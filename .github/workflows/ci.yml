@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Tests de las herramientas
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Validar datos
+        run: |
+          python tools/validate.py
+          python tools/validate.py --json > validate-report.json
+
+      - name: Generar Lua
+        run: python tools/build.py
+
+      - name: Lo generado está commiteado
+        run: |
+          git diff --exit-code -- addon/Senda/Guides addon/Senda/Knowledge addon/Senda/Senda.toc || {
+            echo "::error::Lo generado no coincide con lo commiteado. Ejecuta 'python tools/build.py' y commitea."
+            exit 1
+          }
+          untracked="$(git ls-files --others --exclude-standard -- addon/Senda/Guides addon/Senda/Knowledge)"
+          if [ -n "$untracked" ]; then
+            echo "::error::Archivos generados sin commitear:"
+            echo "$untracked"
+            exit 1
+          fi
+
+      - name: Instalar Lua 5.1 y luacheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lua5.1 luarocks
+          sudo luarocks install luacheck
+
+      - name: Sintaxis (luac -p)
+        run: |
+          LUAC="$(command -v luac5.1 || command -v luac)"
+          find addon/Senda -name '*.lua' -print0 | xargs -0 -r "$LUAC" -p
+          echo "luac -p: OK"
+
+      - name: luacheck
+        run: luacheck addon/Senda
+
+      - name: Empaquetar
+        run: python tools/package.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: senda-package
+          path: |
+            dist/*.zip
+            validate-report.json
+          if-no-files-found: error

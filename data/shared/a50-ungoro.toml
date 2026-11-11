@@ -1,0 +1,772 @@
+# Ruta compartida de Alianza (brujo gnomo y mago humano), 45-60. Generada con QuestieDB local; textos propios.
+id = "a50-ungoro"
+title = "Cráter de Un'Goro"
+levels = [50, 52]
+map = 1449
+summary = "Entrena al 50 en Forjaz, vuelve a Gadgetzan con la piedra y vacía el Refugio de Marshal dando una vuelta al cráter."
+
+[[step]]
+id = "a50-ungoro-001"
+do = "fly"
+node = "Ironforge"
+zone = 1455
+text = "Vuela del Nido Aguileño a Forjaz."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a50-ungoro-002"
+do = "train"
+npc = 5173
+spells = [11667, 11734]
+at = [1455, 50.1, 7.5]
+text = "Brujo: entrena los hechizos del nivel 50."
+if = { class = ["WARLOCK"], minlevel = 50 }
+status = "unverified"
+sources = ["questie:npc/5173", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a50-ungoro-003"
+do = "train"
+npc = 5144
+spells = [10180, 10219, 11419]
+at = [1455, 27.2, 8.3]
+text = "Mago: entrena los hechizos del nivel 50."
+if = { class = ["MAGE"], minlevel = 50 }
+status = "unverified"
+sources = ["questie:npc/5144", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a50-ungoro-004"
+do = "hearth"
+zone = 1446
+text = "Usa la piedra de hogar para volver a Gadgetzan."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a50-ungoro-005"
+do = "turnin"
+quest = 2641
+npc = 7583
+at = [1446, 51.1, 26.9]
+text = "Dale el tragan violeta a Sprinkle."
+status = "unverified"
+sources = ["questie:quest/2641", "questie:npc/7583", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-006"
+do = "accept"
+quest = 2661
+npc = 7583
+at = [1446, 51.1, 26.9]
+text = "Coge la entrega para Marin."
+status = "unverified"
+sources = ["questie:quest/2661", "questie:npc/7583", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-007"
+do = "turnin"
+quest = 2661
+npc = 7564
+at = [1446, 51.8, 28.7]
+text = "Lleva el polvo violeta a Marin Noggenfogger."
+status = "unverified"
+sources = ["questie:quest/2661", "questie:npc/7564", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-008"
+do = "accept"
+quest = 2662
+npc = 7564
+at = [1446, 51.8, 28.7]
+text = "Coge el elixir de Noggenfogger."
+status = "unverified"
+sources = ["questie:quest/2662", "questie:npc/7564", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-009"
+do = "turnin"
+quest = 2662
+npc = 7564
+at = [1446, 51.8, 28.7]
+text = "Espera a que Marin prepare el elixir y entrégala."
+tip = "Guarda los elixires de Noggenfogger: la caída lenta te salva en los saltos."
+status = "unverified"
+sources = ["questie:quest/2662", "questie:npc/7564", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-010"
+do = "goto"
+at = [1449, 71.6, 76.0]
+text = "Cabalga al oeste de Tanaris y baja la rampa al Cráter de Un'Goro."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a50-ungoro-011"
+do = "accept"
+quest = 4289
+npc = 9619
+at = [1449, 71.6, 76.0]
+text = "Coge la misión de los simios de Torwa Pathfinder, en la entrada."
+status = "unverified"
+sources = ["questie:quest/4289", "questie:npc/9619", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-012"
+do = "accept"
+quest = 4290
+npc = 9619
+at = [1449, 71.6, 76.0]
+text = "Coge también la de la presa de Lar'korwi."
+status = "unverified"
+sources = ["questie:quest/4290", "questie:npc/9619", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-013"
+do = "goto"
+at = [1449, 44.0, 7.2]
+text = "Cruza el cráter hacia el norte hasta el Refugio de Marshal."
+tip = "Recoge los cristales de poder de colores que veas por el camino: los pide una misión de aquí."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a50-ungoro-014"
+do = "getfp"
+npc = 10583
+node = "Marshal's Refuge"
+at = [1449, 45.2, 5.8]
+text = "Coge la ruta de vuelo del Refugio de Marshal."
+status = "unverified"
+sources = ["questie:npc/10583", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-015"
+do = "accept"
+quest = 3882
+npc = 9272
+at = [1449, 43.5, 7.4]
+text = "Coge la misión de los huesos de dinosaurio de Spark."
+status = "unverified"
+sources = ["questie:quest/3882", "questie:npc/9272", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-016"
+do = "accept"
+quest = 4503
+npc = 9998
+at = [1449, 44.2, 11.6]
+text = "Coge la misión de las escamas para el volador de Shizzle."
+status = "unverified"
+sources = ["questie:quest/4503", "questie:npc/9998", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-017"
+do = "accept"
+quest = 3883
+npc = 9271
+at = [1449, 43.9, 7.2]
+text = "Coge la muestra de la colmena (ecología alienígena)."
+status = "unverified"
+sources = ["questie:quest/3883", "questie:npc/9271", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-018"
+do = "accept"
+quest = 3881
+npc = 9270
+at = [1449, 44.0, 7.1]
+text = "Coge la misión de salvar la expedición de Williden."
+status = "unverified"
+sources = ["questie:quest/3881", "questie:npc/9270", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-019"
+do = "accept"
+quest = 4284
+npc = 9117
+at = [1449, 41.9, 2.7]
+text = "Entra en la cueva y coge la misión de los cristales de poder de J.D. Collie."
+status = "unverified"
+sources = ["questie:quest/4284", "questie:npc/9117", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-020"
+do = "accept"
+quest = 4501
+at = [1449, 43.5, 8.4]
+text = "Coge el cartel de los pterrordax."
+status = "unverified"
+sources = ["questie:quest/4501", "questie:object/174682", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a50-ungoro-021"
+do = "accept"
+quest = 4492
+npc = 9997
+at = [1449, 43.6, 8.5]
+text = "Coge la misión de Spraggle: encuentra a Ringo."
+status = "unverified"
+sources = ["questie:quest/4492", "questie:npc/9997", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-022"
+do = "accept"
+quest = 5150
+npc = 9274
+at = [1449, 43.6, 7.2]
+text = "Coge la misión de Dadanga: brotes de sangrepétalo."
+status = "unverified"
+sources = ["questie:quest/5150", "questie:npc/9274", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-023"
+do = "complete"
+quest = 4289
+at = [1449, 66.1, 16.1]
+text = "Al noreste, en la cueva de los gorilas, consigue 2 pieles de cada tipo de simio."
+status = "unverified"
+sources = ["questie:quest/4289", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-024"
+do = "complete"
+quest = 4503
+at = [1449, 66.0, 31.6]
+wps = [[1449, 76.0, 44.3, "Pterrordax"]]
+text = "Mata diemetradones y pterrordax al este hasta tener 8 escamas de cada."
+status = "unverified"
+sources = ["questie:quest/4503", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-025"
+do = "complete"
+quest = 4501
+at = [1449, 52.2, 59.4]
+text = "Mata 10 pterrordax y 15 pterrordax frenéticos mientras recorres el este."
+status = "unverified"
+sources = ["questie:quest/4501", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-026"
+do = "complete"
+quest = 3881
+at = [1449, 68.5, 36.5]
+text = "Coge la caja de víveres del campamento destruido del este."
+status = "unverified"
+sources = ["questie:quest/3881", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-027"
+do = "complete"
+quest = 4290
+at = [1449, 68.7, 56.7]
+text = "Busca el cadáver de la presa de Lar'korwi y coge un trozo de carne."
+status = "unverified"
+sources = ["questie:quest/4290", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-028"
+do = "goto"
+at = [1449, 71.6, 76.0]
+text = "Baja al sureste, con Torwa."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a50-ungoro-029"
+do = "turnin"
+quest = 4290
+npc = 9619
+at = [1449, 71.6, 76.0]
+text = "Entrega la carne a Torwa."
+status = "unverified"
+sources = ["questie:quest/4290", "questie:npc/9619", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-030"
+do = "turnin"
+quest = 4289
+npc = 9619
+at = [1449, 71.6, 76.0]
+text = "Entrega las pieles de simio a Torwa."
+status = "unverified"
+sources = ["questie:quest/4289", "questie:npc/9619", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-031"
+do = "accept"
+quest = 4291
+npc = 9619
+at = [1449, 71.6, 76.0]
+text = "Coge la continuación: glándulas de feromonas de ravasaurio."
+status = "unverified"
+sources = ["questie:quest/4291", "questie:npc/9619", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-032"
+do = "complete"
+quest = 4291
+at = [1449, 64.9, 68.2]
+text = "Mata ravasaurios al oeste de Torwa hasta tener 2 glándulas."
+tip = "Los ravasaurios cazan en grupo y rápido: cuidado con juntar más de dos."
+status = "unverified"
+sources = ["questie:quest/4291", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-033"
+do = "turnin"
+quest = 4291
+npc = 9619
+at = [1449, 71.6, 76.0]
+text = "Entrega las glándulas a Torwa."
+status = "unverified"
+sources = ["questie:quest/4291", "questie:npc/9619", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-034"
+do = "accept"
+quest = 3844
+at = [1449, 63.0, 68.6]
+text = "En la charca del sur, examina la balsa rota."
+status = "unverified"
+sources = ["questie:quest/3844", "questie:object/161505", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a50-ungoro-035"
+do = "turnin"
+quest = 3844
+at = [1449, 63.1, 69.1]
+text = "Mira en la charca el paquete del dueño de la balsa."
+status = "unverified"
+sources = ["questie:quest/3844", "questie:object/161504", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a50-ungoro-036"
+do = "accept"
+quest = 3845
+at = [1449, 63.1, 69.1]
+text = "Coge el paquete: llévalo a su dueño."
+status = "unverified"
+sources = ["questie:quest/3845", "questie:object/161504", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a50-ungoro-037"
+do = "complete"
+quest = 3883
+at = [1449, 48.7, 85.3]
+text = "En la colmena Gorishi del sur, usa el vial en una de las salas de cría."
+status = "unverified"
+sources = ["questie:quest/3883", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-038"
+do = "complete"
+quest = 3882
+at = [1449, 34.2, 70.7]
+text = "En los Pozos de Alquitrán del suroeste consigue 8 huesos de dinosaurio."
+status = "unverified"
+sources = ["questie:quest/3882", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-039"
+do = "complete"
+quest = 3881
+at = [1449, 38.5, 66.1]
+text = "Coge el equipo de investigación, al oeste de los pozos."
+status = "unverified"
+sources = ["questie:quest/3881", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-040"
+do = "complete"
+quest = 4284
+at = [1449, 56.0, 49.5]
+text = "Recoge 7 cristales de poder de cada color (rojo, azul, amarillo y verde) por el cráter."
+status = "unverified"
+sources = ["questie:quest/4284", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-041"
+do = "accept"
+quest = 974
+npc = 10302
+at = [1449, 30.9, 50.4]
+text = "Coge la misión de Krakle: el punto más caliente de la Cresta de Fuego."
+status = "unverified"
+sources = ["questie:quest/974", "questie:npc/10302", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-042"
+do = "complete"
+quest = 974
+at = [1449, 49.7, 45.6]
+text = "Sube a la Cresta del Penacho de Fuego y usa el termómetro hasta encontrar el punto más caliente."
+status = "unverified"
+sources = ["questie:quest/974", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-043"
+do = "turnin"
+quest = 974
+npc = 10302
+at = [1449, 30.9, 50.4]
+text = "Vuelve con Krakle y entrégala."
+status = "unverified"
+sources = ["questie:quest/974", "questie:npc/10302", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-044"
+do = "accept"
+quest = 980
+npc = 10302
+at = [1449, 30.9, 50.4]
+text = "Coge el viaje a Cuna del Invierno (Donova Snowden). Guárdala."
+status = "unverified"
+sources = ["questie:quest/980", "questie:npc/10302", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-045"
+do = "complete"
+quest = 5150
+at = [1449, 41.0, 27.5]
+text = "Coge brotes de sangrepétalo junto a la Cresta del Penacho de Fuego."
+status = "unverified"
+sources = ["questie:quest/5150", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-046"
+do = "turnin"
+quest = 4492
+npc = 9999
+at = [1449, 51.9, 49.9]
+text = "Encuentra a Ringo al pie de la Cresta del Penacho de Fuego."
+status = "unverified"
+sources = ["questie:quest/4492", "questie:npc/9999", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-047"
+do = "accept"
+quest = 4491
+npc = 9999
+at = [1449, 51.9, 49.9]
+text = "Coge la escolta de Ringo."
+status = "unverified"
+sources = ["questie:quest/4491", "questie:npc/9999", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-048"
+do = "complete"
+quest = 4491
+at = [1449, 43.6, 8.5]
+text = "Lleva a Ringo al Refugio de Marshal; si se desmaya, usa la cantimplora."
+status = "unverified"
+sources = ["questie:quest/4491", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-049"
+do = "turnin"
+quest = 4491
+npc = 9997
+at = [1449, 43.6, 8.5]
+text = "Entrega a Ringo a Spraggle."
+status = "unverified"
+sources = ["questie:quest/4491", "questie:npc/9997", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-050"
+do = "turnin"
+quest = 4501
+npc = 9997
+at = [1449, 43.6, 8.5]
+text = "Entrega los pterrordax a Spraggle."
+status = "unverified"
+sources = ["questie:quest/4501", "questie:npc/9997", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-051"
+do = "turnin"
+quest = 3882
+npc = 9272
+at = [1449, 43.5, 7.4]
+text = "Entrega los huesos a Spark."
+status = "unverified"
+sources = ["questie:quest/3882", "questie:npc/9272", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-052"
+do = "turnin"
+quest = 4503
+npc = 9998
+at = [1449, 44.2, 11.6]
+text = "Entrega las escamas a Shizzle."
+status = "unverified"
+sources = ["questie:quest/4503", "questie:npc/9998", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-053"
+do = "turnin"
+quest = 3883
+npc = 9271
+at = [1449, 43.9, 7.2]
+text = "Entrega la muestra de la colmena."
+status = "unverified"
+sources = ["questie:quest/3883", "questie:npc/9271", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-054"
+do = "turnin"
+quest = 3881
+npc = 9270
+at = [1449, 44.0, 7.1]
+text = "Entrega la caja y el equipo a Williden."
+status = "unverified"
+sources = ["questie:quest/3881", "questie:npc/9270", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-055"
+do = "turnin"
+quest = 5150
+npc = 9274
+at = [1449, 43.6, 7.2]
+text = "Dale los brotes a Dadanga."
+status = "unverified"
+sources = ["questie:quest/5150", "questie:npc/9274", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-056"
+do = "turnin"
+quest = 3845
+npc = 8737
+at = [1449, 44.7, 8.1]
+text = "Dale el paquete a Linken."
+status = "unverified"
+sources = ["questie:quest/3845", "questie:npc/8737", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-057"
+do = "accept"
+quest = 3908
+npc = 8737
+at = [1449, 44.7, 8.1]
+text = "Coge la misión de llevar la espada de Linken a Cuna del Invierno. Guárdala."
+status = "unverified"
+sources = ["questie:quest/3908", "questie:npc/8737", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-058"
+do = "turnin"
+quest = 4284
+npc = 9117
+at = [1449, 41.9, 2.7]
+text = "Entrega los cristales a J.D. Collie, en la cueva."
+status = "unverified"
+sources = ["questie:quest/4284", "questie:npc/9117", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-059"
+do = "accept"
+quest = 4285
+npc = 9117
+at = [1449, 41.9, 2.7]
+text = "Coge la búsqueda del pilón del norte."
+status = "unverified"
+sources = ["questie:quest/4285", "questie:npc/9117", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-060"
+do = "accept"
+quest = 4287
+npc = 9117
+at = [1449, 41.9, 2.7]
+text = "Coge la del pilón del este."
+status = "unverified"
+sources = ["questie:quest/4287", "questie:npc/9117", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-061"
+do = "accept"
+quest = 4288
+npc = 9117
+at = [1449, 41.9, 2.7]
+text = "Coge la del pilón del oeste."
+status = "unverified"
+sources = ["questie:quest/4288", "questie:npc/9117", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-062"
+do = "complete"
+quest = 4285
+at = [1449, 56.5, 12.5]
+text = "Descubre el pilón del norte."
+status = "unverified"
+sources = ["questie:quest/4285", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-063"
+do = "complete"
+quest = 4287
+at = [1449, 77.2, 50.0]
+text = "Descubre el pilón del este."
+status = "unverified"
+sources = ["questie:quest/4287", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-064"
+do = "complete"
+quest = 4288
+at = [1449, 23.9, 59.2]
+text = "Descubre el pilón del oeste."
+tip = "Si ya pasaste por los tres pilones con las misiones, se marcan al volver a acercarte."
+status = "unverified"
+sources = ["questie:quest/4288", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-065"
+do = "turnin"
+quest = 4285
+npc = 9117
+at = [1449, 41.9, 2.7]
+text = "Entrega el pilón del norte a J.D. Collie."
+status = "unverified"
+sources = ["questie:quest/4285", "questie:npc/9117", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-066"
+do = "turnin"
+quest = 4287
+npc = 9117
+at = [1449, 41.9, 2.7]
+text = "Entrega el pilón del este."
+status = "unverified"
+sources = ["questie:quest/4287", "questie:npc/9117", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-067"
+do = "turnin"
+quest = 4288
+npc = 9117
+at = [1449, 41.9, 2.7]
+text = "Entrega el pilón del oeste."
+status = "unverified"
+sources = ["questie:quest/4288", "questie:npc/9117", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-068"
+do = "accept"
+quest = 4321
+npc = 9117
+at = [1449, 41.9, 2.7]
+text = "Coge la misión de dar sentido a los cristales."
+status = "unverified"
+sources = ["questie:quest/4321", "questie:npc/9117", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-069"
+do = "turnin"
+quest = 4321
+npc = 9117
+at = [1449, 41.9, 2.7]
+text = "Espera un momento y habla otra vez con J.D. Collie."
+status = "unverified"
+sources = ["questie:quest/4321", "questie:npc/9117", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a50-ungoro-070"
+do = "train"
+npc = 5495
+spells = [11660, 11675]
+at = [1453, 39.9, 84.2]
+text = "Brujo: entrena los hechizos del nivel 52."
+if = { class = ["WARLOCK"], minlevel = 52 }
+optional = true
+status = "unverified"
+sources = ["questie:npc/5495", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a50-ungoro-071"
+do = "train"
+npc = 5497
+spells = [10186, 10192]
+at = [1453, 49.6, 85.8]
+text = "Mago: entrena los hechizos del nivel 52."
+if = { class = ["MAGE"], minlevel = 52 }
+optional = true
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a50-ungoro-072"
+do = "note"
+text = "Opcional al 52: el mago abre Portal a Ventormenta para entrenar; luego Teletransporte a Darnassus y vuelo a Astranaar."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]

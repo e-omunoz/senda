@@ -1,0 +1,172 @@
+# Brujo (Alianza): el Manáfago (nivel 30). Cadena larga: Trinquete, Forjaz, Laderas de Trabalomas,
+# Las Mil Agujas, Los Humedales y vuelta a Trinquete. Hazla aprovechando los viajes a esas zonas.
+id = "wl-felhunter"
+title = "Brujo: el Manáfago"
+levels = [30, 34]
+map = 1413
+summary = "Strahad Farsan (Trinquete) te manda con Krom Stoutarm (Forjaz). Juntas el tomo mohoso (Trabalomas), el manuscrito (Mil Agujas) y 3 varas de canalización (Los Humedales) y haces la vinculación en la torre de Strahad."
+if = { class = ["WARLOCK"] }
+
+[[step]]
+id = "wl-felhunter-001"
+do = "accept"
+quest = 1798
+npc = 6120
+at = [1455, 47.6, 9.3]
+text = "Coge de Lago Blackwrench, en la Caverna Abandonada de Forjaz, la misión que te manda con Strahad."
+tip = "Gakin, en Ventormenta, da la misma misión. Entrena el 30 a la vez con Briarthorn: Subyugar demonio y Piroinferno."
+status = "unverified"
+sources = ["questie:quest/1798", "questie:npc/6120", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-felhunter-002"
+do = "train"
+spells = [1098, 1949]
+npc = 5172
+at = [1455, 50.4, 5.7]
+text = "Entrena el 30 con Briarthorn: Subyugar demonio y Piroinferno."
+status = "unverified"
+sources = ["questie:npc/5172", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-felhunter-003"
+do = "turnin"
+quest = 1798
+npc = 6251
+at = [1413, 62.6, 35.5]
+text = "Ve a Trinquete (Los Baldíos) y entrega a Strahad Farsan, en su torre."
+tip = "Barco de Bahía del Botín a Trinquete, o de Menethil a Theramore y a pie."
+status = "unverified"
+sources = ["questie:quest/1798", "questie:npc/6251", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-felhunter-004"
+do = "accept"
+quest = 1758
+npc = 6251
+at = [1413, 62.6, 35.5]
+text = "Coge la primera parte del Tomo de la Cábala de Strahad."
+status = "unverified"
+sources = ["questie:quest/1758", "questie:npc/6251"]
+
+[[step]]
+id = "wl-felhunter-005"
+do = "turnin"
+quest = 1758
+npc = 6294
+at = [1455, 74.2, 9.4]
+text = "Vuelve a Forjaz y entrega a Krom Stoutarm, en la Sala de los Exploradores."
+status = "unverified"
+sources = ["questie:quest/1758", "questie:npc/6294", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-felhunter-006"
+do = "accept"
+quest = 1802
+npc = 6294
+at = [1455, 74.2, 9.4]
+text = "Coge de Krom la misión de las dos páginas del tomo."
+status = "unverified"
+sources = ["questie:quest/1802", "questie:npc/6294"]
+
+[[step]]
+id = "wl-felhunter-007"
+do = "complete"
+quest = 1802
+obj = 1
+at = [1424, 27.8, 72.8]
+text = "Coge el tomo mohoso en el campamento múrloc de la costa de Laderas de Trabalomas."
+status = "unverified"
+sources = ["questie:quest/1802", "questie:object/92013", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-felhunter-008"
+do = "complete"
+quest = 1802
+obj = 2
+at = [1441, 43.4, 32.7]
+text = "Coge el manuscrito del cofre dañado del Campamento Pezuña Quebrada, en Las Mil Agujas."
+tip = "Los centauros van en grupos: Miedo a uno y Abisario o Súcubo con el otro."
+status = "unverified"
+sources = ["questie:quest/1802", "questie:object/92423", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-felhunter-009"
+do = "turnin"
+quest = 1802
+npc = 6294
+at = [1455, 74.2, 9.4]
+text = "Entrega las dos páginas a Krom en Forjaz."
+status = "unverified"
+sources = ["questie:quest/1802", "questie:npc/6294"]
+
+[[step]]
+id = "wl-felhunter-010"
+do = "accept"
+quest = 1804
+npc = 6294
+at = [1455, 74.2, 9.4]
+text = "Coge la última parte del tomo de Krom."
+status = "unverified"
+sources = ["questie:quest/1804", "questie:npc/6294"]
+
+[[step]]
+id = "wl-felhunter-011"
+do = "complete"
+quest = 1804
+at = [1437, 48.6, 47.1]
+wps = [[1437, 51.0, 45.0, "Entrada trasera"], [1437, 52.6, 52.9, "Guardasombras"]]
+text = "En Los Humedales, mata lanzadores Faucedraco del Campamento Dentellada hasta tener 3 varas de canalización."
+tip = "Entra por detrás (hacia 51, 45) para tirar de uno en uno."
+status = "unverified"
+sources = ["questie:quest/1804", "questie:npc/1057", "questie:npc/1038", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-felhunter-012"
+do = "turnin"
+quest = 1804
+npc = 6251
+at = [1413, 62.6, 35.5]
+text = "Lleva el tomo y las varas a Strahad, en Trinquete."
+status = "unverified"
+sources = ["questie:quest/1804", "questie:npc/6251"]
+
+[[step]]
+id = "wl-felhunter-013"
+do = "accept"
+quest = 1795
+npc = 6251
+at = [1413, 62.6, 35.5]
+text = "Coge La vinculación de Strahad."
+status = "unverified"
+sources = ["questie:quest/1795", "questie:npc/6251"]
+
+[[step]]
+id = "wl-felhunter-014"
+do = "complete"
+quest = 1795
+at = [1413, 62.6, 35.3]
+text = "Usa el tomo en el círculo de la torre de Strahad y derrota al manáfago invocado."
+tip = "Vida y maná llenos. Demonio a tanquear, DoTs y Drenar vida."
+status = "unverified"
+sources = ["questie:quest/1795", "questie:npc/6268"]
+
+[[step]]
+id = "wl-felhunter-015"
+do = "turnin"
+quest = 1795
+npc = 6251
+at = [1413, 62.6, 35.5]
+text = "Entrega La vinculación a Strahad."
+status = "unverified"
+sources = ["questie:quest/1795", "questie:npc/6251"]
+
+[[step]]
+id = "wl-felhunter-016"
+do = "train"
+spells = [691]
+at = [1413, 62.6, 35.5]
+text = "Ya puedes invocar al Manáfago."
+tip = "Para subir sigue con el Súcubo o el Íncubo. El Manáfago es para enemigos lanzadores (Bloqueo de hechizo) y JcJ. Desde aquí, Drenar vida es tu relleno."
+status = "unverified"
+sources = ["questie:quest/1795", "legacy:BrujoGnomoGuia 4.1.0"]

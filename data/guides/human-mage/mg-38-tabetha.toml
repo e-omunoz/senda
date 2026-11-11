@@ -1,0 +1,65 @@
+# Guía human-mage: Mago: Tabetha (Fangos Oscuros). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-38-tabetha"
+title = "Mago: Tabetha (Fangos Oscuros)"
+levels = [38, 40]
+map = 1445
+summary = "Misiones de clase con Tabetha, en el Pantano de Fangos Oscuros."
+
+[[step]]
+id = "mg-38-tabetha-001"
+do = "turnin"
+quest = 1947
+npc = 6546
+at = [1445, 46.1, 57.1]
+text = "En la granja de Tabetha, entrega la misión del pantano."
+status = "unverified"
+sources = ["questie:quest/1947", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-38-tabetha-002"
+do = "accept"
+quest = 1948
+npc = 6546
+at = [1445, 46.1, 57.1]
+text = "Coge la misión de los objetos de poder."
+tip = "Necesitas un jade (filones o subasta) y una zarza cargada de rayos de Arathi."
+status = "unverified"
+sources = ["questie:quest/1948", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-38-tabetha-003"
+do = "accept"
+quest = 1949
+npc = 6546
+at = [1445, 46.1, 57.1]
+text = "Coge la misión de los secretos ocultos: te manda a las Mil Agujas."
+status = "unverified"
+sources = ["questie:quest/1949", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-38-tabetha-004"
+do = "turnin"
+quest = 1953
+npc = 6546
+at = [1445, 46.1, 57.1]
+optional = true
+text = "Entrega la misión de volver al pantano."
+status = "unverified"
+sources = ["questie:quest/1953", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-38-tabetha-005"
+do = "accept"
+quest = 1954
+npc = 6546
+at = [1445, 46.1, 57.1]
+optional = true
+text = "Coge la misión del orbe infernal."
+tip = "El orbe lo sueltan los invocadores del Filo Ardiente de Desolace."
+status = "unverified"
+sources = ["questie:quest/1954", "questie:npc/6546"]
+checked = "2026-11-11"

@@ -1,0 +1,19 @@
+id = "alliance-test"
+title = "Ruta compartida"
+levels = [6, 12]
+
+[[step]]
+id = "shared-001"
+do = "level"
+level = 10
+text = "Llega a nivel 10."
+status = "unverified"
+
+[[step]]
+id = "shared-002"
+do = "fly"
+zone = 1453
+node = "Ventormenta"
+text = "Vuela a Ventormenta."
+status = "unverified"
+optional = true

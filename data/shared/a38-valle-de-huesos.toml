@@ -1,0 +1,195 @@
+# Ruta compartida de la Alianza (brujo gnomo y mago humano).
+
+id = "a38-valle-de-huesos"
+title = "Valle de los Huesos (Shen'dralas)"
+levels = [38, 40]
+map = 2652
+summary = "Cadena nueva de Forever con los Gelkis en la entrada sur del Valle de los Huesos (mapa de Shen'dralas), más los devastadores de la Senda Escarlata. Al acabar, vuelve a Punta de Nijel."
+
+[[step]]
+id = "a38-valle-de-huesos-001"
+do = "accept"
+quest = 93034
+npc = 5397
+at = [1443, 36.22, 79.25]
+text = "Coge de Uthek el Sabio la misión del Valle de los Huesos."
+status = "unverified"
+sources = ["questie:quest/93034", "questie:npc/5397"]
+
+[[step]]
+id = "a38-valle-de-huesos-002"
+do = "turnin"
+quest = 93034
+npc = 253177
+at = [2652, 21.2, 23.2]
+text = "Ve al este hasta Nerlokh, en la entrada sur del Valle de los Huesos."
+status = "unverified"
+sources = ["questie:quest/93034", "questie:npc/253177"]
+
+[[step]]
+id = "a38-valle-de-huesos-003"
+do = "accept"
+quest = 93035
+npc = 253177
+at = [2652, 21.2, 23.2]
+text = "Coge de Nerlokh la caza de devastadores."
+status = "unverified"
+sources = ["questie:quest/93035", "questie:npc/253177"]
+
+[[step]]
+id = "a38-valle-de-huesos-004"
+do = "accept"
+quest = 93041
+npc = 253177
+at = [2652, 21.2, 23.2]
+text = "Coge de Nerlokh la misión de la verdad."
+status = "unverified"
+sources = ["questie:quest/93041", "questie:npc/253177"]
+
+[[step]]
+id = "a38-valle-de-huesos-005"
+do = "accept"
+quest = 93037
+npc = 253177
+at = [2652, 21.2, 23.2]
+text = "Coge de Nerlokh la de los proscritos."
+status = "unverified"
+sources = ["questie:quest/93037", "questie:npc/253177"]
+
+[[step]]
+id = "a38-valle-de-huesos-006"
+do = "complete"
+quest = 93035
+at = [1443, 62, 87]
+text = "Mata devastadores no muertos en el valle: cuentan para Nerlokh y para la Senda Escarlata."
+tip = "Te faltan 30 para el hermano Anton: termina las dos a la vez."
+status = "unverified"
+sources = ["questie:quest/93035"]
+
+[[step]]
+id = "a38-valle-de-huesos-007"
+do = "complete"
+quest = 261
+at = [1443, 62, 87]
+text = "Termina los 30 devastadores del hermano Anton."
+status = "unverified"
+sources = ["questie:quest/261"]
+
+[[step]]
+id = "a38-valle-de-huesos-008"
+do = "complete"
+quest = 93041
+at = [2652, 39, 29.2]
+text = "Mata nigromantes en el valle hasta conseguir la vestimenta y la calavera."
+tip = "Lugar aproximado: los nigromantes están en el centro del valle."
+status = "unverified"
+sources = ["questie:quest/93041"]
+
+[[step]]
+id = "a38-valle-de-huesos-009"
+do = "complete"
+quest = 93037
+at = [2652, 39, 29.2]
+text = "Consigue otra vestimenta nigromántica para Nerlokh."
+status = "unverified"
+sources = ["questie:quest/93037"]
+
+[[step]]
+id = "a38-valle-de-huesos-010"
+do = "turnin"
+quest = 93035
+npc = 253177
+at = [2652, 21.2, 23.2]
+text = "Vuelve con Nerlokh y entrega los devastadores."
+status = "unverified"
+sources = ["questie:quest/93035", "questie:npc/253177"]
+
+[[step]]
+id = "a38-valle-de-huesos-011"
+do = "turnin"
+quest = 93037
+npc = 253177
+at = [2652, 21.2, 23.2]
+text = "Entrega los proscritos a Nerlokh."
+tip = "Si te ofrece más misiones del valle (cautivos, entierros), cógelas solo si eres 40 o más."
+status = "unverified"
+sources = ["questie:quest/93037", "questie:npc/253177"]
+
+[[step]]
+id = "a38-valle-de-huesos-012"
+do = "turnin"
+quest = 93041
+npc = 5397
+at = [1443, 36.22, 79.25]
+text = "Lleva la calavera y la vestimenta a Uthek."
+status = "unverified"
+sources = ["questie:quest/93041", "questie:npc/5397"]
+
+[[step]]
+id = "a38-valle-de-huesos-013"
+do = "hearth"
+zone = 1443
+text = "Usa la piedra de hogar para volver a Punta de Nijel."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a38-valle-de-huesos-014"
+do = "turnin"
+quest = 261
+npc = 1182
+at = [1443, 66.52, 7.91]
+text = "Entrega los devastadores al hermano Anton."
+status = "unverified"
+sources = ["questie:quest/261", "questie:npc/1182"]
+
+[[step]]
+id = "a38-valle-de-huesos-015"
+do = "accept"
+quest = 1052
+npc = 1182
+at = [1443, 66.52, 7.91]
+optional = true
+text = "Coge la carta de Anton para Costasur (Monasterio Escarlata)."
+tip = "Solo si harás el Monasterio."
+status = "unverified"
+sources = ["questie:quest/1052", "questie:npc/1182"]
+
+[[step]]
+id = "a38-valle-de-huesos-016"
+do = "turnin"
+quest = 1387
+npc = 5752
+at = [1443, 66.74, 10.87]
+text = "Entrega las orejas de centauro a Melkins."
+status = "unverified"
+sources = ["questie:quest/1387", "questie:npc/5752"]
+
+[[step]]
+id = "a38-valle-de-huesos-017"
+do = "turnin"
+quest = 93224
+npc = 5396
+at = [1443, 66.66, 10.93]
+text = "Entrega los tótems a Pentigast."
+status = "unverified"
+sources = ["questie:quest/93224", "questie:npc/5396"]
+
+[[step]]
+id = "a38-valle-de-huesos-018"
+do = "turnin"
+quest = 1459
+npc = 5638
+at = [1443, 66.2, 9.63]
+text = "Entrega el veneno y la piel a Kreldig."
+tip = "Las siguientes de Kreldig mandan al pecio Karnitol: sáltalas."
+status = "unverified"
+sources = ["questie:quest/1459", "questie:npc/5638"]
+
+[[step]]
+id = "a38-valle-de-huesos-019"
+do = "level"
+level = 40
+text = "Deberías estar cerca del 40. Si no, repite centauros o devastadores."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]

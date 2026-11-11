@@ -1,0 +1,51 @@
+# Guía human-mage: Mago: Túnica de tejido de maná. Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-16-manaweave"
+title = "Mago: Túnica de tejido de maná"
+levels = [16, 17]
+map = 1453
+summary = "Entrega de la Túnica de tejido de maná y hechizos del 16."
+
+[[step]]
+id = "mg-16-manaweave-001"
+do = "turnin"
+quest = 1921
+npc = 1309
+at = [1453, 51.8, 83.5]
+text = "En Ventormenta, entrega los materiales a Wynne Larson (Ropa Larson)."
+status = "unverified"
+sources = ["questie:quest/1921", "questie:npc/1309"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-16-manaweave-002"
+do = "accept"
+quest = 1941
+npc = 1309
+at = [1453, 51.8, 83.5]
+text = "Coge la misión de la túnica de Wynne Larson."
+status = "unverified"
+sources = ["questie:quest/1941", "questie:npc/1309"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-16-manaweave-003"
+do = "turnin"
+quest = 1941
+npc = 1309
+at = [1453, 51.8, 83.5]
+text = "Entrega y llévate la Túnica de tejido de maná."
+status = "unverified"
+sources = ["questie:quest/1941", "questie:npc/1309"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-16-manaweave-004"
+do = "train"
+npc = 5497
+spells = [2120]
+at = [1453, 49.6, 85.8]
+text = "Nivel 16: aprende Fogonazo."
+tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos."
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"

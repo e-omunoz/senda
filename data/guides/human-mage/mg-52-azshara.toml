@@ -1,0 +1,94 @@
+# Guía human-mage: Mago: Archimago Xylem (Azshara). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-52-azshara"
+title = "Mago: Archimago Xylem (Azshara)"
+levels = [52, 55]
+map = 1447
+summary = "Cadena de clase con el Archimago Xylem en Azshara."
+
+[[step]]
+id = "mg-52-azshara-001"
+do = "turnin"
+quest = 8250
+npc = 8395
+at = [1447, 28.1, 50.1]
+text = "En Azshara, entrega a Sanath Lim-yo, al pie de la torre de Xylem."
+status = "unverified"
+sources = ["questie:quest/8250", "questie:npc/8395"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-52-azshara-002"
+do = "accept"
+quest = 8251
+npc = 8379
+at = [1447, 29.6, 40.4]
+text = "Sube a la torre y coge del Archimago Xylem la misión del polvo."
+status = "unverified"
+sources = ["questie:quest/8251", "questie:npc/8379"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-52-azshara-003"
+do = "complete"
+quest = 8251
+at = [1447, 57.2, 28.7]
+text = "Mata elfos de sangre al noreste hasta tener el polvo reluciente."
+status = "unverified"
+sources = ["questie:quest/8251"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-52-azshara-004"
+do = "turnin"
+quest = 8251
+npc = 8379
+at = [1447, 29.6, 40.4]
+text = "Entrega al Archimago Xylem."
+status = "unverified"
+sources = ["questie:quest/8251", "questie:npc/8379"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-52-azshara-005"
+do = "accept"
+quest = 8252
+npc = 8379
+at = [1447, 29.6, 40.4]
+text = "Coge la misión del coral."
+status = "unverified"
+sources = ["questie:quest/8252", "questie:npc/8379"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-52-azshara-006"
+do = "complete"
+quest = 8252
+at = [1447, 43.3, 54.2]
+text = "Mata sirenas Spitelash en la costa hasta tener el coral encantado."
+status = "unverified"
+sources = ["questie:quest/8252"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-52-azshara-007"
+do = "turnin"
+quest = 8252
+npc = 8379
+at = [1447, 29.6, 40.4]
+text = "Entrega el coral."
+status = "unverified"
+sources = ["questie:quest/8252", "questie:npc/8379"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-52-azshara-008"
+do = "accept"
+quest = 8253
+npc = 8379
+at = [1447, 29.6, 40.4]
+optional = true
+text = "Coge la misión de Morphaz."
+tip = "Morphaz está en el Templo de Atal'Hakkar: hazla con esa mazmorra."
+status = "unverified"
+sources = ["questie:quest/8253", "questie:npc/8379"]
+checked = "2026-11-11"

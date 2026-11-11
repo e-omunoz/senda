@@ -1,0 +1,52 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Gear.lua ns.GEAR.WEIGHTS.WARLOCK y textos de BrujoGnomoGuia.lua).
+# [weights]: pesos por punto de estadística para valorar equipo (más alto = más importante). Ver docs/MIGRATION.md.
+#   SP poder con hechizos · SCHOOL escuela preferida · SCHOOL_W peso del poder de esa escuela · SPI Espíritu
+#   INT Intelecto · STA Aguante · MP5 maná cada 5 s · ARMOR armadura · WAND_DPS DPS de varita
+#   WAND_DPS_30 peso del DPS de varita desde el nivel 30.
+# Los pesos los puso el autor a partir de las prioridades: nadie publica pesos numéricos para Forever.
+id = "warlock-gear"
+class = "WARLOCK"
+kind = "page"
+title = "Equipo: prioridad de estadísticas (Aflicción)"
+order = 140
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.warcrafttavern.com/forever/", "cita:Blizzard, notas de desarrollo de la beta (24-sep-2026)"]
+checked = "2026-11-09"
+note = "Prioridades de Warcraft Tavern (guía de brujo de Forever, revisado el 9-nov). Que las varitas no escalan con el poder con hechizos sale de las notas de desarrollo de la beta del 24-sep (Blizzard), sin enlace."
+
+[weights]
+SP = 1.0
+SCHOOL = "SHADOW"
+SCHOOL_W = 1.0
+SPI = 0.5
+INT = 0.45
+STA = 0.35
+MP5 = 0.6
+ARMOR = 0.005
+WAND_DPS = 1.5
+WAND_DPS_30 = 0.6
+
+[[block]]
+heading = "Prioridad"
+body = """
+**Poder con hechizos / de Sombras > DPS de varita > Espíritu = Intelecto > Aguante.**
+
+- El DPS de varita importa hasta el nivel 30; luego Drenar vida es tu relleno.
+- Transfusión de vida da 140 + tu Espíritu en maná (rango 3).
+- Las varitas **no** ganan daño con tu poder con hechizos: cuentan por su DPS y por el poder que traen.
+- Piezas con Fuerza o Agilidad y sin Intelecto, Espíritu ni poder con hechizos no te sirven."""
+
+[[block]]
+heading = "Armas"
+body = """
+El brujo empieza sabiendo usar dagas y varitas. Aprende **Bastones** con Woo Ping en Ventormenta (57.1, 57.7): en Forjaz no se enseñan. Bastón o arma de una mano + mano izquierda: quédate con lo que sume más."""
+
+[[block]]
+heading = "Sastrería"
+body = """
+Patrones de Mivin Shadowweave (Tres Caminos, 30 de Favor cada uno) a habilidad 60, 75, 85, 100, 110 y 125. El conjunto de Sombras es para el brujo. Solo los puede llevar quien los fabrica."""
+
+[[block]]
+heading = "Dónde buscar equipo"
+body = """
+La lista de objetos por nivel está en data/knowledge/general/gear-items.toml (los marcados para WARLOCK o para todos). Si no hay nada: recompensas de misión y verdes con Intelecto, Espíritu o poder con hechizos en la casa de subastas."""

@@ -1,0 +1,92 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Brackets.lua, tramo 30-39).
+id = "warlock-bracket-30-39"
+class = "WARLOCK"
+kind = "page"
+title = "Niveles 30-39: drain tanking"
+levels = [30, 39]
+order = 40
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.warcrafttavern.com/forever/"]
+note = "Desde el 31 el orden de talentos es orientativo (Warcraft Tavern y el orden más usado en la beta). Equitación incluida en la misión del Corcel nefasto: corrección de Blizzard del 9-nov citada sin enlace."
+
+[[block]]
+heading = "Zonas"
+body = """
+- **30-35:** Tierras Altas de Arathi.
+- **30-38:** Desolace.
+- **30-40:** Vega de Tuercespina.
+- **35-45:** Riverglades (zona nueva; base de la Alianza: Farholde Keep, 60.6, 81.6).
+
+Mazmorras: Monasterio Escarlata, Uldaman, The Drowned City (35-40)."""
+
+[[block]]
+heading = "Demonio"
+body = """
+**Manáfago** al 30 (cadena larga, pestaña Guía). Para subir sigue con el Íncubo o el Súcubo; el Manáfago es para PvP y para enemigos lanzadores (Bloqueo de hechizo)."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **30:** Subyugar demonio, Piroinferno.
+- **32:** Custodia de las Sombras.
+- **36:** Crear piedra de hechizos."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **30:** Terror de agonía mejorado 2/2.
+- **31-35:** Malevolencia 5/5.
+- **36:** Succionar vida.
+- **37-39:** Maestría de las Sombras 3/5.
+
+Desde el 31 el orden es orientativo: las guías no coinciden."""
+note = "Terror de agonía mejorado y Malevolencia: nombres sin confirmar en el cliente."
+
+[[block]]
+heading = "Rotación"
+body = """
+**Drain tanking:** el demonio tanquea, DoTs a todo y Drenar vida de relleno.
+- Transfusión de vida cuando tu vida supere a tu maná.
+- Con Ocaso, Descarga de las Sombras instantánea.
+- Inmolar solo en enemigos que vayan a durar."""
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 30:** SND_Interrumpir (Bloqueo de hechizo del Manáfago al foco).
+- **Al 35:** SND_Succion_MO."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+- Al 35 entrena **Artesano** (habilidad 200).
+- Objetivo al 40: Sastrería ~250 y Encantamiento ~225.
+- Con 140 de Sastrería: **Rueca** para el campamento (patrón de botín) y conjuntos de 140-235 (los pies son de lo mejor a los niveles 30, 40 y 50)."""
+
+[[block]]
+heading = "Equipo"
+body = """
+- **Piedra de hechizos** desde el 36 (mejor que la pirorroca para Aflicción).
+- Botas de Sastrería del tramo 140-235.
+- Aceite de zahorí menor si lo puedes pagar."""
+
+[[block]]
+heading = "Oro"
+body = """
+- La equitación del 40 viene con la misión del Corcel nefasto (9 nov): no hace falta ahorrar para ella.
+- Entrenar del 1 al 60 cuesta unos 207 de oro contando los grimorios.
+- Vende bolsas de tejido mágico."""
+
+[[block]]
+heading = "Objetivos antes del 40"
+body = """
+- Manáfago.
+- Succionar vida y Ocaso.
+- Sastrería 250, Encantamiento 225."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Con el Manáfago, Bloqueo de hechizo corta a los lanzadores y los deja sin escuela unos segundos.
+- Piroinferno solo con sanador: te quema a ti también.
+- Subyugar demonio te da un demonio temporal más fuerte en zonas con demonios."""

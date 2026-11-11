@@ -1,0 +1,63 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Brackets.lua, tramo 50-60).
+id = "warlock-bracket-50-60"
+class = "WARLOCK"
+kind = "page"
+title = "Niveles 50-60: hacia el máximo"
+levels = [50, 60]
+order = 60
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+note = "Calendario de bandas (9-dic) según Warcraft Wiki. Cambio de Estragos: Blizzard 4-nov y ajuste del 10-nov, citados sin enlace."
+
+[[block]]
+heading = "Zonas"
+body = """
+- **48-55:** Cráter de Un'Goro.
+- **48-55:** Frondavil.
+- **50-58:** Las Estepas Ardientes.
+- **53-60:** Cuna del Invierno.
+- **53-60:** Tierras de la Peste del Este.
+
+Mazmorras: Alcaz Prison (48-53), Profundidades de Roca Negra, Blackmaw Hold (55-60), Shaper's Terrace (58-60), Scholomance, Stratholme, La Masacre."""
+
+[[block]]
+heading = "Demonio"
+body = """
+- **50:** Inferno (Niby, Frondavil).
+- **60:** Guardia apocalíptico y Corcel de la muerte."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **50:** Concentración vil 5/5.
+- **51-54:** Descarga de las Sombras mejorada 4/5.
+- **55-56:** Supresión 5/5.
+- **57-60:** Vitalidad vil (Demonología) o lo que te falte.
+
+Estragos: Blizzard dobló su coeficiente el 4 nov; revisa el ajuste del 10 nov."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+- **Sastrería 300:** Telar para el campamento y recetas del conjunto de banda (Demonheart) con Aisarra Nightmeadow.
+- **Encantamiento 300:** Forja arcana y encantamientos de poder con hechizos."""
+
+[[block]]
+heading = "Oro"
+body = """
+Al 60: mazmorras de nivel máximo y vender azules ligados al equiparse, esencias y paño rúnico.
+
+Las bandas abren el **9 de diciembre**:
+- **Barrow Deeps** (10 jugadores).
+- **Hyjal Summit** (20).
+- **Guarida de Onyxia** (40; todos necesitan el Amuleto de Fuego de Dragón).
+
+No hay Núcleo de Magma. Los consumibles se venden mejor esas semanas."""
+
+[[block]]
+heading = "Objetivos al 60"
+body = """
+- Sastrería y Encantamiento a 300 (6 puntos de Legacy).
+- Conjunto de Sastrería y Piedra de hechizos.
+- Guardia apocalíptico y Corcel de la muerte.
+- Equipo de mazmorra de nivel 60."""

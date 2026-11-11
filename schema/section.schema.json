@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://e-omunoz.github.io/senda/schema/section.schema.json",
+  "title": "Senda guide section",
+  "type": "object",
+  "required": ["id", "title", "levels", "step"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "title": { "type": "string", "minLength": 1 },
+    "levels": { "type": "array", "items": { "type": "integer", "minimum": 1, "maximum": 60 }, "minItems": 2, "maxItems": 2 },
+    "map": { "type": "integer" },
+    "summary": { "type": "string" },
+    "link": { "type": "string" },
+    "if": { "$ref": "#/$defs/filter" },
+    "step": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/step" } }
+  },
+  "$defs": {
+    "point": {
+      "type": "array", "minItems": 3, "maxItems": 4,
+      "prefixItems": [
+        { "type": "integer" },
+        { "type": "number", "minimum": 0, "maximum": 100 },
+        { "type": "number", "minimum": 0, "maximum": 100 },
+        { "type": "string" }
+      ]
+    },
+    "filter": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "class": { "type": "array", "items": { "enum": ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"] } },
+        "race": { "type": "array", "items": { "enum": ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Scourge", "Tauren", "Troll", "Skyborne"] } },
+        "faction": { "enum": ["Alliance", "Horde"] },
+        "prof": { "type": "array", "items": { "type": "string" } },
+        "minlevel": { "type": "integer" },
+        "maxlevel": { "type": "integer" }
+      }
+    },
+    "step": {
+      "type": "object",
+      "required": ["id", "do", "text", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "do": { "enum": ["goto", "accept", "complete", "turnin", "train", "learn_prof", "skill", "buy", "have", "loot", "use", "sethearth", "hearth", "getfp", "fly", "level", "dungeon", "note"] },
+        "text": { "type": "string", "minLength": 1 },
+        "tip": { "type": "string" },
+        "quest": { "type": "integer" },
+        "quests": { "type": "array", "items": { "type": "integer" } },
+        "obj": { "type": "integer", "minimum": 1 },
+        "npc": { "type": "integer" },
+        "item": { "type": "integer" },
+        "count": { "type": "integer", "minimum": 1 },
+        "spells": { "type": "array", "items": { "type": "integer" } },
+        "level": { "type": "integer", "minimum": 1, "maximum": 60 },
+        "prof": { "type": "string" },
+        "skill": { "type": "integer" },
+        "at": { "$ref": "#/$defs/point" },
+        "wps": { "type": "array", "items": { "$ref": "#/$defs/point" } },
+        "radius": { "type": "number", "minimum": 1 },
+        "node": { "type": "string" },
+        "zone": { "type": "integer" },
+        "if": { "$ref": "#/$defs/filter" },
+        "optional": { "type": "boolean" },
+        "chain": { "type": "string" },
+        "link": { "type": "string" },
+        "status": { "enum": ["verified", "unverified", "disputed"] },
+        "sources": { "type": "array", "items": { "type": "string" } },
+        "checked": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

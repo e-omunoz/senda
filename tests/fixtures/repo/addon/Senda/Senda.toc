@@ -1,0 +1,7 @@
+## Interface: 16001
+## Title: Senda
+## Version: 0.0.0
+## SavedVariablesPerCharacter: SendaDB
+
+Guides\Guides.xml
+Knowledge\Knowledge.xml

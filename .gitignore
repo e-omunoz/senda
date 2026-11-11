@@ -1,0 +1,7 @@
+.cache/
+_site/
+dist/
+__pycache__/
+*.pyc
+.env
+harness/reports/tmp/

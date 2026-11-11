@@ -1,0 +1,350 @@
+# Ruta compartida de la Alianza: cadena de La Hermandad Defias y Minas de la Muerte (20 -> 22).
+# Desde el 8 de noviembre los enemigos de mazmorra dan un 50% más de experiencia (notas del jugador).
+# Misiones de mazmorra: QuestieDB (área 1581) y data/knowledge/general/duo-05-18-22.toml.
+id = "a21-minas-de-la-muerte"
+title = "Minas de la Muerte"
+levels = [20, 22]
+map = 1436
+summary = "Cadena de La Hermandad Defias entre la Colina del Centinela y Ventormenta, y Minas de la Muerte en grupo con todas sus misiones."
+link = "https://conquestcapped.com/guides/wow-forever/wow-forever-leveling/"
+
+[[step]]
+id = "a21dm-001"
+do = "accept"
+quest = 168
+npc = 656
+at = [1453, 70.3, 40.8]
+text = "En Ventormenta, coge con Wilder Thistlenettle (Distrito de los Enanos) la misión de las tarjetas de minero."
+status = "unverified"
+sources = ["questie:quest/168", "questie:npc/656"]
+
+[[step]]
+id = "a21dm-002"
+do = "accept"
+quest = 167
+npc = 656
+at = [1453, 70.3, 40.8]
+text = "Coge también la de su hermano, el capataz."
+status = "unverified"
+sources = ["questie:quest/167"]
+
+[[step]]
+id = "a21dm-003"
+do = "accept"
+quest = 2040
+npc = 6579
+at = [1453, 62.6, 34.1]
+text = "Coge con Shoni la Silenciosa la misión de la pieza de gnomo."
+status = "unverified"
+sources = ["questie:quest/2040", "questie:npc/6579"]
+
+[[step]]
+id = "a21dm-004"
+do = "fly"
+npc = 352
+at = [1453, 71.3, 72.2]
+zone = 1436
+text = "Vuela a la Colina del Centinela."
+status = "unverified"
+sources = ["questie:npc/352"]
+
+[[step]]
+id = "a21dm-005"
+do = "turnin"
+quest = 132
+npc = 234
+at = [1436, 56.3, 47.5]
+text = "Entrega la nota de Wiley a Gryan Stoutmantle."
+status = "unverified"
+sources = ["questie:quest/132"]
+
+[[step]]
+id = "a21dm-006"
+do = "accept"
+quest = 135
+npc = 234
+at = [1436, 56.3, 47.5]
+text = "Coge la siguiente: llevar la nota a Mathias Shaw en Ventormenta."
+status = "unverified"
+sources = ["questie:quest/135"]
+
+[[step]]
+id = "a21dm-007"
+do = "turnin"
+quest = 92752
+npc = 253092
+at = [1436, 52.5, 53.0]
+text = "Si llevas la consulta de Sprite, entrégasela a Alba Fairmoon."
+optional = true
+status = "unverified"
+sources = ["questie:quest/92752"]
+
+[[step]]
+id = "a21dm-008"
+do = "accept"
+quest = 92753
+npc = 253092
+at = [1436, 52.5, 53.0]
+text = "Coge la misión de los explosivos de las Minas de la Muerte."
+optional = true
+status = "unverified"
+sources = ["questie:quest/92753"]
+
+[[step]]
+id = "a21dm-009"
+do = "fly"
+npc = 523
+at = [1436, 56.6, 52.6]
+zone = 1453
+text = "Vuela de vuelta a Ventormenta."
+status = "unverified"
+sources = ["questie:npc/523"]
+
+[[step]]
+id = "a21dm-010"
+do = "turnin"
+quest = 135
+npc = 332
+at = [1453, 78.3, 70.7]
+text = "Entrega la nota a Mathias Shaw, en el Casco Antiguo (sede del IV:7)."
+status = "unverified"
+sources = ["questie:quest/135", "questie:npc/332"]
+
+[[step]]
+id = "a21dm-011"
+do = "accept"
+quest = 141
+npc = 332
+at = [1453, 78.3, 70.7]
+text = "Coge el informe de Shaw para Gryan."
+status = "unverified"
+sources = ["questie:quest/141"]
+
+[[step]]
+id = "a21dm-012"
+do = "fly"
+npc = 352
+at = [1453, 71.3, 72.2]
+zone = 1436
+text = "Vuela otra vez a la Colina del Centinela."
+status = "unverified"
+sources = ["questie:npc/352"]
+
+[[step]]
+id = "a21dm-013"
+do = "turnin"
+quest = 141
+npc = 234
+at = [1436, 56.3, 47.5]
+text = "Entrega el informe a Gryan."
+status = "unverified"
+sources = ["questie:quest/141"]
+
+[[step]]
+id = "a21dm-014"
+do = "accept"
+quest = 142
+npc = 234
+at = [1436, 56.3, 47.5]
+text = "Coge la misión del mensajero Defias."
+status = "unverified"
+sources = ["questie:quest/142"]
+
+[[step]]
+id = "a21dm-015"
+do = "complete"
+quest = 142
+at = [1436, 45.1, 69.3]
+text = "Busca al mensajero Defias: recorre los caminos entre Arroyo de la Luna y la Colina. Mátalo y coge el mensaje."
+tip = "Patrulla una ruta larga. Si no lo ves, espera en el cruce de Arroyo de la Luna."
+status = "unverified"
+sources = ["questie:quest/142", "questie:npc/550"]
+
+[[step]]
+id = "a21dm-016"
+do = "turnin"
+quest = 142
+npc = 234
+at = [1436, 56.3, 47.5]
+text = "Entrega el mensaje a Gryan."
+status = "unverified"
+sources = ["questie:quest/142"]
+
+[[step]]
+id = "a21dm-017"
+do = "accept"
+quest = 155
+npc = 467
+at = [1436, 55.7, 47.5]
+text = "Habla con el Traidor Defias y escóltalo hasta la guarida de los Defias en Arroyo de la Luna."
+tip = "Le atacan por el camino: no te alejes de él."
+status = "unverified"
+sources = ["questie:quest/155", "questie:npc/467"]
+
+[[step]]
+id = "a21dm-018"
+do = "complete"
+quest = 155
+at = [1436, 42.6, 71.7]
+text = "Sigue al traidor hasta la entrada de las Minas de la Muerte."
+status = "unverified"
+sources = ["questie:quest/155"]
+
+[[step]]
+id = "a21dm-019"
+do = "turnin"
+quest = 155
+npc = 234
+at = [1436, 56.3, 47.5]
+text = "Vuelve con Gryan y entrega la escolta."
+status = "unverified"
+sources = ["questie:quest/155"]
+
+[[step]]
+id = "a21dm-020"
+do = "accept"
+quest = 166
+npc = 234
+at = [1436, 56.3, 47.5]
+text = "Coge la misión de Edwin VanCleef."
+status = "unverified"
+sources = ["questie:quest/166"]
+
+[[step]]
+id = "a21dm-021"
+do = "accept"
+quest = 214
+npc = 820
+at = [1436, 56.7, 47.4]
+text = "Coge con la Exploradora Riell la de los pañuelos de seda roja."
+status = "unverified"
+sources = ["questie:quest/214", "questie:npc/820"]
+
+[[step]]
+id = "a21dm-022"
+do = "dungeon"
+quests = [166, 167, 168, 214, 2040, 92753]
+at = [1436, 42.6, 71.7, "Entrada a las Minas de la Muerte (Arroyo de la Luna)"]
+text = "Haz las Minas de la Muerte en grupo. Entrada en la casa grande de Arroyo de la Luna."
+tip = "Las misiones de mazmorra no se comparten. Brujo: lleva el Diablillo si hay tanque. Mago: Polimorfia a los lanzadores. Botín: Vara para remover galletas y Bastón de piedra de ascuas."
+optional = true
+status = "unverified"
+sources = ["knowledge:duo-05-18-22", "questie:quest/166", "https://conquestcapped.com/guides/wow-forever/wow-forever-leveling/"]
+
+[[step]]
+id = "a21dm-023"
+do = "turnin"
+quest = 92753
+npc = 253279
+at = [1436, 38.7, 83.7]
+text = "Al salir por la cala, busca a Alba Fairmoon junto a la salida de la mina."
+optional = true
+status = "unverified"
+sources = ["questie:quest/92753", "questie:npc/253279"]
+
+[[step]]
+id = "a21dm-024"
+do = "accept"
+quest = 92819
+npc = 253279
+at = [1436, 38.7, 83.7]
+text = "Coge la misión del detonador."
+optional = true
+status = "unverified"
+sources = ["questie:quest/92819"]
+
+[[step]]
+id = "a21dm-025"
+do = "complete"
+quest = 92819
+at = [1436, 38.7, 83.6]
+text = "Usa el detonador, al lado de Alba."
+optional = true
+status = "unverified"
+sources = ["questie:quest/92819", "questie:object/581792"]
+
+[[step]]
+id = "a21dm-026"
+do = "turnin"
+quest = 92819
+npc = 253279
+at = [1436, 38.7, 83.7]
+text = "Entrega a Alba."
+optional = true
+status = "unverified"
+sources = ["questie:quest/92819"]
+
+[[step]]
+id = "a21dm-027"
+do = "goto"
+at = [1436, 56.3, 47.5, "Colina del Centinela"]
+radius = 30
+text = "Vuelve a la Colina del Centinela."
+tip = "Plan: Colina (entregas), Ventormenta (entregas y nivel 22), Villa del Lago y Bosque del Ocaso."
+status = "unverified"
+sources = ["questie:npc/234"]
+
+[[step]]
+id = "a21dm-028"
+do = "turnin"
+quest = 166
+npc = 234
+at = [1436, 56.3, 47.5]
+text = "En la Colina del Centinela, entrega la cabeza de VanCleef a Gryan."
+optional = true
+status = "unverified"
+sources = ["questie:quest/166"]
+
+[[step]]
+id = "a21dm-029"
+do = "turnin"
+quest = 214
+npc = 820
+at = [1436, 56.7, 47.4]
+text = "Entrega los pañuelos de seda a Riell."
+optional = true
+status = "unverified"
+sources = ["questie:quest/214"]
+
+[[step]]
+id = "a21dm-030"
+do = "fly"
+npc = 523
+at = [1436, 56.6, 52.6]
+zone = 1453
+text = "Vuela a Ventormenta."
+status = "unverified"
+sources = ["questie:npc/523"]
+
+[[step]]
+id = "a21dm-031"
+do = "turnin"
+quest = 168
+npc = 656
+at = [1453, 70.3, 40.8]
+text = "Entrega las tarjetas de minero a Wilder Thistlenettle."
+optional = true
+status = "unverified"
+sources = ["questie:quest/168"]
+
+[[step]]
+id = "a21dm-032"
+do = "turnin"
+quest = 167
+npc = 656
+at = [1453, 70.3, 40.8]
+text = "Entrega la insignia de su hermano."
+optional = true
+status = "unverified"
+sources = ["questie:quest/167"]
+
+[[step]]
+id = "a21dm-033"
+do = "turnin"
+quest = 2040
+npc = 6579
+at = [1453, 62.6, 34.1]
+text = "Entrega la pieza a Shoni."
+optional = true
+status = "unverified"
+sources = ["questie:quest/2040"]

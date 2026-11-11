@@ -1,0 +1,458 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://e-omunoz.github.io/senda/schema/knowledge.schema.json",
+  "title": "Senda knowledge page",
+  "type": "object",
+  "required": [
+    "id",
+    "class",
+    "kind",
+    "title",
+    "status"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "class": {
+      "enum": [
+        "ANY",
+        "WARRIOR",
+        "PALADIN",
+        "HUNTER",
+        "ROGUE",
+        "PRIEST",
+        "SHAMAN",
+        "MAGE",
+        "WARLOCK",
+        "DRUID"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "pattern": "^[a-z_]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string"
+    },
+    "levels": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 60
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "order": {
+      "type": "integer"
+    },
+    "icon": {
+      "type": [
+        "string",
+        "integer"
+      ]
+    },
+    "link": {
+      "type": "string"
+    },
+    "race": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "faction": {
+      "enum": [
+        "Alliance",
+        "Horde"
+      ]
+    },
+    "status": {
+      "enum": [
+        "verified",
+        "unverified",
+        "disputed"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "checked": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "block": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/block"
+      }
+    },
+    "pick": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/pick"
+      }
+    },
+    "train": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/train"
+      }
+    },
+    "macro": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/macro"
+      }
+    },
+    "route": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/route"
+      }
+    },
+    "phase": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/phase"
+      }
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "level": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "ids": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "trainer": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "block": {
+      "type": "object",
+      "required": [
+        "body"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1
+        },
+        "levels": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "unverified",
+            "disputed"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "checked": {
+          "type": "string"
+        }
+      }
+    },
+    "pick": {
+      "type": "object",
+      "required": [
+        "level",
+        "talent"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "level": {
+          "$ref": "#/$defs/level"
+        },
+        "talent": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "tree": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "rank": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "note": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "unverified",
+            "disputed"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "checked": {
+          "type": "string"
+        }
+      }
+    },
+    "train": {
+      "type": "object",
+      "required": [
+        "level",
+        "spells"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "level": {
+          "$ref": "#/$defs/level"
+        },
+        "spells": {
+          "$ref": "#/$defs/ids"
+        },
+        "cost": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "note": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "unverified",
+            "disputed"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "checked": {
+          "type": "string"
+        }
+      }
+    },
+    "macro": {
+      "type": "object",
+      "required": [
+        "name",
+        "body"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "icon": {
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "minlevel": {
+          "$ref": "#/$defs/level"
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "unverified",
+            "disputed"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "checked": {
+          "type": "string"
+        }
+      }
+    },
+    "route": {
+      "type": "object",
+      "required": [
+        "prof",
+        "from",
+        "to"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "prof": {
+          "type": "string"
+        },
+        "from": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "to": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "craft": {
+          "type": "integer"
+        },
+        "mats": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer",
+                "minimum": 1
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "trainer": {
+          "$ref": "#/$defs/trainer"
+        },
+        "note": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "unverified",
+            "disputed"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "checked": {
+          "type": "string"
+        }
+      }
+    },
+    "phase": {
+      "type": "object",
+      "required": [
+        "from",
+        "to",
+        "text"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/level"
+        },
+        "to": {
+          "$ref": "#/$defs/level"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "spells": {
+          "$ref": "#/$defs/ids"
+        },
+        "note": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "unverified",
+            "disputed"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "checked": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$comment": "Volcado genérico a Lua: los campos listados se validan; se admiten campos extra (los usan los módulos)."
+}

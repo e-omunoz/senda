@@ -1,0 +1,2 @@
+# Solo para llamar a la API (CI o local con API key). --dry-run, propose y los tests no lo necesitan.
+anthropic>=1.7,<2

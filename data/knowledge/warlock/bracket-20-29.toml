@@ -1,0 +1,97 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Brackets.lua, tramo 20-29).
+id = "warlock-bracket-20-29"
+class = "WARLOCK"
+kind = "page"
+title = "Niveles 20-29: el Íncubo"
+levels = [20, 29]
+order = 30
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+note = "Talentos 20-29: build de ConquestCapped (8-nov); Warcraft Tavern mete Poder profano y Energías demoníacas hacia el 20-26. Ver data/knowledge/warlock/talents.toml."
+
+[[block]]
+heading = "Zonas"
+body = """
+- **20-24:** Montañas Crestagrana.
+- **21-28:** Bosque del Ocaso.
+- **22-28:** Los Humedales.
+- **24-30:** Vallefresno.
+
+Mazmorras:
+- **Cavernas de Brazanegra** (22-27): Cetro de lápida.
+- **Castillo de Colmillo Oscuro** (22-30).
+- **Excavation Site: Wetlands** (24-29).
+- **City of Dalaran** (28-33): necesita la llave de las cloacas; la cadena empieza en Costasur."""
+
+[[block]]
+heading = "Demonio"
+body = """
+**Íncubo o Súcubo** al 20: cadena de 3 pasos que empieza Gakin en Ventormenta (la del Súcubo es algo más sencilla). Hace más daño que el Abisario; el Abisario sigue siendo mejor contra dos enemigos a la vez o contra élites."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **20:** Maldición de los elementos, Armadura demoníaca, Ritual de invocación, Lluvia de fuego.
+- **22:** Ojo de Kilrogg.
+- **24:** Drenar maná.
+- **26:** Maldición de la lengua.
+- **28:** Desterrar, Crear pirorroca."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **20-22:** Drenajes mejorados 3/3.
+- **23-25:** Pandemia 3/3.
+- **26-27:** Ocaso 2/2.
+- **28:** Amplificar maldición.
+- **29:** Terror de agonía mejorado 1/2."""
+note = "Drenajes mejorados, Pandemia y Terror de agonía mejorado: nombres sin confirmar en el cliente."
+
+[[block]]
+heading = "Rotación"
+body = """
+Igual que antes, pero con **Armadura demoníaca** siempre puesta. Los DoTs ya pueden hacer crítico (Pandemia los refuerza)."""
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 20:** SND_Agonia_MO y SND_Corr_MO (DoTs sin cambiar de objetivo).
+- **Al 26:** SND_Lenguas.
+- **Al 28:** SND_Desterrar."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+- Al 20 entrena **Experto** (habilidad 125).
+- Objetivo al 30: Sastrería ~200 y Encantamiento ~175.
+- Fabrica bolsas para venderlas.
+- Patrones de Encantamiento nuevos con Favor: bastones y orbes a 140 (45 de Favor)."""
+
+[[block]]
+heading = "Equipo"
+body = """
+- Aprende **Bastones** con Woo Ping en Ventormenta (10 de plata) antes de ir a por el **Bastón de Soran'ruk** (misión de Doan Karhan).
+- **Cetro de lápida** en Brazanegra.
+- Imbuye el arma con Pirorroca desde el 28.
+- Encanta brazales y pecho con Intelecto o Espíritu."""
+
+[[block]]
+heading = "Oro"
+body = """
+Las mazmorras empiezan a dar azules que se venden bien. Vende los polvos y esencias que te sobren. Ofrece encantamientos en Comercio (el cliente pone los materiales)."""
+
+[[block]]
+heading = "Objetivos antes del 30"
+body = """
+- Íncubo o Súcubo.
+- Bastón de Soran'ruk.
+- Cetro de lápida.
+- Sastrería 200, Encantamiento 175.
+- Bolsas de 10 casillas o más."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Desterrar inmoviliza demonios y elementales: úsalo con élites.
+- En grupo, Maldición de los elementos si nadie lleva otra maldición.
+- El Ritual de invocación es la única forma de llevar gente a una mazmorra en Forever: te pedirán que invoques."""

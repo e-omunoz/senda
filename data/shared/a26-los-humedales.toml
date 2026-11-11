@@ -1,0 +1,955 @@
+# Ruta compartida de la Alianza: Los Humedales (26 -> 30).
+# En Forever, Los Humedales tienen un hub nuevo (Howin Kindfeather) y la mazmorra nueva Excavation Site: Wetlands
+# (24-29, mínimo 26) sobre la Excavación de Whelgar. Misiones nuevas: 98197, 98221, 98230, 98240, 98245, 98246,
+# 98282, 98291, 98216, 98815, 98824, 95646, 95647.
+# Ids y coordenadas: QuestieDB de Forever. Orden: games.gg (Wetlands Forever), ConquestCapped y notas del jugador
+# (data/knowledge/general/duo-06-22-30.toml). Termina en Forjaz al 30 (entrenamiento y entregas).
+id = "a26-los-humedales"
+title = "Los Humedales"
+levels = [26, 30]
+map = 1437
+summary = "Entrena al 26, cruza Dun Algaz hasta Puerto de Menethil y haz la costa, la Excavación de Whelgar, el Cinturón Verde, el hub de Howin Kindfeather y el campamento Faucedraco. Mazmorra Excavation Site. Acaba en Forjaz al 30."
+link = "https://games.gg/world-of-warcraft/guides/wow-forever-wetlands-leveling-guide/"
+
+[[step]]
+id = "a26wl-001"
+do = "fly"
+npc = 2409
+at = [1431, 77.5, 44.3]
+zone = 1453
+text = "Desde Villa Oscura, vuela a Ventormenta."
+status = "unverified"
+sources = ["questie:npc/2409"]
+
+[[step]]
+id = "a26wl-002"
+do = "train"
+spells = [1714, 132]
+npc = 5495
+at = [1453, 39.9, 84.2]
+text = "Brujo: entrena lo del 26 (Maldición de la lengua, Detectar invisibilidad)."
+if = { class = ["WARLOCK"] }
+status = "unverified"
+sources = ["questie:npc/5495", "knowledge:warlock-spells"]
+
+[[step]]
+id = "a26wl-003"
+do = "train"
+spells = [120]
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "Mago: entrena lo del 26 (Cono de frío)."
+if = { class = ["MAGE"] }
+status = "unverified"
+sources = ["questie:npc/5497", "knowledge:mage-spells"]
+
+[[step]]
+id = "a26wl-004"
+do = "fly"
+npc = 352
+at = [1453, 71.3, 72.2]
+zone = 1432
+text = "Vuela a Thelsamar (Loch Modan)."
+tip = "Si no hay ruta directa, vuela a Forjaz y de allí a Thelsamar."
+status = "unverified"
+sources = ["questie:npc/352"]
+
+[[step]]
+id = "a26wl-005"
+do = "accept"
+quest = 468
+npc = 1340
+at = [1432, 32.6, 49.7]
+text = "En Thelsamar, coge con el Montañero Kadrell el aviso para el Montañero Rockgar."
+status = "unverified"
+sources = ["questie:quest/468", "questie:npc/1340"]
+
+[[step]]
+id = "a26wl-006"
+do = "turnin"
+quest = 468
+npc = 1342
+at = [1432, 25.4, 10.4]
+text = "Sigue el camino al norte hasta Dun Algaz y habla con Rockgar."
+status = "unverified"
+sources = ["questie:quest/468", "questie:npc/1342"]
+
+[[step]]
+id = "a26wl-007"
+do = "accept"
+quest = 455
+npc = 1342
+at = [1432, 25.4, 10.4]
+text = "Coge la misión para cruzar Dun Algaz."
+status = "unverified"
+sources = ["questie:quest/455"]
+
+[[step]]
+id = "a26wl-008"
+do = "complete"
+quest = 455
+at = [1437, 48.2, 76.9]
+text = "Cruza el paso hacia Los Humedales: mata exploradores y soldados Faucedraco por el camino."
+status = "unverified"
+sources = ["questie:quest/455"]
+
+[[step]]
+id = "a26wl-009"
+do = "getfp"
+node = "7"
+npc = 1571
+at = [1437, 9.5, 59.7]
+text = "Sigue el camino al oeste hasta Puerto de Menethil. Coge la ruta de vuelo con Shellei Brondir."
+tip = "Ojo con los raptores y crocoliscos del camino: algunos son de nivel 28-30."
+status = "unverified"
+sources = ["questie:npc/1571"]
+
+[[step]]
+id = "a26wl-010"
+do = "sethearth"
+npc = 1464
+at = [1437, 10.7, 61.0]
+zone = 1437
+text = "Pon la piedra de hogar en la posada de Menethil."
+status = "unverified"
+sources = ["questie:npc/1464", "https://games.gg/world-of-warcraft/guides/wow-forever-wetlands-leveling-guide/"]
+
+[[step]]
+id = "a26wl-011"
+do = "turnin"
+quest = 455
+npc = 2086
+at = [1437, 10.1, 56.9]
+text = "Entrega Dun Algaz a Valstag Ironjaw, en la fortaleza."
+status = "unverified"
+sources = ["questie:quest/455", "questie:npc/2086"]
+
+[[step]]
+id = "a26wl-012"
+do = "accept"
+quest = 473
+npc = 2086
+at = [1437, 10.1, 56.9]
+text = "Coge el aviso para el Capitán Stoutfist."
+status = "unverified"
+sources = ["questie:quest/473"]
+
+[[step]]
+id = "a26wl-013"
+do = "accept"
+quest = 98197
+npc = 2086
+at = [1437, 10.1, 56.9]
+text = "Coge también la de los botines de guerra de Valstag."
+status = "unverified"
+sources = ["questie:quest/98197"]
+
+[[step]]
+id = "a26wl-014"
+do = "turnin"
+quest = 473
+npc = 2104
+at = [1437, 9.9, 57.5]
+text = "Habla con el Capitán Stoutfist."
+status = "unverified"
+sources = ["questie:quest/473", "questie:npc/2104"]
+
+[[step]]
+id = "a26wl-015"
+do = "accept"
+quest = 464
+npc = 2104
+at = [1437, 9.9, 57.5]
+text = "Coge con Stoutfist la misión de los estandartes Faucedraco."
+status = "unverified"
+sources = ["questie:quest/464"]
+
+[[step]]
+id = "a26wl-016"
+do = "accept"
+quest = 98221
+npc = 2104
+at = [1437, 9.9, 57.5]
+text = "Coge también la de los planes de ataque del campamento Faucedraco."
+status = "unverified"
+sources = ["questie:quest/98221"]
+
+[[step]]
+id = "a26wl-017"
+do = "accept"
+quest = 98230
+npc = 2104
+at = [1437, 9.9, 57.5]
+text = "Y la que te manda con Howin Kindfeather, al este por el camino."
+status = "unverified"
+sources = ["questie:quest/98230"]
+
+[[step]]
+id = "a26wl-018"
+do = "accept"
+quest = 484
+npc = 2094
+at = [1437, 8.6, 55.7]
+text = "Coge con el curtidor James Halloran la de las pieles de crocolisco joven."
+status = "unverified"
+sources = ["questie:quest/484", "questie:npc/2094"]
+
+[[step]]
+id = "a26wl-019"
+do = "accept"
+quest = 98240
+npc = 2094
+at = [1437, 8.6, 55.7]
+text = "Coge también la caja carmesí para Howin."
+status = "unverified"
+sources = ["questie:quest/98240"]
+
+[[step]]
+id = "a26wl-020"
+do = "accept"
+quest = 98815
+npc = 2094
+at = [1437, 8.6, 55.7]
+text = "Si vas a hacer Excavation Site, coge la de las pieles de raptor de la espesura."
+optional = true
+status = "unverified"
+sources = ["questie:quest/98815"]
+
+[[step]]
+id = "a26wl-021"
+do = "accept"
+quest = 279
+npc = 1242
+at = [1437, 8.3, 58.6]
+text = "En el muelle, coge con Karl Boran la de los múrlocs Branquiazul."
+status = "unverified"
+sources = ["questie:quest/279", "questie:npc/1242"]
+
+[[step]]
+id = "a26wl-022"
+do = "accept"
+quest = 463
+npc = 1239
+at = [1437, 10.9, 59.6]
+text = "Coge con el Primer Oficial Fitzsimmons la misión para el Guardaverde."
+status = "unverified"
+sources = ["questie:quest/463", "questie:npc/1239"]
+
+[[step]]
+id = "a26wl-023"
+do = "accept"
+quest = 305
+npc = 2096
+at = [1437, 11.5, 52.2]
+text = "Al norte del pueblo, coge con Tarrel Rockweaver la misión para el equipo de excavación."
+status = "unverified"
+sources = ["questie:quest/305", "questie:npc/2096"]
+
+[[step]]
+id = "a26wl-024"
+do = "accept"
+quest = 98282
+npc = 1480
+at = [1437, 11.9, 58.8]
+text = "Coge con Caitlin Grassman la de la glándula de acechador."
+status = "unverified"
+sources = ["questie:quest/98282", "questie:npc/1480"]
+
+[[step]]
+id = "a26wl-025"
+do = "accept"
+quest = 95647
+npc = 1480
+at = [1437, 11.9, 58.8]
+text = "Si vas a hacer Excavation Site, coge también la de Ardin Grassman."
+optional = true
+status = "unverified"
+sources = ["questie:quest/95647"]
+
+[[step]]
+id = "a26wl-026"
+do = "complete"
+quest = 98197
+at = [1437, 8.5, 55.0]
+text = "Por todo Menethil, recoge 6 maderas y 30 de hierro de Khaz Modan."
+tip = "Están por el suelo del pueblo y la fortaleza: es rápida."
+status = "unverified"
+sources = ["questie:quest/98197"]
+
+[[step]]
+id = "a26wl-027"
+do = "turnin"
+quest = 98197
+npc = 2086
+at = [1437, 10.1, 56.9]
+text = "Entrega los botines a Valstag."
+status = "unverified"
+sources = ["questie:quest/98197"]
+
+[[step]]
+id = "a26wl-028"
+do = "complete"
+quest = 279
+at = [1437, 15.3, 39.9]
+text = "Ve al norte por la costa: mata 12 múrlocs Branquiazul y a Gobbler."
+status = "unverified"
+sources = ["questie:quest/279"]
+
+[[step]]
+id = "a26wl-029"
+do = "complete"
+quest = 484
+at = [1437, 18.0, 45.0]
+text = "Mata crocoliscos jóvenes por el camino hasta tener 4 pieles."
+status = "unverified"
+sources = ["questie:quest/484"]
+
+[[step]]
+id = "a26wl-030"
+do = "turnin"
+quest = 279
+npc = 1242
+at = [1437, 8.3, 58.6]
+text = "Vuelve a Menethil y entrega a Karl Boran."
+status = "unverified"
+sources = ["questie:quest/279"]
+
+[[step]]
+id = "a26wl-031"
+do = "accept"
+quest = 281
+npc = 1242
+at = [1437, 8.3, 58.6]
+text = "Coge la búsqueda de la estatuilla de Menethil."
+status = "unverified"
+sources = ["questie:quest/281"]
+
+[[step]]
+id = "a26wl-032"
+do = "turnin"
+quest = 484
+npc = 2094
+at = [1437, 8.6, 55.7]
+text = "Entrega las pieles a Halloran."
+status = "unverified"
+sources = ["questie:quest/484"]
+
+[[step]]
+id = "a26wl-033"
+do = "turnin"
+quest = 281
+at = [1437, 13.5, 41.4]
+text = "Vuelve a los poblados múrloc del norte y registra la caja dañada."
+status = "unverified"
+sources = ["questie:quest/281", "questie:object/261"]
+
+[[step]]
+id = "a26wl-034"
+do = "accept"
+quest = 284
+at = [1437, 13.5, 41.4]
+text = "Coge la siguiente pista de la caja."
+status = "unverified"
+sources = ["questie:quest/284"]
+
+[[step]]
+id = "a26wl-035"
+do = "turnin"
+quest = 284
+at = [1437, 13.6, 38.2]
+text = "Registra el barril sellado, un poco más al norte."
+status = "unverified"
+sources = ["questie:quest/284", "questie:object/142151"]
+
+[[step]]
+id = "a26wl-036"
+do = "accept"
+quest = 285
+at = [1437, 13.6, 38.2]
+text = "Coge la siguiente pista del barril."
+status = "unverified"
+sources = ["questie:quest/285"]
+
+[[step]]
+id = "a26wl-037"
+do = "turnin"
+quest = 285
+at = [1437, 13.9, 34.8]
+text = "Registra el barril medio enterrado, más al norte."
+status = "unverified"
+sources = ["questie:quest/285", "questie:object/259"]
+
+[[step]]
+id = "a26wl-038"
+do = "accept"
+quest = 286
+at = [1437, 13.9, 34.8]
+text = "Coge la estatuilla de Menethil."
+status = "unverified"
+sources = ["questie:quest/286"]
+
+[[step]]
+id = "a26wl-039"
+do = "turnin"
+quest = 286
+npc = 1242
+at = [1437, 8.3, 58.6]
+text = "Lleva la estatuilla a Karl Boran."
+status = "unverified"
+sources = ["questie:quest/286"]
+
+[[step]]
+id = "a26wl-040"
+do = "accept"
+quest = 98189
+npc = 1242
+at = [1437, 8.3, 58.6]
+text = "Coge la entrega de la estatuilla al Capitán Stoutfist."
+status = "unverified"
+sources = ["questie:quest/98189"]
+
+[[step]]
+id = "a26wl-041"
+do = "turnin"
+quest = 98189
+npc = 2104
+at = [1437, 9.9, 57.5]
+text = "Entrega la estatuilla a Stoutfist."
+tip = "Después te ofrece llevarla al Alto Señor Bolvar en Ventormenta: cógela solo si vas a pasar por allí."
+status = "unverified"
+sources = ["questie:quest/98189"]
+
+[[step]]
+id = "a26wl-042"
+do = "turnin"
+quest = 305
+npc = 1076
+at = [1437, 38.9, 52.3]
+text = "Ve al este por el camino hasta la Excavación de Whelgar. Habla con Merrin Rockweaver."
+status = "unverified"
+sources = ["questie:quest/305", "questie:npc/1076"]
+
+[[step]]
+id = "a26wl-043"
+do = "accept"
+quest = 306
+npc = 1076
+at = [1437, 38.9, 52.3]
+text = "Coge la nota de Merrin para Tarrel."
+status = "unverified"
+sources = ["questie:quest/306"]
+
+[[step]]
+id = "a26wl-044"
+do = "accept"
+quest = 294
+npc = 1078
+at = [1437, 38.2, 50.9]
+text = "Coge con Ormer Ironbraid la venganza contra los raptores."
+status = "unverified"
+sources = ["questie:quest/294", "questie:npc/1078"]
+
+[[step]]
+id = "a26wl-045"
+do = "accept"
+quest = 299
+npc = 1077
+at = [1437, 38.8, 52.4]
+text = "Coge con el Prospector Whelgar la de los fragmentos de la tablilla."
+status = "unverified"
+sources = ["questie:quest/299", "questie:npc/1077"]
+
+[[step]]
+id = "a26wl-046"
+do = "complete"
+quest = 294
+at = [1437, 24.3, 50.0]
+text = "Al oeste de la excavación, mata 10 raptores moteados y 10 chilladores moteados."
+status = "unverified"
+sources = ["questie:quest/294"]
+
+[[step]]
+id = "a26wl-047"
+do = "complete"
+quest = 299
+at = [1437, 34.7, 47.9]
+text = "Dentro de la excavación, busca los 4 fragmentos (Ados, Modr, Golm y Neru) en las reliquias y la tierra suelta."
+status = "unverified"
+sources = ["questie:quest/299"]
+
+[[step]]
+id = "a26wl-048"
+do = "turnin"
+quest = 294
+npc = 1078
+at = [1437, 38.2, 50.9]
+text = "Entrega a Ormer."
+status = "unverified"
+sources = ["questie:quest/294"]
+
+[[step]]
+id = "a26wl-049"
+do = "accept"
+quest = 295
+npc = 1078
+at = [1437, 38.2, 50.9]
+text = "Coge la segunda venganza de Ormer (raptores de la excavación)."
+status = "unverified"
+sources = ["questie:quest/295"]
+
+[[step]]
+id = "a26wl-050"
+do = "turnin"
+quest = 299
+npc = 1077
+at = [1437, 38.8, 52.4]
+text = "Entrega los fragmentos a Whelgar."
+status = "unverified"
+sources = ["questie:quest/299"]
+
+[[step]]
+id = "a26wl-051"
+do = "complete"
+quest = 295
+at = [1437, 34.0, 48.5]
+text = "En la excavación, mata 10 guadañas y 10 fauces de navaja moteados."
+status = "unverified"
+sources = ["questie:quest/295"]
+
+[[step]]
+id = "a26wl-052"
+do = "turnin"
+quest = 295
+npc = 1078
+at = [1437, 38.2, 50.9]
+text = "Entrega a Ormer."
+status = "unverified"
+sources = ["questie:quest/295"]
+
+[[step]]
+id = "a26wl-053"
+do = "dungeon"
+quests = [95647, 98815, 95646]
+at = [1437, 38.8, 52.4, "Excavation Site: Wetlands (sobre la Excavación de Whelgar)"]
+text = "Opcional: Excavation Site: Wetlands en grupo (mínimo 26). Pasa por Whelgar para ver si te da Prehistoric Prism."
+tip = "Lleva vendas: los raptores hacen sangrar. Muchos de sus jefes sueltan una Reliquia titánica que inicia otra misión."
+optional = true
+status = "unverified"
+sources = ["https://conquestcapped.com/guides/wow-forever/wow-forever-leveling/", "https://games.gg/world-of-warcraft/guides/wow-forever-wetlands-leveling-guide/", "questie:quest/95647"]
+note = "Entrada de la mazmorra sin confirmar: la fuente dice «sobre la Excavación de Whelgar». Highland Horror (95646) sale en QuestieDB en 49.9, 59.7."
+
+[[step]]
+id = "a26wl-054"
+do = "turnin"
+quest = 463
+npc = 1244
+at = [1437, 56.4, 40.4]
+text = "Sigue el camino al este y sube al Cinturón Verde: entrega a Rethiel el Guardaverde."
+status = "unverified"
+sources = ["questie:quest/463", "questie:npc/1244"]
+
+[[step]]
+id = "a26wl-055"
+do = "accept"
+quest = 276
+npc = 1244
+at = [1437, 56.4, 40.4]
+text = "Coge la misión de los gnolls Pellejomusgo."
+status = "unverified"
+sources = ["questie:quest/276"]
+
+[[step]]
+id = "a26wl-056"
+do = "turnin"
+quest = 98230
+npc = 270637
+at = [1437, 49.4, 42.1]
+text = "Baja al camino y habla con Howin Kindfeather."
+status = "unverified"
+sources = ["questie:quest/98230", "questie:npc/270637"]
+
+[[step]]
+id = "a26wl-057"
+do = "turnin"
+quest = 98240
+npc = 270637
+at = [1437, 49.4, 42.1]
+text = "Entrégale también la caja carmesí."
+status = "unverified"
+sources = ["questie:quest/98240"]
+
+[[step]]
+id = "a26wl-058"
+do = "accept"
+quest = 98245
+npc = 270637
+at = [1437, 49.4, 42.1]
+text = "Coge la de los incisivos de fauces de navaja."
+status = "unverified"
+sources = ["questie:quest/98245"]
+
+[[step]]
+id = "a26wl-059"
+do = "accept"
+quest = 98246
+npc = 270637
+at = [1437, 49.4, 42.1]
+text = "Coge la de los huevos de fauces de navaja."
+status = "unverified"
+sources = ["questie:quest/98246"]
+
+[[step]]
+id = "a26wl-060"
+do = "accept"
+quest = 98291
+npc = 270637
+at = [1437, 49.4, 42.1]
+text = "Y la de los Faucedraco del Refugio Faucedraco."
+status = "unverified"
+sources = ["questie:quest/98291"]
+
+[[step]]
+id = "a26wl-061"
+do = "complete"
+quest = 464
+at = [1437, 46.0, 46.0]
+text = "Entra en el campamento Faucedraco (Angerfang): mata orcos hasta tener 8 estandartes de guerra."
+status = "unverified"
+sources = ["questie:quest/464"]
+
+[[step]]
+id = "a26wl-062"
+do = "complete"
+quest = 98221
+at = [1437, 47.5, 47.0]
+text = "Destruye los 4 juegos de planes de ataque del campamento."
+status = "unverified"
+sources = ["questie:quest/98221"]
+
+[[step]]
+id = "a26wl-063"
+do = "complete"
+quest = 276
+at = [1437, 61.8, 68.0]
+text = "Al sur, mata 15 gnolls y 10 chuchos Pellejomusgo."
+tip = "De paso, en la Roca Thelgen (50, 62) consigue la glándula de acechador para Caitlin."
+status = "unverified"
+sources = ["questie:quest/276"]
+
+[[step]]
+id = "a26wl-064"
+do = "complete"
+quest = 98282
+at = [1437, 52.7, 62.8]
+text = "Mata acechadores sanguijuela en la Roca Thelgen hasta conseguir una glándula intacta."
+status = "unverified"
+sources = ["questie:quest/98282"]
+
+[[step]]
+id = "a26wl-065"
+do = "turnin"
+quest = 276
+npc = 1244
+at = [1437, 56.4, 40.4]
+text = "Vuelve con Rethiel y entrega los gnolls."
+status = "unverified"
+sources = ["questie:quest/276"]
+
+[[step]]
+id = "a26wl-066"
+do = "accept"
+quest = 277
+npc = 1244
+at = [1437, 56.4, 40.4]
+text = "Coge la del pedernal."
+status = "unverified"
+sources = ["questie:quest/277"]
+
+[[step]]
+id = "a26wl-067"
+do = "complete"
+quest = 98245
+at = [1437, 66.0, 32.0]
+text = "Al noreste, mata fauces de navaja de las tierras altas: 10 incisivos. Recoge también 12 huevos perfectos."
+status = "unverified"
+sources = ["questie:quest/98245", "questie:quest/98246"]
+
+[[step]]
+id = "a26wl-068"
+do = "complete"
+quest = 98246
+at = [1437, 66.0, 32.0]
+text = "Termina los 12 huevos de fauces de navaja."
+status = "unverified"
+sources = ["questie:quest/98246"]
+
+[[step]]
+id = "a26wl-069"
+do = "complete"
+quest = 98291
+at = [1437, 64.3, 46.0]
+text = "En el Refugio Faucedraco, mata 8 recuperadores, 5 vinculadores de almas y 3 infiltrados."
+status = "unverified"
+sources = ["questie:quest/98291"]
+
+[[step]]
+id = "a26wl-070"
+do = "complete"
+quest = 277
+at = [1437, 40.0, 32.0]
+text = "Al oeste del Cinturón Verde, mata gnolls Pellejomusgo hasta tener 9 pedernales."
+status = "unverified"
+sources = ["questie:quest/277"]
+
+[[step]]
+id = "a26wl-071"
+do = "turnin"
+quest = 98245
+npc = 270637
+at = [1437, 49.4, 42.1]
+text = "Entrega los incisivos a Howin."
+status = "unverified"
+sources = ["questie:quest/98245"]
+
+[[step]]
+id = "a26wl-072"
+do = "turnin"
+quest = 98246
+npc = 270637
+at = [1437, 49.4, 42.1]
+text = "Entrega los huevos."
+status = "unverified"
+sources = ["questie:quest/98246"]
+
+[[step]]
+id = "a26wl-073"
+do = "turnin"
+quest = 98291
+npc = 270637
+at = [1437, 49.4, 42.1]
+text = "Entrega los Faucedraco."
+status = "unverified"
+sources = ["questie:quest/98291"]
+
+[[step]]
+id = "a26wl-074"
+do = "turnin"
+quest = 277
+npc = 1244
+at = [1437, 56.4, 40.4]
+text = "Entrega el pedernal a Rethiel."
+status = "unverified"
+sources = ["questie:quest/277"]
+
+[[step]]
+id = "a26wl-075"
+do = "accept"
+quest = 275
+npc = 1244
+at = [1437, 56.4, 40.4]
+text = "Coge la de las enredaderas de la ciénaga."
+status = "unverified"
+sources = ["questie:quest/275"]
+
+[[step]]
+id = "a26wl-076"
+do = "complete"
+quest = 275
+at = [1437, 33.0, 33.0]
+text = "Mata 12 trepadoras de la ciénaga camino de Menethil."
+status = "unverified"
+sources = ["questie:quest/275"]
+
+[[step]]
+id = "a26wl-077"
+do = "hearth"
+zone = 1437
+text = "Usa la piedra de hogar para volver a Menethil."
+status = "unverified"
+sources = ["questie:npc/1464"]
+
+[[step]]
+id = "a26wl-078"
+do = "turnin"
+quest = 464
+npc = 2104
+at = [1437, 9.9, 57.5]
+text = "Entrega los estandartes a Stoutfist."
+status = "unverified"
+sources = ["questie:quest/464"]
+
+[[step]]
+id = "a26wl-079"
+do = "turnin"
+quest = 98221
+npc = 2104
+at = [1437, 9.9, 57.5]
+text = "Entrega los planes de ataque."
+status = "unverified"
+sources = ["questie:quest/98221"]
+
+[[step]]
+id = "a26wl-080"
+do = "turnin"
+quest = 98282
+npc = 1480
+at = [1437, 11.9, 58.8]
+text = "Entrega la glándula a Caitlin."
+status = "unverified"
+sources = ["questie:quest/98282"]
+
+[[step]]
+id = "a26wl-081"
+do = "turnin"
+quest = 306
+npc = 2096
+at = [1437, 11.5, 52.2]
+text = "Entrega la nota de Merrin a Tarrel Rockweaver."
+status = "unverified"
+sources = ["questie:quest/306"]
+
+[[step]]
+id = "a26wl-082"
+do = "fly"
+npc = 1571
+at = [1437, 9.5, 59.7]
+zone = 1455
+text = "Al 28, vuela a Forjaz para entrenar."
+status = "unverified"
+sources = ["questie:npc/1571"]
+
+[[step]]
+id = "a26wl-083"
+do = "train"
+spells = [710, 6366]
+npc = 5172
+at = [1455, 50.4, 5.7]
+text = "Brujo: entrena lo del 28 (Desterrar, Crear pirorroca)."
+if = { class = ["WARLOCK"] }
+status = "unverified"
+sources = ["questie:npc/5172", "knowledge:warlock-spells"]
+
+[[step]]
+id = "a26wl-084"
+do = "train"
+spells = [759]
+npc = 5144
+at = [1455, 27.3, 8.3]
+text = "Mago: entrena lo del 28 (Conjurar ágata de maná)."
+if = { class = ["MAGE"] }
+status = "unverified"
+sources = ["questie:npc/5144", "knowledge:mage-spells"]
+
+[[step]]
+id = "a26wl-085"
+do = "fly"
+npc = 1573
+at = [1455, 55.5, 47.7]
+zone = 1437
+text = "Vuela de vuelta a Menethil."
+status = "unverified"
+sources = ["questie:npc/1573"]
+
+[[step]]
+id = "a26wl-086"
+do = "accept"
+quest = 288
+npc = 1239
+at = [1437, 10.9, 59.6]
+text = "Coge con Fitzsimmons la misión del hidromiel: cómpralo en la posada y entrégaselo."
+optional = true
+tip = "La siguiente, La tripulación maldita, es en el barco hundido del norte: mejor con uno o dos compañeros."
+status = "unverified"
+sources = ["questie:quest/288"]
+
+[[step]]
+id = "a26wl-087"
+do = "turnin"
+quest = 288
+npc = 1239
+at = [1437, 10.9, 59.6]
+text = "Dale el hidromiel a Fitzsimmons."
+optional = true
+status = "unverified"
+sources = ["questie:quest/288"]
+
+[[step]]
+id = "a26wl-088"
+do = "turnin"
+quest = 275
+npc = 1244
+at = [1437, 56.4, 40.4]
+text = "Vuelve al Cinturón Verde y entrega las trepadoras a Rethiel."
+status = "unverified"
+sources = ["questie:quest/275"]
+
+[[step]]
+id = "a26wl-089"
+do = "accept"
+quest = 98216
+npc = 1077
+at = [1437, 38.8, 52.4]
+text = "En la Excavación de Whelgar, coge con Whelgar la misión de la piedra angular titánica."
+status = "unverified"
+sources = ["questie:quest/98216"]
+
+[[step]]
+id = "a26wl-090"
+do = "complete"
+quest = 98216
+at = [1437, 35.0, 49.8]
+text = "Usa la Piedra de Goaz junto a un guardián de Goaz y consigue su piedra angular titánica."
+status = "unverified"
+sources = ["questie:quest/98216"]
+
+[[step]]
+id = "a26wl-091"
+do = "turnin"
+quest = 98216
+npc = 1077
+at = [1437, 38.8, 52.4]
+text = "Entrega la piedra angular a Whelgar."
+status = "unverified"
+sources = ["questie:quest/98216"]
+
+[[step]]
+id = "a26wl-092"
+do = "level"
+level = 30
+text = "Llega al 30. Si te falta, repite Excavation Site o mata Faucedraco en el Refugio."
+tip = "Al 30 empiezan las cadenas de Arathi, Trabalomas y City of Dalaran (la llave empieza en Costasur: hay barco desde Menethil)."
+status = "unverified"
+sources = ["https://conquestcapped.com/guides/wow-forever/wow-forever-leveling/", "knowledge:warlock-bracket-20-29"]
+
+[[step]]
+id = "a26wl-093"
+do = "fly"
+npc = 1571
+at = [1437, 9.5, 59.7]
+zone = 1455
+text = "Vuela a Forjaz para entrenar al 30."
+status = "unverified"
+sources = ["questie:npc/1571"]
+
+[[step]]
+id = "a26wl-094"
+do = "train"
+spells = [1098, 1949]
+npc = 5172
+at = [1455, 50.4, 5.7]
+text = "Brujo: entrena lo del 30 (Subyugar demonio, Piroinferno)."
+tip = "El Manáfago llega con la cadena de clase del 30."
+if = { class = ["WARLOCK"] }
+status = "unverified"
+sources = ["questie:npc/5172", "knowledge:warlock-spells"]
+
+[[step]]
+id = "a26wl-095"
+do = "train"
+spells = [7302]
+npc = 5144
+at = [1455, 27.3, 8.3]
+text = "Mago: entrena lo del 30 (Armadura de hielo). Teletransporte a Darnassus con el instructor de portales."
+if = { class = ["MAGE"] }
+status = "unverified"
+sources = ["questie:npc/5144", "questie:npc/2489", "knowledge:mage-spells"]

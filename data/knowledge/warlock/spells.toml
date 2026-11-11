@@ -1,0 +1,279 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Data.lua ns.TRAIN; ids de BrujoGnomoGuia.lua, Macros.lua, Bars.lua y Data.lua).
+# [[train]]: hechizos nuevos del instructor por nivel.
+#   spells       ids (rango que se aprende a ese nivel; ids de Classic).
+#   names        nombres en el cliente esES, en el mismo orden que la fuente.
+#   ids_added    ids que NO venían en la fuente: los puso la migración a partir de Classic (verificar en Forever).
+#   no_id        nombres de la fuente sin id conocido (nuevos o dudosos en Forever).
+# [[alias]]: nombres alternativos del cliente esES por si el id de Classic no existe en Forever
+#   (BrujoGnomoGuia.lua, SPELL_NAMES: se usaba el primero que estuviera en el libro de hechizos).
+# [ids]: listas de ids que usaba la lógica del addon antiguo.
+id = "warlock-spells"
+class = "WARLOCK"
+kind = "spells"
+title = "Hechizos del instructor de brujo"
+levels = [1, 60]
+order = 80
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+note = "Los ids son de Classic (rango 1 o el rango que se aprende a ese nivel). Forever puede usar otros ids: el addon antiguo comprobaba también por nombre."
+
+[[train]]
+level = 1
+names = ["Inmolar"]
+spells = [348]
+note = "Al empezar ya conoces Descarga de las Sombras (686) y Piel de demonio (687); el Diablillo (688) se aprende con la misión de nivel 1."
+
+[[train]]
+level = 4
+names = ["Corrupción", "Maldición de debilidad"]
+spells = [172, 702]
+ids_added = [702]
+
+[[train]]
+level = 6
+names = ["Transfusión de vida"]
+spells = [1454]
+
+[[train]]
+level = 8
+names = ["Terror de agonía", "Miedo"]
+spells = [980, 5782]
+note = "«Terror de agonía» es el nombre que daba la fuente con «(?)»; alias posibles: Maldición de agonía, Agonía."
+status = "unverified"
+
+[[train]]
+level = 10
+names = ["Drenar alma", "Crear piedra de salud", "Piel de demonio (rango 2)", "Inmolar (rango 2)"]
+spells = [1120, 6201, 696, 707]
+ids_added = [707]
+note = "Invocar a abisario (697) llega con la misión de nivel 10."
+
+[[train]]
+level = 12
+names = ["Cauce de salud"]
+spells = [755]
+ids_added = [755]
+
+[[train]]
+level = 14
+names = ["Maldición de temeridad", "Drenar vida"]
+spells = [704, 689]
+ids_added = [704]
+
+[[train]]
+level = 16
+names = ["Fuerza inmortal"]
+spells = []
+no_id = ["Fuerza inmortal"]
+status = "unverified"
+note = "Nombre dudoso: en Classic el brujo aprende al 16 Aliento inagotable (5697). Comprobar en el instructor."
+
+[[train]]
+level = 18
+names = ["Crear piedra de alma", "Dolor abrasador"]
+spells = [693, 5676]
+ids_added = [5676]
+
+[[train]]
+level = 20
+names = ["Maldición de los elementos", "Armadura demoníaca", "Ritual de invocación", "Lluvia de fuego"]
+spells = [1490, 706, 698, 5740]
+ids_added = [5740]
+note = "Maldición de los elementos al 20 es un cambio de Forever (en Classic, al 32)."
+
+[[train]]
+level = 22
+names = ["Ojo de Kilrogg"]
+spells = [126]
+
+[[train]]
+level = 24
+names = ["Drenar maná", "Captar demonios"]
+spells = [5138, 5500]
+ids_added = [5138, 5500]
+
+[[train]]
+level = 26
+names = ["Maldición de la lengua", "Detectar invisibilidad"]
+spells = [1714, 132]
+ids_added = [132]
+note = "En Classic es «Detectar invisibilidad inferior» (132)."
+
+[[train]]
+level = 28
+names = ["Desterrar", "Crear pirorroca"]
+spells = [710, 6366]
+
+[[train]]
+level = 30
+names = ["Subyugar demonio", "Piroinferno"]
+spells = [1098, 1949]
+ids_added = [1098, 1949]
+note = "Invocar a manáfago (691) llega con la cadena de nivel 30."
+
+[[train]]
+level = 32
+names = ["Custodia de las Sombras"]
+spells = [6229]
+ids_added = [6229]
+
+[[train]]
+level = 36
+names = ["Crear piedra de hechizos"]
+spells = [2362]
+note = "En Forever es un imbuido de arma que aumenta el daño de Sombras y se acumula con el Aceite de zahorí."
+
+[[train]]
+level = 40
+names = ["Aullido de terror"]
+spells = [5484]
+note = "Invocar a corcel nefasto (5784) llega con la misión gratuita de Strahad Farsan."
+
+[[train]]
+level = 42
+names = ["Espiral mortal"]
+spells = [6789]
+
+[[train]]
+level = 48
+names = ["Fuego de alma"]
+spells = [6353]
+ids_added = [6353]
+
+[[train]]
+level = 50
+names = ["Inferno (misión)"]
+spells = [1122]
+
+[[train]]
+level = 60
+names = ["Terror de fatalidad", "Ritual de condena"]
+spells = [603, 18540]
+ids_added = [603]
+note = "«Terror de fatalidad» es Curse of Doom (603). Corcel de la muerte (23161) llega con la cadena de Jubahl Corpseseeker."
+
+# Hechizos de demonio y de misión que referenciaba la fuente
+[[train]]
+level = 10
+names = ["Sacrificio (Abisario)"]
+spells = [7812]
+pet = true
+
+[[train]]
+level = 30
+names = ["Bloqueo de hechizo (Manáfago)"]
+spells = [19244]
+pet = true
+
+[[train]]
+level = 36
+names = ["Succionar vida (talento)"]
+spells = [18265]
+talent = true
+
+[[alias]]
+spell = 5019
+names = ["Disparar"]
+
+[[alias]]
+spell = 686
+names = ["Descarga de las Sombras"]
+
+[[alias]]
+spell = 348
+names = ["Inmolar"]
+
+[[alias]]
+spell = 172
+names = ["Corrupción"]
+
+[[alias]]
+spell = 980
+names = ["Terror de agonía", "Maldición de agonía", "Agonía"]
+
+[[alias]]
+spell = 18265
+names = ["Succionar vida"]
+
+[[alias]]
+spell = 1454
+names = ["Transfusión de vida"]
+
+[[alias]]
+spell = 689
+names = ["Drenar vida"]
+
+[[alias]]
+spell = 1120
+names = ["Drenar alma"]
+
+[[alias]]
+spell = 5782
+names = ["Miedo"]
+
+[[alias]]
+spell = 687
+names = ["Piel de demonio"]
+
+[[alias]]
+spell = 706
+names = ["Armadura demoníaca"]
+
+[[alias]]
+spell = 6201
+names = ["Crear piedra de salud"]
+
+[[alias]]
+spell = 688
+names = ["Invocar diablillo"]
+
+[[alias]]
+spell = 697
+names = ["Invocar abisario"]
+
+[[alias]]
+spell = 712
+names = ["Invocar súcubo"]
+
+[[alias]]
+spell = 691
+names = ["Invocar manáfago"]
+
+[[alias]]
+spell = 7812
+names = ["Sacrificio"]
+
+[[alias]]
+spell = 1714
+names = ["Maldición de las lenguas"]
+note = "La guía escribe «Maldición de la lengua»; el addon antiguo buscaba «Maldición de las lenguas» en el libro. Confirmar el nombre real del cliente."
+
+[[alias]]
+spell = 710
+names = ["Desterrar"]
+
+[[alias]]
+spell = 19244
+names = ["Bloqueo de hechizo"]
+
+[[alias]]
+spell = 5484
+names = ["Aullido de terror"]
+
+[[alias]]
+spell = 6789
+names = ["Espiral mortal"]
+
+[ids]
+soul_shard = 6265
+# Piedras de salud, de peor a mejor (orden de BrujoGnomoGuia.lua HEALTHSTONES)
+healthstones = [5512, 19004, 19005, 5511, 19006, 19007, 5509, 19008, 19009, 5510, 19010, 19011, 9421, 19012, 19013]
+# Auras de Piel/Armadura demoníaca (aviso «sin armadura» del HUD)
+demon_armor_buffs = [687, 696, 706, 1086, 11733, 11734, 11735]
+# Demonios y monturas para el análisis del personaje (aviso si faltan 2 niveles después)
+imp = 688
+voidwalker = 697
+succubus = 712
+felhunter = 691
+felsteed = 5784
+dreadsteed = 23161

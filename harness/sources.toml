@@ -1,0 +1,252 @@
+# Registro de fuentes del harness de IA de Senda.
+#
+# tier:
+#   official             -> Blizzard (noticias, mensajes azules, notas de desarrollo, hotfixes).
+#                           Cuenta para `verified` por sí sola (regla a de ARCHITECTURE.md).
+#   community_curated    -> wikis y guías editadas (warcraft.wiki.gg, Wowhead, Icy Veins...).
+#                           Solo cuenta para `verified` junto a QuestieDB local (regla c).
+#   community_unverified -> Reddit, hilos de foro de jugadores, exportaciones de Discord.
+#                           Nunca cuenta para `verified`; sirve para detectar pistas.
+#
+# kind:
+#   rss | atom      -> feed estándar
+#   html            -> página de listado; se siguen los enlaces que casan con `link_pattern`
+#   discourse       -> categoría o tema de foro Discourse (foros de Blizzard); `blue_only`
+#                      se queda solo con mensajes de empleados de Blizzard (tier official)
+#   local_dir       -> carpeta local (exportaciones de Discord, notas pegadas a mano)
+#   reference       -> no se vigila; solo sirve para clasificar URL citadas por la IA
+#
+# match: prefijos de URL (sin esquema) que se clasifican con el tier de esta fuente.
+#        Gana el prefijo más largo. Una URL que no casa con nada es community_unverified.
+# cadence: "hourly" | "daily" | "weekly" (o un número de horas).
+# lang: idioma principal de la fuente.
+#
+# Las URL marcadas con `check = true` son una suposición razonable que hay que confirmar
+# la primera vez que se ejecute `watch` (el informe avisa si fallan).
+
+[defaults]
+cadence = "daily"
+max_items = 10           # elementos nuevos por fuente y ejecución
+max_item_chars = 40000   # por encima se avisa en el informe y se recorta
+user_agent = "SendaHarness/0.1 (+https://github.com/e-omunoz/senda)"
+
+# --------------------------------------------------------------------------- oficiales
+
+[[source]]
+id = "blizzard-forever"
+name = "World of Warcraft Forever (portal oficial)"
+tier = "official"
+kind = "html"
+# Página renderizada con JS: se vigila entera (cambio de hash) en lugar de seguir enlaces.
+url = "https://worldofwarcraft.blizzard.com/forever"
+match = ["worldofwarcraft.blizzard.com/forever", "worldofwarcraft.blizzard.com"]
+cadence = "daily"
+lang = "en"
+
+[[source]]
+id = "blizzard-news"
+name = "Noticias y hotfixes de World of Warcraft (Blizzard)"
+tier = "official"
+kind = "html"
+url = "https://worldofwarcraft.blizzard.com/en-us/news"
+# Enlaces del tipo /news/24315281/wow-forever-hotfixes-november-10-2026
+link_pattern = '/news/\d+'
+# Filtro por slug/título: noticias de Forever y todos los hotfixes (el modelo descarta los de Retail).
+keywords = ["forever", "hotfix"]
+match = ["worldofwarcraft.blizzard.com/en-us/news", "worldofwarcraft.blizzard.com/es-es/news",
+         "worldofwarcraft.blizzard.com/es-mx/news", "worldofwarcraft.blizzard.com/news", "news.blizzard.com"]
+cadence = "daily"
+lang = "en"
+
+[[source]]
+id = "forums-us-forever-blue"
+name = "Foros EE. UU. de Forever (solo mensajes azules)"
+tier = "official"
+kind = "discourse"
+url = "https://us.forums.blizzard.com/en/wow/c/wow-forever/347"
+blue_only = true
+# Los hilos de jugadores en el foro NO son oficiales: el prefijo general es community_unverified
+# (ver forums-us-forever-players). Solo los mensajes azules que el watcher ha leído llevan tier official.
+match = []
+cadence = "daily"
+lang = "en"
+
+[[source]]
+id = "forums-eu-forever-blue"
+name = "Foros UE de Forever (solo mensajes azules)"
+tier = "official"
+kind = "discourse"
+url = "https://eu.forums.blizzard.com/en/wow/c/wow-forever/359"
+blue_only = true
+match = []
+cadence = "daily"
+lang = "en"
+
+[[source]]
+id = "dev-notes"
+name = "Notas de desarrollo de Forever"
+tier = "official"
+kind = "discourse"
+url = "https://us.forums.blizzard.com/en/wow/t/2360696"
+blue_only = true
+match = ["us.forums.blizzard.com/en/wow/t/2360696"]
+cadence = "daily"
+lang = "en"
+
+[[source]]
+id = "wowhead-blue-tracker"
+name = "Seguimiento de mensajes azules (Wowhead)"
+tier = "official"          # solo republica mensajes de empleados de Blizzard
+kind = "html"
+url = "https://www.wowhead.com/forever/blue-tracker"
+# Página renderizada con JS: se vigila entera (cambio de hash).
+match = ["www.wowhead.com/forever/blue-tracker", "wowhead.com/forever/blue-tracker"]
+cadence = "daily"
+lang = "en"
+
+# --------------------------------------------------------------------------- comunitarias curadas
+
+[[source]]
+id = "wiki-forever"
+name = "warcraft.wiki.gg: World of Warcraft: Forever (historial)"
+tier = "community_curated"
+kind = "atom"
+# Patch_1.60 redirige aquí desde sep-2026.
+url = "https://warcraft.wiki.gg/index.php?title=World_of_Warcraft:_Forever&action=history&feed=atom"
+match = ["warcraft.wiki.gg"]
+cadence = "daily"
+lang = "en"
+
+[[source]]
+id = "wiki-patch-1-60-1"
+name = "warcraft.wiki.gg: Patch 1.60.1 (historial)"
+tier = "community_curated"
+kind = "atom"
+url = "https://warcraft.wiki.gg/index.php?title=Patch_1.60.1&action=history&feed=atom"
+match = []
+cadence = "daily"
+lang = "en"
+check = true
+
+[[source]]
+id = "wowhead-forever"
+name = "Wowhead Forever (noticias y guías)"
+tier = "community_curated"
+kind = "rss"
+url = "https://www.wowhead.com/news/rss/forever"
+match = ["www.wowhead.com/forever", "wowhead.com/forever", "www.wowhead.com/news=", "wowhead.com/news="]
+cadence = "daily"
+lang = "en"
+check = true
+
+[[source]]
+id = "icy-veins"
+name = "Icy Veins: guías de clase de Forever"
+tier = "community_curated"
+kind = "html"
+url = "https://www.icy-veins.com/wow-forever/class-guides"
+# Solo guías de leveo (amplía el patrón al añadir clases).
+link_pattern = '/wow-forever/[a-z0-9-]*leveling[a-z0-9-]*'
+match = ["www.icy-veins.com/wow-forever", "icy-veins.com/wow-forever"]
+cadence = "weekly"
+lang = "en"
+
+[[source]]
+id = "warcraft-tavern"
+name = "Warcraft Tavern: Forever"
+tier = "community_curated"
+kind = "html"
+url = "https://www.warcrafttavern.com/forever/"
+link_pattern = '/forever/(?:guides/(?:warlock|mage|leveling)[a-z0-9/-]*|news/[a-z0-9-]+/?)'
+match = ["www.warcrafttavern.com/forever", "warcrafttavern.com/forever"]
+cadence = "weekly"
+lang = "en"
+
+[[source]]
+id = "mobalytics"
+name = "Mobalytics: WoW Forever"
+tier = "community_curated"
+# Devuelve 403 a clientes automáticos (nov-2026): solo se usa para clasificar URL citadas.
+kind = "reference"
+url = "https://mobalytics.gg/wow-forever"
+link_pattern = '/wow-forever/(?:guides|builds|leveling)[a-z0-9/-]*'
+match = ["mobalytics.gg/wow-forever"]
+cadence = "weekly"
+lang = "en"
+
+[[source]]
+id = "gamer-guides"
+name = "Gamer Guides: WoW Forever wiki"
+tier = "community_curated"
+kind = "html"
+url = "https://gamer-guides.com/wiki/wow-forever/"
+link_pattern = '/wiki/wow-forever/[a-z0-9-]+'
+match = ["gamer-guides.com/wiki/wow-forever", "www.gamer-guides.com/wiki/wow-forever"]
+cadence = "weekly"
+lang = "en"
+
+[[source]]
+id = "kami-labs"
+name = "Kami Labs: addons de WoW Forever"
+tier = "community_curated"
+kind = "html"
+url = "https://kami-labs.fr/en/addons-wow-forever/"
+match = ["kami-labs.fr"]
+cadence = "weekly"
+lang = "en"
+
+# --------------------------------------------------------------------------- comunitarias sin verificar
+
+[[source]]
+id = "forums-us-forever-players"
+name = "Foros EE. UU. de Forever (hilos de jugadores)"
+tier = "community_unverified"
+kind = "reference"
+url = "https://us.forums.blizzard.com/en/wow/c/wow-forever/347"
+match = ["us.forums.blizzard.com", "eu.forums.blizzard.com"]
+lang = "en"
+
+[[source]]
+id = "reddit-classicwow-forever"
+name = "Reddit r/classicwow (búsqueda «forever»)"
+tier = "community_unverified"
+kind = "rss"
+url = "https://www.reddit.com/r/classicwow/search.rss?q=forever&restrict_sr=1&sort=new"
+keywords = ["level", "leveling", "xp", "quest", "hotfix", "warlock", "mage", "route", "trick", "tip"]
+match = ["www.reddit.com", "reddit.com", "old.reddit.com"]
+cadence = "daily"
+lang = "en"
+# Reddit limita mucho a clientes sin OAuth (403/429 en pruebas locales). El fallo solo se anota en el informe.
+check = true
+
+[[source]]
+id = "reddit-wowforever"
+name = "Reddit r/wowforever"
+tier = "community_unverified"
+kind = "rss"
+url = "https://www.reddit.com/r/wowforever/new/.rss"
+keywords = ["level", "leveling", "xp", "quest", "hotfix", "warlock", "mage", "route", "trick", "tip"]
+match = []
+cadence = "daily"
+lang = "en"
+check = true
+
+[[source]]
+id = "discord-exports"
+name = "Exportaciones de Discord (manuales)"
+tier = "community_unverified"
+kind = "local_dir"
+# Pega aquí exportaciones (.json de DiscordChatExporter, .txt o .md). Se procesan una vez.
+url = "harness/inbox/discord"
+match = ["discord.com", "discord.gg"]
+cadence = "hourly"
+lang = "en"
+
+[[source]]
+id = "github-addons"
+name = "Incidencias de addons de leveo (GitHub)"
+tier = "community_unverified"
+kind = "reference"
+url = "https://github.com"
+match = ["github.com"]
+lang = "en"

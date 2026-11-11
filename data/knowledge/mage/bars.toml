@@ -1,0 +1,184 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua MG.BARS y consejos de BrujoGnomoGuia.lua).
+# Mismo formato que data/knowledge/warlock/bars.toml. Extras: spell_name (hechizo sin id conocido, por nombre)
+# y alt2 (segunda alternativa si no conoces ni spell ni alt).
+id = "mage-bars"
+class = "MAGE"
+kind = "bars"
+title = "Barras de acción del mago"
+order = 130
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+
+[[bar]]
+title = "Barra principal (1 a =)"
+
+[[bar.slot]]
+slot = 1
+key = "1"
+spell = 116
+level = 4
+
+[[bar.slot]]
+slot = 2
+key = "2"
+spell = 2136
+level = 6
+
+[[bar.slot]]
+slot = 3
+key = "3"
+macro = "SND_Lanza"
+icon = "name:Lanza de hielo"
+level = 22
+
+[[bar.slot]]
+slot = 4
+key = "4"
+spell = 122
+level = 10
+
+[[bar.slot]]
+slot = 5
+key = "5"
+macro = "SND_Varita"
+icon = "spell:5019"
+level = 5
+
+[[bar.slot]]
+slot = 6
+key = "6"
+spell = 1953
+level = 20
+
+[[bar.slot]]
+slot = 7
+key = "7"
+macro = "SND_Poli"
+icon = "spell:118"
+level = 8
+
+[[bar.slot]]
+slot = 8
+key = "8"
+macro = "SND_Contra"
+icon = "spell:2139"
+level = 24
+
+[[bar.slot]]
+slot = 9
+key = "9"
+spell = 120
+level = 26
+
+[[bar.slot]]
+slot = 10
+key = "0"
+spell = 10
+level = 20
+
+[[bar.slot]]
+slot = 11
+key = "-"
+spell = 12051
+level = 20
+
+[[bar.slot]]
+slot = 12
+key = "="
+macro = "SND_Bloque"
+icon = "name:Bloqueo de hielo"
+level = 25
+
+[[bar]]
+title = "Inferior izquierda (Mayúsculas + 1 a 6)"
+
+[[bar.slot]]
+slot = 61
+key = "S1"
+spell = 133
+level = 1
+
+[[bar.slot]]
+slot = 62
+key = "S2"
+spell = 1449
+level = 14
+
+[[bar.slot]]
+slot = 63
+key = "S3"
+spell = 2120
+level = 16
+
+[[bar.slot]]
+slot = 64
+key = "S4"
+macro = "SND_Gema"
+icon = "item:5514"
+level = 28
+
+[[bar.slot]]
+slot = 65
+key = "S5"
+spell_name = "Barrera de hielo"
+level = 40
+
+[[bar.slot]]
+slot = 66
+key = "S6"
+spell_name = "Mordedura helada"
+level = 32
+note = "Mordedura helada entra en la build al reiniciar al 33; la fuente la colocaba desde el 32."
+
+[[bar]]
+title = "Inferior derecha (fuera de combate, con el ratón)"
+
+[[bar.slot]]
+slot = 49
+macro = "SND_Conjurar"
+icon = "spell:5504"
+level = 4
+
+[[bar.slot]]
+slot = 50
+spell = 1459
+level = 1
+
+[[bar.slot]]
+slot = 51
+spell = 6117
+alt = 7302
+alt2 = 168
+level = 1
+note = "Armadura de mago; si no, Armadura de hielo; si no, Armadura de Escarcha."
+
+[[bar.slot]]
+slot = 52
+spell = 759
+level = 28
+
+[[bar.slot]]
+slot = 53
+spell = 3561
+level = 20
+
+[[bar.slot]]
+slot = 54
+spell = 10059
+level = 40
+
+[bindings]
+"SHIFT-1" = "MULTIACTIONBAR1BUTTON1"
+"SHIFT-2" = "MULTIACTIONBAR1BUTTON2"
+"SHIFT-3" = "MULTIACTIONBAR1BUTTON3"
+"SHIFT-4" = "MULTIACTIONBAR1BUTTON4"
+"SHIFT-5" = "MULTIACTIONBAR1BUTTON5"
+"SHIFT-6" = "MULTIACTIONBAR1BUTTON6"
+
+[[block]]
+heading = "Consejos de barras"
+body = """
+- Barra 1: Descarga de Escarcha, Explosión de Fuego, Lanza de hielo, Nova, Varita, Traslación.
+- Barra 2: Polimorfia, Contrahechizo, Cono de frío, Ventisca, Evocación, Bloqueo de hielo.
+- Usa /focus en el segundo enemigo y las macros con foco (Polimorfia, Contrahechizo).
+- En Classic las barras no suben de rango solas: vuelve a colocarlas después de entrenar."""

@@ -1,0 +1,100 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Brackets.lua, tramo 10-19).
+id = "warlock-bracket-10-19"
+class = "WARLOCK"
+kind = "page"
+title = "Niveles 10-19: el Abisario"
+levels = [10, 19]
+order = 20
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/"]
+checked = "2026-11-08"
+note = "Talentos 10-19 según ConquestCapped (8-nov-2026). Bonificación del 50% en mazmorras: cambio de Blizzard del 8-nov citado sin enlace."
+
+[[block]]
+heading = "Zonas"
+body = """
+- **10-14:** Loch Modan.
+- **14-18:** Páramos de Poniente.
+- **17-20:** Costa Oscura.
+
+Mazmorras:
+- **Hall of Thanes** (13-18): dentro de Forjaz, en la Antigua Forjaz.
+- **Ruins of Lordaeron** (15-20).
+- **Minas de la Muerte** (17-22).
+
+Sus misiones dan más del doble de experiencia que en Classic y, desde el 8 de noviembre, los enemigos de mazmorra dan un 50% más (solo los enemigos, no las misiones)."""
+
+[[block]]
+heading = "Demonio"
+body = """
+**Abisario** desde el 10 (pestaña Guía). En pasivo: lo envías con SND_Abrir.
+- **Tormento** para recuperar la amenaza.
+- **Consumir sombras** fuera de combate.
+- **Sacrificio** si vas a morir."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **10:** Drenar alma, Crear piedra de salud.
+- **12:** Cauce de salud.
+- **14:** Drenar vida, Maldición de temeridad.
+- **16:** Fuerza inmortal.
+- **18:** Crear piedra de alma, Dolor abrasador."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **10-14:** Corrupción mejorada 5/5 (instantánea).
+- **15-17:** Supresión 3/5.
+- **18-19:** Alcance macabro 2/2.
+
+Fuente: ConquestCapped, 8 nov."""
+
+[[block]]
+heading = "Rotación"
+body = """
+Terror de agonía desde lejos → Corrupción → Abisario → Inmolar → varita. Drenar vida (desde el 14) si te falta vida. Drenar alma al enemigo casi muerto si tienes menos de 3 fragmentos."""
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 10:** SND_Drenar, SND_Piedra, SND_Sacrificio.
+- **Al 14:** SND_Drenar pasa a ser Drenar vida, y Drenar alma con Alt."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+- Al 10 entrena **Oficial** (habilidad 50).
+- Objetivo al 20: Sastrería ~125 y Encantamiento ~100.
+- Con habilidad 20 en ambas tienes el **Estandarte de facción** (+Espíritu) y el **Laúd encantado** (armadura y estadísticas) para el campamento.
+- Empieza a entregar cajas de suministros en Tres Caminos para el **Favor de mercader**: caen de los enemigos y también en mazmorras."""
+
+[[block]]
+heading = "Equipo"
+body = """
+- **Varita mágica superior** (Encantamiento).
+- Conjunto de Sombras de Sastrería (habilidad 60-125, patrones con Favor).
+- Busca Intelecto, Espíritu y Aguante."""
+
+[[block]]
+heading = "Oro"
+body = """
+Misiones y grises. Vende en la casa de subastas los verdes ligados al equiparse que no te sirvan y que no merezca la pena desencantar. Guarda 5-10 de oro para el 20 (rango Experto de profesiones y hechizos)."""
+
+[[block]]
+heading = "Objetivos antes del 20"
+body = """
+- Abisario.
+- Varita mágica superior.
+- Piedra de salud siempre en la bolsa.
+- Sastrería 125, Encantamiento 100.
+- 10 puntos de talento gastados."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Dos enemigos a la vez: el Abisario tanquea a uno y tú le pones DoTs al otro.
+- Usa SND_Abrir con Terror de agonía para que el demonio llegue antes que tú en amenaza.
+- En Minas de la Muerte lleva el Diablillo (Pacto de sangre) si tenéis tanque.
+- Al 14 empieza la cadena del **Saco de dormir acogedor** en la granja Alexston (Páramos de Poniente, 37, 50): hasta +3% de experiencia y zona de descanso.
+- Las bolsas nuevas hay que equiparlas a mano. La bolsa de almas va en la ranura de componentes."""

@@ -1,0 +1,225 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua MG.TRAIN y MG.MAGE_CHECKS; ids de MageData.lua y BrujoGnomoGuia.lua).
+# Mismo formato que data/knowledge/warlock/spells.toml (spells, names, ids_added, no_id).
+# [[check]]: hechizos clave del análisis del personaje (aviso si no se conocen 2 niveles después).
+id = "mage-spells"
+class = "MAGE"
+kind = "spells"
+title = "Hechizos del instructor de mago"
+levels = [1, 60]
+order = 80
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever"]
+checked = "2026-11-10"
+note = "Nombres y niveles: datos de cliente de Wowhead Forever (9-10 nov). Los ids son de Classic salvo Entender pergamino (1296017), que es de Forever."
+
+[[train]]
+level = 1
+names = ["Bola de Fuego", "Armadura de Escarcha", "Intelecto Arcano"]
+spells = [133, 168, 1459]
+note = "Se conocen al empezar o se aprenden con Khelden Bremen al nivel 1."
+
+[[train]]
+level = 4
+names = ["Conjurar agua", "Descarga de Escarcha"]
+spells = [5504, 116]
+
+[[train]]
+level = 6
+names = ["Conjurar comida", "Explosión de Fuego", "Entender pergamino"]
+spells = [587, 2136, 1296017]
+note = "Entender pergamino es la habilidad nueva del mago en Forever (Comprensión)."
+
+[[train]]
+level = 8
+names = ["Misiles Arcanos", "Polimorfia"]
+spells = [5143, 118]
+ids_added = [5143]
+
+[[train]]
+level = 10
+names = ["Nova de Escarcha"]
+spells = [122]
+
+[[train]]
+level = 12
+names = ["Empapar magia", "Caída lenta"]
+spells = [604, 130]
+ids_added = [604, 130]
+
+[[train]]
+level = 14
+names = ["Deflagración Arcana"]
+spells = [1449]
+
+[[train]]
+level = 16
+names = ["Fogonazo"]
+spells = [2120]
+
+[[train]]
+level = 18
+names = ["Amplificar magia", "Deshacer maldición inferior"]
+spells = [1008, 475]
+ids_added = [1008, 475]
+
+[[train]]
+level = 20
+names = ["Traslación", "Evocación", "Escudo de maná", "Custodia de Fuego", "Ventisca", "Teletransporte a: Ventormenta", "Teletransporte a: Forjaz"]
+spells = [1953, 12051, 1463, 543, 10, 3561, 3562]
+ids_added = [1463, 543, 3562]
+status = "unverified"
+note = "La guía antigua decía que el Teletransporte lo enseña la instructora de portales del Sagrario de los Magos (Larimaine Purdue, sin confirmar). Cada teletransporte gasta una Runa de Teletransporte."
+
+[[train]]
+level = 22
+names = ["Chamuscar", "Custodia de Escarcha"]
+spells = [2948, 6143]
+ids_added = [2948, 6143]
+note = "Al 22, talento Lanza de hielo."
+
+[[train]]
+level = 24
+names = ["Contrahechizo"]
+spells = [2139]
+
+[[train]]
+level = 26
+names = ["Cono de frío"]
+spells = [120]
+note = "En Forever dura menos: 40% de ralentización durante 6 s."
+
+[[train]]
+level = 28
+names = ["Conjurar ágata de maná"]
+spells = [759]
+
+[[train]]
+level = 30
+names = ["Armadura de hielo", "Teletransporte a: Darnassus"]
+spells = [7302, 3565]
+ids_added = [3565]
+
+[[train]]
+level = 34
+names = ["Armadura de mago"]
+spells = [6117]
+
+[[train]]
+level = 38
+names = ["Conjurar jade de maná"]
+spells = [3552]
+ids_added = [3552]
+
+[[train]]
+level = 40
+names = ["Descarga de Pirofrío", "Portal: Ventormenta", "Portal: Forjaz"]
+spells = [10059, 11416]
+ids_added = [11416]
+no_id = ["Descarga de Pirofrío"]
+note = "Descarga de Pirofrío es nueva en Forever (Fuego y Escarcha a la vez, ralentiza un 40%): id desconocido."
+
+[[train]]
+level = 48
+names = ["Conjurar citrino de maná"]
+spells = [10053]
+ids_added = [10053]
+
+[[train]]
+level = 50
+names = ["Portal: Darnassus", "Teletransporte a: Dalaran"]
+spells = [11419]
+ids_added = [11419]
+no_id = ["Teletransporte a: Dalaran"]
+note = "Teletransporte a: Dalaran es nuevo en Forever (Runa de Teletransporte, 10 s): id desconocido."
+
+[[train]]
+level = 56
+names = ["Resplandor Arcano"]
+spells = [23028]
+
+[[train]]
+level = 58
+names = ["Conjurar rubí de maná"]
+spells = [10054]
+ids_added = [10054]
+
+[[train]]
+level = 60
+names = ["Polimorfia: vaca"]
+spells = [28270]
+ids_added = [28270]
+
+[[check]]
+spell = 116
+level = 4
+name = "Descarga de Escarcha"
+
+[[check]]
+spell = 118
+level = 8
+name = "Polimorfia"
+
+[[check]]
+spell = 122
+level = 10
+name = "Nova de Escarcha"
+
+[[check]]
+spell = 1953
+level = 20
+name = "Traslación"
+
+[[check]]
+spell = 12051
+level = 20
+name = "Evocación"
+
+[[check]]
+spell = 3561
+level = 20
+name = "Teletransporte a: Ventormenta"
+
+[[check]]
+spell = 2139
+level = 24
+name = "Contrahechizo"
+
+[[check]]
+spell = 120
+level = 26
+name = "Cono de frío"
+
+[[check]]
+spell = 759
+level = 28
+name = "Conjurar ágata de maná"
+
+[[check]]
+spell = 6117
+level = 34
+name = "Armadura de mago"
+
+[ids]
+# Hechizos (ids de rango 1 de Classic; BrujoGnomoGuia.lua MSPELL)
+frostbolt = 116
+fireball = 133
+fire_blast = 2136
+frost_nova = 122
+evocation = 12051
+arcane_intellect = 1459
+conjure_water = 5504
+conjure_food = 587
+mana_agate = 759
+polymorph = 118
+blink = 1953
+blizzard = 10
+cone_of_cold = 120
+ice_block = 11958
+ice_barrier = 11426
+# Auras de armadura (aviso «sin armadura de escarcha/hielo/mago»)
+armor_buffs = [168, 7300, 7301, 7302, 7320, 10219, 10220, 6117, 22782, 22783]
+# Auras de Intelecto Arcano / Resplandor Arcano
+intellect_buffs = [1459, 1460, 1461, 10156, 10157, 23028]
+# Objetos: agua conjurada y gemas de maná
+conjured_water_items = [5350, 2288, 2136, 3772, 8077, 8078, 8079]
+mana_gem_items = [5514, 5513, 8007, 8008]

@@ -1,0 +1,594 @@
+# Ruta compartida de Alianza (brujo gnomo y mago humano), 45-60. Generada con QuestieDB local; textos propios.
+id = "a57-western-plaguelands"
+title = "Tierras de la Peste del Oeste"
+levels = [57, 58]
+map = 1422
+summary = "Campamento Viento Frío: calderos de la Plaga, Andorhal con Cromi y el inicio de Darrowshire."
+
+[[step]]
+id = "a57-western-plaguelands-001"
+do = "goto"
+at = [1422, 42.9, 85.1]
+text = "Ve al Campamento Viento Frío: vuela a Costasur (Laderas de Trabalomas) y sube al norte."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-002"
+do = "getfp"
+npc = 12596
+node = "Chillwind Camp"
+at = [1422, 42.9, 85.1]
+text = "Coge la ruta de vuelo del campamento."
+status = "unverified"
+sources = ["questie:npc/12596", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-003"
+do = "turnin"
+quest = 6028
+npc = 10840
+at = [1422, 43.0, 83.5]
+text = "Entrega el informe de Vista Eterna al oficial Pureheart."
+status = "unverified"
+sources = ["questie:quest/6028", "questie:npc/10840", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-004"
+do = "accept"
+quest = 5401
+npc = 10840
+at = [1422, 43.0, 83.5]
+text = "Coge la comisión del Alba Argenta."
+status = "unverified"
+sources = ["questie:quest/5401", "questie:npc/10840", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-005"
+do = "turnin"
+quest = 5401
+npc = 10840
+at = [1422, 43.0, 83.5]
+text = "Entrégala en el acto: el amuleto te deja recoger piedras de la Plaga para el Alba Argenta."
+status = "unverified"
+sources = ["questie:quest/5401", "questie:npc/10840", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-006"
+do = "accept"
+quest = 5092
+npc = 10838
+at = [1422, 42.7, 84.0]
+text = "Coge la misión de despejar el camino del comandante Valorfist."
+status = "unverified"
+sources = ["questie:quest/5092", "questie:npc/10838", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-007"
+do = "complete"
+quest = 5092
+at = [1422, 43.7, 67.3]
+text = "En la Colina del Pesar, al norte del campamento, mata 10 desolladores esqueléticos y 10 necrófagos."
+status = "unverified"
+sources = ["questie:quest/5092", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-008"
+do = "goto"
+at = [1422, 43.0, 84.5]
+text = "Vuelve al campamento."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-009"
+do = "turnin"
+quest = 5092
+npc = 10838
+at = [1422, 42.7, 84.0]
+text = "Entrega la misión a Valorfist."
+status = "unverified"
+sources = ["questie:quest/5092", "questie:npc/10838", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-010"
+do = "accept"
+quest = 5097
+npc = 10838
+at = [1422, 42.7, 84.0]
+text = "Coge la misión de marcar las torres de Andorhal."
+status = "unverified"
+sources = ["questie:quest/5097", "questie:npc/10838", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-011"
+do = "accept"
+quest = 5215
+npc = 10838
+at = [1422, 42.7, 84.0]
+text = "Coge la misión de los calderos de la Plaga."
+status = "unverified"
+sources = ["questie:quest/5215", "questie:npc/10838", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-012"
+do = "turnin"
+quest = 5215
+npc = 11053
+at = [1422, 43.0, 84.5]
+text = "Habla con la suma sacerdotisa MacDonnell."
+status = "unverified"
+sources = ["questie:quest/5215", "questie:npc/11053", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-013"
+do = "accept"
+quest = 5216
+npc = 11053
+at = [1422, 43.0, 84.5]
+text = "Coge el objetivo del Campo Felstone."
+status = "unverified"
+sources = ["questie:quest/5216", "questie:npc/11053", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-014"
+do = "accept"
+quest = 4971
+npc = 10667
+at = [1422, 39.5, 66.8]
+text = "En Andorhal, sube a la posada y coge la misión de Cromi."
+status = "unverified"
+sources = ["questie:quest/4971", "questie:npc/10667", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-015"
+do = "complete"
+quest = 5097
+at = [1422, 40.0, 71.6]
+text = "Marca las cuatro torres de Andorhal con la antorcha, desde la puerta de cada una."
+status = "unverified"
+sources = ["questie:quest/5097", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-016"
+do = "complete"
+quest = 4971
+at = [1422, 48.1, 65.2]
+text = "Usa el desplazador junto a los silos de Andorhal y mata 10 parásitos temporales."
+status = "unverified"
+sources = ["questie:quest/4971", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-017"
+do = "turnin"
+quest = 4971
+npc = 10667
+at = [1422, 39.5, 66.8]
+text = "Vuelve con Cromi."
+status = "unverified"
+sources = ["questie:quest/4971", "questie:npc/10667", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-018"
+do = "accept"
+quest = 4972
+npc = 10667
+at = [1422, 39.5, 66.8]
+text = "Coge la misión de los relojes de Andorhal."
+status = "unverified"
+sources = ["questie:quest/4972", "questie:npc/10667", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-019"
+do = "complete"
+quest = 4972
+at = [1422, 43.0, 70.1]
+text = "Busca 5 relojes en los cofres de las ruinas de Andorhal."
+status = "unverified"
+sources = ["questie:quest/4972", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-020"
+do = "turnin"
+quest = 4972
+npc = 10667
+at = [1422, 39.5, 66.8]
+text = "Entrega los relojes a Cromi."
+status = "unverified"
+sources = ["questie:quest/4972", "questie:npc/10667", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-021"
+do = "accept"
+quest = 4984
+npc = 10739
+at = [1422, 53.7, 64.7]
+text = "Ve al este, a la Guarida Retorcida, y coge la misión de Mulgris contra los lobos."
+status = "unverified"
+sources = ["questie:quest/4984", "questie:npc/10739", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-022"
+do = "complete"
+quest = 4984
+at = [1422, 47.4, 45.1]
+text = "Mata 8 lobos enfermos por los campos del centro."
+status = "unverified"
+sources = ["questie:quest/4984", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-023"
+do = "complete"
+quest = 5216
+at = [1422, 36.9, 57.4]
+text = "En el Campo Felstone, al noroeste, mata al señor del caldero y coge su llave."
+status = "unverified"
+sources = ["questie:quest/5216", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-024"
+do = "turnin"
+quest = 5216
+at = [1422, 37.2, 56.8]
+text = "Usa la llave en el caldero de Campo Felstone."
+status = "unverified"
+sources = ["questie:quest/5216", "questie:object/176361", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-025"
+do = "accept"
+quest = 5217
+at = [1422, 37.2, 56.8]
+text = "Coge la botella llena del caldero."
+status = "unverified"
+sources = ["questie:quest/5217", "questie:object/176361", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-026"
+do = "goto"
+at = [1422, 43.0, 84.5]
+text = "Vuelve al Campamento Viento Frío."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-027"
+do = "turnin"
+quest = 5097
+npc = 10838
+at = [1422, 42.7, 84.0]
+text = "Entrega las torres a Valorfist."
+status = "unverified"
+sources = ["questie:quest/5097", "questie:npc/10838", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-028"
+do = "turnin"
+quest = 5217
+npc = 11053
+at = [1422, 43.0, 84.5]
+text = "Entrega la botella del Campo Felstone a MacDonnell."
+status = "unverified"
+sources = ["questie:quest/5217", "questie:npc/11053", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-029"
+do = "accept"
+quest = 5219
+npc = 11053
+at = [1422, 43.0, 84.5]
+text = "Coge el objetivo de Las Lágrimas de Dalson."
+status = "unverified"
+sources = ["questie:quest/5219", "questie:npc/11053", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-030"
+do = "accept"
+quest = 5533
+npc = 10838
+at = [1422, 42.7, 84.0]
+text = "Opcional: coge la misión de Scholomance para tenerla lista."
+optional = true
+status = "unverified"
+sources = ["questie:quest/5533", "questie:npc/10838", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-031"
+do = "complete"
+quest = 5219
+at = [1422, 46.1, 52.6]
+text = "En Las Lágrimas de Dalson mata al señor del caldero y coge su llave."
+status = "unverified"
+sources = ["questie:quest/5219", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-032"
+do = "turnin"
+quest = 5219
+at = [1422, 46.2, 51.9]
+text = "Usa la llave en el caldero de Las Lágrimas de Dalson."
+status = "unverified"
+sources = ["questie:quest/5219", "questie:object/177289", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-033"
+do = "accept"
+quest = 5220
+at = [1422, 46.2, 51.9]
+text = "Coge la botella llena del caldero."
+status = "unverified"
+sources = ["questie:quest/5220", "questie:object/177289", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-034"
+do = "turnin"
+quest = 4984
+npc = 10739
+at = [1422, 53.7, 64.7]
+text = "Entrega los lobos a Mulgris."
+status = "unverified"
+sources = ["questie:quest/4984", "questie:npc/10739", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-035"
+do = "accept"
+quest = 4985
+npc = 10739
+at = [1422, 53.7, 64.7]
+text = "Coge la continuación contra los osos pardos."
+status = "unverified"
+sources = ["questie:quest/4985", "questie:npc/10739", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-036"
+do = "accept"
+quest = 5142
+npc = 10927
+at = [1422, 49.2, 78.6]
+text = "Al sur de la Guarida, habla con Marlene y coge la misión de la pequeña Pamela."
+status = "unverified"
+sources = ["questie:quest/5142", "questie:npc/10927", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-037"
+do = "goto"
+at = [1422, 43.0, 84.5]
+text = "Vuelve al Campamento Viento Frío."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-038"
+do = "turnin"
+quest = 5220
+npc = 11053
+at = [1422, 43.0, 84.5]
+text = "Entrega la botella de Las Lágrimas de Dalson."
+status = "unverified"
+sources = ["questie:quest/5220", "questie:npc/11053", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-039"
+do = "accept"
+quest = 5222
+npc = 11053
+at = [1422, 43.0, 84.5]
+text = "Coge el objetivo de la Guarida Retorcida."
+status = "unverified"
+sources = ["questie:quest/5222", "questie:npc/11053", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-040"
+do = "complete"
+quest = 5222
+at = [1422, 52.9, 66.1]
+text = "En la Guarida Retorcida mata al señor del caldero y coge su llave."
+status = "unverified"
+sources = ["questie:quest/5222", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-041"
+do = "turnin"
+quest = 5222
+at = [1422, 53.0, 65.6]
+text = "Usa la llave en el caldero de la Guarida Retorcida."
+status = "unverified"
+sources = ["questie:quest/5222", "questie:object/176393", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-042"
+do = "accept"
+quest = 5223
+at = [1422, 53.0, 65.6]
+text = "Coge la botella llena del caldero."
+status = "unverified"
+sources = ["questie:quest/5223", "questie:object/176393", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-043"
+do = "complete"
+quest = 4985
+at = [1422, 59.9, 52.8]
+text = "Mata 8 osos pardos enfermos al este, cerca de El Marchitamiento de Gahrron."
+status = "unverified"
+sources = ["questie:quest/4985", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-044"
+do = "turnin"
+quest = 4985
+npc = 10739
+at = [1422, 53.7, 64.7]
+text = "Entrega los osos a Mulgris."
+tip = "La continuación te manda a Darnassus: sáltala."
+status = "unverified"
+sources = ["questie:quest/4985", "questie:npc/10739", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-045"
+do = "goto"
+at = [1422, 43.0, 84.5]
+text = "Vuelve al campamento."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-046"
+do = "turnin"
+quest = 5223
+npc = 11053
+at = [1422, 43.0, 84.5]
+text = "Entrega la botella de la Guarida Retorcida."
+status = "unverified"
+sources = ["questie:quest/5223", "questie:npc/11053", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-047"
+do = "accept"
+quest = 5225
+npc = 11053
+at = [1422, 43.0, 84.5]
+text = "Coge el último objetivo: El Marchitamiento de Gahrron."
+status = "unverified"
+sources = ["questie:quest/5225", "questie:npc/11053", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-048"
+do = "complete"
+quest = 5225
+at = [1422, 62.2, 59.1]
+text = "En El Marchitamiento de Gahrron mata al señor del caldero y coge su llave."
+status = "unverified"
+sources = ["questie:quest/5225", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-049"
+do = "turnin"
+quest = 5225
+at = [1422, 62.5, 58.5]
+text = "Usa la llave en el caldero de El Marchitamiento de Gahrron."
+status = "unverified"
+sources = ["questie:quest/5225", "questie:object/176392", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-050"
+do = "accept"
+quest = 5226
+at = [1422, 62.5, 58.5]
+text = "Coge la botella llena del caldero."
+status = "unverified"
+sources = ["questie:quest/5226", "questie:object/176392", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-051"
+do = "goto"
+at = [1422, 43.0, 84.5]
+text = "Vuelve al campamento."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a57-western-plaguelands-052"
+do = "turnin"
+quest = 5226
+npc = 11053
+at = [1422, 43.0, 84.5]
+text = "Entrega la última botella."
+status = "unverified"
+sources = ["questie:quest/5226", "questie:npc/11053", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-053"
+do = "accept"
+quest = 5237
+npc = 10838
+at = [1422, 42.7, 84.0]
+text = "Coge la misión final de los calderos."
+status = "unverified"
+sources = ["questie:quest/5237", "questie:npc/10838", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-054"
+do = "turnin"
+quest = 5237
+npc = 10838
+at = [1422, 42.7, 84.0]
+text = "Entrégala a Valorfist."
+status = "unverified"
+sources = ["questie:quest/5237", "questie:npc/10838", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a57-western-plaguelands-055"
+do = "train"
+npc = 5173
+spells = [11713, 17926]
+at = [1455, 50.1, 7.5]
+text = "Brujo: entrena los hechizos del nivel 58."
+if = { class = ["WARLOCK"], minlevel = 58 }
+optional = true
+status = "unverified"
+sources = ["questie:npc/5173", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a57-western-plaguelands-056"
+do = "train"
+npc = 5144
+spells = [10054, 10161, 10207]
+at = [1455, 27.2, 8.3]
+text = "Mago: entrena los hechizos del nivel 58."
+if = { class = ["MAGE"], minlevel = 58 }
+optional = true
+status = "unverified"
+sources = ["questie:npc/5144", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a57-western-plaguelands-057"
+do = "note"
+text = "Opcional al 58: vuela del campamento a Forjaz, entrena y vuelve. El mago con Teletransporte y la piedra de vuelta."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]

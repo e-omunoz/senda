@@ -1,0 +1,40 @@
+# Guía human-mage: Mago: seda de araña e instructor (28). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-28-astral"
+title = "Mago: seda de araña e instructor (28)"
+levels = [28, 29]
+map = 1453
+summary = "Entrega del tratado, misión de la seda y hechizos del 28."
+
+[[step]]
+id = "mg-28-astral-001"
+do = "turnin"
+quest = 1938
+npc = 5694
+at = [1453, 48.7, 87.6]
+text = "Entrega el tratado al Alto hechicero Andromath."
+status = "unverified"
+sources = ["questie:quest/1938", "questie:npc/5694"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-28-astral-002"
+do = "accept"
+quest = 1940
+npc = 5694
+at = [1453, 48.7, 87.6]
+text = "Coge la misión de la seda de araña prístina."
+status = "unverified"
+sources = ["questie:quest/1940", "questie:npc/5694"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-28-astral-003"
+do = "train"
+npc = 5497
+spells = [759]
+at = [1453, 49.6, 85.8]
+text = "Nivel 28: aprende Conjurar ágata de maná."
+tip = "Úsala en combate cuando te falte maná: no gasta turno."
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"

@@ -1,0 +1,255 @@
+# Ruta compartida de la Alianza (brujo gnomo y mago humano).
+
+id = "a44-badlands"
+title = "Tierras Inhóspitas y Uldaman"
+levels = [44, 45]
+map = 1418
+summary = "Sube a pie al noroeste hasta las Tierras Inhóspitas. Misiones del campamento de excavación y Uldaman en grupo. Acabas listo para el tramo 45."
+
+[[step]]
+id = "a44-badlands-001"
+do = "note"
+if = { class = ["MAGE"] }
+text = "Al 42 y al 44 toca entrenar. Mago: Teletransporte a Forjaz y vuelve con la piedra de hogar."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a44-badlands-002"
+do = "train"
+npc = 5172
+spells = [6789]
+at = [1455, 50.35, 5.66]
+if = { class = ["WARLOCK"], minlevel = 42 }
+text = "Brujo al 42: entrena Espiral mortal en Forjaz cuando pases (por Thelsamar)."
+status = "unverified"
+sources = ["questie:npc/5172"]
+
+[[step]]
+id = "a44-badlands-003"
+do = "goto"
+at = [1418, 53.4, 43.4]
+text = "Desde el fuerte, ve al noroeste hasta las Tierras Inhóspitas; busca el campamento enano del centro."
+status = "unverified"
+sources = ["https://warcraft.wiki.gg/wiki/Riverglades"]
+
+[[step]]
+id = "a44-badlands-004"
+do = "accept"
+quest = 719
+npc = 2910
+at = [1418, 53.42, 43.39]
+text = "Coge la misión del pico del prospector Ryedol."
+status = "unverified"
+sources = ["questie:quest/719", "questie:npc/2910"]
+
+[[step]]
+id = "a44-badlands-005"
+do = "accept"
+quest = 718
+npc = 2860
+at = [1418, 53.8, 43.3]
+text = "Coge los espejismos de Sigrun Ironhew, a su lado."
+status = "unverified"
+sources = ["questie:quest/718", "questie:npc/2860"]
+
+[[step]]
+id = "a44-badlands-006"
+do = "accept"
+quest = 709
+npc = 2785
+at = [1418, 51.39, 76.87]
+text = "Ve a la cabaña del sur, con Theldurin el Perdido, y coge la solución a la ruina."
+status = "unverified"
+sources = ["questie:quest/709", "questie:npc/2785"]
+
+[[step]]
+id = "a44-badlands-007"
+do = "accept"
+quest = 2418
+npc = 2817
+at = [1418, 42.39, 52.93]
+text = "Al noroeste, Rigglefuzz te da las piedras de poder."
+status = "unverified"
+sources = ["questie:quest/2418", "questie:npc/2817"]
+
+[[step]]
+id = "a44-badlands-008"
+do = "complete"
+quest = 719
+at = [1418, 43.4, 30.6]
+text = "Consigue el pico de Ryedol de los enanos Hierro Negro."
+status = "unverified"
+sources = ["questie:quest/719"]
+
+[[step]]
+id = "a44-badlands-009"
+do = "accept"
+quest = 720
+at = [1418, 53.03, 33.94]
+text = "En el campamento Hierro Negro encuentra el mapa arrugado."
+status = "unverified"
+sources = ["questie:quest/720"]
+
+[[step]]
+id = "a44-badlands-010"
+do = "complete"
+quest = 2418
+at = [1418, 48, 12.2]
+text = "Saca piedras de poder de los Sombra Pétrea alrededor de la excavación."
+status = "unverified"
+sources = ["questie:quest/2418"]
+
+[[step]]
+id = "a44-badlands-011"
+do = "complete"
+quest = 718
+at = [1418, 66.6, 22]
+text = "Busca la caja de suministros en el este."
+status = "unverified"
+sources = ["questie:quest/718"]
+
+[[step]]
+id = "a44-badlands-012"
+do = "turnin"
+quest = 719
+npc = 2910
+at = [1418, 53.42, 43.39]
+text = "Vuelve con Ryedol: entrega el pico."
+status = "unverified"
+sources = ["questie:quest/719", "questie:npc/2910"]
+
+[[step]]
+id = "a44-badlands-013"
+do = "turnin"
+quest = 720
+npc = 2910
+at = [1418, 53.42, 43.39]
+text = "Entrégale también el mapa."
+status = "unverified"
+sources = ["questie:quest/720", "questie:npc/2910"]
+
+[[step]]
+id = "a44-badlands-014"
+do = "accept"
+quest = 721
+npc = 2910
+at = [1418, 53.42, 43.39]
+text = "Coge la siguiente: llévale el mensaje a Hammertoe Grez."
+status = "unverified"
+sources = ["questie:quest/721", "questie:npc/2910"]
+
+[[step]]
+id = "a44-badlands-015"
+do = "turnin"
+quest = 718
+npc = 2860
+at = [1418, 53.8, 43.3]
+text = "Entrega los espejismos a Sigrun."
+status = "unverified"
+sources = ["questie:quest/718", "questie:npc/2860"]
+
+[[step]]
+id = "a44-badlands-016"
+do = "turnin"
+quest = 721
+npc = 2909
+at = [1418, 37.9, 10.59]
+text = "Busca a Hammertoe Grez junto a la entrada de Uldaman."
+status = "unverified"
+sources = ["questie:quest/721", "questie:npc/2909"]
+
+[[step]]
+id = "a44-badlands-017"
+do = "accept"
+quest = 722
+npc = 2909
+at = [1418, 37.9, 10.59]
+text = "Coge el amuleto de Hammertoe."
+status = "unverified"
+sources = ["questie:quest/722", "questie:npc/2909"]
+
+[[step]]
+id = "a44-badlands-018"
+do = "complete"
+quest = 722
+at = [1418, 39, 19.7]
+text = "Recupera el amuleto en la excavación exterior."
+status = "unverified"
+sources = ["questie:quest/722"]
+
+[[step]]
+id = "a44-badlands-019"
+do = "complete"
+quest = 709
+at = [1418, 39.3, 18.8]
+text = "Recupera la tablilla de Ryun'eh en la misma excavación."
+status = "unverified"
+sources = ["questie:quest/709"]
+
+[[step]]
+id = "a44-badlands-020"
+do = "complete"
+quest = 1360
+at = [1418, 35.6, 23.5]
+optional = true
+text = "Abre el tesoro de Krom en la parte exterior de Uldaman."
+status = "unverified"
+sources = ["questie:quest/1360"]
+
+[[step]]
+id = "a44-badlands-021"
+do = "turnin"
+quest = 722
+npc = 2909
+at = [1418, 37.9, 10.59]
+text = "Entrega el amuleto a Hammertoe."
+status = "unverified"
+sources = ["questie:quest/722", "questie:npc/2909"]
+
+[[step]]
+id = "a44-badlands-022"
+do = "dungeon"
+at = [1418, 42.4, 11.6, "Uldaman (coordenada clásica, sin verificar)"]
+optional = true
+text = "Uldaman (en grupo): Baelog y los enanos perdidos, y la cámara oculta."
+tip = "Encantador: la instructora de Artesano, Annora, está dentro. Ve con grupo."
+status = "unverified"
+sources = ["questie:quest/2398", "questie:quest/2240", "https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a44-badlands-023"
+do = "note"
+npc = 11073
+if = { prof = ["enchanting"] }
+text = "Encantador con 200 y nivel 35: entrena Artesano con Annora dentro de Uldaman."
+status = "unverified"
+sources = ["questie:npc/11073", "questie:npc/11073"]
+
+[[step]]
+id = "a44-badlands-024"
+do = "turnin"
+quest = 2418
+npc = 2817
+at = [1418, 42.39, 52.93]
+text = "Vuelve con Rigglefuzz y entrega las piedras de poder."
+status = "unverified"
+sources = ["questie:quest/2418", "questie:npc/2817"]
+
+[[step]]
+id = "a44-badlands-025"
+do = "turnin"
+quest = 709
+npc = 2785
+at = [1418, 51.39, 76.87]
+text = "Entrega la tablilla a Theldurin, al sur."
+status = "unverified"
+sources = ["questie:quest/709", "questie:npc/2785"]
+
+[[step]]
+id = "a44-badlands-026"
+do = "level"
+level = 45
+text = "Nivel 45: sigue con la siguiente sección (Tanaris o la zona que marque tu guía)."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]

@@ -1,0 +1,88 @@
+# Guía human-mage: Mago: nivel 60. Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-60-krellian"
+title = "Mago: nivel 60"
+levels = [60, 60]
+map = 1453
+summary = "Polimorfia: vaca y la cadena del Señor de la guerra Krellian."
+
+[[step]]
+id = "mg-60-krellian-001"
+do = "train"
+npc = 5497
+spells = [28270]
+at = [1453, 49.6, 85.8]
+text = "Nivel 60: aprende Polimorfia: vaca."
+tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos."
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-60-krellian-002"
+do = "accept"
+quest = 9362
+npc = 8379
+at = [1447, 29.6, 40.4]
+optional = true
+text = "En Azshara, coge del Archimago Xylem la misión del Señor de la guerra Krellian."
+status = "unverified"
+sources = ["questie:quest/9362", "questie:npc/8379"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-60-krellian-003"
+do = "complete"
+quest = 9362
+at = [1447, 41.0, 53.0]
+optional = true
+text = "Consigue la concha prismática de Krellian o de los Barbaescama."
+status = "unverified"
+sources = ["questie:quest/9362"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-60-krellian-004"
+do = "turnin"
+quest = 9362
+npc = 8379
+at = [1447, 29.6, 40.4]
+optional = true
+text = "Entrega al Archimago Xylem."
+status = "unverified"
+sources = ["questie:quest/9362", "questie:npc/8379"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-60-krellian-005"
+do = "accept"
+quest = 9364
+npc = 8379
+at = [1447, 29.6, 40.4]
+optional = true
+text = "Coge la misión de la magia fragmentada."
+status = "unverified"
+sources = ["questie:quest/9364", "questie:npc/8379"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-60-krellian-006"
+do = "complete"
+quest = 9364
+at = [1447, 33.0, 54.0]
+optional = true
+text = "Destruye los clones de Polimorfia en la costa."
+status = "unverified"
+sources = ["questie:quest/9364"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-60-krellian-007"
+do = "turnin"
+quest = 9364
+npc = 8379
+at = [1447, 29.6, 40.4]
+optional = true
+text = "Entrega y llévate tu recompensa."
+status = "unverified"
+sources = ["questie:quest/9364", "questie:npc/8379"]
+checked = "2026-11-11"

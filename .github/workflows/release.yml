@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: La etiqueta coincide con VERSION
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          version="$(tr -d '[:space:]' < VERSION)"
+          if [ "$tag" != "$version" ]; then
+            echo "::error::La etiqueta $GITHUB_REF_NAME no coincide con VERSION ($version)"
+            exit 1
+          fi
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+
+      - name: Validar y generar
+        run: |
+          python tools/validate.py
+          python tools/build.py --check
+
+      - name: Empaquetar
+        run: python tools/package.py
+
+      - name: Notas desde CHANGELOG.md
+        run: python tools/package.py --changelog "$VERSION" > release-notes.md
+
+      - name: Crear release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          prerelease=""
+          case "$VERSION" in *-*) prerelease="--prerelease" ;; esac
+          gh release create "$GITHUB_REF_NAME" "dist/Senda-$VERSION.zip" \
+            --title "Senda $VERSION" --notes-file release-notes.md $prerelease

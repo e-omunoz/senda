@@ -1,0 +1,39 @@
+# Guía human-mage: Mago: portales (40). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-40-train"
+title = "Mago: portales (40)"
+levels = [40, 41]
+map = 1453
+summary = "Nivel 40: Portal: Ventormenta y Forjaz."
+
+[[step]]
+id = "mg-40-train-001"
+do = "train"
+npc = 2485
+spells = [10059, 11416]
+at = [1453, 50.4, 86.0]
+text = "Nivel 40: aprende Portal: Ventormenta y Portal: Forjaz con Larimaine Purdue."
+tip = "Compra Runas de Portales. Vende portales en la ciudad: la gente deja propina."
+status = "unverified"
+sources = ["questie:npc/2485", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-40-train-002"
+do = "note"
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "Entrena con Jennea Cannon Descarga de Pirofrío y los rangos nuevos."
+tip = "Descarga de Pirofrío es nueva en Forever (Fuego y Escarcha, ralentiza)."
+status = "unverified"
+sources = ["questie:npc/5497"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-40-train-003"
+do = "note"
+at = [1429, 84.0, 65.0, "Establo de Vega del Este"]
+optional = true
+text = "Monta: el mago paga su equitación. Caballos en el campamento maderero de Vega del Este (Elwynn)."
+status = "unverified"
+sources = []
+checked = "2026-11-11"

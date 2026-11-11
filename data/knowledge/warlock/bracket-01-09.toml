@@ -1,0 +1,78 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Brackets.lua, tramo 1-9).
+id = "warlock-bracket-1-9"
+class = "WARLOCK"
+kind = "page"
+title = "Niveles 1-9: lo básico"
+levels = [1, 9]
+order = 10
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+
+[[block]]
+heading = "Zonas"
+body = """
+- **1-5:** Valle de Crestanevada.
+- **5-10:** Dun Morogh. Haz todas las misiones de Kharanos y del lago de Forjaz."""
+
+[[block]]
+heading = "Demonio"
+body = """
+**Diablillo** (misión de nivel 1). Ponlo en defensivo hasta el 10: no genera amenaza suficiente para tanquear, así que abres tú y él dispara."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **1:** Descarga de las Sombras, Inmolar, Piel de demonio.
+- **4:** Corrupción, Maldición de debilidad.
+- **6:** Transfusión de vida.
+- **8:** Terror de agonía, Miedo."""
+
+[[block]]
+heading = "Rotación"
+body = """
+- **1-3:** Descarga de las Sombras e Inmolar mientras viaja; remata a golpes.
+- **4-7:** Corrupción, Inmolar, varita.
+- **8-9:** Terror de agonía, Corrupción, varita. Ya casi no lanzas Descarga de las Sombras: gasta mucho maná."""
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 5:** SND_Varita.
+- **Al 8:** SND_Abrir y SND_Miedo.
+
+Créalas desde la pestaña Macros."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+Al 5 aprende **Sastrería**, **Encantamiento**, **Primeros auxilios** y **Cocina**.
+
+Objetivo al 10:
+- Sastrería 50-75 con Madejas de paño de lino y Guantes de lino pesado.
+- Encantamiento 50 desencantando verdes.
+- Fabrica la **Varita mágica inferior** en cuanto llegues a la habilidad."""
+
+[[block]]
+heading = "Equipo"
+body = """
+Prioridad: **varita > Intelecto/Espíritu > Aguante**. Cualquier tela con Intelecto o Espíritu vale. Bolsas: compra o fabrica bolsas de lino."""
+
+[[block]]
+heading = "Oro"
+body = """
+Vende todos los grises. No vendas el paño: lo necesitas. Objetivo: tener 1-2 de oro al llegar al 10 para entrenar."""
+
+[[block]]
+heading = "Objetivos antes del 10"
+body = """
+- Diablillo invocado.
+- Varita equipada.
+- Sastrería y Encantamiento aprendidas.
+- 2-3 Fragmentos de alma guardados."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Transfusión de vida en vez de beber: tu vida se recupera sola al caminar.
+- Lanza Corrupción e Inmolar y pasa al siguiente si el primero va a morir solo.
+- El Diablillo da Pacto de sangre (Aguante) también a tu grupo."""

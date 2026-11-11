@@ -1,0 +1,259 @@
+# Senda — arquitectura
+
+Senda es un addon de guía de leveo paso a paso para **WoW Forever** (cliente `_forever_`,
+`## Interface: 16001`). Empieza con **brujo gnomo** y **mago humano** (1 → nivel máximo), pero
+todo está pensado para añadir cualquier raza/clase sin tocar el motor.
+
+Principios:
+
+1. **Los datos no son código.** Las guías viven en `data/` (TOML) y se compilan a Lua.
+   El motor no sabe nada de brujos ni de magos.
+2. **Cada dato tiene procedencia.** Todo paso lleva `status` (`verified` / `unverified` /
+   `disputed`) y `sources`. Solo se publica como verificado lo que pasa el harness.
+3. **El juego es la fuente de verdad final.** El addon registra observaciones reales
+   (misiones aceptadas/entregadas, posición, id del PNJ) que el harness usa para verificar.
+4. **Nombres por id, no por texto.** Misiones, PNJ, objetos y hechizos se referencian por id;
+   el nombre se resuelve en el cliente (así coincide con el idioma del jugador).
+5. **No se copian datos de terceros con licencia restrictiva.** QuestieDB es "all rights
+   reserved": solo se lee en local para verificar (`.cache/`, ignorado por git) o en tiempo de
+   ejecución si el usuario tiene Questie instalado. Nunca se commitea.
+
+## Estructura del repositorio
+
+```
+addon/Senda/              Addon (esta carpeta se copia a Interface/AddOns/Senda)
+  Senda.toc
+  Core/                   Init, utilidades, eventos, base de datos guardada, locales
+  Engine/                 Registro de guías, condiciones, progreso, detección de pasos
+  UI/                     HUD, flecha, panel principal, opciones, botón de minimapa
+  Recorder/               Observaciones en juego para el harness
+  Knowledge/              Paneles de conocimiento (rotaciones, talentos, macros...) generados
+  Guides/                 GENERADO por tools/build.py desde data/ (sí se commitea)
+data/
+  guides/<guide-id>/      Secciones TOML de cada guía (orden por prefijo numérico)
+  guides/<guide-id>/guide.toml   Metadatos de la guía (raza/clase/facción, secciones)
+  shared/                 Secciones compartidas (rutas de Alianza, etc.)
+  knowledge/<class>/      Conocimiento por clase (talentos, rotación, macros, profesiones)
+  observations/           Observaciones ingeridas desde SavedVariables (JSON, sin datos personales)
+schema/                   JSON Schema de los TOML (fuente de verdad del formato)
+tools/                    Python stdlib: build, validate, verify, ingest, site, package
+harness/                  Harness de IA: fuentes, agentes de investigación, informes
+site/                     Plantillas de la web (GitHub Pages); la salida va a _site/ (ignorada)
+.github/workflows/        CI, release, Pages, verificación programada
+```
+
+## Formato de guía (TOML)
+
+`data/guides/<guide-id>/guide.toml`:
+
+```toml
+id = "gnome-warlock"
+title = "Brujo gnomo 1-60"
+faction = "Alliance"
+races = ["Gnome"]
+classes = ["WARLOCK"]
+# Lista ordenada de secciones; "shared:<id>" apunta a data/shared/<id>.toml
+sections = ["01-coldridge", "02-dun-morogh", "shared:alliance-12-20-loch-modan", "..."]
+```
+
+Sección (`data/guides/<guide-id>/01-coldridge.toml` o `data/shared/<id>.toml`):
+
+```toml
+id = "coldridge"
+title = "Valle de Crestanevada"
+levels = [1, 6]
+map = 1426                # uiMapID principal
+summary = "Texto corto que se muestra al entrar en la sección."
+
+[[step]]
+id = "coldridge-001"       # único en todo el repo, estable (lo usa el progreso guardado)
+do = "accept"              # ver tipos abajo
+quest = 179
+npc = 658
+at = [1426, 29.9, 71.2]    # [uiMapID, x, y] en porcentaje 0-100
+text = "Habla con Sten Stoutarm y coge la misión."
+tip = "Opcional: consejo de experto."
+status = "unverified"      # verified | unverified | disputed
+sources = ["questie:quest/179"]
+```
+
+### Campos de paso
+
+| Campo | Tipo | Uso |
+|---|---|---|
+| `id` | string | Obligatorio, único global, `[a-z0-9-]+` |
+| `do` | enum | Obligatorio. Tipo de paso |
+| `text` | string | Obligatorio. Instrucción en español, imperativo, breve |
+| `tip` | string | Consejo opcional (expertos) |
+| `quest` | int | Misión (accept/turnin/complete) |
+| `obj` | int | Índice de objetivo (complete parcial), opcional |
+| `npc` | int | PNJ relacionado |
+| `item` | int | Objeto (buy/have/use/loot) |
+| `count` | int | Cantidad (have/buy/loot) |
+| `spells` | int[] | Hechizos (train) — completa cuando se conocen todos |
+| `level` | int | Nivel (do = "level") |
+| `prof` | string | Profesión (`tailoring`, `enchanting`...) para learn_prof / skill |
+| `skill` | int | Rango de profesión objetivo |
+| `at` | [map, x, y] | Destino principal |
+| `wps` | [[map, x, y, "etiqueta"], ...] | Puntos adicionales |
+| `radius` | number | Metros para `goto` (por defecto 12) |
+| `node` | string | Nombre/id de nodo de vuelo (getfp/fly) |
+| `zone` | int | uiMapID de llegada (hearth/fly) |
+| `if` | tabla | Filtros: `class`, `race`, `faction`, `prof`, `minlevel`, `maxlevel` |
+| `optional` | bool | Se puede saltar sin penalización |
+| `chain` | string | Pasos que se completan juntos |
+| `link` | string | Ruta en la web (GitHub Pages) para leer más |
+| `status` | enum | Obligatorio: `verified`, `unverified`, `disputed` |
+| `sources` | string[] | Obligatorio (vacío solo si `unverified`) |
+| `checked` | date | Fecha de la última verificación |
+
+### Tipos de paso (`do`) y detección automática
+
+| `do` | Se completa cuando |
+|---|---|
+| `goto` | El jugador está a menos de `radius` metros de `at` |
+| `accept` | `QUEST_ACCEPTED` con `quest`, o la misión ya está en el registro / completada |
+| `complete` | Todos (u `obj`) los objetivos de `quest` están cumplidos, o ya entregada |
+| `turnin` | `QUEST_TURNED_IN` con `quest` o `IsQuestFlaggedCompleted(quest)` |
+| `train` | Se conocen todos los `spells` |
+| `learn_prof` | Se tiene la profesión `prof` |
+| `skill` | Rango de `prof` ≥ `skill` |
+| `buy` / `have` / `loot` | `GetItemCount(item) >= count` |
+| `use` | Uso de `item` detectado o paso manual |
+| `sethearth` | Evento de vincular piedra de hogar (`HEARTHSTONE_BOUND`) en la zona del paso |
+| `hearth` | Cambio a `zone` tras lanzar Piedra de hogar |
+| `getfp` | Se descubre el nodo `node` (`TAXIMAP_OPENED`) |
+| `fly` | Llegada a `zone` |
+| `level` | Nivel del jugador ≥ `level` |
+| `dungeon` | Manual (o todas las `quest` asociadas entregadas) |
+| `note` | Manual (botón "Hecho") |
+
+Todo paso se puede marcar manualmente (Hecho / Saltar / Atrás).
+
+## Contrato Lua (generado)
+
+`tools/build.py` genera `addon/Senda/Guides/<guide-id>.lua` y `addon/Senda/Guides/Shared.lua`:
+
+```lua
+local _, Senda = ...
+Senda.Guides:RegisterSection({ id = "coldridge", title = "...", levels = {1, 6}, map = 1426,
+  steps = { { id = "coldridge-001", ["do"] = "accept", quest = 179, npc = 658,
+              at = {1426, 29.9, 71.2}, text = "...", status = "unverified" }, ... } })
+Senda.Guides:RegisterGuide({ id = "gnome-warlock", title = "...", faction = "Alliance",
+  races = {"Gnome"}, classes = {"WARLOCK"}, sections = {"coldridge", ...} })
+```
+
+`sources` y `checked` **no** se incluyen en el Lua (solo `status`), para no inflar el addon.
+El `.toc` incluye `Guides\Guides.xml`, que también genera el build.
+
+## SavedVariables
+
+- `SendaDB` (por personaje): guía activa, índice/estado de pasos, posiciones de marcos, opciones.
+- `SendaRecorderDB` (cuenta): observaciones `{ t, kind, quest, npc, map, x, y, level, race, class, build }`.
+  `kind` ∈ `accept`, `turnin`, `npc_seen` (trainer/vendor/gossip), `fp`, `bind`. Sin nombres de
+  personaje ni de reino.
+
+## Harness de verificación
+
+1. **Estático** (`tools/validate.py`): esquema, ids únicos, orden de niveles, referencias.
+2. **Base de datos local** (`tools/verify.py`): cruza con QuestieDB (Forever) leído en local:
+   existe la misión, el PNJ inicia/termina la misión, coordenadas dentro de tolerancia,
+   prerrequisitos antes en la ruta, raza/clase pueden coger la misión.
+3. **Observaciones de juego** (`tools/ingest.py`): lo registrado en partida confirma o refuta.
+4. **IA** (`harness/`): agentes que leen fuentes oficiales y comunitarias (`harness/sources.toml`),
+   extraen afirmaciones con cita, las comparan con `data/` y proponen cambios en un PR con informe.
+   Regla: `verified` exige una de estas tres cosas:
+   - (a) una fuente oficial;
+   - (b) una observación en el juego;
+   - (c) que la base de datos local coincida **y** el harness haya encontrado la cita literal en una fuente
+     independiente.
+
+   Citar una guía de leveo genérica (por ejemplo, la página de rutas de un sitio) no basta para dar por
+   verificado un paso concreto. El resto entra como `unverified` o `disputed`.
+
+   Confirmar los ids y las coordenadas contra QuestieDB se muestra como evidencia en los informes, pero por sí
+   solo no da el estado de verificado.
+
+## Versionado
+
+SemVer. `CHANGELOG.md` en español. El build escribe la versión en el `.toc`.
+Los releases empaquetan `Senda-<versión>.zip` (carpeta `Senda/`) desde GitHub Actions.
+
+## Convivencia con otros addons
+
+- **Questie se mantiene instalado** (lo usa el jugador). Senda no dibuja iconos de misión en el mapa ni duplica
+  su seguimiento de misiones. Si Questie está cargado, Senda puede consultar su base de datos en tiempo de
+  ejecución (opcional, protegido con `pcall`) para completar las coordenadas que falten.
+- **TomTom se sustituye.** Senda trae su propia flecha (`UI/Arrow.lua`):
+  - Muestra distancia, tiempo estimado y giro.
+  - Tiene **modo cadáver**: al morir apunta automáticamente a tu cuerpo usando
+    `C_DeathInfo.GetCorpseMapPosition` y vuelve a la guía al resucitar.
+  - Puede apuntar a cualquier punto con `/senda way <x> <y> [texto]`.
+  - Si TomTom está instalado, se puede usar como alternativa (opción), pero no hace falta.
+
+## API interna del núcleo (contrato entre módulos)
+
+Todo vive en la tabla de espacio de nombres del addon (`local ADDON, Senda = ...`) y se expone también como
+`_G.Senda` para depurar.
+
+```lua
+Senda.VERSION                          -- desde el .toc
+Senda.L                                -- tabla de cadenas localizadas (esES por defecto, enUS de reserva)
+Senda.db                               -- SendaDB (por personaje), listo tras PLAYER_LOGIN
+Senda.recorder                         -- SendaRecorderDB (cuenta)
+Senda:Print(msg)                       -- mensaje con prefijo en el chat
+Senda:Debug(msg)                       -- solo si db.opts.debug
+Senda.Events:On(event, fn)             -- varios suscriptores por evento; fn(event, ...)
+Senda.Events:Fire(name, ...)           -- eventos internos: "SENDA_STEP_CHANGED", "SENDA_GUIDE_CHANGED",
+                                       --   "SENDA_STEP_COMPLETED", "SENDA_READY"
+Senda.Compat.*                         -- capa sobre la API moderna con fallbacks:
+                                       --   QuestTitle(id), IsQuestDone(id), IsOnQuest(id), QuestObjectives(id),
+                                       --   SpellName(id), SpellIcon(id), IsSpellKnown(id), ItemName(id),
+                                       --   ItemIcon(id), ItemCount(id), PlayerMapPos() -> map, x, y (0-1),
+                                       --   WorldDistance(map1,x1,y1, map2,x2,y2) -> metros, angulo
+                                       --   NpcIdFromGUID(guid) -> id o nil, ProfessionRank(key) -> rango, max
+Senda.Guides:RegisterSection(t), :RegisterGuide(t), :Get(id), :ForPlayer() -> lista de guías válidas
+Senda.Engine:CurrentStep(), :Advance(), :Back(), :Skip(), :Complete(stepId), :SetGuide(id)
+Senda.Arrow:SetTarget(map, x, y, label, source), :Clear(source)
+Senda.Knowledge:Register(t), :ForClass(class) -> lista de páginas
+Senda.UI:RegisterTab({ key, title, icon, order, build = function(parent) end, refresh = function() end })
+Senda.UI:Frame / :Button / :ScrollText / :Backdrop       -- helpers de estilo común
+Senda.Options:Register({ key, label, type = "toggle"|"slider", default, min, max, onChange })
+```
+
+Propietarios de carpetas del addon:
+- `Core/`, `Engine/`, `UI/`, `Recorder/` y `Senda.toc`: equipo del motor.
+- `Modules/`: utilidades portadas (equipo, vendedores, instructores, desencantar, macros, barras, análisis,
+  asesor y pareja).
+- `Guides/` y `Knowledge/`: los genera `tools/build.py`.
+
+Cada carpeta tiene su `<Carpeta>.xml` y el `.toc` solo incluye esos XML, en este orden:
+`Core\Core.xml`, `Engine\Engine.xml`, `Recorder\Recorder.xml`, `UI\UI.xml`, `Knowledge\Knowledge.xml`,
+`Guides\Guides.xml`, `Modules\Modules.xml`.
+
+## Formato de conocimiento (TOML)
+
+`data/knowledge/<class>/*.toml` (o `data/knowledge/general/*.toml`) se compila a Lua **tal cual**: el build hace
+un volcado genérico de TOML a una tabla Lua y quita `sources` y `checked`. Cada archivo:
+
+```toml
+id = "warlock-bracket-10-19"
+class = "WARLOCK"            # o "ANY"
+kind = "page"                # page | talents | spells | macros | professions | rotation
+title = "Niveles 10-19: el Abisario"
+levels = [10, 19]            # opcional
+order = 20
+status = "verified"
+sources = ["..."]
+
+[[block]]                    # kind = "page"
+heading = "Zonas"
+body = "Texto. Admite **negrita**, listas con '- ' y enlaces [texto](https://...)."
+```
+
+Tipos estructurados (los usa el módulo correspondiente):
+- `talents`: `[[pick]] level, talent, tree, note`
+- `spells`: `[[train]] level, spells = [ids], note`
+- `macros`: `[[macro]] name, icon, minlevel, body, note`
+- `professions`: `[[route]] prof, from, to, craft (id), mats = [[id, n]], trainer = [map, x, y, "nombre"]`
+- `rotation`: `[[phase]] from, to, text, spells = [ids]`

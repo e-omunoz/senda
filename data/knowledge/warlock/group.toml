@@ -1,0 +1,48 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Texts.lua, ns.TEXTS.grupo).
+id = "warlock-group"
+class = "WARLOCK"
+kind = "page"
+title = "Grupo, mazmorras y PvP"
+order = 120
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+
+[[block]]
+heading = "Antes del primer pull"
+body = """
+- Piedra de salud para cada miembro (créalas y dalas por comercio).
+- Piedra de alma en el sanador.
+- Ritual de invocación para traer a los que falten (en Forever es la única forma de invocar a una mazmorra).
+- Demonio: Diablillo (Pacto de sangre) casi siempre. Manáfago si hay muchos lanzadores. Abisario si no hay un buen tanque."""
+
+[[block]]
+heading = "Amenaza"
+body = """
+- No abras con Inmolar: espera 2-3 golpes del tanque.
+- DoTs en el objetivo marcado con calavera, varita, y Drenar vida si te falta vida.
+- Si se te viene un enemigo, Miedo solo si nadie lo va a tanquear: el miedo suelta enemigos por toda la sala.
+- Corrupción en varios objetivos genera amenaza repartida y puede quitarle enemigos al tanque. Pregunta antes."""
+
+[[block]]
+heading = "Utilidad que te van a pedir"
+body = """
+- Maldición de los elementos en jefes (en Forever cubre toda la magia; la de las Sombras ya no existe).
+- Maldición de temeridad en enemigos que huyen.
+- Desterrar demonios y elementales.
+- Subyugar demonio en zonas con demonios.
+- Drenar maná a lanzadores si tu grupo lo necesita.
+- Transfusión de vida: ojo, gasta tu vida y al sanador le cuesta maná. Recupérala con Drenar vida."""
+note = "«Maldición de los elementos cubre toda la magia y la de las Sombras ya no existe»: cambio de Forever sin fuente citada."
+
+[[block]]
+heading = "PvP"
+body = """
+- **Demonio:** Manáfago (Bloqueo de hechizo, Devorar magia). Súcubo para Seducir.
+- **Gnomo:** Artista del escape te saca de raíces y ralentizaciones.
+- **Contra guerreros:** Miedo, Maldición de agotamiento (talento), corre y pon DoTs.
+- **Contra pícaros:** Armadura demoníaca siempre, Corrupción al primero que veas y Miedo nada más salir del sigilo.
+- **Contra magos:** Manáfago con Bloqueo de hechizo y Devorar magia para quitarle escudos.
+- **Contra sacerdotes:** Maldición de la lengua y Drenar maná.
+- **Contra cazadores:** pégate a ellos; su zona muerta de cerca les impide disparar.
+- **Contra paladines:** DoTs y aguanta; quitan maldiciones, así que prioriza Corrupción.
+- **Contra druidas:** Corrupción y Terror de agonía antes de que cambien de forma; Miedo cuando curen."""

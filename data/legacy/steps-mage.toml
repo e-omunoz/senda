@@ -1,0 +1,249 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua, MG.STEPS). NO se publica: es la entrada para las rutas detalladas.
+# Fuentes del autor (9-10 nov 2026): datos de cliente de Wowhead Forever (nombres esES, niveles), guía de Escarcha de
+# Wowhead (Porom, 4-nov), Warcraft Tavern, Method, ConquestCapped, foreverwisp (ruta humana 1-20) y notas de Blizzard.
+# Coordenadas de Villanorte y Ventormenta: guías de Forever/Classic; pueden variar un poco.
+# do: train si el paso tenía hechizo, goto si solo tenía puntos, note en otro caso. Sin ids de misión ni de PNJ.
+id = "legacy-mage"
+title = "Mago humano: hitos de la guía antigua"
+levels = [1, 60]
+summary = "Hitos de la guía antigua (BrujoGnomoGuia 4.1.0). Entrada para escribir las rutas detalladas; no se publica tal cual."
+if = { class = ["MAGE"] }
+
+[[step]]
+id = "legacy-mg-001"
+do = "goto"
+text = "Valle de Villanorte. Haz Limpieza del campamento kobold para el Mariscal McBride (48.8, 41.7): te da Carta glífica. Llévasela a Khelden Bremen, el instructor de mago: Abadía de Villanorte, ala de la biblioteca (al fondo a la izquierda), subiendo las escaleras de madera (49.6, 39.6). Aprende Intelecto Arcano y ponte Armadura de Escarcha."
+at = [1429, 48.8, 41.7, "Mariscal McBride"]
+wps = [[1429, 49.6, 39.6, "Khelden Bremen (instructor de mago, arriba)"]]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Primeros pasos (Villanorte)». Nivel recomendado: 1. Varios puntos: no es un único destino, revisar al detallar la ruta."
+
+[[step]]
+id = "legacy-mg-002"
+do = "train"
+text = "Entrena Descarga de Escarcha y Conjurar agua con Khelden Bremen. Conjura agua antes de cada salida: es gratis y te ahorra oro."
+spells = [116]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Descarga de Escarcha y agua». Nivel recomendado: 4."
+
+[[step]]
+id = "legacy-mg-003"
+do = "goto"
+text = "En Ventormenta, Barrio de los Magos: Sastrería con Sellandus o Georgio Bolero (hacia 42.0, 76.2) y Encantamiento con Lucan Cordell (su tienda junto a los canales). Si no los encuentras, pregunta a un guardia. Aprende también Primeros auxilios y Cocina (Tomas, Villadorada). Guarda todo el paño y desencanta los verdes que no uses."
+at = [1453, 42.0, 76.2, "Sastrería: Sellandus"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Profesiones (Ventormenta)». Nivel recomendado: 5."
+
+[[step]]
+id = "legacy-mg-004"
+do = "train"
+text = "El instructor te enseña Entender pergamino: la habilidad nueva del mago. Los enemigos sueltan pergaminos sin traducir (KWYJIBO, CWAL…). Al descifrarlos subes Comprensión y obtienes encantamientos de arma, familiares y utilidades. Si fallas, te conviertes en oveja 8 segundos y conservas el pergamino. Entrena también Conjurar comida y Explosión de Fuego."
+spells = [1296017]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Comprensión». Nivel recomendado: 6."
+
+[[step]]
+id = "legacy-mg-005"
+do = "train"
+text = "Entrena Polimorfia y Misiles Arcanos. Polimorfia funciona con bestias, humanoides y alimañas, dura 20 s y el objetivo se cura mientras está convertido."
+spells = [118]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Polimorfia y Misiles Arcanos». Nivel recomendado: 8."
+
+[[step]]
+id = "legacy-mg-006"
+do = "train"
+text = "Primer talento: Especialización en varitas 2/2 (Wowhead la llama «valiosísima»). Entrena Nova de Escarcha en Villadorada o en Ventormenta. Si subes con un brujo, mira la pestaña En pareja: a partir de aquí os conviene ir juntos."
+spells = [122]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Talentos y Nova de Escarcha». Nivel recomendado: 10."
+
+[[step]]
+id = "legacy-mg-007"
+do = "goto"
+text = "Zaldimar Wefhellt, en la posada El Orgullo del León de Villadorada (43.3, 66.2), te da Habla con Jennea. Jennea Cannon está en lo alto del Sagrario de los Magos de Ventormenta (49.6, 85.8): sube la rampa exterior, la interior y el portal de arriba. Te da un frasco para llenar en la cascada del Lago Espejo, al suroeste de las puertas de Ventormenta (hacia 32.1, 58.2; otra guía dice 28, 61). Recompensa a elegir: Orbe o Bastón Ley."
+at = [1429, 43.3, 66.2, "Zaldimar Wefhellt (posada de Villadorada)"]
+wps = [[1453, 49.6, 85.8, "Jennea Cannon (Sagrario de los Magos)"], [1429, 32.1, 58.2, "Cascada del Lago Espejo"]]
+status = "disputed"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Habla con Jennea y el Lago Espejo». Nivel recomendado: 10. Varios puntos: no es un único destino, revisar al detallar la ruta. Coordenadas de la cascada del Lago Espejo en disputa: 32.1, 58.2 (hacia) u otra guía 28, 61."
+
+[[step]]
+id = "legacy-mg-008"
+do = "goto"
+text = "Del 10 al 15: Páramos de Poniente (base en la Colina del Centinela, 56, 47) o Loch Modan (tranvía a Forjaz). Si subes con un brujo gnomo, quedad en Páramos de Poniente (pestaña En pareja)."
+at = [1436, 56.0, 47.0, "Colina del Centinela"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Páramos de Poniente o Loch Modan». Nivel recomendado: 11."
+
+[[step]]
+id = "legacy-mg-009"
+do = "goto"
+text = "Mazmorra 13-18 dentro de Forjaz (tranvía desde Ventormenta): Gran Fundición, sala del trono, pasillo de la izquierda hacia la Antigua Forjaz (43.5, 52.0). La Alianza tiene sus 5 misiones. Lleva agua para todo el grupo."
+at = [1455, 43.5, 52.0, "Hall of Thanes (Antigua Forjaz)"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Hall of Thanes». Nivel recomendado: 13."
+
+[[step]]
+id = "legacy-mg-010"
+do = "train"
+text = "Entrena Deflagración Arcana. En Páramos de Poniente, el tablón de la granja Alexston (37, 50) empieza la cadena del Saco de dormir acogedor: hasta +3% de experiencia."
+spells = [1449]
+at = [1436, 37.0, 50.0, "Saco de dormir: tablón de la granja Alexston"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Deflagración Arcana y saco de dormir». Nivel recomendado: 14."
+
+[[step]]
+id = "legacy-mg-011"
+do = "goto"
+text = "Tres Caminos (Montañas Crestagrana). Cajas de suministros (caen de enemigos y también en mazmorras) a Marcy Baker (9.6, 70.9) y patrones de Sastrería con Favor a Mivin Shadowweave (10.0, 73.0)."
+at = [1433, 9.6, 70.9, "Marcy Baker: entrega de cajas"]
+wps = [[1433, 10.0, 73.0, "Mivin Shadowweave: patrones de Sastrería"]]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Favor de mercader». Nivel recomendado: 15. Varios puntos: no es un único destino, revisar al detallar la ruta."
+
+[[step]]
+id = "legacy-mg-012"
+do = "goto"
+text = "Cadena de clase con Jennea Cannon (Sagrario de los Magos): Informa a Jennea e Investiga la Reclusa Azul. Necesitas lino y Gemas de falla cargadas de la Mina Arroyoplata (Loch Modan). Se entrega a Wynne Larson, Ropa Larson (Ventormenta, 41.5, 76.3). Recompensa: Túnica de tejido de maná."
+at = [1453, 49.6, 85.8, "Jennea Cannon"]
+wps = [[1453, 41.5, 76.3, "Wynne Larson (Ropa Larson)"]]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Túnica de tejido de maná». Nivel recomendado: 15. Varios puntos: no es un único destino, revisar al detallar la ruta."
+
+[[step]]
+id = "legacy-mg-013"
+do = "train"
+text = "Entrena Traslación, Evocación, Escudo de maná, Ventisca y Custodia de Fuego. Teletransporte a: Ventormenta con la instructora de portales del Sagrario de los Magos (Larimaine Purdue; una guía dice 39.6, 79.6 y otra 49, 84). Cada teletransporte gasta una Runa de Teletransporte: las venden en Componentes Esenciales, junto al Sagrario. Al 22, talento Lanza de hielo."
+spells = [3561]
+at = [1453, 39.6, 79.6, "Larimaine Purdue (portales)"]
+status = "disputed"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Teletransporte, Traslación y Evocación». Nivel recomendado: 20. Coordenadas de Larimaine Purdue en disputa: 39.6, 79.6 u otra guía 49, 84. Nombre sin confirmar (marcado «(?)»). Dudoso además que el Teletransporte lo enseñe la instructora de portales y no el instructor de mago."
+
+[[step]]
+id = "legacy-mg-014"
+do = "goto"
+text = "Entrega un libro de biblioteca a Garion Wendell, Sagrario de los Magos de Ventormenta (37.6, 80.8). Aprendes Estudiar: 6 s, una vez por hora, gasta una pluma ligera y solo dentro de una biblioteca. Da un lote de pergaminos ya descifrados (no suben la habilidad)."
+at = [1453, 37.6, 80.8, "Garion Wendell (bibliotecario)"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Biblioteca: Estudiar». Nivel recomendado: 20. Corregido «Santuario de los Magos» → «Sagrario de los Magos» (el resto de la fuente usa Sagrario)."
+
+[[step]]
+id = "legacy-mg-015"
+do = "note"
+text = "Cetro de lápida (misión de Cavernas de Brazanegra) y Bastón de aguja fría (Rath'Mael, Ruins of Lordaeron; queda en tierra de la Horda). Como humano ya sabes usar espadas de una mano; Woo Ping (Ventormenta, 57.1, 57.7) enseña Bastones si no los tienes. La racial Despiadado da crítico con cualquier arma."
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Armas para subir». Nivel recomendado: 22."
+
+[[step]]
+id = "legacy-mg-016"
+do = "train"
+text = "Entrena Cono de frío (ahora dura menos: 40% de ralentización 6 s). Cadena de clase con el Alto hechicero Andromath (Ventormenta): Tratado de Ur sobre magia de las Sombras (Torre de Ilgalar, Montañas Crestagrana), Seda de araña prístina (Bosque del Ocaso, a Wynne Larson) y Prenda de nudo astral."
+spells = [120]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Cono de frío y túnica astral». Nivel recomendado: 26."
+
+[[step]]
+id = "legacy-mg-017"
+do = "train"
+text = "Entrena Conjurar ágata de maná. Úsala en combate cuando te falte maná: no gasta turno. Crea otra en cuanto acabe el combate."
+spells = [759]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Gema de maná». Nivel recomendado: 28."
+
+[[step]]
+id = "legacy-mg-018"
+do = "note"
+text = "Viaje al pantano (se coge al 30) te la da Jennea (Ventormenta) y se entrega a Tabetha en el Pantano de Fangos Oscuros (43, 57); sigue con la Varita de mago (40). Recompensa a elegir: Varita Furia de Hielo, de Fuerza abisal o de Fuego iracundo. Method recomienda hacerla hacia el 40. Ahora entrena Armadura de hielo y Teletransporte a Darnassus."
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Varita de Furia de Hielo». Nivel recomendado: 30."
+
+[[step]]
+id = "legacy-mg-019"
+do = "note"
+text = "Wowhead recomienda reiniciar talentos al 33 y pasar a la build 33-60 (sin Mordiescarcha, que no se acumula con Dedos de Escarcha). Mira la pestaña Por nivel. Reiniciar ya cuesta 1-5 de oro."
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Cambio de talentos». Nivel recomendado: 33."
+
+[[step]]
+id = "legacy-mg-020"
+do = "train"
+text = "Entrena Armadura de mago: en Forever el 50% de tu regeneración de maná sigue mientras lanzas (algunas guías aún dicen 30%). Úsala para subir; Armadura de hielo cuando te peguen mucho."
+spells = [6117]
+status = "disputed"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Armadura de mago». Nivel recomendado: 34. Armadura de mago: 50% de regeneración en Forever según la fuente; algunas guías aún dicen 30%."
+
+[[step]]
+id = "legacy-mg-021"
+do = "note"
+text = "Entrena Descarga de Pirofrío (nuevo: Fuego y Escarcha a la vez, ralentiza un 40%) y Portal: Ventormenta. El mago sí paga la equitación (unos 100 de oro: el brujo la recibe gratis, el mago no); caballos humanos en el Campamento de los Leñadores de Vega del Este (Bosque de Elwynn). Doble especialización: Escarcha para subir y Fuego para bandas. Vende portales en las ciudades."
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Descarga de Pirofrío, portales y montura». Nivel recomendado: 40."
+
+[[step]]
+id = "legacy-mg-022"
+do = "note"
+text = "Nuevo en Forever al 50 (Runa de Teletransporte, 10 s). También Portal: Darnassus. Cadena de clase Magecraft → Señor de la guerra Krellian (Azshara) del 50 al 60."
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Teletransporte a: Dalaran». Nivel recomendado: 50."
+
+[[step]]
+id = "legacy-mg-023"
+do = "note"
+text = "Intelecto Arcano para todo el grupo. Lleva siempre componentes."
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Resplandor Arcano». Nivel recomendado: 56."
+
+[[step]]
+id = "legacy-mg-024"
+do = "note"
+text = "Polimorfia: vaca. Para bandas, Fuego tiene más daño a un objetivo; Escarcha más control. Las bandas abren el 9 de diciembre (Barrow Deeps, Hyjal Summit y Guarida de Onyxia)."
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://conquestcapped.com/", "cita:foreverwisp (ruta humana 1-20)"]
+checked = "2026-11-10"
+note = "Título original: «Nivel máximo». Nivel recomendado: 60."

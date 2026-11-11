@@ -1,0 +1,114 @@
+# Ruta compartida de Alianza (brujo gnomo y mago humano), 45-60. Generada con QuestieDB local; textos propios.
+id = "a60-endgame"
+title = "Nivel 60: y ahora qué"
+levels = [60, 60]
+map = 1453
+summary = "Entrena al 60, empieza la armonización de Onyxia y prepárate para las bandas del 9 de diciembre de 2026."
+
+[[step]]
+id = "a60-endgame-001"
+do = "goto"
+at = [1453, 71.3, 72.2]
+text = "Ve a Ventormenta (el mago con Teletransporte)."
+status = "unverified"
+sources = ["https://www.icy-veins.com/wow-forever/news/weekly-reset-attunement-locations-raid-sizes-official-wow-forever-raid-preview/", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60", "https://www.warcrafttavern.com/forever/guides/dungeons/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a60-endgame-002"
+do = "train"
+npc = 5495
+spells = [11661, 11668]
+at = [1453, 39.9, 84.2]
+text = "Brujo: entrena los hechizos del nivel 60."
+if = { class = ["WARLOCK"], minlevel = 60 }
+status = "unverified"
+sources = ["questie:npc/5495", "https://www.icy-veins.com/wow-forever/news/weekly-reset-attunement-locations-raid-sizes-official-wow-forever-raid-preview/", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60", "https://www.warcrafttavern.com/forever/guides/dungeons/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a60-endgame-003"
+do = "train"
+npc = 5497
+spells = [10150, 10220, 10187]
+at = [1453, 49.6, 85.8]
+text = "Mago: entrena los hechizos del nivel 60."
+if = { class = ["MAGE"], minlevel = 60 }
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.icy-veins.com/wow-forever/news/weekly-reset-attunement-locations-raid-sizes-official-wow-forever-raid-preview/", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60", "https://www.warcrafttavern.com/forever/guides/dungeons/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a60-endgame-004"
+do = "note"
+text = "Haz los ascensos de la Legacy: Sastrería y Encantamiento a 300 dan puntos y recetas para la banda."
+tip = "Mira la página de profesiones del addon para la ruta de materiales."
+status = "unverified"
+sources = ["https://www.icy-veins.com/wow-forever/news/weekly-reset-attunement-locations-raid-sizes-official-wow-forever-raid-preview/", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60", "https://www.warcrafttavern.com/forever/guides/dungeons/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a60-endgame-005"
+do = "dungeon"
+quests = [4241, 4242, 4264, 4282, 4322]
+at = [1428, 29.0, 28.9]
+text = "Armonización de Onyxia (1): en Profundidades de Roca Negra rescata a Windsor y vuelve con Maxwell."
+tip = "Necesitas la nota arrugada que suelta un general de Profundidades de Roca Negra."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/dungeons/", "https://www.icy-veins.com/wow-forever/news/weekly-reset-attunement-locations-raid-sizes-official-wow-forever-raid-preview/", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60", "https://expcarry.com/wow-forever-leveling-guide-alliance", "questie:quest/4241", "questie:quest/4242", "questie:quest/4264", "questie:quest/4282", "questie:quest/4322"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a60-endgame-006"
+do = "dungeon"
+quests = [6402, 6403, 6501]
+at = [1453, 73.6, 91.1]
+text = "Armonización de Onyxia (2): escolta a Windsor en Ventormenta y lleva el fragmento al dragón azul de Cuna del Invierno."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/dungeons/", "https://www.icy-veins.com/wow-forever/news/weekly-reset-attunement-locations-raid-sizes-official-wow-forever-raid-preview/", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60", "https://expcarry.com/wow-forever-leveling-guide-alliance", "questie:quest/6402", "questie:quest/6403", "questie:quest/6501"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a60-endgame-007"
+do = "dungeon"
+quests = [6502]
+at = [1428, 29.0, 28.9]
+text = "Armonización de Onyxia (3): consigue la sangre del general Drakkisath en Cumbre de Roca Negra Superior."
+tip = "Cada jugador necesita su propio Amuleto de Fuego de Dragón para entrar en la Guarida de Onyxia."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/dungeons/", "https://www.icy-veins.com/wow-forever/news/weekly-reset-attunement-locations-raid-sizes-official-wow-forever-raid-preview/", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60", "https://expcarry.com/wow-forever-leveling-guide-alliance", "questie:quest/6502"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a60-endgame-008"
+do = "note"
+text = "Equípate en mazmorras de 60: Blackmaw Hold, Terraza del Modelador, Scholomance, Stratholme, La Masacre y Cumbre de Roca Negra."
+status = "unverified"
+sources = ["https://www.icy-veins.com/wow-forever/news/weekly-reset-attunement-locations-raid-sizes-official-wow-forever-raid-preview/", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60", "https://www.warcrafttavern.com/forever/guides/dungeons/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a60-endgame-009"
+do = "note"
+text = "Monte Hyjal es contenido de nivel 60: misiones y reputación para preparar la banda de la Cumbre Hyjal."
+status = "unverified"
+sources = ["https://www.icy-veins.com/wow-forever/news/weekly-reset-attunement-locations-raid-sizes-official-wow-forever-raid-preview/", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60", "https://www.warcrafttavern.com/forever/guides/dungeons/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+note = "Según las guías de lanzamiento; las misiones de Hyjal aún no están en la base de datos local."
+
+[[step]]
+id = "a60-endgame-010"
+do = "note"
+text = "Bandas desde el 9 de diciembre de 2026: Barrow Deeps (10), Cumbre Hyjal (20) y Guarida de Onyxia (40)."
+tip = "Barrow Deeps y Cumbre Hyjal no tienen armonización; Onyxia exige el amuleto a cada jugador."
+status = "unverified"
+sources = ["https://www.icy-veins.com/wow-forever/news/weekly-reset-attunement-locations-raid-sizes-official-wow-forever-raid-preview/", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60", "https://www.warcrafttavern.com/forever/guides/dungeons/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a60-endgame-011"
+do = "note"
+text = "Brujo y mago: las misiones de clase del 60 (corcel de la muerte, guardia apocalíptico, etc.) están en las secciones de clase."
+optional = true
+status = "unverified"
+sources = ["https://www.icy-veins.com/wow-forever/news/weekly-reset-attunement-locations-raid-sizes-official-wow-forever-raid-preview/", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60", "https://www.warcrafttavern.com/forever/guides/dungeons/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]

@@ -1,0 +1,7 @@
+id = "gnome-warlock"
+title = "Brujo gnomo 1-60"
+faction = "Alliance"
+races = ["Gnome"]
+classes = ["WARLOCK"]
+sections = ["01-coldridge", "shared:alliance-test"]
+sources = ["interno"]

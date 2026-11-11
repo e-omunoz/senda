@@ -1,0 +1,154 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Data.lua ns.ROTATION y la sugerencia del HUD de BrujoGnomoGuia.lua).
+# [[phase]]: rotación por tramo de nivel (from/to inclusivos). El texto conserva la numeración de la fuente.
+# [[hud]]: prioridad que usaba el HUD de combate; se evalúa en orden y gana la primera regla que se cumple.
+#   when: condición en texto; hp/mana = tu vida/maná (0-1); thp = vida del objetivo (0-1).
+id = "warlock-rotation"
+class = "WARLOCK"
+kind = "rotation"
+title = "Rotación del brujo"
+levels = [1, 60]
+order = 100
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+note = "Estragos: Blizzard dobló su coeficiente el 4-nov; el ajuste del 10-nov puede cambiarlo (citado sin enlace)."
+
+[[phase]]
+from = 1
+to = 3
+spells = [686, 348]
+text = """
+1. Descarga de las Sombras.
+2. Inmolar mientras viaja la descarga.
+3. Remata en cuerpo a cuerpo."""
+
+[[phase]]
+from = 4
+to = 7
+spells = [172, 348, 5019]
+text = """
+1. Corrupción.
+2. Inmolar.
+3. Varita hasta el final."""
+
+[[phase]]
+from = 8
+to = 9
+spells = [980, 172, 5019]
+text = """
+1. Terror de agonía.
+2. Corrupción.
+3. Varita."""
+
+[[phase]]
+from = 10
+to = 29
+spells = [980, 172, 348, 5019, 689, 1120, 1454]
+text = """
+1. Terror de agonía (desde 30 m).
+2. Corrupción.
+3. Envía al demonio.
+4. Inmolar.
+5. Varita, o Drenar vida si te falta vida.
+6. Drenar alma al enemigo casi muerto si te faltan Fragmentos de alma.
+
+Transfusión de vida al caminar."""
+
+[[phase]]
+from = 30
+to = 39
+spells = [980, 172, 18265, 348, 689, 1454]
+text = """
+1. Demonio al ataque.
+2. Terror de agonía + Corrupción (+ Succionar vida desde el 35).
+3. Inmolar solo si el enemigo va a durar.
+4. Drenar vida de relleno (drain tanking).
+5. Transfusión de vida cuando tu vida supere a tu maná."""
+note = "La fuente dice «Succionar vida desde el 35» aquí, pero la build de talentos lo coge al 36."
+
+[[phase]]
+from = 40
+to = 60
+spells = [172, 980, 18265, 686, 689, 1120, 348]
+text = """
+**Aflicción:** Corrupción + Terror de agonía + Succionar vida siempre activos, y Estragos (Blizzard dobló su coeficiente el 4 nov; el ajuste del 10 nov puede cambiarlo). Descarga de las Sombras con Ocaso. Drenar vida de relleno. Drenar alma al final.
+
+**Destrucción:** Inmolar > Conflagrar > Incinerar de relleno. Eureka! con los cooldowns. Quemadura de las Sombras para rematar."""
+
+[[hud]]
+when = "Sin objetivo, fuera de combate, conoces Transfusión de vida, mana < 0.6 y hp > 0.7"
+suggest = "Transfusión de vida"
+spell = 1454
+
+[[hud]]
+when = "hp < 0.35 y llevas Piedra de salud"
+suggest = "¡Piedra de salud!"
+
+[[hud]]
+when = "thp < 0.25, nivel >= 10, menos de 3 Fragmentos de alma y conoces Drenar alma"
+suggest = "Drenar alma"
+spell = 1120
+
+[[hud]]
+when = "thp > 0.35 y al objetivo le falta tu Terror de agonía"
+suggest = "Terror de agonía"
+spell = 980
+
+[[hud]]
+when = "thp > 0.2 y al objetivo le falta tu Corrupción"
+suggest = "Corrupción"
+spell = 172
+
+[[hud]]
+when = "thp > 0.3 y al objetivo le falta tu Succionar vida"
+suggest = "Succionar vida"
+spell = 18265
+
+[[hud]]
+when = "thp > 0.4 y al objetivo le falta tu Inmolar"
+suggest = "Inmolar"
+spell = 348
+
+[[hud]]
+when = "hp < 0.6 y conoces Drenar vida"
+suggest = "Drenar vida"
+spell = 689
+
+[[hud]]
+when = "mana < 0.2, hp > 0.5 y conoces Transfusión de vida"
+suggest = "Transfusión de vida"
+spell = 1454
+
+[[hud]]
+when = "Llevas varita"
+suggest = "Varita"
+spell = 5019
+
+[[hud]]
+when = "Siempre (último recurso)"
+suggest = "Descarga de las Sombras"
+spell = 686
+
+# Avisos fuera de combate del HUD (BrujoGnomoGuia.lua, Warnings)
+[[warning]]
+text = "Sin Piel/Armadura demoníaca"
+when = "No tienes ninguna aura de [ids].demon_armor_buffs (spells.toml)"
+
+[[warning]]
+text = "Sin demonio"
+when = "Nivel >= 2, conoces Invocar diablillo, no tienes demonio y no vas montado"
+
+[[warning]]
+text = "Sin Piedra de salud"
+when = "Nivel >= 10, conoces Crear piedra de salud y no llevas ninguna"
+
+[[warning]]
+text = "Pocos fragmentos"
+when = "Nivel >= 10 y menos de 2 Fragmentos de alma"
+
+[[warning]]
+text = "Talento(s) sin gastar"
+when = "Tienes puntos de talento sin gastar"
+
+[[warning]]
+text = "Bolsas llenas"
+when = "Menos de 3 huecos libres"

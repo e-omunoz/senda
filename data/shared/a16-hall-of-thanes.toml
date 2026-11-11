@@ -1,0 +1,125 @@
+# Ruta compartida de la Alianza: Forjaz y Hall of Thanes (16 -> 17).
+# Hall of Thanes es una mazmorra nueva de Forever (13-18) dentro de la Antigua Forjaz.
+# Datos del jugador: data/legacy/steps-*.toml (entrada en la Gran Fundición, pasillo de la izquierda, 43.5, 52.0)
+# y data/knowledge/general/duo-04-14-18.toml (sus 5 misiones).
+id = "a16-hall-of-thanes"
+title = "Forjaz: Hall of Thanes"
+levels = [16, 17]
+map = 1455
+summary = "Entrena al 16, coge las misiones de Hall of Thanes y haz la mazmorra en grupo. Después, tranvía a Ventormenta."
+link = "https://conquestcapped.com/guides/wow-forever/wow-forever-leveling/"
+
+[[step]]
+id = "a16hot-001"
+do = "goto"
+at = [1455, 55.5, 47.7, "Forjaz"]
+radius = 30
+text = "Vuelve a Forjaz: por el túnel de Dun Morogh o en grifo desde Thelsamar."
+status = "unverified"
+sources = ["questie:npc/1573"]
+
+[[step]]
+id = "a16hot-002"
+do = "note"
+npc = 5172
+at = [1455, 50.4, 5.7]
+text = "Brujo: entrena lo del 16 en la Caverna Abandonada (y lo del 14 si te faltaba)."
+tip = "Hechizo del 16 sin confirmar en Forever (las notas dicen «Fuerza inmortal»; en Classic era Aliento inagotable)."
+if = { class = ["WARLOCK"] }
+status = "unverified"
+sources = ["questie:npc/5172", "knowledge:warlock-spells"]
+
+[[step]]
+id = "a16hot-003"
+do = "train"
+spells = [2120]
+npc = 5144
+at = [1455, 27.3, 8.3]
+text = "Mago: entrena Fogonazo en la Sala Mística (y lo del 14 si te faltaba)."
+if = { class = ["MAGE"] }
+status = "unverified"
+sources = ["questie:npc/5144", "knowledge:mage-spells"]
+
+[[step]]
+id = "a16hot-004"
+do = "accept"
+quest = 96394
+npc = 264943
+at = [1455, 33.2, 48.0]
+text = "Coge la misión de Afadra Dunwall, la guardiana de la tradición de Forjaz."
+status = "unverified"
+sources = ["questie:quest/96394", "questie:npc/264943", "knowledge:duo-14-18"]
+
+[[step]]
+id = "a16hot-005"
+do = "accept"
+quest = 96403
+npc = 265003
+at = [1455, 32.2, 44.5]
+text = "Coge la misión de las reliquias de Thom Filch, muy cerca."
+status = "unverified"
+sources = ["questie:quest/96403", "questie:npc/265003", "knowledge:duo-14-18"]
+
+[[step]]
+id = "a16hot-006"
+do = "dungeon"
+quests = [96393, 96394, 96403, 96395, 98423]
+at = [1455, 43.5, 52.0, "Entrada a Hall of Thanes (Antigua Forjaz)"]
+text = "Busca grupo y entra en Hall of Thanes: Gran Fundición, sala del trono y pasillo de la izquierda hacia la Antigua Forjaz."
+tip = "Dentro: An Ancient Grudge (Asistente fantasmal) y el Tratado de Entendimiento en la tablilla de la última sala. Las misiones de mazmorra no se comparten: cada uno necesita las suyas."
+optional = true
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "knowledge:duo-14-18", "questie:quest/96395", "questie:quest/98423", "https://conquestcapped.com/guides/wow-forever/wow-forever-leveling/"]
+
+[[step]]
+id = "a16hot-007"
+do = "turnin"
+quest = 96394
+npc = 264943
+at = [1455, 33.2, 48.0]
+text = "Al salir, entrega a Afadra Dunwall."
+optional = true
+status = "unverified"
+sources = ["questie:quest/96394"]
+
+[[step]]
+id = "a16hot-008"
+do = "turnin"
+quest = 96403
+npc = 265003
+at = [1455, 32.2, 44.5]
+text = "Entrega las reliquias a Thom Filch."
+optional = true
+status = "unverified"
+sources = ["questie:quest/96403"]
+
+[[step]]
+id = "a16hot-009"
+do = "turnin"
+quest = 96393
+npc = 2784
+at = [1455, 39.1, 56.2]
+text = "Entrega la cabeza de Durgen Dirgehammer al rey Magni Bronzebeard."
+optional = true
+status = "unverified"
+sources = ["questie:quest/96393", "questie:npc/2784"]
+
+[[step]]
+id = "a16hot-010"
+do = "turnin"
+quest = 98423
+npc = 2784
+at = [1455, 39.1, 56.2]
+text = "Entrega también el Tratado de Entendimiento a Magni."
+optional = true
+status = "unverified"
+sources = ["questie:quest/98423"]
+
+[[step]]
+id = "a16hot-011"
+do = "goto"
+at = [1455, 76.5, 51.0, "Tranvía subterráneo (Ciudad Manitas)"]
+radius = 25
+text = "Ve a Ciudad Manitas y coge el Tranvía subterráneo a Ventormenta."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]

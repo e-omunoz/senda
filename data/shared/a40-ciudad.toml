@@ -1,0 +1,109 @@
+# Ruta compartida de la Alianza (brujo gnomo y mago humano).
+
+id = "a40-ciudad"
+title = "Nivel 40: Forjaz, montura y doble especialización"
+levels = [40, 40]
+map = 1455
+summary = "Entrena el 40, activa la doble especialización y consigue la montura. Coge las misiones de Uldaman en Forjaz para el 44."
+
+[[step]]
+id = "a40-ciudad-001"
+do = "note"
+text = "Mago: Teletransporte a Forjaz. Brujo: vuela a Auberdine, barco a Menethil y vuela a Forjaz."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a40-ciudad-002"
+do = "train"
+npc = 5144
+spells = [10059, 11416]
+at = [1455, 27.25, 8.3]
+if = { class = ["MAGE"] }
+text = "Entrena el 40 con Bink: portales a Ventormenta y Forjaz."
+tip = "Con los portales puedes ganar algo de oro en Ventormenta y Forjaz."
+status = "unverified"
+sources = ["questie:npc/5144"]
+
+[[step]]
+id = "a40-ciudad-003"
+do = "train"
+npc = 5172
+spells = [2362, 5484]
+at = [1455, 50.35, 5.66]
+if = { class = ["WARLOCK"] }
+text = "Entrena del 36 al 40 con Briarthorn: piedra de hechizos y Aullido de terror."
+status = "unverified"
+sources = ["questie:npc/5172"]
+
+[[step]]
+id = "a40-ciudad-004"
+do = "note"
+text = "Activa la doble especialización con tu instructor: una para subir y otra para mazmorras."
+tip = "Precio sin confirmar en Forever (algunas guías dicen 50 de oro). Brujo: Aflicción y Destrucción; mago: Escarcha y Fuego."
+status = "unverified"
+sources = ["https://www.icy-veins.com/wow-forever/news/stop-wasting-gold-on-spells-and-crafting-before-level-40-in-wow-forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+
+[[step]]
+id = "a40-ciudad-005"
+do = "note"
+if = { class = ["WARLOCK"] }
+text = "Brujo: tu instructor te manda a por el Corcel nefasto, que incluye la equitación. Síguelo en la guía de clase."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/riding/", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "a40-ciudad-006"
+do = "accept"
+quest = 2398
+npc = 1356
+at = [1455, 74.64, 11.74]
+optional = true
+text = "Coge la misión de los enanos perdidos del prospector Stormpike (Sala de los Exploradores)."
+tip = "Es de Uldaman, para el 44."
+status = "unverified"
+sources = ["questie:quest/2398", "questie:npc/1356"]
+
+[[step]]
+id = "a40-ciudad-007"
+do = "accept"
+quest = 1360
+npc = 6294
+at = [1455, 74.19, 9.39]
+optional = true
+text = "Coge el tesoro de Krom Stoutarm, en la misma sala."
+tip = "El cofre está en la parte exterior de Uldaman: no hace falta grupo."
+status = "unverified"
+sources = ["questie:quest/1360", "questie:npc/6294"]
+
+[[step]]
+id = "a40-ciudad-008"
+do = "goto"
+at = [1429, 84.32, 64.87, "Randal Hunter"]
+if = { class = ["MAGE"], race = ["Human"] }
+text = "Mago humano: coge el tranvía a Ventormenta y ve al este del Bosque de Elwynn, al Campamento Maderero."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/riding/"]
+
+[[step]]
+id = "a40-ciudad-009"
+do = "note"
+npc = 4732
+at = [1429, 84.32, 64.87]
+if = { class = ["MAGE"], race = ["Human"] }
+text = "Aprende Equitación con Randal Hunter (100 de oro) y compra el caballo a Katie Hunter (20 de oro)."
+tip = "Con Honorable en Ventormenta, 10% de descuento. Si te falta oro, sigue a pie y vuelve al 42."
+status = "unverified"
+sources = ["questie:npc/4732", "https://www.warcrafttavern.com/forever/guides/riding/", "questie:npc/384"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a40-ciudad-010"
+do = "note"
+npc = 7954
+at = [1426, 49.15, 48.13]
+if = { class = ["MAGE"], race = ["Gnome"] }
+text = "Mago gnomo: Equitación con Binjy Featherwhistle en Dun Morogh (49.2, 48.1) y mecazancudo a Milli."
+status = "unverified"
+sources = ["questie:npc/7954", "https://www.warcrafttavern.com/forever/guides/riding/"]
+checked = "2026-11-11"

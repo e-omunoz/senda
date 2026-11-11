@@ -1,0 +1,73 @@
+# Ruta compartida de la Alianza (brujo gnomo y mago humano).
+
+id = "a40-monasterio"
+title = "Monasterio Escarlata (opcional)"
+levels = [40, 41]
+map = 1424
+summary = "Mazmorra opcional. Entrega la carta del hermano Anton en Costasur y entra en grupo a las alas Armería y Catedral. Sin grupo, salta esta sección."
+
+[[step]]
+id = "a40-monasterio-001"
+do = "fly"
+npc = 2432
+node = "Southshore"
+zone = 1424
+at = [1424, 49.34, 52.27]
+text = "Vuela a Costasur (Laderas de Trabalomas)."
+status = "unverified"
+sources = ["questie:npc/2432"]
+
+[[step]]
+id = "a40-monasterio-002"
+do = "turnin"
+quest = 1052
+npc = 3980
+at = [1424, 51.47, 58.35]
+optional = true
+text = "Entrega la carta de Anton a Raleigh el Devoto, en la posada."
+status = "unverified"
+sources = ["questie:quest/1052", "questie:npc/3980"]
+
+[[step]]
+id = "a40-monasterio-003"
+do = "accept"
+quest = 1053
+npc = 3980
+at = [1424, 51.47, 58.35]
+optional = true
+text = "Coge de Raleigh la misión de los cuatro líderes escarlata."
+status = "unverified"
+sources = ["questie:quest/1053", "questie:npc/3980"]
+
+[[step]]
+id = "a40-monasterio-004"
+do = "dungeon"
+at = [1420, 82.6, 33.8, "Monasterio Escarlata (coordenada clásica, sin verificar)"]
+optional = true
+text = "Monasterio Escarlata (Claros de Tirisfal): Biblioteca para el libro de Mae; Armería y Catedral para Raleigh."
+tip = "Ve con grupo de búsqueda o invocación. Mago: el Orbe del vidente olvidado y la Hoja hipnótica salen aquí."
+status = "unverified"
+sources = ["questie:quest/1050", "questie:quest/1053", "https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a40-monasterio-005"
+do = "turnin"
+quest = 1053
+npc = 3980
+at = [1424, 51.47, 58.35]
+optional = true
+text = "Vuelve a Costasur y entrega los cuatro líderes a Raleigh."
+status = "unverified"
+sources = ["questie:quest/1053", "questie:npc/3980"]
+
+[[step]]
+id = "a40-monasterio-006"
+do = "turnin"
+quest = 1050
+npc = 3979
+at = [1455, 74.97, 12.48]
+optional = true
+text = "En Forjaz, entrega el libro de mitología a Mae Paledust."
+tip = "Si no vas a Forjaz ahora, entrégalo al volver al 44."
+status = "unverified"
+sources = ["questie:quest/1050", "questie:npc/3979"]

@@ -1,0 +1,228 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Crafting.lua, ns.CRAFT.PROFS.ench y MageData.lua CRAFT_TRAINERS).
+# Mismo formato que professions-tailoring.toml. Extra: craft_spell = id del hechizo de encantamiento cuando lo que
+# se «fabrica» es un encantamiento y no un objeto.
+id = "general-professions-enchanting"
+class = "ANY"
+kind = "professions"
+title = "Encantamiento 1-300"
+order = 210
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://conquestcapped.com/", "cita:wowprofs", "https://www.method.gg/", "https://www.wow-professions.com/"]
+checked = "2026-11-09"
+note = "Wowhead Forever, ConquestCapped, wowprofs, Method (todas las recetas, 5-nov) y wow-professions; revisado el 9-nov. Varias cantidades de materiales difieren de Classic (posible cambio de Forever): ver docs/MIGRATION.md."
+
+[[trainer]]
+prof = "enchanting"
+ranks = ["Aprendiz", "Oficial"]
+for_class = "WARLOCK"
+name = "Gimble Thistlefuzz"
+at = [1455, 60.4, 45.6, "Gimble Thistlefuzz (Forjaz, Ciudad Manitas)"]
+
+[[trainer]]
+prof = "enchanting"
+ranks = ["Aprendiz", "Oficial"]
+for_class = "MAGE"
+name = "Lucan Cordell"
+text = "Ventormenta, Barrio de los Magos, en su tienda junto a los canales. Si no lo encuentras, pregunta a un guardia."
+note = "Sin coordenadas en la fuente."
+status = "unverified"
+
+[[trainer]]
+prof = "enchanting"
+ranks = ["Experto"]
+for_class = "ANY"
+name = "Kitta Firewind"
+at = [1429, 64.8, 70.6, "Kitta Firewind (Torre de Azora)"]
+note = "Torre de Azora, Bosque de Elwynn."
+
+[[trainer]]
+prof = "enchanting"
+ranks = ["Artesano"]
+for_class = "ANY"
+name = "Annora"
+text = "Dentro de Uldaman (Tierras Inhóspitas): aparece al limpiar su zona. Ve en grupo."
+
+[[trainer]]
+prof = "both"
+ranks = []
+for_class = "MAGE"
+name = "Eldrin y Lalina Summerbreeze"
+text = "En el Bosque de Elwynn, en la Vega del Este, hay instructores de Sastrería y de Encantamiento (Eldrin y Lalina Summerbreeze)."
+note = "Sin coordenadas ni rangos en la fuente."
+status = "unverified"
+
+[[route]]
+prof = "enchanting"
+from = 1
+to = 2
+craft = 6218
+name = "Vara de cobre con runas"
+n = 1
+mats = [[6217, 1], [247786, 1]]
+note = "La receta ya la sabes. Sin la vara no puedes encantar."
+
+[[route]]
+prof = "enchanting"
+from = 2
+to = 20
+name = "Desencantar verdes"
+n = 20
+note = "Desencanta los verdes que no uses: cada uno suele dar un punto hasta 20. También puedes hacer la Varita de prácticas de novicio (Madera simple + Mota de magia)."
+
+[[route]]
+prof = "enchanting"
+from = 20
+to = 70
+craft_spell = 7420
+name = "Encantar torso: aguante menor"
+n = 50
+mats = [[10940, 1]]
+note = "Aplícalo a tu pechera o a la de un compañero."
+
+[[route]]
+prof = "enchanting"
+from = 70
+to = 90
+craft = 11287
+name = "Varita mágica inferior"
+n = 25
+mats = [[4470, 1], [10938, 1]]
+note = "La receta se aprende a 10: haz una para ti en cuanto puedas. Del resto quédate una y vende las demás a magos, brujos y sacerdotes."
+
+[[route]]
+prof = "enchanting"
+from = 90
+to = 100
+craft_spell = 7457
+name = "Encantar brazales: aguante menor"
+n = 12
+mats = [[10940, 2]]
+
+[[route]]
+prof = "enchanting"
+from = 100
+to = 101
+craft = 6339
+name = "Vara de plata con runas"
+n = 1
+mats = [[6338, 1], [10940, 3], [10938, 4], [1210, 1]]
+note = "La Vara de plata la hacen los herreros: búscala en la subasta."
+
+[[route]]
+prof = "enchanting"
+from = 101
+to = 111
+craft = 11288
+name = "Varita mágica superior"
+n = 10
+mats = [[4470, 1], [10938, 2]]
+note = "Tu varita para los niveles 13-22. Vende las que sobren."
+
+[[route]]
+prof = "enchanting"
+from = 111
+to = 125
+craft_spell = 13419
+name = "Encantar capa: agilidad menor"
+n = 15
+mats = [[10998, 1]]
+src = "Fórmula de vendedor: Dalria (Astranaar, Vallefresno)."
+
+[[route]]
+prof = "enchanting"
+from = 125
+to = 151
+craft_spell = 7863
+name = "Encantar botas: aguante menor"
+n = 26
+mats = [[10940, 4]]
+note = "Entrena Experto a 125 y nivel 20 con Kitta Firewind. A 140: Bastón de alma y Orbe de almas (45 de Favor, Alynsia en Tres Caminos). El Arcane Salvager del campamento (140) es una fórmula de botín."
+
+[[route]]
+prof = "enchanting"
+from = 151
+to = 157
+craft_spell = 13501
+name = "Encantar brazal: aguante inferior"
+n = 8
+mats = [[11083, 1]]
+
+[[route]]
+prof = "enchanting"
+from = 157
+to = 185
+craft_spell = 13536
+name = "Encantar brazal: fuerza inferior"
+n = 30
+mats = [[11083, 1]]
+src = "Fórmula de vendedor: Dalria (Astranaar, Vallefresno)."
+note = "Hacia 160, Vara de oro con runas (Vara de oro en la subasta, Perla iridiscente, Esencia astral superior, Polvo de alma)."
+
+[[route]]
+prof = "enchanting"
+from = 185
+to = 220
+craft_spell = 13661
+name = "Encantar brazal: fuerza"
+n = 38
+mats = [[11137, 1]]
+note = "Se pone gris hacia 220. A 200: Vara de veraplata con runas y entrena Artesano (nivel 35) con Annora en Uldaman. Alternativa de 201 a 220: Aceite de zahorí inferior. A 210: collares (120 de Favor y Amistoso con la Azeroth Commerce Authority)."
+
+[[route]]
+prof = "enchanting"
+from = 220
+to = 225
+craft_spell = 13746
+name = "Encantar capa: defensa superior"
+n = 6
+mats = [[11137, 3]]
+
+[[route]]
+prof = "enchanting"
+from = 225
+to = 235
+craft_spell = 13815
+name = "Encantar guantes: agilidad"
+n = 10
+mats = [[11137, 1], [11174, 1]]
+
+[[route]]
+prof = "enchanting"
+from = 235
+to = 250
+craft_spell = 13858
+name = "Encantar torso: aguante excelente"
+n = 16
+mats = [[11137, 3]]
+
+[[route]]
+prof = "enchanting"
+from = 250
+to = 265
+craft = 20747
+name = "Aceite de maná inferior"
+n = 16
+mats = [[11176, 1], [8831, 1], [8925, 1]]
+src = "Fórmula de Kania (posada de Fuerte Cenarion, Silithus)."
+note = "Se vende bien a sanadores. El Vial de cristal lo venden los proveedores de alquimia."
+
+[[route]]
+prof = "enchanting"
+from = 265
+to = 295
+craft_spell = 20017
+name = "Encantar escudo: aguante superior"
+n = 30
+mats = [[11176, 6]]
+src = "Fórmula de vendedor: Mythrin'dir (Darnassus)."
+
+[[route]]
+prof = "enchanting"
+from = 295
+to = 300
+craft_spell = 20015
+name = "Encantar capa: defensa excelente"
+n = 8
+mats = [[16204, 8]]
+src = "Fórmula de Lorelae Wintersong (Claro de la Luna)."
+note = "Antes, Vara de arcanita con runas (también de Lorelae). Varita brillante: 180 de Favor y Honorable con la Azeroth Commerce Authority."

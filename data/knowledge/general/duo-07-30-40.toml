@@ -1,0 +1,26 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Duo.lua, ns.DUO.BRACKETS, tramo 30-40). Tramo por el nivel más bajo de los dos.
+id = "duo-30-40"
+class = "ANY"
+kind = "page"
+title = "Niveles 30-40: Arathi, Desolace y Monasterio"
+levels = [30, 40]
+order = 370
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "cita:Manual del Mago Gnomo (sección «En pareja»)", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Dónde"
+body = """
+Tierras Altas de Arathi, Desolace, Vega de Tuercespina y Riverglades (35-45, base de la Alianza en Farholde Keep). Mazmorras: Monasterio Escarlata (sus 4 alas), Uldaman y The Drowned City (35-40)."""
+
+[[block]]
+heading = "Misiones de clase"
+body = """
+- **Brujo:** cadena del Manáfago (30) y del Corcel nefasto (40, incluye la equitación).
+- **Mago:** Viaje al pantano (30-40, Pantano de Fangos Oscuros) para la varita de mago. Al 33, reinicia talentos."""
+
+[[block]]
+heading = "Oro"
+body = """
+El mago tiene que pagar la equitación del 40 (unos 100 de oro); el brujo no. Si os repartís el oro, que el brujo ayude al mago a llegar."""

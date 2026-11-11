@@ -1,0 +1,53 @@
+# Guía human-mage: Mago: la Reclusa Azul. Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-15-blue-recluse"
+title = "Mago: la Reclusa Azul"
+levels = [15, 16]
+map = 1453
+summary = "Primera parte de la Túnica de tejido de maná (misión de clase del 15)."
+
+[[step]]
+id = "mg-15-blue-recluse-001"
+do = "accept"
+quest = 1920
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "En el Sagrario de los Magos, coge de Jennea Cannon la misión de la Reclusa Azul."
+tip = "Si Zaldimar te dio la misión de ir a ver a Jennea, entrégala antes."
+status = "unverified"
+sources = ["questie:quest/1920", "questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-15-blue-recluse-002"
+do = "complete"
+quest = 1920
+at = [1453, 51.2, 94.0]
+wps = [[1453, 49.5, 85.5, "Cofre de cofres de contención"], [1453, 49.6, 85.4, "Conjuro de manifestación"]]
+text = "Coge el cofre y el conjuro junto a Jennea y llena los cofres de contención en la Reclusa Azul."
+tip = "Al usar el conjuro sale un elemental: tenlo a distancia."
+status = "unverified"
+sources = ["questie:quest/1920"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-15-blue-recluse-003"
+do = "turnin"
+quest = 1920
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "Entrega a Jennea Cannon."
+status = "unverified"
+sources = ["questie:quest/1920", "questie:npc/5497"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-15-blue-recluse-004"
+do = "accept"
+quest = 1921
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "Coge la misión de los materiales."
+tip = "Necesitas paño de lino y una Gema de falla cargada de la Mina Arroyoplata (Loch Modan): guárdala para cuando vayas."
+status = "unverified"
+sources = ["questie:quest/1921", "questie:npc/5497"]
+checked = "2026-11-11"

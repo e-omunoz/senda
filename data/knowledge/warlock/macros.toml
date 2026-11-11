@@ -1,0 +1,183 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Macros.lua, ns.MACROS). Nombres renombrados de BG_* a SND_*.
+# Marcadores en los cuerpos (los sustituye el módulo de macros):
+#   {id}      nombre del hechizo con ese id en el idioma del cliente (p. ej. {980}).
+#   {hs}      id de la Piedra de salud que llevas ahora (se actualiza al cambiar las bolsas).
+#   {n:Nombre} nombre literal del hechizo (cuando no hay id fiable).
+# `body` es la versión preferida; `fallbacks` son alternativas: se usa la primera cuyos hechizos conozcas.
+# `pet = true`: hechizo de demonio, no se comprueba en tu libro de hechizos.
+# `icon`: "spell:<id>" o "item:<id>" (de Bars.lua) para la barra de acción.
+id = "warlock-macros"
+class = "WARLOCK"
+kind = "macros"
+title = "Macros del brujo"
+order = 90
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+note = "Cuerpos copiados tal cual de la fuente."
+
+[[macro]]
+name = "SND_Abrir"
+legacy = "BG_Abrir"
+icon = "spell:980"
+minlevel = 1
+body = """
+#showtooltip {980}
+/petattack
+/cast {980}"""
+fallbacks = ["""
+#showtooltip {348}
+/petattack
+/cast {348}"""]
+note = "Envía al demonio y lanza tu hechizo de apertura (Terror de agonía desde el 8; antes, Inmolar)."
+
+[[macro]]
+name = "SND_Varita"
+legacy = "BG_Varita"
+icon = "spell:5019"
+minlevel = 5
+body = """
+#showtooltip
+/cast !{5019}"""
+note = "Dispara la varita sin cortarla si ya está disparando."
+
+[[macro]]
+name = "SND_Miedo"
+legacy = "BG_Miedo"
+icon = "spell:5782"
+minlevel = 8
+body = """
+#showtooltip {5782}
+/cast [@focus,harm,nodead][] {5782}"""
+note = "Miedo a tu foco si tienes; si no, a tu objetivo. Usa /focus en el enemigo extra."
+
+[[macro]]
+name = "SND_Drenar"
+legacy = "BG_Drenar"
+icon = "spell:689"
+minlevel = 10
+body = """
+#showtooltip
+/cast [mod:alt] {1120}; {689}"""
+fallbacks = ["""
+#showtooltip {1120}
+/cast {1120}"""]
+note = "Drenar vida; con Alt, Drenar alma (para fragmentos). Hasta el 14 (sin Drenar vida) usa solo Drenar alma."
+
+[[macro]]
+name = "SND_Piedra"
+legacy = "BG_Piedra"
+icon = "item:5512"
+minlevel = 10
+body = """
+#showtooltip item:{hs}
+/use item:{hs}"""
+fallbacks = ["""
+#showtooltip
+/use item:19013
+/use item:19012
+/use item:9421
+/use item:19011
+/use item:19010
+/use item:5510
+/use item:19009
+/use item:19008
+/use item:5509
+/use item:19007
+/use item:19006
+/use item:5511
+/use item:19005
+/use item:19004
+/use item:5512"""]
+note = "Usa la mejor Piedra de salud que lleves (alternativa: todas, de mejor a peor, ids de Classic)."
+
+[[macro]]
+name = "SND_Sacrificio"
+legacy = "BG_Sacrificio"
+icon = "spell:7812"
+minlevel = 10
+pet = true
+body = """
+#showtooltip {7812}
+/cast {7812}"""
+note = "Sacrificio del Abisario: escudo de emergencia."
+
+[[macro]]
+name = "SND_Corr_MO"
+legacy = "BG_Corr_MO"
+icon = "spell:172"
+minlevel = 20
+body = """
+#showtooltip {172}
+/cast [@mouseover,harm,nodead][] {172}"""
+note = "Corrupción al enemigo bajo el ratón sin cambiar de objetivo."
+
+[[macro]]
+name = "SND_Agonia_MO"
+legacy = "BG_Agonia_MO"
+icon = "spell:980"
+minlevel = 20
+body = """
+#showtooltip {980}
+/cast [@mouseover,harm,nodead][] {980}"""
+note = "Terror de agonía al enemigo bajo el ratón."
+
+[[macro]]
+name = "SND_Lenguas"
+legacy = "BG_Lenguas"
+icon = "spell:1714"
+minlevel = 26
+body = """
+#showtooltip {1714}
+/cast [@mouseover,harm,nodead][] {1714}"""
+note = "Maldición de la lengua al ratón o al objetivo (lanzadores)."
+
+[[macro]]
+name = "SND_Desterrar"
+legacy = "BG_Desterrar"
+icon = "spell:710"
+minlevel = 28
+body = """
+#showtooltip {710}
+/cast [@focus,harm,nodead][] {710}"""
+note = "Desterrar al foco o al objetivo (demonios y elementales)."
+
+[[macro]]
+name = "SND_Interrumpir"
+legacy = "BG_Interrumpir"
+icon = "spell:19244"
+minlevel = 30
+pet = true
+body = """
+#showtooltip {19244}
+/cast [@focus,harm,nodead][] {19244}"""
+note = "Bloqueo de hechizo del Manáfago al foco o al objetivo."
+
+[[macro]]
+name = "SND_Succion_MO"
+legacy = "BG_Succion_MO"
+icon = "spell:18265"
+minlevel = 35
+body = """
+#showtooltip {18265}
+/cast [@mouseover,harm,nodead][] {18265}"""
+note = "Succionar vida al enemigo bajo el ratón."
+
+[[macro]]
+name = "SND_Aullido"
+legacy = "BG_Aullido"
+icon = "spell:5484"
+minlevel = 40
+body = """
+#showtooltip {5484}
+/cast {5484}"""
+note = "Aullido de terror (miedo en área)."
+
+[[macro]]
+name = "SND_Espiral"
+legacy = "BG_Espiral"
+icon = "spell:6789"
+minlevel = 42
+body = """
+#showtooltip {6789}
+/cast [@focus,harm,nodead][] {6789}"""
+note = "Espiral mortal al foco o al objetivo: miedo y cura de emergencia."

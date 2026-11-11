@@ -1,0 +1,198 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Bars.lua ns.BARS / ns.BAR_BINDINGS y consejos de BrujoGnomoGuia.lua).
+# kind = "bars" (tipo nuevo, ver docs/MIGRATION.md):
+#   [[bar]] title + [[bar.slot]]:
+#     slot    casilla de acción (1-12 barra principal, 61-72 inferior izquierda, 49-60 inferior derecha)
+#     key     tecla mostrada ("S1" = Mayúsculas + 1)
+#     spell   id de hechizo (se coloca el rango más alto que conozcas); alt = id alternativo si no conoces spell
+#     macro   nombre de macro de Senda (SND_*); icon = "spell:<id>" o "item:<id>"
+#     level   nivel a partir del que se coloca
+#   [bindings]: atajos de teclado que asignaba el addon.
+id = "warlock-bars"
+class = "WARLOCK"
+kind = "bars"
+title = "Barras de acción del brujo"
+order = 130
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+
+[[bar]]
+title = "Barra principal (1 a =)"
+
+[[bar.slot]]
+slot = 1
+key = "1"
+macro = "SND_Abrir"
+icon = "spell:980"
+level = 1
+
+[[bar.slot]]
+slot = 2
+key = "2"
+spell = 172
+level = 4
+
+[[bar.slot]]
+slot = 3
+key = "3"
+spell = 348
+level = 1
+
+[[bar.slot]]
+slot = 4
+key = "4"
+macro = "SND_Drenar"
+icon = "spell:689"
+level = 10
+
+[[bar.slot]]
+slot = 5
+key = "5"
+macro = "SND_Varita"
+icon = "spell:5019"
+level = 5
+
+[[bar.slot]]
+slot = 6
+key = "6"
+spell = 1454
+level = 6
+
+[[bar.slot]]
+slot = 7
+key = "7"
+spell = 686
+level = 1
+
+[[bar.slot]]
+slot = 8
+key = "8"
+macro = "SND_Miedo"
+icon = "spell:5782"
+level = 8
+
+[[bar.slot]]
+slot = 9
+key = "9"
+macro = "SND_Piedra"
+icon = "item:5512"
+level = 10
+
+[[bar.slot]]
+slot = 10
+key = "0"
+macro = "SND_Sacrificio"
+icon = "spell:7812"
+level = 10
+
+[[bar.slot]]
+slot = 11
+key = "-"
+macro = "SND_Espiral"
+icon = "spell:6789"
+level = 42
+
+[[bar.slot]]
+slot = 12
+key = "="
+spell = 706
+alt = 687
+level = 1
+note = "Armadura demoníaca; antes del 20, Piel de demonio."
+
+[[bar]]
+title = "Inferior izquierda (Mayúsculas + 1 a 6)"
+
+[[bar.slot]]
+slot = 61
+key = "S1"
+macro = "SND_Corr_MO"
+icon = "spell:172"
+level = 20
+
+[[bar.slot]]
+slot = 62
+key = "S2"
+macro = "SND_Agonia_MO"
+icon = "spell:980"
+level = 20
+
+[[bar.slot]]
+slot = 63
+key = "S3"
+macro = "SND_Succion_MO"
+icon = "spell:18265"
+level = 35
+
+[[bar.slot]]
+slot = 64
+key = "S4"
+spell = 1490
+level = 20
+
+[[bar.slot]]
+slot = 65
+key = "S5"
+macro = "SND_Lenguas"
+icon = "spell:1714"
+level = 26
+
+[[bar.slot]]
+slot = 66
+key = "S6"
+macro = "SND_Desterrar"
+icon = "spell:710"
+level = 28
+
+[[bar]]
+title = "Inferior derecha (fuera de combate, con el ratón)"
+
+[[bar.slot]]
+slot = 49
+spell = 697
+alt = 688
+level = 1
+note = "Invocar abisario; antes del 10, Invocar diablillo."
+
+[[bar.slot]]
+slot = 50
+spell = 6201
+level = 10
+
+[[bar.slot]]
+slot = 51
+spell = 693
+level = 18
+
+[[bar.slot]]
+slot = 52
+spell = 698
+level = 20
+
+[[bar.slot]]
+slot = 53
+spell = 5784
+level = 40
+
+[[bar.slot]]
+slot = 54
+spell = 126
+level = 22
+
+[bindings]
+"SHIFT-1" = "MULTIACTIONBAR1BUTTON1"
+"SHIFT-2" = "MULTIACTIONBAR1BUTTON2"
+"SHIFT-3" = "MULTIACTIONBAR1BUTTON3"
+"SHIFT-4" = "MULTIACTIONBAR1BUTTON4"
+"SHIFT-5" = "MULTIACTIONBAR1BUTTON5"
+"SHIFT-6" = "MULTIACTIONBAR1BUTTON6"
+
+[[block]]
+heading = "Consejos de barras"
+body = """
+- **Teclas 1-6:** lo que pulsas en cada combate, en orden. **7 a =:** reacciones (Miedo, piedra, escudo, Espiral).
+- **Mayúsculas + 1-6:** macros de ratón encima para un segundo enemigo. **Inferior derecha:** invocar y crear, fuera de combate.
+- Barra 1: Abrir, Corrupción, Inmolar, Drenar, Varita, Transfusión de vida.
+- Barra 2: Miedo, Piedra, Sacrificio, maldiciones.
+- Usa /focus en el segundo enemigo y las macros con foco (Miedo, Desterrar, Interrumpir, Espiral).
+- En Classic las barras no suben de rango solas: vuelve a colocarlas después de entrenar.
+- Colocar las barras sustituye la barra principal (1 a =) y las seis primeras casillas de las barras inferiores, y asigna Mayúsculas + 1 a 6. Si no ves las barras inferiores, actívalas en Opciones > Interfaz > Barras de acción."""

@@ -1,0 +1,27 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua, MG.TEXTS.profesiones: lo que se añadía al texto común).
+id = "mage-professions-extra"
+class = "MAGE"
+kind = "page"
+title = "Comprensión e instructores para el mago humano"
+order = 195
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever"]
+checked = "2026-11-10"
+note = "Complementa data/knowledge/general/professions-guide.toml."
+
+[[block]]
+heading = "Comprensión (solo mago)"
+body = """
+- Se aprende al 6 con el instructor: **Entender pergamino**.
+- Los enemigos sueltan pergaminos sin traducir (KWYJIBO, CWAL…); descifrarlos sube la habilidad hasta que se vuelven grises.
+- Si fallas, eres una oveja 8 s y te quedas el pergamino.
+- **Recompensas:** encantamientos de bastón, daga y espada de 1 hora; familiares de Intelecto (rata +2, rana +6, gato +12); Evocación menor; Cryoblast; abrir cerraduras.
+- **Transformaciones:** Hoja de Silverlaine → Sable de llama fría; Hoja hipnótica → Espada de Narpas.
+- **Estudiar** (biblioteca, una vez por hora) da pergaminos ya descifrados."""
+
+[[block]]
+heading = "Instructores para un humano"
+body = """
+- **Sastrería:** Sellandus o Georgio Bolero (Ventormenta, Barrio de los Magos). Lawrence Schneider solo enseña el rango Aprendiz.
+- **Encantamiento:** Lucan Cordell (Ventormenta, Barrio de los Magos).
+- En Elwynn, en la Vega del Este, hay instructores de las dos (Eldrin y Lalina Summerbreeze)."""

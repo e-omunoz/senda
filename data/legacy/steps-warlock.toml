@@ -1,0 +1,294 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Data.lua, ns.STEPS). NO se publica: es la entrada para las rutas detalladas.
+# Coordenadas verificadas por el autor el 9-nov-2026 con ConquestCapped, Warcraft Tavern y Warcraft Wiki.
+# Forever usa el mapa CLÁSICO de Ventormenta (Woo Ping en 57, 57; El Cordero Degollado en 25.3, 78.2).
+# Algunas guías (ConquestCapped, Warcraft Tavern) dan 39.0, 84.5 para el círculo: son coordenadas del mapa moderno.
+# do: train si el paso tenía hechizo (se completaba al conocerlo), goto si solo tenía puntos, note en otro caso.
+# La fuente no tenía ids de misión ni de PNJ.
+id = "legacy-warlock"
+title = "Brujo gnomo: hitos de la guía antigua"
+levels = [1, 60]
+summary = "Hitos de la guía antigua (BrujoGnomoGuia 4.1.0). Entrada para escribir las rutas detalladas; no se publica tal cual."
+if = { class = ["WARLOCK"] }
+
+[[step]]
+id = "legacy-wl-001"
+do = "goto"
+text = "Empiezas en el Valle de Crestanevada (Dun Morogh). Sten Stoutarm te da Memorando contaminado: llévaselo a Alamar Grimm, el instructor de brujo de Yunquemar (28.6, 66.2)."
+at = [1426, 28.6, 66.2, "Alamar Grimm (Yunquemar)"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Primeros pasos». Nivel recomendado: 1."
+
+[[step]]
+id = "legacy-wl-002"
+do = "train"
+text = "Alamar Grimm te da Comienzos: 3 amuletos de pluma de los novicios Peloescarcha en la cueva al suroeste de Yunquemar. Entrégala y aprende Invocar a diablillo."
+spells = [688]
+at = [1426, 28.6, 66.2, "Alamar Grimm"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Misión del Diablillo». Nivel recomendado: 2."
+
+[[step]]
+id = "legacy-wl-003"
+do = "train"
+text = "Entrena Corrupción y Maldición de debilidad. En Kharanos tienes otro instructor: Gimrizz Shadowcog (47.2, 53.6). Rotación: Corrupción + Inmolar y remata con Descarga de las Sombras o en cuerpo a cuerpo."
+spells = [172]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Corrupción». Nivel recomendado: 4."
+
+[[step]]
+id = "legacy-wl-004"
+do = "goto"
+text = "En Forjaz: Sastrería con Jormund Stonebrow (43.2, 29.0, en la Gran Fundición) y Encantamiento con Gimble Thistlefuzz (60.4, 45.6, Ciudad Manitas). Si tienes Herboristería (en el cliente: Botánica), abandónala. Aprende también Primeros auxilios y Cocina. Guarda todo el paño y desencanta los verdes que no uses."
+at = [1455, 43.2, 29.0, "Sastrería: Jormund Stonebrow"]
+wps = [[1455, 60.4, 45.6, "Encantamiento: Gimble Thistlefuzz"]]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Profesiones». Nivel recomendado: 5. Varios puntos: no es un único destino, revisar al detallar la ruta."
+
+[[step]]
+id = "legacy-wl-005"
+do = "train"
+text = "Entrena Transfusión de vida. Úsala mientras caminas entre combates para no perder tiempo bebiendo."
+spells = [1454]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Transfusión de vida». Nivel recomendado: 6."
+
+[[step]]
+id = "legacy-wl-006"
+do = "train"
+text = "Entrena Terror de agonía y Miedo. Rotación: Terror de agonía, Corrupción, Inmolar y varita. Crea las macros desde la pestaña Macros."
+spells = [5782]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Terror de agonía y Miedo». Nivel recomendado: 8. Nombres sin confirmar en el cliente (marcados «(?)» en la fuente): Terror de agonía."
+
+[[step]]
+id = "legacy-wl-007"
+do = "goto"
+text = "Entrena en Forjaz (La Caverna Abandonada, 50.8, 6.4): Drenar alma y Crear piedra de salud. Consigue 2-3 Fragmentos de alma: si el enemigo muere mientras lo drenas, siempre te da uno; cada tick tiene además una probabilidad pequeña (Blizzard la redujo mucho el 4 de noviembre). Crea una Piedra de salud. Talento: Corrupción mejorada."
+at = [1455, 50.8, 6.4, "Instructores de brujo (Caverna Abandonada)"]
+chain = "void"
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Preparar el Abisario». Nivel recomendado: 10."
+
+[[step]]
+id = "legacy-wl-008"
+do = "goto"
+text = "Lago Blackwrench (Forjaz) te da El Cordero Degollado. Coge el Tren subterráneo en Ciudad Manitas hasta Ventormenta y baja al sótano de El Cordero Degollado, en el Barrio de los Magos (25.3, 78.2). Habla con Gakin. No hace falta pasar por Villadorada: eso es solo para humanos."
+at = [1453, 25.3, 78.2, "El Cordero Degollado (Gakin, sótano)"]
+chain = "void"
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «El Cordero Degollado». Nivel recomendado: 10. El círculo/sótano de Ventormenta está en 25.3, 78.2 en el mapa clásico que usa Forever; ConquestCapped y Warcraft Tavern dan 39.0, 84.5 (mapa moderno)."
+
+[[step]]
+id = "legacy-wl-009"
+do = "goto"
+text = "Plantación de Calabazas de Brackwell, Bosque de Elwynn (71.0, 80.6). Surena es nivel 9 y tiene dos guardias: sepáralos o usa Miedo en uno. Recoge la gargantilla de Surena (en Forever la comparte el grupo)."
+at = [1429, 71.0, 80.6, "Surena Caledon"]
+chain = "void"
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Surena Caledon». Nivel recomendado: 10."
+
+[[step]]
+id = "legacy-wl-010"
+do = "train"
+text = "Vuelve con Gakin y coge La vinculación. Vida y maná llenos. Usa la gargantilla de sangre en el círculo, debajo de la sala de Gakin. DoTs, Diablillo al ataque, Miedo cuando llegue, remata. Aprendes Invocar a abisario."
+spells = [697]
+at = [1453, 25.3, 78.2, "Círculo de invocación (sótano)"]
+chain = "void"
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «La vinculación». Nivel recomendado: 10. Nombres sin confirmar en el cliente (marcados «(?)» en la fuente): La vinculación, gargantilla de sangre."
+
+[[step]]
+id = "legacy-wl-011"
+do = "note"
+text = "Sube en Loch Modan y coge la ruta de vuelo de Thelsamar. Abisario en pasivo: lo mandas tú. Con dos enemigos, el Abisario aguanta a uno y tú le pones DoTs al otro."
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Loch Modan». Nivel recomendado: 11."
+
+[[step]]
+id = "legacy-wl-012"
+do = "train"
+text = "Entrena Drenar vida y Maldición de temeridad. En Páramos de Poniente, el tablón de la granja Alexston (37, 50) empieza la cadena del Saco de dormir acogedor: hasta +3% de experiencia y zona de descanso."
+spells = [689]
+at = [1436, 37.0, 50.0, "Saco de dormir: tablón de la granja Alexston"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Drenar vida y saco de dormir». Nivel recomendado: 14."
+
+[[step]]
+id = "legacy-wl-013"
+do = "goto"
+text = "Tres Caminos (Montañas Crestagrana, 10.5, 72.7). Las cajas de suministros y las órdenes de trabajo caen de los enemigos y también en mazmorras (9 nov). Entrégalas a Marcy Baker (9.6, 70.9) y compra patrones de Sastrería con Favor de mercader a Mivin Shadowweave (10.0, 73.0)."
+at = [1433, 9.6, 70.9, "Marcy Baker: entrega de cajas"]
+wps = [[1433, 10.0, 73.0, "Mivin Shadowweave: patrones de Sastrería"]]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Favor de mercader». Nivel recomendado: 15. Varios puntos: no es un único destino, revisar al detallar la ruta."
+
+[[step]]
+id = "legacy-wl-014"
+do = "goto"
+text = "Hall of Thanes (13-18) está dentro de Forjaz: Gran Fundición, sala del trono y pasillo de la izquierda hacia la Antigua Forjaz (43.5, 52.0). La Alianza tiene sus 5 misiones. Luego Ruins of Lordaeron (15-20) y Minas de la Muerte (17-22). Sus misiones dan más del doble de experiencia que en Classic, y desde el 8 de noviembre los enemigos de mazmorra dan un 50% más (solo los enemigos, no las misiones). Antes del primer pull: Piedra de alma al sanador y Piedras de salud para todos."
+at = [1455, 43.5, 52.0, "Hall of Thanes (Antigua Forjaz)"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Mazmorras 13-22». Nivel recomendado: 17."
+
+[[step]]
+id = "legacy-wl-015"
+do = "goto"
+text = "El brujo solo sabe usar dagas y varitas. Aprende Bastones con Woo Ping en el Weller's Arsenal, Ventormenta (57.1, 57.7, Distrito de Comercio). En Forjaz no se enseñan. Sin esto no podrás equiparte el Bastón de Soran'ruk."
+at = [1453, 57.1, 57.7, "Woo Ping: Bastones"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Aprende Bastones». Nivel recomendado: 20."
+
+[[step]]
+id = "legacy-wl-016"
+do = "train"
+text = "Gakin te manda con Takar el Vidente (Los Baldíos, 49.2, 57.0). Íncubo: Takar da primero Devorador de almas y luego ¿Qué es el amor?: la figurilla de madera está en el piso de arriba de una casa al norte del Maestra's Post, Vallefresno (26.0, 22.0). Enciende la antorcha apagada y quema el carro para distraer a los arqueólogos. Súcubo: corazón de madera del árbol de Ordil'Aran (31.4, 31.5), entrega a Gakin. Vinculación en el círculo de Ventormenta. Elige uno: no se pasan entre sí."
+spells = [712]
+at = [1413, 49.2, 57.0, "Takar el Vidente"]
+wps = [[1440, 26.0, 22.0, "Figurilla de madera (Íncubo)"], [1440, 31.4, 31.5, "Corazón de madera (Súcubo)"], [1453, 25.3, 78.2, "Círculo de Ventormenta"]]
+chain = "sayaad"
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Íncubo o Súcubo». Nivel recomendado: 20. Nombres sin confirmar en el cliente (marcados «(?)» en la fuente): Devorador de almas, ¿Qué es el amor?."
+
+[[step]]
+id = "legacy-wl-017"
+do = "goto"
+text = "Doan Karhan, junto a Takar (Los Baldíos, 49.2, 57.2). 3 fragmentos de los acólitos Crepusculares en Cavernas de Brazanegra y 1 fragmento grande del Shadowfang Darksoul en el Castillo de Colmillo Oscuro (inmune a las Sombras: usa Inmolar y Dolor abrasador). En Brazanegra consigue también el Cetro de lápida."
+at = [1413, 49.2, 57.2, "Doan Karhan"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Bastón de Soran'ruk». Nivel recomendado: 22. Nombres sin confirmar en el cliente (marcados «(?)» en la fuente): Shadowfang Darksoul."
+
+[[step]]
+id = "legacy-wl-018"
+do = "train"
+text = "Entrena Desterrar y Crear pirorroca."
+spells = [6366]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Pirorroca». Nivel recomendado: 28."
+
+[[step]]
+id = "legacy-wl-019"
+do = "goto"
+text = "Tu instructor te manda con Strahad Farsan en Trinquete (62.6, 35.4). Él te da la primera parte del Tomo de la Cábala, que te lleva a Krom Stoutarm en Forjaz."
+at = [1413, 62.6, 35.4, "Strahad Farsan (Trinquete)"]
+chain = "felhunter"
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Manáfago: Strahad». Nivel recomendado: 30."
+
+[[step]]
+id = "legacy-wl-020"
+do = "goto"
+text = "Krom Stoutarm (Forjaz, Sala de los Exploradores, 74.2, 9.8) pide el tomo mohoso (Laderas de Trabalomas, 27.7, 72.8) y el manuscrito (Campamento Pezuña Quebrada, Las Mil Agujas, 43.4, 32.7). Te da el tomo reconstruido."
+at = [1455, 74.2, 9.8, "Krom Stoutarm (Sala de los Exploradores)"]
+wps = [[1424, 27.7, 72.8, "Tomo mohoso (campamento múrloc)"], [1441, 43.4, 32.7, "Manuscrito (Campamento Pezuña Quebrada)"]]
+chain = "felhunter"
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Manáfago: Krom y las dos páginas». Nivel recomendado: 30. Varios puntos: no es un único destino, revisar al detallar la ruta."
+
+[[step]]
+id = "legacy-wl-021"
+do = "train"
+text = "3 varas de canalización de los lanzadores Faucedraco del Campamento Dentellada (Los Humedales, 45.7, 45.4; entrada trasera hacia 51, 45). Lleva tomo y varas a Strahad y haz la vinculación en su torre. Desde aquí, Drenar vida es tu relleno (drain tanking)."
+spells = [691]
+at = [1437, 45.7, 45.4, "Campamento Dentellada (varas)"]
+wps = [[1413, 62.6, 35.4, "Strahad Farsan"]]
+chain = "felhunter"
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Manáfago: varas y vinculación». Nivel recomendado: 30."
+
+[[step]]
+id = "legacy-wl-022"
+do = "train"
+text = "Entrena Crear piedra de hechizos. En Forever es un imbuido de arma que aumenta el daño de Sombras y se acumula con el Aceite zahorí: perfecta para Aflicción."
+spells = [2362]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Piedra de hechizos». Nivel recomendado: 36."
+
+[[step]]
+id = "legacy-wl-023"
+do = "train"
+text = "Tu instructor de brujo de la capital te manda con Strahad Farsan (Trinquete, 62.6, 35.4): te enseña Invocar a corcel nefasto en el momento, sin coste, y desde el 9 de noviembre incluye la equitación: no hace falta ahorrar para ella. Activa la doble especialización: Aflicción para subir y Destrucción o Demonología para grupo."
+spells = [5784]
+at = [1413, 62.6, 35.4, "Strahad Farsan"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Corcel nefasto y doble especialización». Nivel recomendado: 40."
+
+[[step]]
+id = "legacy-wl-024"
+do = "train"
+text = "Niby el Todopoderoso (Frondavil, 41.4, 44.8) y su criado Impsy piden tres esencias viles impecables (Jaedenar, sátiros Legashi de Azshara y el Portal Oscuro). Luego Fuego vil sobre Kroshius (45.4, 35.4), elite 55: lleva grupo."
+spells = [1122]
+at = [1448, 41.4, 44.8, "Niby el Todopoderoso"]
+wps = [[1448, 45.4, 35.4, "Kroshius"]]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Inferno». Nivel recomendado: 50."
+
+[[step]]
+id = "legacy-wl-025"
+do = "train"
+text = "Daio el Decrépito (Las Tierras Devastadas, 34.0, 50.2). 15 sangres de sátiro de La Masacre y 5 lágrimas de Hederine de Cuna del Invierno; luego atrapa a un comandante guardia apocalíptico. Necesitas grupo."
+spells = [18540]
+at = [1419, 34.0, 50.2, "Daio el Decrépito"]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Guardia apocalíptico». Nivel recomendado: 60."
+
+[[step]]
+id = "legacy-wl-026"
+do = "train"
+text = "Jubahl Corpseseeker (Forjaz, 53.2, 7.6) te manda con Mor'zul Bloodbringer (Las Estepas Ardientes, 12.6, 31.6). Cadena larga que termina con un ritual de 5 jugadores en La Masacre Oeste."
+spells = [23161]
+at = [1455, 53.2, 7.6, "Jubahl Corpseseeker"]
+wps = [[1428, 12.6, 31.6, "Mor'zul Bloodbringer (Altar de las Tormentas)"]]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Título original: «Corcel de la muerte». Nivel recomendado: 60."

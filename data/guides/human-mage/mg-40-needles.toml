@@ -1,0 +1,61 @@
+# Guía human-mage: Mago: Magus Tirth (Mil Agujas). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-40-needles"
+title = "Mago: Magus Tirth (Mil Agujas)"
+levels = [40, 41]
+map = 1441
+summary = "Misiones de clase con Magus Tirth, en los Llanos Centelleantes."
+
+[[step]]
+id = "mg-40-needles-001"
+do = "turnin"
+quest = 1949
+npc = 6548
+at = [1441, 78.3, 75.7]
+text = "En los Llanos Centelleantes, entrega a Magus Tirth."
+status = "unverified"
+sources = ["questie:quest/1949", "questie:npc/6548"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-40-needles-002"
+do = "accept"
+quest = 1950
+npc = 6548
+at = [1441, 78.3, 75.7]
+text = "Coge la misión de Magus Tirth."
+status = "unverified"
+sources = ["questie:quest/1950", "questie:npc/6548"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-40-needles-003"
+do = "complete"
+quest = 1950
+at = [1441, 79.6, 75.6]
+text = "Encárgate de «Plucky» Johnson, al lado de Tirth."
+status = "unverified"
+sources = ["questie:quest/1950"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-40-needles-004"
+do = "turnin"
+quest = 1950
+npc = 6548
+at = [1441, 78.3, 75.7]
+text = "Entrega a Magus Tirth."
+status = "unverified"
+sources = ["questie:quest/1950", "questie:npc/6548"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-40-needles-005"
+do = "accept"
+quest = 1951
+npc = 6548
+at = [1441, 78.3, 75.7]
+text = "Coge la misión de los rituales de poder."
+tip = "El libro está en la biblioteca del Monasterio Escarlata: hazlo cuando vayas a esa mazmorra."
+status = "unverified"
+sources = ["questie:quest/1951", "questie:npc/6548"]
+checked = "2026-11-11"

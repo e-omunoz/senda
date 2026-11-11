@@ -1,0 +1,667 @@
+# Ruta compartida de Alianza (brujo gnomo y mago humano), 45-60. Generada con QuestieDB local; textos propios.
+id = "a45-feralas"
+title = "Feralas: Bastión Plumaluna"
+levels = [45, 47]
+map = 1444
+summary = "Cadenas de Plumaluna: nagas de Solarsal, el mensajero perdido, gordunni, Grimtotem y gigantes. Piedra en Plumaluna."
+
+[[step]]
+id = "a45-feralas-001"
+do = "goto"
+at = [1444, 43.4, 43.0]
+text = "Desde Forjaz: barco Menethil-Theramore, vuelo a Punta de Nijel y baja al sur hasta el muelle de Feralas."
+tip = "El camino de los Colosos Gemelos tiene bestias de 47-50: ve montado y sin pararte."
+status = "unverified"
+sources = ["https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a45-feralas-002"
+do = "goto"
+at = [1444, 30.2, 43.3]
+text = "Toma el barco del muelle hasta el Bastión Plumaluna."
+status = "unverified"
+sources = ["https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a45-feralas-003"
+do = "getfp"
+npc = 8019
+node = "Feathermoon"
+at = [1444, 30.2, 43.2]
+text = "Coge la ruta de vuelo del bastión."
+status = "unverified"
+sources = ["questie:npc/8019", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-004"
+do = "sethearth"
+npc = 7736
+at = [1444, 31.0, 43.5]
+text = "Pon la piedra de hogar en la posada de Plumaluna."
+status = "unverified"
+sources = ["questie:npc/7736", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-005"
+do = "accept"
+quest = 2866
+npc = 3936
+at = [1444, 30.3, 46.2]
+text = "Coge la misión de Shandris: explorar las ruinas de Solarsal."
+status = "unverified"
+sources = ["questie:quest/2866", "questie:npc/3936", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-006"
+do = "accept"
+quest = 4124
+npc = 7877
+at = [1444, 30.4, 46.2]
+text = "Coge la misión del mensajero desaparecido."
+status = "unverified"
+sources = ["questie:quest/4124", "questie:npc/7877", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-007"
+do = "turnin"
+quest = 4124
+npc = 7880
+at = [1444, 31.9, 45.1]
+text = "Entrégala a Ginro, aquí mismo en el bastión."
+status = "unverified"
+sources = ["questie:quest/4124", "questie:npc/7880", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-008"
+do = "accept"
+quest = 4125
+npc = 7880
+at = [1444, 31.9, 45.1]
+text = "Coge la continuación: busca el barco del mensajero en la costa."
+status = "unverified"
+sources = ["questie:quest/4125", "questie:npc/7880", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-009"
+do = "accept"
+quest = 2982
+npc = 7900
+at = [1444, 31.8, 45.6]
+text = "Coge la misión de Angelas contra los gordunni de las Tierras Salvajes."
+status = "unverified"
+sources = ["questie:quest/2982", "questie:npc/7900", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-010"
+do = "accept"
+quest = 2821
+npc = 7852
+at = [1444, 30.6, 42.7]
+text = "Coge la misión de Pratt: pieles de yeti gruesas."
+tip = "Las pieles caen de los yetis de la cueva del sur de Feralas; no hace falta ser peletero."
+status = "unverified"
+sources = ["questie:quest/2821", "questie:npc/7852", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-011"
+do = "complete"
+quest = 2866
+at = [1444, 26.3, 52.3]
+text = "Explora las ruinas de Solarsal, en la isla al sur del bastión, hasta que se marque la misión."
+status = "unverified"
+sources = ["questie:quest/2866", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-012"
+do = "turnin"
+quest = 2866
+at = [1444, 26.3, 52.3]
+text = "Entrega la misión en el objeto de las ruinas."
+status = "unverified"
+sources = ["questie:quest/2866", "questie:object/142179", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a45-feralas-013"
+do = "accept"
+quest = 2867
+at = [1444, 26.3, 52.3]
+text = "Junto al objeto de las ruinas coge la misión de vuelta al bastión."
+status = "unverified"
+sources = ["questie:quest/2867", "questie:object/142179", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a45-feralas-014"
+do = "turnin"
+quest = 2867
+npc = 3936
+at = [1444, 30.3, 46.2]
+text = "Vuelve con Shandris y entrégala."
+status = "unverified"
+sources = ["questie:quest/2867", "questie:npc/3936", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-015"
+do = "accept"
+quest = 3130
+npc = 3936
+at = [1444, 30.3, 46.2]
+text = "Coge la misión que te manda con Latronicus."
+status = "unverified"
+sources = ["questie:quest/3130", "questie:npc/3936", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-016"
+do = "turnin"
+quest = 3130
+npc = 7877
+at = [1444, 30.4, 46.2]
+text = "Habla con Latronicus Moonspear."
+status = "unverified"
+sources = ["questie:quest/3130", "questie:npc/7877", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-017"
+do = "accept"
+quest = 2869
+npc = 7877
+at = [1444, 30.4, 46.2]
+text = "Coge la misión de las escamas de los nagas Hatecrest."
+status = "unverified"
+sources = ["questie:quest/2869", "questie:npc/7877", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-018"
+do = "complete"
+quest = 2869
+at = [1444, 28.8, 53.5]
+text = "Mata nagas Hatecrest en las ruinas de Solarsal hasta tener 10 escamas."
+status = "unverified"
+sources = ["questie:quest/2869", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-019"
+do = "turnin"
+quest = 2869
+npc = 7877
+at = [1444, 30.4, 46.2]
+text = "Entrega las escamas a Latronicus."
+status = "unverified"
+sources = ["questie:quest/2869", "questie:npc/7877", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-020"
+do = "accept"
+quest = 2870
+npc = 7877
+at = [1444, 30.4, 46.2]
+text = "Coge la misión contra Lord Shalzaru."
+status = "unverified"
+sources = ["questie:quest/2870", "questie:npc/7877", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-021"
+do = "complete"
+quest = 2870
+at = [1444, 28.5, 70.5]
+text = "Ve a la Isla del Terror (suroeste), entra en la cueva de Shalzaru y mátalo para recuperar la reliquia."
+tip = "Los quimeroks de la isla son élites de nivel 56-62: rodéalos pegado a la costa."
+status = "unverified"
+sources = ["questie:quest/2870", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-022"
+do = "turnin"
+quest = 2870
+npc = 7877
+at = [1444, 30.4, 46.2]
+text = "Vuelve al bastión y entrégasela a Latronicus."
+status = "unverified"
+sources = ["questie:quest/2870", "questie:npc/7877", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-023"
+do = "accept"
+quest = 2871
+npc = 7877
+at = [1444, 30.4, 46.2]
+text = "Coge la entrega de la reliquia."
+status = "unverified"
+sources = ["questie:quest/2871", "questie:npc/7877", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-024"
+do = "turnin"
+quest = 2871
+npc = 7878
+at = [1444, 30.1, 45.1]
+text = "Dale la reliquia a Vestia Moonspear, al lado."
+status = "unverified"
+sources = ["questie:quest/2871", "questie:npc/7878", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-025"
+do = "accept"
+quest = 7003
+npc = 14637
+at = [1444, 44.8, 43.4]
+text = "Cruza al muelle del continente y coge la misión de Zorbin: reducir gigantes."
+status = "unverified"
+sources = ["questie:quest/7003", "questie:npc/14637", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-026"
+do = "accept"
+quest = 7721
+npc = 14637
+at = [1444, 44.8, 43.4]
+text = "Coge también la de los núcleos de elementales de agua."
+status = "unverified"
+sources = ["questie:quest/7721", "questie:npc/14637", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-027"
+do = "complete"
+quest = 7721
+at = [1444, 43.2, 48.2]
+text = "Mata elementales marinos en la Costa Olvidada, al sur del muelle, hasta tener 10 núcleos."
+status = "unverified"
+sources = ["questie:quest/7721", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-028"
+do = "complete"
+quest = 4125
+at = [1444, 45.4, 65.0]
+text = "Sigue la costa hacia el sur hasta los restos del barco del mensajero."
+status = "unverified"
+sources = ["questie:quest/4125", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-029"
+do = "turnin"
+quest = 4125
+at = [1444, 45.4, 65.0]
+text = "Examina los restos del barco."
+status = "unverified"
+sources = ["questie:quest/4125", "questie:object/164909", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a45-feralas-030"
+do = "accept"
+quest = 4127
+at = [1444, 45.4, 65.0]
+text = "Coge la misión de los restos: lleva el cuchillo a Ginro."
+status = "unverified"
+sources = ["questie:quest/4127", "questie:object/164909", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a45-feralas-031"
+do = "turnin"
+quest = 4127
+npc = 7880
+at = [1444, 31.9, 45.1]
+text = "Vuelve al bastión y enséñale el cuchillo a Ginro."
+status = "unverified"
+sources = ["questie:quest/4127", "questie:npc/7880", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-032"
+do = "accept"
+quest = 4129
+npc = 7880
+at = [1444, 31.9, 45.1]
+text = "Coge la continuación del cuchillo."
+status = "unverified"
+sources = ["questie:quest/4129", "questie:npc/7880", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-033"
+do = "turnin"
+quest = 4129
+npc = 7879
+at = [1444, 32.5, 43.8]
+text = "Lleva el cuchillo a Quintis Jonespyre."
+status = "unverified"
+sources = ["questie:quest/4129", "questie:npc/7879", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-034"
+do = "accept"
+quest = 4130
+npc = 7879
+at = [1444, 32.5, 43.8]
+text = "Coge la lectura psicométrica."
+status = "unverified"
+sources = ["questie:quest/4130", "questie:npc/7879", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-035"
+do = "turnin"
+quest = 4130
+npc = 7880
+at = [1444, 31.9, 45.1]
+text = "Vuelve a hablar con Ginro."
+status = "unverified"
+sources = ["questie:quest/4130", "questie:npc/7880", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-036"
+do = "accept"
+quest = 4131
+npc = 7880
+at = [1444, 31.9, 45.1]
+text = "Coge la misión de los campamentos de los gnolls Woodpaw."
+status = "unverified"
+sources = ["questie:quest/4131", "questie:npc/7880", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-037"
+do = "complete"
+quest = 2982
+at = [1444, 59.8, 64.7]
+wps = [[1444, 60.8, 67.8, "Chamanes gordunni"], [1444, 69.2, 43.3, "Brutos gordunni"]]
+text = "Ve al este, a las ruinas de Isildien, y mata brujos, chamanes y brutos gordunni (8 de cada)."
+status = "unverified"
+sources = ["questie:quest/2982", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-038"
+do = "turnin"
+quest = 4131
+at = [1444, 73.3, 56.3]
+text = "Busca el rastro del mensajero en el campamento Woodpaw del sureste."
+status = "unverified"
+sources = ["questie:quest/4131", "questie:object/164953", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a45-feralas-039"
+do = "accept"
+quest = 4135
+at = [1444, 73.3, 56.3]
+text = "Coge la nota del campamento: el mensajero está en la colmena."
+status = "unverified"
+sources = ["questie:quest/4135", "questie:object/164953", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a45-feralas-040"
+do = "turnin"
+quest = 4135
+at = [1444, 72.1, 63.7]
+text = "Entra en la colmena Zukk'ash (las Profundidades Retorcidas) y busca al mensajero."
+status = "unverified"
+sources = ["questie:quest/4135", "questie:object/164954", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a45-feralas-041"
+do = "accept"
+quest = 4265
+at = [1444, 72.1, 63.7]
+text = "Coge la misión para liberar a Raschal de la colmena."
+status = "unverified"
+sources = ["questie:quest/4265", "questie:object/164954", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a45-feralas-042"
+do = "complete"
+quest = 4265
+at = [1444, 72.1, 63.7]
+text = "Libera a Raschal dentro de la colmena."
+tip = "Los silítidos salen en grupos; deja al demonio o la mascota de agua aguantando."
+status = "unverified"
+sources = ["questie:quest/4265", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-043"
+do = "complete"
+quest = 2821
+at = [1444, 54.6, 56.7]
+text = "Mata yetis en la cueva de Feral Scar hasta tener 10 pieles gruesas."
+status = "unverified"
+sources = ["questie:quest/2821", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-044"
+do = "accept"
+quest = 2969
+npc = 7956
+at = [1444, 65.9, 45.6]
+text = "Ve al campamento Grimtotem y coge la misión de Kindal Moonweaver: liberar a los dardos."
+status = "unverified"
+sources = ["questie:quest/2969", "questie:npc/7956", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-045"
+do = "complete"
+quest = 2969
+at = [1444, 66.0, 45.6]
+text = "Abre la jaula y protege a los dardos y a Kindal mientras escapan."
+status = "unverified"
+sources = ["questie:quest/2969", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-046"
+do = "turnin"
+quest = 2969
+npc = 7956
+at = [1444, 65.9, 45.6]
+text = "Entrégala a Kindal."
+status = "unverified"
+sources = ["questie:quest/2969", "questie:npc/7956", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-047"
+do = "accept"
+quest = 2970
+npc = 7957
+at = [1444, 66.0, 45.6]
+text = "Coge la misión de Jer'kai contra los Grimtotem."
+status = "unverified"
+sources = ["questie:quest/2970", "questie:npc/7957", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-048"
+do = "complete"
+quest = 2970
+at = [1444, 68.0, 41.0]
+text = "Mata naturalistas, asaltantes y chamanes Grimtotem en el campamento."
+status = "unverified"
+sources = ["questie:quest/2970", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-049"
+do = "turnin"
+quest = 2970
+npc = 7957
+at = [1444, 66.0, 45.6]
+text = "Entrégala a Jer'kai."
+status = "unverified"
+sources = ["questie:quest/2970", "questie:npc/7957", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-050"
+do = "complete"
+quest = 7003
+at = [1444, 39.3, 22.9]
+text = "Ve al norte y usa el reductor de Zorbin en los gigantes; recoge el residuo de cada uno (15)."
+tip = "Primero reduce al gigante y después mátalo: pequeño muere enseguida."
+status = "unverified"
+sources = ["questie:quest/7003", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-051"
+do = "accept"
+quest = 2844
+npc = 7765
+at = [1444, 42.4, 22.0]
+text = "Coge la misión de Rockbiter: busca a la niña perdida."
+status = "unverified"
+sources = ["questie:quest/2844", "questie:npc/7765", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-052"
+do = "turnin"
+quest = 2844
+npc = 7774
+at = [1444, 38.2, 10.3]
+text = "Busca a Shay al norte del campamento de Rockbiter."
+status = "unverified"
+sources = ["questie:quest/2844", "questie:npc/7774", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-053"
+do = "accept"
+quest = 2845
+npc = 7774
+at = [1444, 38.2, 10.3]
+text = "Coge la escolta de Shay."
+status = "unverified"
+sources = ["questie:quest/2845", "questie:npc/7774", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-054"
+do = "complete"
+quest = 2845
+at = [1444, 38.2, 10.3]
+text = "Coge la campana del cofre y lleva a Shay hasta Rockbiter; tócala si se despista."
+status = "unverified"
+sources = ["questie:quest/2845", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-055"
+do = "turnin"
+quest = 2845
+npc = 7765
+at = [1444, 42.4, 22.0]
+text = "Entrega la misión a Rockbiter."
+status = "unverified"
+sources = ["questie:quest/2845", "questie:npc/7765", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-056"
+do = "turnin"
+quest = 7003
+npc = 14637
+at = [1444, 44.8, 43.4]
+text = "Vuelve al muelle y entrega los residuos a Zorbin."
+status = "unverified"
+sources = ["questie:quest/7003", "questie:npc/14637", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-057"
+do = "turnin"
+quest = 7721
+npc = 14637
+at = [1444, 44.8, 43.4]
+text = "Entrega también los núcleos de agua."
+status = "unverified"
+sources = ["questie:quest/7721", "questie:npc/14637", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-058"
+do = "hearth"
+zone = 1444
+text = "Usa la piedra de hogar para volver a Plumaluna."
+status = "unverified"
+sources = ["https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a45-feralas-059"
+do = "turnin"
+quest = 2982
+npc = 7900
+at = [1444, 31.8, 45.6]
+text = "Entrega la misión de los gordunni a Angelas."
+status = "unverified"
+sources = ["questie:quest/2982", "questie:npc/7900", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-060"
+do = "turnin"
+quest = 2821
+npc = 7852
+at = [1444, 30.6, 42.7]
+text = "Entrega las pieles a Pratt."
+status = "unverified"
+sources = ["questie:quest/2821", "questie:npc/7852", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-061"
+do = "turnin"
+quest = 4265
+npc = 7880
+at = [1444, 31.9, 45.1]
+text = "Cuéntale a Ginro que Raschal está a salvo."
+status = "unverified"
+sources = ["questie:quest/4265", "questie:npc/7880", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-062"
+do = "accept"
+quest = 4266
+npc = 7880
+at = [1444, 31.9, 45.1]
+text = "Coge la misión de la bienvenida del héroe."
+status = "unverified"
+sources = ["questie:quest/4266", "questie:npc/7880", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a45-feralas-063"
+do = "turnin"
+quest = 4266
+npc = 3936
+at = [1444, 30.3, 46.2]
+text = "Habla con Shandris para terminarla."
+status = "unverified"
+sources = ["questie:quest/4266", "questie:npc/3936", "https://games.gg/world-of-warcraft/guides/wow-forever-feralas-leveling-guide/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"

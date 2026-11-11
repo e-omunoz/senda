@@ -1,0 +1,64 @@
+# Guía human-mage: Mago: Prenda de nudo astral (30). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-30-astral-knot"
+title = "Mago: Prenda de nudo astral (30)"
+levels = [30, 31]
+map = 1453
+summary = "Entrega de la Prenda de nudo astral y hechizos del 30."
+
+[[step]]
+id = "mg-30-astral-knot-001"
+do = "turnin"
+quest = 1940
+npc = 1309
+at = [1453, 51.8, 83.5]
+text = "Lleva la seda a Wynne Larson, en Ventormenta."
+status = "unverified"
+sources = ["questie:quest/1940", "questie:npc/1309"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-30-astral-knot-002"
+do = "accept"
+quest = 1942
+npc = 1309
+at = [1453, 51.8, 83.5]
+text = "Coge la misión de la prenda."
+status = "unverified"
+sources = ["questie:quest/1942", "questie:npc/1309"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-30-astral-knot-003"
+do = "turnin"
+quest = 1942
+npc = 1309
+at = [1453, 51.8, 83.5]
+text = "Entrega y elige tu recompensa."
+status = "unverified"
+sources = ["questie:quest/1942", "questie:npc/1309"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-30-astral-knot-004"
+do = "train"
+npc = 5497
+spells = [7302]
+at = [1453, 49.6, 85.8]
+text = "Nivel 30: aprende Armadura de hielo."
+tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos."
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-30-astral-knot-005"
+do = "train"
+npc = 2485
+spells = [3565]
+at = [1453, 50.4, 86.0]
+optional = true
+text = "Aprende Teletransporte: Darnassus con Larimaine Purdue."
+tip = "Si no te lo enseña, la instructora de portales de Darnassus sí."
+status = "unverified"
+sources = ["questie:npc/2485", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"

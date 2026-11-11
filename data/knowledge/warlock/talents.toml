@@ -1,0 +1,463 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Data.lua, ns.TALENTS). Un punto por nivel, del 10 al 60.
+# `rank` = rango que alcanzas con ese punto; `max` = rangos del talento.
+id = "warlock-talents-leveling"
+class = "WARLOCK"
+kind = "talents"
+title = "Talentos de subida: Aflicción"
+levels = [10, 60]
+order = 70
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/"]
+checked = "2026-11-08"
+note = "10-30: ConquestCapped (8-nov-2026). 31-60: orientativo (Warcraft Tavern y el orden más usado en la beta); comprueba el árbol. Las guías no coinciden del todo: Warcraft Tavern mete Poder profano y Energías demoníacas hacia el 20-26."
+
+[[pick]]
+level = 10
+talent = "Corrupción mejorada"
+tree = "Aflicción"
+rank = 1
+max = 5
+status = "unverified"
+note = "ConquestCapped (8-nov)."
+
+[[pick]]
+level = 11
+talent = "Corrupción mejorada"
+tree = "Aflicción"
+rank = 2
+max = 5
+status = "unverified"
+note = "ConquestCapped (8-nov)."
+
+[[pick]]
+level = 12
+talent = "Corrupción mejorada"
+tree = "Aflicción"
+rank = 3
+max = 5
+status = "unverified"
+note = "ConquestCapped (8-nov)."
+
+[[pick]]
+level = 13
+talent = "Corrupción mejorada"
+tree = "Aflicción"
+rank = 4
+max = 5
+status = "unverified"
+note = "ConquestCapped (8-nov)."
+
+[[pick]]
+level = 14
+talent = "Corrupción mejorada"
+tree = "Aflicción"
+rank = 5
+max = 5
+status = "unverified"
+note = "ConquestCapped (8-nov)."
+
+[[pick]]
+level = 15
+talent = "Supresión"
+tree = "Aflicción"
+rank = 1
+max = 5
+status = "unverified"
+note = "ConquestCapped (8-nov)."
+
+[[pick]]
+level = 16
+talent = "Supresión"
+tree = "Aflicción"
+rank = 2
+max = 5
+status = "unverified"
+note = "ConquestCapped (8-nov)."
+
+[[pick]]
+level = 17
+talent = "Supresión"
+tree = "Aflicción"
+rank = 3
+max = 5
+status = "unverified"
+note = "ConquestCapped (8-nov)."
+
+[[pick]]
+level = 18
+talent = "Alcance macabro"
+tree = "Aflicción"
+rank = 1
+max = 2
+status = "unverified"
+note = "ConquestCapped (8-nov)."
+
+[[pick]]
+level = 19
+talent = "Alcance macabro"
+tree = "Aflicción"
+rank = 2
+max = 2
+status = "unverified"
+note = "ConquestCapped (8-nov)."
+
+[[pick]]
+level = 20
+talent = "Drenajes mejorados"
+tree = "Aflicción"
+rank = 1
+max = 3
+status = "disputed"
+note = "ConquestCapped (8-nov). Warcraft Tavern mete Poder profano y Energías demoníacas hacia el 20-26. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 21
+talent = "Drenajes mejorados"
+tree = "Aflicción"
+rank = 2
+max = 3
+status = "disputed"
+note = "ConquestCapped (8-nov). Warcraft Tavern mete Poder profano y Energías demoníacas hacia el 20-26. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 22
+talent = "Drenajes mejorados"
+tree = "Aflicción"
+rank = 3
+max = 3
+status = "disputed"
+note = "ConquestCapped (8-nov). Warcraft Tavern mete Poder profano y Energías demoníacas hacia el 20-26. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 23
+talent = "Pandemia"
+tree = "Aflicción"
+rank = 1
+max = 3
+status = "disputed"
+note = "ConquestCapped (8-nov). Warcraft Tavern mete Poder profano y Energías demoníacas hacia el 20-26. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 24
+talent = "Pandemia"
+tree = "Aflicción"
+rank = 2
+max = 3
+status = "disputed"
+note = "ConquestCapped (8-nov). Warcraft Tavern mete Poder profano y Energías demoníacas hacia el 20-26. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 25
+talent = "Pandemia"
+tree = "Aflicción"
+rank = 3
+max = 3
+status = "disputed"
+note = "ConquestCapped (8-nov). Warcraft Tavern mete Poder profano y Energías demoníacas hacia el 20-26. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 26
+talent = "Ocaso"
+tree = "Aflicción"
+rank = 1
+max = 2
+status = "disputed"
+note = "ConquestCapped (8-nov). Warcraft Tavern mete Poder profano y Energías demoníacas hacia el 20-26."
+
+[[pick]]
+level = 27
+talent = "Ocaso"
+tree = "Aflicción"
+rank = 2
+max = 2
+status = "disputed"
+note = "ConquestCapped (8-nov). Warcraft Tavern mete Poder profano y Energías demoníacas hacia el 20-26."
+
+[[pick]]
+level = 28
+talent = "Amplificar maldición"
+tree = "Aflicción"
+rank = 1
+max = 1
+status = "unverified"
+note = "ConquestCapped (8-nov)."
+
+[[pick]]
+level = 29
+talent = "Terror de agonía mejorado"
+tree = "Aflicción"
+rank = 1
+max = 2
+status = "unverified"
+note = "ConquestCapped (8-nov). Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 30
+talent = "Terror de agonía mejorado"
+tree = "Aflicción"
+rank = 2
+max = 2
+status = "unverified"
+note = "ConquestCapped (8-nov). Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 31
+talent = "Malevolencia"
+tree = "Aflicción"
+rank = 1
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y orden más usado en la beta): comprueba el árbol. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 32
+talent = "Malevolencia"
+tree = "Aflicción"
+rank = 2
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y orden más usado en la beta): comprueba el árbol. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 33
+talent = "Malevolencia"
+tree = "Aflicción"
+rank = 3
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y orden más usado en la beta): comprueba el árbol. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 34
+talent = "Malevolencia"
+tree = "Aflicción"
+rank = 4
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y orden más usado en la beta): comprueba el árbol. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 35
+talent = "Malevolencia"
+tree = "Aflicción"
+rank = 5
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y orden más usado en la beta): comprueba el árbol. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 36
+talent = "Succionar vida"
+tree = "Aflicción"
+rank = 1
+max = 1
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta)."
+
+[[pick]]
+level = 37
+talent = "Maestría de las Sombras"
+tree = "Aflicción"
+rank = 1
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta)."
+
+[[pick]]
+level = 38
+talent = "Maestría de las Sombras"
+tree = "Aflicción"
+rank = 2
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta)."
+
+[[pick]]
+level = 39
+talent = "Maestría de las Sombras"
+tree = "Aflicción"
+rank = 3
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta)."
+
+[[pick]]
+level = 40
+talent = "Maestría de las Sombras"
+tree = "Aflicción"
+rank = 4
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta)."
+
+[[pick]]
+level = 41
+talent = "Maestría de las Sombras"
+tree = "Aflicción"
+rank = 5
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta)."
+
+[[pick]]
+level = 42
+talent = "Succión de alma"
+tree = "Aflicción"
+rank = 1
+max = 3
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta). Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 43
+talent = "Succión de alma"
+tree = "Aflicción"
+rank = 2
+max = 3
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta). Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 44
+talent = "Succión de alma"
+tree = "Aflicción"
+rank = 3
+max = 3
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta). Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 45
+talent = "Estragos"
+tree = "Aflicción"
+rank = 1
+max = 1
+status = "unverified"
+note = "Orientativo. Blizzard dobló su coeficiente el 4-nov; el ajuste del 10-nov puede cambiarlo. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 46
+talent = "Concentración vil"
+tree = "Aflicción"
+rank = 1
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta)."
+
+[[pick]]
+level = 47
+talent = "Concentración vil"
+tree = "Aflicción"
+rank = 2
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta)."
+
+[[pick]]
+level = 48
+talent = "Concentración vil"
+tree = "Aflicción"
+rank = 3
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta)."
+
+[[pick]]
+level = 49
+talent = "Concentración vil"
+tree = "Aflicción"
+rank = 4
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta)."
+
+[[pick]]
+level = 50
+talent = "Concentración vil"
+tree = "Aflicción"
+rank = 5
+max = 5
+status = "unverified"
+note = "Orientativo (Warcraft Tavern y beta)."
+
+[[pick]]
+level = 51
+talent = "Descarga de las Sombras mejorada"
+tree = "Aflicción"
+rank = 1
+max = 5
+status = "unverified"
+note = "Orientativo. Se deja en 4/5."
+
+[[pick]]
+level = 52
+talent = "Descarga de las Sombras mejorada"
+tree = "Aflicción"
+rank = 2
+max = 5
+status = "unverified"
+note = "Orientativo. Se deja en 4/5."
+
+[[pick]]
+level = 53
+talent = "Descarga de las Sombras mejorada"
+tree = "Aflicción"
+rank = 3
+max = 5
+status = "unverified"
+note = "Orientativo. Se deja en 4/5."
+
+[[pick]]
+level = 54
+talent = "Descarga de las Sombras mejorada"
+tree = "Aflicción"
+rank = 4
+max = 5
+status = "unverified"
+note = "Orientativo. Se deja en 4/5."
+
+[[pick]]
+level = 55
+talent = "Supresión"
+tree = "Aflicción"
+rank = 4
+max = 5
+status = "unverified"
+note = "Orientativo. Completa Supresión (3/5 desde el 17)."
+
+[[pick]]
+level = 56
+talent = "Supresión"
+tree = "Aflicción"
+rank = 5
+max = 5
+status = "unverified"
+note = "Orientativo. Completa Supresión (3/5 desde el 17)."
+
+[[pick]]
+level = 57
+talent = "Libre: Vitalidad vil (Demonología) o lo que te falte de Aflicción"
+tree = "Demonología"
+status = "unverified"
+note = "Orientativo. Puntos libres."
+
+[[pick]]
+level = 58
+talent = "Libre: Vitalidad vil (Demonología) o lo que te falte de Aflicción"
+tree = "Demonología"
+status = "unverified"
+note = "Orientativo. Puntos libres."
+
+[[pick]]
+level = 59
+talent = "Libre: Vitalidad vil (Demonología) o lo que te falte de Aflicción"
+tree = "Demonología"
+status = "unverified"
+note = "Orientativo. Puntos libres."
+
+[[pick]]
+level = 60
+talent = "Libre: Vitalidad vil (Demonología) o lo que te falte de Aflicción"
+tree = "Demonología"
+status = "unverified"
+note = "Orientativo. Puntos libres."

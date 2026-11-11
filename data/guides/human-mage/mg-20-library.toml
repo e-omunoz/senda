@@ -1,0 +1,51 @@
+# Guía human-mage: Mago: biblioteca e Investigación (20). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-20-library"
+title = "Mago: biblioteca e Investigación (20)"
+levels = [20, 22]
+map = 1453
+summary = "Un libro de biblioteca para Garion Wendell: el mago aprende Investigación y Estudiar."
+
+[[step]]
+id = "mg-20-library-001"
+do = "accept"
+quest = 79092
+at = [1429, 65.4, 70.1]
+text = "De camino a Crestagrana, entra en la Torre de Azora (Elwynn) y coge el libro de la biblioteca."
+tip = "Vale cualquier libro de biblioteca que encuentres por el mundo."
+status = "unverified"
+sources = ["questie:quest/79092"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-20-library-002"
+do = "turnin"
+quest = 79092
+npc = 211033
+at = [1453, 48.9, 86.5]
+text = "Teletranspórtate a Ventormenta y entrega el libro a Garion Wendell, en lo alto del Sagrario."
+status = "unverified"
+sources = ["questie:quest/79092", "questie:npc/211033"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-20-library-003"
+do = "accept"
+quest = 97286
+npc = 211033
+at = [1453, 48.9, 86.5]
+text = "Coge de Garion Wendell la misión de Investigación (solo magos)."
+tip = "Te da Estudiar: una vez por hora, dentro de una biblioteca, gasta una pluma ligera y da pergaminos."
+status = "unverified"
+sources = ["questie:quest/97286", "questie:npc/211033"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-20-library-004"
+do = "turnin"
+quest = 97286
+npc = 211033
+at = [1453, 48.9, 86.5]
+text = "Entrega a Garion Wendell y aprende Estudiar."
+status = "unverified"
+sources = ["questie:quest/97286", "questie:npc/211033"]
+checked = "2026-11-11"

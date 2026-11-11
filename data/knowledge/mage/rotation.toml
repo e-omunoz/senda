@@ -1,0 +1,126 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua MG.ROTATION y la sugerencia del HUD de BrujoGnomoGuia.lua, MageSuggest).
+# Mismo formato que data/knowledge/warlock/rotation.toml ([[phase]], [[hud]], [[warning]]).
+id = "mage-rotation"
+class = "MAGE"
+kind = "rotation"
+title = "Rotación del mago"
+levels = [1, 60]
+order = 100
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever"]
+checked = "2026-11-04"
+note = "Basada en la guía de Escarcha de Wowhead (Porom, 4-nov)."
+
+[[phase]]
+from = 1
+to = 9
+spells = [116, 2136, 5019]
+text = """
+1. Descarga de Escarcha antes de que llegue.
+2. Otra mientras se acerca.
+3. Explosión de Fuego para rematar.
+4. Varita si te quedas sin maná."""
+
+[[phase]]
+from = 10
+to = 19
+spells = [116, 2136, 122, 5019]
+text = """
+1. Descarga de Escarcha x2.
+2. Explosión de Fuego cuando llegue.
+3. Nova de Escarcha y aléjate.
+4. Descarga de Escarcha.
+5. Varita para rematar."""
+
+[[phase]]
+from = 20
+to = 39
+spells = [116, 122, 2136, 1953]
+text = """
+1. Descarga de Escarcha.
+2. Nova de Escarcha y aléjate.
+3. Lanza de hielo en cuanto esté congelado (o con Dedos de Escarcha).
+4. Descarga de Escarcha.
+5. Explosión de Fuego o Lanza de hielo (comparten 8 s).
+6. Traslación para separarte."""
+note = "Lanza de hielo es un talento de Forever (22) sin id conocido."
+
+[[phase]]
+from = 40
+to = 60
+spells = [116, 120, 133, 2948, 2136]
+text = """
+**Escarcha:** Descarga de Escarcha de relleno. Lanza de hielo con congelación o con Dedos de Escarcha. Cono de frío con 5 cargas de Escalofrío del invierno.
+
+**Fuego (bandas):** Piroexplosión de apertura, Chamuscar hasta 5 cargas, Bola de Fuego de relleno, Explosión de Fuego cuando esté lista, Piroexplosión con 3 de Calentamiento."""
+
+[[hud]]
+when = "Sin objetivo, fuera de combate y mana < 0.5"
+suggest = "Bebe agua conjurada"
+
+[[hud]]
+when = "hp < 0.3 y conoces Bloqueo de hielo"
+suggest = "Bloqueo de hielo"
+spell = 11958
+
+[[hud]]
+when = "hp < 0.35 y llevas Piedra de salud"
+suggest = "¡Piedra de salud!"
+
+[[hud]]
+when = "hp < 0.45 y conoces Nova de Escarcha"
+suggest = "Nova de Escarcha y aléjate"
+spell = 122
+
+[[hud]]
+when = "mana < 0.1 y conoces Evocación"
+suggest = "Evocación"
+spell = 12051
+
+[[hud]]
+when = "mana < 0.2 y llevas gema de maná"
+suggest = "Gema de maná"
+
+[[hud]]
+when = "thp < 0.15 y conoces Explosión de Fuego"
+suggest = "Explosión de Fuego"
+spell = 2136
+
+[[hud]]
+when = "mana < 0.15 y llevas varita"
+suggest = "Varita"
+spell = 5019
+
+[[hud]]
+when = "Conoces Descarga de Escarcha"
+suggest = "Descarga de Escarcha"
+spell = 116
+
+[[hud]]
+when = "Siempre (último recurso)"
+suggest = "Bola de Fuego"
+spell = 133
+
+[[warning]]
+text = "Sin armadura de escarcha/hielo/mago"
+when = "No tienes ninguna aura de [ids].armor_buffs (spells.toml)"
+
+[[warning]]
+text = "Sin Intelecto Arcano"
+when = "No tienes ninguna aura de [ids].intellect_buffs"
+
+[[warning]]
+text = "Poca agua"
+when = "Conoces Conjurar agua y llevas menos de 5 aguas conjuradas"
+
+[[warning]]
+text = "Sin gema de maná"
+when = "Conoces Conjurar ágata de maná y no llevas ninguna gema"
+
+[[warning]]
+text = "Talento(s) sin gastar"
+when = "Tienes puntos de talento sin gastar"
+
+[[warning]]
+text = "Bolsas llenas"
+when = "Menos de 3 huecos libres"

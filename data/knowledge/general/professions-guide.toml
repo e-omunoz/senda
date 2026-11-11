@@ -1,0 +1,84 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Texts.lua, ns.TEXTS.profesiones). Lo usaban el brujo y el mago.
+id = "general-professions-guide"
+class = "ANY"
+kind = "page"
+title = "Profesiones: Sastrería y Encantamiento"
+order = 190
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/"]
+note = "Recomendación de Legacy (Thrill of Adventure) según ConquestCapped. Los nombres de Legacy y Arcane Salvager están en inglés: el nombre español no está confirmado."
+
+[[block]]
+heading = "Plan definitivo"
+body = """
+**Sastrería + Encantamiento**, sin cambiar nunca. Secundarias: Primeros auxilios y Cocina (Pesca opcional).
+
+Cada profesión de fabricación da 1 punto de Legacy a 150, 225 y 300, una vez por cuenta. Subirla de nuevo no da nada."""
+
+[[block]]
+heading = "Rangos de instructor"
+body = """
+- **Aprendiz:** 1-75.
+- **Oficial:** habilidad 50 y nivel 10.
+- **Experto:** habilidad 125 y nivel 20.
+- **Artesano:** habilidad 200 y nivel 35.
+
+Entrena el rango siguiente antes de llegar al tope: los puntos por encima se pierden."""
+
+[[block]]
+heading = "Sastrería por habilidad"
+body = """
+- **1-45:** Madejas de paño de lino; **45-55:** Guantes de lino pesado.
+- **20:** Estandarte de facción para el campamento (+Espíritu).
+- **60-125:** conjuntos nuevos ligados al recogerlos (30 de Favor cada patrón, Mivin Shadowweave en Tres Caminos). Fabrica el de Sombras si eres brujo.
+- **75-125:** túnicas Filigreed (Filigreed Shadow Gown para Aflicción); patrones en jefes de mazmorra.
+- **140:** Rueca para el campamento (patrón de botín, no del instructor). **140-235:** seis conjuntos más; los pies son de lo mejor a los niveles 30, 40 y 50.
+- **195-205:** hombros y brazales Nether (60 de Favor y Amistoso con la Azeroth Commerce Authority).
+- **300:** Telar y conjunto de banda del brujo (Demonheart, Aisarra Nightmeadow).
+
+Ruta exacta con materiales: data/knowledge/general/professions-tailoring.toml. De 225 a 300 aún no hay ninguna ruta probada en Forever."""
+
+[[block]]
+heading = "Encantamiento por habilidad"
+body = """
+- **1:** Vara de cobre con runas, y desencanta todo verde que no uses.
+- **Varita mágica inferior:** la receta se aprende a 10; haz una para ti ya. **Varita mágica superior:** a 70. Para subir puntos rinden más tarde (70-90 y 101-111).
+- **20:** Laúd encantado para el campamento (armadura, estadísticas, resistencias).
+- **140:** bastones y orbes nuevos (Soulstaff, Orb of Souls), 45 de Favor.
+- **140:** Arcane Salvager para el campamento (fórmula de botín).
+- **210:** encantamientos de collar, como Poder con hechizos (120 de Favor y Amistoso con la Azeroth Commerce Authority).
+- **Varita brillante:** 180 de Favor y Honorable con la Azeroth Commerce Authority (la habilidad, 275 o 220, según la guía).
+- **300:** Forja arcana y encantamientos de poder con hechizos.
+
+Ruta exacta con materiales: data/knowledge/general/professions-enchanting.toml."""
+note = "Varita brillante: las guías no coinciden en la habilidad (275 o 220)."
+
+[[block]]
+heading = "Secundarias"
+body = """
+- **Primeros auxilios:** vendas con el paño sobrante; en Forever, también pociones de salud.
+- **Cocina:** comida con +5% de experiencia y la hoguera del campamento (sin hoguera no hay objetos de campamento)."""
+
+[[block]]
+heading = "Campamento"
+body = """
+- La hoguera básica admite 3 objetos; la de Oficial (Cocina 140), 5; la de Experto (Cocina 220), 10.
+- Siéntate o fabrica un minuto al lado para ganar el beneficio.
+- Todos los objetos comparten 1 hora de reutilización.
+- Tus dos profesiones dan objetos a habilidad 20: úsalos cada vez que pares."""
+
+[[block]]
+heading = "Puntos de Legacy (16 por personaje)"
+body = """
+- **Thrill of Adventure:** lo que recomienda ConquestCapped para el personaje principal.
+- **Working Overtime** (5 rangos, +4% de probabilidad de subir habilidad cada uno): si quieres subir profesiones rápido.
+- **Reagent Economy:** tus hechizos de clase dejan de pedir componentes de vendedor y los objetos de campamento básicos son gratis.
+- **Permanence:** tus beneficios largos de grupo duran más.
+- **Field Guide:** menos reutilización del campamento."""
+
+[[block]]
+heading = "Lógica del asesor"
+body = """
+- Ideal de habilidad para tu nivel: **nivel × 5** (máximo 300). Si vas 40 puntos por debajo, la profesión va atrasada.
+- Aviso de tope: a 15 puntos del máximo de tu rango, entrena el siguiente si ya cumples nivel y habilidad.
+- Si tienes una profesión de recolección (Herboristería, que el cliente llama Botánica; Minería; Desuello), el plan es abandonarla."""

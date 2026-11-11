@@ -1,0 +1,51 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua MG.BRACKETS, tramo 30-39).
+id = "mage-bracket-30-39"
+class = "MAGE"
+kind = "page"
+title = "Niveles 30-39: Dedos de Escarcha"
+levels = [30, 39]
+order = 40
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Zonas"
+body = """
+Tierras Altas de Arathi, Desolace, Vega de Tuercespina y Riverglades (35-45).
+
+Mazmorras: Monasterio Escarlata, Uldaman, **The Drowned City** (35-40)."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **30-31:** Fragmentos de hielo 5/5.
+- **32:** Dedos de Escarcha 1/2.
+- **33:** REINICIA a la build 33-60: Descarga de Escarcha mejorada 5, Fragmentos de hielo 5, Precisión 3, Lanza de hielo, Ventisca mejorada 1, Trizar 3, Canalización de Escarcha 2, Dedos de Escarcha 2, Mordedura helada.
+- **34-35:** Cono de frío mejorado 3/3.
+- **36-39:** Escalofrío del invierno 4/5."""
+note = "La build 33-60 al reiniciar suma 23 puntos y al 33 tienes 24: falta uno en la fuente."
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **30:** Armadura de hielo, Teletransporte a Darnassus.
+- **34:** Armadura de mago.
+- **38:** Conjurar jade de maná."""
+
+[[block]]
+heading = "Equipo"
+body = """
+- **Orbe del vidente olvidado** (Monasterio Escarlata) y **Hoja hipnótica** (Doan): con el pergamino de Comprensión se convierte en la Espada de Narpas. Como humano, una espada te va bien.
+- **Varita de Furia de Hielo** con la cadena del pantano."""
+
+[[block]]
+heading = "Oro"
+body = """
+Guarda unos 100 de oro para la equitación del 40: el mago sí la paga."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Mordedura helada reinicia Nova, Bloqueo de hielo y Cono de frío: úsala cuando te veas mal.
+- Armadura de mago para subir; de hielo si te pegan mucho."""

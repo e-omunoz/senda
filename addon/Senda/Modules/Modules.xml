@@ -1,0 +1,17 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/ https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_SharedXML/UI.xsd">
+  <!-- Common primero: el resto usa Senda.Mod. Después, en orden de dependencia (Knowledge y Macros antes que
+       Professions/Gear; Advisor y Character al final porque consultan a los demás en tiempo de ejecución). -->
+  <Script file="Common.lua"/>
+  <Script file="Knowledge.lua"/>
+  <Script file="Macros.lua"/>
+  <Script file="Professions.lua"/>
+  <Script file="Gear.lua"/>
+  <Script file="Vendor.lua"/>
+  <Script file="Trainer.lua"/>
+  <Script file="Disenchant.lua"/>
+  <Script file="Advisor.lua"/>
+  <Script file="Character.lua"/>
+  <Script file="Duo.lua"/>
+  <Script file="Bars.lua"/>
+</Ui>

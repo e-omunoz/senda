@@ -1,0 +1,571 @@
+# Guía human-mage: Valle de Villanorte. Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "hmage-northshire"
+title = "Valle de Villanorte"
+levels = [1, 6]
+map = 1429
+summary = "Del 1 al 6 en Villanorte: misiones de la abadía, Carta glífica y la cadena nueva de los libros."
+
+[[step]]
+id = "hmage-northshire-001"
+do = "accept"
+quest = 783
+npc = 823
+at = [1429, 48.2, 42.9]
+text = "Habla con el Ayudante Willem, delante de la abadía, y coge la misión."
+tip = "Ponte ya Armadura de Escarcha: dura 30 min y hace que los enemigos lleguen más lentos."
+status = "unverified"
+sources = ["questie:quest/783", "questie:npc/823", "https://games.gg/world-of-warcraft/guides/wow-forever-elwynn-forest/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-002"
+do = "turnin"
+quest = 783
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Entrega al Mariscal McBride, dentro de la abadía."
+status = "unverified"
+sources = ["questie:quest/783", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-003"
+do = "accept"
+quest = 7
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Coge la misión de los kóbolds del Mariscal McBride."
+status = "unverified"
+sources = ["questie:quest/7", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-004"
+do = "accept"
+quest = 5261
+npc = 823
+at = [1429, 48.2, 42.9]
+text = "Vuelve con el Ayudante Willem y coge la misión que te manda con Eagan."
+status = "unverified"
+sources = ["questie:quest/5261", "questie:npc/823"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-005"
+do = "turnin"
+quest = 5261
+npc = 196
+at = [1429, 48.9, 40.2]
+text = "Entrega a Eagan Peltskinner, detrás de la abadía."
+status = "unverified"
+sources = ["questie:quest/5261", "questie:npc/196"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-006"
+do = "accept"
+quest = 33
+npc = 196
+at = [1429, 48.9, 40.2]
+text = "Coge la misión de la carne de lobo de Eagan."
+status = "unverified"
+sources = ["questie:quest/33", "questie:npc/196"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-007"
+do = "complete"
+quest = 7
+at = [1429, 49.2, 36.3]
+wps = [[1429, 48.0, 37.0, "Alimañas kóbold"], [1429, 51.0, 37.5, "Alimañas kóbold"]]
+text = "Mata alimañas kóbold en el campamento al norte de la abadía."
+tip = "Bola de Fuego para abrir y remata con cuerpo a cuerpo para ahorrar maná. Guarda el libro que puede caer."
+status = "unverified"
+sources = ["questie:quest/7"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-008"
+do = "complete"
+quest = 33
+at = [1429, 47.5, 39.5]
+text = "Mata lobos alrededor de la abadía hasta tener la carne."
+tip = "Los lobos están entre la abadía y el campamento kóbold: hazlo a la vez que los kóbolds."
+status = "unverified"
+sources = ["questie:quest/33"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-009"
+do = "accept"
+quest = 91741
+text = "Haz clic derecho en el Libro mordisqueado que sueltan los kóbolds y acepta la misión."
+tip = "Misión nueva de Forever. Si aún no te ha caído, sigue matando kóbolds: sale también en los trabajadores."
+status = "unverified"
+sources = ["questie:quest/91741"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-010"
+do = "turnin"
+quest = 7
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Entrega al Mariscal McBride."
+status = "unverified"
+sources = ["questie:quest/7", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-011"
+do = "accept"
+quest = 3104
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Coge la Carta glífica del Mariscal McBride: es la misión de mago."
+status = "unverified"
+sources = ["questie:quest/3104", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-012"
+do = "accept"
+quest = 15
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Coge también la misión de la Cresta del Eco."
+status = "unverified"
+sources = ["questie:quest/15", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-013"
+do = "turnin"
+quest = 3104
+npc = 198
+at = [1429, 49.7, 39.4]
+text = "Lleva la carta a Khelden Bremen: ala de la biblioteca, arriba por las escaleras de madera."
+status = "unverified"
+sources = ["questie:quest/3104", "questie:npc/198", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-014"
+do = "train"
+npc = 198
+spells = [1459]
+at = [1429, 49.7, 39.4]
+text = "Aprende Intelecto Arcano con Khelden Bremen y póntelo."
+status = "unverified"
+sources = ["questie:npc/198", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-015"
+do = "turnin"
+quest = 91741
+npc = 951
+at = [1429, 49.6, 40.4]
+text = "Devuelve el libro al Hermano Paxton, el bibliotecario de la abadía."
+status = "unverified"
+sources = ["questie:quest/91741", "questie:npc/951"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-016"
+do = "accept"
+quest = 92124
+npc = 951
+at = [1429, 49.6, 40.4]
+text = "Coge la siguiente misión del Hermano Paxton."
+status = "unverified"
+sources = ["questie:quest/92124", "questie:npc/951"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-017"
+do = "turnin"
+quest = 92124
+npc = 247229
+at = [1429, 49.5, 40.7]
+text = "Habla con Daniel, a dos pasos de Paxton."
+status = "unverified"
+sources = ["questie:quest/92124", "questie:npc/247229"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-018"
+do = "accept"
+quest = 91743
+npc = 951
+at = [1429, 49.6, 40.4]
+text = "Vuelve con el Hermano Paxton y coge la misión de los libros robados."
+status = "unverified"
+sources = ["questie:quest/91743", "questie:npc/951"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-019"
+do = "turnin"
+quest = 33
+npc = 196
+at = [1429, 48.9, 40.2]
+text = "Entrega la carne a Eagan Peltskinner."
+status = "unverified"
+sources = ["questie:quest/33", "questie:npc/196"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-020"
+do = "accept"
+quest = 18
+npc = 823
+at = [1429, 48.2, 42.9]
+text = "Coge la misión de los bandidos del Ayudante Willem."
+tip = "Pide nivel 2. Si aún no lo tienes, cógela a la vuelta de la Cresta del Eco."
+status = "unverified"
+sources = ["questie:quest/18", "questie:npc/823"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-021"
+do = "complete"
+quest = 15
+at = [1429, 48.9, 34.6]
+wps = [[1429, 47.5, 33.0, "Trabajadores kóbold"], [1429, 50.5, 35.5, "Trabajadores kóbold"]]
+text = "Mata trabajadores kóbold en la Cresta del Eco, al norte."
+status = "unverified"
+sources = ["questie:quest/15"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-022"
+do = "complete"
+quest = 91743
+at = [1429, 49.0, 35.0]
+text = "Recoge los libros robados de los kóbolds de la zona."
+tip = "Caen de alimañas, trabajadores y obreros: no hace falta entrar en la mina todavía."
+status = "unverified"
+sources = ["questie:quest/91743"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-023"
+do = "turnin"
+quest = 15
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Entrega al Mariscal McBride."
+status = "unverified"
+sources = ["questie:quest/15", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-024"
+do = "accept"
+quest = 21
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Coge la misión de la mina de la Cresta del Eco."
+status = "unverified"
+sources = ["questie:quest/21", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-025"
+do = "turnin"
+quest = 91743
+npc = 951
+at = [1429, 49.6, 40.4]
+text = "Entrega los libros al Hermano Paxton."
+status = "unverified"
+sources = ["questie:quest/91743", "questie:npc/951"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-026"
+do = "accept"
+quest = 91745
+npc = 951
+at = [1429, 49.6, 40.4]
+text = "Coge la misión que te manda con Kelsey Fargo, en la mina."
+status = "unverified"
+sources = ["questie:quest/91745", "questie:npc/951"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-027"
+do = "complete"
+quest = 18
+at = [1429, 54.2, 47.3]
+wps = [[1429, 52.5, 44.0, "Matones Defias"], [1429, 55.5, 50.0, "Matones Defias"]]
+text = "Mata matones Defias en los viñedos al este hasta tener los pañuelos."
+tip = "Ve de uno en uno: Descarga de Escarcha cuando la tengas y no te metas entre dos grupos."
+status = "unverified"
+sources = ["questie:quest/18"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-028"
+do = "turnin"
+quest = 18
+npc = 823
+at = [1429, 48.2, 42.9]
+text = "Entrega los pañuelos al Ayudante Willem."
+status = "unverified"
+sources = ["questie:quest/18", "questie:npc/823"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-029"
+do = "accept"
+quest = 3903
+npc = 823
+at = [1429, 48.2, 42.9]
+text = "Coge la misión que te manda con Milly Osworth."
+status = "unverified"
+sources = ["questie:quest/3903", "questie:npc/823"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-030"
+do = "accept"
+quest = 6
+npc = 823
+at = [1429, 48.2, 42.9]
+text = "Coge la recompensa por Garrick Padfoot."
+status = "unverified"
+sources = ["questie:quest/6", "questie:npc/823"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-031"
+do = "turnin"
+quest = 3903
+npc = 9296
+at = [1429, 50.7, 39.4]
+text = "Habla con Milly Osworth, junto al establo detrás de la abadía."
+status = "unverified"
+sources = ["questie:quest/3903", "questie:npc/9296"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-032"
+do = "accept"
+quest = 3904
+npc = 9296
+at = [1429, 50.7, 39.4]
+text = "Coge la misión de la cosecha de Milly."
+status = "unverified"
+sources = ["questie:quest/3904", "questie:npc/9296"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-033"
+do = "complete"
+quest = 3904
+at = [1429, 54.0, 48.9]
+text = "Recoge las cestas de uva en los viñedos del este."
+tip = "Haz la cosecha y a Garrick en el mismo viaje."
+status = "unverified"
+sources = ["questie:quest/3904"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-034"
+do = "complete"
+quest = 6
+at = [1429, 57.5, 48.2]
+text = "Mata a Garrick Padfoot en la cabaña del extremo este de los viñedos y coge su cabeza."
+tip = "Va con matones al lado: tira de ellos de uno en uno antes de ir a por él."
+status = "unverified"
+sources = ["questie:quest/6"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-035"
+do = "turnin"
+quest = 3904
+npc = 9296
+at = [1429, 50.7, 39.4]
+text = "Entrega la cosecha a Milly Osworth."
+status = "unverified"
+sources = ["questie:quest/3904", "questie:npc/9296"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-036"
+do = "accept"
+quest = 3905
+npc = 9296
+at = [1429, 50.7, 39.4]
+text = "Coge el albarán de uvas de Milly."
+status = "unverified"
+sources = ["questie:quest/3905", "questie:npc/9296"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-037"
+do = "turnin"
+quest = 3905
+npc = 952
+at = [1429, 49.5, 41.6]
+text = "Lleva el albarán al Hermano Neals, dentro de la abadía."
+status = "unverified"
+sources = ["questie:quest/3905", "questie:npc/952"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-038"
+do = "turnin"
+quest = 6
+npc = 823
+at = [1429, 48.2, 42.9]
+text = "Entrega la cabeza de Garrick al Ayudante Willem."
+status = "unverified"
+sources = ["questie:quest/6", "questie:npc/823"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-039"
+do = "train"
+npc = 198
+spells = [5504, 116]
+at = [1429, 49.7, 39.4]
+text = "Nivel 4: aprende Descarga de Escarcha y Conjurar agua con Khelden Bremen."
+tip = "Desde ahora: Descarga de Escarcha para abrir. Conjura agua antes de cada salida y no compres bebida."
+status = "unverified"
+sources = ["questie:npc/198"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-040"
+do = "turnin"
+quest = 91745
+npc = 247226
+at = [1429, 47.2, 32.2]
+text = "Habla con Kelsey Fargo en la entrada de la mina de la Cresta del Eco."
+status = "unverified"
+sources = ["questie:quest/91745", "questie:npc/247226"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-041"
+do = "accept"
+quest = 91752
+npc = 247226
+at = [1429, 47.2, 32.2]
+text = "Coge la misión de Kelsey Fargo."
+status = "unverified"
+sources = ["questie:quest/91752", "questie:npc/247226"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-042"
+do = "complete"
+quest = 21
+at = [1429, 48.9, 28.3]
+text = "Entra en la mina y mata obreros kóbold."
+tip = "Dentro hay muchos: tira de uno en uno y no avances hasta limpiar lo que tienes delante."
+status = "unverified"
+sources = ["questie:quest/21"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-043"
+do = "complete"
+quest = 91752
+at = [1429, 49.2, 28.0]
+text = "Mata a Shinyfinder Narf, al fondo de la mina, y coge el saco de libros."
+status = "unverified"
+sources = ["questie:quest/91752"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-044"
+do = "turnin"
+quest = 21
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Vuelve con el Mariscal McBride y entrega."
+status = "unverified"
+sources = ["questie:quest/21", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-045"
+do = "turnin"
+quest = 91752
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Entrega también el saco de libros."
+status = "unverified"
+sources = ["questie:quest/91752", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-046"
+do = "accept"
+quest = 54
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Coge la misión que te manda a Villadorada."
+status = "unverified"
+sources = ["questie:quest/54", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-047"
+do = "accept"
+quest = 96627
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Coge la misión del aventurero: te manda con Sam Sarsaparilla, en Villadorada."
+tip = "Misión nueva de Forever: abre el campamento (hoguera, saco de dormir y objetos de profesión)."
+status = "unverified"
+sources = ["questie:quest/96627", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-048"
+do = "accept"
+quest = 91758
+npc = 197
+at = [1429, 48.9, 41.6]
+text = "Coge la misión del kóbold fugado."
+status = "unverified"
+sources = ["questie:quest/91758", "questie:npc/197"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-049"
+do = "turnin"
+quest = 91758
+npc = 248415
+at = [1429, 51.2, 40.8]
+text = "Habla con Tordrin Sternblade, al este de la abadía."
+status = "unverified"
+sources = ["questie:quest/91758", "questie:npc/248415"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-050"
+do = "accept"
+quest = 91772
+npc = 248415
+at = [1429, 51.2, 40.8]
+text = "Coge la misión de rastrear al kóbold."
+status = "unverified"
+sources = ["questie:quest/91772", "questie:npc/248415"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-northshire-051"
+do = "accept"
+quest = 2158
+npc = 6774
+at = [1429, 45.6, 47.7]
+text = "Al salir por el camino del sur, coge la misión de Falkhaan Isenstrider."
+status = "unverified"
+sources = ["questie:quest/2158", "questie:npc/6774"]
+checked = "2026-11-11"

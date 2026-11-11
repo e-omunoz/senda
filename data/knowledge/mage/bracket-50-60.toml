@@ -1,0 +1,43 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua MG.BRACKETS, tramo 50-60).
+id = "mage-bracket-50-60"
+class = "MAGE"
+kind = "page"
+title = "Niveles 50-60: hacia el máximo"
+levels = [50, 60]
+order = 60
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Zonas"
+body = """
+Cráter de Un'Goro, Frondavil, Las Estepas Ardientes, Cuna del Invierno y Tierras de la Peste del Este.
+
+Mazmorras: **Alcaz Prison** (48-53), **Blackmaw Hold** (55-60), **Shaper's Terrace** (58-60) y las clásicas."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **50-54:** Concentración Arcana 5/5.
+- **55-57:** Impacto Arcano 3/3.
+- **58-60:** Meditación Arcana 3/3. Cuando no te falte maná, puedes quitar Meditación."""
+note = "Impacto Arcano: nombre sin confirmar en el cliente."
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **50:** Teletransporte a: Dalaran, Portal: Darnassus.
+- **56:** Resplandor Arcano.
+- **58:** Conjurar rubí de maná.
+- **60:** Polimorfia: vaca."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+Sastrería y Encantamiento a 300: 6 puntos de Legacy."""
+
+[[block]]
+heading = "Bandas"
+body = """
+Abren el **9 de diciembre**: Barrow Deeps (10), Hyjal Summit (20) y Guarida de Onyxia (40, amuleto obligatorio). Fuego es la mejor opción de daño a un objetivo."""

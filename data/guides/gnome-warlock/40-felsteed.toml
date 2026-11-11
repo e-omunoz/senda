@@ -1,0 +1,70 @@
+# Brujo (Alianza): el Corcel nefasto (nivel 40). Strahad lo enseña sin prueba.
+# Según las notas del jugador (corrección de Blizzard del 9-nov) incluye la equitación; ConquestCapped
+# lo daba como dudoso antes del lanzamiento.
+id = "wl-felsteed"
+title = "Brujo: el Corcel nefasto"
+levels = [40, 40]
+map = 1413
+summary = "Briarthorn (Forjaz) te manda con Strahad Farsan en Trinquete, que te enseña Invocar a corcel nefasto en el momento."
+if = { class = ["WARLOCK"] }
+
+[[step]]
+id = "wl-felsteed-001"
+do = "train"
+spells = [5484]
+npc = 5172
+at = [1455, 50.4, 5.7]
+text = "Entrena el 40 con Briarthorn en la Caverna Abandonada de Forjaz: Aullido de terror."
+status = "unverified"
+sources = ["questie:npc/5172", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-felsteed-002"
+do = "accept"
+quest = 4487
+npc = 5172
+at = [1455, 50.4, 5.7]
+text = "Coge de Briarthorn la misión del Corcel nefasto."
+tip = "En Ventormenta la da Demisette Cloyce: coge la del sitio donde estés."
+status = "unverified"
+sources = ["questie:quest/4487", "questie:npc/5172", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "wl-felsteed-003"
+do = "turnin"
+quest = 4487
+npc = 6251
+at = [1413, 62.6, 35.5]
+text = "Ve a Trinquete y entrega a Strahad Farsan."
+status = "unverified"
+sources = ["questie:quest/4487", "questie:npc/6251"]
+
+[[step]]
+id = "wl-felsteed-004"
+do = "accept"
+quest = 4490
+npc = 6251
+at = [1413, 62.6, 35.5]
+text = "Coge la segunda parte de Strahad."
+status = "unverified"
+sources = ["questie:quest/4490", "questie:npc/6251"]
+
+[[step]]
+id = "wl-felsteed-005"
+do = "turnin"
+quest = 4490
+npc = 6251
+at = [1413, 62.6, 35.5]
+text = "Entrégala en el momento: no hay prueba."
+status = "unverified"
+sources = ["questie:quest/4490", "questie:npc/6251", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "wl-felsteed-006"
+do = "train"
+spells = [5784]
+at = [1413, 62.6, 35.5]
+text = "Invoca al Corcel nefasto: en Forever aparece en la colección de monturas."
+tip = "Si la equitación no te llega con la misión, apréndela en Forjaz antes de gastar oro en otra cosa. Activa la doble especialización."
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]

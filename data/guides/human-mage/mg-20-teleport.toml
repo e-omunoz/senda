@@ -1,0 +1,66 @@
+# Guía human-mage: Mago: Teletransporte (20). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-20-teleport"
+title = "Mago: Teletransporte (20)"
+levels = [20, 21]
+map = 1453
+summary = "Nivel 20: Traslación, Evocación, Teletransporte a Ventormenta y Forjaz, y runas."
+
+[[step]]
+id = "mg-20-teleport-001"
+do = "train"
+npc = 5497
+spells = [1953, 12051, 1463, 543, 10]
+at = [1453, 49.6, 85.8]
+text = "Nivel 20: aprende Traslación, Evocación, Escudo de maná, Custodia de Fuego y Ventisca."
+tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos."
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-20-teleport-002"
+do = "train"
+npc = 2485
+spells = [3561]
+at = [1453, 50.4, 86.0]
+text = "Aprende Teletransporte: Ventormenta con Larimaine Purdue, la instructora de portales del Sagrario."
+tip = "Es tu mejor herramienta: vuelve a entrenar y a entregar en segundos."
+status = "unverified"
+sources = ["questie:npc/2485", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-20-teleport-003"
+do = "train"
+npc = 2485
+spells = [3562]
+at = [1453, 50.4, 86.0]
+optional = true
+text = "Aprende también Teletransporte: Forjaz."
+tip = "Si Larimaine no te lo enseña, aprende en Forjaz con Milstaff Stormeye."
+status = "unverified"
+sources = ["questie:npc/2485", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-20-teleport-004"
+do = "buy"
+npc = 1308
+item = 17031
+count = 5
+at = [1453, 47.4, 82.5]
+text = "Compra Runas de Teletransporte en la tienda de componentes junto al Sagrario."
+tip = "Cada teletransporte gasta una. Con el punto de Legacy Reagent Economy dejas de necesitarlas."
+status = "unverified"
+sources = ["questie:npc/1308", "questie:item/17031"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-20-teleport-005"
+do = "note"
+optional = true
+text = "Entrena el rango Experto de Sastrería y Encantamiento si ya tienes 125 de habilidad."
+tip = "Sastrería: Sellandus (Barrio de los Magos). Encantamiento: Kitta Firewind (Torre de Azora)."
+status = "unverified"
+sources = []
+checked = "2026-11-11"

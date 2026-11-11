@@ -1,0 +1,34 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Duo.lua, ns.DUO.INTRO). Subir en pareja: brujo gnomo + mago humano.
+# Las páginas duo-* sirven a los dos personajes; el tramo se elige por el nivel MÁS BAJO de los dos.
+id = "duo-intro"
+class = "ANY"
+kind = "page"
+title = "En pareja: brujo gnomo + mago humano"
+order = 300
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "cita:Manual del Mago Gnomo (sección «En pareja»)", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/"]
+checked = "2026-11-10"
+note = "Manual del Mago Gnomo (sección «En pareja»), contrastado el 10-nov con ConquestCapped, Warcraft Tavern, Method y las correcciones de Blizzard. Bonificación del 50% en mazmorras: Blizzard 8-nov, sin enlace."
+
+[[block]]
+heading = "Cómo funciona la experiencia en grupo (Forever)"
+body = """
+- **Misiones:** los dos cobráis la experiencia entera. Algunos objetos de misión los recoge todo el grupo.
+- **Enemigos:** la experiencia se reparte entre los dos. Desde el 8 de noviembre los enemigos de mazmorra dan un 50% más.
+- **Mazmorras:** sus misiones dan unas 2,4 veces lo de Classic. Máximo 5 mazmorras por hora.
+- **Descanso:** solo duplica la experiencia de enemigos, no la de misiones."""
+
+[[block]]
+heading = "Reparto de papeles"
+body = """
+- El Abisario aguanta al primer enemigo. El brujo pone DoTs y el mago lanza Descarga de Escarcha.
+- Si aparece un segundo: el mago usa Polimorfia y el brujo Miedo, cada uno a un enemigo distinto.
+- Contra grupos: el Abisario los junta y el mago usa Nova de Escarcha y Deflagración Arcana. Nada de Miedo ahí.
+- El mago da agua conjurada e Intelecto Arcano. El brujo da Piedras de salud (macro SND_Piedra del mago) y Piedra de alma al mago en sitios peligrosos."""
+
+[[block]]
+heading = "Botín y profesiones"
+body = """
+- Los dos sois Sastrería + Encantamiento: compartid el trabajo. Uno hace las madejas y el otro desencanta, o turnaos el paño.
+- Botín «Libre para todos» entre los dos; en mazmorra, «Botín de grupo» con umbral en verde.
+- Lo de Sombras para el brujo y lo de Escarcha para el mago. Conjuntos de Sastrería: Sombras (brujo) y Silky (mago)."""

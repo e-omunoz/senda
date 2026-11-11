@@ -1,0 +1,18 @@
+# Guía human-mage: Mago: seda de araña (Bosque del Ocaso). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-29-spider-silk"
+title = "Mago: seda de araña (Bosque del Ocaso)"
+levels = [29, 30]
+map = 1431
+summary = "Paso de la misión de clase que se hace en el Bosque del Ocaso."
+
+[[step]]
+id = "mg-29-spider-silk-001"
+do = "complete"
+quest = 1940
+at = [1431, 42.9, 49.4]
+wps = [[1431, 20.0, 41.2, "Reclusas carroñeras"]]
+text = "Mata arañas del Bosque del Ocaso hasta conseguir la seda de araña prístina."
+tip = "Cae con poca suerte: hazlo a la vez que las misiones de arañas de la zona."
+status = "unverified"
+sources = ["questie:quest/1940"]
+checked = "2026-11-11"

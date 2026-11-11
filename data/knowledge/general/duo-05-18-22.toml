@@ -1,0 +1,26 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Duo.lua, ns.DUO.BRACKETS, tramo 18-22). Tramo por el nivel más bajo de los dos.
+id = "duo-18-22"
+class = "ANY"
+kind = "page"
+title = "Niveles 18-22: Minas de la Muerte"
+levels = [18, 22]
+order = 350
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "cita:Manual del Mago Gnomo (sección «En pareja»)", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Dónde"
+body = """
+Minas de la Muerte (Páramos de Poniente, Arroyo de la Luna). Mazmorra de 5: los dos solos no la vais a limpiar. Coged antes las misiones: la cadena de La Hermandad Defias (Gryan Stoutmantle, Colina del Centinela), Pañuelos de seda roja (Explorador Riell) y Collecting Memories (Ventormenta) (dato de Classic)."""
+note = "«(Classic)» en la fuente."
+
+[[block]]
+heading = "Botín"
+body = """
+Vara para remover galletas (varita) y Bastón de piedra de ascuas. Casi todo son humanoides: lino y lana a montones."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+Entrenad **Experto** a 125 y nivel 20 (para Encantamiento, Kitta Firewind en la Torre de Azora, Elwynn)."""

@@ -1,0 +1,54 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua MG.BRACKETS, tramo 1-9).
+id = "mage-bracket-1-9"
+class = "MAGE"
+kind = "page"
+title = "Niveles 1-9: lo básico"
+levels = [1, 9]
+order = 10
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Zonas"
+body = """
+- **1-5:** Valle de Villanorte.
+- **5-10:** Bosque de Elwynn, con base en Villadorada."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **1:** Bola de Fuego, Armadura de Escarcha, Intelecto Arcano.
+- **4:** Descarga de Escarcha, Conjurar agua.
+- **6:** Explosión de Fuego, Conjurar comida, Entender pergamino.
+- **8:** Polimorfia, Misiles Arcanos."""
+
+[[block]]
+heading = "Rotación"
+body = """
+Descarga de Escarcha antes de que llegue, otra mientras se acerca y Explosión de Fuego para rematar. Varita cuando falte maná."""
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 4:** SND_Conjurar.
+- **Al 5:** SND_Varita.
+- **Al 8:** SND_Poli."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+Al 5: Sastrería y Encantamiento en Ventormenta (Barrio de los Magos), Primeros auxilios y Cocina (Tomas, Villadorada). Fabrica la Varita mágica inferior."""
+
+[[block]]
+heading = "Comprensión"
+body = """
+Desde el 6, recoge todos los pergaminos sin traducir que caigan. Descífralos fuera de combate: si fallas, eres una oveja 8 s."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Agua conjurada siempre: nunca compres bebida.
+- Intelecto Arcano a todo el que pase: hace amigos.
+- Junto a Sam Sarsaparilla (Elwynn) hay una hoguera de campamento: siéntate para el descanso mejorado.
+- La varita no escala con el poder con hechizos y tienes que estar quieto medio segundo antes de que dispare."""

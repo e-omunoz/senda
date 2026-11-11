@@ -1,0 +1,45 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua MG.BRACKETS, tramo 40-49).
+id = "mage-bracket-40-49"
+class = "MAGE"
+kind = "page"
+title = "Niveles 40-49: Pirofrío y portales"
+levels = [40, 49]
+order = 50
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Zonas"
+body = """
+Tanaris, Feralas, Tierras del Interior y Tierras Inhóspitas.
+
+Mazmorras: Zul'Farrak, Maraudon, **Krol'dok Stronghold** (40-45)."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **40:** Barrera de hielo.
+- **41:** Escalofrío del invierno 5/5.
+- **42:** Canalización de Escarcha 3/3.
+- **43-44:** Especialización en varitas 2/2.
+- **45-47:** Recuperación Arcana 3/3.
+- **48-49:** Sutileza Arcana 2/2."""
+note = "Recuperación Arcana: nombre sin confirmar en el cliente."
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **40:** Descarga de Pirofrío, Portal: Ventormenta y Forjaz.
+- **48:** Conjurar citrino de maná."""
+
+[[block]]
+heading = "Oro"
+body = """
+Vende portales en Ventormenta y Forjaz: la gente deja propina. Necesitas Runas de Portales."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Barrera de hielo da +15% de daño de Escarcha durante 1 minuto y evita los retrasos al lanzar mientras aguanta.
+- Doble especialización: Fuego para grupo y bandas."""

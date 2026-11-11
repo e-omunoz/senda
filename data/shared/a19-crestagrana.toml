@@ -1,0 +1,539 @@
+# Ruta compartida de la Alianza: Montañas Crestagrana (19 -> 21).
+# Tres Caminos (Azeroth Commerce Authority): Favor de mercader con Marcy Baker y patrones de Mivin Shadowweave
+# (notas del jugador: data/legacy/steps-*.toml, data/knowledge/general/duo-04-14-18.toml).
+# Misiones nuevas de Forever: 98386 Alther's Mill, 98387 Blackrock Blockade, 98407 Show of Force.
+# Ids y coordenadas: QuestieDB de Forever.
+id = "a19-crestagrana"
+title = "Montañas Crestagrana"
+levels = [19, 21]
+map = 1433
+summary = "Favor de mercader en Tres Caminos, Villa del Lago, gnolls, múrlocs del lago y Roca Negra. Al 20, a Ventormenta: entrenar, rango Experto de profesiones y Bastones para el brujo."
+link = "https://www.warcrafttavern.com/forever/guides/leveling/"
+
+[[step]]
+id = "a19rr-001"
+do = "goto"
+at = [1433, 9.7, 70.9, "Tres Caminos (Marcy Baker)"]
+radius = 20
+text = "Desde Ventormenta, cruza Elwynn hacia el este hasta Tres Caminos, a la entrada de Crestagrana."
+status = "unverified"
+sources = ["questie:npc/256390"]
+
+[[step]]
+id = "a19rr-002"
+do = "note"
+npc = 256390
+at = [1433, 9.7, 70.9]
+text = "Favor de mercader: entrega a Marcy Baker las cajas de suministros y órdenes de trabajo que lleves."
+tip = "Haz antes madejas: 20 madejas de lino dan 10 de Favor; 40 de lino suelto, solo 5. 20 de Polvo extraño dan 5. Las cajas caen de enemigos y en mazmorras."
+optional = true
+status = "unverified"
+sources = ["questie:npc/256390", "legacy:BrujoGnomoGuia 4.1.0", "knowledge:duo-14-18"]
+
+[[step]]
+id = "a19rr-003"
+do = "note"
+npc = 256390
+at = [1433, 9.7, 70.9]
+text = "Si te dieron una etiqueta de envío en la primera entrega, haz clic derecho en ella y entrégasela a Marcy: 50 de Favor."
+tip = "Es la misión Shipping Label (98247). En QuestieDB figura con nivel 60 porque escala; se puede hacer desde el 10."
+optional = true
+status = "unverified"
+sources = ["questie:quest/98247", "knowledge:duo-14-18"]
+
+[[step]]
+id = "a19rr-004"
+do = "note"
+npc = 256735
+at = [1433, 9.3, 71.5]
+text = "Con Favor, compra patrones a Mivin Shadowweave: Sombras para el brujo, Silky para el mago."
+if = { prof = ["tailoring"] }
+optional = true
+status = "unverified"
+sources = ["questie:npc/256735", "knowledge:duo-14-18"]
+
+[[step]]
+id = "a19rr-005"
+do = "accept"
+quest = 244
+npc = 464
+at = [1433, 10.4, 71.3]
+text = "Coge con el Guardia Parker, que patrulla el camino, el aviso para el Ayudante Feldon."
+status = "unverified"
+sources = ["questie:quest/244", "questie:npc/464"]
+
+[[step]]
+id = "a19rr-006"
+do = "getfp"
+node = "5"
+npc = 931
+at = [1433, 25.5, 59.4]
+text = "Sigue el camino al este hasta Villa del Lago. Coge la ruta de vuelo con Ariena Stormfeather, al sur del puente."
+status = "unverified"
+sources = ["questie:npc/931"]
+
+[[step]]
+id = "a19rr-007"
+do = "turnin"
+quest = 244
+npc = 1070
+at = [1433, 25.6, 60.0]
+text = "Entrega al Ayudante Feldon, junto al maestro de vuelo."
+status = "unverified"
+sources = ["questie:quest/244", "questie:npc/1070"]
+
+[[step]]
+id = "a19rr-008"
+do = "accept"
+quest = 246
+npc = 1070
+at = [1433, 25.6, 60.0]
+text = "Coge la misión de gnolls de Feldon."
+status = "unverified"
+sources = ["questie:quest/246"]
+
+[[step]]
+id = "a19rr-009"
+do = "accept"
+quest = 98407
+npc = 1070
+at = [1433, 25.6, 60.0]
+text = "Coge también la de los collares de los trituradores."
+status = "unverified"
+sources = ["questie:quest/98407"]
+
+[[step]]
+id = "a19rr-010"
+do = "sethearth"
+npc = 6727
+at = [1433, 21.9, 44.8]
+zone = 1433
+text = "Cruza el puente y pon la piedra de hogar en la posada de Villa del Lago."
+status = "unverified"
+sources = ["questie:npc/6727"]
+
+[[step]]
+id = "a19rr-011"
+do = "turnin"
+quest = 65
+npc = 266
+at = [1433, 21.4, 45.4]
+text = "Entrega La Hermandad Defias a Wiley el Negro, en la posada."
+status = "unverified"
+sources = ["questie:quest/65", "questie:npc/266"]
+
+[[step]]
+id = "a19rr-012"
+do = "accept"
+quest = 132
+npc = 266
+at = [1433, 21.4, 45.4]
+text = "Coge la nota de Wiley para Gryan Stoutmantle. La entregarás al volver a Poniente."
+status = "unverified"
+sources = ["questie:quest/132"]
+
+[[step]]
+id = "a19rr-013"
+do = "accept"
+quest = 127
+npc = 381
+at = [1433, 22.6, 47.4]
+text = "En el muelle, coge las dos misiones de múrlocs del Jefe de muelle Baren (pescado)."
+status = "unverified"
+sources = ["questie:quest/127", "questie:npc/381"]
+
+[[step]]
+id = "a19rr-014"
+do = "accept"
+quest = 150
+npc = 381
+at = [1433, 22.6, 47.4]
+text = "Coge también la de las aletas de múrloc."
+status = "unverified"
+sources = ["questie:quest/150"]
+
+[[step]]
+id = "a19rr-015"
+do = "accept"
+quest = 92
+npc = 343
+at = [1433, 17.6, 43.8]
+text = "Coge el estofado de Crestagrana con la Chef Breanna."
+status = "unverified"
+sources = ["questie:quest/92", "questie:npc/343"]
+
+[[step]]
+id = "a19rr-016"
+do = "accept"
+quest = 125
+npc = 341
+at = [1433, 27.1, 48.6]
+text = "Coge con el Capataz Oslow la misión de su caja de herramientas."
+status = "unverified"
+sources = ["questie:quest/125", "questie:npc/341"]
+
+[[step]]
+id = "a19rr-017"
+do = "accept"
+quest = 20
+npc = 382
+at = [1433, 28.4, 49.0]
+text = "Coge con el Mariscal Marris la de las hachas de Roca Negra."
+status = "unverified"
+sources = ["questie:quest/20", "questie:npc/382"]
+
+[[step]]
+id = "a19rr-018"
+do = "accept"
+quest = 98387
+npc = 382
+at = [1433, 28.4, 49.0]
+text = "Coge también la del bloqueo de Roca Negra."
+status = "unverified"
+sources = ["questie:quest/98387"]
+
+[[step]]
+id = "a19rr-019"
+do = "accept"
+quest = 91
+npc = 900
+at = [1433, 24.6, 44.3]
+text = "En el ayuntamiento, coge con el Alguacil Conacher la de los colgantes Sombrapellejo."
+status = "unverified"
+sources = ["questie:quest/91", "questie:npc/900"]
+
+[[step]]
+id = "a19rr-020"
+do = "accept"
+quest = 3741
+npc = 8965
+at = [1433, 24.2, 53.6]
+text = "Al sur del pueblo, coge con Shawn la misión del collar de Hilary."
+status = "unverified"
+sources = ["questie:quest/3741", "questie:npc/8965"]
+
+[[step]]
+id = "a19rr-021"
+do = "complete"
+quest = 3741
+at = [1433, 24.4, 54.3]
+text = "Busca el collar en el barro brillante de la orilla."
+status = "unverified"
+sources = ["questie:quest/3741", "questie:object/154357"]
+
+[[step]]
+id = "a19rr-022"
+do = "turnin"
+quest = 3741
+npc = 8962
+at = [1433, 24.1, 53.6]
+text = "Devuelve el collar a Hilary."
+status = "unverified"
+sources = ["questie:quest/3741"]
+
+[[step]]
+id = "a19rr-023"
+do = "complete"
+quest = 125
+at = [1433, 36.4, 54.7]
+text = "Bucea al fondo del lago Everstill y abre el cofre hundido: la caja de Oslow."
+status = "unverified"
+sources = ["questie:quest/125", "questie:object/32"]
+
+[[step]]
+id = "a19rr-024"
+do = "complete"
+quest = 150
+at = [1433, 45.0, 58.0]
+text = "Mata múrlocs en la orilla sur del lago: 8 aletas y 10 peces luna moteados."
+tip = "Los múrlocs van en grupos: abre con control (Miedo, Polimorfia o Nova)."
+status = "unverified"
+sources = ["questie:quest/150", "questie:quest/127"]
+
+[[step]]
+id = "a19rr-025"
+do = "complete"
+quest = 127
+at = [1433, 50.8, 61.6]
+text = "Termina los 10 peces."
+status = "unverified"
+sources = ["questie:quest/127"]
+
+[[step]]
+id = "a19rr-026"
+do = "complete"
+quest = 246
+at = [1433, 26.0, 76.0]
+text = "Ve al sur de Villa del Lago: mata 10 chuchos y 6 cazadores furtivos de Crestagrana."
+tip = "Por el camino: hocicos de jabalí y carne de araña para Breanna."
+status = "unverified"
+sources = ["questie:quest/246"]
+
+[[step]]
+id = "a19rr-027"
+do = "complete"
+quest = 98407
+at = [1433, 10.9, 66.3]
+text = "Al suroeste, cerca de Tres Caminos, consigue 5 collares de los trituradores de Crestagrana."
+status = "unverified"
+sources = ["questie:quest/98407"]
+
+[[step]]
+id = "a19rr-028"
+do = "complete"
+quest = 92
+at = [1433, 23.9, 61.1]
+wps = [[1433, 8.2, 77.0, "Tarántulas (carne de araña)"], [1433, 50.1, 70.2, "Cóndores"]]
+text = "Completa el estofado: 5 carnes de cóndor, 5 hocicos de jabalí grande y 5 carnes de araña."
+status = "unverified"
+sources = ["questie:quest/92"]
+
+[[step]]
+id = "a19rr-029"
+do = "turnin"
+quest = 246
+npc = 1070
+at = [1433, 25.6, 60.0]
+text = "Entrega a Feldon."
+status = "unverified"
+sources = ["questie:quest/246"]
+
+[[step]]
+id = "a19rr-030"
+do = "turnin"
+quest = 98407
+npc = 1070
+at = [1433, 25.6, 60.0]
+text = "Entrega también los collares."
+status = "unverified"
+sources = ["questie:quest/98407"]
+
+[[step]]
+id = "a19rr-031"
+do = "turnin"
+quest = 125
+npc = 341
+at = [1433, 27.1, 48.6]
+text = "En Villa del Lago, entrega la caja a Oslow."
+status = "unverified"
+sources = ["questie:quest/125"]
+
+[[step]]
+id = "a19rr-032"
+do = "accept"
+quest = 89
+npc = 341
+at = [1433, 27.1, 48.6]
+text = "Coge la del puente (picas y remaches de hierro)."
+status = "unverified"
+sources = ["questie:quest/89"]
+
+[[step]]
+id = "a19rr-033"
+do = "turnin"
+quest = 92
+npc = 343
+at = [1433, 17.6, 43.8]
+text = "Entrega el estofado a Breanna."
+status = "unverified"
+sources = ["questie:quest/92"]
+
+[[step]]
+id = "a19rr-034"
+do = "turnin"
+quest = 127
+npc = 381
+at = [1433, 22.6, 47.4]
+text = "Entrega el pescado a Baren."
+status = "unverified"
+sources = ["questie:quest/127"]
+
+[[step]]
+id = "a19rr-035"
+do = "turnin"
+quest = 150
+npc = 381
+at = [1433, 22.6, 47.4]
+text = "Entrega las aletas."
+status = "unverified"
+sources = ["questie:quest/150"]
+
+[[step]]
+id = "a19rr-036"
+do = "complete"
+quest = 89
+at = [1433, 21.0, 30.0]
+text = "Al norte del pueblo, mata gnolls de Crestagrana hasta tener 5 picas y 5 remaches de hierro."
+status = "unverified"
+sources = ["questie:quest/89"]
+
+[[step]]
+id = "a19rr-037"
+do = "turnin"
+quest = 89
+npc = 341
+at = [1433, 27.1, 48.6]
+text = "Entrega a Oslow."
+status = "unverified"
+sources = ["questie:quest/89"]
+
+[[step]]
+id = "a19rr-038"
+do = "accept"
+quest = 98386
+npc = 341
+at = [1433, 27.1, 48.6]
+text = "Coge la del Molino de Alther (tarántulas y huevos)."
+status = "unverified"
+sources = ["questie:quest/98386"]
+
+[[step]]
+id = "a19rr-039"
+do = "complete"
+quest = 98386
+at = [1433, 48.3, 40.8]
+text = "En el Molino de Alther, mata 12 tarántulas mayores y rompe 6 huevos."
+status = "unverified"
+sources = ["questie:quest/98386"]
+
+[[step]]
+id = "a19rr-040"
+do = "complete"
+quest = 20
+at = [1433, 57.5, 45.6]
+text = "Al este, mata orcos Roca Negra hasta tener 10 hachas desgastadas."
+status = "unverified"
+sources = ["questie:quest/20"]
+
+[[step]]
+id = "a19rr-041"
+do = "complete"
+quest = 91
+at = [1433, 72.0, 48.0]
+text = "Más al este, mata gnolls Sombrapellejo hasta tener 10 colgantes."
+tip = "Si cae un Colgante Sombrapellejo desgastado, haz clic derecho: misión para Theocritus (Torre de Azora, Elwynn)."
+status = "unverified"
+sources = ["questie:quest/91"]
+
+[[step]]
+id = "a19rr-042"
+do = "complete"
+quest = 98387
+at = [1433, 70.5, 78.9]
+text = "En el campamento Roca Negra del sureste, recoge 8 armas robadas y 10 suministros."
+status = "unverified"
+sources = ["questie:quest/98387"]
+
+[[step]]
+id = "a19rr-043"
+do = "hearth"
+zone = 1433
+text = "Usa la piedra de hogar para volver a Villa del Lago."
+status = "unverified"
+sources = ["questie:npc/6727"]
+
+[[step]]
+id = "a19rr-044"
+do = "turnin"
+quest = 20
+npc = 382
+at = [1433, 28.4, 49.0]
+text = "Entrega las hachas a Marris."
+status = "unverified"
+sources = ["questie:quest/20"]
+
+[[step]]
+id = "a19rr-045"
+do = "turnin"
+quest = 98387
+npc = 382
+at = [1433, 28.4, 49.0]
+text = "Entrega el bloqueo."
+status = "unverified"
+sources = ["questie:quest/98387"]
+
+[[step]]
+id = "a19rr-046"
+do = "turnin"
+quest = 98386
+npc = 341
+at = [1433, 27.1, 48.6]
+text = "Entrega el Molino a Oslow."
+status = "unverified"
+sources = ["questie:quest/98386"]
+
+[[step]]
+id = "a19rr-047"
+do = "turnin"
+quest = 91
+npc = 900
+at = [1433, 24.6, 44.3]
+text = "Entrega los colgantes a Conacher."
+status = "unverified"
+sources = ["questie:quest/91"]
+
+[[step]]
+id = "a19rr-048"
+do = "fly"
+npc = 931
+at = [1433, 25.5, 59.4]
+zone = 1453
+text = "Vuela a Ventormenta para entrenar al 20."
+tip = "Tharil'zun y Orbes de medianoche (Marris) y los carteles de SE BUSCA son de nivel 23-26: déjalos."
+status = "unverified"
+sources = ["questie:npc/931"]
+
+[[step]]
+id = "a19rr-049"
+do = "train"
+spells = [1490, 706, 698, 5740]
+npc = 5495
+at = [1453, 39.9, 84.2]
+text = "Brujo: entrena lo del 20 (Maldición de los elementos, Armadura demoníaca, Ritual de invocación, Lluvia de fuego)."
+tip = "La misión del Íncubo/Súcubo empieza aquí con Gakin: la verás en la sección de clase."
+if = { class = ["WARLOCK"] }
+status = "unverified"
+sources = ["questie:npc/5495", "knowledge:warlock-spells"]
+
+[[step]]
+id = "a19rr-050"
+do = "note"
+npc = 11867
+at = [1453, 63.9, 69.1]
+text = "Brujo: aprende Bastones con Woo Ping (10 de plata). Lo necesitas para el Bastón de Soran'ruk."
+if = { class = ["WARLOCK"] }
+status = "unverified"
+sources = ["questie:npc/11867", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "a19rr-051"
+do = "train"
+spells = [1953, 12051, 1463, 543, 10]
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "Mago: entrena lo del 20 (Traslación, Evocación, Escudo de maná, Custodia de Fuego, Ventisca)."
+if = { class = ["MAGE"] }
+status = "unverified"
+sources = ["questie:npc/5497", "knowledge:mage-spells"]
+
+[[step]]
+id = "a19rr-052"
+do = "train"
+spells = [3561, 3562]
+npc = 2485
+at = [1453, 50.4, 86.0]
+text = "Mago: aprende Teletransporte a Ventormenta y a Forjaz con Larimaine Purdue, la instructora de portales."
+tip = "Cada teletransporte gasta una Runa de Teletransporte. Lleva siempre un par."
+if = { class = ["MAGE"] }
+optional = true
+status = "unverified"
+sources = ["questie:npc/2485", "knowledge:mage-spells"]
+
+[[step]]
+id = "a19rr-053"
+do = "note"
+text = "Profesiones: con habilidad 125 y nivel 20, entrena Experto. Sastrería con Georgio Bolero (53.1, 81.4) y Encantamiento con Lucan Cordell (52.9, 74.5)."
+tip = "Objetivo al 30: Sastrería ~200 y Encantamiento ~175. Haz bolsas para vender."
+optional = true
+status = "unverified"
+sources = ["questie:npc/1346", "questie:npc/1317", "knowledge:duo-18-22"]

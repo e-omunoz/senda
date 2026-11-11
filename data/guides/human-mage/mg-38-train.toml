@@ -1,0 +1,43 @@
+# Guía human-mage: Mago: instructor al 38 y viaje al pantano. Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-38-train"
+title = "Mago: instructor al 38 y viaje al pantano"
+levels = [38, 39]
+map = 1453
+summary = "Hechizos del 38 y misiones que llevan al Pantano de Fangos Oscuros."
+
+[[step]]
+id = "mg-38-train-001"
+do = "train"
+npc = 5497
+spells = [3552]
+at = [1453, 49.6, 85.8]
+text = "Nivel 38: aprende Conjurar jade de maná."
+tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos."
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-38-train-002"
+do = "accept"
+quest = 1947
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "Coge de Jennea Cannon la misión del viaje al pantano."
+tip = "Empieza la cadena de la Varita de mago (recompensa: varita a elegir)."
+status = "unverified"
+sources = ["questie:quest/1947", "questie:npc/5497"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-38-train-003"
+do = "accept"
+quest = 1953
+npc = 5497
+at = [1453, 49.6, 85.8]
+optional = true
+text = "Coge también la misión de volver al pantano: es la cadena del Orbe celestial."
+tip = "Larga y con Uldaman: hazla solo si vas a entrar en esa mazmorra."
+status = "unverified"
+sources = ["questie:quest/1953", "questie:npc/5497"]
+checked = "2026-11-11"

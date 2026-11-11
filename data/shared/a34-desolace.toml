@@ -1,0 +1,352 @@
+# Ruta compartida de la Alianza (brujo gnomo y mago humano).
+
+id = "a34-desolace"
+title = "Desolace"
+levels = [34, 38]
+map = 1443
+summary = "Forjaz para entrenar y coger misiones, y viaje a Desolace. Base en Punta de Nijel. En Forever eliges clan centauro: esta ruta va con los Gelkis (Uthek el Sabio)."
+
+[[step]]
+id = "a34-desolace-001"
+do = "fly"
+npc = 2859
+node = "Ironforge"
+zone = 1455
+at = [1434, 27.53, 77.79]
+text = "Desde Bahía del Botín vuela a Forjaz."
+status = "unverified"
+sources = ["questie:npc/2859"]
+
+[[step]]
+id = "a34-desolace-002"
+do = "train"
+npc = 5144
+spells = [6117]
+at = [1455, 27.25, 8.3]
+if = { class = ["MAGE"] }
+text = "Entrena el 32-34 con Bink, en el Distrito Místico de Forjaz."
+status = "unverified"
+sources = ["questie:npc/5144"]
+
+[[step]]
+id = "a34-desolace-003"
+do = "train"
+npc = 5172
+spells = [6229]
+at = [1455, 50.35, 5.66]
+if = { class = ["WARLOCK"] }
+text = "Entrena el 32-34 con Briarthorn, en la Caverna Desolada de Forjaz."
+status = "unverified"
+sources = ["questie:npc/5172"]
+
+[[step]]
+id = "a34-desolace-004"
+do = "accept"
+quest = 1453
+npc = 5637
+at = [1455, 69.95, 21.26]
+text = "Coge la misión de los Reclamadores con Roetten Stonehammer (Sala de los Exploradores)."
+status = "unverified"
+sources = ["questie:quest/1453", "questie:npc/5637"]
+
+[[step]]
+id = "a34-desolace-005"
+do = "accept"
+quest = 1050
+npc = 3979
+at = [1455, 74.97, 12.48]
+optional = true
+text = "Coge la misión del libro de mitología con la bibliotecaria Mae Paledust (Monasterio Escarlata)."
+tip = "Solo si vas a hacer el Monasterio al 40. Guárdala en el registro."
+status = "unverified"
+sources = ["questie:quest/1050", "questie:npc/3979"]
+
+[[step]]
+id = "a34-desolace-006"
+do = "note"
+if = { class = ["MAGE"] }
+text = "Mago: Teletransporte a Darnassus, vuela al Pico del Espolón y baja a pie hasta Punta de Nijel."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a34-desolace-007"
+do = "note"
+if = { class = ["WARLOCK"] }
+text = "Brujo: vuela a Menethil, barco a Auberdine y vuela al Pico del Espolón; baja a pie hasta Punta de Nijel."
+tip = "Si no tienes el Pico del Espolón, vuela a Astranaar y cruza el Espolón hacia el oeste."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a34-desolace-008"
+do = "getfp"
+npc = 6706
+node = "Nijel's Point"
+at = [1443, 64.66, 10.54]
+text = "Coge la ruta de vuelo de Punta de Nijel con Baritanas Skyriver."
+status = "unverified"
+sources = ["questie:npc/6706"]
+
+[[step]]
+id = "a34-desolace-009"
+do = "sethearth"
+npc = 11103
+at = [1443, 66.27, 6.55]
+text = "Pon la piedra de hogar en la posada de Punta de Nijel."
+tip = "Volverás aquí varias veces a entregar."
+status = "unverified"
+sources = ["questie:npc/11103"]
+
+[[step]]
+id = "a34-desolace-010"
+do = "turnin"
+quest = 1453
+npc = 5638
+at = [1443, 66.2, 9.63]
+text = "Entrega la misión de los Reclamadores a Kreldig Ungor."
+status = "unverified"
+sources = ["questie:quest/1453", "questie:npc/5638"]
+
+[[step]]
+id = "a34-desolace-011"
+do = "accept"
+quest = 1458
+npc = 5638
+at = [1443, 66.2, 9.63]
+text = "Coge el primer encargo de reactivos de Kreldig."
+status = "unverified"
+sources = ["questie:quest/1458", "questie:npc/5638"]
+
+[[step]]
+id = "a34-desolace-012"
+do = "accept"
+quest = 1387
+npc = 5752
+at = [1443, 66.74, 10.87]
+text = "Coge la recompensa por orejas de centauro del cabo Melkins."
+tip = "Sirve cualquier centauro: la completarás sin buscarla."
+status = "unverified"
+sources = ["questie:quest/1387", "questie:npc/5752"]
+
+[[step]]
+id = "a34-desolace-013"
+do = "accept"
+quest = 1382
+npc = 5396
+at = [1443, 66.66, 10.93]
+text = "Coge la alianza con los centauros del capitán Pentigast."
+tip = "Elige Gelkis (Uthek). No cojas la de los Magram (Brutal Politics): los dos clanes se excluyen."
+status = "unverified"
+sources = ["questie:quest/1382", "questie:npc/5396"]
+
+[[step]]
+id = "a34-desolace-014"
+do = "accept"
+quest = 93224
+npc = 5396
+at = [1443, 66.66, 10.93]
+text = "Coge también los tótems tallados de centauro de Pentigast (nueva de Forever)."
+status = "unverified"
+sources = ["questie:quest/93224", "questie:npc/5396"]
+
+[[step]]
+id = "a34-desolace-015"
+do = "accept"
+quest = 261
+npc = 1182
+at = [1443, 66.52, 7.91]
+text = "Coge la Senda Escarlata del hermano Anton (pide nivel 34)."
+tip = "Los 30 devastadores no muertos están en el Valle de los Huesos: los harás al 38."
+status = "unverified"
+sources = ["questie:quest/261", "questie:npc/1182"]
+
+[[step]]
+id = "a34-desolace-016"
+do = "complete"
+quest = 1458
+at = [1443, 75.7, 19.3]
+text = "Mata sátiros Hatefury al este hasta tener garras y cuernos."
+status = "unverified"
+sources = ["questie:quest/1458"]
+
+[[step]]
+id = "a34-desolace-017"
+do = "turnin"
+quest = 1458
+npc = 5638
+at = [1443, 66.2, 9.63]
+text = "Entrega los reactivos a Kreldig."
+status = "unverified"
+sources = ["questie:quest/1458", "questie:npc/5638"]
+
+[[step]]
+id = "a34-desolace-018"
+do = "accept"
+quest = 1459
+npc = 5638
+at = [1443, 66.2, 9.63]
+text = "Coge el segundo encargo: veneno de escórpido y piel de kodo vieja."
+tip = "Escórpidos y kodos están por toda la zona: complétala de paso."
+status = "unverified"
+sources = ["questie:quest/1459", "questie:npc/5638"]
+
+[[step]]
+id = "a34-desolace-019"
+do = "accept"
+quest = 5741
+npc = 11863
+at = [1443, 38.88, 27.16]
+text = "Ve al oeste y coge el cetro de luz de Azore Aldamort, en su torre."
+status = "unverified"
+sources = ["questie:quest/5741", "questie:npc/11863"]
+
+[[step]]
+id = "a34-desolace-020"
+do = "complete"
+quest = 5741
+at = [1443, 55.2, 30.1]
+text = "Recupera el cetro en lo alto de la torre de la Fortaleza Hacha de Trueno."
+tip = "Lo lleva un vigía en lo alto; los orcos Filo Ardiente van en grupos de dos."
+status = "unverified"
+sources = ["questie:quest/5741"]
+
+[[step]]
+id = "a34-desolace-021"
+do = "turnin"
+quest = 5741
+npc = 11863
+at = [1443, 38.88, 27.16]
+text = "Vuelve con Azore y entrega el cetro."
+tip = "El Libro de los Ancianos sigue en las islas naga del norte (élites): sáltatelo."
+status = "unverified"
+sources = ["questie:quest/5741", "questie:npc/11863"]
+
+[[step]]
+id = "a34-desolace-022"
+do = "turnin"
+quest = 1382
+npc = 5397
+at = [1443, 36.22, 79.25]
+text = "Baja hacia el sur por el oeste de la zona hasta Uthek el Sabio y entrega la alianza."
+status = "unverified"
+sources = ["questie:quest/1382", "questie:npc/5397"]
+
+[[step]]
+id = "a34-desolace-023"
+do = "accept"
+quest = 1384
+npc = 5397
+at = [1443, 36.22, 79.25]
+text = "Coge de Uthek el asalto a los Kolkar."
+status = "unverified"
+sources = ["questie:quest/1384", "questie:npc/5397"]
+
+[[step]]
+id = "a34-desolace-024"
+do = "complete"
+quest = 1384
+at = [1443, 71.5, 46.1]
+text = "Consigue amuletos toscos de los centauros Kolkar, en su poblado del este."
+tip = "Aquí sacas también las orejas y los tótems."
+status = "unverified"
+sources = ["questie:quest/1384"]
+
+[[step]]
+id = "a34-desolace-025"
+do = "accept"
+quest = 5561
+npc = 11596
+at = [1443, 60.86, 61.86]
+text = "Al sur, en el Cementerio de Kodos, coge la redada de kodos de Smeed Scrabblescrew."
+status = "unverified"
+sources = ["questie:quest/5561", "questie:npc/11596"]
+
+[[step]]
+id = "a34-desolace-026"
+do = "complete"
+quest = 5561
+at = [1443, 55, 60]
+text = "Usa el control de kodos en los kodos ancianos y llévalos hasta Smeed."
+status = "unverified"
+sources = ["questie:quest/5561"]
+
+[[step]]
+id = "a34-desolace-027"
+do = "turnin"
+quest = 5561
+npc = 11596
+at = [1443, 60.86, 61.86]
+text = "Entrega la redada a Smeed."
+status = "unverified"
+sources = ["questie:quest/5561", "questie:npc/11596"]
+
+[[step]]
+id = "a34-desolace-028"
+do = "turnin"
+quest = 1384
+npc = 5397
+at = [1443, 36.22, 79.25]
+text = "Vuelve con Uthek y entrega los amuletos."
+status = "unverified"
+sources = ["questie:quest/1384", "questie:npc/5397"]
+
+[[step]]
+id = "a34-desolace-029"
+do = "accept"
+quest = 1370
+npc = 5397
+at = [1443, 36.22, 79.25]
+text = "Coge el robo de provisiones a los Magram."
+status = "unverified"
+sources = ["questie:quest/1370", "questie:npc/5397"]
+
+[[step]]
+id = "a34-desolace-030"
+do = "complete"
+quest = 1370
+at = [1443, 72.4, 77.3]
+text = "Roba carne seca en el poblado Magram, al sureste."
+tip = "Ahora los Magram son hostiles: tira de uno en uno, sus chamanes ponen tótems."
+status = "unverified"
+sources = ["questie:quest/1370"]
+
+[[step]]
+id = "a34-desolace-031"
+do = "complete"
+quest = 93224
+at = [1443, 72, 75]
+text = "Termina orejas y tótems de centauro antes de volver."
+status = "unverified"
+sources = ["questie:quest/93224"]
+
+[[step]]
+id = "a34-desolace-032"
+do = "turnin"
+quest = 1370
+npc = 5397
+at = [1443, 36.22, 79.25]
+text = "Entrega las provisiones a Uthek."
+tip = "Ongeku y los kanes siguientes son de nivel 37-42: déjalos, la cadena nueva del valle rinde más."
+status = "unverified"
+sources = ["questie:quest/1370", "questie:npc/5397"]
+
+[[step]]
+id = "a34-desolace-033"
+do = "note"
+at = [1445, 66.2, 51.6, "Timothy Worthington (Theramore)"]
+if = { prof = ["tailoring"] }
+text = "Sastre con 200 y nivel 35: entrena Artesano con Timothy Worthington en Theramore (66.2, 51.6)."
+status = "unverified"
+sources = ["questie:npc/11052"]
+
+[[step]]
+id = "a34-desolace-034"
+do = "train"
+npc = 5497
+spells = [3552]
+at = [1453, 49.56, 85.8]
+if = { class = ["MAGE"], minlevel = 38 }
+text = "Mago al 36-38: Teletransporte a Ventormenta, entrena con Jennea y vuelve con la piedra de hogar."
+status = "unverified"
+sources = ["questie:npc/5497"]

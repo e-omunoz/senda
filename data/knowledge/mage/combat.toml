@@ -1,0 +1,60 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua, MG.TEXTS.combate).
+id = "mage-combat"
+class = "MAGE"
+kind = "page"
+title = "Combate en solitario"
+order = 110
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://www.warcrafttavern.com/forever/"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "El combate básico (Escarcha)"
+body = """
+1. Descarga de Escarcha desde lejos. Otra mientras llega: va ralentizado.
+2. Cuando esté cerca: Nova de Escarcha y aléjate durante el tiempo global.
+3. Lanza de hielo en cuanto esté congelado: hace un 300% más. Que el daño rompa la congelación es normal.
+4. Vuelve a Descarga de Escarcha.
+5. Remata con Explosión de Fuego o con la varita."""
+
+[[block]]
+heading = "Dos enemigos"
+body = """
+- Polimorfia en uno (macro SND_Poli con foco) y mata al otro.
+- No le pegues al convertido: se despierta.
+- Bestias y humanoides se pueden convertir; elementales y no-muertos, no."""
+
+[[block]]
+heading = "Tirar de grupos"
+body = """
+- Para que lleguen juntos: Bola de Fuego de rango 1 a 35 m al lejano y Descarga de Escarcha al cercano.
+- Si la Nova falla (resistida), reinicia el combate alejándote.
+- Mordiescarcha congela al azar: en área separa a los enemigos. La build de área no lo lleva."""
+
+[[block]]
+heading = "Maná"
+body = """
+- Agua conjurada siempre. Bebe entre combates.
+- Gema de maná en combate, sin gastar turno. Evocación (8 min) cuando estés seco.
+- Armadura de mago: en Forever el 50% de la regeneración sigue mientras lanzas.
+- El espíritu humano (racial) te da más Espíritu: regeneras más maná fuera de combate."""
+note = "Armadura de mago: 50% en Forever; algunas guías aún dicen 30%."
+
+[[block]]
+heading = "Emergencias, por orden"
+body = """
+1. Nova de Escarcha y Traslación.
+2. Voluntad de sobrevivir (racial humana) si te aturden.
+3. Bloqueo de hielo (talento) para cortar el daño.
+4. Mordedura helada para recuperar Nova y Bloqueo de hielo.
+5. Piedra de salud (pídesela a tu compañero brujo: macro SND_Piedra)."""
+
+[[block]]
+heading = "Raciales humanas en Forever"
+body = """
+- **Voluntad de sobrevivir:** quita todos los aturdimientos (3 min).
+- **Percepción:** detectas sigilo durante 20 s (3 min). Útil contra pícaros.
+- **Despiadado:** +1% de crítico con hechizos y ataques (las guías dan cifras entre 1% y 2%).
+- **El espíritu humano:** más Espíritu (5% en la beta; algunas guías dicen que subió al 10%).
+- **Diplomacia** ya no existe."""
+note = "Cifras de Despiadado (1-2%) y del espíritu humano (5% o 10%) en disputa entre guías."

@@ -1,0 +1,188 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (BrujoGnomoGuia.lua: Analyze, FocusAdvice, ProfAdvice, SellAdvice, GearText).
+# kind = "rules" (tipo nuevo, ver docs/MIGRATION.md): umbrales y reglas del análisis del personaje y del asesor
+# «Qué hago». No es texto para el jugador sino referencia para el módulo asesor (Modules/). Cada [[rule]]:
+#   id, class (WARLOCK | MAGE | ANY), when (condición), say (mensaje que mostraba el addon), priority (orden en «Qué hago»;
+#   menor = más urgente; sin priority = solo en el análisis).
+id = "general-advisor-rules"
+class = "ANY"
+kind = "rules"
+title = "Reglas del asesor y del análisis del personaje"
+order = 900
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+note = "Heurísticas del autor, no datos del juego."
+
+[[rule]]
+id = "talents-unspent"
+class = "ANY"
+when = "Puntos de talento sin gastar > 0"
+say = "Gasta N punto(s) de talento: <talento recomendado para tu nivel>."
+priority = 1
+
+[[rule]]
+id = "prof-missing"
+class = "ANY"
+when = "Nivel >= 5 y no tienes Sastrería o Encantamiento"
+say = "Aprende <profesión> con <instructor>."
+priority = 2
+
+[[rule]]
+id = "prof-train-next"
+class = "ANY"
+when = "Habilidad >= tope del rango - 15, y cumples nivel y habilidad del rango siguiente"
+say = "Entrena <rango> ya con <instructor> (<coste>). Los puntos por encima de <tope> se pierden."
+priority = 3
+
+[[rule]]
+id = "prof-capped-by-level"
+class = "ANY"
+when = "Habilidad >= tope del rango - 15 y te falta nivel para el rango siguiente"
+say = "Te acercas al tope. <rango> pide nivel N: hasta entonces, sube de nivel y guarda materiales."
+
+[[rule]]
+id = "prof-near-cap"
+class = "ANY"
+when = "Habilidad >= máximo - 5 y máximo < 300"
+say = "<profesión> está casi en su tope: entrena el rango siguiente."
+
+[[rule]]
+id = "bags-full-advice"
+class = "ANY"
+when = "Menos de 4 huecos libres"
+say = "Bolsas casi llenas: vende grises y desencanta verdes."
+priority = 4
+
+[[rule]]
+id = "craft-now"
+class = "ANY"
+when = "Tienes material para fabricar el tramo actual de la ruta y no estás limitado por nivel"
+say = "Antes de salir, fabrica N x <receta>: tienes el material."
+priority = 5
+
+[[rule]]
+id = "prof-behind"
+class = "ANY"
+when = "Habilidad < objetivo - 40, con objetivo = min(300, nivel × 5)"
+say = "<profesión> va atrasada (N, ideal ~M para tu nivel): dedica un rato a subirla en la ciudad."
+priority = 6
+
+[[rule]]
+id = "mage-save-riding"
+class = "MAGE"
+when = "Nivel 34-39 y menos de 100 de oro"
+say = "Ahorra para la equitación del 40: unos 100 de oro. El mago sí la paga."
+priority = 7
+
+[[rule]]
+id = "focus"
+class = "ANY"
+when = "Alguna profesión atrasada → foco profesiones; si no → foco subir de nivel"
+say = "Foco: profesiones (súbelas hasta tu nivel y luego sigue con la guía) / Foco: subir de nivel (fabrica solo cuando tengas material)."
+
+[[rule]]
+id = "warlock-pets"
+class = "WARLOCK"
+when = "Nivel >= 12 sin Abisario; >= 22 sin Íncubo/Súcubo; >= 32 sin Manáfago; >= 42 sin Corcel nefasto"
+say = "Te falta <demonio> (misión de nivel N)."
+
+[[rule]]
+id = "mage-key-spells"
+class = "MAGE"
+when = "Nivel >= nivel del hechizo + 2 y no lo conoces (lista [[check]] de mage/spells.toml)"
+say = "Te falta <hechizo> (nivel N): pasa por el instructor."
+
+[[rule]]
+id = "wand-missing"
+class = "ANY"
+when = "Nivel >= 5 sin varita"
+say = "No llevas varita. Es tu arma principal: fabrícala con Encantamiento o cómprala."
+
+[[rule]]
+id = "wand-low"
+class = "ANY"
+when = "Nivel de objeto de la varita < nivel - 12"
+say = "Tu varita se ha quedado baja. Busca una mejor."
+
+[[rule]]
+id = "gear-low"
+class = "ANY"
+when = "Nivel >= 15 y una pieza con nivel de objeto < nivel - 15; o nivel >= 10 y una ranura vacía (salvo abalorios y mano izquierda)"
+say = "Equipo bajo o vacío: <ranuras>."
+
+[[rule]]
+id = "gear-wrong-stats"
+class = "ANY"
+when = "Pieza con Fuerza o Agilidad y sin Intelecto, Espíritu ni poder con hechizos"
+say = "Piezas con Fuerza o Agilidad y sin Intelecto/Espíritu (no te sirven): <ranuras>."
+
+[[rule]]
+id = "gathering-prof"
+class = "ANY"
+when = "Tienes Herboristería (Botánica en el cliente esES), Minería o Desuello"
+say = "El plan es Sastrería + Encantamiento: abandónala en el libro de profesiones (K)."
+
+[[rule]]
+id = "secondary-missing"
+class = "ANY"
+when = "Nivel >= 5 sin Primeros auxilios o sin Cocina"
+say = "Te falta Primeros auxilios (vendas con el paño sobrante) / Cocina (comida con experiencia y hoguera del campamento)."
+
+[[rule]]
+id = "warlock-shards"
+class = "WARLOCK"
+when = "Nivel >= 10 y menos de 2 Fragmentos de alma"
+say = "Ten al menos 3 Fragmentos de alma (Drenar alma)."
+
+[[rule]]
+id = "warlock-healthstone"
+class = "WARLOCK"
+when = "Nivel >= 10, conoces Crear piedra de salud y no llevas ninguna"
+say = "No llevas Piedra de salud: créala."
+
+[[rule]]
+id = "mage-water"
+class = "MAGE"
+when = "Conoces Conjurar agua y llevas menos de 10 aguas conjuradas"
+say = "Llevas poca agua conjurada: crea más antes de salir."
+
+[[rule]]
+id = "mage-gem"
+class = "MAGE"
+when = "Conoces Conjurar ágata de maná y no llevas gema"
+say = "No llevas gema de maná: créala (se usa en combate sin gastar turno)."
+
+[[rule]]
+id = "bags-low"
+class = "ANY"
+when = "Menos de 4 huecos libres"
+say = "Solo te quedan N huecos en las bolsas. Vende grises o fabrica bolsas."
+
+[[rule]]
+id = "sell-greys"
+class = "ANY"
+when = "Objetos grises en las bolsas"
+say = "Vende N objetos grises al vendedor."
+
+[[rule]]
+id = "greens"
+class = "ANY"
+when = "Verdes desencantables que no son mejora"
+say = "Con Encantamiento: desencántalos, no los vendas. Sin Encantamiento: subasta o vendedor."
+
+[[rule]]
+id = "surplus"
+class = "ANY"
+when = "Te sobra un material de sellable (professions-materials.toml) por encima de su `min` para toda tu ruta"
+say = "Te sobran N x <material>: <consejo de venta>."
+
+[[rule]]
+id = "trainer-budget"
+class = "ANY"
+when = "En el instructor no te llega el oro para todo"
+say = "Primero lo que usas en cada combate: los DoTs, Descarga y tu armadura; deja para después lo de grupo y PvP."
+
+[[rule]]
+id = "gear-where-window"
+class = "ANY"
+when = "Lista de equipo (gear-items.toml): se muestra desde el nivel from - 3 hasta to"
+say = "Dónde buscar más para tu nivel."

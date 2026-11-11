@@ -1,0 +1,434 @@
+# Brujo gnomo: Valle de Crestanevada (1-6).
+# Ids y coordenadas de QuestieDB (Forever) leída en local con tools/lookup.py. Textos propios.
+id = "coldridge"
+title = "Valle de Crestanevada"
+levels = [1, 6]
+map = 1426
+summary = "Del 1 al 6 en el Valle de Crestanevada. Consigues el Diablillo con la misión de clase y sales por el túnel hacia Kharanos."
+
+[[step]]
+id = "coldridge-001"
+do = "accept"
+quest = 179
+npc = 658
+at = [1426, 29.9, 71.2]
+text = "Coge la misión de Sten Stoutarm, delante de ti al aparecer."
+tip = "Pon Descarga de las Sombras e Inmolar en la barra. Vende los grises en cada vendedor que pises."
+status = "unverified"
+sources = ["questie:quest/179", "questie:npc/658"]
+
+[[step]]
+id = "coldridge-002"
+do = "complete"
+quest = 179
+at = [1426, 28.8, 73.8]
+wps = [[1426, 31.3, 70.5, "Lobos al este"], [1426, 27.0, 71.0, "Lobos al oeste"]]
+text = "Mata lobos jóvenes alrededor del campamento hasta tener 8 carnes."
+tip = "Abre con Inmolar y remata con Descarga de las Sombras o a bastonazos: ahorras maná y no paras a beber."
+status = "unverified"
+sources = ["questie:quest/179", "questie:npc/705"]
+
+[[step]]
+id = "coldridge-003"
+do = "turnin"
+quest = 179
+npc = 658
+at = [1426, 29.9, 71.2]
+text = "Entrega la carne a Sten Stoutarm."
+status = "unverified"
+sources = ["questie:quest/179", "questie:npc/658"]
+
+[[step]]
+id = "coldridge-004"
+do = "accept"
+quest = 3115
+npc = 658
+at = [1426, 29.9, 71.2]
+text = "Coge el memorando de brujo de Sten Stoutarm."
+tip = "Se entrega más tarde en Yunquemar: no subas todavía, lo harás al llevar la cerveza caliente."
+status = "unverified"
+sources = ["questie:quest/3115", "questie:npc/658"]
+
+[[step]]
+id = "coldridge-005"
+do = "accept"
+quest = 233
+npc = 658
+at = [1426, 29.9, 71.2]
+text = "Coge también el correo para Talin Keeneye."
+status = "unverified"
+sources = ["questie:quest/233", "questie:npc/658"]
+
+[[step]]
+id = "coldridge-006"
+do = "accept"
+quest = 170
+npc = 713
+at = [1426, 29.7, 71.2]
+text = "Coge la misión de los troggs de Balir Frosthammer, al lado de Sten."
+status = "unverified"
+sources = ["questie:quest/170", "questie:npc/713"]
+
+[[step]]
+id = "coldridge-007"
+do = "turnin"
+quest = 233
+npc = 714
+at = [1426, 22.6, 71.4]
+text = "Ve al oeste y entrega el correo a Talin Keeneye."
+tip = "Mata troggs por el camino: cuentan para la misión de Balir."
+status = "unverified"
+sources = ["questie:quest/233", "questie:npc/714"]
+
+[[step]]
+id = "coldridge-008"
+do = "accept"
+quest = 234
+npc = 714
+at = [1426, 22.6, 71.4]
+text = "Coge la segunda entrega de correo de Talin."
+status = "unverified"
+sources = ["questie:quest/234", "questie:npc/714"]
+
+[[step]]
+id = "coldridge-009"
+do = "accept"
+quest = 183
+npc = 714
+at = [1426, 22.6, 71.4]
+text = "Coge la caza de jabalíes de Talin."
+status = "unverified"
+sources = ["questie:quest/183", "questie:npc/714"]
+
+[[step]]
+id = "coldridge-010"
+do = "complete"
+quest = 183
+at = [1426, 23.0, 72.0]
+wps = [[1426, 25.4, 74.4, "Troggs fornidos"], [1426, 28.8, 75.5, "Troggs"]]
+text = "Mata 12 jabalíes pequeños alrededor de Talin. Acaba a la vez los 6 troggs y los 6 troggs fornidos."
+tip = "Los troggs están al sur y al este de Talin. Al 4 vuelve a Yunquemar a entrenar Corrupción en cuanto pases por allí."
+status = "unverified"
+sources = ["questie:quest/183", "questie:quest/170", "questie:npc/708", "questie:npc/707", "questie:npc/724"]
+
+[[step]]
+id = "coldridge-011"
+do = "complete"
+quest = 170
+at = [1426, 25.4, 74.4]
+text = "Termina los troggs que falten."
+status = "unverified"
+sources = ["questie:quest/170", "questie:npc/707", "questie:npc/724"]
+
+[[step]]
+id = "coldridge-012"
+do = "turnin"
+quest = 183
+npc = 714
+at = [1426, 22.6, 71.4]
+text = "Entrega los jabalíes a Talin."
+status = "unverified"
+sources = ["questie:quest/183", "questie:npc/714"]
+
+[[step]]
+id = "coldridge-013"
+do = "turnin"
+quest = 234
+npc = 786
+at = [1426, 25.1, 75.7]
+text = "Entrega el correo a Grelin Whitebeard, en el campamento al sureste."
+status = "unverified"
+sources = ["questie:quest/234", "questie:npc/786"]
+
+[[step]]
+id = "coldridge-014"
+do = "accept"
+quest = 182
+npc = 786
+at = [1426, 25.1, 75.7]
+text = "Coge la misión de la cueva de los trols de Grelin."
+status = "unverified"
+sources = ["questie:quest/182", "questie:npc/786"]
+
+[[step]]
+id = "coldridge-015"
+do = "accept"
+quest = 3364
+npc = 12738
+at = [1426, 25.0, 76.0]
+text = "Coge la cerveza caliente de Nori Pridedrift, junto a Grelin (nivel 4)."
+tip = "Llévala ya a Yunquemar, sin desvíos: allí entregas también el memorando y entrenas."
+status = "unverified"
+sources = ["questie:quest/3364", "questie:npc/12738"]
+
+[[step]]
+id = "coldridge-016"
+do = "turnin"
+quest = 3364
+npc = 836
+at = [1426, 28.8, 66.4]
+text = "Sube a Yunquemar y entrega la cerveza a Durnan Furcutter."
+status = "unverified"
+sources = ["questie:quest/3364", "questie:npc/836"]
+
+[[step]]
+id = "coldridge-017"
+do = "accept"
+quest = 3365
+npc = 836
+at = [1426, 28.8, 66.4]
+text = "Coge la jarra de vuelta de Durnan."
+status = "unverified"
+sources = ["questie:quest/3365", "questie:npc/836"]
+
+[[step]]
+id = "coldridge-018"
+do = "turnin"
+quest = 3115
+npc = 460
+at = [1426, 28.6, 66.1]
+text = "Entrega el memorando a Alamar Grimm, el instructor de brujo de Yunquemar."
+status = "unverified"
+sources = ["questie:quest/3115", "questie:npc/460", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "coldridge-019"
+do = "accept"
+quest = 1599
+npc = 460
+at = [1426, 28.6, 66.1]
+text = "Coge la misión del Diablillo de Alamar Grimm."
+status = "unverified"
+sources = ["questie:quest/1599", "questie:npc/460", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "coldridge-020"
+do = "train"
+spells = [348, 172, 702]
+npc = 460
+at = [1426, 28.6, 66.1]
+text = "Entrena con Alamar Grimm: Inmolar, Corrupción y Maldición de debilidad."
+tip = "Corrupción y Maldición de debilidad piden nivel 4. Si aún no lo tienes, entrena lo que puedas y vuelve al entregar el Diablillo."
+status = "unverified"
+sources = ["questie:npc/460", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "coldridge-021"
+do = "accept"
+quest = 3361
+npc = 8416
+at = [1426, 28.6, 67.6]
+text = "Coge la misión de Felix Whindlebolt, dentro de Yunquemar."
+status = "unverified"
+sources = ["questie:quest/3361", "questie:npc/8416"]
+
+[[step]]
+id = "coldridge-022"
+do = "accept"
+quest = 97277
+npc = 2756
+at = [1426, 28.7, 67.5]
+text = "Coge la misión de Grund Drokda, al lado de Felix."
+tip = "Misión nueva de Forever: el objetivo está justo al norte de Yunquemar."
+status = "unverified"
+sources = ["questie:quest/97277", "questie:npc/2756"]
+
+[[step]]
+id = "coldridge-023"
+do = "complete"
+quest = 97277
+at = [1426, 27.4, 62.9]
+text = "Sal de Yunquemar hacia el norte: mata al leopardo merodeador y recoge el diario del mecánico que hay al lado."
+status = "unverified"
+sources = ["questie:quest/97277", "questie:npc/269075", "questie:object/664122"]
+
+[[step]]
+id = "coldridge-024"
+do = "turnin"
+quest = 97277
+npc = 2756
+at = [1426, 28.7, 67.5]
+text = "Vuelve y entrega a Grund Drokda."
+status = "unverified"
+sources = ["questie:quest/97277", "questie:npc/2756"]
+
+[[step]]
+id = "coldridge-025"
+do = "turnin"
+quest = 170
+npc = 713
+at = [1426, 29.7, 71.2]
+text = "Baja al campamento y entrega los troggs a Balir Frosthammer."
+status = "unverified"
+sources = ["questie:quest/170", "questie:npc/713"]
+
+[[step]]
+id = "coldridge-026"
+do = "complete"
+quest = 182
+at = [1426, 26.2, 79.5]
+wps = [[1426, 22.0, 78.5, "Trols al oeste"], [1426, 29.0, 80.0, "Entrada de la cueva"]]
+text = "Mata crías de trol Peloescarcha al sur de Grelin, delante y dentro de la cueva."
+status = "unverified"
+sources = ["questie:quest/182", "questie:npc/706"]
+
+[[step]]
+id = "coldridge-027"
+do = "complete"
+quest = 3361
+at = [1426, 22.8, 80.0]
+wps = [[1426, 20.9, 76.1, "Caja de Felix"], [1426, 22.8, 80.0, "Cofre de Felix"], [1426, 26.3, 79.3, "Cubo de tornillos de Felix"]]
+text = "Recoge las tres cosas de Felix en el campamento trol: caja, cofre y cubo de tornillos."
+status = "unverified"
+sources = ["questie:quest/3361", "questie:object/148499", "questie:object/178084", "questie:object/178085"]
+
+[[step]]
+id = "coldridge-028"
+do = "complete"
+quest = 1599
+at = [1426, 29.7, 81.4]
+text = "Mata novicios Peloescarcha en la cueva hasta tener 3 amuletos de pluma."
+tip = "Los novicios lanzan hechizos: Corrupción e Inmolar a distancia, y Miedo no lo tienes aún, así que tira de uno en uno."
+status = "unverified"
+sources = ["questie:quest/1599", "questie:npc/946", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "coldridge-029"
+do = "turnin"
+quest = 182
+npc = 786
+at = [1426, 25.1, 75.7]
+text = "Sal y entrega la cueva a Grelin."
+status = "unverified"
+sources = ["questie:quest/182", "questie:npc/786"]
+
+[[step]]
+id = "coldridge-030"
+do = "turnin"
+quest = 3365
+npc = 12738
+at = [1426, 25.0, 76.0]
+text = "Devuelve la jarra a Nori Pridedrift."
+status = "unverified"
+sources = ["questie:quest/3365", "questie:npc/12738"]
+
+[[step]]
+id = "coldridge-031"
+do = "accept"
+quest = 218
+npc = 786
+at = [1426, 25.1, 75.7]
+text = "Coge el diario robado de Grelin."
+status = "unverified"
+sources = ["questie:quest/218", "questie:npc/786"]
+
+[[step]]
+id = "coldridge-032"
+do = "complete"
+quest = 218
+at = [1426, 30.5, 80.2]
+text = "Entra en la cueva y mata a Grik'nir el Frío al fondo: suelta el diario."
+tip = "Limpia el camino, entra con vida y maná llenos y usa el Diablillo si ya lo tienes."
+status = "unverified"
+sources = ["questie:quest/218", "questie:npc/808"]
+
+[[step]]
+id = "coldridge-033"
+do = "turnin"
+quest = 218
+npc = 786
+at = [1426, 25.1, 75.7]
+text = "Entrega el diario a Grelin."
+status = "unverified"
+sources = ["questie:quest/218", "questie:npc/786"]
+
+[[step]]
+id = "coldridge-034"
+do = "accept"
+quest = 282
+npc = 786
+at = [1426, 25.1, 75.7]
+text = "Coge las observaciones para el montañero del túnel."
+status = "unverified"
+sources = ["questie:quest/282", "questie:npc/786"]
+
+[[step]]
+id = "coldridge-035"
+do = "turnin"
+quest = 1599
+npc = 460
+at = [1426, 28.6, 66.1]
+text = "Sube a Yunquemar y entrega los amuletos a Alamar Grimm."
+status = "unverified"
+sources = ["questie:quest/1599", "questie:npc/460"]
+
+[[step]]
+id = "coldridge-036"
+do = "train"
+spells = [688]
+npc = 460
+at = [1426, 28.6, 66.1]
+text = "Invoca al Diablillo. Entrena también lo que te falte de nivel 4 (y Transfusión de vida si ya eres 6)."
+tip = "Diablillo en defensivo: abres tú y él dispara. Su Pacto de sangre te da Aguante."
+status = "unverified"
+sources = ["questie:quest/1599", "legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "coldridge-037"
+do = "turnin"
+quest = 3361
+npc = 8416
+at = [1426, 28.6, 67.6]
+text = "Entrega las cosas a Felix Whindlebolt."
+status = "unverified"
+sources = ["questie:quest/3361", "questie:npc/8416"]
+
+[[step]]
+id = "coldridge-038"
+do = "turnin"
+quest = 282
+npc = 1965
+at = [1426, 33.5, 71.8]
+text = "Ve al este, a la boca del túnel, y entrega a Mountaineer Thalos."
+status = "unverified"
+sources = ["questie:quest/282", "questie:npc/1965"]
+
+[[step]]
+id = "coldridge-039"
+do = "accept"
+quest = 420
+npc = 1965
+at = [1426, 33.5, 71.8]
+text = "Coge la continuación de Thalos: se entrega en Kharanos."
+status = "unverified"
+sources = ["questie:quest/420", "questie:npc/1965"]
+
+[[step]]
+id = "coldridge-040"
+do = "accept"
+quest = 96628
+npc = 1965
+at = [1426, 33.5, 71.8]
+text = "Coge también la misión del aventurero de Thalos (nueva de Forever): te lleva al campamento de Kharanos."
+status = "unverified"
+sources = ["questie:quest/96628", "questie:npc/1965"]
+
+[[step]]
+id = "coldridge-041"
+do = "accept"
+quest = 2160
+npc = 6782
+at = [1426, 33.9, 72.2]
+text = "Coge los suministros de Hands Springsprocket, al lado de Thalos."
+status = "unverified"
+sources = ["questie:quest/2160", "questie:npc/6782"]
+
+[[step]]
+id = "coldridge-042"
+do = "goto"
+at = [1426, 41.0, 63.0]
+radius = 30
+text = "Cruza el túnel y sigue el camino hacia el noreste, hasta Kharanos."
+tip = "Al salir del túnel los troggs son hostiles y de más nivel: no te desvíes."
+status = "unverified"
+sources = ["questie:npc/6806"]

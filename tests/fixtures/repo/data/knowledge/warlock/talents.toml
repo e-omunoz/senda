@@ -1,0 +1,13 @@
+id = "warlock-talents"
+class = "WARLOCK"
+kind = "talents"
+title = "Talentos de leveo"
+order = 10
+status = "unverified"
+
+[[pick]]
+level = 10
+talent = "Corrupción mejorada"
+tree = 1
+note = "Visible para el jugador."
+sources = ["x"]

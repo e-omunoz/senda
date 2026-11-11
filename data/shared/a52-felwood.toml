@@ -1,0 +1,282 @@
+# Ruta compartida de Alianza (brujo gnomo y mago humano), 45-60. Generada con QuestieDB local; textos propios.
+id = "a52-felwood"
+title = "Frondavil"
+levels = [52, 54]
+map = 1448
+summary = "Santuario Esmeralda al sur (Jadefire, Jaedenar, Madera Muerta) y subida al norte hasta Fauces de Madera."
+
+[[step]]
+id = "a52-felwood-001"
+do = "goto"
+at = [1448, 51.2, 82.1]
+text = "Vuela a Astranaar (Vallefresno) y sube al norte hasta el Santuario Esmeralda de Frondavil."
+tip = "Si no tienes Astranaar, vuela a Auberdine y baja por Costa Oscura."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a52-felwood-002"
+do = "accept"
+quest = 8460
+npc = 11554
+at = [1448, 50.9, 85.0]
+text = "Coge la misión de Grazle: aliado de los Fauces de Madera."
+tip = "La reputación con Fauces de Madera abre el túnel a Cuna del Invierno sin peleas."
+status = "unverified"
+sources = ["questie:quest/8460", "questie:npc/11554", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-003"
+do = "accept"
+quest = 5155
+npc = 10922
+at = [1448, 51.2, 82.1]
+text = "Coge la misión de Greta contra las fuerzas de Jaedenar."
+status = "unverified"
+sources = ["questie:quest/5155", "questie:npc/10922", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-004"
+do = "accept"
+quest = 4421
+npc = 9116
+at = [1448, 51.4, 81.5]
+text = "Coge la misión de Eridan contra los Jadefire."
+status = "unverified"
+sources = ["questie:quest/4421", "questie:npc/9116", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-005"
+do = "accept"
+quest = 5156
+npc = 10921
+at = [1448, 50.9, 81.6]
+text = "Coge la verificación de la corrupción."
+status = "unverified"
+sources = ["questie:quest/5156", "questie:npc/10921", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-006"
+do = "complete"
+quest = 8460
+at = [1448, 48.4, 91.4]
+text = "Al sur del santuario, mata 6 guerreros, 6 exploradores y 6 jardineros Madera Muerta."
+tip = "Guarda las plumas de tocado: valen para la reputación."
+status = "unverified"
+sources = ["questie:quest/8460", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-007"
+do = "turnin"
+quest = 8460
+npc = 11554
+at = [1448, 50.9, 85.0]
+text = "Entrégala a Grazle."
+status = "unverified"
+sources = ["questie:quest/8460", "questie:npc/11554", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-008"
+do = "accept"
+quest = 8462
+npc = 11554
+at = [1448, 50.9, 85.0]
+text = "Coge la misión de hablar con Nafien, al norte de Frondavil."
+status = "unverified"
+sources = ["questie:quest/8462", "questie:npc/11554", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-009"
+do = "complete"
+quest = 4421
+at = [1448, 39.4, 79.6]
+wps = [[1448, 35.7, 67.6, "Acechasombras y pícaros"], [1448, 32.2, 67.1, "Xavathras"]]
+text = "En la Cañada Jadefire (oeste) mata felsworn, acechasombras, pícaros Jadefire y a Xavathras."
+status = "unverified"
+sources = ["questie:quest/4421", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-010"
+do = "complete"
+quest = 5155
+at = [1448, 37.2, 60.8]
+text = "En Jaedenar mata 4 canes, 4 guardianes, 6 adeptos y 6 sectarios."
+status = "unverified"
+sources = ["questie:quest/5155", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-011"
+do = "complete"
+quest = 5156
+at = [1448, 42.5, 40.3]
+text = "Al norte, en el Valle Cicatriz, mata 2 bestias y 2 horrores entrópicos."
+status = "unverified"
+sources = ["questie:quest/5156", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-012"
+do = "goto"
+at = [1448, 51.2, 82.1]
+text = "Vuelve al Santuario Esmeralda."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a52-felwood-013"
+do = "turnin"
+quest = 4421
+npc = 9116
+at = [1448, 51.4, 81.5]
+text = "Entrega los Jadefire a Eridan."
+status = "unverified"
+sources = ["questie:quest/4421", "questie:npc/9116", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-014"
+do = "turnin"
+quest = 5155
+npc = 10922
+at = [1448, 51.2, 82.1]
+text = "Entrega Jaedenar a Greta."
+status = "unverified"
+sources = ["questie:quest/5155", "questie:npc/10922", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-015"
+do = "turnin"
+quest = 5156
+npc = 10921
+at = [1448, 50.9, 81.6]
+text = "Entrega la verificación de la corrupción."
+status = "unverified"
+sources = ["questie:quest/5156", "questie:npc/10921", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-016"
+do = "accept"
+quest = 5249
+npc = 10924
+at = [1448, 51.0, 81.6]
+text = "Coge la misión hacia Cuna del Invierno (Aldea Caída Estelar). Guárdala."
+status = "unverified"
+sources = ["questie:quest/5249", "questie:npc/10924", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-017"
+do = "goto"
+at = [1448, 62.5, 24.2]
+text = "Sube por el camino del norte hasta el Claro Talonbranch."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a52-felwood-018"
+do = "getfp"
+npc = 12578
+node = "Talonbranch Glade"
+at = [1448, 62.5, 24.2]
+text = "Coge la ruta de vuelo del claro."
+status = "unverified"
+sources = ["questie:npc/12578", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-019"
+do = "turnin"
+quest = 8462
+npc = 15395
+at = [1448, 64.8, 8.1]
+text = "Sigue al norte hasta Nafien, en la entrada de Fauces de Madera."
+status = "unverified"
+sources = ["questie:quest/8462", "questie:npc/15395", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-020"
+do = "accept"
+quest = 8461
+npc = 15395
+at = [1448, 64.8, 8.1]
+text = "Coge la misión de los Madera Muerta del norte."
+status = "unverified"
+sources = ["questie:quest/8461", "questie:npc/15395", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-021"
+do = "complete"
+quest = 8461
+at = [1448, 61.8, 8.2]
+text = "Mata 6 vigías, 6 vengadores y 6 chamanes Madera Muerta al lado del túnel."
+status = "unverified"
+sources = ["questie:quest/8461", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-022"
+do = "turnin"
+quest = 8461
+npc = 15395
+at = [1448, 64.8, 8.1]
+text = "Entrega la misión a Nafien."
+status = "unverified"
+sources = ["questie:quest/8461", "questie:npc/15395", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-023"
+do = "accept"
+quest = 8467
+npc = 15395
+at = [1448, 64.8, 8.1]
+text = "Opcional: entrega 5 plumas a Nafien por reputación."
+optional = true
+status = "unverified"
+sources = ["questie:quest/8467", "questie:npc/15395", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-024"
+do = "turnin"
+quest = 8467
+npc = 15395
+at = [1448, 64.8, 8.1]
+text = "Entrega las plumas."
+optional = true
+status = "unverified"
+sources = ["questie:quest/8467", "questie:npc/15395", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-025"
+do = "accept"
+quest = 8465
+npc = 15395
+at = [1448, 64.8, 8.1]
+text = "Coge la misión de hablar con Salfa, al otro lado del túnel."
+status = "unverified"
+sources = ["questie:quest/8465", "questie:npc/15395", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a52-felwood-026"
+do = "note"
+text = "Brujo: Niby el Todopoderoso, en el centro de Frondavil, empieza la cadena del Inferno (la cubre la sección de clase)."
+if = { class = ["WARLOCK"] }
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]

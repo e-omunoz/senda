@@ -1,0 +1,365 @@
+# Ruta compartida de Alianza (brujo gnomo y mago humano), 45-60. Generada con QuestieDB local; textos propios.
+id = "a47-tanaris"
+title = "Tanaris: Gadgetzan"
+levels = [47, 48]
+map = 1446
+summary = "Encargos de Gadgetzan en el desierto. Piedra en Gadgetzan para volver después de los Reinos del Este. Zul'Farrak opcional."
+
+[[step]]
+id = "a47-tanaris-001"
+do = "fly"
+node = "Gadgetzan"
+zone = 1446
+text = "Vuela de Plumaluna a Gadgetzan (Tanaris)."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a47-tanaris-002"
+do = "getfp"
+npc = 7823
+node = "Gadgetzan"
+at = [1446, 51.0, 29.3]
+text = "Coge la ruta de vuelo de Gadgetzan si no la tienes."
+status = "unverified"
+sources = ["questie:npc/7823", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-003"
+do = "sethearth"
+npc = 7733
+at = [1446, 52.5, 27.9]
+text = "Pon la piedra en la posada de Gadgetzan: la usarás al volver de Forjaz."
+status = "unverified"
+sources = ["questie:npc/7733", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-004"
+do = "accept"
+quest = 992
+npc = 7724
+at = [1446, 50.2, 27.5]
+text = "Coge el estudio del agua del topógrafo Fizzledowser."
+status = "unverified"
+sources = ["questie:quest/992", "questie:npc/7724", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-005"
+do = "accept"
+quest = 2605
+npc = 7564
+at = [1446, 51.8, 28.7]
+text = "Coge la misión del goblin sediento de Marin Noggenfogger."
+status = "unverified"
+sources = ["questie:quest/2605", "questie:npc/7564", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-006"
+do = "accept"
+quest = 5863
+npc = 11758
+at = [1446, 52.8, 27.4]
+text = "Coge la misión contra el complejo Dunemaul de Andi Lynn."
+status = "unverified"
+sources = ["questie:quest/5863", "questie:npc/11758", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-007"
+do = "accept"
+quest = 3362
+npc = 7876
+at = [1446, 51.6, 26.8]
+text = "Coge la misión del Valle Thistleshrub de Tran'rek."
+status = "unverified"
+sources = ["questie:quest/3362", "questie:npc/7876", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-008"
+do = "accept"
+quest = 2768
+npc = 7407
+at = [1446, 52.5, 28.5]
+text = "Opcional: coge la vara adivinatoria para Zul'Farrak."
+optional = true
+status = "unverified"
+sources = ["questie:quest/2768", "questie:npc/7407", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-009"
+do = "accept"
+quest = 2865
+npc = 7876
+at = [1446, 51.6, 26.8]
+text = "Opcional: coge la de los caparazones de escarabajo para Zul'Farrak."
+optional = true
+status = "unverified"
+sources = ["questie:quest/2865", "questie:npc/7876", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-010"
+do = "accept"
+quest = 3042
+npc = 7804
+at = [1446, 51.4, 28.8]
+text = "Opcional: coge la del temple de trol para Zul'Farrak."
+optional = true
+status = "unverified"
+sources = ["questie:quest/3042", "questie:npc/7804", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-011"
+do = "complete"
+quest = 992
+at = [1446, 39.0, 29.0]
+text = "Usa el zahorí en la poza de agua junto a Sandsorrow Watch, al oeste."
+status = "unverified"
+sources = ["questie:quest/992", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-012"
+do = "complete"
+quest = 5863
+at = [1446, 40.9, 57.3]
+text = "Ve al complejo Dunemaul (centro-sur): mata 10 brutos, 10 ejecutores y a Gor'marok."
+tip = "Gor'marok está en lo alto del campamento: limpia antes el camino."
+status = "unverified"
+sources = ["questie:quest/5863", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-013"
+do = "complete"
+quest = 3362
+at = [1446, 29.1, 65.5]
+text = "En el Valle Thistleshrub (suroeste) mata 8 cardos nudosos y 8 moldeadores de raíces."
+status = "unverified"
+sources = ["questie:quest/3362", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-014"
+do = "complete"
+quest = 2605
+at = [1446, 29.3, 65.9]
+text = "Mata dientes de agua del valle hasta que caiga una glándula de rocío."
+status = "unverified"
+sources = ["questie:quest/2605", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-015"
+do = "hearth"
+zone = 1446
+text = "Vuelve a Gadgetzan con la piedra (o a pie si la tienes en recarga)."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a47-tanaris-016"
+do = "turnin"
+quest = 992
+npc = 7724
+at = [1446, 50.2, 27.5]
+text = "Entrega el zahorí a Fizzledowser."
+status = "unverified"
+sources = ["questie:quest/992", "questie:npc/7724", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-017"
+do = "accept"
+quest = 82
+npc = 7724
+at = [1446, 50.2, 27.5]
+text = "Coge la investigación de la Guarida Nociva."
+status = "unverified"
+sources = ["questie:quest/82", "questie:npc/7724", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-018"
+do = "turnin"
+quest = 5863
+npc = 11758
+at = [1446, 52.8, 27.4]
+text = "Entrega la misión a Andi Lynn."
+status = "unverified"
+sources = ["questie:quest/5863", "questie:npc/11758", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-019"
+do = "turnin"
+quest = 3362
+npc = 7876
+at = [1446, 51.6, 26.8]
+text = "Entrega la misión a Tran'rek."
+status = "unverified"
+sources = ["questie:quest/3362", "questie:npc/7876", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-020"
+do = "turnin"
+quest = 2605
+npc = 7564
+at = [1446, 51.8, 28.7]
+text = "Entrega la glándula a Marin."
+status = "unverified"
+sources = ["questie:quest/2605", "questie:npc/7564", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-021"
+do = "accept"
+quest = 2606
+npc = 7564
+at = [1446, 51.8, 28.7]
+text = "Coge la continuación: habla con Sprinkle."
+status = "unverified"
+sources = ["questie:quest/2606", "questie:npc/7564", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-022"
+do = "turnin"
+quest = 2606
+npc = 7583
+at = [1446, 51.1, 26.9]
+text = "Habla con Sprinkle, junto a la posada."
+status = "unverified"
+sources = ["questie:quest/2606", "questie:npc/7583", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-023"
+do = "accept"
+quest = 2641
+npc = 7583
+at = [1446, 51.1, 26.9]
+text = "Coge el ingrediente secreto: un tragan violeta de las Tierras del Interior."
+tip = "Guárdala: el tragan está en el agua de las Tierras del Interior, tu próxima zona."
+status = "unverified"
+sources = ["questie:quest/2641", "questie:npc/7583", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-024"
+do = "complete"
+quest = 82
+at = [1446, 33.7, 44.1]
+text = "En la Guarida Nociva (oeste) mata centipaar hasta tener 5 partes de insecto."
+status = "unverified"
+sources = ["questie:quest/82", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-025"
+do = "turnin"
+quest = 82
+npc = 5594
+at = [1446, 50.9, 27.0]
+text = "Entrega las partes al alquimista Pestlezugg."
+status = "unverified"
+sources = ["questie:quest/82", "questie:npc/5594", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-026"
+do = "accept"
+quest = 10
+npc = 7724
+at = [1446, 50.2, 27.5]
+text = "Coge la misión del topógrafo Scrimshank."
+status = "unverified"
+sources = ["questie:quest/10", "questie:npc/7724", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-027"
+do = "complete"
+quest = 10
+at = [1446, 56.0, 71.2]
+text = "Busca el equipo de Scrimshank dentro de la guarida de los centipaar."
+status = "unverified"
+sources = ["questie:quest/10", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-028"
+do = "turnin"
+quest = 10
+npc = 7724
+at = [1446, 50.2, 27.5]
+text = "Entrega el equipo a Fizzledowser."
+status = "unverified"
+sources = ["questie:quest/10", "questie:npc/7724", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-029"
+do = "dungeon"
+quests = [2768, 2865, 3042]
+at = [1446, 38.7, 20.0]
+text = "Opcional (44-54): Zul'Farrak, al noroeste. Vara de Bly, escarabajos y temple de trol."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/dungeons/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "questie:quest/2768", "questie:quest/2865", "questie:quest/3042"]
+checked = "2026-11-11"
+note = "Entrada aproximada (mapa clásico de Tanaris): confirmar en Forever."
+
+[[step]]
+id = "a47-tanaris-030"
+do = "turnin"
+quest = 2768
+npc = 7407
+at = [1446, 52.5, 28.5]
+text = "Entrega la vara a Bilgewhizzle."
+optional = true
+status = "unverified"
+sources = ["questie:quest/2768", "questie:npc/7407", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-031"
+do = "turnin"
+quest = 2865
+npc = 7876
+at = [1446, 51.6, 26.8]
+text = "Entrega los caparazones a Tran'rek."
+optional = true
+status = "unverified"
+sources = ["questie:quest/2865", "questie:npc/7876", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-032"
+do = "turnin"
+quest = 3042
+npc = 7804
+at = [1446, 51.4, 28.8]
+text = "Entrega el temple de trol a Trenton."
+optional = true
+status = "unverified"
+sources = ["questie:quest/3042", "questie:npc/7804", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a47-tanaris-033"
+do = "dungeon"
+at = [1445, 77.0, 17.0]
+text = "Opcional (48-55): Prisión de la Isla de Alcaz, en el Marjal Revolcafango. Pilla de paso hacia Theramore."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/dungeons/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+note = "Mazmorra nueva de Forever sin misiones en la base de datos local; entrada aproximada."

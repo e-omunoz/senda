@@ -1,0 +1,27 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Duo.lua, ns.DUO.BRACKETS, tramo 1-10). Tramo por el nivel más bajo de los dos.
+id = "duo-1-10"
+class = "ANY"
+kind = "page"
+title = "Niveles 1-10: cada uno en su zona"
+levels = [1, 10]
+order = 310
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "cita:Manual del Mago Gnomo (sección «En pareja»)", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Dónde"
+body = """
+El brujo gnomo empieza en Dun Morogh (Valle de Crestanevada, Kharanos) y el mago humano en Villanorte y el Bosque de Elwynn. No merece la pena juntarse antes del 10: las misiones de clase y de inicio son de cada raza."""
+
+[[block]]
+heading = "Punto de encuentro"
+body = """
+**Villadorada** (Bosque de Elwynn, 42, 65). El brujo llega a Ventormenta en el Tren subterráneo de Forjaz y sale por la puerta principal."""
+
+[[block]]
+heading = "Antes de juntaros"
+body = """
+- **Brujo:** misión del Abisario (nivel 10: sótano de El Cordero Degollado en Ventormenta y la Plantación de Brackwell en Elwynn). Entre los dos, Surena Caledon es fácil.
+- **Mago:** Habla con Jennea y el Lago Espejo (nivel 10, también en Elwynn y Ventormenta).
+- **Los dos:** Sastrería, Encantamiento y Primeros auxilios aprendidas. El paño de lino, a guardar."""

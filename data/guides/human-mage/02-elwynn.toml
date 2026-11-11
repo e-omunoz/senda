@@ -1,0 +1,1426 @@
+# Guía human-mage: Bosque de Elwynn. Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "hmage-elwynn"
+title = "Bosque de Elwynn"
+levels = [6, 12]
+map = 1429
+summary = "Del 6 al 11: Villadorada, granjas del sur, Vega del Este, Arroyoeste y la misión del Lago Espejo."
+
+[[step]]
+id = "hmage-elwynn-001"
+do = "complete"
+quest = 91772
+at = [1429, 45.4, 56.1]
+wps = [[1429, 44.0, 50.0, "Huellas"], [1429, 46.5, 59.5, "Huellas"]]
+text = "Baja por el camino hacia Villadorada e investiga las huellas kóbold."
+status = "unverified"
+sources = ["questie:quest/91772"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-002"
+do = "turnin"
+quest = 54
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "En Villadorada, entrega al Mariscal Dughan."
+status = "unverified"
+sources = ["questie:quest/54", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-003"
+do = "turnin"
+quest = 91772
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "Entrega también la misión de las huellas."
+status = "unverified"
+sources = ["questie:quest/91772", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-004"
+do = "accept"
+quest = 91775
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "Coge la misión de los libros perdidos del Mariscal Dughan."
+status = "unverified"
+sources = ["questie:quest/91775", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-005"
+do = "accept"
+quest = 62
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "Coge la misión de la Mina Abisal."
+status = "unverified"
+sources = ["questie:quest/62", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-006"
+do = "turnin"
+quest = 2158
+npc = 295
+at = [1429, 43.8, 65.8]
+text = "Entra en la posada y entrega al Posadero Farley."
+status = "unverified"
+sources = ["questie:quest/2158", "questie:npc/295"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-007"
+do = "sethearth"
+npc = 295
+at = [1429, 43.8, 65.8]
+text = "Pon la piedra de hogar en la posada de Villadorada."
+tip = "Vas a volver aquí varias veces: Villadorada es tu base hasta el 10."
+status = "unverified"
+sources = ["questie:npc/295"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-008"
+do = "train"
+npc = 328
+spells = [587, 2136, 1296017]
+at = [1429, 43.3, 66.2]
+text = "Nivel 6: aprende Conjurar comida, Explosión de Fuego y Entender pergamino con Zaldimar Wefhellt (posada)."
+tip = "Guarda los pergaminos sin traducir y descífralos fuera de combate: si fallas, eres oveja 8 s."
+status = "unverified"
+sources = ["questie:npc/328", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-009"
+do = "turnin"
+quest = 96627
+npc = 263399
+at = [1429, 44.9, 63.4]
+text = "Habla con Sam Sarsaparilla, junto a la hoguera al norte de la posada."
+status = "unverified"
+sources = ["questie:quest/96627", "questie:npc/263399"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-010"
+do = "accept"
+quest = 95998
+npc = 263399
+at = [1429, 44.9, 63.4]
+text = "Coge la misión de Sam sobre el campamento."
+status = "unverified"
+sources = ["questie:quest/95998", "questie:npc/263399"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-011"
+do = "complete"
+quest = 95998
+at = [1429, 44.9, 63.2]
+text = "Usa la hoguera de al lado de Sam."
+status = "unverified"
+sources = ["questie:quest/95998"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-012"
+do = "turnin"
+quest = 95998
+npc = 263399
+at = [1429, 44.9, 63.4]
+text = "Entrega a Sam Sarsaparilla."
+status = "unverified"
+sources = ["questie:quest/95998", "questie:npc/263399"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-013"
+do = "accept"
+quest = 96626
+npc = 263399
+at = [1429, 44.9, 63.4]
+text = "Coge de Sam la lección de campamento de Cocina."
+status = "unverified"
+sources = ["questie:quest/96626", "questie:npc/263399"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-014"
+do = "accept"
+quest = 97919
+npc = 263399
+at = [1429, 44.9, 63.4]
+text = "Coge la lección de Primeros auxilios."
+status = "unverified"
+sources = ["questie:quest/97919", "questie:npc/263399"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-015"
+do = "accept"
+quest = 97925
+npc = 263399
+at = [1429, 44.9, 63.4]
+text = "Coge la lección de Sastrería: se entrega en Vega del Este."
+status = "unverified"
+sources = ["questie:quest/97925", "questie:npc/263399"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-016"
+do = "accept"
+quest = 97917
+npc = 263399
+at = [1429, 44.9, 63.4]
+text = "Coge la lección de Encantamiento: se entrega en Ventormenta."
+tip = "Si Sam no te deja coger más de una, quédate con Sastrería y Encantamiento: son tus principales."
+status = "unverified"
+sources = ["questie:quest/97917", "questie:npc/263399"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-017"
+do = "turnin"
+quest = 96626
+npc = 1430
+at = [1429, 44.4, 66.0]
+text = "Entrega la lección a Tomas, el cocinero de la posada."
+status = "unverified"
+sources = ["questie:quest/96626", "questie:npc/1430"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-018"
+do = "learn_prof"
+npc = 1430
+prof = "cooking"
+at = [1429, 44.4, 66.0]
+text = "Aprende Cocina con Tomas."
+tip = "La comida de Cocina da +5% de experiencia y sin hoguera no hay objetos de campamento."
+status = "unverified"
+sources = ["questie:npc/1430"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-019"
+do = "turnin"
+quest = 97919
+npc = 2329
+at = [1429, 43.4, 65.6]
+text = "Entrega la lección a Michelle Belle, en la casa de al lado de la posada."
+status = "unverified"
+sources = ["questie:quest/97919", "questie:npc/2329"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-020"
+do = "learn_prof"
+npc = 2329
+prof = "firstaid"
+at = [1429, 43.4, 65.6]
+text = "Aprende Primeros auxilios con Michelle Belle."
+tip = "Guarda el paño de lino: vendas para ti y madejas para Sastrería."
+status = "unverified"
+sources = ["questie:npc/2329"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-021"
+do = "accept"
+quest = 60
+npc = 253
+at = [1429, 43.3, 65.7]
+text = "Coge la misión de las velas de William Pestle, delante de la posada."
+status = "unverified"
+sources = ["questie:quest/60", "questie:npc/253"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-022"
+do = "accept"
+quest = 47
+npc = 241
+at = [1429, 42.1, 67.3]
+text = "Coge la misión del polvo de oro de Remy «Dos Veces»."
+status = "unverified"
+sources = ["questie:quest/47", "questie:npc/241"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-023"
+do = "accept"
+quest = 99127
+npc = 383
+at = [1429, 47.5, 62.2]
+text = "Ve al lago al este de la posada y coge la misión de Jason Mathers."
+status = "unverified"
+sources = ["questie:quest/99127", "questie:npc/383"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-024"
+do = "accept"
+quest = 99143
+npc = 1651
+at = [1429, 47.6, 62.3]
+text = "Coge la misión de Lee Brown, a su lado."
+status = "unverified"
+sources = ["questie:quest/99143", "questie:npc/1651"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-025"
+do = "accept"
+quest = 91751
+npc = 6306
+at = [1429, 46.2, 62.2]
+text = "Coge la misión de pieles de Helene Peltskinner."
+tip = "Las pieles son de los lobos del este: se completa sola cuando vayas a Vega del Este."
+status = "unverified"
+sources = ["questie:quest/91751", "questie:npc/6306"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-026"
+do = "complete"
+quest = 99127
+at = [1429, 48.5, 64.3]
+text = "Recoge el pescado de las trampas de la orilla del lago."
+status = "unverified"
+sources = ["questie:quest/99127"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-027"
+do = "turnin"
+quest = 99127
+npc = 383
+at = [1429, 47.5, 62.2]
+text = "Entrega a Jason Mathers."
+status = "unverified"
+sources = ["questie:quest/99127", "questie:npc/383"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-028"
+do = "accept"
+quest = 99128
+npc = 383
+at = [1429, 47.5, 62.2]
+text = "Coge la misión de los múrlocs."
+status = "unverified"
+sources = ["questie:quest/99128", "questie:npc/383"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-029"
+do = "complete"
+quest = 99128
+at = [1429, 54.2, 66.7]
+wps = [[1429, 51.0, 66.0, "Múrlocs"], [1429, 56.5, 68.0, "Múrlocs"]]
+text = "Mata múrlocs en el río al este del lago."
+tip = "Los múrlocs llaman a sus amigos: Descarga de Escarcha desde lejos y aléjate del agua."
+status = "unverified"
+sources = ["questie:quest/99128"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-030"
+do = "complete"
+quest = 99143
+at = [1429, 56.2, 66.9]
+text = "Registra los montones de chatarra de la orilla del río."
+status = "unverified"
+sources = ["questie:quest/99143"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-031"
+do = "turnin"
+quest = 99128
+npc = 383
+at = [1429, 47.5, 62.2]
+text = "Vuelve con Jason Mathers y entrega."
+status = "unverified"
+sources = ["questie:quest/99128", "questie:npc/383"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-032"
+do = "accept"
+quest = 99129
+npc = 383
+at = [1429, 47.5, 62.2]
+text = "Coge la siguiente misión: te manda con Remy."
+status = "unverified"
+sources = ["questie:quest/99129", "questie:npc/383"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-033"
+do = "turnin"
+quest = 99143
+npc = 1651
+at = [1429, 47.6, 62.3]
+text = "Entrega la chatarra a Lee Brown."
+status = "unverified"
+sources = ["questie:quest/99143", "questie:npc/1651"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-034"
+do = "turnin"
+quest = 99129
+npc = 241
+at = [1429, 42.1, 67.3]
+text = "Habla con Remy «Dos Veces» en Villadorada."
+status = "unverified"
+sources = ["questie:quest/99129", "questie:npc/241"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-035"
+do = "accept"
+quest = 99130
+npc = 241
+at = [1429, 42.1, 67.3]
+text = "Coge la misión del cebo de Remy."
+status = "unverified"
+sources = ["questie:quest/99130", "questie:npc/241"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-036"
+do = "accept"
+quest = 106
+npc = 251
+at = [1429, 43.2, 89.6]
+text = "Baja al sur, a la granja Maclure, y coge la misión de Maybell Maclure."
+status = "unverified"
+sources = ["questie:quest/106", "questie:npc/251"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-037"
+do = "accept"
+quest = 85
+npc = 246
+at = [1429, 34.5, 84.2]
+text = "Ve al oeste, a la granja de los Stonefield, y coge la misión de la tía Bernice."
+status = "unverified"
+sources = ["questie:quest/85", "questie:npc/246"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-038"
+do = "accept"
+quest = 88
+npc = 244
+at = [1429, 34.7, 84.5]
+text = "Coge la misión de la cerda Princesa de Ma Stonefield."
+tip = "Princesa está al este, en el huerto de calabazas de Brackwell: la harás al pasar por allí."
+status = "unverified"
+sources = ["questie:quest/88", "questie:npc/244"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-039"
+do = "turnin"
+quest = 106
+npc = 252
+at = [1429, 29.8, 86.0]
+text = "Habla con Tommy Joe Stonefield, junto al río al oeste de la granja."
+status = "unverified"
+sources = ["questie:quest/106", "questie:npc/252"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-040"
+do = "accept"
+quest = 111
+npc = 252
+at = [1429, 29.8, 86.0]
+text = "Coge la misión que te manda con la abuela."
+status = "unverified"
+sources = ["questie:quest/111", "questie:npc/252"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-041"
+do = "turnin"
+quest = 111
+npc = 248
+at = [1429, 34.9, 83.9]
+text = "Habla con la abuela Stonefield, dentro de la casa."
+status = "unverified"
+sources = ["questie:quest/111", "questie:npc/248"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-042"
+do = "accept"
+quest = 107
+npc = 248
+at = [1429, 34.9, 83.9]
+text = "Coge la nota para William Pestle."
+status = "unverified"
+sources = ["questie:quest/107", "questie:npc/248"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-043"
+do = "turnin"
+quest = 85
+npc = 247
+at = [1429, 43.1, 85.7]
+text = "Ve a la granja Maclure y entrega a Billy Maclure."
+status = "unverified"
+sources = ["questie:quest/85", "questie:npc/247"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-044"
+do = "accept"
+quest = 86
+npc = 247
+at = [1429, 43.1, 85.7]
+text = "Coge la misión del pastel de Billy."
+status = "unverified"
+sources = ["questie:quest/86", "questie:npc/247"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-045"
+do = "complete"
+quest = 86
+at = [1429, 37.7, 82.5]
+text = "Mata jabalíes entre las dos granjas hasta tener la carne."
+tip = "A la vez, sangre de jabalí para Remy."
+status = "unverified"
+sources = ["questie:quest/86"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-046"
+do = "complete"
+quest = 99130
+at = [1429, 38.2, 86.1]
+wps = [[1429, 34.0, 86.5, "Duskweed"], [1429, 41.5, 87.5, "Duskweed"]]
+text = "Recoge pétalos de Duskweed en la orilla sur y sangre de animal de los jabalíes."
+status = "unverified"
+sources = ["questie:quest/99130"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-047"
+do = "turnin"
+quest = 86
+npc = 246
+at = [1429, 34.5, 84.2]
+text = "Entrega la carne a la tía Bernice."
+status = "unverified"
+sources = ["questie:quest/86", "questie:npc/246"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-048"
+do = "accept"
+quest = 84
+npc = 246
+at = [1429, 34.5, 84.2]
+text = "Coge la misión de vuelta con Billy."
+status = "unverified"
+sources = ["questie:quest/84", "questie:npc/246"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-049"
+do = "turnin"
+quest = 84
+npc = 247
+at = [1429, 43.1, 85.7]
+text = "Entrega a Billy Maclure."
+status = "unverified"
+sources = ["questie:quest/84", "questie:npc/247"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-050"
+do = "accept"
+quest = 87
+npc = 247
+at = [1429, 43.1, 85.7]
+text = "Coge la misión de Goldtooth."
+status = "unverified"
+sources = ["questie:quest/87", "questie:npc/247"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-051"
+do = "complete"
+quest = 62
+at = [1429, 40.6, 82.3]
+text = "Explora la Mina Abisal, al norte de la granja Maclure."
+status = "unverified"
+sources = ["questie:quest/62"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-052"
+do = "complete"
+quest = 60
+at = [1429, 39.1, 81.7]
+text = "Mata kóbolds de la mina hasta tener las velas."
+tip = "El polvo de oro, las velas y los libros perdidos salen de los mismos kóbolds."
+status = "unverified"
+sources = ["questie:quest/60"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-053"
+do = "complete"
+quest = 47
+at = [1429, 39.1, 81.7]
+text = "Sigue con los kóbolds hasta tener el polvo de oro."
+status = "unverified"
+sources = ["questie:quest/47"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-054"
+do = "complete"
+quest = 91775
+at = [1429, 41.6, 79.9]
+text = "Coge los libros perdidos de los kóbolds y el libro ilustrado de Nimsy, en la mina."
+status = "unverified"
+sources = ["questie:quest/91775"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-055"
+do = "complete"
+quest = 87
+at = [1429, 41.7, 78.0]
+text = "Mata a Goldtooth, al fondo del nivel superior de la mina, y coge el collar."
+tip = "Guarda el collar: lo entregas al pasar por la granja de los Stonefield camino de Arroyoeste."
+status = "unverified"
+sources = ["questie:quest/87"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-056"
+do = "turnin"
+quest = 62
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "Vuelve a Villadorada y entrega al Mariscal Dughan."
+status = "unverified"
+sources = ["questie:quest/62", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-057"
+do = "accept"
+quest = 76
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "Coge la misión de la mina del este."
+status = "unverified"
+sources = ["questie:quest/76", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-058"
+do = "turnin"
+quest = 91775
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "Entrega los libros perdidos."
+tip = "Sáltate la continuación (libros raros): manda a la abadía y no compensa."
+status = "unverified"
+sources = ["questie:quest/91775", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-059"
+do = "turnin"
+quest = 60
+npc = 253
+at = [1429, 43.3, 65.7]
+text = "Entrega las velas a William Pestle."
+status = "unverified"
+sources = ["questie:quest/60", "questie:npc/253"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-060"
+do = "accept"
+quest = 61
+npc = 253
+at = [1429, 43.3, 65.7]
+text = "Coge el envío para Ventormenta: lo entregas al ir a la ciudad."
+status = "unverified"
+sources = ["questie:quest/61", "questie:npc/253"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-061"
+do = "turnin"
+quest = 107
+npc = 253
+at = [1429, 43.3, 65.7]
+text = "Entrega la nota de la abuela."
+status = "unverified"
+sources = ["questie:quest/107", "questie:npc/253"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-062"
+do = "accept"
+quest = 112
+npc = 253
+at = [1429, 43.3, 65.7]
+text = "Coge la misión de las algas."
+status = "unverified"
+sources = ["questie:quest/112", "questie:npc/253"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-063"
+do = "turnin"
+quest = 47
+npc = 241
+at = [1429, 42.1, 67.3]
+text = "Entrega el polvo de oro a Remy."
+status = "unverified"
+sources = ["questie:quest/47", "questie:npc/241"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-064"
+do = "turnin"
+quest = 99130
+npc = 241
+at = [1429, 42.1, 67.3]
+text = "Entrega los materiales del cebo."
+status = "unverified"
+sources = ["questie:quest/99130", "questie:npc/241"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-065"
+do = "accept"
+quest = 99131
+npc = 241
+at = [1429, 42.1, 67.3]
+text = "Coge el cebo para Jason."
+status = "unverified"
+sources = ["questie:quest/99131", "questie:npc/241"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-066"
+do = "accept"
+quest = 40
+npc = 241
+at = [1429, 42.1, 67.3]
+text = "Coge la misión del pez de Remy."
+tip = "Pide nivel 7."
+status = "unverified"
+sources = ["questie:quest/40", "questie:npc/241"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-067"
+do = "turnin"
+quest = 40
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "Entrégala al momento al Mariscal Dughan."
+status = "unverified"
+sources = ["questie:quest/40", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-068"
+do = "accept"
+quest = 35
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "Coge la misión que te manda con el Guardia Thomas, al este."
+status = "unverified"
+sources = ["questie:quest/35", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-069"
+do = "turnin"
+quest = 99131
+npc = 383
+at = [1429, 47.5, 62.2]
+text = "Lleva el cebo a Jason Mathers, junto al lago."
+status = "unverified"
+sources = ["questie:quest/99131", "questie:npc/383"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-070"
+do = "train"
+npc = 328
+spells = [5143, 118]
+at = [1429, 43.3, 66.2]
+text = "Nivel 8: aprende Misiles Arcanos y Polimorfia con Zaldimar Wefhellt."
+tip = "Polimorfia al segundo enemigo y mata al primero."
+status = "unverified"
+sources = ["questie:npc/328"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-071"
+do = "complete"
+quest = 112
+at = [1429, 54.2, 66.7]
+text = "Camino del este, mata múrlocs del río hasta tener las algas."
+status = "unverified"
+sources = ["questie:quest/112"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-072"
+do = "learn_prof"
+npc = 11072
+prof = "enchanting"
+at = [1429, 64.9, 70.7]
+text = "En la Torre de Azora, aprende Encantamiento con Kitta Firewind."
+tip = "Desencanta todo verde que no uses. A 10 de habilidad, Varita mágica inferior para ti."
+status = "unverified"
+sources = ["questie:npc/11072"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-073"
+do = "accept"
+quest = 91723
+npc = 248242
+at = [1429, 65.1, 69.8]
+text = "Coge la misión de Hamish Bergwort, junto a la torre."
+status = "unverified"
+sources = ["questie:quest/91723", "questie:npc/248242"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-074"
+do = "accept"
+quest = 91725
+npc = 248248
+at = [1429, 63.2, 72.6]
+text = "Coge la misión de Blixie Fitzwink, al sur de la torre."
+status = "unverified"
+sources = ["questie:quest/91725", "questie:npc/248248"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-075"
+do = "turnin"
+quest = 35
+npc = 261
+at = [1429, 74.0, 72.2]
+text = "Ve al puente de Vega del Este y entrega al Guardia Thomas."
+status = "unverified"
+sources = ["questie:quest/35", "questie:npc/261"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-076"
+do = "accept"
+quest = 37
+npc = 261
+at = [1429, 74.0, 72.2]
+text = "Coge la misión de los guardias perdidos."
+status = "unverified"
+sources = ["questie:quest/37", "questie:npc/261"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-077"
+do = "accept"
+quest = 52
+npc = 261
+at = [1429, 74.0, 72.2]
+text = "Coge la misión de proteger la frontera."
+status = "unverified"
+sources = ["questie:quest/52", "questie:npc/261"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-078"
+do = "accept"
+quest = 91733
+npc = 248265
+at = [1429, 76.5, 71.9]
+text = "Coge la misión de Ormin Pelford, al este del puente."
+status = "unverified"
+sources = ["questie:quest/91733", "questie:npc/248265"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-079"
+do = "accept"
+quest = 83
+npc = 278
+at = [1429, 79.5, 68.8]
+text = "En el campamento maderero, coge la misión de Sara Timberlain."
+status = "unverified"
+sources = ["questie:quest/83", "questie:npc/278"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-080"
+do = "turnin"
+quest = 97925
+npc = 1103
+at = [1429, 79.2, 69.0]
+text = "Entrega la lección de Sastrería a Eldrin."
+status = "unverified"
+sources = ["questie:quest/97925", "questie:npc/1103"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-081"
+do = "learn_prof"
+npc = 1103
+prof = "tailoring"
+at = [1429, 79.2, 69.0]
+text = "Aprende Sastrería con Eldrin."
+tip = "Madejas de lino hasta 45. Con 20 tienes el Estandarte de facción para el campamento."
+status = "unverified"
+sources = ["questie:npc/1103"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-082"
+do = "accept"
+quest = 5545
+npc = 10616
+at = [1429, 81.4, 66.1]
+text = "Coge la misión de la madera del Supervisor Raelen."
+status = "unverified"
+sources = ["questie:quest/5545", "questie:npc/10616"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-083"
+do = "accept"
+quest = 91732
+npc = 248266
+at = [1429, 82.5, 63.8]
+text = "Coge la misión de las herramientas de Hagar Lowe."
+status = "unverified"
+sources = ["questie:quest/91732", "questie:npc/248266"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-084"
+do = "complete"
+quest = 5545
+at = [1429, 80.3, 59.7]
+text = "Recoge los haces de leña en el bosque al norte del campamento."
+status = "unverified"
+sources = ["questie:quest/5545"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-085"
+do = "complete"
+quest = 52
+at = [1429, 76.0, 60.0]
+text = "Mata merodeadores y oseznos por el camino hasta completar."
+tip = "Los lobos también dan las pieles de Helene: hazlo todo a la vez."
+status = "unverified"
+sources = ["questie:quest/52"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-086"
+do = "complete"
+quest = 91751
+at = [1429, 76.0, 60.0]
+text = "Termina las pieles de lobo de Helene."
+status = "unverified"
+sources = ["questie:quest/91751"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-087"
+do = "turnin"
+quest = 37
+at = [1429, 72.7, 60.3]
+text = "Busca el cuerpo medio comido junto al río, al norte del puente."
+status = "unverified"
+sources = ["questie:quest/37"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-088"
+do = "accept"
+quest = 45
+at = [1429, 72.7, 60.3]
+text = "Examina el cuerpo y coge la siguiente misión."
+status = "unverified"
+sources = ["questie:quest/45"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-089"
+do = "turnin"
+quest = 45
+at = [1429, 79.8, 55.5]
+text = "Encuentra el cadáver de Rolf en el campamento múrloc del norte."
+tip = "Hay muchos múrlocs juntos: entra por un lado, usa la Nova al llegar al 10 y no te quedes rodeado."
+status = "unverified"
+sources = ["questie:quest/45"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-090"
+do = "accept"
+quest = 71
+at = [1429, 79.8, 55.5]
+text = "Coge la misión del cadáver de Rolf."
+status = "unverified"
+sources = ["questie:quest/71"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-091"
+do = "complete"
+quest = 91732
+at = [1429, 61.3, 51.7]
+text = "Ve al oeste, a la mina, y recoge las herramientas de minería de la entrada."
+status = "unverified"
+sources = ["questie:quest/91732"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-092"
+do = "complete"
+quest = 76
+at = [1429, 61.9, 53.2]
+text = "Explora la mina."
+tip = "Basta con entrar un poco."
+status = "unverified"
+sources = ["questie:quest/76"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-093"
+do = "complete"
+quest = 91723
+at = [1429, 62.9, 55.2]
+text = "Mata geomantes kóbold dentro y alrededor de la mina."
+status = "unverified"
+sources = ["questie:quest/91723"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-094"
+do = "complete"
+quest = 91725
+at = [1429, 67.4, 42.1]
+wps = [[1429, 66.0, 39.0, "Materiales"], [1429, 69.0, 48.0, "Materiales"]]
+text = "Sube al norte y recoge los materiales de encantamiento robados."
+status = "unverified"
+sources = ["questie:quest/91725"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-095"
+do = "turnin"
+quest = 5545
+npc = 10616
+at = [1429, 81.4, 66.1]
+text = "Vuelve al campamento y entrega la madera al Supervisor Raelen."
+status = "unverified"
+sources = ["questie:quest/5545", "questie:npc/10616"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-096"
+do = "turnin"
+quest = 91732
+npc = 248266
+at = [1429, 82.5, 63.8]
+text = "Entrega las herramientas a Hagar Lowe."
+status = "unverified"
+sources = ["questie:quest/91732", "questie:npc/248266"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-097"
+do = "turnin"
+quest = 71
+npc = 261
+at = [1429, 74.0, 72.2]
+text = "Entrega al Guardia Thomas."
+status = "unverified"
+sources = ["questie:quest/71", "questie:npc/261"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-098"
+do = "accept"
+quest = 39
+npc = 261
+at = [1429, 74.0, 72.2]
+text = "Coge el informe para el Mariscal Dughan."
+status = "unverified"
+sources = ["questie:quest/39", "questie:npc/261"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-099"
+do = "turnin"
+quest = 52
+npc = 261
+at = [1429, 74.0, 72.2]
+text = "Entrega la misión de la frontera."
+status = "unverified"
+sources = ["questie:quest/52", "questie:npc/261"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-100"
+do = "complete"
+quest = 91733
+at = [1429, 75.5, 80.0]
+wps = [[1429, 74.3, 76.4, "Sierra"], [1429, 76.7, 82.5, "Hacha"], [1429, 77.3, 86.7, "Caja de herramientas"]]
+text = "Baja por el río y recoge las herramientas mojadas."
+status = "unverified"
+sources = ["questie:quest/91733"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-101"
+do = "complete"
+quest = 88
+at = [1429, 69.4, 79.3]
+text = "Ve al huerto de calabazas de Brackwell y mata a Princesa."
+tip = "Va con dos jabalíes: Polimorfia a uno y tira de Princesa desde lejos."
+status = "unverified"
+sources = ["questie:quest/88"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-102"
+do = "complete"
+quest = 83
+at = [1429, 69.5, 79.0]
+text = "Mata bandidos Defias por la zona de Brackwell hasta tener los pañuelos rojos."
+status = "unverified"
+sources = ["questie:quest/83"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-103"
+do = "turnin"
+quest = 91733
+npc = 248265
+at = [1429, 76.5, 71.9]
+text = "Entrega las herramientas a Ormin Pelford."
+status = "unverified"
+sources = ["questie:quest/91733", "questie:npc/248265"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-104"
+do = "turnin"
+quest = 83
+npc = 278
+at = [1429, 79.5, 68.8]
+text = "Entrega los pañuelos a Sara Timberlain."
+status = "unverified"
+sources = ["questie:quest/83", "questie:npc/278"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-105"
+do = "turnin"
+quest = 91723
+npc = 248242
+at = [1429, 65.1, 69.8]
+text = "Vuelve a la Torre de Azora y entrega a Hamish Bergwort."
+tip = "Sáltate la segunda parte (magos Defias) si vas justo de tiempo."
+status = "unverified"
+sources = ["questie:quest/91723", "questie:npc/248242"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-106"
+do = "turnin"
+quest = 91725
+npc = 248248
+at = [1429, 63.2, 72.6]
+text = "Entrega los materiales a Blixie Fitzwink."
+status = "unverified"
+sources = ["questie:quest/91725", "questie:npc/248248"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-107"
+do = "turnin"
+quest = 39
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "Vuelve a Villadorada y entrega el informe al Mariscal Dughan."
+tip = "No cojas Cloth and Leather Armor: se hace mejor de camino a Montañas Crestagrana."
+status = "unverified"
+sources = ["questie:quest/39", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-108"
+do = "turnin"
+quest = 76
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "Entrega la misión de la mina del este."
+status = "unverified"
+sources = ["questie:quest/76", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-109"
+do = "accept"
+quest = 239
+npc = 240
+at = [1429, 42.1, 65.9]
+text = "Coge la misión del Cuartel de Arroyoeste."
+status = "unverified"
+sources = ["questie:quest/239", "questie:npc/240"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-110"
+do = "turnin"
+quest = 112
+npc = 253
+at = [1429, 43.3, 65.7]
+text = "Entrega las algas a William Pestle."
+status = "unverified"
+sources = ["questie:quest/112", "questie:npc/253"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-111"
+do = "accept"
+quest = 114
+npc = 253
+at = [1429, 43.3, 65.7]
+text = "Coge la misión de la huida: se entrega en la granja Maclure."
+status = "unverified"
+sources = ["questie:quest/114", "questie:npc/253"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-112"
+do = "turnin"
+quest = 91751
+npc = 6306
+at = [1429, 46.2, 62.2]
+text = "Entrega las pieles a Helene Peltskinner."
+status = "unverified"
+sources = ["questie:quest/91751", "questie:npc/6306"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-113"
+do = "train"
+npc = 328
+spells = [122]
+at = [1429, 43.3, 66.2]
+text = "Nivel 10: aprende Nova de Escarcha con Zaldimar Wefhellt."
+tip = "Primer talento: Especialización en varitas 2/2. Haz ya tu Varita mágica inferior si tienes Encantamiento 10."
+status = "unverified"
+sources = ["questie:npc/328"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-114"
+do = "accept"
+quest = 1860
+npc = 328
+at = [1429, 43.3, 66.2]
+text = "Coge la misión de clase de Zaldimar: te manda con Jennea Cannon, en Ventormenta."
+status = "unverified"
+sources = ["questie:quest/1860", "questie:npc/328", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-115"
+do = "turnin"
+quest = 114
+npc = 251
+at = [1429, 43.2, 89.6]
+text = "Baja a la granja Maclure y entrega a Maybell."
+status = "unverified"
+sources = ["questie:quest/114", "questie:npc/251"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-116"
+do = "turnin"
+quest = 87
+npc = 246
+at = [1429, 34.5, 84.2]
+text = "En la granja de los Stonefield, devuelve el collar a la tía Bernice."
+status = "unverified"
+sources = ["questie:quest/87", "questie:npc/246"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-117"
+do = "turnin"
+quest = 88
+npc = 244
+at = [1429, 34.7, 84.5]
+text = "Entrega el collar de Princesa a Ma Stonefield."
+status = "unverified"
+sources = ["questie:quest/88", "questie:npc/244"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-118"
+do = "turnin"
+quest = 239
+npc = 963
+at = [1429, 24.2, 74.5]
+text = "Ve al oeste, al Cuartel de Arroyoeste, y entrega al Ayudante Rainer."
+status = "unverified"
+sources = ["questie:quest/239", "questie:npc/963"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-119"
+do = "accept"
+quest = 11
+npc = 963
+at = [1429, 24.2, 74.5]
+text = "Coge la recompensa por brazaletes de gnoll."
+status = "unverified"
+sources = ["questie:quest/11", "questie:npc/963"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-120"
+do = "complete"
+quest = 11
+at = [1429, 26.5, 85.0]
+text = "Mata gnolls Riverpaw al sur del cuartel hasta tener los brazaletes."
+tip = "Hogger (élite) ronda por aquí: evítalo si vas solo. Su misión solo compensa en grupo."
+status = "unverified"
+sources = ["questie:quest/11"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-121"
+do = "turnin"
+quest = 11
+npc = 963
+at = [1429, 24.2, 74.5]
+text = "Entrega los brazaletes al Ayudante Rainer."
+status = "unverified"
+sources = ["questie:quest/11", "questie:npc/963"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-122"
+do = "goto"
+at = [1453, 63.0, 74.0, "Ventormenta: Barrio de Comercio"]
+radius = 30
+text = "Sigue el camino al norte hasta Ventormenta y entra por la puerta principal."
+status = "unverified"
+sources = []
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-123"
+do = "getfp"
+npc = 352
+at = [1453, 71.3, 72.2]
+node = "Ventormenta"
+text = "Habla con el maestro de grifos, junto a la puerta, para coger la ruta de vuelo."
+status = "unverified"
+sources = ["questie:npc/352"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-124"
+do = "turnin"
+quest = 61
+npc = 279
+at = [1453, 63.2, 74.4]
+text = "Entrega el envío a Morgan Pestle, en el Barrio de Comercio."
+status = "unverified"
+sources = ["questie:quest/61", "questie:npc/279"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-125"
+do = "turnin"
+quest = 97917
+npc = 11068
+at = [1453, 53.0, 73.7]
+text = "Entrega la lección de Encantamiento a Betty Quin."
+tip = "Solo si la cogiste con Sam."
+status = "unverified"
+sources = ["questie:quest/97917", "questie:npc/11068"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-126"
+do = "turnin"
+quest = 1860
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "En el Barrio de los Magos, sube al Sagrario y entrega a Jennea Cannon."
+status = "unverified"
+sources = ["questie:quest/1860", "questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-127"
+do = "accept"
+quest = 1861
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "Coge la misión del Lago Espejo de Jennea."
+status = "unverified"
+sources = ["questie:quest/1861", "questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-128"
+do = "complete"
+quest = 1861
+at = [1429, 28.6, 61.4]
+text = "Sal de la ciudad y llena el frasco en la cascada del Lago Espejo, al suroeste de las puertas."
+tip = "Usa el frasco junto a la caída de agua."
+status = "unverified"
+sources = ["questie:quest/1861", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-129"
+do = "turnin"
+quest = 1861
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "Vuelve con Jennea Cannon y entrega."
+tip = "Elige el orbe si llevas varita y arma de una mano; el bastón si no tienes nada mejor."
+status = "unverified"
+sources = ["questie:quest/1861", "questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"

@@ -1,0 +1,119 @@
+# Brujo: el Inferno (50-55). Niby el Todopoderoso y su criado Impsy, en Frondavil.
+# Recompensa según ConquestCapped: el hechizo Inferno y un abalorio.
+id = "wl-inferno"
+title = "Brujo: el Inferno"
+levels = [50, 55]
+map = 1448
+summary = "Tres esencias viles impecables (Jaedenar, Azshara y el Portal Oscuro) y el núcleo de Kroshius, élite 55 en Frondavil. Lleva grupo para Kroshius."
+if = { class = ["WARLOCK"] }
+
+[[step]]
+id = "wl-inferno-001"
+do = "accept"
+quest = 7601
+npc = 14469
+at = [1448, 41.4, 44.9]
+text = "En Frondavil, coge la misión de Niby el Todopoderoso."
+status = "unverified"
+sources = ["questie:quest/7601", "questie:npc/14469", "legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "wl-inferno-002"
+do = "turnin"
+quest = 7601
+npc = 14470
+at = [1448, 41.4, 45.0]
+text = "Entrégala a Impsy, el diablillo de al lado."
+status = "unverified"
+sources = ["questie:quest/7601", "questie:npc/14470"]
+
+[[step]]
+id = "wl-inferno-003"
+do = "accept"
+quest = 7602
+npc = 14470
+at = [1448, 41.4, 45.0]
+text = "Coge de Impsy la misión de las tres esencias viles."
+tip = "Hazla a la vez que las zonas: Jaedenar (Frondavil), Azshara y Las Tierras Devastadas."
+status = "unverified"
+sources = ["questie:quest/7602", "questie:npc/14470"]
+
+[[step]]
+id = "wl-inferno-004"
+do = "complete"
+quest = 7602
+obj = 2
+at = [1448, 37.6, 50.2]
+text = "Mata legionarios de Jaedenar, al sur de Niby, hasta que caiga su esencia."
+status = "unverified"
+sources = ["questie:quest/7602", "questie:npc/9862"]
+
+[[step]]
+id = "wl-inferno-005"
+do = "complete"
+quest = 7602
+obj = 1
+at = [1447, 61.1, 20.5]
+text = "En Azshara, mata sátiros Legashi hasta que caiga su esencia."
+status = "unverified"
+sources = ["questie:quest/7602", "questie:npc/6200", "questie:npc/6201", "questie:npc/6202"]
+
+[[step]]
+id = "wl-inferno-006"
+do = "complete"
+quest = 7602
+obj = 3
+at = [1419, 58.5, 51.2]
+text = "En Las Tierras Devastadas, mata guardias viles centinela junto al Portal Oscuro hasta que caiga su esencia."
+status = "unverified"
+sources = ["questie:quest/7602", "questie:npc/6011"]
+
+[[step]]
+id = "wl-inferno-007"
+do = "turnin"
+quest = 7602
+npc = 14470
+at = [1448, 41.4, 45.0]
+text = "Vuelve a Frondavil y entrega las esencias a Impsy."
+status = "unverified"
+sources = ["questie:quest/7602", "questie:npc/14470"]
+
+[[step]]
+id = "wl-inferno-008"
+do = "accept"
+quest = 7603
+npc = 14470
+at = [1448, 41.4, 45.0]
+text = "Coge de Impsy la misión de Kroshius."
+status = "unverified"
+sources = ["questie:quest/7603", "questie:npc/14470"]
+
+[[step]]
+id = "wl-inferno-009"
+do = "complete"
+quest = 7603
+at = [1448, 45.7, 34.8]
+text = "En el Valle Cicatriz, usa el Fuego vil junto a los restos de Kroshius y mátalo cuando despierte."
+tip = "Élite 55: lleva grupo. Se le puede poner Miedo."
+status = "unverified"
+sources = ["questie:quest/7603", "questie:npc/14467", "legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "wl-inferno-010"
+do = "turnin"
+quest = 7603
+npc = 14469
+at = [1448, 41.4, 44.9]
+text = "Entrega el núcleo a Niby."
+status = "unverified"
+sources = ["questie:quest/7603", "questie:npc/14469"]
+
+[[step]]
+id = "wl-inferno-011"
+do = "train"
+spells = [1122]
+at = [1448, 41.4, 44.9]
+text = "Aprende Inferno y equípate el abalorio si te sirve."
+tip = "El Inferno necesita una Piedra infernal. Úsalo como emergencia contra grupos: el demonio se suelta al cabo de un rato."
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]

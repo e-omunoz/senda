@@ -1,0 +1,71 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua MG.BRACKETS, tramo 10-19).
+id = "mage-bracket-10-19"
+class = "MAGE"
+kind = "page"
+title = "Niveles 10-19: la Nova"
+levels = [10, 19]
+order = 20
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever"]
+checked = "2026-11-10"
+note = "Talentos: build 1-33 de la guía de Escarcha de Wowhead (Porom, 4-nov)."
+
+[[block]]
+heading = "Zonas"
+body = """
+- **10-15:** Páramos de Poniente (Colina del Centinela).
+- **11-14:** Loch Modan.
+- **15-20:** Montañas Crestagrana.
+- **14-20:** Costa Oscura (barco desde el puerto de Ventormenta).
+
+Mazmorras: **Hall of Thanes** (13-18, en Forjaz) y **Minas de la Muerte** (17-22, en Páramos de Poniente)."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **10-11:** Especialización en varitas 2/2.
+- **12-16:** Descarga de Escarcha mejorada 5/5.
+- **17-19:** Mordiescarcha 3/3."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **10:** Nova de Escarcha.
+- **12:** Empapar magia, Caída lenta.
+- **14:** Deflagración Arcana.
+- **16:** Fogonazo.
+- **18:** Amplificar magia, Deshacer maldición inferior."""
+
+[[block]]
+heading = "Rotación"
+body = """
+Descarga de Escarcha x2, Explosión de Fuego cuando llegue, Nova de Escarcha, aléjate y otra Descarga de Escarcha. Remata con la varita."""
+
+[[block]]
+heading = "Misiones de clase"
+body = """
+- **10:** Habla con Jennea y el Lago Espejo (Orbe o Bastón Ley).
+- **15:** Túnica de tejido de maná (Jennea y Wynne Larson)."""
+
+[[block]]
+heading = "Macros"
+body = """
+SND_Varita, SND_Conjurar, SND_Poli. Pon Polimorfia al foco para el segundo enemigo."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+Objetivo al 20: Sastrería ~125 y Encantamiento ~100. Favor de mercader en Tres Caminos para los patrones."""
+
+[[block]]
+heading = "Equipo"
+body = """
+Varita mágica superior (Encantamiento). Mira la pestaña Equipo."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- En grupo, conjura agua para todos.
+- Polimorfia en el segundo enemigo y mata al primero.
+- Al 14, saco de dormir en Páramos de Poniente (37, 50).
+- Si subes con un brujo: páginas «En pareja» (duo-*)."""

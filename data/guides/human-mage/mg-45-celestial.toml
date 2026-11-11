@@ -1,0 +1,77 @@
+# Guía human-mage: Mago: Orbe celestial. Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-45-celestial"
+title = "Mago: Orbe celestial"
+levels = [44, 46]
+map = 1445
+summary = "Final opcional de la cadena del Orbe celestial tras Uldaman."
+
+[[step]]
+id = "mg-45-celestial-001"
+do = "turnin"
+quest = 1956
+npc = 6546
+at = [1445, 46.1, 57.1]
+optional = true
+text = "Tras Uldaman, entrega la fuente de poder a Tabetha."
+status = "unverified"
+sources = ["questie:quest/1956", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-45-celestial-002"
+do = "accept"
+quest = 1957
+npc = 6546
+at = [1445, 46.1, 57.1]
+optional = true
+text = "Coge la misión de las oleadas de maná."
+status = "unverified"
+sources = ["questie:quest/1957", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-45-celestial-003"
+do = "complete"
+quest = 1957
+at = [1445, 45.8, 56.9]
+optional = true
+text = "Derrota las oleadas de maná junto a la casa de Tabetha."
+status = "unverified"
+sources = ["questie:quest/1957"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-45-celestial-004"
+do = "turnin"
+quest = 1957
+npc = 6546
+at = [1445, 46.1, 57.1]
+optional = true
+text = "Entrega a Tabetha."
+status = "unverified"
+sources = ["questie:quest/1957", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-45-celestial-005"
+do = "accept"
+quest = 1958
+npc = 6546
+at = [1445, 46.1, 57.1]
+optional = true
+text = "Coge la última misión."
+status = "unverified"
+sources = ["questie:quest/1958", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-45-celestial-006"
+do = "turnin"
+quest = 1958
+npc = 6546
+at = [1445, 46.1, 57.1]
+optional = true
+text = "Entrega y llévate el Orbe celestial."
+status = "unverified"
+sources = ["questie:quest/1958", "questie:npc/6546"]
+checked = "2026-11-11"

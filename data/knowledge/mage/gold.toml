@@ -1,0 +1,16 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua, MG.TEXTS.oro: lo que se añadía al texto común general/gold.toml).
+id = "mage-gold"
+class = "MAGE"
+kind = "page"
+title = "Oro de mago"
+order = 235
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+
+[[block]]
+heading = "Oro de mago"
+body = """
+- Agua conjurada: nunca gastes en bebida.
+- El mago paga la equitación del 40 (unos 100 de oro): ve guardando desde el 30. El asesor avisaba desde el 34 si llevabas menos de 100 de oro.
+- Portales desde el 40: anúncialos en Ventormenta y Forjaz; la gente deja propina.
+- Runas de Teletransporte y de Portales: Componentes Esenciales, junto al Sagrario de los Magos (Ventormenta)."""

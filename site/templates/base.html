@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es" data-root="$root" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title</title>
+<meta name="description" content="$description">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#14161b">
+<link rel="canonical" href="$canonical">
+<meta property="og:type" content="website">
+<meta property="og:title" content="$title">
+<meta property="og:description" content="$description">
+<meta property="og:url" content="$canonical">
+<link rel="icon" href="${root}static/favicon.svg" type="image/svg+xml">
+<script>
+(function () {
+  var t = null;
+  try { t = localStorage.getItem("senda-theme"); } catch (e) {}
+  if (t !== "light" && t !== "dark") {
+    t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  }
+  document.documentElement.setAttribute("data-theme", t);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap">
+<link rel="stylesheet" href="${root}static/style.css?v=$asset_version">
+<script src="${root}static/app.js?v=$asset_version" defer></script>
+</head>
+<body class="$page_class">
+$icons
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <button type="button" class="icon-btn nav-toggle" id="nav-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menú">
+      <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+    </button>
+    <a class="brand" href="$root">
+      <svg class="logo" width="30" height="30" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".55"/><path d="M14 39c4-5 14-4 14-10s-12-5-12-11 8-7 12-8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="1 5.2"/><path d="M33 7.5l1.6 3.4 3.7.5-2.7 2.6.7 3.7-3.3-1.8-3.3 1.8.7-3.7-2.7-2.6 3.7-.5z" fill="currentColor"/></svg>
+      <span class="brand-name">Senda</span>
+    </a>
+    <div class="search" role="search">
+      <label class="sr-only" for="search-input">Buscar en Senda</label>
+      <svg class="icon search-icon" aria-hidden="true"><use href="#i-search"/></svg>
+      <input id="search-input" type="search" placeholder="Buscar en Senda…" autocomplete="off" spellcheck="false"
+        role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results">
+      <kbd class="search-hint" aria-hidden="true">/</kbd>
+      <ul id="search-results" class="search-results" role="listbox" aria-label="Resultados" hidden></ul>
+      <p id="search-status" class="sr-only" aria-live="polite"></p>
+    </div>
+    <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Cambiar a tema claro" title="Cambiar tema">
+      <svg class="icon i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      <svg class="icon i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+    </button>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Navegación principal">
+$sidebar
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main id="contenido" class="content" tabindex="-1">
+$content
+  </main>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <p><strong>Senda</strong> $version · <a href="$repo" target="_blank" rel="noopener">Código fuente</a> ·
+      <a href="$releases" target="_blank" rel="noopener">Descargas</a> · <a href="${root}estado/">Estado de los datos</a></p>
+    <p class="muted">Proyecto de fans, gratuito y de código abierto, sin relación con Blizzard Entertainment.
+      World of Warcraft es una marca registrada de Blizzard Entertainment, Inc. Web generada el $built.</p>
+  </div>
+</footer>
+</body>
+</html>

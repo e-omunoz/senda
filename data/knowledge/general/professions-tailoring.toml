@@ -1,0 +1,220 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Crafting.lua, ns.CRAFT.PROFS.tailor y MageData.lua CRAFT_TRAINERS).
+# [[route]]: prof, from, to, craft (id del objeto fabricado), name (nombre esES según Wowhead), n (fabricaciones
+#   aproximadas para todo el tramo), mats = [[id, cantidad]] por fabricación, src (origen de la receta si no la
+#   enseña el instructor), note. Si la receta del juego pide otra cosa, manda la receta.
+#   Las madejas se pueden contar como paño suelto: ver [[material]].made_from en professions-materials.toml.
+# [[trainer]]: instructores. for_class = clase para la que se usaba (gnomo brujo → Forjaz; humano mago → Ventormenta).
+#   at = [uiMapID, x, y, "etiqueta"] cuando la fuente daba coordenadas.
+id = "general-professions-tailoring"
+class = "ANY"
+kind = "professions"
+title = "Sastrería 1-300"
+order = 200
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.method.gg/", "https://www.wow-professions.com/", "https://www.wowhead.com/forever"]
+checked = "2026-11-09"
+note = "Method.gg (9-nov) y wow-professions; recetas y materiales comprobados en los datos de Wowhead Forever. 225-300 es la ruta de Method, que ellos mismos llaman especulativa (nadie la probó en la beta)."
+
+[[trainer]]
+prof = "tailoring"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+for_class = "WARLOCK"
+name = "Jormund Stonebrow"
+at = [1455, 43.2, 29.0, "Jormund Stonebrow (Forjaz, Gran Fundición)"]
+
+[[trainer]]
+prof = "tailoring"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+for_class = "MAGE"
+name = "Sellandus o Georgio Bolero"
+at = [1453, 42.0, 76.2, "Sastrería: Sellandus o Georgio Bolero (Barrio de los Magos)"]
+note = "Coordenada aproximada («hacia 42.0, 76.2»). Lawrence Schneider (Ventormenta) solo enseña el rango Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "tailoring"
+ranks = ["Artesano"]
+for_class = "ANY"
+name = "Timothy Worthington"
+at = [1445, 66.2, 51.6, "Timothy Worthington (Theramore)"]
+note = "Theramore, Marjal Revolcafango."
+
+[[route]]
+prof = "tailoring"
+from = 1
+to = 45
+craft = 2996
+name = "Madeja de paño de lino"
+n = 60
+mats = [[2589, 2]]
+note = "Guarda las madejas: las usas en el tramo siguiente."
+
+[[route]]
+prof = "tailoring"
+from = 45
+to = 55
+craft = 4307
+name = "Guantes de lino pesado"
+n = 10
+mats = [[2996, 2], [2320, 1]]
+note = "Desencántalos (te dan polvo para Encantamiento)."
+
+[[route]]
+prof = "tailoring"
+from = 55
+to = 80
+craft = 2997
+name = "Madeja de paño de lana"
+n = 30
+mats = [[2592, 3]]
+note = "A 50 de habilidad y nivel 10, entrena Oficial: el tope de Aprendiz es 75."
+
+[[route]]
+prof = "tailoring"
+from = 80
+to = 85
+craft = 2584
+name = "Capa de lana"
+n = 6
+mats = [[2997, 1], [2321, 1]]
+
+[[route]]
+prof = "tailoring"
+from = 85
+to = 95
+craft = 2587
+name = "Camisa de lana gris"
+n = 12
+mats = [[2997, 2], [2321, 1], [4340, 1]]
+
+[[route]]
+prof = "tailoring"
+from = 95
+to = 100
+craft = 4314
+name = "Hombreras de lana con doble pespunte"
+n = 5
+mats = [[2997, 3], [2321, 2]]
+
+[[route]]
+prof = "tailoring"
+from = 100
+to = 120
+craft = 4305
+name = "Madeja de paño de seda"
+n = 40
+mats = [[4306, 4]]
+note = "Guarda las madejas: las necesitas hasta 190."
+
+[[route]]
+prof = "tailoring"
+from = 120
+to = 135
+craft = 7048
+name = "Caperuza de seda azur"
+n = 17
+mats = [[4305, 2], [6260, 2], [2321, 1]]
+note = "Si es mejor que tu casco, póntela; si no, desencántala. A 125 y nivel 20, entrena Experto."
+
+[[route]]
+prof = "tailoring"
+from = 135
+to = 140
+craft = 4334
+name = "Camisa blanca formal"
+n = 5
+mats = [[4305, 3], [2324, 2], [2321, 1]]
+
+[[route]]
+prof = "tailoring"
+from = 140
+to = 150
+craft = 4339
+name = "Madeja de tejido mágico"
+n = 12
+mats = [[4338, 5]]
+note = "La Rueca del campamento (140) es un patrón de botín: no te la enseña el instructor."
+
+[[route]]
+prof = "tailoring"
+from = 150
+to = 170
+craft = 7058
+name = "Jubón de seda carmesí"
+n = 20
+mats = [[4305, 4], [2604, 2], [2321, 2]]
+
+[[route]]
+prof = "tailoring"
+from = 170
+to = 190
+craft = 7062
+name = "Pantalones bombacho de seda carmesí"
+n = 25
+mats = [[4305, 4], [2604, 2], [4291, 2]]
+
+[[route]]
+prof = "tailoring"
+from = 190
+to = 215
+craft = 10003
+name = "Guantes de tejido mágico negros"
+n = 38
+mats = [[4339, 2], [8343, 2]]
+note = "A 200 y nivel 35, entrena Artesano."
+
+[[route]]
+prof = "tailoring"
+from = 215
+to = 225
+craft = 10050
+name = "Bolsa de tejido mágico"
+n = 18
+mats = [[4339, 4], [4291, 2]]
+note = "Bolsa de 12 huecos: usa una y vende el resto, se venden bien."
+
+[[route]]
+prof = "tailoring"
+from = 225
+to = 240
+craft = 13856
+name = "Cinturón de paño rúnico"
+n = 25
+mats = [[14048, 3], [14341, 1]]
+status = "unverified"
+note = "Ruta especulativa de Method (225-300 no se probó en la beta). En Forever el cinturón se aprende a 210: se pondrá gris pronto."
+
+[[route]]
+prof = "tailoring"
+from = 240
+to = 250
+craft = 13863
+name = "Guantes de paño rúnico"
+n = 12
+mats = [[14048, 4], [8170, 4], [14341, 1]]
+src = "Patrón de vendedor: Qia (Cuna del Invierno)."
+status = "unverified"
+note = "Especulativo."
+
+[[route]]
+prof = "tailoring"
+from = 250
+to = 280
+craft = 13866
+name = "Cinta de paño rúnico"
+n = 40
+mats = [[14048, 4], [14227, 2], [14341, 1]]
+status = "unverified"
+note = "Especulativo. En Forever se aprende a 250."
+
+[[route]]
+prof = "tailoring"
+from = 280
+to = 300
+craft = 13867
+name = "Hombreras de paño rúnico"
+n = 50
+mats = [[14048, 7], [14227, 2], [8170, 4], [14341, 1]]
+src = "Patrón de botín en Classic; en Forever, sin confirmar."
+status = "unverified"
+note = "Especulativo. A 300: el Telar del campamento (origen sin confirmar) y el conjunto de banda."

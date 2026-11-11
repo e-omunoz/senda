@@ -1,0 +1,384 @@
+# Ruta compartida de Alianza (brujo gnomo y mago humano), 45-60. Generada con QuestieDB local; textos propios.
+id = "a48-searing-gorge"
+title = "Forjaz y La Garganta de Fuego"
+levels = [48, 49]
+map = 1427
+summary = "Entrena en Forjaz y haz los encargos del Puesto del Torio contra los Hierro Negro. La piedra sigue en Gadgetzan."
+
+[[step]]
+id = "a48-searing-gorge-001"
+do = "goto"
+at = [1455, 55.5, 47.7]
+text = "Ve a Forjaz: el mago con Teletransporte; el brujo vuela a Theramore, barco a Menethil y vuelo a Forjaz."
+tip = "En pareja, el mago abre un portal para los dos. No cambies la piedra: la necesitas en Gadgetzan al 50."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a48-searing-gorge-002"
+do = "train"
+npc = 5173
+spells = [11699, 11688]
+at = [1455, 50.1, 7.5]
+text = "Brujo: entrena los hechizos del nivel 46."
+if = { class = ["WARLOCK"], minlevel = 46 }
+status = "unverified"
+sources = ["questie:npc/5173", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a48-searing-gorge-003"
+do = "train"
+npc = 5144
+spells = [10197, 10201, 10205]
+at = [1455, 27.2, 8.3]
+text = "Mago: entrena los hechizos del nivel 46."
+if = { class = ["MAGE"], minlevel = 46 }
+status = "unverified"
+sources = ["questie:npc/5144", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a48-searing-gorge-004"
+do = "train"
+npc = 5173
+spells = [6353, 11712]
+at = [1455, 50.1, 7.5]
+text = "Brujo: entrena los hechizos del nivel 48."
+if = { class = ["WARLOCK"], minlevel = 48 }
+status = "unverified"
+sources = ["questie:npc/5173", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a48-searing-gorge-005"
+do = "train"
+npc = 5144
+spells = [10053, 10148, 10211]
+at = [1455, 27.2, 8.3]
+text = "Mago: entrena los hechizos del nivel 48."
+if = { class = ["MAGE"], minlevel = 48 }
+status = "unverified"
+sources = ["questie:npc/5144", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a48-searing-gorge-006"
+do = "goto"
+at = [1427, 37.9, 30.9]
+text = "Ve al Puesto del Torio (La Garganta de Fuego): vuela a Thelsamar y cruza por las Tierras Inhóspitas."
+tip = "Si no tienes el vuelo, entra a la Garganta desde el este de las Tierras Inhóspitas; evita la puerta cerrada del norte."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a48-searing-gorge-007"
+do = "getfp"
+npc = 2941
+node = "Thorium Point"
+at = [1427, 37.9, 30.9]
+text = "Coge la ruta de vuelo del Puesto del Torio."
+status = "unverified"
+sources = ["questie:npc/2941", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-008"
+do = "accept"
+quest = 7728
+at = [1427, 37.6, 26.5]
+text = "Coge en el tablón la misión de los objetos robados."
+status = "unverified"
+sources = ["questie:quest/7728", "questie:object/179827", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a48-searing-gorge-009"
+do = "accept"
+quest = 7729
+at = [1427, 37.6, 26.5]
+text = "Coge en el tablón la de diezmar a la competencia."
+status = "unverified"
+sources = ["questie:quest/7729", "questie:object/179827", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a48-searing-gorge-010"
+do = "accept"
+quest = 7701
+at = [1427, 37.6, 26.5]
+text = "Coge en el tablón el cartel de busca del supervisor Maltorius."
+status = "unverified"
+sources = ["questie:quest/7701", "questie:object/179827", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a48-searing-gorge-011"
+do = "accept"
+quest = 7723
+npc = 14627
+at = [1427, 38.6, 27.8]
+text = "Coge la misión de los gólems de guerra de Hansel."
+status = "unverified"
+sources = ["questie:quest/7723", "questie:npc/14627", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-012"
+do = "accept"
+quest = 7724
+npc = 14627
+at = [1427, 38.6, 27.8]
+text = "Coge la de las arañas de lava de Hansel."
+status = "unverified"
+sources = ["questie:quest/7724", "questie:npc/14627", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-013"
+do = "accept"
+quest = 7727
+npc = 14627
+at = [1427, 38.6, 27.8]
+text = "Coge la de los incendosaurios de Hansel."
+status = "unverified"
+sources = ["questie:quest/7727", "questie:npc/14627", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-014"
+do = "accept"
+quest = 7722
+npc = 14624
+at = [1427, 38.8, 28.5]
+text = "Coge la misión del flujo de fuego del maestro herrero."
+status = "unverified"
+sources = ["questie:quest/7722", "questie:npc/14624", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-015"
+do = "accept"
+quest = 3441
+npc = 8479
+at = [1427, 39.1, 39.0]
+text = "Ve a la cueva de Kalaran Windblade, al sur del puesto, y escucha su historia."
+status = "unverified"
+sources = ["questie:quest/3441", "questie:npc/8479", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-016"
+do = "complete"
+quest = 3441
+at = [1427, 39.1, 39.0]
+text = "Escucha la historia de Kalaran hasta que termine."
+status = "unverified"
+sources = ["questie:quest/3441", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-017"
+do = "turnin"
+quest = 3441
+npc = 8479
+at = [1427, 39.1, 39.0]
+text = "Entrégale la misión a Kalaran."
+status = "unverified"
+sources = ["questie:quest/3441", "questie:npc/8479", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-018"
+do = "accept"
+quest = 3442
+npc = 8479
+at = [1427, 39.1, 39.0]
+text = "Coge la misión de la llama impecable."
+status = "unverified"
+sources = ["questie:quest/3442", "questie:npc/8479", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-019"
+do = "complete"
+quest = 7729
+at = [1427, 42.5, 39.8]
+text = "Mata capataces y esclavistas Hierro Negro en el centro de la Garganta (15 de cada)."
+status = "unverified"
+sources = ["questie:quest/7729", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-020"
+do = "complete"
+quest = 7723
+at = [1427, 40.8, 49.2]
+text = "Mata 20 gólems de guerra pesados alrededor del Caldero."
+status = "unverified"
+sources = ["questie:quest/7723", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-021"
+do = "complete"
+quest = 3442
+at = [1427, 52.5, 49.4]
+text = "Consigue 4 corazones de llama de los elementales y 4 aceites de gólem."
+tip = "Los aceites caen de los gólems de guerra: hazlo junto con los de Hansel."
+status = "unverified"
+sources = ["questie:quest/3442", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-022"
+do = "complete"
+quest = 7728
+at = [1427, 39.9, 50.1]
+text = "Recupera la tobera de herrería y el catalejo de los Hierro Negro del Caldero."
+status = "unverified"
+sources = ["questie:quest/7728", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-023"
+do = "complete"
+quest = 7724
+at = [1427, 29.5, 59.2]
+text = "Mata 20 arañas de lava mayores en las mesetas del oeste."
+status = "unverified"
+sources = ["questie:quest/7724", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-024"
+do = "complete"
+quest = 7727
+at = [1427, 48.4, 28.0]
+text = "Baja al Pozo de Escoria y mata 20 incendosaurios."
+status = "unverified"
+sources = ["questie:quest/7727", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-025"
+do = "complete"
+quest = 7701
+at = [1427, 40.8, 35.9]
+text = "En el Pozo de Escoria, mata al supervisor Maltorius y coge su cabeza."
+tip = "Maltorius lleva escolta: tira primero de los de alrededor."
+status = "unverified"
+sources = ["questie:quest/7701", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-026"
+do = "complete"
+quest = 7722
+at = [1427, 40.5, 35.7]
+text = "Coge los planos secretos del flujo de fuego, junto a Maltorius."
+status = "unverified"
+sources = ["questie:quest/7722", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-027"
+do = "turnin"
+quest = 3442
+npc = 8479
+at = [1427, 39.1, 39.0]
+text = "Vuelve con Kalaran y entrega la llama."
+status = "unverified"
+sources = ["questie:quest/3442", "questie:npc/8479", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-028"
+do = "accept"
+quest = 3443
+npc = 8479
+at = [1427, 39.1, 39.0]
+text = "Opcional: coge la misión del astil (dagas chapadas en torio)."
+tip = "Las dagas son de herrería: cómpralas en la casa de subastas o sáltala."
+optional = true
+status = "unverified"
+sources = ["questie:quest/3443", "questie:npc/8479", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-029"
+do = "turnin"
+quest = 7728
+npc = 14626
+at = [1427, 39.0, 27.5]
+text = "En el Puesto del Torio entrega los objetos robados."
+status = "unverified"
+sources = ["questie:quest/7728", "questie:npc/14626", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-030"
+do = "turnin"
+quest = 7729
+npc = 14626
+at = [1427, 39.0, 27.5]
+text = "Entrega la misión de diezmar a la competencia."
+status = "unverified"
+sources = ["questie:quest/7729", "questie:npc/14626", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-031"
+do = "turnin"
+quest = 7723
+npc = 14627
+at = [1427, 38.6, 27.8]
+text = "Entrega los gólems a Hansel."
+status = "unverified"
+sources = ["questie:quest/7723", "questie:npc/14627", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-032"
+do = "turnin"
+quest = 7724
+npc = 14627
+at = [1427, 38.6, 27.8]
+text = "Entrega las arañas a Hansel."
+status = "unverified"
+sources = ["questie:quest/7724", "questie:npc/14627", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-033"
+do = "turnin"
+quest = 7727
+npc = 14627
+at = [1427, 38.6, 27.8]
+text = "Entrega los incendosaurios a Hansel."
+status = "unverified"
+sources = ["questie:quest/7727", "questie:npc/14627", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-034"
+do = "turnin"
+quest = 7701
+npc = 14634
+at = [1427, 37.7, 26.6]
+text = "Entrega la cabeza de Maltorius."
+status = "unverified"
+sources = ["questie:quest/7701", "questie:npc/14634", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a48-searing-gorge-035"
+do = "turnin"
+quest = 7722
+npc = 14624
+at = [1427, 38.8, 28.5]
+text = "Entrega los planos al maestro herrero."
+status = "unverified"
+sources = ["questie:quest/7722", "questie:npc/14624", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"

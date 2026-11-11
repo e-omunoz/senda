@@ -1,0 +1,170 @@
+# Brujo (Alianza): el Abisario (nivel 10). Se inserta tras la zona de inicio.
+# Gnomo: la empieza Lago Blackwrench en Forjaz. Humano: Remen Marcot en Villadorada.
+# Coordenadas de Ventormenta: las de QuestieDB (Forever), que coinciden con el mapa moderno (Gakin 39.2, 85.2).
+# La guía antigua del jugador daba 25.3, 78.2 (mapa clásico): DUDA ABIERTA, comprobar en juego.
+id = "wl-voidwalker"
+title = "Brujo: el Abisario"
+levels = [10, 12]
+map = 1453
+summary = "Cadena de clase del nivel 10: Gakin en El Cordero Degollado (Ventormenta), la gargantilla de Surena Caledon en Elwynn y la vinculación en el círculo del sótano."
+if = { class = ["WARLOCK"] }
+
+[[step]]
+id = "wl-voidwalker-001"
+do = "accept"
+quest = 1715
+npc = 6120
+at = [1455, 47.6, 9.3]
+text = "En la Caverna Abandonada de Forjaz, coge la misión de Lago Blackwrench."
+if = { race = ["Gnome"] }
+status = "unverified"
+sources = ["questie:quest/1715", "questie:npc/6120", "legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "wl-voidwalker-002"
+do = "accept"
+quest = 1685
+npc = 6121
+at = [1429, 44.5, 66.3]
+text = "En la posada de Villadorada, coge la misión de Remen Marcot."
+if = { race = ["Human"] }
+status = "unverified"
+sources = ["questie:quest/1685", "questie:npc/6121", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "wl-voidwalker-003"
+do = "goto"
+at = [1455, 76.0, 51.0]
+radius = 15
+text = "Ve a Ciudad Manitas y coge el Tranvía Subterráneo hasta Ventormenta."
+tip = "No hace falta pasar por Villadorada: eso es solo para humanos."
+if = { race = ["Gnome", "Dwarf"] }
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-voidwalker-004"
+do = "getfp"
+node = "2"
+npc = 352
+at = [1453, 71.3, 72.2]
+text = "Coge la ruta de vuelo de Ventormenta con Dungar Longdrink."
+tip = "Así vuelves a Forjaz en grifo al acabar."
+status = "unverified"
+sources = ["questie:npc/352"]
+
+[[step]]
+id = "wl-voidwalker-005"
+do = "turnin"
+quest = 1715
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Ve a El Cordero Degollado, en el Barrio de los Magos, baja al sótano y entrega a Gakin el Vinculador."
+tip = "Si la flecha no cuadra con el sótano, la guía antigua lo situaba en 25.3, 78.2 (mapa clásico)."
+if = { race = ["Gnome"] }
+status = "unverified"
+sources = ["questie:quest/1715", "questie:npc/6122", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-voidwalker-006"
+do = "turnin"
+quest = 1685
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Ve a El Cordero Degollado, baja al sótano y entrega a Gakin el Vinculador."
+if = { race = ["Human"] }
+status = "unverified"
+sources = ["questie:quest/1685", "questie:npc/6122"]
+
+[[step]]
+id = "wl-voidwalker-007"
+do = "accept"
+quest = 1688
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Coge la misión de Surena Caledon de Gakin."
+status = "unverified"
+sources = ["questie:quest/1688", "questie:npc/6122"]
+
+[[step]]
+id = "wl-voidwalker-008"
+do = "train"
+spells = [755]
+npc = 461
+at = [1453, 39.2, 85.0]
+text = "Si eres 12, entrena Cauce de salud con Demisette Cloyce, en la misma sala."
+optional = true
+if = { minlevel = 12 }
+status = "unverified"
+sources = ["questie:npc/461", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-voidwalker-009"
+do = "complete"
+quest = 1688
+at = [1429, 71.0, 80.8]
+text = "Sal por la puerta de Ventormenta, cruza Elwynn hasta la Plantación de Calabazas de Brackwell y mata a Surena Caledon."
+tip = "Es nivel 9 con dos guardias: sepáralos o pon Miedo a uno. Llévate su gargantilla (en grupo, cada uno recibe la suya)."
+status = "unverified"
+sources = ["questie:quest/1688", "questie:npc/881", "legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "wl-voidwalker-010"
+do = "turnin"
+quest = 1688
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Vuelve a Ventormenta y entrega la gargantilla a Gakin."
+status = "unverified"
+sources = ["questie:quest/1688", "questie:npc/6122"]
+
+[[step]]
+id = "wl-voidwalker-011"
+do = "accept"
+quest = 1689
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Coge La vinculación de Gakin."
+status = "unverified"
+sources = ["questie:quest/1689", "questie:npc/6122"]
+
+[[step]]
+id = "wl-voidwalker-012"
+do = "complete"
+quest = 1689
+at = [1453, 39.1, 84.4]
+text = "Con vida y maná llenos, usa la gargantilla en el círculo de invocación, bajo la sala de Gakin, y derrota al Abisario."
+tip = "DoTs, Diablillo al ataque, Miedo cuando llegue a ti y remata. Ten una Piedra de salud a mano."
+status = "unverified"
+sources = ["questie:quest/1689", "questie:npc/5676", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-voidwalker-013"
+do = "turnin"
+quest = 1689
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Entrega La vinculación a Gakin."
+status = "unverified"
+sources = ["questie:quest/1689", "questie:npc/6122"]
+
+[[step]]
+id = "wl-voidwalker-014"
+do = "train"
+spells = [697]
+at = [1453, 39.2, 85.2]
+text = "Invoca al Abisario y ponlo en pasivo: lo mandas tú."
+tip = "Tormento para recuperar la amenaza, Consumir sombras fuera de combate y Sacrificio si vas a morir."
+status = "unverified"
+sources = ["questie:quest/1689", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-voidwalker-015"
+do = "fly"
+zone = 1455
+npc = 352
+at = [1453, 71.3, 72.2]
+text = "Vuela de vuelta a Forjaz y sigue hacia Loch Modan."
+if = { race = ["Gnome", "Dwarf"] }
+status = "unverified"
+sources = ["questie:npc/352"]

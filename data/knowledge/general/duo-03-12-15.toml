@@ -1,0 +1,29 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Duo.lua, ns.DUO.BRACKETS, tramo 12-15). Tramo por el nivel más bajo de los dos.
+id = "duo-12-15"
+class = "ANY"
+kind = "page"
+title = "Niveles 12-15: Páramos de Poniente"
+levels = [12, 15]
+order = 330
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "cita:Manual del Mago Gnomo (sección «En pareja»)", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Dónde"
+body = """
+Base en la Colina del Centinela (56, 47) y la granja Saldean (56, 31). Misiones de Defias y gnolls Pellejorrío. Old Murk-Eye (élite) entre los dos (dato de Classic).
+
+Al 14, si os apetece, la cadena del Saco de dormir acogedor en la granja Alexston (37, 50): es larga y sale de la ruta."""
+note = "«(Classic)» en la fuente: dato del Classic original, sin comprobar en Forever."
+
+[[block]]
+heading = "Profesiones"
+body = """
+El mejor sitio de lino: Defias de la mina Jangolode (43, 22) y gnolls junto a la Colina (dato de Classic). Objetivo: Sastrería 75-100."""
+note = "«(Classic)» en la fuente."
+
+[[block]]
+heading = "Táctica"
+body = """
+Defias en grupos de 2-3: Abisario al primero, Polimorfia al segundo y Miedo al tercero si hace falta. El mago no debe lanzar la Nova si el Abisario tiene la amenaza: los DoTs rompen la congelación."""

@@ -1,0 +1,25 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Duo.lua, ns.DUO.BRACKETS, tramo 40-50). Tramo por el nivel más bajo de los dos.
+id = "duo-40-50"
+class = "ANY"
+kind = "page"
+title = "Niveles 40-50: Tanaris y Feralas"
+levels = [40, 50]
+order = 380
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "cita:Manual del Mago Gnomo (sección «En pareja»)", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Dónde"
+body = """
+Tanaris, Feralas, Tierras del Interior y Tierras Inhóspitas. Mazmorras: Zul'Farrak, Maraudon, Krol'dok Stronghold (40-45) y Alcaz Prison (48-53)."""
+
+[[block]]
+heading = "Viajes"
+body = """
+Desde el 40 el mago abre portales: volved juntos a Ventormenta o Forjaz para entrenar sin perder tiempo."""
+
+[[block]]
+heading = "Táctica"
+body = """
+El brujo con el Manáfago contra lanzadores (Bloqueo de hechizo) o el Abisario contra cuerpo a cuerpo; el mago con Pirofrío y Cono de frío. Doble especialización los dos para mazmorras."""

@@ -1,0 +1,549 @@
+# Ruta compartida de la Alianza: Bosque del Ocaso (22 -> 26).
+# Base en Villa Oscura. Misión nueva de Forever: 96139 The Valor Family.
+# Notas del jugador (data/knowledge/general/duo-06-22-30.toml): la Polimorfia no funciona con no-muertos;
+# el Abisario aguanta y el mago usa la Nova.
+# Ids y coordenadas: QuestieDB de Forever.
+id = "a22-bosque-del-ocaso"
+title = "Bosque del Ocaso"
+levels = [22, 26]
+map = 1431
+summary = "Entrena al 22, Favor de mercader en Tres Caminos y Villa Oscura: cementerio, Colina del Cuervo, campamento de Sven, el ermitaño y los huargen. Entrena al 24."
+link = "https://www.warcrafttavern.com/forever/guides/leveling/"
+
+[[step]]
+id = "a22dw-001"
+do = "train"
+spells = [126]
+npc = 5495
+at = [1453, 39.9, 84.2]
+text = "Brujo: en Ventormenta, entrena lo del 22 (Ojo de Kilrogg)."
+if = { class = ["WARLOCK"] }
+status = "unverified"
+sources = ["questie:npc/5495", "knowledge:warlock-spells"]
+
+[[step]]
+id = "a22dw-002"
+do = "train"
+spells = [2948, 6143]
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "Mago: en Ventormenta, entrena lo del 22 (Chamuscar, Custodia de Escarcha)."
+tip = "Talento al 22: Lanza de hielo."
+if = { class = ["MAGE"] }
+status = "unverified"
+sources = ["questie:npc/5497", "knowledge:mage-spells"]
+
+[[step]]
+id = "a22dw-003"
+do = "hearth"
+zone = 1433
+text = "Usa la piedra de hogar para ir a Villa del Lago (o vuela desde Ventormenta)."
+status = "unverified"
+sources = ["questie:npc/6727"]
+
+[[step]]
+id = "a22dw-004"
+do = "note"
+npc = 256390
+at = [1433, 9.7, 70.9]
+text = "Camino del Bosque del Ocaso, para en Tres Caminos: entrega a Marcy Baker las cajas de suministros de las Minas."
+tip = "Las cajas también caen en mazmorras. Compra patrones con el Favor a Mivin Shadowweave."
+optional = true
+status = "unverified"
+sources = ["questie:npc/256390", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "a22dw-005"
+do = "getfp"
+node = "12"
+npc = 2409
+at = [1431, 77.5, 44.3]
+text = "Baja por el camino del sur hasta Villa Oscura. Coge la ruta de vuelo con Felicia Maline."
+status = "unverified"
+sources = ["questie:npc/2409"]
+
+[[step]]
+id = "a22dw-006"
+do = "sethearth"
+npc = 6790
+at = [1431, 73.9, 44.4]
+zone = 1431
+text = "Pon la piedra de hogar en la posada de Villa Oscura."
+status = "unverified"
+sources = ["questie:npc/6790"]
+
+[[step]]
+id = "a22dw-007"
+do = "accept"
+quest = 56
+npc = 264
+at = [1431, 73.5, 46.8]
+text = "Coge con la Comandante Althea Ebonlocke la primera misión de la Guardia Nocturna."
+status = "unverified"
+sources = ["questie:quest/56", "questie:npc/264"]
+
+[[step]]
+id = "a22dw-008"
+do = "accept"
+quest = 163
+npc = 633
+at = [1431, 75.3, 48.8]
+text = "Coge con Elaine Carevin la misión para Jitters (Colina del Cuervo)."
+status = "unverified"
+sources = ["questie:quest/163", "questie:npc/633"]
+
+[[step]]
+id = "a22dw-009"
+do = "accept"
+quest = 164
+npc = 633
+at = [1431, 75.3, 48.8]
+text = "Coge también la entrega para Sven."
+status = "unverified"
+sources = ["questie:quest/164"]
+
+[[step]]
+id = "a22dw-010"
+do = "accept"
+quest = 165
+npc = 633
+at = [1431, 75.3, 48.8]
+text = "Y la del ermitaño."
+status = "unverified"
+sources = ["questie:quest/165"]
+
+[[step]]
+id = "a22dw-011"
+do = "accept"
+quest = 96139
+npc = 268
+at = [1431, 72.6, 47.6]
+text = "Coge con Sirra Von'Indi la misión de la familia Valor."
+status = "unverified"
+sources = ["questie:quest/96139", "questie:npc/268"]
+
+[[step]]
+id = "a22dw-012"
+do = "accept"
+quest = 101
+npc = 265
+at = [1431, 75.8, 45.3]
+text = "Coge con Madame Eva la misión del tótem (colmillos de necrófago, dedos de esqueleto y veneno de araña)."
+tip = "Se completa poco a poco en toda la zona: no la busques aparte."
+status = "unverified"
+sources = ["questie:quest/101", "questie:npc/265"]
+
+[[step]]
+id = "a22dw-013"
+do = "complete"
+quest = 56
+at = [1431, 79.8, 71.0]
+text = "Ve al cementerio del sureste (Jardines Tranquilos): mata 12 guerreros y 6 magos esqueleto."
+tip = "Polimorfia no funciona con no-muertos. Recoge dedos de esqueleto para Madame Eva."
+status = "unverified"
+sources = ["questie:quest/56"]
+
+[[step]]
+id = "a22dw-014"
+do = "turnin"
+quest = 56
+npc = 264
+at = [1431, 73.5, 46.8]
+text = "Vuelve a Villa Oscura y entrega a Althea."
+status = "unverified"
+sources = ["questie:quest/56"]
+
+[[step]]
+id = "a22dw-015"
+do = "accept"
+quest = 57
+npc = 264
+at = [1431, 73.5, 46.8]
+text = "Coge la segunda misión de la Guardia Nocturna."
+status = "unverified"
+sources = ["questie:quest/57"]
+
+[[step]]
+id = "a22dw-016"
+do = "accept"
+quest = 245
+npc = 888
+at = [1431, 45.1, 67.0]
+text = "Ve al oeste por el camino. Coge con el Vigía Dodds la misión de las arañas."
+status = "unverified"
+sources = ["questie:quest/245", "questie:npc/888"]
+
+[[step]]
+id = "a22dw-017"
+do = "turnin"
+quest = 163
+npc = 288
+at = [1431, 18.4, 56.4]
+text = "Sigue al oeste hasta la Colina del Cuervo. Entrega a Jitters, en la casa al sur del pueblo."
+status = "unverified"
+sources = ["questie:quest/163", "questie:npc/288"]
+
+[[step]]
+id = "a22dw-018"
+do = "accept"
+quest = 5
+npc = 288
+at = [1431, 18.4, 56.4]
+text = "Coge la de Jitters para el Chef Grual."
+status = "unverified"
+sources = ["questie:quest/5"]
+
+[[step]]
+id = "a22dw-019"
+do = "complete"
+quest = 96139
+at = [1431, 21.1, 55.6]
+text = "En la Colina del Cuervo, busca el Recuerdo de Valor y coge el tomo."
+status = "unverified"
+sources = ["questie:quest/96139", "questie:object/673515"]
+
+[[step]]
+id = "a22dw-020"
+do = "complete"
+quest = 57
+at = [1431, 21.8, 45.0]
+text = "En el cementerio de la Colina del Cuervo, mata 15 demonios esqueleto y 15 horrores esqueleto."
+status = "unverified"
+sources = ["questie:quest/57"]
+
+[[step]]
+id = "a22dw-021"
+do = "turnin"
+quest = 164
+npc = 311
+at = [1431, 7.8, 34.1]
+text = "Ve al noroeste, al campamento de Sven. Entrega a Sven Yorgen."
+status = "unverified"
+sources = ["questie:quest/164", "questie:npc/311"]
+
+[[step]]
+id = "a22dw-022"
+do = "accept"
+quest = 95
+npc = 311
+at = [1431, 7.8, 34.1]
+text = "Coge la venganza de Sven."
+status = "unverified"
+sources = ["questie:quest/95"]
+
+[[step]]
+id = "a22dw-023"
+do = "accept"
+quest = 226
+npc = 893
+at = [1431, 7.7, 33.2]
+text = "Coge con Lars la misión de los lobos."
+status = "unverified"
+sources = ["questie:quest/226", "questie:npc/893"]
+
+[[step]]
+id = "a22dw-024"
+do = "turnin"
+quest = 165
+npc = 289
+at = [1431, 28.1, 31.5]
+text = "Ve al este, a la cabaña del ermitaño Abercrombie."
+status = "unverified"
+sources = ["questie:quest/165", "questie:npc/289"]
+
+[[step]]
+id = "a22dw-025"
+do = "accept"
+quest = 148
+npc = 289
+at = [1431, 28.1, 31.5]
+text = "Coge su encargo para Madame Eva."
+status = "unverified"
+sources = ["questie:quest/148"]
+
+[[step]]
+id = "a22dw-026"
+do = "complete"
+quest = 226
+at = [1431, 20.2, 27.6]
+text = "Mata 12 lobos hambrientos y 8 lobos rabiosos en el norte del bosque."
+tip = "Los necrófagos de la cripta (24, 34) dan colmillos para Madame Eva."
+status = "unverified"
+sources = ["questie:quest/226"]
+
+[[step]]
+id = "a22dw-027"
+do = "turnin"
+quest = 226
+npc = 893
+at = [1431, 7.7, 33.2]
+text = "Vuelve con Lars y entrega los lobos."
+status = "unverified"
+sources = ["questie:quest/226"]
+
+[[step]]
+id = "a22dw-028"
+do = "complete"
+quest = 245
+at = [1431, 30.0, 40.0]
+text = "Termina las 15 arañas venenosas pigmeas por el camino de vuelta."
+status = "unverified"
+sources = ["questie:quest/245"]
+
+[[step]]
+id = "a22dw-029"
+do = "turnin"
+quest = 245
+npc = 888
+at = [1431, 45.1, 67.0]
+text = "Entrega las arañas a Dodds."
+status = "unverified"
+sources = ["questie:quest/245"]
+
+[[step]]
+id = "a22dw-030"
+do = "turnin"
+quest = 95
+at = [1431, 49.9, 77.7]
+text = "Al sur del camino, busca el montón de tierra suelta: allí acaba la venganza de Sven."
+status = "unverified"
+sources = ["questie:quest/95", "questie:object/59"]
+
+[[step]]
+id = "a22dw-031"
+do = "hearth"
+zone = 1431
+text = "Usa la piedra de hogar para volver a Villa Oscura."
+status = "unverified"
+sources = ["questie:npc/6790"]
+
+[[step]]
+id = "a22dw-032"
+do = "turnin"
+quest = 57
+npc = 264
+at = [1431, 73.5, 46.8]
+text = "Entrega la Guardia Nocturna a Althea."
+status = "unverified"
+sources = ["questie:quest/57"]
+
+[[step]]
+id = "a22dw-033"
+do = "turnin"
+quest = 96139
+npc = 268
+at = [1431, 72.6, 47.6]
+text = "Entrega el tomo a Sirra."
+status = "unverified"
+sources = ["questie:quest/96139"]
+
+[[step]]
+id = "a22dw-034"
+do = "turnin"
+quest = 5
+npc = 272
+at = [1431, 73.8, 43.5]
+text = "Habla con el Chef Grual."
+status = "unverified"
+sources = ["questie:quest/5"]
+
+[[step]]
+id = "a22dw-035"
+do = "turnin"
+quest = 148
+npc = 265
+at = [1431, 75.8, 45.3]
+text = "Entrega el encargo de Abercrombie a Madame Eva."
+status = "unverified"
+sources = ["questie:quest/148"]
+
+[[step]]
+id = "a22dw-036"
+do = "accept"
+quest = 149
+npc = 265
+at = [1431, 75.8, 45.3]
+text = "Coge la del peine para Mary la Ciega."
+status = "unverified"
+sources = ["questie:quest/149"]
+
+[[step]]
+id = "a22dw-037"
+do = "turnin"
+quest = 149
+npc = 302
+at = [1431, 82.0, 59.1]
+text = "Ve al sureste, a la casa de Mary la Ciega."
+status = "unverified"
+sources = ["questie:quest/149", "questie:npc/302"]
+
+[[step]]
+id = "a22dw-038"
+do = "accept"
+quest = 154
+npc = 302
+at = [1431, 82.0, 59.1]
+text = "Coge la vuelta para Madame Eva."
+status = "unverified"
+sources = ["questie:quest/154"]
+
+[[step]]
+id = "a22dw-039"
+do = "turnin"
+quest = 154
+npc = 265
+at = [1431, 75.8, 45.3]
+text = "Entrega el peine a Madame Eva."
+status = "unverified"
+sources = ["questie:quest/154"]
+
+[[step]]
+id = "a22dw-040"
+do = "fly"
+npc = 2409
+at = [1431, 77.5, 44.3]
+zone = 1453
+text = "Al 24, vuela a Ventormenta para entrenar."
+status = "unverified"
+sources = ["questie:npc/2409"]
+
+[[step]]
+id = "a22dw-041"
+do = "train"
+spells = [5138, 5500]
+npc = 5495
+at = [1453, 39.9, 84.2]
+text = "Brujo: entrena lo del 24 (Drenar maná, Captar demonios)."
+if = { class = ["WARLOCK"] }
+status = "unverified"
+sources = ["questie:npc/5495", "knowledge:warlock-spells"]
+
+[[step]]
+id = "a22dw-042"
+do = "train"
+spells = [2139]
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "Mago: entrena lo del 24 (Contrahechizo)."
+if = { class = ["MAGE"] }
+status = "unverified"
+sources = ["questie:npc/5497", "knowledge:mage-spells"]
+
+[[step]]
+id = "a22dw-043"
+do = "fly"
+npc = 352
+at = [1453, 71.3, 72.2]
+zone = 1431
+text = "Vuela de vuelta a Villa Oscura."
+status = "unverified"
+sources = ["questie:npc/352"]
+
+[[step]]
+id = "a22dw-044"
+do = "accept"
+quest = 173
+npc = 663
+at = [1431, 75.8, 47.6]
+text = "Coge con Calor la primera misión de los huargen."
+status = "unverified"
+sources = ["questie:quest/173", "questie:npc/663"]
+
+[[step]]
+id = "a22dw-045"
+do = "complete"
+quest = 173
+at = [1431, 63.4, 52.8]
+text = "Al oeste de Villa Oscura, mata tejedores de sombras Nocheterna."
+tip = "Huargen en grupos: Miedo o Polimorfia al segundo."
+status = "unverified"
+sources = ["questie:quest/173"]
+
+[[step]]
+id = "a22dw-046"
+do = "turnin"
+quest = 173
+npc = 663
+at = [1431, 75.8, 47.6]
+text = "Entrega a Calor."
+status = "unverified"
+sources = ["questie:quest/173"]
+
+[[step]]
+id = "a22dw-047"
+do = "accept"
+quest = 221
+npc = 663
+at = [1431, 75.8, 47.6]
+text = "Coge la segunda de los huargen."
+status = "unverified"
+sources = ["questie:quest/221"]
+
+[[step]]
+id = "a22dw-048"
+do = "complete"
+quest = 221
+at = [1431, 64.1, 67.7]
+text = "Al sur, mata corredores oscuros Nocheterna."
+status = "unverified"
+sources = ["questie:quest/221"]
+
+[[step]]
+id = "a22dw-049"
+do = "complete"
+quest = 101
+at = [1431, 77.9, 34.0]
+text = "Termina el tótem de Madame Eva: los cadáveres fétidos del norte de Villa Oscura dan colmillos."
+status = "unverified"
+sources = ["questie:quest/101"]
+
+[[step]]
+id = "a22dw-050"
+do = "turnin"
+quest = 221
+npc = 663
+at = [1431, 75.8, 47.6]
+text = "Entrega los corredores a Calor."
+status = "unverified"
+sources = ["questie:quest/221"]
+
+[[step]]
+id = "a22dw-051"
+do = "turnin"
+quest = 101
+npc = 265
+at = [1431, 75.8, 45.3]
+text = "Entrega el tótem a Madame Eva."
+status = "unverified"
+sources = ["questie:quest/101"]
+
+[[step]]
+id = "a22dw-051b"
+do = "accept"
+quest = 377
+npc = 270
+at = [1431, 71.9, 47.8]
+text = "Si piensas hacer Las Mazmorras, coge con el Concejal Millstipe la misión de Dextren Ward."
+optional = true
+status = "unverified"
+sources = ["questie:quest/377", "questie:npc/270"]
+
+[[step]]
+id = "a22dw-052"
+do = "dungeon"
+quests = [377]
+at = [1453, 41.0, 58.0, "Las Mazmorras (Ventormenta)"]
+text = "Opcional: Las Mazmorras de Ventormenta (24-27) si encuentras grupo."
+tip = "Es rápida y fácil. Tiene más misiones en Villa del Lago (Guardia Berton) y Ventormenta: cógelas si vas a entrar."
+optional = true
+status = "unverified"
+sources = ["questie:quest/377", "https://conquestcapped.com/guides/wow-forever/wow-forever-leveling/"]
+note = "Coordenadas de la entrada de Las Mazmorras aproximadas (mapa moderno de Ventormenta); sin verificar."
+
+[[step]]
+id = "a22dw-053"
+do = "level"
+level = 26
+text = "Llega al 26 antes de ir a Los Humedales: si te falta, haz la tercera de los huargen o mata Nocheterna."
+status = "unverified"
+sources = ["knowledge:duo-22-30"]

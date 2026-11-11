@@ -1,0 +1,227 @@
+# Brujo (Alianza): Súcubo o Íncubo (nivel 20) y el Bastón de Soran'ruk (20-25, opcional).
+# El Íncubo es una opción nueva de Forever (What Is Love?, 65602 -> The Binding, 65603).
+# Coordenadas de Ventormenta: las de QuestieDB (Forever). Ver la duda abierta en 10-voidwalker.toml.
+id = "wl-succubus"
+title = "Brujo: Súcubo o Íncubo"
+levels = [20, 24]
+map = 1453
+summary = "Gakin te manda con Takar el Vidente en Los Baldíos. Eliges Súcubo (corazón de madera) o Íncubo (figurilla de madera), ambos en Vallefresno, y haces la vinculación en Ventormenta."
+if = { class = ["WARLOCK"] }
+
+[[step]]
+id = "wl-succubus-001"
+do = "accept"
+quest = 1717
+npc = 6120
+at = [1455, 47.6, 9.3]
+text = "Si pasas por Forjaz, coge el aviso de Lago Blackwrench en la Caverna Abandonada."
+tip = "Es solo un recado: si estás ya en Ventormenta, ve directo a Gakin."
+optional = true
+if = { race = ["Gnome"] }
+status = "unverified"
+sources = ["questie:quest/1717", "questie:npc/6120"]
+
+[[step]]
+id = "wl-succubus-002"
+do = "turnin"
+quest = 1717
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Entrega el aviso a Gakin, en el sótano de El Cordero Degollado."
+optional = true
+if = { race = ["Gnome"] }
+status = "unverified"
+sources = ["questie:quest/1717", "questie:npc/6122"]
+
+[[step]]
+id = "wl-succubus-003"
+do = "accept"
+quest = 1716
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Coge de Gakin la misión que te manda con Takar el Vidente, en Los Baldíos."
+status = "unverified"
+sources = ["questie:quest/1716", "questie:npc/6122", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "wl-succubus-004"
+do = "train"
+spells = [1490, 706, 698, 5740]
+npc = 461
+at = [1453, 39.2, 85.0]
+text = "Entrena con Demisette Cloyce, en la misma sala: Maldición de los elementos, Armadura demoníaca, Ritual de invocación y Lluvia de fuego."
+status = "unverified"
+sources = ["questie:npc/461", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-succubus-005"
+do = "note"
+at = [1453, 63.9, 69.1]
+text = "Aprende Bastones con Woo Ping, el maestro de armas del Distrito de Comercio."
+tip = "En Forjaz no se enseñan. Sin ellos no podrás llevar el Bastón de Soran'ruk."
+optional = true
+npc = 11867
+status = "unverified"
+sources = ["questie:npc/11867", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-succubus-006"
+do = "turnin"
+quest = 1716
+npc = 6244
+at = [1413, 49.3, 57.1]
+text = "Viaja a Los Baldíos y entrega a Takar el Vidente."
+tip = "Ruta típica: barco de Menethil a Theramore y a pie hacia el oeste. Es zona de la Horda: cuidado con los guardias."
+status = "unverified"
+sources = ["questie:quest/1716", "questie:npc/6244", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-succubus-007"
+do = "accept"
+quest = 1738
+npc = 6244
+at = [1413, 49.3, 57.1]
+text = "Súcubo: coge de Takar la misión del corazón de madera."
+tip = "Elige uno: Súcubo o Íncubo. Los grimorios no se pasan de uno a otro. La cadena del Súcubo es algo más sencilla."
+optional = true
+status = "unverified"
+sources = ["questie:quest/1738", "questie:npc/6244", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "wl-succubus-008"
+do = "accept"
+quest = 65602
+npc = 6244
+at = [1413, 49.3, 57.1]
+text = "Íncubo: coge de Takar la misión de la figurilla de madera."
+optional = true
+status = "unverified"
+sources = ["questie:quest/65602", "questie:npc/6244", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "wl-succubus-009"
+do = "accept"
+quest = 1740
+npc = 6247
+at = [1413, 49.3, 57.2]
+text = "Coge también la del Orbe de Soran'ruk de Doan Karhan, junto a Takar."
+tip = "3 fragmentos de los acólitos Crepusculares (Cavernas de Brazanegra) y 1 grande en el Castillo de Colmillo Oscuro. Recompensa: bastón u orbe."
+optional = true
+status = "unverified"
+sources = ["questie:quest/1740", "questie:npc/6247", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-succubus-010"
+do = "complete"
+quest = 1738
+at = [1440, 31.6, 31.6]
+text = "Súcubo: en Vallefresno, ve a las ruinas de Ordil'Aran y coge el corazón de madera del árbol."
+optional = true
+status = "unverified"
+sources = ["questie:quest/1738", "questie:object/93192", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-succubus-011"
+do = "complete"
+quest = 65602
+at = [1440, 26.6, 22.0]
+text = "Íncubo: en Vallefresno, sube al piso de arriba de la casa al norte del Puesto de Maestra y coge la figurilla de madera."
+tip = "Enciende la antorcha apagada y quema el carro para distraer a los arqueólogos."
+optional = true
+status = "unverified"
+sources = ["questie:quest/65602", "questie:object/375544", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-succubus-012"
+do = "turnin"
+quest = 1738
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Súcubo: vuelve a Ventormenta y entrega el corazón a Gakin."
+optional = true
+status = "unverified"
+sources = ["questie:quest/1738", "questie:npc/6122"]
+
+[[step]]
+id = "wl-succubus-013"
+do = "turnin"
+quest = 65602
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Íncubo: vuelve a Ventormenta y entrega la figurilla a Gakin."
+optional = true
+status = "unverified"
+sources = ["questie:quest/65602", "questie:npc/6122"]
+
+[[step]]
+id = "wl-succubus-014"
+do = "accept"
+quest = 1739
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Súcubo: coge La vinculación de Gakin."
+optional = true
+status = "unverified"
+sources = ["questie:quest/1739", "questie:npc/6122"]
+
+[[step]]
+id = "wl-succubus-015"
+do = "accept"
+quest = 65603
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Íncubo: coge La vinculación de Gakin."
+optional = true
+status = "unverified"
+sources = ["questie:quest/65603", "questie:npc/6122"]
+
+[[step]]
+id = "wl-succubus-016"
+do = "complete"
+quest = 1739
+at = [1453, 39.1, 84.4]
+text = "Súcubo: usa el objeto en el círculo del sótano y derrota a la súcubo invocada."
+tip = "Vida y maná llenos. Abisario a tanquear, DoTs y Drenar vida. Miedo si se suelta."
+optional = true
+status = "unverified"
+sources = ["questie:quest/1739", "questie:npc/5677"]
+
+[[step]]
+id = "wl-succubus-017"
+do = "complete"
+quest = 65603
+at = [1453, 39.1, 84.4]
+text = "Íncubo: usa el objeto en el círculo del sótano y derrota al íncubo invocado."
+tip = "Vida y maná llenos. Abisario a tanquear, DoTs y Drenar vida. Miedo si se suelta."
+optional = true
+status = "unverified"
+sources = ["questie:quest/65603", "questie:npc/185335"]
+
+[[step]]
+id = "wl-succubus-018"
+do = "turnin"
+quest = 1739
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Súcubo: entrega La vinculación a Gakin y aprende a invocarla."
+optional = true
+status = "unverified"
+sources = ["questie:quest/1739", "questie:npc/6122"]
+
+[[step]]
+id = "wl-succubus-019"
+do = "turnin"
+quest = 65603
+npc = 6122
+at = [1453, 39.2, 85.2]
+text = "Íncubo: entrega La vinculación a Gakin y aprende a invocarlo."
+optional = true
+status = "unverified"
+sources = ["questie:quest/65603", "questie:npc/6122"]
+
+[[step]]
+id = "wl-succubus-020"
+do = "note"
+text = "Súcubo o Íncubo para subir (más daño). El Abisario sigue siendo mejor contra dos enemigos o contra élites."
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]

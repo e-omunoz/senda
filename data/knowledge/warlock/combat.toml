@@ -1,0 +1,70 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Texts.lua, ns.TEXTS.combate).
+id = "warlock-combat"
+class = "WARLOCK"
+kind = "page"
+title = "Combate en solitario"
+order = 110
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+note = "La reducción de la probabilidad de fragmento por tick de Drenar alma es un cambio de Blizzard del 4-nov citado sin enlace."
+
+[[block]]
+heading = "El pull perfecto (solo)"
+body = """
+1. Demonio en pasivo. Marca el objetivo.
+2. Desde 30 m: Terror de agonía (macro SND_Abrir: envía al demonio a la vez).
+3. Corrupción (instantánea con el talento).
+4. Deja que el demonio golpee 1-2 segundos antes de Inmolar: Inmolar genera mucha amenaza de golpe.
+5. Varita hasta el final. Drenar vida si te falta vida. Drenar alma en el último 20% si necesitas fragmentos."""
+
+[[block]]
+heading = "Dos o tres enemigos"
+body = """
+- El demonio tanquea al primero. Tú pones Terror de agonía y Corrupción en el segundo y lo drenas.
+- Tercer enemigo: Miedo (el rango 1 dura 10 s y gasta menos maná). Cuando vuelva, otro Miedo.
+- Usa las macros _MO (mouseover) para poner DoTs sin cambiar de objetivo.
+- Con el Abisario: Tormento si un enemigo se le escapa."""
+
+[[block]]
+heading = "Gestión de maná y vida"
+body = """
+- Transfusión de vida cuando tu vida esté por encima de tu maná. Recupera la vida con Drenar vida.
+- Bebe solo cuando tengas poco de las dos cosas.
+- El Espíritu mejora Transfusión de vida en Forever.
+- Consumir sombras (Abisario) fuera de combate mientras haces Transfusión de vida."""
+
+[[block]]
+heading = "Emergencias, por orden"
+body = """
+1. Piedra de salud.
+2. Sacrificio del Abisario (escudo; no consume tiempo global).
+3. Miedo al enemigo que te pega.
+4. Espiral mortal (desde el 42): miedo de 3 s y cura.
+5. Aullido de terror (desde el 40) si son varios.
+6. Si vas a morir sin remedio: una Piedra de alma puesta en ti antes del combate te deja resucitar ahí mismo."""
+
+[[block]]
+heading = "Tipos de enemigo"
+body = """
+- **Lanzadores:** Maldición de la lengua o Bloqueo de hechizo del Manáfago. Pégate a ellos para que vengan al cuerpo a cuerpo.
+- **Los que huyen:** Maldición de temeridad (no huyen), o déjalos con DoTs y dispara con la varita.
+- **Guerreros y golpeadores fuertes:** Maldición de debilidad.
+- **Demonios y elementales élite:** Desterrar (desde el 28).
+- **Bestias:** el Íncubo o el Súcubo no pueden Seducir bestias; usa Miedo.
+- **Humanoides:** el Íncubo o el Súcubo pueden Seducir."""
+
+[[block]]
+heading = "Fragmentos de alma"
+body = """
+- Ten 3-5 siempre: Abisario, Íncubo o Manáfago (1 cada uno), Piedra de salud (1), Piedra de alma (1), Ritual de invocación (1).
+- Drenar alma: Blizzard redujo mucho la probabilidad de fragmento por tick. Lo seguro es que el enemigo muera mientras lo drenas.
+- La bolsa de almas va en la ranura de bolsa de componentes (la quinta): no te quita un hueco normal.
+- Las bolsas de almas (misiones del Íncubo y del Manáfago) los guardan aparte."""
+
+[[block]]
+heading = "Elección de demonio"
+body = """
+- **Abisario:** varios enemigos, élites, o cuando te falta equipo.
+- **Íncubo/Súcubo:** subir rápido contra un enemigo cada vez.
+- **Manáfago:** lanzadores y PvP.
+- **Diablillo:** grupos (Pacto de sangre)."""

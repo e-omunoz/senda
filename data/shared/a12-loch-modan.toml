@@ -1,0 +1,956 @@
+# Ruta compartida de la Alianza: Loch Modan (12 -> 16). Punto de unión de gnomos (desde Dun Morogh/Forjaz)
+# y humanos (desde a11-humano-tranvia).
+# Coordenadas e ids: QuestieDB de Forever (tools/lookup.py). Orden: guías de leveo de Forever (Warcraft Tavern,
+# ConquestCapped) y notas del jugador (data/knowledge/warlock/bracket-10-19.toml: «10-14 Loch Modan»).
+id = "a12-loch-modan"
+title = "Loch Modan"
+levels = [12, 16]
+map = 1432
+summary = "Cadena de Earthseer Farsen en Dun Morogh (llave de Hall of Thanes), Thelsamar, mina Arroyoplata, excavación de Ironband y valle Pedrastilla. Viaje a Forjaz al 14 para entrenar."
+link = "https://www.warcrafttavern.com/forever/guides/leveling/"
+
+[[step]]
+id = "a12lm-001"
+do = "getfp"
+node = "6"
+npc = 1573
+at = [1455, 55.5, 47.7]
+text = "Antes de salir de Forjaz, coge la ruta de vuelo con Gryth Thurden (Gran Fundición)."
+tip = "Si ya la tienes, se completa sola."
+status = "unverified"
+sources = ["questie:npc/1573"]
+
+[[step]]
+id = "a12lm-002"
+do = "accept"
+quest = 96392
+npc = 264936
+at = [1426, 64.9, 58.5]
+text = "Sal de Forjaz hacia el este por Dun Morogh. Habla con Earthseer Farsen, en el campamento sobre la cantera de Gol'Bolar."
+tip = "Esta cadena de Forever da la misión de Hall of Thanes que empieza fuera de Forjaz. No te la saltes."
+status = "unverified"
+sources = ["questie:quest/96392", "questie:npc/264936", "https://conquestcapped.com/guides/wow-forever/wow-forever-leveling/"]
+
+[[step]]
+id = "a12lm-003"
+do = "complete"
+quest = 96392
+npc = 264936
+at = [1426, 64.9, 58.5]
+text = "Pídele a Farsen que te preste su visión lejana y observa a los Hierro Negro."
+status = "unverified"
+sources = ["questie:quest/96392"]
+
+[[step]]
+id = "a12lm-004"
+do = "turnin"
+quest = 96392
+npc = 264936
+at = [1426, 64.9, 58.5]
+text = "Entrega a Farsen."
+status = "unverified"
+sources = ["questie:quest/96392"]
+
+[[step]]
+id = "a12lm-005"
+do = "accept"
+quest = 96390
+npc = 264936
+at = [1426, 64.9, 58.5]
+text = "Coge la siguiente misión de Farsen: matar espías Hierro Negro."
+status = "unverified"
+sources = ["questie:quest/96390"]
+
+[[step]]
+id = "a12lm-006"
+do = "complete"
+quest = 96390
+at = [1426, 77.5, 61.3]
+text = "Mata 10 espías Hierro Negro en el campamento al este, junto al camino a Loch Modan."
+tip = "El Capitán Beld (78, 62) y los espías sueltan el Mapa Hierro Negro. Si no cae, sigue matando: lo necesitas."
+status = "unverified"
+sources = ["questie:quest/96390", "questie:npc/6123"]
+
+[[step]]
+id = "a12lm-007"
+do = "accept"
+quest = 96391
+item = 274268
+at = [1426, 77.5, 61.3]
+text = "Haz clic derecho en el Mapa Hierro Negro para empezar la misión."
+status = "unverified"
+sources = ["questie:quest/96391", "questie:npc/6124"]
+
+[[step]]
+id = "a12lm-008"
+do = "turnin"
+quest = 96390
+npc = 264936
+at = [1426, 64.9, 58.5]
+text = "Vuelve con Farsen y entrega los espías."
+status = "unverified"
+sources = ["questie:quest/96390"]
+
+[[step]]
+id = "a12lm-009"
+do = "turnin"
+quest = 96391
+npc = 264936
+at = [1426, 64.9, 58.5]
+text = "Entrega también el mapa a Farsen."
+status = "unverified"
+sources = ["questie:quest/96391"]
+
+[[step]]
+id = "a12lm-010"
+do = "accept"
+quest = 96393
+npc = 264936
+at = [1426, 64.9, 58.5]
+text = "Coge la misión de Hall of Thanes. Guárdala en el registro hasta el 16."
+tip = "Se entrega al rey Magni en Forjaz tras matar al jefe de la mazmorra."
+status = "unverified"
+sources = ["questie:quest/96393", "https://conquestcapped.com/guides/wow-forever/wow-forever-leveling/"]
+
+[[step]]
+id = "a12lm-011"
+do = "accept"
+quest = 224
+npc = 1089
+at = [1432, 22.1, 73.1]
+text = "Cruza el túnel a Loch Modan. En la torre de guardia del sur, coge la misión del Montañero Cobbleflint."
+status = "unverified"
+sources = ["questie:quest/224", "questie:npc/1089"]
+
+[[step]]
+id = "a12lm-012"
+do = "accept"
+quest = 267
+npc = 1092
+at = [1432, 23.2, 73.7]
+text = "Coge también la del Capitán Rugelfuss (dientes de trogg)."
+status = "unverified"
+sources = ["questie:quest/267", "questie:npc/1092"]
+
+[[step]]
+id = "a12lm-013"
+do = "complete"
+quest = 224
+at = [1432, 30.0, 68.0]
+wps = [[1432, 31.5, 72.4, "Troggs Pedrastilla"], [1432, 29.0, 60.0, "Más troggs junto al camino"]]
+text = "Mata troggs y exploradores Pedrastilla al este de la torre. Recoge a la vez los dientes de trogg."
+tip = "Los dientes caen de todos los troggs Pedrastilla: completas las dos misiones a la vez."
+status = "unverified"
+sources = ["questie:quest/224", "questie:quest/267"]
+
+[[step]]
+id = "a12lm-014"
+do = "complete"
+quest = 267
+at = [1432, 31.5, 72.4]
+text = "Termina los 8 dientes de trogg."
+status = "unverified"
+sources = ["questie:quest/267"]
+
+[[step]]
+id = "a12lm-015"
+do = "turnin"
+quest = 224
+npc = 1089
+at = [1432, 22.1, 73.1]
+text = "Vuelve a la torre y entrega a Cobbleflint."
+status = "unverified"
+sources = ["questie:quest/224"]
+
+[[step]]
+id = "a12lm-016"
+do = "turnin"
+quest = 267
+npc = 1092
+at = [1432, 23.2, 73.7]
+text = "Entrega los dientes a Rugelfuss."
+status = "unverified"
+sources = ["questie:quest/267"]
+
+[[step]]
+id = "a12lm-017"
+do = "accept"
+quest = 237
+npc = 1091
+at = [1432, 23.5, 76.4]
+text = "Coge la siguiente misión del Montañero Gravelgaw. La harás al final de la zona."
+status = "unverified"
+sources = ["questie:quest/237", "questie:npc/1091"]
+
+[[step]]
+id = "a12lm-018"
+do = "getfp"
+node = "8"
+npc = 1572
+at = [1432, 33.9, 51.0]
+text = "Sigue el camino al norte hasta Thelsamar y coge la ruta de vuelo con Thorgrum Borrelson."
+status = "unverified"
+sources = ["questie:npc/1572"]
+
+[[step]]
+id = "a12lm-019"
+do = "sethearth"
+npc = 6734
+at = [1432, 35.5, 48.4]
+zone = 1432
+text = "Pon la piedra de hogar en la posada de Thelsamar."
+status = "unverified"
+sources = ["questie:npc/6734"]
+
+[[step]]
+id = "a12lm-020"
+do = "accept"
+quest = 416
+npc = 1340
+at = [1432, 32.6, 49.7]
+text = "Coge la misión de ratas del Montañero Kadrell."
+status = "unverified"
+sources = ["questie:quest/416", "questie:npc/1340"]
+
+[[step]]
+id = "a12lm-021"
+do = "accept"
+quest = 1339
+npc = 1340
+at = [1432, 32.6, 49.7]
+text = "Coge también la que te manda con el Montañero Stormpike."
+status = "unverified"
+sources = ["questie:quest/1339"]
+
+[[step]]
+id = "a12lm-022"
+do = "accept"
+quest = 418
+npc = 1963
+at = [1432, 34.8, 49.3]
+text = "Coge la de las salchichas con Vidra Hearthstove."
+tip = "Oso, jabalí y araña de Loch Modan: ve matando lo que encuentres por el camino."
+status = "unverified"
+sources = ["questie:quest/418", "questie:npc/1963"]
+
+[[step]]
+id = "a12lm-023"
+do = "accept"
+quest = 86667
+npc = 49808
+at = [1432, 36.5, 48.3]
+text = "Coge la entrega del tarro de nieve con Grenhild Darktalon."
+status = "unverified"
+sources = ["questie:quest/86667", "questie:npc/49808"]
+
+[[step]]
+id = "a12lm-024"
+do = "accept"
+quest = 6387
+npc = 1681
+at = [1432, 37.0, 47.8]
+text = "Coge la misión de Brock Stoneseeker (solo enanos y gnomos)."
+if = { race = ["Gnome", "Dwarf"] }
+status = "unverified"
+sources = ["questie:quest/6387", "questie:npc/1681"]
+
+[[step]]
+id = "a12lm-025"
+do = "turnin"
+quest = 6387
+npc = 1572
+at = [1432, 33.9, 51.0]
+text = "Entrégasela al maestro de grifos Thorgrum."
+if = { race = ["Gnome", "Dwarf"] }
+status = "unverified"
+sources = ["questie:quest/6387"]
+
+[[step]]
+id = "a12lm-026"
+do = "accept"
+quest = 6391
+npc = 1572
+at = [1432, 33.9, 51.0]
+text = "Coge el vuelo a Forjaz, pero no vueles todavía: lo usarás al 14."
+if = { race = ["Gnome", "Dwarf"] }
+status = "unverified"
+sources = ["questie:quest/6391"]
+
+[[step]]
+id = "a12lm-027"
+do = "accept"
+quest = 86614
+at = [1432, 45.7, 43.3]
+text = "En la orilla al este de Thelsamar hay una caja de pesca tirada: ábrela y coge la misión."
+optional = true
+status = "unverified"
+sources = ["questie:quest/86614", "questie:object/665289"]
+
+[[step]]
+id = "a12lm-028"
+do = "turnin"
+quest = 86614
+npc = 1684
+at = [1432, 40.3, 39.3]
+text = "Devuelve el pasador de plata a Khara Deepwater, en la casa junto al lago."
+optional = true
+status = "unverified"
+sources = ["questie:quest/86614", "questie:npc/1684"]
+
+[[step]]
+id = "a12lm-029"
+do = "turnin"
+quest = 1339
+npc = 1343
+at = [1432, 24.8, 18.4]
+text = "Ve al norte, a la torre junto a Dun Algaz. Habla con el Montañero Stormpike."
+status = "unverified"
+sources = ["questie:quest/1339", "questie:npc/1343"]
+
+[[step]]
+id = "a12lm-030"
+do = "accept"
+quest = 307
+npc = 1343
+at = [1432, 24.8, 18.4]
+text = "Coge la misión del equipo de minero."
+status = "unverified"
+sources = ["questie:quest/307"]
+
+[[step]]
+id = "a12lm-031"
+do = "accept"
+quest = 1338
+npc = 1343
+at = [1432, 24.8, 18.4]
+text = "Coge también el encargo para Ventormenta: lo entregarás al llegar allí."
+status = "unverified"
+sources = ["questie:quest/1338"]
+
+[[step]]
+id = "a12lm-032"
+do = "complete"
+quest = 307
+at = [1432, 35.5, 24.8]
+text = "Entra en la mina Arroyoplata y recoge 4 cargas de equipo de minero de las cajas."
+tip = "Mata ratas del túnel mientras tanto: sus orejas son para Kadrell."
+status = "unverified"
+sources = ["questie:quest/307", "questie:object/271"]
+
+[[step]]
+id = "a12lm-033"
+do = "complete"
+quest = 416
+at = [1432, 35.8, 25.1]
+text = "Termina las 12 orejas de rata del túnel dentro y alrededor de la mina."
+status = "unverified"
+sources = ["questie:quest/416"]
+
+[[step]]
+id = "a12lm-034"
+do = "turnin"
+quest = 86667
+npc = 258043
+at = [1432, 41.8, 19.1]
+text = "Lleva el tarro de nieve a Norric Lochthane, en su casa de la orilla noroeste del lago."
+status = "unverified"
+sources = ["questie:quest/86667", "questie:npc/258043"]
+
+[[step]]
+id = "a12lm-035"
+do = "turnin"
+quest = 307
+npc = 1343
+at = [1432, 24.8, 18.4]
+text = "Vuelve con Stormpike y entrega el equipo de minero."
+status = "unverified"
+sources = ["questie:quest/307"]
+
+[[step]]
+id = "a12lm-036"
+do = "complete"
+quest = 418
+at = [1432, 30.6, 33.2]
+text = "Completa las salchichas: carne de oso, intestinos de jabalí e icor de araña en el oeste de la zona."
+status = "unverified"
+sources = ["questie:quest/418"]
+
+[[step]]
+id = "a12lm-037"
+do = "turnin"
+quest = 416
+npc = 1340
+at = [1432, 32.6, 49.7]
+text = "En Thelsamar, entrega las orejas a Kadrell."
+status = "unverified"
+sources = ["questie:quest/416"]
+
+[[step]]
+id = "a12lm-038"
+do = "turnin"
+quest = 418
+npc = 1963
+at = [1432, 34.8, 49.3]
+text = "Entrega las salchichas a Vidra."
+status = "unverified"
+sources = ["questie:quest/418"]
+
+[[step]]
+id = "a12lm-039"
+do = "accept"
+quest = 436
+npc = 1105
+at = [1432, 37.2, 47.4]
+text = "Coge con Jern Hornhelm la misión que te lleva a la excavación de Ironband."
+status = "unverified"
+sources = ["questie:quest/436", "questie:npc/1105"]
+
+[[step]]
+id = "a12lm-040"
+do = "accept"
+quest = 298
+npc = 1344
+at = [1432, 65.9, 65.6]
+text = "Ve al este, a la excavación de Ironband. Coge el informe del Prospector Ironband."
+status = "unverified"
+sources = ["questie:quest/298", "questie:npc/1344"]
+
+[[step]]
+id = "a12lm-041"
+do = "turnin"
+quest = 436
+npc = 1345
+at = [1432, 64.9, 66.7]
+text = "Entrega a Magmar Fellhew, al lado."
+status = "unverified"
+sources = ["questie:quest/436", "questie:npc/1345"]
+
+[[step]]
+id = "a12lm-042"
+do = "accept"
+quest = 297
+npc = 1345
+at = [1432, 64.9, 66.7]
+text = "Coge la misión de los ídolos de piedra."
+status = "unverified"
+sources = ["questie:quest/297"]
+
+[[step]]
+id = "a12lm-043"
+do = "accept"
+quest = 385
+npc = 1154
+at = [1432, 81.8, 61.7]
+text = "Sigue al este hasta el Refugio de los Zancaalta. Coge la misión de crocoliscos de Marek Ironheart."
+status = "unverified"
+sources = ["questie:quest/385", "questie:npc/1154"]
+
+[[step]]
+id = "a12lm-044"
+do = "accept"
+quest = 86758
+npc = 1154
+at = [1432, 81.8, 61.7]
+text = "Coge también la del cuchillo de Marek (el crocolisco Daggerfang)."
+status = "unverified"
+sources = ["questie:quest/86758"]
+
+[[step]]
+id = "a12lm-045"
+do = "accept"
+quest = 257
+npc = 1187
+at = [1432, 83.5, 65.5]
+text = "Coge el reto de Daryl el Joven: 6 buitres en 15 minutos."
+tip = "Los buitres están al sur y oeste del refugio. Si no te da tiempo, la vuelves a coger."
+status = "unverified"
+sources = ["questie:quest/257", "questie:npc/1187"]
+
+[[step]]
+id = "a12lm-046"
+do = "complete"
+quest = 257
+at = [1432, 76.8, 70.5]
+text = "Mata 6 buitres de montaña y vuelve a tiempo."
+status = "unverified"
+sources = ["questie:quest/257"]
+
+[[step]]
+id = "a12lm-047"
+do = "turnin"
+quest = 257
+npc = 1187
+at = [1432, 83.5, 65.5]
+text = "Entrega a Daryl."
+status = "unverified"
+sources = ["questie:quest/257"]
+
+[[step]]
+id = "a12lm-048"
+do = "accept"
+quest = 258
+npc = 1187
+at = [1432, 83.5, 65.5]
+text = "Coge el segundo reto: 5 jabalíes ancianos en 12 minutos."
+optional = true
+tip = "Los jabalíes están al norte (65, 40). Sáltala si te queda lejos."
+status = "unverified"
+sources = ["questie:quest/258"]
+
+[[step]]
+id = "a12lm-049"
+do = "complete"
+quest = 297
+at = [1432, 70.0, 64.0]
+text = "Mata troggs en la excavación hasta tener 8 ídolos de piedra tallada."
+tip = "Abre de paso las herramientas de excavación del suelo: una inicia otra misión."
+status = "unverified"
+sources = ["questie:quest/297"]
+
+[[step]]
+id = "a12lm-050"
+do = "accept"
+quest = 86613
+item = 278049
+at = [1432, 69.5, 66.7]
+text = "Recoge unas herramientas de excavación del suelo de la excavación: empiezan una misión."
+status = "unverified"
+sources = ["questie:quest/86613", "questie:object/665282"]
+
+[[step]]
+id = "a12lm-051"
+do = "complete"
+quest = 86613
+at = [1432, 69.5, 66.7]
+text = "Recoge 6 herramientas de excavación por la cantera."
+status = "unverified"
+sources = ["questie:quest/86613"]
+
+[[step]]
+id = "a12lm-052"
+do = "turnin"
+quest = 297
+npc = 1345
+at = [1432, 64.9, 66.7]
+text = "Entrega los ídolos a Fellhew."
+status = "unverified"
+sources = ["questie:quest/297"]
+
+[[step]]
+id = "a12lm-053"
+do = "turnin"
+quest = 86613
+npc = 1344
+at = [1432, 65.9, 65.6]
+text = "Entrega las herramientas a Ironband."
+status = "unverified"
+sources = ["questie:quest/86613"]
+
+[[step]]
+id = "a12lm-054"
+do = "complete"
+quest = 385
+at = [1432, 56.1, 39.3]
+wps = [[1432, 62.0, 43.8, "Daggerfang (en la orilla)"]]
+text = "En la orilla este del lago, mata crocoliscos: 5 carnes y 6 pieles. Busca también a Daggerfang."
+tip = "Daggerfang suelta el cuchillo de Marek."
+status = "unverified"
+sources = ["questie:quest/385", "questie:quest/86758"]
+
+[[step]]
+id = "a12lm-055"
+do = "complete"
+quest = 86758
+at = [1432, 62.0, 43.8]
+text = "Mata a Daggerfang y coge el cuchillo de Marek."
+status = "unverified"
+sources = ["questie:quest/86758"]
+
+[[step]]
+id = "a12lm-056"
+do = "complete"
+quest = 258
+at = [1432, 65.4, 39.6]
+text = "Si llevas el reto, mata 5 jabalíes de montaña ancianos."
+optional = true
+status = "unverified"
+sources = ["questie:quest/258"]
+
+[[step]]
+id = "a12lm-057"
+do = "turnin"
+quest = 385
+npc = 1154
+at = [1432, 81.8, 61.7]
+text = "Vuelve al refugio y entrega a Marek."
+status = "unverified"
+sources = ["questie:quest/385"]
+
+[[step]]
+id = "a12lm-058"
+do = "turnin"
+quest = 86758
+npc = 1154
+at = [1432, 81.8, 61.7]
+text = "Entrégale también su cuchillo."
+status = "unverified"
+sources = ["questie:quest/86758"]
+
+[[step]]
+id = "a12lm-059"
+do = "turnin"
+quest = 258
+npc = 1187
+at = [1432, 83.5, 65.5]
+text = "Entrega el segundo reto a Daryl."
+optional = true
+status = "unverified"
+sources = ["questie:quest/258"]
+
+[[step]]
+id = "a12lm-060"
+do = "hearth"
+zone = 1432
+text = "Usa la piedra de hogar para volver a Thelsamar."
+status = "unverified"
+sources = ["questie:npc/6734"]
+
+[[step]]
+id = "a12lm-061"
+do = "turnin"
+quest = 298
+npc = 1105
+at = [1432, 37.2, 47.4]
+text = "Entrega el informe de Ironband a Jern Hornhelm."
+status = "unverified"
+sources = ["questie:quest/298"]
+
+[[step]]
+id = "a12lm-062"
+do = "accept"
+quest = 301
+npc = 1105
+at = [1432, 37.2, 47.4]
+text = "Coge la misión que te manda a Forjaz."
+status = "unverified"
+sources = ["questie:quest/301"]
+
+[[step]]
+id = "a12lm-063"
+do = "fly"
+npc = 1572
+at = [1432, 33.9, 51.0]
+zone = 1455
+text = "Vuela a Forjaz."
+tip = "Gnomos y enanos: este es el vuelo de la misión de Brock."
+status = "unverified"
+sources = ["questie:npc/1572"]
+
+[[step]]
+id = "a12lm-064"
+do = "turnin"
+quest = 6391
+npc = 4256
+at = [1455, 51.5, 26.3]
+text = "Entrega la lista a Golnir Bouldertoe, en la Gran Fundición."
+if = { race = ["Gnome", "Dwarf"] }
+status = "unverified"
+sources = ["questie:quest/6391", "questie:npc/4256"]
+
+[[step]]
+id = "a12lm-065"
+do = "accept"
+quest = 6388
+npc = 4256
+at = [1455, 51.5, 26.3]
+text = "Coge los picos honorarios."
+if = { race = ["Gnome", "Dwarf"] }
+status = "unverified"
+sources = ["questie:quest/6388"]
+
+[[step]]
+id = "a12lm-066"
+do = "train"
+spells = [755, 704, 689]
+npc = 5172
+at = [1455, 50.4, 5.7]
+text = "Brujo: entrena en la Caverna Abandonada (niveles 12 y 14): Cauce de salud, Maldición de temeridad y Drenar vida."
+tip = "Si aún eres 13, entrena lo del 12 y vuelve al 14 cuando pases por Forjaz para Hall of Thanes."
+if = { class = ["WARLOCK"] }
+status = "unverified"
+sources = ["questie:npc/5172", "knowledge:warlock-spells"]
+
+[[step]]
+id = "a12lm-067"
+do = "train"
+spells = [604, 130, 1449]
+npc = 5144
+at = [1455, 27.3, 8.3]
+text = "Mago: entrena en la Sala Mística (niveles 12 y 14): Empapar magia, Caída lenta y Deflagración Arcana."
+tip = "Si aún eres 13, entrena lo del 12 y vuelve al 14 cuando pases por Forjaz para Hall of Thanes."
+if = { class = ["MAGE"] }
+status = "unverified"
+sources = ["questie:npc/5144", "knowledge:mage-spells"]
+
+[[step]]
+id = "a12lm-068"
+do = "turnin"
+quest = 301
+npc = 1356
+at = [1455, 74.6, 11.7]
+text = "Entrega el informe al Prospector Stormpike, en la Sala de los Exploradores."
+status = "unverified"
+sources = ["questie:quest/301", "questie:npc/1356"]
+
+[[step]]
+id = "a12lm-069"
+do = "accept"
+quest = 302
+npc = 1356
+at = [1455, 74.6, 11.7]
+text = "Coge la pólvora para Ironband."
+status = "unverified"
+sources = ["questie:quest/302"]
+
+[[step]]
+id = "a12lm-070"
+do = "turnin"
+quest = 6388
+npc = 1573
+at = [1455, 55.5, 47.7]
+text = "Entrega los picos al maestro de grifos Gryth Thurden."
+if = { race = ["Gnome", "Dwarf"] }
+status = "unverified"
+sources = ["questie:quest/6388"]
+
+[[step]]
+id = "a12lm-071"
+do = "accept"
+quest = 6392
+npc = 1573
+at = [1455, 55.5, 47.7]
+text = "Coge la vuelta con Brock."
+if = { race = ["Gnome", "Dwarf"] }
+status = "unverified"
+sources = ["questie:quest/6392"]
+
+[[step]]
+id = "a12lm-072"
+do = "note"
+text = "Profesiones: si tienes Sastrería o Encantamiento, sube rangos ahora (Jormund Stonebrow 43.2, 29.4; Gimble Thistlefuzz 59.8, 45.5). Haz madejas de lino."
+tip = "Guarda el lino: 20 madejas dan Favor de mercader en Tres Caminos (Crestagrana)."
+optional = true
+status = "unverified"
+sources = ["questie:npc/5153", "questie:npc/5157", "knowledge:duo-14-18"]
+
+[[step]]
+id = "a12lm-073"
+do = "fly"
+npc = 1573
+at = [1455, 55.5, 47.7]
+zone = 1432
+text = "Vuela de vuelta a Thelsamar."
+status = "unverified"
+sources = ["questie:npc/1573"]
+
+[[step]]
+id = "a12lm-074"
+do = "turnin"
+quest = 6392
+npc = 1681
+at = [1432, 37.0, 47.8]
+text = "Entrega los picos a Brock Stoneseeker."
+if = { race = ["Gnome", "Dwarf"] }
+status = "unverified"
+sources = ["questie:quest/6392"]
+
+[[step]]
+id = "a12lm-075"
+do = "turnin"
+quest = 302
+npc = 1105
+at = [1432, 37.2, 47.4]
+text = "Habla con Jern Hornhelm."
+status = "unverified"
+sources = ["questie:quest/302"]
+
+[[step]]
+id = "a12lm-076"
+do = "accept"
+quest = 273
+npc = 1105
+at = [1432, 37.2, 47.4]
+text = "Coge el reabastecimiento de la excavación."
+status = "unverified"
+sources = ["questie:quest/273"]
+
+[[step]]
+id = "a12lm-077"
+do = "turnin"
+quest = 273
+npc = 2057
+at = [1432, 52.2, 69.3]
+text = "Ve al sur del lago y habla con Huldar junto al carro emboscado."
+status = "unverified"
+sources = ["questie:quest/273", "questie:npc/2057"]
+
+[[step]]
+id = "a12lm-078"
+do = "accept"
+quest = 454
+npc = 2057
+at = [1432, 52.2, 69.3]
+text = "Coge la misión de Huldar."
+tip = "Al aceptarla aparecen enanos Hierro Negro que atacan el carro: mátalos."
+status = "unverified"
+sources = ["questie:quest/454"]
+
+[[step]]
+id = "a12lm-079"
+do = "turnin"
+quest = 454
+npc = 1379
+at = [1432, 52.2, 69.4]
+text = "Habla con Miran."
+status = "unverified"
+sources = ["questie:quest/454", "questie:npc/1379"]
+
+[[step]]
+id = "a12lm-080"
+do = "accept"
+quest = 309
+npc = 1379
+at = [1432, 52.2, 69.4]
+text = "Escolta a Miran y el cargamento hasta la excavación."
+status = "unverified"
+sources = ["questie:quest/309"]
+
+[[step]]
+id = "a12lm-081"
+do = "turnin"
+quest = 309
+npc = 1344
+at = [1432, 65.9, 65.6]
+text = "Al llegar, informa al Prospector Ironband."
+status = "unverified"
+sources = ["questie:quest/309"]
+
+[[step]]
+id = "a12lm-082"
+do = "complete"
+quest = 237
+at = [1432, 35.5, 83.0]
+text = "Ve al valle Pedrastilla, al sur: mata 10 machacacráneos y 10 videntes Pedrastilla."
+tip = "Es la zona más dura de Loch Modan: tira de uno en uno. Mata también chamanes y rompehuesos: no cuentan aún, pero dan experiencia."
+status = "unverified"
+sources = ["questie:quest/237"]
+
+[[step]]
+id = "a12lm-082b"
+do = "turnin"
+quest = 237
+npc = 1091
+at = [1432, 23.5, 76.4]
+text = "Vuelve a la torre del sur y entrega a Gravelgaw."
+status = "unverified"
+sources = ["questie:quest/237"]
+
+[[step]]
+id = "a12lm-083"
+do = "accept"
+quest = 263
+npc = 1090
+at = [1432, 23.5, 74.5]
+text = "Coge la misión del Montañero Wallbang (chamanes y rompehuesos)."
+status = "unverified"
+sources = ["questie:quest/263", "questie:npc/1090"]
+
+[[step]]
+id = "a12lm-084"
+do = "accept"
+quest = 86585
+npc = 269153
+at = [1432, 31.8, 86.3]
+text = "En la entrada del valle, coge la misión de la Montañera Ylva."
+status = "unverified"
+sources = ["questie:quest/86585", "questie:npc/269153"]
+
+[[step]]
+id = "a12lm-085"
+do = "complete"
+quest = 263
+at = [1432, 37.5, 88.0]
+text = "Mata 10 chamanes y 10 rompehuesos Pedrastilla en el valle."
+status = "unverified"
+sources = ["questie:quest/263"]
+
+[[step]]
+id = "a12lm-086"
+do = "complete"
+quest = 86585
+at = [1432, 31.0, 85.0]
+text = "Alza el estandarte de Forjaz para llamar al trogg Headsplitter y mátalo."
+status = "unverified"
+sources = ["questie:quest/86585"]
+
+[[step]]
+id = "a12lm-087"
+do = "turnin"
+quest = 263
+npc = 1090
+at = [1432, 23.5, 74.5]
+text = "Vuelve a la torre y entrega a Wallbang."
+status = "unverified"
+sources = ["questie:quest/263"]
+
+[[step]]
+id = "a12lm-088"
+do = "turnin"
+quest = 86585
+npc = 1092
+at = [1432, 23.2, 73.7]
+text = "Entrega el estandarte al Capitán Rugelfuss."
+status = "unverified"
+sources = ["questie:quest/86585"]
+
+[[step]]
+id = "a12lm-089"
+do = "accept"
+quest = 217
+npc = 1092
+at = [1432, 23.2, 73.7]
+text = "Coge la misión de Grawmug y sus dos guardias."
+optional = true
+tip = "Grawmug está al fondo del valle (35, 90) con dos escoltas. Con grupo es fácil; solo, separa uno con Miedo o Polimorfia."
+status = "unverified"
+sources = ["questie:quest/217"]
+
+[[step]]
+id = "a12lm-090"
+do = "complete"
+quest = 217
+at = [1432, 34.8, 90.5]
+text = "Mata a Grawmug, Gnasher y Brawler."
+optional = true
+status = "unverified"
+sources = ["questie:quest/217"]
+
+[[step]]
+id = "a12lm-091"
+do = "turnin"
+quest = 217
+npc = 1092
+at = [1432, 23.2, 73.7]
+text = "Entrega a Rugelfuss."
+optional = true
+status = "unverified"
+sources = ["questie:quest/217"]
+
+[[step]]
+id = "a12lm-092"
+do = "level"
+level = 16
+text = "Deberías estar cerca del 16. Si te falta poco, mata troggs del valle hasta subir."
+tip = "Hall of Thanes da mucha experiencia (sus misiones y +50% por enemigo de mazmorra desde el 8 de noviembre)."
+status = "unverified"
+sources = ["knowledge:warlock-bracket-10-19"]

@@ -1,0 +1,23 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Duo.lua, ns.DUO.BRACKETS, tramo 22-30). Tramo por el nivel más bajo de los dos.
+id = "duo-22-30"
+class = "ANY"
+kind = "page"
+title = "Niveles 22-30: Humedales y Bosque del Ocaso"
+levels = [22, 30]
+order = 360
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "cita:Manual del Mago Gnomo (sección «En pareja»)", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Dónde"
+body = """
+- **Los Humedales:** mazmorra nueva Excavation Site (24-29), con cadenas desde Menethil, Crestagrana y Vallefresno.
+- **Bosque del Ocaso** (Villa Oscura): misiones de no-muertos y huargen. Ojo: la Polimorfia no funciona en no-muertos; ahí el Abisario aguanta y el mago usa la Nova.
+- **Montañas Crestagrana:** la Torre de Ilgalar (misión de clase del mago, Tratado de Ur) y las misiones de orcos.
+- **Mazmorra:** Cavernas de Brazanegra (Vallefresno): Cetro de lápida (varita) para los dos."""
+
+[[block]]
+heading = "Táctica"
+body = """
+Desde el 22 el mago tiene Lanza de hielo: Nova, os alejáis los dos y Lanza. El brujo se queda con el Abisario delante y drena."""

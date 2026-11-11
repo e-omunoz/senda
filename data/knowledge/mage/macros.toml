@@ -1,0 +1,117 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua, MG.MACROS). Nombres renombrados de MG_* a SND_*.
+# Mismo formato y marcadores que data/knowledge/warlock/macros.toml ({id}, {hs}, {n:Nombre}).
+# Nota: SND_Piedra existe también en el brujo; las dos versiones son para clases distintas y no coinciden en el mismo personaje.
+id = "mage-macros"
+class = "MAGE"
+kind = "macros"
+title = "Macros del mago"
+order = 90
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+note = "Cuerpos copiados tal cual de la fuente. Lanza de hielo y Bloqueo de hielo van por nombre ({n:...}) porque su id en Forever no se conoce."
+
+[[macro]]
+name = "SND_Piedra"
+legacy = "MG_Piedra"
+icon = "item:5512"
+minlevel = 1
+body = """
+#showtooltip item:{hs}
+/use item:{hs}"""
+fallbacks = ["""
+#showtooltip
+/use item:19013
+/use item:19012
+/use item:9421
+/use item:19011
+/use item:19010
+/use item:5510
+/use item:19009
+/use item:19008
+/use item:5509
+/use item:19007
+/use item:19006
+/use item:5511
+/use item:19005
+/use item:19004
+/use item:5512"""]
+note = "Usa la Piedra de salud que te dé tu compañero brujo."
+
+[[macro]]
+name = "SND_Conjurar"
+legacy = "MG_Conjurar"
+icon = "spell:5504"
+minlevel = 4
+body = """
+#showtooltip
+/cast [mod:alt] {587}; {5504}"""
+fallbacks = ["""
+#showtooltip {5504}
+/cast {5504}"""]
+note = "Conjura agua; con Alt, comida (la comida llega al 6)."
+
+[[macro]]
+name = "SND_Varita"
+legacy = "MG_Varita"
+icon = "spell:5019"
+minlevel = 5
+body = """
+#showtooltip
+/cast !{5019}"""
+note = "Dispara la varita sin cortarla."
+
+[[macro]]
+name = "SND_Poli"
+legacy = "MG_Poli"
+icon = "spell:118"
+minlevel = 8
+body = """
+#showtooltip {118}
+/cast [@focus,harm,nodead][] {118}"""
+note = "Polimorfia a tu foco si tienes; si no, a tu objetivo. Usa /focus en el segundo enemigo."
+
+[[macro]]
+name = "SND_Lanza"
+legacy = "MG_Lanza"
+icon = "name:Lanza de hielo"
+minlevel = 22
+body = """
+#showtooltip {n:Lanza de hielo}
+/cast [@mouseover,harm,nodead][] {n:Lanza de hielo}"""
+note = "Lanza de hielo al enemigo bajo el ratón o a tu objetivo."
+
+[[macro]]
+name = "SND_Contra"
+legacy = "MG_Contra"
+icon = "spell:2139"
+minlevel = 24
+body = """
+#showtooltip {2139}
+/stopcasting
+/cast [@focus,harm,nodead][] {2139}"""
+note = "Corta lo que estés lanzando y usa Contrahechizo en el foco o el objetivo."
+
+[[macro]]
+name = "SND_Bloque"
+legacy = "MG_Bloque"
+icon = "name:Bloqueo de hielo"
+minlevel = 25
+body = """
+#showtooltip {n:Bloqueo de hielo}
+/stopcasting
+/cancelaura {n:Bloqueo de hielo}
+/cast {n:Bloqueo de hielo}"""
+note = "Bloqueo de hielo; si ya estás dentro, lo cancela. Bloqueo de hielo es un talento (11958 en Classic)."
+
+[[macro]]
+name = "SND_Gema"
+legacy = "MG_Gema"
+icon = "item:5514"
+minlevel = 28
+body = """
+#showtooltip
+/use item:8008
+/use item:8007
+/use item:5513
+/use item:5514"""
+note = "Usa la mejor gema de maná que lleves."

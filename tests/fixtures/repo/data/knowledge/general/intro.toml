@@ -1,0 +1,14 @@
+id = "general-intro"
+class = "ANY"
+kind = "page"
+title = "Introducción"
+status = "verified"
+sources = ["https://example.org"]
+checked = 2026-11-01
+
+[[block]]
+heading = "Zonas"
+body = """
+Texto con **negrita**.
+- lista
+"""

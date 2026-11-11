@@ -1,0 +1,458 @@
+# Ruta compartida de Alianza (brujo gnomo y mago humano), 45-60. Generada con QuestieDB local; textos propios.
+id = "a58-eastern-plaguelands"
+title = "Tierras de la Peste del Este"
+levels = [58, 60]
+map = 1423
+summary = "Tirion Fordring, Darrowshire y la Capilla de la Esperanza de la Luz. Piedra en la capilla. Mazmorras de 58-60 opcionales."
+
+[[step]]
+id = "a58-eastern-plaguelands-001"
+do = "goto"
+at = [1423, 5.2, 35.6]
+text = "Cruza el río Thondroril hacia el este hasta la cabaña de Tirion Fordring."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+
+[[step]]
+id = "a58-eastern-plaguelands-002"
+do = "accept"
+quest = 5542
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Coge la misión de los perros demonio de Tirion."
+status = "unverified"
+sources = ["questie:quest/5542", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-003"
+do = "accept"
+quest = 5543
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Coge la de los murciélagos de la Plaga."
+status = "unverified"
+sources = ["questie:quest/5543", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-004"
+do = "accept"
+quest = 5544
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Coge la de la carne de larva carroñera."
+status = "unverified"
+sources = ["questie:quest/5544", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-005"
+do = "complete"
+quest = 5543
+at = [1423, 31.1, 65.2]
+text = "Mata 30 murciélagos de la Plaga mientras bajas hacia Darrowshire."
+status = "unverified"
+sources = ["questie:quest/5543", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-006"
+do = "complete"
+quest = 5542
+at = [1423, 26.2, 61.6]
+text = "Mata 20 cachorros, 5 canes y 5 canes frenéticos de la Plaga por el oeste y el centro."
+status = "unverified"
+sources = ["questie:quest/5542", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-007"
+do = "complete"
+quest = 5544
+at = [1423, 40.8, 58.6]
+text = "Mata larvas y devoradores carroñeros hasta tener 15 trozos de carne."
+status = "unverified"
+sources = ["questie:quest/5544", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-008"
+do = "turnin"
+quest = 5142
+npc = 10926
+at = [1423, 31.1, 78.0]
+text = "En Darrowshire, al sur, habla con el espíritu de Pamela Redpath."
+status = "unverified"
+sources = ["questie:quest/5142", "questie:npc/10926", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-009"
+do = "accept"
+quest = 5149
+npc = 10926
+at = [1423, 31.1, 78.0]
+text = "Coge la misión de la muñeca de Pamela."
+status = "unverified"
+sources = ["questie:quest/5149", "questie:npc/10926", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-010"
+do = "complete"
+quest = 5149
+at = [1423, 33.0, 80.0]
+text = "Busca la muñeca en los montones de escombros de las casas de Darrowshire."
+tip = "Al abrir cada montón sale un fantasma: mátalo y mira el siguiente."
+status = "unverified"
+sources = ["questie:quest/5149", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+note = "Coordenada aproximada de las casas: la base de datos no la da."
+
+[[step]]
+id = "a58-eastern-plaguelands-011"
+do = "turnin"
+quest = 5149
+npc = 10926
+at = [1423, 31.1, 78.0]
+text = "Dale la muñeca a Pamela."
+status = "unverified"
+sources = ["questie:quest/5149", "questie:npc/10926", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-012"
+do = "accept"
+quest = 5241
+npc = 10926
+at = [1423, 31.1, 78.0]
+text = "Coge la misión de buscar a su tío Carlin (Esperanza de la Luz)."
+status = "unverified"
+sources = ["questie:quest/5241", "questie:npc/10926", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-013"
+do = "goto"
+at = [1423, 71.8, 49.6]
+text = "Cruza la zona hacia el este hasta la Capilla de la Esperanza de la Luz."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+
+[[step]]
+id = "a58-eastern-plaguelands-014"
+do = "getfp"
+npc = 12617
+node = "Light's Hope Chapel"
+at = [1423, 71.8, 49.6]
+text = "Coge la ruta de vuelo de la capilla."
+status = "unverified"
+sources = ["questie:npc/12617", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-015"
+do = "sethearth"
+npc = 16256
+at = [1423, 71.8, 48.5]
+text = "Pon la piedra de hogar en la posada de la capilla."
+status = "unverified"
+sources = ["questie:npc/16256", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-016"
+do = "turnin"
+quest = 6030
+npc = 11039
+at = [1423, 71.6, 50.1]
+text = "Entrega el libro al duque Nicholas Zverenhoff."
+status = "unverified"
+sources = ["questie:quest/6030", "questie:npc/11039", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-017"
+do = "turnin"
+quest = 5241
+npc = 11063
+at = [1423, 71.7, 50.0]
+text = "Entrega la misión a Carlin Redpath."
+status = "unverified"
+sources = ["questie:quest/5241", "questie:npc/11063", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-018"
+do = "accept"
+quest = 5211
+npc = 11063
+at = [1423, 71.7, 50.0]
+text = "Coge la misión de liberar a los espíritus de Darrowshire."
+status = "unverified"
+sources = ["questie:quest/5211", "questie:npc/11063", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-019"
+do = "accept"
+quest = 6021
+npc = 11038
+at = [1423, 69.9, 53.7]
+text = "Coge la misión contra Zaeldarr el Proscrito."
+status = "unverified"
+sources = ["questie:quest/6021", "questie:npc/11038", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-020"
+do = "turnin"
+quest = 5245
+npc = 10304
+at = [1423, 46.5, 16.0]
+text = "Ve a la Torre del Paso Norte y dale los fragmentos de Kel'Theril a Aurora Skycaller."
+status = "unverified"
+sources = ["questie:quest/5245", "questie:npc/10304", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-021"
+do = "complete"
+quest = 5211
+at = [1423, 30.0, 30.0]
+text = "Mata a la Plaga de la zona y libera 15 espíritus de Darrowshire; hay muchos en el norte y el oeste."
+status = "unverified"
+sources = ["questie:quest/5211", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+note = "Los espíritus aparecen por toda la zona: coordenada orientativa."
+
+[[step]]
+id = "a58-eastern-plaguelands-022"
+do = "goto"
+at = [1423, 5.2, 35.6]
+text = "Vuelve a la cabaña de Tirion."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+
+[[step]]
+id = "a58-eastern-plaguelands-023"
+do = "turnin"
+quest = 5542
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Entrega los perros demonio a Tirion."
+status = "unverified"
+sources = ["questie:quest/5542", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-024"
+do = "turnin"
+quest = 5543
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Entrega los murciélagos."
+status = "unverified"
+sources = ["questie:quest/5543", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-025"
+do = "turnin"
+quest = 5544
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Entrega la carne de larva."
+status = "unverified"
+sources = ["questie:quest/5544", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-026"
+do = "accept"
+quest = 5742
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Coge la misión de la redención."
+status = "unverified"
+sources = ["questie:quest/5742", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-027"
+do = "complete"
+quest = 5742
+at = [1423, 5.2, 35.6]
+text = "Escucha la historia de Tirion hasta el final."
+status = "unverified"
+sources = ["questie:quest/5742", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-028"
+do = "turnin"
+quest = 5742
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Habla con Tirion para terminarla."
+status = "unverified"
+sources = ["questie:quest/5742", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-029"
+do = "accept"
+quest = 5781
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Coge la misión del martillo de Taelan."
+status = "unverified"
+sources = ["questie:quest/5781", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-030"
+do = "complete"
+quest = 5781
+at = [1423, 23.9, 74.2]
+text = "En la Cripta Baja (suroeste), invoca a los guardianes y recupera el martillo de Taelan."
+tip = "Salen varias oleadas seguidas: mejor en pareja y con el maná lleno."
+status = "unverified"
+sources = ["questie:quest/5781", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-031"
+do = "complete"
+quest = 6021
+at = [1423, 23.1, 72.6]
+text = "En la misma Cripta Baja mata a Zaeldarr y coge su cabeza."
+status = "unverified"
+sources = ["questie:quest/6021", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-032"
+do = "turnin"
+quest = 5781
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Lleva el martillo a Tirion."
+status = "unverified"
+sources = ["questie:quest/5781", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-033"
+do = "accept"
+quest = 5845
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Opcional: coge la siguiente parte (el símbolo del honor perdido, en Northdale)."
+optional = true
+status = "unverified"
+sources = ["questie:quest/5845", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-034"
+do = "complete"
+quest = 5845
+at = [1423, 70.0, 16.0]
+text = "Recupera el símbolo del honor perdido en el estanque de Northdale (noreste)."
+optional = true
+status = "unverified"
+sources = ["questie:quest/5845", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+note = "Coordenada aproximada de Northdale."
+
+[[step]]
+id = "a58-eastern-plaguelands-035"
+do = "turnin"
+quest = 5845
+npc = 1855
+at = [1423, 5.2, 35.6]
+text = "Entrega el símbolo a Tirion."
+optional = true
+status = "unverified"
+sources = ["questie:quest/5845", "questie:npc/1855", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-036"
+do = "hearth"
+zone = 1423
+text = "Usa la piedra para volver a la Capilla de la Esperanza de la Luz."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+
+[[step]]
+id = "a58-eastern-plaguelands-037"
+do = "turnin"
+quest = 5211
+npc = 11063
+at = [1423, 71.7, 50.0]
+text = "Entrega los espíritus a Carlin."
+status = "unverified"
+sources = ["questie:quest/5211", "questie:npc/11063", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-038"
+do = "turnin"
+quest = 6021
+npc = 11038
+at = [1423, 69.9, 53.7]
+text = "Entrega la cabeza de Zaeldarr al cuidador Alen."
+status = "unverified"
+sources = ["questie:quest/6021", "questie:npc/11038", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a58-eastern-plaguelands-039"
+do = "dungeon"
+quests = [5533]
+at = [1422, 69.4, 73.0]
+text = "Opcional (58-60): Scholomance, en Darrowshire (oeste). Necesita la llave de la cadena del alquimista Arbington."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/dungeons/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "questie:quest/5533"]
+checked = "2026-11-11"
+note = "Entrada aproximada (Isla de Caer Darrow)."
+
+[[step]]
+id = "a58-eastern-plaguelands-040"
+do = "dungeon"
+at = [1423, 27.0, 11.5]
+text = "Opcional (58-60): Stratholme, al norte de esta zona. Buenas misiones del Alba Argenta para equipo de banda."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/dungeons/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+note = "Entrada aproximada."
+
+[[step]]
+id = "a58-eastern-plaguelands-041"
+do = "dungeon"
+text = "Opcional (55-60): Blackmaw Hold, mazmorra nueva de Forever en Azshara."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/dungeons/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+note = "Sin misiones en la base de datos local; entrada sin confirmar."
+
+[[step]]
+id = "a58-eastern-plaguelands-042"
+do = "dungeon"
+text = "Opcional (58-60): Terraza del Modelador, mazmorra nueva de Forever en el Cráter de Un'Goro."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/dungeons/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+note = "Sin misiones en la base de datos local; entrada sin confirmar."
+
+[[step]]
+id = "a58-eastern-plaguelands-043"
+do = "level"
+level = 60
+text = "Llega al 60. Si te falta poco, remata con Scholomance, Stratholme o las misiones restantes de Cuna del Invierno."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/guides/dungeons/"]

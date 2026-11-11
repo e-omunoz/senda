@@ -1,0 +1,175 @@
+# Ruta compartida de Alianza (brujo gnomo y mago humano), 45-60. Generada con QuestieDB local; textos propios.
+id = "a49-hinterlands"
+title = "Tierras del Interior: Nido Aguileño"
+levels = [49, 50]
+map = 1425
+summary = "Trols Witherbark, la Roca Skulk y el tragan de Sprinkle. Al 50, a Forjaz a entrenar."
+
+[[step]]
+id = "a49-hinterlands-001"
+do = "fly"
+node = "Aerie Peak"
+zone = 1425
+text = "Vuela del Puesto del Torio al Nido Aguileño (Tierras del Interior)."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a49-hinterlands-002"
+do = "getfp"
+npc = 8018
+node = "Aerie Peak"
+at = [1425, 11.1, 46.1]
+text = "Coge la ruta de vuelo del Nido Aguileño si no la tienes."
+status = "unverified"
+sources = ["questie:npc/8018", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-003"
+do = "accept"
+quest = 2880
+npc = 7884
+at = [1425, 14.8, 44.6]
+text = "Coge la recompensa por collares de trol de Fraggar."
+status = "unverified"
+sources = ["questie:quest/2880", "questie:npc/7884", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-004"
+do = "accept"
+quest = 2877
+npc = 7884
+at = [1425, 14.8, 44.6]
+text = "Coge la limpieza de la Roca Skulk de Fraggar."
+status = "unverified"
+sources = ["questie:quest/2877", "questie:npc/7884", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-005"
+do = "accept"
+quest = 2988
+npc = 5636
+at = [1425, 9.8, 44.5]
+text = "Coge la misión de las jaulas Witherbark del maestro de grifos."
+status = "unverified"
+sources = ["questie:quest/2988", "questie:npc/5636", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-006"
+do = "complete"
+quest = 2988
+at = [1425, 23.3, 58.8]
+wps = [[1425, 32.0, 57.3, "Tercera jaula"]]
+text = "Revisa las tres jaulas de los poblados Witherbark del suroeste."
+status = "unverified"
+sources = ["questie:quest/2988", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-007"
+do = "complete"
+quest = 2641
+at = [1425, 40.6, 59.7]
+text = "Coge un tragan violeta del agua cercana a los poblados."
+status = "unverified"
+sources = ["questie:quest/2641", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-008"
+do = "complete"
+quest = 2880
+at = [1425, 46.2, 65.5]
+text = "Mata trols Witherbark hasta tener 5 collares tribales."
+status = "unverified"
+sources = ["questie:quest/2880", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-009"
+do = "complete"
+quest = 2877
+at = [1425, 51.7, 44.5]
+text = "En la Roca Skulk mata 10 lodos verdes y 10 cienos de jade."
+status = "unverified"
+sources = ["questie:quest/2877", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-010"
+do = "goto"
+at = [1425, 9.8, 44.5]
+text = "Vuelve al Nido Aguileño."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a49-hinterlands-011"
+do = "turnin"
+quest = 2988
+npc = 5636
+at = [1425, 9.8, 44.5]
+text = "Entrega las jaulas al maestro de grifos Talonaxe."
+status = "unverified"
+sources = ["questie:quest/2988", "questie:npc/5636", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-012"
+do = "accept"
+quest = 2989
+npc = 5636
+at = [1425, 9.8, 44.5]
+text = "Coge la misión del Altar de Zul."
+status = "unverified"
+sources = ["questie:quest/2989", "questie:npc/5636", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-013"
+do = "turnin"
+quest = 2880
+npc = 7884
+at = [1425, 14.8, 44.6]
+text = "Entrega los collares a Fraggar."
+status = "unverified"
+sources = ["questie:quest/2880", "questie:npc/7884", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-014"
+do = "turnin"
+quest = 2877
+npc = 7884
+at = [1425, 14.8, 44.6]
+text = "Entrega la Roca Skulk a Fraggar."
+status = "unverified"
+sources = ["questie:quest/2877", "questie:npc/7884", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a49-hinterlands-015"
+do = "complete"
+quest = 2989
+at = [1425, 48.0, 68.0]
+text = "Sube a lo alto del Altar de Zul, al sur, y vuelve."
+status = "unverified"
+sources = ["questie:quest/2989", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Coordenada aproximada del altar: la base de datos no la da."
+
+[[step]]
+id = "a49-hinterlands-016"
+do = "turnin"
+quest = 2989
+npc = 5636
+at = [1425, 9.8, 44.5]
+text = "Entrega el altar a Talonaxe."
+tip = "La continuación (Thadius, en Las Tierras Devastadas) no compensa el viaje: sáltala."
+status = "unverified"
+sources = ["questie:quest/2989", "questie:npc/5636", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"

@@ -1,0 +1,269 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Crafting.lua: ns.CRAFT.RANKS, ns.CRAFT.MATS, ns.CRAFT.SELLABLE, ns.CRAFT.ORDER).
+# [[rank]]: rangos de instructor. max = tope de habilidad; skill = habilidad mínima para entrenarlo; level = nivel mínimo.
+# [[material]]: id, name (esES según Wowhead), vendor = precio en cobre si lo vende el proveedor de suministros,
+#   where = de dónde sale, sell = consejo de venta si sobra, min = cantidad sobrante a partir de la que se aconseja vender,
+#   made_from = [id_base, cantidad] para madejas (el addon contaba madejas y paño suelto juntos).
+# sellable: materiales que el addon proponía vender si sobraban para toda la ruta.
+id = "general-professions-materials"
+class = "ANY"
+kind = "professions"
+title = "Rangos y materiales de Sastrería y Encantamiento"
+order = 220
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever"]
+checked = "2026-11-09"
+order_profs = ["tailoring", "enchanting"]
+sellable = [2589, 2592, 4306, 4338, 14047, 10940, 10938, 10939, 11176]
+
+[[rank]]
+name = "Aprendiz"
+max = 75
+skill = 0
+level = 5
+cost = "10 cobres"
+
+[[rank]]
+name = "Oficial"
+max = 150
+skill = 50
+level = 10
+cost = "5 platas"
+
+[[rank]]
+name = "Experto"
+max = 225
+skill = 125
+level = 20
+cost = "50 platas"
+
+[[rank]]
+name = "Artesano"
+max = 300
+skill = 200
+level = 35
+cost = "5 de oro"
+
+# --- Paño y madejas
+[[material]]
+id = 2589
+name = "Paño de lino"
+where = "humanoides de nivel 5-15 o subasta"
+sell = "véndelo en la subasta o haz vendas de Primeros auxilios."
+min = 20
+
+[[material]]
+id = 2592
+name = "Paño de lana"
+where = "humanoides de nivel 15-25 o subasta"
+sell = "véndelo en la subasta: lo buscan sastres y Primeros auxilios."
+min = 20
+
+[[material]]
+id = 4306
+name = "Paño de seda"
+where = "humanoides de nivel 23-35 o subasta"
+sell = "véndelo en la subasta."
+min = 20
+
+[[material]]
+id = 4338
+name = "Paño de tejido mágico"
+where = "humanoides de nivel 35-45 o subasta"
+sell = "véndelo en la subasta: se vende muy bien."
+min = 20
+note = "La fuente lo llamaba «Tela de paño mágico»; el nombre esES habitual es «Paño de tejido mágico». Confirmar en el cliente."
+
+[[material]]
+id = 14047
+name = "Paño rúnico"
+where = "humanoides de nivel 48+ o subasta"
+sell = "véndelo en la subasta."
+min = 20
+
+[[material]]
+id = 2996
+name = "Madeja de paño de lino"
+made_from = [2589, 2]
+
+[[material]]
+id = 2997
+name = "Madeja de paño de lana"
+made_from = [2592, 3]
+
+[[material]]
+id = 4305
+name = "Madeja de paño de seda"
+made_from = [4306, 4]
+
+[[material]]
+id = 4339
+name = "Madeja de tejido mágico"
+made_from = [4338, 5]
+
+[[material]]
+id = 14048
+name = "Madeja de paño rúnico"
+made_from = [14047, 5]
+
+# --- Proveedor de suministros comerciales
+[[material]]
+id = 2320
+name = "Hilo burdo"
+vendor = 10
+
+[[material]]
+id = 2321
+name = "Hilo refinado"
+vendor = 100
+
+[[material]]
+id = 4291
+name = "Hilo de seda"
+vendor = 500
+
+[[material]]
+id = 8343
+name = "Hilo de seda pesada"
+vendor = 2000
+
+[[material]]
+id = 14341
+name = "Hilo rúnico"
+vendor = 5000
+
+[[material]]
+id = 2604
+name = "Tinte rojo"
+vendor = 50
+
+[[material]]
+id = 6260
+name = "Tinte azul"
+vendor = 50
+
+[[material]]
+id = 4340
+name = "Tinte gris"
+vendor = 350
+
+[[material]]
+id = 2324
+name = "Lejía"
+vendor = 25
+
+[[material]]
+id = 6217
+name = "Vara de cobre"
+vendor = 124
+
+[[material]]
+id = 247786
+name = "Mota de magia"
+vendor = 5
+note = "Objeto nuevo de Forever."
+
+[[material]]
+id = 4470
+name = "Madera simple"
+vendor = 38
+
+[[material]]
+id = 8925
+name = "Vial de cristal"
+vendor = 500
+note = "Lo venden los proveedores de alquimia."
+
+# --- Otros
+[[material]]
+id = 8170
+name = "Cuero basto"
+where = "subasta (desolladores)"
+
+[[material]]
+id = 14227
+name = "Seda de araña de tela de hierro"
+where = "arañas de nivel 50+ o subasta"
+
+[[material]]
+id = 6338
+name = "Vara de plata"
+where = "subasta (la hacen los herreros)"
+
+[[material]]
+id = 1210
+name = "Gema de las Sombras"
+where = "subasta o botín"
+
+[[material]]
+id = 8831
+name = "Loto morado"
+where = "subasta (herboristas)"
+
+# --- Encantamiento (desencantar)
+[[material]]
+id = 10940
+name = "Polvo extraño"
+where = "desencanta verdes de nivel 5-20"
+sell = "lo compran otros encantadores en la subasta."
+min = 20
+
+[[material]]
+id = 10938
+name = "Esencia mágica inferior"
+where = "desencanta verdes de nivel 5-15"
+sell = "véndela en la subasta."
+min = 6
+
+[[material]]
+id = 10939
+name = "Esencia mágica superior"
+where = "desencanta verdes de nivel 15-20"
+sell = "véndela en la subasta."
+min = 3
+
+[[material]]
+id = 10998
+name = "Esencia astral inferior"
+where = "desencanta verdes de nivel 20-25"
+
+[[material]]
+id = 11082
+name = "Esencia astral superior"
+where = "desencanta verdes de nivel 25-30"
+
+[[material]]
+id = 11083
+name = "Polvo de alma"
+where = "desencanta verdes de nivel 20-30"
+
+[[material]]
+id = 11134
+name = "Esencia mística inferior"
+where = "desencanta verdes de nivel 30-35"
+
+[[material]]
+id = 11135
+name = "Esencia mística superior"
+where = "desencanta verdes de nivel 35-40"
+
+[[material]]
+id = 11137
+name = "Polvo de visión"
+where = "desencanta verdes de nivel 30-40"
+
+[[material]]
+id = 11174
+name = "Esencia abisal inferior"
+where = "desencanta verdes de nivel 40-45"
+
+[[material]]
+id = 11176
+name = "Polvo onírico"
+where = "desencanta verdes de nivel 40-50"
+sell = "se vende muy bien: todo encantador lo necesita de 265 a 300."
+min = 20
+
+[[material]]
+id = 16204
+name = "Polvo de ilusión"
+where = "desencanta verdes de nivel 50-60"

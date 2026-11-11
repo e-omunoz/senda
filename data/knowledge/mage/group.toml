@@ -1,0 +1,35 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua, MG.TEXTS.grupo).
+id = "mage-group"
+class = "MAGE"
+kind = "page"
+title = "Grupo, viajes y PvP"
+order = 120
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+
+[[block]]
+heading = "En mazmorra"
+body = """
+- Agua y comida conjuradas para todos antes de empezar.
+- Intelecto Arcano a los que usen maná.
+- Polimorfia al objetivo de la luna (lo asigna el líder).
+- Contrahechizo a los lanzadores peligrosos.
+- Deshacer maldición inferior en el grupo.
+- Espera 2-3 golpes del tanque antes de empezar: tu daño de golpe le quita la amenaza.
+- Área solo si el tanque lo pide y con la Nova a mano."""
+
+[[block]]
+heading = "Viajes"
+body = """
+- Teletransporte a Ventormenta al acabar: vuelves a entrenar al momento.
+- Desde el 40, portales para el grupo."""
+
+[[block]]
+heading = "PvP"
+body = """
+- **Humano:** Voluntad de sobrevivir rompe aturdimientos y Percepción descubre pícaros.
+- **Contra guerreros y pícaros:** Nova, Traslación, Descarga de Escarcha.
+- **Contra sacerdotes y brujos:** Contrahechizo en sus curas o en su Miedo; Polimorfia.
+- **Contra cazadores:** pégate a ellos para entrar en su zona muerta y usa la Nova.
+- **Contra otros magos:** Contrahechizo cuando lancen Polimorfia.
+- Dedos de Escarcha es muy fuerte en PvP."""

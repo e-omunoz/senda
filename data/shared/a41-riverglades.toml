@@ -1,0 +1,109 @@
+# Ruta compartida de la Alianza (brujo gnomo y mago humano).
+
+id = "a41-riverglades"
+title = "Riverglades: Fuerte Farholde"
+levels = [41, 44]
+map = 2548
+summary = "Zona nueva de Forever (35-45) al sureste de Khaz Modan. Base de la Alianza en el Fuerte Farholde. Nuestra base de datos aún no tiene sus misiones: la sección marca los centros y los tramos."
+
+[[step]]
+id = "a41-riverglades-001"
+do = "fly"
+npc = 931
+node = "Lakeshire"
+zone = 1433
+at = [1433, 25.5, 59.41]
+text = "Vuela a Villa del Lago (Montañas Crestagrana)."
+status = "unverified"
+sources = ["questie:npc/931", "https://warcraft.wiki.gg/wiki/Riverglades"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a41-riverglades-002"
+do = "goto"
+at = [2548, 62, 82, "Fuerte Farholde"]
+text = "Sigue el camino de Crestagrana hacia el este y toma el desvío señalizado a Riverglades; ve hasta el Fuerte Farholde."
+tip = "Los cocodrilos y múrlocs del río van en grupo: no te metas en el agua."
+status = "unverified"
+sources = ["https://warcraft.wiki.gg/wiki/Riverglades", "https://leprestore.com/guides/world-of-warcraft-forever/wow-forever-riverglades-guide/"]
+
+[[step]]
+id = "a41-riverglades-003"
+do = "getfp"
+node = "Farholde Keep"
+at = [2548, 60.62, 81.53]
+text = "Coge la ruta de vuelo del Fuerte Farholde con Gretchen Mayberry."
+status = "unverified"
+sources = ["questie:npc/257087", "https://warcraft.wiki.gg/wiki/Farholde_Keep"]
+
+[[step]]
+id = "a41-riverglades-004"
+do = "sethearth"
+npc = 257595
+at = [2548, 64.64, 84.2]
+text = "Pon la piedra de hogar con el intendente de cuartel Harlan, en la posada del fuerte."
+status = "unverified"
+sources = ["questie:npc/257595", "questie:npc/257595", "https://warcraft.wiki.gg/wiki/Farholde_Keep"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a41-riverglades-005"
+do = "note"
+npc = 257558
+at = [2548, 66.69, 81.02]
+text = "Habla con el comandante caballero Demar Brant y coge todas las misiones del fuerte (Hermandad del Caballo)."
+tip = "Mira también a Cady Lloydriel (66.4, 82.6), Bertrand Ironbrow (63.4, 80.6) y Thaddeus Brillyard (64.8, 83.7)."
+status = "unverified"
+sources = ["questie:npc/257558", "questie:npc/257558", "https://warcraft.wiki.gg/wiki/Farholde_Keep", "https://leprestore.com/guides/world-of-warcraft-forever/wow-forever-riverglades-guide/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a41-riverglades-006"
+do = "note"
+at = [2548, 52, 72]
+text = "Haz primero las misiones de las granjas y del camino comercial cercanos al fuerte; entrégalas juntas."
+tip = "Sin escalado de nivel: si un objetivo te supera, déjalo para luego."
+status = "unverified"
+sources = ["https://leprestore.com/guides/world-of-warcraft-forever/wow-forever-riverglades-guide/"]
+
+[[step]]
+id = "a41-riverglades-007"
+do = "note"
+npc = 259353
+at = [2548, 39.4, 74.6]
+wps = [[2548, 41, 62.8, "Halligan Turner"]]
+text = "Sigue la campaña hacia el oeste: el capitán de la guardia Cedric Dalton y el capataz Halligan Turner tienen el siguiente tramo."
+status = "unverified"
+sources = ["questie:npc/259353", "questie:npc/259353", "questie:npc/256438", "https://leprestore.com/guides/world-of-warcraft-forever/wow-forever-riverglades-guide/"]
+
+[[step]]
+id = "a41-riverglades-008"
+do = "note"
+text = "Evita la Sombra Crepuscular y los alrededores de Sunnyglade hasta ir en grupo: lanzadores del Martillo Crepuscular."
+status = "unverified"
+sources = ["https://leprestore.com/guides/world-of-warcraft-forever/wow-forever-riverglades-guide/", "https://warcraft.wiki.gg/wiki/Riverglades"]
+
+[[step]]
+id = "a41-riverglades-009"
+do = "note"
+at = [2548, 77, 53, "Puerto Pólvora"]
+text = "Puerto Pólvora (neutral, este) tiene banco, posada y el barco a Tanaris: útil para el 45."
+status = "unverified"
+sources = ["questie:npc/255894", "https://warcraft.wiki.gg/wiki/Riverglades"]
+
+[[step]]
+id = "a41-riverglades-010"
+do = "dungeon"
+optional = true
+text = "Fortaleza Krol'dok (40-45): mazmorra de ogros de Riverglades. Coge sus misiones en el fuerte y ve en grupo."
+tip = "La entrada está en territorio ogro cerca de Bolder'ok; ubicación sin confirmar."
+status = "unverified"
+sources = ["https://warcraft.wiki.gg/wiki/Riverglades", "https://leprestore.com/guides/world-of-warcraft-forever/wow-forever-riverglades-guide/"]
+
+[[step]]
+id = "a41-riverglades-011"
+do = "level"
+level = 44
+text = "Sube hasta el 44 en Riverglades antes de ir a las Tierras Inhóspitas."
+status = "unverified"
+sources = ["https://warcraft.wiki.gg/wiki/Riverglades"]

@@ -1,0 +1,76 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Brackets.lua, tramo 40-49).
+id = "warlock-bracket-40-49"
+class = "WARLOCK"
+kind = "page"
+title = "Niveles 40-49: montura y doble especialización"
+levels = [40, 49]
+order = 50
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+
+[[block]]
+heading = "Zonas"
+body = """
+- **40-45:** Tanaris.
+- **41-48:** Feralas.
+- **42-50:** Tierras del Interior.
+- **35-45:** Tierras Inhóspitas.
+
+Mazmorras: Zul'Farrak, Maraudon, Krol'dok Stronghold (40-45)."""
+
+[[block]]
+heading = "Demonio"
+body = """
+**Corcel nefasto** al 40: misión gratuita (tu instructor de brujo de la capital te manda con Strahad Farsan, en Trinquete). Íncubo o Súcubo para subir."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **40:** Aullido de terror.
+- **42:** Espiral mortal.
+- **48:** Fuego de alma."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **40-41:** Maestría de las Sombras 5/5.
+- **42-44:** Succión de alma 3/3.
+- **45:** Estragos.
+- **46-49:** Concentración vil 4/5.
+
+Activa la **doble especialización**: la segunda con Destrucción o Demonología para mazmorras (Eureka! potencia el daño directo)."""
+note = "Succión de alma y Estragos: nombres sin confirmar en el cliente. Orden orientativo."
+
+[[block]]
+heading = "Rotación"
+body = """
+Aflicción, igual que antes. En Destrucción: Inmolar > Conflagrar > Incinerar > Quemadura de las Sombras para rematar."""
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 40:** SND_Aullido.
+- **Al 42:** SND_Espiral (Espiral mortal de emergencia)."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+- Objetivo al 50: Sastrería ~285, Encantamiento ~275.
+- **Varita brillante** de Encantamiento: 180 de Favor y Honorable con la Azeroth Commerce Authority.
+- Instructora de Artesano de Encantamiento: **Annora**, dentro de Uldaman (ve en grupo)."""
+
+[[block]]
+heading = "Equipo"
+body = """
+Cambia el equipo de misiones por azules de Zul'Farrak y Maraudon. Encanta el arma con poder con hechizos en cuanto puedas."""
+
+[[block]]
+heading = "Oro"
+body = """
+El paño rúnico empieza a caer: guárdalo para Sastrería 260-300. Vende el tejido mágico sobrante."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Espiral mortal asusta 3 segundos y te cura: es tu botón de emergencia.
+- Aullido de terror asusta a todos los enemigos cercanos: cuidado en mazmorras."""

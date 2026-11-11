@@ -1,0 +1,388 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Gear.lua, ns.GEAR.WHERE): equipo de subida para lanzadores de la Alianza.
+# [[item]]: from/to = niveles en los que interesa (el addon lo mostraba desde from - 3); id = objeto;
+#   name = nombre de Wowhead en español (el cliente da el definitivo); src = de dónde sale;
+#   class = solo para esa clase (si falta, sirve a brujo y mago).
+# Nombres en inglés = la fuente no daba el nombre español (lo resuelve el cliente por id).
+id = "general-gear-items"
+class = "ANY"
+kind = "page"
+title = "Equipo de subida para lanzadores"
+levels = [1, 60]
+order = 150
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://timesaver.gg/", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-09"
+note = "Niveles = nivel requerido según Wowhead Forever. Fuentes: datos de objetos de Wowhead Forever, timesaver.gg (listas de Aflicción y Escarcha), Warcraft Tavern, Method, Warcraft Wiki."
+
+[[block]]
+heading = "Cómo usar la lista"
+body = """
+- Bastón o arma de una mano + mano izquierda: quédate con lo que sume más.
+- Las piezas de Sastrería solo las puede llevar quien las fabrica.
+- La misión The Orb of Soran'ruk te deja elegir el bastón **o** el orbe.
+- Varita Furia de Hielo: la misión Mage's Wand te deja elegir una de tres varitas."""
+
+[[item]]
+from = 1
+to = 14
+id = 247789
+name = "Varita de prácticas de novicio"
+src = "Encantamiento 1-10 (varita)"
+
+[[item]]
+from = 5
+to = 16
+id = 11287
+name = "Varita mágica inferior"
+src = "Encantamiento (varita)"
+
+[[item]]
+from = 7
+to = 18
+id = 248008
+name = "Bastón de hechizos de aprendiz"
+src = "misión Rare Books (bastón)"
+
+[[item]]
+from = 13
+to = 22
+id = 11288
+name = "Varita mágica superior"
+src = "Encantamiento (varita)"
+
+[[item]]
+from = 13
+to = 22
+id = 279896
+name = "Llamarada profunda"
+src = "misión Old Ironforge Incursion, Hall of Thanes (varita)"
+
+[[item]]
+from = 13
+to = 22
+id = 271095
+name = "Colmillo de magmatus"
+src = "Hall of Thanes: Magmatus (daga)"
+
+[[item]]
+from = 13
+to = 22
+id = 270261
+name = "Togas del señor feudal caído en desgracia"
+src = "Hall of Thanes: Durgen Dirgehammer (pecho)"
+
+[[item]]
+from = 13
+to = 22
+id = 271096
+name = "Brazales de fuego fatuo del éter"
+src = "Hall of Thanes: Faldrim Anvilmar (muñecas)"
+
+[[item]]
+from = 13
+to = 22
+id = 271097
+name = "Mantón de espíritu espectral"
+src = "Hall of Thanes: Faldrim Anvilmar (capa)"
+
+[[item]]
+from = 13
+to = 22
+id = 279898
+name = "Escrito enano"
+src = "misión Important Heirlooms (mano izquierda)"
+
+[[item]]
+from = 15
+to = 25
+id = 253907
+name = "Gonela de las Sombras de filigrana"
+src = "Sastrería 75, receta de botín (pecho; solo la lleva quien la fabrica)"
+class = "WARLOCK"
+
+[[item]]
+from = 17
+to = 24
+id = 5201
+name = "Bastón de piedra de ascuas"
+src = "Minas de la Muerte: Capitán Verdepellejo (bastón)"
+
+[[item]]
+from = 17
+to = 24
+id = 5198
+name = "Vara para remover galletas"
+src = "Minas de la Muerte: Cookie (varita)"
+
+[[item]]
+from = 19
+to = 26
+id = 271215
+name = "Bastón de aguja fría"
+src = "Ruins of Lordaeron: Rath'Mael (bastón, daño de Escarcha)"
+class = "MAGE"
+
+[[item]]
+from = 20
+to = 28
+id = 15109
+name = "Bastón de Soran'ruk"
+src = "misión The Orb of Soran'ruk: eliges el bastón O el orbe"
+class = "WARLOCK"
+
+[[item]]
+from = 20
+to = 28
+id = 6898
+name = "Orbe de Soran'ruk"
+src = "misión The Orb of Soran'ruk: eliges el bastón O el orbe"
+class = "WARLOCK"
+
+[[item]]
+from = 20
+to = 30
+id = 253955
+name = "Shadow Circlet"
+src = "Sastrería 100, patrón de Mivin Shadowweave con Favor (cabeza)"
+class = "WARLOCK"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 20
+to = 30
+id = 253951
+name = "Silky Circlet"
+src = "Sastrería 100, patrón de Mivin Shadowweave con Favor (cabeza)"
+class = "MAGE"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 20
+to = 30
+id = 253939
+name = "Leotardos sedosos de filigrana"
+src = "Sastrería 100, receta de botín (piernas)"
+class = "MAGE"
+
+[[item]]
+from = 22
+to = 30
+id = 7001
+name = "Cetro de lápida"
+src = "misión Blackfathom Villainy (varita)"
+
+[[item]]
+from = 23
+to = 32
+id = 6903
+name = "Gaze Dreamer Pants"
+src = "Cavernas de Brazanegra: Kelris (piernas)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 24
+to = 32
+id = 1155
+name = "Vara del Insomne"
+src = "Cavernas de Brazanegra: Kelris (bastón)"
+
+[[item]]
+from = 25
+to = 33
+id = 253977
+name = "Diadema sedosa de filigrana"
+src = "Sastrería 125, receta de botín (cabeza)"
+class = "MAGE"
+
+[[item]]
+from = 26
+to = 34
+id = 273027
+name = "Raptor's Gaze"
+src = "Excavation Site (Los Humedales): Shadetooth (mano izquierda)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 27
+to = 35
+id = 273043
+name = "Wand of Mana Concentration"
+src = "raro Arcanic Enigma, Montañas de Alterac (varita)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 27
+to = 35
+id = 273044
+name = "Violet Sorcerer's Robes"
+src = "raro Arcanic Enigma, Montañas de Alterac (pecho)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 27
+to = 35
+id = 273034
+name = "Ephemeral Grips"
+src = "raro Arcane Anomaly, Montañas de Alterac (manos)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 27
+to = 35
+id = 9452
+name = "Hidrocaña"
+src = "Gnomeregan: Viscous Fallout (bastón)"
+
+[[item]]
+from = 28
+to = 36
+id = 273030
+name = "Ring of Power Regulation"
+src = "Excavation Site: Relic Guardian (anillo)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 30
+to = 38
+id = 7708
+name = "Necrotic Wand"
+src = "Monasterio Escarlata: Azshir the Sleepless (varita)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 30
+to = 38
+id = 6691
+name = "Swinetusk Shank"
+src = "Horado Rajacieno: Agathelos (daga)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 30
+to = 38
+id = 7684
+name = "Bloodmage Mantle"
+src = "Monasterio Escarlata: Thalnos (hombros)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 31
+to = 39
+id = 9492
+name = "Electromagnetic Gigaflux Reactivator"
+src = "Gnomeregan: Thermaplugg (cabeza)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 32
+to = 40
+id = 7685
+name = "Orb of the Forgotten Seer"
+src = "Monasterio Escarlata: Thalnos (mano izquierda)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 34
+to = 42
+id = 7714
+name = "Hypnotic Blade"
+src = "Monasterio Escarlata: Doan (mano derecha)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 35
+to = 42
+id = 277206
+name = "Capa brillante"
+src = "misión Strahnbrad Mystery (capa)"
+
+[[item]]
+from = 36
+to = 44
+id = 10771
+name = "Deathmage Sash"
+src = "Zahúrda Rajacieno: Mordresh (cintura)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 36
+to = 44
+id = 10770
+name = "Mordresh's Lifeless Skull"
+src = "Zahúrda Rajacieno: Mordresh (mano izquierda, Sombras)"
+class = "WARLOCK"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 37
+to = 45
+id = 249144
+name = "Varita del Vacío Abisal"
+src = "Encantamiento 185 (varita)"
+
+[[item]]
+from = 38
+to = 46
+id = 10762
+name = "Robes of the Lich"
+src = "Zahúrda Rajacieno: Amnennar (pecho, Escarcha y Sombras)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 38
+to = 46
+id = 7514
+name = "Varita Furia de Hielo"
+src = "misión Mage's Wand (Pantano de Fangos Oscuros): eliges una de tres varitas"
+class = "MAGE"
+
+[[item]]
+from = 40
+to = 48
+id = 277256
+name = "Dudd's Second-Favorite Wand"
+src = "misión Partial Mystical Notes, Vega de Tuercespina (varita)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 43
+to = 50
+id = 249234
+name = "Varita de Ramaoniria"
+src = "Encantamiento 215 (varita)"
+
+[[item]]
+from = 43
+to = 50
+id = 18082
+name = "Zum'rah's Vexing Cane"
+src = "Zul'Farrak: Zum'rah (bastón)"
+note = "Nombre en inglés: sin nombre español confirmado."
+
+[[item]]
+from = 49
+to = 56
+id = 249232
+name = "Varita eterna inferior"
+src = "Encantamiento 245 (varita)"
+
+[[item]]
+from = 50
+to = 58
+id = 9654
+name = "Fragmento de piedra de hito"
+src = "misión The Morrow Stone, Feralas (varita)"
+
+[[item]]
+from = 55
+to = 60
+id = 249237
+name = "Varita eterna superior"
+src = "Encantamiento (varita)"
+
+[[item]]
+from = 60
+to = 60
+id = 279246
+name = "Antorcha de luz"
+src = "Encantamiento (varita)"

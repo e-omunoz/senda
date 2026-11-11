@@ -1,0 +1,17 @@
+# Guía human-mage: Mago: Gema de falla (Loch Modan). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-16-rift-gem"
+title = "Mago: Gema de falla (Loch Modan)"
+levels = [16, 17]
+map = 1432
+summary = "Paso de la misión de clase que se hace en Loch Modan."
+
+[[step]]
+id = "mg-16-rift-gem-001"
+do = "complete"
+quest = 1921
+at = [1432, 35.5, 24.3]
+text = "En la Mina Arroyoplata, abre cajas de la Liga de Mineros hasta tener la Gema de falla cargada."
+tip = "La mina tiene kóbolds y troggs: entra con maná lleno. El paño de lino lo llevas de antes."
+status = "unverified"
+sources = ["questie:quest/1921"]
+checked = "2026-11-11"

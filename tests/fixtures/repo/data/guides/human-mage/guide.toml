@@ -1,0 +1,6 @@
+id = "human-mage"
+title = "Mago humano 1-60"
+faction = "Alliance"
+races = ["Human"]
+classes = ["MAGE"]
+sections = ["01-northshire", "shared:alliance-test"]

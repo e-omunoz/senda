@@ -1,0 +1,561 @@
+# Ruta compartida de Alianza (brujo gnomo y mago humano), 45-60. Generada con QuestieDB local; textos propios.
+id = "a55-burning-steppes"
+title = "Ventormenta y Las Estepas Ardientes"
+levels = [55, 57]
+map = 1428
+summary = "Entrena en Ventormenta y haz la Vigilia de Morgan: ogros, dragonantes y el inicio de la cadena de Onyxia."
+
+[[step]]
+id = "a55-burning-steppes-001"
+do = "goto"
+at = [1453, 71.3, 72.2]
+text = "Viaja a Ventormenta: el mago con Teletransporte o Portal para la pareja; si no, vuelo y barco."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+
+[[step]]
+id = "a55-burning-steppes-002"
+do = "train"
+npc = 5495
+spells = [11660, 11675]
+at = [1453, 39.9, 84.2]
+text = "Brujo: entrena los hechizos del nivel 52."
+if = { class = ["WARLOCK"], minlevel = 52 }
+status = "unverified"
+sources = ["questie:npc/5495", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a55-burning-steppes-003"
+do = "train"
+npc = 5497
+spells = [10186, 10192]
+at = [1453, 49.6, 85.8]
+text = "Mago: entrena los hechizos del nivel 52."
+if = { class = ["MAGE"], minlevel = 52 }
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a55-burning-steppes-004"
+do = "train"
+npc = 5495
+spells = [11672, 11700]
+at = [1453, 39.9, 84.2]
+text = "Brujo: entrena los hechizos del nivel 54."
+if = { class = ["WARLOCK"], minlevel = 54 }
+status = "unverified"
+sources = ["questie:npc/5495", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a55-burning-steppes-005"
+do = "train"
+npc = 5497
+spells = [10149, 10230, 10202]
+at = [1453, 49.6, 85.8]
+text = "Mago: entrena los hechizos del nivel 54."
+if = { class = ["MAGE"], minlevel = 54 }
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a55-burning-steppes-006"
+do = "train"
+npc = 5495
+spells = [11689, 17924]
+at = [1453, 39.9, 84.2]
+text = "Brujo: entrena los hechizos del nivel 56."
+if = { class = ["WARLOCK"], minlevel = 56 }
+status = "unverified"
+sources = ["questie:npc/5495", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a55-burning-steppes-007"
+do = "train"
+npc = 5497
+spells = [10181, 10212, 10157]
+at = [1453, 49.6, 85.8]
+text = "Mago: entrena los hechizos del nivel 56."
+if = { class = ["MAGE"], minlevel = 56 }
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a55-burning-steppes-008"
+do = "sethearth"
+npc = 6740
+at = [1453, 60.4, 75.3]
+text = "Pon la piedra en la posada de Ventormenta: la cadena de las Estepas te trae varias veces."
+status = "unverified"
+sources = ["questie:npc/6740", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-009"
+do = "fly"
+node = "Morgan's Vigil"
+zone = 1428
+text = "Vuela a la Vigilia de Morgan (Las Estepas Ardientes)."
+tip = "Si no tienes el vuelo, vuela a Villa del Lago y sube al norte por el paso de los Montes Crestagrana."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+
+[[step]]
+id = "a55-burning-steppes-010"
+do = "getfp"
+npc = 2299
+node = "Morgan's Vigil"
+at = [1428, 84.3, 68.3]
+text = "Coge la ruta de vuelo de la Vigilia de Morgan."
+status = "unverified"
+sources = ["questie:npc/2299", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-011"
+do = "accept"
+quest = 3823
+npc = 9177
+at = [1428, 84.6, 68.7]
+text = "Coge la misión de Oralius contra los Firegut."
+status = "unverified"
+sources = ["questie:quest/3823", "questie:npc/9177", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-012"
+do = "accept"
+quest = 4283
+npc = 9177
+at = [1428, 84.6, 68.7]
+text = "Coge también la de los 50 medallones Roca Negra."
+tip = "Los medallones caen de cualquier orco Roca Negra: ve sumando mientras haces lo demás."
+status = "unverified"
+sources = ["questie:quest/4283", "questie:npc/9177", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-013"
+do = "accept"
+quest = 4182
+npc = 9562
+at = [1428, 85.8, 69.0]
+text = "Coge la amenaza de los dragonantes de Helendis."
+status = "unverified"
+sources = ["questie:quest/4182", "questie:npc/9562", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-014"
+do = "accept"
+quest = 4262
+npc = 9561
+at = [1428, 85.4, 70.1]
+text = "Coge la misión contra el supervisor Pyron de Jalinda."
+status = "unverified"
+sources = ["questie:quest/4262", "questie:npc/9561", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-015"
+do = "complete"
+quest = 3823
+at = [1428, 80.1, 42.6]
+text = "Al norte de la Vigilia, en la Roca Dreadmaul, mata 15 ogros magos, 7 ogros y 7 brutos Firegut."
+status = "unverified"
+sources = ["questie:quest/3823", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-016"
+do = "complete"
+quest = 4182
+at = [1428, 87.9, 38.4]
+text = "Al norte de la Vigilia mata crías, engendros, vástagos negros y un draco negro."
+tip = "El draco negro anda por el norte: búscalo antes de dar la vuelta."
+status = "unverified"
+sources = ["questie:quest/4182", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-017"
+do = "complete"
+quest = 4283
+at = [1428, 46.8, 54.6]
+text = "Mata orcos Roca Negra hasta reunir 50 medallones."
+status = "unverified"
+sources = ["questie:quest/4283", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-018"
+do = "complete"
+quest = 4262
+at = [1415, 46.8, 67.7]
+text = "Ve a la cantera de la Montaña Roca Negra y mata al supervisor Pyron."
+tip = "Pyron es un elemental de fuego: el mago, en Escarcha; el brujo, con Sombras."
+status = "unverified"
+sources = ["questie:quest/4262", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-019"
+do = "goto"
+at = [1428, 84.6, 68.7]
+text = "Vuelve a la Vigilia de Morgan."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+
+[[step]]
+id = "a55-burning-steppes-020"
+do = "turnin"
+quest = 3823
+npc = 9177
+at = [1428, 84.6, 68.7]
+text = "Entrega los Firegut a Oralius."
+status = "unverified"
+sources = ["questie:quest/3823", "questie:npc/9177", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-021"
+do = "accept"
+quest = 3824
+npc = 9177
+at = [1428, 84.6, 68.7]
+text = "Coge la misión contra Gor'tesh."
+tip = "Gor'tesh está al oeste: hazlo al ir a por Pyron."
+status = "unverified"
+sources = ["questie:quest/3824", "questie:npc/9177", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-022"
+do = "turnin"
+quest = 4283
+npc = 9177
+at = [1428, 84.6, 68.7]
+text = "Entrega los medallones a Oralius."
+status = "unverified"
+sources = ["questie:quest/4283", "questie:npc/9177", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-023"
+do = "turnin"
+quest = 4182
+npc = 9562
+at = [1428, 85.8, 69.0]
+text = "Entrega los dragonantes a Helendis."
+status = "unverified"
+sources = ["questie:quest/4182", "questie:npc/9562", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-024"
+do = "accept"
+quest = 4183
+npc = 9562
+at = [1428, 85.8, 69.0]
+text = "Coge la carta para el magistrado Solomon de Villa del Lago."
+status = "unverified"
+sources = ["questie:quest/4183", "questie:npc/9562", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-025"
+do = "turnin"
+quest = 4262
+npc = 9561
+at = [1428, 85.4, 70.1]
+text = "Entrega Pyron a Jalinda."
+status = "unverified"
+sources = ["questie:quest/4262", "questie:npc/9561", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-026"
+do = "accept"
+quest = 4263
+npc = 9561
+at = [1428, 85.4, 70.1]
+text = "Opcional: coge la misión contra Incendius (Profundidades de Roca Negra)."
+optional = true
+status = "unverified"
+sources = ["questie:quest/4263", "questie:npc/9561", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-027"
+do = "complete"
+quest = 3824
+at = [1428, 39.3, 55.3]
+text = "Ve al oeste de las Estepas, mata a Gor'tesh y coge su cabeza."
+status = "unverified"
+sources = ["questie:quest/3824", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-028"
+do = "turnin"
+quest = 3824
+npc = 9177
+at = [1428, 84.6, 68.7]
+text = "Vuelve con Oralius y entrega la cabeza."
+status = "unverified"
+sources = ["questie:quest/3824", "questie:npc/9177", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-029"
+do = "accept"
+quest = 3825
+npc = 9177
+at = [1428, 84.6, 68.7]
+text = "Coge la misión de la cabeza en la pica."
+status = "unverified"
+sources = ["questie:quest/3825", "questie:npc/9177", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-030"
+do = "complete"
+quest = 3825
+at = [1428, 81.0, 46.8]
+text = "Clava la cabeza en el montículo de tierra de lo alto de la Roca Dreadmaul."
+status = "unverified"
+sources = ["questie:quest/3825", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-031"
+do = "turnin"
+quest = 3825
+npc = 9177
+at = [1428, 84.6, 68.7]
+text = "Vuelve con Oralius y entrégala."
+status = "unverified"
+sources = ["questie:quest/3825", "questie:npc/9177", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-032"
+do = "fly"
+node = "Lakeshire"
+zone = 1433
+text = "Vuela a Villa del Lago (Montañas Crestagrana)."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+
+[[step]]
+id = "a55-burning-steppes-033"
+do = "turnin"
+quest = 4183
+npc = 344
+at = [1433, 24.9, 44.5]
+text = "Lleva la carta al magistrado Solomon, en el ayuntamiento."
+status = "unverified"
+sources = ["questie:quest/4183", "questie:npc/344", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-034"
+do = "accept"
+quest = 4184
+npc = 344
+at = [1433, 24.9, 44.5]
+text = "Coge la súplica para Bolvar."
+status = "unverified"
+sources = ["questie:quest/4184", "questie:npc/344", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-035"
+do = "hearth"
+zone = 1453
+text = "Usa la piedra para ir a Ventormenta."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+
+[[step]]
+id = "a55-burning-steppes-036"
+do = "turnin"
+quest = 4184
+npc = 1748
+at = [1453, 80.2, 38.4]
+text = "Ve al castillo de Ventormenta y entrega la súplica a Bolvar."
+status = "unverified"
+sources = ["questie:quest/4184", "questie:npc/1748", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-037"
+do = "accept"
+quest = 4185
+npc = 1748
+at = [1453, 80.2, 38.4]
+text = "Coge la misión de hablar con lady Katrana Prestor."
+status = "unverified"
+sources = ["questie:quest/4185", "questie:npc/1748", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-038"
+do = "complete"
+quest = 4185
+at = [1453, 80.2, 38.4]
+text = "Habla con lady Katrana Prestor, junto a Bolvar."
+status = "unverified"
+sources = ["questie:quest/4185", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-039"
+do = "turnin"
+quest = 4185
+npc = 1748
+at = [1453, 80.2, 38.4]
+text = "Vuelve a hablar con Bolvar."
+status = "unverified"
+sources = ["questie:quest/4185", "questie:npc/1748", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-040"
+do = "accept"
+quest = 4186
+npc = 1748
+at = [1453, 80.2, 38.4]
+text = "Coge el decreto de Bolvar para Solomon."
+status = "unverified"
+sources = ["questie:quest/4186", "questie:npc/1748", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-041"
+do = "fly"
+node = "Lakeshire"
+zone = 1433
+text = "Vuela otra vez a Villa del Lago."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+
+[[step]]
+id = "a55-burning-steppes-042"
+do = "turnin"
+quest = 4186
+npc = 344
+at = [1433, 24.9, 44.5]
+text = "Entrega el decreto a Solomon."
+status = "unverified"
+sources = ["questie:quest/4186", "questie:npc/344", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-043"
+do = "accept"
+quest = 4223
+npc = 344
+at = [1433, 24.9, 44.5]
+text = "Coge la misión de hablar con el mariscal Maxwell."
+status = "unverified"
+sources = ["questie:quest/4223", "questie:npc/344", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-044"
+do = "fly"
+node = "Morgan's Vigil"
+zone = 1428
+text = "Vuela a la Vigilia de Morgan."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+
+[[step]]
+id = "a55-burning-steppes-045"
+do = "turnin"
+quest = 4223
+npc = 9560
+at = [1428, 84.7, 69.0]
+text = "Habla con el mariscal Maxwell."
+status = "unverified"
+sources = ["questie:quest/4223", "questie:npc/9560", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-046"
+do = "accept"
+quest = 4224
+npc = 9560
+at = [1428, 84.7, 69.0]
+text = "Coge la misión de hablar con Ragged John."
+status = "unverified"
+sources = ["questie:quest/4224", "questie:npc/9560", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-047"
+do = "complete"
+quest = 4224
+at = [1428, 65.0, 23.8]
+text = "Busca a Ragged John al norte de las Estepas y escucha su historia."
+status = "unverified"
+sources = ["questie:quest/4224", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-048"
+do = "turnin"
+quest = 4224
+npc = 9560
+at = [1428, 84.7, 69.0]
+text = "Vuelve con Maxwell y entrégala."
+status = "unverified"
+sources = ["questie:quest/4224", "questie:npc/9560", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-049"
+do = "accept"
+quest = 4241
+npc = 9560
+at = [1428, 84.7, 69.0]
+text = "Coge la misión del mariscal Windsor (Profundidades de Roca Negra)."
+tip = "Es el principio de la armonización de Onyxia: guárdala aunque no vayas aún a la mazmorra."
+status = "unverified"
+sources = ["questie:quest/4241", "questie:npc/9560", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a55-burning-steppes-050"
+do = "dungeon"
+quests = [4241, 4263]
+at = [1428, 29.0, 28.9]
+text = "Opcional (52-60): Profundidades de Roca Negra. Busca a Windsor y mata a Incendius."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/dungeons/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "questie:quest/4241", "questie:quest/4263"]
+checked = "2026-11-11"
+note = "Entrada por la Montaña Roca Negra, al noroeste de las Estepas."
+
+[[step]]
+id = "a55-burning-steppes-051"
+do = "dungeon"
+quests = [4729, 4862, 4701]
+at = [1428, 29.0, 28.9]
+text = "Opcional (55-60): Cumbre de Roca Negra Inferior con las misiones de Kibler y Helendis."
+optional = true
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/dungeons/", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/", "questie:quest/4729", "questie:quest/4862", "questie:quest/4701"]
+checked = "2026-11-11"

@@ -1,0 +1,44 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Texts.lua, ns.TEXTS.oro). Lo usaban el brujo y el mago (el mago añadía mage/gold.toml).
+id = "general-gold"
+class = "ANY"
+kind = "page"
+title = "Oro sin recolectar"
+order = 230
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0"]
+note = "Precios de la casa de subastas del 9-nov (reino del autor). Equitación gratis para el brujo: corrección de Blizzard del 9-nov citada sin enlace."
+
+[[block]]
+heading = "Cómo entra el oro sin recolectar"
+body = """
+- **Misiones:** el oro de las recompensas. Si no te sirve ninguna recompensa, elige la que más valga.
+- **Grises** al vendedor, siempre.
+- **Mazmorras:** azules y verdes ligados al equiparse, a la casa de subastas.
+- **Bolsas:** las de tejido mágico rojo y las de componentes se venden bien.
+- **Encantar a otros:** ofrece en Comercio que el cliente pone los materiales y tú cobras la mano de obra.
+- **Lo que sobre:** polvos, esencias y paño que no vayas a usar."""
+
+[[block]]
+heading = "Materiales"
+body = """
+- **Paño:** cae de humanoides, gratis.
+- **Hilo y tintes:** proveedor de suministros comerciales.
+- **Polvos y esencias:** desencanta.
+- **Patrones nuevos:** Favor de mercader (cajas de suministros en Tres Caminos; caen también en mazmorras).
+- **Lo que falte:** casa de subastas (unos 81 de oro todo el paño e hilo hasta Sastrería 225, precios del 9 nov)."""
+
+[[block]]
+heading = "Reglas de casa de subastas"
+body = """
+- Mira el precio antes de vender al vendedor.
+- No vendas lo fabricado al vendedor: Blizzard bajó mucho esos precios.
+- Si no se vende, pierdes el depósito: no pongas precios absurdos.
+- La primera semana todo está caro; los materiales de nivel bajo suelen bajar mucho en dos semanas."""
+
+[[block]]
+heading = "Gastos que vienen"
+body = """
+- Hechizos de clase en cada nivel par.
+- Rangos de profesión.
+- Equitación al 40: gratis para el brujo, viene con la misión del Corcel nefasto (corrección del 9 nov). El mago la paga (unos 100 de oro).
+- Los patrones con Favor no cuestan oro."""

@@ -1,0 +1,142 @@
+# Guía human-mage: Mago: Varita de mago. Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-42-wand"
+title = "Mago: Varita de mago"
+levels = [40, 44]
+map = 1445
+summary = "Materiales y entrega de la Varita de mago (y, opcional, el Orbe celestial)."
+
+[[step]]
+id = "mg-42-wand-001"
+do = "complete"
+quest = 1948
+at = [1417, 52.0, 50.8]
+text = "En las Tierras Altas de Arathi, coge la zarza cargada de rayos; consigue también un jade."
+tip = "El jade sale de filones de mithril u oro, o cómpralo en la subasta."
+status = "unverified"
+sources = ["questie:quest/1948"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-42-wand-002"
+do = "complete"
+quest = 1951
+at = [1420, 84.0, 31.0, "Monasterio Escarlata"]
+text = "Coge el libro de los rituales en la biblioteca del Monasterio Escarlata."
+tip = "Está dentro de la mazmorra (ala de la Biblioteca): hazlo durante la mazmorra."
+status = "unverified"
+sources = ["questie:quest/1951"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-42-wand-003"
+do = "turnin"
+quest = 1948
+npc = 6546
+at = [1445, 46.1, 57.1]
+text = "Vuelve con Tabetha y entrega los objetos de poder."
+status = "unverified"
+sources = ["questie:quest/1948", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-42-wand-004"
+do = "turnin"
+quest = 1951
+npc = 6546
+at = [1445, 46.1, 57.1]
+text = "Entrega los rituales de poder."
+status = "unverified"
+sources = ["questie:quest/1951", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-42-wand-005"
+do = "accept"
+quest = 1952
+npc = 6546
+at = [1445, 46.1, 57.1]
+text = "Coge la misión de la varita."
+status = "unverified"
+sources = ["questie:quest/1952", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-42-wand-006"
+do = "turnin"
+quest = 1952
+npc = 6546
+at = [1445, 46.1, 57.1]
+text = "Entrega y elige varita: Escarcha si subes como Escarcha."
+status = "unverified"
+sources = ["questie:quest/1952", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-42-wand-007"
+do = "complete"
+quest = 1954
+at = [1443, 67.6, 77.8]
+optional = true
+text = "En Desolace, mata invocadores del Filo Ardiente hasta tener el orbe infernal."
+status = "unverified"
+sources = ["questie:quest/1954"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-42-wand-008"
+do = "turnin"
+quest = 1954
+npc = 6546
+at = [1445, 46.1, 57.1]
+optional = true
+text = "Entrega el orbe a Tabetha."
+status = "unverified"
+sources = ["questie:quest/1954", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-42-wand-009"
+do = "accept"
+quest = 1955
+npc = 6546
+at = [1445, 46.1, 57.1]
+optional = true
+text = "Coge la misión del exorcismo."
+status = "unverified"
+sources = ["questie:quest/1955", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-42-wand-010"
+do = "complete"
+quest = 1955
+at = [1445, 45.8, 57.0]
+optional = true
+text = "Mata al demonio del orbe junto a la casa de Tabetha."
+status = "unverified"
+sources = ["questie:quest/1955"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-42-wand-011"
+do = "turnin"
+quest = 1955
+npc = 6546
+at = [1445, 46.1, 57.1]
+optional = true
+text = "Entrega a Tabetha."
+status = "unverified"
+sources = ["questie:quest/1955", "questie:npc/6546"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-42-wand-012"
+do = "accept"
+quest = 1956
+npc = 6546
+at = [1445, 46.1, 57.1]
+optional = true
+text = "Coge la misión de Uldaman: la fuente de poder la suelta el Centinela de obsidiana."
+status = "unverified"
+sources = ["questie:quest/1956", "questie:npc/6546"]
+checked = "2026-11-11"

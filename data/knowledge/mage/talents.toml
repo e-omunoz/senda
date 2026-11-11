@@ -1,0 +1,469 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua, MG.TALENTS). Un punto por nivel, del 10 al 60.
+# `rank` = rango que alcanzas con ese punto; `max` = rangos del talento.
+id = "mage-talents-leveling"
+class = "MAGE"
+kind = "talents"
+title = "Talentos de subida: Escarcha"
+levels = [10, 60]
+order = 70
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever"]
+checked = "2026-11-04"
+note = "Guía de Escarcha de Wowhead (Porom, 4-nov-2026): build 1-33 y build 33-60 tras reiniciar al 33. Build 33-60 al reiniciar: Descarga de Escarcha mejorada 5, Fragmentos de hielo 5, Precisión 3, Lanza de hielo, Ventisca mejorada 1, Trizar 3, Canalización de Escarcha 2, Dedos de Escarcha 2, Mordedura helada (23 puntos de los 24 disponibles al 33)."
+
+[[pick]]
+level = 10
+talent = "Especialización en varitas"
+tree = "Arcano"
+rank = 1
+max = 2
+status = "unverified"
+note = "Build 1-33 de Wowhead (Porom, 4-nov): «valiosísima»."
+
+[[pick]]
+level = 11
+talent = "Especialización en varitas"
+tree = "Arcano"
+rank = 2
+max = 2
+status = "unverified"
+note = "Build 1-33 de Wowhead (Porom, 4-nov): «valiosísima»."
+
+[[pick]]
+level = 12
+talent = "Descarga de Escarcha mejorada"
+tree = "Escarcha"
+rank = 1
+max = 5
+status = "unverified"
+note = "Build 1-33 de Wowhead (Porom, 4-nov)."
+
+[[pick]]
+level = 13
+talent = "Descarga de Escarcha mejorada"
+tree = "Escarcha"
+rank = 2
+max = 5
+status = "unverified"
+note = "Build 1-33 de Wowhead (Porom, 4-nov)."
+
+[[pick]]
+level = 14
+talent = "Descarga de Escarcha mejorada"
+tree = "Escarcha"
+rank = 3
+max = 5
+status = "unverified"
+note = "Build 1-33 de Wowhead (Porom, 4-nov)."
+
+[[pick]]
+level = 15
+talent = "Descarga de Escarcha mejorada"
+tree = "Escarcha"
+rank = 4
+max = 5
+status = "unverified"
+note = "Build 1-33 de Wowhead (Porom, 4-nov)."
+
+[[pick]]
+level = 16
+talent = "Descarga de Escarcha mejorada"
+tree = "Escarcha"
+rank = 5
+max = 5
+status = "unverified"
+note = "Build 1-33 de Wowhead (Porom, 4-nov)."
+
+[[pick]]
+level = 17
+talent = "Mordiescarcha"
+tree = "Escarcha"
+rank = 1
+max = 3
+status = "unverified"
+note = "Build 1-33 de Wowhead. Se quita al reiniciar al 33 (no se acumula con Dedos de Escarcha)."
+
+[[pick]]
+level = 18
+talent = "Mordiescarcha"
+tree = "Escarcha"
+rank = 2
+max = 3
+status = "unverified"
+note = "Build 1-33 de Wowhead. Se quita al reiniciar al 33 (no se acumula con Dedos de Escarcha)."
+
+[[pick]]
+level = 19
+talent = "Mordiescarcha"
+tree = "Escarcha"
+rank = 3
+max = 3
+status = "unverified"
+note = "Build 1-33 de Wowhead. Se quita al reiniciar al 33 (no se acumula con Dedos de Escarcha)."
+
+[[pick]]
+level = 20
+talent = "Precisión"
+tree = "Escarcha"
+rank = 1
+max = 3
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 21
+talent = "Precisión"
+tree = "Escarcha"
+rank = 2
+max = 3
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 22
+talent = "Lanza de hielo"
+tree = "Escarcha"
+rank = 1
+max = 1
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 23
+talent = "Ventisca mejorada"
+tree = "Escarcha"
+rank = 1
+max = 3
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 24
+talent = "Fragmentos de hielo"
+tree = "Escarcha"
+rank = 1
+max = 5
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 25
+talent = "Fragmentos de hielo"
+tree = "Escarcha"
+rank = 2
+max = 5
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 26
+talent = "Fragmentos de hielo"
+tree = "Escarcha"
+rank = 3
+max = 5
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 27
+talent = "Trizar"
+tree = "Escarcha"
+rank = 1
+max = 3
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 28
+talent = "Trizar"
+tree = "Escarcha"
+rank = 2
+max = 3
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 29
+talent = "Trizar"
+tree = "Escarcha"
+rank = 3
+max = 3
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 30
+talent = "Fragmentos de hielo"
+tree = "Escarcha"
+rank = 4
+max = 5
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 31
+talent = "Fragmentos de hielo"
+tree = "Escarcha"
+rank = 5
+max = 5
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 32
+talent = "Dedos de Escarcha"
+tree = "Escarcha"
+rank = 1
+max = 2
+status = "unverified"
+note = "Build 1-33 de Wowhead."
+
+[[pick]]
+level = 33
+talent = "REINICIA talentos y pasa a la build 33-60"
+tree = "Escarcha"
+status = "unverified"
+note = "Wowhead recomienda reiniciar al 33. Reiniciar cuesta 1-5 de oro. Ver la página de 30-39 para la build completa."
+
+[[pick]]
+level = 34
+talent = "Cono de frío mejorado"
+tree = "Escarcha"
+rank = 2
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead (Porom, 4-nov)."
+
+[[pick]]
+level = 35
+talent = "Cono de frío mejorado"
+tree = "Escarcha"
+rank = 3
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead (Porom, 4-nov)."
+
+[[pick]]
+level = 36
+talent = "Escalofrío del invierno"
+tree = "Escarcha"
+rank = 1
+max = 5
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 37
+talent = "Escalofrío del invierno"
+tree = "Escarcha"
+rank = 2
+max = 5
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 38
+talent = "Escalofrío del invierno"
+tree = "Escarcha"
+rank = 3
+max = 5
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 39
+talent = "Escalofrío del invierno"
+tree = "Escarcha"
+rank = 4
+max = 5
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 40
+talent = "Barrera de hielo"
+tree = "Escarcha"
+rank = 1
+max = 1
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 41
+talent = "Escalofrío del invierno"
+tree = "Escarcha"
+rank = 5
+max = 5
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 42
+talent = "Canalización de Escarcha"
+tree = "Escarcha"
+rank = 3
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead (2/3 ya puestos al reiniciar)."
+
+[[pick]]
+level = 43
+talent = "Especialización en varitas"
+tree = "Arcano"
+rank = 1
+max = 2
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 44
+talent = "Especialización en varitas"
+tree = "Arcano"
+rank = 2
+max = 2
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 45
+talent = "Recuperación Arcana"
+tree = "Arcano"
+rank = 1
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 46
+talent = "Recuperación Arcana"
+tree = "Arcano"
+rank = 2
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 47
+talent = "Recuperación Arcana"
+tree = "Arcano"
+rank = 3
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 48
+talent = "Sutileza Arcana"
+tree = "Arcano"
+rank = 1
+max = 2
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 49
+talent = "Sutileza Arcana"
+tree = "Arcano"
+rank = 2
+max = 2
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 50
+talent = "Concentración Arcana"
+tree = "Arcano"
+rank = 1
+max = 5
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 51
+talent = "Concentración Arcana"
+tree = "Arcano"
+rank = 2
+max = 5
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 52
+talent = "Concentración Arcana"
+tree = "Arcano"
+rank = 3
+max = 5
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 53
+talent = "Concentración Arcana"
+tree = "Arcano"
+rank = 4
+max = 5
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 54
+talent = "Concentración Arcana"
+tree = "Arcano"
+rank = 5
+max = 5
+status = "unverified"
+note = "Build 33-60 de Wowhead."
+
+[[pick]]
+level = 55
+talent = "Impacto Arcano"
+tree = "Arcano"
+rank = 1
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 56
+talent = "Impacto Arcano"
+tree = "Arcano"
+rank = 2
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 57
+talent = "Impacto Arcano"
+tree = "Arcano"
+rank = 3
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead. Nombre sin confirmar en el cliente (marcado «(?)» en la fuente)."
+
+[[pick]]
+level = 58
+talent = "Meditación Arcana"
+tree = "Arcano"
+rank = 1
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead. Si no te falta maná, puedes quitarla."
+
+[[pick]]
+level = 59
+talent = "Meditación Arcana"
+tree = "Arcano"
+rank = 2
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead. Si no te falta maná, puedes quitarla."
+
+[[pick]]
+level = 60
+talent = "Meditación Arcana"
+tree = "Arcano"
+rank = 3
+max = 3
+status = "unverified"
+note = "Build 33-60 de Wowhead. Si no te falta maná, puedes quitarla."

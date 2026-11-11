@@ -1,0 +1,450 @@
+# Ruta compartida de la Alianza (brujo gnomo y mago humano).
+
+id = "a30-stv-norte"
+title = "Vega de Tuercespina norte"
+levels = [30, 34]
+map = 1434
+summary = "Entrena el 30 en Ventormenta y baja a la Vega por el Bosque del Ocaso: Campamento Rebelde y campamento de Nesingwary. Acabas en Bahía del Botín con su ruta de vuelo."
+
+[[step]]
+id = "a30-stv-norte-001"
+do = "train"
+npc = 5497
+spells = [7302, 3565]
+at = [1453, 49.56, 85.8]
+if = { class = ["MAGE"] }
+text = "Entrena el 30 con Jennea Cannon, en el Barrio de los Magos de Ventormenta."
+tip = "Teletransporte a Darnassus te servirá para llegar a Desolace en un rato."
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.icy-veins.com/wow-forever/class-guides"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a30-stv-norte-002"
+do = "train"
+npc = 5495
+spells = [1098, 1949]
+at = [1453, 39.89, 84.19]
+if = { class = ["WARLOCK"] }
+text = "Entrena el 30 con Ursula Deline, en la Taberna del Cordero Degollado (Ventormenta)."
+tip = "Si estás en Forjaz, Briarthorn (50.4, 5.7) enseña lo mismo. La cadena del Manáfago va en tu guía de clase."
+status = "unverified"
+sources = ["questie:npc/5495"]
+
+[[step]]
+id = "a30-stv-norte-003"
+do = "fly"
+npc = 352
+node = "Darkshire"
+zone = 1431
+at = [1453, 71.29, 72.23]
+text = "Vuela a Villa Oscura (Bosque del Ocaso) con Dungar Longdrink."
+status = "unverified"
+sources = ["questie:npc/352"]
+
+[[step]]
+id = "a30-stv-norte-004"
+do = "goto"
+at = [1434, 38, 3.3]
+text = "Ve al sur por el camino hasta el Campamento Rebelde, en la entrada norte de la Vega de Tuercespina."
+tip = "No pares en el Bosque del Ocaso: a tu nivel ya da poca experiencia."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a30-stv-norte-005"
+do = "accept"
+quest = 203
+npc = 733
+at = [1434, 38.02, 3.33]
+text = "Habla con el sargento Yohwa y coge las dos misiones de la rebelión Kurzen."
+status = "unverified"
+sources = ["questie:quest/203", "questie:npc/733"]
+
+[[step]]
+id = "a30-stv-norte-006"
+do = "accept"
+quest = 204
+npc = 733
+at = [1434, 38.02, 3.33]
+text = "Coge también la de las medicinas al mismo sargento."
+status = "unverified"
+sources = ["questie:quest/204", "questie:npc/733"]
+
+[[step]]
+id = "a30-stv-norte-007"
+do = "accept"
+quest = 215
+npc = 738
+at = [1434, 40.34, 8.44]
+text = "Al sureste, el soldado Thorsen te da la misión de los secretos de la selva."
+status = "unverified"
+sources = ["questie:quest/215", "questie:npc/738"]
+
+[[step]]
+id = "a30-stv-norte-008"
+do = "accept"
+quest = 583
+npc = 716
+at = [1434, 35.66, 10.53]
+text = "Baja al campamento de Nesingwary y habla con Barnil Stonepot."
+status = "unverified"
+sources = ["questie:quest/583", "questie:npc/716"]
+
+[[step]]
+id = "a30-stv-norte-009"
+do = "turnin"
+quest = 583
+npc = 715
+at = [1434, 35.66, 10.81]
+text = "Entrégasela a Hemet Nesingwary, a su lado."
+status = "unverified"
+sources = ["questie:quest/583", "questie:npc/715"]
+
+[[step]]
+id = "a30-stv-norte-010"
+do = "accept"
+quest = 185
+npc = 717
+at = [1434, 35.62, 10.62]
+text = "Coge la caza de tigres jóvenes de Ajeck Rouack."
+status = "unverified"
+sources = ["questie:quest/185", "questie:npc/717"]
+
+[[step]]
+id = "a30-stv-norte-011"
+do = "accept"
+quest = 190
+npc = 718
+at = [1434, 35.55, 10.55]
+text = "Coge la caza de panteras jóvenes de Sir S. J. Erlgadin."
+status = "unverified"
+sources = ["questie:quest/190", "questie:npc/718"]
+
+[[step]]
+id = "a30-stv-norte-012"
+do = "accept"
+quest = 194
+npc = 715
+at = [1434, 35.66, 10.81]
+text = "Coge la caza de raptores de Hemet Nesingwary."
+status = "unverified"
+sources = ["questie:quest/194", "questie:npc/715"]
+
+[[step]]
+id = "a30-stv-norte-013"
+do = "complete"
+quest = 185
+at = [1434, 35.6, 11.6]
+text = "Mata tigres jóvenes alrededor del campamento."
+status = "unverified"
+sources = ["questie:quest/185"]
+
+[[step]]
+id = "a30-stv-norte-014"
+do = "complete"
+quest = 190
+at = [1434, 41.3, 12.8]
+text = "Mata panteras jóvenes al este, hacia el río."
+status = "unverified"
+sources = ["questie:quest/190"]
+
+[[step]]
+id = "a30-stv-norte-015"
+do = "complete"
+quest = 203
+at = [1434, 44.9, 10]
+text = "Mata luchadores Kurzen en el campamento al este."
+tip = "Tira de uno en uno: los médicos Kurzen curan y huyen."
+status = "unverified"
+sources = ["questie:quest/203"]
+
+[[step]]
+id = "a30-stv-norte-016"
+do = "complete"
+quest = 204
+at = [1434, 46.4, 8.7]
+text = "Consigue los remedios de la selva y el extracto de helecho de los Kurzen."
+status = "unverified"
+sources = ["questie:quest/204"]
+
+[[step]]
+id = "a30-stv-norte-017"
+do = "turnin"
+quest = 185
+npc = 717
+at = [1434, 35.62, 10.62]
+text = "Vuelve con Hemet y entrega los tigres y las panteras."
+status = "unverified"
+sources = ["questie:quest/185", "questie:npc/717"]
+
+[[step]]
+id = "a30-stv-norte-018"
+do = "turnin"
+quest = 190
+npc = 718
+at = [1434, 35.55, 10.55]
+text = "Entrega las panteras jóvenes a Sir S. J. Erlgadin."
+status = "unverified"
+sources = ["questie:quest/190", "questie:npc/718"]
+
+[[step]]
+id = "a30-stv-norte-019"
+do = "accept"
+quest = 186
+npc = 717
+at = [1434, 35.62, 10.62]
+text = "Coge la segunda caza de tigres."
+status = "unverified"
+sources = ["questie:quest/186", "questie:npc/717"]
+
+[[step]]
+id = "a30-stv-norte-020"
+do = "accept"
+quest = 191
+npc = 718
+at = [1434, 35.55, 10.55]
+text = "Coge la segunda caza de panteras."
+status = "unverified"
+sources = ["questie:quest/191", "questie:npc/718"]
+
+[[step]]
+id = "a30-stv-norte-021"
+do = "complete"
+quest = 186
+at = [1434, 37.8, 13.7]
+text = "Mata tigres de Tuercespina entre el campamento y el río."
+status = "unverified"
+sources = ["questie:quest/186"]
+
+[[step]]
+id = "a30-stv-norte-022"
+do = "complete"
+quest = 194
+at = [1434, 26, 16.1]
+text = "Mata raptores de Tuercespina al oeste."
+status = "unverified"
+sources = ["questie:quest/194"]
+
+[[step]]
+id = "a30-stv-norte-023"
+do = "complete"
+quest = 191
+at = [1434, 29.8, 12.6]
+text = "Mata panteras de camino de vuelta."
+status = "unverified"
+sources = ["questie:quest/191"]
+
+[[step]]
+id = "a30-stv-norte-024"
+do = "turnin"
+quest = 186
+npc = 717
+at = [1434, 35.62, 10.62]
+text = "Entrega los tigres a Ajeck."
+status = "unverified"
+sources = ["questie:quest/186", "questie:npc/717"]
+
+[[step]]
+id = "a30-stv-norte-025"
+do = "turnin"
+quest = 191
+npc = 718
+at = [1434, 35.55, 10.55]
+text = "Entrega las panteras a Sir S. J. Erlgadin."
+status = "unverified"
+sources = ["questie:quest/191", "questie:npc/718"]
+
+[[step]]
+id = "a30-stv-norte-026"
+do = "turnin"
+quest = 194
+npc = 715
+at = [1434, 35.66, 10.81]
+text = "Entrega los raptores a Hemet."
+tip = "Las siguientes cazas (Maestro de raptores 2, tigres 3...) quedan para más tarde: no las cojas ahora."
+status = "unverified"
+sources = ["questie:quest/194", "questie:npc/715"]
+
+[[step]]
+id = "a30-stv-norte-027"
+do = "turnin"
+quest = 203
+npc = 733
+at = [1434, 38.02, 3.33]
+text = "Vuelve al Campamento Rebelde y entrega la rebelión a Yohwa."
+status = "unverified"
+sources = ["questie:quest/203", "questie:npc/733"]
+
+[[step]]
+id = "a30-stv-norte-028"
+do = "turnin"
+quest = 204
+npc = 733
+at = [1434, 38.02, 3.33]
+text = "Entrega las medicinas a Yohwa."
+status = "unverified"
+sources = ["questie:quest/204", "questie:npc/733"]
+
+[[step]]
+id = "a30-stv-norte-029"
+do = "turnin"
+quest = 215
+npc = 469
+at = [1434, 38.04, 3.01]
+text = "Entrega los secretos de la selva al teniente Doren."
+status = "unverified"
+sources = ["questie:quest/215", "questie:npc/469"]
+
+[[step]]
+id = "a30-stv-norte-030"
+do = "accept"
+quest = 200
+npc = 469
+at = [1434, 38.04, 3.01]
+text = "Coge de Doren la misión del corredor de apuestas Herod."
+status = "unverified"
+sources = ["questie:quest/200", "questie:npc/469"]
+
+[[step]]
+id = "a30-stv-norte-031"
+do = "accept"
+quest = 210
+npc = 770
+at = [1434, 37.74, 3.3]
+text = "Coge la misión de cocina del cabo Kaleb (pide nivel 32)."
+tip = "Si aún no eres 32, vuelve a por ella antes de bajar a Bahía del Botín."
+status = "unverified"
+sources = ["questie:quest/210", "questie:npc/770"]
+
+[[step]]
+id = "a30-stv-norte-032"
+do = "turnin"
+quest = 200
+at = [1434, 43.67, 9.37]
+text = "Busca los registros de Herod en la cabaña del campamento Kurzen."
+status = "unverified"
+sources = ["questie:quest/200"]
+
+[[step]]
+id = "a30-stv-norte-033"
+do = "accept"
+quest = 328
+at = [1434, 43.67, 9.37]
+text = "Coge la siguiente parte en los mismos registros."
+status = "unverified"
+sources = ["questie:quest/328"]
+
+[[step]]
+id = "a30-stv-norte-034"
+do = "turnin"
+quest = 328
+at = [1434, 49.62, 7.56]
+text = "Abre la caja fuerte de Herod en la cueva del este."
+tip = "Cueva llena de Kurzen: entra con vida y maná llenos."
+status = "unverified"
+sources = ["questie:quest/328"]
+
+[[step]]
+id = "a30-stv-norte-035"
+do = "accept"
+quest = 329
+at = [1434, 49.62, 7.56]
+text = "Coge en la caja la misión del espía."
+status = "unverified"
+sources = ["questie:quest/329"]
+
+[[step]]
+id = "a30-stv-norte-036"
+do = "turnin"
+quest = 329
+npc = 469
+at = [1434, 38.04, 3.01]
+text = "Vuelve con Doren y entrega el espía."
+status = "unverified"
+sources = ["questie:quest/329", "questie:npc/469"]
+
+[[step]]
+id = "a30-stv-norte-037"
+do = "accept"
+quest = 330
+npc = 469
+at = [1434, 38.04, 3.01]
+text = "Coge de Doren los horarios de patrulla."
+status = "unverified"
+sources = ["questie:quest/330", "questie:npc/469"]
+
+[[step]]
+id = "a30-stv-norte-038"
+do = "turnin"
+quest = 330
+npc = 1422
+at = [1434, 37.66, 3.39]
+text = "Entrégaselos al cabo Sethman, a dos pasos."
+status = "unverified"
+sources = ["questie:quest/330", "questie:npc/1422"]
+
+[[step]]
+id = "a30-stv-norte-039"
+do = "accept"
+quest = 331
+npc = 1422
+at = [1434, 37.66, 3.39]
+text = "Coge el aviso para Doren."
+status = "unverified"
+sources = ["questie:quest/331", "questie:npc/1422"]
+
+[[step]]
+id = "a30-stv-norte-040"
+do = "turnin"
+quest = 331
+npc = 469
+at = [1434, 38.04, 3.01]
+text = "Entrega el aviso a Doren."
+status = "unverified"
+sources = ["questie:quest/331", "questie:npc/469"]
+
+[[step]]
+id = "a30-stv-norte-041"
+do = "goto"
+at = [1434, 27, 77]
+text = "Baja por el camino hasta Bahía del Botín, en la punta sur."
+tip = "El camino cruza zonas de nivel 40: no te desvíes y evita las ruinas trolls."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a30-stv-norte-042"
+do = "getfp"
+npc = 2859
+node = "Booty Bay"
+at = [1434, 27.53, 77.79]
+text = "Coge la ruta de vuelo de Bahía del Botín con Gyll."
+status = "unverified"
+sources = ["questie:npc/2859"]
+
+[[step]]
+id = "a30-stv-norte-043"
+do = "turnin"
+quest = 210
+npc = 773
+at = [1434, 26.95, 77.21]
+text = "Entrega la misión de cocina a Krazek, en la planta alta de la posada."
+status = "unverified"
+sources = ["questie:quest/210", "questie:npc/773"]
+
+[[step]]
+id = "a30-stv-norte-044"
+do = "note"
+if = { class = ["MAGE"] }
+text = "Al 32 y al 34 toca entrenar. Mago: Teletransporte a Ventormenta, entrena y vuelve volando."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a30-stv-norte-045"
+do = "level"
+level = 34
+text = "Deberías ser nivel 34. Si te falta, mata raptores y tigres al norte antes de irte."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]

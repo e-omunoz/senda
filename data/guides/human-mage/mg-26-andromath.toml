@@ -1,0 +1,52 @@
+# Guía human-mage: Mago: Alto hechicero Andromath (26). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-26-andromath"
+title = "Mago: Alto hechicero Andromath (26)"
+levels = [26, 27]
+map = 1453
+summary = "Hechizos del 26 y comienzo de la cadena de la Prenda de nudo astral."
+
+[[step]]
+id = "mg-26-andromath-001"
+do = "train"
+npc = 5497
+spells = [120]
+at = [1453, 49.6, 85.8]
+text = "Nivel 26: aprende Cono de frío."
+tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos."
+status = "unverified"
+sources = ["questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-26-andromath-002"
+do = "accept"
+quest = 1939
+npc = 5497
+at = [1453, 49.6, 85.8]
+text = "Coge de Jennea Cannon la misión del Alto hechicero Andromath."
+status = "unverified"
+sources = ["questie:quest/1939", "questie:npc/5497", "https://www.warcrafttavern.com/forever/guides/mage-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-26-andromath-003"
+do = "turnin"
+quest = 1939
+npc = 5694
+at = [1453, 48.7, 87.6]
+text = "Habla con el Alto hechicero Andromath, en el Sagrario."
+status = "unverified"
+sources = ["questie:quest/1939", "questie:npc/5694"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-26-andromath-004"
+do = "accept"
+quest = 1938
+npc = 5694
+at = [1453, 48.7, 87.6]
+text = "Coge la misión del tratado de Ur."
+tip = "El tratado está en lo alto de la Torre de Ilgalar (Montañas Crestagrana): llévalo cuando vayas allí."
+status = "unverified"
+sources = ["questie:quest/1938", "questie:npc/5694"]
+checked = "2026-11-11"

@@ -1,0 +1,20 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Duo.lua, ns.DUO.BRACKETS, tramo 50-60). Tramo por el nivel más bajo de los dos.
+id = "duo-50-60"
+class = "ANY"
+kind = "page"
+title = "Niveles 50-60: hacia el máximo"
+levels = [50, 60]
+order = 390
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "cita:Manual del Mago Gnomo (sección «En pareja»)", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Dónde"
+body = """
+Cráter de Un'Goro, Frondavil, Las Estepas Ardientes, Cuna del Invierno y Tierras de la Peste del Este. Mazmorras: Blackmaw Hold (55-60), Shaper's Terrace (58-60) y las clásicas."""
+
+[[block]]
+heading = "Al 60"
+body = """
+Bandas el **9 de diciembre**: Barrow Deeps (10), Hyjal Summit (20) y Guarida de Onyxia (40, amuleto obligatorio). El mago en Fuego y el brujo en Destrucción para bandas."""

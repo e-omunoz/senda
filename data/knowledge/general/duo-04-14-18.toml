@@ -1,0 +1,35 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (Duo.lua, ns.DUO.BRACKETS, tramo 14-18). Tramo por el nivel más bajo de los dos.
+id = "duo-14-18"
+class = "ANY"
+kind = "page"
+title = "Niveles 14-18: Hall of Thanes y Crestagrana"
+levels = [14, 18]
+order = 340
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "cita:Manual del Mago Gnomo (sección «En pareja»)", "https://conquestcapped.com/", "https://www.warcrafttavern.com/forever/", "https://www.method.gg/"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Hall of Thanes (14-17)"
+body = """
+Mazmorra de 5 dentro de Forjaz: buscad 3 jugadores (tanque y sanador). Entrada por el pasillo con telarañas a la izquierda del salón de Magni.
+
+Coged antes sus 5 misiones (unos 13.300 de experiencia):
+- **Important Heirlooms** (Thom Filch).
+- **The Restless Dead** (Afadra Dunwall).
+- **An Ancient Grudge** (dentro).
+- **The Treaty of Understanding** (tablilla de la última sala).
+- **Old Ironforge Incursion** (Earthseer Farsen, cantera de Gol'Bolar, Dun Morogh 64.8, 58.5)."""
+
+[[block]]
+heading = "Montañas Crestagrana y Tres Caminos (15-18)"
+body = """
+Misiones de Villa del Lago (dato de Classic). En Tres Caminos (10.5, 72.7) entregad cajas de suministros a Marcy Baker y comprad patrones de Sastrería con el Favor a Mivin Shadowweave: Sombras para el brujo y Silky para el mago."""
+note = "«(Classic)» en la fuente para las misiones de Villa del Lago."
+
+[[block]]
+heading = "Favor de mercader"
+body = """
+- 20 Madejas de paño de lino dan 10 de Favor; 40 de lino suelto, solo 5. Haced madejas antes de entregar.
+- 20 de Polvo extraño dan 5 de Favor.
+- La primera entrega da una etiqueta cuya misión da 50 de Favor."""

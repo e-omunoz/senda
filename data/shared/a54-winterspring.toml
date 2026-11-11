@@ -1,0 +1,395 @@
+# Ruta compartida de Alianza (brujo gnomo y mago humano), 45-60. Generada con QuestieDB local; textos propios.
+id = "a54-winterspring"
+title = "Cuna del Invierno"
+levels = [54, 56]
+map = 1452
+summary = "Cruza Fauces de Madera. Donova, Aldea Caída Estelar y Vista Eterna: Winterfall, yetis y fúrbolgs. Piedra en Vista Eterna."
+
+[[step]]
+id = "a54-winterspring-001"
+do = "turnin"
+quest = 8465
+npc = 11556
+at = [1452, 27.7, 34.5]
+text = "Cruza el túnel de Fauces de Madera y habla con Salfa a la salida, en Cuna del Invierno."
+tip = "Si los fúrbolgs del túnel te atacan, sube reputación con plumas o rodea por Vista Eterna en vuelo."
+status = "unverified"
+sources = ["questie:quest/8465", "questie:npc/11556", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-002"
+do = "accept"
+quest = 8464
+npc = 11556
+at = [1452, 27.7, 34.5]
+text = "Coge la misión de Salfa contra los Winterfall."
+status = "unverified"
+sources = ["questie:quest/8464", "questie:npc/11556", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-003"
+do = "turnin"
+quest = 980
+npc = 9298
+at = [1452, 31.3, 45.2]
+text = "Baja al sur hasta Donova Snowden y entrega las fuentes nuevas."
+status = "unverified"
+sources = ["questie:quest/980", "questie:npc/9298", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-004"
+do = "turnin"
+quest = 3908
+npc = 9298
+at = [1452, 31.3, 45.2]
+text = "Dale a Donova la espada de Linken."
+tip = "La siguiente parte (el elixir de Feralas) no compensa: sáltala."
+status = "unverified"
+sources = ["questie:quest/3908", "questie:npc/9298", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-005"
+do = "accept"
+quest = 5082
+npc = 9298
+at = [1452, 31.3, 45.2]
+text = "Coge la misión de Donova contra los Winterfall."
+status = "unverified"
+sources = ["questie:quest/5082", "questie:npc/9298", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-006"
+do = "complete"
+quest = 5082
+at = [1452, 36.4, 40.0]
+text = "En las Aguas Termales Fuego Frío, al este de Donova, mata exploradores y totémicos Winterfall (8 de cada)."
+tip = "Los vigías de guarida salen en el Poblado Winterfall, al este: termínalos allí."
+status = "unverified"
+sources = ["questie:quest/5082", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-007"
+do = "goto"
+at = [1452, 61.4, 38.8]
+text = "Cruza el centro de la zona hacia el este hasta Vista Eterna."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a54-winterspring-008"
+do = "getfp"
+npc = 11138
+node = "Everlook"
+at = [1452, 62.3, 36.6]
+text = "Coge la ruta de vuelo de Vista Eterna."
+status = "unverified"
+sources = ["questie:npc/11138", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-009"
+do = "sethearth"
+npc = 11118
+at = [1452, 61.4, 38.8]
+text = "Pon la piedra de hogar en la posada de Vista Eterna."
+status = "unverified"
+sources = ["questie:npc/11118", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-010"
+do = "accept"
+quest = 3783
+npc = 10305
+at = [1452, 60.9, 37.6]
+text = "Coge la misión de las pieles de yeti de Umi."
+status = "unverified"
+sources = ["questie:quest/3783", "questie:npc/10305", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-011"
+do = "accept"
+quest = 6028
+npc = 10431
+at = [1452, 61.4, 39.0]
+text = "Coge el informe de Vista Eterna (para Campamento Viento Frío). Guárdalo."
+status = "unverified"
+sources = ["questie:quest/6028", "questie:npc/10431", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-012"
+do = "accept"
+quest = 6030
+npc = 10431
+at = [1452, 61.4, 39.0]
+text = "Coge el libro para el duque Nicholas (Capilla de la Esperanza de la Luz). Guárdalo."
+status = "unverified"
+sources = ["questie:quest/6030", "questie:npc/10431", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-013"
+do = "accept"
+quest = 6604
+npc = 11755
+at = [1452, 61.1, 38.4]
+text = "Coge la misión de los fúrbolgs lechúcicos enfurecidos."
+status = "unverified"
+sources = ["questie:quest/6604", "questie:npc/11755", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-014"
+do = "complete"
+quest = 5082
+at = [1452, 68.0, 37.5]
+text = "En el Poblado Winterfall, al este de Vista Eterna, mata 8 vigías de guarida."
+status = "unverified"
+sources = ["questie:quest/5082", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-015"
+do = "complete"
+quest = 8464
+at = [1452, 68.0, 37.5]
+text = "En el mismo poblado mata 8 chamanes, 8 vigías de guarida y 8 úrsidos Winterfall."
+tip = "Guarda las cuentas de espíritu: Salfa las cambia por reputación."
+status = "unverified"
+sources = ["questie:quest/8464", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-016"
+do = "complete"
+quest = 3783
+at = [1452, 43.6, 39.4]
+text = "De camino al oeste, mata yetis Cardo de Hielo errantes del centro hasta tener 10 pieles gruesas."
+status = "unverified"
+sources = ["questie:quest/3783", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-017"
+do = "goto"
+at = [1452, 52.0, 30.4]
+text = "Ve a la Aldea Caída Estelar."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a54-winterspring-018"
+do = "turnin"
+quest = 5249
+npc = 11079
+at = [1452, 52.0, 30.4]
+text = "Entrega la misión a Wynd Nightchaser."
+status = "unverified"
+sources = ["questie:quest/5249", "questie:npc/11079", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-019"
+do = "accept"
+quest = 5244
+npc = 11079
+at = [1452, 52.0, 30.4]
+text = "Coge la misión de las ruinas de Kel'Theril."
+status = "unverified"
+sources = ["questie:quest/5244", "questie:npc/11079", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-020"
+do = "turnin"
+quest = 5244
+npc = 10301
+at = [1452, 52.1, 30.4]
+text = "Habla con Jaron Stoneshaper, al lado."
+status = "unverified"
+sources = ["questie:quest/5244", "questie:npc/10301", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-021"
+do = "accept"
+quest = 5245
+npc = 10301
+at = [1452, 52.1, 30.4]
+text = "Coge la misión de los espíritus de Kel'Theril."
+status = "unverified"
+sources = ["questie:quest/5245", "questie:npc/10301", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-022"
+do = "turnin"
+quest = 6604
+npc = 10301
+at = [1452, 52.1, 30.4]
+text = "Entrega a Jaron la misión de los fúrbolgs lechúcicos."
+status = "unverified"
+sources = ["questie:quest/6604", "questie:npc/10301", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-023"
+do = "accept"
+quest = 4861
+npc = 10301
+at = [1452, 52.1, 30.4]
+text = "Coge la continuación: busca el campamento destrozado de Jaron."
+status = "unverified"
+sources = ["questie:quest/4861", "questie:npc/10301", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-024"
+do = "complete"
+quest = 5245
+at = [1452, 53.0, 45.0]
+text = "Usa el pico de Jaron en las ruinas junto al lago Kel'Theril hasta tener los cuatro fragmentos."
+tip = "Los fragmentos se entregan en las Tierras de la Peste del Este: guárdalos."
+status = "unverified"
+sources = ["questie:quest/5245", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Coordenada aproximada de las ruinas: la base de datos no la da."
+
+[[step]]
+id = "a54-winterspring-025"
+do = "turnin"
+quest = 4861
+at = [1452, 59.0, 59.8]
+text = "Baja al sur y examina el campamento destrozado de Jaron."
+status = "unverified"
+sources = ["questie:quest/4861", "questie:object/175587", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a54-winterspring-026"
+do = "accept"
+quest = 4863
+at = [1452, 59.0, 59.8]
+text = "Coge la continuación del campamento."
+status = "unverified"
+sources = ["questie:quest/4863", "questie:object/175587", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a54-winterspring-027"
+do = "turnin"
+quest = 4863
+at = [1452, 61.4, 60.7]
+text = "Encuentra el carro destrozado, un poco más al este."
+status = "unverified"
+sources = ["questie:quest/4863", "questie:object/175586", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a54-winterspring-028"
+do = "accept"
+quest = 4864
+at = [1452, 61.4, 60.7]
+text = "Coge la misión de recuperar las provisiones y el amuleto."
+status = "unverified"
+sources = ["questie:quest/4864", "questie:object/175586", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a54-winterspring-029"
+do = "complete"
+quest = 4864
+at = [1452, 61.0, 62.0]
+text = "Recoge las provisiones de la nieve y mata fúrbolgs lechúcicos hasta recuperar el amuleto de plumas."
+status = "unverified"
+sources = ["questie:quest/4864", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+note = "Coordenada aproximada junto al carro."
+
+[[step]]
+id = "a54-winterspring-030"
+do = "turnin"
+quest = 4864
+npc = 10301
+at = [1452, 52.1, 30.4]
+text = "Vuelve con Jaron a Caída Estelar y entrégala."
+status = "unverified"
+sources = ["questie:quest/4864", "questie:npc/10301", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-031"
+do = "goto"
+at = [1452, 31.3, 45.2]
+text = "Vuelve al oeste, con Donova."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a54-winterspring-032"
+do = "turnin"
+quest = 5082
+npc = 9298
+at = [1452, 31.3, 45.2]
+text = "Entrega los Winterfall a Donova."
+status = "unverified"
+sources = ["questie:quest/5082", "questie:npc/9298", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-033"
+do = "turnin"
+quest = 8464
+npc = 11556
+at = [1452, 27.7, 34.5]
+text = "Entrega la misión a Salfa, en la salida del túnel."
+status = "unverified"
+sources = ["questie:quest/8464", "questie:npc/11556", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-034"
+do = "accept"
+quest = 8469
+npc = 11556
+at = [1452, 27.7, 34.5]
+text = "Opcional: entrega las cuentas de espíritu a Salfa."
+optional = true
+status = "unverified"
+sources = ["questie:quest/8469", "questie:npc/11556", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-035"
+do = "turnin"
+quest = 8469
+npc = 11556
+at = [1452, 27.7, 34.5]
+text = "Entrega las cuentas."
+optional = true
+status = "unverified"
+sources = ["questie:quest/8469", "questie:npc/11556", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"
+
+[[step]]
+id = "a54-winterspring-036"
+do = "hearth"
+zone = 1452
+text = "Usa la piedra para volver a Vista Eterna."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a54-winterspring-037"
+do = "turnin"
+quest = 3783
+npc = 10305
+at = [1452, 60.9, 37.6]
+text = "Entrega las pieles de yeti a Umi."
+status = "unverified"
+sources = ["questie:quest/3783", "questie:npc/10305", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+checked = "2026-11-11"

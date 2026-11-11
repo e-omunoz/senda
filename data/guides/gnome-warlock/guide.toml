@@ -1,0 +1,45 @@
+id = "gnome-warlock"
+title = "Brujo gnomo 1-60"
+faction = "Alliance"
+races = ["Gnome"]
+classes = ["WARLOCK"]
+levels = [1, 60]
+# Solo las secciones propias de la guía, en orden de nivel. El integrador intercala las
+# secciones compartidas de la Alianza ("shared:<id>") entre ellas.
+sections = [
+  "01-coldridge",
+  "02-dun-morogh",
+  "10-voidwalker",
+  "shared:a12-loch-modan",
+  "shared:a16-hall-of-thanes",
+  "shared:a17-paramos-de-poniente",
+  "shared:a19-crestagrana",
+  "shared:a21-minas-de-la-muerte",
+  "20-succubus",
+  "shared:a22-bosque-del-ocaso",
+  "shared:a26-los-humedales",
+  "shared:a30-stv-norte",
+  "30-felhunter",
+  "shared:a34-desolace",
+  "shared:a38-valle-de-huesos",
+  "shared:a40-ciudad",
+  "40-felsteed",
+  "shared:a40-monasterio",
+  "shared:a41-riverglades",
+  "shared:a44-badlands",
+  "shared:a45-feralas",
+  "shared:a47-tanaris",
+  "shared:a48-searing-gorge",
+  "shared:a49-hinterlands",
+  "shared:a50-ungoro",
+  "shared:a52-felwood",
+  "50-inferno",
+  "shared:a54-winterspring",
+  "shared:a55-burning-steppes",
+  "shared:a57-western-plaguelands",
+  "shared:a58-eastern-plaguelands",
+  "shared:a60-endgame",
+  "60-doomguard-dreadsteed",
+]
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]

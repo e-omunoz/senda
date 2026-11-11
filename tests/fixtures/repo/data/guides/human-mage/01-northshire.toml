@@ -1,0 +1,12 @@
+id = "northshire"
+title = "Valle de Villanorte"
+levels = [1, 5]
+map = 1429
+
+[[step]]
+id = "northshire-001"
+do = "train"
+spells = [116, 133]
+text = "Entrena Descarga de Escarcha."
+status = "disputed"
+sources = ["wiki", "observación"]

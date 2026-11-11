@@ -1,0 +1,17 @@
+# Guía human-mage: Mago: Tratado de Ur (Crestagrana). Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "mg-27-ur-treatise"
+title = "Mago: Tratado de Ur (Crestagrana)"
+levels = [27, 28]
+map = 1433
+summary = "Paso de la misión de clase que se hace en Montañas Crestagrana."
+
+[[step]]
+id = "mg-27-ur-treatise-001"
+do = "complete"
+quest = 1938
+at = [1433, 73.8, 47.6]
+text = "Sube a lo alto de la Torre de Ilgalar y coge el tratado de Ur."
+tip = "La torre está llena de magos y guardianes: limpia piso a piso y usa Polimorfia. Mejor en grupo."
+status = "unverified"
+sources = ["questie:quest/1938"]
+checked = "2026-11-11"

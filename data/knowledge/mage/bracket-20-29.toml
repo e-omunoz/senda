@@ -1,0 +1,64 @@
+# Migrado de BrujoGnomoGuia 4.1.0 (MageData.lua MG.BRACKETS, tramo 20-29).
+id = "mage-bracket-20-29"
+class = "MAGE"
+kind = "page"
+title = "Niveles 20-29: Lanza de hielo"
+levels = [20, 29]
+order = 30
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever"]
+checked = "2026-11-10"
+
+[[block]]
+heading = "Zonas"
+body = """
+Montañas Crestagrana, Bosque del Ocaso, Los Humedales y Vallefresno.
+
+Mazmorras: Cavernas de Brazanegra, **Excavation Site: Wetlands** (24-29), **City of Dalaran** (28-33)."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **20-21:** Precisión 2/3.
+- **22:** Lanza de hielo.
+- **23:** Ventisca mejorada 1/3.
+- **24-26:** Fragmentos de hielo 3/5.
+- **27-29:** Trizar 3/3."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **20:** Traslación, Evocación, Escudo de maná, Ventisca, Teletransporte a: Ventormenta.
+- **22:** Chamuscar.
+- **24:** Contrahechizo.
+- **26:** Cono de frío.
+- **28:** Conjurar ágata de maná."""
+
+[[block]]
+heading = "Rotación"
+body = """
+Descarga de Escarcha, Nova, aléjate, Lanza de hielo mientras está congelado y Descarga de Escarcha. Lanza de hielo y Explosión de Fuego comparten 8 s: elige una."""
+
+[[block]]
+heading = "Área (opcional)"
+body = """
+Junta 3-4 enemigos, Nova, aléjate, Ventisca empezando en el último segundo de la Nova, Cono de frío, otra Nova y Fogonazo. En Forever está debilitado (ralentización máxima del 40%, Cono más corto): úsalo con cuidado."""
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 22:** SND_Lanza.
+- **Al 24:** SND_Contra.
+- **Al 28:** SND_Gema."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+Al 20 entrena **Experto**. Objetivo al 30: Sastrería ~200 y Encantamiento ~175."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Traslación rompe raíces y aturdimientos.
+- Usa siempre el rango más alto de Descarga de Escarcha.
+- Teletransporte a Ventormenta para volver a entrenar: compra runas."""

@@ -1,0 +1,52 @@
+# Entrada humana a la ruta compartida de la Alianza (10/11 -> 12).
+# El humano acaba el Bosque de Elwynn hacia el 10-11 junto a Ventormenta y coge el Tranvía subterráneo
+# para unirse a la ruta en Loch Modan (a12-loch-modan), igual que el gnomo.
+# Coordenadas: QuestieDB de Forever (tools/lookup.py). Ventormenta usa en QuestieDB las coordenadas del mapa
+# moderno (Dungar Longdrink 71.3, 72.2); ver data/shared/ROUTE-a.md.
+id = "a11-humano-tranvia"
+title = "Ventormenta: Tranvía a Forjaz (humanos)"
+levels = [10, 12]
+map = 1453
+summary = "Solo humanos: ruta de vuelo de Ventormenta, Tranvía subterráneo a Forjaz y ruta de vuelo de Forjaz. Después, Loch Modan."
+if = { race = ["Human"] }
+
+[[step]]
+id = "a11h-001"
+do = "getfp"
+node = "2"
+npc = 352
+at = [1453, 71.3, 72.2]
+text = "Habla con Dungar Longdrink, el maestro de grifos de Ventormenta, para tener la ruta de vuelo."
+tip = "Si ya la tienes, el paso se completa solo."
+status = "unverified"
+sources = ["questie:npc/352"]
+
+[[step]]
+id = "a11h-002"
+do = "goto"
+at = [1453, 69.0, 31.0, "Tranvía subterráneo (Distrito de los Enanos)"]
+radius = 25
+text = "Ve al Distrito de los Enanos y entra en el Tranvía subterráneo. Viaja hasta Forjaz."
+tip = "El viaje dura un par de minutos: aprovecha para ordenar bolsas y conjurar agua."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
+note = "Coordenada aproximada de la entrada del tranvía en el mapa moderno de Ventormenta; revisar en juego."
+
+[[step]]
+id = "a11h-003"
+do = "goto"
+at = [1455, 76.5, 51.0, "Salida del tranvía (Ciudad Manitas)"]
+radius = 25
+text = "Sal del tranvía en Ciudad Manitas (Forjaz)."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a11h-004"
+do = "getfp"
+node = "6"
+npc = 1573
+at = [1455, 55.5, 47.7]
+text = "Coge la ruta de vuelo de Forjaz con Gryth Thurden, en la Gran Fundición."
+status = "unverified"
+sources = ["questie:npc/1573"]

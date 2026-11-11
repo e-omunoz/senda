@@ -1,0 +1,27 @@
+id = "coldridge"
+title = "Valle de Crestanevada"
+levels = [1, 6]
+map = 1426
+summary = "Primeros pasos en «Crestanevada»: ¡ánimo!"
+
+[[step]]
+id = "coldridge-001"
+do = "accept"
+quest = 179
+npc = 658
+at = [1426, 29.9, 71.2]
+text = "Habla con Sten \"Brazorrecio\" y coge la misión."
+tip = "Línea 1\nLínea 2 con barra \\ invertida\ty tab"
+status = "verified"
+sources = ["questie:quest/179"]
+checked = 2026-11-10
+note = "nota interna que no debe salir"
+
+[[step]]
+id = "coldridge-002"
+do = "goto"
+at = [1426, 30, 70.5]
+wps = [[1426, 31.0, 72.0, "Cueva"]]
+text = "Ve a la cueva ]] [[ ]=]."
+status = "unverified"
+if = { class = ["WARLOCK"], minlevel = 2 }

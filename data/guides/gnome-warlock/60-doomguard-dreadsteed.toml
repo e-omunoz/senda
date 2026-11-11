@@ -1,0 +1,137 @@
+# Brujo: Ritual de condena (Guardia apocalíptico) y Corcel de la muerte (60). Opcional: no ayudan a subir.
+# Ambas piden grupo (La Masacre); el Corcel de la muerte es una cadena larga y cara.
+id = "wl-endgame"
+title = "Brujo: Guardia apocalíptico y Corcel de la muerte"
+levels = [60, 60]
+map = 1419
+summary = "Opcional al 60. Daio el Decrépito (Las Tierras Devastadas) enseña el Ritual de condena; Jubahl Corpseseeker (Forjaz) empieza la cadena del Corcel de la muerte."
+if = { class = ["WARLOCK"] }
+
+[[step]]
+id = "wl-endgame-001"
+do = "accept"
+quest = 7581
+npc = 14463
+at = [1419, 34.1, 50.1]
+text = "En la Cicatriz Corrupta (Las Tierras Devastadas), coge la primera misión de Daio el Decrépito."
+optional = true
+status = "unverified"
+sources = ["questie:quest/7581", "questie:npc/14463", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-endgame-002"
+do = "accept"
+quest = 7582
+npc = 14463
+at = [1419, 34.1, 50.1]
+text = "Coge también la segunda de Daio."
+optional = true
+status = "unverified"
+sources = ["questie:quest/7582", "questie:npc/14463"]
+
+[[step]]
+id = "wl-endgame-003"
+do = "complete"
+quest = 7581
+text = "Consigue 15 sangres de sátiro de los sátiros Wildspawn en La Masacre (barrio del Hacha de Madera)."
+tip = "Mazmorra: hazla con grupo."
+optional = true
+status = "unverified"
+sources = ["questie:quest/7581", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+
+[[step]]
+id = "wl-endgame-004"
+do = "complete"
+quest = 7582
+at = [1452, 57.7, 82.4]
+text = "En Cuna del Invierno, mata Hederine en la Garganta Negrasusurro hasta tener 5 lágrimas."
+optional = true
+status = "unverified"
+sources = ["questie:quest/7582", "questie:npc/7461", "questie:npc/7462", "questie:npc/7463"]
+
+[[step]]
+id = "wl-endgame-005"
+do = "turnin"
+quest = 7581
+npc = 14463
+at = [1419, 34.1, 50.1]
+text = "Entrega la sangre a Daio."
+optional = true
+status = "unverified"
+sources = ["questie:quest/7581", "questie:npc/14463"]
+
+[[step]]
+id = "wl-endgame-006"
+do = "turnin"
+quest = 7582
+npc = 14463
+at = [1419, 34.1, 50.1]
+text = "Entrega las lágrimas a Daio."
+optional = true
+status = "unverified"
+sources = ["questie:quest/7582", "questie:npc/14463"]
+
+[[step]]
+id = "wl-endgame-007"
+do = "accept"
+quest = 7583
+npc = 14463
+at = [1419, 34.1, 50.1]
+text = "Coge la última de Daio."
+optional = true
+status = "unverified"
+sources = ["questie:quest/7583", "questie:npc/14463"]
+
+[[step]]
+id = "wl-endgame-008"
+do = "complete"
+quest = 7583
+at = [1419, 43.4, 69.4]
+text = "Usa la prisión de cristal sobre un comandante guardia apocalíptico de la Cicatriz Corrupta."
+tip = "Llévate a alguien: intenta escapar a golpes. Si falla, Desterrar."
+optional = true
+status = "unverified"
+sources = ["questie:quest/7583", "questie:object/179644", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-endgame-009"
+do = "turnin"
+quest = 7583
+npc = 14463
+at = [1419, 34.1, 50.1]
+text = "Entrega el guardia apocalíptico a Daio y aprende el Ritual de condena."
+optional = true
+status = "unverified"
+sources = ["questie:quest/7583", "questie:npc/14463"]
+
+[[step]]
+id = "wl-endgame-010"
+do = "accept"
+quest = 7562
+npc = 6382
+at = [1455, 52.7, 6.1]
+text = "Corcel de la muerte: en la Caverna Abandonada de Forjaz, coge la misión de Jubahl Corpseseeker."
+tip = "Cadena larga y cara: sangres de bestia, elixires, fragmentos, escamas, barras de arcanita y un ritual de 5 en La Masacre Oeste."
+optional = true
+status = "unverified"
+sources = ["questie:quest/7562", "questie:npc/6382", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-endgame-011"
+do = "turnin"
+quest = 7562
+npc = 14436
+at = [1428, 12.7, 31.6]
+text = "Entrega a Mor'zul Bloodbringer, en el Altar de las Tormentas (Las Estepas Ardientes), y sigue su cadena."
+optional = true
+status = "unverified"
+sources = ["questie:quest/7562", "questie:npc/14436", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "wl-endgame-012"
+do = "train"
+spells = [23161]
+text = "Al acabar la cadena tienes el Corcel de la muerte."
+optional = true
+status = "unverified"
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
