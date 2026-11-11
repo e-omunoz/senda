@@ -42,27 +42,32 @@ jobs:
             exit 1
           fi
 
-      # Sin apt: los espejos de Ubuntu de los runners fallan a veces. Estas actions compilan Lua
-      # desde lua.org y LuaRocks desde su repositorio.
-      - name: Instalar Lua 5.1
-        uses: leafo/gh-actions-lua@v11
-        with:
-          luaVersion: "5.1.5"
-
-      - name: Instalar LuaRocks
-        uses: leafo/gh-actions-luarocks@v5
-
-      - name: Instalar luacheck
-        run: luarocks install luacheck
+      # luacheck es una comprobación extra. Si los espejos de apt del runner fallan (pasa a veces),
+      # se avisa y se sigue: la sintaxis y la ejecución real del addon las cubre el job de simulación.
+      - name: Instalar Lua 5.1 y luacheck
+        id: lua
+        continue-on-error: true
+        run: |
+          for i in 1 2 3; do
+            sudo apt-get update -o Acquire::Retries=3 &&             sudo apt-get install -y -o Acquire::Retries=3 lua5.1 luarocks && break
+            echo "apt falló (intento $i); reintento en 20 s"; sleep 20
+          done
+          sudo luarocks install luacheck
 
       - name: Sintaxis (luac -p)
+        if: steps.lua.outcome == 'success'
         run: |
           LUAC="$(command -v luac5.1 || command -v luac)"
           find addon/Senda -name '*.lua' -print0 | xargs -0 -r "$LUAC" -p
           echo "luac -p: OK"
 
       - name: luacheck
+        if: steps.lua.outcome == 'success'
         run: luacheck addon/Senda
+
+      - name: Aviso si no se pudo instalar luacheck
+        if: steps.lua.outcome != 'success'
+        run: echo "::warning::No se pudo instalar Lua/luacheck (espejos de apt). Se omite luacheck; la simulación sigue validando el addon."
 
       - name: Empaquetar
         run: python tools/package.py
