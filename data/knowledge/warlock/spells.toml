@@ -65,8 +65,11 @@ level = 16
 names = ["Fuerza inmortal"]
 spells = []
 no_id = ["Fuerza inmortal"]
-status = "unverified"
-note = "Nombre dudoso: en Classic el brujo aprende al 16 Aliento inagotable (5697). Comprobar en el instructor."
+cost = "16 platas"
+status = "verified"
+sources = ["ingame:2026-11-11 instructor Demisette Cloyce (captura del jugador)"]
+checked = "2026-11-11"
+note = "Confirmado en el juego: Demisette Cloyce la enseña al 16 por 16 platas, junto a Transfusión de vida (rango 2). Es nueva de Forever (en Classic, al 16 se aprendía Aliento inagotable). Falta su id."
 
 [[train]]
 level = 18
