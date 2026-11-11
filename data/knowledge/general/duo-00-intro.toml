@@ -11,6 +11,17 @@ checked = "2026-11-10"
 note = "Manual del Mago Gnomo (sección «En pareja»), contrastado el 10-nov con ConquestCapped, Warcraft Tavern, Method y las correcciones de Blizzard. Bonificación del 50% en mazmorras: Blizzard 8-nov, sin enlace."
 
 [[block]]
+heading = "Estar en la misma capa del servidor"
+body = """
+- Los dos tenéis que estar en el **mismo reglamento** (normal, JcJ…) y en la **misma facción**: si no, no podéis agruparos.
+- **Invita a tu compañero al grupo.** El juego le ofrece moverse a la copia del mundo del líder.
+- Abajo a la izquierda sale un aviso con un temporizador: pulsa **«Actualizar ahora» (Refresh Now)** para pasar al momento en lugar de esperar.
+- Si seguís sin veros, que el invitado salga y vuelva a entrar en la zona, o salid del grupo y volved a agruparos.
+- Las fases de misión son otra cosa: si uno tiene una misión más avanzada, puede ver el mundo distinto. Haced las cadenas a la vez."""
+status = "unverified"
+sources = ["https://www.icy-veins.com/wow-forever/news/dont-get-separated-from-your-friends-how-to-avoid-being-layered-in-wow-forever/", "https://allthings.how/?p=331411"]
+
+[[block]]
 heading = "Cómo funciona la experiencia en grupo (Forever)"
 body = """
 - **Misiones:** los dos cobráis la experiencia entera. Algunos objetos de misión los recoge todo el grupo.
