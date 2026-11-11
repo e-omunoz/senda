@@ -42,11 +42,18 @@ jobs:
             exit 1
           fi
 
-      - name: Instalar Lua 5.1 y luacheck
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y lua5.1 luarocks
-          sudo luarocks install luacheck
+      # Sin apt: los espejos de Ubuntu de los runners fallan a veces. Estas actions compilan Lua
+      # desde lua.org y LuaRocks desde su repositorio.
+      - name: Instalar Lua 5.1
+        uses: leafo/gh-actions-lua@v11
+        with:
+          luaVersion: "5.1.5"
+
+      - name: Instalar LuaRocks
+        uses: leafo/gh-actions-luarocks@v5
+
+      - name: Instalar luacheck
+        run: luarocks install luacheck
 
       - name: Sintaxis (luac -p)
         run: |
