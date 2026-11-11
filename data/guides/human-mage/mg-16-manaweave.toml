@@ -42,6 +42,7 @@ checked = "2026-11-11"
 [[step]]
 id = "mg-16-manaweave-004"
 do = "train"
+reqlevel = 16
 npc = 5497
 spells = [2120]
 at = [1453, 49.6, 85.8]

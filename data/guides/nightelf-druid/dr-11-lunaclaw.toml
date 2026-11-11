@@ -45,6 +45,7 @@ checked = "2026-11-11"
 [[step]]
 id = "dr-11-lunaclaw-004"
 do = "train"
+reqlevel = 10
 spells = [5487]
 npc = 4217
 at = [1457, 35.37, 8.4]
@@ -57,6 +58,7 @@ checked = "2026-11-11"
 [[step]]
 id = "dr-11-lunaclaw-005"
 do = "train"
+reqlevel = 12
 spells = [8936, 5229]
 npc = 4217
 at = [1457, 35.37, 8.4]

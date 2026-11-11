@@ -8,6 +8,7 @@ summary = "Nivel 20: Traslación, Evocación, Teletransporte a Ventormenta y For
 [[step]]
 id = "mg-20-teleport-001"
 do = "train"
+reqlevel = 20
 npc = 5497
 spells = [1953, 12051, 1463, 543, 10]
 at = [1453, 49.6, 85.8]
@@ -20,6 +21,7 @@ checked = "2026-11-11"
 [[step]]
 id = "mg-20-teleport-002"
 do = "train"
+reqlevel = 20
 npc = 2485
 spells = [3561]
 at = [1453, 50.4, 86.0]
@@ -32,6 +34,7 @@ checked = "2026-11-11"
 [[step]]
 id = "mg-20-teleport-003"
 do = "train"
+reqlevel = 20
 npc = 2485
 spells = [3562]
 at = [1453, 50.4, 86.0]

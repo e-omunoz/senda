@@ -206,6 +206,7 @@ sources = ["questie:quest/1599", "questie:npc/460", "https://conquestcapped.com/
 [[step]]
 id = "coldridge-020"
 do = "train"
+reqlevel = 4
 spells = [348, 172, 702]
 npc = 460
 at = [1426, 28.6, 66.1]

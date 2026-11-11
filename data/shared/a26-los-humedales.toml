@@ -24,6 +24,7 @@ sources = ["questie:npc/2409"]
 [[step]]
 id = "a26wl-002"
 do = "train"
+reqlevel = 26
 spells = [1714, 132]
 npc = 5495
 at = [1453, 39.9, 84.2]
@@ -35,6 +36,7 @@ sources = ["questie:npc/5495", "knowledge:warlock-spells"]
 [[step]]
 id = "a26wl-003"
 do = "train"
+reqlevel = 26
 spells = [120]
 npc = 5497
 at = [1453, 49.6, 85.8]
@@ -46,6 +48,7 @@ sources = ["questie:npc/5497", "knowledge:mage-spells"]
 [[step]]
 id = "a26wl-dr-26"
 do = "train"
+reqlevel = 26
 spells = [1850, 2893]
 npc = 5504
 at = [1453, 35.84, 67.38]
@@ -900,6 +903,7 @@ sources = ["questie:npc/1571"]
 [[step]]
 id = "a26wl-083"
 do = "train"
+reqlevel = 28
 spells = [710, 6366]
 npc = 5172
 at = [1455, 50.4, 5.7]
@@ -911,6 +915,7 @@ sources = ["questie:npc/5172", "knowledge:warlock-spells"]
 [[step]]
 id = "a26wl-084"
 do = "train"
+reqlevel = 28
 spells = [759]
 npc = 5144
 at = [1455, 27.3, 8.3]
@@ -922,6 +927,7 @@ sources = ["questie:npc/5144", "knowledge:mage-spells"]
 [[step]]
 id = "a26wl-dr-28"
 do = "train"
+reqlevel = 28
 spells = [5209, 8998]
 npc = 12042
 at = [1450, 52.53, 40.57]
@@ -1028,6 +1034,7 @@ sources = ["questie:npc/1571"]
 [[step]]
 id = "a26wl-094"
 do = "train"
+reqlevel = 30
 spells = [1098, 1949]
 npc = 5172
 at = [1455, 50.4, 5.7]
@@ -1040,6 +1047,7 @@ sources = ["questie:npc/5172", "knowledge:warlock-spells"]
 [[step]]
 id = "a26wl-095"
 do = "train"
+reqlevel = 30
 spells = [7302]
 npc = 5144
 at = [1455, 27.3, 8.3]
@@ -1051,6 +1059,7 @@ sources = ["questie:npc/5144", "questie:npc/2489", "knowledge:mage-spells"]
 [[step]]
 id = "a26wl-dr-30"
 do = "train"
+reqlevel = 30
 spells = [783, 740]
 npc = 12042
 at = [1450, 52.53, 40.57]

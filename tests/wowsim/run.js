@@ -191,6 +191,44 @@ const SCENARIO_E = L_`
 
 const scenarios = [
   {
+    id: 'gate2',
+    title: 'Trainer visits above your level are postponed (warlock 16 at "lo del 18")',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E = S().Engine
+      local p = Sim.player
+      p.level = 16
+      Sim.Fire("PLAYER_LEVEL_UP", 16, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      local i = StepIndexOf("a17wf-064")
+      Check(i ~= nil, "step a17wf-064 exists")
+      E:JumpTo(i)
+      E:Advance()
+      Sim.Advance(1)
+      Check(StepId() ~= "a17wf-065", "the level-18 training step is not current at level 16", StepId())
+      local g
+      for _, x in ipairs(E:LevelGated()) do if x.entry.step.id == "a17wf-065" then g = x end end
+      Check(g ~= nil and g.level == 18 and not g.ready, "training is remembered until level 18")
+      local before = #Sim.chat
+      p.level = 18
+      Sim.Fire("PLAYER_LEVEL_UP", 18, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      local said = false
+      for k = before + 1, #Sim.chat do if Sim.chat[k]:find("Ya puedes entrenar", 1, true) then said = true end end
+      Check(said, "chat says you can train now")
+      local btn = SendaHUD.gated
+      Check(btn and btn:IsShown() and Plain(btn.text:GetText()):find("Ya puedes entrenar", 1, true) ~= nil, "HUD green line offers the training", btn and btn.text:GetText())
+      if btn and btn.index then btn:GetScript("OnClick")(btn) end
+      Sim.Advance(0.5)
+      Check(StepId() == "a17wf-065", "clicking it goes to the training step", StepId())
+      for _, id in ipairs(E:CurrentStep().spells or {}) do Sim.LearnSpell(id) end
+      Sim.Advance(1)
+      Check(StepId() ~= "a17wf-065", "learning the spells completes the step on its own", StepId())
+    `,
+  },
+  {
     id: 'gate',
     title: 'Quests above your level are postponed and offered again on level-up',
     char: 'gnome-warlock',

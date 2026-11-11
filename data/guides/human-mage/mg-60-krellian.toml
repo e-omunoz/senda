@@ -8,6 +8,7 @@ summary = "Polimorfia: vaca y la cadena del Señor de la guerra Krellian."
 [[step]]
 id = "mg-60-krellian-001"
 do = "train"
+reqlevel = 60
 npc = 5497
 spells = [28270]
 at = [1453, 49.6, 85.8]

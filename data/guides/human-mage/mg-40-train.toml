@@ -8,6 +8,7 @@ summary = "Nivel 40: Portal: Ventormenta y Forjaz."
 [[step]]
 id = "mg-40-train-001"
 do = "train"
+reqlevel = 40
 npc = 2485
 spells = [10059, 11416]
 at = [1453, 50.4, 86.0]

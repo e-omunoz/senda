@@ -32,6 +32,7 @@ sources = ["questie:npc/5172", "knowledge:warlock-spells"]
 [[step]]
 id = "a16hot-003"
 do = "train"
+reqlevel = 16
 spells = [2120]
 npc = 5144
 at = [1455, 27.3, 8.3]
@@ -43,6 +44,7 @@ sources = ["questie:npc/5144", "knowledge:mage-spells"]
 [[step]]
 id = "a16hot-dr-16"
 do = "train"
+reqlevel = 16
 spells = [779]
 npc = 12042
 at = [1450, 52.53, 40.57]

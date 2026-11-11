@@ -67,6 +67,7 @@ sources = ["questie:quest/99158", "questie:npc/1226"]
 [[step]]
 id = "dun-morogh-006"
 do = "train"
+reqlevel = 6
 spells = [1454]
 npc = 5612
 at = [1426, 47.3, 53.7]
@@ -474,6 +475,7 @@ sources = ["questie:quest/313", "questie:npc/1377"]
 [[step]]
 id = "dun-morogh-045"
 do = "train"
+reqlevel = 8
 spells = [980, 5782]
 npc = 5612
 at = [1426, 47.3, 53.7]
@@ -1284,6 +1286,7 @@ sources = ["questie:quest/95041", "questie:npc/11028"]
 [[step]]
 id = "dun-morogh-123"
 do = "train"
+reqlevel = 10
 spells = [1120, 6201, 696, 707]
 npc = 5172
 at = [1455, 50.4, 5.7]

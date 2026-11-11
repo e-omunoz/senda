@@ -697,6 +697,7 @@ sources = ["questie:quest/6388"]
 [[step]]
 id = "a12lm-066"
 do = "train"
+reqlevel = 14
 spells = [755, 704, 689]
 npc = 5172
 at = [1455, 50.4, 5.7]
@@ -709,6 +710,7 @@ sources = ["questie:npc/5172", "knowledge:warlock-spells"]
 [[step]]
 id = "a12lm-067"
 do = "train"
+reqlevel = 14
 spells = [604, 130, 1449]
 npc = 5144
 at = [1455, 27.3, 8.3]
@@ -721,6 +723,7 @@ sources = ["questie:npc/5144", "knowledge:mage-spells"]
 [[step]]
 id = "a12lm-dr-14"
 do = "train"
+reqlevel = 14
 spells = [8936, 5229, 5211]
 npc = 12042
 at = [1450, 52.53, 40.57]

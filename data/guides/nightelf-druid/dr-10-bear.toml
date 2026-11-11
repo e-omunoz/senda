@@ -59,6 +59,7 @@ checked = "2026-11-11"
 [[step]]
 id = "dr-10-bear-005"
 do = "train"
+reqlevel = 10
 spells = [18960]
 npc = 4217
 at = [1457, 35.37, 8.4]

@@ -51,11 +51,20 @@ end
 -- * complete / turnin de una misión aplazada por nivel que aún no tienes: se aplazan con ella.
 function Engine:WaitLevel(entry)
   local s = entry and entry.step
-  if not s or not s.quest then return nil end
+  if not s then return nil end
+  local d = s["do"]
+  if d == "train" then
+    -- El instructor no enseña esos hechizos hasta el nivel: si aún no lo tienes, se aplaza.
+    local req = s.reqlevel
+    if not req or (Compat.PlayerLevel() or 1) >= req then return nil end
+    if Cond:Check(s, {}) == true then return nil end -- ya los conoces
+    return req
+  end
+  if not s.quest then return nil end
   local req
-  if s["do"] == "accept" then
+  if d == "accept" then
     req = s.reqlevel
-  elseif s["do"] == "complete" or s["do"] == "turnin" then
+  elseif d == "complete" or d == "turnin" then
     req = self.questWait and self.questWait[s.quest]
   end
   if not req or (Compat.PlayerLevel() or 1) >= req then return nil end
@@ -102,7 +111,7 @@ end
 function Engine:RememberGated(entry)
   local p = Progress()
   local s = entry and entry.step
-  if not p or not s or s["do"] ~= "accept" or not s.reqlevel then return end
+  if not p or not s or (s["do"] ~= "accept" and s["do"] ~= "train") or not s.reqlevel then return end
   p.gated = p.gated or {}
   p.gated[s.id] = s.reqlevel
 end
@@ -118,7 +127,13 @@ function Engine:LevelGated()
     local i = self.idIndex[id]
     local e = i and self.steps[i]
     local mark = e and DoneMark(e)
-    if not e or mark == "a" or mark == "d" or QuestTaken(e.step.quest) then
+    local finished
+    if e and e.step["do"] == "train" then
+      finished = Cond:Check(e.step, {}) == true
+    else
+      finished = e and QuestTaken(e.step.quest)
+    end
+    if not e or mark == "a" or mark == "d" or finished then
       p.gated[id] = nil -- ya cogida, hecha o fuera de la guía: se olvida
     else
       out[#out + 1] = { entry = e, index = i, level = req, ready = lvl >= req }
@@ -338,8 +353,10 @@ function Engine:Skip()
   local e = self.steps[self.index]
   if not e then return end
   local s = e.step
-  if s["do"] == "accept" and s.reqlevel and (Compat.PlayerLevel() or 1) < s.reqlevel and not QuestTaken(s.quest) then
-    self:RememberGated(e)
+  if s.reqlevel and (Compat.PlayerLevel() or 1) < s.reqlevel then
+    if (s["do"] == "accept" and not QuestTaken(s.quest)) or s["do"] == "train" then
+      self:RememberGated(e)
+    end
   end
   self:Mark(e, "s", true)
   self.held = nil
@@ -593,7 +610,8 @@ Events:On("SENDA_READY", function()
           local s = g.entry.step
           local name = (Senda.HUD and Senda.HUD.StepTitle and Senda.HUD:StepTitle(s)) or ""
           if name == "" then name = "#" .. tostring(s.quest) end
-          Senda:Print(string.format(Senda.L.LEVEL_GATE_READY, name))
+          local key = s["do"] == "train" and "LEVEL_GATE_READY_TRAIN" or "LEVEL_GATE_READY"
+          Senda:Print(string.format(Senda.L[key] or Senda.L.LEVEL_GATE_READY, name))
         end
       end
     end

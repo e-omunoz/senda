@@ -17,6 +17,7 @@ sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
 [[step]]
 id = "a44-badlands-dr-44"
 do = "train"
+reqlevel = 44
 spells = [22812]
 npc = 12042
 at = [1450, 52.53, 40.57]
@@ -30,6 +31,7 @@ sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/d
 [[step]]
 id = "a44-badlands-002"
 do = "train"
+reqlevel = 42
 npc = 5172
 spells = [6789]
 at = [1455, 50.35, 5.66]

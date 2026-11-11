@@ -17,6 +17,7 @@ sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://e
 [[step]]
 id = "a50-ungoro-002"
 do = "train"
+reqlevel = 50
 npc = 5173
 spells = [11667, 11734]
 at = [1455, 50.1, 7.5]
@@ -30,6 +31,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a50-ungoro-003"
 do = "train"
+reqlevel = 50
 npc = 5144
 spells = [10180, 10219, 11419]
 at = [1455, 27.2, 8.3]
@@ -43,6 +45,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a50-ungoro-dr-50"
 do = "train"
+reqlevel = 50
 spells = [21849, 9875, 9888]
 npc = 12042
 at = [1450, 52.53, 40.57]
@@ -774,6 +777,7 @@ checked = "2026-11-11"
 [[step]]
 id = "a50-ungoro-070"
 do = "train"
+reqlevel = 52
 npc = 5495
 spells = [11660, 11675]
 at = [1453, 39.9, 84.2]
@@ -788,6 +792,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a50-ungoro-071"
 do = "train"
+reqlevel = 52
 npc = 5497
 spells = [10186, 10192]
 at = [1453, 49.6, 85.8]
@@ -802,6 +807,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a50-ungoro-dr-52"
 do = "train"
+reqlevel = 52
 spells = [9834, 9840]
 npc = 5504
 at = [1453, 35.84, 67.38]

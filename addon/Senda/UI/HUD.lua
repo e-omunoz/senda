@@ -392,7 +392,8 @@ function HUD:Refresh()
     if #ready > 0 then
       local first = ready[1] -- la primera en el orden de la ruta
       f.gated.index = first.index
-      text = UI:Color("green", L.LEVEL_GATE_NOW) .. " " .. first.name
+      local nowLabel = first.entry.step["do"] == "train" and (L.LEVEL_GATE_NOW_TRAIN or L.LEVEL_GATE_NOW) or L.LEVEL_GATE_NOW
+      text = UI:Color("green", nowLabel) .. " " .. first.name
       if #ready > 1 then text = text .. UI:Color("dim", string.format(" (+%d)", #ready - 1)) end
       tip[#tip + 1] = UI:Color("dim", L.LEVEL_GATE_CLICK)
     else

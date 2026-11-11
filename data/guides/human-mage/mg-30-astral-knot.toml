@@ -42,6 +42,7 @@ checked = "2026-11-11"
 [[step]]
 id = "mg-30-astral-knot-004"
 do = "train"
+reqlevel = 30
 npc = 5497
 spells = [7302]
 at = [1453, 49.6, 85.8]
@@ -54,6 +55,7 @@ checked = "2026-11-11"
 [[step]]
 id = "mg-30-astral-knot-005"
 do = "train"
+reqlevel = 30
 npc = 2485
 spells = [3565]
 at = [1453, 50.4, 86.0]

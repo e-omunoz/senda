@@ -11,6 +11,7 @@ if = { class = ["DRUID"] }
 [[step]]
 id = "dr-20-cat-001"
 do = "train"
+reqlevel = 20
 spells = [2912, 20484]
 npc = 4217
 at = [1457, 35.37, 8.4]
@@ -171,6 +172,7 @@ checked = "2026-11-11"
 [[step]]
 id = "dr-20-cat-015"
 do = "train"
+reqlevel = 20
 spells = [768, 5215]
 npc = 4217
 at = [1457, 35.37, 8.4]

@@ -35,6 +35,7 @@ checked = "2026-11-11"
 [[step]]
 id = "dr-16-aquatic-003"
 do = "train"
+reqlevel = 16
 spells = [779]
 npc = 4217
 at = [1457, 35.37, 8.4]

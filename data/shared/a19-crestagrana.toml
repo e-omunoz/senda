@@ -505,6 +505,7 @@ sources = ["questie:npc/931"]
 [[step]]
 id = "a19rr-049"
 do = "train"
+reqlevel = 20
 spells = [1490, 706, 698, 5740]
 npc = 5495
 at = [1453, 39.9, 84.2]
@@ -527,6 +528,7 @@ sources = ["questie:npc/11867", "legacy:BrujoGnomoGuia 4.1.0"]
 [[step]]
 id = "a19rr-051"
 do = "train"
+reqlevel = 20
 spells = [1953, 12051, 1463, 543, 10]
 npc = 5497
 at = [1453, 49.6, 85.8]
@@ -538,6 +540,7 @@ sources = ["questie:npc/5497", "knowledge:mage-spells"]
 [[step]]
 id = "a19rr-dr-20"
 do = "train"
+reqlevel = 20
 spells = [2912, 20484]
 npc = 5504
 at = [1453, 35.84, 67.38]
@@ -551,6 +554,7 @@ sources = ["questie:npc/5504", "https://www.warcrafttavern.com/forever/guides/dr
 [[step]]
 id = "a19rr-052"
 do = "train"
+reqlevel = 20
 spells = [3561, 3562]
 npc = 2485
 at = [1453, 50.4, 86.0]

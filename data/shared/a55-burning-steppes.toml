@@ -16,6 +16,7 @@ sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://e
 [[step]]
 id = "a55-burning-steppes-002"
 do = "train"
+reqlevel = 52
 npc = 5495
 spells = [11660, 11675]
 at = [1453, 39.9, 84.2]
@@ -29,6 +30,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a55-burning-steppes-003"
 do = "train"
+reqlevel = 52
 npc = 5497
 spells = [10186, 10192]
 at = [1453, 49.6, 85.8]
@@ -42,6 +44,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a55-burning-steppes-dr-52"
 do = "train"
+reqlevel = 52
 spells = [9834, 9840]
 npc = 5504
 at = [1453, 35.84, 67.38]
@@ -54,6 +57,7 @@ sources = ["questie:npc/5504", "https://www.warcrafttavern.com/forever/guides/dr
 [[step]]
 id = "a55-burning-steppes-004"
 do = "train"
+reqlevel = 54
 npc = 5495
 spells = [11672, 11700]
 at = [1453, 39.9, 84.2]
@@ -67,6 +71,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a55-burning-steppes-005"
 do = "train"
+reqlevel = 54
 npc = 5497
 spells = [10149, 10230, 10202]
 at = [1453, 49.6, 85.8]
@@ -80,6 +85,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a55-burning-steppes-dr-54"
 do = "train"
+reqlevel = 54
 spells = [9912, 9857, 9907]
 npc = 5504
 at = [1453, 35.84, 67.38]
@@ -92,6 +98,7 @@ sources = ["questie:npc/5504", "https://www.warcrafttavern.com/forever/guides/dr
 [[step]]
 id = "a55-burning-steppes-006"
 do = "train"
+reqlevel = 56
 npc = 5495
 spells = [11689, 17924]
 at = [1453, 39.9, 84.2]
@@ -105,6 +112,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a55-burning-steppes-007"
 do = "train"
+reqlevel = 56
 npc = 5497
 spells = [10181, 10212, 10157]
 at = [1453, 49.6, 85.8]
@@ -118,6 +126,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a55-burning-steppes-dr-56"
 do = "train"
+reqlevel = 56
 spells = [9889]
 npc = 5504
 at = [1453, 35.84, 67.38]

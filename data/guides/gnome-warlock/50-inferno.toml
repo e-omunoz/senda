@@ -114,6 +114,7 @@ sources = ["questie:quest/7603", "questie:npc/14469"]
 [[step]]
 id = "wl-inferno-011"
 do = "train"
+reqlevel = 50
 spells = [1122]
 at = [1448, 41.4, 44.9]
 text = "Aprende Inferno y equípate el abalorio si te sirve."

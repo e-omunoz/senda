@@ -20,6 +20,7 @@ sources = ["questie:npc/2859"]
 [[step]]
 id = "a34-desolace-002"
 do = "train"
+reqlevel = 34
 npc = 5144
 spells = [6117]
 at = [1455, 27.25, 8.3]
@@ -31,6 +32,7 @@ sources = ["questie:npc/5144"]
 [[step]]
 id = "a34-desolace-dr-34"
 do = "train"
+reqlevel = 32
 spells = [5225, 6785]
 npc = 12042
 at = [1450, 52.53, 40.57]
@@ -44,6 +46,7 @@ sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/d
 [[step]]
 id = "a34-desolace-003"
 do = "train"
+reqlevel = 32
 npc = 5172
 spells = [6229]
 at = [1455, 50.35, 5.66]
@@ -368,6 +371,7 @@ sources = ["questie:npc/11052"]
 [[step]]
 id = "a34-desolace-034"
 do = "train"
+reqlevel = 38
 npc = 5497
 spells = [3552]
 at = [1453, 49.56, 85.8]
@@ -379,6 +383,7 @@ sources = ["questie:npc/5497"]
 [[step]]
 id = "a34-desolace-dr-38"
 do = "train"
+reqlevel = 38
 spells = [9005, 22842]
 npc = 12042
 at = [1450, 52.53, 40.57]

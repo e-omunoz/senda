@@ -47,7 +47,7 @@ Senda.Guides:RegisterSection({
     { id = "hmage-northshire-036", ["do"] = "accept", quest = 3905, npc = 9296, at = {1429, 50.7, 39.4}, text = "Coge el albarán de uvas de Milly.", status = "unverified", reqlevel = 2 },
     { id = "hmage-northshire-037", ["do"] = "turnin", quest = 3905, npc = 952, at = {1429, 49.5, 41.6}, text = "Lleva el albarán al Hermano Neals, dentro de la abadía.", status = "unverified" },
     { id = "hmage-northshire-038", ["do"] = "turnin", quest = 6, npc = 823, at = {1429, 48.2, 42.9}, text = "Entrega la cabeza de Garrick al Ayudante Willem.", status = "unverified" },
-    { id = "hmage-northshire-039", ["do"] = "train", npc = 198, spells = {5504, 116}, at = {1429, 49.7, 39.4}, text = "Nivel 4: aprende Descarga de Escarcha y Conjurar agua con Khelden Bremen.", tip = "Desde ahora: Descarga de Escarcha para abrir. Conjura agua antes de cada salida y no compres bebida.", status = "unverified" },
+    { id = "hmage-northshire-039", ["do"] = "train", npc = 198, spells = {5504, 116}, at = {1429, 49.7, 39.4}, text = "Nivel 4: aprende Descarga de Escarcha y Conjurar agua con Khelden Bremen.", tip = "Desde ahora: Descarga de Escarcha para abrir. Conjura agua antes de cada salida y no compres bebida.", status = "unverified", reqlevel = 4 },
     { id = "hmage-northshire-040", ["do"] = "turnin", quest = 91745, npc = 247226, at = {1429, 47.2, 32.2}, text = "Habla con Kelsey Fargo en la entrada de la mina de la Cresta del Eco.", status = "unverified" },
     { id = "hmage-northshire-041", ["do"] = "accept", quest = 91752, npc = 247226, at = {1429, 47.2, 32.2}, text = "Coge la misión de Kelsey Fargo.", status = "unverified" },
     { id = "hmage-northshire-042", ["do"] = "complete", quest = 21, at = {1429, 48.9, 28.3}, text = "Entra en la mina y mata obreros kóbold.", tip = "Dentro hay muchos: tira de uno en uno y no avances hasta limpiar lo que tienes delante.", status = "unverified" },
@@ -77,7 +77,7 @@ Senda.Guides:RegisterSection({
     { id = "hmage-elwynn-005", ["do"] = "accept", quest = 62, npc = 240, at = {1429, 42.1, 65.9}, text = "Coge la misión de la Mina Abisal.", status = "unverified", reqlevel = 4 },
     { id = "hmage-elwynn-006", ["do"] = "turnin", quest = 2158, npc = 295, at = {1429, 43.8, 65.8}, text = "Entra en la posada y entrega al Posadero Farley.", status = "unverified" },
     { id = "hmage-elwynn-007", ["do"] = "sethearth", npc = 295, at = {1429, 43.8, 65.8}, text = "Pon la piedra de hogar en la posada de Villadorada.", tip = "Vas a volver aquí varias veces: Villadorada es tu base hasta el 10.", status = "unverified" },
-    { id = "hmage-elwynn-008", ["do"] = "train", npc = 328, spells = {587, 2136, 1296017}, at = {1429, 43.3, 66.2}, text = "Nivel 6: aprende Conjurar comida, Explosión de Fuego y Entender pergamino con Zaldimar Wefhellt (posada).", tip = "Guarda los pergaminos sin traducir y descífralos fuera de combate: si fallas, eres oveja 8 s.", status = "unverified" },
+    { id = "hmage-elwynn-008", ["do"] = "train", npc = 328, spells = {587, 2136, 1296017}, at = {1429, 43.3, 66.2}, text = "Nivel 6: aprende Conjurar comida, Explosión de Fuego y Entender pergamino con Zaldimar Wefhellt (posada).", tip = "Guarda los pergaminos sin traducir y descífralos fuera de combate: si fallas, eres oveja 8 s.", status = "unverified", reqlevel = 6 },
     { id = "hmage-elwynn-009", ["do"] = "turnin", quest = 96627, npc = 263399, at = {1429, 44.9, 63.4}, text = "Habla con Sam Sarsaparilla, junto a la hoguera al norte de la posada.", status = "unverified" },
     { id = "hmage-elwynn-010", ["do"] = "accept", quest = 95998, npc = 263399, at = {1429, 44.9, 63.4}, text = "Coge la misión de Sam sobre el campamento.", status = "unverified", reqlevel = 4 },
     { id = "hmage-elwynn-011", ["do"] = "complete", quest = 95998, at = {1429, 44.9, 63.2}, text = "Usa la hoguera de al lado de Sam.", status = "unverified" },
@@ -139,7 +139,7 @@ Senda.Guides:RegisterSection({
     { id = "hmage-elwynn-067", ["do"] = "turnin", quest = 40, npc = 240, at = {1429, 42.1, 65.9}, text = "Entrégala al momento al Alguacil Dughan.", status = "unverified" },
     { id = "hmage-elwynn-068", ["do"] = "accept", quest = 35, npc = 240, at = {1429, 42.1, 65.9}, text = "Coge la misión que te manda con el Guardia Thomas, al este.", status = "unverified", reqlevel = 7 },
     { id = "hmage-elwynn-069", ["do"] = "turnin", quest = 99131, npc = 383, at = {1429, 47.5, 62.2}, text = "Lleva el cebo a Jason Mathers, junto al lago.", status = "unverified" },
-    { id = "hmage-elwynn-070", ["do"] = "train", npc = 328, spells = {5143, 118}, at = {1429, 43.3, 66.2}, text = "Nivel 8: aprende Misiles Arcanos y Polimorfia con Zaldimar Wefhellt.", tip = "Polimorfia al segundo enemigo y mata al primero.", status = "unverified" },
+    { id = "hmage-elwynn-070", ["do"] = "train", npc = 328, spells = {5143, 118}, at = {1429, 43.3, 66.2}, text = "Nivel 8: aprende Misiles Arcanos y Polimorfia con Zaldimar Wefhellt.", tip = "Polimorfia al segundo enemigo y mata al primero.", status = "unverified", reqlevel = 8 },
     { id = "hmage-elwynn-071", ["do"] = "complete", quest = 112, at = {1429, 54.2, 66.7}, text = "Camino del este, mata múrlocs del río hasta tener las algas.", status = "unverified" },
     { id = "hmage-elwynn-072", ["do"] = "learn_prof", npc = 11072, prof = "enchanting", at = {1429, 64.9, 70.7}, text = "En la Torre de Azora, aprende Encantamiento con Kitta Firewind.", tip = "Desencanta todo verde que no uses. A 10 de habilidad, Varita mágica inferior para ti.", status = "unverified" },
     { id = "hmage-elwynn-073", ["do"] = "accept", quest = 91723, npc = 248242, at = {1429, 65.1, 69.8}, text = "Coge la misión de Hamish Bergwort, junto a la torre.", status = "unverified", reqlevel = 7 },
@@ -182,7 +182,7 @@ Senda.Guides:RegisterSection({
     { id = "hmage-elwynn-110", ["do"] = "turnin", quest = 112, npc = 253, at = {1429, 43.3, 65.7}, text = "Entrega las algas a William Pestle.", status = "unverified" },
     { id = "hmage-elwynn-111", ["do"] = "accept", quest = 114, npc = 253, at = {1429, 43.3, 65.7}, text = "Coge la misión de la huida: se entrega en la granja Maclure.", status = "unverified", reqlevel = 5 },
     { id = "hmage-elwynn-112", ["do"] = "turnin", quest = 91751, npc = 6306, at = {1429, 46.2, 62.2}, text = "Entrega las pieles a Helene Peltskinner.", status = "unverified" },
-    { id = "hmage-elwynn-113", ["do"] = "train", npc = 328, spells = {122}, at = {1429, 43.3, 66.2}, text = "Nivel 10: aprende Nova de Escarcha con Zaldimar Wefhellt.", tip = "Primer talento: Especialización en varitas 2/2. Haz ya tu Varita mágica inferior si tienes Encantamiento 10.", status = "unverified" },
+    { id = "hmage-elwynn-113", ["do"] = "train", npc = 328, spells = {122}, at = {1429, 43.3, 66.2}, text = "Nivel 10: aprende Nova de Escarcha con Zaldimar Wefhellt.", tip = "Primer talento: Especialización en varitas 2/2. Haz ya tu Varita mágica inferior si tienes Encantamiento 10.", status = "unverified", reqlevel = 10 },
     { id = "hmage-elwynn-114", ["do"] = "accept", quest = 1860, npc = 328, at = {1429, 43.3, 66.2}, text = "Coge la misión de clase de Zaldimar: te manda con Jennea Cannon, en Ventormenta.", status = "unverified", reqlevel = 10 },
     { id = "hmage-elwynn-115", ["do"] = "turnin", quest = 114, npc = 251, at = {1429, 43.2, 89.6}, text = "Baja a la granja Maclure y entrega a Maybell.", status = "unverified" },
     { id = "hmage-elwynn-116", ["do"] = "turnin", quest = 87, npc = 246, at = {1429, 34.5, 84.2}, text = "En la granja de los Stonefield, devuelve el collar a la tía Bernice.", status = "unverified" },
@@ -237,7 +237,7 @@ Senda.Guides:RegisterSection({
     { id = "mg-16-manaweave-001", ["do"] = "turnin", quest = 1921, npc = 1309, at = {1453, 51.8, 83.5}, text = "En Ventormenta, entrega los materiales a Wynne Larson (Ropa Larson).", status = "unverified" },
     { id = "mg-16-manaweave-002", ["do"] = "accept", quest = 1941, npc = 1309, at = {1453, 51.8, 83.5}, text = "Coge la misión de la túnica de Wynne Larson.", status = "unverified", reqlevel = 15 },
     { id = "mg-16-manaweave-003", ["do"] = "turnin", quest = 1941, npc = 1309, at = {1453, 51.8, 83.5}, text = "Entrega y llévate la Túnica de tejido de maná.", status = "unverified" },
-    { id = "mg-16-manaweave-004", ["do"] = "train", npc = 5497, spells = {2120}, at = {1453, 49.6, 85.8}, text = "Nivel 16: aprende Fogonazo.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified" },
+    { id = "mg-16-manaweave-004", ["do"] = "train", npc = 5497, spells = {2120}, at = {1453, 49.6, 85.8}, text = "Nivel 16: aprende Fogonazo.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified", reqlevel = 16 },
   },
 })
 
@@ -248,9 +248,9 @@ Senda.Guides:RegisterSection({
   map = 1453,
   summary = "Nivel 20: Traslación, Evocación, Teletransporte a Ventormenta y Forjaz, y runas.",
   steps = {
-    { id = "mg-20-teleport-001", ["do"] = "train", npc = 5497, spells = {1953, 12051, 1463, 543, 10}, at = {1453, 49.6, 85.8}, text = "Nivel 20: aprende Traslación, Evocación, Escudo de maná, Custodia de Fuego y Ventisca.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified" },
-    { id = "mg-20-teleport-002", ["do"] = "train", npc = 2485, spells = {3561}, at = {1453, 50.4, 86.0}, text = "Aprende Teletransporte: Ventormenta con Larimaine Purdue, la instructora de portales del Sagrario.", tip = "Es tu mejor herramienta: vuelve a entrenar y a entregar en segundos.", status = "unverified" },
-    { id = "mg-20-teleport-003", ["do"] = "train", npc = 2485, spells = {3562}, at = {1453, 50.4, 86.0}, optional = true, text = "Aprende también Teletransporte: Forjaz.", tip = "Si Larimaine no te lo enseña, aprende en Forjaz con Milstaff Stormeye.", status = "unverified" },
+    { id = "mg-20-teleport-001", ["do"] = "train", npc = 5497, spells = {1953, 12051, 1463, 543, 10}, at = {1453, 49.6, 85.8}, text = "Nivel 20: aprende Traslación, Evocación, Escudo de maná, Custodia de Fuego y Ventisca.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified", reqlevel = 20 },
+    { id = "mg-20-teleport-002", ["do"] = "train", npc = 2485, spells = {3561}, at = {1453, 50.4, 86.0}, text = "Aprende Teletransporte: Ventormenta con Larimaine Purdue, la instructora de portales del Sagrario.", tip = "Es tu mejor herramienta: vuelve a entrenar y a entregar en segundos.", status = "unverified", reqlevel = 20 },
+    { id = "mg-20-teleport-003", ["do"] = "train", npc = 2485, spells = {3562}, at = {1453, 50.4, 86.0}, optional = true, text = "Aprende también Teletransporte: Forjaz.", tip = "Si Larimaine no te lo enseña, aprende en Forjaz con Milstaff Stormeye.", status = "unverified", reqlevel = 20 },
     { id = "mg-20-teleport-004", ["do"] = "buy", npc = 1308, item = 17031, count = 5, at = {1453, 47.4, 82.5}, text = "Compra Runas de Teletransporte en la tienda de componentes junto al Sagrario.", tip = "Cada teletransporte gasta una. Con el punto de Legacy Reagent Economy dejas de necesitarlas.", status = "unverified" },
     { id = "mg-20-teleport-005", ["do"] = "note", optional = true, text = "Entrena el rango Experto de Sastrería y Encantamiento si ya tienes 125 de habilidad.", tip = "Sastrería: Sellandus (Barrio de los Magos). Encantamiento: Kitta Firewind (Torre de Azora).", status = "unverified" },
   },
@@ -277,7 +277,7 @@ Senda.Guides:RegisterSection({
   map = 1453,
   summary = "Hechizos del 26 y comienzo de la cadena de la Prenda de nudo astral.",
   steps = {
-    { id = "mg-26-andromath-001", ["do"] = "train", npc = 5497, spells = {120}, at = {1453, 49.6, 85.8}, text = "Nivel 26: aprende Cono de frío.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified" },
+    { id = "mg-26-andromath-001", ["do"] = "train", npc = 5497, spells = {120}, at = {1453, 49.6, 85.8}, text = "Nivel 26: aprende Cono de frío.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified", reqlevel = 26 },
     { id = "mg-26-andromath-002", ["do"] = "accept", quest = 1939, npc = 5497, at = {1453, 49.6, 85.8}, text = "Coge de Jennea Cannon la misión del Alto hechicero Andromath.", status = "unverified", reqlevel = 26 },
     { id = "mg-26-andromath-003", ["do"] = "turnin", quest = 1939, npc = 5694, at = {1453, 48.7, 87.6}, text = "Habla con el Alto hechicero Andromath, en el Sagrario.", status = "unverified" },
     { id = "mg-26-andromath-004", ["do"] = "accept", quest = 1938, npc = 5694, at = {1453, 48.7, 87.6}, text = "Coge la misión del tratado de Ur.", tip = "El tratado está en lo alto de la Torre de Ilgalar (Montañas Crestagrana): llévalo cuando vayas allí.", status = "unverified", reqlevel = 26 },
@@ -304,7 +304,7 @@ Senda.Guides:RegisterSection({
   steps = {
     { id = "mg-28-astral-001", ["do"] = "turnin", quest = 1938, npc = 5694, at = {1453, 48.7, 87.6}, text = "Entrega el tratado al Alto hechicero Andromath.", status = "unverified" },
     { id = "mg-28-astral-002", ["do"] = "accept", quest = 1940, npc = 5694, at = {1453, 48.7, 87.6}, text = "Coge la misión de la seda de araña prístina.", status = "unverified", reqlevel = 26 },
-    { id = "mg-28-astral-003", ["do"] = "train", npc = 5497, spells = {759}, at = {1453, 49.6, 85.8}, text = "Nivel 28: aprende Conjurar ágata de maná.", tip = "Úsala en combate cuando te falte maná: no gasta turno.", status = "unverified" },
+    { id = "mg-28-astral-003", ["do"] = "train", npc = 5497, spells = {759}, at = {1453, 49.6, 85.8}, text = "Nivel 28: aprende Conjurar ágata de maná.", tip = "Úsala en combate cuando te falte maná: no gasta turno.", status = "unverified", reqlevel = 28 },
   },
 })
 
@@ -329,8 +329,8 @@ Senda.Guides:RegisterSection({
     { id = "mg-30-astral-knot-001", ["do"] = "turnin", quest = 1940, npc = 1309, at = {1453, 51.8, 83.5}, text = "Lleva la seda a Wynne Larson, en Ventormenta.", status = "unverified" },
     { id = "mg-30-astral-knot-002", ["do"] = "accept", quest = 1942, npc = 1309, at = {1453, 51.8, 83.5}, text = "Coge la misión de la prenda.", status = "unverified", reqlevel = 26 },
     { id = "mg-30-astral-knot-003", ["do"] = "turnin", quest = 1942, npc = 1309, at = {1453, 51.8, 83.5}, text = "Entrega y elige tu recompensa.", status = "unverified" },
-    { id = "mg-30-astral-knot-004", ["do"] = "train", npc = 5497, spells = {7302}, at = {1453, 49.6, 85.8}, text = "Nivel 30: aprende Armadura de hielo.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified" },
-    { id = "mg-30-astral-knot-005", ["do"] = "train", npc = 2485, spells = {3565}, at = {1453, 50.4, 86.0}, optional = true, text = "Aprende Teletransporte: Darnassus con Larimaine Purdue.", tip = "Si no te lo enseña, la instructora de portales de Darnassus sí.", status = "unverified" },
+    { id = "mg-30-astral-knot-004", ["do"] = "train", npc = 5497, spells = {7302}, at = {1453, 49.6, 85.8}, text = "Nivel 30: aprende Armadura de hielo.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified", reqlevel = 30 },
+    { id = "mg-30-astral-knot-005", ["do"] = "train", npc = 2485, spells = {3565}, at = {1453, 50.4, 86.0}, optional = true, text = "Aprende Teletransporte: Darnassus con Larimaine Purdue.", tip = "Si no te lo enseña, la instructora de portales de Darnassus sí.", status = "unverified", reqlevel = 30 },
   },
 })
 
@@ -341,7 +341,7 @@ Senda.Guides:RegisterSection({
   map = 1453,
   summary = "Hechizos del 38 y misiones que llevan al Pantano de Fangos Oscuros.",
   steps = {
-    { id = "mg-38-train-001", ["do"] = "train", npc = 5497, spells = {3552}, at = {1453, 49.6, 85.8}, text = "Nivel 38: aprende Conjurar jade de maná.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified" },
+    { id = "mg-38-train-001", ["do"] = "train", npc = 5497, spells = {3552}, at = {1453, 49.6, 85.8}, text = "Nivel 38: aprende Conjurar jade de maná.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified", reqlevel = 38 },
     { id = "mg-38-train-002", ["do"] = "accept", quest = 1947, npc = 5497, at = {1453, 49.6, 85.8}, text = "Coge de Jennea Cannon la misión del viaje al pantano.", tip = "Empieza la cadena de la Varita de mago (recompensa: varita a elegir).", status = "unverified", reqlevel = 30 },
     { id = "mg-38-train-003", ["do"] = "accept", quest = 1953, npc = 5497, at = {1453, 49.6, 85.8}, optional = true, text = "Coge también la misión de volver al pantano: es la cadena del Orbe celestial.", tip = "Larga y con Uldaman: hazla solo si vas a entrar en esa mazmorra.", status = "unverified", reqlevel = 35 },
   },
@@ -369,7 +369,7 @@ Senda.Guides:RegisterSection({
   map = 1453,
   summary = "Nivel 40: Portal: Ventormenta y Forjaz.",
   steps = {
-    { id = "mg-40-train-001", ["do"] = "train", npc = 2485, spells = {10059, 11416}, at = {1453, 50.4, 86.0}, text = "Nivel 40: aprende Portal: Ventormenta y Portal: Forjaz con Larimaine Purdue.", tip = "Compra Runas de Portales. Vende portales en la ciudad: la gente deja propina.", status = "unverified" },
+    { id = "mg-40-train-001", ["do"] = "train", npc = 2485, spells = {10059, 11416}, at = {1453, 50.4, 86.0}, text = "Nivel 40: aprende Portal: Ventormenta y Portal: Forjaz con Larimaine Purdue.", tip = "Compra Runas de Portales. Vende portales en la ciudad: la gente deja propina.", status = "unverified", reqlevel = 40 },
     { id = "mg-40-train-002", ["do"] = "note", npc = 5497, at = {1453, 49.6, 85.8}, text = "Entrena con Jennea Cannon Descarga de Pirofrío y los rangos nuevos.", tip = "Descarga de Pirofrío es nueva en Forever (Fuego y Escarcha, ralentiza).", status = "unverified" },
     { id = "mg-40-train-003", ["do"] = "note", at = {1429, 84.0, 65.0, "Establo de Vega del Este"}, optional = true, text = "Monta: el mago paga su equitación. Caballos en el campamento maderero de Vega del Este (Elwynn).", status = "unverified" },
   },
@@ -435,7 +435,7 @@ Senda.Guides:RegisterSection({
   map = 1453,
   summary = "Nivel 50: Portal: Darnassus, Teletransporte a Dalaran y la cadena de Azshara.",
   steps = {
-    { id = "mg-50-magecraft-001", ["do"] = "train", npc = 2485, spells = {11419}, at = {1453, 50.4, 86.0}, text = "Nivel 50: aprende Portal: Darnassus con Larimaine Purdue.", status = "unverified" },
+    { id = "mg-50-magecraft-001", ["do"] = "train", npc = 2485, spells = {11419}, at = {1453, 50.4, 86.0}, text = "Nivel 50: aprende Portal: Darnassus con Larimaine Purdue.", status = "unverified", reqlevel = 50 },
     { id = "mg-50-magecraft-002", ["do"] = "note", npc = 5497, at = {1453, 49.6, 85.8}, text = "Aprende Teletransporte: Dalaran (nuevo en Forever) y los rangos nuevos.", tip = "Gasta una Runa de Teletransporte.", status = "unverified" },
     { id = "mg-50-magecraft-003", ["do"] = "accept", quest = 8250, npc = 331, at = {1453, 49.2, 87.8}, text = "Coge de Maginor Dumas, en lo alto del Sagrario, la misión de Azshara.", tip = "Hazla cuando vayas a Azshara: la cadena da buenos objetos de mago.", status = "unverified", reqlevel = 50 },
   },
@@ -466,7 +466,7 @@ Senda.Guides:RegisterSection({
   map = 1453,
   summary = "Polimorfia: vaca y la cadena del Señor de la guerra Krellian.",
   steps = {
-    { id = "mg-60-krellian-001", ["do"] = "train", npc = 5497, spells = {28270}, at = {1453, 49.6, 85.8}, text = "Nivel 60: aprende Polimorfia: vaca.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified" },
+    { id = "mg-60-krellian-001", ["do"] = "train", npc = 5497, spells = {28270}, at = {1453, 49.6, 85.8}, text = "Nivel 60: aprende Polimorfia: vaca.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified", reqlevel = 60 },
     { id = "mg-60-krellian-002", ["do"] = "accept", quest = 9362, npc = 8379, at = {1447, 29.6, 40.4}, optional = true, text = "En Azshara, coge del Archimago Xylem la misión del Señor de la guerra Krellian.", status = "unverified", reqlevel = 60 },
     { id = "mg-60-krellian-003", ["do"] = "complete", quest = 9362, at = {1447, 41.0, 53.0}, optional = true, text = "Consigue la concha prismática de Krellian o de los Barbaescama.", status = "unverified" },
     { id = "mg-60-krellian-004", ["do"] = "turnin", quest = 9362, npc = 8379, at = {1447, 29.6, 40.4}, optional = true, text = "Entrega al Archimago Xylem.", status = "unverified" },

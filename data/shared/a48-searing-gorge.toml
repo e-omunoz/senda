@@ -17,6 +17,7 @@ sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://e
 [[step]]
 id = "a48-searing-gorge-002"
 do = "train"
+reqlevel = 46
 npc = 5173
 spells = [11699, 11688]
 at = [1455, 50.1, 7.5]
@@ -30,6 +31,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a48-searing-gorge-003"
 do = "train"
+reqlevel = 46
 npc = 5144
 spells = [10197, 10201, 10205]
 at = [1455, 27.2, 8.3]
@@ -43,6 +45,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a48-searing-gorge-dr-46"
 do = "train"
+reqlevel = 46
 spells = [8905, 9833, 9839]
 npc = 12042
 at = [1450, 52.53, 40.57]
@@ -55,6 +58,7 @@ sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/d
 [[step]]
 id = "a48-searing-gorge-004"
 do = "train"
+reqlevel = 48
 npc = 5173
 spells = [6353, 11712]
 at = [1455, 50.1, 7.5]
@@ -68,6 +72,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a48-searing-gorge-005"
 do = "train"
+reqlevel = 48
 npc = 5144
 spells = [10053, 10148, 10211]
 at = [1455, 27.2, 8.3]
@@ -81,6 +86,7 @@ note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a 
 [[step]]
 id = "a48-searing-gorge-dr-48"
 do = "train"
+reqlevel = 48
 spells = [9852, 9856, 9849]
 npc = 12042
 at = [1450, 52.53, 40.57]

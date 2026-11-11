@@ -9,6 +9,7 @@ summary = "Entrena el 30 en Ventormenta y baja a la Vega por el Bosque del Ocaso
 [[step]]
 id = "a30-stv-norte-001"
 do = "train"
+reqlevel = 30
 npc = 5497
 spells = [7302, 3565]
 at = [1453, 49.56, 85.8]
@@ -22,6 +23,7 @@ checked = "2026-11-11"
 [[step]]
 id = "a30-stv-norte-dr-30"
 do = "train"
+reqlevel = 30
 spells = [783, 740]
 npc = 5504
 at = [1453, 35.84, 67.38]
@@ -35,6 +37,7 @@ sources = ["questie:npc/5504", "https://www.warcrafttavern.com/forever/guides/dr
 [[step]]
 id = "a30-stv-norte-002"
 do = "train"
+reqlevel = 30
 npc = 5495
 spells = [1098, 1949]
 at = [1453, 39.89, 84.19]

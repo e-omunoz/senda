@@ -80,6 +80,7 @@ checked = "2026-11-11"
 [[step]]
 id = "dr-18-sea-lion-007"
 do = "train"
+reqlevel = 18
 spells = [770, 2637]
 npc = 4217
 at = [1457, 35.37, 8.4]

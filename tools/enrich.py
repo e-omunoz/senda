@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Añade a los pasos datos de juego que el cliente no puede consultar por sí solo.
 
-Hoy: `reqlevel` (nivel mínimo para coger la misión) en los pasos `do = "accept"`, leído de la
-QuestieDB local. Es un hecho del juego (como un id), no texto de QuestieDB, así que se puede guardar
+Hoy: `reqlevel` (nivel mínimo) en:
+- pasos `do = "accept"`: nivel para coger la misión, leído de la QuestieDB local;
+- pasos `do = "train"`: nivel al que el instructor enseña esos hechizos, sacado de
+  data/knowledge/<clase>/spells.toml (el mayor de los hechizos del paso), del `if.minlevel` o, si no hay
+  más remedio, del texto del paso («lo del 18», «Nivel 20»...). Es un hecho del juego (como un id), no texto de QuestieDB, así que se puede guardar
 en `data/`. El motor lo usa para aplazar las misiones que todavía no puedes coger (exclamación
 plateada) y avisarte cuando subes al nivel necesario.
 
@@ -17,6 +20,7 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -29,6 +33,63 @@ TABLE_RE = re.compile(r"^\[")
 DO_RE = re.compile(r'^do\s*=\s*"([a-z_]+)"')
 QUEST_RE = re.compile(r"^quest\s*=\s*(\d+)")
 REQ_RE = re.compile(r"^reqlevel\s*=\s*(\d+)")
+SPELLS_RE = re.compile(r"^spells\s*=\s*\[([^\]]*)\]")
+CLASS_RE = re.compile(r'class\s*=\s*\[\s*"([A-Z]+)"')
+MINLEVEL_RE = re.compile(r"minlevel\s*=\s*(\d+)")
+TEXT_RE = re.compile(r'^text\s*=\s*"(.*)"')
+TEXT_LEVEL_RE = re.compile(r"(?:lo del|[Nn]ivel|[Ee]ntrena el|[Ee]ntrena del|[Aa]l)\s+(\d{1,2})")
+
+CLASS_DIR = {"WARLOCK": "warlock", "MAGE": "mage", "DRUID": "druid", "WARRIOR": "warrior", "PALADIN": "paladin",
+             "HUNTER": "hunter", "ROGUE": "rogue", "PRIEST": "priest", "SHAMAN": "shaman"}
+
+
+def spell_levels() -> dict[str, dict[int, int]]:
+    """clase -> {id de hechizo -> nivel al que se entrena}, desde data/knowledge/<clase>/spells.toml."""
+    out: dict[str, dict[int, int]] = {}
+    for cls, d in CLASS_DIR.items():
+        f = ROOT / "data" / "knowledge" / d / "spells.toml"
+        if not f.exists():
+            continue
+        data = tomllib.loads(f.read_text(encoding="utf-8"))
+        m: dict[int, int] = {}
+        for tr in data.get("train", []):
+            lvl = tr.get("level")
+            for sid in tr.get("spells", []) or []:
+                if isinstance(sid, int) and isinstance(lvl, int):
+                    m[sid] = min(m.get(sid, lvl), lvl)
+        out[cls] = m
+    return out
+
+
+def guide_class(path: Path) -> str | None:
+    g = path.parent / "guide.toml"
+    if path.parent.parent.name != "guides" or not g.exists():
+        return None
+    classes = tomllib.loads(g.read_text(encoding="utf-8")).get("classes") or []
+    return classes[0] if len(classes) == 1 else None
+
+
+def train_level(block: list[str], cls: str | None, levels: dict[str, dict[int, int]]) -> int | None:
+    found: list[int] = []
+    for l in block:
+        if (m := CLASS_RE.search(l)) and l.startswith("if"):
+            cls = m.group(1)
+    known = levels.get(cls or "", {})
+    for l in block:
+        if (m := SPELLS_RE.match(l)):
+            for sid in re.findall(r"\d+", m.group(1)):
+                if int(sid) in known:
+                    found.append(known[int(sid)])
+        if l.startswith("if") and (m := MINLEVEL_RE.search(l)):
+            found.append(int(m.group(1)))
+    if not found:
+        for l in block:
+            if (m := TEXT_RE.match(l)):
+                nums = [int(n) for n in TEXT_LEVEL_RE.findall(m.group(1)) if 2 <= int(n) <= 60]
+                if nums:
+                    found.append(max(nums))
+    lvl = max(found) if found else None
+    return lvl if lvl and lvl > 1 else None
 
 
 def files() -> list[Path]:
@@ -36,7 +97,8 @@ def files() -> list[Path]:
     return [p for p in out if p.name != "guide.toml"]
 
 
-def process(path: Path, db: QuestDB) -> tuple[str, int]:
+def process(path: Path, db: QuestDB, levels: dict[str, dict[int, int]]) -> tuple[str, int]:
+    cls = guide_class(path)
     lines = path.read_text(encoding="utf-8").split("\n")
     out: list[str] = []
     changes = 0
@@ -56,6 +118,10 @@ def process(path: Path, db: QuestDB) -> tuple[str, int]:
         qline = next((k for k, l in enumerate(block) if QUEST_RE.match(l)), None)
         rline = next((k for k, l in enumerate(block) if REQ_RE.match(l)), None)
         want = None
+        anchor = qline
+        if do == "train":
+            want = train_level(block, cls, levels)
+            anchor = next((k for k, l in enumerate(block) if DO_RE.match(l)), 0)
         if do == "accept" and qline is not None:
             q = db.quest(int(QUEST_RE.match(block[qline]).group(1)))
             lvl = int(q.get("requiredLevel") or 0) if q else 0
@@ -67,7 +133,7 @@ def process(path: Path, db: QuestDB) -> tuple[str, int]:
         elif want is not None:
             text = f"reqlevel = {want}"
             if rline is None:
-                block.insert(qline + 1, text)
+                block.insert(anchor + 1, text)
                 changes += 1
             elif block[rline] != text:
                 block[rline] = text
@@ -83,9 +149,10 @@ def main() -> int:
     ap.add_argument("--questiedb", help="carpeta de QuestieDB (por defecto, la del juego)")
     args = ap.parse_args()
     db = QuestDB.open(args.questiedb)
+    levels = spell_levels()
     total = 0
     for path in files():
-        text, n = process(path, db)
+        text, n = process(path, db, levels)
         if n:
             total += n
             rel = path.relative_to(ROOT).as_posix()

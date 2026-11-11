@@ -23,6 +23,7 @@ checked = "2026-11-11"
 [[step]]
 id = "dr-14-poison-002"
 do = "train"
+reqlevel = 14
 spells = [5211]
 npc = 4217
 at = [1457, 35.37, 8.4]

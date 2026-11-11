@@ -668,6 +668,7 @@ sources = ["questie:npc/523"]
 [[step]]
 id = "a17wf-065"
 do = "train"
+reqlevel = 18
 spells = [693, 5676]
 npc = 5495
 at = [1453, 39.9, 84.2]
@@ -679,6 +680,7 @@ sources = ["questie:npc/5495", "knowledge:warlock-spells"]
 [[step]]
 id = "a17wf-066"
 do = "train"
+reqlevel = 18
 spells = [1008, 475]
 npc = 5497
 at = [1453, 49.6, 85.8]
@@ -690,6 +692,7 @@ sources = ["questie:npc/5497", "knowledge:mage-spells"]
 [[step]]
 id = "a17wf-dr-18"
 do = "train"
+reqlevel = 18
 spells = [770, 2637]
 npc = 5504
 at = [1453, 35.84, 67.38]

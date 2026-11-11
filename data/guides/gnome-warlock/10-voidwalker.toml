@@ -92,6 +92,7 @@ sources = ["questie:quest/1688", "questie:npc/6122"]
 [[step]]
 id = "wl-voidwalker-008"
 do = "train"
+reqlevel = 12
 spells = [755]
 npc = 461
 at = [1453, 39.2, 85.0]

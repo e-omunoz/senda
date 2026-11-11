@@ -11,6 +11,7 @@ if = { class = ["WARLOCK"] }
 [[step]]
 id = "wl-felsteed-001"
 do = "train"
+reqlevel = 40
 spells = [5484]
 npc = 5172
 at = [1455, 50.4, 5.7]

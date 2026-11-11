@@ -234,7 +234,7 @@ Senda.Guides:RegisterSection({
     { id = "dr-10-bear-002", ["do"] = "accept", quest = 5925, npc = 3602, at = {1438, 55.95, 61.56}, text = "Coge con Kal la misión que te manda al Enclave Cenarion de Darnassus.", tip = "Si estás ya en Darnassus, Denatharion da la misma misión en el Enclave Cenarion.", status = "unverified", reqlevel = 10 },
     { id = "dr-10-bear-003", ["do"] = "turnin", quest = 5925, npc = 4217, at = {1457, 35.37, 8.4}, text = "Ve al oeste hasta Darnassus y entrega a Mathrengyl, en el Enclave Cenarion (noroeste de la ciudad).", status = "unverified" },
     { id = "dr-10-bear-004", ["do"] = "accept", quest = 5921, npc = 4217, at = {1457, 35.37, 8.4}, text = "Coge con Mathrengyl la misión del Claro de la Luna.", status = "unverified", reqlevel = 10 },
-    { id = "dr-10-bear-005", ["do"] = "train", npc = 4217, spells = {18960}, at = {1457, 35.37, 8.4}, text = "Asegúrate de tener Teletransporte: Claro de la Luna. Si el instructor te lo ofrece, apréndelo ahora.", tip = "Desde hoy es tu viaje gratis a un instructor completo (Loganaar). Vuelve siempre con la piedra de hogar.", status = "unverified" },
+    { id = "dr-10-bear-005", ["do"] = "train", npc = 4217, spells = {18960}, at = {1457, 35.37, 8.4}, text = "Asegúrate de tener Teletransporte: Claro de la Luna. Si el instructor te lo ofrece, apréndelo ahora.", tip = "Desde hoy es tu viaje gratis a un instructor completo (Loganaar). Vuelve siempre con la piedra de hogar.", status = "unverified", reqlevel = 10 },
     { id = "dr-10-bear-006", ["do"] = "turnin", quest = 5921, npc = 11802, at = {1450, 56.21, 30.64}, text = "Lanza Teletransporte: Claro de la Luna. Sube al piso alto del edificio del pueblo y entrega a Dendrite.", tip = "Llegas junto a la maestra de vuelo; Dendrite está al noreste de ese punto.", status = "unverified" },
     { id = "dr-10-bear-007", ["do"] = "accept", quest = 5929, npc = 11802, at = {1450, 56.21, 30.64}, text = "Coge con Dendrite la misión del Gran Espíritu del Oso.", status = "unverified", reqlevel = 10 },
     { id = "dr-10-bear-008", ["do"] = "complete", quest = 5929, npc = 11956, at = {1450, 39.11, 27.5}, text = "Ve al noroeste del Claro de la Luna y habla con el Gran Espíritu del Oso hasta el final.", tip = "Los bichos del Claro son amistosos: puedes ir en línea recta.", status = "unverified" },
@@ -257,8 +257,8 @@ Senda.Guides:RegisterSection({
     { id = "dr-11-lunaclaw-001", ["do"] = "complete", quest = 6001, npc = 12144, item = 15208, at = {1439, 43.5, 45.97}, text = "Sube la colina al este de Auberdine y usa el polvo lunar en la piedra lechúcica. Vence a Lunaclaw y habla con su espíritu.", tip = "Lunaclaw es nivel 12: entra con vida y maná llenos, Raíces enredadoras y Cólera a distancia, y cúrate con Toque de sanación.", status = "unverified" },
     { id = "dr-11-lunaclaw-002", ["do"] = "goto", at = {1439, 33.2, 40.2}, radius = 20, text = "Vuelve a Auberdine y coge el barco del muelle a la Aldea Rut'theran (Teldrassil).", tip = "Si quieres ahorrar un viaje, entrega en la próxima visita a Darnassus (nivel 14); pero el oso acelera mucho el leveo.", status = "unverified" },
     { id = "dr-11-lunaclaw-003", ["do"] = "turnin", quest = 6001, npc = 4217, at = {1457, 35.37, 8.4}, text = "Entra en Darnassus por el portal de Rut'theran y entrega a Mathrengyl: aprendes Forma de oso, Gruñido y Vapulear.", status = "unverified" },
-    { id = "dr-11-lunaclaw-004", ["do"] = "train", npc = 4217, spells = {5487}, at = {1457, 35.37, 8.4}, text = "Comprueba que tienes Forma de oso. Entrena también Rugido desmoralizador.", tip = "Oso para los combates largos y los grupos de bichos; Cólera para tirar al primero desde lejos.", status = "unverified" },
-    { id = "dr-11-lunaclaw-005", ["do"] = "train", npc = 4217, spells = {8936, 5229}, at = {1457, 35.37, 8.4}, ["if"] = { minlevel = 12 }, optional = true, text = "Si eres 12, entrena Recrecimiento y Enfurecer con cualquier instructor del Enclave.", status = "unverified" },
+    { id = "dr-11-lunaclaw-004", ["do"] = "train", npc = 4217, spells = {5487}, at = {1457, 35.37, 8.4}, text = "Comprueba que tienes Forma de oso. Entrena también Rugido desmoralizador.", tip = "Oso para los combates largos y los grupos de bichos; Cólera para tirar al primero desde lejos.", status = "unverified", reqlevel = 10 },
+    { id = "dr-11-lunaclaw-005", ["do"] = "train", npc = 4217, spells = {8936, 5229}, at = {1457, 35.37, 8.4}, ["if"] = { minlevel = 12 }, optional = true, text = "Si eres 12, entrena Recrecimiento y Enfurecer con cualquier instructor del Enclave.", status = "unverified", reqlevel = 12 },
     { id = "dr-11-lunaclaw-006", ["do"] = "hearth", zone = 1439, text = "Usa la piedra de hogar para volver a Auberdine y sigue con Costa Oscura.", tip = "Pon el hogar en la posada de Auberdine si aún no lo has hecho: lo usarás mucho con las misiones de clase.", status = "unverified" },
   },
 })
@@ -426,7 +426,7 @@ Senda.Guides:RegisterSection({
   ["if"] = { class = {"DRUID"} },
   steps = {
     { id = "dr-14-poison-001", ["do"] = "goto", at = {1438, 55.9, 89.0}, radius = 20, text = "Al 14, coge el barco de Auberdine a Rut'theran y entra en Darnassus por el portal.", tip = "Si te pilla en Teldrassil o Darnassus, sáltate este paso.", status = "unverified" },
-    { id = "dr-14-poison-002", ["do"] = "train", npc = 4217, spells = {5211}, at = {1457, 35.37, 8.4}, text = "Nivel 14: entrena Azote y los rangos nuevos en el Enclave Cenarion (y lo del 12 si te faltaba).", status = "unverified" },
+    { id = "dr-14-poison-002", ["do"] = "train", npc = 4217, spells = {5211}, at = {1457, 35.37, 8.4}, text = "Nivel 14: entrena Azote y los rangos nuevos en el Enclave Cenarion (y lo del 12 si te faltaba).", status = "unverified", reqlevel = 14 },
     { id = "dr-14-poison-003", ["do"] = "accept", quest = 6121, npc = 4217, at = {1457, 35.37, 8.4}, text = "Coge con Mathrengyl la misión que te manda otra vez al Claro de la Luna.", status = "unverified", reqlevel = 14 },
     { id = "dr-14-poison-004", ["do"] = "turnin", quest = 6121, npc = 11802, at = {1450, 56.21, 30.64}, text = "Lanza Teletransporte: Claro de la Luna y entrega a Dendrite.", status = "unverified" },
     { id = "dr-14-poison-005", ["do"] = "accept", quest = 6122, npc = 11802, at = {1450, 56.21, 30.64}, text = "Coge la misión de la muestra de agua: te da el frasco vacío.", status = "unverified", reqlevel = 14 },
@@ -453,7 +453,7 @@ Senda.Guides:RegisterSection({
   steps = {
     { id = "dr-16-aquatic-001", ["do"] = "goto", npc = 11800, at = {1450, 44.15, 45.23}, radius = 10, text = "En el Claro de la Luna, pide a Silva Fil'naveth el vuelo de druida a la Aldea Rut'theran y entra en Darnassus.", tip = "Si no estás en el Claro, coge el barco de Auberdine a Rut'theran.", status = "unverified" },
     { id = "dr-16-aquatic-002", ["do"] = "turnin", quest = 6125, npc = 4217, at = {1457, 35.37, 8.4}, text = "Entrega a Mathrengyl la misión del veneno: aprendes Curar envenenamiento.", status = "unverified" },
-    { id = "dr-16-aquatic-003", ["do"] = "train", npc = 4217, spells = {779}, at = {1457, 35.37, 8.4}, text = "Nivel 16: entrena Flagelo y los rangos nuevos.", tip = "Flagelo pega a todo lo que tienes delante en forma de oso: con él puedes coger dos o tres bichos a la vez.", status = "unverified" },
+    { id = "dr-16-aquatic-003", ["do"] = "train", npc = 4217, spells = {779}, at = {1457, 35.37, 8.4}, text = "Nivel 16: entrena Flagelo y los rangos nuevos.", tip = "Flagelo pega a todo lo que tienes delante en forma de oso: con él puedes coger dos o tres bichos a la vez.", status = "unverified", reqlevel = 16 },
     { id = "dr-16-aquatic-004", ["do"] = "accept", quest = 26, npc = 4217, at = {1457, 35.37, 8.4}, text = "Coge con Mathrengyl la misión de la Forma acuática.", status = "unverified", reqlevel = 16 },
     { id = "dr-16-aquatic-005", ["do"] = "turnin", quest = 26, npc = 11802, at = {1450, 56.21, 30.64}, text = "Lanza Teletransporte: Claro de la Luna y entrega a Dendrite.", status = "unverified" },
     { id = "dr-16-aquatic-006", ["do"] = "accept", quest = 29, npc = 11802, at = {1450, 56.21, 30.64}, text = "Coge la Prueba del lago.", status = "unverified", reqlevel = 16 },
@@ -497,7 +497,7 @@ Senda.Guides:RegisterSection({
     { id = "dr-18-sea-lion-004", ["do"] = "accept", quest = 5061, npc = 11802, at = {1450, 56.21, 30.64}, text = "Coge la última misión de la Forma acuática.", status = "unverified", reqlevel = 16 },
     { id = "dr-18-sea-lion-005", ["do"] = "goto", npc = 11800, at = {1450, 44.15, 45.23}, radius = 10, text = "Pide a Silva Fil'naveth el vuelo de druida a la Aldea Rut'theran y entra en Darnassus por el portal.", status = "unverified" },
     { id = "dr-18-sea-lion-006", ["do"] = "turnin", quest = 5061, npc = 4217, at = {1457, 35.37, 8.4}, text = "Enseña el colgante a Mathrengyl: aprendes Forma acuática.", tip = "Bajo el agua respiras sin límite y nadas mucho más rápido.", status = "unverified" },
-    { id = "dr-18-sea-lion-007", ["do"] = "train", npc = 4217, spells = {770, 2637}, at = {1457, 35.37, 8.4}, ["if"] = { minlevel = 18 }, optional = true, text = "Si eres 18, entrena Fuego feérico e Hibernar.", status = "unverified" },
+    { id = "dr-18-sea-lion-007", ["do"] = "train", npc = 4217, spells = {770, 2637}, at = {1457, 35.37, 8.4}, ["if"] = { minlevel = 18 }, optional = true, text = "Si eres 18, entrena Fuego feérico e Hibernar.", status = "unverified", reqlevel = 18 },
     { id = "dr-18-sea-lion-008", ["do"] = "note", text = "Si ya eres 20, sigue con la Forma felina sin salir de Darnassus. Si no, usa la piedra de hogar para volver a tu ruta.", status = "unverified" },
   },
 })
@@ -510,7 +510,7 @@ Senda.Guides:RegisterSection({
   summary = "Nivel 20: Gran Espíritu del Felino en el sur del Claro de la Luna, tres reliquias en el Túmulo de Tempestira y Forma felina con Acechar.",
   ["if"] = { class = {"DRUID"} },
   steps = {
-    { id = "dr-20-cat-001", ["do"] = "train", npc = 4217, spells = {2912, 20484}, at = {1457, 35.37, 8.4}, text = "Nivel 20: entrena en el Enclave Cenarion de Darnassus: Fuego estelar, Renacer y los rangos nuevos.", tip = "Desde los Reinos del Este: Teletransporte: Claro de la Luna y vuelo de druida de Silva Fil'naveth a Rut'theran.", status = "unverified" },
+    { id = "dr-20-cat-001", ["do"] = "train", npc = 4217, spells = {2912, 20484}, at = {1457, 35.37, 8.4}, text = "Nivel 20: entrena en el Enclave Cenarion de Darnassus: Fuego estelar, Renacer y los rangos nuevos.", tip = "Desde los Reinos del Este: Teletransporte: Claro de la Luna y vuelo de druida de Silva Fil'naveth a Rut'theran.", status = "unverified", reqlevel = 20 },
     { id = "dr-20-cat-002", ["do"] = "accept", quest = 98393, npc = 4217, at = {1457, 35.37, 8.4}, text = "Coge con Mathrengyl la misión del Gran Espíritu del Felino.", status = "unverified", reqlevel = 20 },
     { id = "dr-20-cat-003", ["do"] = "turnin", quest = 98393, npc = 11802, at = {1450, 56.21, 30.64}, text = "Lanza Teletransporte: Claro de la Luna y entrega a Dendrite, en el piso alto.", status = "unverified" },
     { id = "dr-20-cat-004", ["do"] = "accept", quest = 98394, npc = 11802, at = {1450, 56.21, 30.64}, text = "Coge la siguiente misión de Dendrite.", status = "unverified", reqlevel = 20 },
@@ -524,7 +524,7 @@ Senda.Guides:RegisterSection({
     { id = "dr-20-cat-012", ["do"] = "accept", quest = 98397, npc = 11802, at = {1450, 56.21, 30.64}, text = "Coge la misión de vuelta a Darnassus.", status = "unverified", reqlevel = 20 },
     { id = "dr-20-cat-013", ["do"] = "goto", npc = 11800, at = {1450, 44.15, 45.23}, radius = 10, text = "Pide a Silva Fil'naveth el vuelo de druida a la Aldea Rut'theran y entra en Darnassus.", status = "unverified" },
     { id = "dr-20-cat-014", ["do"] = "turnin", quest = 98397, npc = 4217, at = {1457, 35.37, 8.4}, text = "Entrega a Mathrengyl: aprendes Forma felina, Zarpa, Acechar y Destripar.", status = "unverified" },
-    { id = "dr-20-cat-015", ["do"] = "train", npc = 4217, spells = {768, 5215}, at = {1457, 35.37, 8.4}, text = "Comprueba que tienes Forma felina y Acechar, y entrena Triturar si el instructor te lo ofrece.", tip = "Felino para matar rápido a un solo bicho; oso si se juntan varios. Al 20 en Forever también puedes aprender Armas de asta con Woo Ping (Ventormenta).", status = "unverified" },
+    { id = "dr-20-cat-015", ["do"] = "train", npc = 4217, spells = {768, 5215}, at = {1457, 35.37, 8.4}, text = "Comprueba que tienes Forma felina y Acechar, y entrena Triturar si el instructor te lo ofrece.", tip = "Felino para matar rápido a un solo bicho; oso si se juntan varios. Al 20 en Forever también puedes aprender Armas de asta con Woo Ping (Ventormenta).", status = "unverified", reqlevel = 20 },
     { id = "dr-20-cat-016", ["do"] = "note", text = "Usa la piedra de hogar para volver a tu ruta.", status = "unverified" },
   },
 })

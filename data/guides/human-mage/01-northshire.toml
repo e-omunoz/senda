@@ -434,6 +434,7 @@ checked = "2026-11-11"
 [[step]]
 id = "hmage-northshire-039"
 do = "train"
+reqlevel = 4
 npc = 198
 spells = [5504, 116]
 at = [1429, 49.7, 39.4]

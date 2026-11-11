@@ -16,6 +16,7 @@ sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
 [[step]]
 id = "a40-ciudad-002"
 do = "train"
+reqlevel = 40
 npc = 5144
 spells = [10059, 11416]
 at = [1455, 27.25, 8.3]
@@ -28,6 +29,7 @@ sources = ["questie:npc/5144"]
 [[step]]
 id = "a40-ciudad-dr-40"
 do = "train"
+reqlevel = 40
 spells = [9634, 29166, 16914]
 npc = 12042
 at = [1450, 52.53, 40.57]
@@ -41,6 +43,7 @@ sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/d
 [[step]]
 id = "a40-ciudad-003"
 do = "train"
+reqlevel = 40
 npc = 5172
 spells = [2362, 5484]
 at = [1455, 50.35, 5.66]

@@ -22,6 +22,7 @@ sources = ["questie:quest/1798", "questie:npc/6120", "legacy:BrujoGnomoGuia 4.1.
 [[step]]
 id = "wl-felhunter-002"
 do = "train"
+reqlevel = 30
 spells = [1098, 1949]
 npc = 5172
 at = [1455, 50.4, 5.7]

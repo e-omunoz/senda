@@ -8,6 +8,7 @@ summary = "Nivel 50: Portal: Darnassus, Teletransporte a Dalaran y la cadena de 
 [[step]]
 id = "mg-50-magecraft-001"
 do = "train"
+reqlevel = 50
 npc = 2485
 spells = [11419]
 at = [1453, 50.4, 86.0]

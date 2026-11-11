@@ -48,6 +48,7 @@ sources = ["questie:quest/1716", "questie:npc/6122", "https://conquestcapped.com
 [[step]]
 id = "wl-succubus-004"
 do = "train"
+reqlevel = 20
 spells = [1490, 706, 698, 5740]
 npc = 461
 at = [1453, 39.2, 85.0]

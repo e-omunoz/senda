@@ -13,6 +13,7 @@ link = "https://www.warcrafttavern.com/forever/guides/leveling/"
 [[step]]
 id = "a22dw-001"
 do = "train"
+reqlevel = 22
 spells = [126]
 npc = 5495
 at = [1453, 39.9, 84.2]
@@ -24,6 +25,7 @@ sources = ["questie:npc/5495", "knowledge:warlock-spells"]
 [[step]]
 id = "a22dw-002"
 do = "train"
+reqlevel = 22
 spells = [2948, 6143]
 npc = 5497
 at = [1453, 49.6, 85.8]
@@ -36,6 +38,7 @@ sources = ["questie:npc/5497", "knowledge:mage-spells"]
 [[step]]
 id = "a22dw-dr-22"
 do = "train"
+reqlevel = 22
 spells = [2908]
 npc = 5504
 at = [1453, 35.84, 67.38]
@@ -436,6 +439,7 @@ sources = ["questie:npc/2409"]
 [[step]]
 id = "a22dw-041"
 do = "train"
+reqlevel = 24
 spells = [5138, 5500]
 npc = 5495
 at = [1453, 39.9, 84.2]
@@ -447,6 +451,7 @@ sources = ["questie:npc/5495", "knowledge:warlock-spells"]
 [[step]]
 id = "a22dw-042"
 do = "train"
+reqlevel = 24
 spells = [2139]
 npc = 5497
 at = [1453, 49.6, 85.8]
@@ -458,6 +463,7 @@ sources = ["questie:npc/5497", "knowledge:mage-spells"]
 [[step]]
 id = "a22dw-dr-24"
 do = "train"
+reqlevel = 24
 spells = [2782]
 npc = 5504
 at = [1453, 35.84, 67.38]

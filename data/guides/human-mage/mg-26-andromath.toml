@@ -8,6 +8,7 @@ summary = "Hechizos del 26 y comienzo de la cadena de la Prenda de nudo astral."
 [[step]]
 id = "mg-26-andromath-001"
 do = "train"
+reqlevel = 26
 npc = 5497
 spells = [120]
 at = [1453, 49.6, 85.8]

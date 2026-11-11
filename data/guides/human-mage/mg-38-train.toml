@@ -8,6 +8,7 @@ summary = "Hechizos del 38 y misiones que llevan al Pantano de Fangos Oscuros."
 [[step]]
 id = "mg-38-train-001"
 do = "train"
+reqlevel = 38
 npc = 5497
 spells = [3552]
 at = [1453, 49.6, 85.8]
