@@ -36,7 +36,7 @@ do = "accept"
 quest = 109
 npc = 240
 at = [1429, 42.1, 65.9]
-text = "Sal por la puerta y ve a Villadorada. Coge con el Mariscal Dughan la misión para la Colina del Centinela."
+text = "Sal por la puerta y ve a Villadorada. Coge con el Alguacil Dughan la misión para la Colina del Centinela."
 status = "unverified"
 sources = ["questie:quest/109", "questie:npc/240"]
 

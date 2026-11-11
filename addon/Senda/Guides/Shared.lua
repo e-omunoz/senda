@@ -153,7 +153,7 @@ Senda.Guides:RegisterSection({
   steps = {
     { id = "a17wf-001", ["do"] = "getfp", npc = 352, at = {1453, 71.3, 72.2}, node = "2", text = "En Ventormenta, coge la ruta de vuelo con Dungar Longdrink.", tip = "Si ya la tienes, se completa sola.", status = "unverified" },
     { id = "a17wf-002", ["do"] = "turnin", quest = 1338, npc = 5413, at = {1453, 64.6, 37.2}, text = "Entrega el encargo de Stormpike a Furen Longbeard, en el Distrito de los Enanos.", status = "unverified" },
-    { id = "a17wf-003", ["do"] = "accept", quest = 109, npc = 240, at = {1429, 42.1, 65.9}, text = "Sal por la puerta y ve a Villadorada. Coge con el Mariscal Dughan la misión para la Colina del Centinela.", status = "unverified" },
+    { id = "a17wf-003", ["do"] = "accept", quest = 109, npc = 240, at = {1429, 42.1, 65.9}, text = "Sal por la puerta y ve a Villadorada. Coge con el Alguacil Dughan la misión para la Colina del Centinela.", status = "unverified" },
     { id = "a17wf-004", ["do"] = "accept", quest = 64, npc = 237, at = {1436, 60.0, 19.4}, text = "Entra en Páramos de Poniente por el norte. En la granja de los Furlbrow, coge la misión del reloj.", status = "unverified" },
     { id = "a17wf-005", ["do"] = "accept", quest = 36, npc = 238, at = {1436, 59.9, 19.4}, text = "Coge con Verna Furlbrow la receta para Salma Saldean.", status = "unverified" },
     { id = "a17wf-006", ["do"] = "accept", quest = 151, npc = 238, at = {1436, 59.9, 19.4}, text = "Coge también la de la avena para Blanchy.", tip = "Los sacos de avena están por todos los campos: cógelos al pasar.", status = "unverified" },
@@ -252,7 +252,7 @@ Senda.Guides:RegisterSection({
     { id = "a19rr-014", ["do"] = "accept", quest = 150, npc = 381, at = {1433, 22.6, 47.4}, text = "Coge también la de las aletas de múrloc.", status = "unverified" },
     { id = "a19rr-015", ["do"] = "accept", quest = 92, npc = 343, at = {1433, 17.6, 43.8}, text = "Coge el estofado de Crestagrana con la Chef Breanna.", status = "unverified" },
     { id = "a19rr-016", ["do"] = "accept", quest = 125, npc = 341, at = {1433, 27.1, 48.6}, text = "Coge con el Capataz Oslow la misión de su caja de herramientas.", status = "unverified" },
-    { id = "a19rr-017", ["do"] = "accept", quest = 20, npc = 382, at = {1433, 28.4, 49.0}, text = "Coge con el Mariscal Marris la de las hachas de Roca Negra.", status = "unverified" },
+    { id = "a19rr-017", ["do"] = "accept", quest = 20, npc = 382, at = {1433, 28.4, 49.0}, text = "Coge con el Alguacil Marris la de las hachas de Roca Negra.", status = "unverified" },
     { id = "a19rr-018", ["do"] = "accept", quest = 98387, npc = 382, at = {1433, 28.4, 49.0}, text = "Coge también la del bloqueo de Roca Negra.", status = "unverified" },
     { id = "a19rr-019", ["do"] = "accept", quest = 91, npc = 900, at = {1433, 24.6, 44.3}, text = "En el ayuntamiento, coge con el Alguacil Conacher la de los colgantes Sombrapellejo.", status = "unverified" },
     { id = "a19rr-020", ["do"] = "accept", quest = 3741, npc = 8965, at = {1433, 24.2, 53.6}, text = "Al sur del pueblo, coge con Shawn la misión del collar de Hilary.", status = "unverified" },

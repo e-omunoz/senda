@@ -180,7 +180,7 @@ do = "accept"
 quest = 20
 npc = 382
 at = [1433, 28.4, 49.0]
-text = "Coge con el Mariscal Marris la de las hachas de Roca Negra."
+text = "Coge con el Alguacil Marris la de las hachas de Roca Negra."
 status = "unverified"
 sources = ["questie:quest/20", "questie:npc/382"]
 

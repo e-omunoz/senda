@@ -58,6 +58,10 @@ Lo mantiene al día el harness (`harness/`).
     QuestieDB y con las guías de Forever (ConquestCapped y Warcraft Tavern dan unos 39, 84.5).
   - Por eso las coordenadas de Ventormenta de BrujoGnomoGuia 4.1.0 (Gakin 25.3, 78.2; Woo Ping 57.1, 57.7) son
     del marco de Era y hay que convertirlas. Las equivalentes en Forever son 39.2, 85.2 y 63.9, 69.1.
+  - **Comprobado en el juego el 11 de noviembre de 2026:** en Crestagrana, el jugador estaba junto al Alguacil
+    Marris en 28.3, 48.x, y QuestieDB da 28.4, 49.0. Las coordenadas de QuestieDB para Forever ya están en el marco de
+    Forever, así que no hay que transformarlas. Solo hay que transformar las que vengan de guías de Classic Era.
+  - **Nombres en el cliente esES:** «Marshal» se traduce «Alguacil» (Alguacil Marris, Alguacil McBride, Alguacil Dughan).
   - El resto de zonas comparte coordenadas con Era. Aun así, nunca se copian coordenadas de guías de Classic sin
     verificarlas.
 
