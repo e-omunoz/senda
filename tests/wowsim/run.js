@@ -191,6 +191,61 @@ const SCENARIO_E = L_`
 
 const scenarios = [
   {
+    id: 'gate',
+    title: 'Quests above your level are postponed and offered again on level-up',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E = S().Engine
+      local p = Sim.player
+      p.level = 16
+      Sim.Fire("PLAYER_LEVEL_UP", 16, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      local i = StepIndexOf("a19rr-016")
+      Check(i ~= nil, "step a19rr-016 exists")
+      E:JumpTo(i)
+      E:Advance()
+      Sim.Advance(1)
+      Check(StepId() ~= "a19rr-017", "level-18 quest (a19rr-017) is not the current step at level 16", StepId())
+      local gated = E:LevelGated()
+      local g17
+      for _, g in ipairs(gated) do if g.entry.step.id == "a19rr-017" then g17 = g end end
+      Check(g17 ~= nil and g17.level == 18 and not g17.ready, "a19rr-017 is listed as postponed until 18")
+      Check(SendaHUD.gated and SendaHUD.gated:IsShown(), "HUD shows the postponed line")
+      Check(Plain(SendaHUD.gated.text:GetText()):find("Al nivel 1", 1, true) ~= nil, "HUD line says at which level (lowest postponed first)", SendaHUD.gated.text:GetText())
+      Section("walk the rest of the section: never asked to complete/turn in quest 20")
+      local bad
+      for _ = 1, 80 do
+        local st = E:CurrentStep()
+        if not st or st.id:sub(1, 5) ~= "a19rr" then break end
+        if st.quest == 20 and (st["do"] == "complete" or st["do"] == "turnin") then bad = st.id; break end
+        E:Skip(); Sim.Advance(0.3)
+      end
+      Check(bad == nil, "complete/turnin of the untaken quest 20 are passed over", bad)
+      Section("level up to 18")
+      local before = #Sim.chat
+      p.level = 18
+      Sim.Fire("PLAYER_LEVEL_UP", 18, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      local said = false
+      for k = before + 1, #Sim.chat do if Sim.chat[k]:find("Ya tienes nivel", 1, true) then said = true end end
+      local readyNow = false
+      for _, g in ipairs(E:LevelGated()) do if g.entry.step.id == "a19rr-017" and g.ready then readyNow = true end end
+      if not readyNow then
+        -- the cursor may have left the section window; check from a step inside the section
+        E:JumpTo(StepIndexOf("a19rr-030") or i); Sim.Advance(0.5)
+        for _, g in ipairs(E:LevelGated()) do if g.entry.step.id == "a19rr-017" and g.ready then readyNow = true end end
+      end
+      Check(readyNow, "a19rr-017 is now ready")
+      Check(said or readyNow, "chat or HUD tells you it is available")
+      local btn = SendaHUD.gated
+      if btn.index then btn:GetScript("OnClick")(btn) end
+      Sim.Advance(0.5)
+      Check(StepId() == "a19rr-017", "clicking the green line goes back to a19rr-017", StepId())
+    `,
+  },
+  {
     id: 'a',
     title: 'Gnome warlock level 1 logs in',
     char: 'gnome-warlock',

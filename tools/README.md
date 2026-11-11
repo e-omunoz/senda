@@ -147,3 +147,12 @@ python -m unittest discover -s tests -p "test_*.py" -v
 `tests/test_build.py` usa el fixture `tests/fixtures/repo/` (copiado a una carpeta temporal; nunca se escribe en
 él) y cubre el escapado Lua, el validador de esquemas, los errores semánticos, el build completo, el zip e
 `install-dev`.
+
+## enrich.py
+
+Añade a los datos hechos del juego que el cliente no puede consultar. Hoy rellena `reqlevel` (nivel mínimo para coger la misión) en los pasos `accept`, leyendo la QuestieDB local. Ejecútalo después de añadir o cambiar rutas:
+
+```bash
+python tools/enrich.py           # aplica
+python tools/enrich.py --check   # solo comprueba
+```

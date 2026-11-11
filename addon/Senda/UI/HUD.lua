@@ -220,6 +220,24 @@ local function Create()
   f.advice:SetPoint("TOPLEFT", f.tip, "BOTTOMLEFT", 0, -4)
   f.advice:SetPoint("RIGHT", -PAD, 0)
 
+  -- Misiones aplazadas por nivel (clic: volver a la primera que ya se puede coger)
+  f.gated = CreateFrame("Button", nil, f)
+  f.gated:SetHeight(14)
+  f.gated.text = FS(f.gated, "GameFontHighlightSmall")
+  f.gated.text:SetAllPoints()
+  f.gated.text:SetWordWrap(false)
+  f.gated:SetScript("OnClick", function(self)
+    if self.index then Senda.Engine:JumpTo(self.index) end
+  end)
+  f.gated:SetScript("OnEnter", function(self)
+    if not self.tip then return end
+    GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT")
+    GameTooltip:SetText(L.LEVEL_GATE_TITLE, 1, 0.82, 0)
+    for _, line in ipairs(self.tip) do GameTooltip:AddLine(line, 1, 1, 1, true) end
+    GameTooltip:Show()
+  end)
+  f.gated:SetScript("OnLeave", function() GameTooltip:Hide() end)
+
   -- Vista previa de los siguientes pasos ----------------------------------
   f.sep = UI:Divider(f, 0.7)
   f.preview = {}
@@ -352,6 +370,47 @@ function HUD:Refresh()
   end
   f.advice:SetShown(advH > 0)
   y = y + objH + tipH + advH
+
+  -- Misiones aplazadas por nivel
+  local gated = (not collapsed and Engine.LevelGated) and Engine:LevelGated() or {}
+  f.gated.index, f.gated.tip = nil, nil
+  if #gated > 0 then
+    local ready, waiting, tip = {}, {}, {}
+    for _, g in ipairs(gated) do
+      local name = self:StepTitle(g.entry.step)
+      if name == "" then name = self:StepText(g.entry.step) end
+      g.name = name
+      if g.ready then
+        ready[#ready + 1] = g
+        tip[#tip + 1] = UI:Color("green", "+ ") .. name
+      else
+        waiting[#waiting + 1] = g
+        tip[#tip + 1] = string.format(L.LEVEL_GATE_TIP, g.level, name)
+      end
+    end
+    local text
+    if #ready > 0 then
+      local first = ready[1] -- la primera en el orden de la ruta
+      f.gated.index = first.index
+      text = UI:Color("green", L.LEVEL_GATE_NOW) .. " " .. first.name
+      if #ready > 1 then text = text .. UI:Color("dim", string.format(" (+%d)", #ready - 1)) end
+      tip[#tip + 1] = UI:Color("dim", L.LEVEL_GATE_CLICK)
+    else
+      local low = waiting[1]
+      for _, g in ipairs(waiting) do if g.level < low.level then low = g end end
+      text = UI:Color("dim", string.format(L.LEVEL_GATE_LATER, low.level) .. " " .. low.name)
+      if #waiting > 1 then text = text .. UI:Color("dim", string.format(" (+%d)", #waiting - 1)) end
+    end
+    f.gated.tip = tip
+    f.gated.text:SetText(text)
+    f.gated:ClearAllPoints()
+    f.gated:SetPoint("TOPLEFT", PAD, -y)
+    f.gated:SetPoint("RIGHT", -PAD, 0)
+    f.gated:Show()
+    y = y + 16
+  else
+    f.gated:Hide()
+  end
 
   -- Vista previa
   local showPreview = not collapsed and Opt("hudPreview")

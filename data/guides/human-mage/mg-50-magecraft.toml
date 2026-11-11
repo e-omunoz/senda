@@ -31,6 +31,7 @@ checked = "2026-11-11"
 id = "mg-50-magecraft-003"
 do = "accept"
 quest = 8250
+reqlevel = 50
 npc = 331
 at = [1453, 49.2, 87.8]
 text = "Coge de Maginor Dumas, en lo alto del Sagrario, la misión de Azshara."

@@ -20,6 +20,7 @@ checked = "2026-11-11"
 id = "mg-30-astral-knot-002"
 do = "accept"
 quest = 1942
+reqlevel = 26
 npc = 1309
 at = [1453, 51.8, 83.5]
 text = "Coge la misión de la prenda."

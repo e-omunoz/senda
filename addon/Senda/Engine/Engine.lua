@@ -41,8 +41,91 @@ local function DoneMark(entry)
   return p and entry and p.done[entry.step.id]
 end
 
+-- Una misión cuenta como "cogida" si está en el registro o ya se entregó.
+local function QuestTaken(q)
+  return q and (Compat.IsOnQuest(q) or Compat.IsQuestDone(q) or (Engine.turnedIn and Engine.turnedIn[q])) and true or false
+end
+
+-- Nivel que falta para poder hacer este paso, o nil si se puede hacer ya.
+-- * accept con `reqlevel`: la misión pide más nivel (exclamación plateada en el juego).
+-- * complete / turnin de una misión aplazada por nivel que aún no tienes: se aplazan con ella.
+function Engine:WaitLevel(entry)
+  local s = entry and entry.step
+  if not s or not s.quest then return nil end
+  local req
+  if s["do"] == "accept" then
+    req = s.reqlevel
+  elseif s["do"] == "complete" or s["do"] == "turnin" then
+    req = self.questWait and self.questWait[s.quest]
+  end
+  if not req or (Compat.PlayerLevel() or 1) >= req then return nil end
+  if QuestTaken(s.quest) then return nil end
+  return req
+end
+
+-- Completar o entregar una misión que no tienes (la saltaste o no la cogiste) no tiene sentido:
+-- si la ruta tiene antes su paso de coger y la misión no está en el registro ni entregada, se pasa.
+-- Solo cuando el registro de misiones ya cargó (al iniciar sesión tarda unos segundos).
+function Engine:NotTaken(entry)
+  local s = entry and entry.step
+  if not s or not s.quest or not self.logReady then return false end
+  local d = s["do"]
+  if d ~= "complete" and d ~= "turnin" then return false end
+  local acc = self.acceptIndex and self.acceptIndex[s.quest]
+  if not acc or not entry.index or acc >= entry.index then return false end
+  return not QuestTaken(s.quest)
+end
+
 local function Applicable(entry)
-  return entry and Cond:LevelFilter(entry.step["if"])
+  return entry and Cond:LevelFilter(entry.step["if"]) and not Engine:WaitLevel(entry)
+    and not Engine:NotTaken(entry)
+end
+
+-- Índice misión -> nivel requerido (de los pasos accept con reqlevel).
+local function BuildQuestWait(steps)
+  local w, acc, idx = {}, {}, {}
+  for i, e in ipairs(steps or {}) do
+    local s = e.step
+    e.index = i
+    idx[e.step.id] = i
+    if s["do"] == "accept" and s.quest then
+      if s.reqlevel then w[s.quest] = s.reqlevel end
+      if not acc[s.quest] then acc[s.quest] = i end
+    end
+  end
+  Engine.acceptIndex = acc
+  Engine.idIndex = idx
+  return w
+end
+
+-- Recuerda un paso de coger misión aplazado por nivel (lo pasó el motor o lo saltaste sin tener nivel).
+function Engine:RememberGated(entry)
+  local p = Progress()
+  local s = entry and entry.step
+  if not p or not s or s["do"] ~= "accept" or not s.reqlevel then return end
+  p.gated = p.gated or {}
+  p.gated[s.id] = s.reqlevel
+end
+
+-- Misiones aplazadas por nivel que siguen sin coger.
+-- Devuelve { { entry, index, level, ready }, ... } en el orden de la ruta.
+function Engine:LevelGated()
+  local out = {}
+  local p = Progress()
+  if not p or not p.gated or not self.idIndex then return out end
+  local lvl = Compat.PlayerLevel() or 1
+  for id, req in pairs(p.gated) do
+    local i = self.idIndex[id]
+    local e = i and self.steps[i]
+    local mark = e and DoneMark(e)
+    if not e or mark == "a" or mark == "d" or QuestTaken(e.step.quest) then
+      p.gated[id] = nil -- ya cogida, hecha o fuera de la guía: se olvida
+    else
+      out[#out + 1] = { entry = e, index = i, level = req, ready = lvl >= req }
+    end
+  end
+  table.sort(out, function(a, b) return a.index < b.index end)
+  return out
 end
 
 function Engine:GuideId() return self.guideId end
@@ -164,6 +247,7 @@ function Engine:NextPending(from)
   while i <= #self.steps do
     local e = self.steps[i]
     if Applicable(e) and not DoneMark(e) then return i end
+    if e and not DoneMark(e) and self:WaitLevel(e) then self:RememberGated(e) end
     i = i + 1
   end
   return #self.steps + 1
@@ -195,6 +279,7 @@ function Engine:Evaluate(reason)
     if not e then break end
     local step = e.step
     if DoneMark(e) or not Applicable(e) then
+      if not DoneMark(e) and self:WaitLevel(e) then self:RememberGated(e) end
       self.index = self.index + 1
       self:EnterStep()
     else
@@ -252,6 +337,10 @@ end
 function Engine:Skip()
   local e = self.steps[self.index]
   if not e then return end
+  local s = e.step
+  if s["do"] == "accept" and s.reqlevel and (Compat.PlayerLevel() or 1) < s.reqlevel and not QuestTaken(s.quest) then
+    self:RememberGated(e)
+  end
   self:Mark(e, "s", true)
   self.held = nil
   self:MoveTo(self:NextPending(self.index + 1))
@@ -320,6 +409,7 @@ end
 function Engine:Rebuild()
   local p = Progress()
   self.steps = Senda.Guides:Resolve(self.guideId)
+  self.questWait = BuildQuestWait(self.steps)
   local idx
   if p and p.current then
     for i, e in ipairs(self.steps) do
@@ -416,6 +506,7 @@ local function OnSkills()
       local before = Engine:CurrentStep()
       local n = #Engine.steps
       Engine.steps = Senda.Guides:Resolve(Engine.guideId)
+      Engine.questWait = BuildQuestWait(Engine.steps)
       if #Engine.steps ~= n then
         -- reubica el puntero en el mismo paso
         for i, e in ipairs(Engine.steps) do
@@ -488,9 +579,27 @@ Events:On("SENDA_READY", function()
   Events:On("QUEST_ACCEPTED", OnAccepted)
   Events:On("QUEST_TURNED_IN", OnTurnedIn)
   Events:On("QUEST_REMOVED", Req("removed", 0.3))
-  Events:On("QUEST_LOG_UPDATE", Req("log", 0.4))
+  Events:On("QUEST_LOG_UPDATE", function()
+    Engine.logReady = true
+    Engine:RequestEvaluate(0.4, "log")
+  end)
   Events:On("UNIT_QUEST_LOG_CHANGED", Req("log", 0.4))
-  Events:On("PLAYER_LEVEL_UP", Req("level", 0.5))
+  Events:On("PLAYER_LEVEL_UP", function(_, level)
+    -- Aviso de las misiones que ya se pueden coger con el nuevo nivel.
+    level = Compat.Num(level)
+    if level then
+      for _, g in ipairs(Engine:LevelGated()) do
+        if g.level == level then
+          local s = g.entry.step
+          local name = (Senda.HUD and Senda.HUD.StepTitle and Senda.HUD:StepTitle(s)) or ""
+          if name == "" then name = "#" .. tostring(s.quest) end
+          Senda:Print(string.format(Senda.L.LEVEL_GATE_READY, name))
+        end
+      end
+    end
+    Engine:RequestEvaluate(0.5, "level")
+    Events:Fire("SENDA_STEP_UPDATED", Engine.steps and Engine.steps[Engine.index])
+  end)
   Events:On("SPELLS_CHANGED", Req("spells", 0.5))
   Events:On("LEARNED_SPELL_IN_TAB", Req("spells", 0.3))
   Events:On("LEARNED_SPELL_IN_SKILL_LINE", Req("spells", 0.3))
@@ -514,5 +623,8 @@ Events:On("SENDA_READY", function()
   Engine:AutoSelect()
   -- Al iniciar sesión, la caché de misiones puede tardar: se reevalúa un par de veces.
   Engine:RequestEvaluate(1, "login")
-  Compat.After(5, function() Engine:RequestEvaluate(0, "login2") end)
+  Compat.After(5, function()
+    Engine.logReady = true
+    Engine:RequestEvaluate(0, "login2")
+  end)
 end)

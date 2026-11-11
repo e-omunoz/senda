@@ -32,6 +32,7 @@ sources = ["questie:quest/1052", "questie:npc/3980"]
 id = "a40-monasterio-003"
 do = "accept"
 quest = 1053
+reqlevel = 34
 npc = 3980
 at = [1424, 51.47, 58.35]
 optional = true

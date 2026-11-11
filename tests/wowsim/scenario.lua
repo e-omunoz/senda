@@ -153,8 +153,10 @@ function AutoPlay(maxSteps)
     local step, entry = E:CurrentStep()
     if not step then break end
     local sec = entry.section
-    if sec.levels and sec.levels[1] and p.level < sec.levels[1] then
-      p.level = sec.levels[1]
+    -- Al entrar en una sección, el personaje tiene el nivel con que la termina un jugador real:
+    -- así las misiones con nivel mínimo dentro de la sección no se aplazan en el recorrido completo.
+    if sec.levels and sec.levels[2] and p.level < sec.levels[2] then
+      p.level = sec.levels[2]
       Sim.Fire("PLAYER_LEVEL_UP", p.level, 0, 0, 0, 0, 0, 0, 0, 0)
     end
     local f = step["if"]

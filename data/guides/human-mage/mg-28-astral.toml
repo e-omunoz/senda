@@ -20,6 +20,7 @@ checked = "2026-11-11"
 id = "mg-28-astral-002"
 do = "accept"
 quest = 1940
+reqlevel = 26
 npc = 5694
 at = [1453, 48.7, 87.6]
 text = "Coge la misión de la seda de araña prístina."
