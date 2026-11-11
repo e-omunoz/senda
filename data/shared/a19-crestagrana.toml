@@ -59,6 +59,7 @@ quest = 244
 npc = 464
 at = [1433, 10.4, 71.3]
 text = "Coge con el Guardia Parker, que patrulla el camino, el aviso para el Ayudante Feldon."
+tip = "Imprescindible: sin entregar esta misión, Feldon no te ofrece la de los cazadores furtivos. Parker patrulla el camino entre Tres Caminos y el puente de Villa del Lago; si no está en el punto, recorre el camino."
 status = "unverified"
 sources = ["questie:quest/244", "questie:npc/464"]
 
@@ -88,7 +89,8 @@ do = "accept"
 quest = 246
 npc = 1070
 at = [1433, 25.6, 60.0]
-text = "Coge la misión de gnolls de Feldon."
+text = "Coge la misión de gnolls de Feldon (chuchos y cazadores furtivos)."
+tip = "Solo aparece si antes has entregado el aviso del Guardia Parker (paso anterior). Si Feldon no te la da, vuelve a buscar a Parker en el camino del oeste."
 status = "unverified"
 sources = ["questie:quest/246"]
 
