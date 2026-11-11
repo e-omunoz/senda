@@ -327,7 +327,7 @@ Senda.Knowledge:Register({
   order = 320,
   status = "unverified",
   block = {
-    { heading = "Dónde", body = "Bosque de Elwynn y Ventormenta. Mientras uno hace su misión de clase, el otro le acompaña: así os igualáis de nivel.\n\n- **Abisario:** Gakin en el sótano de El Cordero Degollado (25.3, 78.2) y Surena Caledon en la Plantación de Brackwell (71.0, 80.6).\n- **Lago Espejo del mago:** cascada al suroeste de las puertas de Ventormenta (hacia 32, 58)." },
+    { heading = "Dónde", body = "Bosque de Elwynn y Ventormenta. Mientras uno hace su misión de clase, el otro le acompaña: así os igualáis de nivel.\n\n- **Abisario:** Gakin en el sótano de El Cordero Degollado (39.2, 85.2) y Surena Caledon en la Plantación de Brackwell (71.0, 80.6).\n- **Lago Espejo del mago:** cascada al suroeste de las puertas de Ventormenta (hacia 32, 58)." },
     { heading = "Profesiones", body = "Lino de Defias y kóbolds. Madejas de paño de lino. Entrenad **Oficial** (habilidad 50 y nivel 10): Sellandus o Georgio Bolero (Sastrería) y Lucan Cordell (Encantamiento), en el Barrio de los Magos de Ventormenta. Lawrence Schneider solo enseña Aprendiz." },
   },
 })

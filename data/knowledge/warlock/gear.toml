@@ -39,7 +39,7 @@ body = """
 [[block]]
 heading = "Armas"
 body = """
-El brujo empieza sabiendo usar dagas y varitas. Aprende **Bastones** con Woo Ping en Ventormenta (57.1, 57.7): en Forjaz no se enseñan. Bastón o arma de una mano + mano izquierda: quédate con lo que sume más."""
+El brujo empieza sabiendo usar dagas y varitas. Aprende **Bastones** con Woo Ping en Ventormenta (63.9, 69.1): en Forjaz no se enseñan. Bastón o arma de una mano + mano izquierda: quédate con lo que sume más."""
 
 [[block]]
 heading = "Sastrería"

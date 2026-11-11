@@ -381,7 +381,7 @@ Senda.Knowledge:Register({
   weights = { SP = 1.0, SCHOOL = "FROST", SCHOOL_W = 1.0, INT = 0.6, MP5 = 0.6, STA = 0.4, SPI = 0.3, ARMOR = 0.005, WAND_DPS = 1.2, WAND_DPS_30 = 1.0 },
   block = {
     { heading = "Prioridad", body = "**Poder con hechizos > Intelecto > maná cada 5 s > Aguante > Espíritu > armadura.**\n\n- La varita cuenta por su DPS y por el poder que trae: **no** escala con tu poder con hechizos.\n- Piezas con Fuerza o Agilidad y sin Intelecto, Espíritu ni poder con hechizos no te sirven." },
-    { heading = "Armas", body = "Como humano ya sabes usar espadas de una mano; Woo Ping (Ventormenta, 57.1, 57.7) enseña Bastones si no los tienes. La racial Despiadado da crítico con cualquier arma. Bastón o arma de una mano + mano izquierda: quédate con lo que sume más." },
+    { heading = "Armas", body = "Como humano ya sabes usar espadas de una mano; Woo Ping (Ventormenta, 63.9, 69.1) enseña Bastones si no los tienes. La racial Despiadado da crítico con cualquier arma. Bastón o arma de una mano + mano izquierda: quédate con lo que sume más." },
     { heading = "Sastrería", body = "Patrones de Mivin Shadowweave (Tres Caminos, 30 de Favor cada uno) a habilidad 60, 75, 85, 100, 110 y 125. El conjunto Silky (Escarcha) es para el mago. Solo los puede llevar quien los fabrica." },
     { heading = "Dónde buscar equipo", body = "La lista de objetos por nivel está en data/knowledge/general/gear-items.toml (los marcados para MAGE o para todos). Si no hay nada: recompensas de misión y verdes con Intelecto, Espíritu o poder con hechizos en la casa de subastas." },
   },

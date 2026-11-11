@@ -33,7 +33,7 @@ body = """
 [[block]]
 heading = "Armas"
 body = """
-Como humano ya sabes usar espadas de una mano; Woo Ping (Ventormenta, 57.1, 57.7) enseña Bastones si no los tienes. La racial Despiadado da crítico con cualquier arma. Bastón o arma de una mano + mano izquierda: quédate con lo que sume más."""
+Como humano ya sabes usar espadas de una mano; Woo Ping (Ventormenta, 63.9, 69.1) enseña Bastones si no los tienes. La racial Despiadado da crítico con cualquier arma. Bastón o arma de una mano + mano izquierda: quédate con lo que sume más."""
 
 [[block]]
 heading = "Sastrería"

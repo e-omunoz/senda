@@ -430,7 +430,7 @@ Senda.Knowledge:Register({
   weights = { SP = 1.0, SCHOOL = "SHADOW", SCHOOL_W = 1.0, SPI = 0.5, INT = 0.45, STA = 0.35, MP5 = 0.6, ARMOR = 0.005, WAND_DPS = 1.5, WAND_DPS_30 = 0.6 },
   block = {
     { heading = "Prioridad", body = "**Poder con hechizos / de Sombras > DPS de varita > Espíritu = Intelecto > Aguante.**\n\n- El DPS de varita importa hasta el nivel 30; luego Drenar vida es tu relleno.\n- Transfusión de vida da 140 + tu Espíritu en maná (rango 3).\n- Las varitas **no** ganan daño con tu poder con hechizos: cuentan por su DPS y por el poder que traen.\n- Piezas con Fuerza o Agilidad y sin Intelecto, Espíritu ni poder con hechizos no te sirven." },
-    { heading = "Armas", body = "El brujo empieza sabiendo usar dagas y varitas. Aprende **Bastones** con Woo Ping en Ventormenta (57.1, 57.7): en Forjaz no se enseñan. Bastón o arma de una mano + mano izquierda: quédate con lo que sume más." },
+    { heading = "Armas", body = "El brujo empieza sabiendo usar dagas y varitas. Aprende **Bastones** con Woo Ping en Ventormenta (63.9, 69.1): en Forjaz no se enseñan. Bastón o arma de una mano + mano izquierda: quédate con lo que sume más." },
     { heading = "Sastrería", body = "Patrones de Mivin Shadowweave (Tres Caminos, 30 de Favor cada uno) a habilidad 60, 75, 85, 100, 110 y 125. El conjunto de Sombras es para el brujo. Solo los puede llevar quien los fabrica." },
     { heading = "Dónde buscar equipo", body = "La lista de objetos por nivel está en data/knowledge/general/gear-items.toml (los marcados para WARLOCK o para todos). Si no hay nada: recompensas de misión y verdes con Intelecto, Espíritu o poder con hechizos en la casa de subastas." },
   },
