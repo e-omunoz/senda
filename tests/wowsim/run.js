@@ -191,6 +191,37 @@ const SCENARIO_E = L_`
 
 const scenarios = [
   {
+    id: 'macro',
+    title: 'Conditional macros (#showtooltip) get the dynamic "?" icon, also when updating old ones',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local p = Sim.player
+      p.level = 16
+      Sim.Fire("PLAYER_LEVEL_UP", 16, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      Sim.LearnSpell(689); Sim.LearnSpell(1120); Sim.Advance(0.5)
+      -- an old SND_Drenar created by 0.3.2 with a fixed icon
+      CreateMacro("SND_Drenar", 136169, "#showtooltip /cast old", true)
+      local MC = S().Modules.Macros
+      local made = 0
+      for _, e in ipairs(MC.List()) do
+        if e.body then
+          local fn = MC.Apply or MC.ApplyOne
+          if e.gameIcon then made = made + 1 end
+        end
+      end
+      Check(made > 0, "macro list exposes the game icon")
+      if MC.CreateAll then MC.CreateAll() elseif MC.UpdateExisting then MC.UpdateExisting() end
+      Sim.Advance(0.5)
+      local m
+      for _, x in ipairs(Sim.macros) do if x.name == "SND_Drenar" then m = x end end
+      Check(m ~= nil and m.icon == 134400, "SND_Drenar uses the dynamic question-mark icon", m and tostring(m.icon))
+      Check(m ~= nil and m.body:find("[mod:alt]", 1, true) ~= nil, "SND_Drenar body has the Alt condition", m and m.body)
+    `,
+  },
+  {
     id: 'adv',
     title: 'Advisor: profession plan per class, no pet spells as trainer spells',
     char: 'gnome-warlock',

@@ -94,6 +94,16 @@ local function IconFor(m)
 end
 MC.IconFor = IconFor
 
+-- Icono con el que se guarda la macro en el juego. Si el cuerpo empieza por #showtooltip, la macro debe
+-- llevar el icono de interrogación (134400): solo así el juego pone el icono del hechizo que se lanzaría
+-- en cada momento (cambia con [mod:alt], [@mouseover], etc.). Con un icono fijo, ese icono no cambia nunca.
+local DYNAMIC_ICON = 134400 -- INV_Misc_QuestionMark
+local function GameIcon(m, body)
+  if type(body) == "string" and body:match("^%s*#show") then return DYNAMIC_ICON end
+  return IconFor(m)
+end
+MC.GameIcon = GameIcon
+
 -- Todas las macros del conocimiento, con su estado.
 function MC.List()
   local out, level = {}, M.Level()
@@ -102,7 +112,7 @@ function MC.List()
       if type(m) == "table" and m.name and m.body then
         local body, why = MC.Resolve(m, level)
         table.insert(out, { m = m, name = MC.ManagedName(m.name), body = body, why = why,
-          idx = MC.Index(m.name), status = m.status or p.status, icon = IconFor(m) })
+          idx = MC.Index(m.name), status = m.status or p.status, icon = IconFor(m), gameIcon = GameIcon(m, body) })
       end
     end
   end
@@ -120,15 +130,16 @@ end
 local function Apply(e, allowCreate)
   if e.idx then
     if not MC.IsManaged(e.name) then return "skip" end
-    local okI, _, _, current = pcall(GetMacroInfo, e.idx)
-    if okI and current == e.body then return "same" end
-    local ok = pcall(EditMacro, e.idx, e.name, e.icon, e.body)
+    local okI, _, curIcon, current = pcall(GetMacroInfo, e.idx)
+    -- También se reescribe si tenía un icono fijo y ahora debe ser dinámico (macros creadas antes de 0.3.3).
+    if okI and current == e.body and (e.gameIcon ~= DYNAMIC_ICON or curIcon == DYNAMIC_ICON) then return "same" end
+    local ok = pcall(EditMacro, e.idx, e.name, e.gameIcon or e.icon, e.body)
     return ok and "updated" or "fail"
   end
   if not allowCreate then return "skip" end
   local perChar = M.Opt("mod_macro_char") ~= false
   if not Space(perChar) then return "full" end
-  local ok = pcall(CreateMacro, e.name, e.icon, e.body, perChar)
+  local ok = pcall(CreateMacro, e.name, e.gameIcon or e.icon, e.body, perChar)
   return ok and "made" or "fail"
 end
 
