@@ -10,6 +10,8 @@ ignore = {
   "212",   -- argumento sin usar
   "432",   -- sombrear un upvalue (self en callbacks)
   "542",   -- rama if vacía
+  "211/ADDON",     -- `local ADDON, Senda = ...` (nombre del addon, a veces sin usar)
+  "131/SLASH_.*",  -- variables de comandos de barra: las lee el cliente
 }
 
 globals = {
@@ -20,6 +22,12 @@ globals = {
 }
 
 read_globals = {
+  -- API usada con comprobación de existencia (puede faltar en el cliente moderno)
+  "ClassTrainerFrame", "GetItemSpell", "GetMerchantItemMaxStack", "GetNumQuestLogChoices",
+  "GetNumQuestLogRewards", "GetQuestLogItemLink", "GetQuestLogSelection", "GetTaxiMapID",
+  "GetTrainerServiceCost", "GetTrainerServiceIcon", "HasPetSpells", "IsMouseButtonDown",
+  "IsPassiveSpell", "IsTradeskillTrainer", "MAX_ACCOUNT_MACROS", "MAX_CHARACTER_MACROS",
+  "NUM_BANKBAGSLOTS", "NUM_TOTAL_EQUIPPED_BAG_SLOTS", "SelectQuestLogEntry",
   -- Lua / utilidades de WoW
   "bit", "date", "time", "debugstack", "debugprofilestop", "geterrorhandler", "seterrorhandler",
   "strsplit", "strjoin", "strtrim", "strmatch", "strfind", "strsub", "strlower", "strupper", "strlen",
