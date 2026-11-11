@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 .env
 harness/reports/tmp/
+tests/wowsim/node_modules/

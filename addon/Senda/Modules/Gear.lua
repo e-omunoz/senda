@@ -473,12 +473,18 @@ function G.Tips()
   return tips
 end
 
--- Dónde buscar (opcional): páginas con [[gear]] from, to, id, src.
+-- Dónde buscar (opcional): páginas con [[gear]] o [[item]] (general/gear-items.toml) from, to, id, src y,
+-- opcionalmente, class (solo para esa clase).
 local function WhereList()
   local out = {}
+  local class = M.Class()
   for _, p in ipairs(M.Pages()) do
-    for _, w in ipairs(type(p.gear) == "table" and p.gear or {}) do
-      if type(w) == "table" and w.id then table.insert(out, w) end
+    for _, field in ipairs({ "gear", "item" }) do
+      for _, w in ipairs(type(p[field]) == "table" and p[field] or {}) do
+        if type(w) == "table" and w.id and (w.class == nil or w.class == "ANY" or w.class == class) then
+          table.insert(out, w)
+        end
+      end
     end
   end
   return out

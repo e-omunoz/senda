@@ -1,6 +1,7 @@
 -- Senda / Modules / Professions
 -- Progreso y ruta de subida de profesiones desde el conocimiento kind = "professions":
---   [[route]] prof, from, to, craft (id de objeto o de hechizo), mats = [[id, n]], trainer = [map, x, y, "nombre"], note
+--   [[route]] prof, from, to, craft (id de objeto o de hechizo) o craft_spell, mats = [[id, n]], trainer = [map, x, y, "nombre"], note
+--   [[trainer]] prof, ranks, for_class, name, at = [map, x, y, "etiqueta"] (página; se usa si la ruta no trae trainer)
 -- Qué fabricar ahora, material que falta (bolsas + banco), instructor con la flecha y avisos de tope de rango.
 local ADDON, Senda = ...
 local M = Senda.Mod
@@ -40,7 +41,41 @@ function P.Routes()
   for _, key in ipairs(out.order) do
     table.sort(out[key].segs, function(a, b) return a.from < b.from end)
   end
+  -- [[trainer]] a nivel de página (formato de los archivos de profesión): { prof, ranks, for_class, name, at, text }.
+  -- El instructor depende de la clase (raza) y del rango, así que no va dentro de cada [[route]].
+  local class = M.Class()
+  for _, p in ipairs(M.Pages("professions")) do
+    for _, t in ipairs(type(p.trainer) == "table" and p.trainer or {}) do
+      if type(t) == "table" and t.prof and (t.for_class == nil or t.for_class == "ANY" or t.for_class == class) then
+        local key = M.ProfKey(t.prof)
+        for _, k in ipairs(out.order) do
+          if k == key or key == "both" then
+            out[k].trainers = out[k].trainers or {}
+            table.insert(out[k].trainers, t)
+          end
+        end
+      end
+    end
+  end
   return out
+end
+
+-- Instructor de [[trainer]] con coordenadas para el rango `rankName`: [map, x, y, "nombre"] o nil.
+local function PageTrainer(route, rankName)
+  local best, bestScore
+  for _, t in ipairs(route and route.trainers or {}) do
+    local at = t.at
+    -- Solo los que enseñan ese rango (una lista de rangos vacía o ausente = sin restricción).
+    local teaches = type(t.ranks) ~= "table" or #t.ranks == 0 or not rankName
+    for _, r in ipairs(type(t.ranks) == "table" and t.ranks or {}) do
+      if r == rankName then teaches = true end
+    end
+    if teaches and type(at) == "table" and at[1] and at[2] and at[3] then
+      local score = (t.for_class and t.for_class ~= "ANY") and 1 or 0
+      if not best or score > bestScore then best, bestScore = t, score end
+    end
+  end
+  if best then return { best.at[1], best.at[2], best.at[3], best.at[4] or best.name } end
 end
 
 local function Ranks()
@@ -112,10 +147,13 @@ P.CraftsLeft = CraftsLeft
 function P.SegName(s)
   if s.name then return s.name end
   if s.craft then return M.ItemName(s.craft) or M.SpellName(s.craft) or ("#" .. s.craft) end
+  if s.craft_spell then return M.SpellName(s.craft_spell) or ("#" .. s.craft_spell) end
   return string.format("%d-%d", s.from, s.to)
 end
 
+-- `craft` = objeto fabricado; `craft_spell` = hechizo (encantamientos, que no crean objeto).
 function P.SegIcon(s)
+  if s.craft_spell then return M.SpellIcon(s.craft_spell) end
   if not s.craft then return nil end
   return M.ItemIcon(s.craft) or M.SpellIcon(s.craft)
 end
@@ -133,7 +171,8 @@ function P.State(key, level, route)
   local rank, max = M.ProfRank(key)
   if not rank then
     st.missing = true
-    st.trainer = segs[1] and segs[1].trainer
+    local first = Ranks()[1]
+    st.trainer = (segs[1] and segs[1].trainer) or PageTrainer(route, first and first.name)
     return st
   end
   st.rank, st.max = rank, max
@@ -151,6 +190,7 @@ function P.State(key, level, route)
   end
   if st.seg and st.seg.trainer then trainer = st.seg.trainer end
   st.trainer = trainer or (segs[1] and segs[1].trainer)
+    or PageTrainer(route, (st.train and st.train.name) or (st.capped and st.capped.name) or st.rankName)
   if #segs == 0 then return st end
   if not st.seg then st.done = true; return st end
   local s = st.seg
@@ -355,7 +395,7 @@ function P.Refresh()
       end
       table.insert(nodes, { t = "row", hl = "now", raw = true, icon = P.SegIcon(s) or "Interface\\Icons\\Trade_Engineering",
         text = what .. M.StatusTag(s.status), item = (s.craft and M.ItemName(s.craft)) and s.craft or nil,
-        spell = (s.craft and not M.ItemName(s.craft)) and s.craft or nil })
+        spell = s.craft_spell or ((s.craft and not M.ItemName(s.craft)) and s.craft or nil) })
       if s.note then table.insert(nodes, { t = "md", text = s.note }) end
       for _, m in ipairs(st.mats or {}) do
         local col = m.miss > 0 and "|cffff8040" or "|cff7cc66f"

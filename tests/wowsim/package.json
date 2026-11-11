@@ -1,0 +1,13 @@
+{
+  "name": "senda-wowsim",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Headless simulation of the Senda addon on a mocked WoW (Mainline 12.x) API, running on fengari (Lua VM in JS).",
+  "license": "MIT",
+  "scripts": {
+    "test": "node run.js"
+  },
+  "dependencies": {
+    "fengari": "^0.1.4"
+  }
+}

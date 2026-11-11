@@ -283,7 +283,12 @@ local function GuideLabel(step)
   local title = Senda.HUD and Senda.HUD:StepTitle(step) or ""
   if title ~= "" then return title end
   local text = step.text or ""
-  if #text > 40 then text = text:sub(1, 38) .. "…" end
+  if #text > 40 then
+    -- Corte por bytes sin partir un carácter UTF-8 (los textos son español: á, ñ...).
+    local cut = 38
+    while cut > 0 and (text:byte(cut + 1) or 0) >= 0x80 and (text:byte(cut + 1) or 0) < 0xC0 do cut = cut - 1 end
+    text = text:sub(1, cut) .. "…"
+  end
   return text
 end
 
@@ -293,7 +298,14 @@ function Arrow:FollowStep()
   local label = GuideLabel(step)
   local radius = step["do"] == "goto" and step.radius or nil
   if type(step.at) == "table" and step.at[1] then
-    self:SetTarget(step.at[1], step.at[2], step.at[3], label, "guide", { radius = radius })
+    local extra = { radius = radius }
+    if type(step.wps) == "table" and type(step.wps[1]) == "table" then
+      -- `at` es el primer punto y `wps` el resto: la flecha los recorre en orden.
+      local route = { { step.at[1], step.at[2], step.at[3], step.at[4] } }
+      for _, wp in ipairs(step.wps) do route[#route + 1] = wp end
+      extra.wps, extra.wpIndex, extra.baseLabel = route, 1, label
+    end
+    self:SetTarget(step.at[1], step.at[2], step.at[3], label, "guide", extra)
   elseif type(step.wps) == "table" and type(step.wps[1]) == "table" then
     local wp = step.wps[1]
     self:SetTarget(wp[1], wp[2], wp[3], wp[4] or label, "guide",

@@ -44,12 +44,9 @@ function MC.BestHealthstone()
 end
 MC.HEALTHSTONES = HEALTHSTONES
 
--- Cuerpo resuelto o nil, motivo ("level" | "spell" | "long").
-function MC.Resolve(m, level)
-  level = level or M.Level()
-  if m.minlevel and level < m.minlevel then return nil, "level" end
+local function ResolveBody(text)
   local ok = true
-  local body = tostring(m.body or "")
+  local body = tostring(text or "")
   body = body:gsub("{hs}", function() return tostring(MC.BestHealthstone() or HEALTHSTONES[1]) end)
   body = body:gsub("{(%??)(%d+)}", function(opt, id)
     id = tonumber(id)
@@ -67,12 +64,35 @@ function MC.Resolve(m, level)
   return body
 end
 
+-- Cuerpo resuelto o nil, motivo ("level" | "spell" | "long"). Si `body` no se puede resolver, se prueban las
+-- `fallbacks` del conocimiento en orden (p. ej. Inmolar en lugar de Terror de agonía antes del nivel 8).
+function MC.Resolve(m, level)
+  level = level or M.Level()
+  if m.minlevel and level < m.minlevel then return nil, "level" end
+  local body, why = ResolveBody(m.body)
+  if not body and type(m.fallbacks) == "table" then
+    for _, fb in ipairs(m.fallbacks) do
+      local alt = ResolveBody(fb)
+      if alt then return alt end
+    end
+  end
+  return body, why
+end
+
+-- Icono: id de hechizo, "spell:<id>", "item:<id>", "name:<hechizo>" (formato del conocimiento) o nombre de icono.
 local function IconFor(m)
   local i = m.icon
   if type(i) == "number" then return M.SpellIcon(i) or DEFAULT_ICON end
-  if type(i) == "string" and i ~= "" then return (i:gsub("^[Ii]nterface\\[Ii]cons\\", "")) end
+  if type(i) == "string" and i ~= "" then
+    local kind, ref = i:match("^(%a+):(.+)$")
+    if kind == "spell" then return M.SpellIcon(tonumber(ref)) or DEFAULT_ICON end
+    if kind == "item" then return M.ItemIcon(tonumber(ref)) or DEFAULT_ICON end
+    if kind == "name" then return M.SpellIcon(ref) or DEFAULT_ICON end
+    return (i:gsub("^[Ii]nterface\\[Ii]cons\\", ""))
+  end
   return DEFAULT_ICON
 end
+MC.IconFor = IconFor
 
 -- Todas las macros del conocimiento, con su estado.
 function MC.List()

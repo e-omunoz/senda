@@ -24,17 +24,25 @@ local function IsPassive(id)
   return false
 end
 
--- { title, rows = { { slot, key, spell, macro, item, icon, minlevel } } }
+-- { title, rows = { { slot, key, spell, alt, alt2, spell_name, macro, item, icon, minlevel } } }
 function B.Layout()
   local level = M.Level()
-  -- 1) explícito en el conocimiento
+  -- 1) explícito en el conocimiento: [[slot]] (con `bar` = título) o [[bar]] + [[bar.slot]] (con `level`), que es
+  --    el formato de los archivos kind = "bars".
   local explicit, groups = {}, {}
+  local function add(title, s)
+    if type(s) ~= "table" or not s.slot then return end
+    title = title or (L.MOD_BARS_MAIN or "Barra principal")
+    if not groups[title] then groups[title] = { title = title, rows = {} }; table.insert(explicit, groups[title]) end
+    table.insert(groups[title].rows, { slot = s.slot, key = s.key, spell = s.spell, alt = s.alt, alt2 = s.alt2,
+      spell_name = s.spell_name, macro = s.macro, item = s.item, icon = s.icon, note = s.note,
+      minlevel = s.minlevel or s.level })
+  end
   for _, p in ipairs(M.Pages()) do
-    for _, s in ipairs(type(p.slot) == "table" and p.slot or {}) do
-      if type(s) == "table" and s.slot then
-        local title = s.bar or (L.MOD_BARS_MAIN or "Barra principal")
-        if not groups[title] then groups[title] = { title = title, rows = {} }; table.insert(explicit, groups[title]) end
-        table.insert(groups[title].rows, s)
+    for _, s in ipairs(type(p.slot) == "table" and p.slot or {}) do add(type(s) == "table" and s.bar or nil, s) end
+    for _, b in ipairs(type(p.bar) == "table" and p.bar or {}) do
+      if type(b) == "table" then
+        for _, s in ipairs(type(b.slot) == "table" and b.slot or {}) do add(b.title, s) end
       end
     end
   end
@@ -92,27 +100,55 @@ local function MacroIndex(name)
   return nil
 end
 
+-- Hechizo de la casilla: el primero que conoces de spell, alt, alt2 (p. ej. Armadura de mago > de hielo > de
+-- Escarcha). Devuelve id, conocido; si no conoces ninguno, el principal.
+local function EntrySpell(e)
+  local first
+  for _, k in ipairs({ "spell", "alt", "alt2" }) do
+    local id = e[k]
+    if id then
+      first = first or id
+      if M.Known(id) then return id, true end
+    end
+  end
+  return first, false
+end
+
 local function EntryAvailable(e)
   if e.macro then return MacroIndex(e.macro) ~= nil end
   if e.item then return M.ItemCount(e.item) > 0 end
-  return e.spell and M.Known(e.spell)
+  local id, known = EntrySpell(e)
+  if id then return known end
+  return e.spell_name ~= nil and M.InBook(e.spell_name)
 end
 
 local function EntryIcon(e)
   if e.item then return M.ItemIcon(e.item) end
   if type(e.icon) == "number" then return M.SpellIcon(e.icon) end
   if type(e.icon) == "string" then
-    if e.icon:find("\\", 1, true) then return e.icon end
-    return "Interface\\Icons\\" .. e.icon
+    if e.icon:find(":", 1, true) then
+      -- "spell:<id>", "item:<id>" o "name:<hechizo>" (formato del conocimiento): no es una ruta de textura.
+      local MC = Senda.Modules.Macros
+      local tex = MC and MC.IconFor and MC.IconFor({ icon = e.icon })
+      if type(tex) == "number" then return tex end
+    elseif e.icon:find("\\", 1, true) then
+      return e.icon
+    else
+      return "Interface\\Icons\\" .. e.icon
+    end
   end
-  if e.spell then return M.SpellIcon(e.spell) end
+  local id = EntrySpell(e)
+  if id then return M.SpellIcon(id) end
+  if e.spell_name then return M.SpellIcon(e.spell_name) end
   return nil
 end
 
 local function EntryLabel(e)
   if e.macro then return e.macro end
   if e.item then return M.ItemName(e.item) or ("#" .. e.item) end
-  return M.SpellName(e.spell) or ("#" .. tostring(e.spell))
+  local id = EntrySpell(e)
+  if not id and e.spell_name then return e.spell_name end
+  return M.SpellName(id) or ("#" .. tostring(id))
 end
 
 ------------------------------------------------------------------------
@@ -129,15 +165,24 @@ local function PickupEntry(e)
     if f and M.ItemCount(e.item) > 0 then pcall(f, e.item); return true end
     return false
   end
-  if not (e.spell and M.Known(e.spell)) then return false end
-  local bi = M.BookIndex(M.SpellName(e.spell))
+  local id, known = EntrySpell(e)
+  local name
+  if id then
+    if not known then return false end
+    name = M.SpellName(id)
+  elseif e.spell_name and M.InBook(e.spell_name) then
+    name = e.spell_name
+  else
+    return false
+  end
+  local bi = M.BookIndex(name)
   if bi then
     local bank = (Enum and Enum.SpellBookSpellBank and Enum.SpellBookSpellBank.Player) or "spell"
     local f = (C_SpellBook and C_SpellBook.PickupSpellBookItem) or _G.PickupSpellBookItem
     if f and pcall(f, bi, bank) then return true end
   end
   local f = (C_Spell and C_Spell.PickupSpell) or _G.PickupSpell
-  if f then return (pcall(f, e.spell)) end
+  if f then return (pcall(f, id or name)) end
   return false
 end
 
