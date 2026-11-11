@@ -24,12 +24,28 @@ P.RANKS = RANKS
 -- Datos
 ------------------------------------------------------------------------
 -- { order = {key...}, [key] = { key, segs = {...} } }
+-- Plan de profesiones de tu clase: `prof_plan = [...]` en una página de conocimiento de la clase;
+-- si no hay, el `order_profs` general (Sastrería + Encantamiento). Devuelve un conjunto de claves.
+function P.Plan()
+  local class = M.Class()
+  local plan, fallback
+  for _, p in ipairs(M.Pages()) do
+    if type(p.prof_plan) == "table" and p.class == class then plan = p.prof_plan end
+    if type(p.order_profs) == "table" and not fallback then fallback = p.order_profs end
+  end
+  local set = {}
+  for _, k in ipairs(plan or fallback or {}) do set[M.ProfKey(k)] = true end
+  return set
+end
+
 function P.Routes()
   local out = { order = {} }
+  local plan = P.Plan()
   for _, p in ipairs(M.Pages("professions")) do
     for _, s in ipairs(p.route or {}) do
-      if type(s) == "table" and s.prof and s.from and s.to then
-        local key = M.ProfKey(s.prof)
+      -- Solo las profesiones de tu plan, o las que ya tienes aprendidas por tu cuenta.
+      local key = type(s) == "table" and s.prof and M.ProfKey(s.prof)
+      if key and s.from and s.to and (plan[key] or M.ProfRank(key)) then
         if not out[key] then
           out[key] = { key = key, segs = {}, page = p }
           table.insert(out.order, key)

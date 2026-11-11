@@ -191,6 +191,44 @@ const SCENARIO_E = L_`
 
 const scenarios = [
   {
+    id: 'adv',
+    title: 'Advisor: profession plan per class, no pet spells as trainer spells',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local p = Sim.player
+      p.level = 16
+      Sim.Fire("PLAYER_LEVEL_UP", 16, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      local A = S().Modules.Advisor
+      local txt = {}
+      for _, it in ipairs(A.Items()) do txt[#txt + 1] = Plain(it.text) end
+      local all = table.concat(txt, " | ")
+      Sim.Out("    " .. all)
+      Check(not all:find("Herborister", 1, true) and not all:find("Alquimia", 1, true), "warlock is not told to learn Herbalism/Alchemy", all)
+      Check(not all:find("Sacrificio", 1, true), "voidwalker Sacrifice is not a trainer spell", all)
+      local P = S().Modules.Professions
+      local keys = {}
+      for _, k in ipairs(P.Routes().order) do keys[#keys + 1] = k end
+      Check(table.concat(keys, ",") == "tailoring,enchanting", "warlock profession routes = tailoring, enchanting", table.concat(keys, ","))
+    `,
+  },
+  {
+    id: 'adv2',
+    title: 'Advisor: druid plan is Herbalism + Alchemy',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local P = S().Modules.Professions
+      local keys = {}
+      for _, k in ipairs(P.Routes().order) do keys[#keys + 1] = k end
+      table.sort(keys)
+      Check(table.concat(keys, ",") == "alchemy,herbalism", "druid profession routes = herbalism, alchemy", table.concat(keys, ","))
+    `,
+  },
+  {
     id: 'gate2',
     title: 'Trainer visits above your level are postponed (warlock 16 at "lo del 18")',
     char: 'gnome-warlock',

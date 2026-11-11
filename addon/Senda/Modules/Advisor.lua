@@ -258,7 +258,7 @@ function A.Refresh()
     for _, s in ipairs(sell) do table.insert(nodes, { t = "li", text = s, raw = true }) end
   end
   table.insert(nodes, { t = "sp" })
-  table.insert(nodes, { t = "p", raw = true, text = string.format("|cffaaaaaa%s %s|r", L.MOD_ADV_MONEY or "Llevas", M.Money(GetMoney and GetMoney() or 0)) })
+  table.insert(nodes, { t = "p", raw = true, text = string.format("|cffaaaaaa%s %s|r", L.MOD_ADV_MONEY or "Dinero:", M.Money(GetMoney and GetMoney() or 0)) })
   ui.doc:Set(nodes, true)
 end
 

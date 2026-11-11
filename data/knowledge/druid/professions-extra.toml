@@ -3,6 +3,7 @@ id = "druid-professions-extra"
 class = "DRUID"
 kind = "page"
 title = "Herboristería y Alquimia para el druida elfo de la noche"
+prof_plan = ["herbalism", "alchemy"]
 order = 195
 status = "unverified"
 sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/herbalism/", "https://www.wowhead.com/forever/profession-leveling-guides/alchemy", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents", "questie:npc/3604", "questie:npc/3603", "questie:npc/4204", "questie:npc/11041", "questie:npc/4160", "questie:npc/4226"]

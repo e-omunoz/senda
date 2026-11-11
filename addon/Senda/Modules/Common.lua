@@ -192,18 +192,22 @@ function M.Money(c)
     local ok, s = pcall(GetCoinTextureString, c)
     if ok and s then return s end
   end
+  -- Sin GetCoinTextureString: los mismos iconos de moneda que usa el juego.
+  local G = "|TInterface\\MoneyFrame\\UI-GoldIcon:12:12:2:0|t"
+  local S = "|TInterface\\MoneyFrame\\UI-SilverIcon:12:12:2:0|t"
+  local C = "|TInterface\\MoneyFrame\\UI-CopperIcon:12:12:2:0|t"
   local g, s, cp = math.floor(c / 10000), math.floor(c / 100) % 100, c % 100
-  if g > 0 then return string.format("%d o %d p", g, s) end
-  if s > 0 then return string.format("%d p %d c", s, cp) end
-  return cp .. " c"
+  if g > 0 then return string.format("%d%s %d%s %d%s", g, G, s, S, cp, C) end
+  if s > 0 then return string.format("%d%s %d%s", s, S, cp, C) end
+  return cp .. C
 end
 
 function M.MoneyPlain(c)
   c = math.floor(tonumber(c) or 0)
   local g, s, cp = math.floor(c / 10000), math.floor(c / 100) % 100, c % 100
-  if g > 0 then return string.format("%d o %d p", g, s) end
-  if s > 0 then return string.format("%d p %d c", s, cp) end
-  return cp .. " c"
+  if g > 0 then return string.format("%d oro %d plata", g, s) end
+  if s > 0 then return string.format("%d plata %d cobre", s, cp) end
+  return cp .. " cobre"
 end
 
 ------------------------------------------------------------------------

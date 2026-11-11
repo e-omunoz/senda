@@ -471,6 +471,7 @@ Senda.Knowledge:Register({
   title = "Herboristería y Alquimia para el druida elfo de la noche",
   order = 195,
   status = "unverified",
+  prof_plan = {"herbalism", "alchemy"},
   note = "Complementa data/knowledge/general/professions-guide.toml y las rutas general/professions-herbalism.toml y general/professions-alchemy.toml. Instructores y coordenadas de QuestieDB (Forever).",
   block = {
     { heading = "Por qué Herboristería + Alquimia", body = "- Recoges en **Forma de viaje** y en felino sin bajarte (en Forever el druida interactúa con casi todo en forma).\n- Herboristería da un bonus de Intelecto en el campamento; Alquimia, regeneración de maná.\n- **Elixir de agilidad** y Elixir de agilidad mayor son para ti; las pociones de maná, para curarte y para Poder cambiante.\n- Oro: las hierbas y las pociones de maná se venden bien toda la subida.\n- Alternativa de Warcraft Tavern y Method: Peletería + Desuello (equipo ligado y Casco de cabeza de lobo)." },
