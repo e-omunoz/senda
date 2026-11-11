@@ -218,7 +218,7 @@ Senda.Knowledge:Register({
     { level = 10, names = {"Drenar alma", "Crear piedra de salud", "Piel de demonio (rango 2)", "Inmolar (rango 2)"}, spells = {1120, 6201, 696, 707}, ids_added = {707}, note = "Invocar a abisario (697) llega con la misión de nivel 10." },
     { level = 12, names = {"Cauce de salud"}, spells = {755}, ids_added = {755} },
     { level = 14, names = {"Maldición de temeridad", "Drenar vida"}, spells = {704, 689}, ids_added = {704} },
-    { level = 16, names = {"Fuerza inmortal"}, spells = {}, no_id = {"Fuerza inmortal"}, cost = 1600, status = "verified", note = "Confirmado en el juego: Demisette Cloyce la enseña al 16 por 16 platas, junto a Transfusión de vida (rango 2). Es nueva de Forever (en Classic, al 16 se aprendía Aliento inagotable). Falta su id." },
+    { level = 16, names = {"Fuerza inmortal"}, spells = {}, no_id = {"Fuerza inmortal"}, cost = 1600, status = "verified", note = "Confirmado en el juego: Demisette Cloyce la enseña al 16 por 16 platas, junto a Transfusión de vida (rango 2). Es el hechizo de respirar bajo el agua (el equivalente de Aliento inagotable de Classic, id 5697 sin confirmar en Forever). Opcional: solo hace falta para misiones bajo el agua; no la cuentes como pendiente." },
     { level = 18, names = {"Crear piedra de alma", "Dolor abrasador"}, spells = {693, 5676}, ids_added = {5676} },
     { level = 20, names = {"Maldición de los elementos", "Armadura demoníaca", "Ritual de invocación", "Lluvia de fuego"}, spells = {1490, 706, 698, 5740}, ids_added = {5740}, note = "Maldición de los elementos al 20 es un cambio de Forever (en Classic, al 32)." },
     { level = 22, names = {"Ojo de Kilrogg"}, spells = {126} },
