@@ -1,0 +1,102 @@
+# Druida elfo de la noche, tramo 20-29. Escrito para Senda (no migrado).
+id = "druid-bracket-20-29"
+class = "DRUID"
+kind = "page"
+title = "Niveles 20-29: la Forma felina"
+levels = [20, 29]
+order = 30
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/druid/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents", "https://timesaver.gg/tools/wow-forever/talent-calculator/druid", "questie:quest/98393", "questie:quest/98394", "questie:quest/98396", "questie:quest/98397"]
+checked = "2026-11-11"
+note = "La misión de la Forma felina es nueva en Forever (cadena 98393-98397 en QuestieDB). Rotación de felino: Method y Warcraft Tavern."
+
+[[block]]
+heading = "Zonas"
+body = """
+- **18-25:** Vallefresno (Astranaar).
+- **20-25:** Sierra Espolón o Los Humedales (barco Auberdine → Menethil).
+- **20-30:** Montañas Crestagrana y Bosque del Ocaso, si vas al este.
+
+Mazmorras:
+- **Cavernas de Brazanegra** (20-27), en Vallefresno: la más cómoda para un elfo de la noche.
+- **Excavation Site: Wetlands** (24-29).
+- **Gnomeregan** y el Cementerio del Monasterio Escarlata al final del tramo."""
+
+[[block]]
+heading = "Formas"
+body = """
+- **20: Forma felina** con la misión **El gran espíritu felino** (Mathrengyl Bearwalker, Darnassus → Dendrite Starblaze, Claro de la Luna). Te da Arañazo, Acechar y Destripar.
+- Desde aquí el felino es tu forma de subir: mata más rápido. El oso queda para cuando te peguen varios.
+- **Celeridad feral** ya da +30% de velocidad en felino: corre en felino entre enemigos."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **20:** Forma felina, Arañazo, Acechar, Destripar, Triturar (baja al 20), Fuego estelar, Renacer, Augurio de claridad (de base). Armas de asta (Woo Ping, Ventormenta).
+- **22:** Calmar animal.
+- **24:** Arañar, Mordedura feroz (baja al 24), Eliminar maldición.
+- **26:** Carrerilla, Suprimir veneno.
+- **28:** Rugido desafiante, Agazaparse."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **20:** Cargar feral.
+- **21-22:** Garras afiladas 2/2.
+- **23-24:** Furia salvaje 2/2.
+- **25-27:** Golpes depredadores 3/3.
+- **28-29:** Frenesí de sangre 2/2."""
+note = "Nombre esES de Frenesí de sangre sin confirmar."
+
+[[block]]
+heading = "Rotación"
+body = """
+1. Acechar y abre con **Triturar** por la espalda (o Cargar feral).
+2. **Fuego feérico**, **Arañar** (desde el 24).
+3. **Arañazo** hasta 4-5 puntos de combo.
+4. **Destripar** si va a vivir todo el sangrado; si no, **Mordedura feroz**.
+
+En Forever los puntos de combo no se pierden al cambiar de objetivo (pero tampoco pasan al nuevo)."""
+
+[[block]]
+heading = "Misiones de clase"
+body = """
+- **20: El gran espíritu felino** (98393, Mathrengyl Bearwalker, Darnassus) → Dendrite Starblaze (Claro de la Luna) → el Gran espíritu felino (58.4, 73.5) → **A Darnassus**. Hay también **Bendiciones del Gran espíritu felino** (98731) en el Claro de la Luna."""
+note = "Títulos esES sin confirmar. La 98731 no tiene recompensa conocida."
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 20:** SND_Abrir (una tecla: felino, Acechar, abrir y Arañazo), SND_Gato (vuelve a felino y te quitas raíces), SND_Carga."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+- Entrena **Experto** (rango 3) al 20 en Darnassus: Firodren Mooncaller (Herboristería, 48.0, 68.0) y Ainethil (Alquimia, 54.9, 24.0).
+- Objetivo al 30: Herboristería ~170, Alquimia ~160.
+- Vallefresno y Los Humedales: Hierba cardenal, Acérita salvaje, Sangrerregia y Raíz de vida."""
+
+[[block]]
+heading = "Equipo"
+body = """
+- **Armas de asta** desde el 20 (Woo Ping, Ventormenta): en Forever las formas escalan con el DPS del arma.
+- Gran martillo de Smite (Minas de la Muerte) y el conjunto Abrazo de la víbora (Cuevas de los Lamentos) si vas en grupo."""
+
+[[block]]
+heading = "Oro"
+body = """
+- Guarda para el 30 (Forma de viaje y rangos) y empieza a apartar para la montura del 40.
+- Las pociones de maná de Alquimia (Poción de maná inferior) se venden bien a otros lanzadores."""
+
+[[block]]
+heading = "Objetivos"
+body = """
+- Forma felina el mismo día que llegas al 20.
+- Un arma de dos manos con buen DPS antes del 25."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Acechar te deja elegir pelea: pasa entre grupos sin que te vean.
+- Si te pegan dos, no te quedes en felino: Forma de oso o Raíces enredadoras al segundo (SND_Raices con foco).
+- Cúrate fuera de combate en forma normal y vuelve a felino: el Augurio de claridad abarata el siguiente golpe."""

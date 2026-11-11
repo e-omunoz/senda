@@ -605,6 +605,19 @@ checked = "2026-11-11"
 note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
 
 [[step]]
+id = "a57-western-plaguelands-dr-58"
+do = "train"
+spells = [9835, 9841, 9876]
+npc = 12042
+at = [1450, 52.53, 40.57]
+text = "Druida: lanza Teletransporte: Claro de la Luna y entrena los hechizos del nivel 58 con Loganaar."
+tip = "Vuelve con la piedra de hogar."
+if = { class = ["DRUID"], minlevel = 58 }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a57-western-plaguelands-057"
 do = "note"
 text = "Opcional al 58: vuela del campamento a Forjaz, entrena y vuelve. El mago con Teletransporte y la piedra de vuelta."

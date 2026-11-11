@@ -1,0 +1,164 @@
+# Druida elfo de la noche: Forma de oso (nivel 10). Ids y coordenadas de QuestieDB (Forever); textos propios.
+# Cadena: Kal (Dolanaar) -> Mathrengyl (Darnassus) -> Dendrite (Claro de la Luna) -> Gran Espíritu del Oso ->
+# Dendrite -> Mathrengyl. La pelea con Lunaclaw (Costa Oscura) va en dr-11-lunaclaw.
+id = "dr-10-bear"
+title = "Druida: Forma de oso (10)"
+levels = [10, 11]
+map = 1457
+summary = "Nivel 10: entrena con Kal en Dolanaar, aprende Teletransporte: Claro de la Luna y habla con el Gran Espíritu del Oso."
+if = { class = ["DRUID"] }
+
+[[step]]
+id = "dr-10-bear-001"
+do = "train"
+spells = [8924, 1058]
+npc = 3602
+at = [1438, 55.95, 61.56]
+text = "Nivel 10: entrena con Kal, el instructor de druidas de Dolanaar (nuevos rangos de Fuego lunar y Rejuvenecimiento)."
+tip = "Aprende también Garra de la naturaleza si te la ofrece: en Forever es de instructor al 10."
+status = "unverified"
+sources = ["questie:npc/3602", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-002"
+do = "accept"
+quest = 5925
+reqlevel = 10
+npc = 3602
+at = [1438, 55.95, 61.56]
+text = "Coge con Kal la misión que te manda al Enclave Cenarion de Darnassus."
+tip = "Si estás ya en Darnassus, Denatharion da la misma misión en el Enclave Cenarion."
+status = "unverified"
+sources = ["questie:quest/5925", "questie:npc/3602", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-003"
+do = "turnin"
+quest = 5925
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Ve al oeste hasta Darnassus y entrega a Mathrengyl, en el Enclave Cenarion (noroeste de la ciudad)."
+status = "unverified"
+sources = ["questie:quest/5925", "questie:npc/4217"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-004"
+do = "accept"
+quest = 5921
+reqlevel = 10
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Coge con Mathrengyl la misión del Claro de la Luna."
+status = "unverified"
+sources = ["questie:quest/5921", "questie:npc/4217"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-005"
+do = "train"
+spells = [18960]
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Asegúrate de tener Teletransporte: Claro de la Luna. Si el instructor te lo ofrece, apréndelo ahora."
+tip = "Desde hoy es tu viaje gratis a un instructor completo (Loganaar). Vuelve siempre con la piedra de hogar."
+status = "unverified"
+sources = ["questie:quest/5921", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-006"
+do = "turnin"
+quest = 5921
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Lanza Teletransporte: Claro de la Luna. Sube al piso alto del edificio del pueblo y entrega a Dendrite."
+tip = "Llegas junto a la maestra de vuelo; Dendrite está al noreste de ese punto."
+status = "unverified"
+sources = ["questie:quest/5921", "questie:npc/11802", "https://www.warcrafttavern.com/forever/guides/skyborne-druid-quests/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-007"
+do = "accept"
+quest = 5929
+reqlevel = 10
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Coge con Dendrite la misión del Gran Espíritu del Oso."
+status = "unverified"
+sources = ["questie:quest/5929", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-008"
+do = "complete"
+quest = 5929
+npc = 11956
+at = [1450, 39.11, 27.5]
+text = "Ve al noroeste del Claro de la Luna y habla con el Gran Espíritu del Oso hasta el final."
+tip = "Los bichos del Claro son amistosos: puedes ir en línea recta."
+status = "unverified"
+sources = ["questie:quest/5929", "questie:npc/11956"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-009"
+do = "turnin"
+quest = 5929
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Vuelve con Dendrite y entrega."
+status = "unverified"
+sources = ["questie:quest/5929", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-010"
+do = "accept"
+quest = 5931
+reqlevel = 10
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Coge la misión de vuelta a Darnassus."
+status = "unverified"
+sources = ["questie:quest/5931", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-011"
+do = "goto"
+npc = 11800
+at = [1450, 44.15, 45.23]
+radius = 10
+text = "Habla con Silva Fil'naveth, la maestra de vuelo, y pide el vuelo de druida a la Aldea Rut'theran."
+tip = "Si no te ofrece el vuelo, usa la piedra de hogar (Dolanaar) y camina a Darnassus."
+status = "unverified"
+sources = ["questie:npc/11800", "https://warcraft.wiki.gg/wiki/Trial_of_the_Sea_Lion"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-012"
+do = "turnin"
+quest = 5931
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Entra en Darnassus por el portal de Rut'theran y entrega a Mathrengyl."
+status = "unverified"
+sources = ["questie:quest/5931", "questie:npc/4217"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-10-bear-013"
+do = "accept"
+quest = 6001
+reqlevel = 10
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Coge la siguiente misión de Mathrengyl: te da un polvo lunar para usarlo en la piedra lechúcica de Auberdine."
+tip = "Guarda el polvo. La pelea es en Costa Oscura: hazla al llegar a Auberdine."
+status = "unverified"
+sources = ["questie:quest/6001", "questie:npc/4217", "questie:item/15208"]
+checked = "2026-11-11"

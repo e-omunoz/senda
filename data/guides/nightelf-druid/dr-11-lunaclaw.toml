@@ -1,0 +1,78 @@
+# Druida elfo de la noche: Lunaclaw y Forma de oso (11-12). Ids y coordenadas de QuestieDB (Forever); textos propios.
+# Va en Costa Oscura, justo al llegar a Auberdine. La entrega en Darnassus coincide con el entrenamiento del 12.
+id = "dr-11-lunaclaw"
+title = "Druida: Lunaclaw (11-12)"
+levels = [11, 12]
+map = 1439
+summary = "Usa el polvo lunar en la piedra lechúcica de Auberdine, vence a Lunaclaw y vuelve a Darnassus a por la Forma de oso."
+if = { class = ["DRUID"] }
+
+[[step]]
+id = "dr-11-lunaclaw-001"
+do = "complete"
+quest = 6001
+npc = 12144
+item = 15208
+at = [1439, 43.5, 45.97]
+text = "Sube la colina al este de Auberdine y usa el polvo lunar en la piedra lechúcica. Vence a Lunaclaw y habla con su espíritu."
+tip = "Lunaclaw es nivel 12: entra con vida y maná llenos, Raíces enredadoras y Cólera a distancia, y cúrate con Toque de sanación."
+status = "unverified"
+sources = ["questie:quest/6001", "questie:object/177525", "questie:npc/12138", "questie:npc/12144"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-11-lunaclaw-002"
+do = "goto"
+at = [1439, 33.2, 40.2]
+radius = 20
+text = "Vuelve a Auberdine y coge el barco del muelle a la Aldea Rut'theran (Teldrassil)."
+tip = "Si quieres ahorrar un viaje, entrega en la próxima visita a Darnassus (nivel 14); pero el oso acelera mucho el leveo."
+status = "unverified"
+sources = []
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-11-lunaclaw-003"
+do = "turnin"
+quest = 6001
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Entra en Darnassus por el portal de Rut'theran y entrega a Mathrengyl: aprendes Forma de oso, Gruñido y Vapulear."
+status = "unverified"
+sources = ["questie:quest/6001", "questie:npc/4217", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-11-lunaclaw-004"
+do = "train"
+spells = [5487]
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Comprueba que tienes Forma de oso. Entrena también Rugido desmoralizador."
+tip = "Oso para los combates largos y los grupos de bichos; Cólera para tirar al primero desde lejos."
+status = "unverified"
+sources = ["questie:quest/6001", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-11-lunaclaw-005"
+do = "train"
+spells = [8936, 5229]
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Si eres 12, entrena Recrecimiento y Enfurecer con cualquier instructor del Enclave."
+optional = true
+if = { minlevel = 12 }
+status = "unverified"
+sources = ["questie:npc/4217", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-11-lunaclaw-006"
+do = "hearth"
+zone = 1439
+text = "Usa la piedra de hogar para volver a Auberdine y sigue con Costa Oscura."
+tip = "Pon el hogar en la posada de Auberdine si aún no lo has hecho: lo usarás mucho con las misiones de clase."
+status = "unverified"
+sources = []
+checked = "2026-11-11"

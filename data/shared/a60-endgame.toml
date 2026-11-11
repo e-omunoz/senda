@@ -40,6 +40,18 @@ checked = "2026-11-11"
 note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
 
 [[step]]
+id = "a60-endgame-dr-60"
+do = "train"
+spells = [9885, 21850, 9858]
+npc = 5504
+at = [1453, 35.84, 67.38]
+text = "Druida: entrena los hechizos del nivel 60 en El Parque de Ventormenta."
+if = { class = ["DRUID"], minlevel = 60 }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/5504", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a60-endgame-004"
 do = "note"
 text = "Haz los ascensos de la Legacy: Sastrería y Encantamiento a 300 dan puntos y recetas para la banda."

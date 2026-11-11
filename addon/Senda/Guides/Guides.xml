@@ -3,4 +3,5 @@
   <Script file="Shared.lua"/>
   <Script file="gnome-warlock.lua"/>
   <Script file="human-mage.lua"/>
+  <Script file="nightelf-druid.lua"/>
 </Ui>

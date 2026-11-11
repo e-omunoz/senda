@@ -1,0 +1,35 @@
+# Druida: grupo, viajes y PvP. Escrito para Senda (no migrado).
+id = "druid-group"
+class = "DRUID"
+kind = "page"
+title = "Grupo, viajes y PvP"
+order = 120
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid/", "https://www.warcrafttavern.com/forever/guides/feral-druid/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"]
+checked = "2026-11-11"
+
+[[block]]
+heading = "En mazmorra"
+body = """
+- Marca de lo Salvaje (Don de lo Salvaje al 50) y Espinas al tanque.
+- **Felino (daño):** espera 2-3 golpes del tanque, Fuego feérico, golpea por la espalda (Triturar). Agazaparse si te ven.
+- **Oso (tanque):** Fuego feérico, Lacerar x5, Mordisco primario, Rugido desmoralizador; Flagelo en grupos. Gruñido (SND_Gru) para recuperar enemigos y Rugido desafiante como último recurso.
+- **Cargar feral** en oso interrumpe lanzadores.
+- Curar envenenamiento, Eliminar maldición y Renacer (resurrección en combate; pide componente).
+- **Revivir** (12) resucita fuera de combate."""
+
+[[block]]
+heading = "Viajes"
+body = """
+- **Teletransporte: Claro de la Luna** (10): instructor de druida y maestro de vuelo a Darnassus.
+- **Forma de viaje** (30) y **Forma acuática** (16): SND_Viaje elige sola.
+- Desde Auberdine: barco a Menethil (Reinos del Este) y a Rut'theran (Darnassus)."""
+
+[[block]]
+heading = "PvP"
+body = """
+- **Elfo de la noche:** Fusión de las sombras y Acechar te dejan elegir la pelea.
+- **Contra guerreros y pícaros:** Raíces enredadoras y distancia; Forma de oso si te aturden mucho.
+- **Contra lanzadores:** Abalanzarse desde Acechar, Azote o Cargar feral (oso) para cortar.
+- **Contra cazadores:** pégate a ellos y quítate las ralentizaciones con SND_Gato.
+- Cambiar de forma te libra de raíces y ralentizaciones."""

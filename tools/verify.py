@@ -128,6 +128,21 @@ def _chk(name, result, evidence, suggestion=None):
     return c
 
 
+def step_applies(guide_meta, section_data, step):
+    """False si el filtro `if` (raza/clase) del paso o de la sección excluye a todos los personajes de la guía:
+    ese paso no existe para esta guía (el motor del addon tampoco lo muestra)."""
+    races = set(guide_meta.get("races", []) or [])
+    classes = set(guide_meta.get("classes", []) or [])
+    for flt in (section_data.get("if") or {}, step.get("if") or {}):
+        if flt.get("race") and races and not races & set(flt["race"]):
+            return False
+        if flt.get("class") and classes and not classes & set(flt["class"]):
+            return False
+        if flt.get("faction") and guide_meta.get("faction") and flt["faction"] != guide_meta["faction"]:
+            return False
+    return True
+
+
 def step_combos(guide_meta, section_data, step):
     races = list(guide_meta.get("races", []))
     classes = list(guide_meta.get("classes", []))
@@ -576,6 +591,8 @@ def main(argv=None):
                 suggestions.append(f"guide {g['id']}: section `{sec['ref']}` not found ({sec['file'].as_posix()})")
                 continue
             for step in sec["steps"]:
+                if not step_applies(g["meta"], sec["data"], step):
+                    continue
                 r = check_step(db, g, sec, step, state, observations, args.tolerance)
                 try:
                     r["file"] = sec["file"].relative_to(root).as_posix()

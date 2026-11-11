@@ -719,6 +719,20 @@ status = "unverified"
 sources = ["questie:npc/5144", "knowledge:mage-spells"]
 
 [[step]]
+id = "a12lm-dr-14"
+do = "train"
+spells = [8936, 5229, 5211]
+npc = 12042
+at = [1450, 52.53, 40.57]
+text = "Druida: en Forjaz no hay instructor. Lanza Teletransporte: Claro de la Luna y entrena el 12 y el 14 con Loganaar (Recrecimiento, Enfurecer, Azote)."
+tip = "Vuelve con la piedra de hogar si está lista. Si no, entrena en Darnassus o en El Parque de Ventormenta cuando pases."
+optional = true
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a12lm-068"
 do = "turnin"
 quest = 301

@@ -1,0 +1,102 @@
+# Druida elfo de la noche, tramo 10-19. Escrito para Senda (no migrado).
+id = "druid-bracket-10-19"
+class = "DRUID"
+kind = "page"
+title = "Niveles 10-19: la Forma de oso"
+levels = [10, 19]
+order = 20
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/druid/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents", "https://timesaver.gg/tools/wow-forever/talent-calculator/druid", "questie:quest/5923", "questie:quest/5921", "questie:quest/5929", "questie:quest/5931", "questie:quest/6121", "questie:quest/26", "questie:quest/5061"]
+checked = "2026-11-11"
+note = "Cadenas de misiones de clase comprobadas en QuestieDB (Forever). Rotación de oso: Method (7-nov) y Warcraft Tavern."
+
+[[block]]
+heading = "Zonas"
+body = """
+- **10-12:** termina Teldrassil (Dolanaar) y sube a **Darnassus** a entrenar.
+- **12-19:** **Costa Oscura**, con base en Auberdine (barco desde Embarcadero de Rut'theran).
+
+Mazmorras:
+- **Hall of Thanes** (13-18) en Forjaz y **Ruins of Lordaeron** (15-20): lejos para un elfo de la noche, solo con grupo hecho.
+- **Minas de la Muerte** (17-22) y **Cuevas de los Lamentos** (17-24)."""
+
+[[block]]
+heading = "Formas"
+body = """
+- **10: Forma de oso** con la misión de clase (no se compra al instructor). Con ella: Gruñido, Magullar y Rugido desmoralizador.
+- **16: Forma acuática** con otra misión de clase: nadas más rápido y respiras bajo el agua. Te da el **Ídolo de las mareas cambiantes** (Idol of Shifting Tides), que abarata cambiar de forma.
+
+Hasta el 20 el oso es tu forma de combate: aguanta golpes y no gasta maná."""
+note = "Nombre esES del ídolo sin confirmar; lo da la misión de la Forma acuática según Warcraft Tavern."
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **10:** Forma de oso (misión), Teletransporte: Claro de la Luna, Garras de la naturaleza (de base en Forever).
+- **12:** Recrecimiento, Enfurecer, **Revivir** (resurrección fuera de combate, nueva).
+- **14:** Azote, Curar envenenamiento (misión de clase).
+- **16:** Flagelo, Forma acuática (misión).
+- **18:** Fuego feérico (de base en Forever, ya no es talento), Hibernar."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **10-14:** Ferocidad 5/5 (Magullar, Flagelo, Arañazo y Arañar más baratos).
+- **15-16:** Celeridad feral 2/2 (esquiva ya; +30% de velocidad en felino desde el 20).
+- **17-19:** Piel gruesa 3/3."""
+note = "Árbol según la calculadora de timesaver (Forever). Nombres esES de Celeridad feral y Piel gruesa sin confirmar."
+
+[[block]]
+heading = "Rotación"
+body = """
+**Un enemigo:** Cólera x2 desde lejos, Fuego lunar, **Forma de oso** cuando llegue, Enfurecer, Rugido desmoralizador, Magullar en cada golpe.
+
+**Varios:** Forma de oso, Enfurecer, Rugido desmoralizador y Flagelo (desde el 16).
+
+Contra lanzadores no gastes ira en el Rugido."""
+
+[[block]]
+heading = "Misiones de clase"
+body = """
+- **10: Atender la llamada** (Kal en Dolanaar o Denatharion en Darnassus) → **Claro de la Luna** (Mathrengyl Bearwalker, Darnassus) → **Gran espíritu del oso** (Dendrite Starblaze, Claro de la Luna) → **De vuelta a Darnassus**. Recompensa: Forma de oso.
+- **14: Lecciones de nuevo** (Lessons Anew, Mathrengyl) → Claro de la Luna → Costa Oscura (Alanndarian Nightsong, 37.7, 40.7). Recompensa: Curar envenenamiento.
+- **16: Una lección que aprender** (A Lesson to Learn) → **Prueba del lago** → **Prueba del león marino** (Costa Oscura) → **Forma acuática**."""
+note = "Títulos esES de las misiones sin confirmar; ids 5923/5925, 5921, 5929, 5931, 6121-6125, 26, 29, 272, 5061."
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 10:** SND_Oso (entra en oso sin quitártelo), SND_Gru (Gruñido al ratón o al objetivo).
+- **Al 16:** SND_Viaje (en el agua, Forma acuática; luego, la mejor forma de viaje que tengas).
+- **Al 18:** SND_Feerico (Fuego feérico en cualquier forma)."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+- Objetivo al 20: Herboristería ~125, Alquimia ~110.
+- Costa Oscura: Marregal, Brezospina, Alga estranguladora y Hierba cardenal.
+- Entrena Oficial (rango 2) al 10 en Dolanaar; Experto al 20 en Darnassus."""
+
+[[block]]
+heading = "Equipo"
+body = """
+- Prioridad: **DPS del arma**, Fuerza, Agilidad, Aguante. Un bastón o maza de dos manos con buen DPS vale más que cualquier verde de Intelecto.
+- Hombreras de la serpiente (Serpent's Shoulders, Cuevas de los Lamentos) y Gran martillo de Smite (Minas de la Muerte), si vas en grupo."""
+
+[[block]]
+heading = "Oro"
+body = """
+Vende las hierbas que no uses (Marregal y Brezospina se venden bien). El Teletransporte: Claro de la Luna ahorra la piedra de hogar para entrenar."""
+
+[[block]]
+heading = "Objetivos"
+body = """
+- Forma de oso al 10, Forma acuática al 16.
+- Nivel 20 con unas 2-3 de oro guardadas para entrenar Forma felina y los rangos del 20."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Teletransporte: Claro de la Luna te deja junto a un instructor de druida (Loganaar) y un maestro de vuelo a Darnassus.
+- En Forever puedes usar consumibles y hablar con la mayoría de PNJ **sin salir de la forma**.
+- Cúrate entre combates en forma normal (SND_Cura) y vuelve a oso: no esperes a que se llene el maná."""

@@ -1,0 +1,42 @@
+# Guía del druida elfo de la noche (Alianza). Inicio en Teldrassil y Costa Oscura (1-20), misiones de clase
+# del druida (prefijo dr-) y ruta compartida de la Alianza desde Crestagrana. Ver ROUTE.md.
+id = "nightelf-druid"
+title = "Druida elfo de la noche 1-60"
+faction = "Alliance"
+races = ["NightElf"]
+classes = ["DRUID"]
+sections = [
+  "01-shadowglen",
+  "02-teldrassil",
+  "dr-10-bear",
+  "dr-11-lunaclaw",
+  "03-darkshore",
+  "dr-14-poison",
+  "dr-16-aquatic",
+  "05-viaje-reinos-del-este",
+  "dr-18-sea-lion",
+  "dr-20-cat",
+  "shared:a19-crestagrana",
+  "shared:a22-bosque-del-ocaso",
+  "shared:a26-los-humedales",
+  "shared:a30-stv-norte",
+  "shared:a34-desolace",
+  "shared:a38-valle-de-huesos",
+  "shared:a40-ciudad",
+  "shared:a40-monasterio",
+  "shared:a41-riverglades",
+  "shared:a44-badlands",
+  "shared:a45-feralas",
+  "shared:a47-tanaris",
+  "shared:a48-searing-gorge",
+  "shared:a49-hinterlands",
+  "shared:a50-ungoro",
+  "dr-52-torwa",
+  "shared:a52-felwood",
+  "shared:a54-winterspring",
+  "shared:a55-burning-steppes",
+  "shared:a57-western-plaguelands",
+  "shared:a58-eastern-plaguelands",
+  "shared:a60-endgame",
+  "dr-60-endgame",
+]

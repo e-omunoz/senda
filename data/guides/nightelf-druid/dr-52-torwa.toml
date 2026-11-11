@@ -1,0 +1,127 @@
+# Druida: cadena de Torwa Pathfinder en Un'Goro (50-54). Ids y coordenadas de QuestieDB (Forever); textos propios.
+# Opcional. La empiezan Loganaar (Claro de la Luna), Theridran (Ventormenta) o Mathrengyl (Darnassus).
+# La última parte (9053) exige el Templo Sumergido.
+id = "dr-52-torwa"
+title = "Druida: Torwa Pathfinder (52)"
+levels = [50, 54]
+map = 1449
+summary = "Opcional: veneno de pétalo de sangre, prueba con un demosaurio y la enredadera pútrida del Templo Sumergido."
+if = { class = ["DRUID"] }
+
+[[step]]
+id = "dr-52-torwa-001"
+do = "accept"
+quest = 9063
+reqlevel = 50
+npc = 12042
+at = [1450, 52.53, 40.57]
+optional = true
+text = "Al entrenar el 50, coge con Loganaar la misión que te manda con Torwa a Un'Goro."
+tip = "También la dan Theridran en El Parque de Ventormenta y Mathrengyl en Darnassus."
+status = "unverified"
+sources = ["questie:quest/9063", "questie:npc/12042", "questie:npc/5505", "https://warcraft.wiki.gg/wiki/Druid_Quests"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-52-torwa-002"
+do = "turnin"
+quest = 9063
+npc = 9619
+at = [1449, 71.64, 75.96]
+optional = true
+text = "En el sureste de Un'Goro, entrega a Torwa Pathfinder."
+status = "unverified"
+sources = ["questie:quest/9063", "questie:npc/9619"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-52-torwa-003"
+do = "accept"
+quest = 9052
+reqlevel = 50
+npc = 9619
+at = [1449, 71.64, 75.96]
+optional = true
+text = "Coge con Torwa la misión del veneno."
+tip = "Torwa también da la cadena de Lar'korwi: cógela a la vez."
+status = "unverified"
+sources = ["questie:quest/9052", "questie:npc/9619"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-52-torwa-004"
+do = "complete"
+quest = 9052
+at = [1449, 50.0, 80.0]
+wps = [[1449, 51.0, 31.5, "Brotes de pétalo de sangre (norte)"], [1449, 66.4, 32.9, "Brotes de pétalo de sangre (noreste)"]]
+optional = true
+text = "Consigue 8 aguijones de las avispas Gorishi del sur y 8 capuchones de sangre de los brotes de pétalo de sangre."
+tip = "Los brotes están por todo el cráter: recógelos mientras haces el resto de Un'Goro."
+status = "unverified"
+sources = ["questie:quest/9052", "questie:npc/6551", "questie:npc/6554", "questie:object/164958"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-52-torwa-005"
+do = "turnin"
+quest = 9052
+npc = 9619
+at = [1449, 71.64, 75.96]
+optional = true
+text = "Entrega los ingredientes a Torwa."
+status = "unverified"
+sources = ["questie:quest/9052", "questie:npc/9619"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-52-torwa-006"
+do = "accept"
+quest = 9051
+reqlevel = 50
+npc = 9619
+at = [1449, 71.64, 75.96]
+optional = true
+text = "Coge la prueba del demosaurio: te da la púa envenenada."
+status = "unverified"
+sources = ["questie:quest/9051", "questie:npc/9619", "questie:item/22432"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-52-torwa-007"
+do = "complete"
+quest = 9051
+item = 22432
+at = [1449, 57.3, 23.7]
+wps = [[1449, 34.6, 22.4, "Demosaurio"], [1449, 31.2, 36.4, "Demosaurio"]]
+optional = true
+text = "Busca un demosaurio y clávale la púa. No hace falta matarlo."
+tip = "Es nivel 54-55 y pega muy fuerte: úsala desde Acechar y aléjate en Forma de viaje."
+status = "unverified"
+sources = ["questie:quest/9051", "questie:npc/6498"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-52-torwa-008"
+do = "turnin"
+quest = 9051
+npc = 9619
+at = [1449, 71.64, 75.96]
+optional = true
+text = "Vuelve con Torwa y entrega."
+status = "unverified"
+sources = ["questie:quest/9051", "questie:npc/9619"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-52-torwa-009"
+do = "accept"
+quest = 9053
+reqlevel = 50
+npc = 9619
+at = [1449, 71.64, 75.96]
+optional = true
+text = "Coge la última misión: la enredadera pútrida del guardián del fondo del Templo Sumergido."
+tip = "Solo si vas a hacer el Templo Sumergido en grupo. Si no, déjala."
+status = "unverified"
+sources = ["questie:quest/9053", "questie:npc/9619", "questie:npc/8580"]
+checked = "2026-11-11"

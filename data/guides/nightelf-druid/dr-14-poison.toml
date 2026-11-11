@@ -1,0 +1,183 @@
+# Druida elfo de la noche: Curar envenenamiento (14). Ids y coordenadas de QuestieDB (Forever); textos propios.
+# Cadena: Mathrengyl -> Dendrite -> cueva de la Cascada de Cliffspring -> Alanndarian (Auberdine) -> raíz de tierra y
+# hongos lunares -> 10 ciervos enfermos -> Dendrite -> Mathrengyl. Los ciervos se curan mientras haces Costa Oscura.
+# La entrega final (6125) va al principio de dr-16-aquatic, en el viaje a Darnassus del 16.
+id = "dr-14-poison"
+title = "Druida: Curar envenenamiento (14)"
+levels = [14, 16]
+map = 1439
+summary = "Nivel 14: muestra de agua de la Cascada de Cliffspring, ungüento de Alanndarian en Auberdine y diez ciervos enfermos de Costa Oscura."
+if = { class = ["DRUID"] }
+
+[[step]]
+id = "dr-14-poison-001"
+do = "goto"
+at = [1438, 55.9, 89.0]
+radius = 20
+text = "Al 14, coge el barco de Auberdine a Rut'theran y entra en Darnassus por el portal."
+tip = "Si te pilla en Teldrassil o Darnassus, sáltate este paso."
+status = "unverified"
+sources = []
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-002"
+do = "train"
+spells = [5211]
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Nivel 14: entrena Azote y los rangos nuevos en el Enclave Cenarion (y lo del 12 si te faltaba)."
+status = "unverified"
+sources = ["questie:npc/4217", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-003"
+do = "accept"
+quest = 6121
+reqlevel = 14
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Coge con Mathrengyl la misión que te manda otra vez al Claro de la Luna."
+status = "unverified"
+sources = ["questie:quest/6121", "questie:npc/4217"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-004"
+do = "turnin"
+quest = 6121
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Lanza Teletransporte: Claro de la Luna y entrega a Dendrite."
+status = "unverified"
+sources = ["questie:quest/6121", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-005"
+do = "accept"
+quest = 6122
+reqlevel = 14
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Coge la misión de la muestra de agua: te da el frasco vacío."
+status = "unverified"
+sources = ["questie:quest/6122", "questie:npc/11802", "questie:item/15844"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-006"
+do = "hearth"
+zone = 1439
+text = "Usa la piedra de hogar para volver a Auberdine."
+status = "unverified"
+sources = []
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-007"
+do = "complete"
+quest = 6122
+item = 15844
+at = [1439, 54.92, 33.31]
+text = "Ve al noreste, a la cueva de la Cascada de Cliffspring, y usa el frasco en la boca de la cueva."
+tip = "No hace falta entrar: basta con estar en la entrada. Dentro hay nagas y sátiros de tu nivel."
+status = "unverified"
+sources = ["questie:quest/6122", "questie:object/19463"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-008"
+do = "turnin"
+quest = 6122
+npc = 3702
+at = [1439, 37.69, 40.66]
+text = "Vuelve a Auberdine y entrega la muestra a Alanndarian."
+status = "unverified"
+sources = ["questie:quest/6122", "questie:npc/3702"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-009"
+do = "accept"
+quest = 6123
+reqlevel = 14
+npc = 3702
+at = [1439, 37.69, 40.66]
+text = "Coge la misión de los ingredientes del ungüento."
+status = "unverified"
+sources = ["questie:quest/6123", "questie:npc/3702"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-010"
+do = "complete"
+quest = 6123
+at = [1439, 43.4, 45.9]
+wps = [[1439, 46.5, 45.7, "Hongos lunares"], [1439, 45.9, 50.2, "Hongos lunares"]]
+text = "Recoge 12 hongos lunares en las colinas al este de Auberdine y 5 raíces de tierra."
+tip = "Los hongos están alrededor de la piedra lechúcica y en las cuevecitas cercanas. La raíz de tierra: herboristería o casa de subastas."
+status = "unverified"
+sources = ["questie:quest/6123", "questie:object/177750", "questie:item/15851", "questie:item/2449"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-011"
+do = "turnin"
+quest = 6123
+npc = 3702
+at = [1439, 37.69, 40.66]
+text = "Entrega los ingredientes a Alanndarian."
+status = "unverified"
+sources = ["questie:quest/6123", "questie:npc/3702"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-012"
+do = "accept"
+quest = 6124
+reqlevel = 14
+npc = 3702
+at = [1439, 37.69, 40.66]
+text = "Coge la misión de los ciervos enfermos: te da el ungüento."
+status = "unverified"
+sources = ["questie:quest/6124", "questie:npc/3702", "questie:item/15826"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-013"
+do = "complete"
+quest = 6124
+item = 15826
+at = [1439, 44.5, 24.4]
+wps = [[1439, 38.4, 77.5, "Ciervos del sur"], [1439, 35.2, 89.3, "Ciervos del sur"]]
+text = "Usa el ungüento en 10 ciervos enfermos. Los hay por toda Costa Oscura, del río Cliffspring hacia el sur."
+tip = "No vayas a por ellos: llévalo en la barra y cúralos mientras haces el resto de misiones de la zona."
+status = "unverified"
+sources = ["questie:quest/6124", "questie:npc/12298"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-014"
+do = "turnin"
+quest = 6124
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Lanza Teletransporte: Claro de la Luna y entrega a Dendrite."
+tip = "Hazlo cuando vayas a ir a Darnassus de todas formas (entrenar el 16) y así juntas los viajes."
+status = "unverified"
+sources = ["questie:quest/6124", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-14-poison-015"
+do = "accept"
+quest = 6125
+reqlevel = 14
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Coge la última misión: vuelve con Mathrengyl a Darnassus."
+status = "unverified"
+sources = ["questie:quest/6125", "questie:npc/11802"]
+checked = "2026-11-11"

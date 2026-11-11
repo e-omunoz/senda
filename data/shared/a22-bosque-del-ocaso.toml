@@ -34,6 +34,18 @@ status = "unverified"
 sources = ["questie:npc/5497", "knowledge:mage-spells"]
 
 [[step]]
+id = "a22dw-dr-22"
+do = "train"
+spells = [2908]
+npc = 5504
+at = [1453, 35.84, 67.38]
+text = "Druida: en Ventormenta, entrena lo del 22 (Calmar animal) en El Parque."
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/5504", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a22dw-003"
 do = "hearth"
 zone = 1433
@@ -442,6 +454,18 @@ text = "Mago: entrena lo del 24 (Contrahechizo)."
 if = { class = ["MAGE"] }
 status = "unverified"
 sources = ["questie:npc/5497", "knowledge:mage-spells"]
+
+[[step]]
+id = "a22dw-dr-24"
+do = "train"
+spells = [2782]
+npc = 5504
+at = [1453, 35.84, 67.38]
+text = "Druida: entrena lo del 24 (Eliminar maldición y las técnicas felinas nuevas) en El Parque."
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/5504", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
 
 [[step]]
 id = "a22dw-043"

@@ -44,6 +44,18 @@ status = "unverified"
 sources = ["questie:npc/5497", "knowledge:mage-spells"]
 
 [[step]]
+id = "a26wl-dr-26"
+do = "train"
+spells = [1850, 2893]
+npc = 5504
+at = [1453, 35.84, 67.38]
+text = "Druida: entrena lo del 26 (Carrerilla, Suprimir veneno) en El Parque de Ventormenta."
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/5504", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a26wl-004"
 do = "fly"
 npc = 352
@@ -51,8 +63,33 @@ at = [1453, 71.3, 72.2]
 zone = 1432
 text = "Vuela a Thelsamar (Loch Modan)."
 tip = "Si no hay ruta directa, vuela a Forjaz y de allí a Thelsamar."
+if = { race = ["Human", "Dwarf", "Gnome"] }
 status = "unverified"
 sources = ["questie:npc/352"]
+
+[[step]]
+id = "a26wl-ne-01"
+do = "getfp"
+node = "6"
+npc = 1573
+at = [1455, 55.5, 47.7]
+text = "Toma el Tranvía Subterráneo en Ciudad de los Enanos (Ventormenta) hasta Forjaz y coge la ruta de vuelo con Gryth Thurden, en la Gran Fundición."
+tip = "Es tu primera visita a Forjaz: así podrás volar aquí al 28 y al 30."
+if = { race = ["NightElf"] }
+status = "unverified"
+sources = ["questie:npc/1573"]
+
+[[step]]
+id = "a26wl-ne-02"
+do = "getfp"
+node = "8"
+npc = 1572
+at = [1432, 33.9, 51.0]
+text = "Sal por la puerta de Forjaz, cruza Dun Morogh hacia el este y entra en Loch Modan por el túnel. Coge la ruta de vuelo de Thelsamar con Thorgrum Borrelson."
+tip = "El camino es seguro a tu nivel. Si vas montado (forma de viaje al 30 no; a pie), unos 6-7 minutos."
+if = { race = ["NightElf"] }
+status = "unverified"
+sources = ["questie:npc/1572"]
 
 [[step]]
 id = "a26wl-005"
@@ -115,6 +152,18 @@ zone = 1437
 text = "Pon la piedra de hogar en la posada de Menethil."
 status = "unverified"
 sources = ["questie:npc/1464", "https://games.gg/world-of-warcraft/guides/wow-forever-wetlands-leveling-guide/"]
+
+[[step]]
+id = "a26wl-ne-03"
+do = "turnin"
+quest = 98461
+npc = 2096
+at = [1437, 11.5, 52.2]
+text = "Si la cogiste en Costa Oscura, entrega la nota de Hollee a Tarrel Rockweaver, junto a Menethil."
+if = { race = ["NightElf"] }
+optional = true
+status = "unverified"
+sources = ["questie:quest/98461", "questie:npc/2096"]
 
 [[step]]
 id = "a26wl-011"
@@ -871,6 +920,19 @@ status = "unverified"
 sources = ["questie:npc/5144", "knowledge:mage-spells"]
 
 [[step]]
+id = "a26wl-dr-28"
+do = "train"
+spells = [5209, 8998]
+npc = 12042
+at = [1450, 52.53, 40.57]
+text = "Druida: en Forjaz no hay instructor. Lanza Teletransporte: Claro de la Luna y entrena lo del 28 (Rugido desafiante, Agazaparse) con Loganaar."
+tip = "Vuelve con la piedra de hogar a Menethil: te ahorras el vuelo."
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a26wl-085"
 do = "fly"
 npc = 1573
@@ -985,3 +1047,17 @@ text = "Mago: entrena lo del 30 (Armadura de hielo). Teletransporte a Darnassus 
 if = { class = ["MAGE"] }
 status = "unverified"
 sources = ["questie:npc/5144", "questie:npc/2489", "knowledge:mage-spells"]
+
+[[step]]
+id = "a26wl-dr-30"
+do = "train"
+spells = [783, 740]
+npc = 12042
+at = [1450, 52.53, 40.57]
+text = "Druida: entrena lo del 30 (Forma de viaje, Tranquilidad) con Loganaar en el Claro de la Luna."
+tip = "Si no tienes la piedra de hogar lista, entrénalo en El Parque de Ventormenta al empezar la siguiente sección."
+optional = true
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]

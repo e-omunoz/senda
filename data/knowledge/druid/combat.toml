@@ -1,0 +1,53 @@
+# Druida: combate en solitario. Escrito para Senda (no migrado).
+id = "druid-combat"
+class = "DRUID"
+kind = "page"
+title = "Combate en solitario"
+order = 110
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/druid/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents", "https://www.warcrafttavern.com/forever/news/powershifting-is-back-sort-of-hunter-druid-deep-dive-for-wow-forever/"]
+checked = "2026-11-11"
+
+[[block]]
+heading = "El combate básico (felino)"
+body = """
+1. Espinas y Marca de lo Salvaje puestas.
+2. Acecha y abre por la espalda (Triturar o Devastar). Fuego feérico.
+3. Arañar, Arañazo hasta 4-5 puntos de combo.
+4. Destripar si va para largo; Mordedura feroz si va a morir ya.
+5. Fuera de combate: forma normal, Recrecimiento o Rejuvenecimiento y vuelta a felino."""
+
+[[block]]
+heading = "Dos enemigos o más"
+body = """
+- **Forma de oso**: Rugido desmoralizador y Flagelo. Aguantas mucho más que en felino.
+- **Raíces enredadoras** al segundo (SND_Raices con foco) y mata al primero. En Forever valen en interiores.
+- **Hibernar** duerme bestias y dragonantes.
+- **Garras de la naturaleza** (de base): enraíza a quien te golpee. Úsala antes de tirar si temes una pelea doble."""
+
+[[block]]
+heading = "Energía y maná"
+body = """
+- **Augurio de claridad** es de base en Forever: el siguiente golpe o hechizo sale gratis.
+- **Poder cambiante** (talento del 40) cambia maná por 40 de energía sin salir del felino: sustituye al antiguo cambio de forma con poder. Úsalo con menos de 50 de energía.
+- **Furor** ya no da energía al cambiar de forma (la conserva): no merece la pena re-entrar en felino para ganar energía.
+- Bebe entre combates: el maná es tu vida (curas) y tu energía extra."""
+
+[[block]]
+heading = "Emergencias, por orden"
+body = """
+1. Forma de oso (más vida y armadura) y Regeneración frenética (36).
+2. Piel de corteza (44).
+3. Garras de la naturaleza o Raíces enredadoras y huye en felino (Carrerilla, 26).
+4. Sal de la forma y cúrate: Recrecimiento, Toque de sanación.
+5. Estimular (40) si te falta maná.
+6. Poción: en Forever las de sanación las hace Primeros auxilios, y puedes beberlas sin salir de la forma."""
+
+[[block]]
+heading = "Raciales de elfo de la noche en Forever"
+body = """
+- **Fusión de las sombras:** te ocultas quieto; combina con Acechar para reiniciar peleas.
+- **Luz de Elune** (Elune's Light, nueva): cooldown de crítico.
+- **Rapidez:** más esquiva y velocidad de movimiento.
+- **Espíritu de fuego fatuo:** al morir corres más como espíritu."""
+note = "Raciales según Warcraft Tavern; nombre esES de Luz de Elune sin confirmar."

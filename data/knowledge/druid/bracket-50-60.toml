@@ -1,0 +1,73 @@
+# Druida elfo de la noche, tramo 50-60. Escrito para Senda (no migrado).
+id = "druid-bracket-50-60"
+class = "DRUID"
+kind = "page"
+title = "Niveles 50-60: hacia el máximo"
+levels = [50, 60]
+order = 60
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/feral-druid/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents", "https://warcraft.wiki.gg/wiki/Patch_1.60", "questie:quest/6761", "questie:quest/6762"]
+checked = "2026-11-11"
+
+[[block]]
+heading = "Zonas"
+body = """
+- **48-55:** Cráter de Un'Goro y Frondavil.
+- **50-55:** Las Estepas Ardientes y Tierras de la Peste del Oeste.
+- **53-58:** Cuna del Invierno y Tierras de la Peste del Este.
+- **55-60:** Silithus.
+- **60:** **Monte Hyjal** (zona nueva de Forever).
+
+Mazmorras: **Alcaz Prison** (48-53), **Blackmaw Hold** (55-60), **Shaper's Terrace** (58-60) y las clásicas (Profundidades de Roca Negra, Scholomance, Stratholme, La Masacre)."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **50:** Don de lo Salvaje (en Classic; compruébalo en el instructor).
+- El resto del tramo son rangos nuevos: entrena cada dos niveles. Teletransporte: Claro de la Luna te deja junto a Loganaar."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **50-54:** Génesis 5/5 (Equilibrio).
+- **55-56:** Majestad de la Naturaleza 2/2 (+4% de crítico).
+- **57-58:** Alcance de la Naturaleza 2/2 (+4% de golpe).
+- **59-60:** Impacto brutal 2/2.
+
+Build final **34/9/8**. Para bandas de felino, Warcraft Tavern propone 9/37/5."""
+note = "Nombres esES sin confirmar."
+
+[[block]]
+heading = "Misiones de clase"
+body = """
+- **54: La nueva frontera** (The New Frontier, Fandral Staghelm) y **Rabine Saturna** (Mathrengyl Bearwalker) te llevan a la cadena de Cuna del Invierno y Silithus del Claro de la Luna.
+- **60:** misiones de Keeper Remulos en el Claro de la Luna (cadena de la Pesadilla)."""
+note = "Ids 6761 y 6762 (QuestieDB); títulos esES sin confirmar."
+
+[[block]]
+heading = "Profesiones"
+body = """
+- Herboristería y Alquimia a 300: puntos de Legacy.
+- Cuna del Invierno, Frondavil y Tierras de la Peste: Hojasueño, Salviargenta de montaña, Flor de peste y Setelo. Con suerte, **Loto negro**.
+- Hierbas nuevas de Forever para el 60: Marefoil, Demonsage y Death Lotus (nombres esES sin confirmar)."""
+
+[[block]]
+heading = "Equipo"
+body = """
+Busca un arma de dos manos con buen DPS (escala tus formas), cuero con Agilidad y Fuerza, y un ídolo para la ranura de reliquia. Mira la pestaña Equipo."""
+
+[[block]]
+heading = "Oro"
+body = """
+Al 55-60, las hierbas altas (Hojasueño, Setelo, Loto negro) valen mucho en la subasta. Frascos y transmutaciones de Alquimia para las bandas."""
+
+[[block]]
+heading = "Bandas"
+body = """
+Abren el **9 de diciembre**: Barrow Deeps (10), Hyjal Summit (20) y Guarida de Onyxia (40). El druida feral aporta Líder de la manada a toda la banda en Forever; el de oso, tanque secundario."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Al 60, tope de golpe del felino para bandas: 9% (unos 4% salen de Alcance de la Naturaleza).
+- Cambia la segunda especialización a oso o a Restauración para mazmorras."""

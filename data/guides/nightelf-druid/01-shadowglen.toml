@@ -1,0 +1,450 @@
+# Elfo de la noche: Cañada Umbría (1-6). Ruta de inicio común a todas las clases de elfo de la noche.
+# Las misiones de clase (sigilo del druida, instructor) las añade la sección de clase con prefijo dr-.
+# Ids y coordenadas: QuestieDB de Forever leída en local con tools/lookup.py. Textos propios.
+# Misiones nuevas de Forever: 97979 The Goddess Provides, 97977 Nature's Call, 97236 Fang of Githyiss,
+# 96630 The Adventurer (campamento).
+id = "ne-shadowglen"
+title = "Cañada Umbría"
+levels = [1, 6]
+map = 1438
+summary = "Del 1 al 6 en la Cañada Umbría, alrededor de Aldrassil. Acabas con la cadena de la Corona de la Tierra y bajas a Dolanaar."
+link = "https://games.gg/world-of-warcraft/guides/wow-forever-teldrassil-leveling/"
+
+[[step]]
+id = "nesg-001"
+do = "accept"
+quest = 456
+npc = 2079
+at = [1438, 58.69, 44.27]
+text = "Coge la misión del Conservador Ilthalaine, delante de Aldrassil."
+tip = "Vende los grises en cada vendedor. Mata todo lo que te cruces: la Cañada se acaba rápido."
+status = "unverified"
+sources = ["questie:quest/456", "questie:npc/2079"]
+
+[[step]]
+id = "nesg-002"
+do = "accept"
+quest = 458
+npc = 2077
+at = [1438, 59.92, 42.47]
+text = "Coge la misión de Melithar Staghelm, junto al camino."
+status = "unverified"
+sources = ["questie:quest/458", "questie:npc/2077"]
+
+[[step]]
+id = "nesg-003"
+do = "complete"
+quest = 456
+at = [1438, 59.5, 43.5]
+wps = [[1438, 61.5, 42.0, "Sables al este"], [1438, 57.5, 43.0, "Jabalíes al oeste"]]
+text = "Mata 7 sables de la noche jóvenes y 4 jabalíes de cardo jóvenes alrededor de Aldrassil."
+status = "unverified"
+sources = ["questie:quest/456"]
+
+[[step]]
+id = "nesg-004"
+do = "turnin"
+quest = 456
+npc = 2079
+at = [1438, 58.69, 44.27]
+text = "Entrega la misión al Conservador Ilthalaine."
+status = "unverified"
+sources = ["questie:quest/456", "questie:npc/2079"]
+
+[[step]]
+id = "nesg-005"
+do = "accept"
+quest = 457
+npc = 2079
+at = [1438, 58.69, 44.27]
+text = "Coge la segunda parte: ahora sables y jabalíes adultos, más al norte."
+status = "unverified"
+sources = ["questie:quest/457", "questie:npc/2079"]
+
+[[step]]
+id = "nesg-006"
+do = "accept"
+quest = 97979
+npc = 3595
+at = [1438, 59.17, 40.44]
+text = "Sube a Aldrassil y coge la misión de Shanda (nueva de Forever)."
+status = "unverified"
+sources = ["questie:quest/97979", "questie:npc/3595"]
+
+[[step]]
+id = "nesg-007"
+do = "complete"
+quest = 97979
+at = [1438, 59.17, 40.44]
+text = "Lanza Luz de Elune y Fusión de las sombras para completar la misión."
+tip = "Son habilidades raciales: arrástralas a la barra. Fusión de las sombras te sirve luego para beber sin que te ataquen."
+status = "unverified"
+sources = ["questie:quest/97979"]
+
+[[step]]
+id = "nesg-008"
+do = "turnin"
+quest = 97979
+npc = 3595
+at = [1438, 59.17, 40.44]
+text = "Entrega la misión a Shanda."
+status = "unverified"
+sources = ["questie:quest/97979", "questie:npc/3595"]
+
+[[step]]
+id = "nesg-009"
+do = "turnin"
+quest = 458
+npc = 1992
+at = [1438, 57.83, 45.21]
+text = "Baja y entrega a Tarindrella, al oeste de Aldrassil."
+status = "unverified"
+sources = ["questie:quest/458", "questie:npc/1992"]
+
+[[step]]
+id = "nesg-010"
+do = "accept"
+quest = 459
+npc = 1992
+at = [1438, 57.83, 45.21]
+text = "Coge la misión del musgo vil de Tarindrella."
+status = "unverified"
+sources = ["questie:quest/459", "questie:npc/1992"]
+
+[[step]]
+id = "nesg-011"
+do = "accept"
+quest = 97977
+npc = 1992
+at = [1438, 57.83, 45.21]
+text = "Coge también la de los tótems Tuercepinos (nueva de Forever)."
+status = "unverified"
+sources = ["questie:quest/97977", "questie:npc/1992"]
+
+[[step]]
+id = "nesg-012"
+do = "complete"
+quest = 459
+at = [1438, 55.5, 42.5]
+wps = [[1438, 55.1, 41.8, "Tótems"], [1438, 56.0, 45.5, "Grells"]]
+text = "Mata grells al oeste para el musgo vil y recoge los tótems Tuercepinos del suelo."
+tip = "Los tótems están entre los grells: haz las dos misiones a la vez."
+status = "unverified"
+sources = ["questie:quest/459"]
+
+[[step]]
+id = "nesg-013"
+do = "complete"
+quest = 97977
+at = [1438, 55.0, 41.0]
+text = "Termina los 4 tótems Tuercepinos."
+status = "unverified"
+sources = ["questie:quest/97977"]
+
+[[step]]
+id = "nesg-014"
+do = "turnin"
+quest = 459
+npc = 1992
+at = [1438, 57.83, 45.21]
+text = "Entrega el musgo vil a Tarindrella."
+status = "unverified"
+sources = ["questie:quest/459", "questie:npc/1992"]
+
+[[step]]
+id = "nesg-015"
+do = "turnin"
+quest = 97977
+npc = 1992
+at = [1438, 57.83, 45.21]
+text = "Entrega los tótems a Tarindrella."
+status = "unverified"
+sources = ["questie:quest/97977", "questie:npc/1992"]
+
+[[step]]
+id = "nesg-016"
+do = "accept"
+quest = 916
+reqlevel = 3
+npc = 2082
+at = [1438, 57.81, 41.65]
+text = "Entra en Aldrassil y coge la misión del veneno de Gilshalan Windwalker."
+status = "unverified"
+sources = ["questie:quest/916", "questie:npc/2082"]
+
+[[step]]
+id = "nesg-017"
+do = "accept"
+quest = 4495
+reqlevel = 2
+npc = 8583
+at = [1438, 60.9, 41.96]
+text = "Coge la misión de Dirania Silvershine, al este de Aldrassil."
+status = "unverified"
+sources = ["questie:quest/4495", "questie:npc/8583"]
+
+[[step]]
+id = "nesg-018"
+do = "complete"
+quest = 457
+at = [1438, 60.5, 36.0]
+wps = [[1438, 61.4, 36.4, "Sables"], [1438, 59.2, 36.2, "Jabalíes"]]
+text = "Ve al norte y mata sables de la noche sarnosos y jabalíes de cardo."
+status = "unverified"
+sources = ["questie:quest/457"]
+
+[[step]]
+id = "nesg-019"
+do = "turnin"
+quest = 4495
+npc = 8584
+at = [1438, 54.59, 32.99]
+text = "Busca a Iverron al noroeste, junto a la cueva de las arañas."
+status = "unverified"
+sources = ["questie:quest/4495", "questie:npc/8584"]
+
+[[step]]
+id = "nesg-020"
+do = "accept"
+quest = 3519
+reqlevel = 2
+npc = 8584
+at = [1438, 54.59, 32.99]
+text = "Coge la misión de Iverron: vuelve con Dirania."
+status = "unverified"
+sources = ["questie:quest/3519", "questie:npc/8584"]
+
+[[step]]
+id = "nesg-021"
+do = "complete"
+quest = 916
+at = [1438, 56.8, 29.5]
+text = "Mata arañas de la Telaraña frente a la cueva hasta tener 10 sacos de veneno."
+tip = "No entres aún en la cueva: los huevos y Githyiss vienen en la siguiente misión."
+status = "unverified"
+sources = ["questie:quest/916"]
+
+[[step]]
+id = "nesg-022"
+do = "turnin"
+quest = 457
+npc = 2079
+at = [1438, 58.69, 44.27]
+text = "Vuelve a Aldrassil y entrega los sables y jabalíes al Conservador."
+status = "unverified"
+sources = ["questie:quest/457", "questie:npc/2079"]
+
+[[step]]
+id = "nesg-023"
+do = "turnin"
+quest = 3519
+npc = 8583
+at = [1438, 60.9, 41.96]
+text = "Entrega a Dirania Silvershine."
+status = "unverified"
+sources = ["questie:quest/3519", "questie:npc/8583"]
+
+[[step]]
+id = "nesg-024"
+do = "accept"
+quest = 3521
+reqlevel = 2
+npc = 8583
+at = [1438, 60.9, 41.96]
+text = "Coge el antídoto de Iverron."
+status = "unverified"
+sources = ["questie:quest/3521", "questie:npc/8583"]
+
+[[step]]
+id = "nesg-025"
+do = "turnin"
+quest = 916
+npc = 2082
+at = [1438, 57.81, 41.65]
+text = "Entrega los sacos de veneno a Gilshalan."
+status = "unverified"
+sources = ["questie:quest/916", "questie:npc/2082"]
+
+[[step]]
+id = "nesg-026"
+do = "accept"
+quest = 917
+npc = 2082
+at = [1438, 57.81, 41.65]
+text = "Coge la misión de los huevos de araña."
+status = "unverified"
+sources = ["questie:quest/917", "questie:npc/2082"]
+
+[[step]]
+id = "nesg-027"
+do = "complete"
+quest = 3521
+at = [1438, 57.8, 37.5]
+wps = [[1438, 57.8, 37.5, "Lirios"], [1438, 56.8, 29.5, "Arañas (icor)"]]
+text = "Recoge lirios de pétalo lunar junto al estanque, champiñones jacinto (suelo o grells) e icor de araña."
+tip = "Los champiñones también caen de los grells. Coge los que veas por el camino."
+status = "unverified"
+sources = ["questie:quest/3521"]
+
+[[step]]
+id = "nesg-028"
+do = "complete"
+quest = 917
+at = [1438, 56.8, 26.5]
+text = "Entra en la cueva y coge 5 huevos de la Telaraña."
+tip = "Los huevos están al fondo. Mata a Githyiss la Vil, al final de la cueva: suelta un colmillo que inicia misión."
+status = "unverified"
+sources = ["questie:quest/917"]
+
+[[step]]
+id = "nesg-029"
+do = "accept"
+quest = 97236
+at = [1438, 56.65, 26.31]
+text = "Si te cayó el Colmillo de Githyiss, úsalo para empezar la misión (nueva de Forever)."
+optional = true
+status = "unverified"
+sources = ["questie:quest/97236", "questie:item/277190", "questie:npc/1994"]
+
+[[step]]
+id = "nesg-030"
+do = "turnin"
+quest = 3521
+npc = 8583
+at = [1438, 60.9, 41.96]
+text = "Vuelve con Dirania y entrega los ingredientes."
+status = "unverified"
+sources = ["questie:quest/3521", "questie:npc/8583"]
+
+[[step]]
+id = "nesg-031"
+do = "accept"
+quest = 3522
+reqlevel = 2
+npc = 8583
+at = [1438, 60.9, 41.96]
+text = "Coge el antídoto: llévaselo a Iverron."
+tip = "Tiene tiempo límite: ve directo a la cueva."
+status = "unverified"
+sources = ["questie:quest/3522", "questie:npc/8583"]
+
+[[step]]
+id = "nesg-032"
+do = "turnin"
+quest = 3522
+npc = 8584
+at = [1438, 54.59, 32.99]
+text = "Dale el antídoto a Iverron, junto a la cueva."
+status = "unverified"
+sources = ["questie:quest/3522", "questie:npc/8584"]
+
+[[step]]
+id = "nesg-033"
+do = "turnin"
+quest = 917
+npc = 2082
+at = [1438, 57.81, 41.65]
+text = "Vuelve a Aldrassil y entrega los huevos a Gilshalan."
+status = "unverified"
+sources = ["questie:quest/917", "questie:npc/2082"]
+
+[[step]]
+id = "nesg-034"
+do = "turnin"
+quest = 97236
+npc = 2082
+at = [1438, 57.81, 41.65]
+text = "Entrega el colmillo de Githyiss a Gilshalan."
+optional = true
+status = "unverified"
+sources = ["questie:quest/97236", "questie:npc/2082"]
+
+[[step]]
+id = "nesg-035"
+do = "accept"
+quest = 920
+npc = 2082
+at = [1438, 57.81, 41.65]
+text = "Coge la misión que te manda arriba, con Tenaron Stormgrip."
+status = "unverified"
+sources = ["questie:quest/920", "questie:npc/2082"]
+
+[[step]]
+id = "nesg-036"
+do = "turnin"
+quest = 920
+npc = 3514
+at = [1438, 59.06, 39.45]
+text = "Sube a lo alto de Aldrassil y entrega a Tenaron Stormgrip."
+status = "unverified"
+sources = ["questie:quest/920", "questie:npc/3514"]
+
+[[step]]
+id = "nesg-037"
+do = "accept"
+quest = 921
+npc = 3514
+at = [1438, 59.06, 39.45]
+text = "Coge la primera misión de la Corona de la Tierra."
+status = "unverified"
+sources = ["questie:quest/921", "questie:npc/3514"]
+
+[[step]]
+id = "nesg-038"
+do = "complete"
+quest = 921
+at = [1438, 60.0, 33.0]
+text = "Llena la redoma en la poza de la luna al norte de Aldrassil."
+status = "unverified"
+sources = ["questie:quest/921"]
+
+[[step]]
+id = "nesg-039"
+do = "turnin"
+quest = 921
+npc = 3514
+at = [1438, 59.06, 39.45]
+text = "Vuelve con Tenaron y entrega la redoma llena."
+status = "unverified"
+sources = ["questie:quest/921", "questie:npc/3514"]
+
+[[step]]
+id = "nesg-040"
+do = "accept"
+quest = 928
+npc = 3514
+at = [1438, 59.06, 39.45]
+text = "Coge la siguiente Corona de la Tierra: se entrega en Dolanaar."
+status = "unverified"
+sources = ["questie:quest/928", "questie:npc/3514"]
+
+[[step]]
+id = "nesg-041"
+do = "accept"
+quest = 96630
+reqlevel = 4
+at = [1438, 59.07, 39.55]
+text = "Junto a Tenaron, abre el Diario perdido: misión del aventurero para Dolanaar (nueva de Forever)."
+tip = "Abre el campamento de Forever: hoguera, saco de dormir y lecciones de profesión."
+status = "unverified"
+sources = ["questie:quest/96630", "questie:object/654846"]
+
+[[step]]
+id = "nesg-042"
+do = "accept"
+quest = 2159
+npc = 6780
+at = [1438, 61.16, 47.64]
+text = "Al salir por la rampa del sur, coge la entrega de Porthannius."
+status = "unverified"
+sources = ["questie:quest/2159", "questie:npc/6780"]
+
+[[step]]
+id = "nesg-043"
+do = "goto"
+at = [1438, 55.6, 59.8, "Dolanaar"]
+radius = 30
+text = "Sigue el camino al sur hasta Dolanaar."
+tip = "Mata lo que encuentres en el camino: al llegar deberías estar a punto de subir al 6."
+status = "unverified"
+sources = ["https://games.gg/world-of-warcraft/guides/wow-forever-teldrassil-leveling/"]

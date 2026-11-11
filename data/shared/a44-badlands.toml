@@ -15,6 +15,19 @@ status = "unverified"
 sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
 
 [[step]]
+id = "a44-badlands-dr-44"
+do = "train"
+spells = [22812]
+npc = 12042
+at = [1450, 52.53, 40.57]
+text = "Druida al 42 y al 44: Teletransporte: Claro de la Luna, entrena con Loganaar (Piel de corteza al 44) y vuelve con la piedra de hogar."
+optional = true
+if = { class = ["DRUID"], minlevel = 44 }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a44-badlands-002"
 do = "train"
 npc = 5172

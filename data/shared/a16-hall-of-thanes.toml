@@ -41,6 +41,20 @@ status = "unverified"
 sources = ["questie:npc/5144", "knowledge:mage-spells"]
 
 [[step]]
+id = "a16hot-dr-16"
+do = "train"
+spells = [779]
+npc = 12042
+at = [1450, 52.53, 40.57]
+text = "Druida: entrena Flagelo (16) con Loganaar en el Claro de la Luna, o en El Parque de Ventormenta al bajar del tranvía."
+tip = "Ve con Teletransporte: Claro de la Luna solo si tienes la piedra de hogar lista para volver."
+optional = true
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a16hot-004"
 do = "accept"
 quest = 96394

@@ -28,6 +28,10 @@ Sim.CHARS = {
     bag = { [1] = { 6948 }, [2] = { 159, 4 } },
     profs = { { name = "Sastrería", skillLine = 197, rank = 50, max = 75 } },
     equipped = { [5] = 57 } },
+  ["nightelf-druid"] = { race = "NightElf", class = "DRUID", level = 1, map = 1438, x = 0.587, y = 0.443,
+    spells = { 5176, 5185 },
+    bag = { [1] = { 6948 }, [2] = { 159, 4 } },
+    equipped = {} },
   ["nightelf-warrior"] = { race = "NightElf", class = "WARRIOR", level = 3, map = 1438, x = 0.58, y = 0.44,
     bag = { [1] = { 6948 } }, equipped = {} },
 }

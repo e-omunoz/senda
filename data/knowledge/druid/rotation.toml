@@ -1,0 +1,158 @@
+# Druida: rotación por tramo y por forma. Escrito para Senda (no migrado).
+# Mismo formato que data/knowledge/mage/rotation.toml ([[phase]], [[hud]], [[warning]]).
+#   when: condición en texto; hp/mana = tu vida/maná (0-1); thp = vida del objetivo (0-1); energy/rage/cp = energía,
+#   ira y puntos de combo.
+id = "druid-rotation"
+class = "DRUID"
+kind = "rotation"
+title = "Rotación del druida (feral)"
+levels = [1, 60]
+order = 100
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/feral-druid/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"]
+checked = "2026-11-11"
+note = "Rotaciones de Warcraft Tavern (guías de druida y de feral de Forever) y Method (7-nov). Poder cambiante y Mordisco primario son talentos de Forever con ids de Warcraft Tavern."
+
+[[phase]]
+from = 1
+to = 9
+spells = [467, 5176, 8921, 774]
+text = """
+1. Espinas y Marca de lo Salvaje puestas.
+2. Cólera para tirar.
+3. Fuego lunar.
+4. Cólera hasta que esté casi muerto o te falte maná.
+5. Remata con el arma. Rejuvenecimiento entre combates."""
+
+[[phase]]
+from = 10
+to = 19
+spells = [5176, 8921, 5487, 5229, 99, 6807, 779]
+text = """
+**Oso, un enemigo:**
+1. Cólera x2 y Fuego lunar mientras llega.
+2. Forma de oso, Enfurecer.
+3. Rugido desmoralizador (no contra lanzadores).
+4. Magullar en cada golpe; Azote si lanza.
+
+**Oso, varios:** Enfurecer, Rugido desmoralizador y Flagelo (16)."""
+
+[[phase]]
+from = 20
+to = 29
+spells = [768, 5215, 5221, 770, 1082, 1079, 1822, 22568]
+text = """
+**Felino:**
+1. Acechar y abre con Triturar por la espalda (o Cargar feral para saltar detrás).
+2. Fuego feérico.
+3. Arañar (desde el 24; sáltalo si va a morir ya).
+4. Arañazo hasta 4-5 puntos de combo (Triturar si estás detrás).
+5. Destripar si va a vivir todo el sangrado; si no, Mordedura feroz (24).
+
+Si te pegan varios: Forma de oso."""
+
+[[phase]]
+from = 30
+to = 39
+spells = [768, 5215, 6785, 770, 1822, 1082, 1079, 22568]
+text = """
+**Felino:**
+1. Acechar y abre con Devastar (32) por la espalda; si no, Triturar.
+2. Fuego feérico, Arañar.
+3. Arañazo (o Triturar detrás) hasta 5 puntos.
+4. Mordedura feroz con 4-5 puntos y 70+ de energía; Destripar en enemigos con mucha vida.
+5. Forma de viaje (30) para moverte entre grupos."""
+
+[[phase]]
+from = 40
+to = 60
+spells = [768, 6785, 770, 1822, 1079, 22568, 1082, 1322605, 9634, 407995]
+text = """
+**Felino:**
+1. Espinas puesta, Fuego feérico.
+2. **Poder cambiante** si tienes menos de 50 de energía (no lo gastes todo: el maná es para curarte).
+3. Destripar con 5 puntos; Mordedura feroz con 4-5 puntos y 70+ de energía.
+4. Arañar (sáltalo si va a morir ya).
+5. Arañazo para generar puntos; Triturar si estás detrás.
+
+**Oso temible (grupos o mazmorra):** Fuego feérico, Lacerar hasta 5 cargas, Rugido desmoralizador, Mordisco primario cuando esté listo, Flagelo (varios) o Magullar (uno)."""
+note = "Poder cambiante (1322605) y Mordisco primario (407995): ids de Warcraft Tavern, sin comprobar."
+
+[[hud]]
+when = "Sin objetivo, fuera de combate y hp < 0.6"
+suggest = "Cúrate en forma normal (Recrecimiento / Rejuvenecimiento)"
+spell = 8936
+
+[[hud]]
+when = "Sin objetivo, fuera de combate y mana < 0.4"
+suggest = "Bebe agua"
+
+[[hud]]
+when = "hp < 0.3 y conoces Regeneración frenética y estás en oso"
+suggest = "Regeneración frenética"
+spell = 22842
+
+[[hud]]
+when = "hp < 0.3 y no estás en oso"
+suggest = "Forma de oso (o Garras de la naturaleza y huye)"
+spell = 5487
+
+[[hud]]
+when = "Estás en felino, energy < 50 y conoces Poder cambiante"
+suggest = "Poder cambiante"
+spell = 1322605
+
+[[hud]]
+when = "Estás en felino, cp >= 5 y thp > 0.4"
+suggest = "Destripar"
+spell = 1079
+
+[[hud]]
+when = "Estás en felino, cp >= 4 y conoces Mordedura feroz"
+suggest = "Mordedura feroz"
+spell = 22568
+
+[[hud]]
+when = "Estás en felino y el objetivo no tiene Arañar"
+suggest = "Arañar"
+spell = 1822
+
+[[hud]]
+when = "Estás en felino"
+suggest = "Arañazo (Triturar si estás detrás)"
+spell = 1082
+
+[[hud]]
+when = "Estás en oso y rage >= 15"
+suggest = "Magullar"
+spell = 6807
+
+[[hud]]
+when = "Estás en oso"
+suggest = "Enfurecer y Rugido desmoralizador"
+spell = 5229
+
+[[hud]]
+when = "Siempre (último recurso)"
+suggest = "Cólera"
+spell = 5176
+
+[[warning]]
+text = "Sin Marca de lo Salvaje"
+when = "No tienes ninguna aura de [ids].mark_buffs (spells.toml)"
+
+[[warning]]
+text = "Sin Espinas"
+when = "No tienes ninguna aura de [ids].thorns_buffs y vas a pelear solo"
+
+[[warning]]
+text = "Talento(s) sin gastar"
+when = "Tienes puntos de talento sin gastar"
+
+[[warning]]
+text = "Sin Forma felina al 20"
+when = "Nivel >= 21 y no conoces Forma felina (misión El gran espíritu felino)"
+
+[[warning]]
+text = "Bolsas llenas"
+when = "Menos de 3 huecos libres"

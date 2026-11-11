@@ -1,0 +1,344 @@
+# Druida: barras de acción. Escrito para Senda (no migrado).
+# Mismo formato que data/knowledge/mage/bars.toml. El druida cambia de barra principal con la forma: el juego
+# usa las casillas 73-84 en Forma felina y 97-108 en Forma de oso (las mismas teclas 1 a =). La barra de Acechar
+# (85-96) solo existe si la activas; aquí no se usa.
+id = "druid-bars"
+class = "DRUID"
+kind = "bars"
+title = "Barras de acción del druida"
+order = 130
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+note = "Distribución del autor. Casillas de forma (73-84 felino, 97-108 oso) del cliente moderno; sin comprobar en Forever."
+
+[[bar]]
+title = "Forma normal (1 a =)"
+
+[[bar.slot]]
+slot = 1
+key = "1"
+spell = 5176
+level = 1
+
+[[bar.slot]]
+slot = 2
+key = "2"
+spell = 8921
+level = 4
+
+[[bar.slot]]
+slot = 3
+key = "3"
+macro = "SND_Raices"
+icon = "spell:339"
+level = 8
+
+[[bar.slot]]
+slot = 4
+key = "4"
+macro = "SND_Feerico"
+icon = "spell:770"
+level = 18
+
+[[bar.slot]]
+slot = 5
+key = "5"
+spell = 16689
+level = 10
+
+[[bar.slot]]
+slot = 6
+key = "6"
+spell = 2637
+level = 18
+
+[[bar.slot]]
+slot = 7
+key = "7"
+macro = "SND_Cura"
+icon = "spell:8936"
+level = 1
+
+[[bar.slot]]
+slot = 8
+key = "8"
+spell = 774
+level = 4
+
+[[bar.slot]]
+slot = 9
+key = "9"
+spell = 5185
+level = 1
+
+[[bar.slot]]
+slot = 10
+key = "0"
+macro = "SND_Gato"
+icon = "spell:768"
+level = 20
+
+[[bar.slot]]
+slot = 11
+key = "-"
+macro = "SND_Oso"
+icon = "spell:5487"
+level = 10
+
+[[bar.slot]]
+slot = 12
+key = "="
+macro = "SND_Viaje"
+icon = "spell:783"
+level = 16
+
+[[bar]]
+title = "Forma felina (casillas 73-84, mismas teclas)"
+
+[[bar.slot]]
+slot = 73
+key = "1"
+macro = "SND_Abrir"
+icon = "spell:6785"
+level = 20
+
+[[bar.slot]]
+slot = 74
+key = "2"
+spell = 1822
+level = 24
+
+[[bar.slot]]
+slot = 75
+key = "3"
+spell = 1079
+level = 20
+
+[[bar.slot]]
+slot = 76
+key = "4"
+spell = 22568
+level = 24
+
+[[bar.slot]]
+slot = 77
+key = "5"
+macro = "SND_Feerico"
+icon = "spell:770"
+level = 20
+
+[[bar.slot]]
+slot = 78
+key = "6"
+macro = "SND_Poder"
+icon = "spell:1322605"
+level = 40
+
+[[bar.slot]]
+slot = 79
+key = "7"
+spell = 5221
+level = 20
+
+[[bar.slot]]
+slot = 80
+key = "8"
+macro = "SND_Carga"
+icon = "spell:16979"
+level = 20
+
+[[bar.slot]]
+slot = 81
+key = "9"
+spell = 9005
+level = 36
+
+[[bar.slot]]
+slot = 82
+key = "0"
+spell = 1850
+level = 26
+
+[[bar.slot]]
+slot = 83
+key = "-"
+spell = 8998
+level = 28
+
+[[bar.slot]]
+slot = 84
+key = "="
+macro = "SND_Oso"
+icon = "spell:5487"
+level = 20
+
+[[bar]]
+title = "Forma de oso (casillas 97-108, mismas teclas)"
+
+[[bar.slot]]
+slot = 97
+key = "1"
+spell = 6807
+level = 10
+
+[[bar.slot]]
+slot = 98
+key = "2"
+spell = 779
+level = 16
+
+[[bar.slot]]
+slot = 99
+key = "3"
+spell = 99
+level = 10
+
+[[bar.slot]]
+slot = 100
+key = "4"
+macro = "SND_Feerico"
+icon = "spell:770"
+level = 18
+
+[[bar.slot]]
+slot = 101
+key = "5"
+spell = 5229
+level = 12
+
+[[bar.slot]]
+slot = 102
+key = "6"
+note = "Mordisco primario (talento del 41); id de Warcraft Tavern, sin comprobar."
+spell = 407995
+level = 41
+
+[[bar.slot]]
+slot = 103
+key = "7"
+macro = "SND_Gru"
+icon = "spell:6795"
+level = 10
+
+[[bar.slot]]
+slot = 104
+key = "8"
+macro = "SND_Carga"
+icon = "spell:16979"
+level = 20
+
+[[bar.slot]]
+slot = 105
+key = "9"
+spell = 5211
+level = 14
+
+[[bar.slot]]
+slot = 106
+key = "0"
+spell = 22842
+level = 36
+
+[[bar.slot]]
+slot = 107
+key = "-"
+spell = 5209
+level = 28
+
+[[bar.slot]]
+slot = 108
+key = "="
+macro = "SND_Gato"
+icon = "spell:768"
+level = 20
+
+[[bar]]
+title = "Inferior izquierda (Mayúsculas + 1 a 6)"
+
+[[bar.slot]]
+slot = 61
+key = "S1"
+spell = 2912
+level = 20
+
+[[bar.slot]]
+slot = 62
+key = "S2"
+spell = 8936
+level = 12
+
+[[bar.slot]]
+slot = 63
+key = "S3"
+macro = "SND_Estimular"
+icon = "spell:29166"
+level = 40
+
+[[bar.slot]]
+slot = 64
+key = "S4"
+spell = 22812
+level = 44
+
+[[bar.slot]]
+slot = 65
+key = "S5"
+spell = 8946
+alt = 2893
+level = 14
+
+[[bar.slot]]
+slot = 66
+key = "S6"
+spell = 2782
+level = 24
+
+[[bar]]
+title = "Inferior derecha (fuera de combate, con el ratón)"
+
+[[bar.slot]]
+slot = 49
+spell = 1126
+level = 1
+
+[[bar.slot]]
+slot = 50
+spell = 467
+level = 6
+
+[[bar.slot]]
+slot = 51
+spell = 18960
+level = 10
+
+[[bar.slot]]
+slot = 52
+spell = 1237951
+level = 12
+
+[[bar.slot]]
+slot = 53
+spell = 20484
+level = 20
+
+[[bar.slot]]
+slot = 54
+spell = 5225
+level = 32
+
+[bindings]
+"SHIFT-1" = "MULTIACTIONBAR1BUTTON1"
+"SHIFT-2" = "MULTIACTIONBAR1BUTTON2"
+"SHIFT-3" = "MULTIACTIONBAR1BUTTON3"
+"SHIFT-4" = "MULTIACTIONBAR1BUTTON4"
+"SHIFT-5" = "MULTIACTIONBAR1BUTTON5"
+"SHIFT-6" = "MULTIACTIONBAR1BUTTON6"
+
+[[block]]
+heading = "Consejos de barras"
+body = """
+- Coloca cada barra **estando en esa forma**: el juego guarda una barra distinta para normal, felino y oso.
+- Deja las mismas teclas para lo mismo en las tres: 1 = abrir/golpe principal, 4 = Fuego feérico, 8 = Cargar feral, 12 = cambiar de forma.
+- SND_Cura sale de la forma y te cura: tenla también en la barra de felino y oso si quieres (cuesta un cambio de forma volver).
+- En Classic las barras no suben de rango solas: vuelve a colocar los hechizos después de entrenar."""

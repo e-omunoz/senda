@@ -1,0 +1,153 @@
+# Druida feral: prioridad de estadísticas y equipo de subida. Escrito para Senda (no migrado).
+# [weights]: pesos por punto de estadística (más alto = más importante), mismas claves que el módulo de equipo:
+#   STR Fuerza · AGI Agilidad · AP poder de ataque · STA Aguante · INT Intelecto · SPI Espíritu · SP poder con hechizos
+#   ARMOR armadura · DPS DPS del arma cuerpo a cuerpo.
+# [[item]]: mismo formato que data/knowledge/general/gear-items.toml (from, to, id, name, src, class).
+# Los pesos los puso el autor a partir de las prioridades: nadie publica pesos numéricos para Forever.
+id = "druid-gear"
+class = "DRUID"
+kind = "page"
+title = "Equipo: prioridad de estadísticas (feral)"
+order = 140
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/feral-druid/", "https://www.warcrafttavern.com/forever/guides/druid/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"]
+checked = "2026-11-11"
+note = "Prioridad feral de Warcraft Tavern (Fuerza/Agilidad/poder de ataque > Aguante/Intelecto/Espíritu > armadura). En Forever los ataques en forma escalan con el daño del arma (Warcraft Tavern y Method): de ahí el peso alto de DPS. Lista de objetos: Method (7-nov) y Warcraft Tavern; ids y niveles requeridos de QuestieDB (Forever)."
+
+[weights]
+STR = 1.0
+AGI = 0.9
+AP = 0.45
+STA = 0.5
+INT = 0.3
+SPI = 0.25
+SP = 0.1
+ARMOR = 0.01
+DPS = 2.5
+
+[[block]]
+heading = "Prioridad"
+body = """
+**DPS del arma > Fuerza ≈ Agilidad > poder de ataque > Aguante > Intelecto = Espíritu > armadura.**
+
+- En Forever las formas escalan con el daño de tu arma (también con piedras de afilar): un arma de dos manos con buen DPS es la mayor mejora.
+- Intelecto y Espíritu ayudan a curarte entre combates y a usar Poder cambiante, pero no matan.
+- Antes del 10 (sin formas): Intelecto y Aguante."""
+
+[[block]]
+heading = "Armas"
+body = """
+- Empiezas con **dagas y bastones**.
+- **Armas de puño:** Ilyenia Moonfire (Darnassus).
+- **Mazas de una y dos manos:** Buliwyf Stonehand (Forjaz).
+- **Armas de asta** (nuevas para el druida en Forever) desde el 20: Woo Ping (Ventormenta).
+- Ranura de reliquia: **ídolos** (el Ídolo de las mareas cambiantes sale de la misión de la Forma acuática)."""
+
+[[block]]
+heading = "Al 60"
+body = """
+- **Felino (bandas):** golpe hasta 9%, pericia, crítico, celeridad, Agilidad, Fuerza, poder de ataque.
+- **Oso:** defensa (440 para jefes de banda), esquiva, armadura, Aguante."""
+
+[[block]]
+heading = "Dónde buscar equipo"
+body = """
+Los objetos de abajo, más la lista general de data/knowledge/general/gear-items.toml (los de todas las clases). Si no hay nada: recompensas de misión y verdes «del mono» o «del oso» en la casa de subastas."""
+
+[[item]]
+from = 16
+to = 30
+id = 263411
+name = "Ídolo de las mareas cambiantes"
+src = "misión de la Forma acuática (abarata cambiar de forma)"
+class = "DRUID"
+
+[[item]]
+from = 18
+to = 28
+id = 5404
+name = "Serpent's Shoulders"
+src = "Lady Anacondra, Cuevas de los Lamentos"
+class = "DRUID"
+
+[[item]]
+from = 18
+to = 28
+id = 6473
+name = "Armor of the Fang"
+src = "Cuevas de los Lamentos (conjunto Abrazo de la víbora)"
+class = "DRUID"
+
+[[item]]
+from = 18
+to = 28
+id = 7230
+name = "Smite's Mighty Hammer"
+src = "Mr. Smite, Minas de la Muerte (maza de dos manos)"
+class = "DRUID"
+
+[[item]]
+from = 29
+to = 40
+id = 9449
+name = "Manual Crowd Pummeler"
+src = "Gnomeregan (maza de dos manos)"
+class = "DRUID"
+
+[[item]]
+from = 30
+to = 40
+id = 279841
+name = "Defender of Dalaran"
+src = "cadena de la Alianza de Emissary Jacques, Laderas de Trabalomas (maza de dos manos)"
+class = "DRUID"
+note = "QuestieDB da nivel requerido 1 (objeto de misión); Method lo pone al 30."
+
+[[item]]
+from = 30
+to = 42
+id = 7731
+name = "Ghostshard Talisman"
+src = "Azshir el Insomne, Monasterio Escarlata (cuello)"
+class = "DRUID"
+
+[[item]]
+from = 30
+to = 42
+id = 271800
+name = "Scavenged Magram Armament"
+src = "cadena de Khan Jehn, Desolace (arma de asta)"
+class = "DRUID"
+note = "QuestieDB da nivel requerido 30; Method, 35."
+
+[[item]]
+from = 32
+to = 42
+id = 6327
+name = "The Pacifier"
+src = "Lo'Grosh, Montañas de Alterac (maza de dos manos)"
+class = "DRUID"
+
+[[item]]
+from = 34
+to = 45
+id = 5257
+name = "Dark Hooded Cape"
+src = "Nimar el Asesino, Tierras Altas de Arathi (capa)"
+class = "DRUID"
+
+[[item]]
+from = 40
+to = 55
+id = 8345
+name = "Wolfshead Helm"
+src = "Peletería (casco; Warcraft Tavern lo destaca)"
+class = "DRUID"
+
+[[item]]
+from = 42
+to = 52
+id = 9416
+name = "Grimlok's Charge"
+src = "Grimlok, Uldaman (arma de asta)"
+class = "DRUID"

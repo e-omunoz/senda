@@ -1,0 +1,1455 @@
+# Elfo de la noche: Costa Oscura (12-20). Base en Auberdine (hogar y ruta de vuelo).
+# Misiones nuevas de Forever: 98025 Jai'vhanel, 98042, 98013 Swelling Forces, 98028 Baron Marinous,
+# 87760 Holy Diver, 98461 Unrequited Love (se entrega en Menethil, en a26-los-humedales).
+# Se saltan: 967+ Torre de Althalaxx (Vallefresno), 945/5713/5321 (escoltas que acaban en Vallefresno),
+# 986/993 (Volcor), 741 (Darnassus), 2098/2078 (robot élite), 97914 (ida y vuelta a Ventormenta),
+# 6343 (vuelta a Rut'theran) y las de pesca de Wizbang y Gubber.
+# Ids y coordenadas: QuestieDB de Forever. Orden: guía de games.gg (Costa Oscura) ajustada. Textos propios.
+id = "ne-darkshore"
+title = "Costa Oscura"
+levels = [12, 20]
+map = 1439
+summary = "Del 12 al 20 con base en Auberdine: buzones de Wizbang, Ameth'Aran, Bashal'Aran, la cascada del norte, Onu y las nagas Escamatormenta. Acabas listo para viajar a los Reinos del Este."
+link = "https://games.gg/world-of-warcraft/guides/wow-forever-darkshore-leveling-guide/"
+
+[[step]]
+id = "neds-001"
+do = "turnin"
+quest = 6342
+npc = 4200
+at = [1439, 36.77, 44.28]
+text = "En Auberdine, entrega el vuelo a Laird, el vendedor de pescado."
+tip = "No cojas la vuelta con Nessa: no vas a volver a Rut'theran."
+status = "unverified"
+sources = ["questie:quest/6342", "questie:npc/4200"]
+
+[[step]]
+id = "neds-002"
+do = "getfp"
+npc = 3841
+node = "26"
+at = [1439, 36.34, 45.58]
+text = "Coge la ruta de vuelo de Auberdine con Caylais Moonfeather."
+status = "unverified"
+sources = ["questie:npc/3841"]
+
+[[step]]
+id = "neds-003"
+do = "sethearth"
+npc = 6737
+zone = 1439
+at = [1439, 37.04, 44.13]
+text = "Pon la piedra de hogar en la posada de Auberdine (posadera Shaussiy)."
+tip = "Auberdine es tu base hasta el 20."
+status = "unverified"
+sources = ["questie:npc/6737"]
+
+[[step]]
+id = "neds-004"
+do = "accept"
+quest = 983
+reqlevel = 7
+npc = 3666
+at = [1439, 36.97, 44.13]
+text = "Coge la misión del buzón de Wizbang Cranktoggle, en la posada."
+status = "unverified"
+sources = ["questie:quest/983", "questie:npc/3666"]
+
+[[step]]
+id = "neds-005"
+do = "accept"
+quest = 98025
+reqlevel = 10
+at = [1439, 37.22, 44.22]
+text = "Coge en el cartel de la posada el aviso de Jai'vhanel (nuevo de Forever)."
+status = "unverified"
+sources = ["questie:quest/98025", "questie:object/175320"]
+
+[[step]]
+id = "neds-006"
+do = "accept"
+quest = 3524
+reqlevel = 11
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Coge la misión de Gwennyth Bly'Leggonde, junto al muelle."
+status = "unverified"
+sources = ["questie:quest/3524", "questie:npc/10219"]
+
+[[step]]
+id = "neds-007"
+do = "accept"
+quest = 963
+reqlevel = 11
+npc = 3644
+at = [1439, 35.74, 43.71]
+text = "Coge la misión de Cerellean Whiteclaw, al oeste del muelle."
+tip = "Anaya es de nivel 16: la harás en la segunda pasada por Ameth'Aran."
+status = "unverified"
+sources = ["questie:quest/963", "questie:npc/3644"]
+
+[[step]]
+id = "neds-008"
+do = "accept"
+quest = 947
+reqlevel = 12
+npc = 3583
+at = [1439, 37.32, 43.64]
+text = "Coge la misión de los champiñones de Barithras Moonshade."
+status = "unverified"
+sources = ["questie:quest/947", "questie:npc/3583"]
+
+[[step]]
+id = "neds-009"
+do = "accept"
+quest = 4811
+reqlevel = 12
+npc = 2930
+at = [1439, 37.7, 43.41]
+text = "Coge la misión del cristal rojo de la Centinela Glynda Nal'Shea."
+status = "unverified"
+sources = ["questie:quest/4811", "questie:npc/2930"]
+
+[[step]]
+id = "neds-010"
+do = "accept"
+quest = 2118
+reqlevel = 10
+npc = 3701
+at = [1439, 38.84, 43.42]
+text = "Coge la misión de los osos de Tharnariun Treetender."
+tip = "Te da una trampa: si la pierdes, pide otra a Tharnariun."
+status = "unverified"
+sources = ["questie:quest/2118", "questie:npc/3701"]
+
+[[step]]
+id = "neds-011"
+do = "accept"
+quest = 984
+reqlevel = 10
+npc = 3693
+at = [1439, 39.37, 43.48]
+text = "Coge la amenaza de Terenthis, junto al camino del este."
+status = "unverified"
+sources = ["questie:quest/984", "questie:npc/3693"]
+
+[[step]]
+id = "neds-012"
+do = "accept"
+quest = 954
+reqlevel = 7
+npc = 3649
+at = [1439, 37.4, 40.13]
+text = "Coge la misión de Bashal'Aran de Thundris Windweaver, al norte del pueblo."
+status = "unverified"
+sources = ["questie:quest/954", "questie:npc/3649"]
+
+[[step]]
+id = "neds-013"
+do = "accept"
+quest = 958
+reqlevel = 9
+npc = 3649
+at = [1439, 37.4, 40.13]
+text = "Coge también las herramientas de los altonatos."
+status = "unverified"
+sources = ["questie:quest/958", "questie:npc/3649"]
+
+[[step]]
+id = "neds-014"
+do = "complete"
+quest = 983
+at = [1439, 36.5, 48.0]
+text = "Mata crustáceos por la playa al sur de Auberdine hasta tener las patas."
+status = "unverified"
+sources = ["questie:quest/983"]
+
+[[step]]
+id = "neds-015"
+do = "complete"
+quest = 3524
+at = [1439, 36.4, 50.9]
+text = "Busca los huesos de la criatura varada en la playa al sur."
+status = "unverified"
+sources = ["questie:quest/3524"]
+
+[[step]]
+id = "neds-016"
+do = "turnin"
+quest = 983
+at = [1439, 36.64, 46.26]
+text = "Echa las patas en el Buzón 827 de la playa."
+status = "unverified"
+sources = ["questie:quest/983", "questie:object/17182"]
+
+[[step]]
+id = "neds-017"
+do = "accept"
+quest = 1001
+reqlevel = 7
+at = [1439, 36.64, 46.26]
+text = "Coge del buzón la siguiente misión: ojos de trillador."
+tip = "Los trilladores nadan por toda la costa: mátalos cuando los veas."
+status = "unverified"
+sources = ["questie:quest/1001", "questie:object/17182"]
+
+[[step]]
+id = "neds-018"
+do = "complete"
+quest = 2118
+at = [1439, 41.0, 48.0]
+text = "Busca un oso de cardo rabioso al este del camino y atrápalo con la trampa."
+tip = "Pon la trampa, atrae al oso encima y espera a que quede atrapado."
+status = "unverified"
+sources = ["questie:quest/2118"]
+
+[[step]]
+id = "neds-019"
+do = "complete"
+quest = 984
+at = [1439, 39.86, 53.89]
+text = "Encuentra el campamento furbolg corrupto al sureste."
+status = "unverified"
+sources = ["questie:quest/984"]
+
+[[step]]
+id = "neds-020"
+do = "accept"
+quest = 953
+reqlevel = 9
+npc = 3639
+at = [1439, 40.3, 59.73]
+text = "Sigue el camino al sur: coge la misión de la Centinela Tysha Moonblade."
+status = "unverified"
+sources = ["questie:quest/953", "questie:npc/3639"]
+
+[[step]]
+id = "neds-021"
+do = "complete"
+quest = 953
+at = [1439, 43.0, 61.0]
+wps = [[1439, 43.3, 58.7, "Tablilla norte"], [1439, 42.6, 63.1, "Tablilla sur"]]
+text = "En Ameth'Aran, lee las dos tablillas."
+status = "unverified"
+sources = ["questie:quest/953"]
+
+[[step]]
+id = "neds-022"
+do = "complete"
+quest = 958
+at = [1439, 42.5, 60.5]
+text = "Mata altonatos en Ameth'Aran para las reliquias."
+status = "unverified"
+sources = ["questie:quest/958"]
+
+[[step]]
+id = "neds-023"
+do = "complete"
+quest = 98025
+at = [1439, 44.2, 58.2]
+text = "Mata a Jai'vhanel en Ameth'Aran por su pluma."
+status = "unverified"
+sources = ["questie:quest/98025"]
+
+[[step]]
+id = "neds-024"
+do = "turnin"
+quest = 953
+npc = 3639
+at = [1439, 40.3, 59.73]
+text = "Entrega a Tysha en el camino."
+status = "unverified"
+sources = ["questie:quest/953", "questie:npc/3639"]
+
+[[step]]
+id = "neds-025"
+do = "complete"
+quest = 4811
+at = [1439, 47.3, 48.7]
+text = "Sube a la montaña del este y encuentra el gran cristal rojo."
+status = "unverified"
+sources = ["questie:quest/4811"]
+
+[[step]]
+id = "neds-026"
+do = "turnin"
+quest = 2118
+npc = 3701
+at = [1439, 38.84, 43.42]
+text = "Vuelve a Auberdine. Entrega el oso a Tharnariun."
+status = "unverified"
+sources = ["questie:quest/2118", "questie:npc/3701"]
+
+[[step]]
+id = "neds-027"
+do = "accept"
+quest = 2138
+reqlevel = 10
+npc = 3701
+at = [1439, 38.84, 43.42]
+text = "Coge la siguiente: mata osos rabiosos."
+status = "unverified"
+sources = ["questie:quest/2138", "questie:npc/3701"]
+
+[[step]]
+id = "neds-028"
+do = "turnin"
+quest = 984
+npc = 3693
+at = [1439, 39.37, 43.48]
+text = "Entrega a Terenthis."
+status = "unverified"
+sources = ["questie:quest/984", "questie:npc/3693"]
+
+[[step]]
+id = "neds-029"
+do = "accept"
+quest = 985
+reqlevel = 10
+npc = 3693
+at = [1439, 39.37, 43.48]
+text = "Coge la siguiente amenaza: furbolgs del campamento."
+tip = "Los harás en la segunda bajada al sur."
+status = "unverified"
+sources = ["questie:quest/985", "questie:npc/3693"]
+
+[[step]]
+id = "neds-030"
+do = "accept"
+quest = 4761
+reqlevel = 11
+npc = 3693
+at = [1439, 39.37, 43.48]
+text = "Coge el aviso para Thundris."
+status = "unverified"
+sources = ["questie:quest/4761", "questie:npc/3693"]
+
+[[step]]
+id = "neds-031"
+do = "turnin"
+quest = 4761
+npc = 3649
+at = [1439, 37.4, 40.13]
+text = "Entrega el aviso a Thundris Windweaver."
+status = "unverified"
+sources = ["questie:quest/4761", "questie:npc/3649"]
+
+[[step]]
+id = "neds-032"
+do = "accept"
+quest = 4762
+reqlevel = 11
+npc = 3649
+at = [1439, 37.4, 40.13]
+text = "Coge la misión del río de la cascada."
+status = "unverified"
+sources = ["questie:quest/4762", "questie:npc/3649"]
+
+[[step]]
+id = "neds-033"
+do = "turnin"
+quest = 958
+npc = 3649
+at = [1439, 37.4, 40.13]
+text = "Entrega las reliquias a Thundris."
+status = "unverified"
+sources = ["questie:quest/958", "questie:npc/3649"]
+
+[[step]]
+id = "neds-034"
+do = "turnin"
+quest = 98025
+npc = 2930
+at = [1439, 37.7, 43.41]
+text = "Entrega la pluma de Jai'vhanel a Glynda."
+status = "unverified"
+sources = ["questie:quest/98025", "questie:npc/2930"]
+
+[[step]]
+id = "neds-035"
+do = "turnin"
+quest = 4811
+npc = 2930
+at = [1439, 37.7, 43.41]
+text = "Entrega el cristal a Glynda."
+status = "unverified"
+sources = ["questie:quest/4811", "questie:npc/2930"]
+
+[[step]]
+id = "neds-036"
+do = "accept"
+quest = 4812
+reqlevel = 12
+npc = 2930
+at = [1439, 37.7, 43.41]
+text = "Coge la misión del agua de la poza."
+status = "unverified"
+sources = ["questie:quest/4812", "questie:npc/2930"]
+
+[[step]]
+id = "neds-037"
+do = "complete"
+quest = 4812
+at = [1439, 37.8, 44.0]
+text = "Llena el tubo en la poza de la luna de Auberdine."
+status = "unverified"
+sources = ["questie:quest/4812"]
+
+[[step]]
+id = "neds-038"
+do = "turnin"
+quest = 3524
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega los huesos a Gwennyth."
+status = "unverified"
+sources = ["questie:quest/3524", "questie:npc/10219"]
+
+[[step]]
+id = "neds-039"
+do = "accept"
+quest = 4681
+reqlevel = 11
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Coge la segunda misión de Gwennyth."
+status = "unverified"
+sources = ["questie:quest/4681", "questie:npc/10219"]
+
+[[step]]
+id = "neds-040"
+do = "complete"
+quest = 4681
+at = [1439, 31.8, 46.3]
+text = "Nada al oeste hasta el esqueleto de tortuga marina y recoge sus restos."
+tip = "Mata trilladores por el camino para los ojos."
+status = "unverified"
+sources = ["questie:quest/4681"]
+
+[[step]]
+id = "neds-041"
+do = "turnin"
+quest = 4681
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega los restos a Gwennyth."
+tip = "Desde ahora, cada criatura o tortuga varada de la costa empieza una misión para Gwennyth: cógelas todas."
+status = "unverified"
+sources = ["questie:quest/4681", "questie:npc/10219"]
+
+[[step]]
+id = "neds-042"
+do = "accept"
+quest = 982
+reqlevel = 13
+npc = 6301
+at = [1439, 38.11, 41.17]
+text = "Coge la misión de los cofres hundidos de Gorbold Steelhand (desde el 13)."
+status = "unverified"
+sources = ["questie:quest/982", "questie:npc/6301"]
+
+[[step]]
+id = "neds-043"
+do = "accept"
+quest = 965
+reqlevel = 13
+npc = 3657
+at = [1439, 39.05, 43.55]
+text = "Coge la Torre de Althalaxx de la Centinela Elissa Starbreeze (desde el 13)."
+status = "unverified"
+sources = ["questie:quest/965", "questie:npc/3657"]
+
+[[step]]
+id = "neds-044"
+do = "complete"
+quest = 982
+at = [1439, 39.0, 28.2]
+wps = [[1439, 38.2, 28.8, "Cofre 1"], [1439, 39.6, 27.5, "Cofre 2"]]
+text = "Ve al norte por la costa: saca los dos cofres del barco hundido."
+status = "unverified"
+sources = ["questie:quest/982"]
+
+[[step]]
+id = "neds-045"
+do = "accept"
+quest = 4723
+reqlevel = 11
+at = [1439, 41.93, 31.53]
+text = "Examina la criatura varada de la costa norte."
+status = "unverified"
+sources = ["questie:quest/4723", "questie:object/175233"]
+
+[[step]]
+id = "neds-046"
+do = "complete"
+quest = 1001
+at = [1439, 38.5, 32.0]
+text = "Termina los ojos de trillador."
+status = "unverified"
+sources = ["questie:quest/1001"]
+
+[[step]]
+id = "neds-047"
+do = "turnin"
+quest = 1001
+at = [1439, 41.96, 28.62]
+text = "Echa los ojos en el Buzón 411, en la orilla."
+status = "unverified"
+sources = ["questie:quest/1001", "questie:object/17183"]
+
+[[step]]
+id = "neds-048"
+do = "accept"
+quest = 1002
+reqlevel = 7
+at = [1439, 41.96, 28.62]
+text = "Coge del buzón la siguiente: colmillos de acechaluna."
+tip = "Los acechalunas salen por todo el norte: mátalos de camino."
+status = "unverified"
+sources = ["questie:quest/1002", "questie:object/17183"]
+
+[[step]]
+id = "neds-049"
+do = "accept"
+quest = 4725
+reqlevel = 12
+at = [1439, 44.19, 20.6]
+text = "En la playa del norte, examina la tortuga varada."
+status = "unverified"
+sources = ["questie:quest/4725", "questie:object/176197"]
+
+[[step]]
+id = "neds-050"
+do = "turnin"
+quest = 954
+npc = 3650
+at = [1439, 44.17, 36.29]
+text = "Ve a las ruinas de Bashal'Aran y habla con Asterion."
+status = "unverified"
+sources = ["questie:quest/954", "questie:npc/3650"]
+
+[[step]]
+id = "neds-051"
+do = "accept"
+quest = 955
+reqlevel = 7
+npc = 3650
+at = [1439, 44.17, 36.29]
+text = "Coge su misión: pendientes de grell."
+status = "unverified"
+sources = ["questie:quest/955", "questie:npc/3650"]
+
+[[step]]
+id = "neds-052"
+do = "complete"
+quest = 955
+at = [1439, 46.0, 38.0]
+text = "Mata grells y duendes viles alrededor de las ruinas."
+status = "unverified"
+sources = ["questie:quest/955"]
+
+[[step]]
+id = "neds-053"
+do = "turnin"
+quest = 955
+npc = 3650
+at = [1439, 44.17, 36.29]
+text = "Entrega los pendientes a Asterion."
+status = "unverified"
+sources = ["questie:quest/955", "questie:npc/3650"]
+
+[[step]]
+id = "neds-054"
+do = "accept"
+quest = 956
+reqlevel = 7
+npc = 3650
+at = [1439, 44.17, 36.29]
+text = "Coge la siguiente: el sello de los sátiros."
+status = "unverified"
+sources = ["questie:quest/956", "questie:npc/3650"]
+
+[[step]]
+id = "neds-055"
+do = "complete"
+quest = 956
+at = [1439, 46.7, 37.8]
+text = "Mata sátiros Deth'ryll en las ruinas hasta que caiga el sello."
+status = "unverified"
+sources = ["questie:quest/956"]
+
+[[step]]
+id = "neds-056"
+do = "turnin"
+quest = 956
+npc = 3650
+at = [1439, 44.17, 36.29]
+text = "Entrega el sello a Asterion."
+status = "unverified"
+sources = ["questie:quest/956", "questie:npc/3650"]
+
+[[step]]
+id = "neds-057"
+do = "accept"
+quest = 957
+reqlevel = 7
+npc = 3650
+at = [1439, 44.17, 36.29]
+text = "Coge la última parte: el sello se quema en Ameth'Aran."
+status = "unverified"
+sources = ["questie:quest/957", "questie:npc/3650"]
+
+[[step]]
+id = "neds-058"
+do = "complete"
+quest = 2138
+at = [1439, 44.0, 40.0]
+text = "Mata osos rabiosos por el camino hasta tener los que pide Tharnariun."
+status = "unverified"
+sources = ["questie:quest/2138"]
+
+[[step]]
+id = "neds-059"
+do = "complete"
+quest = 4762
+at = [1439, 50.8, 25.6]
+text = "Sube al noreste y llena el tubo en la cascada del río."
+status = "unverified"
+sources = ["questie:quest/4762"]
+
+[[step]]
+id = "neds-060"
+do = "complete"
+quest = 1002
+at = [1439, 48.0, 30.0]
+text = "Termina los colmillos de acechaluna."
+status = "unverified"
+sources = ["questie:quest/1002"]
+
+[[step]]
+id = "neds-061"
+do = "turnin"
+quest = 1002
+at = [1439, 51.29, 24.57]
+text = "Echa los colmillos en el Buzón 323, junto al puente."
+status = "unverified"
+sources = ["questie:quest/1002", "questie:object/17184"]
+
+[[step]]
+id = "neds-062"
+do = "accept"
+quest = 1003
+reqlevel = 7
+at = [1439, 51.29, 24.57]
+text = "Coge del buzón la última: cabelleras de oso canoso (al sur)."
+status = "unverified"
+sources = ["questie:quest/1003", "questie:object/17184"]
+
+[[step]]
+id = "neds-063"
+do = "turnin"
+quest = 965
+npc = 3661
+at = [1439, 54.97, 24.89]
+text = "Sube a la Torre de Althalaxx y entrega a Balthule Shadowstrike."
+status = "unverified"
+sources = ["questie:quest/965", "questie:npc/3661"]
+
+[[step]]
+id = "neds-064"
+do = "accept"
+quest = 966
+reqlevel = 13
+npc = 3661
+at = [1439, 54.97, 24.89]
+text = "Coge su misión: pergaminos de los fanáticos."
+status = "unverified"
+sources = ["questie:quest/966", "questie:npc/3661"]
+
+[[step]]
+id = "neds-065"
+do = "complete"
+quest = 966
+at = [1439, 56.3, 26.7]
+text = "Mata fanáticos Hebra Oscura alrededor de la torre para los pergaminos."
+status = "unverified"
+sources = ["questie:quest/966"]
+
+[[step]]
+id = "neds-066"
+do = "turnin"
+quest = 966
+npc = 3661
+at = [1439, 54.97, 24.89]
+text = "Entrega los pergaminos a Balthule."
+tip = "No cojas la siguiente: se entrega en Vallefresno y no vas a pasar por allí."
+status = "unverified"
+sources = ["questie:quest/966", "questie:npc/3661"]
+
+[[step]]
+id = "neds-067"
+do = "accept"
+quest = 4727
+reqlevel = 12
+at = [1439, 53.11, 18.08]
+text = "Examina la tortuga varada de la playa del noreste."
+status = "unverified"
+sources = ["questie:quest/4727", "questie:object/176196"]
+
+[[step]]
+id = "neds-068"
+do = "complete"
+quest = 947
+at = [1439, 55.7, 35.2]
+text = "Baja a la cueva de la cascada y recoge tallos escaberos y matacabras."
+tip = "Hay setas fuera y dentro de la cueva. Cuidado con los furbolgs de dentro."
+status = "unverified"
+sources = ["questie:quest/947"]
+
+[[step]]
+id = "neds-069"
+do = "turnin"
+quest = 4812
+at = [1439, 47.32, 48.68]
+text = "Vuelve al cristal rojo de la montaña y vierte el agua de la poza."
+status = "unverified"
+sources = ["questie:quest/4812", "questie:object/175524"]
+
+[[step]]
+id = "neds-070"
+do = "accept"
+quest = 4813
+reqlevel = 12
+at = [1439, 47.32, 48.68]
+text = "Coge la siguiente en el cristal."
+status = "unverified"
+sources = ["questie:quest/4813", "questie:object/175524"]
+
+[[step]]
+id = "neds-071"
+do = "hearth"
+zone = 1439
+text = "Usa la piedra de hogar para volver a Auberdine."
+status = "unverified"
+sources = ["questie:npc/6737"]
+
+[[step]]
+id = "neds-072"
+do = "turnin"
+quest = 982
+npc = 6301
+at = [1439, 38.11, 41.17]
+text = "Entrega los cofres a Gorbold."
+status = "unverified"
+sources = ["questie:quest/982", "questie:npc/6301"]
+
+[[step]]
+id = "neds-073"
+do = "turnin"
+quest = 4813
+npc = 2930
+at = [1439, 37.7, 43.41]
+text = "Entrega los fragmentos a Glynda."
+status = "unverified"
+sources = ["questie:quest/4813", "questie:npc/2930"]
+
+[[step]]
+id = "neds-074"
+do = "turnin"
+quest = 2138
+npc = 3701
+at = [1439, 38.84, 43.42]
+text = "Entrega los osos a Tharnariun."
+status = "unverified"
+sources = ["questie:quest/2138", "questie:npc/3701"]
+
+[[step]]
+id = "neds-075"
+do = "accept"
+quest = 2139
+reqlevel = 10
+npc = 3701
+at = [1439, 38.84, 43.42]
+text = "Coge la misión de la Madre de la guarida (al noreste; para el 18-19)."
+status = "unverified"
+sources = ["questie:quest/2139", "questie:npc/3701"]
+
+[[step]]
+id = "neds-076"
+do = "turnin"
+quest = 4762
+npc = 3649
+at = [1439, 37.4, 40.13]
+text = "Entrega el agua del río a Thundris."
+status = "unverified"
+sources = ["questie:quest/4762", "questie:npc/3649"]
+
+[[step]]
+id = "neds-077"
+do = "accept"
+quest = 4763
+reqlevel = 15
+npc = 3649
+at = [1439, 37.4, 40.13]
+text = "Coge la misión de los Madera Negra corruptos (para el 18-19)."
+status = "unverified"
+sources = ["questie:quest/4763", "questie:npc/3649"]
+
+[[step]]
+id = "neds-078"
+do = "turnin"
+quest = 947
+npc = 3583
+at = [1439, 37.32, 43.64]
+text = "Entrega las setas a Barithras."
+status = "unverified"
+sources = ["questie:quest/947", "questie:npc/3583"]
+
+[[step]]
+id = "neds-079"
+do = "accept"
+quest = 948
+reqlevel = 12
+npc = 3583
+at = [1439, 37.32, 43.64]
+text = "Coge la misión para Onu."
+status = "unverified"
+sources = ["questie:quest/948", "questie:npc/3583"]
+
+[[step]]
+id = "neds-080"
+do = "turnin"
+quest = 4723
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega la criatura varada del norte a Gwennyth."
+status = "unverified"
+sources = ["questie:quest/4723", "questie:npc/10219"]
+
+[[step]]
+id = "neds-081"
+do = "turnin"
+quest = 4725
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega la tortuga del norte."
+status = "unverified"
+sources = ["questie:quest/4725", "questie:npc/10219"]
+
+[[step]]
+id = "neds-082"
+do = "turnin"
+quest = 4727
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega la tortuga del noreste."
+status = "unverified"
+sources = ["questie:quest/4727", "questie:npc/10219"]
+
+[[step]]
+id = "neds-083"
+do = "accept"
+quest = 1138
+reqlevel = 15
+npc = 10216
+at = [1439, 36.1, 44.93]
+text = "Coge la misión de Gubber Blump: carne de cangrejo (desde el 15)."
+status = "unverified"
+sources = ["questie:quest/1138", "questie:npc/10216"]
+
+[[step]]
+id = "neds-084"
+do = "accept"
+quest = 4740
+reqlevel = 15
+at = [1439, 37.22, 44.22]
+text = "Coge en el cartel la busca de Murkdeep (desde el 15)."
+status = "unverified"
+sources = ["questie:quest/4740", "questie:object/175320"]
+
+[[step]]
+id = "neds-085"
+do = "accept"
+quest = 729
+reqlevel = 15
+npc = 2913
+at = [1439, 37.44, 41.84]
+text = "Coge el prospector despistado de la Arqueóloga Hollee (desde el 15)."
+status = "unverified"
+sources = ["questie:quest/729", "questie:npc/2913"]
+
+[[step]]
+id = "neds-086"
+do = "complete"
+quest = 985
+at = [1439, 39.6, 54.4]
+text = "Baja al sur. Mata exploradores y hablavientos en el campamento furbolg corrupto."
+status = "unverified"
+sources = ["questie:quest/985"]
+
+[[step]]
+id = "neds-087"
+do = "complete"
+quest = 957
+at = [1439, 42.4, 61.8]
+text = "En Ameth'Aran, quema el sello en la llama antigua."
+status = "unverified"
+sources = ["questie:quest/957"]
+
+[[step]]
+id = "neds-088"
+do = "complete"
+quest = 963
+at = [1439, 41.8, 60.7]
+text = "Mata a Anaya Dawnrunner, el espíritu de Ameth'Aran, por el colgante."
+status = "unverified"
+sources = ["questie:quest/963"]
+
+[[step]]
+id = "neds-089"
+do = "accept"
+quest = 4722
+reqlevel = 11
+at = [1439, 37.09, 62.18]
+text = "En la playa al oeste de Ameth'Aran, examina la tortuga varada."
+status = "unverified"
+sources = ["questie:quest/4722", "questie:object/176190"]
+
+[[step]]
+id = "neds-090"
+do = "accept"
+quest = 4728
+reqlevel = 12
+at = [1439, 36.01, 70.88]
+text = "Sigue la playa al sur: criatura varada."
+status = "unverified"
+sources = ["questie:quest/4728", "questie:object/175226"]
+
+[[step]]
+id = "neds-091"
+do = "complete"
+quest = 1138
+at = [1439, 36.0, 66.0]
+text = "Mata cangrejos de arrecife por la playa para la carne."
+status = "unverified"
+sources = ["questie:quest/1138"]
+
+[[step]]
+id = "neds-092"
+do = "complete"
+quest = 4740
+at = [1439, 36.4, 76.5]
+text = "Limpia el campamento múrloc de la playa y mata a Murkdeep cuando salga."
+tip = "Murkdeep aparece tras unas oleadas de múrlocs. Empieza con vida y maná llenos."
+status = "unverified"
+sources = ["questie:quest/4740"]
+
+[[step]]
+id = "neds-093"
+do = "turnin"
+quest = 948
+npc = 3616
+at = [1439, 43.55, 76.29]
+text = "Sube al este hasta Onu, el anciano, y entrega la misión de Barithras."
+status = "unverified"
+sources = ["questie:quest/948", "questie:npc/3616"]
+
+[[step]]
+id = "neds-094"
+do = "turnin"
+quest = 952
+npc = 3616
+at = [1439, 43.55, 76.29]
+text = "Entrega el Bosque de los Ancestros a Onu."
+status = "unverified"
+sources = ["questie:quest/952", "questie:npc/3616"]
+
+[[step]]
+id = "neds-095"
+do = "accept"
+quest = 944
+reqlevel = 12
+npc = 3616
+at = [1439, 43.55, 76.29]
+text = "Coge la misión de la guja del maestro."
+status = "unverified"
+sources = ["questie:quest/944", "questie:npc/3616"]
+
+[[step]]
+id = "neds-096"
+do = "complete"
+quest = 1003
+at = [1439, 40.0, 79.5]
+text = "Mata osos de cardo canosos al suroeste de Onu para las cabelleras."
+status = "unverified"
+sources = ["questie:quest/1003"]
+
+[[step]]
+id = "neds-097"
+do = "turnin"
+quest = 1003
+at = [1439, 41.39, 80.56]
+text = "Echa las cabelleras en el Buzón 525."
+status = "unverified"
+sources = ["questie:quest/1003", "questie:object/17185"]
+
+[[step]]
+id = "neds-098"
+do = "accept"
+quest = 4730
+reqlevel = 12
+at = [1439, 32.69, 80.79]
+text = "Examina la criatura varada al oeste."
+status = "unverified"
+sources = ["questie:quest/4730", "questie:object/175227"]
+
+[[step]]
+id = "neds-099"
+do = "turnin"
+quest = 729
+npc = 2917
+at = [1439, 35.73, 83.7]
+text = "Habla con el Prospector Remtravel, en la excavación del sur."
+status = "unverified"
+sources = ["questie:quest/729", "questie:npc/2917"]
+
+[[step]]
+id = "neds-100"
+do = "accept"
+quest = 731
+reqlevel = 15
+npc = 2917
+at = [1439, 35.73, 83.7]
+text = "Coge la escolta de Remtravel."
+status = "unverified"
+sources = ["questie:quest/731", "questie:npc/2917"]
+
+[[step]]
+id = "neds-101"
+do = "complete"
+quest = 731
+at = [1439, 35.67, 84.03]
+text = "Escolta a Remtravel por la excavación."
+tip = "Se para a mirar cosas y atrae gnolls: no te alejes."
+status = "unverified"
+sources = ["questie:quest/731"]
+
+[[step]]
+id = "neds-102"
+do = "accept"
+quest = 4731
+reqlevel = 13
+at = [1439, 31.67, 83.68]
+text = "En la playa del sur, examina la tortuga varada."
+status = "unverified"
+sources = ["questie:quest/4731", "questie:object/176198"]
+
+[[step]]
+id = "neds-103"
+do = "accept"
+quest = 4732
+reqlevel = 13
+at = [1439, 31.23, 85.6]
+text = "Otra tortuga varada al lado."
+status = "unverified"
+sources = ["questie:quest/4732", "questie:object/176191"]
+
+[[step]]
+id = "neds-104"
+do = "accept"
+quest = 4733
+reqlevel = 13
+at = [1439, 31.26, 87.44]
+text = "Y la criatura varada del extremo sur."
+status = "unverified"
+sources = ["questie:quest/4733", "questie:object/175230"]
+
+[[step]]
+id = "neds-105"
+do = "turnin"
+quest = 944
+at = [1439, 38.6, 86.2]
+text = "Ve a la Guja del Maestro y examina el cuenco de adivinación."
+status = "unverified"
+sources = ["questie:quest/944", "questie:object/10076"]
+
+[[step]]
+id = "neds-106"
+do = "accept"
+quest = 949
+reqlevel = 12
+at = [1439, 38.6, 86.2]
+text = "Coge la siguiente en el cuenco."
+status = "unverified"
+sources = ["questie:quest/949", "questie:object/10076"]
+
+[[step]]
+id = "neds-107"
+do = "turnin"
+quest = 949
+at = [1439, 38.54, 86.05]
+text = "Busca el Tomo Crepuscular en el campamento."
+status = "unverified"
+sources = ["questie:quest/949", "questie:object/12666"]
+
+[[step]]
+id = "neds-108"
+do = "accept"
+quest = 950
+reqlevel = 12
+at = [1439, 38.54, 86.05]
+text = "Coge del tomo la vuelta con Onu."
+status = "unverified"
+sources = ["questie:quest/950", "questie:object/12666"]
+
+[[step]]
+id = "neds-109"
+do = "accept"
+quest = 98042
+reqlevel = 12
+at = [1439, 38.54, 86.05]
+text = "Coge también del tomo la misión del Ojo (nueva de Forever)."
+status = "unverified"
+sources = ["questie:quest/98042", "questie:object/12666"]
+
+[[step]]
+id = "neds-110"
+do = "complete"
+quest = 98042
+at = [1439, 38.7, 86.8]
+text = "Mata discípulos y matones Crepusculares hasta que caiga el Ojo sin par."
+status = "unverified"
+sources = ["questie:quest/98042"]
+
+[[step]]
+id = "neds-111"
+do = "turnin"
+quest = 950
+npc = 3616
+at = [1439, 43.55, 76.29]
+text = "Entrega el tomo a Onu."
+status = "unverified"
+sources = ["questie:quest/950", "questie:npc/3616"]
+
+[[step]]
+id = "neds-112"
+do = "accept"
+quest = 951
+reqlevel = 12
+npc = 3616
+at = [1439, 43.55, 76.29]
+text = "Coge las reliquias de Mathystra (al norte, para el 19-20)."
+status = "unverified"
+sources = ["questie:quest/951", "questie:npc/3616"]
+
+[[step]]
+id = "neds-113"
+do = "accept"
+quest = 98013
+reqlevel = 12
+npc = 270269
+at = [1439, 43.75, 76.5]
+text = "Coge con Arbal, junto a Onu, la misión de las nagas (nueva de Forever)."
+status = "unverified"
+sources = ["questie:quest/98013", "questie:npc/270269"]
+
+[[step]]
+id = "neds-114"
+do = "hearth"
+zone = 1439
+text = "Usa la piedra de hogar para volver a Auberdine."
+status = "unverified"
+sources = ["questie:npc/6737"]
+
+[[step]]
+id = "neds-115"
+do = "turnin"
+quest = 985
+npc = 3693
+at = [1439, 39.37, 43.48]
+text = "Entrega los furbolgs a Terenthis."
+tip = "No cojas El maestro perdido: termina en Vallefresno."
+status = "unverified"
+sources = ["questie:quest/985", "questie:npc/3693"]
+
+[[step]]
+id = "neds-116"
+do = "turnin"
+quest = 963
+npc = 3644
+at = [1439, 35.74, 43.71]
+text = "Entrega el colgante de Anaya a Cerellean."
+status = "unverified"
+sources = ["questie:quest/963", "questie:npc/3644"]
+
+[[step]]
+id = "neds-117"
+do = "turnin"
+quest = 1138
+npc = 10216
+at = [1439, 36.1, 44.93]
+text = "Entrega la carne a Gubber Blump."
+status = "unverified"
+sources = ["questie:quest/1138", "questie:npc/10216"]
+
+[[step]]
+id = "neds-118"
+do = "turnin"
+quest = 4740
+npc = 2930
+at = [1439, 37.7, 43.41]
+text = "Entrega Murkdeep a Glynda."
+status = "unverified"
+sources = ["questie:quest/4740", "questie:npc/2930"]
+
+[[step]]
+id = "neds-119"
+do = "turnin"
+quest = 731
+npc = 2913
+at = [1439, 37.44, 41.84]
+text = "Entrega la escolta a la Arqueóloga Hollee."
+tip = "No cojas la siguiente: se entrega en Darnassus."
+status = "unverified"
+sources = ["questie:quest/731", "questie:npc/2913"]
+
+[[step]]
+id = "neds-120"
+do = "turnin"
+quest = 98042
+npc = 3649
+at = [1439, 37.4, 40.13]
+text = "Entrega el Ojo sin par a Thundris."
+status = "unverified"
+sources = ["questie:quest/98042", "questie:npc/3649"]
+
+[[step]]
+id = "neds-121"
+do = "turnin"
+quest = 4722
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega a Gwennyth la tortuga de Ameth'Aran."
+status = "unverified"
+sources = ["questie:quest/4722", "questie:npc/10219"]
+
+[[step]]
+id = "neds-122"
+do = "turnin"
+quest = 4728
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega a Gwennyth la criatura del sur."
+status = "unverified"
+sources = ["questie:quest/4728", "questie:npc/10219"]
+
+[[step]]
+id = "neds-123"
+do = "turnin"
+quest = 4730
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega a Gwennyth la criatura del suroeste."
+status = "unverified"
+sources = ["questie:quest/4730", "questie:npc/10219"]
+
+[[step]]
+id = "neds-124"
+do = "turnin"
+quest = 4731
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega a Gwennyth la primera tortuga del sur."
+status = "unverified"
+sources = ["questie:quest/4731", "questie:npc/10219"]
+
+[[step]]
+id = "neds-125"
+do = "turnin"
+quest = 4732
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega a Gwennyth la segunda tortuga del sur."
+status = "unverified"
+sources = ["questie:quest/4732", "questie:npc/10219"]
+
+[[step]]
+id = "neds-126"
+do = "turnin"
+quest = 4733
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega a Gwennyth la criatura del extremo sur."
+status = "unverified"
+sources = ["questie:quest/4733", "questie:npc/10219"]
+
+[[step]]
+id = "neds-127"
+do = "accept"
+quest = 87760
+reqlevel = 15
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Coge con Gwennyth la misión de la vara (nueva de Forever): sale al entregar todas las varadas."
+status = "unverified"
+sources = ["questie:quest/87760", "questie:npc/10219"]
+
+[[step]]
+id = "neds-128"
+do = "turnin"
+quest = 957
+npc = 3650
+at = [1439, 44.17, 36.29]
+text = "Sube al noreste. En Bashal'Aran, entrega el sello quemado a Asterion."
+status = "unverified"
+sources = ["questie:quest/957", "questie:npc/3650"]
+
+[[step]]
+id = "neds-129"
+do = "complete"
+quest = 2139
+at = [1439, 51.5, 38.3]
+text = "Mata a la Madre de la guarida, en su cueva al este."
+tip = "Tiene cachorros: llévalos de uno en uno y guarda pociones."
+status = "unverified"
+sources = ["questie:quest/2139"]
+
+[[step]]
+id = "neds-130"
+do = "complete"
+quest = 4763
+at = [1439, 52.5, 33.4]
+text = "En el campamento Madera Negra del norte, mata a Xabraxxis y abre su bolsa."
+status = "unverified"
+sources = ["questie:quest/4763"]
+
+[[step]]
+id = "neds-131"
+do = "complete"
+quest = 951
+at = [1439, 59.7, 21.9]
+text = "Sube al extremo norte: recoge las reliquias de Mathystra del suelo."
+status = "unverified"
+sources = ["questie:quest/951"]
+
+[[step]]
+id = "neds-132"
+do = "complete"
+quest = 98013
+at = [1439, 59.0, 20.5]
+text = "Mata mirmidones, hechiceras y guerreros Escamatormenta."
+tip = "El Barón Marinous (21) puede soltar una esfera que inicia misión."
+status = "unverified"
+sources = ["questie:quest/98013"]
+
+[[step]]
+id = "neds-133"
+do = "accept"
+quest = 98028
+reqlevel = 17
+at = [1439, 59.13, 22.79]
+text = "Si te cayó la Esfera de agua turbia del Barón Marinous, úsala (nueva de Forever)."
+optional = true
+status = "unverified"
+sources = ["questie:quest/98028", "questie:item/279275", "questie:npc/270294"]
+
+[[step]]
+id = "neds-134"
+do = "complete"
+quest = 87760
+at = [1439, 49.5, 13.4]
+text = "Al oeste, mata Señoras de las bestias Escamatormenta hasta que caiga la vara."
+status = "unverified"
+sources = ["questie:quest/87760"]
+
+[[step]]
+id = "neds-135"
+do = "turnin"
+quest = 951
+npc = 3616
+at = [1439, 43.55, 76.29]
+text = "Baja por el camino hasta Onu y entrega las reliquias."
+status = "unverified"
+sources = ["questie:quest/951", "questie:npc/3616"]
+
+[[step]]
+id = "neds-136"
+do = "turnin"
+quest = 98013
+npc = 270269
+at = [1439, 43.75, 76.5]
+text = "Entrega las nagas a Arbal."
+status = "unverified"
+sources = ["questie:quest/98013", "questie:npc/270269"]
+
+[[step]]
+id = "neds-137"
+do = "turnin"
+quest = 98028
+npc = 3616
+at = [1439, 43.55, 76.29]
+text = "Entrega la esfera a Onu."
+optional = true
+status = "unverified"
+sources = ["questie:quest/98028", "questie:npc/3616"]
+
+[[step]]
+id = "neds-138"
+do = "goto"
+at = [1439, 37.0, 44.0, "Auberdine"]
+radius = 30
+text = "Vuelve a Auberdine por el camino del oeste."
+tip = "Si la piedra de hogar está lista, úsala."
+status = "unverified"
+sources = ["https://games.gg/world-of-warcraft/guides/wow-forever-darkshore-leveling-guide/"]
+
+[[step]]
+id = "neds-139"
+do = "turnin"
+quest = 2139
+npc = 3701
+at = [1439, 38.84, 43.42]
+text = "Entrega la Madre de la guarida a Tharnariun."
+status = "unverified"
+sources = ["questie:quest/2139", "questie:npc/3701"]
+
+[[step]]
+id = "neds-140"
+do = "turnin"
+quest = 4763
+npc = 3649
+at = [1439, 37.4, 40.13]
+text = "Entrega el talismán a Thundris."
+status = "unverified"
+sources = ["questie:quest/4763", "questie:npc/3649"]
+
+[[step]]
+id = "neds-141"
+do = "turnin"
+quest = 87760
+npc = 10219
+at = [1439, 36.62, 45.59]
+text = "Entrega la vara a Gwennyth."
+status = "unverified"
+sources = ["questie:quest/87760", "questie:npc/10219"]
+
+[[step]]
+id = "neds-142"
+do = "accept"
+quest = 98461
+reqlevel = 18
+npc = 2913
+at = [1439, 37.44, 41.84]
+text = "Coge con Hollee el amor no correspondido (nueva de Forever): se entrega en Menethil."
+tip = "La entregas en Puerto de Menethil (Los Humedales) hacia el 26: déjala en el registro."
+optional = true
+status = "unverified"
+sources = ["questie:quest/98461", "questie:npc/2913"]
+
+[[step]]
+id = "neds-143"
+do = "level"
+level = 20
+text = "Deberías estar en el 20. Si te falta poco, mata nagas o trilladores antes de viajar."
+status = "unverified"
+sources = ["https://games.gg/world-of-warcraft/guides/wow-forever-darkshore-leveling-guide/"]

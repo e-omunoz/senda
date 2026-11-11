@@ -1,0 +1,222 @@
+# Druida: qué se aprende en cada nivel. Escrito para Senda (no migrado).
+# Mismo formato que data/knowledge/mage/spells.toml (spells, names, no_id, [[check]], [ids]).
+# Solo hechizos nuevos (los rangos nuevos de lo que ya tienes no se listan). Ids de rango 1 de Classic salvo donde
+# la nota dice que son de Forever. `quest = true`: no lo vende el instructor, sale de una misión de clase.
+id = "druid-spells"
+class = "DRUID"
+kind = "spells"
+title = "Hechizos del instructor de druida"
+levels = [1, 60]
+order = 80
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/druid/", "questie:quest/5931", "questie:quest/5061", "questie:quest/98393", "questie:npc/4217", "questie:npc/12042"]
+checked = "2026-11-11"
+note = "Niveles: lista «Abilities by level» de Warcraft Tavern (Forever). Los ids salen de memoria (Classic), salvo los marcados de Forever, que da Warcraft Tavern: todos sin comprobar en el cliente. Instructores: Mardant Strongoak (Cañada Umbría), Kal (Dolanaar), Mathrengyl Bearwalker, Denatharion y Fylerian Nightwing (Darnassus, Enclave Cenarion) y Loganaar (Claro de la Luna)."
+
+[[train]]
+level = 1
+names = ["Cólera", "Toque de sanación", "Marca de lo Salvaje"]
+spells = [5176, 5185, 1126]
+note = "Se conocen al empezar o se aprenden con Mardant Strongoak al nivel 1."
+
+[[train]]
+level = 4
+names = ["Fuego lunar", "Rejuvenecimiento"]
+spells = [8921, 774]
+
+[[train]]
+level = 6
+names = ["Espinas"]
+spells = [467]
+
+[[train]]
+level = 8
+names = ["Raíces enredadoras"]
+spells = [339]
+note = "En Forever se puede lanzar en interiores."
+
+[[train]]
+level = 10
+names = ["Forma de oso", "Gruñido", "Magullar", "Rugido desmoralizador", "Teletransporte: Claro de la Luna", "Garras de la naturaleza"]
+spells = [5487, 6795, 6807, 99, 18960, 16689]
+quest = true
+note = "Forma de oso sale de la cadena Atender la llamada → Claro de la Luna → Gran espíritu del oso → De vuelta a Darnassus (5923/5925, 5921, 5929, 5931). Warcraft Tavern dice que la misión también da Gruñido, Magullar y Teletransporte: Claro de la Luna. Garras de la naturaleza es de base en Forever (en Classic era un hechizo del 10 también)."
+
+[[train]]
+level = 12
+names = ["Recrecimiento", "Enfurecer", "Revivir"]
+spells = [8936, 5229, 1237951]
+note = "Revivir (resurrección fuera de combate) es nuevo en Forever; id 1237951 de Warcraft Tavern."
+
+[[train]]
+level = 14
+names = ["Azote", "Curar envenenamiento"]
+spells = [5211, 8946]
+note = "Curar envenenamiento sale de la cadena Lecciones de nuevo (6121-6125)."
+
+[[train]]
+level = 16
+names = ["Flagelo", "Forma acuática"]
+spells = [779, 1066]
+quest = true
+note = "Forma acuática sale de la cadena Una lección que aprender (26, 29, 272, 5061)."
+
+[[train]]
+level = 18
+names = ["Fuego feérico", "Hibernar"]
+spells = [770, 2637]
+note = "Fuego feérico es de base en Forever (ya no es talento) y se usa en cualquier forma según las rotaciones de Warcraft Tavern; puede que sea otro id en forma."
+
+[[train]]
+level = 20
+names = ["Forma felina", "Arañazo", "Acechar", "Destripar", "Triturar", "Fuego estelar", "Renacer", "Augurio de claridad"]
+spells = [768, 1082, 5215, 1079, 5221, 2912, 20484, 16864]
+quest = true
+note = "Forma felina, Arañazo, Acechar y Destripar salen de la misión El gran espíritu felino (98393 → 98394 → 98396 → 98397), nueva en Forever. Triturar baja del 22 al 20. Augurio de claridad es de base (en Classic era talento). Renacer pide un componente según el rango. Desde el 20 se pueden aprender armas de asta (Woo Ping, Ventormenta)."
+
+[[train]]
+level = 22
+names = ["Calmar animal"]
+spells = [2908]
+
+[[train]]
+level = 24
+names = ["Eliminar maldición", "Arañar", "Mordedura feroz"]
+spells = [2782, 1822, 22568]
+note = "Mordedura feroz baja del 32 al 24 en Forever. Furia del tigre (5217, 24 en Classic) no aparece en la lista de Warcraft Tavern: compruébalo en el instructor."
+
+[[train]]
+level = 26
+names = ["Carrerilla", "Suprimir veneno"]
+spells = [1850, 2893]
+
+[[train]]
+level = 28
+names = ["Rugido desafiante", "Agazaparse"]
+spells = [5209, 8998]
+
+[[train]]
+level = 30
+names = ["Forma de viaje", "Tranquilidad"]
+spells = [783, 740]
+note = "Forma de viaje: instantánea, +40% de velocidad al aire libre; diez niveles antes que la montura."
+
+[[train]]
+level = 32
+names = ["Rastrear humanoides", "Devastar"]
+spells = [5225, 6785]
+no_id = ["Aplomo (Poised)"]
+note = "Warcraft Tavern lista «Poised» al 32 (felino): habilidad o pasiva nueva sin id conocido."
+
+[[train]]
+level = 36
+names = ["Regeneración frenética", "Abalanzarse"]
+spells = [22842, 9005]
+
+[[train]]
+level = 40
+names = ["Forma de oso temible", "Estimular", "Huracán", "Gracia felina"]
+spells = [9634, 29166, 16914, 20719]
+note = "Al 40 también: equitación de aprendiz y doble especialización."
+
+[[train]]
+level = 44
+names = ["Piel de corteza"]
+spells = [22812]
+
+[[train]]
+level = 50
+names = ["Don de lo Salvaje"]
+spells = [21849]
+note = "No aparece en la lista de Warcraft Tavern; en Classic es del 50. Pide Baya espinosa salvaje."
+
+[[check]]
+spell = 5487
+level = 10
+name = "Forma de oso"
+
+[[check]]
+spell = 18960
+level = 10
+name = "Teletransporte: Claro de la Luna"
+
+[[check]]
+spell = 1066
+level = 16
+name = "Forma acuática"
+
+[[check]]
+spell = 770
+level = 18
+name = "Fuego feérico"
+
+[[check]]
+spell = 768
+level = 20
+name = "Forma felina"
+
+[[check]]
+spell = 1079
+level = 20
+name = "Destripar"
+
+[[check]]
+spell = 22568
+level = 24
+name = "Mordedura feroz"
+
+[[check]]
+spell = 783
+level = 30
+name = "Forma de viaje"
+
+[[check]]
+spell = 9634
+level = 40
+name = "Forma de oso temible"
+
+[ids]
+# Formas (ids de Classic)
+bear_form = 5487
+dire_bear_form = 9634
+aquatic_form = 1066
+cat_form = 768
+travel_form = 783
+moonkin_form = 24858
+# Hechizos clave
+wrath = 5176
+moonfire = 8921
+healing_touch = 5185
+rejuvenation = 774
+regrowth = 8936
+entangling_roots = 339
+natures_grasp = 16689
+faerie_fire = 770
+feral_charge = 16979
+prowl = 5215
+claw = 1082
+rake = 1822
+rip = 1079
+shred = 5221
+ferocious_bite = 22568
+ravage = 6785
+maul = 6807
+swipe = 779
+demoralizing_roar = 99
+growl = 6795
+enrage = 5229
+bash = 5211
+innervate = 29166
+barkskin = 22812
+teleport_moonglade = 18960
+# Nuevos de Forever (ids de Warcraft Tavern, sin comprobar)
+revive = 1237951
+shifting_power = 1322605
+primal_bite = 407995
+lacerate = 1235827
+feral_charge_forever = 1238122
+enraged_regeneration = 402913
+# Auras de Marca/Don de lo Salvaje (aviso «sin Marca»)
+mark_buffs = [1126, 5232, 6756, 5234, 8907, 9884, 9885, 21849, 21850]
+# Auras de Espinas (aviso «sin Espinas»)
+thorns_buffs = [467, 782, 1075, 8914, 9756, 9910]

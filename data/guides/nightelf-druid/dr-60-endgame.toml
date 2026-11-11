@@ -1,0 +1,54 @@
+# Druida: misiones de clase opcionales de nivel máximo. Ids y coordenadas de QuestieDB (Forever); textos propios.
+id = "dr-60-endgame"
+title = "Druida: nivel 60 (opcional)"
+levels = [60, 60]
+map = 1450
+summary = "Opcional: el libro de La Masacre, la cadena de Torwa en el Templo Sumergido y las misiones de clase de Zul'Gurub."
+if = { class = ["DRUID"] }
+
+[[step]]
+id = "dr-60-endgame-001"
+do = "note"
+optional = true
+text = "Lanza Teletransporte: Claro de la Luna y entrena lo del 60 con Loganaar si no lo hiciste en Ventormenta."
+status = "unverified"
+sources = ["questie:npc/12042"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-60-endgame-002"
+do = "turnin"
+quest = 7506
+npc = 14381
+optional = true
+text = "En La Masacre, si te sale el libro de druida, entrégalo en la biblioteca: da un objeto de clase a elegir."
+tip = "Lo suelta el capitán Kromcrush o un tomo polvoriento. Cualquier druida de nivel 54+ puede cogerlo."
+status = "unverified"
+sources = ["questie:quest/7506", "questie:item/18364", "questie:npc/14381"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-60-endgame-003"
+do = "turnin"
+quest = 9053
+npc = 9619
+at = [1449, 71.64, 75.96]
+optional = true
+text = "Si cogiste la última misión de Torwa, tras el Templo Sumergido entrégale la enredadera pútrida en Un'Goro."
+status = "unverified"
+sources = ["questie:quest/9053", "questie:npc/9619"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-60-endgame-004"
+do = "accept"
+quest = 8110
+reqlevel = 60
+npc = 14904
+at = [1434, 15.3, 16.02]
+optional = true
+text = "Si haces Zul'Gurub: en la isla de Yojamba (Vega de Tuercespina), Maywiki da las misiones de clase del druida."
+tip = "Piden reputación con la tribu Zandalar y monedas o bijous de Zul'Gurub."
+status = "unverified"
+sources = ["questie:quest/8110", "questie:npc/14904", "https://warcraft.wiki.gg/wiki/Druid_Quests"]
+checked = "2026-11-11"

@@ -600,6 +600,22 @@ const scenarios = [
     `,
   },
   {
+    id: 'j',
+    title: 'Night elf druid: guide auto-selected, then the whole guide plays through',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      local E = S().Engine
+      Check(E:GuideId() == "nightelf-druid", "guide nightelf-druid auto-selected", E:GuideId())
+      Check(StepId() == "nesg-001", "starts at the first Shadowglen step", StepId())
+      RunAllTabs()
+      local r = AutoPlay(3000)
+      Sim.Out(string.format("    auto %d, manual %d, stuck %d", r.auto, r.manual, #r.stuck))
+      Check(E:IsFinished(), "guide finished", StepId())
+      Check(#r.stuck == 0, "no auto-detectable step got stuck", table.concat(r.stuck, ", "))
+    `,
+  },
+  {
     id: 'k',
     title: 'Character without a guide (night elf warrior): HUD, slash and panel still work',
     char: 'nightelf-warrior',

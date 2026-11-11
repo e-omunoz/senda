@@ -1,0 +1,74 @@
+# Elfo de la noche: viaje de Costa Oscura a los Reinos del Este (20).
+# En Forever hay barco de Auberdine al puerto de Ventormenta (games.gg); en Classic solo había Auberdine-Menethil.
+# Sigue con shared:a19-crestagrana (empieza en Ventormenta y cruza Elwynn hasta Tres Caminos).
+# Coordenadas de los muelles: aproximadas, sin dato en QuestieDB.
+id = "ne-viaje-reinos-del-este"
+title = "Viaje a Ventormenta"
+levels = [20, 20]
+map = 1453
+summary = "Barco de Auberdine al puerto de Ventormenta, ruta de vuelo de Ventormenta, profesiones a Experto y salida hacia Crestagrana."
+link = "https://games.gg/world-of-warcraft/guides/wow-forever-darkshore-leveling-guide/"
+
+[[step]]
+id = "nevj-001"
+do = "goto"
+at = [1439, 31.5, 44.5, "Muelle de Auberdine"]
+radius = 25
+text = "En Auberdine, ve al muelle del oeste y toma el barco a Ventormenta."
+tip = "Si no encuentras el barco de Ventormenta, toma el de Menethil y sigue por Los Humedales, Loch Modan y Forjaz (tranvía)."
+status = "unverified"
+sources = ["https://games.gg/world-of-warcraft/guides/wow-forever-darkshore-leveling-guide/"]
+note = "Coordenada aproximada del muelle; revisar en el juego."
+
+[[step]]
+id = "nevj-002"
+do = "goto"
+at = [1453, 21.0, 30.0, "Puerto de Ventormenta"]
+radius = 40
+text = "Baja en el puerto de Ventormenta."
+status = "unverified"
+sources = ["https://games.gg/world-of-warcraft/guides/wow-forever-darkshore-leveling-guide/"]
+note = "Coordenada aproximada del puerto en el mapa de Forever; revisar en el juego."
+
+[[step]]
+id = "nevj-003"
+do = "getfp"
+npc = 352
+node = "2"
+at = [1453, 71.3, 72.2]
+text = "Cruza la ciudad y coge la ruta de vuelo con Dungar Longdrink."
+tip = "Coordenadas del mapa de Ventormenta de Forever (ver data/shared/ROUTE-a.md)."
+status = "unverified"
+sources = ["questie:npc/352"]
+
+[[step]]
+id = "nevj-004"
+do = "note"
+npc = 5566
+at = [1453, 54.29, 84.1]
+text = "Herboristería: con 125 o más, entrena Experto con Tannysa, en el Distrito de los Magos."
+optional = true
+if = { prof = ["herbalism"] }
+status = "unverified"
+sources = ["questie:npc/5566"]
+
+[[step]]
+id = "nevj-005"
+do = "note"
+npc = 5499
+at = [1453, 55.66, 86.09]
+text = "Alquimia: con 125 o más, entrena Experto con Lilyssia Nightbreeze, al lado de Tannysa."
+tip = "Las pociones de sanación inferiores se venden bien: guarda unas cuantas para Crestagrana."
+optional = true
+if = { prof = ["alchemy"] }
+status = "unverified"
+sources = ["questie:npc/5499"]
+
+[[step]]
+id = "nevj-006"
+do = "goto"
+at = [1429, 32.0, 50.0, "Puerta de Ventormenta"]
+radius = 40
+text = "Sal por la puerta principal de Ventormenta al Bosque de Elwynn: la ruta sigue hacia Crestagrana."
+status = "unverified"
+sources = ["https://games.gg/world-of-warcraft/guides/wow-forever-darkshore-leveling-guide/"]

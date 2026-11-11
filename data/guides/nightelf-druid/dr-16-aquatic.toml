@@ -1,0 +1,149 @@
+# Druida elfo de la noche: Forma acuática, primera parte (16). Ids y coordenadas de QuestieDB (Forever); textos propios.
+# Viaje a Darnassus del 16: entrega de Curar envenenamiento (6125), entrenamiento y comienzo de la Forma acuática.
+# Prueba del lago en el Claro de la Luna y mitad del colgante de Costa Oscura (Ruinas de Mathystra).
+# La mitad de los Páramos de Poniente y las entregas van en dr-18-sea-lion.
+id = "dr-16-aquatic"
+title = "Druida: Forma acuática (16)"
+levels = [16, 17]
+map = 1450
+summary = "Nivel 16: Curar envenenamiento, Prueba del lago en el Claro de la Luna y la mitad del colgante hundida junto a las Ruinas de Mathystra."
+if = { class = ["DRUID"] }
+
+[[step]]
+id = "dr-16-aquatic-001"
+do = "goto"
+npc = 11800
+at = [1450, 44.15, 45.23]
+radius = 10
+text = "En el Claro de la Luna, pide a Silva Fil'naveth el vuelo de druida a la Aldea Rut'theran y entra en Darnassus."
+tip = "Si no estás en el Claro, coge el barco de Auberdine a Rut'theran."
+status = "unverified"
+sources = ["questie:npc/11800", "https://warcraft.wiki.gg/wiki/Trial_of_the_Sea_Lion"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-16-aquatic-002"
+do = "turnin"
+quest = 6125
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Entrega a Mathrengyl la misión del veneno: aprendes Curar envenenamiento."
+status = "unverified"
+sources = ["questie:quest/6125", "questie:npc/4217", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-16-aquatic-003"
+do = "train"
+spells = [779]
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Nivel 16: entrena Flagelo y los rangos nuevos."
+tip = "Flagelo pega a todo lo que tienes delante en forma de oso: con él puedes coger dos o tres bichos a la vez."
+status = "unverified"
+sources = ["questie:npc/4217", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-16-aquatic-004"
+do = "accept"
+quest = 26
+reqlevel = 16
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Coge con Mathrengyl la misión de la Forma acuática."
+status = "unverified"
+sources = ["questie:quest/26", "questie:npc/4217"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-16-aquatic-005"
+do = "turnin"
+quest = 26
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Lanza Teletransporte: Claro de la Luna y entrega a Dendrite."
+status = "unverified"
+sources = ["questie:quest/26", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-16-aquatic-006"
+do = "accept"
+quest = 29
+reqlevel = 16
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Coge la Prueba del lago."
+status = "unverified"
+sources = ["questie:quest/29", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-16-aquatic-007"
+do = "loot"
+item = 15877
+count = 1
+at = [1450, 52.1, 50.1]
+wps = [[1450, 48.0, 47.1, "Contenedor"], [1450, 52.1, 53.4, "Contenedor"], [1450, 53.0, 48.5, "Contenedor"]]
+text = "Bucea en el lago del centro del Claro y abre un contenedor del fondo: saca la baratija del santuario."
+tip = "Hay varios contenedores repartidos por el fondo. Vigila la barra de respiración."
+status = "unverified"
+sources = ["questie:quest/29", "questie:object/177785", "questie:item/15877"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-16-aquatic-008"
+do = "complete"
+quest = 29
+item = 15877
+at = [1450, 36.0, 41.42]
+text = "Ve al Santuario de Remulos, al noroeste, y usa allí la baratija."
+status = "unverified"
+sources = ["questie:quest/29", "questie:object/15885"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-16-aquatic-009"
+do = "turnin"
+quest = 29
+npc = 11799
+at = [1450, 36.52, 40.1]
+text = "Habla con Tajarri, en el santuario, y entrega la prueba."
+status = "unverified"
+sources = ["questie:quest/29", "questie:npc/11799"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-16-aquatic-010"
+do = "accept"
+quest = 272
+reqlevel = 16
+npc = 11799
+at = [1450, 36.52, 40.1]
+text = "Coge con Tajarri la Prueba del león marino: dos mitades de colgante, una en Costa Oscura y otra en los Páramos de Poniente."
+tip = "Silva Fil'naveth y otros vecinos del Claro dan pistas si les hablas."
+status = "unverified"
+sources = ["questie:quest/272", "questie:npc/11799", "https://warcraft.wiki.gg/wiki/Trial_of_the_Sea_Lion"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-16-aquatic-011"
+do = "hearth"
+zone = 1439
+text = "Usa la piedra de hogar para volver a Auberdine."
+status = "unverified"
+sources = []
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-16-aquatic-012"
+do = "loot"
+item = 15883
+count = 1
+at = [1439, 48.87, 11.32]
+text = "Ve al norte, a la costa de las Ruinas de Mathystra, y bucea hasta la caja extraña del fondo: saca la mitad del colgante."
+tip = "Hay trilladores alrededor de la formación de roca. Hazlo cuando pases por el norte con las misiones de la zona."
+status = "unverified"
+sources = ["questie:quest/272", "questie:object/177792", "questie:item/15883", "https://warcraft.wiki.gg/wiki/Trial_of_the_Sea_Lion"]
+checked = "2026-11-11"

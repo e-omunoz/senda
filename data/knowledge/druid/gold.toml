@@ -1,0 +1,19 @@
+# Druida: lo que se añade al texto común de general/gold.toml. Escrito para Senda (no migrado).
+id = "druid-gold"
+class = "DRUID"
+kind = "page"
+title = "Oro de druida"
+order = 235
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/herbalism/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"]
+checked = "2026-11-11"
+note = "Precio de la equitación del 40 para el druida sin fuente."
+
+[[block]]
+heading = "Oro de druida"
+body = """
+- **Herboristería** es la recolección perfecta para el druida: en Forever recoges sin salir de la Forma de viaje. Vende lo que la Alquimia no use.
+- **Teletransporte: Claro de la Luna** (sin componente en Classic): entrenas sin gastar la piedra de hogar ni pagar vuelos largos.
+- No necesitas comprar comida para mascota ni munición, y la Forma de viaje (30) retrasa la montura: guarda desde el 30 para la equitación del 40 (la paga el druida).
+- Pociones de maná y elixires de Alquimia se venden bien; las de sanación ya no (son de Primeros auxilios en Forever).
+- Renacer pide un componente por lanzamiento: lleva algunos para mazmorras, no los compres de más."""

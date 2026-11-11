@@ -1,0 +1,189 @@
+# Druida elfo de la noche: Forma felina (20). Misiones nuevas de Forever (98393 -> 98394 -> 98396 -> 98731 -> 98397).
+# Ids y coordenadas de QuestieDB (Forever); orden de la cadena según Warcraft Tavern (versión Skyborne, que
+# comparte Dendrite, Gran Espíritu del Felino y túmulo). Textos propios.
+id = "dr-20-cat"
+title = "Druida: Forma felina (20)"
+levels = [20, 21]
+map = 1450
+summary = "Nivel 20: Gran Espíritu del Felino en el sur del Claro de la Luna, tres reliquias en el Túmulo de Tempestira y Forma felina con Acechar."
+if = { class = ["DRUID"] }
+
+[[step]]
+id = "dr-20-cat-001"
+do = "train"
+spells = [2912, 20484]
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Nivel 20: entrena en el Enclave Cenarion de Darnassus: Fuego estelar, Renacer y los rangos nuevos."
+tip = "Desde los Reinos del Este: Teletransporte: Claro de la Luna y vuelo de druida de Silva Fil'naveth a Rut'theran."
+status = "unverified"
+sources = ["questie:npc/4217", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-002"
+do = "accept"
+quest = 98393
+reqlevel = 20
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Coge con Mathrengyl la misión del Gran Espíritu del Felino."
+status = "unverified"
+sources = ["questie:quest/98393", "questie:npc/4217", "https://www.warcrafttavern.com/forever/guides/skyborne-druid-quests/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-003"
+do = "turnin"
+quest = 98393
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Lanza Teletransporte: Claro de la Luna y entrega a Dendrite, en el piso alto."
+status = "unverified"
+sources = ["questie:quest/98393", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-004"
+do = "accept"
+quest = 98394
+reqlevel = 20
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Coge la siguiente misión de Dendrite."
+status = "unverified"
+sources = ["questie:quest/98394", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-005"
+do = "turnin"
+quest = 98394
+npc = 11957
+at = [1450, 58.39, 73.52]
+text = "Ve al sur del Claro y habla con el Gran Espíritu del Felino."
+status = "unverified"
+sources = ["questie:quest/98394", "questie:npc/11957"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-006"
+do = "accept"
+quest = 98396
+reqlevel = 20
+npc = 11957
+at = [1450, 58.39, 73.52]
+text = "Coge la prueba de las tres reliquias."
+status = "unverified"
+sources = ["questie:quest/98396", "questie:npc/11957"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-007"
+do = "goto"
+at = [1450, 71.7, 61.9]
+radius = 8
+text = "Ve al este, entra en el Túmulo de Tempestira y toca la estatua del felino de la entrada: te da un beneficio de sigilo."
+tip = "Con el beneficio pasas entre los guardianes sin que te vean. Si lo pierdes, vuelve a la estatua."
+status = "unverified"
+sources = ["questie:object/673394", "https://www.warcrafttavern.com/forever/guides/skyborne-druid-quests/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-008"
+do = "complete"
+quest = 98396
+at = [1450, 74.4, 65.5]
+wps = [[1450, 75.2, 67.2, "Reliquia de la Zarpa (tras el puente)"], [1450, 72.4, 66.0, "Reliquia del Colmillo (piso de abajo)"], [1450, 74.4, 65.4, "Reliquia de la Sombra Silenciosa (bajo el puente)"]]
+text = "Coge las tres reliquias de sus estatuas: cruza el puente de la primera sala, baja un piso y vuelve a la sala bajo el puente."
+status = "unverified"
+sources = ["questie:quest/98396", "questie:object/672821", "questie:object/673093", "questie:object/673094", "https://www.warcrafttavern.com/forever/guides/skyborne-druid-quests/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-009"
+do = "turnin"
+quest = 98396
+npc = 11957
+at = [1450, 58.39, 73.52]
+text = "Sal del túmulo y entrega las reliquias al Gran Espíritu del Felino."
+status = "unverified"
+sources = ["questie:quest/98396", "questie:npc/11957"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-010"
+do = "accept"
+quest = 98731
+reqlevel = 20
+npc = 11957
+at = [1450, 58.39, 73.52]
+text = "Coge la misión de las bendiciones."
+status = "unverified"
+sources = ["questie:quest/98731", "questie:npc/11957"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-011"
+do = "turnin"
+quest = 98731
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Vuelve al pueblo y entrega a Dendrite."
+status = "unverified"
+sources = ["questie:quest/98731", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-012"
+do = "accept"
+quest = 98397
+reqlevel = 20
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Coge la misión de vuelta a Darnassus."
+status = "unverified"
+sources = ["questie:quest/98397", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-013"
+do = "goto"
+npc = 11800
+at = [1450, 44.15, 45.23]
+radius = 10
+text = "Pide a Silva Fil'naveth el vuelo de druida a la Aldea Rut'theran y entra en Darnassus."
+status = "unverified"
+sources = ["questie:npc/11800"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-014"
+do = "turnin"
+quest = 98397
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Entrega a Mathrengyl: aprendes Forma felina, Zarpa, Acechar y Destripar."
+status = "unverified"
+sources = ["questie:quest/98397", "questie:npc/4217", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-015"
+do = "train"
+spells = [768, 5215]
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Comprueba que tienes Forma felina y Acechar, y entrena Triturar si el instructor te lo ofrece."
+tip = "Felino para matar rápido a un solo bicho; oso si se juntan varios. Al 20 en Forever también puedes aprender Armas de asta con Woo Ping (Ventormenta)."
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-20-cat-016"
+do = "note"
+text = "Usa la piedra de hogar para volver a tu ruta."
+status = "unverified"
+sources = []
+checked = "2026-11-11"

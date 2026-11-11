@@ -41,6 +41,18 @@ checked = "2026-11-11"
 note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
 
 [[step]]
+id = "a48-searing-gorge-dr-46"
+do = "train"
+spells = [8905, 9833, 9839]
+npc = 12042
+at = [1450, 52.53, 40.57]
+text = "Druida: entrena los hechizos del nivel 46 con Loganaar (Teletransporte: Claro de la Luna)."
+if = { class = ["DRUID"], minlevel = 46 }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a48-searing-gorge-004"
 do = "train"
 npc = 5173
@@ -65,6 +77,18 @@ status = "unverified"
 sources = ["questie:npc/5144", "https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
 checked = "2026-11-11"
 note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+
+[[step]]
+id = "a48-searing-gorge-dr-48"
+do = "train"
+spells = [9852, 9856, 9849]
+npc = 12042
+at = [1450, 52.53, 40.57]
+text = "Druida: entrena los hechizos del nivel 48 con Loganaar (Teletransporte: Claro de la Luna)."
+if = { class = ["DRUID"], minlevel = 48 }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
 
 [[step]]
 id = "a48-searing-gorge-006"

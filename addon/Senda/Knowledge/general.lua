@@ -159,6 +159,61 @@ Senda.Knowledge:Register({
 })
 
 Senda.Knowledge:Register({
+  id = "general-professions-herbalism",
+  class = "ANY",
+  kind = "professions",
+  title = "Herboristería 1-300",
+  order = 215,
+  status = "unverified",
+  note = "Tramos de hierbas y zonas de Warcraft Tavern (guía de Herboristería de Forever); la asignación de tramos a habilidad la hizo el autor. Las hierbas suben habilidad unos 100 puntos y se vuelven verdes a unos 50. Ids de hierbas comprobados en QuestieDB (Forever); habilidad mínima de cada hierba: la de Classic, sin confirmar en Forever. Cambios de Forever: materiales escasos (Frilled Lichen, Rosecap, Stranglevine), semillas de hierbas en cuatro calidades, hierbas nuevas (Marefoil, Demonsage, Death Lotus), Té de espina de oro (+15) y Buscar hierbas compatible con otros rastreos (no con Buscar minerales).",
+  trainer = {
+    { prof = "herbalism", ranks = {"Aprendiz", "Oficial"}, for_class = "DRUID", name = "Malorne Bladeleaf", at = {1438, 57.7, 60.6, "Malorne Bladeleaf (Teldrassil, Dolanaar)"}, note = "QuestieDB lo titula «Herbalist»; rangos que enseña sin confirmar." },
+    { prof = "herbalism", ranks = {"Aprendiz", "Oficial", "Experto", "Artesano"}, for_class = "DRUID", name = "Firodren Mooncaller", at = {1457, 48.0, 68.0, "Firodren Mooncaller (Darnassus)"}, note = "Instructor de Herboristería de Darnassus. Que enseñe Artesano está sin confirmar.", status = "unverified" },
+  },
+  route = {
+    { prof = "herbalism", from = 1, to = 70, craft = 765, name = "Flor de paz, Hojaplata y Raíz de tierra", n = 80, herbs = {2447, 765, 2449}, note = "Zonas de inicio. Elfo de la noche: Teldrassil entera. Raíz de tierra desde 15." },
+    { prof = "herbalism", from = 70, to = 115, craft = 785, name = "Marregal, Brezospina y Alga estranguladora", n = 50, herbs = {785, 2450, 3820}, note = "Costa Oscura (Alianza de Kalimdor), Loch Modan o Los Baldíos. A 50 de habilidad y nivel 10, entrena Oficial." },
+    { prof = "herbalism", from = 115, to = 170, craft = 3356, name = "Hierba cardenal, Acérita salvaje, Sangrerregia y Raíz de vida", n = 60, herbs = {2453, 3355, 3356, 3357}, note = "Vallefresno, Los Humedales, Laderas de Trabalomas; Sierra Espolón si te pilla cerca. A 125 y nivel 20, entrena Experto." },
+    { prof = "herbalism", from = 170, to = 205, craft = 3821, name = "Pálida, Espina de oro y Mostacho de Khadgar", n = 40, herbs = {3356, 3357, 3818, 3821, 3358}, note = "Tierras Altas de Arathi y el norte de la Vega de Tuercespina. A 200 y nivel 35, entrena Artesano." },
+    { prof = "herbalism", from = 205, to = 230, craft = 4625, name = "Flor de fuego y Loto cárdeno", n = 30, herbs = {8831, 4625}, note = "Tanaris (o la Garganta de Fuego)." },
+    { prof = "herbalism", from = 230, to = 270, craft = 8838, name = "Hierba de sol, Sansam dorado y Champiñón fantasma", n = 45, herbs = {8838, 8831, 13464, 8845}, note = "Tierras del Interior." },
+    { prof = "herbalism", from = 270, to = 300, craft = 13463, name = "Hojasueño, Salviargenta de montaña, Flor de peste y Setelo", n = 40, herbs = {8838, 8846, 13464, 13463, 13465, 13466, 13467, 13468}, note = "Frondavil, Cráter de Un'Goro o cualquier zona 50-60. Tómate el Té de espina de oro antes: puede salir Loto negro." },
+  },
+})
+
+Senda.Knowledge:Register({
+  id = "general-professions-alchemy",
+  class = "ANY",
+  kind = "professions",
+  title = "Alquimia 1-300",
+  order = 218,
+  status = "unverified",
+  note = "Ruta de la guía de Alquimia de Wowhead Forever (recetas, cantidades y número de fabricaciones). Ids de objetos y PNJ comprobados en QuestieDB (Forever). En Forever las pociones de sanación pasan a Primeros auxilios (Warcraft Tavern y otras guías); la ruta clásica de pociones de sanación no vale. Icy Veins dice que 225-300 aún no está confirmado.",
+  trainer = {
+    { prof = "alchemy", ranks = {"Aprendiz", "Oficial"}, for_class = "DRUID", name = "Cyndra Kindwhisper", at = {1438, 57.6, 60.8, "Cyndra Kindwhisper (Teldrassil, Dolanaar)"} },
+    { prof = "alchemy", ranks = {"Aprendiz", "Oficial"}, for_class = "DRUID", name = "Milla Fairancora", at = {1457, 55.4, 22.7, "Milla Fairancora (Darnassus, Terraza del Artesano)"} },
+    { prof = "alchemy", ranks = {"Aprendiz", "Oficial", "Experto", "Artesano"}, for_class = "DRUID", name = "Ainethil", at = {1457, 54.9, 24.0, "Ainethil (Darnassus, Terraza del Artesano)"}, note = "QuestieDB la titula «Artisan Alchemist». Ulthir (55.8, 24.5), al lado, vende viales y la receta de Poción de maná superior." },
+    { prof = "alchemy", ranks = {}, for_class = "ANY", name = "Odd Child", at = {1436, 42.8, 72.8, "Odd Child (Páramos de Poniente)"}, note = "Instructor especial de la Poción de sanación descolorida mayor (270-300) tras una cadena de misiones (empieza con My First Alchemy Set, 92109). Horda: Apothecary Renferrel (Bosque de Argénteos).", status = "unverified" },
+  },
+  route = {
+    { prof = "alchemy", from = 1, to = 12, craft = 247755, name = "Elixir de fuerza menor", n = 11, mats = {{765, 1}, {3371, 1}}, note = "Receta nueva de Forever; se conoce al aprender la profesión." },
+    { prof = "alchemy", from = 12, to = 55, craft = 5997, name = "Elixir de defensa menor", n = 43, mats = {{765, 1}, {2447, 1}, {3371, 1}} },
+    { prof = "alchemy", from = 55, to = 65, craft = 2455, name = "Poción de maná menor", n = 10, mats = {{785, 1}, {2447, 1}, {3371, 1}}, note = "En Classic pedía Hojaplata en lugar de Flor de paz; Wowhead Forever dice Flor de paz." },
+    { prof = "alchemy", from = 65, to = 90, craft = 2458, name = "Elixir de entereza menor", n = 26, mats = {{2449, 2}, {2447, 1}, {3371, 1}}, note = "A 50 de habilidad y nivel 10, entrena Oficial: el tope de Aprendiz es 75." },
+    { prof = "alchemy", from = 90, to = 120, craft = 3383, name = "Elixir de sabiduría", n = 30, mats = {{785, 1}, {2450, 2}, {3371, 1}} },
+    { prof = "alchemy", from = 120, to = 160, craft = 3385, name = "Poción de maná inferior", n = 43, mats = {{785, 1}, {3820, 1}, {3371, 1}}, note = "A 125 y nivel 20, entrena Experto." },
+    { prof = "alchemy", from = 160, to = 195, craft = 3827, name = "Poción de maná", n = 38, mats = {{3820, 1}, {3356, 1}, {3372, 1}} },
+    { prof = "alchemy", from = 195, to = 205, craft = 8949, name = "Elixir de agilidad", n = 10, mats = {{3820, 1}, {3821, 1}, {3372, 1}}, note = "Guárdalos si eres druida feral o pícaro. A 200 y nivel 35, entrena Artesano." },
+    { prof = "alchemy", from = 205, to = 225, craft = 6149, name = "Poción de maná mayor", n = 20, mats = {{3358, 1}, {3821, 1}, {3372, 1}} },
+    { prof = "alchemy", from = 225, to = 226, craft = 9149, name = "Piedra filosofal", n = 1, mats = {{3575, 4}, {9262, 1}, {8831, 4}, {4625, 4}}, src = "Receta 9303 de Alchemist Pestlezugg (Gadgetzan, Tanaris).", note = "Guárdala: la necesitan las transmutaciones. Opcional para subir." },
+    { prof = "alchemy", from = 226, to = 240, craft = 6149, name = "Poción de maná mayor", n = 20, mats = {{3358, 1}, {3821, 1}, {3372, 1}} },
+    { prof = "alchemy", from = 240, to = 260, craft = 9154, name = "Elixir de detectar no-muertos", n = 23, mats = {{8836, 1}, {8925, 1}}, note = "Wowhead lo llama Draught of Detect Undead; en la base de datos es Elixir of Detect Undead (9154)." },
+    { prof = "alchemy", from = 260, to = 270, craft = 13443, name = "Poción de maná superior", n = 10, mats = {{8838, 2}, {8839, 2}, {8925, 1}}, src = "Receta 13477: Ulthir (Darnassus) en la Alianza, Algernon (Entrañas) en la Horda." },
+    { prof = "alchemy", from = 270, to = 300, craft = 241650, name = "Poción de sanación descolorida mayor", n = 31, mats = {{8925, 1}, {13466, 1}, {730, 1}}, src = "Instructor especial tras una cadena de misiones: Odd Child (Páramos de Poniente) en la Alianza.", status = "disputed", note = "Wowhead la pone en la ruta de Alquimia; otras guías dicen que las pociones de sanación pasaron a Primeros auxilios en Forever. Si no la tienes, usa Poción de maná superior hasta 285 y cualquier receta naranja o amarilla hasta 300." },
+  },
+})
+
+Senda.Knowledge:Register({
   id = "general-professions-materials",
   class = "ANY",
   kind = "professions",

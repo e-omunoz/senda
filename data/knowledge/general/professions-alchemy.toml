@@ -1,0 +1,184 @@
+# Alquimia 1-300. Mismo formato que professions-tailoring.toml.
+# [[route]]: prof, from, to, craft (id del objeto fabricado), name (nombre esES probable; el cliente da el definitivo
+#   por id), n (fabricaciones aproximadas para todo el tramo), mats = [[id, cantidad]] por fabricación, src (origen de
+#   la receta si no la enseña el instructor), note. Si la receta del juego pide otra cosa, manda la receta.
+# [[trainer]]: instructores. for_class = clase para la que se pone (druida elfo de la noche → Teldrassil/Darnassus).
+id = "general-professions-alchemy"
+class = "ANY"
+kind = "professions"
+title = "Alquimia 1-300"
+order = 218
+status = "unverified"
+sources = ["https://www.wowhead.com/forever/profession-leveling-guides/alchemy", "https://www.warcrafttavern.com/forever/guides/herbalism/", "https://conquestcapped.com/guides/wow-forever/wow-forever-alchemy/", "https://www.icy-veins.com/wow-forever/alchemy-leveling-guide", "questie:npc/3603", "questie:npc/11041", "questie:npc/4160", "questie:npc/4226", "questie:npc/5594", "questie:npc/249713"]
+checked = "2026-11-11"
+note = "Ruta de la guía de Alquimia de Wowhead Forever (recetas, cantidades y número de fabricaciones). Ids de objetos y PNJ comprobados en QuestieDB (Forever). En Forever las pociones de sanación pasan a Primeros auxilios (Warcraft Tavern y otras guías); la ruta clásica de pociones de sanación no vale. Icy Veins dice que 225-300 aún no está confirmado."
+
+[[trainer]]
+prof = "alchemy"
+ranks = ["Aprendiz", "Oficial"]
+for_class = "DRUID"
+name = "Cyndra Kindwhisper"
+at = [1438, 57.6, 60.8, "Cyndra Kindwhisper (Teldrassil, Dolanaar)"]
+
+[[trainer]]
+prof = "alchemy"
+ranks = ["Aprendiz", "Oficial"]
+for_class = "DRUID"
+name = "Milla Fairancora"
+at = [1457, 55.4, 22.7, "Milla Fairancora (Darnassus, Terraza del Artesano)"]
+
+[[trainer]]
+prof = "alchemy"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+for_class = "DRUID"
+name = "Ainethil"
+at = [1457, 54.9, 24.0, "Ainethil (Darnassus, Terraza del Artesano)"]
+note = "QuestieDB la titula «Artisan Alchemist». Ulthir (55.8, 24.5), al lado, vende viales y la receta de Poción de maná superior."
+
+[[trainer]]
+prof = "alchemy"
+ranks = []
+for_class = "ANY"
+name = "Odd Child"
+at = [1436, 42.8, 72.8, "Odd Child (Páramos de Poniente)"]
+note = "Instructor especial de la Poción de sanación descolorida mayor (270-300) tras una cadena de misiones (empieza con My First Alchemy Set, 92109). Horda: Apothecary Renferrel (Bosque de Argénteos)."
+status = "unverified"
+
+[[route]]
+prof = "alchemy"
+from = 1
+to = 12
+craft = 247755
+name = "Elixir de fuerza menor"
+n = 11
+mats = [[765, 1], [3371, 1]]
+note = "Receta nueva de Forever; se conoce al aprender la profesión."
+
+[[route]]
+prof = "alchemy"
+from = 12
+to = 55
+craft = 5997
+name = "Elixir de defensa menor"
+n = 43
+mats = [[765, 1], [2447, 1], [3371, 1]]
+
+[[route]]
+prof = "alchemy"
+from = 55
+to = 65
+craft = 2455
+name = "Poción de maná menor"
+n = 10
+mats = [[785, 1], [2447, 1], [3371, 1]]
+note = "En Classic pedía Hojaplata en lugar de Flor de paz; Wowhead Forever dice Flor de paz."
+
+[[route]]
+prof = "alchemy"
+from = 65
+to = 90
+craft = 2458
+name = "Elixir de entereza menor"
+n = 26
+mats = [[2449, 2], [2447, 1], [3371, 1]]
+note = "A 50 de habilidad y nivel 10, entrena Oficial: el tope de Aprendiz es 75."
+
+[[route]]
+prof = "alchemy"
+from = 90
+to = 120
+craft = 3383
+name = "Elixir de sabiduría"
+n = 30
+mats = [[785, 1], [2450, 2], [3371, 1]]
+
+[[route]]
+prof = "alchemy"
+from = 120
+to = 160
+craft = 3385
+name = "Poción de maná inferior"
+n = 43
+mats = [[785, 1], [3820, 1], [3371, 1]]
+note = "A 125 y nivel 20, entrena Experto."
+
+[[route]]
+prof = "alchemy"
+from = 160
+to = 195
+craft = 3827
+name = "Poción de maná"
+n = 38
+mats = [[3820, 1], [3356, 1], [3372, 1]]
+
+[[route]]
+prof = "alchemy"
+from = 195
+to = 205
+craft = 8949
+name = "Elixir de agilidad"
+n = 10
+mats = [[3820, 1], [3821, 1], [3372, 1]]
+note = "Guárdalos si eres druida feral o pícaro. A 200 y nivel 35, entrena Artesano."
+
+[[route]]
+prof = "alchemy"
+from = 205
+to = 225
+craft = 6149
+name = "Poción de maná mayor"
+n = 20
+mats = [[3358, 1], [3821, 1], [3372, 1]]
+
+[[route]]
+prof = "alchemy"
+from = 225
+to = 226
+craft = 9149
+name = "Piedra filosofal"
+n = 1
+mats = [[3575, 4], [9262, 1], [8831, 4], [4625, 4]]
+src = "Receta 9303 de Alchemist Pestlezugg (Gadgetzan, Tanaris)."
+note = "Guárdala: la necesitan las transmutaciones. Opcional para subir."
+
+[[route]]
+prof = "alchemy"
+from = 226
+to = 240
+craft = 6149
+name = "Poción de maná mayor"
+n = 20
+mats = [[3358, 1], [3821, 1], [3372, 1]]
+
+[[route]]
+prof = "alchemy"
+from = 240
+to = 260
+craft = 9154
+name = "Elixir de detectar no-muertos"
+n = 23
+mats = [[8836, 1], [8925, 1]]
+note = "Wowhead lo llama Draught of Detect Undead; en la base de datos es Elixir of Detect Undead (9154)."
+
+[[route]]
+prof = "alchemy"
+from = 260
+to = 270
+craft = 13443
+name = "Poción de maná superior"
+n = 10
+mats = [[8838, 2], [8839, 2], [8925, 1]]
+src = "Receta 13477: Ulthir (Darnassus) en la Alianza, Algernon (Entrañas) en la Horda."
+
+[[route]]
+prof = "alchemy"
+from = 270
+to = 300
+craft = 241650
+name = "Poción de sanación descolorida mayor"
+n = 31
+mats = [[8925, 1], [13466, 1], [730, 1]]
+src = "Instructor especial tras una cadena de misiones: Odd Child (Páramos de Poniente) en la Alianza."
+status = "disputed"
+sources = ["https://www.wowhead.com/forever/profession-leveling-guides/alchemy", "https://www.warcrafttavern.com/forever/guides/herbalism/"]
+note = "Wowhead la pone en la ruta de Alquimia; otras guías dicen que las pociones de sanación pasaron a Primeros auxilios en Forever. Si no la tienes, usa Poción de maná superior hasta 285 y cualquier receta naranja o amarilla hasta 300."

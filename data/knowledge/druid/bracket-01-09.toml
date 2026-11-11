@@ -1,0 +1,76 @@
+# Druida elfo de la noche, tramo 1-9. Escrito para Senda (no migrado).
+id = "druid-bracket-1-9"
+class = "DRUID"
+kind = "page"
+title = "Niveles 1-9: Cólera y Teldrassil"
+levels = [1, 9]
+order = 10
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents", "questie:npc/3597", "questie:npc/3602", "questie:quest/3120"]
+checked = "2026-11-11"
+note = "Niveles de hechizos de la guía de leveo de druida de Warcraft Tavern (Forever). Instructores y misiones confirmados en QuestieDB (Forever), sin comprobar en el juego."
+
+[[block]]
+heading = "Zonas"
+body = """
+- **1-5:** Cañada Umbría (Shadowglen), en Teldrassil. Instructor: **Mardant Strongoak** (58.6, 40.3).
+- **5-10:** Dolanaar, en el centro de Teldrassil. Instructor: **Kal** (56.0, 61.6).
+
+Teldrassil está lleno de Flor de paz y Hojaplata: si coges Herboristería, empieza aquí."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **1:** Cólera, Toque de sanación, Marca de lo Salvaje.
+- **4:** Fuego lunar, Rejuvenecimiento.
+- **6:** Espinas.
+- **8:** Raíces enredadoras (en Forever también en interiores)."""
+
+[[block]]
+heading = "Rotación"
+body = """
+1. **Espinas** y **Marca de lo Salvaje** puestas siempre.
+2. **Cólera** para tirar.
+3. **Fuego lunar** mientras se acerca.
+4. **Cólera** hasta que esté casi muerto o te quedes sin maná.
+5. Remata con el arma (bastón o daga).
+
+Cúrate con **Rejuvenecimiento** entre combates y bebe agua: aún no tienes formas."""
+
+[[block]]
+heading = "Misiones de clase"
+body = """
+- **1:** El sello verde (Verdant Sigil), de Conservator Ilthalaine en Cañada Umbría: solo druidas.
+- Al llegar al **10** te espera **Atender la llamada** (Heeding the Call): Kal en Dolanaar o Denatharion en Darnassus. Te da la Forma de oso (ver tramo 10-19)."""
+note = "«El sello verde»: traducción esES sin confirmar."
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 1:** SND_Cura (te curas a ti mismo; con Alt, Rejuvenecimiento desde el 4).
+- **Al 8:** SND_Raices (Raíces enredadoras al foco o al objetivo)."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+- **Al 5:** Herboristería en Dolanaar (Malorne Bladeleaf, 57.7, 60.6) y Alquimia (Cyndra Kindwhisper, 57.6, 60.8).
+- Coge también **Cocina**: la campaña de campamento («Camping 101») da descanso y la comida «Bien alimentado» da experiencia.
+- Recuerda: en Forever las pociones de sanación son de **Primeros auxilios**, no de Alquimia."""
+
+[[block]]
+heading = "Equipo"
+body = """
+Cuero con Intelecto o Espíritu hasta el 10; desde el 10 empieza a contar el DPS del arma (las formas escalan con él en Forever). Un bastón de dos manos de misión es la mejor opción temprana."""
+
+[[block]]
+heading = "Objetivos"
+body = """
+- Nivel 10 en Teldrassil, con la Herboristería a ~50.
+- Unas 20-30 piezas de Flor de paz y Hojaplata guardadas para Alquimia."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Junto a cada pueblo hay una hoguera de campamento: siéntate para el descanso mejorado.
+- Garras de la naturaleza llega gratis al 10 (en Forever es de base): úsala para escapar.
+- No gastes dinero en agua: de 1 a 9 vas a beber mucho. Las bebidas de misión bastan."""

@@ -1,0 +1,45 @@
+# Druida elfo de la noche: plan de profesiones (Herboristería + Alquimia). Escrito para Senda (no migrado).
+id = "druid-professions-extra"
+class = "DRUID"
+kind = "page"
+title = "Herboristería y Alquimia para el druida elfo de la noche"
+order = 195
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/herbalism/", "https://www.wowhead.com/forever/profession-leveling-guides/alchemy", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents", "questie:npc/3604", "questie:npc/3603", "questie:npc/4204", "questie:npc/11041", "questie:npc/4160", "questie:npc/4226"]
+checked = "2026-11-11"
+note = "Complementa data/knowledge/general/professions-guide.toml y las rutas general/professions-herbalism.toml y general/professions-alchemy.toml. Instructores y coordenadas de QuestieDB (Forever)."
+
+[[block]]
+heading = "Por qué Herboristería + Alquimia"
+body = """
+- Recoges en **Forma de viaje** y en felino sin bajarte (en Forever el druida interactúa con casi todo en forma).
+- Herboristería da un bonus de Intelecto en el campamento; Alquimia, regeneración de maná.
+- **Elixir de agilidad** y Elixir de agilidad mayor son para ti; las pociones de maná, para curarte y para Poder cambiante.
+- Oro: las hierbas y las pociones de maná se venden bien toda la subida.
+- Alternativa de Warcraft Tavern y Method: Peletería + Desuello (equipo ligado y Casco de cabeza de lobo)."""
+
+[[block]]
+heading = "Cambios de Forever"
+body = """
+- **Las pociones de sanación son de Primeros auxilios**, no de Alquimia: sube Primeros auxilios también.
+- La ruta de Alquimia de Forever usa elixires y pociones de maná (ver general/professions-alchemy.toml).
+- Hierbas nuevas: Marefoil, Demonsage y Death Lotus; materiales escasos (Frilled Lichen, Rosecap, Stranglevine) que caen de hierbas normales.
+- **Té de espina de oro** (Goldthorn Tea, nuevo): +15 a Herboristería. Úsalo antes de 270-300."""
+
+[[block]]
+heading = "Instructores para un elfo de la noche"
+body = """
+- **Dolanaar (Teldrassil):** Malorne Bladeleaf, Herboristería (57.7, 60.6); Cyndra Kindwhisper, Alquimia hasta Oficial (57.6, 60.8).
+- **Darnassus:** Firodren Mooncaller, Herboristería (48.0, 68.0); Milla Fairancora, Alquimia hasta Oficial (55.4, 22.7); **Ainethil**, Alquimia Experto y Artesano (54.9, 24.0).
+- **Ulthir** (Darnassus, 55.8, 24.5): suministros de Alquimia (viales) y la receta de Poción de maná superior."""
+
+[[block]]
+heading = "Plan por tramos"
+body = """
+- **5-10:** aprende las dos en Dolanaar. Hierbas de Teldrassil hasta ~50.
+- **10-20:** Costa Oscura. Herboristería ~125, Alquimia ~110 (Elixir de defensa menor, Poción de maná menor, Elixir de entereza menor).
+- **20-30:** Experto en Darnassus (Firodren y Ainethil). Herboristería ~170, Alquimia ~160 (Elixir de sabiduría, Poción de maná inferior).
+- **30-40:** Artesano al 35 (Ainethil). Herboristería ~230, Alquimia ~210 (Poción de maná, Elixir de agilidad).
+- **40-50:** Herboristería ~285, Alquimia ~260 (Poción de maná mayor, Piedra filosofal, Elixir de detectar no-muertos).
+- **50-60:** las dos a 300."""
+note = "Objetivos por tramo puestos por el autor."

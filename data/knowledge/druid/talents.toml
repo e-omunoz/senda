@@ -1,0 +1,471 @@
+# Druida elfo de la noche: un punto por nivel, del 10 al 60. Escrito para Senda (no migrado).
+# `rank` = rango que alcanzas con ese punto; `max` = rangos del talento. Árbol de Forever según la calculadora de timesaver.gg.
+id = "druid-talents-leveling"
+class = "DRUID"
+kind = "talents"
+title = "Talentos de subida: Combate feral"
+levels = [10, 60]
+order = 70
+status = "unverified"
+sources = ["https://timesaver.gg/tools/wow-forever/talent-calculator/druid", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents", "https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/feral-druid/", "https://www.warcrafttavern.com/forever/guides/druid/", "https://mobalytics.gg/wow-forever/classes/druid-leveling-guide"]
+checked = "2026-11-11"
+note = "Build 34/9/8 armada por el autor con el árbol de Forever (timesaver) y las prioridades de Method (7-nov: Ferocidad, Celeridad feral, Líder de la manada, Golpes depredadores, Mordisco primario, Poder cambiante; luego Génesis/Majestad/Alcance y Corazón de lo Salvaje) y Warcraft Tavern (9/37/5, sin Ataques trituradores en solitario). Ninguna guía publica el orden punto a punto. Cambios de Forever: Augurio de claridad y Fuego feérico son de base; Furor ya no da energía al cambiar de forma (la conserva); Celeridad feral vale en interiores y da esquiva; Corazón de lo Salvaje y Furor cambiaron de fila. Con el Legacy «Talented», los talentos se abren hasta 5 niveles antes. Nombres esES: los que llevan el inglés entre paréntesis no están confirmados en el cliente."
+
+[[pick]]
+level = 10
+talent = "Ferocidad"
+tree = "Combate feral"
+rank = 1
+max = 5
+status = "unverified"
+note = "Abarata Magullar, Flagelo, Arañazo, Arañar y Mordisco primario. Primer talento en Method y Mobalytics."
+
+[[pick]]
+level = 11
+talent = "Ferocidad"
+tree = "Combate feral"
+rank = 2
+max = 5
+status = "unverified"
+note = "Abarata Magullar, Flagelo, Arañazo, Arañar y Mordisco primario. Primer talento en Method y Mobalytics."
+
+[[pick]]
+level = 12
+talent = "Ferocidad"
+tree = "Combate feral"
+rank = 3
+max = 5
+status = "unverified"
+note = "Abarata Magullar, Flagelo, Arañazo, Arañar y Mordisco primario. Primer talento en Method y Mobalytics."
+
+[[pick]]
+level = 13
+talent = "Ferocidad"
+tree = "Combate feral"
+rank = 4
+max = 5
+status = "unverified"
+note = "Abarata Magullar, Flagelo, Arañazo, Arañar y Mordisco primario. Primer talento en Method y Mobalytics."
+
+[[pick]]
+level = 14
+talent = "Ferocidad"
+tree = "Combate feral"
+rank = 5
+max = 5
+status = "unverified"
+note = "Abarata Magullar, Flagelo, Arañazo, Arañar y Mordisco primario. Primer talento en Method y Mobalytics."
+
+[[pick]]
+level = 15
+talent = "Celeridad feral (Feral Swiftness)"
+tree = "Combate feral"
+rank = 1
+max = 2
+status = "unverified"
+note = "+4% de esquiva en todas las formas y +30% de velocidad en Forma felina (también en interiores en Forever). Mejorado en Forever. Nombre esES sin confirmar."
+
+[[pick]]
+level = 16
+talent = "Celeridad feral (Feral Swiftness)"
+tree = "Combate feral"
+rank = 2
+max = 2
+status = "unverified"
+note = "+4% de esquiva en todas las formas y +30% de velocidad en Forma felina (también en interiores en Forever). Mejorado en Forever. Nombre esES sin confirmar."
+
+[[pick]]
+level = 17
+talent = "Piel gruesa (Thick Hide)"
+tree = "Combate feral"
+rank = 1
+max = 3
+status = "unverified"
+note = "Más armadura en forma: el oso del 10-19 aguanta mejor. Nombre esES sin confirmar. Alternativa: Instinto feral si vas mucho en grupo de oso."
+
+[[pick]]
+level = 18
+talent = "Piel gruesa (Thick Hide)"
+tree = "Combate feral"
+rank = 2
+max = 3
+status = "unverified"
+note = "Más armadura en forma: el oso del 10-19 aguanta mejor. Nombre esES sin confirmar. Alternativa: Instinto feral si vas mucho en grupo de oso."
+
+[[pick]]
+level = 19
+talent = "Piel gruesa (Thick Hide)"
+tree = "Combate feral"
+rank = 3
+max = 3
+status = "unverified"
+note = "Más armadura en forma: el oso del 10-19 aguanta mejor. Nombre esES sin confirmar. Alternativa: Instinto feral si vas mucho en grupo de oso."
+
+[[pick]]
+level = 20
+talent = "Cargar feral"
+tree = "Combate feral"
+rank = 1
+max = 1
+status = "unverified"
+note = "En oso, carga que inmoviliza e interrumpe; en felino, salto detrás del objetivo que aturde."
+
+[[pick]]
+level = 21
+talent = "Garras afiladas"
+tree = "Combate feral"
+rank = 1
+max = 2
+status = "unverified"
+note = "+6% de crítico en oso y felino."
+
+[[pick]]
+level = 22
+talent = "Garras afiladas"
+tree = "Combate feral"
+rank = 2
+max = 2
+status = "unverified"
+note = "+6% de crítico en oso y felino."
+
+[[pick]]
+level = 23
+talent = "Furia salvaje"
+tree = "Combate feral"
+rank = 1
+max = 2
+status = "unverified"
+note = "+10% de daño de Arañazo, Arañar, Triturar, Magullar y Flagelo."
+
+[[pick]]
+level = 24
+talent = "Furia salvaje"
+tree = "Combate feral"
+rank = 2
+max = 2
+status = "unverified"
+note = "+10% de daño de Arañazo, Arañar, Triturar, Magullar y Flagelo."
+
+[[pick]]
+level = 25
+talent = "Golpes depredadores"
+tree = "Combate feral"
+rank = 1
+max = 3
+status = "unverified"
+note = "Más poder de ataque en forma."
+
+[[pick]]
+level = 26
+talent = "Golpes depredadores"
+tree = "Combate feral"
+rank = 2
+max = 3
+status = "unverified"
+note = "Más poder de ataque en forma."
+
+[[pick]]
+level = 27
+talent = "Golpes depredadores"
+tree = "Combate feral"
+rank = 3
+max = 3
+status = "unverified"
+note = "Más poder de ataque en forma."
+
+[[pick]]
+level = 28
+talent = "Frenesí de sangre (Blood Frenzy)"
+tree = "Combate feral"
+rank = 1
+max = 2
+status = "unverified"
+note = "Ira extra con críticos en oso; punto de combo extra en felino. Nombre esES sin confirmar."
+
+[[pick]]
+level = 29
+talent = "Frenesí de sangre (Blood Frenzy)"
+tree = "Combate feral"
+rank = 2
+max = 2
+status = "unverified"
+note = "Ira extra con críticos en oso; punto de combo extra en felino. Nombre esES sin confirmar."
+
+[[pick]]
+level = 30
+talent = "Líder de la manada"
+tree = "Combate feral"
+rank = 1
+max = 1
+status = "unverified"
+note = "+3% de crítico al grupo (y a la banda en Forever)."
+
+[[pick]]
+level = 31
+talent = "Instinto natural (Natural Instinct)"
+tree = "Combate feral"
+rank = 1
+max = 2
+status = "unverified"
+note = "Críticos cuerpo a cuerpo más fuertes. Nuevo en Forever. Nombre esES sin confirmar."
+
+[[pick]]
+level = 32
+talent = "Instinto natural (Natural Instinct)"
+tree = "Combate feral"
+rank = 2
+max = 2
+status = "unverified"
+note = "Críticos cuerpo a cuerpo más fuertes. Nuevo en Forever. Nombre esES sin confirmar."
+
+[[pick]]
+level = 33
+talent = "Disciplina depredadora (Predatory Discipline)"
+tree = "Combate feral"
+rank = 1
+max = 1
+status = "unverified"
+note = "Mordedura feroz ya no se come la energía sobrante. Nuevo en Forever. Nombre esES sin confirmar. Hace falta para llegar a 25 puntos antes de Rasgar y desgarrar."
+
+[[pick]]
+level = 34
+talent = "Lacerar (Lacerate)"
+tree = "Combate feral"
+rank = 1
+max = 1
+status = "unverified"
+note = "Sangrado acumulable de oso. Útil si tanqueas; en solitario es relleno para llegar a la fila siguiente. Nombre esES sin confirmar."
+
+[[pick]]
+level = 35
+talent = "Rasgar y desgarrar (Rend and Tear)"
+tree = "Combate feral"
+rank = 1
+max = 5
+status = "unverified"
+note = "+15% de daño cuerpo a cuerpo contra objetivos que sangran (Arañar, Destripar). Nuevo en Forever. Nombre esES sin confirmar."
+
+[[pick]]
+level = 36
+talent = "Rasgar y desgarrar (Rend and Tear)"
+tree = "Combate feral"
+rank = 2
+max = 5
+status = "unverified"
+note = "+15% de daño cuerpo a cuerpo contra objetivos que sangran (Arañar, Destripar). Nuevo en Forever. Nombre esES sin confirmar."
+
+[[pick]]
+level = 37
+talent = "Rasgar y desgarrar (Rend and Tear)"
+tree = "Combate feral"
+rank = 3
+max = 5
+status = "unverified"
+note = "+15% de daño cuerpo a cuerpo contra objetivos que sangran (Arañar, Destripar). Nuevo en Forever. Nombre esES sin confirmar."
+
+[[pick]]
+level = 38
+talent = "Rasgar y desgarrar (Rend and Tear)"
+tree = "Combate feral"
+rank = 4
+max = 5
+status = "unverified"
+note = "+15% de daño cuerpo a cuerpo contra objetivos que sangran (Arañar, Destripar). Nuevo en Forever. Nombre esES sin confirmar."
+
+[[pick]]
+level = 39
+talent = "Rasgar y desgarrar (Rend and Tear)"
+tree = "Combate feral"
+rank = 5
+max = 5
+status = "unverified"
+note = "+15% de daño cuerpo a cuerpo contra objetivos que sangran (Arañar, Destripar). Nuevo en Forever. Nombre esES sin confirmar."
+
+[[pick]]
+level = 40
+talent = "Poder cambiante (Shifting Power)"
+tree = "Combate feral"
+rank = 1
+max = 1
+status = "unverified"
+note = "Convierte maná en 40 de energía sin cambiar de forma: sustituye al cambio de forma con poder. Nombre esES sin confirmar. Id de Warcraft Tavern: 1322605."
+
+[[pick]]
+level = 41
+talent = "Mordisco primario (Primal Bite)"
+tree = "Combate feral"
+rank = 1
+max = 1
+status = "unverified"
+note = "Mordisco de mucho daño y amenaza. Lo recomiendan Method y Warcraft Tavern. Nombre esES sin confirmar. Id de Warcraft Tavern: 407995."
+
+[[pick]]
+level = 42
+talent = "Corazón de lo Salvaje"
+tree = "Restauración"
+rank = 1
+max = 5
+status = "unverified"
+note = "+10% de Intelecto; más Aguante en oso y más Fuerza en felino. En Forever está en la primera fila de Restauración."
+
+[[pick]]
+level = 43
+talent = "Corazón de lo Salvaje"
+tree = "Restauración"
+rank = 2
+max = 5
+status = "unverified"
+note = "+10% de Intelecto; más Aguante en oso y más Fuerza en felino. En Forever está en la primera fila de Restauración."
+
+[[pick]]
+level = 44
+talent = "Corazón de lo Salvaje"
+tree = "Restauración"
+rank = 3
+max = 5
+status = "unverified"
+note = "+10% de Intelecto; más Aguante en oso y más Fuerza en felino. En Forever está en la primera fila de Restauración."
+
+[[pick]]
+level = 45
+talent = "Corazón de lo Salvaje"
+tree = "Restauración"
+rank = 4
+max = 5
+status = "unverified"
+note = "+10% de Intelecto; más Aguante en oso y más Fuerza en felino. En Forever está en la primera fila de Restauración."
+
+[[pick]]
+level = 46
+talent = "Corazón de lo Salvaje"
+tree = "Restauración"
+rank = 5
+max = 5
+status = "unverified"
+note = "+10% de Intelecto; más Aguante en oso y más Fuerza en felino. En Forever está en la primera fila de Restauración."
+
+[[pick]]
+level = 47
+talent = "Cambiaformas natural (Natural Shapeshifter)"
+tree = "Restauración"
+rank = 1
+max = 3
+status = "unverified"
+note = "-30% de coste de maná al cambiar de forma: más Poder cambiante y más curas entre combates. Nombre esES sin confirmar. Elección del autor; Warcraft Tavern (9/37/5) pone esos 3 puntos en Combate feral."
+
+[[pick]]
+level = 48
+talent = "Cambiaformas natural (Natural Shapeshifter)"
+tree = "Restauración"
+rank = 2
+max = 3
+status = "unverified"
+note = "-30% de coste de maná al cambiar de forma: más Poder cambiante y más curas entre combates. Nombre esES sin confirmar. Elección del autor; Warcraft Tavern (9/37/5) pone esos 3 puntos en Combate feral."
+
+[[pick]]
+level = 49
+talent = "Cambiaformas natural (Natural Shapeshifter)"
+tree = "Restauración"
+rank = 3
+max = 3
+status = "unverified"
+note = "-30% de coste de maná al cambiar de forma: más Poder cambiante y más curas entre combates. Nombre esES sin confirmar. Elección del autor; Warcraft Tavern (9/37/5) pone esos 3 puntos en Combate feral."
+
+[[pick]]
+level = 50
+talent = "Génesis (Genesis)"
+tree = "Equilibrio"
+rank = 1
+max = 5
+status = "unverified"
+note = "+10% de daño y sanación periódicos. Puerta para los dos talentos siguientes. Nombre esES sin confirmar. Ruta de Method: 5 en Génesis para abrir Majestad y Alcance."
+
+[[pick]]
+level = 51
+talent = "Génesis (Genesis)"
+tree = "Equilibrio"
+rank = 2
+max = 5
+status = "unverified"
+note = "+10% de daño y sanación periódicos. Puerta para los dos talentos siguientes. Nombre esES sin confirmar. Ruta de Method: 5 en Génesis para abrir Majestad y Alcance."
+
+[[pick]]
+level = 52
+talent = "Génesis (Genesis)"
+tree = "Equilibrio"
+rank = 3
+max = 5
+status = "unverified"
+note = "+10% de daño y sanación periódicos. Puerta para los dos talentos siguientes. Nombre esES sin confirmar. Ruta de Method: 5 en Génesis para abrir Majestad y Alcance."
+
+[[pick]]
+level = 53
+talent = "Génesis (Genesis)"
+tree = "Equilibrio"
+rank = 4
+max = 5
+status = "unverified"
+note = "+10% de daño y sanación periódicos. Puerta para los dos talentos siguientes. Nombre esES sin confirmar. Ruta de Method: 5 en Génesis para abrir Majestad y Alcance."
+
+[[pick]]
+level = 54
+talent = "Génesis (Genesis)"
+tree = "Equilibrio"
+rank = 5
+max = 5
+status = "unverified"
+note = "+10% de daño y sanación periódicos. Puerta para los dos talentos siguientes. Nombre esES sin confirmar. Ruta de Method: 5 en Génesis para abrir Majestad y Alcance."
+
+[[pick]]
+level = 55
+talent = "Majestad de la Naturaleza (Nature's Majesty)"
+tree = "Equilibrio"
+rank = 1
+max = 2
+status = "unverified"
+note = "+4% de crítico con hechizos y cuerpo a cuerpo. Nombre esES sin confirmar."
+
+[[pick]]
+level = 56
+talent = "Majestad de la Naturaleza (Nature's Majesty)"
+tree = "Equilibrio"
+rank = 2
+max = 2
+status = "unverified"
+note = "+4% de crítico con hechizos y cuerpo a cuerpo. Nombre esES sin confirmar."
+
+[[pick]]
+level = 57
+talent = "Alcance de la Naturaleza (Nature's Reach)"
+tree = "Equilibrio"
+rank = 1
+max = 2
+status = "unverified"
+note = "+4% de golpe (Warcraft Tavern lo cuenta para el tope de golpe del felino). Nombre esES sin confirmar."
+
+[[pick]]
+level = 58
+talent = "Alcance de la Naturaleza (Nature's Reach)"
+tree = "Equilibrio"
+rank = 2
+max = 2
+status = "unverified"
+note = "+4% de golpe (Warcraft Tavern lo cuenta para el tope de golpe del felino). Nombre esES sin confirmar."
+
+[[pick]]
+level = 59
+talent = "Impacto brutal"
+tree = "Combate feral"
+rank = 1
+max = 2
+status = "unverified"
+note = "Azote y Abalanzarse aturden más tiempo. Útil contra lanzadores y para huir. Alternativa: Instinto feral 2/3 o Furor."
+
+[[pick]]
+level = 60
+talent = "Impacto brutal"
+tree = "Combate feral"
+rank = 2
+max = 2
+status = "unverified"
+note = "Azote y Abalanzarse aturden más tiempo. Útil contra lanzadores y para huir. Alternativa: Instinto feral 2/3 o Furor."

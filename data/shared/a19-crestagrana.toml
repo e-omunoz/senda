@@ -124,6 +124,7 @@ quest = 65
 npc = 266
 at = [1433, 21.4, 45.4]
 text = "Entrega La Hermandad Defias a Wiley el Negro, en la posada."
+if = { race = ["Human", "Dwarf", "Gnome"] }
 status = "unverified"
 sources = ["questie:quest/65", "questie:npc/266"]
 
@@ -135,6 +136,7 @@ reqlevel = 14
 npc = 266
 at = [1433, 21.4, 45.4]
 text = "Coge la nota de Wiley para Gryan Stoutmantle. La entregarás al volver a Poniente."
+if = { race = ["Human", "Dwarf", "Gnome"] }
 status = "unverified"
 sources = ["questie:quest/132"]
 
@@ -532,6 +534,19 @@ text = "Mago: entrena lo del 20 (Traslación, Evocación, Escudo de maná, Custo
 if = { class = ["MAGE"] }
 status = "unverified"
 sources = ["questie:npc/5497", "knowledge:mage-spells"]
+
+[[step]]
+id = "a19rr-dr-20"
+do = "train"
+spells = [2912, 20484]
+npc = 5504
+at = [1453, 35.84, 67.38]
+text = "Druida: entrena lo del 20 (Fuego estelar, Renacer) con Sheldras Moontree, en El Parque de Ventormenta."
+tip = "La Forma felina es una misión de clase que empieza en Darnassus. Al 20 puedes aprender Armas de asta con Woo Ping."
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/5504", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
 
 [[step]]
 id = "a19rr-052"

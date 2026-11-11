@@ -1,0 +1,92 @@
+# Druida elfo de la noche, tramo 40-49. Escrito para Senda (no migrado).
+id = "druid-bracket-40-49"
+class = "DRUID"
+kind = "page"
+title = "Niveles 40-49: Oso temible y Poder cambiante"
+levels = [40, 49]
+order = 50
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/druid/", "https://www.warcrafttavern.com/forever/guides/feral-druid/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-11"
+note = "Poder cambiante y Mordisco primario: talentos de Forever (Warcraft Tavern y Method)."
+
+[[block]]
+heading = "Zonas"
+body = """
+- **40-45:** Tanaris, Feralas (Bastión Plumaluna) y Tierras del Interior.
+- **40-45:** **Shen'dralar** (zona nueva de Forever).
+- **43-48:** Garganta de Fuego.
+- **45-50:** Azshara y Frondavil.
+
+Mazmorras: **Krol'dok** (40-45), Zul'Farrak, Maraudon, Uldaman."""
+
+[[block]]
+heading = "Formas"
+body = """
+**40: Forma de oso temible**: sustituye a la Forma de oso. Más armadura y vida: ya puedes tanquear mazmorras con Lacerar y Mordisco primario."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **40:** Forma de oso temible, Estimular, Huracán, Gracia felina. Equitación de aprendiz y **doble especialización**.
+- **44:** Piel de corteza."""
+
+[[block]]
+heading = "Talentos"
+body = """
+- **40:** **Poder cambiante** (maná por 40 de energía).
+- **41:** Mordisco primario.
+- **42-46:** Corazón de lo Salvaje 5/5 (Restauración).
+- **47-49:** Cambiaformas natural 3/3.
+
+**Doble especialización al 40:** la segunda, de oso (Instinto feral, Piel gruesa, Lacerar, Reacción natural) para tanquear, o de Restauración para curar."""
+note = "Cambiaformas natural es elección del autor; Warcraft Tavern (9/37/5) usa esos puntos en Combate feral."
+
+[[block]]
+heading = "Rotación"
+body = """
+1. Fuego feérico, Arañar.
+2. **Poder cambiante** con menos de 50 de energía (no gastes el maná que necesitas para curarte).
+3. Destripar con 5 puntos; Mordedura feroz con 4-5 puntos y 70+ de energía.
+4. Arañazo o Triturar para generar puntos.
+
+**Oso temible:** Fuego feérico, Lacerar x5, Rugido desmoralizador, Mordisco primario, Flagelo o Magullar."""
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 40:** SND_Poder (Poder cambiante), SND_Estimular. SND_Oso pasa a Oso temible."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+- Objetivo al 50: Herboristería ~285, Alquimia ~260.
+- Tanaris y Feralas: Flor de fuego, Loto cárdeno, Hierba de sol, Gromsanguina.
+- **Piedra filosofal** (Alquimia 225, receta de Alchemist Pestlezugg en Gadgetzan): guárdala, la necesitan las transmutaciones."""
+
+[[block]]
+heading = "Equipo"
+body = """
+- **Carga de Grimlok** (Grimlok's Charge, arma de asta, 42): Grimlok, Uldaman.
+- **Aporreador de masas manual** (Manual Crowd Pummeler, Gnomeregan) sigue siendo muy bueno para felino.
+- Cuero con Agilidad y Fuerza de Zul'Farrak y Maraudon."""
+note = "Nombres esES sin confirmar."
+
+[[block]]
+heading = "Oro"
+body = """
+La equitación del 40 la pagas tú (en Forever el brujo la tiene gratis con su misión; el druida, no). Vende Flor de fuego y Loto cárdeno: los compran los alquimistas."""
+note = "Precio de la equitación para el druida sin fuente."
+
+[[block]]
+heading = "Objetivos"
+body = """
+- Oso temible, equitación y doble especialización al 40.
+- 34 puntos en Combate feral al 41 (Poder cambiante y Mordisco primario)."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Estimular a ti mismo con poco maná: te curas entero y vuelves a felino.
+- Piel de corteza (44) se lanza en forma y no rompe el sigilo: úsalo antes de que te aturdan.
+- En mazmorra, si el grupo no tiene tanque, cambia a la especialización de oso."""

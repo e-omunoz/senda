@@ -1,0 +1,99 @@
+# Druida elfo de la noche: Forma acuática, segunda parte (17-19). Ids y coordenadas de QuestieDB (Forever); textos propios.
+# Mitad del colgante hundida en los Páramos de Poniente (al oeste de la cantera de Costa Dorada), unión en el Santuario
+# de Remulos y entregas en el Claro de la Luna y Darnassus. Va con la ruta de los Páramos (a17).
+id = "dr-18-sea-lion"
+title = "Druida: Prueba del león marino (18)"
+levels = [17, 19]
+map = 1436
+summary = "Mitad del colgante en la costa de los Páramos de Poniente, colgante unido en el Santuario de Remulos y Forma acuática en Darnassus."
+if = { class = ["DRUID"] }
+
+[[step]]
+id = "dr-18-sea-lion-001"
+do = "loot"
+item = 15882
+count = 1
+at = [1436, 17.94, 33.18]
+text = "Al oeste-noroeste de la cantera de Costa Dorada, bucea junto al barco hundido del ancla y saca la mitad del colgante de la caja."
+tip = "Hay una grieta con burbujas cerca para recuperar el aire. Cuidado con los múrlocs de la costa."
+status = "unverified"
+sources = ["questie:quest/272", "questie:object/177790", "questie:item/15882", "https://warcraft.wiki.gg/wiki/Trial_of_the_Sea_Lion"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-18-sea-lion-002"
+do = "complete"
+quest = 272
+at = [1450, 36.0, 41.42]
+text = "Lanza Teletransporte: Claro de la Luna, ve al Santuario de Remulos y une allí las dos mitades del colgante."
+tip = "Hazlo cuando tengas la piedra de hogar lista para volver a los Reinos del Este."
+status = "unverified"
+sources = ["questie:quest/272", "questie:object/15885", "questie:item/15885"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-18-sea-lion-003"
+do = "turnin"
+quest = 272
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Entrega el colgante a Dendrite."
+status = "unverified"
+sources = ["questie:quest/272", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-18-sea-lion-004"
+do = "accept"
+quest = 5061
+reqlevel = 16
+npc = 11802
+at = [1450, 56.21, 30.64]
+text = "Coge la última misión de la Forma acuática."
+status = "unverified"
+sources = ["questie:quest/5061", "questie:npc/11802"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-18-sea-lion-005"
+do = "goto"
+npc = 11800
+at = [1450, 44.15, 45.23]
+radius = 10
+text = "Pide a Silva Fil'naveth el vuelo de druida a la Aldea Rut'theran y entra en Darnassus por el portal."
+status = "unverified"
+sources = ["questie:npc/11800"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-18-sea-lion-006"
+do = "turnin"
+quest = 5061
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Enseña el colgante a Mathrengyl: aprendes Forma acuática."
+tip = "Bajo el agua respiras sin límite y nadas mucho más rápido."
+status = "unverified"
+sources = ["questie:quest/5061", "questie:npc/4217", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-18-sea-lion-007"
+do = "train"
+spells = [770, 2637]
+npc = 4217
+at = [1457, 35.37, 8.4]
+text = "Si eres 18, entrena Fuego feérico e Hibernar."
+optional = true
+if = { minlevel = 18 }
+status = "unverified"
+sources = ["questie:npc/4217", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+checked = "2026-11-11"
+
+[[step]]
+id = "dr-18-sea-lion-008"
+do = "note"
+text = "Si ya eres 20, sigue con la Forma felina sin salir de Darnassus. Si no, usa la piedra de hogar para volver a tu ruta."
+status = "unverified"
+sources = []
+checked = "2026-11-11"

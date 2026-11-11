@@ -688,6 +688,19 @@ status = "unverified"
 sources = ["questie:npc/5497", "knowledge:mage-spells"]
 
 [[step]]
+id = "a17wf-dr-18"
+do = "train"
+spells = [770, 2637]
+npc = 5504
+at = [1453, 35.84, 67.38]
+text = "Druida: entrena lo del 18 (Fuego feérico, Hibernar) con Sheldras Moontree, en El Parque de Ventormenta."
+tip = "Theridran y Maldryn, a su lado, también son instructores de druida."
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/5504", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a17wf-067"
 do = "turnin"
 quest = 92748

@@ -1,0 +1,95 @@
+# Druida elfo de la noche, tramo 30-39. Escrito para Senda (no migrado).
+id = "druid-bracket-30-39"
+class = "DRUID"
+kind = "page"
+title = "Niveles 30-39: Forma de viaje"
+levels = [30, 39]
+order = 40
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents", "https://timesaver.gg/tools/wow-forever/talent-calculator/druid", "https://warcraft.wiki.gg/wiki/Patch_1.60"]
+checked = "2026-11-11"
+note = "Niveles de zonas: tabla de Warcraft Tavern (nivel mínimo recomendado). Equipo: tabla de Method."
+
+[[block]]
+heading = "Zonas"
+body = """
+- **30-35:** Laderas de Trabalomas, Tierras Altas de Arathi, Desolace y Montañas de Alterac.
+- **30-40:** Vega de Tuercespina (norte).
+- **35-40:** Marjal Revolcafango, Pantano de las Penas y **Riverglades** (zona nueva de Forever).
+
+Mazmorras: **City of Dalaran** (28-33), Monasterio Escarlata, **The Drowned City** (35-40), Uldaman al final."""
+
+[[block]]
+heading = "Formas"
+body = """
+**30: Forma de viaje** (instantánea, +40% al aire libre): ya no necesitas montura hasta el 40. En Forever puedes recoger hierbas e interactuar con casi todo sin salir de la forma."""
+
+[[block]]
+heading = "Hechizos"
+body = """
+- **30:** Forma de viaje, Tranquilidad.
+- **32:** Rastrear humanoides, Devastar, Aplomo (Poised, nuevo).
+- **36:** Regeneración frenética, Abalanzarse."""
+note = "«Poised» al 32: aparece en la lista de Warcraft Tavern sin descripción."
+
+[[block]]
+heading = "Talentos"
+body = """
+- **30:** Líder de la manada.
+- **31-32:** Instinto natural 2/2.
+- **33:** Disciplina depredadora.
+- **34:** Lacerar (relleno para llegar a 25 puntos).
+- **35-39:** Rasgar y desgarrar 5/5."""
+note = "Nombres esES sin confirmar salvo Líder de la manada. Orden del autor (ver talents.toml)."
+
+[[block]]
+heading = "Rotación"
+body = """
+1. Acechar y **Devastar** por la espalda (o Abalanzarse para aturdir, 36).
+2. Fuego feérico, Arañar.
+3. Arañazo (Triturar detrás) hasta 5 puntos.
+4. **Mordedura feroz** con 4-5 puntos y 70+ de energía; Destripar en enemigos con mucha vida.
+
+Con Rasgar y desgarrar, todo pega más si el objetivo sangra: Arañar siempre primero."""
+
+[[block]]
+heading = "Macros"
+body = """
+- **Al 30:** SND_Viaje ya elige sola agua, aire libre o felino.
+- SND_Abrir pasa a usar Devastar al 32."""
+
+[[block]]
+heading = "Profesiones"
+body = """
+- Objetivo al 40: Herboristería ~230, Alquimia ~210.
+- Entrena **Artesano** al 35 con Ainethil (Darnassus, 54.9, 24.0).
+- Arathi y la Vega de Tuercespina: Pálida, Espina de oro, Mostacho de Khadgar.
+- **Elixir de agilidad** (Alquimia ~195): úsalo tú en felino."""
+
+[[block]]
+heading = "Equipo"
+body = """
+- **Defensor de Dalaran** (Defender of Dalaran, maza de dos manos, 30): cadena de Alianza de Emissary Jacques (Laderas de Trabalomas).
+- **Talismán de fragmento fantasmal** (Ghostshard Talisman, cuello, 30): Azshir el Insomne, Monasterio Escarlata.
+- **Capa oscura con capucha** (Dark Hooded Cape, 34): Nimar el Asesino, Arathi.
+- **Armamento magram recuperado** (Scavenged Magram Armament, arma de asta, 35): cadena de Khan Jehn, Desolace.
+- **El Pacificador** (The Pacifier, maza de dos manos, 36): Lo'Grosh, Montañas de Alterac."""
+note = "Lista de Method (7-nov); nombres esES sin confirmar."
+
+[[block]]
+heading = "Oro"
+body = """
+Guarda para la equitación del 40: la Forma de viaje te deja ahorrar sin montura, pero la montura es más rápida (60%). Vende Sangrerregia y Raíz de vida."""
+
+[[block]]
+heading = "Objetivos"
+body = """
+- Forma de viaje al 30 y 30 puntos de talento en Combate feral al 39.
+- Llegar al 40 con el oro de la equitación."""
+
+[[block]]
+heading = "Consejos"
+body = """
+- Forma de viaje + Herboristería: recoges mientras viajas sin bajarte.
+- Abalanzarse (36) aturde desde Acechar: úsalo contra lanzadores.
+- Regeneración frenética (36) convierte ira en vida: tu botón de emergencia en oso."""

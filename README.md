@@ -22,7 +22,7 @@ Senda te lleva de la mano desde el primer paso hasta el nivel máximo:
 - **Datos con procedencia**: cada paso indica si está verificado, sin verificar o en disputa, con sus fuentes.
 - **Convive con Questie**: Senda guía la ruta y Questie sigue mostrando las misiones en el mapa.
 
-Guías disponibles: **brujo gnomo** y **mago humano**. Más razas y clases próximamente.
+Guías disponibles: **brujo gnomo**, **mago humano** y **druida elfo de la noche**. Más razas y clases próximamente.
 
 Web con la guía detallada: https://e-omunoz.github.io/senda/
 

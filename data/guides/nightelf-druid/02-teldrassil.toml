@@ -1,0 +1,1617 @@
+# Elfo de la noche: Teldrassil y Darnassus (6-12).
+# Profesiones del druida: Herboristería y Alquimia (Dolanaar), Primeros auxilios y Cocina.
+# Misiones nuevas de Forever: 96606 y lecciones Camping 101, 87288, 98403, 99046-99073 (Ban'ethil),
+# 98391, 98392/98398 (Claro del Oráculo), 98046/98065 (Corona de la Tierra), 98067.
+# Ids y coordenadas: QuestieDB de Forever. Orden: guía de games.gg (Teldrassil) ajustada. Textos propios.
+id = "ne-teldrassil"
+title = "Teldrassil y Darnassus"
+levels = [6, 12]
+map = 1438
+summary = "Del 6 al 12: Dolanaar (hogar y profesiones), Villa Brisa Estelar, Roca Vil, el lago de Denalan, el túmulo de Ban'ethil, Darnassus, el Claro del Oráculo y vuelo a Costa Oscura."
+link = "https://games.gg/world-of-warcraft/guides/wow-forever-teldrassil-leveling/"
+
+[[step]]
+id = "netd-001"
+do = "turnin"
+quest = 2159
+npc = 6736
+at = [1438, 55.62, 59.79]
+text = "Entrega el paquete de Porthannius al posadero Keldamyr."
+status = "unverified"
+sources = ["questie:quest/2159", "questie:npc/6736"]
+
+[[step]]
+id = "netd-002"
+do = "sethearth"
+npc = 6736
+zone = 1438
+at = [1438, 55.62, 59.79]
+text = "Pon la piedra de hogar en la posada de Dolanaar."
+tip = "Dolanaar es tu base hasta el 11-12."
+status = "unverified"
+sources = ["questie:npc/6736"]
+
+[[step]]
+id = "netd-003"
+do = "turnin"
+quest = 928
+npc = 3515
+at = [1438, 56.14, 61.71]
+text = "Entrega la Corona de la Tierra a Corithras Moonrage, al este de la posada."
+status = "unverified"
+sources = ["questie:quest/928", "questie:npc/3515"]
+
+[[step]]
+id = "netd-004"
+do = "accept"
+quest = 929
+npc = 3515
+at = [1438, 56.14, 61.71]
+text = "Coge la siguiente Corona de la Tierra."
+status = "unverified"
+sources = ["questie:quest/929", "questie:npc/3515"]
+
+[[step]]
+id = "netd-005"
+do = "turnin"
+quest = 96630
+npc = 265811
+at = [1438, 57.58, 56.64]
+text = "Lleva el diario a Lyreena Duskblade, junto a la hoguera al norte del pueblo."
+status = "unverified"
+sources = ["questie:quest/96630", "questie:npc/265811"]
+
+[[step]]
+id = "netd-006"
+do = "accept"
+quest = 96606
+reqlevel = 4
+npc = 265811
+at = [1438, 57.58, 56.64]
+text = "Coge la misión del campamento de Lyreena."
+status = "unverified"
+sources = ["questie:quest/96606", "questie:npc/265811"]
+
+[[step]]
+id = "netd-007"
+do = "complete"
+quest = 96606
+at = [1438, 57.58, 56.64]
+text = "Siéntate junto a la hoguera de Lyreena hasta recibir el beneficio de descanso."
+status = "unverified"
+sources = ["questie:quest/96606"]
+
+[[step]]
+id = "netd-008"
+do = "turnin"
+quest = 96606
+npc = 265811
+at = [1438, 57.58, 56.64]
+text = "Entrega la misión a Lyreena."
+status = "unverified"
+sources = ["questie:quest/96606", "questie:npc/265811"]
+
+[[step]]
+id = "netd-009"
+do = "accept"
+quest = 97944
+reqlevel = 4
+npc = 265811
+at = [1438, 57.58, 56.64]
+text = "Coge la lección de campamento de Herboristería."
+status = "unverified"
+sources = ["questie:quest/97944", "questie:npc/265811"]
+
+[[step]]
+id = "netd-010"
+do = "accept"
+quest = 97938
+reqlevel = 4
+npc = 265811
+at = [1438, 57.58, 56.64]
+text = "Coge la lección de Alquimia."
+status = "unverified"
+sources = ["questie:quest/97938", "questie:npc/265811"]
+
+[[step]]
+id = "netd-011"
+do = "accept"
+quest = 97942
+reqlevel = 4
+npc = 265811
+at = [1438, 57.58, 56.64]
+text = "Coge la lección de Primeros auxilios."
+status = "unverified"
+sources = ["questie:quest/97942", "questie:npc/265811"]
+
+[[step]]
+id = "netd-012"
+do = "accept"
+quest = 96634
+reqlevel = 4
+npc = 265811
+at = [1438, 57.58, 56.64]
+text = "Coge la lección de Cocina."
+tip = "Si Lyreena no deja coger tantas, quédate con Herboristería y Alquimia: son tus principales."
+status = "unverified"
+sources = ["questie:quest/96634", "questie:npc/265811"]
+
+[[step]]
+id = "netd-013"
+do = "turnin"
+quest = 97944
+npc = 3604
+at = [1438, 57.72, 60.64]
+text = "Entrega la lección a Malorne Bladeleaf, el herbolario del sur del pueblo."
+status = "unverified"
+sources = ["questie:quest/97944", "questie:npc/3604"]
+
+[[step]]
+id = "netd-014"
+do = "learn_prof"
+npc = 3604
+prof = "herbalism"
+at = [1438, 57.72, 60.64]
+text = "Aprende Herboristería con Malorne Bladeleaf."
+tip = "Activa Buscar hierbas. Recoge todo el Musgo de tumba, Hojaplata y Flor de paz que veas: son para Alquimia."
+status = "unverified"
+sources = ["questie:npc/3604"]
+
+[[step]]
+id = "netd-015"
+do = "turnin"
+quest = 97938
+npc = 3603
+at = [1438, 57.64, 60.8]
+text = "Entrega la lección a Cyndra Kindwhisper, al lado."
+status = "unverified"
+sources = ["questie:quest/97938", "questie:npc/3603"]
+
+[[step]]
+id = "netd-016"
+do = "learn_prof"
+npc = 3603
+prof = "alchemy"
+at = [1438, 57.64, 60.8]
+text = "Aprende Alquimia con Cyndra Kindwhisper."
+tip = "Pociones de sanación menores con Flor de paz y Hojaplata: te ahorran descansos y suben la Alquimia."
+status = "unverified"
+sources = ["questie:npc/3603"]
+
+[[step]]
+id = "netd-017"
+do = "turnin"
+quest = 96634
+npc = 6286
+at = [1438, 57.12, 61.3]
+text = "Entrega la lección a Zarrin, el cocinero."
+status = "unverified"
+sources = ["questie:quest/96634", "questie:npc/6286"]
+
+[[step]]
+id = "netd-018"
+do = "learn_prof"
+npc = 6286
+prof = "cooking"
+at = [1438, 57.12, 61.3]
+text = "Aprende Cocina con Zarrin."
+tip = "La comida de Cocina da +5% de experiencia en Forever."
+status = "unverified"
+sources = ["questie:npc/6286"]
+
+[[step]]
+id = "netd-019"
+do = "accept"
+quest = 4161
+npc = 6286
+at = [1438, 57.12, 61.3]
+text = "Coge la receta de Zarrin: patas de araña pequeñas de las arañas de Teldrassil."
+optional = true
+status = "unverified"
+sources = ["questie:quest/4161", "questie:npc/6286"]
+
+[[step]]
+id = "netd-020"
+do = "turnin"
+quest = 97942
+npc = 6094
+at = [1438, 55.29, 56.82]
+text = "Entrega la lección a Byancie, en la casa del oeste."
+status = "unverified"
+sources = ["questie:quest/97942", "questie:npc/6094"]
+
+[[step]]
+id = "netd-021"
+do = "learn_prof"
+npc = 6094
+prof = "firstaid"
+at = [1438, 55.29, 56.82]
+text = "Aprende Primeros auxilios con Byancie."
+tip = "Guarda el paño de lino para vendas."
+status = "unverified"
+sources = ["questie:npc/6094"]
+
+[[step]]
+id = "netd-022"
+do = "accept"
+quest = 475
+reqlevel = 4
+npc = 2078
+at = [1438, 55.96, 57.27]
+text = "Coge la misión de Athridas Bearmantle."
+status = "unverified"
+sources = ["questie:quest/475", "questie:npc/2078"]
+
+[[step]]
+id = "netd-023"
+do = "accept"
+quest = 2438
+npc = 3567
+at = [1438, 55.57, 56.95]
+text = "Coge la misión del atrapasueños de Tallonkai Swiftroot."
+status = "unverified"
+sources = ["questie:quest/2438", "questie:npc/3567"]
+
+[[step]]
+id = "netd-024"
+do = "accept"
+quest = 932
+reqlevel = 4
+npc = 3567
+at = [1438, 55.57, 56.95]
+text = "Coge también la de Lord Melenas de Tallonkai."
+status = "unverified"
+sources = ["questie:quest/932", "questie:npc/3567"]
+
+[[step]]
+id = "netd-025"
+do = "accept"
+quest = 87288
+reqlevel = 4
+npc = 3608
+at = [1438, 55.51, 57.15]
+text = "Coge la misión de las pieles de sable de Aldia (nueva de Forever)."
+status = "unverified"
+sources = ["questie:quest/87288", "questie:npc/3608"]
+
+[[step]]
+id = "netd-026"
+do = "accept"
+quest = 997
+reqlevel = 4
+npc = 2083
+at = [1438, 56.08, 57.72]
+text = "Coge la misión de la tierra de Denalan de Syral Bladeleaf."
+status = "unverified"
+sources = ["questie:quest/997", "questie:npc/2083"]
+
+[[step]]
+id = "netd-027"
+do = "accept"
+quest = 1581
+reqlevel = 4
+npc = 2083
+at = [1438, 56.08, 57.72]
+text = "Coge los elixires de Syral si llevas Alquimia."
+tip = "Pide un Elixir de fuerza de león y uno de defensa menor: apréndelos con Cyndra y fabrícalos con lo que recojas."
+optional = true
+if = { prof = ["alchemy"] }
+status = "unverified"
+sources = ["questie:quest/1581", "questie:npc/2083"]
+
+[[step]]
+id = "netd-028"
+do = "accept"
+quest = 488
+reqlevel = 4
+npc = 2150
+at = [1438, 60.35, 56.16]
+text = "Al este del pueblo, coge la misión de Zenn Foulhoof (el sátiro)."
+tip = "Colmillos de sable, plumas de lechuza y seda de araña: se consiguen solos mientras haces lo demás."
+status = "unverified"
+sources = ["questie:quest/488", "questie:npc/2150"]
+
+[[step]]
+id = "netd-029"
+do = "turnin"
+quest = 475
+npc = 2107
+at = [1438, 66.26, 58.52]
+text = "Ve al este a Villa Brisa Estelar y entrega a Gaerolas Talvethren."
+status = "unverified"
+sources = ["questie:quest/475", "questie:npc/2107"]
+
+[[step]]
+id = "netd-030"
+do = "accept"
+quest = 476
+reqlevel = 4
+npc = 2107
+at = [1438, 66.26, 58.52]
+text = "Coge su misión: vuelve con Athridas."
+status = "unverified"
+sources = ["questie:quest/476", "questie:npc/2107"]
+
+[[step]]
+id = "netd-031"
+do = "complete"
+quest = 2438
+at = [1438, 68.0, 59.6]
+text = "Recoge el Atrapasueños esmeralda del cajón de la casa de Tallonkai, al este de la villa."
+status = "unverified"
+sources = ["questie:quest/2438"]
+
+[[step]]
+id = "netd-032"
+do = "complete"
+quest = 929
+at = [1438, 63.4, 58.1]
+text = "Llena la redoma de jade en la poza de la luna de Villa Brisa Estelar."
+status = "unverified"
+sources = ["questie:quest/929"]
+
+[[step]]
+id = "netd-033"
+do = "complete"
+quest = 87288
+at = [1438, 58.0, 59.0]
+text = "Mata sables de la noche alrededor de Dolanaar hasta tener las pieles suaves."
+tip = "Cuentan también para los colmillos de Zenn."
+status = "unverified"
+sources = ["questie:quest/87288"]
+
+[[step]]
+id = "netd-034"
+do = "turnin"
+quest = 476
+npc = 2078
+at = [1438, 55.96, 57.27]
+text = "Vuelve a Dolanaar y entrega a Athridas."
+status = "unverified"
+sources = ["questie:quest/476", "questie:npc/2078"]
+
+[[step]]
+id = "netd-035"
+do = "accept"
+quest = 483
+reqlevel = 4
+npc = 2078
+at = [1438, 55.96, 57.27]
+text = "Coge las reliquias del despertar (Ban'ethil): las harás más tarde."
+status = "unverified"
+sources = ["questie:quest/483", "questie:npc/2078"]
+
+[[step]]
+id = "netd-036"
+do = "turnin"
+quest = 2438
+npc = 3567
+at = [1438, 55.57, 56.95]
+text = "Entrega el atrapasueños a Tallonkai."
+status = "unverified"
+sources = ["questie:quest/2438", "questie:npc/3567"]
+
+[[step]]
+id = "netd-037"
+do = "accept"
+quest = 2459
+npc = 3567
+at = [1438, 55.57, 56.95]
+text = "Coge la misión de Ferocitas."
+status = "unverified"
+sources = ["questie:quest/2459", "questie:npc/3567"]
+
+[[step]]
+id = "netd-038"
+do = "turnin"
+quest = 87288
+npc = 3608
+at = [1438, 55.51, 57.15]
+text = "Entrega las pieles a Aldia."
+status = "unverified"
+sources = ["questie:quest/87288", "questie:npc/3608"]
+
+[[step]]
+id = "netd-039"
+do = "turnin"
+quest = 929
+npc = 3515
+at = [1438, 56.14, 61.71]
+text = "Entrega la redoma de jade a Corithras."
+status = "unverified"
+sources = ["questie:quest/929", "questie:npc/3515"]
+
+[[step]]
+id = "netd-040"
+do = "accept"
+quest = 933
+npc = 3515
+at = [1438, 56.14, 61.71]
+text = "Coge la siguiente Corona de la Tierra."
+status = "unverified"
+sources = ["questie:quest/933", "questie:npc/3515"]
+
+[[step]]
+id = "netd-041"
+do = "complete"
+quest = 2459
+at = [1438, 68.9, 52.8]
+text = "Ve al noreste: mata místicos Tuercepinos y a Ferocitas el Devorasueños para la joya."
+tip = "Ferocitas lleva místicos con él: llévalos de uno en uno. Si hay cola, sáltatela."
+status = "unverified"
+sources = ["questie:quest/2459"]
+
+[[step]]
+id = "netd-042"
+do = "turnin"
+quest = 2459
+npc = 3567
+at = [1438, 55.57, 56.95]
+text = "Vuelve a Dolanaar y entrega a Tallonkai."
+status = "unverified"
+sources = ["questie:quest/2459", "questie:npc/3567"]
+
+[[step]]
+id = "netd-043"
+do = "complete"
+quest = 932
+at = [1438, 51.8, 50.4]
+text = "Entra en la Roca Vil (cueva al noroeste de Dolanaar) y mata a Lord Melenas."
+tip = "Es un sátiro débil al fondo de la cueva. Mata a los grells de la entrada solo si te cortan el paso."
+status = "unverified"
+sources = ["questie:quest/932"]
+
+[[step]]
+id = "netd-044"
+do = "turnin"
+quest = 932
+npc = 3567
+at = [1438, 55.57, 56.95]
+text = "Entrega la cabeza de Melenas a Tallonkai."
+status = "unverified"
+sources = ["questie:quest/932", "questie:npc/3567"]
+
+[[step]]
+id = "netd-045"
+do = "accept"
+quest = 98403
+reqlevel = 4
+npc = 3567
+at = [1438, 55.57, 56.95]
+text = "Coge la continuación (nueva de Forever): arañas corruptas y musgo vil al norte. Hazla al 10-11."
+status = "unverified"
+sources = ["questie:quest/98403", "questie:npc/3567"]
+
+[[step]]
+id = "netd-046"
+do = "turnin"
+quest = 488
+npc = 2150
+at = [1438, 60.35, 56.16]
+text = "Entrega los colmillos, plumas y seda a Zenn."
+tip = "Si te falta algo, hazlo en el lago: hay arañas, lechuzas y sables al sur."
+status = "unverified"
+sources = ["questie:quest/488", "questie:npc/2150"]
+
+[[step]]
+id = "netd-047"
+do = "accept"
+quest = 489
+reqlevel = 4
+npc = 2083
+at = [1438, 56.08, 57.72]
+text = "En Dolanaar, coge con Syral Bladeleaf la misión de los conos viles para Zenn."
+tip = "Los conos viles están por el suelo alrededor del lago del sur."
+status = "unverified"
+sources = ["questie:quest/489", "questie:npc/2083"]
+
+[[step]]
+id = "netd-048"
+do = "turnin"
+quest = 997
+npc = 2080
+at = [1438, 60.9, 68.49]
+text = "Baja al lago del sur y entrega la tierra a Denalan."
+status = "unverified"
+sources = ["questie:quest/997", "questie:npc/2080"]
+
+[[step]]
+id = "netd-049"
+do = "accept"
+quest = 918
+reqlevel = 4
+npc = 2080
+at = [1438, 60.9, 68.49]
+text = "Coge la misión de las semillas."
+status = "unverified"
+sources = ["questie:quest/918", "questie:npc/2080"]
+
+[[step]]
+id = "netd-050"
+do = "accept"
+quest = 919
+reqlevel = 4
+npc = 2080
+at = [1438, 60.9, 68.49]
+text = "Coge la de los brotes."
+status = "unverified"
+sources = ["questie:quest/919", "questie:npc/2080"]
+
+[[step]]
+id = "netd-051"
+do = "complete"
+quest = 918
+at = [1438, 58.0, 68.0]
+wps = [[1438, 56.3, 69.4, "Brotes"], [1438, 58.9, 67.3, "Leñatillos"]]
+text = "Mata Leñatillos alrededor del lago para las semillas y recoge los brotes del suelo."
+status = "unverified"
+sources = ["questie:quest/918"]
+
+[[step]]
+id = "netd-052"
+do = "complete"
+quest = 919
+at = [1438, 56.3, 69.4]
+text = "Termina los brotes de Leñatillo."
+status = "unverified"
+sources = ["questie:quest/919"]
+
+[[step]]
+id = "netd-053"
+do = "complete"
+quest = 489
+at = [1438, 55.0, 66.0]
+text = "Recoge los conos viles por el suelo alrededor del lago."
+status = "unverified"
+sources = ["questie:quest/489"]
+
+[[step]]
+id = "netd-054"
+do = "turnin"
+quest = 918
+npc = 2080
+at = [1438, 60.9, 68.49]
+text = "Entrega las semillas a Denalan."
+status = "unverified"
+sources = ["questie:quest/918", "questie:npc/2080"]
+
+[[step]]
+id = "netd-055"
+do = "turnin"
+quest = 919
+npc = 2080
+at = [1438, 60.9, 68.49]
+text = "Entrega los brotes a Denalan."
+status = "unverified"
+sources = ["questie:quest/919", "questie:npc/2080"]
+
+[[step]]
+id = "netd-056"
+do = "accept"
+quest = 922
+reqlevel = 4
+npc = 2080
+at = [1438, 60.9, 68.49]
+text = "Coge la misión que te manda a Darnassus con Rellian Greenspyre."
+status = "unverified"
+sources = ["questie:quest/922", "questie:npc/2080"]
+
+[[step]]
+id = "netd-057"
+do = "turnin"
+quest = 489
+npc = 2150
+at = [1438, 60.35, 56.16]
+text = "Vuelve a Dolanaar y entrega los conos a Zenn."
+status = "unverified"
+sources = ["questie:quest/489", "questie:npc/2150"]
+
+[[step]]
+id = "netd-058"
+do = "turnin"
+quest = 4161
+npc = 6286
+at = [1438, 57.12, 61.3]
+text = "Entrega las patas de araña a Zarrin."
+optional = true
+status = "unverified"
+sources = ["questie:quest/4161", "questie:npc/6286"]
+
+[[step]]
+id = "netd-059"
+do = "turnin"
+quest = 1581
+npc = 2083
+at = [1438, 56.08, 57.72]
+text = "Entrega los elixires a Syral."
+optional = true
+if = { prof = ["alchemy"] }
+status = "unverified"
+sources = ["questie:quest/1581", "questie:npc/2083"]
+
+[[step]]
+id = "netd-060"
+do = "accept"
+quest = 99046
+reqlevel = 4
+npc = 2081
+at = [1438, 56.0, 59.52]
+text = "Coge la misión del corredor perdido de la Centinela Kyra Starsong (nueva de Forever)."
+status = "unverified"
+sources = ["questie:quest/99046", "questie:npc/2081"]
+
+[[step]]
+id = "netd-061"
+do = "accept"
+quest = 487
+reqlevel = 5
+npc = 2151
+at = [1438, 52.91, 57.2]
+text = "Toma el camino al oeste. Coge la misión de la Sacerdotisa lunar Amara, que patrulla el camino."
+tip = "Amara recorre el camino hacia el oeste: si no está en el punto, síguelo."
+status = "unverified"
+sources = ["questie:quest/487", "questie:npc/2151"]
+
+[[step]]
+id = "netd-062"
+do = "complete"
+quest = 487
+at = [1438, 46.5, 53.3]
+text = "Mata emboscadores Tuercepinos junto al camino."
+status = "unverified"
+sources = ["questie:quest/487"]
+
+[[step]]
+id = "netd-063"
+do = "accept"
+quest = 490
+reqlevel = 5
+npc = 2155
+at = [1438, 40.46, 50.73]
+text = "Sigue al oeste y coge la recompensa de la Centinela Shayla Nightbreeze."
+status = "unverified"
+sources = ["questie:quest/490", "questie:npc/2155"]
+
+[[step]]
+id = "netd-064"
+do = "accept"
+quest = 2541
+reqlevel = 3
+npc = 7317
+at = [1438, 44.94, 61.59]
+text = "Baja al túmulo de Ban'ethil y coge la misión de Oben Rageclaw, dentro."
+status = "unverified"
+sources = ["questie:quest/2541", "questie:npc/7317"]
+
+[[step]]
+id = "netd-065"
+do = "accept"
+quest = 99053
+reqlevel = 4
+npc = 275744
+at = [1438, 44.67, 58.91]
+text = "En el túmulo, habla con la Centinela Lynessa Duskblossom y acepta su escolta (nueva de Forever)."
+tip = "Haz antes las reliquias y los amuletos: la escolta acaba fuera y no tendrás que volver a entrar."
+status = "unverified"
+sources = ["questie:quest/99053", "questie:npc/275744"]
+
+[[step]]
+id = "netd-066"
+do = "complete"
+quest = 483
+at = [1438, 44.5, 61.0]
+wps = [[1438, 45.6, 57.4, "Cofre del Cuervo"], [1438, 43.7, 61.2, "Cofre de la Pluma Negra"], [1438, 44.7, 62.4, "Cofre del Cielo"], [1438, 44.4, 60.7, "Cofre del Nido"]]
+text = "Abre los cuatro cofres del fondo del túmulo para las reliquias."
+status = "unverified"
+sources = ["questie:quest/483"]
+
+[[step]]
+id = "netd-067"
+do = "complete"
+quest = 2541
+at = [1438, 45.5, 63.0]
+text = "Mata chamanes Tuercepinos para los amuletos vudú."
+status = "unverified"
+sources = ["questie:quest/2541"]
+
+[[step]]
+id = "netd-068"
+do = "complete"
+quest = 490
+at = [1438, 45.0, 64.0]
+text = "Junta los colmillos Tuercepinos de los furbolgs del túmulo."
+status = "unverified"
+sources = ["questie:quest/490"]
+
+[[step]]
+id = "netd-069"
+do = "turnin"
+quest = 2541
+npc = 7317
+at = [1438, 44.94, 61.59]
+text = "Entrega los amuletos a Oben Rageclaw."
+status = "unverified"
+sources = ["questie:quest/2541", "questie:npc/7317"]
+
+[[step]]
+id = "netd-070"
+do = "accept"
+quest = 2561
+reqlevel = 3
+npc = 7317
+at = [1438, 44.94, 61.59]
+text = "Coge la misión de Rageclaw."
+status = "unverified"
+sources = ["questie:quest/2561", "questie:npc/7317"]
+
+[[step]]
+id = "netd-071"
+do = "complete"
+quest = 2561
+at = [1438, 45.5, 58.6]
+text = "Mata a Rageclaw, el oso del fondo del túmulo, y usa el objeto de Oben en su cuerpo."
+status = "unverified"
+sources = ["questie:quest/2561"]
+
+[[step]]
+id = "netd-072"
+do = "turnin"
+quest = 2561
+npc = 7317
+at = [1438, 44.94, 61.59]
+text = "Vuelve con Oben y entrega."
+status = "unverified"
+sources = ["questie:quest/2561", "questie:npc/7317"]
+
+[[step]]
+id = "netd-073"
+do = "complete"
+quest = 99053
+at = [1438, 43.1, 51.6]
+text = "Escolta a Lynessa hasta la salida del túmulo."
+status = "unverified"
+sources = ["questie:quest/99053"]
+
+[[step]]
+id = "netd-074"
+do = "complete"
+quest = 933
+at = [1438, 42.4, 67.1]
+text = "Ve al sur y llena la redoma de turmalina en las Pozas de Arlithrien."
+status = "unverified"
+sources = ["questie:quest/933"]
+
+[[step]]
+id = "netd-075"
+do = "accept"
+quest = 930
+reqlevel = 4
+at = [1438, 42.61, 76.19]
+text = "Al sur de las pozas, examina la planta de frutos extraños: misión para Denalan."
+optional = true
+status = "unverified"
+sources = ["questie:quest/930", "questie:object/6751"]
+
+[[step]]
+id = "netd-076"
+do = "turnin"
+quest = 490
+npc = 2155
+at = [1438, 40.46, 50.73]
+text = "Vuelve al camino y entrega los colmillos a Shayla."
+status = "unverified"
+sources = ["questie:quest/490", "questie:npc/2155"]
+
+[[step]]
+id = "netd-077"
+do = "turnin"
+quest = 487
+npc = 2151
+at = [1438, 52.91, 57.2]
+text = "De vuelta hacia Dolanaar, entrega los emboscadores a Amara."
+status = "unverified"
+sources = ["questie:quest/487", "questie:npc/2151"]
+
+[[step]]
+id = "netd-078"
+do = "turnin"
+quest = 99053
+npc = 2081
+at = [1438, 56.0, 59.52]
+text = "En Dolanaar, entrega la escolta a la Centinela Kyra Starsong."
+status = "unverified"
+sources = ["questie:quest/99053", "questie:npc/2081"]
+
+[[step]]
+id = "netd-079"
+do = "turnin"
+quest = 483
+npc = 2078
+at = [1438, 55.96, 57.27]
+text = "Entrega las reliquias a Athridas."
+status = "unverified"
+sources = ["questie:quest/483", "questie:npc/2078"]
+
+[[step]]
+id = "netd-080"
+do = "accept"
+quest = 486
+reqlevel = 4
+npc = 2078
+at = [1438, 55.96, 57.27]
+text = "Coge la misión de Ursal el Triturador: hazla al 12 o sáltatela."
+optional = true
+status = "unverified"
+sources = ["questie:quest/486", "questie:npc/2078"]
+
+[[step]]
+id = "netd-081"
+do = "turnin"
+quest = 933
+npc = 3515
+at = [1438, 56.14, 61.71]
+text = "Entrega la redoma de turmalina a Corithras."
+status = "unverified"
+sources = ["questie:quest/933", "questie:npc/3515"]
+
+[[step]]
+id = "netd-082"
+do = "accept"
+quest = 7383
+npc = 3515
+at = [1438, 56.14, 61.71]
+text = "Coge la siguiente Corona de la Tierra: poza del Claro del Oráculo."
+status = "unverified"
+sources = ["questie:quest/7383", "questie:npc/3515"]
+
+[[step]]
+id = "netd-083"
+do = "accept"
+quest = 98391
+reqlevel = 5
+npc = 3600
+at = [1438, 55.56, 56.75]
+text = "Coge la misión de Laurna Morninglight para el Templo de la Luna."
+status = "unverified"
+sources = ["questie:quest/98391", "questie:npc/3600"]
+
+[[step]]
+id = "netd-084"
+do = "turnin"
+quest = 922
+npc = 3517
+at = [1457, 38.18, 21.64]
+text = "Ve por el camino del oeste a Darnassus. En el Enclave Cenarion, entrega a Rellian Greenspyre."
+tip = "Darnassus no tiene ruta de vuelo: el vuelo está abajo, en Rut'theran."
+status = "unverified"
+sources = ["questie:quest/922", "questie:npc/3517"]
+
+[[step]]
+id = "netd-085"
+do = "accept"
+quest = 923
+reqlevel = 4
+npc = 3517
+at = [1457, 38.18, 21.64]
+text = "Coge la misión de los tumores."
+status = "unverified"
+sources = ["questie:quest/923", "questie:npc/3517"]
+
+[[step]]
+id = "netd-086"
+do = "buy"
+npc = 4226
+item = 3371
+count = 1
+at = [1457, 55.84, 24.47]
+text = "Compra un Vial vacío a Ulthir (suministros de alquimia), al este del Enclave."
+tip = "Lo pide Byancie más tarde. Compra también viales para tus pociones."
+status = "unverified"
+sources = ["questie:npc/4226"]
+
+[[step]]
+id = "netd-087"
+do = "turnin"
+quest = 98391
+npc = 7316
+at = [1457, 28.94, 45.8]
+text = "Entrega la carta de Laurna a la Hermana Aquinne, en el jardín del Templo."
+status = "unverified"
+sources = ["questie:quest/98391", "questie:npc/7316"]
+
+[[step]]
+id = "netd-088"
+do = "accept"
+quest = 2519
+reqlevel = 5
+npc = 7316
+at = [1457, 28.94, 45.8]
+text = "Coge su misión para el Templo de la Luna."
+status = "unverified"
+sources = ["questie:quest/2519", "questie:npc/7316"]
+
+[[step]]
+id = "netd-089"
+do = "turnin"
+quest = 2519
+npc = 7313
+at = [1457, 36.65, 85.93]
+text = "Entra en el Templo de la Luna y entrega a la Sacerdotisa A'moora."
+status = "unverified"
+sources = ["questie:quest/2519", "questie:npc/7313"]
+
+[[step]]
+id = "netd-090"
+do = "accept"
+quest = 2518
+reqlevel = 5
+npc = 7313
+at = [1457, 36.65, 85.93]
+text = "Coge la misión de las Lágrimas de la Luna (Lady Sathrah, al norte de Teldrassil)."
+status = "unverified"
+sources = ["questie:quest/2518", "questie:npc/7313"]
+
+[[step]]
+id = "netd-091"
+do = "accept"
+quest = 98067
+npc = 8396
+at = [1457, 39.65, 89.54]
+text = "En el Templo, coge la misión de la Centinela Dalia Sunblade (nueva de Forever)."
+status = "unverified"
+sources = ["questie:quest/98067", "questie:npc/8396"]
+
+[[step]]
+id = "netd-092"
+do = "complete"
+quest = 98067
+at = [1457, 41.0, 43.5]
+wps = [[1457, 33.4, 16.8, "Noroeste"], [1457, 41.0, 43.5, "Centro"], [1457, 66.5, 15.3, "Noreste"], [1457, 89.1, 34.8, "Entrada"]]
+text = "Recorre los cuatro puntos de vigilancia de Darnassus con el objeto de Dalia."
+status = "unverified"
+sources = ["questie:quest/98067"]
+
+[[step]]
+id = "netd-093"
+do = "turnin"
+quest = 98067
+npc = 8396
+at = [1457, 39.65, 89.54]
+text = "Vuelve al Templo y entrega a Dalia."
+status = "unverified"
+sources = ["questie:quest/98067", "questie:npc/8396"]
+
+[[step]]
+id = "netd-094"
+do = "accept"
+quest = 6344
+reqlevel = 10
+npc = 4241
+at = [1457, 70.68, 45.38]
+text = "Junto a la entrada de la ciudad, coge con Mydrannul la misión de Nessa Shadowsong."
+tip = "Te da el vuelo gratis a Costa Oscura al acabar Teldrassil."
+status = "unverified"
+sources = ["questie:quest/6344", "questie:npc/4241"]
+
+[[step]]
+id = "netd-095"
+do = "turnin"
+quest = 99046
+npc = 275683
+at = [1438, 37.54, 36.81]
+text = "Sal de Darnassus y sube al norte, al Claro del Oráculo. Entrega a la Centinela Eralya Leafshadow."
+status = "unverified"
+sources = ["questie:quest/99046", "questie:npc/275683"]
+
+[[step]]
+id = "netd-096"
+do = "accept"
+quest = 99047
+reqlevel = 4
+npc = 275683
+at = [1438, 37.54, 36.81]
+text = "Coge su misión: vuelve con Byancie a Dolanaar."
+status = "unverified"
+sources = ["questie:quest/99047", "questie:npc/275683"]
+
+[[step]]
+id = "netd-097"
+do = "complete"
+quest = 7383
+at = [1438, 38.4, 34.1]
+text = "Llena la redoma de amatista en la poza del Claro del Oráculo."
+status = "unverified"
+sources = ["questie:quest/7383"]
+
+[[step]]
+id = "netd-098"
+do = "accept"
+quest = 937
+reqlevel = 6
+npc = 3519
+at = [1438, 38.32, 34.36]
+text = "Coge la misión de la Centinela Arynia Cloudsbreak, junto a la poza."
+status = "unverified"
+sources = ["questie:quest/937", "questie:npc/3519"]
+
+[[step]]
+id = "netd-099"
+do = "complete"
+quest = 937
+at = [1438, 36.0, 38.5]
+text = "Mata arpías Plumasangre al sur y al oeste del claro para los cinturones."
+status = "unverified"
+sources = ["questie:quest/937"]
+
+[[step]]
+id = "netd-100"
+do = "turnin"
+quest = 937
+npc = 3519
+at = [1438, 38.32, 34.36]
+text = "Entrega los cinturones a Arynia."
+status = "unverified"
+sources = ["questie:quest/937", "questie:npc/3519"]
+
+[[step]]
+id = "netd-101"
+do = "accept"
+quest = 98392
+reqlevel = 6
+npc = 3519
+at = [1438, 38.32, 34.36]
+text = "Coge la continuación (nueva de Forever): tres arpías con nombre."
+status = "unverified"
+sources = ["questie:quest/98392", "questie:npc/3519"]
+
+[[step]]
+id = "netd-102"
+do = "complete"
+quest = 98392
+at = [1438, 34.2, 34.0]
+wps = [[1438, 35.0, 39.3, "Hatescreech"], [1438, 33.2, 36.1, "Gaedress"], [1438, 34.2, 27.9, "Arysa"]]
+text = "Mata a Hatescreech, a la Señora del viento Gaedress y a la Madre bruja Arysa por sus amuletos."
+tip = "Limpia alrededor antes de atacar a cada una. Arysa, al norte, es la más dura."
+status = "unverified"
+sources = ["questie:quest/98392"]
+
+[[step]]
+id = "netd-103"
+do = "turnin"
+quest = 98392
+npc = 3519
+at = [1438, 38.32, 34.36]
+text = "Entrega los amuletos a Arynia."
+status = "unverified"
+sources = ["questie:quest/98392", "questie:npc/3519"]
+
+[[step]]
+id = "netd-104"
+do = "accept"
+quest = 98398
+reqlevel = 6
+npc = 3519
+at = [1438, 38.32, 34.36]
+text = "Coge la misión del Árbol del Oráculo."
+status = "unverified"
+sources = ["questie:quest/98398", "questie:npc/3519"]
+
+[[step]]
+id = "netd-105"
+do = "turnin"
+quest = 98398
+at = [1438, 36.97, 34.04]
+text = "Toca la corteza del Árbol del Oráculo, junto a la poza."
+status = "unverified"
+sources = ["questie:quest/98398", "questie:object/673378"]
+
+[[step]]
+id = "netd-106"
+do = "accept"
+quest = 940
+reqlevel = 6
+at = [1438, 36.97, 34.04]
+text = "Coge de la corteza la misión para el Archidruida Fandral Staghelm."
+status = "unverified"
+sources = ["questie:quest/940", "questie:object/673378"]
+
+[[step]]
+id = "netd-107"
+do = "accept"
+quest = 938
+reqlevel = 7
+npc = 3568
+at = [1438, 31.54, 31.61]
+text = "Al oeste del claro, habla con Mist, la cría de sable, y empieza la escolta."
+status = "unverified"
+sources = ["questie:quest/938", "questie:npc/3568"]
+
+[[step]]
+id = "netd-108"
+do = "complete"
+quest = 938
+at = [1438, 38.33, 34.39]
+text = "Lleva a Mist hasta Arynia sin perderla."
+tip = "Ve despacio y no tires grupos: si Mist muere hay que volver a por ella."
+status = "unverified"
+sources = ["questie:quest/938"]
+
+[[step]]
+id = "netd-109"
+do = "turnin"
+quest = 938
+npc = 3519
+at = [1438, 38.32, 34.36]
+text = "Entrega a Arynia."
+status = "unverified"
+sources = ["questie:quest/938", "questie:npc/3519"]
+
+[[step]]
+id = "netd-110"
+do = "accept"
+quest = 931
+reqlevel = 4
+at = [1438, 34.61, 28.76]
+text = "Al norte, examina la planta de frondas extrañas: misión para Denalan."
+status = "unverified"
+sources = ["questie:quest/931", "questie:object/6752"]
+
+[[step]]
+id = "netd-111"
+do = "complete"
+quest = 2518
+at = [1438, 43.3, 25.4]
+text = "Sube al norte y mata a Lady Sathrah, la araña grande, para las hileras plateadas."
+tip = "Patrulla entre los árboles del norte. Si hay otros jugadores, espera a que reaparezca."
+status = "unverified"
+sources = ["questie:quest/2518"]
+
+[[step]]
+id = "netd-112"
+do = "complete"
+quest = 923
+at = [1438, 43.5, 31.0]
+wps = [[1438, 43.8, 27.2, "Leñatillos ancianos"], [1438, 42.9, 33.8, "Bestias del lodo"]]
+text = "Mata Leñatillos del lodo y ancianos al sur de Sathrah para los tumores."
+status = "unverified"
+sources = ["questie:quest/923"]
+
+[[step]]
+id = "netd-113"
+do = "turnin"
+quest = 940
+npc = 3516
+at = [1457, 34.81, 9.26]
+text = "Vuelve a Darnassus y entrega la corteza al Archidruida Fandral Staghelm, en el Enclave Cenarion."
+status = "unverified"
+sources = ["questie:quest/940", "questie:npc/3516"]
+
+[[step]]
+id = "netd-114"
+do = "accept"
+quest = 952
+reqlevel = 6
+npc = 3516
+at = [1457, 34.81, 9.26]
+text = "Coge la misión del Bosque de los Ancestros: se entrega a Onu, en Costa Oscura."
+status = "unverified"
+sources = ["questie:quest/952", "questie:npc/3516"]
+
+[[step]]
+id = "netd-115"
+do = "turnin"
+quest = 923
+npc = 3517
+at = [1457, 38.18, 21.64]
+text = "Entrega los tumores a Rellian."
+status = "unverified"
+sources = ["questie:quest/923", "questie:npc/3517"]
+
+[[step]]
+id = "netd-116"
+do = "accept"
+quest = 2498
+reqlevel = 4
+npc = 3517
+at = [1457, 38.18, 21.64]
+text = "Coge la misión de vuelta con Denalan."
+status = "unverified"
+sources = ["questie:quest/2498", "questie:npc/3517"]
+
+[[step]]
+id = "netd-117"
+do = "turnin"
+quest = 2518
+npc = 7313
+at = [1457, 36.65, 85.93]
+text = "En el Templo de la Luna, entrega las hileras a A'moora."
+status = "unverified"
+sources = ["questie:quest/2518", "questie:npc/7313"]
+
+[[step]]
+id = "netd-118"
+do = "accept"
+quest = 2520
+reqlevel = 5
+npc = 7313
+at = [1457, 36.65, 85.93]
+text = "Coge el sacrificio de Sathrah."
+status = "unverified"
+sources = ["questie:quest/2520", "questie:npc/7313"]
+
+[[step]]
+id = "netd-119"
+do = "complete"
+quest = 2520
+at = [1457, 39.2, 85.6]
+text = "Echa el objeto en la fuente del Templo de la Luna."
+status = "unverified"
+sources = ["questie:quest/2520"]
+
+[[step]]
+id = "netd-120"
+do = "turnin"
+quest = 2520
+npc = 7313
+at = [1457, 36.65, 85.93]
+text = "Entrega a A'moora."
+status = "unverified"
+sources = ["questie:quest/2520", "questie:npc/7313"]
+
+[[step]]
+id = "netd-121"
+do = "hearth"
+zone = 1438
+text = "Usa la piedra de hogar para volver a Dolanaar."
+status = "unverified"
+sources = ["questie:npc/6736"]
+
+[[step]]
+id = "netd-122"
+do = "turnin"
+quest = 99047
+npc = 6094
+at = [1438, 55.29, 56.82]
+text = "Entrega la misión de Eralya a Byancie."
+status = "unverified"
+sources = ["questie:quest/99047", "questie:npc/6094"]
+
+[[step]]
+id = "netd-123"
+do = "accept"
+quest = 99050
+reqlevel = 4
+npc = 6094
+at = [1438, 55.29, 56.82]
+text = "Coge la misión de Byancie (nueva de Forever): frondas, vial y agua."
+status = "unverified"
+sources = ["questie:quest/99050", "questie:npc/6094"]
+
+[[step]]
+id = "netd-124"
+do = "buy"
+npc = 6736
+item = 159
+count = 1
+at = [1438, 55.62, 59.79]
+text = "Compra una Agua de manantial refrescante al posadero Keldamyr."
+status = "unverified"
+sources = ["questie:npc/6736"]
+
+[[step]]
+id = "netd-125"
+do = "turnin"
+quest = 7383
+npc = 3515
+at = [1438, 56.14, 61.71]
+text = "Entrega la redoma de amatista a Corithras."
+status = "unverified"
+sources = ["questie:quest/7383", "questie:npc/3515"]
+
+[[step]]
+id = "netd-126"
+do = "accept"
+quest = 935
+npc = 3515
+at = [1438, 56.14, 61.71]
+text = "Coge la última Corona de la Tierra: para Fandral, en Darnassus."
+status = "unverified"
+sources = ["questie:quest/935", "questie:npc/3515"]
+
+[[step]]
+id = "netd-127"
+do = "turnin"
+quest = 2498
+npc = 2080
+at = [1438, 60.9, 68.49]
+text = "Baja al lago y entrega a Denalan."
+status = "unverified"
+sources = ["questie:quest/2498", "questie:npc/2080"]
+
+[[step]]
+id = "netd-128"
+do = "accept"
+quest = 2499
+reqlevel = 4
+npc = 2080
+at = [1438, 60.9, 68.49]
+text = "Coge la misión de Robleceño (élite)."
+status = "unverified"
+sources = ["questie:quest/2499", "questie:npc/2080"]
+
+[[step]]
+id = "netd-129"
+do = "turnin"
+quest = 931
+npc = 2080
+at = [1438, 60.9, 68.49]
+text = "Entrega la fronda extraña a Denalan."
+status = "unverified"
+sources = ["questie:quest/931", "questie:npc/2080"]
+
+[[step]]
+id = "netd-130"
+do = "accept"
+quest = 2399
+reqlevel = 4
+at = [1438, 60.75, 68.56]
+text = "Coge la misión de las frondas brotadas."
+tip = "Sale de la fronda plantada junto a Denalan."
+status = "unverified"
+sources = ["questie:quest/2399", "questie:object/7510"]
+
+[[step]]
+id = "netd-131"
+do = "turnin"
+quest = 930
+npc = 2080
+at = [1438, 60.9, 68.49]
+text = "Entrega el fruto extraño a Denalan."
+optional = true
+status = "unverified"
+sources = ["questie:quest/930", "questie:npc/2080"]
+
+[[step]]
+id = "netd-132"
+do = "turnin"
+quest = 2399
+at = [1438, 60.75, 68.56]
+text = "Completa las frondas brotadas en la maceta de Denalan."
+status = "unverified"
+sources = ["questie:quest/2399", "questie:object/7510"]
+
+[[step]]
+id = "netd-133"
+do = "complete"
+quest = 99050
+at = [1438, 56.6, 69.0]
+text = "Mata azotadores alrededor del lago para las frondas de rocío."
+status = "unverified"
+sources = ["questie:quest/99050"]
+
+[[step]]
+id = "netd-134"
+do = "complete"
+quest = 2499
+at = [1438, 53.8, 75.1]
+text = "Entra en la cueva al suroeste del lago y mata a Robleceño por el tumor gigante."
+tip = "Es élite pero lento: con nivel 11-12 y pociones se hace solo. Limpia la cueva antes."
+status = "unverified"
+sources = ["questie:quest/2499"]
+
+[[step]]
+id = "netd-135"
+do = "turnin"
+quest = 2499
+npc = 2080
+at = [1438, 60.9, 68.49]
+text = "Entrega el tumor a Denalan."
+status = "unverified"
+sources = ["questie:quest/2499", "questie:npc/2080"]
+
+[[step]]
+id = "netd-136"
+do = "turnin"
+quest = 99050
+npc = 6094
+at = [1438, 55.29, 56.82]
+text = "Vuelve a Dolanaar y entrega a Byancie."
+status = "unverified"
+sources = ["questie:quest/99050", "questie:npc/6094"]
+
+[[step]]
+id = "netd-137"
+do = "accept"
+quest = 99073
+reqlevel = 4
+npc = 6094
+at = [1438, 55.29, 56.82]
+text = "Coge su siguiente misión: llévale el remedio a Eralya."
+status = "unverified"
+sources = ["questie:quest/99073", "questie:npc/6094"]
+
+[[step]]
+id = "netd-138"
+do = "complete"
+quest = 98403
+at = [1438, 51.0, 44.0]
+wps = [[1438, 49.8, 44.9, "Arañas corruptas"], [1438, 52.0, 43.1, "Xethorr"]]
+text = "Al noroeste de Dolanaar, mata arañas corruptas y a Xethorr el Malvado por el musgo vil maduro."
+status = "unverified"
+sources = ["questie:quest/98403"]
+
+[[step]]
+id = "netd-139"
+do = "turnin"
+quest = 98403
+npc = 3567
+at = [1438, 55.57, 56.95]
+text = "Entrega a Tallonkai."
+status = "unverified"
+sources = ["questie:quest/98403", "questie:npc/3567"]
+
+[[step]]
+id = "netd-140"
+do = "complete"
+quest = 486
+at = [1438, 38.8, 79.8]
+text = "Opcional al 12: mata a Ursal el Triturador, al suroeste, junto al lago del sur."
+optional = true
+status = "unverified"
+sources = ["questie:quest/486"]
+
+[[step]]
+id = "netd-141"
+do = "turnin"
+quest = 486
+npc = 2078
+at = [1438, 55.96, 57.27]
+text = "Entrega a Athridas."
+optional = true
+status = "unverified"
+sources = ["questie:quest/486", "questie:npc/2078"]
+
+[[step]]
+id = "netd-142"
+do = "skill"
+npc = 3603
+prof = "alchemy"
+skill = 60
+at = [1438, 57.64, 60.8]
+text = "Antes de salir, entrena recetas con Cyndra y sube Alquimia con lo que lleves."
+tip = "Pociones de sanación menores hasta 60. En Costa Oscura saldrán Brezospina y Raíz de tierra."
+optional = true
+status = "unverified"
+sources = ["questie:npc/3603"]
+
+[[step]]
+id = "netd-143"
+do = "turnin"
+quest = 99073
+npc = 275683
+at = [1438, 37.54, 36.81]
+text = "Ve al Claro del Oráculo y entrega el remedio a Eralya."
+status = "unverified"
+sources = ["questie:quest/99073", "questie:npc/275683"]
+
+[[step]]
+id = "netd-144"
+do = "turnin"
+quest = 935
+npc = 3516
+at = [1457, 34.81, 9.26]
+text = "Entra en Darnassus y entrega la última Corona de la Tierra a Fandral."
+status = "unverified"
+sources = ["questie:quest/935", "questie:npc/3516"]
+
+[[step]]
+id = "netd-145"
+do = "accept"
+quest = 98046
+npc = 3516
+at = [1457, 34.81, 9.26]
+text = "Coge la continuación (nueva de Forever): para Lariia, en el Templo de la Luna."
+status = "unverified"
+sources = ["questie:quest/98046", "questie:npc/3516"]
+
+[[step]]
+id = "netd-146"
+do = "turnin"
+quest = 98046
+npc = 4092
+at = [1457, 40.35, 88.68]
+text = "En el Templo de la Luna, entrega a Lariia."
+status = "unverified"
+sources = ["questie:quest/98046", "questie:npc/4092"]
+
+[[step]]
+id = "netd-147"
+do = "accept"
+quest = 98065
+npc = 4092
+at = [1457, 40.35, 88.68]
+text = "Coge la última parte: para Tyrande Whisperwind."
+status = "unverified"
+sources = ["questie:quest/98065", "questie:npc/4092"]
+
+[[step]]
+id = "netd-148"
+do = "turnin"
+quest = 98065
+npc = 7999
+at = [1457, 39.1, 81.59]
+text = "Sube al balcón del Templo y entrega a Tyrande Whisperwind."
+status = "unverified"
+sources = ["questie:quest/98065", "questie:npc/7999"]
+
+[[step]]
+id = "netd-149"
+do = "goto"
+at = [1457, 88.0, 40.0, "Portal a Rut'theran"]
+radius = 30
+text = "Sal por la entrada este de Darnassus y cruza el portal rosa que baja a Rut'theran."
+status = "unverified"
+sources = ["https://games.gg/world-of-warcraft/guides/wow-forever-teldrassil-leveling/"]
+note = "Coordenada aproximada del portal; revisar en el juego."
+
+[[step]]
+id = "netd-150"
+do = "turnin"
+quest = 6344
+npc = 10118
+at = [1438, 56.26, 92.44]
+text = "En Rut'theran, entrega a Nessa Shadowsong, en el muelle."
+status = "unverified"
+sources = ["questie:quest/6344", "questie:npc/10118"]
+
+[[step]]
+id = "netd-151"
+do = "accept"
+quest = 6341
+reqlevel = 10
+npc = 10118
+at = [1438, 56.26, 92.44]
+text = "Coge la misión de Nessa."
+status = "unverified"
+sources = ["questie:quest/6341", "questie:npc/10118"]
+
+[[step]]
+id = "netd-152"
+do = "turnin"
+quest = 6341
+npc = 3838
+at = [1438, 58.4, 94.02]
+text = "Entrega a Vesprystus, el maestro de hipogrifos."
+status = "unverified"
+sources = ["questie:quest/6341", "questie:npc/3838"]
+
+[[step]]
+id = "netd-153"
+do = "getfp"
+npc = 3838
+node = "27"
+at = [1438, 58.4, 94.02]
+text = "Coge la ruta de vuelo de Rut'theran con Vesprystus."
+status = "unverified"
+sources = ["questie:npc/3838"]
+
+[[step]]
+id = "netd-154"
+do = "accept"
+quest = 6342
+reqlevel = 10
+npc = 3838
+at = [1438, 58.4, 94.02]
+text = "Coge el vuelo a Auberdine."
+status = "unverified"
+sources = ["questie:quest/6342", "questie:npc/3838"]
+
+[[step]]
+id = "netd-155"
+do = "fly"
+npc = 3838
+zone = 1439
+at = [1438, 58.4, 94.02]
+text = "Vuela gratis a Auberdine, en Costa Oscura."
+status = "unverified"
+sources = ["questie:npc/3838"]

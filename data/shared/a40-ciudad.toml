@@ -26,6 +26,19 @@ status = "unverified"
 sources = ["questie:npc/5144"]
 
 [[step]]
+id = "a40-ciudad-dr-40"
+do = "train"
+spells = [9634, 29166, 16914]
+npc = 12042
+at = [1450, 52.53, 40.57]
+text = "Druida: lanza Teletransporte: Claro de la Luna y entrena el 40 con Loganaar: Forma de oso temible, Estimular y Huracán."
+tip = "Activa allí también la doble especialización."
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a40-ciudad-003"
 do = "train"
 npc = 5172

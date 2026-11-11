@@ -29,6 +29,19 @@ status = "unverified"
 sources = ["questie:npc/5144"]
 
 [[step]]
+id = "a34-desolace-dr-34"
+do = "train"
+spells = [5225, 6785]
+npc = 12042
+at = [1450, 52.53, 40.57]
+text = "Druida: lanza Teletransporte: Claro de la Luna y entrena el 32-34 con Loganaar (Rastrear humanoides, Devastar)."
+tip = "Desde el Claro puedes volar por Kalimdor hacia Desolace sin pasar por Menethil."
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a34-desolace-003"
 do = "train"
 npc = 5172
@@ -362,3 +375,15 @@ if = { class = ["MAGE"], minlevel = 38 }
 text = "Mago al 36-38: Teletransporte a Ventormenta, entrena con Jennea y vuelve con la piedra de hogar."
 status = "unverified"
 sources = ["questie:npc/5497"]
+
+[[step]]
+id = "a34-desolace-dr-38"
+do = "train"
+spells = [9005, 22842]
+npc = 12042
+at = [1450, 52.53, 40.57]
+text = "Druida al 36-38: Teletransporte: Claro de la Luna, entrena con Loganaar (Abalanzarse, Regeneración frenética) y vuelve con la piedra de hogar."
+if = { class = ["DRUID"], minlevel = 38 }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/12042", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]

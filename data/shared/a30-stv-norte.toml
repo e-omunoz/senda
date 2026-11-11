@@ -20,6 +20,19 @@ sources = ["questie:npc/5497", "https://www.icy-veins.com/wow-forever/class-guid
 checked = "2026-11-11"
 
 [[step]]
+id = "a30-stv-norte-dr-30"
+do = "train"
+spells = [783, 740]
+npc = 5504
+at = [1453, 35.84, 67.38]
+text = "Entrena el 30 con Sheldras Moontree, en El Parque de Ventormenta: Forma de viaje y Tranquilidad."
+tip = "Forma de viaje corre un 40 % más al aire libre: úsala siempre entre misiones."
+if = { class = ["DRUID"] }
+note = "Ids de rango de Classic: si Forever cambió el hechizo, marca el paso a mano."
+status = "unverified"
+sources = ["questie:npc/5504", "https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
+
+[[step]]
 id = "a30-stv-norte-002"
 do = "train"
 npc = 5495
@@ -455,6 +468,14 @@ if = { class = ["MAGE"] }
 text = "Al 32 y al 34 toca entrenar. Mago: Teletransporte a Ventormenta, entrena y vuelve volando."
 status = "unverified"
 sources = ["https://www.warcrafttavern.com/forever/guides/leveling/"]
+
+[[step]]
+id = "a30-stv-norte-dr-32"
+do = "note"
+text = "Al 32 y al 34 toca entrenar. Druida: Teletransporte: Claro de la Luna, entrena con Loganaar y vuelve con la piedra de hogar."
+if = { class = ["DRUID"] }
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/"]
 
 [[step]]
 id = "a30-stv-norte-045"

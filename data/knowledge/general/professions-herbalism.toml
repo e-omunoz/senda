@@ -1,0 +1,101 @@
+# Herboristería 1-300 (recolección). Mismo formato que professions-tailoring.toml.
+# [[route]]: prof, from, to, craft (id de la hierba principal del tramo: aquí no se fabrica, se recoge), name,
+#   n (hierbas aproximadas que recoger en todo el tramo), herbs (todas las hierbas que suben en ese tramo; extra),
+#   note (zonas). Sin mats: la recolección no gasta material.
+# [[trainer]]: instructores. for_class = clase para la que se pone (druida elfo de la noche → Teldrassil/Darnassus).
+id = "general-professions-herbalism"
+class = "ANY"
+kind = "professions"
+title = "Herboristería 1-300"
+order = 215
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/herbalism/", "https://www.method.gg/wow-forever/herbalism-in-wow-forever-leveling-guide-herbalism-items-enchants-trainers", "https://rankedboost.com/world-of-warcraft/forever/professions/herbalism-leveling/", "questie:npc/3604", "questie:npc/4204"]
+checked = "2026-11-11"
+note = "Tramos de hierbas y zonas de Warcraft Tavern (guía de Herboristería de Forever); la asignación de tramos a habilidad la hizo el autor. Las hierbas suben habilidad unos 100 puntos y se vuelven verdes a unos 50. Ids de hierbas comprobados en QuestieDB (Forever); habilidad mínima de cada hierba: la de Classic, sin confirmar en Forever. Cambios de Forever: materiales escasos (Frilled Lichen, Rosecap, Stranglevine), semillas de hierbas en cuatro calidades, hierbas nuevas (Marefoil, Demonsage, Death Lotus), Té de espina de oro (+15) y Buscar hierbas compatible con otros rastreos (no con Buscar minerales)."
+
+[[trainer]]
+prof = "herbalism"
+ranks = ["Aprendiz", "Oficial"]
+for_class = "DRUID"
+name = "Malorne Bladeleaf"
+at = [1438, 57.7, 60.6, "Malorne Bladeleaf (Teldrassil, Dolanaar)"]
+note = "QuestieDB lo titula «Herbalist»; rangos que enseña sin confirmar."
+
+[[trainer]]
+prof = "herbalism"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+for_class = "DRUID"
+name = "Firodren Mooncaller"
+at = [1457, 48.0, 68.0, "Firodren Mooncaller (Darnassus)"]
+note = "Instructor de Herboristería de Darnassus. Que enseñe Artesano está sin confirmar."
+status = "unverified"
+
+[[route]]
+prof = "herbalism"
+from = 1
+to = 70
+craft = 765
+name = "Flor de paz, Hojaplata y Raíz de tierra"
+n = 80
+herbs = [2447, 765, 2449]
+note = "Zonas de inicio. Elfo de la noche: Teldrassil entera. Raíz de tierra desde 15."
+
+[[route]]
+prof = "herbalism"
+from = 70
+to = 115
+craft = 785
+name = "Marregal, Brezospina y Alga estranguladora"
+n = 50
+herbs = [785, 2450, 3820]
+note = "Costa Oscura (Alianza de Kalimdor), Loch Modan o Los Baldíos. A 50 de habilidad y nivel 10, entrena Oficial."
+
+[[route]]
+prof = "herbalism"
+from = 115
+to = 170
+craft = 3356
+name = "Hierba cardenal, Acérita salvaje, Sangrerregia y Raíz de vida"
+n = 60
+herbs = [2453, 3355, 3356, 3357]
+note = "Vallefresno, Los Humedales, Laderas de Trabalomas; Sierra Espolón si te pilla cerca. A 125 y nivel 20, entrena Experto."
+
+[[route]]
+prof = "herbalism"
+from = 170
+to = 205
+craft = 3821
+name = "Pálida, Espina de oro y Mostacho de Khadgar"
+n = 40
+herbs = [3356, 3357, 3818, 3821, 3358]
+note = "Tierras Altas de Arathi y el norte de la Vega de Tuercespina. A 200 y nivel 35, entrena Artesano."
+
+[[route]]
+prof = "herbalism"
+from = 205
+to = 230
+craft = 4625
+name = "Flor de fuego y Loto cárdeno"
+n = 30
+herbs = [8831, 4625]
+note = "Tanaris (o la Garganta de Fuego)."
+
+[[route]]
+prof = "herbalism"
+from = 230
+to = 270
+craft = 8838
+name = "Hierba de sol, Sansam dorado y Champiñón fantasma"
+n = 45
+herbs = [8838, 8831, 13464, 8845]
+note = "Tierras del Interior."
+
+[[route]]
+prof = "herbalism"
+from = 270
+to = 300
+craft = 13463
+name = "Hojasueño, Salviargenta de montaña, Flor de peste y Setelo"
+n = 40
+herbs = [8838, 8846, 13464, 13463, 13465, 13466, 13467, 13468]
+note = "Frondavil, Cráter de Un'Goro o cualquier zona 50-60. Tómate el Té de espina de oro antes: puede salir Loto negro."
