@@ -723,6 +723,26 @@ const scenarios = [
     `,
   },
   {
+    id: 's',
+    title: 'Profession lessons (reqskill): skipped without the profession, offered once learned',
+    char: 'nightelf-druid',
+    lua: L_`
+      Sim.CHARS["nightelf-druid"].level = 6
+      Login()
+      local E = S().Engine
+      local function entry(id) for _, e in ipairs(E.steps) do if e.step.id == id then return e end end end
+      local alch, cook = entry("netd-010"), entry("netd-012")
+      Check(alch and alch.step.reqskill and alch.step.reqskill[1] == 171, "alchemy lesson carries reqskill 171")
+      Check(entry("netd-016").index < alch.index, "learning Alchemy comes before the lesson")
+      Check(E:NoSkill(alch) == true, "lesson skipped without Alchemy")
+      Check(E:NoSkill(cook) == false, "cooking lesson needs no profession")
+      table.insert(Sim.player.profs, { name = "Alquimia", skillLine = 171, rank = 1, max = 75 })
+      Check(E:NoSkill(alch) == false, "lesson offered once Alchemy is learned")
+      local elix = entry("netd-027") -- lleva if.prof = alchemy: puede no estar resuelto aún
+      Check(elix == nil or E:NoSkill(elix) == true, "Syral's elixirs still wait for Alchemy 20")
+    `,
+  },
+  {
     id: 'k',
     title: 'Character without a guide (night elf warrior): HUD, slash and panel still work',
     char: 'nightelf-warrior',

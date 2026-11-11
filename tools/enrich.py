@@ -9,6 +9,9 @@ Hoy: `reqlevel` (nivel mínimo) en:
 en `data/`. El motor lo usa para aplazar las misiones que todavía no puedes coger (exclamación
 plateada) y avisarte cuando subes al nivel necesario.
 
+Y `reqskill = [línea, rango]` en pasos `accept` cuya misión pide una profesión (las lecciones
+«Camping 101» de oficio exigen saberlo ya): el motor salta el paso si no llegas a ese rango.
+
 Edición mínima por líneas: inserta o actualiza `reqlevel = N` justo después de `quest = X` y respeta
 los comentarios y el formato.
 
@@ -33,6 +36,7 @@ TABLE_RE = re.compile(r"^\[")
 DO_RE = re.compile(r'^do\s*=\s*"([a-z_]+)"')
 QUEST_RE = re.compile(r"^quest\s*=\s*(\d+)")
 REQ_RE = re.compile(r"^reqlevel\s*=\s*(\d+)")
+SKILL_RE = re.compile(r"^reqskill\s*=")
 SPELLS_RE = re.compile(r"^spells\s*=\s*\[([^\]]*)\]")
 CLASS_RE = re.compile(r'class\s*=\s*\[\s*"([A-Z]+)"')
 MINLEVEL_RE = re.compile(r"minlevel\s*=\s*(\d+)")
@@ -137,6 +141,21 @@ def process(path: Path, db: QuestDB, levels: dict[str, dict[int, int]]) -> tuple
                 changes += 1
             elif block[rline] != text:
                 block[rline] = text
+                changes += 1
+        if do == "accept" and qline is not None:
+            q = db.quest(int(QUEST_RE.match(block[qline]).group(1)))
+            rs = q.get("requiredSkill") if q else None
+            sline = next((k for k, l in enumerate(block) if SKILL_RE.match(l)), None)
+            want_s = f"reqskill = [{int(rs[0])}, {int(rs[1])}]" if rs and len(rs) >= 2 and rs[0] else None
+            if want_s is None and sline is not None:
+                del block[sline]
+                changes += 1
+            elif want_s is not None and sline is None:
+                rl = next((k for k, l in enumerate(block) if REQ_RE.match(l)), qline)
+                block.insert(rl + 1, want_s)
+                changes += 1
+            elif want_s is not None and block[sline] != want_s:
+                block[sline] = want_s
                 changes += 1
         out.extend(block)
         i = j

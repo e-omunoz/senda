@@ -118,24 +118,25 @@ status = "unverified"
 sources = ["questie:quest/96608", "questie:npc/265813"]
 
 [[step]]
-id = "dun-morogh-011"
-do = "accept"
-quest = 96057
-reqlevel = 4
-npc = 265813
-at = [1426, 46.6, 53.9]
-text = "Coge la de Sastrería de Eric: se entrega al instructor de Forjaz."
+id = "dun-morogh-015"
+do = "learn_prof"
+prof = "first_aid"
+npc = 2326
+at = [1426, 47.2, 52.6]
+text = "Entra en la posada y aprende Primeros auxilios con Thamner Pol: la lección de Eric pide saberlo ya."
+tip = "Guarda el paño de lino: primero para Sastrería; las vendas solo con el que sobre."
 status = "unverified"
-sources = ["questie:quest/96057", "questie:npc/265813"]
+sources = ["questie:npc/2326", "legacy:BrujoGnomoGuia 4.1.0"]
 
 [[step]]
 id = "dun-morogh-012"
 do = "accept"
 quest = 96047
 reqlevel = 4
+reqskill = [129, 1]
 npc = 265813
 at = [1426, 46.6, 53.9]
-text = "Coge también la de Primeros auxilios."
+text = "Vuelve con Eric y coge la lección de Primeros auxilios."
 status = "unverified"
 sources = ["questie:quest/96047", "questie:npc/265813"]
 
@@ -156,20 +157,9 @@ do = "turnin"
 quest = 96047
 npc = 2326
 at = [1426, 47.2, 52.6]
-text = "Entrega la de Primeros auxilios a Thamner Pol, en la posada."
+text = "Entrega la lección de Primeros auxilios a Thamner Pol, en la posada."
 status = "unverified"
 sources = ["questie:quest/96047", "questie:npc/2326"]
-
-[[step]]
-id = "dun-morogh-015"
-do = "learn_prof"
-prof = "first_aid"
-npc = 2326
-at = [1426, 47.2, 52.6]
-text = "Aprende Primeros auxilios con Thamner Pol."
-tip = "Guarda el paño de lino: primero para Sastrería; las vendas solo con el que sobre."
-status = "unverified"
-sources = ["questie:npc/2326", "legacy:BrujoGnomoGuia 4.1.0"]
 
 [[step]]
 id = "dun-morogh-016"
@@ -506,36 +496,15 @@ status = "unverified"
 sources = ["questie:npc/1573"]
 
 [[step]]
-id = "dun-morogh-048"
-do = "turnin"
-quest = 96057
-npc = 1703
-at = [1455, 43.8, 27.9]
-text = "Ve a la Gran Fundición y entrega la de Sastrería a Uthrar Threx."
-status = "unverified"
-sources = ["questie:quest/96057", "questie:npc/1703"]
-
-[[step]]
 id = "dun-morogh-049"
 do = "learn_prof"
 prof = "tailoring"
 npc = 1703
 at = [1455, 43.8, 27.9]
-text = "Aprende Sastrería con Uthrar Threx."
+text = "Ve a la Gran Fundición y aprende Sastrería con Uthrar Threx."
 tip = "Guarda todo el paño de lino. Haz madejas y prendas de lino hasta 50-75 antes del 10."
 status = "unverified"
 sources = ["questie:npc/1703", "legacy:BrujoGnomoGuia 4.1.0"]
-
-[[step]]
-id = "dun-morogh-050"
-do = "accept"
-quest = 96059
-reqlevel = 4
-npc = 11065
-at = [1455, 60.3, 45.4]
-text = "Ve a Ciudad Manitas y coge la de Encantamiento de Thonys Pillarstone."
-status = "unverified"
-sources = ["questie:quest/96059", "questie:npc/11065"]
 
 [[step]]
 id = "dun-morogh-051"
@@ -543,10 +512,22 @@ do = "learn_prof"
 prof = "enchanting"
 npc = 11065
 at = [1455, 60.3, 45.4]
-text = "Aprende Encantamiento con Thonys Pillarstone."
+text = "Ve a Ciudad Manitas y aprende Encantamiento con Thonys Pillarstone."
 tip = "Desencanta los verdes que no uses. La Varita mágica inferior es tu primera gran mejora."
 status = "unverified"
 sources = ["questie:npc/11065", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "dun-morogh-050"
+do = "accept"
+quest = 96059
+reqlevel = 4
+reqskill = [333, 1]
+npc = 11065
+at = [1455, 60.3, 45.4]
+text = "Coge la lección de Encantamiento de Thonys."
+status = "unverified"
+sources = ["questie:quest/96059", "questie:npc/11065"]
 
 [[step]]
 id = "dun-morogh-052"
@@ -775,6 +756,18 @@ at = [1426, 46.7, 53.8]
 text = "Coge los informes de Senir: se entregan en Forjaz."
 status = "unverified"
 sources = ["questie:quest/291", "questie:npc/1252"]
+
+[[step]]
+id = "dun-morogh-011"
+do = "accept"
+quest = 96057
+reqlevel = 4
+reqskill = [197, 1]
+npc = 265813
+at = [1426, 46.6, 53.9]
+text = "Ya con Sastrería, coge la lección de Sastrería de Eric, junto a la hoguera: se entrega en Forjaz."
+status = "unverified"
+sources = ["questie:quest/96057", "questie:npc/265813"]
 
 [[step]]
 id = "dun-morogh-074"
@@ -1294,6 +1287,16 @@ text = "Ve a la Caverna Abandonada y entrena con Briarthorn: Drenar alma, Crear 
 tip = "Si ya eres 12, entrena también Cauce de salud. Guarda 2-3 Fragmentos de alma y haz una Piedra de salud."
 status = "unverified"
 sources = ["questie:npc/5172", "legacy:BrujoGnomoGuia 4.1.0"]
+
+[[step]]
+id = "dun-morogh-048"
+do = "turnin"
+quest = 96057
+npc = 1703
+at = [1455, 43.8, 27.9]
+text = "Ve a la Gran Fundición y entrega la lección de Sastrería a Uthrar Threx."
+status = "unverified"
+sources = ["questie:quest/96057", "questie:npc/1703"]
 
 [[step]]
 id = "dun-morogh-124"

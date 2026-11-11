@@ -92,13 +92,47 @@ status = "unverified"
 sources = ["questie:quest/96606", "questie:npc/265811"]
 
 [[step]]
+id = "netd-021"
+do = "learn_prof"
+npc = 6094
+prof = "firstaid"
+at = [1438, 55.29, 56.82]
+text = "Antes de las lecciones de Lyreena, aprende Primeros auxilios con Byancie, en la casa del oeste."
+tip = "Guarda el paño de lino para vendas."
+status = "unverified"
+sources = ["questie:npc/6094"]
+
+[[step]]
+id = "netd-014"
+do = "learn_prof"
+npc = 3604
+prof = "herbalism"
+at = [1438, 57.72, 60.64]
+text = "Baja al sur del pueblo y aprende Herboristería con Malorne Bladeleaf."
+tip = "Activa Buscar hierbas. Recoge todo el Musgo de tumba, Hojaplata y Flor de paz que veas: son para Alquimia."
+status = "unverified"
+sources = ["questie:npc/3604"]
+
+[[step]]
+id = "netd-016"
+do = "learn_prof"
+npc = 3603
+prof = "alchemy"
+at = [1438, 57.64, 60.8]
+text = "Aprende Alquimia con Cyndra Kindwhisper, al lado."
+tip = "Pociones de sanación menores con Flor de paz y Hojaplata: te ahorran descansos y suben la Alquimia."
+status = "unverified"
+sources = ["questie:npc/3603"]
+
+[[step]]
 id = "netd-009"
 do = "accept"
 quest = 97944
 reqlevel = 4
+reqskill = [182, 1]
 npc = 265811
 at = [1438, 57.58, 56.64]
-text = "Coge la lección de campamento de Herboristería."
+text = "Vuelve con Lyreena y coge la lección de campamento de Herboristería (pide saber ya la profesión)."
 status = "unverified"
 sources = ["questie:quest/97944", "questie:npc/265811"]
 
@@ -107,6 +141,7 @@ id = "netd-010"
 do = "accept"
 quest = 97938
 reqlevel = 4
+reqskill = [171, 1]
 npc = 265811
 at = [1438, 57.58, 56.64]
 text = "Coge la lección de Alquimia."
@@ -118,6 +153,7 @@ id = "netd-011"
 do = "accept"
 quest = 97942
 reqlevel = 4
+reqskill = [129, 1]
 npc = 265811
 at = [1438, 57.58, 56.64]
 text = "Coge la lección de Primeros auxilios."
@@ -142,20 +178,9 @@ do = "turnin"
 quest = 97944
 npc = 3604
 at = [1438, 57.72, 60.64]
-text = "Entrega la lección a Malorne Bladeleaf, el herbolario del sur del pueblo."
+text = "Baja otra vez al sur y entrega la lección a Malorne Bladeleaf."
 status = "unverified"
 sources = ["questie:quest/97944", "questie:npc/3604"]
-
-[[step]]
-id = "netd-014"
-do = "learn_prof"
-npc = 3604
-prof = "herbalism"
-at = [1438, 57.72, 60.64]
-text = "Aprende Herboristería con Malorne Bladeleaf."
-tip = "Activa Buscar hierbas. Recoge todo el Musgo de tumba, Hojaplata y Flor de paz que veas: son para Alquimia."
-status = "unverified"
-sources = ["questie:npc/3604"]
 
 [[step]]
 id = "netd-015"
@@ -166,17 +191,6 @@ at = [1438, 57.64, 60.8]
 text = "Entrega la lección a Cyndra Kindwhisper, al lado."
 status = "unverified"
 sources = ["questie:quest/97938", "questie:npc/3603"]
-
-[[step]]
-id = "netd-016"
-do = "learn_prof"
-npc = 3603
-prof = "alchemy"
-at = [1438, 57.64, 60.8]
-text = "Aprende Alquimia con Cyndra Kindwhisper."
-tip = "Pociones de sanación menores con Flor de paz y Hojaplata: te ahorran descansos y suben la Alquimia."
-status = "unverified"
-sources = ["questie:npc/3603"]
 
 [[step]]
 id = "netd-017"
@@ -203,6 +217,7 @@ sources = ["questie:npc/6286"]
 id = "netd-019"
 do = "accept"
 quest = 4161
+reqskill = [185, 1]
 npc = 6286
 at = [1438, 57.12, 61.3]
 text = "Coge la receta de Zarrin: patas de araña pequeñas de las arañas de Teldrassil."
@@ -216,20 +231,9 @@ do = "turnin"
 quest = 97942
 npc = 6094
 at = [1438, 55.29, 56.82]
-text = "Entrega la lección a Byancie, en la casa del oeste."
+text = "Entrega la lección de Primeros auxilios a Byancie, en la casa del oeste."
 status = "unverified"
 sources = ["questie:quest/97942", "questie:npc/6094"]
-
-[[step]]
-id = "netd-021"
-do = "learn_prof"
-npc = 6094
-prof = "firstaid"
-at = [1438, 55.29, 56.82]
-text = "Aprende Primeros auxilios con Byancie."
-tip = "Guarda el paño de lino para vendas."
-status = "unverified"
-sources = ["questie:npc/6094"]
 
 [[step]]
 id = "netd-022"
@@ -290,6 +294,7 @@ id = "netd-027"
 do = "accept"
 quest = 1581
 reqlevel = 4
+reqskill = [171, 20]
 npc = 2083
 at = [1438, 56.08, 57.72]
 text = "Coge los elixires de Syral si llevas Alquimia."

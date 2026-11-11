@@ -85,9 +85,20 @@ function Engine:NotTaken(entry)
   return not QuestTaken(s.quest)
 end
 
+-- Coger una misión que pide una profesión (`reqskill = {línea, rango}`, p. ej. las lecciones
+-- «Camping 101» de oficio) sin tenerla al rango pedido: el PNJ no la ofrece, así que se pasa.
+function Engine:NoSkill(entry)
+  local s = entry and entry.step
+  local rs = s and s.reqskill
+  if not rs or s["do"] ~= "accept" or type(rs) ~= "table" then return false end
+  if QuestTaken(s.quest) then return false end
+  local rank = Compat.ProfessionRank(rs[1])
+  return not rank or rank < (rs[2] or 1)
+end
+
 local function Applicable(entry)
   return entry and Cond:LevelFilter(entry.step["if"]) and not Engine:WaitLevel(entry)
-    and not Engine:NotTaken(entry)
+    and not Engine:NotTaken(entry) and not Engine:NoSkill(entry)
 end
 
 -- Índice misión -> nivel requerido (de los pasos accept con reqlevel).

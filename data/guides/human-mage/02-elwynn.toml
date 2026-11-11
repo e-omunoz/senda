@@ -141,6 +141,18 @@ sources = ["questie:quest/95998", "questie:npc/263399"]
 checked = "2026-11-11"
 
 [[step]]
+id = "hmage-elwynn-020"
+do = "learn_prof"
+npc = 2329
+prof = "firstaid"
+at = [1429, 43.4, 65.6]
+text = "Antes de las lecciones de Sam, aprende Primeros auxilios con Michelle Belle, en la casa de al lado de la posada."
+tip = "Guarda el paño de lino: vendas para ti y madejas para Sastrería."
+status = "unverified"
+sources = ["questie:npc/2329"]
+checked = "2026-11-11"
+
+[[step]]
 id = "hmage-elwynn-013"
 do = "accept"
 quest = 96626
@@ -157,36 +169,12 @@ id = "hmage-elwynn-014"
 do = "accept"
 quest = 97919
 reqlevel = 4
+reqskill = [129, 1]
 npc = 263399
 at = [1429, 44.9, 63.4]
 text = "Coge la lección de Primeros auxilios."
 status = "unverified"
 sources = ["questie:quest/97919", "questie:npc/263399"]
-checked = "2026-11-11"
-
-[[step]]
-id = "hmage-elwynn-015"
-do = "accept"
-quest = 97925
-reqlevel = 4
-npc = 263399
-at = [1429, 44.9, 63.4]
-text = "Coge la lección de Sastrería: se entrega en Vega del Este."
-status = "unverified"
-sources = ["questie:quest/97925", "questie:npc/263399"]
-checked = "2026-11-11"
-
-[[step]]
-id = "hmage-elwynn-016"
-do = "accept"
-quest = 97917
-reqlevel = 4
-npc = 263399
-at = [1429, 44.9, 63.4]
-text = "Coge la lección de Encantamiento: se entrega en Ventormenta."
-tip = "Si Sam no te deja coger más de una, quédate con Sastrería y Encantamiento: son tus principales."
-status = "unverified"
-sources = ["questie:quest/97917", "questie:npc/263399"]
 checked = "2026-11-11"
 
 [[step]]
@@ -218,21 +206,9 @@ do = "turnin"
 quest = 97919
 npc = 2329
 at = [1429, 43.4, 65.6]
-text = "Entrega la lección a Michelle Belle, en la casa de al lado de la posada."
+text = "Entrega la lección de Primeros auxilios a Michelle Belle."
 status = "unverified"
 sources = ["questie:quest/97919", "questie:npc/2329"]
-checked = "2026-11-11"
-
-[[step]]
-id = "hmage-elwynn-020"
-do = "learn_prof"
-npc = 2329
-prof = "firstaid"
-at = [1429, 43.4, 65.6]
-text = "Aprende Primeros auxilios con Michelle Belle."
-tip = "Guarda el paño de lino: vendas para ti y madejas para Sastrería."
-status = "unverified"
-sources = ["questie:npc/2329"]
 checked = "2026-11-11"
 
 [[step]]
@@ -288,6 +264,7 @@ id = "hmage-elwynn-025"
 do = "accept"
 quest = 91751
 reqlevel = 5
+reqskill = [393, 1]
 npc = 6306
 at = [1429, 46.2, 62.2]
 text = "Coge la misión de pieles de Helene Peltskinner."
@@ -915,17 +892,6 @@ sources = ["questie:quest/83", "questie:npc/278"]
 checked = "2026-11-11"
 
 [[step]]
-id = "hmage-elwynn-080"
-do = "turnin"
-quest = 97925
-npc = 1103
-at = [1429, 79.2, 69.0]
-text = "Entrega la lección de Sastrería a Eldrin."
-status = "unverified"
-sources = ["questie:quest/97925", "questie:npc/1103"]
-checked = "2026-11-11"
-
-[[step]]
 id = "hmage-elwynn-081"
 do = "learn_prof"
 npc = 1103
@@ -1277,6 +1243,20 @@ at = [1429, 46.2, 62.2]
 text = "Entrega las pieles a Helene Peltskinner."
 status = "unverified"
 sources = ["questie:quest/91751", "questie:npc/6306"]
+checked = "2026-11-11"
+
+[[step]]
+id = "hmage-elwynn-016"
+do = "accept"
+quest = 97917
+reqlevel = 4
+reqskill = [333, 1]
+npc = 263399
+at = [1429, 44.9, 63.4]
+text = "Ya con Encantamiento, coge de Sam Sarsaparilla la lección de Encantamiento: se entrega en Ventormenta."
+tip = "Si Sam no te deja coger más de una, quédate con Sastrería y Encantamiento: son tus principales."
+status = "unverified"
+sources = ["questie:quest/97917", "questie:npc/263399"]
 checked = "2026-11-11"
 
 [[step]]
