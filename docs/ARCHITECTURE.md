@@ -30,6 +30,7 @@ addon/Senda/              Addon (esta carpeta se copia a Interface/AddOns/Senda)
   Recorder/               Observaciones en juego para el harness
   Knowledge/              Paneles de conocimiento (rotaciones, talentos, macros...) generados
   Locale/                 GENERADO: nombres de respaldo por idioma (Names_<locale>.lua) desde data/locale/
+  Data/                   GENERADO: Travel.lua (datos de viaje en cadenas compactas, desde data/travel/)
   Guides/                 GENERADO por tools/build.py desde data/ (sí se commitea)
 data/
   guides/<guide-id>/      Secciones TOML de cada guía (orden por prefijo numérico)
@@ -355,9 +356,12 @@ Senda.Report:Open(), :Context(), :Text(desc), :IssueURL(desc); Senda.Errors:Add(
 Senda.Visibility:Hidden(), :SetHidden(b), :Toggle()  -- ocultar HUD y flecha (instancias o a mano)
 Senda.Party.Members(), .StepsApart(m), .Holds(entry), .HoldsQuest(q), .GoOn(), .RequestSync()  -- pareja
                                        --   (Modules/Party.lua; evento interno SENDA_PARTY_UPDATED)
-Senda.Arrow:SetTarget(map, x, y, label, source), :Clear(source)
 Senda.ArrowNav:Waypoint(t, map, x, y), :TargetChanged(t), :State()   -- caminos reales de la flecha
                                        --   (UI/ArrowNav.lua sobre el addon Senda_Nav; docs/NAV.md, 8.5)
+Senda.Arrow:SetTarget(map, x, y, label, source), :Clear(source), :Has(source), :Destination() -> target, source
+                                       --   (el objetivo sin el tramo "travel"; evento SENDA_ARROW_DEST)
+Senda.Modules.Travel.HudLine(), .GetPlan(), .Context(), .PlanSync(ctx, inicio, destino), .HighlightTaxi()
+                                       --   planificador de viaje (Modules/Travel.lua; evento SENDA_TRAVEL_UPDATED)
 Senda.Knowledge:Register(t), :ForClass(class) -> lista de páginas
 Senda.UI:RegisterTab({ key, title, icon, order, build = function(parent) end, refresh = function() end })
 Senda.UI:Frame / :Button / :ScrollText / :Backdrop       -- helpers de estilo común
@@ -367,12 +371,43 @@ Senda.Options:Register({ key, label, type = "toggle"|"slider", default, min, max
 Propietarios de carpetas del addon:
 - `Core/`, `Engine/`, `UI/`, `Recorder/` y `Senda.toc`: equipo del motor.
 - `Modules/`: utilidades portadas (equipo, vendedores, instructores, desencantar, macros, barras, análisis,
-  asesor y pareja).
+  asesor, pareja y planificador de viaje).
 - `Guides/` y `Knowledge/`: los genera `tools/build.py`.
 
 Cada carpeta tiene su `<Carpeta>.xml` y el `.toc` solo incluye esos XML, en este orden:
 `Core\Core.xml`, `Locale\Locale.xml`, `Engine\Engine.xml`, `Recorder\Recorder.xml`, `UI\UI.xml`, `Knowledge\Knowledge.xml`,
-`Guides\Guides.xml`, `Modules\Modules.xml`.
+`Data\Travel.lua` (un solo archivo, sin XML), `Guides\Guides.xml`, `Modules\Modules.xml`.
+
+## Planificador de viaje (`Modules/Travel.lua`)
+
+Cuando el destino de la flecha (fuente `guide` o `manual`) está en otro continente o a más de 800 yardas, el módulo calcula
+el camino más rápido con lo que el personaje sabe y lleva, y lo enseña. Datos y modelo de costes en
+[TRAVEL.md](TRAVEL.md); aquí, cómo encaja en el motor:
+
+- **Datos bajo demanda.** `Data/Travel.lua` (generado por `tools/build.py` desde `data/travel/`) solo contiene cadenas
+  compactas (`Senda.TravelData`); no se decodifican al cargar, sino la primera vez que hay un destino lejano y fuera de combate.
+- **Dijkstra en una corrutina.** Estado (nodo, ¿llegado volando?) para cobrar el despegue una vez por tramo. A pie en línea
+  recta ×1,25 a 7 yd/s (más rápido con corcel de brujo, forma de viaje o una montura en las bolsas), vuelos **solo entre
+  nodos descubiertos** de tu facción y clase, barcos, zepelines y tranvía con su espera media, portales, teletransportes de
+  clase (hechizo conocido, reactivo en las bolsas y sin enfriamiento) y la piedra de hogar (objeto en las bolsas, enfriamiento
+  leído con `C_Container.GetItemCooldown`, posada vinculada). Se calcula sin atajos, con la piedra y con los teletransportes, y
+  gana lo más rápido que cumpla sus márgenes (piedra: viaje de 3 min o más que ahorre 2 min; teletransporte: ahorra 60 s o el 20 %).
+  La corrutina cede cada 700 operaciones o 1 ms (el presupuesto del addon es de 2 ms por fotograma), se pausa en combate y no usa `pcall`
+  (Lua 5.1 no deja ceder a través de él).
+- **Nodos descubiertos.** Los del motor (`db.char.fps`, al abrir un maestro de vuelo) y los que lee `C_TaxiMap.GetTaxiNodesForMap`
+  (`isUndiscovered`) sin abrir nada, guardados en `db.char.travel`. Un cliente que no marca ningún nodo como no descubierto no se
+  da por bueno.
+- **Piedra de hogar.** La posada vinculada se aprende al vincular (`HEARTHSTONE_BOUND`: el posadero del paso `sethearth`, la unidad
+  «npc» o la posada a menos de 60 yardas), se reconoce por el nombre de zona del cliente (`C_Map.GetAreaInfo`) o por el
+  nombre inglés de los datos, y como último recurso por el último paso `sethearth` hecho de la guía.
+- **Salida.** Una línea del HUD, «Camino más rápido: vuela a X (3 min) → barco a Y → a pie», y la fuente `travel` de la flecha
+  (justo por delante del destino al que sustituye) apuntando al embarque del primer tramo. Sin flecha si ya estás allí o si el
+  primer tramo es la piedra o un teletransporte. Clic derecho en la flecha la descarta hasta que cambie el destino.
+- **Mapa de vuelo.** Con `TAXIMAP_OPENED` marca con un resplandor el nodo al que lleva el primer vuelo (`FlightMapFrame` o los
+  botones del marco clásico) y lo dice en el chat. Nunca vuela por ti: no hay ninguna acción protegida.
+- Solo Reinos del Este y Kalimdor (continentes 0 y 1): el continente nuevo de Forever no tiene yardas fiables. No se usan los
+  ascensores ni los horarios reales de barcos y zepelines (esperas medias). `/senda viaje [recalcular]` y la opción
+  `mod_travel`.
 
 ## Formato de conocimiento (TOML)
 

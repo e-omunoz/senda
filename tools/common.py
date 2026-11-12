@@ -42,6 +42,8 @@ class Paths:
         self.out_guides = self.addon / "Guides"
         self.out_knowledge = self.addon / "Knowledge"
         self.out_locale = self.addon / "Locale"
+        self.out_data = self.addon / "Data"
+        self.travel = self.data / "travel"
         self.toc = self.addon / "Senda.toc"
         self.version_file = self.root / "VERSION"
         self.dist = self.root / "dist"

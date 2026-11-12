@@ -14,6 +14,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - El paquete de la versión lleva cuatro carpetas (`Senda`, `Senda_Nav`, `Senda_Nav_EK`, `Senda_Nav_Kalimdor`), cada
   una con su licencia; `install-dev` copia las cuatro.
 - Simulador: escenarios `nav-*` con el `Senda_Nav` real y paquetes sintéticos.
+- **Planificador de viaje** (`Modules/Travel.lua`, datos de `data/travel/` compilados a `Data/Travel.lua`). Si el destino de la flecha está en otro continente o a más de 800 yardas, el HUD enseña una línea «Camino más rápido: vuela a X (3 min) → barco a Y → a pie» y la flecha apunta al embarque del primer tramo. Usa solo lo que ya conoces: vuelos descubiertos de tu facción, barcos, zepelines, el tranvía, portales, teletransportes de clase (con su reactivo) y la piedra de hogar (con su enfriamiento y la posada vinculada). En un maestro de vuelo marca en el mapa el nodo al que hay que volar, sin volar por ti. `/senda viaje [recalcular]` y una opción para apagarlo.
+- Simulador: escenarios `travel`, `travel-hud`, `travel-taxi`, `travel-lock`, `travel-druid` y `travel-mage`; el mock ya tiene `C_TaxiMap.GetTaxiNodesForMap`, enfriamientos de objetos y hechizos y `C_Map.GetAreaInfo`.
 
 ## [0.5.0] - 2026-11-12
 
