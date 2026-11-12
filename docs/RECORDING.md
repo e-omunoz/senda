@@ -13,7 +13,8 @@ Mide cuánto tarda de verdad cada paso de una guía para compararlo con el tiemp
 ## Qué se guarda y qué no
 
 Se guarda: id de guía y de paso, motivo del cambio de paso (`next`, `skip`, `back`, `pick`, `auto`, `guide`, `login`,
-`end`), XP ganada y nivel, combate sí/no, ausente (AFK) sí/no, muertes, misiones aceptadas / entregadas / con los
+`end`; «Saltar esta misión» y aceptar «saltar a su paso» en pareja son `skip`; Deshacer y la colocación desde el
+registro de misiones son `pick`: ninguno cuenta como paso completado), XP ganada y nivel, combate sí/no, ausente (AFK) sí/no, muertes, misiones aceptadas / entregadas / con los
 objetivos completos (solo el id), si vas en un grupo de exactamente dos (sí/no) y, con el rastro activado, mapa y
 posición cada ~2 s o 10 yardas. El rastro se detiene solo tras 30 min sin moverte.
 

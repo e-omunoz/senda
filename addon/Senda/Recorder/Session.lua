@@ -437,7 +437,14 @@ Events:On("SENDA_READY", function()
     Wrap(E, "SetGuide", "guide")
     Wrap(E, "Reset", "guide")
     Wrap(E, "Evaluate", "auto")
+    -- Saltos que no son completar el paso (si no, contarían como "auto"): saltar una misión con las que
+    -- dependen de ella, deshacerlo, la colocación desde el registro de misiones y «saltar a su paso».
+    Wrap(E, "SkipQuestTree", "skip")
+    Wrap(E, "UndoSkip", "pick")
+    Wrap(E, "UnskipAll", "pick")
+    Wrap(E, "ApplyPlacement", "pick")
   end
+  if Senda.Party then Wrap(Senda.Party, "AcceptSync", "skip") end
   if Senda.Slash then
     Senda.Slash:Register("grabar", Slash, L.SESSION_HELP)
     Senda.Slash:Register("record", Slash)

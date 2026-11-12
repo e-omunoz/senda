@@ -260,6 +260,54 @@ const scenarios = [
       Check(S().Session:Stats() == 0, "/senda grabar limpiar deletes the chunks")
     `,
   },
+  {
+    id: 'recskip',
+    title: 'Session recorder: skipping a quest tree, undoing it and placement jumps are not recorded as completed steps',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      local E = S().Engine
+      local db = S().recorder
+      S().Options:Set("recordSession", true)
+      Sim.Advance(2)
+      local function LastReason()
+        S().Session:Flush()
+        local last
+        for _, s in pairs(db.chunks) do
+          for line in (s .. "\n"):gmatch("([^\n]*)\n") do
+            if line:sub(1, 2) == "s\t" then last = line end
+          end
+        end
+        local f = {}
+        for v in ((last or "") .. "\t"):gmatch("([^\t]*)\t") do f[#f + 1] = v end
+        return f[5], f[4]
+      end
+      -- first quest step from here on
+      local qi, q
+      for i = E:Index() + 1, #E:Steps() do
+        local s = E:Entry(i).step
+        if s["do"] == "accept" and type(s.quest) == "number" then qi, q = i, s.quest; break end
+      end
+      Check(qi ~= nil, "a quest step to skip", tostring(qi))
+      E:JumpTo(qi)
+      Check(LastReason() == "pick", "jumping from the guide list records pick", tostring(LastReason()))
+      E:SkipQuestTree(q)
+      local r, id = LastReason()
+      Check(r == "skip", "Saltar esta misión records skip (not auto)", tostring(r) .. " " .. tostring(id))
+      E:UndoSkip()
+      r = LastReason()
+      Check(r == "pick", "Deshacer records pick", tostring(r))
+      Section("placement and party sync are wrapped")
+      Check(S().Party ~= nil and S().Party.AcceptSync ~= nil, "Party.AcceptSync exists")
+      local job = { guideId = E:GuideId(), steps = E:Steps(), reason = "test" }
+      E.held = nil
+      local before = E:Index()
+      E:ApplyPlacement(job, before + 3, before + 3)
+      if E:Index() ~= before then
+        Check(LastReason() == "pick", "a placement jump records pick", tostring(LastReason()))
+      end
+    `,
+  },
 ];
 
 module.exports = { scenarios, ingest };

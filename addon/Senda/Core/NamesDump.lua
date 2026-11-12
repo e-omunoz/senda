@@ -167,16 +167,17 @@ local function Body(d)
       started = started + 1
       job.started = job.started + 1
       job.inflight = job.inflight + 1
+      local j = job -- una respuesta tardía de un volcado parado o reiniciado no cuenta en el siguiente
       Names:Request(kind, id, function(name)
-        job.inflight = job.inflight - 1
-        job.answered = job.answered + 1
+        j.inflight = j.inflight - 1
+        j.answered = j.answered + 1
         if name then
           d[kind][id] = name
           d.missing[kind][id] = nil
-          job.ok = job.ok + 1
+          j.ok = j.ok + 1
         else
           d.missing[kind][id] = true
-          job.miss = job.miss + 1
+          j.miss = j.miss + 1
         end
       end)
     end

@@ -1150,7 +1150,8 @@ const scenarios = [
       local errs = #Sim.errors
       for _, b in ipairs(SendaLevelCard.icons) do Sim.RunScript(b, "OnEnter"); Sim.RunScript(b, "OnLeave") end
       Check(#Sim.errors == errs, "icon tooltips run without errors")
-      Check(Plain(SendaLevelCard.cost:GetText()):find("El precio lo ver", 1, true) ~= nil, "unknown prices are said", SendaLevelCard.cost:GetText())
+      -- the trainer data (data/knowledge/trainer) gives the prices: 5 s in total for 1454 and 695 at level 6
+      Check(Plain(SendaLevelCard.cost:GetText()):find("Coste: 0g 5s 0c", 1, true) ~= nil, "compiled prices are said", SendaLevelCard.cost:GetText())
       local w = SC.Where(SC.LevelList())
       Check(w and w.kind == "trainer" and w.at and w.at[1] == 1426, "falls back to the guide's trainer on this map", w and w.kind)
       Check(SendaLevelCard.point:IsShown(), "point button offered")
@@ -1164,7 +1165,7 @@ const scenarios = [
 
       Section("trainer visit caches the cost")
       CreateFrame("Frame", "ClassTrainerFrame", UIParent)
-      Sim.trainer = { { spell = 172, cost = 100 }, { spell = 702, cost = 100 }, { spell = 1454, cost = 500 } }
+      Sim.trainer = { { spell = 172, cost = 100 }, { spell = 695, cost = 100 }, { spell = 1454, cost = 500 } }
       Sim.Fire("TRAINER_SHOW"); Sim.Advance(1)
       ClassTrainerFrame:Hide(); Sim.Fire("TRAINER_CLOSED"); Sim.Advance(0.5)
       Check(S().Modules.Trainer.CachedCost(172) == 100, "cost cached from the trainer", S().Modules.Trainer.CachedCost(172))
@@ -1257,7 +1258,7 @@ const scenarios = [
       Check(SendaLevelCard and SendaLevelCard:IsShown(), "card shown")
       local head = Plain(SendaLevelCard.head:GetText())
       Check(head:find("Level 6: you can train 3 spells", 1, true) ~= nil, "English head", head)
-      Check(Plain(SendaLevelCard.cost:GetText()):find("see the price", 1, true) ~= nil, "English cost line", SendaLevelCard.cost:GetText())
+      Check(Plain(SendaLevelCard.cost:GetText()):find("Cost: 0g 5s 0c", 1, true) ~= nil, "English cost line", SendaLevelCard.cost:GetText())
       Sim.actions[1] = { "spell", 116 }
       Sim.LearnSpell(116); Sim.LearnSpell(837); Sim.Advance(14)
       Check(SendaRankCard and SendaRankCard:IsShown(), "rank card shown")

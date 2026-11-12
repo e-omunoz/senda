@@ -291,7 +291,8 @@ local function Create()
   f.banner.text:SetPoint("TOPLEFT", 0, -2)
   f.banner.text:SetPoint("RIGHT", f.banner.undo, "LEFT", -6, 0)
   f.banner:Hide()
-\n  -- Pareja (Modules/Party.lua): la espera al compañero y dónde va
+
+  -- Pareja (Modules/Party.lua): la espera al compañero y dónde va
   f.duoWait = FS(f, "GameFontHighlightSmall", C.gold[1], C.gold[2], C.gold[3])
   f.duoWait:SetPoint("RIGHT", -PAD, 0)
   f.duo = FS(f, "GameFontHighlightSmall", C.text[1] * 0.85, C.text[2] * 0.85, C.text[3] * 0.85)
@@ -514,7 +515,9 @@ function HUD:Refresh()
     y = y + bh + 4
   else
     f.banner:Hide()
-  end\n\n  -- Pareja: «Espera a Ana: le falta 3/8» con «Seguir sin él», y la línea de dónde va
+  end
+
+  -- Pareja: «Espera a Ana: le falta 3/8» con «Seguir sin él», y la línea de dónde va
   local P = Senda.Party
   local waitText = (not collapsed and P and P.HoldLine) and P.HoldLine() or nil
   local duoText = (not collapsed and P and P.HudLine) and P.HudLine() or nil

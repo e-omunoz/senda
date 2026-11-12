@@ -73,8 +73,9 @@ function C.LevelList()
   local ok, now = pcall(K.TrainNow)
   if not ok or type(now) ~= "table" then return out end
   for _, e in ipairs(now) do
-    local cost = e.cost
-    if not cost and T and T.CachedCost then cost = T.CachedCost(e.spell) end
+    -- El precio que el instructor te mostró (con descuentos de reputación) gana al compilado del conocimiento.
+    local cost = T and T.CachedCost and T.CachedCost(e.spell) or nil
+    if not cost then cost = e.cost end
     out[#out + 1] = { id = e.spell, level = e.level, cost = cost, trainer = e.trainer }
   end
   return out

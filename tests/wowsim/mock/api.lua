@@ -228,7 +228,6 @@ function UnitExists(u)
 end
 local function partyOf(u) local n = u:match("^party(%d)$"); return n and Sim.party[tonumber(n)] end
 function UnitIsPlayer(u) unitArg(u, "UnitIsPlayer"); return u == "player" or partyOf(u) ~= nil end
-function GetRealmName() return Sim.realm or "Reino de Prueba" end
 function UnitName(u)
   unitArg(u, "UnitName")
   if u == "player" then return Sim.player.name end
@@ -278,14 +277,6 @@ function UnitOnTaxi(u) unitArg(u, "UnitOnTaxi"); return u == "player" and Sim.pl
 function UnitAffectingCombat(u) return u == "player" and Sim.player.combat or false end
 function UnitXP(u) return Sim.player.xp end
 function UnitIsAFK(u) unitArg(u, "UnitIsAFK"); return u == "player" and Sim.player.afk == true or false end
-function GetRealmName() return Sim.player.realm or "Reino de Pruebas" end
-function GetNormalizedRealmName() return (GetRealmName():gsub("%s", "")) end
-function GetNumGroupMembers()
-  local n = 0
-  for _ in pairs(Sim.party) do n = n + 1 end
-  return n > 0 and n + 1 or 0
-end
-function IsInGroup() return next(Sim.party) ~= nil end
 function UnitXPMax(u) return Sim.player.xpMax end
 function UnitStat(u, i) num(i, "UnitStat", "statIndex"); return 20, 20 + i, 0, 0 end
 function UnitHealth(u) return 100 end
@@ -1173,12 +1164,13 @@ Sim.addonFault = 0
 Sim.realm = "Reino"
 local addonPrefixes = {}
 
-function GetRealmName() return Sim.realm end
-function GetNormalizedRealmName() return Sim.realm end
+-- The player's realm: a scenario may set Sim.player.realm (privacy checks of the recorder); else Sim.realm.
+function GetRealmName() return Sim.player.realm or Sim.realm end
+function GetNormalizedRealmName() return (GetRealmName():gsub("%s", "")) end
 function Ambiguate(name, context)
   str(name, "Ambiguate", "fullName"); str(context, "Ambiguate", "context")
   local base, realm = name:match("^([^%-]+)%-(.+)$")
-  if base and (context == "short" or realm == Sim.realm) then return base end
+  if base and (context == "short" or realm == GetNormalizedRealmName()) then return base end
   return name
 end
 local function partyCount() local n = 0; for i = 1, 4 do if Sim.party[i] then n = i end end; return n end
@@ -1225,7 +1217,7 @@ function C_ChatInfo.SendAddonMessage(prefix, text, chatType, target)
   Sim.addonSent[#Sim.addonSent + 1] = { prefix = prefix, text = text, channel = chatType, result = result, t = Sim.time }
   if Sim.verbose then Sim.Out("  > addon " .. prefix .. " " .. chatType .. " " .. text .. " -> " .. result) end
   if result ~= R.Success then return result end
-  local sender = Sim.player.name .. "-" .. Sim.realm
+  local sender = Sim.player.name .. "-" .. GetNormalizedRealmName()
   Sim.addonInbox[#Sim.addonInbox + 1] = { due = Sim.time + 0.05, prefix = prefix, text = text, channel = chatType, sender = sender }
   local busSend = rawget(_G, "__busSend")
   if busSend then busSend(prefix, text, chatType, Sim.time, sender) end

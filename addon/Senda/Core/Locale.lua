@@ -557,7 +557,9 @@ Senda:AddLocale({
     log = "in the log", ready = "ready to turn in", failed = "failed", done = "turned in",
     none = "not taken", skipped = "skipped",
   },
-})\n\n-- Pareja sincronizada (Modules/Party.lua).
+})
+
+-- Pareja sincronizada (Modules/Party.lua).
 Senda:AddLocale({
   OPT_SECTION_DUO = "Pareja",
   OPT_DUO_SYNC = "Sincronizar el progreso con tu compañero de grupo",
