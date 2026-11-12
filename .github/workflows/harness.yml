@@ -48,7 +48,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Sin el secreto ANTHROPIC_API_KEY el arnés no puede trabajar: se salta sin marcar fallo.
+  key:
+    runs-on: ubuntu-latest
+    outputs:
+      ok: ${{ steps.check.outputs.ok }}
+    steps:
+      - id: check
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -n "$ANTHROPIC_API_KEY" ] || [ "${{ inputs.dry_run }}" = "true" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Falta el secreto ANTHROPIC_API_KEY: el arnés no se ejecuta (ver docs/HARNESS.md)."
+          fi
+
   harness:
+    needs: key
+    if: needs.key.outputs.ok == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
