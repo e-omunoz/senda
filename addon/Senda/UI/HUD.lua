@@ -95,6 +95,13 @@ function HUD:StepTip(step)
   return Names:Resolve(tip)
 end
 
+-- Por qué toca este paso (xp, minutos, qué desbloquea), con fichas resueltas; nil si no hay o la opción está off.
+function HUD:StepWhy(step)
+  local why = step and step.why
+  if type(why) ~= "string" or why == "" or not Senda.Options:Get("hudWhy") then return nil end
+  return Names:Resolve(why)
+end
+
 function HUD:TypeLabel(step)
   local d = step and step["do"]
   return (d and L["DO_" .. d]) or L.DO_unknown
@@ -139,6 +146,7 @@ HUD.STATUS = STATUS
 -- Construcción
 ------------------------------------------------------------------------------
 
+local NL = "\n"
 local function Opt(key) return Senda.Options:Get(key) end
 
 -- Quita los códigos de color de un texto (|cAARRGGBB ... |r).
@@ -264,6 +272,11 @@ local function Create()
   end)
   f.hit:SetScript("OnClick", function(_, btn) if btn == "RightButton" then HUD:ShowSkipMenu() end end)
   UI:Tooltip(f.hit, function() return rawget(HUD, "hitTip") end, function() return rawget(HUD, "hitBody") end)
+
+  -- «Por qué»: línea tenue bajo el texto del paso (datos de la fusión de rutas). Posición absoluta, ver Apply.
+  f.why = FS(f, "GameFontHighlightSmall", C.dim[1], C.dim[2], C.dim[3])
+  f.why:SetPoint("TOPLEFT", f.text, "BOTTOMLEFT", 0, -2)
+  f.why:SetPoint("RIGHT", -PAD, 0)
 
   f.objectives = FS(f, "GameFontHighlightSmall")
   f.objectives:SetPoint("TOPLEFT", f.text, "BOTTOMLEFT", 0, -4)
@@ -509,7 +522,17 @@ function HUD:Refresh()
 
   local titleH = math.max(f.title:GetStringHeight(), 12)
   local textH = collapsed and 0 or (f.text:GetStringHeight() + 3)
-  y = y + math.max(28, titleH + textH) + 4
+  local whyText = (step and not collapsed and not problem) and self:StepWhy(step) or nil
+  f.why:SetText(whyText or "")
+  local whyH = whyText and (f.why:GetStringHeight() + 2) or 0
+  y = y + math.max(28, titleH + textH + whyH) + 4
+  if whyH > 0 then
+    -- Absoluta (no encadenada al texto), como el resto de líneas de debajo
+    f.why:ClearAllPoints()
+    f.why:SetPoint("TOPLEFT", TEXT_X, -(28 + titleH + textH))
+    f.why:SetPoint("RIGHT", -PAD, 0)
+  end
+  f.why:SetShown(whyH > 0)
 
   -- Objetivos, cuentas atrás, consejo y nota de escolta
   local objH, statusH, tipH, escortH = 0, 0, 0, 0
@@ -627,9 +650,15 @@ function HUD:Refresh()
   -- Zona de clic derecho del paso (solo pasos de misión)
   local skipQs = (step and not detour) and self:SkippableQuests(step) or {}
   f.hit:SetShown(step ~= nil)
-  f.hit:SetHeight(math.max(28, titleH + textH))
-  self.hitTip = #skipQs > 0 and L.SKIP_MENU or nil
-  self.hitBody = #skipQs > 0 and L.SKIP_HINT or nil
+  f.hit:SetHeight(math.max(28, titleH + textH + whyH))
+  if #skipQs > 0 then
+    self.hitTip = L.SKIP_MENU
+    self.hitBody = L.SKIP_HINT .. (whyText and (NL .. whyText) or "")
+  elseif whyText then
+    self.hitTip, self.hitBody = L.HUD_WHY_TITLE, whyText
+  else
+    self.hitTip, self.hitBody = nil, nil
+  end
 
   -- Aviso de misión saltada
   local last = Engine.LastSkip and Engine:LastSkip() or nil
@@ -978,6 +1007,8 @@ Senda.Options:Register({ key = "hudLocked", label = L.OPT_HUD_LOCKED, type = "to
   section = SEC, order = 2 })
 Senda.Options:Register({ key = "hudPreview", label = L.OPT_HUD_PREVIEW, type = "toggle", default = true,
   section = SEC, order = 3, onChange = Apply })
+Senda.Options:Register({ key = "hudWhy", label = L.OPT_HUD_WHY, type = "toggle", default = true,
+  section = SEC, order = 3.5, onChange = Apply })
 Senda.Options:Register({ key = "hudCombatHide", label = L.OPT_HUD_COMBAT, type = "toggle", default = false,
   section = SEC, order = 4, onChange = Apply })
 Senda.Options:Register({ key = "hudScale", label = L.OPT_SCALE, type = "slider", default = 1, min = 0.6, max = 1.6,

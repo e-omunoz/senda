@@ -24,6 +24,7 @@ local RUNTIME = "Senda_Nav"
 local PACKS = { [0] = true, [1] = true } -- continentes con paquete: Reinos del Este y Kalimdor
 local REROUTE_COOLDOWN = 5 -- s mínimos entre dos rutas pedidas por salirse del camino
 local RETRY_AFTER = 20     -- s antes de volver a pedir una ruta que falló, al mismo objetivo...
+local RETRY_JUMP = 400    -- yd: un salto así (tranvía, barco, teletransporte) tras un fallo pide ruta sin esperar
 local RETRY_MOVED = 30     -- ...y solo si el jugador se ha movido al menos estas yardas
 local FAR_OFF = 120        -- yd: tan lejos del camino, la flecha va recta mientras se recalcula
 local LOOK = 15            -- yd por delante en el camino a los que apunta la flecha
@@ -204,7 +205,8 @@ function Nav:Waypoint(t, map, x, y)
     Request(t, map, x, y, pn, pw)
   elseif st.status == "fail" then
     local dn, dw = pn - (st.failN or pn), pw - (st.failW or pw)
-    if now - (st.failAt or now) >= RETRY_AFTER and dn * dn + dw * dw >= RETRY_MOVED * RETRY_MOVED then
+    local d2 = dn * dn + dw * dw
+    if (now - (st.failAt or now) >= RETRY_AFTER and d2 >= RETRY_MOVED * RETRY_MOVED) or d2 >= RETRY_JUMP * RETRY_JUMP then
       Request(t, map, x, y, pn, pw)
     end
   end

@@ -2779,6 +2779,92 @@ const scenarios = [
       Check(#Sim.AddonTexts() == 2, "no hello for the same roster")
     `,
   },
+  {
+    id: 'duo4',
+    title: 'Duo sync: "va por delante" discounts the steps either side skipped (2K message)',
+    char: 'gnome-warlock',
+    duo: { char: 'nightelf-druid', name: 'Lunaria' },
+    lua: L_`
+      Peer("Login()")
+      Login()
+      DuoGuide()
+      Peer("DuoGuide()")
+      DuoJoin("Lunaria", "DRUID", "NightElf")
+      Peer([[DuoJoin("Pruebas", "WARLOCK", "Gnome")]])
+      Sim.Advance(12)
+      Check(DuoMember("Lunaria") ~= nil, "A heard Lunaria")
+      Check(StepId() == "dp-001", "A on dp-001", StepId())
+      Section("Lunaria jumps ahead to dp-009")
+      Peer([[local E = S().Engine
+        for i, e in ipairs(E:Steps()) do if e.step.id == "dp-009" then E:JumpTo(i) end end]])
+      Sim.Advance(4)
+      Check(Peer("return StepId()") == "dp-009", "B on dp-009", Peer("return StepId()"))
+      local apart = S().Party.StepsApart(DuoMember("Lunaria"))
+      Check(apart == 6, "A: 6 shared steps (1,2,4,5,6,8; dp-003 and dp-007 belong to one class)", apart)
+      Section("Lunaria skips quest 9002: its three steps no longer count")
+      Peer([[S().Engine:SkipQuestTree(9002)]])
+      Sim.Advance(4)
+      local m = DuoMember("Lunaria")
+      Check(m and m.skipped and m.skipped[9002], "A received her skipped quests (2K)")
+      Check(S().Party.StepsApart(m) == 3, "A: 3 steps apart after her skip", S().Party.StepsApart(m))
+      Check(Peer([[return S().Party.StepsApart(DuoMember("Pruebas"))]]) == -3, "B: -3 from her side")
+      Section("I skip 9001 too: nothing left that both can do")
+      S().Engine:SkipQuestTree(9001)
+      Sim.Advance(4)
+      Check(S().Party.StepsApart(DuoMember("Lunaria")) == 0, "A: 0 shared steps left", S().Party.StepsApart(DuoMember("Lunaria")))
+      Section("wire format")
+      local P = S().Party
+      Check(P.EncodeSkipped({ 30, 5, 5 }) == "2K|5,5,30" or P.EncodeSkipped({ 30, 5 }) == "2K|5,30", "encode sorted")
+      local d = P.DecodeSkipped("2K|5,30")
+      Check(d and d[5] and d[30], "decode")
+      Check(P.DecodeSkipped("2K|5,x") == nil and P.DecodeSkipped("2K|0") == nil, "malformed rejected")
+      local many = {}
+      for i = 1, 100 do many[i] = 100000 + i end
+      Check(#P.EncodeSkipped(many) <= 255, "long list fits in 255 bytes")
+      Check(#Sim.apiErrors == 0, "no malformed send")
+    `,
+  },
+  {
+    id: 'hudwhy',
+    title: 'HUD: the why line of a step (option on by default), its own block, no overlap, tooltip',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      local G, E, HUD = S().Guides, S().Engine, S().HUD
+      Sim.questCache[179] = true
+      G:RegisterSection({ id = "sim-why", title = "Por qué", levels = { 1, 2 }, map = 1426, steps = {
+        { id = "sim-why-001", ["do"] = "accept", quest = 179, npc = 658, at = { 1426, 29.9, 71.2 },
+          text = "Coge la misión.", tip = "Un consejo.", status = "unverified",
+          why = "+3.144 XP · ~2,2 min · desbloquea «{quest:179}» y 3 más" },
+        { id = "sim-why-002", ["do"] = "note", text = "Sin motivo.", status = "unverified" } } })
+      G:RegisterGuide({ id = "sim-why", title = "Por qué", sections = { "sim-why" }, order = -1 })
+      E:SetGuide("sim-why", true)
+      Sim.Advance(1)
+      Check(S().Options:Get("hudWhy") == true, "option on by default")
+      local f = SendaHUD
+      local why = Plain(f.why:GetText() or "")
+      Check(f.why:IsShown() and why:find("+3.144 XP · ~2,2 min", 1, true) ~= nil, "why line shown", why)
+      Check(not why:find("{quest", 1, true), "tokens resolved", why)
+      Check(not Plain(f.text:GetText()):find("XP", 1, true), "it is not in the step text block")
+      Check(f.extraLine == nil or HUD.extraLine == nil, "the extra-line slot is untouched", tostring(HUD.extraLine))
+      local function top(fs) local _, _, _, _, y = fs:GetPoint(1); return y end
+      Check(f.tip:IsShown() and top(f.tip) < top(f.why) - f.why:GetStringHeight() + 0.5,
+        "tip sits below the why line (no overlap)", tostring(top(f.tip)) .. " vs " .. tostring(top(f.why)))
+      Check(top(f.why) <= -(28 + 12 + f.text:GetStringHeight()), "why starts under the step text", top(f.why))
+      Check(HUD.hitTip ~= nil and Plain(HUD.hitBody):find("3.144 XP", 1, true) ~= nil, "right-click tooltip carries the why", tostring(HUD.hitBody))
+      Section("option off")
+      S().Options:Set("hudWhy", false)
+      Sim.Advance(1)
+      Check(not f.why:IsShown(), "hidden with the option off")
+      Check(not (HUD.hitBody or ""):find("3.144", 1, true), "tooltip without it too", tostring(HUD.hitBody))
+      S().Options:Set("hudWhy", true)
+      Section("step without why")
+      E:Skip()
+      Sim.Advance(1)
+      Check(StepId() == "sim-why-002" and not f.why:IsShown(), "no why, no line", StepId())
+      Check(#Sim.apiErrors == 0, "no API errors")
+    `,
+  },
 ];
 
 scenarios.push(...require('./scenarios_rec').scenarios);
