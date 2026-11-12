@@ -12,13 +12,14 @@
 process.env.FENGARICONF = JSON.stringify({ LUA_COMPAT_FLOATSTRING: true });
 
 const fs = require('fs');
+const zlib = require('zlib');
 const path = require('path');
 const { lua, lauxlib, lualib, to_luastring, to_jsstring } = require('fengari');
 
 const HERE = __dirname;
 const ROOT = path.resolve(HERE, '..', '..');
 const ADDON_ROOT = path.join(ROOT, 'addon').split(path.sep).join('/');
-const MOCK_FILES = ['compat51', 'core', 'frames', 'api', 'loader'].map((n) => path.join(HERE, 'mock', n + '.lua'));
+const MOCK_FILES = ['compat51', 'core', 'frames', 'api', 'nav', 'loader'].map((n) => path.join(HERE, 'mock', n + '.lua'));
 const SCENARIO_HELPERS = path.join(HERE, 'scenario.lua');
 
 const args = process.argv.slice(2);
@@ -61,6 +62,23 @@ function newState(report) {
     return 0;
   });
   lua.lua_setglobal(L, to_luastring('__report'));
+  // zlib for the mock's C_EncodingUtil.DecompressString and the synthetic navigation packs (mock/nav.lua)
+  for (const [name, fn] of [['__zinflate', zlib.inflateSync], ['__zdeflate', zlib.deflateSync]]) {
+    lua.lua_pushjsfunction(L, (L) => {
+      const raw = lua.lua_tolstring(L, 1);
+      let out;
+      try {
+        out = fn(Buffer.from(raw));
+      } catch (e) {
+        lua.lua_pushnil(L);
+        return 1;
+      }
+      const arr = Uint8Array.from(out);
+      lua.lua_pushlstring(L, arr, arr.length);
+      return 1;
+    });
+    lua.lua_setglobal(L, to_luastring(name));
+  }
   return L;
 }
 
@@ -2166,6 +2184,7 @@ const scenarios = [
 ];
 
 scenarios.push(...require('./scenarios_rec').scenarios);
+scenarios.push(...require('./scenarios_nav').scenarios);
 
 // ---------------------------------------------------------------------------
 // Runner

@@ -2,6 +2,19 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado [SemVer](https://semver.org/lang/es/).
 
+## [Sin publicar]
+
+### Añadido
+- **La flecha sigue caminos reales.** Si el objetivo está en tu continente, la flecha apunta al siguiente punto de
+  un camino a pie calculado sobre el terreno del cliente de Forever (`Senda_Nav`, docs/NAV.md) y enseña la
+  distancia «a pie» con una marca «ruta». Recalcula si te sales del camino (como mucho cada 5 s) o cambia el
+  objetivo, también en modo cadáver. Va recta mientras calcula, sin datos, volando, en taxi, en barco y en
+  mazmorras. Los datos se cargan fuera de combate, solo los de tu continente, y se suelta el otro al cambiar.
+  Opción «Seguir caminos reales» (activada).
+- El paquete de la versión lleva cuatro carpetas (`Senda`, `Senda_Nav`, `Senda_Nav_EK`, `Senda_Nav_Kalimdor`), cada
+  una con su licencia; `install-dev` copia las cuatro.
+- Simulador: escenarios `nav-*` con el `Senda_Nav` real y paquetes sintéticos.
+
 ## [0.5.0] - 2026-11-12
 
 ### Añadido

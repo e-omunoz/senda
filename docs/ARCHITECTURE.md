@@ -316,6 +316,9 @@ Protocolo propio inspirado en el de Polestar (`Quests/Party.lua`), con el prefij
   - Tiene **modo cadáver**: al morir apunta automáticamente a tu cuerpo usando
     `C_DeathInfo.GetCorpseMapPosition` y vuelve a la guía al resucitar.
   - Puede apuntar a cualquier punto con `/senda way <x> <y> [texto]`.
+  - **Caminos reales** (opción «Seguir caminos reales», activada): si el objetivo está en tu continente, apunta
+    al siguiente punto de un camino a pie calculado por `Senda_Nav` sobre el terreno del cliente y muestra la
+    distancia «a pie» con la marca «ruta» (`UI/ArrowNav.lua`, [NAV.md](NAV.md) sección 8.5).
   - Si TomTom está instalado, se puede usar como alternativa (opción), pero no hace falta.
 
 ## API interna del núcleo (contrato entre módulos)
@@ -353,6 +356,8 @@ Senda.Visibility:Hidden(), :SetHidden(b), :Toggle()  -- ocultar HUD y flecha (in
 Senda.Party.Members(), .StepsApart(m), .Holds(entry), .HoldsQuest(q), .GoOn(), .RequestSync()  -- pareja
                                        --   (Modules/Party.lua; evento interno SENDA_PARTY_UPDATED)
 Senda.Arrow:SetTarget(map, x, y, label, source), :Clear(source)
+Senda.ArrowNav:Waypoint(t, map, x, y), :TargetChanged(t), :State()   -- caminos reales de la flecha
+                                       --   (UI/ArrowNav.lua sobre el addon Senda_Nav; docs/NAV.md, 8.5)
 Senda.Knowledge:Register(t), :ForClass(class) -> lista de páginas
 Senda.UI:RegisterTab({ key, title, icon, order, build = function(parent) end, refresh = function() end })
 Senda.UI:Frame / :Button / :ScrollText / :Backdrop       -- helpers de estilo común

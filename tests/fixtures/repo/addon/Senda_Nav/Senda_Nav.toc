@@ -1,0 +1,4 @@
+## Interface: 16001
+## Title: Senda_Nav (fixture)
+## LoadOnDemand: 1
+SendaNav.lua

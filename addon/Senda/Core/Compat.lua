@@ -79,6 +79,13 @@ function Compat.OnTaxi()
   return (Try(UnitOnTaxi, "player")) and true or false
 end
 
+-- ¿Volando (montura voladora o forma de vuelo)? Un valor secreto cuenta como «no».
+function Compat.IsFlying()
+  local r = Try(_G.IsFlying)
+  if IsSecret(r) then return false end
+  return r and true or false
+end
+
 -- Orientación del jugador en radianes (0 = norte, sentido antihorario) o nil si no se puede leer.
 function Compat.PlayerFacing()
   return Num(Try(GetPlayerFacing))
