@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: Senda Nav: Reinos del Este
+## Notes: Paquete de navegación de Senda para Reinos del Este (celdas transitables derivadas del terreno del cliente). Lo carga Senda Nav fuera de combate.
+## Notes-enUS: Senda's navigation pack for Eastern Kingdoms (walkable cells derived from the client's terrain). Senda Nav loads it out of combat.
+## Author: omunoz
+## Version: 0.1.0
+## LoadOnDemand: 1
+## X-License: GPL-3.0
+
+SendaNav_0_graph.lua
+SendaNav_0_cells.lua

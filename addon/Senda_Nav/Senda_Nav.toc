@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: Senda Nav
+## Notes: Caminos a pie de Senda sobre el terreno real del cliente de WoW: Forever. Se carga bajo demanda.
+## Notes-enUS: Senda's walking routes over the real terrain of the WoW: Forever client. Loads on demand.
+## Author: omunoz
+## Version: 0.1.0
+## LoadOnDemand: 1
+## X-License: GPL-3.0
+
+Router.lua
+SendaNav.lua

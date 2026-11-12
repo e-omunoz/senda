@@ -1,0 +1,3 @@
+# Salidas de compilación y de la generación (pesadas; derivadas del terreno del cliente): nunca se commitean.
+target/
+out/

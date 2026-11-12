@@ -1,0 +1,16 @@
+[package]
+name = "senda-nav"
+description = "Senda: client grid -> compact walk grid + HPA* packs (Lua) and the route evaluator."
+version.workspace = true
+edition.workspace = true
+license = "GPL-3.0-only"
+publish = false
+
+[dependencies]
+forge-navbuild = { path = "../forge-navbuild" }
+forge-gamedata = { path = "../forge-gamedata" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+rustc-hash.workspace = true
+rayon = "1"
+flate2 = "1"

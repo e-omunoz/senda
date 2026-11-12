@@ -1,0 +1,12 @@
+[package]
+name = "senda-nav-lua"
+description = "Runs nav/lua/SendaNavRouter.lua in Lua 5.1 over the packs and the route corpus: frames, ms a frame, memory."
+version.workspace = true
+edition.workspace = true
+license = "GPL-3.0-only"
+publish = false
+
+[dependencies]
+mlua = { version = "0.10", features = ["lua51", "vendored"] }
+flate2 = "1"
+serde_json = { workspace = true }

@@ -1,0 +1,7 @@
+{
+	"note": "One-way walking links the terrain cannot show: teleporters a player steps into. Source: Polestar addon/Polestar/Nav/TravelData.lua (GPL-3.0; its travel data carries Shortest Path Forever's notice), ids portal-ruttheran and portal-darnassus: world yards (x north, y west, z) of each end and the 5 s the ride takes (cost: seconds x 7 yd/s run speed).",
+	"teleports": [
+		{ "id": "portal-ruttheran", "name": "Darnassus -> Rut'theran Village", "map": 1, "a": [9947.5, 2630, 1318.7], "b": [8785.8, 967, 30.2], "seconds": 5 },
+		{ "id": "portal-darnassus", "name": "Rut'theran Village -> Darnassus", "map": 1, "a": [8799.4, 969.8, 30.4], "b": [9946.3, 2613, 1316.3], "seconds": 5 }
+	]
+}

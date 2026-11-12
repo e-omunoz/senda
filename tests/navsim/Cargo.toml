@@ -1,0 +1,20 @@
+[package]
+name = "navsim"
+description = "Headless test of the in-game navigation runtime (addon/Senda_Nav) in the official Lua 5.1, against Senda's Rust evaluator (nav/)."
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-only"
+publish = false
+
+# Standalone: not part of nav/'s workspace.
+[workspace]
+
+[dependencies]
+mlua = { version = "0.10", features = ["lua51", "vendored"] }
+flate2 = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rustc-hash = "2"
+
+[profile.release]
+opt-level = 3

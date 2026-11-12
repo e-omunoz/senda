@@ -16,3 +16,7 @@ data/guides/ps-*/
 data/guides/gnome-warlock-ps/
 data/guides/human-mage-ps/
 data/guides/nightelf-druid-ps-full/
+# Puntuaciones de las rutas importadas en bruto (se regeneran con tools/route_score.py)
+data/scores/ps-*
+data/scores/*-ps.*
+data/scores/*-ps-full.*

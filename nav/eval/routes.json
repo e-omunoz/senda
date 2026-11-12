@@ -1,0 +1,1265 @@
+{
+ "note": "Builds nav/eval/routes.json: Senda's navigation validation corpus (docs/NAV.md).",
+ "routes": [
+  {
+   "id": "deadmines-from-sentinel-hill",
+   "kind": "dungeon",
+   "map": 0,
+   "from": {
+    "uiMap": 1436,
+    "x": 56.33,
+    "y": 47.53,
+    "z": 60.7,
+    "src": "forever-db spawn npc 234"
+   },
+   "to": {
+    "uiMap": 1436,
+    "x": 42.6,
+    "y": 71.7,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "Senda guide a21: Deadmines entrance in Moonbrook",
+   "expect": "found"
+  },
+  {
+   "id": "sentinel-hill-thor-to-deadmines",
+   "kind": "dungeon",
+   "map": 0,
+   "from": {
+    "uiMap": 1436,
+    "x": 56.55,
+    "y": 52.65,
+    "z": 34.2,
+    "src": "forever-db spawn npc 523"
+   },
+   "to": {
+    "uiMap": 1436,
+    "x": 42.6,
+    "y": 71.7,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "flight master to the dungeon",
+   "expect": "found"
+  },
+  {
+   "id": "thelsamar-to-menethil-dun-algaz",
+   "kind": "tunnel",
+   "map": 0,
+   "from": {
+    "uiMap": 1432,
+    "x": 33.94,
+    "y": 50.96,
+    "z": 347.6,
+    "src": "forever-db spawn npc 1572"
+   },
+   "to": {
+    "uiMap": 1437,
+    "x": 9.49,
+    "y": 59.69,
+    "z": 9.1,
+    "src": "forever-db spawn npc 1571"
+   },
+   "note": "Loch Modan -> Wetlands through Dun Algaz",
+   "expect": "found"
+  },
+  {
+   "id": "menethil-to-refuge-pointe-thandol",
+   "kind": "bridge",
+   "map": 0,
+   "from": {
+    "uiMap": 1437,
+    "x": 9.49,
+    "y": 59.69,
+    "z": 9.1,
+    "src": "forever-db spawn npc 1571"
+   },
+   "to": {
+    "uiMap": 1417,
+    "x": 45.73,
+    "y": 46.09,
+    "z": 22.2,
+    "src": "forever-db spawn npc 2835"
+   },
+   "note": "Wetlands -> Arathi over Thandol Span",
+   "expect": "found"
+  },
+  {
+   "id": "kharanos-to-thelsamar",
+   "kind": "tunnel",
+   "map": 0,
+   "from": {
+    "uiMap": 1426,
+    "x": 46.7,
+    "y": 53.0,
+    "z": 401.493,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1432,
+    "x": 33.94,
+    "y": 50.96,
+    "z": 347.6,
+    "src": "forever-db spawn npc 1572"
+   },
+   "note": "Dun Morogh -> Loch Modan tunnel",
+   "expect": "found"
+  },
+  {
+   "id": "kharanos-to-ironforge-great-forge",
+   "kind": "gate",
+   "map": 0,
+   "from": {
+    "uiMap": 1426,
+    "x": 46.7,
+    "y": 53.0,
+    "z": 401.493,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1455,
+    "x": 55.51,
+    "y": 47.72,
+    "z": 502.3,
+    "src": "forever-db spawn npc 1573"
+   },
+   "note": "through the gates to the flight master",
+   "expect": "found"
+  },
+  {
+   "id": "ironforge-forge-to-kharanos",
+   "kind": "gate",
+   "map": 0,
+   "from": {
+    "uiMap": 1455,
+    "x": 55.51,
+    "y": 47.72,
+    "z": 502.3,
+    "src": "forever-db spawn npc 1573"
+   },
+   "to": {
+    "uiMap": 1426,
+    "x": 46.7,
+    "y": 53.0,
+    "z": 401.493,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "out through the gates",
+   "expect": "found"
+  },
+  {
+   "id": "ironforge-to-gnomeregan-vator",
+   "kind": "lift",
+   "map": 0,
+   "from": {
+    "uiMap": 1426,
+    "x": 53.0,
+    "y": 35.0,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1426,
+    "x": 21.36,
+    "y": 37.26,
+    "z": 260.6,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Gnomeregan's lift",
+   "expect": "found"
+  },
+  {
+   "id": "darnassus-ruttheran-portal",
+   "kind": "portal",
+   "map": 1,
+   "from": {
+    "uiMap": 1438,
+    "x": 56.73,
+    "y": 61.9,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1438,
+    "x": 55.87,
+    "y": 89.34,
+    "z": 30.4,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Dolanaar -> Rut'theran portal",
+   "expect": "found"
+  },
+  {
+   "id": "ruttheran-dock-to-dolanaar",
+   "kind": "portal",
+   "map": 1,
+   "from": {
+    "uiMap": 1438,
+    "x": 54.77,
+    "y": 96.84,
+    "z": 5.9,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1438,
+    "x": 56.73,
+    "y": 61.9,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "Rut'theran dock -> Dolanaar (up the tree)",
+   "expect": "found"
+  },
+  {
+   "id": "dolanaar-to-darnassus",
+   "kind": "city",
+   "map": 1,
+   "from": {
+    "uiMap": 1438,
+    "x": 56.73,
+    "y": 61.9,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1457,
+    "x": 47.88,
+    "y": 56.65,
+    "z": 1315.8,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "into Darnassus",
+   "expect": "found"
+  },
+  {
+   "id": "ruttheran-fm-to-dock",
+   "kind": "portal",
+   "map": 1,
+   "from": {
+    "uiMap": 1438,
+    "x": 58.4,
+    "y": 94.02,
+    "z": 23.3,
+    "src": "forever-db spawn npc 3838"
+   },
+   "to": {
+    "uiMap": 1438,
+    "x": 54.77,
+    "y": 96.84,
+    "z": 5.9,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Vesprystus -> dock",
+   "expect": "found"
+  },
+  {
+   "id": "auberdine-to-coast-north",
+   "kind": "coast",
+   "map": 1,
+   "from": {
+    "uiMap": 1439,
+    "x": 36.34,
+    "y": 45.58,
+    "z": 16.1,
+    "src": "forever-db spawn npc 3841"
+   },
+   "to": {
+    "uiMap": 1439,
+    "x": 54.92,
+    "y": 33.31,
+    "z": null,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Darkshore coast north of Auberdine",
+   "expect": "found"
+  },
+  {
+   "id": "auberdine-to-coast-south",
+   "kind": "coast",
+   "map": 1,
+   "from": {
+    "uiMap": 1439,
+    "x": 36.34,
+    "y": 45.58,
+    "z": 16.1,
+    "src": "forever-db spawn npc 3841"
+   },
+   "to": {
+    "uiMap": 1439,
+    "x": 38.6,
+    "y": 86.2,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "Darkshore coast south (Senda guide point)",
+   "expect": "found"
+  },
+  {
+   "id": "sw-trade-to-harbor-boat",
+   "kind": "canals",
+   "map": 0,
+   "from": {
+    "uiMap": 1453,
+    "x": 68.48,
+    "y": 75.35,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1453,
+    "x": 22.46,
+    "y": 56.44,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "across the canals to the harbour",
+   "expect": "found"
+  },
+  {
+   "id": "sw-cathedral-to-harbor",
+   "kind": "canals",
+   "map": 0,
+   "from": {
+    "uiMap": 1453,
+    "x": 55.9,
+    "y": 56.9,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1453,
+    "x": 22.19,
+    "y": 56.43,
+    "z": 6.0,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Cathedral Square -> harbour",
+   "expect": "found"
+  },
+  {
+   "id": "sw-dwarven-to-tram",
+   "kind": "canals",
+   "map": 0,
+   "from": {
+    "uiMap": 1453,
+    "x": 66.04,
+    "y": 39.37,
+    "z": 95.0,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1453,
+    "x": 69.58,
+    "y": 30.27,
+    "z": 91.8,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Dwarven District -> Deeprun Tram",
+   "expect": "found"
+  },
+  {
+   "id": "sw-fm-to-mage-quarter",
+   "kind": "canals",
+   "map": 0,
+   "from": {
+    "uiMap": 1453,
+    "x": 70.96,
+    "y": 72.49,
+    "z": 109.7,
+    "src": "forever-db spawn npc 352"
+   },
+   "to": {
+    "uiMap": 1453,
+    "x": 39.2,
+    "y": 85.2,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "Dungar -> Mage Quarter over the canals (Senda guide point)",
+   "expect": "found"
+  },
+  {
+   "id": "goldshire-to-sw-trade",
+   "kind": "city",
+   "map": 0,
+   "from": {
+    "uiMap": 1429,
+    "x": 43.77,
+    "y": 65.8,
+    "z": 56.963,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1453,
+    "x": 61.18,
+    "y": 71.28,
+    "z": 98.351,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Goldshire -> Trade District",
+   "expect": "found"
+  },
+  {
+   "id": "goldshire-to-fargodeep",
+   "kind": "cave",
+   "map": 0,
+   "from": {
+    "uiMap": 1429,
+    "x": 42.0,
+    "y": 65.0,
+    "z": 57.353,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1429,
+    "x": 39.5,
+    "y": 80.0,
+    "z": 27.373,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Fargodeep Mine",
+   "expect": "found"
+  },
+  {
+   "id": "eastvale-to-lakeshire-bridge",
+   "kind": "bridge",
+   "map": 0,
+   "from": {
+    "uiMap": 1429,
+    "x": 81.0,
+    "y": 66.0,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1433,
+    "x": 21.92,
+    "y": 44.82,
+    "z": 64,
+    "src": "forever-db spawn npc 6727"
+   },
+   "note": "Eastvale -> Lakeshire over the bridge",
+   "expect": "found"
+  },
+  {
+   "id": "lakeshire-fm-to-town-hall",
+   "kind": "bridge",
+   "map": 0,
+   "from": {
+    "uiMap": 1433,
+    "x": 25.51,
+    "y": 59.4,
+    "z": 69.2,
+    "src": "forever-db spawn npc 931"
+   },
+   "to": {
+    "uiMap": 1433,
+    "x": 24.91,
+    "y": 44.44,
+    "z": 67.6,
+    "src": "forever-db spawn npc 344"
+   },
+   "note": "Lakeshire flight master -> town hall",
+   "expect": "found"
+  },
+  {
+   "id": "redridge-ridge-murlocs",
+   "kind": "bridge",
+   "map": 0,
+   "from": {
+    "uiMap": 1433,
+    "x": 32.42,
+    "y": 43.39,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1433,
+    "x": 40.2,
+    "y": 51.8,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "Polestar report #-: Redridge ridge to the lake",
+   "expect": "found"
+  },
+  {
+   "id": "darkshire-to-sentinel-hill",
+   "kind": "zones",
+   "map": 0,
+   "from": {
+    "uiMap": 1431,
+    "x": 77.49,
+    "y": 44.3,
+    "z": 41.5,
+    "src": "forever-db spawn npc 2409"
+   },
+   "to": {
+    "uiMap": 1436,
+    "x": 56.33,
+    "y": 47.53,
+    "z": 60.7,
+    "src": "forever-db spawn npc 234"
+   },
+   "note": "Duskwood -> Westfall",
+   "expect": "found"
+  },
+  {
+   "id": "sven-to-sentinel-hill",
+   "kind": "zones",
+   "map": 0,
+   "from": {
+    "uiMap": 1431,
+    "x": 7.78,
+    "y": 34.07,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1436,
+    "x": 56.55,
+    "y": 52.64,
+    "z": 34.2,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Duskwood west -> Westfall",
+   "expect": "found"
+  },
+  {
+   "id": "darkshire-to-lakeshire",
+   "kind": "zones",
+   "map": 0,
+   "from": {
+    "uiMap": 1431,
+    "x": 77.49,
+    "y": 44.3,
+    "z": 41.5,
+    "src": "forever-db spawn npc 2409"
+   },
+   "to": {
+    "uiMap": 1433,
+    "x": 25.51,
+    "y": 59.4,
+    "z": 69.2,
+    "src": "forever-db spawn npc 931"
+   },
+   "note": "Duskwood -> Redridge",
+   "expect": "found"
+  },
+  {
+   "id": "brill-to-undercity-undervator",
+   "kind": "lift",
+   "map": 0,
+   "from": {
+    "uiMap": 1420,
+    "x": 61.89,
+    "y": 52.73,
+    "z": 41.3,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1458,
+    "x": 63.25,
+    "y": 48.56,
+    "z": -59.285,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Brill -> Undercity by the lifts",
+   "expect": "found"
+  },
+  {
+   "id": "ruins-to-undercity-trade",
+   "kind": "lift",
+   "map": 0,
+   "from": {
+    "uiMap": 1420,
+    "x": 62.0,
+    "y": 70.5,
+    "z": 62.598,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1458,
+    "x": 63.24,
+    "y": 48.58,
+    "z": -43,
+    "src": "forever-db spawn npc 4551"
+   },
+   "note": "ruins of Lordaeron -> bat handler",
+   "expect": "found"
+  },
+  {
+   "id": "undercity-trade-to-royal",
+   "kind": "city",
+   "map": 0,
+   "from": {
+    "uiMap": 1458,
+    "x": 67.74,
+    "y": 37.89,
+    "z": -43.0,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1458,
+    "x": 58.06,
+    "y": 91.79,
+    "z": -57.2,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Trade Quarter -> Royal Quarter",
+   "expect": "found"
+  },
+  {
+   "id": "undercity-apothecarium-to-canal",
+   "kind": "city",
+   "map": 0,
+   "from": {
+    "uiMap": 1458,
+    "x": 51.47,
+    "y": 56.39,
+    "z": -61.4,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1458,
+    "x": 83.51,
+    "y": 69.11,
+    "z": -62.2,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Apothecarium -> lower canal",
+   "expect": "found"
+  },
+  {
+   "id": "tarrenmill-to-brill",
+   "kind": "zones",
+   "map": 0,
+   "from": {
+    "uiMap": 1424,
+    "x": 60.79,
+    "y": 19.92,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1420,
+    "x": 61.82,
+    "y": 52.83,
+    "z": 34.3,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Hillsbrad -> Tirisfal",
+   "expect": "found"
+  },
+  {
+   "id": "stv-booty-bay-inn",
+   "kind": "town",
+   "map": 0,
+   "from": {
+    "uiMap": 1434,
+    "x": 28.0,
+    "y": 70.5,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1434,
+    "x": 26.87,
+    "y": 77.1,
+    "z": 26.4,
+    "src": "forever-db spawn npc 2858"
+   },
+   "note": "into Booty Bay",
+   "expect": "found"
+  },
+  {
+   "id": "badlands-kargath-to-angor",
+   "kind": "zones",
+   "map": 0,
+   "from": {
+    "uiMap": 1418,
+    "x": 4.0,
+    "y": 46.5,
+    "z": 244.617,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1418,
+    "x": 41.5,
+    "y": 28.5,
+    "z": 285.278,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Badlands",
+   "expect": "found"
+  },
+  {
+   "id": "searing-cauldron-upper-lower",
+   "kind": "lift",
+   "map": 0,
+   "from": {
+    "uiMap": 1427,
+    "x": 38.15,
+    "y": 51.36,
+    "z": 240.3,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1427,
+    "x": 39.99,
+    "y": 54.24,
+    "z": 178.4,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Cauldron, upper to lower",
+   "expect": "found"
+  },
+  {
+   "id": "menethil-dock-to-town",
+   "kind": "town",
+   "map": 0,
+   "from": {
+    "uiMap": 1437,
+    "x": 4.49,
+    "y": 56.66,
+    "z": null,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1437,
+    "x": 9.87,
+    "y": 57.88,
+    "z": 11.5,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Menethil",
+   "expect": "found"
+  },
+  {
+   "id": "lakeshire-to-booty-bay",
+   "kind": "long",
+   "map": 0,
+   "from": {
+    "uiMap": 1433,
+    "x": 25.51,
+    "y": 59.4,
+    "z": 69.2,
+    "src": "forever-db spawn npc 931"
+   },
+   "to": {
+    "uiMap": 1434,
+    "x": 26.87,
+    "y": 77.1,
+    "z": 26.4,
+    "src": "forever-db spawn npc 2858"
+   },
+   "note": "continent-scale walk",
+   "expect": "found"
+  },
+  {
+   "id": "goldshire-to-thelsamar",
+   "kind": "long",
+   "map": 0,
+   "from": {
+    "uiMap": 1429,
+    "x": 43.77,
+    "y": 65.8,
+    "z": 56.963,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1432,
+    "x": 33.94,
+    "y": 50.96,
+    "z": 347.6,
+    "src": "forever-db spawn npc 1572"
+   },
+   "note": "continent-scale walk (Elwynn -> Loch Modan)",
+   "expect": "found"
+  },
+  {
+   "id": "tb-bottom-to-top",
+   "kind": "lift",
+   "map": 1,
+   "from": {
+    "uiMap": 1412,
+    "x": 46.77,
+    "y": 64.49,
+    "z": -3.866,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1456,
+    "x": 45.81,
+    "y": 64.71,
+    "z": 129.209,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Bloodhoof -> Thunder Bluff by the lift",
+   "expect": "found"
+  },
+  {
+   "id": "tb-central-to-elder-rise",
+   "kind": "lift",
+   "map": 1,
+   "from": {
+    "uiMap": 1456,
+    "x": 45.81,
+    "y": 64.71,
+    "z": 129.3,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1456,
+    "x": 78.63,
+    "y": 28.56,
+    "z": 159.1,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "rope bridges",
+   "expect": "found"
+  },
+  {
+   "id": "tb-central-to-spirit-rise",
+   "kind": "lift",
+   "map": 1,
+   "from": {
+    "uiMap": 1456,
+    "x": 45.81,
+    "y": 64.71,
+    "z": 129.3,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1456,
+    "x": 22.82,
+    "y": 21.11,
+    "z": 138.1,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "rope bridges",
+   "expect": "found"
+  },
+  {
+   "id": "tb-top-to-mulgore",
+   "kind": "lift",
+   "map": 1,
+   "from": {
+    "uiMap": 1456,
+    "x": 47.25,
+    "y": 49.94,
+    "z": 177,
+    "src": "forever-db spawn npc 2995"
+   },
+   "to": {
+    "uiMap": 1412,
+    "x": 46.24,
+    "y": 61.58,
+    "z": -9.425,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Tal -> Bloodhoof, down the lift",
+   "expect": "found"
+  },
+  {
+   "id": "tn-freewind-inn-to-nyse",
+   "kind": "bridge",
+   "map": 1,
+   "from": {
+    "uiMap": 1441,
+    "x": 46.07,
+    "y": 51.52,
+    "z": 89.4,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1441,
+    "x": 45.14,
+    "y": 49.1,
+    "z": 89.7,
+    "src": "forever-db spawn npc 4317"
+   },
+   "note": "Freewind Post bridges",
+   "expect": "found"
+  },
+  {
+   "id": "tn-canyon-to-freewind",
+   "kind": "lift",
+   "map": 1,
+   "from": {
+    "uiMap": 1441,
+    "x": 43.42,
+    "y": 54.19,
+    "z": -44.0,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1441,
+    "x": 45.14,
+    "y": 49.1,
+    "z": 89.7,
+    "src": "forever-db spawn npc 4317"
+   },
+   "note": "canyon floor -> Freewind Post",
+   "expect": "found"
+  },
+  {
+   "id": "tn-canyon-to-darkcloud",
+   "kind": "bridge",
+   "map": 1,
+   "from": {
+    "uiMap": 1441,
+    "x": 62.86,
+    "y": 45.7,
+    "z": -45.6,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1441,
+    "x": 37.86,
+    "y": 26.53,
+    "z": 83.7,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Darkcloud Pinnacle",
+   "expect": "found"
+  },
+  {
+   "id": "orgrimmar-tunnel",
+   "kind": "city",
+   "map": 1,
+   "from": {
+    "uiMap": 1411,
+    "x": 45.5,
+    "y": 12.0,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1454,
+    "x": 54.1,
+    "y": 68.41,
+    "z": 15.48,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Durotar -> Valley of Strength",
+   "expect": "found"
+  },
+  {
+   "id": "razorhill-to-orgrimmar",
+   "kind": "zones",
+   "map": 1,
+   "from": {
+    "uiMap": 1411,
+    "x": 51.51,
+    "y": 41.64,
+    "z": 16.458,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1454,
+    "x": 54.1,
+    "y": 68.41,
+    "z": 15.48,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Razor Hill -> Orgrimmar",
+   "expect": "found"
+  },
+  {
+   "id": "crossroads-to-northwatch",
+   "kind": "zones",
+   "map": 1,
+   "from": {
+    "uiMap": 1413,
+    "x": 51.5,
+    "y": 30.34,
+    "z": 95.9,
+    "src": "forever-db spawn npc 3615"
+   },
+   "to": {
+    "uiMap": 1413,
+    "x": 61.0,
+    "y": 55.0,
+    "z": 97.703,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "the Barrens",
+   "expect": "found"
+  },
+  {
+   "id": "ratchet-to-northwatch",
+   "kind": "zones",
+   "map": 1,
+   "from": {
+    "uiMap": 1413,
+    "x": 63.08,
+    "y": 37.16,
+    "z": 11.8,
+    "src": "forever-db spawn npc 16227"
+   },
+   "to": {
+    "uiMap": 1413,
+    "x": 61.0,
+    "y": 55.0,
+    "z": 97.703,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "the Barrens",
+   "expect": "found"
+  },
+  {
+   "id": "tanaris-riggercove-southbreak",
+   "kind": "zones",
+   "map": 1,
+   "from": {
+    "uiMap": 1446,
+    "x": 72.0,
+    "y": 47.0,
+    "z": 2.325,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "to": {
+    "uiMap": 1446,
+    "x": 63.0,
+    "y": 63.0,
+    "z": 39.635,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "Tanaris",
+   "expect": "found"
+  },
+  {
+   "id": "crossroads-to-orgrimmar",
+   "kind": "long",
+   "map": 1,
+   "from": {
+    "uiMap": 1413,
+    "x": 51.5,
+    "y": 30.34,
+    "z": 95.9,
+    "src": "forever-db spawn npc 3615"
+   },
+   "to": {
+    "uiMap": 1454,
+    "x": 45.12,
+    "y": 63.92,
+    "z": 61.7,
+    "src": "forever-db spawn npc 3310"
+   },
+   "note": "continent-scale walk",
+   "expect": "found"
+  },
+  {
+   "id": "teldrassil-banethil-oben",
+   "kind": "cave",
+   "map": 1,
+   "from": {
+    "uiMap": 1438,
+    "x": 44.92,
+    "y": 55.02,
+    "z": null,
+    "src": "zone map point"
+   },
+   "to": {
+    "uiMap": 1438,
+    "x": 44.94,
+    "y": 61.59,
+    "z": 1280.4,
+    "src": "Polestar nav corpus (coordinates)"
+   },
+   "note": "barrow",
+   "expect": "found"
+  },
+  {
+   "id": "fm1573-to-gw00-224",
+   "kind": "flight",
+   "map": 0,
+   "from": {
+    "uiMap": 1455,
+    "x": 55.51,
+    "y": 47.72,
+    "z": 502.3,
+    "src": "forever-db spawn npc 1573"
+   },
+   "to": {
+    "uiMap": 1455,
+    "x": 51.52,
+    "y": 26.31,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "guide data/guides/gnome-warlock-ps/01-dun-morogh.toml step gw00-224",
+   "expect": "found"
+  },
+  {
+   "id": "fm523-to-gw03-093",
+   "kind": "flight",
+   "map": 0,
+   "from": {
+    "uiMap": 1436,
+    "x": 56.55,
+    "y": 52.65,
+    "z": 34.2,
+    "src": "forever-db spawn npc 523"
+   },
+   "to": {
+    "uiMap": 1436,
+    "x": 59.9,
+    "y": 19.4,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "guide data/guides/gnome-warlock-ps/04-loch-modan.toml step gw03-093",
+   "expect": "found"
+  },
+  {
+   "id": "fm352-to-gw03-100",
+   "kind": "flight",
+   "map": 0,
+   "from": {
+    "uiMap": 1453,
+    "x": 70.96,
+    "y": 72.49,
+    "z": 109.7,
+    "src": "forever-db spawn npc 352"
+   },
+   "to": {
+    "uiMap": 1453,
+    "x": 78.31,
+    "y": 70.74,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "guide data/guides/gnome-warlock-ps/04-loch-modan.toml step gw03-100",
+   "expect": "found"
+  },
+  {
+   "id": "fm523-to-gw03-105",
+   "kind": "flight",
+   "map": 0,
+   "from": {
+    "uiMap": 1436,
+    "x": 56.55,
+    "y": 52.65,
+    "z": 34.2,
+    "src": "forever-db spawn npc 523"
+   },
+   "to": {
+    "uiMap": 1436,
+    "x": 56.33,
+    "y": 47.52,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "guide data/guides/gnome-warlock-ps/04-loch-modan.toml step gw03-105",
+   "expect": "found"
+  },
+  {
+   "id": "fm931-to-gw03-125",
+   "kind": "flight",
+   "map": 0,
+   "from": {
+    "uiMap": 1433,
+    "x": 25.51,
+    "y": 59.4,
+    "z": 69.2,
+    "src": "forever-db spawn npc 931"
+   },
+   "to": {
+    "uiMap": 1433,
+    "x": 25.88,
+    "y": 47.27,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "guide data/guides/gnome-warlock-ps/04-loch-modan.toml step gw03-125",
+   "expect": "found"
+  },
+  {
+   "id": "fm352-to-gw03-141",
+   "kind": "flight",
+   "map": 0,
+   "from": {
+    "uiMap": 1453,
+    "x": 70.96,
+    "y": 72.49,
+    "z": 109.7,
+    "src": "forever-db spawn npc 352"
+   },
+   "to": {
+    "uiMap": 1453,
+    "x": 61.88,
+    "y": 30.56,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "guide data/guides/gnome-warlock-ps/04-loch-modan.toml step gw03-141",
+   "expect": "found"
+  },
+  {
+   "id": "fm3841-to-gw05-082",
+   "kind": "flight",
+   "map": 1,
+   "from": {
+    "uiMap": 1439,
+    "x": 36.34,
+    "y": 45.58,
+    "z": 16.1,
+    "src": "forever-db spawn npc 3841"
+   },
+   "to": {
+    "uiMap": 1439,
+    "x": 32.4,
+    "y": 43.8,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "guide data/guides/gnome-warlock-ps/06-ashenvale.toml step gw05-082",
+   "expect": "found"
+  },
+  {
+   "id": "fm1573-to-gw05-124",
+   "kind": "flight",
+   "map": 0,
+   "from": {
+    "uiMap": 1455,
+    "x": 55.51,
+    "y": 47.72,
+    "z": 502.3,
+    "src": "forever-db spawn npc 1573"
+   },
+   "to": {
+    "uiMap": 1455,
+    "x": 72.08,
+    "y": 51.88,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "guide data/guides/gnome-warlock-ps/06-ashenvale.toml step gw05-124",
+   "expect": "found"
+  },
+  {
+   "id": "fm2409-to-gw07-003",
+   "kind": "flight",
+   "map": 0,
+   "from": {
+    "uiMap": 1431,
+    "x": 77.49,
+    "y": 44.3,
+    "z": 41.5,
+    "src": "forever-db spawn npc 2409"
+   },
+   "to": {
+    "uiMap": 1431,
+    "x": 81.99,
+    "y": 59.09,
+    "z": null,
+    "src": "zone map point"
+   },
+   "note": "guide data/guides/gnome-warlock-ps/08-duskwood.toml step gw07-003",
+   "expect": "found"
+  }
+ ]
+}

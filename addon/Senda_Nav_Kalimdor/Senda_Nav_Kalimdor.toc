@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: Senda Nav: Kalimdor
+## Notes: Paquete de navegación de Senda para Kalimdor (celdas transitables derivadas del terreno del cliente). Lo carga Senda Nav fuera de combate.
+## Notes-enUS: Senda's navigation pack for Kalimdor (walkable cells derived from the client's terrain). Senda Nav loads it out of combat.
+## Author: omunoz
+## Version: 0.1.0
+## LoadOnDemand: 1
+## X-License: GPL-3.0
+
+SendaNav_1_graph.lua
+SendaNav_1_cells.lua
