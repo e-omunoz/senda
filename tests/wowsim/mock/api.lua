@@ -147,6 +147,12 @@ function C_Map.GetMapInfo(map)
   local m = mapData(map)
   return { mapID = map, name = m.name, mapType = m.type, parentMapID = m.parent, flags = 0 }
 end
+-- Area names (AreaTable ids, not uiMapIDs): the client returns the localized name, "" for unknown ids.
+Sim.AREA_NAMES = { [1581] = "Las Minas de la Muerte", [718] = "Cuevas de los Lamentos", [12] = "Bosque de Elwynn" }
+function C_Map.GetAreaInfo(area)
+  num(area, "C_Map.GetAreaInfo", "areaID")
+  return Sim.AREA_NAMES[area] or ""
+end
 function C_Map.GetWorldPosFromMapPos(map, pos)
   num(map, "C_Map.GetWorldPosFromMapPos", "uiMapID")
   if type(pos) ~= "table" or type(pos.GetXY) ~= "function" then bad("C_Map.GetWorldPosFromMapPos", "mapPosition must be a Vector2D") end
@@ -651,6 +657,25 @@ Sim.ITEMS = {
     stats = { ITEM_MOD_STAMINA_SHORT = 2, ITEM_MOD_STRENGTH_SHORT = 2 } },
   [5512] = { name = "Piedra de salud menor", quality = 1, class = 0, sub = 0, loc = "", price = 0, stack = 1 },
   [11286] = { name = "Flecha afilada", quality = 1, class = 6, sub = 2, loc = "INVTYPE_AMMO", price = 1, stack = 200, minLevel = 1 },
+  -- Equipo de prueba para la valoración por build (escenarios gear-*): ids fuera del juego, datos inventados.
+  [90001] = { name = "Túnica de aprendiz de sombras", quality = 2, class = 4, sub = 1, loc = "INVTYPE_ROBE", price = 150, stack = 1, ilvl = 14, minLevel = 8,
+    stats = { ITEM_MOD_INTELLECT_SHORT = 5, ITEM_MOD_SPIRIT_SHORT = 5, ITEM_MOD_STAMINA_SHORT = 3, RESISTANCE0_NAME = 20 } },
+  [90002] = { name = "Jubón de cuero del acechador", quality = 2, class = 4, sub = 2, loc = "INVTYPE_CHEST", price = 160, stack = 1, ilvl = 14, minLevel = 8,
+    stats = { ITEM_MOD_AGILITY_SHORT = 6, ITEM_MOD_STRENGTH_SHORT = 4, ITEM_MOD_STAMINA_SHORT = 2, RESISTANCE0_NAME = 60 } },
+  [90003] = { name = "Coraza de malla del sabio", quality = 3, class = 4, sub = 3, loc = "INVTYPE_CHEST", price = 900, stack = 1, ilvl = 14, minLevel = 8,
+    stats = { ITEM_MOD_INTELLECT_SHORT = 20, ITEM_MOD_SPIRIT_SHORT = 20, ITEM_MOD_STAMINA_SHORT = 10, ITEM_MOD_AGILITY_SHORT = 20, RESISTANCE0_NAME = 150 } },
+  [90004] = { name = "Escudo de roble", quality = 2, class = 4, sub = 6, loc = "INVTYPE_SHIELD", price = 400, stack = 1, ilvl = 14, minLevel = 8,
+    stats = { ITEM_MOD_INTELLECT_SHORT = 10, ITEM_MOD_STAMINA_SHORT = 10, RESISTANCE0_NAME = 300 } },
+  [90005] = { name = "Bastón de roble tallado", quality = 2, class = 2, sub = 10, loc = "INVTYPE_2HWEAPON", price = 300, stack = 1, ilvl = 14, minLevel = 8,
+    stats = { ITEM_MOD_INTELLECT_SHORT = 6, ITEM_MOD_SPIRIT_SHORT = 6, ITEM_MOD_DAMAGE_PER_SECOND_SHORT = 9.0 } },
+  [90006] = { name = "Guantes de lino", quality = 1, class = 4, sub = 1, loc = "INVTYPE_HAND", price = 20, stack = 1, ilvl = 8, minLevel = 3,
+    stats = { ITEM_MOD_INTELLECT_SHORT = 1 } },
+  [90007] = { name = "Jubón del oso", quality = 2, class = 4, sub = 2, loc = "INVTYPE_CHEST", price = 160, stack = 1, ilvl = 14, minLevel = 8,
+    stats = { ITEM_MOD_STAMINA_SHORT = 8, RESISTANCE0_NAME = 70 } },
+  [90008] = { name = "Hacha de leñador", quality = 3, class = 2, sub = 1, loc = "INVTYPE_2HWEAPON", price = 800, stack = 1, ilvl = 14, minLevel = 8,
+    stats = { ITEM_MOD_STRENGTH_SHORT = 10, ITEM_MOD_STAMINA_SHORT = 10, ITEM_MOD_AGILITY_SHORT = 10, ITEM_MOD_DAMAGE_PER_SECOND_SHORT = 12.0 } },
+  [90009] = { name = "Orbe de sombras", quality = 2, class = 4, sub = 0, loc = "INVTYPE_HOLDABLE", price = 120, stack = 1, ilvl = 14, minLevel = 8,
+    stats = { ITEM_MOD_INTELLECT_SHORT = 3, ITEM_MOD_SPIRIT_SHORT = 2 } },
 }
 local QUALITY_COLOR = { [0] = "ff9d9d9d", [1] = "ffffffff", [2] = "ff1eff00", [3] = "ff0070dd", [4] = "ffa335ee" }
 

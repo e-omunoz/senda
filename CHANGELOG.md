@@ -17,6 +17,14 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - **Planificador de viaje** (`Modules/Travel.lua`, datos de `data/travel/` compilados a `Data/Travel.lua`). Si el destino de la flecha está en otro continente o a más de 800 yardas, el HUD enseña una línea «Camino más rápido: vuela a X (3 min) → barco a Y → a pie» y la flecha apunta al embarque del primer tramo. Usa solo lo que ya conoces: vuelos descubiertos de tu facción, barcos, zepelines, el tranvía, portales, teletransportes de clase (con su reactivo) y la piedra de hogar (con su enfriamiento y la posada vinculada). En un maestro de vuelo marca en el mapa el nodo al que hay que volar, sin volar por ti. `/senda viaje [recalcular]` y una opción para apagarlo.
 - Simulador: escenarios `travel`, `travel-hud`, `travel-taxi`, `travel-lock`, `travel-druid` y `travel-mage`; el mock ya tiene `C_TaxiMap.GetTaxiNodesForMap`, enfriamientos de objetos y hechizos y `C_Map.GetAreaInfo`.
 - **Alertas de raros** (`Modules/Rares.lua`, datos de `data/rares/` compilados a `Data/Rares.lua`, 346 raros con aparición): una línea en el HUD, «Raro cerca: {npc:N} (nivel A-B) · Señalar», que apunta la flecha al raro. Detecta por viñetas del minimapa (barrido como mucho cada 2 s, en tandas, nunca en combate), placas de nombre, objetivo y ratón encima; rebote de 3 s por unidad, enfriamiento por raro, ignora muertos, retiene el aviso en combate y lo suelta al salir si sigue vivo; nada en mazmorras ni con todo oculto. Opciones en la sección «Raros» (activar, solo ±3 niveles, sonido) y `/senda raros`. Ver `docs/RARES.md`.
+- **Equipo según tu build** ([docs/GEAR.md](docs/GEAR.md)). Pesos por build y tramo de nivel con fuente
+  (`data/knowledge/<clase>/weights.toml`): Aflicción, Escarcha y Feral (felino para subir, oso para élites; se cambia en
+  la pestaña Equipo o con `/senda equipo oso | felino`). Se aplican en la recompensa de misión recomendada, en el aviso
+  de las bolsas («Ponte X: mejora un 12% para tu build»), en una línea de la descripción de los objetos («Senda: +12%
+  para tu build») y en la pestaña Equipo. Nunca recomienda lo que tu clase no puede llevar; un arma que aún no sabes
+  usar solo se propone si no hay nada que ponerte ya, y con el motivo.
+- **Mejor pieza conocida para tu tramo** en la pestaña Equipo (`bis-forever.toml`, generado por `tools/gen_bis.py` desde
+  ForeverLevelingBiS v0.12.0-beta, MIT, a través de Polestar).
 
 ## [0.5.0] - 2026-11-12
 

@@ -371,7 +371,8 @@ Senda.Options:Register({ key, label, type = "toggle"|"slider", default, min, max
 Propietarios de carpetas del addon:
 - `Core/`, `Engine/`, `UI/`, `Recorder/` y `Senda.toc`: equipo del motor.
 - `Modules/`: utilidades portadas (equipo, vendedores, instructores, desencantar, macros, barras, análisis,
-  asesor, pareja y planificador de viaje).
+  asesor, pareja y planificador de viaje). El equipo se valora con los pesos por build y tramo de `data/knowledge/<clase>/weights.toml`
+  (`kind = "weights"`) y enseña la mejor pieza conocida de `bis-forever.toml` (`kind = "bis"`): [GEAR.md](GEAR.md).
 - `Guides/` y `Knowledge/`: los genera `tools/build.py`.
 
 Cada carpeta tiene su `<Carpeta>.xml` y el `.toc` solo incluye esos XML, en este orden:

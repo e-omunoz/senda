@@ -1,9 +1,6 @@
 # Druida feral: prioridad de estadísticas y equipo de subida. Escrito para Senda (no migrado).
-# [weights]: pesos por punto de estadística (más alto = más importante), mismas claves que el módulo de equipo:
-#   STR Fuerza · AGI Agilidad · AP poder de ataque · STA Aguante · INT Intelecto · SPI Espíritu · SP poder con hechizos
-#   ARMOR armadura · DPS DPS del arma cuerpo a cuerpo.
+# Los pesos numéricos (antes [weights] aquí) están en weights.toml: felino y oso, por tramo y con fuente (docs/GEAR.md).
 # [[item]]: mismo formato que data/knowledge/general/gear-items.toml (from, to, id, name, src, class).
-# Los pesos los puso el autor a partir de las prioridades: nadie publica pesos numéricos para Forever.
 id = "druid-gear"
 class = "DRUID"
 kind = "page"
@@ -14,16 +11,6 @@ sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "htt
 checked = "2026-11-11"
 note = "Prioridad feral de Warcraft Tavern (Fuerza/Agilidad/poder de ataque > Aguante/Intelecto/Espíritu > armadura). En Forever los ataques en forma escalan con el daño del arma (Warcraft Tavern y Method): de ahí el peso alto de DPS. Lista de objetos: Method (7-nov) y Warcraft Tavern; ids y niveles requeridos de QuestieDB (Forever)."
 
-[weights]
-STR = 1.0
-AGI = 0.9
-AP = 0.45
-STA = 0.5
-INT = 0.3
-SPI = 0.25
-SP = 0.1
-ARMOR = 0.01
-DPS = 2.5
 
 [[block]]
 heading = "Prioridad"

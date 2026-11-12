@@ -1,0 +1,821 @@
+# GENERADO por tools/gen_bis.py — no editar a mano: vuelve a ejecutarlo (docs/GEAR.md).
+# Objetos: ForeverLevelingBiS v0.12.0-beta de Thunder (MIT, datos 2026-10-13), redistribuido por Polestar
+# (GPL-3.0, commit 19bd636e) en addon/Polestar_ItemDB/Forever.lua (sha256 dd440d4e7548ddce).
+# Elección: Senda, con los pesos de weights.toml de esta carpeta (no es una lista BiS publicada por nadie).
+# [[bis]]: from/to = tramo; build; slot = ranura (1 cabeza ... 16 arma, 17 mano izquierda, 18 a distancia o
+#   reliquia); id = objeto; quest = misión de la Alianza que lo da; npc/zone/pct = botín (pnj 0: suelto;
+#   zone = id de área del cliente; pct = probabilidad, como mínimo 5); craft/prof/skill = receta; race = solo esa raza.
+id = "warlock-bis-forever"
+class = "WARLOCK"
+kind = "bis"
+title = "Mejor pieza conocida por tramo"
+order = 142
+status = "unverified"
+sources = ["flb:v0.12.0-beta", "polestar:19bd636e/addon/Polestar_ItemDB/Forever.lua", "https://www.curseforge.com/wow/addons/forever-leveling-bis"]
+checked = "2026-10-13"
+note = "Objetos y de dónde salen: ForeverLevelingBiS (MIT) a través de Polestar. La elección por ranura y tramo la hace Senda con sus pesos."
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 2
+id = 279870
+quest = 95161
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 5
+id = 6242
+craft = 7633
+prof = "tailoring"
+skill = 70
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 6
+id = 253885
+craft = 1257368
+prof = "tailoring"
+skill = 50
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 7
+id = 10047
+craft = 12046
+prof = "tailoring"
+skill = 75
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 8
+id = 2569
+craft = 2386
+prof = "tailoring"
+skill = 65
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 9
+id = 277011
+craft = 1301440
+prof = "tailoring"
+skill = 50
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 10
+id = 280096
+quest = 96403
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 11
+id = 276899
+quest = 96800
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 12
+id = 279867
+quest = 95250
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 15
+id = 279835
+quest = 92456
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 16
+id = 276888
+quest = 97005
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 17
+id = 276898
+quest = 96800
+
+[[bis]]
+from = 1
+to = 10
+build = "affliction"
+slot = 18
+id = 279896
+quest = 96393
+race = "Gnome"
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 1
+id = 253955
+craft = 1257403
+prof = "tailoring"
+skill = 100
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 2
+id = 270227
+npc = 261306
+zone = 16919
+pct = 31.7
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 3
+id = 4315
+craft = 3849
+prof = "tailoring"
+skill = 120
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 5
+id = 253907
+craft = 1257379
+prof = "tailoring"
+skill = 75
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 6
+id = 253931
+craft = 1257391
+prof = "tailoring"
+skill = 85
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 7
+id = 253943
+craft = 1257397
+prof = "tailoring"
+skill = 100
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 8
+id = 4320
+craft = 3855
+prof = "tailoring"
+skill = 125
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 9
+id = 14148
+npc = 11520
+zone = 2437
+pct = 30.5
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 10
+id = 253919
+craft = 1257385
+prof = "tailoring"
+skill = 75
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 11
+id = 281635
+quest = 79536
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 12
+id = 281634
+quest = 79536
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 15
+id = 6632
+npc = 5912
+zone = 718
+pct = 46.2
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 16
+id = 5201
+npc = 647
+zone = 1581
+pct = 38
+
+[[bis]]
+from = 11
+to = 20
+build = "affliction"
+slot = 18
+id = 5243
+npc = 5912
+zone = 718
+pct = 41.1
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 1
+id = 253981
+craft = 1257416
+prof = "tailoring"
+skill = 125
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 2
+id = 6695
+npc = 4425
+zone = 491
+pct = 25.8
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 3
+id = 7684
+npc = 4543
+zone = 796
+pct = 47.7
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 5
+id = 253967
+craft = 1257409
+prof = "tailoring"
+skill = 110
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 6
+id = 273039
+npc = 246003
+zone = 16544
+pct = 35.8
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 7
+id = 253993
+craft = 1257422
+prof = "tailoring"
+skill = 125
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 8
+id = 254007
+craft = 1257429
+prof = "tailoring"
+skill = 140
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 9
+id = 9448
+npc = 6235
+zone = 721
+pct = 39.7
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 10
+id = 273034
+npc = 245999
+zone = 16544
+pct = 33.5
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 11
+id = 9447
+npc = 6235
+zone = 721
+pct = 31.8
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 12
+id = 273031
+npc = 245999
+zone = 16544
+pct = 31.6
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 15
+id = 6901
+npc = 4830
+zone = 719
+pct = 38
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 16
+id = 6691
+npc = 4422
+zone = 491
+pct = 33.5
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 17
+id = 273027
+npc = 260325
+zone = 16732
+pct = 33.8
+
+[[bis]]
+from = 21
+to = 30
+build = "affliction"
+slot = 18
+id = 270084
+quest = 208
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 1
+id = 9492
+npc = 7800
+zone = 721
+pct = 9.8
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 2
+id = 10769
+npc = 7357
+zone = 722
+pct = 32.5
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 3
+id = 4197
+quest = 1101
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 5
+id = 10762
+npc = 7358
+zone = 722
+pct = 38.9
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 6
+id = 254043
+craft = 1257447
+prof = "tailoring"
+skill = 190
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 7
+id = 9407
+npc = 7228
+zone = 1337
+pct = 38
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 8
+id = 254013
+craft = 1257432
+prof = "tailoring"
+skill = 145
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 9
+id = 15864
+quest = 6134
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 10
+id = 254027
+craft = 1257439
+prof = "tailoring"
+skill = 165
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 11
+id = 2043
+quest = 98
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 12
+id = 9622
+quest = 1203
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 15
+id = 4327
+craft = 3862
+prof = "tailoring"
+skill = 200
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 16
+id = 7714
+npc = 6487
+zone = 796
+pct = 47.5
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 17
+id = 10770
+npc = 7357
+zone = 722
+pct = 32.7
+
+[[bis]]
+from = 31
+to = 40
+build = "affliction"
+slot = 18
+id = 249144
+craft = 1248461
+prof = "enchanting"
+skill = 185
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 1
+id = 10033
+craft = 12084
+prof = "tailoring"
+skill = 240
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 2
+id = 11196
+quest = 717
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 3
+id = 254055
+craft = 1257453
+prof = "tailoring"
+skill = 195
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 5
+id = 13857
+craft = 18407
+prof = "tailoring"
+skill = 260
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 6
+id = 254087
+craft = 1257469
+prof = "tailoring"
+skill = 215
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 7
+id = 14132
+craft = 18421
+prof = "tailoring"
+skill = 275
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 8
+id = 254113
+craft = 1257482
+prof = "tailoring"
+skill = 235
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 9
+id = 254067
+craft = 1257459
+prof = "tailoring"
+skill = 205
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 10
+id = 254101
+craft = 1257476
+prof = "tailoring"
+skill = 235
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 13
+id = 744
+quest = 53
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 14
+id = 10418
+quest = 3321
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 15
+id = 13860
+craft = 18409
+prof = "tailoring"
+skill = 265
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 16
+id = 249453
+craft = 1249061
+prof = "enchanting"
+skill = 220
+
+[[bis]]
+from = 41
+to = 50
+build = "affliction"
+slot = 18
+id = 249232
+craft = 1248505
+prof = "enchanting"
+skill = 245
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 1
+id = 16698
+npc = 1853
+zone = 2057
+pct = 11.7
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 2
+id = 15856
+quest = 5942
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 3
+id = 22507
+quest = 9106
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 5
+id = 14153
+craft = 18458
+prof = "tailoring"
+skill = 300
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 6
+id = 22510
+quest = 9109
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 7
+id = 14144
+craft = 18441
+prof = "tailoring"
+skill = 290
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 8
+id = 22508
+quest = 9107
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 9
+id = 22071
+quest = 8911
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 10
+id = 14146
+craft = 18454
+prof = "tailoring"
+skill = 300
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 11
+id = 18403
+quest = 7496
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 12
+id = 22681
+quest = 9221
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 13
+id = 10659
+quest = 2701
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 15
+id = 21418
+quest = 8694
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 16
+id = 22630
+quest = 9271
+
+[[bis]]
+from = 51
+to = 60
+build = "affliction"
+slot = 18
+id = 279246
+craft = 1306520
+prof = "enchanting"
+skill = 300

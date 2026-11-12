@@ -1,0 +1,46 @@
+# Pesos de equipo por build y tramo de nivel (los lee Modules/Gear.lua). Formato: docs/GEAR.md.
+#
+# De dónde sale cada número:
+#  · 1-39: pesos de subida de Polestar (addon/Polestar/Gear/Weights.lua, GPL-3.0, commit 19bd636e, tramo `frost`
+#    «Polestar leveling» de SpecData.lua): sp 1.1, spFrost 1.1, int 0.9, spi 0.6, sta 0.6, mp5 1.8, rdps 1.5,
+#    armor 0.005, spellHit 9, spellCrit 6. Aquí divididos entre 1.1 para que el poder con hechizos valga 1.
+#  · 40-59: media 50 % Polestar + 50 % wowsims Classic (la mezcla es criterio, el mismo método de Polestar).
+#    wowsims/classic commit 7779ebbf79dc7f1341e6ab939b28a3402c9a730a (24-jul-2026), ui/mage/sim.ts, epWeights
+#    (MIT): Intellect 0.49, SpellPower 1, FrostPower 1, SpellHit 18.59, SpellCrit 13.91, MP5 0.11 (Espíritu y
+#    Aguante: 0, no los simula).
+#  · 60: 25 % Polestar + 75 % wowsims Classic.
+id = "mage-weights"
+class = "MAGE"
+kind = "weights"
+title = "Pesos de equipo: Escarcha"
+order = 141
+status = "unverified"
+sources = ["polestar:19bd636e/addon/Polestar/Gear/Weights.lua", "polestar:19bd636e/addon/Polestar/Gear/SpecData.lua", "https://github.com/wowsims/classic/blob/7779ebbf79dc7f1341e6ab939b28a3402c9a730a/ui/mage/sim.ts"]
+checked = "2026-11-12"
+note = "Pesos de subida de Polestar (fórmulas de Classic) hasta el 39; desde el 40 mezclados con la simulación de wowsims Classic (nivel 60)."
+
+[[build]]
+key = "frost"
+school = "FROST"
+default = true
+
+[[band]]
+build = "frost"
+from = 1
+to = 39
+ref = "Polestar"
+w = { SP = 1.0, SCHOOL_W = 1.0, INT = 0.82, SPI = 0.55, STA = 0.55, MP5 = 1.64, WAND_DPS = 1.36, ARMOR = 0.005, SPELL_HIT = 8.18, SPELL_CRIT = 5.45 }
+
+[[band]]
+build = "frost"
+from = 40
+to = 59
+ref = "Polestar 50% + wowsims 50%"
+w = { SP = 1.0, SCHOOL_W = 1.0, INT = 0.65, SPI = 0.27, STA = 0.27, MP5 = 0.87, WAND_DPS = 0.68, ARMOR = 0.003, SPELL_HIT = 13.39, SPELL_CRIT = 9.68 }
+
+[[band]]
+build = "frost"
+from = 60
+to = 60
+ref = "Polestar 25% + wowsims 75%"
+w = { SP = 1.0, SCHOOL_W = 1.0, INT = 0.57, SPI = 0.14, STA = 0.14, MP5 = 0.49, WAND_DPS = 0.34, ARMOR = 0.001, SPELL_HIT = 15.99, SPELL_CRIT = 11.8 }

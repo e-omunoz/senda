@@ -242,6 +242,8 @@ Los nombres oficiales en español (misiones, PNJ, objetos, hechizos, zonas) los 
   arma y armadura que puede llevar, bastón frente a varita y orbe, Espíritu frente a Intelecto según el
   tramo de nivel), y aplicarlo en recompensas de misión, bolsas, tooltips y la lista de equipo.
   ForeverLevelingBiS (MIT) como referencia de piezas por tramo.
+  **Hecho** (rama `fase3-equipo`): ver [GEAR.md](GEAR.md). ForeverLevelingBiS se usa en su versión MIT v0.12.0-beta
+  a través de Polestar; las versiones actuales de CurseForge son «All Rights Reserved».
 
 ## 7. Calidad: cómo sabremos que somos mejores
 

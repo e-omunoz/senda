@@ -134,6 +134,27 @@
         "$ref": "#/$defs/phase"
       }
     },
+    "build": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/build"
+      }
+    },
+    "band": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/band"
+      }
+    },
+    "bis": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/bis"
+      }
+    },
     "note": {
       "type": "string"
     }
@@ -452,7 +473,156 @@
           "type": "string"
         }
       }
+    },
+    "build": {
+      "type": "object",
+      "required": [
+        "key"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^[a-z_]+$"
+        },
+        "school": {
+          "enum": [
+            "SHADOW",
+            "FROST",
+            "FIRE",
+            "ARCANE",
+            "NATURE",
+            "HOLY"
+          ]
+        },
+        "default": {
+          "type": "boolean"
+        }
+      }
+    },
+    "band": {
+      "type": "object",
+      "required": [
+        "build",
+        "from",
+        "to",
+        "w"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "build": {
+          "type": "string",
+          "pattern": "^[a-z_]+$"
+        },
+        "from": {
+          "$ref": "#/$defs/level"
+        },
+        "to": {
+          "$ref": "#/$defs/level"
+        },
+        "ref": {
+          "type": "string"
+        },
+        "w": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "unverified",
+            "disputed"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "checked": {
+          "type": "string"
+        }
+      }
+    },
+    "bis": {
+      "type": "object",
+      "required": [
+        "from",
+        "to",
+        "build",
+        "slot",
+        "id"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/level"
+        },
+        "to": {
+          "$ref": "#/$defs/level"
+        },
+        "build": {
+          "type": "string",
+          "pattern": "^[a-z_]+$"
+        },
+        "slot": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quest": {
+          "type": "integer"
+        },
+        "npc": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "zone": {
+          "type": "integer"
+        },
+        "pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "craft": {
+          "type": "integer"
+        },
+        "prof": {
+          "type": "string"
+        },
+        "skill": {
+          "type": "integer"
+        },
+        "race": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "unverified",
+            "disputed"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "checked": {
+          "type": "string"
+        }
+      }
     }
   },
-  "$comment": "Volcado genérico a Lua: los campos listados se validan; se admiten campos extra (los usan los módulos)."
+  "$comment": "Volcado genérico a Lua: los campos listados se validan; se admiten campos extra (los usan los módulos). weights: [[build]] + [[band]] (pesos de equipo por tramo, docs/GEAR.md); bis: [[bis]] (tools/gen_bis.py)."
 }

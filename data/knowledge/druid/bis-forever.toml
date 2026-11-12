@@ -1,0 +1,1258 @@
+# GENERADO por tools/gen_bis.py — no editar a mano: vuelve a ejecutarlo (docs/GEAR.md).
+# Objetos: ForeverLevelingBiS v0.12.0-beta de Thunder (MIT, datos 2026-10-13), redistribuido por Polestar
+# (GPL-3.0, commit 19bd636e) en addon/Polestar_ItemDB/Forever.lua (sha256 dd440d4e7548ddce).
+# Elección: Senda, con los pesos de weights.toml de esta carpeta (no es una lista BiS publicada por nadie).
+# [[bis]]: from/to = tramo; build; slot = ranura (1 cabeza ... 16 arma, 17 mano izquierda, 18 a distancia o
+#   reliquia); id = objeto; quest = misión de la Alianza que lo da; npc/zone/pct = botín (pnj 0: suelto;
+#   zone = id de área del cliente; pct = probabilidad, como mínimo 5); craft/prof/skill = receta; race = solo esa raza.
+id = "druid-bis-forever"
+class = "DRUID"
+kind = "bis"
+title = "Mejor pieza conocida por tramo"
+order = 142
+status = "unverified"
+sources = ["flb:v0.12.0-beta", "polestar:19bd636e/addon/Polestar_ItemDB/Forever.lua", "https://www.curseforge.com/wow/addons/forever-leveling-bis"]
+checked = "2026-10-13"
+note = "Objetos y de dónde salen: ForeverLevelingBiS (MIT) a través de Polestar. La elección por ranura y tramo la hace Senda con sus pesos."
+
+[[bis]]
+from = 1
+to = 10
+build = "cat"
+slot = 2
+id = 277204
+quest = 78150
+
+[[bis]]
+from = 1
+to = 10
+build = "cat"
+slot = 5
+id = 270000
+quest = 176
+
+[[bis]]
+from = 1
+to = 10
+build = "cat"
+slot = 6
+id = 279897
+quest = 96394
+
+[[bis]]
+from = 1
+to = 10
+build = "cat"
+slot = 7
+id = 279868
+quest = 95195
+
+[[bis]]
+from = 1
+to = 10
+build = "cat"
+slot = 8
+id = 279840
+quest = 92458
+
+[[bis]]
+from = 1
+to = 10
+build = "cat"
+slot = 10
+id = 279849
+quest = 92489
+
+[[bis]]
+from = 1
+to = 10
+build = "cat"
+slot = 11
+id = 276899
+quest = 96800
+
+[[bis]]
+from = 1
+to = 10
+build = "cat"
+slot = 12
+id = 279867
+quest = 95250
+
+[[bis]]
+from = 1
+to = 10
+build = "cat"
+slot = 15
+id = 279865
+quest = 95250
+
+[[bis]]
+from = 1
+to = 10
+build = "cat"
+slot = 16
+id = 279841
+quest = 92458
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 2
+id = 270227
+npc = 261306
+zone = 16919
+pct = 31.7
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 3
+id = 5404
+npc = 3671
+zone = 718
+pct = 41.4
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 5
+id = 10399
+npc = 639
+zone = 1581
+pct = 15.3
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 6
+id = 10403
+npc = 647
+zone = 1581
+pct = 26.5
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 7
+id = 10410
+npc = 3669
+zone = 718
+pct = 18.8
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 8
+id = 10411
+npc = 3673
+zone = 718
+pct = 21.1
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 9
+id = 270032
+quest = 1200
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 10
+id = 270045
+quest = 2928
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 11
+id = 281634
+quest = 79536
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 12
+id = 281635
+quest = 79536
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 15
+id = 5193
+npc = 639
+zone = 1581
+pct = 22.9
+
+[[bis]]
+from = 11
+to = 20
+build = "cat"
+slot = 16
+id = 5200
+npc = 647
+zone = 1581
+pct = 28.3
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 1
+id = 6688
+npc = 4842
+zone = 491
+pct = 46.4
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 2
+id = 7731
+npc = 6490
+zone = 796
+pct = 33.8
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 3
+id = 273047
+npc = 246017
+zone = 16544
+pct = 32.3
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 5
+id = 273038
+npc = 246003
+zone = 16544
+pct = 34.8
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 6
+id = 273041
+npc = 246008
+zone = 16544
+pct = 34.8
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 7
+id = 270057
+quest = 682
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 8
+id = 6752
+quest = 1142
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 9
+id = 270080
+quest = 685
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 10
+id = 7756
+npc = 3974
+zone = 796
+pct = 56
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 11
+id = 270053
+quest = 98
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 12
+id = 277208
+quest = 79242
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 15
+id = 281319
+quest = 98310
+
+[[bis]]
+from = 21
+to = 30
+build = "cat"
+slot = 16
+id = 270071
+quest = 202
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 1
+id = 9492
+npc = 7800
+zone = 721
+pct = 9.8
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 2
+id = 7746
+quest = 1050
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 3
+id = 4197
+quest = 1101
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 5
+id = 10762
+npc = 7358
+zone = 722
+pct = 38.9
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 6
+id = 10771
+npc = 7357
+zone = 722
+pct = 31.9
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 7
+id = 9407
+npc = 7228
+zone = 1337
+pct = 38
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 8
+id = 15104
+quest = 697
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 9
+id = 15864
+quest = 6134
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 10
+id = 9698
+quest = 1440
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 11
+id = 9538
+quest = 2948
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 12
+id = 6693
+npc = 4421
+zone = 491
+pct = 34.9
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 15
+id = 2805
+quest = 565
+
+[[bis]]
+from = 31
+to = 40
+build = "cat"
+slot = 16
+id = 271800
+quest = 93196
+
+[[bis]]
+from = 41
+to = 50
+build = "cat"
+slot = 2
+id = 6723
+quest = 1139
+
+[[bis]]
+from = 41
+to = 50
+build = "cat"
+slot = 3
+id = 16739
+quest = 5863
+
+[[bis]]
+from = 41
+to = 50
+build = "cat"
+slot = 5
+id = 9415
+npc = 4854
+zone = 1337
+pct = 39.3
+
+[[bis]]
+from = 41
+to = 50
+build = "cat"
+slot = 7
+id = 9414
+npc = 4854
+zone = 1337
+pct = 29.1
+
+[[bis]]
+from = 41
+to = 50
+build = "cat"
+slot = 9
+id = 11469
+quest = 614
+
+[[bis]]
+from = 41
+to = 50
+build = "cat"
+slot = 10
+id = 16738
+quest = 5863
+
+[[bis]]
+from = 41
+to = 50
+build = "cat"
+slot = 13
+id = 10418
+quest = 3321
+
+[[bis]]
+from = 41
+to = 50
+build = "cat"
+slot = 14
+id = 744
+quest = 53
+
+[[bis]]
+from = 41
+to = 50
+build = "cat"
+slot = 15
+id = 4114
+quest = 576
+
+[[bis]]
+from = 41
+to = 50
+build = "cat"
+slot = 16
+id = 10826
+quest = 3161
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 1
+id = 16707
+npc = 1853
+zone = 2057
+pct = 11.1
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 2
+id = 18404
+quest = 7496
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 3
+id = 16718
+npc = 10268
+zone = 1583
+pct = 18.2
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 5
+id = 19838
+quest = 8065
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 6
+id = 19839
+quest = 8064
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 7
+id = 16709
+npc = 10440
+zone = 2017
+pct = 10.8
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 8
+id = 16715
+npc = 10596
+zone = 1583
+pct = 15.7
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 9
+id = 22108
+quest = 8905
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 10
+id = 16712
+npc = 9236
+zone = 1583
+pct = 17.5
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 11
+id = 22681
+quest = 9221
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 12
+id = 18403
+quest = 7496
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 13
+id = 10659
+quest = 2701
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 15
+id = 21710
+quest = 8802
+
+[[bis]]
+from = 51
+to = 60
+build = "cat"
+slot = 16
+id = 22632
+quest = 9269
+
+[[bis]]
+from = 1
+to = 10
+build = "bear"
+slot = 2
+id = 279870
+quest = 95161
+
+[[bis]]
+from = 1
+to = 10
+build = "bear"
+slot = 5
+id = 270000
+quest = 176
+
+[[bis]]
+from = 1
+to = 10
+build = "bear"
+slot = 6
+id = 279897
+quest = 96394
+
+[[bis]]
+from = 1
+to = 10
+build = "bear"
+slot = 7
+id = 279868
+quest = 95195
+
+[[bis]]
+from = 1
+to = 10
+build = "bear"
+slot = 8
+id = 279840
+quest = 92458
+
+[[bis]]
+from = 1
+to = 10
+build = "bear"
+slot = 10
+id = 279849
+quest = 92489
+
+[[bis]]
+from = 1
+to = 10
+build = "bear"
+slot = 11
+id = 276899
+quest = 96800
+
+[[bis]]
+from = 1
+to = 10
+build = "bear"
+slot = 12
+id = 279867
+quest = 95250
+
+[[bis]]
+from = 1
+to = 10
+build = "bear"
+slot = 15
+id = 279835
+quest = 92456
+
+[[bis]]
+from = 1
+to = 10
+build = "bear"
+slot = 16
+id = 279841
+quest = 92458
+
+[[bis]]
+from = 11
+to = 20
+build = "bear"
+slot = 3
+id = 270044
+quest = 253
+
+[[bis]]
+from = 11
+to = 20
+build = "bear"
+slot = 5
+id = 10399
+npc = 639
+zone = 1581
+pct = 15.3
+
+[[bis]]
+from = 11
+to = 20
+build = "bear"
+slot = 6
+id = 10412
+npc = 3671
+zone = 718
+pct = 10.8
+
+[[bis]]
+from = 11
+to = 20
+build = "bear"
+slot = 7
+id = 270031
+quest = 1200
+
+[[bis]]
+from = 11
+to = 20
+build = "bear"
+slot = 8
+id = 10411
+npc = 3673
+zone = 718
+pct = 21.1
+
+[[bis]]
+from = 11
+to = 20
+build = "bear"
+slot = 9
+id = 270032
+quest = 1200
+
+[[bis]]
+from = 11
+to = 20
+build = "bear"
+slot = 10
+id = 270045
+quest = 2928
+
+[[bis]]
+from = 11
+to = 20
+build = "bear"
+slot = 11
+id = 281634
+quest = 79536
+
+[[bis]]
+from = 11
+to = 20
+build = "bear"
+slot = 15
+id = 5193
+npc = 639
+zone = 1581
+pct = 22.9
+
+[[bis]]
+from = 11
+to = 20
+build = "bear"
+slot = 16
+id = 5187
+npc = 644
+zone = 1581
+pct = 71
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 1
+id = 6688
+npc = 4842
+zone = 491
+pct = 46.4
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 2
+id = 7731
+npc = 6490
+zone = 796
+pct = 33.8
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 3
+id = 273047
+npc = 246017
+zone = 16544
+pct = 32.3
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 5
+id = 273038
+npc = 246003
+zone = 16544
+pct = 34.8
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 6
+id = 273041
+npc = 246008
+zone = 16544
+pct = 34.8
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 7
+id = 273022
+npc = 260322
+zone = 16732
+pct = 36.9
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 8
+id = 9450
+npc = 6229
+zone = 721
+pct = 64.5
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 9
+id = 3230
+npc = 4274
+zone = 209
+pct = 18.1
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 10
+id = 270072
+quest = 504
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 11
+id = 273032
+npc = 247126
+zone = 16544
+pct = 32.5
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 12
+id = 281320
+quest = 98310
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 15
+id = 281319
+quest = 98310
+
+[[bis]]
+from = 21
+to = 30
+build = "bear"
+slot = 16
+id = 271766
+quest = 98824
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 1
+id = 9492
+npc = 7800
+zone = 721
+pct = 9.8
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 2
+id = 7746
+quest = 1050
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 3
+id = 9389
+npc = 6910
+zone = 1337
+pct = 23.4
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 5
+id = 10762
+npc = 7358
+zone = 722
+pct = 38.9
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 6
+id = 3753
+quest = 564
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 7
+id = 9407
+npc = 7228
+zone = 1337
+pct = 38
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 8
+id = 10359
+quest = 2418
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 9
+id = 15864
+quest = 6134
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 10
+id = 9698
+quest = 1440
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 11
+id = 9538
+quest = 2948
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 12
+id = 6693
+npc = 4421
+zone = 491
+pct = 34.9
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 15
+id = 10776
+npc = 7355
+zone = 722
+pct = 34.1
+
+[[bis]]
+from = 31
+to = 40
+build = "bear"
+slot = 16
+id = 271800
+quest = 93196
+
+[[bis]]
+from = 41
+to = 50
+build = "bear"
+slot = 2
+id = 6723
+quest = 1139
+
+[[bis]]
+from = 41
+to = 50
+build = "bear"
+slot = 3
+id = 16739
+quest = 5863
+
+[[bis]]
+from = 41
+to = 50
+build = "bear"
+slot = 5
+id = 9415
+npc = 4854
+zone = 1337
+pct = 39.3
+
+[[bis]]
+from = 41
+to = 50
+build = "bear"
+slot = 7
+id = 9414
+npc = 4854
+zone = 1337
+pct = 29.1
+
+[[bis]]
+from = 41
+to = 50
+build = "bear"
+slot = 9
+id = 11469
+quest = 614
+
+[[bis]]
+from = 41
+to = 50
+build = "bear"
+slot = 10
+id = 16738
+quest = 5863
+
+[[bis]]
+from = 41
+to = 50
+build = "bear"
+slot = 13
+id = 10418
+quest = 3321
+
+[[bis]]
+from = 41
+to = 50
+build = "bear"
+slot = 15
+id = 4114
+quest = 576
+
+[[bis]]
+from = 41
+to = 50
+build = "bear"
+slot = 16
+id = 11857
+quest = 4266
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 1
+id = 16707
+npc = 1853
+zone = 2057
+pct = 11.1
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 2
+id = 18404
+quest = 7496
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 3
+id = 16718
+npc = 10268
+zone = 1583
+pct = 18.2
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 5
+id = 19838
+quest = 8065
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 6
+id = 19839
+quest = 8064
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 7
+id = 16709
+npc = 10440
+zone = 2017
+pct = 10.8
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 8
+id = 16715
+npc = 10596
+zone = 1583
+pct = 15.7
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 9
+id = 19840
+quest = 8057
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 10
+id = 16712
+npc = 9236
+zone = 1583
+pct = 17.5
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 11
+id = 18403
+quest = 7496
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 12
+id = 22681
+quest = 9221
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 13
+id = 10779
+quest = 3628
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 14
+id = 17904
+quest = 7172
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 15
+id = 21710
+quest = 8802
+
+[[bis]]
+from = 51
+to = 60
+build = "bear"
+slot = 16
+id = 21268
+quest = 8790
