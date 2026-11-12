@@ -38,6 +38,7 @@ Sim.IsWidget = isWidget
 local Region = {}   -- every widget
 local FrameM = {}   -- Frame and subclasses
 local FontStringM, TextureM = {}, {}
+local LineM
 local ButtonM, CheckButtonM, ScrollFrameM, EditBoxM, SliderM, StatusBarM, TooltipM, BackdropM = {}, {}, {}, {}, {}, {}, {}, {}
 
 -- Region (shared) -----------------------------------------------------------
@@ -341,6 +342,9 @@ end
 function FrameM:CreateTexture(name, layer, template)
   return Sim.NewWidget("Texture", name, self, template)
 end
+function FrameM:CreateLine(name, layer, template)
+  return Sim.NewWidget("Line", name, self, template)
+end
 function FrameM:SetFrameStrata(s) usage(STRATA[s], "SetFrameStrata(): invalid strata " .. tostring(s)) end
 function FrameM:GetFrameStrata() return "MEDIUM" end
 function FrameM:SetFrameLevel(n) usage(type(n) == "number", "Usage: SetFrameLevel(level)"); self.__level = n end
@@ -558,9 +562,25 @@ function TooltipM:FadeOut() self:Hide() end
 -- Construction
 ------------------------------------------------------------------------------
 
+-- Line (CreateLine): puntos de inicio y fin relativos a una región, grosor.
+LineM = {}
+function LineM:SetStartPoint(rel, region, x, y)
+  usage(type(rel) == "string", "Usage: SetStartPoint(relativePoint, region, x, y)")
+  self.__start = { rel, region, x or 0, y or 0 }
+end
+function LineM:SetEndPoint(rel, region, x, y)
+  usage(type(rel) == "string", "Usage: SetEndPoint(relativePoint, region, x, y)")
+  self.__end = { rel, region, x or 0, y or 0 }
+end
+function LineM:GetStartPoint() local p = self.__start or {} return p[1], p[2], p[3], p[4] end
+function LineM:GetEndPoint() local p = self.__end or {} return p[1], p[2], p[3], p[4] end
+function LineM:SetThickness(t) usage(type(t) == "number", "Usage: SetThickness(t)"); self.__thick = t end
+function LineM:GetThickness() return self.__thick or 1 end
+
 local CLASS_METHODS = {
   FontString = { FontStringM },
   Texture = { TextureM },
+  Line = { LineM, TextureM },
   Frame = { FrameM },
   Button = { ButtonM, FrameM },
   CheckButton = { CheckButtonM, ButtonM, FrameM },
@@ -616,7 +636,7 @@ function Sim.NewWidget(otype, name, parent, template)
   local o = {
     __isWidget = true, __type = otype, __name = name, __parent = nil, __children = {},
     __shown = true, __scripts = {}, __hooks = {}, __events = {}, __points = {}, __attrs = {},
-    __enabled = true, __isFrame = (otype ~= "FontString" and otype ~= "Texture"), __template = template,
+    __enabled = true, __isFrame = (otype ~= "FontString" and otype ~= "Texture" and otype ~= "Line"), __template = template,
   }
   setmetatable(o, metaFor(otype, backdrop))
   if parent then o.__parent = parent; parent.__children[#parent.__children + 1] = o end

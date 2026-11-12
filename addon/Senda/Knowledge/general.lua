@@ -454,7 +454,7 @@ Senda.Knowledge:Register({
     { id = "craft-now", class = "ANY", when = "Tienes material para fabricar el tramo actual de la ruta y no estás limitado por nivel", say = "Antes de salir, fabrica N x <receta>: tienes el material.", priority = 5 },
     { id = "prof-behind", class = "ANY", when = "Habilidad < objetivo - 40, con objetivo = min(300, nivel × 5)", say = "<profesión> va atrasada (N, ideal ~M para tu nivel): dedica un rato a subirla en la ciudad.", priority = 6 },
     { id = "mage-save-riding", class = "MAGE", when = "Nivel 34-39 y menos de 100 de oro", say = "Ahorra para la equitación del 40: unos 100 de oro. El mago sí la paga.", priority = 7 },
-    { id = "focus", class = "ANY", when = "Alguna profesión atrasada → foco profesiones; si no → foco subir de nivel", say = "Foco: profesiones (súbelas hasta tu nivel y luego sigue con la guía) / Foco: subir de nivel (fabrica solo cuando tengas material)." },
+    { id = "focus", class = "ANY", when = "Alguna profesión atrasada » foco profesiones; si no » foco subir de nivel", say = "Foco: profesiones (súbelas hasta tu nivel y luego sigue con la guía) / Foco: subir de nivel (fabrica solo cuando tengas material)." },
     { id = "warlock-pets", class = "WARLOCK", when = "Nivel >= 12 sin Abisario; >= 22 sin Íncubo/Súcubo; >= 32 sin Manáfago; >= 42 sin Corcel nefasto", say = "Te falta <demonio> (misión de nivel N)." },
     { id = "mage-key-spells", class = "MAGE", when = "Nivel >= nivel del hechizo + 2 y no lo conoces (lista [[check]] de mage/spells.toml)", say = "Te falta <hechizo> (nivel N): pasa por el instructor." },
     { id = "wand-missing", class = "ANY", when = "Nivel >= 5 sin varita", say = "No llevas varita. Es tu arma principal: fabrícala con Encantamiento o cómprala." },

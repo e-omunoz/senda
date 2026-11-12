@@ -18,6 +18,7 @@ Senda.HUD = HUD
 
 local WIDTH = 320
 local PAD = 8
+local TEXT_X = PAD + 28 + 8 -- sangría del texto del paso (icono de 28 + 8)
 local hud
 
 ------------------------------------------------------------------------------
@@ -528,14 +529,14 @@ function HUD:Refresh()
     end
     for _, t in ipairs(Engine.StepTimers and Engine:StepTimers(step) or {}) do
       local color = t.left <= 60 and "red" or (t.left <= 120 and "gold" or "white")
-      st[#st + 1] = "|TInterface\\Icons\\INV_Misc_PocketWatch_01:14:14:0:0|t " .. UI:Color(color,
+      st[#st + 1] = "|TInterface\\Icons\\INV_Misc_PocketWatch_01:0:0:0:0|t " .. UI:Color(color,
         Senda.Quests.Clock(t.left)) .. UI:Color("dim", "  " .. QuestName(t.quest))
     end
     f.status:SetText(table.concat(st, "\n"))
     statusH = #st > 0 and (f.status:GetStringHeight() + 4) or 0
 
     local tip = self:StepTip(step)
-    f.tip:SetText(tip and ("|TInterface\\COMMON\\help-i:14:14:0:0|t" .. tip) or "")
+    f.tip:SetText(tip and ("|TInterface\\COMMON\\help-i:0:0:0:0|t " .. tip) or "")
     tipH = tip and (f.tip:GetStringHeight() + 4) or 0
     f.escort:SetText(step.escort and L.ESCORT_NOTE or "")
     escortH = step.escort and (f.escort:GetStringHeight() + 4) or 0
@@ -557,7 +558,17 @@ function HUD:Refresh()
     f.advice:SetText("")
   end
   f.advice:SetShown(advH > 0)
-  y = y + objH + statusH + tipH + escortH + advH
+  -- Posición absoluta (no encadenada): una cadena de anclajes cuenta también los huecos de las líneas vacías
+  -- y el alto de los iconos en línea, y lo que va debajo (viaje, Aparte, raro) acababa pisando el consejo.
+  for _, it in ipairs({ { f.objectives, objH }, { f.status, statusH }, { f.tip, tipH }, { f.escort, escortH },
+                         { f.advice, advH } }) do
+    if it[2] > 0 then
+      it[1]:ClearAllPoints()
+      it[1]:SetPoint("TOPLEFT", TEXT_X, -y)
+      it[1]:SetPoint("RIGHT", -PAD, 0)
+      y = y + it[2]
+    end
+  end
 
   -- Desvío: a qué paso de la ruta vuelves
   if detour and not collapsed then

@@ -4,6 +4,31 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ## [Sin publicar]
 
+## [0.6.1] - 2026-11-12
+
+### Añadido
+- **Ruta en el minimapa:** una línea verde con el camino a pie que sigue la flecha (opción «Dibujar la ruta en el
+  minimapa», activada). Respeta el minimapa giratorio y los cuadrados. En el suelo del mundo no se puede dibujar: el
+  juego no da esa función a los addons.
+- **La flecha dice siempre qué está haciendo:** «Ruta a pie» (verde) o «Línea recta» (gris) delante de la distancia y,
+  si va recta, el motivo debajo (calculando la ruta, volando, en una instancia, en combate, sin caminos...). Con ruta,
+  una flechita dorada en el borde marca la línea recta al destino.
+- En el Tranvía subterráneo la flecha dice «Tranvía: súbete y baja en Forjaz/Ventormenta» en vez de «Posición no
+  disponible aquí».
+
+### Cambiado
+- **Flecha más suave:** apunta a un punto 15 yardas por delante en el camino (no salta en cada recodo) y el giro se
+  suaviza; girar el personaje sigue siendo inmediato.
+- **Cambiar de continente ya no pide /reload:** los datos de caminos de un continente se quedan cargados toda la sesión.
+- El viaje nombra dónde embarcar: «ve al tranvía de Ciudad de Ventormenta», «ve al maestro de vuelo de...», etc.
+
+### Corregido
+- La línea «Camino más rápido» del HUD pisaba el consejo del paso: las líneas del paso se colocan ahora por posición
+  y los iconos en línea miden lo mismo que el texto.
+- La flecha «→» salía como un cuadro (las fuentes del juego no la tienen): ahora «»» en todo el addon.
+- Un paso de una cadena se da por hecho si ya tienes una misión posterior de esa cadena (por ejemplo, el aviso de
+  Lago Blackwrench cuando ya llevas «Devoradora de almas» de Gakin).
+
 ## [0.6.0] - 2026-11-12
 
 ### Añadido

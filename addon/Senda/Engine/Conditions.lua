@@ -84,8 +84,22 @@ function Cond:Quests(step)
   return nil
 end
 
+-- Una misión que va después en la cadena (Guides:Followups) ya cogida o entregada: esta ya no hace falta
+-- (p. ej. el aviso de Lago Blackwrench cuando ya tienes «Devoradora de almas» de Gakin).
+local function Superseded(q, state)
+  local G = Senda.Guides
+  local deps = G and G.Followups and G:Followups(q)
+  if not deps then return false end
+  for _, d in ipairs(deps) do
+    if (state and state.turnedIn and state.turnedIn[d]) or Compat.IsOnQuest(d) or Compat.IsQuestDone(d) then
+      return true
+    end
+  end
+  return false
+end
+
 local function TurnedIn(q, state)
-  return (state and state.turnedIn and state.turnedIn[q]) or Compat.IsQuestDone(q)
+  return (state and state.turnedIn and state.turnedIn[q]) or Compat.IsQuestDone(q) or Superseded(q, state)
 end
 
 local function AllQuests(step, state, fn)

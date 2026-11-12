@@ -7,9 +7,13 @@
 --   Senda.ArrowNav:State() -> "off" | "straight" | "routing" | "path", motivo
 --   Senda.ArrowNav:Straight()          -- la flecha mide en línea recta en este fotograma
 -- Reglas: los addons Senda_Nav, Senda_Nav_EK y Senda_Nav_Kalimdor se cargan bajo demanda y nunca en
--- combate (se espera a PLAYER_REGEN_ENABLED); el paquete del otro continente se suelta al cambiar de
--- continente (el cliente no deja volver a cargarlo hasta /reload). La búsqueda la reparte Senda_Nav en
--- fotogramas (1,2 ms por fotograma fuera de combate).
+-- combate (se espera a PLAYER_REGEN_ENABLED). Un paquete cargado se queda cargado toda la sesión: el cliente
+-- no deja volver a cargar un addon, así que soltarlo obligaría a hacer /reload al volver a ese continente.
+-- La búsqueda la reparte Senda_Nav en fotogramas (1,2 ms por fotograma fuera de combate).
+-- La flecha no apunta al siguiente punto del camino sino a una «zanahoria» LOOK yardas más adelante por él:
+-- así gira con suavidad en los recodos en vez de saltar al llegar a cada punto.
+--   Senda.ArrowNav:Why() -> motivo de la última medida en línea recta (para el texto de la flecha)
+--   Senda.ArrowNav:Path() -> path, índice (para dibujar el camino en el minimapa)
 local _, Senda = ...
 local Compat, Events = Senda.Compat, Senda.Events
 
@@ -22,6 +26,7 @@ local REROUTE_COOLDOWN = 5 -- s mínimos entre dos rutas pedidas por salirse del
 local RETRY_AFTER = 20     -- s antes de volver a pedir una ruta que falló, al mismo objetivo...
 local RETRY_MOVED = 30     -- ...y solo si el jugador se ha movido al menos estas yardas
 local FAR_OFF = 120        -- yd: tan lejos del camino, la flecha va recta mientras se recalcula
+local LOOK = 15            -- yd por delante en el camino a los que apunta la flecha
 
 local sqrt = math.sqrt
 
@@ -86,23 +91,11 @@ local function LoadRuntime()
   return false
 end
 
-local function UnloadOthers(c)
-  local N = API()
-  if not N then return end
-  for o in pairs(PACKS) do
-    if o ~= c and N.IsLoaded(o) then
-      N.Unload(o)
-      Senda:Debug("caminos: soltado el paquete del continente " .. o)
-    end
-  end
-end
-
 local function LoadPack(c)
   local N = API()
   if N.IsLoaded(c) then return true end
   if st.packFail[c] then return false end
   if Compat.InCombat() then Nav:Defer(); return false end
-  UnloadOthers(c)
   local ok, why = N.Load(c)
   if ok then return true end
   if why == "combat" then
@@ -117,7 +110,6 @@ end
 local function ContinentChanged(c)
   st.continent = c
   Reset(nil)
-  if PACKS[c] then UnloadOthers(c) end
 end
 
 -- Yardas que quedan desde cada punto hasta el final del camino.
@@ -156,24 +148,54 @@ local function Request(t, map, x, y, pn, pw)
   if st.token == token and st.status == "routing" then st.job = job end
 end
 
+-- Punto LOOK yardas por delante del jugador siguiendo el camino desde el punto i (sin pasar de un ascensor
+-- o portal: ahí hay que llegar al punto exacto).
+local function Carrot(path, i, pn, pw)
+  local ax, ay, left = pn, pw, LOOK
+  for k = i, #path do
+    local q = path[k]
+    local dx, dy = q.wx - ax, q.wy - ay
+    local d = sqrt(dx * dx + dy * dy)
+    if d >= left then
+      return ax + dx * left / d, ay + dy * left / d
+    end
+    left = left - d
+    ax, ay = q.wx, q.wy
+    if q.lift then break end
+  end
+  return ax, ay
+end
+Nav.Carrot = Carrot
+
 function Nav:TargetChanged(t)
   local key = t and Key(t) or nil
   if key ~= st.key then Reset(key) end
 end
 
+local function Straight(why)
+  st.straightWhy = why
+  return nil
+end
+
 function Nav:Waypoint(t, map, x, y)
   st.shown = false
-  if not (t and map and x and y) or not Enabled() then return nil end
-  if not (t.continent and PACKS[t.continent]) then return nil end
+  if not Enabled() then return Straight("off") end
+  if not (t and map and x and y) then return Straight("nopos") end
+  if not (t.continent and PACKS[t.continent]) then return Straight("nodata") end
   local c, pn, pw = Compat.WorldPos(map, x, y)
-  if not c then return nil end
+  if not c then return Straight("nopos") end
   if c ~= st.continent then ContinentChanged(c) end
-  if c ~= t.continent then return nil end
+  if c ~= t.continent then return Straight("continent") end
   -- volando, en taxi o en una instancia no se anda: flecha recta
-  if Compat.OnTaxi() or Compat.IsFlying() then return nil end
+  if Compat.OnTaxi() then return Straight("taxi") end
+  if Compat.IsFlying() then return Straight("flying") end
   local inst = Compat.InstanceType()
-  if inst and inst ~= "none" then return nil end
-  if not LoadRuntime() or not LoadPack(c) then return nil end
+  if inst and inst ~= "none" then return Straight("instance") end
+  if not LoadRuntime() then return Straight(st.runtime == false and "nonav" or "loading") end
+  if not LoadPack(c) then
+    if st.packFail[c] then return Straight("nodata") end
+    return Straight(Compat.InCombat() and "combat" or "loading")
+  end
 
   local key = Key(t)
   if key ~= st.key then Reset(key) end
@@ -187,20 +209,32 @@ function Nav:Waypoint(t, map, x, y)
     end
   end
   local path = st.path
-  if not path then return nil end -- calculando la primera ruta o sin ruta: recta
+  if not path then -- calculando la primera ruta o sin ruta: recta
+    return Straight(st.status == "routing" and "routing" or "noroute")
+  end
 
   local N = API()
   local wp, i, yards, off = N.Next(path, map, x * 100, y * 100)
-  if not (wp and i and yards) then return nil end
+  if not (wp and i and yards) then return Straight("noroute") end
   if off then
     if st.status ~= "routing" and now - st.routedAt >= REROUTE_COOLDOWN then
       Request(t, map, x, y, pn, pw)
     end
-    if yards > FAR_OFF then return nil end
+    if yards > FAR_OFF then return Straight("routing") end
   end
   local along = yards + (path.rest[i] or 0)
-  st.shown, st.idx, st.along = true, i, along
-  return wp.wx, wp.wy, along, i, #path
+  st.shown, st.idx, st.along, st.straightWhy = true, i, along, nil
+  st.pn, st.pw = pn, pw
+  local cn, cw = Carrot(path, i, pn, pw)
+  st.aimN, st.aimW = cn, cw
+  return cn, cw, along, i, #path
+end
+
+function Nav:Why() return st.straightWhy end
+
+function Nav:Path()
+  if not st.shown then return nil end
+  return st.path, st.idx, st.pn, st.pw
 end
 
 -- Esta medida de la flecha va recta (sin posición, otro continente...): la marca «ruta» se apaga.
@@ -229,7 +263,7 @@ Events:On("PLAYER_REGEN_ENABLED", function()
   if t and map then Nav:Waypoint(t, map, x, y) end
 end)
 
--- Cambio de continente aunque la flecha no esté mirando (sin objetivo): se suelta el otro paquete.
+-- Cambio de continente aunque la flecha no esté mirando (sin objetivo): la ruta vieja ya no vale.
 local function CheckContinent()
   local map, x, y = Compat.PlayerMapPos()
   if not map then return end

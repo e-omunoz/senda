@@ -9,8 +9,10 @@
 -- muestra distancia (m o yd) y tiempo estimado, se pone verde al acercarse y marca "has llegado".
 -- Modo cadáver: siendo fantasma apunta a C_DeathInfo.GetCorpseMapPosition y vuelve a la guía al resucitar.
 -- Caminos reales (opción navPaths, UI/ArrowNav.lua): si el objetivo está en tu continente, la flecha apunta
--- al siguiente punto del camino a pie de Senda_Nav y la distancia es la que queda por el camino («a pie»,
--- con la marca «ruta»); mientras se calcula, sin datos, volando, en taxi o en instancias, va recta.
+-- a un punto del camino a pie de Senda_Nav (15 yd por delante) y la distancia es la que queda por el camino;
+-- mientras se calcula, sin datos, volando, en taxi o en instancias, va recta. El texto lo dice siempre:
+-- «Ruta a pie  230 m» (verde) o «Línea recta  230 m» (gris) con el motivo debajo. Con ruta, una flechita
+-- dorada en el borde marca la línea recta al destino. El giro se suaviza (sin saltos entre puntos del camino).
 -- En un desvío activo (Engine/Aside.lua) el objetivo de la guía es el paso del desvío («Desvío: ...»).
 local _, Senda = ...
 local UI, Compat, Events = Senda.UI, Senda.Compat, Senda.Events
@@ -142,14 +144,35 @@ local function Measure(t)
       local metres = yards * 0.9144
       local wn, ww, along
       if nav then wn, ww, along = nav:Waypoint(t, map, x, y) end
+      local direct = math.atan2(dW, dN)
       if wn then
-        return metres, math.atan2(ww - w, wn - n), false, along * 0.9144, true
+        return metres, math.atan2(ww - w, wn - n), false, along * 0.9144, true, direct
       end
-      return metres, math.atan2(dW, dN), false, metres, false
+      return metres, direct, false, metres, false, direct
     end
   end
   local m, a = Compat.WorldDistance(map, x, y, t.map, t.x, t.y)
-  return m, a, false, m, false
+  return m, a, false, m, false, a
+end
+
+-- Sin posición: en el Tranvía subterráneo (instancia 369) se dice qué hacer en vez de «posición no disponible».
+local TRAM_INSTANCE = 369
+local function NoPositionText()
+  local id = GetInstanceInfo and select(8, GetInstanceInfo())
+  if id ~= TRAM_INSTANCE then return L.ARROW_NO_POSITION end
+  local TV = Senda.Modules and Senda.Modules.Travel
+  local plan = TV and TV.GetPlan and TV.GetPlan()
+  for _, leg in ipairs(plan and plan.legs or {}) do
+    if leg.how == "ride" and leg.kind == "tram" then
+      return string.format(L.ARROW_TRAM_TO, TV.PlaceName(leg.to) or "?")
+    end
+  end
+  return L.ARROW_TRAM
+end
+
+-- Ángulo más corto de a hacia b (radianes, -pi..pi).
+local function Delta(a, b)
+  return ((b - a + math.pi) % TWO_PI) - math.pi
 end
 
 local function FormatDist(m)
@@ -169,7 +192,36 @@ local function TurnColor(rel)
   return 1, 0.9 - (diff - 0.5) * 1.3, 0.25
 end
 
+-- Gira la flecha (cada fotograma): rumbo suavizado menos la orientación del jugador. Girar el personaje no
+-- tiene retraso; un cambio de punto del camino sí se suaviza (sin saltos).
+local function Turn(self, elapsed)
+  if not self.goal then return end
+  local cur = self.heading or self.goal
+  cur = cur + Delta(cur, self.goal) * (1 - math.exp(-(elapsed or 0) * 8))
+  self.heading = cur
+  local facing = Compat.PlayerFacing()
+  if facing then
+    local rel = cur - facing
+    self.arrow:SetRotation(rel)
+    self.arrow:SetVertexColor(TurnColor(rel))
+    if self.directGoal then
+      local d = self.directGoal - facing
+      self.direct:ClearAllPoints()
+      self.direct:SetPoint("CENTER", self.arrow, "CENTER", -math.sin(d) * 30, math.cos(d) * 30)
+      self.direct:SetRotation(d)
+      self.direct:Show()
+    else
+      self.direct:Hide()
+    end
+  else
+    self.arrow:SetRotation(0)
+    self.arrow:SetVertexColor(0.6, 0.6, 0.6)
+    self.direct:Hide()
+  end
+end
+
 local function OnUpdate(self, elapsed)
+  Turn(self, elapsed)
   self.acc = (self.acc or 0) + elapsed
   if self.acc < 0.04 then return end
   local dt = self.acc
@@ -177,18 +229,20 @@ local function OnUpdate(self, elapsed)
   local t = active
   if not t then return end
 
-  local dist, angle, otherContinent, shown, routed = Measure(t)
+  if t ~= self.lastTarget then self.lastTarget, self.heading = t, nil end -- objetivo nuevo: sin giro suave
+  local dist, angle, otherContinent, shown, routed, direct = Measure(t)
   self.label:SetText(t.label or "")
-  self.route:SetShown(routed and dist ~= nil and dist > (t.radius or DEFAULT_ARRIVE) or false)
   if routed ~= self.routed then
     -- el camino cambia la distancia que se mide: la velocidad suavizada vuelve a empezar
     self.routed, self.speed, self.lastDist = routed, nil, nil
   end
   if not dist then
     self.arrow:Hide()
+    self.direct:Hide()
+    self.goal, self.directGoal = nil, nil
     self.check:Hide()
     self.unknown:Show()
-    self.info:SetText(otherContinent and L.ARROW_OTHER_CONTINENT or L.ARROW_NO_POSITION)
+    self.info:SetText(otherContinent and L.ARROW_OTHER_CONTINENT or NoPositionText())
     return
   end
   self.unknown:Hide()
@@ -196,6 +250,8 @@ local function OnUpdate(self, elapsed)
   local arrive = t.radius or DEFAULT_ARRIVE
   if dist <= arrive then
     self.arrow:Hide()
+    self.direct:Hide()
+    self.goal, self.directGoal = nil, nil
     self.check:Show()
     self.info:SetText(UI:Color("green", L.ARROW_ARRIVED))
     -- Puntos de ruta: al llegar a uno se pasa al siguiente; los manuales se borran solos.
@@ -212,15 +268,10 @@ local function OnUpdate(self, elapsed)
   self.check:Hide()
   self.arrow:Show()
 
-  local facing = Compat.PlayerFacing()
-  if facing and angle then
-    local rel = angle - facing
-    self.arrow:SetRotation(rel)
-    self.arrow:SetVertexColor(TurnColor(rel))
-  else
-    self.arrow:SetRotation(0)
-    self.arrow:SetVertexColor(0.6, 0.6, 0.6)
-  end
+  self.goal = angle
+  -- flechita de la línea recta: solo con ruta y si se aparta de ella más de ~20°
+  self.directGoal = (routed and direct and angle and math.abs(Delta(angle, direct)) > 0.35) and direct or nil
+  Turn(self, 0)
 
   -- Tiempo estimado: velocidad de acercamiento suavizada; si no, velocidad del personaje.
   -- Con camino, la distancia es la que queda por él.
@@ -237,9 +288,16 @@ local function OnUpdate(self, elapsed)
     local sp = Compat.PlayerSpeed()
     if sp and sp > 0 and Compat.IsGhost() then eta = shown / (sp * 0.9144) end
   end
-  local text = FormatDist(shown)
-  if routed then text = string.format(L.ARROW_ON_FOOT, text) end
+  -- Modo siempre explícito: «Ruta a pie  230 m» o «Línea recta  230 m» con el motivo debajo
+  local text = (routed and UI:Color("green", L.ARROW_MODE_PATH) or UI:Color("dim", L.ARROW_MODE_LINE))
+    .. "  " .. FormatDist(shown)
   if eta and eta < 3600 then text = text .. UI:Color("dim", "  ·  " .. Senda.Util.FormatTime(eta)) end
+  if not routed then
+    local nav = Nav()
+    local why = nav and nav:Why()
+    local reason = why and L["ARROW_WHY_" .. why]
+    if reason then text = text .. "\n" .. UI:Color("dim", reason) end
+  end
   self.info:SetText(text)
 end
 
@@ -299,6 +357,14 @@ local function Create()
   f.route:SetText(L.ARROW_ROUTE_MARK)
   f.route:Hide()
 
+  -- Flechita dorada en el borde: la línea recta al destino cuando la flecha sigue la ruta
+  f.direct = f:CreateTexture(nil, "OVERLAY")
+  f.direct:SetSize(14, 14)
+  f.direct:SetTexture("Interface\\Minimap\\MinimapArrow")
+  f.direct:SetVertexColor(1, 0.82, 0.2)
+  f.direct:SetAlpha(0.85)
+  f.direct:Hide()
+
   f:SetScript("OnUpdate", OnUpdate)
   f:SetScript("OnClick", function()
     if activeSource ~= "guide" and activeSource ~= "corpse" then
@@ -320,6 +386,7 @@ local function Create()
       local path = nav.state.path
       local i, n = path and path.idx, path and #path
       if i and n then GameTooltip:AddLine(string.format(L.ARROW_TIP_PATH, i, n), 0.45, 0.85, 0.45, true) end
+      GameTooltip:AddLine(L.ARROW_TIP_DIRECT, 1, 0.82, 0.2, true)
     elseif state == "routing" then
       GameTooltip:AddLine(L.ARROW_TIP_ROUTING, 0.7, 0.7, 0.7, true)
     end

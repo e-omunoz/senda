@@ -90,6 +90,10 @@ class LuaError(ValueError):
     pass
 
 
+# Caracteres que las fuentes del juego (Friz Quadrata, Arial Narrow) no tienen: saldrían como un cuadro.
+GLYPH_FALLBACK = {"→": "»", "←": "«", "⇒": "»", "≈": "~", "≥": ">=", "≤": "<=", "−": "-"}
+
+
 def lua_string(s: str) -> str:
     """Cadena Lua 5.1 entre comillas dobles con escapes.
 
@@ -98,6 +102,7 @@ def lua_string(s: str) -> str:
     """
     out = ['"']
     for ch in s:
+        ch = GLYPH_FALLBACK.get(ch, ch)
         o = ord(ch)
         if ch == "\\":
             out.append("\\\\")

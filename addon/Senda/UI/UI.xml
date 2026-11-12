@@ -6,6 +6,7 @@
   <Script file="HUD.lua"/>
   <Script file="Arrow.lua"/>
   <Script file="ArrowNav.lua"/>
+  <Script file="MinimapRoute.lua"/>
   <Script file="MapPin.lua"/>
   <Script file="Visibility.lua"/>
   <Script file="Minimap.lua"/>

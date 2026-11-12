@@ -267,7 +267,8 @@ SendaNav.ToWorld(mapa, x, y) -> continente, wx, wy;  SendaNav.ToMap(continente, 
   un viaje) si está más cerca, y en un tramo de viaje espera en su inicio. `fueraDeRuta` a más de
   `SendaNav.offRoute` (30 yd) del tramo: toca pedir otra ruta.
 - `Unload(c)` suelta el paquete (`SendaNavData[c] = nil`); el cliente solo carga un addon una vez por
-  sesión, así que después `Load(c)` responde `false, "unloaded"` hasta `/reload`.
+  sesión, así que después `Load(c)` responde `false, "unloaded"` hasta `/reload`. Por eso Senda (desde la 0.6.1)
+  nunca llama a `Unload`: un paquete cargado se queda toda la sesión y cambiar de continente no pide `/reload`.
 
 ### 8.2 Coordenadas en el juego
 

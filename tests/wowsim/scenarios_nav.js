@@ -76,9 +76,10 @@ const scenarios = [
       Sim.Advance(Sim.FRAME)
       Check(NavState().status == "routing", "a route is requested for the new target", NavState().status)
       Check(NavState().requests == before + 1, "exactly one request", NavState().requests - before)
-      Check(not SendaArrow.route:IsShown(), "no «ruta» marker while it computes")
-      Check(Near(SendaArrow.arrow:GetRotation(), StraightAim()), "straight arrow while the route computes")
-      Check(ArrowInfo():find(" a pie", 1, true) == nil, "no «a pie» distance while it computes", ArrowInfo())
+      Check(ArrowInfo():find(L.ARROW_MODE_PATH, 1, true) == nil, "no «Ruta a pie» while it computes")
+      Check(Near(SendaArrow.goal, StraightAim()), "straight arrow while the route computes")
+      Check(ArrowInfo():find(L.ARROW_MODE_LINE, 1, true) == 1 and ArrowInfo():find(L.ARROW_WHY_routing, 1, true) ~= nil,
+        "«Línea recta» with «calculando la ruta…» while it computes", ArrowInfo())
       local frames = NavWait(10) + 1
       local st = NavState()
       Check(st.status == "ok" and st.path ~= nil, "the route arrives", st.status .. " " .. tostring(st.why))
@@ -91,10 +92,19 @@ const scenarios = [
       Check(deep >= 48, "the path goes round the south end of the wall", deep)
       local wp = path[st.idx]
       Check(st.shown and st.idx == 2, "the arrow follows the path's first waypoint", st.idx)
-      Check(Near(SendaArrow.arrow:GetRotation(), AimAt(wp.wx, wp.wy)), "the arrow points at SendaNav.Next's waypoint, not at the target")
-      Check(not Near(SendaArrow.arrow:GetRotation(), StraightAim(), 0.2), "...which is not the straight direction")
-      Check(SendaArrow.route:IsShown() and Plain(SendaArrow.route:GetText()) == L.ARROW_ROUTE_MARK, "the «ruta» marker is shown")
-      Check(ArrowInfo():find(" a pie", 1, true) ~= nil, "the distance says «a pie»", ArrowInfo())
+      Check(Near(SendaArrow.goal, AimAt(st.aimN, st.aimW)), "the arrow aims at the look-ahead point on the path, not at the target")
+      do
+        local map0, x0, y0 = S().Compat.PlayerMapPos()
+        local _, pn0, pw0 = S().Compat.WorldPos(map0, x0, y0)
+        local dc = math.sqrt((st.aimN - pn0) ^ 2 + (st.aimW - pw0) ^ 2)
+        Check(dc <= 15.01, "the look-ahead point is at most 15 yd ahead", string.format("%.1f", dc))
+      end
+      Check(not Near(SendaArrow.goal, StraightAim(), 0.2), "...which is not the straight direction")
+      Sim.Advance(1)
+      Check(Near(SendaArrow.arrow:GetRotation(), SendaArrow.goal, 0.02), "the arrow's turn settles on the aim (smoothed)")
+      Check(SendaArrow.direct:IsShown(), "the small gold arrow marks the straight line")
+      Check(ArrowInfo():find(L.ARROW_MODE_PATH, 1, true) == 1, "the text says «Ruta a pie»", ArrowInfo())
+      Check(#S().MinimapRoute.lines > 0, "the route is drawn on the minimap", #S().MinimapRoute.lines)
       local t = ArrowTarget()
       local map, x, y = S().Compat.PlayerMapPos()
       local straight = select(3, S().Compat.WorldDistance(map, x, y, t.map, t.x, t.y))
@@ -128,9 +138,10 @@ const scenarios = [
       Check(NavState().shown, "following the path again")
       S().Options:Set("navPaths", false)
       Sim.Advance(0.2)
-      Check(S().ArrowNav:State() == "off" and not SendaArrow.route:IsShown(), "option off: no path, no marker")
-      Check(Near(SendaArrow.arrow:GetRotation(), StraightAim()), "option off: straight arrow")
-      Check(ArrowInfo():find(" a pie", 1, true) == nil, "option off: plain distance", ArrowInfo())
+      Check(S().ArrowNav:State() == "off" and ArrowInfo():find(L.ARROW_MODE_PATH, 1, true) == nil, "option off: no path")
+      Check(#S().MinimapRoute.lines == 0, "option off: nothing on the minimap")
+      Check(Near(SendaArrow.goal, StraightAim()), "option off: straight arrow")
+      Check(ArrowInfo():find(L.ARROW_MODE_LINE, 1, true) == 1, "option off: «Línea recta»", ArrowInfo())
       local r0 = NavState().requests
       S().Options:Set("navPaths", true)
       NavWait(10)
@@ -210,7 +221,7 @@ const scenarios = [
       Sim.Advance(3)
       Check(#Sim.addonLoads == 0, "in combat no add-on is loaded", #Sim.addonLoads)
       Check(NavState().pending, "the load is queued")
-      Check(not NavState().shown and Near(SendaArrow.arrow:GetRotation(), StraightAim()), "straight arrow meanwhile")
+      Check(not NavState().shown and Near(SendaArrow.goal, StraightAim()), "straight arrow meanwhile")
 
       Section("combat ends")
       Sim.player.combat = false
@@ -220,7 +231,7 @@ const scenarios = [
       Sim.Advance(Sim.FRAME)
       local n, inCombat = LoadsOf("Senda_Nav_EK")
       Check(n == 1 and inCombat == 0, "then the EK pack, out of combat", n .. "/" .. inCombat)
-      Check(NavState().shown and SendaArrow.route:IsShown(), "and the arrow follows the path")
+      Check(NavState().shown and ArrowInfo():find(S().L.ARROW_MODE_PATH, 1, true) == 1, "and the arrow follows the path")
 
       Section("a new route in combat (the pack is already loaded)")
       Sim.player.combat = true
@@ -278,8 +289,8 @@ const scenarios = [
       Check(LoadsOf("Senda_Nav") == 1, "LoadAddOn(Senda_Nav) tried once, not every frame", LoadsOf("Senda_Nav"))
       Check(NavState().runtime == false and S().ArrowNav:State() == "straight", "marked unavailable for the session")
       Check(SendaArrow:IsShown() and SendaArrow.arrow:IsShown(), "the arrow works")
-      Check(Near(SendaArrow.arrow:GetRotation(), StraightAim()), "straight arrow")
-      Check(not SendaArrow.route:IsShown() and ArrowInfo():find(" a pie", 1, true) == nil, "no marker, plain distance", ArrowInfo())
+      Check(Near(SendaArrow.goal, StraightAim()), "straight arrow")
+      Check(ArrowInfo():find(S().L.ARROW_MODE_LINE, 1, true) == 1, "no marker, plain distance", ArrowInfo())
       Check(#Sim.errors == 0, "no Lua errors")
     `,
   },
@@ -301,8 +312,8 @@ const scenarios = [
       for _, case in ipairs({ { "flying", "flying" }, { "onTaxi", "on a flight path" } }) do
         Sim.player[case[1]] = true
         Sim.Advance(0.2)
-        Check(not NavState().shown and not SendaArrow.route:IsShown(), case[2] .. ": no path")
-        Check(Near(SendaArrow.arrow:GetRotation(), StraightAim()), case[2] .. ": straight arrow")
+        Check(not NavState().shown and ArrowInfo():find(S().L.ARROW_MODE_PATH, 1, true) == nil, case[2] .. ": no path")
+        Check(Near(SendaArrow.goal, StraightAim()), case[2] .. ": straight arrow")
         Sim.player[case[1]] = false
         Sim.Advance(0.2)
         Check(NavState().shown, case[2] .. " over: back on the path (no new route needed)")
@@ -310,7 +321,7 @@ const scenarios = [
       S().Options:Set("hideInInstance", false) -- keep the arrow running inside
       Sim.SetInstance("party")
       Sim.Advance(0.5)
-      Check(SendaArrow:IsShown() and not NavState().shown and not SendaArrow.route:IsShown(), "in an instance: no path")
+      Check(SendaArrow:IsShown() and not NavState().shown and ArrowInfo():find(S().L.ARROW_MODE_PATH, 1, true) == nil, "in an instance: no path")
       Sim.SetInstance(nil)
       S().Options:Set("hideInInstance", true)
       Sim.Advance(0.5)
@@ -322,7 +333,7 @@ const scenarios = [
       NavWait(5)
       Sim.Advance(0.2)
       Check(NavState().status == "fail" and NavState().why == "offmesh", "the router says offmesh", tostring(NavState().why))
-      Check(not NavState().shown and Near(SendaArrow.arrow:GetRotation(), StraightAim()), "straight arrow")
+      Check(not NavState().shown and Near(SendaArrow.goal, StraightAim()), "straight arrow")
       Sim.Advance(30)
       Check(NavState().requests == r + 1, "standing still, the failed route is not asked again", NavState().requests - r)
       NavGo(D, 10, 40)
@@ -338,7 +349,7 @@ const scenarios = [
   },
   {
     id: 'nav-continent',
-    title: 'Real paths: Kalimdor pack for the druid; changing continent unloads the other pack',
+    title: 'Real paths: Kalimdor pack for the druid; both packs stay loaded, so going back needs no /reload',
     char: 'nightelf-druid',
     lua: PRELUDE + L_`
       local K = NavPackAt(1438, 0.587, 0.443)
@@ -358,7 +369,7 @@ const scenarios = [
       Section("by boat to the Eastern Kingdoms")
       NavGo(E, 10, 10)
       Sim.Advance(0.5)
-      Check(not SendaNav.IsLoaded(1) and (rawget(_G, "SendaNavData") or {})[1] == nil, "Kalimdor's pack is released")
+      Check(SendaNav.IsLoaded(1), "Kalimdor's pack stays loaded (the client could not load it again)")
       Check(ArrowInfo() == S().L.ARROW_OTHER_CONTINENT, "the old target is on another continent", ArrowInfo())
       NavTarget(E, 54, 10, "Al otro lado (EK)")
       NavWait(5)
@@ -368,12 +379,56 @@ const scenarios = [
       Section("back to Kalimdor")
       NavGo(K, 10, 10)
       Sim.Advance(0.5)
-      Check(not SendaNav.IsLoaded(0), "EK's pack is released in turn")
+      Check(SendaNav.IsLoaded(0) and SendaNav.IsLoaded(1), "both packs stay loaded")
       NavTarget(K, 54, 10, "Otra vez")
-      Sim.Advance(1)
-      Check(NavState().packFail[1] == "unloaded", "Kalimdor's pack cannot come back until /reload", tostring(NavState().packFail[1]))
-      Check(not NavState().shown and Near(SendaArrow.arrow:GetRotation(), StraightAim()), "straight arrow instead")
+      NavWait(5)
+      Sim.Advance(Sim.FRAME)
+      Check(NavState().packFail[1] == nil and NavState().shown, "back in Kalimdor the arrow follows a path again, no /reload",
+        tostring(NavState().packFail[1]))
       Check(LoadsOf("Senda_Nav_Kalimdor") == 1, "the client was asked for Kalimdor's pack only once", LoadsOf("Senda_Nav_Kalimdor"))
+      Check(#Sim.errors == 0, "no Lua errors")
+    `,
+  },
+  {
+    id: 'quest-superseded',
+    title: 'Chain: an errand step is done once the next quest of the chain is in the log (Lago -> Gakin, gnome warlock)',
+    char: 'gnome-warlock',
+    lua: PRELUDE + L_`
+      Login()
+      Sim.Advance(2)
+      local E, p = S().Engine, Sim.player
+      p.level = 21
+      Sim.Fire("PLAYER_LEVEL_UP", 21, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      local i = StepIndexOf("wl-succubus-001")
+      Check(i ~= nil, "step wl-succubus-001 (Lago Blackwrench's errand) exists")
+      E:JumpTo(i)
+      Sim.Advance(1)
+      Check(StepId() == "wl-succubus-001", "Lago's errand is current", StepId())
+      Sim.AcceptQuest(1716)
+      Sim.Advance(1)
+      Check(StepId() ~= "wl-succubus-001" and StepId() ~= "wl-succubus-002",
+        "with Devourer of Souls (1716) in the log, the errand (1717) and its turn-in are passed", StepId())
+      Check(#Sim.errors == 0, "no Lua errors")
+    `,
+  },
+  {
+    id: 'arrow-tram',
+    title: 'Arrow inside the Deeprun Tram (no position): says to ride the tram instead of «position unavailable»',
+    char: 'gnome-warlock',
+    lua: PRELUDE + L_`
+      Login()
+      Sim.Advance(2)
+      local L = S().L
+      S().Arrow:SetTarget(1455, 47.6, 9.3, "Lago", "manual")
+      Sim.Advance(0.2)
+      _G.GetInstanceInfo = function() return "Tranvía subterráneo", "none", 0, "", 0, 0, false, 369 end
+      S().Compat.PlayerMapPos = function() return nil end
+      Sim.Advance(0.2)
+      Check(ArrowInfo() == L.ARROW_TRAM, "inside the tram the arrow says to ride it", ArrowInfo())
+      _G.GetInstanceInfo = function() return "Otro", "party", 1, "", 5, 0, false, 36 end
+      Sim.Advance(0.2)
+      Check(ArrowInfo() == L.ARROW_NO_POSITION, "elsewhere without a position: «position unavailable»", ArrowInfo())
       Check(#Sim.errors == 0, "no Lua errors")
     `,
   },

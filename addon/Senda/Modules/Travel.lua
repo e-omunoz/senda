@@ -616,6 +616,9 @@ T.Duration = Dur
 local RIDE_FMT = { boat = "TRAVEL_BOAT", zeppelin = "TRAVEL_ZEPPELIN", tram = "TRAVEL_TRAM" }
 local RIDE_DEFAULT = { TRAVEL_BOAT = "barco a %s", TRAVEL_ZEPPELIN = "zepelín a %s", TRAVEL_TRAM = "tranvía a %s" }
 
+local BOARD_FMT = { fly = "TRAVEL_GO_FLY", boat = "TRAVEL_GO_BOAT", zeppelin = "TRAVEL_GO_ZEPPELIN",
+  tram = "TRAVEL_GO_TRAM", portal = "TRAVEL_GO_PORTAL" }
+
 -- Trozos del camino, uno por tramo que no sea «andar» (más «ve a X» al principio y «a pie» al final).
 function T.Pieces(legs)
   local pieces = {}
@@ -625,7 +628,10 @@ function T.Pieces(legs)
       if i == #legs then
         if leg.secs >= 15 then pieces[#pieces + 1] = L.TRAVEL_WALK or "a pie" end
       elseif i == 1 and (leg.yards or 0) > NEAR_BOARD then
-        pieces[#pieces + 1] = format(L.TRAVEL_GO or "ve a %s", to)
+        -- «ve al tranvía de Ventormenta», no «ve a Ventormenta» (puede que ya estés en la ciudad)
+        local nx = legs[2]
+        local key = nx and (BOARD_FMT[nx.how == "ride" and nx.kind or nx.how]) or nil
+        pieces[#pieces + 1] = format((key and L[key]) or L.TRAVEL_GO or "ve a %s", to)
       end
     elseif leg.how == "fly" then
       pieces[#pieces + 1] = format(L.TRAVEL_FLY or "vuela a %s", to) .. " (" .. Dur(leg.secs) .. ")"
@@ -646,7 +652,7 @@ end
 local function PlanLine(plan)
   local pieces = T.Pieces(plan.legs)
   if #pieces == 0 then return nil end
-  return format(L.TRAVEL_LINE or "Camino más rápido: %s", table.concat(pieces, L.TRAVEL_SEP or " → "))
+  return format(L.TRAVEL_LINE or "Camino más rápido: %s", table.concat(pieces, L.TRAVEL_SEP or " » "))
 end
 
 -- ¿El camino es solo andar? (entonces no se enseña nada: la flecha ya apunta al destino)
