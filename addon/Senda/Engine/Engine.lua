@@ -358,6 +358,9 @@ function Engine:Evaluate(reason)
     else
       local r = Cond:Check(step, self.state)
       if r ~= true and step["do"] == "goto" and self:GotoObsolete(self.index) then r = true end
+      if r == true and Senda.Party and Senda.Party.Holds and Senda.Party.Holds(e) then
+        r = false -- en pareja: tu compañero aún necesita objetivos de este paso (Modules/Party.lua)
+      end
       if r == true and self.held and self.held.id == step.id and self.held.wasDone then
         r = false -- el usuario volvió a este paso a propósito: se queda hasta "Hecho"
       end

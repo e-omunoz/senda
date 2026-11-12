@@ -1912,21 +1912,276 @@ const scenarios = [
       Check(StepId() == "netd-017", "Done moves on to where you were", StepId())
     `,
   },
+  {
+    id: 'duo',
+    title: 'Duo sync (two clients): hello, snapshots, counts, steps ahead/behind, hold, skip to my step, 40-quest log',
+    char: 'gnome-warlock',
+    duo: { char: 'nightelf-druid', name: 'Lunaria' },
+    lua: L_`
+      Peer("Login()")
+      Login()
+      DuoGuide()
+      Peer("DuoGuide()")
+      Sim.Advance(1)
+      Sim.AcceptQuest(9001, { { "Jabalíes muertos", 8 } })
+      Sim.ProgressQuest(9001, 1, 3)
+      Peer([[Sim.AcceptQuest(9001, { { "Jabalíes muertos", 8 } }); Sim.ProgressQuest(9001, 1, 1)]])
+      Sim.Advance(1)
+      Check(StepId() == "dp-002" and Peer("return StepId()") == "dp-002", "both on dp-002 (complete 9001)", StepId())
+      Check(#Sim.AddonTexts("Senda") == 0, "solo: nothing sent")
+
+      Section("hello and snapshots both ways")
+      local before = #Sim.addonSent
+      DuoJoin("Lunaria", "DRUID", "NightElf")
+      Peer([[DuoJoin("Pruebas", "WARLOCK", "Gnome")]])
+      Sim.Advance(1)
+      local first = Sim.AddonTexts("Senda", before + 1)
+      Check(#first == 0, "nothing goes out at once (the hello waits for the others to listen)", table.concat(first, " "))
+      Sim.Advance(12)
+      local sent = Sim.AddonTexts("Senda", before + 1)
+      Check(sent[1] and sent[1]:match("^1[HR]|") ~= nil, "the first message is the hello (or the answer to hers)", sent[1])
+      local m = DuoMember("Lunaria")
+      Check(m ~= nil, "A heard Lunaria's Senda")
+      Check(DuoLog("Lunaria") == "9001:1/8", "A has Lunaria's log from her snapshot", DuoLog("Lunaria"))
+      Check(Peer([[return DuoLog("Pruebas")]]) == "9001:3/8", "B has A's log from A's snapshot", Peer([[return DuoLog("Pruebas")]]))
+      local snap = false
+      for _, t in ipairs(sent) do if t:match("^1[SR]|") then snap = true end end
+      Check(snap, "A sent a snapshot (1S/1R)")
+      Check(m and m.at and m.at.key == "dp-002", "A knows Lunaria's step by key (2P)", m and m.at and m.at.key)
+      Check(m and m.unit and m.unit.class == "DRUID", "A knows Lunaria's class (2U)")
+      Check(Plain(SendaHUD.duo:GetText()):find("Lunaria está en tu paso", 1, true) ~= nil, "HUD duo line: on your step", SendaHUD.duo:GetText())
+
+      Section("one count change -> one message within ~2 s")
+      before = #Sim.addonSent
+      Sim.ProgressQuest(9001, 1, 4)
+      Sim.Advance(1.5)
+      Check(#Sim.AddonTexts("Senda", before + 1) == 0, "debounced: nothing after 1.5 s")
+      Sim.Advance(1)
+      sent = Sim.AddonTexts("Senda", before + 1)
+      Check(#sent == 1 and sent[1] == "1|9001:4/8", "exactly one delta message", table.concat(sent, " "))
+      Sim.Advance(0.5)
+      Check(Peer([[return DuoLog("Pruebas")]]) == "9001:4/8", "B sees 4/8")
+
+      Section("hold: A finished, Lunaria still needs the objective")
+      Sim.ProgressQuest(9001, 1, 8)
+      Sim.Advance(3)
+      Check(StepId() == "dp-002", "A stays on dp-002 while Lunaria needs 1/8", StepId())
+      Check(SendaHUD.duoWait:IsShown() and Plain(SendaHUD.duoWait:GetText()) == "Espera a Lunaria: le falta 1/8", "HUD: wait line", SendaHUD.duoWait:GetText())
+      Check(SendaHUD.goOn:IsShown(), "HUD: 'Seguir sin él' button")
+      Check(S().Party.HoldsQuest(9001), "no automatic turn-in while she needs it")
+      Peer([[Sim.ProgressQuest(9001, 1, 8)]])
+      Sim.Advance(4)
+      Check(StepId() == "dp-003", "A moves on once Lunaria is done: the warlock-only step", StepId())
+      Check(not SendaHUD.goOn:IsShown(), "no wait line any more")
+
+      Section("ahead/behind by step key, a warlock-only step between")
+      Check(Peer("return StepId()") == "dp-004", "B skipped A's class step: on dp-004", Peer("return StepId()"))
+      Sim.Advance(3)
+      Check(S().Party.StepsApart(DuoMember("Lunaria")) == 0, "A: dp-003 (warlock) vs dp-004 counts 0 shared steps", S().Party.StepsApart(DuoMember("Lunaria")))
+      Check(Peer([[return S().Party.StepsApart(DuoMember("Pruebas"))]]) == 0, "B: the same from the other side")
+      Sim.Click(SendaHUD.done)
+      Sim.Advance(3)
+      Check(StepId() == "dp-004", "A on dp-004 after Done", StepId())
+      Peer([[Sim.TurnInQuest(9001)]])
+      Sim.Advance(3)
+      Peer([[Sim.AcceptQuest(9002, { { "Lobos", 5 } })]])
+      Sim.Advance(4)
+      Check(Peer("return StepId()") == "dp-006", "B on dp-006", Peer("return StepId()"))
+      Check(S().Party.StepsApart(DuoMember("Lunaria")) == 2, "A: Lunaria 2 steps ahead", S().Party.StepsApart(DuoMember("Lunaria")))
+      Check(Peer([[return S().Party.StepsApart(DuoMember("Pruebas"))]]) == -2, "B: Pruebas 2 steps behind")
+      Check(Plain(SendaHUD.duo:GetText()):find("Lunaria va 2 pasos por delante", 1, true) ~= nil, "HUD says 2 steps ahead", SendaHUD.duo:GetText())
+      Check(Plain(SendaHUD.duo:GetText()):find("ya la entregó", 1, true) ~= nil, "HUD: she already handed in this step's quest", SendaHUD.duo:GetText())
+      local near = S().Party.TheirDoneNear(DuoMember("Lunaria"))
+      Check(near[1] == 9001, "Lunaria's done quests near your step: 9001", near[1])
+
+      Section("ask to skip to my step: decline, then accept")
+      Peer([[S().Party.RequestSync()]])
+      Sim.Advance(1)
+      Check(Sim.lastPopup ~= nil and Sim.lastPopup.which == "SENDA_PARTY_SYNC", "A gets the prompt")
+      Check(Sim.lastPopup and Sim.lastPopup.text:find("Lunaria te pide que saltes a su paso", 1, true) ~= nil, "prompt text", Sim.lastPopup and Sim.lastPopup.text)
+      Sim.DeclinePopup()
+      Sim.Advance(1)
+      Check(StepId() == "dp-004", "declined: A stays on dp-004", StepId())
+      Check(Peer([[for i = #Sim.chat, 1, -1 do if Sim.chat[i]:find("prefiere seguir en su paso", 1, true) then return true end end return false]]), "B hears the decline")
+      Sim.Advance(31)
+      Peer([[S().Party.RequestSync()]])
+      Sim.Advance(1)
+      Check(Sim.AcceptPopup(), "A accepts the second request")
+      Sim.Advance(2)
+      Check(StepId() == "dp-005", "accepted: A jumped to dp-005 (the first step of hers it can do: accept 9002)", StepId())
+      Check(Peer([[for i = #Sim.chat, 1, -1 do if Sim.chat[i]:find("ha saltado a tu paso", 1, true) then return true end end return false]]), "B hears the accept")
+
+      Section("/senda pareja")
+      local lines = Slash("pareja debug")
+      local joined = table.concat(lines, "|")
+      Check(joined:find("prefijo Senda registrado: sí", 1, true) ~= nil and joined:find("oídos", 1, true) ~= nil and joined:find("oído Lunaria", 1, true) ~= nil,
+        "/senda pareja debug shows prefix, sends and messages heard", joined)
+      Slash("pareja")
+      Slash("pareja seguir")
+      Slash("pareja nada")
+      S().UI:ShowPanel(); S().UI:ShowTab("duo"); Sim.Advance(1)
+      for _, t in ipairs(Sim.tabs) do if t.key == "duo" and t.refresh then Sim.SafeCall("duo tab", t.refresh) end end
+
+      Section("a 40-quest log splits under 255 bytes and decodes identical")
+      for i = 1, 39 do
+        local q = 9100 + i
+        Sim.AcceptQuest(q, { { "Uno", 15 }, { "Dos", 10 }, { "Tres", 120 } })
+        local o = Sim.player.quests[q].objectives
+        o[1].have, o[2].have, o[3].have = i % 15, i % 10, (i * 7) % 120
+      end
+      before = #Sim.addonSent
+      Sim.Fire("QUEST_LOG_UPDATE")
+      Sim.Advance(4)
+      sent = Sim.AddonTexts("Senda", before + 1)
+      local deltas, longest = 0, 0
+      for _, t in ipairs(sent) do
+        if t:match("^1|") then deltas = deltas + 1 end
+        longest = math.max(longest, #t)
+      end
+      local nq = 0
+      for _ in pairs(S().Party.ReadLog()) do nq = nq + 1 end
+      Check(nq == 40, "A has 40 quests", nq)
+      Check(deltas >= 3 and longest <= 255, "split into " .. deltas .. " messages, longest " .. longest .. " bytes")
+      Sim.Advance(1)
+      Check(Peer([[return DuoLog("Pruebas")]]) == DuoLog(), "B decodes exactly A's log", Peer([[return DuoLog("Pruebas")]]))
+      local a, b = S().Party.Encode, S().Party.Decode
+      local entries = {}
+      for i = 1, 40 do entries[i] = { q = 100000 + i, counts = { { 999, 999 }, { 12, 15 }, { 0, 3 } } } end
+      local msgs = a(entries, true, false)
+      local back, ok = {}, true
+      for i, t in ipairs(msgs) do
+        if #t > 255 then ok = false end
+        local snap, list = b(t)
+        if (i == 1) ~= snap then ok = false end
+        for _, e in ipairs(list or {}) do back[#back + 1] = e end
+      end
+      Check(ok and #back == 40 and back[40].q == 100040 and back[40].counts[3][2] == 3, "Encode/Decode round trip (" .. #msgs .. " messages)")
+      Check(#Sim.apiErrors == 0, "no oversized or malformed send")
+    `,
+  },
+  {
+    id: 'duo2',
+    title: 'Duo sync (two clients): a refused send is retried; Seguir sin él; partner offline 120 s releases the hold',
+    char: 'gnome-warlock',
+    duo: { char: 'nightelf-druid', name: 'Lunaria' },
+    lua: L_`
+      Peer("Login()")
+      Login()
+      DuoGuide()
+      Peer("DuoGuide()")
+      Sim.AcceptQuest(9001, { { "Jabalíes muertos", 8 } })
+      Peer([[Sim.AcceptQuest(9001, { { "Jabalíes muertos", 8 } })]])
+      DuoJoin("Lunaria", "DRUID", "NightElf")
+      Peer([[DuoJoin("Pruebas", "WARLOCK", "Gnome")]])
+      Sim.Advance(12)
+      Check(DuoMember("Lunaria") ~= nil and Peer([[return DuoMember("Pruebas") ~= nil]]), "both synced")
+
+      Section("refused send (throttle) is retried")
+      local before = #Sim.addonSent
+      Sim.addonFault = 2
+      Sim.ProgressQuest(9001, 1, 2)
+      Sim.Advance(2.5)
+      local refused = 0
+      for i = before + 1, #Sim.addonSent do
+        if Sim.addonSent[i].result == Enum.SendAddonMessageResult.AddonMessageThrottle then refused = refused + 1 end
+      end
+      Check(refused == 1, "the client refused the delta", refused)
+      Check(Peer([[return DuoLog("Pruebas")]]) == "9001:0/8", "B has not got it yet")
+      Sim.Advance(8)
+      local sent = Sim.AddonTexts("Senda", before + 1)
+      Check(#sent == 1 and sent[1] == "1|9001:2/8", "sent once it went through", table.concat(sent, " "))
+      Check(Peer([[return DuoLog("Pruebas")]]) == "9001:2/8", "B got it after the retry")
+      Check(S().Party.Diag().refused == 2, "two refusals counted", S().Party.Diag().refused)
+
+      Section("Seguir sin él")
+      Sim.ProgressQuest(9001, 1, 8)
+      Sim.Advance(3)
+      Check(StepId() == "dp-002" and SendaHUD.goOn:IsShown(), "held on dp-002", StepId())
+      Sim.Click(SendaHUD.goOn)
+      Sim.Advance(2)
+      Check(StepId() == "dp-003", "'Seguir sin él' lets A go on", StepId())
+      Check(not S().Party.HoldsQuest(9001), "the quest is released")
+
+      Section("partner offline: the hold lasts 120 s")
+      Sim.Click(SendaHUD.done)
+      Sim.TurnInQuest(9001)
+      Sim.Advance(2)
+      Sim.AcceptQuest(9002, { { "Lobos", 5 } })
+      Peer([[Sim.AcceptQuest(9002, { { "Lobos", 5 } })]])
+      Sim.Advance(4)
+      Check(StepId() == "dp-006", "A on dp-006", StepId())
+      Sim.FinishQuestObjectives(9002)
+      Sim.Advance(3)
+      Check(StepId() == "dp-006" and SendaHUD.goOn:IsShown(), "held: Lunaria needs 0/5", SendaHUD.duoWait:GetText())
+      Sim.party[1].offline = true
+      Sim.Fire("UNIT_CONNECTION", "party1", false)
+      Sim.Advance(60)
+      Check(StepId() == "dp-006", "still held 60 s after she went offline", StepId())
+      Sim.Advance(62)
+      Check(StepId() ~= "dp-006", "released after 120 s offline", StepId())
+    `,
+  },
+  {
+    id: 'duo3',
+    title: 'Duo sync: nothing sent in a raid or to a party member without Senda (only the hello)',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      Sim.AcceptQuest(9001, { { "Jabalíes muertos", 8 } })
+      Section("raid")
+      Sim.raid = true
+      DuoJoin("Ana", "MAGE", "Human")
+      Sim.ProgressQuest(9001, 1, 2)
+      Sim.Advance(15)
+      Check(#Sim.addonSent == 0, "in a raid nothing is sent", #Sim.addonSent)
+      local lines = Slash("pareja")
+      Check(table.concat(lines, "|"):find("En banda no se sincroniza nada", 1, true) ~= nil, "/senda pareja says so")
+      Section("party member without Senda")
+      Sim.raid = false
+      Sim.Fire("GROUP_ROSTER_UPDATE")
+      Sim.Advance(10)
+      Sim.ProgressQuest(9001, 1, 3)
+      Sim.Advance(5)
+      Sim.Fire("PLAYER_LEVEL_UP", 2, 0, 0, 0, 0, 0, 0, 0, 0)
+      S().Engine:Skip()
+      Sim.Advance(5)
+      local sent = Sim.AddonTexts()
+      Check(#sent == 1 and sent[1]:match("^1H|") ~= nil, "only the hello went out", table.concat(sent, " "))
+      Check(Sim.addonSent[1].channel == "PARTY", "on the party channel")
+      Check(not S().Party.RequestSync(), "no skip request without a partner")
+      Check(SendaHUD.duo:GetText() == "" or not SendaHUD.duo:IsShown(), "no duo line on the HUD")
+      lines = Slash("pareja debug")
+      Check(table.concat(lines, "|"):find("enviados 1", 1, true) ~= nil, "/senda pareja debug counts the hello", table.concat(lines, "|"))
+      Section("a second hello only for someone new")
+      Sim.party[2] = { name = "Bruno", class = "WARRIOR", race = "Dwarf", level = 1, quests = {} }
+      Sim.Fire("GROUP_ROSTER_UPDATE")
+      Sim.Advance(6)
+      Check(#Sim.AddonTexts() == 2, "one more hello when Bruno joins", #Sim.AddonTexts())
+      Sim.Fire("GROUP_ROSTER_UPDATE")
+      Sim.Advance(6)
+      Check(#Sim.AddonTexts() == 2, "no hello for the same roster")
+    `,
+  },
 ];
 
 // ---------------------------------------------------------------------------
 // Runner
 // ---------------------------------------------------------------------------
 
-function runScenario(sc, carry) {
-  const report = {};
-  const L = newState(report);
+// Two-player mode (scenario `duo: { char, name }`): a second Lua state is the partner's client. Every
+// C_ChatInfo.SendAddonMessage of one reaches the other as CHAT_MSG_ADDON BUS_LATENCY seconds later (in
+// order). The main state drives the clock: each of its frames first advances the partner's clock to the
+// same time. The scenario runs in the main state; Peer("lua code") runs code in the partner's state and
+// returns its first result (string, number, boolean or nil). The partner's own errors fail the scenario.
+const BUS_LATENCY = 0.1;
+
+function bootState(L, sc, carry, char, name) {
   for (const f of MOCK_FILES) {
     const err = runFile(L, f);
-    if (err) return { report, fatal: 'mock ' + path.basename(f) + ': ' + err };
+    if (err) return 'mock ' + path.basename(f) + ': ' + err;
   }
   let err = runFile(L, SCENARIO_HELPERS);
-  if (err) return { report, fatal: 'scenario.lua: ' + err };
+  if (err) return 'scenario.lua: ' + err;
   const saved = sc.wipeSaved ? '' : carry.saved || ''; // wipeSaved: the SavedVariables were lost
   const prelude = `
     SIM_ROOT = ${JSON.stringify(ADDON_ROOT)}
@@ -1934,7 +2189,14 @@ function runScenario(sc, carry) {
     SIM_EXPECT_STEP = ${JSON.stringify(carry.expectStep || null)}
     SIM_EXPECT_DONE = ${Number(carry.expectDone || 0)}
     Sim.locale = ${JSON.stringify(sc.locale || 'esES')}
-    local cfg = Sim.CHARS[${JSON.stringify(sc.char)}]
+    -- The preset itself (scenarios may change it before Login()); a copy only to give it another name.
+    local cfg = Sim.CHARS[${JSON.stringify(char)}]
+    if ${JSON.stringify(name || null)} then
+      local named = {}
+      for k, v in pairs(cfg) do named[k] = v end
+      named.name = ${JSON.stringify(name || null)}
+      cfg = named
+    end
     Sim.SetupCharacter(cfg)
     Sim.CreateGlobalFrames()
     Sim.ImportWorld(${JSON.stringify(carry.world || '')})
@@ -1952,13 +2214,121 @@ function runScenario(sc, carry) {
     end
   `;
   err = run(L, prelude, '=prelude');
-  if (err) return { report, fatal: 'prelude: ' + err };
+  if (err) return 'prelude: ' + err;
+  return null;
+}
+
+// Pushes a JS value onto a Lua stack (string, number, boolean; anything else as nil).
+function pushValue(L, v) {
+  if (typeof v === 'string') pushJsString(L, v);
+  else if (typeof v === 'number') lua.lua_pushnumber(L, v);
+  else if (typeof v === 'boolean') lua.lua_pushboolean(L, v);
+  else lua.lua_pushnil(L);
+}
+
+// Reads the value at `idx` of a Lua stack as a JS value (tables and functions become their type name).
+function readValue(L, idx) {
+  const t = lua.lua_type(L, idx);
+  if (t === lua.LUA_TNUMBER) return lua.lua_tonumber(L, idx);
+  if (t === lua.LUA_TSTRING) return lua.lua_tojsstring(L, idx);
+  if (t === lua.LUA_TBOOLEAN) return lua.lua_toboolean(L, idx);
+  if (t === lua.LUA_TNIL || t === lua.LUA_TNONE) return null;
+  return '<' + to_jsstring(lua.lua_typename(L, t)) + '>';
+}
+
+// Wires the message bus between two states (send, receive) and, on the main one, Peer() and the clock.
+function wireBus(A, B) {
+  const queues = new Map([[A, []], [B, []]]);
+  for (const [self, other] of [[A, B], [B, A]]) {
+    lua.lua_pushjsfunction(self, (L) => {
+      queues.get(other).push({
+        prefix: lua.lua_tojsstring(L, 1), text: lua.lua_tojsstring(L, 2), channel: lua.lua_tojsstring(L, 3),
+        due: lua.lua_tonumber(L, 4) + BUS_LATENCY, sender: lua.lua_tojsstring(L, 5),
+      });
+      return 0;
+    });
+    lua.lua_setglobal(self, to_luastring('__busSend'));
+    lua.lua_pushjsfunction(self, (L) => {
+      const now = lua.lua_tonumber(L, 1);
+      const q = queues.get(self);
+      if (!q.length || q[0].due > now + 1e-9) return 0;
+      const m = q.shift();
+      for (const v of [m.prefix, m.text, m.channel, m.sender]) pushJsString(L, v);
+      return 4;
+    });
+    lua.lua_setglobal(self, to_luastring('__busRecv'));
+  }
+  lua.lua_pushjsfunction(A, (L) => {
+    const t = lua.lua_tonumber(L, 1);
+    const err = run(B, `Sim.AdvanceTo(${t})`, '=peer clock');
+    if (err) run(B, `Sim.RecordError(${JSON.stringify(err)}, "peer clock")`, '=x');
+    return 0;
+  });
+  lua.lua_setglobal(A, to_luastring('__peerSync'));
+  lua.lua_pushjsfunction(A, (L) => {
+    const code = lua.lua_tojsstring(L, 1);
+    lua.lua_getglobal(B, to_luastring('debug'));
+    lua.lua_getfield(B, -1, to_luastring('traceback'));
+    lua.lua_remove(B, -2);
+    const base = lua.lua_gettop(B);
+    let st = lauxlib.luaL_loadbuffer(B, to_luastring(code), null, to_luastring('=peer'));
+    if (st === lua.LUA_OK) st = lua.lua_pcall(B, 0, 1, base);
+    if (st !== lua.LUA_OK) {
+      const err = lua.lua_tojsstring(B, -1);
+      lua.lua_settop(B, base - 1);
+      lua.lua_pushnil(L);
+      pushJsString(L, err);
+      return 2;
+    }
+    const v = readValue(B, -1);
+    lua.lua_settop(B, base - 1);
+    pushValue(L, v);
+    return 1;
+  });
+  lua.lua_setglobal(A, to_luastring('__peer'));
+  const err = run(B, 'local out = Sim.Out; Sim.Out = function(s) out("  [peer]" .. tostring(s)) end', '=peer out');
+  if (err) return err;
+  return run(A, `
+    table.insert(Sim.frameHooks, 1, function() __peerSync(Sim.time) end)
+    function Peer(code)
+      local v, err = __peer(code)
+      if err then Sim.RecordError(err, "Peer()") end
+      return v
+    end
+  `, '=bus');
+}
+
+function runScenario(sc, carry) {
+  const report = {};
+  const L = newState(report);
+  let err = bootState(L, sc, carry, sc.char, sc.name);
+  if (err) return { report, fatal: err };
+  let peerReport = null;
+  let B = null;
+  if (sc.duo) {
+    peerReport = {};
+    B = newState(peerReport);
+    err = bootState(B, sc, {}, sc.duo.char, sc.duo.name);
+    if (err) return { report, fatal: 'peer ' + err };
+    err = wireBus(L, B);
+    if (err) return { report, fatal: 'bus: ' + err };
+  }
   err = run(L, sc.lua, '=scenario ' + sc.id);
   if (err) {
     run(L, `Sim.RecordError(${JSON.stringify(err)}, "scenario body")`, '=x');
   }
   err = run(L, 'Sim.Finish()', '=finish');
   if (err) return { report, fatal: 'finish: ' + err };
+  if (B) {
+    err = run(B, 'Sim.Finish()', '=peer finish');
+    if (err) return { report, fatal: 'peer finish: ' + err };
+    report.failures = (report.failures || 0) + (peerReport.failures || 0);
+    report.checks = (report.checks || 0) + (peerReport.checks || 0);
+    if (peerReport.failureText) {
+      const peerText = peerReport.failureText.split('\n').map((l) => 'peer: ' + l).join('\n');
+      report.failureText = report.failureText ? report.failureText + '\n' + peerText : peerText;
+    }
+  }
   return { report };
 }
 

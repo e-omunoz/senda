@@ -12,6 +12,7 @@
   <Script file="Disenchant.lua"/>
   <Script file="Advisor.lua"/>
   <Script file="Character.lua"/>
+  <Script file="Party.lua"/>
   <Script file="Duo.lua"/>
   <Script file="Bars.lua"/>
   <Script file="SpellCards.lua"/>

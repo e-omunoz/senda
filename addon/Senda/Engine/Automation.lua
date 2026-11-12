@@ -29,6 +29,8 @@ function Engine:WantsQuest(kind, q)
   local cur = self.steps[self.index]
   if not cur then return false end
   if kind == "turnin" then
+    -- En pareja, si tu compañero aún no ha terminado esa misión, no se entrega sola (Modules/Party.lua).
+    if Senda.Party and Senda.Party.HoldsQuest and Senda.Party.HoldsQuest(q) then return false end
     -- El paso actual y los de su cadena (entregar A y coger B en el mismo PNJ). Si el actual es solo
     -- "ve a" (llegar al PNJ), también el siguiente pendiente.
     local base = { cur }

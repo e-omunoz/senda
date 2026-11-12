@@ -291,6 +291,15 @@ local function Create()
   f.banner.text:SetPoint("TOPLEFT", 0, -2)
   f.banner.text:SetPoint("RIGHT", f.banner.undo, "LEFT", -6, 0)
   f.banner:Hide()
+\n  -- Pareja (Modules/Party.lua): la espera al compañero y dónde va
+  f.duoWait = FS(f, "GameFontHighlightSmall", C.gold[1], C.gold[2], C.gold[3])
+  f.duoWait:SetPoint("RIGHT", -PAD, 0)
+  f.duo = FS(f, "GameFontHighlightSmall", C.text[1] * 0.85, C.text[2] * 0.85, C.text[3] * 0.85)
+  f.duo:SetPoint("RIGHT", -PAD, 0)
+  f.goOn = UI:Button(f, L.DUO_GO_ON, 110, 20, function()
+    if Senda.Party then Senda.Party.GoOn() end
+  end)
+  UI:Tooltip(f.goOn, L.DUO_GO_ON, L.DUO_GO_ON_TIP)
 
   -- Botones de una misión fallida o abandonada
   f.retake = UI:Button(f, L.QUEST_RETAKE, 110, 20, function()
@@ -505,6 +514,29 @@ function HUD:Refresh()
     y = y + bh + 4
   else
     f.banner:Hide()
+  end\n\n  -- Pareja: «Espera a Ana: le falta 3/8» con «Seguir sin él», y la línea de dónde va
+  local P = Senda.Party
+  local waitText = (not collapsed and P and P.HoldLine) and P.HoldLine() or nil
+  local duoText = (not collapsed and P and P.HudLine) and P.HudLine() or nil
+  f.duoWait:SetText(waitText or "")
+  f.duoWait:SetShown(waitText ~= nil)
+  f.goOn:SetShown(waitText ~= nil)
+  if waitText then
+    f.duoWait:ClearAllPoints()
+    f.duoWait:SetPoint("TOPLEFT", PAD, -y)
+    f.duoWait:SetPoint("RIGHT", -PAD, 0)
+    y = y + f.duoWait:GetStringHeight() + 4
+    f.goOn:ClearAllPoints()
+    f.goOn:SetPoint("TOPLEFT", PAD, -y)
+    y = y + 24
+  end
+  f.duo:SetText(duoText or "")
+  f.duo:SetShown(duoText ~= nil)
+  if duoText then
+    f.duo:ClearAllPoints()
+    f.duo:SetPoint("TOPLEFT", PAD, -y)
+    f.duo:SetPoint("RIGHT", -PAD, 0)
+    y = y + f.duo:GetStringHeight() + 4
   end
 
   -- Misión fallida o abandonada: volver a cogerla o saltarla
@@ -728,6 +760,7 @@ Events:On("SENDA_READY", function()
   end)
   Events:On("QUEST_DATA_LOAD_RESULT", refresh)
   Events:On("SENDA_NAMES_UPDATED", refresh)
+  Events:On("SENDA_PARTY_UPDATED", refresh)
   Events:On("GET_ITEM_INFO_RECEIVED", refresh)
   Events:On("PLAYER_REGEN_DISABLED", function()
     if Opt("hudCombatHide") and hud then hud:Hide() end

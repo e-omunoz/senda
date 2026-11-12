@@ -275,6 +275,36 @@ nada de acciones protegidas en combate):
 SemVer. `CHANGELOG.md` en español. El build escribe la versión en el `.toc`.
 Los releases empaquetan `Senda-<versión>.zip` (carpeta `Senda/`) desde GitHub Actions.
 
+## Pareja sincronizada (`Modules/Party.lua`)
+
+Protocolo propio inspirado en el de Polestar (`Quests/Party.lua`), con el prefijo `Senda`,
+`C_ChatInfo.RegisterAddonMessagePrefix` y `C_ChatInfo.SendAddonMessage` al canal `PARTY` (nunca en banda):
+
+| Mensaje | Cuándo | Qué lleva |
+|---|---|---|
+| `1H|<ver>` | Al entrar en un grupo, al iniciar sesión en uno o cuando entra alguien que aún no ha hablado Senda | Saludo. Hasta que alguien contesta no sale nada más |
+| `1R|…` / `1S|…` | Al oír un saludo (`R`: pide la tuya) o a alguien nuevo | Instantánea del registro: `33:5/8,0/1;60:` |
+| `1|…` | 2 s después del último cambio del registro | Solo las misiones que cambiaron (`60:-`: salió del registro) |
+| `1P|<índice>|<ver>|<guía>` | Con la instantánea | Informativo (versión) |
+| `2P|<paso>|<guía>` | Al cambiar de paso (2 s) | El paso por su `id`, no por su número |
+| `2D|<q>,…` | Con el paso | Misiones entregadas de los pasos cerca del tuyo |
+| `2U|<nivel>|<CLASE>|<Raza>|<ver>` | Con la instantánea y al subir de nivel | Para saber qué pasos son de los dos |
+| `2G|<paso>|<guía>` / `2A|<y,n,x,=,p>` | «Pedir que salte a mi paso» | Petición y respuesta (acepta, rechaza, no puede, ya está, ya va por delante) |
+
+- Todo mensaje cabe en 255 bytes; el registro (hasta 40 misiones) se parte por misiones enteras.
+- Los envíos van por una cola en orden: lo que el cliente rechaza (`Enum.SendAddonMessageResult` distinto de
+  `Success`, o `false` en clientes antiguos) se reintenta cada 3 s, hasta 6 veces. En combate no se lee el registro
+  (los valores pueden ser secretos): se envía al salir.
+- **Delante/detrás:** se cuentan los pasos de la guía completa (sin filtrar) entre tu paso y el suyo que son de los
+  dos (`if.class`, `if.race` de cada uno); los de una sola clase no cuentan.
+- **Espera:** en un paso `complete`, `Engine:Evaluate` pregunta a `Party.Holds(entry)` antes de dar el paso por
+  hecho, y `Engine:WantsQuest("turnin")` a `Party.HoldsQuest(q)`. Se deja de esperar con «Seguir sin él»
+  (`Party.GoOn`, hasta que termine el grupo), cuando el compañero termina, deja el grupo o lleva 120 s
+  desconectado.
+- **Saltar a su paso:** al aceptar se marcan como saltados los pasos hasta el suyo, salvo los que él no tiene (los
+  de tu clase) y los de coger misiones que su paso necesita.
+- Los nombres de los compañeros solo viven en memoria (nunca en `SendaDB`).
+
 ## Convivencia con otros addons
 
 - **Questie se mantiene instalado** (lo usa el jugador). Senda no dibuja iconos de misión en el mapa ni duplica
@@ -319,6 +349,8 @@ Senda.Engine:SkipQuestTree(q) -> info, :UndoSkip([info]), :UnskipAll(), :LastSki
 Senda.Guides:Followups(q) -> misiones que dependen de q (índice de Guides/Followups.lua)
 Senda.Report:Open(), :Context(), :Text(desc), :IssueURL(desc); Senda.Errors:Add(err), .list   -- informe de errores
 Senda.Visibility:Hidden(), :SetHidden(b), :Toggle()  -- ocultar HUD y flecha (instancias o a mano)
+Senda.Party.Members(), .StepsApart(m), .Holds(entry), .HoldsQuest(q), .GoOn(), .RequestSync()  -- pareja
+                                       --   (Modules/Party.lua; evento interno SENDA_PARTY_UPDATED)
 Senda.Arrow:SetTarget(map, x, y, label, source), :Clear(source)
 Senda.Knowledge:Register(t), :ForClass(class) -> lista de páginas
 Senda.UI:RegisterTab({ key, title, icon, order, build = function(parent) end, refresh = function() end })
