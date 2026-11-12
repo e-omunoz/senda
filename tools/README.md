@@ -193,6 +193,16 @@ python -m unittest discover -s tests -p "test_*.py" -v
 él) y cubre el escapado Lua, el validador de esquemas, los errores semánticos, el build completo, el zip e
 `install-dev`.
 
+## ingest_recording.py y route_report.py
+
+```
+python tools/ingest_recording.py WTF/Account/<cuenta>/SavedVariables/Senda.lua   # -> data/recordings/<fecha>-<hash>.json
+python tools/route_report.py [--guide ID] [--check]                              # medido frente a data/scores/<guía>.json
+```
+
+Detalle del formato, la privacidad y las reglas de tiempo en [docs/RECORDING.md](../docs/RECORDING.md). Tests:
+`python -m unittest tests.test_recording -v` y los escenarios `rec1 rec2 recpriv reccap` del simulador.
+
 ## enrich.py
 
 Añade a los datos hechos del juego que el cliente no puede consultar. Hoy rellena `reqlevel` (nivel mínimo para coger la misión) en los pasos `accept`, y `reqskill` (profesión requerida), leyendo la QuestieDB local o, si no está, forever-db (ver abajo). Ejecútalo después de añadir o cambiar rutas:

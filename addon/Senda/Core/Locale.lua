@@ -126,6 +126,18 @@ local esES = {
   RECORDER_COUNT = "Observaciones guardadas: %d",
   RECORDER_EXPORT_TITLE = "Observaciones (%d)",
   RECORDER_EXPORT_HINT = "Ctrl+C para copiar. También están en WTF/Account/<cuenta>/SavedVariables/Senda.lua",
+  OPT_RECORD_SESSION = "Grabar mis partidas para medir las rutas",
+  OPT_RECORD_SESSION_TIP = "Desactivado por defecto. Guarda en SendaRecorderDB los pasos, la experiencia, los combates, las ausencias, las muertes y las misiones, con la hora. Nunca guarda nombres de personaje ni de reino, chat ni compañeros de grupo (solo si vas en pareja o no).",
+  OPT_RECORD_TRAIL = "Incluir el rastro de posición en la grabación",
+  OPT_RECORD_TRAIL_TIP = "Un punto cada unos 2 s o 10 yardas, solo con la grabación activada. Se para solo tras 30 min sin moverte.",
+  SESSION_ON = "Grabación de partidas activada.",
+  SESSION_OFF = "Grabación de partidas desactivada.",
+  SESSION_STATE_ON = "sí",
+  SESSION_STATE_OFF = "no",
+  SESSION_STATUS = "Grabación: %s · fragmentos guardados: %d (%s) · rastro: %s",
+  SESSION_CLEARED = "Grabaciones borradas.",
+  SESSION_USAGE = "Uso: /senda grabar on|off|estado|limpiar|rastro on|off",
+  SESSION_HELP = "on|off|estado|limpiar|rastro — graba tus partidas para medir las rutas (desactivado por defecto)",
 
   -- Minimapa
   MINIMAP_TIP_LINES = {
@@ -244,6 +256,18 @@ local enUS = {
   RECORDER_COUNT = "Stored observations: %d",
   RECORDER_EXPORT_TITLE = "Observations (%d)",
   RECORDER_EXPORT_HINT = "Ctrl+C to copy. Also in WTF/Account/<account>/SavedVariables/Senda.lua",
+  OPT_RECORD_SESSION = "Record my play sessions to measure the routes",
+  OPT_RECORD_SESSION_TIP = "Off by default. Stores steps, experience, combat, away time, deaths and quests, with timestamps, in SendaRecorderDB. Never stores character or realm names, chat or group members (only whether you are in a duo).",
+  OPT_RECORD_TRAIL = "Include the position trail in the recording",
+  OPT_RECORD_TRAIL_TIP = "One point every ~2 s or 10 yards, only while recording. It stops by itself after 30 min without moving.",
+  SESSION_ON = "Session recording enabled.",
+  SESSION_OFF = "Session recording disabled.",
+  SESSION_STATE_ON = "yes",
+  SESSION_STATE_OFF = "no",
+  SESSION_STATUS = "Recording: %s · stored chunks: %d (%s) · trail: %s",
+  SESSION_CLEARED = "Recordings deleted.",
+  SESSION_USAGE = "Usage: /senda grabar on|off|estado|limpiar|rastro on|off",
+  SESSION_HELP = "on|off|estado|limpiar|rastro — record your play sessions to measure the routes (off by default)",
 
   MINIMAP_TIP_LINES = {
     "Click: hide or show everything (HUD and arrow)",

@@ -2164,6 +2164,8 @@ const scenarios = [
   },
 ];
 
+scenarios.push(...require('./scenarios_rec').scenarios);
+
 // ---------------------------------------------------------------------------
 // Runner
 // ---------------------------------------------------------------------------
@@ -2370,7 +2372,25 @@ function main() {
     const t0 = Date.now();
     const { report, fatal } = runScenario(sc, c);
     carry[sc.id] = report;
-    const failures = fatal ? 1 : report.failures || 0;
+    let failures = fatal ? 1 : report.failures || 0;
+    if (sc.post && !fatal) {
+      // node-side checks (they run the real tools on what the sim saved)
+      const extra = [];
+      let checks = 0;
+      const ctx = {
+        check(cond, msg, detail) {
+          checks++;
+          console.log(`  ${cond ? 'ok  ' : 'FAIL'} ${msg}${!cond && detail ? ' — ' + detail : ''}`);
+          if (!cond) extra.push(msg + (detail ? ' — ' + detail : ''));
+          return cond;
+        },
+      };
+      const res = sc.post(report, carry, ctx) || {};
+      if (res.warn) console.log('  WARN ' + res.warn);
+      for (const f of res.fail || []) { console.log('  FAIL ' + f); extra.push(f); }
+      failures += extra.length;
+      report.checks = (report.checks || 0) + checks;
+    }
     if (fatal) console.log('  FATAL ' + fatal);
     if (report.failureText) console.log('  failures:\n    ' + report.failureText.split('\n').join('\n    '));
     for (const m of (report.unknownMethods || '').split(', ').filter(Boolean)) allUnknown.add(m.replace(/ x\d+$/, ''));

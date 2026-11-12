@@ -277,6 +277,15 @@ function UnitIsGhost(u) unitArg(u, "UnitIsGhost"); return u == "player" and Sim.
 function UnitOnTaxi(u) unitArg(u, "UnitOnTaxi"); return u == "player" and Sim.player.onTaxi or false end
 function UnitAffectingCombat(u) return u == "player" and Sim.player.combat or false end
 function UnitXP(u) return Sim.player.xp end
+function UnitIsAFK(u) unitArg(u, "UnitIsAFK"); return u == "player" and Sim.player.afk == true or false end
+function GetRealmName() return Sim.player.realm or "Reino de Pruebas" end
+function GetNormalizedRealmName() return (GetRealmName():gsub("%s", "")) end
+function GetNumGroupMembers()
+  local n = 0
+  for _ in pairs(Sim.party) do n = n + 1 end
+  return n > 0 and n + 1 or 0
+end
+function IsInGroup() return next(Sim.party) ~= nil end
 function UnitXPMax(u) return Sim.player.xpMax end
 function UnitStat(u, i) num(i, "UnitStat", "statIndex"); return 20, 20 + i, 0, 0 end
 function UnitHealth(u) return 100 end
