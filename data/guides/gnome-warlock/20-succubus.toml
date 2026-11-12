@@ -49,10 +49,11 @@ sources = ["questie:quest/1716", "questie:npc/6122", "https://conquestcapped.com
 id = "wl-succubus-004"
 do = "train"
 reqlevel = 20
-spells = [1490, 706, 698, 5740]
+spells = [706, 698]
 npc = 461
 at = [1453, 39.2, 85.0]
-text = "Entrena con Demisette Cloyce, en la misma sala: Maldición de los elementos, Armadura demoníaca, Ritual de invocación y Lluvia de fuego."
+text = "Entrena con Demisette Cloyce, en la misma sala: Armadura demoníaca, Ritual de invocación y los rangos nuevos (Descarga de las Sombras, Inmolar, Cauce de salud)."
+tip = "Lluvia de fuego y Maldición de los elementos son opcionales: tu daño es de Sombras y Agonía es tu maldición."
 status = "unverified"
 sources = ["questie:npc/461", "legacy:BrujoGnomoGuia 4.1.0"]
 

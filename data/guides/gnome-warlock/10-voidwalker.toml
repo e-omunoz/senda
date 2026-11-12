@@ -156,6 +156,7 @@ sources = ["questie:quest/1689", "questie:npc/6122"]
 [[step]]
 id = "wl-voidwalker-014"
 do = "train"
+reqlevel = 10
 spells = [697]
 at = [1453, 39.2, 85.2]
 text = "Invoca al Abisario y ponlo en pasivo: lo mandas tú."

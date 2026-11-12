@@ -2,6 +2,15 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.4.1] - 2026-11-12
+
+### Corregido
+- **Listas del instructor de brujo, mago y druida regeneradas con los datos reales de Forever:** niveles, rangos y costes de los instructores de Forever (vía Polestar, GPL-3) y nombres en español leídos del propio cliente esES. Faltaban las subidas de rango (p. ej. al 20 el brujo entrena Descarga de las Sombras rango 4, Inmolar rango 3 y Cauce de salud rango 2).
+- Ids de Classic que tu cliente no reconoce: Maldición de los elementos ya no sale como «#1490» (en Forever es 440892); Revivir del druida en las barras usaba el rango 5 desde el nivel 12.
+- **Hechizos que tu build no usa, marcados como opcionales** con su motivo, y fuera de los pasos de entrenar: brujo (Lluvia de fuego, Maldición de los elementos, de debilidad y de temeridad, Drenar maná, Captar demonios, Detectar invisibilidad, piedras de fuego y de hechizos, Subyugar demonio, Llamas infernales, Fuego de alma, Custodia de las Sombras, Terror de fatalidad, Ritual de condena), mago (Empapar y Amplificar magia, custodias, portales salvo el de Ventormenta, Polimorfia: vaca, Resplandor Arcano) y druida (Calmar animal, Tranquilidad, Huracán).
+- La pestaña de hechizos ya no dice «entrena ya» en los opcionales ni en los de mascota o misión.
+- La tarjeta de nivel muestra el coste real de lo que toca entrenar.
+
 ## [0.4.0] - 2026-11-12
 
 ### Cambiado

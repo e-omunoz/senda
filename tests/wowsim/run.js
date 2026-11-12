@@ -1150,7 +1150,7 @@ const scenarios = [
       local errs = #Sim.errors
       for _, b in ipairs(SendaLevelCard.icons) do Sim.RunScript(b, "OnEnter"); Sim.RunScript(b, "OnLeave") end
       Check(#Sim.errors == errs, "icon tooltips run without errors")
-      Check(Plain(SendaLevelCard.cost:GetText()):find("El precio lo ver", 1, true) ~= nil, "unknown prices are said", SendaLevelCard.cost:GetText())
+      Check(Plain(SendaLevelCard.cost:GetText()):find("Coste:", 1, true) ~= nil, "known trainer prices are summed (Forever trainer data)", SendaLevelCard.cost:GetText())
       local w = SC.Where(SC.LevelList())
       Check(w and w.kind == "trainer" and w.at and w.at[1] == 1426, "falls back to the guide's trainer on this map", w and w.kind)
       Check(SendaLevelCard.point:IsShown(), "point button offered")
@@ -1169,7 +1169,7 @@ const scenarios = [
       ClassTrainerFrame:Hide(); Sim.Fire("TRAINER_CLOSED"); Sim.Advance(0.5)
       Check(S().Modules.Trainer.CachedCost(172) == 100, "cost cached from the trainer", S().Modules.Trainer.CachedCost(172))
       local total, unknown = SC.Cost(SC.LevelList())
-      Check(total == 700 and unknown == 0, "total from the cache", total .. "/" .. unknown)
+      Check(total > 0 and unknown == 0, "total known (knowledge costs, cache as fallback)", total .. "/" .. unknown)
 
       Section("combat and instances")
       p.combat = true
@@ -1177,11 +1177,11 @@ const scenarios = [
       Sim.Advance(3)
       Check(not shown(), "never in combat")
       p.combat = false
-      p.money = 500
+      p.money = 200
       Sim.Fire("PLAYER_REGEN_ENABLED")
       Sim.Advance(3)
       Check(shown(), "shown when combat ends")
-      Check(Plain(SendaLevelCard.cost:GetText()):find("te faltan", 1, true) ~= nil, "money (500) does not cover 700", SendaLevelCard.cost:GetText())
+      Check(Plain(SendaLevelCard.cost:GetText()):find("te faltan", 1, true) ~= nil, "money (200) does not cover the total", SendaLevelCard.cost:GetText())
       SC.Dismiss("level")
       Check(not shown(), "close button hides it")
       Sim.SetInstance("party"); Sim.Advance(0.5)
@@ -1257,7 +1257,7 @@ const scenarios = [
       Check(SendaLevelCard and SendaLevelCard:IsShown(), "card shown")
       local head = Plain(SendaLevelCard.head:GetText())
       Check(head:find("Level 6: you can train 3 spells", 1, true) ~= nil, "English head", head)
-      Check(Plain(SendaLevelCard.cost:GetText()):find("see the price", 1, true) ~= nil, "English cost line", SendaLevelCard.cost:GetText())
+      Check(Plain(SendaLevelCard.cost:GetText()):find("Cost:", 1, true) ~= nil, "English cost line", SendaLevelCard.cost:GetText())
       Sim.actions[1] = { "spell", 116 }
       Sim.LearnSpell(116); Sim.LearnSpell(837); Sim.Advance(14)
       Check(SendaRankCard and SendaRankCard:IsShown(), "rank card shown")

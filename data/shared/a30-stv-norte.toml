@@ -24,7 +24,7 @@ checked = "2026-11-11"
 id = "a30-stv-norte-dr-30"
 do = "train"
 reqlevel = 30
-spells = [783, 740]
+spells = [783]
 npc = 5504
 at = [1453, 35.84, 67.38]
 text = "Entrena el 30 con Sheldras Moontree, en El Parque de Ventormenta: Forma de viaje y Tranquilidad."
@@ -39,7 +39,7 @@ id = "a30-stv-norte-002"
 do = "train"
 reqlevel = 30
 npc = 5495
-spells = [1098, 1949]
+spells = [709, 1086, 2941, 20752]
 at = [1453, 39.89, 84.19]
 if = { class = ["WARLOCK"] }
 text = "Entrena el 30 con Ursula Deline, en la Taberna del Cordero Degollado (Ventormenta)."

@@ -246,7 +246,7 @@ Senda.Guides:RegisterSection({
   map = 1453,
   summary = "Nivel 20: Traslación, Evocación, Teletransporte a Ventormenta y Forjaz, y runas.",
   steps = {
-    { id = "mg-20-teleport-001", ["do"] = "train", npc = 5497, spells = {1953, 12051, 1463, 543, 10}, at = {1453, 49.6, 85.8}, text = "Nivel 20: aprende Traslación, Evocación, Escudo de maná, Custodia de Fuego y Ventisca.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified", reqlevel = 20 },
+    { id = "mg-20-teleport-001", ["do"] = "train", npc = 5497, spells = {1953, 12051, 1463, 10}, at = {1453, 49.6, 85.8}, text = "Nivel 20: aprende Traslación, Evocación, Escudo de maná, Custodia de Fuego y Ventisca.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified", reqlevel = 20 },
     { id = "mg-20-teleport-002", ["do"] = "train", npc = 2485, spells = {3561}, at = {1453, 50.4, 86.0}, text = "Aprende Teletransporte: Ventormenta con Larimaine Purdue, la instructora de portales del Sagrario.", tip = "Es tu mejor herramienta: vuelve a entrenar y a entregar en segundos.", status = "unverified", reqlevel = 20 },
     { id = "mg-20-teleport-003", ["do"] = "train", npc = 2485, spells = {3562}, at = {1453, 50.4, 86.0}, optional = true, text = "Aprende también Teletransporte: Forjaz.", tip = "Si Larimaine no te lo enseña, aprende en Forjaz con Milstaff Stormeye.", status = "unverified", reqlevel = 20 },
     { id = "mg-20-teleport-004", ["do"] = "buy", npc = 1308, item = 17031, count = 5, at = {1453, 47.4, 82.5}, text = "Compra Runas de Teletransporte en la tienda de componentes junto al Sagrario.", tip = "Cada teletransporte gasta una. Con el punto de Legacy Reagent Economy dejas de necesitarlas.", status = "unverified" },
@@ -367,7 +367,7 @@ Senda.Guides:RegisterSection({
   map = 1453,
   summary = "Nivel 40: Portal: Ventormenta y Forjaz.",
   steps = {
-    { id = "mg-40-train-001", ["do"] = "train", npc = 2485, spells = {10059, 11416}, at = {1453, 50.4, 86.0}, text = "Nivel 40: aprende Portal: Ventormenta y Portal: Forjaz con Larimaine Purdue.", tip = "Compra Runas de Portales. Vende portales en la ciudad: la gente deja propina.", status = "unverified", reqlevel = 40 },
+    { id = "mg-40-train-001", ["do"] = "train", npc = 2485, spells = {10059}, at = {1453, 50.4, 86.0}, text = "Nivel 40: aprende Portal: Ventormenta y Portal: Forjaz con Larimaine Purdue.", tip = "Compra Runas de Portales. Vende portales en la ciudad: la gente deja propina.", status = "unverified", reqlevel = 40 },
     { id = "mg-40-train-002", ["do"] = "note", npc = 5497, at = {1453, 49.6, 85.8}, text = "Entrena con Jennea Cannon Descarga de Pirofrío y los rangos nuevos.", tip = "Descarga de Pirofrío es nueva en Forever (Fuego y Escarcha, ralentiza).", status = "unverified" },
     { id = "mg-40-train-003", ["do"] = "note", at = {1429, 84.0, 65.0, "Establo de Vega del Este"}, optional = true, text = "Monta: el mago paga su equitación. Caballos en el campamento maderero de Vega del Este (Elwynn).", status = "unverified" },
   },
@@ -433,7 +433,7 @@ Senda.Guides:RegisterSection({
   map = 1453,
   summary = "Nivel 50: Portal: Darnassus, Teletransporte a Dalaran y la cadena de Azshara.",
   steps = {
-    { id = "mg-50-magecraft-001", ["do"] = "train", npc = 2485, spells = {11419}, at = {1453, 50.4, 86.0}, text = "Nivel 50: aprende Portal: Darnassus con Larimaine Purdue.", status = "unverified", reqlevel = 50 },
+    { id = "mg-50-magecraft-001", ["do"] = "train", npc = 5497, spells = {10139, 10160, 10180, 10219, 1237312}, at = {1453, 49.6, 85.8}, text = "Nivel 50: entrena los rangos nuevos con Jennea Cannon.", tip = "Portal: Darnassus (Larimaine Purdue, al lado) es opcional: solo sirve para llevar al grupo.", status = "unverified", reqlevel = 50 },
     { id = "mg-50-magecraft-002", ["do"] = "note", npc = 5497, at = {1453, 49.6, 85.8}, text = "Aprende Teletransporte: Dalaran (nuevo en Forever) y los rangos nuevos.", tip = "Gasta una Runa de Teletransporte.", status = "unverified" },
     { id = "mg-50-magecraft-003", ["do"] = "accept", quest = 8250, npc = 331, at = {1453, 49.2, 87.8}, text = "Coge de Maginor Dumas, en lo alto del Sagrario, la misión de Azshara.", tip = "Hazla cuando vayas a Azshara: la cadena da buenos objetos de mago.", status = "unverified", reqlevel = 50 },
   },
@@ -464,7 +464,7 @@ Senda.Guides:RegisterSection({
   map = 1453,
   summary = "Polimorfia: vaca y la cadena del Señor de la guerra Krellian.",
   steps = {
-    { id = "mg-60-krellian-001", ["do"] = "train", npc = 5497, spells = {28270}, at = {1453, 49.6, 85.8}, text = "Nivel 60: aprende Polimorfia: vaca.", tip = "También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz). Entrena además los rangos nuevos.", status = "unverified", reqlevel = 60 },
+    { id = "mg-60-krellian-001", ["do"] = "train", npc = 5497, spells = {10151, 10187, 10193, 10220, 12826, 1237313}, at = {1453, 49.6, 85.8}, text = "Nivel 60: entrena los rangos nuevos con Jennea Cannon.", tip = "Polimorfia: vaca es opcional (solo cambia el aspecto). También vale cualquier instructor de mago (Zaldimar en Villadorada, Bink en Forjaz).", status = "unverified", reqlevel = 60 },
     { id = "mg-60-krellian-002", ["do"] = "accept", quest = 9362, npc = 8379, at = {1447, 29.6, 40.4}, optional = true, text = "En Azshara, coge del Archimago Xylem la misión del Señor de la guerra Krellian.", status = "unverified", reqlevel = 60 },
     { id = "mg-60-krellian-003", ["do"] = "complete", quest = 9362, at = {1447, 41.0, 53.0}, optional = true, text = "Consigue la concha prismática de Krellian o de los Barbaescama.", status = "unverified" },
     { id = "mg-60-krellian-004", ["do"] = "turnin", quest = 9362, npc = 8379, at = {1447, 29.6, 40.4}, optional = true, text = "Entrega al Archimago Xylem.", status = "unverified" },

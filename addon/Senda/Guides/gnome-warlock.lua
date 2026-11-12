@@ -28,7 +28,7 @@ Senda.Guides:RegisterSection({
     { id = "coldridge-017", ["do"] = "accept", quest = 3365, npc = 836, at = {1426, 28.8, 66.4}, text = "Coge la jarra de vuelta de Durnan.", status = "unverified", reqlevel = 4 },
     { id = "coldridge-018", ["do"] = "turnin", quest = 3115, npc = 460, at = {1426, 28.6, 66.1}, text = "Entrega el memorando a Alamar Grimm, el instructor de brujo de Yunquemar.", status = "unverified" },
     { id = "coldridge-019", ["do"] = "accept", quest = 1599, npc = 460, at = {1426, 28.6, 66.1}, text = "Coge la misión del Diablillo de Alamar Grimm.", status = "unverified" },
-    { id = "coldridge-020", ["do"] = "train", npc = 460, spells = {348, 172, 702}, at = {1426, 28.6, 66.1}, text = "Entrena con Alamar Grimm: Inmolar, Corrupción y Maldición de debilidad.", tip = "Corrupción y Maldición de debilidad piden nivel 4. Si aún no lo tienes, entrena lo que puedas y vuelve al entregar el Diablillo.", status = "unverified", reqlevel = 4 },
+    { id = "coldridge-020", ["do"] = "train", npc = 460, spells = {348, 172}, at = {1426, 28.6, 66.1}, text = "Entrena con Alamar Grimm: Inmolar, Corrupción y Maldición de debilidad.", tip = "Corrupción y Maldición de debilidad piden nivel 4. Si aún no lo tienes, entrena lo que puedas y vuelve al entregar el Diablillo.", status = "unverified", reqlevel = 4 },
     { id = "coldridge-021", ["do"] = "accept", quest = 3361, npc = 8416, at = {1426, 28.6, 67.6}, text = "Coge la misión de Felix Whindlebolt, dentro de Yunquemar.", status = "unverified", reqlevel = 3 },
     { id = "coldridge-022", ["do"] = "accept", quest = 97277, npc = 2756, at = {1426, 28.7, 67.5}, text = "Coge la misión de Grund Drokda, al lado de Felix.", tip = "Misión nueva de Forever: el objetivo está justo al norte de Yunquemar.", status = "unverified", reqlevel = 4 },
     { id = "coldridge-023", ["do"] = "complete", quest = 97277, at = {1426, 27.4, 62.9}, text = "Sal de Yunquemar hacia el norte: mata al leopardo merodeador y recoge el diario del mecánico que hay al lado.", status = "unverified" },
@@ -209,7 +209,7 @@ Senda.Guides:RegisterSection({
     { id = "wl-voidwalker-011", ["do"] = "accept", quest = 1689, npc = 6122, at = {1453, 39.2, 85.2}, text = "Coge La vinculación de Gakin.", status = "unverified", reqlevel = 10 },
     { id = "wl-voidwalker-012", ["do"] = "complete", quest = 1689, at = {1453, 39.1, 84.4}, text = "Con vida y maná llenos, usa la gargantilla en el círculo de invocación, bajo la sala de Gakin, y derrota al Abisario.", tip = "DoTs, Diablillo al ataque, Miedo cuando llegue a ti y remata. Ten una Piedra de salud a mano.", status = "unverified" },
     { id = "wl-voidwalker-013", ["do"] = "turnin", quest = 1689, npc = 6122, at = {1453, 39.2, 85.2}, text = "Entrega La vinculación a Gakin.", status = "unverified" },
-    { id = "wl-voidwalker-014", ["do"] = "train", spells = {697}, at = {1453, 39.2, 85.2}, text = "Invoca al Abisario y ponlo en pasivo: lo mandas tú.", tip = "Tormento para recuperar la amenaza, Consumir sombras fuera de combate y Sacrificio si vas a morir.", status = "unverified" },
+    { id = "wl-voidwalker-014", ["do"] = "train", spells = {697}, at = {1453, 39.2, 85.2}, text = "Invoca al Abisario y ponlo en pasivo: lo mandas tú.", tip = "Tormento para recuperar la amenaza, Consumir sombras fuera de combate y Sacrificio si vas a morir.", status = "unverified", reqlevel = 10 },
     { id = "wl-voidwalker-015", ["do"] = "fly", npc = 352, at = {1453, 71.3, 72.2}, zone = 1455, ["if"] = { race = {"Gnome", "Dwarf"} }, text = "Vuela de vuelta a Forjaz y sigue hacia Loch Modan.", status = "unverified" },
   },
 })
@@ -225,7 +225,7 @@ Senda.Guides:RegisterSection({
     { id = "wl-succubus-001", ["do"] = "accept", quest = 1717, npc = 6120, at = {1455, 47.6, 9.3}, ["if"] = { race = {"Gnome"} }, optional = true, text = "Si pasas por Forjaz, coge el aviso de Lago Blackwrench en la Caverna Abandonada.", tip = "Es solo un recado: si estás ya en Ventormenta, ve directo a Gakin.", status = "unverified", reqlevel = 20 },
     { id = "wl-succubus-002", ["do"] = "turnin", quest = 1717, npc = 6122, at = {1453, 39.2, 85.2}, ["if"] = { race = {"Gnome"} }, optional = true, text = "Entrega el aviso a Gakin, en el sótano de El Cordero Degollado.", status = "unverified" },
     { id = "wl-succubus-003", ["do"] = "accept", quest = 1716, npc = 6122, at = {1453, 39.2, 85.2}, text = "Coge de Gakin la misión que te manda con Takar el Vidente, en Los Baldíos.", status = "unverified", reqlevel = 20 },
-    { id = "wl-succubus-004", ["do"] = "train", npc = 461, spells = {1490, 706, 698, 5740}, at = {1453, 39.2, 85.0}, text = "Entrena con Demisette Cloyce, en la misma sala: Maldición de los elementos, Armadura demoníaca, Ritual de invocación y Lluvia de fuego.", status = "unverified", reqlevel = 20 },
+    { id = "wl-succubus-004", ["do"] = "train", npc = 461, spells = {706, 698}, at = {1453, 39.2, 85.0}, text = "Entrena con Demisette Cloyce, en la misma sala: Armadura demoníaca, Ritual de invocación y los rangos nuevos (Descarga de las Sombras, Inmolar, Cauce de salud).", tip = "Lluvia de fuego y Maldición de los elementos son opcionales: tu daño es de Sombras y Agonía es tu maldición.", status = "unverified", reqlevel = 20 },
     { id = "wl-succubus-005", ["do"] = "note", npc = 11867, at = {1453, 63.9, 69.1}, optional = true, text = "Aprende Bastones con Woo Ping, el maestro de armas del Distrito de Comercio.", tip = "En Forjaz no se enseñan. Sin ellos no podrás llevar el Bastón de Soran'ruk.", status = "unverified" },
     { id = "wl-succubus-006", ["do"] = "turnin", quest = 1716, npc = 6244, at = {1413, 49.3, 57.1}, text = "Viaja a Los Baldíos y entrega a Takar el Vidente.", tip = "Ruta típica: barco de Menethil a Theramore y a pie hacia el oeste. Es zona de la Horda: cuidado con los guardias.", status = "unverified" },
     { id = "wl-succubus-007", ["do"] = "accept", quest = 1738, npc = 6244, at = {1413, 49.3, 57.1}, optional = true, text = "Súcubo: coge de Takar la misión del corazón de madera.", tip = "Elige uno: Súcubo o Íncubo. Los grimorios no se pasan de uno a otro. La cadena del Súcubo es algo más sencilla.", status = "unverified", reqlevel = 20 },
@@ -254,7 +254,7 @@ Senda.Guides:RegisterSection({
   ["if"] = { class = {"WARLOCK"} },
   steps = {
     { id = "wl-felhunter-001", ["do"] = "accept", quest = 1798, npc = 6120, at = {1455, 47.6, 9.3}, text = "Coge de Lago Blackwrench, en la Caverna Abandonada de Forjaz, la misión que te manda con Strahad.", tip = "Gakin, en Ventormenta, da la misma misión. Entrena el 30 a la vez con Briarthorn: Subyugar demonio y Piroinferno.", status = "unverified", reqlevel = 30 },
-    { id = "wl-felhunter-002", ["do"] = "train", npc = 5172, spells = {1098, 1949}, at = {1455, 50.4, 5.7}, text = "Entrena el 30 con Briarthorn: Subyugar demonio y Piroinferno.", status = "unverified", reqlevel = 30 },
+    { id = "wl-felhunter-002", ["do"] = "train", npc = 5172, spells = {709, 1086, 2941, 20752}, at = {1455, 50.4, 5.7}, text = "Entrena el 30 con Briarthorn: Drenar vida, Armadura demoníaca, Inmolar y Crear piedra de alma (rangos nuevos).", tip = "Subyugar demonio y Llamas infernales son opcionales: esta build no los usa.", status = "unverified", reqlevel = 30 },
     { id = "wl-felhunter-003", ["do"] = "turnin", quest = 1798, npc = 6251, at = {1413, 62.6, 35.5}, text = "Ve a Trinquete (Los Baldíos) y entrega a Strahad Farsan, en su torre.", tip = "Barco de Bahía del Botín a Trinquete, o de Menethil a Theramore y a pie.", status = "unverified" },
     { id = "wl-felhunter-004", ["do"] = "accept", quest = 1758, npc = 6251, at = {1413, 62.6, 35.5}, text = "Coge la primera parte del Tomo de la Cábala de Strahad.", status = "unverified", reqlevel = 30 },
     { id = "wl-felhunter-005", ["do"] = "turnin", quest = 1758, npc = 6294, at = {1455, 74.2, 9.4}, text = "Vuelve a Forjaz y entrega a Krom Stoutarm, en la Sala de los Exploradores.", status = "unverified" },
@@ -268,7 +268,7 @@ Senda.Guides:RegisterSection({
     { id = "wl-felhunter-013", ["do"] = "accept", quest = 1795, npc = 6251, at = {1413, 62.6, 35.5}, text = "Coge La vinculación de Strahad.", status = "unverified", reqlevel = 30 },
     { id = "wl-felhunter-014", ["do"] = "complete", quest = 1795, at = {1413, 62.6, 35.3}, text = "Usa el tomo en el círculo de la torre de Strahad y derrota al manáfago invocado.", tip = "Vida y maná llenos. Demonio a tanquear, DoTs y Drenar vida.", status = "unverified" },
     { id = "wl-felhunter-015", ["do"] = "turnin", quest = 1795, npc = 6251, at = {1413, 62.6, 35.5}, text = "Entrega La vinculación a Strahad.", status = "unverified" },
-    { id = "wl-felhunter-016", ["do"] = "train", spells = {691}, at = {1413, 62.6, 35.5}, text = "Ya puedes invocar al Manáfago.", tip = "Para subir sigue con el Súcubo o el Íncubo. El Manáfago es para enemigos lanzadores (Bloqueo de hechizo) y JcJ. Desde aquí, Drenar vida es tu relleno.", status = "unverified" },
+    { id = "wl-felhunter-016", ["do"] = "train", spells = {691}, at = {1413, 62.6, 35.5}, text = "Ya puedes invocar al Manáfago.", tip = "Para subir sigue con el Súcubo o el Íncubo. El Manáfago es para enemigos lanzadores (Bloqueo de hechizo) y JcJ. Desde aquí, Drenar vida es tu relleno.", status = "unverified", reqlevel = 30 },
   },
 })
 
@@ -285,7 +285,7 @@ Senda.Guides:RegisterSection({
     { id = "wl-felsteed-003", ["do"] = "turnin", quest = 4487, npc = 6251, at = {1413, 62.6, 35.5}, text = "Ve a Trinquete y entrega a Strahad Farsan.", status = "unverified" },
     { id = "wl-felsteed-004", ["do"] = "accept", quest = 4490, npc = 6251, at = {1413, 62.6, 35.5}, text = "Coge la segunda parte de Strahad.", status = "unverified", reqlevel = 40 },
     { id = "wl-felsteed-005", ["do"] = "turnin", quest = 4490, npc = 6251, at = {1413, 62.6, 35.5}, text = "Entrégala en el momento: no hay prueba.", status = "unverified" },
-    { id = "wl-felsteed-006", ["do"] = "train", spells = {5784}, at = {1413, 62.6, 35.5}, text = "Invoca al Corcel nefasto: en Forever aparece en la colección de monturas.", tip = "Si la equitación no te llega con la misión, apréndela en Forjaz antes de gastar oro en otra cosa. Activa la doble especialización.", status = "unverified" },
+    { id = "wl-felsteed-006", ["do"] = "train", spells = {5784}, at = {1413, 62.6, 35.5}, text = "Invoca al Corcel nefasto: en Forever aparece en la colección de monturas.", tip = "Si la equitación no te llega con la misión, apréndela en Forjaz antes de gastar oro en otra cosa. Activa la doble especialización.", status = "unverified", reqlevel = 40 },
   },
 })
 
@@ -330,7 +330,7 @@ Senda.Guides:RegisterSection({
     { id = "wl-endgame-009", ["do"] = "turnin", quest = 7583, npc = 14463, at = {1419, 34.1, 50.1}, optional = true, text = "Entrega el guardia apocalíptico a Daio y aprende el Ritual de condena.", status = "unverified" },
     { id = "wl-endgame-010", ["do"] = "accept", quest = 7562, npc = 6382, at = {1455, 52.7, 6.1}, optional = true, text = "Corcel de la muerte: en la Caverna Abandonada de Forjaz, coge la misión de Jubahl Corpseseeker.", tip = "Cadena larga y cara: sangres de bestia, elixires, fragmentos, escamas, barras de arcanita y un ritual de 5 en La Masacre Oeste.", status = "unverified", reqlevel = 60 },
     { id = "wl-endgame-011", ["do"] = "turnin", quest = 7562, npc = 14436, at = {1428, 12.7, 31.6}, optional = true, text = "Entrega a Mor'zul Bloodbringer, en el Altar de las Tormentas (Las Estepas Ardientes), y sigue su cadena.", status = "unverified" },
-    { id = "wl-endgame-012", ["do"] = "train", spells = {23161}, optional = true, text = "Al acabar la cadena tienes el Corcel de la muerte.", status = "unverified" },
+    { id = "wl-endgame-012", ["do"] = "train", spells = {23161}, optional = true, text = "Al acabar la cadena tienes el Corcel de la muerte.", status = "unverified", reqlevel = 60 },
   },
 })
 

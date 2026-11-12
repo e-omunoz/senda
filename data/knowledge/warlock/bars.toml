@@ -126,8 +126,9 @@ level = 35
 [[bar.slot]]
 slot = 64
 key = "S4"
-spell = 1490
+spell = 440892
 level = 20
+note = "Maldición de los Elementos (440892 en Forever; 1490 era la de Classic). Opcional: solo si la aprendiste, para grupos con un mago de Fuego o Escarcha."
 
 [[bar.slot]]
 slot = 65

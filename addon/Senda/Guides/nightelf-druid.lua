@@ -230,7 +230,7 @@ Senda.Guides:RegisterSection({
   summary = "Nivel 10: entrena con Kal en Dolanaar, aprende Teletransporte: Claro de la Luna y habla con el Gran Espíritu del Oso.",
   ["if"] = { class = {"DRUID"} },
   steps = {
-    { id = "dr-10-bear-001", ["do"] = "train", npc = 3602, spells = {8924, 1058}, at = {1438, 55.95, 61.56}, text = "Nivel 10: entrena con Kal, el instructor de druidas de Dolanaar (nuevos rangos de Fuego lunar y Rejuvenecimiento).", tip = "Aprende también Garra de la naturaleza si te la ofrece: en Forever es de instructor al 10.", status = "unverified" },
+    { id = "dr-10-bear-001", ["do"] = "train", npc = 3602, spells = {8924, 1058}, at = {1438, 55.95, 61.56}, text = "Nivel 10: entrena con Kal, el instructor de druidas de Dolanaar (nuevos rangos de Fuego lunar y Rejuvenecimiento).", tip = "Aprende también Garra de la naturaleza si te la ofrece: en Forever es de instructor al 10.", status = "unverified", reqlevel = 10 },
     { id = "dr-10-bear-002", ["do"] = "accept", quest = 5925, npc = 3602, at = {1438, 55.95, 61.56}, text = "Coge con Kal la misión que te manda al Enclave Cenarion de Darnassus.", tip = "Si estás ya en Darnassus, Denatharion da la misma misión en el Enclave Cenarion.", status = "unverified", reqlevel = 10 },
     { id = "dr-10-bear-003", ["do"] = "turnin", quest = 5925, npc = 4217, at = {1457, 35.37, 8.4}, text = "Ve al oeste hasta Darnassus y entrega a Mathrengyl, en el Enclave Cenarion (noroeste de la ciudad).", status = "unverified" },
     { id = "dr-10-bear-004", ["do"] = "accept", quest = 5921, npc = 4217, at = {1457, 35.37, 8.4}, text = "Coge con Mathrengyl la misión del Claro de la Luna.", status = "unverified", reqlevel = 10 },

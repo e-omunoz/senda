@@ -65,6 +65,7 @@ sources = ["questie:quest/4490", "questie:npc/6251", "https://conquestcapped.com
 [[step]]
 id = "wl-felsteed-006"
 do = "train"
+reqlevel = 40
 spells = [5784]
 at = [1413, 62.6, 35.5]
 text = "Invoca al Corcel nefasto: en Forever aparece en la colección de monturas."

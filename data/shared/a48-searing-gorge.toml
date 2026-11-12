@@ -60,7 +60,7 @@ id = "a48-searing-gorge-004"
 do = "train"
 reqlevel = 48
 npc = 5173
-spells = [6353, 11712]
+spells = [11712]
 at = [1455, 50.1, 7.5]
 text = "Brujo: entrena los hechizos del nivel 48."
 if = { class = ["WARLOCK"], minlevel = 48 }
