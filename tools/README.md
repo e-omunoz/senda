@@ -18,6 +18,7 @@ instalar nada con `pip`. Funciona igual en Windows y en Linux (CI). Los archivos
 | `import_names.py` (+ `localenames.py`) | Pasa a `data/locale/<idioma>/*.json` los nombres que el cliente dio con `/senda volcar` (lee `SendaNamesDB` del archivo de SavedVariables que se le pasa) e informa de los cambios de nombre entre parches; ver «Nombres del juego» abajo |
 | `route_score.py` (+ `routescore/`) | Filtro de eficiencia: puntúa cada misión de una ruta (`data/scores/`) |
 | `gen_travel.py` / `gen_dungeons.py` / `gen_rares.py` / `gen_lookup.py` | Generan `data/travel/`, `data/dungeons/`, `data/rares/` y `data/lookup/` desde Polestar, forever-db y tablas del cliente (ver `docs/TRAVEL.md`, `DUNGEONS.md`, `RARES.md`, `LOOKUP.md`) |
+| `gen_dungeon_journal.py` | Genera `data/dungeons/journal.json` (botín de mazmorra con estadísticas, jefes y piedras de encuentro) desde ForeverLevelingBiS (MIT, vía Polestar) y forever-db: `python tools/gen_dungeon_journal.py --polestar RUTA/polestar [--check]` (ver `docs/DUNGEONS.md`) |
 
 ## Atajos
 

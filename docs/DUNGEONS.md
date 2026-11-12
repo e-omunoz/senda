@@ -11,6 +11,7 @@ y qué cobertura real tiene. El coordinador lo compilará después a Lua compact
 | `data/dungeons/dungeons.json` | Una ficha por mazmorra: mapa, nombre, niveles, alas, jefes en orden, entrada, facción del buscador y recuento de misiones |
 | `data/dungeons/quests.json` | Misiones por mazmorra (una por línea): quién la da, dónde, requisitos, nivel, facción, si empieza dentro |
 | `data/dungeons/meta.json` | Fuentes y versiones, métricas, mapas excluidos (con motivo), misiones de mazmorra sin colocar, misiones con dador sin aparición |
+| `data/dungeons/journal.json` | Botín de equipo por mazmorra con sus estadísticas, jefes con su id de PNJ y la piedra de encuentro más cercana a cada entrada (`tools/gen_dungeon_journal.py`, ver «Botín por clase») |
 
 Reproducir (imprime los recuentos por mazmorra; `--check` no escribe y falla si lo guardado difiere):
 
@@ -159,14 +160,58 @@ una de Dalaran, de una web), así que no se han tocado; solo se usaron para vali
 4. **Misiones previas en orden:** el plan pide «misiones previas en el orden correcto antes de cada paso `dungeon`»:
    `requires` trae ese orden; falta cruzarlo con los pasos `dungeon` de las guías cuando se compile.
 
-## Botín por clase (no incluido)
+## Botín por clase
 
-El plan lo toma de ForeverLevelingBiS (MIT). No se ha podido obtener sin conexión una copia con su licencia: no está
-instalada en `Interface/AddOns` y se distribuye por CurseForge, donde Polestar solo acepta versiones con licencia MIT
-verificable. Descargarla requiere aprobación expresa, así que **el botín queda fuera**; este conjunto no inventa ni estima
-ningún objeto. Hace falta: (1) descargar la versión, (2) leer su `LICENSE` y anotar versión y fecha de datos,
-(3) añadirlo como segunda fuente en `gen_dungeons.py`, con los pesos de clase de Senda. Hasta entonces `encounters` trae
-los jefes sin botín. AtlasLoot (GPL-2.0, solo local en Polestar) y DungeonJournal (sin licencia) quedan descartados.
+`tools/gen_dungeon_journal.py` genera `data/dungeons/journal.json` (reproducible; `--check` falla si cambiaría):
+
+```
+python tools/gen_dungeon_journal.py --polestar RUTA/polestar [--foreverdb DIR] [--check]
+```
+
+- **Objetos:** ForeverLevelingBiS **v0.12.0-beta** de Thunder (MIT, datos del 13-oct-2026), la misma copia que usa
+  `tools/gen_bis.py` (la de Polestar en `addon/Polestar_ItemDB/Forever.lua`; el generador se niega si no dice MIT). Entra
+  su botín `d<pnj>x<prob>z<zona>` cuya zona es un área de la mazmorra (más tres alias de la propia tabla de zonas de
+  ForeverLevelingBiS: Cumbre Superior 1583, Profundidades 1584 y Templo de Atal'Hakkar 1477). Además, de forever-db
+  (`item_source`) lo que sueltan los jefes de la mazmorra: PNJ sin aparición en el mundo con el nombre de un encuentro
+  del cliente (la regla de `gen_dungeons.py`). Solo armas y armaduras equipables.
+- **Estadísticas:** las de Forever en `Forever.lua`; si el objeto no está ahí, las de la tabla de objetos del cliente
+  Classic Era que Polestar publica en `Items.lua` (`stats_from: "era"`). Se guardan en las claves de los pesos de Senda
+  (`STR`, `AGI`, `INT`, `SP`, `SP_SHADOW`, `MP5`, `DPS`...), así que el addon las valora sin pedir el objeto al cliente.
+- **Elección:** en el juego, con los pesos de tu build y tramo (`weights.toml`, `Modules/Gear.lua`: `G.ScoreData`,
+  `G.DeltaData`): solo lo que tu clase puede llevar y cuyos puntos salen sobre todo de lo que tu build busca (estadísticas
+  con peso de 0,3 o más por punto, sin contar Aguante ni armadura; una capa de Espíritu no es «de felino»). Primero lo que
+  te mejora frente a lo que llevas, por mejora; luego el resto.
+- **Piedra de encuentro:** la aparición de forever-db (objeto tipo 23) más cercana a la entrada en el mismo continente, a
+  menos de 1.000 yardas, con su distancia. forever-db no dice a qué mazmorra sirve cada piedra: la asociación es por
+  distancia (Horado y Zahúrda Rajacieno comparten zona: 146 y 650 yardas).
+- **Jefes:** los encuentros del cliente (sin repetir) con el id de PNJ de forever-db cuando el nombre coincide (223 de 243).
+
+Cobertura (414 objetos): ForeverLevelingBiS es una lista de subida, así que trae el botín que interesa para subir de las
+mazmorras de nivel bajo y medio (Minas 40, Monasterio 38, Cuevas 29, Horado 29, Colmillo Oscuro 28, Cavernas 23, Mazmorras
+21, Gnomeregan 20, Uldaman 15, Zahúrda 10) y casi nada de las de nivel alto. forever-db añade las piezas de conjunto de los
+jefes de Scholomance, Stratholme y Cumbre de Roca Negra. **Sin botín en los datos:** Templo de Atal'Hakkar, Maraudon, La
+Masacre y (casi) Profundidades y Zul'Farrak: el diario lo dice en vez de inventarlo. AtlasLoot (GPL-2.0, Polestar solo lo
+lee en local), DungeonJournal (sin licencia) y las versiones «All Rights Reserved» de ForeverLevelingBiS no se usan.
+
+## En el juego: pestaña «Mazmorras»
+
+`Modules/Dungeons.lua` con `Data/Dungeons.lua` (lo compila `tools/build.py`, `render_dungeons`: ~85 KB en cadenas
+«a|b|c» que se descodifican la primera vez que se abre el diario, fuera de combate y 200 filas por fotograma):
+
+- A la izquierda, las mazmorras de tu bando por nivel recomendado (en verde las de tu momento; «»» la que pide tu guía).
+- La ficha: niveles (entrada, recomendado, misiones), entrada con «Flecha a la entrada» y «Flecha a la piedra» (fuente de
+  flecha `dungeon`; el planificador de viaje la sigue como las de la guía y la ficha enseña su camino), jefes, misiones
+  para tu personaje (bando, clase y raza) con «en tu guía», hechas, en el registro, las previas que faltan y clic para la
+  flecha a quien la da, y el botín para tu build.
+- La entrada es el punto de cadáver del cliente; en las cuatro mazmorras de Forever sin él se usa el punto del paso de la
+  guía que lleva allí (marcado «punto de la guía, sin comprobar»), y si tampoco hay, no hay flecha. Cuando el punto cae en
+  dos zonas se nombra la de la puerta (Uldaman en Tierras Inhóspitas, Horado y Zahúrda en Los Baldíos, Cavernas en
+  Vallefresno).
+- **Pasos de guía:** `render_dungeons` une cada paso `do = "dungeon"` con su mazmorra (el texto la nombra, en español o en
+  inglés; o pide misiones propias de una; o su punto está a menos de 3 % de la entrada). En el HUD, el texto de ese paso
+  termina en «Ver en Mazmorras »» y un clic en el paso abre su ficha: no hay línea nueva en el HUD.
+- `/senda mazmorra [nombre]` abre el diario. Al entrar en una instancia, la flecha a la mazmorra se quita.
+- Simulador: escenarios `dungeons-tab`, `dungeons-druid`, `dungeons-arrow` y `dungeons-hud`.
 
 ## Límites conocidos
 
@@ -177,4 +222,4 @@ los jefes sin botín. AtlasLoot (GPL-2.0, solo local en Polestar) y DungeonJourn
 - Sin `zone_area` conocido para unas 1.370 misiones de forever-db: las que no entran por jefe o texto quedan fuera.
 - Los ids de zona antiguos 133, 978, 1517 y 1717 no están en la rebanada de `AreaTable` (que trae solo las zonas
   principales y las de la rebanada); se confirmaron por el título de sus misiones y se anotan como tales en `via`.
-- Las 4 mazmorras exclusivas de Forever no tienen entrada. No hay botín (ver arriba).
+- Las 4 mazmorras exclusivas de Forever no tienen entrada del cliente (dos la toman del paso de la guía). El botín es el de ForeverLevelingBiS y forever-db (ver arriba).

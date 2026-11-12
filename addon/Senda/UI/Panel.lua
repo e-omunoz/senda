@@ -22,9 +22,13 @@ end
 local function LayoutSidebar()
   if not panel then return end
   SortTabs()
+  -- Las pestañas caben siempre en la barra lateral (sobre la versión): con muchas, se juntan un poco.
+  local room = (panel.sidebar:GetHeight() or 0) - 34
+  if room <= 0 then room = 520 - 42 - 34 end
+  local stepY = math.max(22, math.min(30, math.floor(room / math.max(1, #tabs))))
   for i, t in ipairs(tabs) do
     if not t.button then
-      local b = UI:Button(panel.sidebar, "", SIDEBAR_W - 16, 26, function() UI:ShowTab(t.key) end)
+      local b = UI:Button(panel.sidebar, "", SIDEBAR_W - 16, 24, function() UI:ShowTab(t.key) end)
       local fs = b:GetFontString()
       fs:ClearAllPoints()
       fs:SetPoint("LEFT", t.icon and 30 or 10, 0)
@@ -41,7 +45,7 @@ local function LayoutSidebar()
       t.button = b
     end
     t.button:ClearAllPoints()
-    t.button:SetPoint("TOPLEFT", 8, -8 - (i - 1) * 30)
+    t.button:SetPoint("TOPLEFT", 8, -8 - (i - 1) * stepY)
   end
 end
 

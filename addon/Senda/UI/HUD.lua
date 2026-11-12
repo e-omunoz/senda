@@ -254,15 +254,27 @@ local function Create()
   f.hit:SetPoint("TOPLEFT", PAD, -26)
   f.hit:SetPoint("RIGHT", -PAD, 0)
   f.hit:SetHeight(30)
-  f.hit:RegisterForClicks("RightButtonUp")
+  f.hit:RegisterForClicks("LeftButtonUp", "RightButtonUp")
   f.hit:RegisterForDrag("LeftButton")
   f.hit:SetFrameLevel(f:GetFrameLevel() + 1)
-  f.hit:SetScript("OnDragStart", function() if not Opt("hudLocked") then f:StartMoving() end end)
-  f.hit:SetScript("OnDragStop", function()
+  f.hit:SetScript("OnDragStart", function(self)
+    self.dragged = GetTime and GetTime() or 0
+    if not Opt("hudLocked") then f:StartMoving() end
+  end)
+  f.hit:SetScript("OnDragStop", function(self)
     f:StopMovingOrSizing()
+    self.dragged = GetTime and GetTime() or 0
     Senda:SaveFramePos(f, "hud")
   end)
-  f.hit:SetScript("OnClick", function(_, btn) if btn == "RightButton" then HUD:ShowSkipMenu() end end)
+  f.hit:SetScript("OnClick", function(self, btn)
+    if btn == "RightButton" then HUD:ShowSkipMenu(); return end
+    -- Clic izquierdo (sin arrastrar) en un paso de mazmorra: su ficha en la pestaña Mazmorras.
+    local now = GetTime and GetTime() or 0
+    if rawget(self, "dragged") and now - self.dragged < 0.3 then return end
+    local key = rawget(HUD, "dungeonKey")
+    local DG = Senda.Modules and Senda.Modules.Dungeons
+    if key and DG and DG.Open then DG.Open(key) end
+  end)
   UI:Tooltip(f.hit, function() return rawget(HUD, "hitTip") end, function() return rawget(HUD, "hitBody") end)
 
   f.objectives = FS(f, "GameFontHighlightSmall")
@@ -492,6 +504,10 @@ function HUD:Refresh()
       f.title:SetText(UI:Color("dim", Plain(f.title:GetText())))
       text = UI:Color("dim", Plain(text))
     end
+    -- Paso de mazmorra: el propio texto del paso enlaza con su ficha de la pestaña Mazmorras (clic en el paso).
+    local DG = Senda.Modules and Senda.Modules.Dungeons
+    self.dungeonKey = DG and DG.ForStep and DG.ForStep(step) or nil
+    if self.dungeonKey then text = text .. "  " .. UI:Color("gold", L.HUD_DUNGEON_LINK) end
     f.text:SetText(text)
   elseif Engine:GuideId() and #Engine:Steps() == 0 then
     f.icon:SetTexture("Interface\\RaidFrame\\ReadyCheck-Waiting")
@@ -504,6 +520,7 @@ function HUD:Refresh()
     f.title:SetText(Engine:GuideId() and L.GUIDE_FINISHED or L.NO_GUIDE)
     f.text:SetText(Engine:GuideId() and L.GUIDE_FINISHED_HINT or L.NO_GUIDE_HINT)
   end
+  if not step then self.dungeonKey = nil end
   f.title:SetWordWrap(not collapsed)
   f.text:SetShown(not collapsed)
 
@@ -630,6 +647,10 @@ function HUD:Refresh()
   f.hit:SetHeight(math.max(28, titleH + textH))
   self.hitTip = #skipQs > 0 and L.SKIP_MENU or nil
   self.hitBody = #skipQs > 0 and L.SKIP_HINT or nil
+  if self.dungeonKey and not detour then
+    self.hitTip = L.HUD_DUNGEON_TIP
+    self.hitBody = #skipQs > 0 and (L.HUD_DUNGEON_BODY .. "\n" .. L.SKIP_HINT) or L.HUD_DUNGEON_BODY
+  end
 
   -- Aviso de misión saltada
   local last = Engine.LastSkip and Engine:LastSkip() or nil

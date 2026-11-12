@@ -81,6 +81,9 @@ local function Sources()
     local t = rawget(Senda, key)
     if type(t) == "table" then out[#out + 1] = t end
   end
+  -- Diario de mazmorras: sus ids (descodifica dentro de esta corrutina si aún no se abrió el diario)
+  local DG = Senda.Modules and Senda.Modules.Dungeons
+  if DG and DG.DumpIds then out[#out + 1] = DG.DumpIds() end
   return out
 end
 
