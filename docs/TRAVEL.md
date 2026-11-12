@@ -2,7 +2,8 @@
 
 Generado por `tools/gen_travel.py`. Sirve a la función 9 del plan (`docs/PLAN-POLESTAR.md`, 6b): el
 planificador de viaje con vuelos, barcos, zepelines, tranvía, portales, piedra de hogar y teletransportes
-de clase. Aquí solo están los **datos en JSON** y su validación; el coordinador los compila después a Lua.
+de clase. Aquí están los **datos en JSON** y su validación; `tools/build.py` los compila a
+`addon/Senda/Data/Travel.lua` y `addon/Senda/Modules/Travel.lua` los usa en el juego (ver «En el juego» más abajo).
 
 ```
 python tools/gen_travel.py --polestar <clon de Polestar> [--foreverdb <forever-db o su data/>] [--check]
@@ -117,6 +118,28 @@ clase (6 de mago, Moonglade de druida, Retorno astral de chamán).
    tranvía (324 s), casi un empate, porque la posada de Forjaz está a 300 yardas de su maestro de vuelo y a
    unas 470 del tranvía. Con la espera media (sin horario cronometrado) el planificador es correcto; con el
    horario real del tranvía el reparto cambiará, y el planificador del juego debe usarlo.
+
+## En el juego
+
+`python tools/build.py` compacta estos JSON en `addon/Senda/Data/Travel.lua` (unos 13 KB): una cadena por clase de dato, una
+fila por línea, campos con «|» y puntos «continente,wx,wy,mapa,x,y,zona». Quedan fuera lo que el planificador no usa: los
+ascensores, los horarios (`timetables.json`), los extremos del continente nuevo de Forever (c 2991: dos portales y dos
+posadas) y los fotogramas. `tests/test_travel.py` comprueba que lo compilado dice lo mismo que los JSON.
+
+`Modules/Travel.lua` repite el Dijkstra de la autoprueba de `gen_travel.py` con lo que sabe el personaje:
+
+| Dato del juego | Cómo se lee |
+|---|---|
+| Nodos de vuelo conocidos | `db.char.fps` (el motor, al abrir un maestro de vuelo) y `C_TaxiMap.GetTaxiNodesForMap(...).isUndiscovered`; nunca se usa un nodo desconocido, de la otra facción ni de otra clase |
+| Velocidad a pie | 7 yd/s; ×1,6 con Invocar corcel vil (5784) o una montura en las bolsas a partir del nivel 40; ×2 con Invocar corcel de terror (23161); ×1,4 con la forma de viaje (783) |
+| Piedra de hogar | objeto 6948 en las bolsas, `C_Container.GetItemCooldown` (el enfriamiento restante se suma al coste), posada vinculada (`GetBindLocation` + `HEARTHSTONE_BOUND` + `C_Map.GetAreaInfo`) |
+| Teletransportes | hechizo conocido (`IsSpellKnown`), reactivo en las bolsas (runa de teletransporte 17031), enfriamiento del hechizo; solo desde la posición de salida |
+
+Escenarios con la respuesta esperada en `tests/wowsim/scenarios_travel.js`: Ventormenta - Auberdine (barco del puerto, 428 s
+con un margen de 15 s), Forjaz - Ventormenta (vuelo si se conocen los dos nodos; tranvía si no), andar por debajo de 400 yardas,
+nodo desconocido nunca usado, nodos de la otra facción y de otra clase nunca usados, piedra de hogar usada cuando la posada
+vinculada está cerca del destino y fuera de enfriamiento (y no con enfriamiento, ni en un viaje de menos de 3 minutos), y
+teletransportes de mago y druida.
 
 ## Límites conocidos
 

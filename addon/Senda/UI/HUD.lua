@@ -297,6 +297,9 @@ local function Create()
   f.duoWait:SetPoint("RIGHT", -PAD, 0)
   f.duo = FS(f, "GameFontHighlightSmall", C.text[1] * 0.85, C.text[2] * 0.85, C.text[3] * 0.85)
   f.duo:SetPoint("RIGHT", -PAD, 0)
+  -- Camino más rápido a un destino lejano (Modules/Travel.lua)
+  f.travel = FS(f, "GameFontHighlightSmall", C.accent[1], C.accent[2], C.accent[3])
+  f.travel:SetPoint("RIGHT", -PAD, 0)
   f.goOn = UI:Button(f, L.DUO_GO_ON, 110, 20, function()
     if Senda.Party then Senda.Party.GoOn() end
   end)
@@ -542,6 +545,18 @@ function HUD:Refresh()
     y = y + f.duo:GetStringHeight() + 4
   end
 
+  -- Camino más rápido al destino de la flecha (si está lejos o en otro continente)
+  local TV = Senda.Modules and Senda.Modules.Travel
+  local travelText = (not collapsed and TV and TV.HudLine) and TV.HudLine() or nil
+  f.travel:SetText(travelText or "")
+  f.travel:SetShown(travelText ~= nil)
+  if travelText then
+    f.travel:ClearAllPoints()
+    f.travel:SetPoint("TOPLEFT", PAD, -y)
+    f.travel:SetPoint("RIGHT", -PAD, 0)
+    y = y + f.travel:GetStringHeight() + 4
+  end
+
   -- Misión fallida o abandonada: volver a cogerla o saltarla
   local showProblem = problem ~= nil and not collapsed
   f.retake:SetShown(showProblem and problem.accept ~= nil)
@@ -764,6 +779,7 @@ Events:On("SENDA_READY", function()
   Events:On("QUEST_DATA_LOAD_RESULT", refresh)
   Events:On("SENDA_NAMES_UPDATED", refresh)
   Events:On("SENDA_PARTY_UPDATED", refresh)
+  Events:On("SENDA_TRAVEL_UPDATED", refresh)
   Events:On("GET_ITEM_INFO_RECEIVED", refresh)
   Events:On("PLAYER_REGEN_DISABLED", function()
     if Opt("hudCombatHide") and hud then hud:Hide() end

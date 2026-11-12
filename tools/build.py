@@ -10,6 +10,8 @@ Genera:
   addon/Senda/Knowledge/Knowledge.xml
   addon/Senda/Locale/Names_<locale>.lua  nombres del cliente de respaldo, desde data/locale/<locale>/*.json
   addon/Senda/Locale/Locale.xml       (siempre, aunque no haya idiomas: el .toc lo carga)
+  addon/Senda/Data/Travel.lua         datos de data/travel/ en cadenas compactas (el planificador de viaje las decodifica
+                                      bajo demanda, Modules/Travel.lua); solo si existe data/travel/
 Y estampa la versión de VERSION en la línea `## Version:` de Senda.toc.
 
 Uso:
@@ -244,6 +246,114 @@ def render_locale(paths: Paths) -> dict[Path, str]:
     return out
 
 
+# ---------------------------------------------------------------- viaje
+TRAVEL_SCHEMA = 1
+TRAVEL_FRAMES = (0, 1)  # continentes con yardas reales; el continente nuevo de Forever (2991) no entra en el planificador
+
+
+def _n(v, digits: int = 1) -> str:
+    """Número compacto: sin ceros ni punto final (1.0 -> «1», 12.50 -> «12.5»)."""
+    if v is None:
+        return ""
+    s = f"{float(v):.{digits}f}".rstrip("0").rstrip(".")
+    return "0" if s in ("", "-0") else s
+
+
+def _tpoint(p: dict) -> str:
+    return ",".join([str(p["c"]), _n(p["wx"]), _n(p["wy"]), str(p.get("map", "")), _n(p.get("x"), 2), _n(p.get("y"), 2),
+                     str(p.get("area", ""))])
+
+
+def _tname(s: str) -> str:
+    if "|" in s or "\n" in s or "\r" in s:
+        raise ValueError(f"data/travel: carácter reservado en {s!r}")
+    return s
+
+
+def render_travel(paths: Paths) -> str | None:
+    """data/travel/*.json -> Data/Travel.lua: una tabla con una cadena por clase de dato, una fila por línea y
+    campos separados por «|» (los puntos son «continente,wx,wy,mapa,x,y»; wx es norte-sur y wy este-oeste, en yardas,
+    como las posiciones de mundo del cliente). Nada se decodifica al cargar el addon: lo hace Modules/Travel.lua
+    la primera vez que hace falta y fuera de combate."""
+    tdir = paths.travel
+    if not (tdir / "meta.json").exists():
+        return None
+
+    def rows(name: str) -> list[dict]:
+        with open(tdir / f"{name}.json", encoding="utf-8") as fh:
+            return json.load(fh)["rows"]
+
+    mask_of = {"alliance": 1, "horde": 2, "both": 3}
+    with open(tdir / "meta.json", encoding="utf-8") as fh:
+        meta = json.load(fh)
+    consts = meta["constants"]
+    nodes = [f"{t['id']}|{t['mask']}|{t.get('class') or ''}|{_tpoint(t)}|{_tname(t['name'])}"
+             for t in sorted(rows("taxi_nodes"), key=lambda t: t["id"]) if t["c"] in TRAVEL_FRAMES]
+    ids = {t["id"] for t in rows("taxi_nodes") if t["c"] in TRAVEL_FRAMES}
+    flights = [f"{f['from']}|{f['to']}|{_n(f['seconds'])}" for f in sorted(rows("flights"), key=lambda f: (f["from"], f["to"]))
+               if f["from"] in ids and f["to"] in ids]
+
+    def board(e: dict) -> str:
+        b = e.get("board")
+        return f"{_n(b['wx'])},{_n(b['wy'])}" if b else ""
+
+    rides = []
+    for t in rows("transports"):
+        a, b = t["a"], t["b"]
+        if a["c"] not in TRAVEL_FRAMES or b["c"] not in TRAVEL_FRAMES:
+            continue
+        rides.append("|".join([_tname(t["id"]), t["kind"], str(t["mask"]), _n(t["ride_ab_s"]), _n(t["ride_ba_s"]),
+                               _n(t["wait_a_s"]), _n(t["wait_b_s"]), _n(t["board_s"] + t["pre_s"] + t["post_s"]),
+                               _tpoint(a), board(a), _tname(a["name"]), _tpoint(b), board(b), _tname(b["name"])]))
+    portals = []
+    for p in rows("portals"):
+        if p["a"]["c"] not in TRAVEL_FRAMES or p["b"]["c"] not in TRAVEL_FRAMES:
+            continue
+        portals.append("|".join([_tname(p["id"]), str(p["mask"]), _n(p["seconds"]), _tpoint(p["a"]), _tname(p["a"]["name"]),
+                                 _tpoint(p["b"]), _tname(p["b"]["name"])]))
+    inns = [f"{i['area']}|{i['npc']}|{_tpoint(i)}|{';'.join(_tname(n) for n in i['names'])}"
+            for i in sorted(rows("inns"), key=lambda i: (i["area"], i["npc"])) if i["c"] in TRAVEL_FRAMES]
+    tele = []
+    for t in rows("teleports"):
+        dest = t["to"]
+        if dest != "bind" and dest["c"] not in TRAVEL_FRAMES:
+            continue
+        reag = ";".join(f"{r['item']}:{r['count']}" for r in t.get("reagents") or [])
+        tele.append("|".join([str(t["spell"]), t["class"], str(mask_of[t["faction"]]), _n(t["cast_s"]), reag,
+                              "bind" if dest == "bind" else _tpoint(dest), _tname(t["name"])]))
+
+    def blob(lines: list[str]) -> str:
+        if any("]==]" in ln for ln in lines):
+            raise ValueError("data/travel: «]==]» en una fila")
+        return "[==[\n" + "\n".join(lines) + "\n]==]"
+
+    const_names = {"run_speed_yd_s": "run", "walk_detour": "detour", "flight_speed_yd_s": "flySpeed",
+                   "flight_stop_s": "flyStop", "take_off_s": "takeOff", "hearth_item": "hearthItem",
+                   "hearth_total_s": "hearthSecs", "hearth_min_trip_s": "hearthMinTrip",
+                   "hearth_margin_s": "hearthMargin", "teleport_margin_s": "teleMargin", "teleport_share": "teleShare"}
+    k = ", ".join(f"{lua} = {_n(consts[key], 3)}" for key, lua in const_names.items())
+    counts = (f"{len(nodes)} nodos de vuelo, {len(flights)} vuelos, {len(rides)} transportes, {len(portals)} portales, "
+              f"{len(inns)} posadas, {len(tele)} teletransportes")
+    body = "\n".join([
+        f"-- {GENERATED_HEADER}",
+        f"-- Fuente: data/travel/ (tools/gen_travel.py, GPL-3.0-or-later; ver docs/TRAVEL.md y THIRD_PARTY.md): {counts}",
+        "-- Filas «a|b|c», puntos «continente,wx,wy,mapa,x,y,zona» (yardas de mundo, % de mapa y AreaTable). Se decodifica bajo demanda.",
+        "local _, Senda = ...",
+        "",
+        "Senda.TravelData = {",
+        f"  schema = {TRAVEL_SCHEMA},",
+        f"  consts = {{ {k} }},",
+        f"  nodes = {blob(nodes)},",
+        f"  flights = {blob(flights)},",
+        f"  rides = {blob(rides)},",
+        f"  portals = {blob(portals)},",
+        f"  inns = {blob(inns)},",
+        f"  teleports = {blob(tele)},",
+        "}",
+    ])
+    return body + "\n"
+
+
 def render(ds: validate.Dataset) -> dict[Path, str]:
     """Devuelve {ruta: contenido} de todo lo generado. Determinista."""
     paths = ds.paths
@@ -294,6 +404,9 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
         kfiles.append(name)
     out[paths.out_knowledge / "Knowledge.xml"] = _xml(kfiles)
     out.update(render_locale(paths))
+    travel = render_travel(paths)
+    if travel is not None:
+        out[paths.out_data / "Travel.lua"] = travel
     return out
 
 
@@ -352,7 +465,7 @@ def build(paths: Paths, check: bool = False, quiet: bool = False) -> int:
 
     # Archivos generados que ya no corresponden a nada (solo los que llevan nuestra cabecera).
     stale: list[str] = []
-    for d in (paths.out_guides, paths.out_knowledge, paths.out_locale):
+    for d in (paths.out_guides, paths.out_knowledge, paths.out_locale, paths.out_data):
         if not d.is_dir():
             continue
         for p in sorted(d.iterdir()):

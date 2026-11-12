@@ -783,6 +783,38 @@ function C_TaxiMap.GetAllTaxiNodes(map)
   return Sim.taxiNodes or {}
 end
 function GetTaxiMapID() return Sim.player.map end
+-- The world map's view of the flight paths: Sim.taxiWorld = { [nodeID] = { map = uiMapID, name = "...", known = bool } }.
+-- Nodes the character has not discovered come back with isUndiscovered = true (a client that marks none is not trusted).
+function C_TaxiMap.GetTaxiNodesForMap(map)
+  num(map, "C_TaxiMap.GetTaxiNodesForMap", "uiMapID")
+  local out = {}
+  for id, n in pairs(Sim.taxiWorld or {}) do
+    if n.map == map then out[#out + 1] = { nodeID = id, name = n.name, isUndiscovered = not n.known } end
+  end
+  table.sort(out, function(a, b) return a.nodeID < b.nodeID end)
+  return out
+end
+
+-- Cooldowns: Sim.cooldowns.items[itemID] / .spells[spellID] = seconds left (0 / nil = ready).
+Sim.cooldowns = { items = {}, spells = {} }
+function C_Container.GetItemCooldown(item)
+  if type(item) ~= "number" then bad("C_Container.GetItemCooldown", "itemID must be a number") end
+  local left = Sim.cooldowns.items[item] or 0
+  if left <= 0 then return 0, 0, 1 end
+  return Sim.time, left, 1
+end
+function C_Spell.GetSpellCooldown(spell)
+  local id = spellArg(spell, "C_Spell.GetSpellCooldown")
+  local left = Sim.cooldowns.spells[id] or 0
+  if left <= 0 then return { startTime = 0, duration = 0, isEnabled = true, modRate = 1 } end
+  return { startTime = Sim.time, duration = left, isEnabled = true, modRate = 1 }
+end
+-- AreaTable names in the client's language: Sim.areaNames[areaID] = "Costasur".
+Sim.areaNames = {}
+function C_Map.GetAreaInfo(area)
+  num(area, "C_Map.GetAreaInfo", "areaID")
+  return Sim.areaNames[area]
+end
 
 ------------------------------------------------------------------------------
 -- Merchant / trainer / quest rewards

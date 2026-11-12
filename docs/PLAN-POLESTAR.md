@@ -141,7 +141,7 @@ Ordenadas por valor para quien sube de nivel frente al esfuerzo.
 | 6 | Avisos de escolta («si no está, alguien la está haciendo: espera») | Bajo | No |
 | 7 | Ocultar en mazmorras; botón «ocultar todo» | Bajo | En parte |
 | 8 | Ventana de informe de errores con todo el contexto y enlace a GitHub | Bajo | En parte |
-| 9 | Planificador de viaje: vuelos conocidos, barcos y zepelines con horario, piedra de hogar | Medio | No |
+| 9 | Planificador de viaje: vuelos conocidos, barcos y zepelines con horario, piedra de hogar | Medio | Sí, fase 3 (`Modules/Travel.lua`; esperas medias, sin horario real) |
 | 10 | «Mientras estás aquí»: entregas y recogidas cercanas primero, objetivos después | Medio-alto | No |
 | 11 | Alertas de raros (viñetas del minimapa) | Bajo-medio | No |
 

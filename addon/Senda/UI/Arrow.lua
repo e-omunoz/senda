@@ -2,7 +2,9 @@
 --   Senda.Arrow:SetTarget(map, x, y, label, source)  -- x, y en PORCENTAJE (0-100), como en los datos de guía
 --   Senda.Arrow:Clear(source)
 --   Senda.Arrow:GetTarget() -> target, source         -- target = { map, x, y (0-1), label }
--- Fuentes por prioridad: "corpse" > "manual" > "guide" > cualquier otra.
+-- Fuentes por prioridad: "corpse" > "manual" > "guide" > cualquier otra. La fuente "travel" (Modules/Travel.lua: primer
+-- tramo del camino más rápido) pasa justo por delante del destino al que sustituye.
+--   Senda.Arrow:Destination() -> target, source       -- el objetivo activo sin contar "travel"
 -- Gira según la orientación del jugador (GetPlayerFacing puede devolver nil o un valor secreto: se tolera),
 -- muestra distancia (m o yd) y tiempo estimado, se pone verde al acercarse y marca "has llegado".
 -- Modo cadáver: siendo fantasma apunta a C_DeathInfo.GetCorpseMapPosition y vuelve a la guía al resucitar.
@@ -30,13 +32,28 @@ local function Opt(key) return Senda.Options:Get(key) end
 -- Objetivos
 ------------------------------------------------------------------------------
 
-local function Pick()
+local function Pick(skipTravel)
   local best, bestSrc, bestP
   for src, t in pairs(targets) do
-    local p = PRIORITY[src] or OTHER_PRIORITY
-    if not bestP or p < bestP then best, bestSrc, bestP = t, src, p end
+    if not (skipTravel and src == "travel") then
+      local p = PRIORITY[src] or OTHER_PRIORITY
+      if src == "travel" then
+        local _, destSrc = Pick(true)
+        p = (destSrc and (PRIORITY[destSrc] or OTHER_PRIORITY) or OTHER_PRIORITY) - 0.1
+      end
+      if not bestP or p < bestP then best, bestSrc, bestP = t, src, p end
+    end
   end
   return best, bestSrc
+end
+
+local destination, destinationSource
+local function CheckDestination()
+  local t, src = Pick(true)
+  if t ~= destination or src ~= destinationSource then
+    destination, destinationSource = t, src
+    Events:Fire("SENDA_ARROW_DEST", t, src)
+  end
 end
 
 local function SyncTomTom()
@@ -63,6 +80,7 @@ local function Update()
     SyncTomTom()
     Events:Fire("SENDA_ARROW_TARGET", active, activeSource)
   end
+  CheckDestination()
 end
 
 function Arrow:SetTarget(map, x, y, label, source, extra)
@@ -71,10 +89,17 @@ function Arrow:SetTarget(map, x, y, label, source, extra)
   if not map or not x or not y then return end
   local t = { map = map, x = x / 100, y = y / 100, label = label, source = source }
   if type(extra) == "table" then for k, v in pairs(extra) do t[k] = v end end
-  -- Posición de mundo en caché (no cambia mientras dure el objetivo).
-  t.continent, t.wn, t.ww = Compat.WorldPos(map, t.x, t.y)
+  -- Posición de mundo en caché (no cambia mientras dure el objetivo); un módulo puede traerla ya calculada.
+  if not (t.continent and t.wn and t.ww) then
+    t.continent, t.wn, t.ww = Compat.WorldPos(map, t.x, t.y)
+  end
   targets[source] = t
   Update()
+end
+
+-- ¿Hay un objetivo de esta fuente?
+function Arrow:Has(source)
+  return targets[source] ~= nil
 end
 
 function Arrow:Clear(source)
@@ -84,6 +109,11 @@ end
 
 function Arrow:GetTarget()
   return active, activeSource
+end
+
+-- El objetivo que el jugador quiere alcanzar (guía, punto manual, cadáver), sin el tramo intermedio de "travel".
+function Arrow:Destination()
+  return destination, destinationSource
 end
 
 ------------------------------------------------------------------------------
@@ -240,7 +270,11 @@ local function Create()
 
   f:SetScript("OnUpdate", OnUpdate)
   f:SetScript("OnClick", function()
-    if activeSource ~= "guide" and activeSource ~= "corpse" then Arrow:Clear(activeSource) end
+    if activeSource ~= "guide" and activeSource ~= "corpse" then
+      local src = activeSource
+      Arrow:Clear(src)
+      Events:Fire("SENDA_ARROW_DISMISSED", src)
+    end
   end)
   f:SetScript("OnEnter", function(self)
     GameTooltip:SetOwner(self, "ANCHOR_BOTTOM")

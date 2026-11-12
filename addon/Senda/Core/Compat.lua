@@ -605,3 +605,75 @@ function Compat.ShiftDown()
   local r = Try(_G.IsShiftKeyDown)
   return (not IsSecret(r)) and r and true or false
 end
+
+------------------------------------------------------------------------------
+-- Viaje: posición de mundo, enfriamientos, nodos de vuelo descubiertos
+------------------------------------------------------------------------------
+
+-- Posición del jugador en el mundo: continente, norte, oeste (yardas) o nil.
+function Compat.PlayerWorldPos()
+  local map, x, y = Compat.PlayerMapPos()
+  if not map then return nil end
+  return Compat.WorldPos(map, x, y)
+end
+
+local function Now() return Num(Try(_G.GetTime)) or 0 end
+
+-- Segundos que faltan para que un objeto (piedra de hogar...) esté disponible; 0 si lo está.
+-- C_Container.GetItemCooldown(id) -> inicio, duración, activo (con reservas a las variantes anteriores).
+-- Adaptado de Polestar, Nav/Travel.lua (hearthReady); aquí devuelve el tiempo restante.
+function Compat.ItemCooldownLeft(id)
+  local fn = (_G.C_Container and _G.C_Container.GetItemCooldown) or (_G.C_Item and _G.C_Item.GetItemCooldown)
+    or _G.GetItemCooldown
+  if not fn then return 0 end
+  local start, duration = Try(fn, id)
+  start, duration = Num(start), Num(duration)
+  if not start or not duration or start <= 0 or duration <= 1.5 then return 0 end -- 1,5 s = enfriamiento global
+  return math.max(0, start + duration - Now())
+end
+
+-- Segundos que faltan para que un hechizo esté listo; 0 si lo está.
+function Compat.SpellCooldownLeft(id)
+  local start, duration
+  if _G.C_Spell and _G.C_Spell.GetSpellCooldown then
+    local info = Try(_G.C_Spell.GetSpellCooldown, id)
+    if type(info) == "table" then start, duration = Num(info.startTime), Num(info.duration) end
+  elseif _G.GetSpellCooldown then
+    start, duration = Try(_G.GetSpellCooldown, id)
+    start, duration = Num(start), Num(duration)
+  end
+  if not start or not duration or start <= 0 or duration <= 1.5 then return 0 end
+  return math.max(0, start + duration - Now())
+end
+
+-- Nombre de una zona o subzona (AreaTable) en el idioma del cliente, o nil.
+function Compat.AreaName(areaID)
+  if not (CM and CM.GetAreaInfo) then return nil end
+  local n = Try(CM.GetAreaInfo, areaID)
+  if IsSecret(n) then return nil end
+  return type(n) == "string" and n or nil
+end
+
+-- Nodos de vuelo que el jugador ha descubierto en el mapa `map`, sin abrir ningún maestro de vuelo:
+-- C_TaxiMap.GetTaxiNodesForMap (isUndiscovered) como lo lee el mapa del mundo. Devuelve una lista { id, name }
+-- y si el cliente marcó algún nodo como no descubierto (un cliente que no marca ninguno no es de fiar:
+-- todo personaje tiene alguno sin descubrir). Adaptado de Polestar, Nav/Travel.lua (RecordWorldTaxi).
+function Compat.DiscoveredTaxiOn(map)
+  local out, anyUndiscovered = {}, false
+  local TM = _G.C_TaxiMap
+  if not (TM and TM.GetTaxiNodesForMap) or not map then return out, false end
+  local list = Try(TM.GetTaxiNodesForMap, map)
+  if type(list) ~= "table" then return out, false end
+  for _, n in ipairs(list) do
+    if type(n) == "table" and Num(n.nodeID) then
+      local und = n.isUndiscovered
+      if IsSecret(und) then und = nil end
+      if und == true then
+        anyUndiscovered = true
+      elseif und == false then
+        out[#out + 1] = { id = n.nodeID, name = (not IsSecret(n.name)) and n.name or nil }
+      end
+    end
+  end
+  return out, anyUndiscovered
+end
