@@ -4,6 +4,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ## [Sin publicar]
 
+## [0.6.0] - 2026-11-12
+
 ### Añadido
 - **La flecha sigue caminos reales.** Si el objetivo está en tu continente, la flecha apunta al siguiente punto de
   un camino a pie calculado sobre el terreno del cliente de Forever (`Senda_Nav`, docs/NAV.md) y enseña la
