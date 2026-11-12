@@ -39,11 +39,16 @@ local function str(v, fname, what) if type(v) ~= "string" then bad(fname, (what 
 local RACES = {
   Gnome = { name = "Gnomo", id = 7 }, Human = { name = "Humano", id = 1 }, Dwarf = { name = "Enano", id = 3 },
   NightElf = { name = "Elfo de la noche", id = 4 },
+  -- Horda (fase 4). Skyborne: raza propia de Forever (ids 95/96 por facción, ver tools/questiedb/constants.py).
+  Orc = { name = "Orco", id = 2 }, Scourge = { name = "No-muerto", id = 5 }, Tauren = { name = "Tauren", id = 6 },
+  Troll = { name = "Trol", id = 8 }, Skyborne = { name = "Skyborne", id = 96 },
 }
 local CLASSES = {
   WARLOCK = { name = "Brujo", id = 9, power = 0 }, MAGE = { name = "Mago", id = 8, power = 0 },
   WARRIOR = { name = "Guerrero", id = 1, power = 1 }, PRIEST = { name = "Sacerdote", id = 5, power = 0 },
   DRUID = { name = "Druida", id = 11, power = 0 },
+  PALADIN = { name = "Paladín", id = 2, power = 0 }, HUNTER = { name = "Cazador", id = 3, power = 0 },
+  ROGUE = { name = "Pícaro", id = 4, power = 3 }, SHAMAN = { name = "Chamán", id = 7, power = 0 },
 }
 
 function Sim.SetupCharacter(cfg)
@@ -101,6 +106,13 @@ Sim.MAPS = {
   [1413] = { name = "Los Baldíos", parent = 1414, type = 3, continent = 1, n = 1500, w = 1000, sx = 6000, sy = 4000 },
   [1440] = { name = "Vallefresno", parent = 1414, type = 3, continent = 1, n = 4000, w = 2000, sx = 5700, sy = 3800 },
   [1436] = { name = "Páramos de Poniente", parent = 1415, type = 3, continent = 0, n = -9500, w = 2500, sx = 3500, sy = 2333 },
+  -- Salidas de la Horda (fase 4)
+  [1411] = { name = "Durotar", parent = 1414, type = 3, continent = 1, n = 1000, w = -3500, sx = 5287, sy = 3525 },
+  [1412] = { name = "Mulgore", parent = 1414, type = 3, continent = 1, n = -1000, w = 1500, sx = 5137, sy = 3425 },
+  [1454] = { name = "Orgrimmar", parent = 1411, type = 3, continent = 1, n = 2200, w = -4000, sx = 1739, sy = 1159 },
+  [1456] = { name = "Cima del Trueno", parent = 1412, type = 3, continent = 1, n = -700, w = 300, sx = 1043, sy = 695 },
+  [1420] = { name = "Claros de Tirisfal", parent = 1415, type = 3, continent = 0, n = 3000, w = 1800, sx = 4518, sy = 3012 },
+  [1458] = { name = "Entrañas", parent = 1420, type = 3, continent = 0, n = 1700, w = 400, sx = 959, sy = 640 },
 }
 local function mapData(id)
   if type(id) ~= "number" then return nil end
@@ -844,10 +856,29 @@ function C_Container.UseContainerItem(bag, slot)
     Sim.sold = (Sim.sold or 0) + 1
   end
 end
+-- Stacks onto a slot with the same item; with the bag full, the oldest item added this way is thrown away (a
+-- whole 1-60 route loots far more than 16 items; real players hand them in or destroy them).
 function Sim.AddItem(id, count)
   local bag = Sim.player.bags[0]
+  Sim.addedSlots = Sim.addedSlots or {}
   for slot = 1, 16 do
-    if not bag[slot] then bag[slot] = { id = id, count = count or 1 }; return slot end
+    local it = bag[slot]
+    if it and it.id == id then it.count = it.count + (count or 1); return slot end
+  end
+  for slot = 1, 16 do
+    if not bag[slot] then
+      bag[slot] = { id = id, count = count or 1 }
+      table.insert(Sim.addedSlots, slot)
+      return slot
+    end
+  end
+  while #Sim.addedSlots > 0 do
+    local slot = table.remove(Sim.addedSlots, 1)
+    if bag[slot] then
+      bag[slot] = { id = id, count = count or 1 }
+      table.insert(Sim.addedSlots, slot)
+      return slot
+    end
   end
 end
 

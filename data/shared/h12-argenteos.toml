@@ -1,0 +1,2001 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/03-silverpine-forest
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h12-argenteos"
+title = "Bosque de Argénteos"
+levels = [12, 15]
+map = 1421
+summary = "Ruta común de la Horda, 12-15: Bosque de Argénteos."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h12-argenteos-001"
+do = "getfp"
+npc = 3310
+node = "23"
+at = [1454, 45.12, 63.89]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Coge la ruta de vuelo de {area:1637} con {npc:3310}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#1"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 1 (getfp) · consejo de Polestar sin traducir: Walk in by the main gate. {npc:3310}, the wind rider master, stands on the tower in the {obj:172982}; {npc:268701} by the bank below it."
+
+[[step]]
+id = "h12-argenteos-002"
+do = "accept"
+quest = 97246
+npc = 268701
+at = [1454, 55.68, 72.17]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 5
+text = "Coge «{quest:97246}» de {npc:268701}."
+why = "+800 XP · ~1,4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#1"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 2 (accept)"
+
+[[step]]
+id = "h12-argenteos-003"
+do = "turnin"
+quest = 97246
+npc = 3368
+at = [1454, 57.2, 53.32]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+chain = "h12-argenteos-s002-3368"
+text = "Entrega «{quest:97246}» a {npc:3368}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#2"]
+note = "Polestar paso 2 «Borstan», objetivo 1 (turnin) · consejo de Polestar sin traducir: {obj:173016} is a few steps north."
+
+[[step]]
+id = "h12-argenteos-004"
+do = "accept"
+quest = 97249
+npc = 3368
+at = [1454, 57.2, 53.32]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+chain = "h12-argenteos-s002-3368"
+reqlevel = 5
+text = "Coge «{quest:97249}» de {npc:3368}."
+why = "+1.050 XP · ~1,4 min · 1,8× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#2"]
+note = "Polestar paso 2 «Borstan», objetivo 2 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "h12-argenteos-005"
+do = "turnin"
+quest = 829
+npc = 3216
+at = [1454, 49.47, 50.59]
+if = { race = ["Orc", "Troll"] }
+chain = "h12-argenteos-s003-3216"
+text = "Entrega «{quest:829}» a {npc:3216}."
+tip = "{obj:172960} es el cañón bajo {obj:172982}; «{quest:829}» está en su extremo."
+why = "+460 XP · <1 min · 1,6× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#3"]
+note = "Polestar paso 3 ««Neeru Hojafuego»», objetivo 1 (turnin) · condición no expresable: llevas la misión 829 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-006"
+do = "turnin"
+quest = 832
+npc = 3216
+at = [1454, 49.47, 50.59]
+if = { race = ["Orc", "Troll"] }
+optional = true
+chain = "h12-argenteos-s003-3216"
+text = "Entrega «{quest:832}» a {npc:3216}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#3"]
+note = "Polestar paso 3 ««Neeru Hojafuego»», objetivo 2 (turnin) · condición no expresable: llevas la misión 829 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-007"
+do = "accept"
+quest = 97242
+npc = 3348
+at = [1454, 56.05, 34.12]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 9
+text = "Coge «{quest:97242}» de {npc:3348}."
+tip = "{npc:3348} y {npc:3347} llevan la tienda de alquimia de La Calle Mayor; {npc:11046} está al lado."
+why = "+800 XP · ~2,7 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#4"]
+note = "Polestar paso 4 «La Calle Mayor», objetivo 1 (accept)"
+
+[[step]]
+id = "h12-argenteos-008"
+do = "complete"
+quest = 97905
+at = [1454, 55.62, 39.46]
+if = { race = ["Orc", "Troll"], prof = ["herbalism"] }
+text = "Completa «{quest:97905}»."
+tip = "{npc:3404}, la instructora de herboristería, tiene su tienda en La Calle Mayor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#5"]
+note = "Polestar paso 5 «Jandi», objetivo 1 (complete) · condición no expresable: llevas la misión 97905 (implícita: el paso es de esa misión) · objetivos (EN): Jandi"
+
+[[step]]
+id = "h12-argenteos-009"
+do = "turnin"
+quest = 97905
+npc = 3404
+at = [1454, 55.62, 39.46]
+if = { race = ["Orc", "Troll"], prof = ["herbalism"] }
+text = "Entrega «{quest:97905}» a {npc:3404}, Acampada básica, de la hoguera de Brakk en {map:1411}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#5"]
+note = "Polestar paso 5 «Jandi», objetivo 2 (turnin) · condición no expresable: llevas la misión 97905 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-010"
+do = "complete"
+quest = 97901
+at = [1454, 53.47, 38.55]
+if = { race = ["Orc", "Troll"], prof = ["enchanting"] }
+text = "Completa «{quest:97901}»."
+tip = "{npc:11066}, el instructor de encantamiento, trabaja en La Calle Mayor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#6"]
+note = "Polestar paso 6 «Jhag», objetivo 1 (complete) · condición no expresable: llevas la misión 97901 (implícita: el paso es de esa misión) · objetivos (EN): Jhag"
+
+[[step]]
+id = "h12-argenteos-011"
+do = "turnin"
+quest = 97901
+npc = 11066
+at = [1454, 53.47, 38.55]
+if = { race = ["Orc", "Troll"], prof = ["enchanting"] }
+text = "Entrega «{quest:97901}» a {npc:11066}, Acampada básica, de la hoguera de Brakk en {map:1411}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#6"]
+note = "Polestar paso 6 «Jhag», objetivo 2 (turnin) · condición no expresable: llevas la misión 97901 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-012"
+do = "complete"
+quest = 97242
+obj = 1
+at = [1454, 66.1, 28.9]
+wps = [[1454, 69.5, 31.0, "Puñado de eneas"]]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Recoge {item:277278} (2) de {obj:661093} para «{quest:97242}»."
+tip = "Las espadañas y la hierba lanza crecen junto al agua en {obj:172958}, al este de La Calle Mayor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#7"]
+note = "Polestar paso 7 «Valle del Honor», objetivo 1 (collect)"
+
+[[step]]
+id = "h12-argenteos-013"
+do = "complete"
+quest = 97242
+obj = 2
+at = [1454, 66.2, 28.8]
+wps = [[1454, 69.3, 30.6, "Cortes de apiáceas"]]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Recoge {item:277279} (4) de {obj:661092} para «{quest:97242}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#7"]
+note = "Polestar paso 7 «Valle del Honor», objetivo 2 (collect)"
+
+[[step]]
+id = "h12-argenteos-014"
+do = "complete"
+quest = 97908
+at = [1454, 63.36, 45.42]
+if = { race = ["Orc", "Troll"], prof = ["skinning"] }
+text = "Completa «{quest:97908}»."
+tip = "{npc:7088}, el instructor de desuello, está en {obj:172958}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#8"]
+note = "Polestar paso 8 «Thuwd», objetivo 1 (complete) · condición no expresable: llevas la misión 97908 (implícita: el paso es de esa misión) · objetivos (EN): Thuwd"
+
+[[step]]
+id = "h12-argenteos-015"
+do = "turnin"
+quest = 97908
+npc = 7088
+at = [1454, 63.36, 45.42]
+if = { race = ["Orc", "Troll"], prof = ["skinning"] }
+text = "Entrega «{quest:97908}» a {npc:7088}, Acampada básica, de la hoguera de Brakk en {map:1411}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#8"]
+note = "Polestar paso 8 «Thuwd», objetivo 2 (turnin) · condición no expresable: llevas la misión 97908 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-016"
+do = "complete"
+quest = 97906
+at = [1454, 62.81, 44.15]
+if = { race = ["Orc", "Troll"], prof = ["leatherworking"] }
+text = "Completa «{quest:97906}»."
+tip = "{npc:3365}, el instructor de peletería, trabaja en {obj:172958}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#9"]
+note = "Polestar paso 9 «Karolek», objetivo 1 (complete) · condición no expresable: llevas la misión 97906 (implícita: el paso es de esa misión) · objetivos (EN): Karolek"
+
+[[step]]
+id = "h12-argenteos-017"
+do = "turnin"
+quest = 97906
+npc = 3365
+at = [1454, 62.81, 44.15]
+if = { race = ["Orc", "Troll"], prof = ["leatherworking"] }
+text = "Entrega «{quest:97906}» a {npc:3365}, Acampada básica, de la hoguera de Brakk en {map:1411}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#9"]
+note = "Polestar paso 9 «Karolek», objetivo 2 (turnin) · condición no expresable: llevas la misión 97906 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-018"
+do = "complete"
+quest = 96102
+at = [1454, 62.93, 49.24]
+if = { race = ["Orc", "Troll"], prof = ["tailoring"] }
+text = "Completa «{quest:96102}»."
+tip = "{npc:2855}, el instructor de sastrería, está en {obj:172958}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#10"]
+note = "Polestar paso 10 «Snang», objetivo 1 (complete) · condición no expresable: llevas la misión 96102 (implícita: el paso es de esa misión) · objetivos (EN): Snang"
+
+[[step]]
+id = "h12-argenteos-019"
+do = "turnin"
+quest = 96102
+npc = 2855
+at = [1454, 62.93, 49.24]
+if = { race = ["Orc", "Troll"], prof = ["tailoring"] }
+text = "Entrega «{quest:96102}» a {npc:2855}, Acampada básica, de la hoguera de Brakk en {map:1411}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#10"]
+note = "Polestar paso 10 «Snang», objetivo 2 (turnin) · condición no expresable: llevas la misión 96102 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-020-wr"
+do = "train"
+npc = 3353
+spells = [72, 5242, 7384]
+at = [1454, 79.79, 31.42]
+if = { class = ["WARRIOR"], race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 12
+text = "Entrena con {npc:3353}, el instructor de guerrero."
+tip = "3 hechizos hasta el nivel 12: nuevos {spell:72}, {spell:7384}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#11", "trainer:warrior"]
+note = "Polestar paso 11 «Class trainer», objetivo 1 (train) · consejo de Polestar sin traducir: Train while you are in the city: Druids and Paladins have no trainer here. · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 11-12"
+
+[[step]]
+id = "h12-argenteos-020-hu"
+do = "train"
+npc = 3406
+spells = [136, 2974, 14281, 20736]
+at = [1454, 67.24, 20.2]
+if = { class = ["HUNTER"], race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 12
+text = "Entrena con {npc:3406}, el instructor de cazador."
+tip = "4 hechizos hasta el nivel 12: nuevos {spell:136}, {spell:2974}, {spell:20736} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#11", "trainer:hunter"]
+note = "Polestar paso 11 «Class trainer», objetivo 1 (train) · consejo de Polestar sin traducir: Train while you are in the city: Druids and Paladins have no trainer here. · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 11-12"
+
+[[step]]
+id = "h12-argenteos-020-ro"
+do = "train"
+npc = 3328
+spells = [1766, 2589, 3127]
+at = [1454, 43.9, 54.63]
+if = { class = ["ROGUE"], race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 12
+text = "Entrena con {npc:3328}, el instructor de pícaro."
+tip = "3 hechizos hasta el nivel 12: nuevos {spell:1766}, {spell:3127}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#11", "trainer:rogue"]
+note = "Polestar paso 11 «Class trainer», objetivo 1 (train) · consejo de Polestar sin traducir: Train while you are in the city: Druids and Paladins have no trainer here. · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 11-12"
+
+[[step]]
+id = "h12-argenteos-020-pr"
+do = "train"
+npc = 5994
+spells = [139, 586, 588, 592, 594, 1244, 2006, 8092]
+at = [1454, 35.72, 86.9]
+if = { class = ["PRIEST"], race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 12
+text = "Entrena con {npc:5994}, el instructor de sacerdote."
+tip = "8 hechizos hasta el nivel 12: nuevos {spell:139}, {spell:586}, {spell:588} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#11", "trainer:priest"]
+note = "Polestar paso 11 «Class trainer», objetivo 1 (train) · consejo de Polestar sin traducir: Train while you are in the city: Druids and Paladins have no trainer here. · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 8-12"
+
+[[step]]
+id = "h12-argenteos-020-sh"
+do = "train"
+npc = 3344
+spells = [370, 2008, 408341]
+at = [1454, 38.8, 36.37]
+if = { class = ["SHAMAN"], race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 12
+text = "Entrena con {npc:3344}, el instructor de chamán."
+tip = "3 hechizos hasta el nivel 12: nuevos {spell:370}, {spell:2008}, {spell:408341} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#11", "trainer:shaman"]
+note = "Polestar paso 11 «Class trainer», objetivo 1 (train) · consejo de Polestar sin traducir: Train while you are in the city: Druids and Paladins have no trainer here. · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 11-12"
+
+[[step]]
+id = "h12-argenteos-020-wl"
+do = "train"
+npc = 3325
+spells = [755, 1108]
+at = [1454, 48.62, 46.95]
+if = { class = ["WARLOCK"], race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 12
+text = "Entrena con {npc:3325}, el instructor de brujo."
+tip = "2 hechizos hasta el nivel 12: nuevos {spell:755}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#11", "trainer:warlock"]
+note = "Polestar paso 11 «Class trainer», objetivo 1 (train) · consejo de Polestar sin traducir: Train while you are in the city: Druids and Paladins have no trainer here. · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 11-12"
+
+[[step]]
+id = "h12-argenteos-021"
+do = "note"
+npc = 11868
+at = [1454, 81.7, 19.55]
+if = { class = ["WARRIOR"], race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+optional = true
+text = "Entrena con {npc:11868}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#12"]
+note = "Polestar paso 12 «Sayoc», objetivo 1 (train) · condición no expresable: dinero >= 1000 cobre; no tienes Two-Handed Axes 1+ · train sin hechizos: manual · consejo de Polestar sin traducir: While you're here: learn {spell:197} from {npc:11868} ({obj:172958}, 10 silver); two-handers level a Warrior fastest."
+
+[[step]]
+id = "h12-argenteos-022"
+do = "note"
+npc = 2704
+at = [1454, 81.53, 19.63]
+if = { class = ["HUNTER"], race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+optional = true
+text = "Entrena con {npc:2704}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#13"]
+note = "Polestar paso 13 «Hanashi», objetivo 1 (train) · condición no expresable: dinero >= 1000 cobre; no tienes Staves 1+ · train sin hechizos: manual · consejo de Polestar sin traducir: While you're here: learn Staves from {npc:2704} ({obj:172958}, 10 silver); a Hunter's melee weapon is mostly its stats, and two-handers carry the most."
+
+[[step]]
+id = "h12-argenteos-023"
+do = "note"
+npc = 2704
+at = [1454, 81.53, 19.63]
+if = { class = ["PRIEST"], race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+optional = true
+text = "Entrena con {npc:2704}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#14"]
+note = "Polestar paso 14 «Hanashi», objetivo 1 (train) · condición no expresable: dinero >= 1000 cobre; no tienes Staves 1+ · train sin hechizos: manual · consejo de Polestar sin traducir: While you're here: learn Staves from {npc:2704} ({obj:172958}, 10 silver); a staff carries more spell stats than a one-hander while you level."
+
+[[step]]
+id = "h12-argenteos-024"
+do = "note"
+npc = 2704
+at = [1454, 81.53, 19.63]
+if = { class = ["WARLOCK"], race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+optional = true
+text = "Entrena con {npc:2704}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#15"]
+note = "Polestar paso 15 «Hanashi», objetivo 1 (train) · condición no expresable: dinero >= 1000 cobre; no tienes Staves 1+ · train sin hechizos: manual · consejo de Polestar sin traducir: While you're here: learn Staves from {npc:2704} ({obj:172958}, 10 silver); a staff carries more spell stats than a one-hander while you level."
+
+[[step]]
+id = "h12-argenteos-025"
+do = "turnin"
+quest = 97242
+npc = 3348
+at = [1454, 56.05, 34.12]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Entrega «{quest:97242}» a {npc:3348}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#16"]
+note = "Polestar paso 16 «Kor'geld», objetivo 1 (turnin)"
+
+[[step]]
+id = "h12-argenteos-026"
+do = "accept"
+quest = 97275
+npc = 3347
+at = [1454, 56.84, 33.03]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 9
+text = "Coge «{quest:97275}» de {npc:3347}."
+why = "+800 XP · ~1 min · 1,8× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#16"]
+note = "Polestar paso 16 «Kor'geld», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-027"
+do = "turnin"
+quest = 97275
+npc = 11046
+at = [1454, 55.79, 32.9]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Entrega «{quest:97275}» a {npc:11046}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#16"]
+note = "Polestar paso 16 «Kor'geld», objetivo 3 (turnin)"
+
+[[step]]
+id = "h12-argenteos-028"
+do = "complete"
+quest = 97899
+at = [1454, 55.79, 32.9]
+if = { race = ["Orc", "Troll"], prof = ["alchemy"] }
+text = "Completa «{quest:97899}»."
+tip = "{npc:11046}, el instructor de alquimia, está al lado de {npc:3348}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#17"]
+note = "Polestar paso 17 «Whuut», objetivo 1 (complete) · condición no expresable: llevas la misión 97899 (implícita: el paso es de esa misión) · objetivos (EN): Whuut"
+
+[[step]]
+id = "h12-argenteos-029"
+do = "turnin"
+quest = 97899
+npc = 11046
+at = [1454, 55.79, 32.9]
+if = { race = ["Orc", "Troll"], prof = ["alchemy"] }
+text = "Entrega «{quest:97899}» a {npc:11046}, Acampada básica, de la hoguera de Brakk en {map:1411}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#17"]
+note = "Polestar paso 17 «Whuut», objetivo 2 (turnin) · condición no expresable: llevas la misión 97899 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-030"
+do = "accept"
+quest = 97326
+npc = 268684
+at = [1454, 36.82, 29.06]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 5
+text = "Coge «{quest:97326}» de {npc:268684}."
+why = "+800 XP · ~2 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#18"]
+note = "Polestar paso 18 «Valle de la Sabiduría», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:268684} and {npc:268682} sit behind Grommash Hold in the {obj:172957}; the Smooth Boulders lie around them."
+
+[[step]]
+id = "h12-argenteos-031"
+do = "turnin"
+quest = 97249
+npc = 268682
+at = [1454, 36.53, 29.06]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Entrega «{quest:97249}» a {npc:268682}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#18"]
+note = "Polestar paso 18 «Valle de la Sabiduría», objetivo 2 (turnin)"
+
+[[step]]
+id = "h12-argenteos-032"
+do = "complete"
+quest = 97326
+obj = 1
+at = [1454, 38.4, 26.8]
+wps = [[1454, 42.0, 31.1, "Roca suave"], [1454, 45.8, 38.1, "Roca suave"]]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Recoge {item:277952} (8) de {obj:661446} para «{quest:97326}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#18"]
+note = "Polestar paso 18 «Valle de la Sabiduría», objetivo 3 (collect)"
+
+[[step]]
+id = "h12-argenteos-033"
+do = "turnin"
+quest = 97326
+npc = 268684
+at = [1454, 36.82, 29.06]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Entrega «{quest:97326}» a {npc:268684}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#18"]
+note = "Polestar paso 18 «Valle de la Sabiduría», objetivo 4 (turnin)"
+
+[[step]]
+id = "h12-argenteos-034"
+do = "turnin"
+quest = 95350
+npc = 4949
+at = [1454, 31.73, 37.82]
+if = { race = ["Skyborne"] }
+chain = "h12-argenteos-s019-4949"
+text = "Entrega «{quest:95350}» a {npc:4949}, dentro del Fuerte Grommash."
+why = "+675 XP · ~1,4 min · desbloquea «{quest:93739}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#19"]
+note = "Polestar paso 19 «Thrall», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:4949} stands in Grommash Hold. He offers «{quest:98024}» and «{quest:93739}» once «{quest:95350}» is handed in."
+
+[[step]]
+id = "h12-argenteos-035"
+do = "accept"
+quest = 98024
+npc = 4949
+at = [1454, 31.73, 37.82]
+if = { race = ["Skyborne"] }
+chain = "h12-argenteos-s019-4949"
+reqlevel = 7
+text = "Coge «{quest:98024}» de {npc:4949}."
+why = "+460 XP · <1 min · 3,3× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#19"]
+note = "Polestar paso 19 «Thrall», objetivo 2 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:4949}: keep it, Thork at the Crossroads in the {map:1413} guide."
+
+[[step]]
+id = "h12-argenteos-036"
+do = "accept"
+quest = 93739
+npc = 4949
+at = [1454, 31.73, 37.82]
+if = { race = ["Skyborne"] }
+optional = true
+chain = "h12-argenteos-s019-4949"
+reqlevel = 7
+text = "Coge «{quest:93739}» de {npc:4949}, «{quest:93739}», una visita a los líderes de la Horda."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#19"]
+note = "Polestar paso 19 «Thrall», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-037"
+do = "complete"
+quest = 93739
+obj = 1
+at = [1454, 32.3, 35.75]
+if = { race = ["Skyborne"] }
+optional = true
+text = "Mata {npc:3230} (1) para «{quest:93739}»."
+tip = "Habla con {npc:3230}, en el Fuerte Grommash."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#19"]
+note = "Polestar paso 19 «Thrall», objetivo 4 (kill)"
+
+[[step]]
+id = "h12-argenteos-038"
+do = "complete"
+quest = 93739
+obj = 2
+at = [1454, 34.34, 36.33]
+if = { race = ["Skyborne"] }
+optional = true
+text = "Mata {npc:10540} (1) para «{quest:93739}»."
+tip = "Habla con {npc:10540}, en el Fuerte Grommash."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#19"]
+note = "Polestar paso 19 «Thrall», objetivo 5 (kill)"
+
+[[step]]
+id = "h12-argenteos-039"
+do = "turnin"
+quest = 831
+npc = 3230
+at = [1454, 32.3, 35.75]
+if = { race = ["Orc", "Troll"] }
+text = "Entrega «{quest:831}» a {npc:3230}."
+why = "+500 XP · <1 min · 1,8× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#20"]
+note = "Polestar paso 20 «Nazgrel», objetivo 1 (turnin) · condición no expresable: llevas la misión 831 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: {npc:3230}, in Grommash Hold."
+
+[[step]]
+id = "h12-argenteos-040"
+do = "goto"
+at = [1411, 50.8, 13.5]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Ve al zepelín a {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#21"]
+note = "Polestar paso 21 «Zeppelin to Undercity», objetivo 1 (goto)"
+
+[[step]]
+id = "h12-argenteos-041"
+do = "accept"
+quest = 96895
+npc = 1738
+at = [1420, 61.4, 53.4]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 10
+text = "Coge «{quest:96895}» de {npc:1738}."
+why = "+460 XP · <1 min · 2,5× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#22"]
+note = "Polestar paso 22 «Brill», objetivo 1 (accept) · consejo de Polestar sin traducir: {area:159} is a short walk north up the road from the zeppelin towers: {npc:1738} stands by the road into town, {npc:1518} in the apothecary's house on the west side of the square."
+
+[[step]]
+id = "h12-argenteos-042"
+do = "accept"
+quest = 445
+npc = 1518
+at = [1420, 59.45, 52.4]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+reqlevel = 9
+text = "Coge «{quest:445}» de {npc:1518}."
+why = "+625 XP · <1 min · 2,3× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#22"]
+note = "Polestar paso 22 «Brill», objetivo 2 (accept) · consejo de Polestar sin traducir: {npc:1518}, inside."
+
+[[step]]
+id = "h12-argenteos-043"
+do = "turnin"
+quest = 96895
+npc = 267009
+at = [1420, 65.93, 61.13]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+chain = "h12-argenteos-s023-267009"
+text = "Entrega «{quest:96895}» a {npc:267009}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#23"]
+note = "Polestar paso 23 «Hadric Harlson», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back down the road past the zeppelin towers and east to {npc:1495}'s camp: {npc:267009} stands beside her."
+
+[[step]]
+id = "h12-argenteos-044"
+do = "accept"
+quest = 96897
+npc = 267009
+at = [1420, 65.93, 61.13]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+chain = "h12-argenteos-s023-267009"
+reqlevel = 10
+text = "Coge «{quest:96897}» de {npc:267009}."
+why = "+2.236 XP · ~8,3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#23"]
+note = "Polestar paso 23 «Hadric Harlson», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-045"
+do = "accept"
+quest = 96898
+npc = 267009
+at = [1420, 65.93, 61.13]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+chain = "h12-argenteos-s023-267009"
+reqlevel = 10
+text = "Coge «{quest:96898}» de {npc:267009}."
+why = "+900 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#23"]
+note = "Polestar paso 23 «Hadric Harlson», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-046"
+do = "complete"
+quest = 96897
+obj = 1
+at = [1420, 66.2, 63.4]
+wps = [[1420, 67.1, 64.4, "Neófito oscuro"], [1420, 67.6, 66.6, "Neófito oscuro"], [1420, 69.3, 64.5, "Neófito oscuro"]]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Mata {npc:267006} (8) para «{quest:96897}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#24"]
+note = "Polestar paso 24 ««El Culto de los Malditos»», objetivo 1 (kill) · consejo de Polestar sin traducir: The cultists camp a short walk south-east of {npc:267009}. Dark Neophytes and Dark Enforcers drop the Necrotic Crystal Fragments; more fragments, black crystals, lie on the ground among the tents."
+
+[[step]]
+id = "h12-argenteos-047"
+do = "complete"
+quest = 96897
+obj = 2
+at = [1420, 66.3, 63.3]
+wps = [[1420, 67.2, 64.9, "Déspota oscuro"], [1420, 67.6, 66.8, "Déspota oscuro"], [1420, 69.0, 63.7, "Déspota oscuro"]]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Mata {npc:275437} (8) para «{quest:96897}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#24"]
+note = "Polestar paso 24 ««El Culto de los Malditos»», objetivo 2 (kill)"
+
+[[step]]
+id = "h12-argenteos-048"
+do = "complete"
+quest = 96898
+obj = 1
+at = [1420, 66.4, 63.6]
+wps = [[1420, 67.6, 63.6, "Fragmento de cristal necrótico"], [1420, 68.2, 66.0, "Fragmento de cristal necrótico"]]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+text = "Recoge {item:275851} (12) de {obj:656366} para «{quest:96898}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#24"]
+note = "Polestar paso 24 ««El Culto de los Malditos»», objetivo 3 (collect)"
+
+[[step]]
+id = "h12-argenteos-049"
+do = "turnin"
+quest = 96897
+npc = 267009
+at = [1420, 65.93, 61.13]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+chain = "h12-argenteos-s025-267009"
+text = "Entrega «{quest:96897}» a {npc:267009}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#25"]
+note = "Polestar paso 25 «Hadric Harlson», objetivo 1 (turnin)"
+
+[[step]]
+id = "h12-argenteos-050"
+do = "turnin"
+quest = 96898
+npc = 267009
+at = [1420, 65.93, 61.13]
+if = { race = ["Orc", "Tauren", "Troll", "Skyborne"] }
+chain = "h12-argenteos-s025-267009"
+text = "Entrega «{quest:96898}» a {npc:267009}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#25"]
+note = "Polestar paso 25 «Hadric Harlson», objetivo 2 (turnin)"
+
+[[step]]
+id = "h12-argenteos-051-pa"
+do = "train"
+npc = 246152
+spells = [633, 678, 1022, 3127, 20162, 1311649]
+at = [1420, 60.22, 52.66]
+if = { class = ["PALADIN"] }
+reqlevel = 12
+text = "Entrena con {npc:246152}, el instructor de paladín."
+tip = "6 hechizos hasta el nivel 12: nuevos {spell:633}, {spell:1022}, {spell:3127} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#26", "trainer:paladin"]
+note = "Polestar paso 26 «Brill», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 8-13"
+
+[[step]]
+id = "h12-argenteos-052"
+do = "goto"
+at = [1421, 44.0, 40.9]
+text = "Ve a {area:228}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#27"]
+note = "Polestar paso 27 «The Sepulcher», objetivo 1 (goto)"
+
+[[step]]
+id = "h12-argenteos-053"
+do = "accept"
+quest = 6321
+npc = 6389
+at = [1421, 43.42, 41.68]
+if = { race = ["Scourge"] }
+reqlevel = 10
+text = "Coge «{quest:6321}» de {npc:6389}."
+tip = "{area:228} es el pueblo-cripta de los Renegados en medio del bosque. Todos los que necesitas están alrededor de la entrada de la cripta; {npc:2226}, el cuidador de murciélagos, está justo al este."
+why = "+210 XP · <1 min · desbloquea «{quest:6323}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#28"]
+note = "Polestar paso 28 «The Sepulcher», objetivo 1 (accept)"
+
+[[step]]
+id = "h12-argenteos-054"
+do = "getfp"
+npc = 2226
+node = "10"
+at = [1421, 45.62, 42.6]
+text = "Coge la ruta de vuelo de El Sepulcro con {npc:2226}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#28"]
+note = "Polestar paso 28 «The Sepulcher», objetivo 2 (getfp)"
+
+[[step]]
+id = "h12-argenteos-055"
+do = "turnin"
+quest = 6321
+npc = 2226
+at = [1421, 45.62, 42.6]
+if = { race = ["Scourge"] }
+chain = "h12-argenteos-s028-2226"
+text = "Entrega «{quest:6321}» a {npc:2226}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#28"]
+note = "Polestar paso 28 «The Sepulcher», objetivo 3 (turnin)"
+
+[[step]]
+id = "h12-argenteos-056"
+do = "accept"
+quest = 6323
+npc = 2226
+at = [1421, 45.62, 42.6]
+if = { race = ["Scourge"] }
+chain = "h12-argenteos-s028-2226"
+reqlevel = 10
+text = "Coge «{quest:6323}» de {npc:2226}, {npc:4556}, en {map:1458}, al final de esta guía; no hace falta comprar el vuelo."
+why = "+420 XP · <1 min · desbloquea «{quest:6322}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#28"]
+note = "Polestar paso 28 «The Sepulcher», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-057"
+do = "accept"
+quest = 477
+npc = 2121
+at = [1421, 43.98, 40.93]
+reqlevel = 10
+text = "Coge «{quest:477}» de {npc:2121}."
+why = "+975 XP · ~1 min · desbloquea «{quest:95981}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#28"]
+note = "Polestar paso 28 «The Sepulcher», objetivo 5 (accept)"
+
+[[step]]
+id = "h12-argenteos-058"
+do = "accept"
+quest = 421
+npc = 1938
+at = [1421, 44.2, 39.81]
+reqlevel = 12
+text = "Coge «{quest:421}» de {npc:1938}."
+why = "+1.090 XP · ~4 min · desbloquea «{quest:422}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#28"]
+note = "Polestar paso 28 «The Sepulcher», objetivo 6 (accept)"
+
+[[step]]
+id = "h12-argenteos-059"
+do = "accept"
+quest = 428
+npc = 1952
+at = [1421, 43.42, 40.86]
+chain = "h12-argenteos-s028-1952"
+reqlevel = 10
+text = "Coge «{quest:428}» del {npc:1952}."
+why = "+230 XP · <1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#28"]
+note = "Polestar paso 28 «The Sepulcher», objetivo 7 (accept) · datos no importados: closedBy · consejo de Polestar sin traducir: {npc:1952}, below ground."
+
+[[step]]
+id = "h12-argenteos-060"
+do = "accept"
+quest = 437
+npc = 1952
+at = [1421, 43.42, 40.86]
+chain = "h12-argenteos-s028-1952"
+reqlevel = 10
+text = "Coge «{quest:437}» del {npc:1952}."
+why = "+1.091 XP · ~5 min · desbloquea «{quest:438}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#28"]
+note = "Polestar paso 28 «The Sepulcher», objetivo 8 (accept)"
+
+[[step]]
+id = "h12-argenteos-061"
+do = "turnin"
+quest = 445
+npc = 1937
+at = [1421, 42.8, 40.86]
+text = "Entrega «{quest:445}» a {npc:1937}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#28"]
+note = "Polestar paso 28 «The Sepulcher», objetivo 9 (turnin)"
+
+[[step]]
+id = "h12-argenteos-062"
+do = "turnin"
+quest = 264
+at = [1421, 44.19, 42.67]
+if = { race = ["Tauren", "Skyborne"] }
+text = "Entrega «{quest:264}» en {obj:24776}."
+tip = "«{quest:264}» se entrega en {obj:24776}, una tumba a pocos pasos al sur de la entrada de la cripta, no a una persona."
+why = "+550 XP · <1 min · 2,2× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#29"]
+note = "Polestar paso 29 «The Sepulcher», objetivo 1 (turnin) · condición no expresable: llevas la misión 264 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-063"
+do = "turnin"
+quest = 477
+at = [1421, 49.89, 60.33]
+text = "Entrega «{quest:477}» en {obj:1627}."
+tip = "Sigue el camino al sur. {obj:1627} está junto a él, al norte de la Aldea Piroleña."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#30"]
+note = "Polestar paso 30 ««Pasa la frontera»», objetivo 1 (turnin)"
+
+[[step]]
+id = "h12-argenteos-064"
+do = "accept"
+quest = 478
+at = [1421, 49.89, 60.33]
+reqlevel = 10
+text = "Coge «{quest:478}» ({obj:1627})."
+why = "+750 XP · ~1,3 min · desbloquea «{quest:95981}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#30"]
+note = "Polestar paso 30 ««Pasa la frontera»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-065"
+do = "complete"
+quest = 437
+obj = 1
+at = [1421, 45.0, 21.0]
+text = "Consigue {item:3622} (1) de {npc:1983} para «{quest:437}»."
+tip = "Al norte de {area:228}. {npc:1983} ronda {area:240}: mátalo y luego cruza el campo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#31"]
+note = "Polestar paso 31 «The Dead Field», objetivo 1 (collect)"
+
+[[step]]
+id = "h12-argenteos-066"
+do = "complete"
+quest = 437
+at = [1421, 45.1, 21.7]
+text = "Completa «{quest:437}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#31"]
+note = "Polestar paso 31 «The Dead Field», objetivo 2 (complete) · objetivos (EN): Essence of Nightlash; Enter the Dead Fields"
+
+[[step]]
+id = "h12-argenteos-067"
+do = "turnin"
+quest = 428
+npc = 1950
+at = [1421, 53.46, 13.43]
+chain = "h12-argenteos-s032-1950"
+text = "Entrega «{quest:428}» a {npc:1950}."
+tip = "Sigue el camino al noreste hasta la casa de los Yorick, en {area:238}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#32"]
+note = "Polestar paso 32 «Malden's Orchard», objetivo 1 (turnin)"
+
+[[step]]
+id = "h12-argenteos-068"
+do = "accept"
+quest = 429
+npc = 1950
+at = [1421, 53.46, 13.43]
+chain = "h12-argenteos-s032-1950"
+reqlevel = 10
+text = "Coge «{quest:429}» de {npc:1950}."
+why = "+1.128 XP · ~5 min · desbloquea «{quest:425}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#32"]
+note = "Polestar paso 32 «Malden's Orchard», objetivo 2 (accept)"
+
+[[step]]
+id = "h12-argenteos-069"
+do = "complete"
+quest = 429
+obj = 1
+at = [1421, 54.9, 13.6]
+text = "Consigue {item:3164} (3) para «{quest:429}»."
+tip = "Los Lupos jaspeados merodean por las colinas alrededor de la casa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#33"]
+note = "Polestar paso 33 «Mottled Worgs», objetivo 1 (collect)"
+
+[[step]]
+id = "h12-argenteos-070"
+do = "accept"
+quest = 435
+npc = 1978
+at = [1421, 56.18, 9.18]
+escort = true
+reqlevel = 10
+text = "Coge «{quest:435}» de {npc:1978}."
+tip = "{npc:1978} espera al noreste de la casa. Escóltalo de vuelta hasta {npc:1950}; los huargos atacan por el camino."
+why = "+875 XP · ~6,6 min · desbloquea «{quest:1358}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#34"]
+note = "Polestar paso 34 ««Escolta a Erland»», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:1978}, inside."
+
+[[step]]
+id = "h12-argenteos-071"
+do = "complete"
+quest = 435
+escort = true
+text = "Completa «{quest:435}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#34"]
+note = "Polestar paso 34 ««Escolta a Erland»», objetivo 2 (complete) · objetivos (EN): Erland must reach Rane Yorick"
+
+[[step]]
+id = "h12-argenteos-072"
+do = "turnin"
+quest = 435
+npc = 1950
+at = [1421, 53.46, 13.43]
+chain = "h12-argenteos-s035-1950"
+text = "Entrega «{quest:435}» a {npc:1950}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#35"]
+note = "Polestar paso 35 «Rane Yorick», objetivo 1 (turnin)"
+
+[[step]]
+id = "h12-argenteos-073"
+do = "accept"
+quest = 449
+npc = 1950
+at = [1421, 53.46, 13.43]
+chain = "h12-argenteos-s035-1950"
+reqlevel = 10
+text = "Coge «{quest:449}» de {npc:1950}."
+why = "+440 XP · <1 min · desbloquea «{quest:1358}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#35"]
+note = "Polestar paso 35 «Rane Yorick», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-074"
+do = "complete"
+quest = 421
+obj = 1
+at = [1421, 53.0, 26.7]
+text = "Mata {npc:1769} (5) para «{quest:421}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#36"]
+note = "Polestar paso 36 ««Demuestra tu valía»», objetivo 1 (kill)"
+
+[[step]]
+id = "h12-argenteos-075"
+do = "turnin"
+quest = 478
+npc = 2121
+at = [1421, 43.98, 40.93]
+chain = "h12-argenteos-s037-2121"
+text = "Entrega «{quest:478}» a {npc:2121}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 1 (turnin)"
+
+[[step]]
+id = "h12-argenteos-076"
+do = "accept"
+quest = 481
+npc = 2121
+at = [1421, 43.98, 40.93]
+optional = true
+chain = "h12-argenteos-s037-2121"
+reqlevel = 10
+text = "Coge «{quest:481}» de {npc:2121}."
+tip = "+100 XP · <1 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-077"
+do = "turnin"
+quest = 481
+npc = 1938
+at = [1421, 44.2, 39.81]
+optional = true
+chain = "h12-argenteos-s037-1938"
+text = "Entrega «{quest:481}» a {npc:1938}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 3 (turnin)"
+
+[[step]]
+id = "h12-argenteos-078"
+do = "turnin"
+quest = 421
+npc = 1938
+at = [1421, 44.2, 39.81]
+chain = "h12-argenteos-s037-1938"
+text = "Entrega «{quest:421}» a {npc:1938}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 4 (turnin)"
+
+[[step]]
+id = "h12-argenteos-079"
+do = "accept"
+quest = 422
+npc = 1938
+at = [1421, 44.2, 39.81]
+chain = "h12-argenteos-s037-1938"
+reqlevel = 9
+text = "Coge «{quest:422}» de {npc:1938}."
+why = "+875 XP · ~2,3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 5 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:1938}: his books lie in the {area:227} farmhouse, on the walk north."
+
+[[step]]
+id = "h12-argenteos-080"
+do = "accept"
+quest = 482
+npc = 1938
+at = [1421, 44.2, 39.81]
+chain = "h12-argenteos-s037-1938"
+reqlevel = 10
+text = "Coge «{quest:482}» de {npc:1938}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-081"
+do = "turnin"
+quest = 437
+npc = 1952
+at = [1421, 43.42, 40.86]
+chain = "h12-argenteos-s037-1952"
+text = "Entrega «{quest:437}» al {npc:1952}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 7 (turnin) · consejo de Polestar sin traducir: {npc:1952}, below ground."
+
+[[step]]
+id = "h12-argenteos-082"
+do = "accept"
+quest = 438
+npc = 1952
+at = [1421, 43.42, 40.86]
+chain = "h12-argenteos-s037-1952"
+reqlevel = 10
+text = "Coge «{quest:438}» del {npc:1952}."
+why = "+875 XP · ~1 min · desbloquea «{quest:440}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-083"
+do = "turnin"
+quest = 449
+npc = 1952
+at = [1421, 43.42, 40.86]
+chain = "h12-argenteos-s037-1952"
+text = "Entrega «{quest:449}» al {npc:1952}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 9 (turnin)"
+
+[[step]]
+id = "h12-argenteos-084"
+do = "accept"
+quest = 3221
+npc = 1952
+at = [1421, 43.42, 40.86]
+chain = "h12-argenteos-s037-1952"
+reqlevel = 10
+text = "Coge «{quest:3221}» del {npc:1952}."
+why = "+90 XP · <1 min · desbloquea «{quest:1358}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 10 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-085"
+do = "turnin"
+quest = 3221
+npc = 1937
+at = [1421, 42.8, 40.86]
+chain = "h12-argenteos-s037-1937"
+text = "Entrega «{quest:3221}» a {npc:1937}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 11 (turnin)"
+
+[[step]]
+id = "h12-argenteos-086"
+do = "accept"
+quest = 1359
+npc = 1937
+at = [1421, 42.8, 40.86]
+chain = "h12-argenteos-s037-1937"
+reqlevel = 10
+text = "Coge «{quest:1359}» de {npc:1937}."
+why = "+110 XP · <1 min · desbloquea «{quest:1358}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 12 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:1937}: Zinge in the {map:1458}, on the way to the zeppelin at the end."
+
+[[step]]
+id = "h12-argenteos-087"
+do = "turnin"
+quest = 429
+npc = 1937
+at = [1421, 42.8, 40.86]
+chain = "h12-argenteos-s037-1937"
+text = "Entrega «{quest:429}» a {npc:1937}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 13 (turnin)"
+
+[[step]]
+id = "h12-argenteos-088"
+do = "accept"
+quest = 430
+npc = 1937
+at = [1421, 42.8, 40.86]
+chain = "h12-argenteos-s037-1937"
+reqlevel = 10
+text = "Coge «{quest:430}» de {npc:1937}."
+why = "+650 XP · <1 min · desbloquea «{quest:425}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 14 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-089"
+do = "turnin"
+quest = 482
+npc = 2121
+at = [1421, 43.98, 40.93]
+chain = "h12-argenteos-s037-2121"
+text = "Entrega «{quest:482}» a {npc:2121}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 15 (turnin)"
+
+[[step]]
+id = "h12-argenteos-090"
+do = "accept"
+quest = 479
+npc = 2121
+at = [1421, 43.98, 40.93]
+optional = true
+chain = "h12-argenteos-s037-2121"
+reqlevel = 10
+text = "Coge «{quest:479}» de {npc:2121}."
+tip = "+2.333 XP · ~10 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#37"]
+note = "Polestar paso 37 «The Sepulcher», objetivo 16 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {area:233} comes later, down the lake shore."
+
+[[step]]
+id = "h12-argenteos-091"
+do = "complete"
+quest = 422
+obj = 1
+at = [1421, 52.83, 28.58]
+text = "Recoge {item:3155} (1) de {obj:1571} para «{quest:422}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#38"]
+note = "Polestar paso 38 «Valgan's Field farmhouse», objetivo 1 (collect) · consejo de Polestar sin traducir: {obj:1571}; upstairs. · consejo de Polestar sin traducir: On the road north, the farmhouse at {area:227}: go upstairs, the {obj:1571} lie on the floor in the back room. Looting them brings a {npc:1770}."
+
+[[step]]
+id = "h12-argenteos-092"
+do = "turnin"
+quest = 430
+npc = 1951
+at = [1421, 53.43, 12.59]
+chain = "h12-argenteos-s039-1951"
+text = "Entrega «{quest:430}» a {npc:1951}."
+tip = "De nuevo al norte, a la casa de los Yorick."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#39"]
+note = "Polestar paso 39 «Quinn Yorick», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:1951}, inside."
+
+[[step]]
+id = "h12-argenteos-093"
+do = "accept"
+quest = 91920
+npc = 1951
+at = [1421, 53.43, 12.59]
+chain = "h12-argenteos-s039-1951"
+reqlevel = 10
+text = "Coge «{quest:91920}» de {npc:1951}."
+why = "+440 XP · ~2 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#39"]
+note = "Polestar paso 39 «Quinn Yorick», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-094"
+do = "complete"
+quest = 91920
+obj = 1
+at = [1421, 61.1, 14.5]
+text = "Consigue {item:730} (3) para «{quest:91920}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#40"]
+note = "Polestar paso 40 «Vile Fin murlocs», objetivo 1 (collect) · consejo de Polestar sin traducir: Follow the lake shore south-east from the Yoricks' house: the Vile Fin Shredders and Tidehunters along it drop the murloc eyes."
+
+[[step]]
+id = "h12-argenteos-095"
+do = "turnin"
+quest = 438
+at = [1421, 58.44, 34.9]
+text = "Entrega «{quest:438}» en {obj:1593}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#41"]
+note = "Polestar paso 41 ««El Viejo Embarcadero»», objetivo 1 (turnin) · consejo de Polestar sin traducir: Follow the lake shore south from the murlocs: the {obj:1593} lies at the ferry landing, on the way to {area:233}."
+
+[[step]]
+id = "h12-argenteos-096"
+do = "accept"
+quest = 439
+at = [1421, 58.44, 34.9]
+reqlevel = 10
+text = "Coge «{quest:439}» ({obj:1593})."
+why = "+290 XP · ~1 min · desbloquea «{quest:440}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#41"]
+note = "Polestar paso 41 ««El Viejo Embarcadero»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-097"
+do = "complete"
+quest = 479
+obj = 1
+at = [1421, 56.68, 54.37]
+wps = [[1421, 55.2, 60.8, "Colgante Dalaran"], [1421, 58.7, 62.7, "Colgante Dalaran"], [1421, 62.0, 62.7, "Colgante Dalaran"]]
+optional = true
+text = "Consigue {item:3354} (8) de {npc:1912} y {npc:1914} y {npc:1915} para «{quest:479}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#42"]
+note = "Polestar paso 42 «Ambermill», objetivo 1 (collect) · consejo de Polestar sin traducir: Keep south along the shore from the ferry to {area:233}. Protectors guard the outskirts and Mages the town; both drop pendants. Stay out of the middle, where {npc:2120} stands."
+
+[[step]]
+id = "h12-argenteos-098"
+do = "turnin"
+quest = 479
+npc = 2121
+at = [1421, 43.98, 40.93]
+optional = true
+text = "Entrega «{quest:479}» a {npc:2121}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#43"]
+note = "Polestar paso 43 «The Sepulcher», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back north-west up the road to the {area:228}."
+
+[[step]]
+id = "h12-argenteos-099"
+do = "turnin"
+quest = 91920
+npc = 1937
+at = [1421, 42.8, 40.86]
+chain = "h12-argenteos-s043-1937"
+text = "Entrega «{quest:91920}» a {npc:1937}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#43"]
+note = "Polestar paso 43 «The Sepulcher», objetivo 2 (turnin)"
+
+[[step]]
+id = "h12-argenteos-100"
+do = "accept"
+quest = 91921
+npc = 1937
+at = [1421, 42.8, 40.86]
+chain = "h12-argenteos-s043-1937"
+reqlevel = 10
+text = "Coge «{quest:91921}» de {npc:1937}, para Quinn, en el camino al norte al final."
+why = "+650 XP · ~1,6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#43"]
+note = "Polestar paso 43 «The Sepulcher», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-101"
+do = "turnin"
+quest = 422
+npc = 1938
+at = [1421, 44.2, 39.81]
+text = "Entrega «{quest:422}» a {npc:1938}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#43"]
+note = "Polestar paso 43 «The Sepulcher», objetivo 4 (turnin) · consejo de Polestar sin traducir: {npc:1938}, just north of Allister."
+
+[[step]]
+id = "h12-argenteos-102"
+do = "turnin"
+quest = 439
+npc = 1952
+at = [1421, 43.42, 40.86]
+chain = "h12-argenteos-s043-1952"
+text = "Entrega «{quest:439}» al {npc:1952}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#43"]
+note = "Polestar paso 43 «The Sepulcher», objetivo 5 (turnin) · consejo de Polestar sin traducir: {npc:1952}, below ground."
+
+[[step]]
+id = "h12-argenteos-103"
+do = "accept"
+quest = 440
+npc = 1952
+at = [1421, 43.42, 40.86]
+chain = "h12-argenteos-s043-1952"
+reqlevel = 10
+text = "Coge «{quest:440}» del {npc:1952}."
+why = "+575 XP · <1 min · desbloquea «{quest:441}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#43"]
+note = "Polestar paso 43 «The Sepulcher», objetivo 6 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:1499} in {area:159}, on the way to the zeppelin at the end."
+
+[[step]]
+id = "h12-argenteos-104"
+do = "turnin"
+quest = 91921
+npc = 1951
+at = [1421, 53.43, 12.59]
+text = "Entrega «{quest:91921}» a {npc:1951}."
+tip = "Toma el camino al norte hacia {map:1420}: la casa de los Yorick en {area:238} está de camino. «{quest:425}» acecha a poca distancia al oeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#44"]
+note = "Polestar paso 44 «The Ivar Patch», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:1951}, inside."
+
+[[step]]
+id = "h12-argenteos-105"
+do = "accept"
+quest = 425
+npc = 1950
+at = [1421, 53.46, 13.43]
+reqlevel = 10
+text = "Coge «{quest:425}» de {npc:1950}."
+why = "+771 XP · ~2,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#44"]
+note = "Polestar paso 44 «The Ivar Patch», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-106"
+do = "complete"
+quest = 425
+obj = 1
+at = [1421, 51.52, 13.9]
+text = "Consigue {item:3621} (1) de {npc:1971} para «{quest:425}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#44"]
+note = "Polestar paso 44 «The Ivar Patch», objetivo 3 (collect) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h12-argenteos-107"
+do = "turnin"
+quest = 425
+npc = 1950
+at = [1421, 53.46, 13.43]
+text = "Entrega «{quest:425}» a {npc:1950}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#44"]
+note = "Polestar paso 44 «The Ivar Patch», objetivo 4 (turnin)"
+
+[[step]]
+id = "h12-argenteos-108"
+do = "goto"
+at = [1420, 61.3, 50.8]
+text = "Ve a {area:159}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#45"]
+note = "Polestar paso 45 «Brill», objetivo 1 (goto)"
+
+[[step]]
+id = "h12-argenteos-109"
+do = "turnin"
+quest = 440
+npc = 1499
+at = [1420, 61.26, 50.84]
+chain = "h12-argenteos-s046-1499"
+text = "Entrega «{quest:440}» a {npc:1499}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#46"]
+note = "Polestar paso 46 «Magistrado Sevren», objetivo 1 (turnin) · consejo de Polestar sin traducir: Inside. · consejo de Polestar sin traducir: {area:159} is a short walk north up the road from the zeppelin towers; {npc:1499} is in the town hall."
+
+[[step]]
+id = "h12-argenteos-110"
+do = "accept"
+quest = 441
+npc = 1499
+at = [1420, 61.26, 50.84]
+chain = "h12-argenteos-s046-1499"
+reqlevel = 10
+text = "Coge «{quest:441}» de {npc:1499}."
+why = "+575 XP · <1 min · 4,4× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#46"]
+note = "Polestar paso 46 «Magistrado Sevren», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-111"
+do = "goto"
+at = [1420, 61.8, 76.1]
+text = "Ve a {area:153}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#47"]
+note = "Polestar paso 47 «Tirisfal Glades», objetivo 1 (goto)"
+
+[[step]]
+id = "h12-argenteos-112"
+do = "turnin"
+quest = 6323
+npc = 4556
+at = [1458, 61.49, 41.79]
+if = { race = ["Scourge"] }
+chain = "h12-argenteos-s048-4556"
+text = "Entrega «{quest:6323}» a {npc:4556}, el vendedor de armas junto al cuidador de murciélagos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#48"]
+note = "Polestar paso 48 «Entrañas», objetivo 1 (turnin) · consejo de Polestar sin traducir: {obj:1661} lies under the {area:153}, beside the zeppelin towers. {npc:2050} stands at the inn by the way down; {npc:7683} on the way down to the Apothecarium, where {npc:11044} and {npc:5204} stand beside {npc:2055}."
+
+[[step]]
+id = "h12-argenteos-113"
+do = "accept"
+quest = 6322
+npc = 4556
+at = [1458, 61.49, 41.79]
+if = { race = ["Scourge"] }
+chain = "h12-argenteos-s048-4556"
+reqlevel = 10
+text = "Coge «{quest:6322}» de {npc:4556}."
+why = "+210 XP · <1 min · desbloquea «{quest:6324}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#48"]
+note = "Polestar paso 48 «Entrañas», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-114"
+do = "getfp"
+npc = 4551
+node = "11"
+at = [1458, 63.25, 48.56]
+text = "Coge la ruta de vuelo de Entrañas con {npc:4551}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#48"]
+note = "Polestar paso 48 «Entrañas», objetivo 3 (getfp)"
+
+[[step]]
+id = "h12-argenteos-115"
+do = "turnin"
+quest = 6322
+npc = 4551
+at = [1458, 63.25, 48.56]
+if = { race = ["Scourge"] }
+chain = "h12-argenteos-s048-4551"
+text = "Entrega «{quest:6322}» a {npc:4551}, el cuidador de murciélagos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#48"]
+note = "Polestar paso 48 «Entrañas», objetivo 4 (turnin)"
+
+[[step]]
+id = "h12-argenteos-116"
+do = "accept"
+quest = 6324
+npc = 4551
+at = [1458, 63.25, 48.56]
+if = { race = ["Scourge"] }
+chain = "h12-argenteos-s048-4551"
+reqlevel = 10
+text = "Coge «{quest:6324}» de {npc:4551}, guarda {item:16210}; Podrig lo recoge en la siguiente parada, en {area:228}, a nivel 22."
+why = "+105 XP · <1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#48"]
+note = "Polestar paso 48 «Entrañas», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-117"
+do = "turnin"
+quest = 441
+npc = 2050
+at = [1458, 62.01, 42.75]
+text = "Entrega «{quest:441}» a {npc:2050}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#48"]
+note = "Polestar paso 48 «Entrañas», objetivo 6 (turnin)"
+
+[[step]]
+id = "h12-argenteos-118"
+do = "accept"
+quest = 97891
+npc = 7683
+at = [1458, 58.61, 54.68]
+reqlevel = 9
+text = "Coge «{quest:97891}» de {npc:7683}."
+tip = "Misión con tiempo: 5 min desde que la coges."
+why = "+1.150 XP · <1 min · 3,3× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#48"]
+note = "Polestar paso 48 «Entrañas», objetivo 7 (accept)"
+
+[[step]]
+id = "h12-argenteos-119"
+do = "turnin"
+quest = 97891
+npc = 11044
+at = [1458, 46.61, 74.09]
+text = "Entrega «{quest:97891}» a {npc:11044}, en El Apothecarium."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#48"]
+note = "Polestar paso 48 «Entrañas», objetivo 8 (turnin)"
+
+[[step]]
+id = "h12-argenteos-120"
+do = "turnin"
+quest = 1359
+npc = 5204
+at = [1458, 50.14, 67.97]
+chain = "h12-argenteos-s048-5204"
+text = "Entrega «{quest:1359}» a {npc:5204}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#48"]
+note = "Polestar paso 48 «Entrañas», objetivo 9 (turnin) · consejo de Polestar sin traducir: {npc:5204}, in the Apothecarium."
+
+[[step]]
+id = "h12-argenteos-121"
+do = "accept"
+quest = 1358
+npc = 5204
+at = [1458, 50.14, 67.97]
+chain = "h12-argenteos-s048-5204"
+reqlevel = 10
+text = "Coge «{quest:1358}» de {npc:5204}."
+why = "+1.050 XP · <1 min · 8,5× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#48"]
+note = "Polestar paso 48 «Entrañas», objetivo 10 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:5204}: Helbrim at the Crossroads, in the next guide."
+
+[[step]]
+id = "h12-argenteos-122-pa"
+do = "train"
+npc = 260093
+spells = [19742]
+at = [1458, 48.35, 14.27]
+if = { class = ["PALADIN"] }
+reqlevel = 14
+text = "Entrena con {npc:260093}, el instructor de paladín."
+tip = "1 hechizo hasta el nivel 14: nuevos {spell:19742}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#48", "trainer:paladin"]
+note = "Polestar paso 48 «Entrañas», objetivo 11 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 14-14"
+
+[[step]]
+id = "h12-argenteos-123"
+do = "complete"
+quest = 97959
+at = [1458, 56.03, 37.45]
+if = { race = ["Scourge"], prof = ["mining"] }
+text = "Completa «{quest:97959}»."
+tip = "{npc:4598}, el instructor de minería, trabaja en {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#49"]
+note = "Polestar paso 49 «Brom Killian», objetivo 1 (complete) · condición no expresable: llevas la misión 97959 (implícita: el paso es de esa misión) · objetivos (EN): Brom Killian"
+
+[[step]]
+id = "h12-argenteos-124"
+do = "turnin"
+quest = 97959
+npc = 4598
+at = [1458, 56.03, 37.45]
+if = { race = ["Scourge"], prof = ["mining"] }
+text = "Entrega «{quest:97959}» a {npc:4598}, Acampada básica, de la hoguera de {npc:265812} en Tirisfal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#49"]
+note = "Polestar paso 49 «Brom Killian», objetivo 2 (turnin) · condición no expresable: llevas la misión 97959 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-125"
+do = "complete"
+quest = 97952
+at = [1458, 60.17, 29.09]
+if = { race = ["Scourge"], prof = ["blacksmithing"] }
+text = "Completa «{quest:97952}»."
+tip = "{npc:4605}, el instructor de herrería, trabaja en {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#50"]
+note = "Polestar paso 50 «Basil Frye», objetivo 1 (complete) · condición no expresable: llevas la misión 97952 (implícita: el paso es de esa misión) · objetivos (EN): Basil Frye"
+
+[[step]]
+id = "h12-argenteos-126"
+do = "turnin"
+quest = 97952
+npc = 4605
+at = [1458, 60.17, 29.09]
+if = { race = ["Scourge"], prof = ["blacksmithing"] }
+text = "Entrega «{quest:97952}» a {npc:4605}, Acampada básica, de la hoguera de {npc:265812} en Tirisfal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#50"]
+note = "Polestar paso 50 «Basil Frye», objetivo 2 (turnin) · condición no expresable: llevas la misión 97952 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-127"
+do = "complete"
+quest = 97954
+at = [1458, 75.34, 73.13]
+if = { race = ["Scourge"], prof = ["engineering"] }
+text = "Completa «{quest:97954}»."
+tip = "{npc:4586}, el instructor de ingeniería, trabaja en {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#51"]
+note = "Polestar paso 51 «Graham Van Talen», objetivo 1 (complete) · condición no expresable: llevas la misión 97954 (implícita: el paso es de esa misión) · objetivos (EN): Graham Van Talen"
+
+[[step]]
+id = "h12-argenteos-128"
+do = "turnin"
+quest = 97954
+npc = 4586
+at = [1458, 75.34, 73.13]
+if = { race = ["Scourge"], prof = ["engineering"] }
+text = "Entrega «{quest:97954}» a {npc:4586}, Acampada básica, de la hoguera de {npc:265812} en Tirisfal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#51"]
+note = "Polestar paso 51 «Graham Van Talen», objetivo 2 (turnin) · condición no expresable: llevas la misión 97954 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h12-argenteos-129"
+do = "complete"
+quest = 93739
+obj = 4
+at = [1458, 58.05, 91.79]
+if = { race = ["Skyborne"] }
+optional = true
+text = "Mata {npc:10181} (1) para «{quest:93739}»."
+tip = "Habla con {npc:10181}, en {obj:36126}: «{quest:93739}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#52"]
+note = "Polestar paso 52 «Lady Sylvanas Brisaveloz», objetivo 1 (kill) · consejo de Polestar sin traducir: {npc:10181} holds court in the {obj:36126}."
+
+[[step]]
+id = "h12-argenteos-130"
+do = "goto"
+at = [1420, 60.7, 58.9]
+text = "Ve al zepelín a {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#53"]
+note = "Polestar paso 53 «Zeppelin to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h12-argenteos-131"
+do = "goto"
+at = [1454, 55.6, 72.3]
+text = "Ve a {map:1454}'s {obj:172982}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#54"]
+note = "Polestar paso 54 «Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h12-argenteos-132"
+do = "accept"
+quest = 97246
+npc = 268701
+at = [1454, 55.68, 72.17]
+reqlevel = 5
+text = "Coge «{quest:97246}» de {npc:268701}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#55"]
+note = "Polestar paso 55 «Valle de la Fuerza», objetivo 1 (accept) · consejo de Polestar sin traducir: Walk in through the main gate. {npc:268701} stands in the {obj:172982}."
+
+[[step]]
+id = "h12-argenteos-133"
+do = "getfp"
+npc = 3310
+node = "23"
+at = [1454, 45.12, 63.89]
+text = "Coge la ruta de vuelo de {area:1637} con {npc:3310}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#56"]
+note = "Polestar paso 56 «Valle de la Fuerza», objetivo 1 (getfp)"
+
+[[step]]
+id = "h12-argenteos-134"
+do = "turnin"
+quest = 97246
+npc = 3368
+at = [1454, 57.2, 53.32]
+chain = "h12-argenteos-s057-3368"
+text = "Entrega «{quest:97246}» a {npc:3368}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#57"]
+note = "Polestar paso 57 «Valle de la Fuerza», objetivo 1 (turnin) · consejo de Polestar sin traducir: {obj:173016} is a few steps north."
+
+[[step]]
+id = "h12-argenteos-135"
+do = "accept"
+quest = 97249
+npc = 3368
+at = [1454, 57.2, 53.32]
+chain = "h12-argenteos-s057-3368"
+reqlevel = 5
+text = "Coge «{quest:97249}» de {npc:3368}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#57"]
+note = "Polestar paso 57 «Valle de la Fuerza», objetivo 2 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "h12-argenteos-136-wr"
+do = "train"
+npc = 3353
+spells = [1160, 6572, 1310185]
+at = [1454, 79.79, 31.42]
+if = { class = ["WARRIOR"] }
+reqlevel = 14
+text = "Entrena con {npc:3353}, el instructor de guerrero."
+tip = "3 hechizos hasta el nivel 14: nuevos {spell:1160}, {spell:6572}, {spell:1310185} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#58", "trainer:warrior"]
+note = "Polestar paso 58 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 13-14"
+
+[[step]]
+id = "h12-argenteos-136-hu"
+do = "train"
+npc = 3406
+spells = [1002, 1513, 6197]
+at = [1454, 67.24, 20.2]
+if = { class = ["HUNTER"] }
+reqlevel = 14
+text = "Entrena con {npc:3406}, el instructor de cazador."
+tip = "3 hechizos hasta el nivel 14: nuevos {spell:1002}, {spell:1513}, {spell:6197} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#58", "trainer:hunter"]
+note = "Polestar paso 58 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 13-14"
+
+[[step]]
+id = "h12-argenteos-136-ro"
+do = "train"
+npc = 3328
+spells = [703, 8647]
+at = [1454, 43.9, 54.63]
+if = { class = ["ROGUE"] }
+reqlevel = 14
+text = "Entrena con {npc:3328}, el instructor de pícaro."
+tip = "2 hechizos hasta el nivel 14: nuevos {spell:703}, {spell:8647}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#58", "trainer:rogue"]
+note = "Polestar paso 58 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 13-14"
+
+[[step]]
+id = "h12-argenteos-136-pr"
+do = "train"
+npc = 5994
+spells = [528, 6074, 8122]
+at = [1454, 35.72, 86.9]
+if = { class = ["PRIEST"] }
+reqlevel = 14
+text = "Entrena con {npc:5994}, el instructor de sacerdote."
+tip = "3 hechizos hasta el nivel 14: nuevos {spell:528}, {spell:8122}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#58", "trainer:priest"]
+note = "Polestar paso 58 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 13-14"
+
+[[step]]
+id = "h12-argenteos-136-mg"
+do = "train"
+npc = 5958
+spells = [118, 122, 130, 205, 597, 604, 837, 1449, 1460, 2137, 5143, 5505]
+at = [1454, 38.68, 85.41]
+if = { class = ["MAGE"] }
+reqlevel = 14
+text = "Entrena con {npc:5958}, el instructor de mago."
+tip = "12 hechizos hasta el nivel 14: nuevos {spell:118}, {spell:122}, {spell:130} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#58", "trainer:mage"]
+note = "Polestar paso 58 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 8-14"
+
+[[step]]
+id = "h12-argenteos-136-wl"
+do = "train"
+npc = 3325
+spells = [689, 704, 6222]
+at = [1454, 48.62, 46.95]
+if = { class = ["WARLOCK"] }
+reqlevel = 14
+text = "Entrena con {npc:3325}, el instructor de brujo."
+tip = "3 hechizos hasta el nivel 14: nuevos {spell:689}, {spell:704}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#58", "trainer:warlock"]
+note = "Polestar paso 58 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 13-14"
+
+[[step]]
+id = "h12-argenteos-137"
+do = "accept"
+quest = 97242
+npc = 3348
+at = [1454, 56.05, 34.12]
+reqlevel = 9
+text = "Coge «{quest:97242}» de {npc:3348}."
+tip = "{npc:3348} y {npc:3347} llevan la tienda de alquimia de La Calle Mayor; {npc:11046} está al lado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#59"]
+note = "Polestar paso 59 «La Calle Mayor», objetivo 1 (accept)"
+
+[[step]]
+id = "h12-argenteos-138"
+do = "complete"
+quest = 97242
+obj = 1
+at = [1454, 66.1, 28.9]
+wps = [[1454, 69.5, 31.0, "Puñado de eneas"]]
+text = "Recoge {item:277278} (2) de {obj:661093} para «{quest:97242}»."
+tip = "Las espadañas y la hierba lanza crecen junto al agua en {obj:172958}, al este de La Calle Mayor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#60"]
+note = "Polestar paso 60 «Valle del Honor», objetivo 1 (collect)"
+
+[[step]]
+id = "h12-argenteos-139"
+do = "complete"
+quest = 97242
+obj = 2
+at = [1454, 66.2, 28.8]
+wps = [[1454, 69.3, 30.6, "Cortes de apiáceas"]]
+text = "Recoge {item:277279} (4) de {obj:661092} para «{quest:97242}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#60"]
+note = "Polestar paso 60 «Valle del Honor», objetivo 2 (collect)"
+
+[[step]]
+id = "h12-argenteos-140"
+do = "note"
+npc = 11868
+at = [1454, 81.7, 19.55]
+if = { class = ["PALADIN"] }
+optional = true
+text = "Entrena con {npc:11868}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#61"]
+note = "Polestar paso 61 «Sayoc», objetivo 1 (train) · condición no expresable: dinero >= 1000 cobre; no tienes Two-Handed Axes 1+ · train sin hechizos: manual · consejo de Polestar sin traducir: While you're here: learn {spell:197} from {npc:11868} ({obj:172958}, 10 silver); two-handers level a Paladin fastest."
+
+[[step]]
+id = "h12-argenteos-141"
+do = "turnin"
+quest = 97242
+npc = 3348
+at = [1454, 56.05, 34.12]
+text = "Entrega «{quest:97242}» a {npc:3348}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#62"]
+note = "Polestar paso 62 «Kor'geld», objetivo 1 (turnin)"
+
+[[step]]
+id = "h12-argenteos-142"
+do = "accept"
+quest = 97275
+npc = 3347
+at = [1454, 56.84, 33.03]
+reqlevel = 9
+text = "Coge «{quest:97275}» de {npc:3347}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#62"]
+note = "Polestar paso 62 «Kor'geld», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h12-argenteos-143"
+do = "turnin"
+quest = 97275
+npc = 11046
+at = [1454, 55.79, 32.9]
+text = "Entrega «{quest:97275}» a {npc:11046}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#62"]
+note = "Polestar paso 62 «Kor'geld», objetivo 3 (turnin)"
+
+[[step]]
+id = "h12-argenteos-144"
+do = "accept"
+quest = 97326
+npc = 268684
+at = [1454, 36.82, 29.06]
+reqlevel = 5
+text = "Coge «{quest:97326}» de {npc:268684}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#63"]
+note = "Polestar paso 63 «Valle de la Sabiduría», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:268684} and {npc:268682} sit behind Grommash Hold in the {obj:172957}; the Smooth Boulders lie around them. Train while you are in the city (Druids and Paladins have no trainer here). The next guide walks from here to {area:379} and the Crossroads."
+
+[[step]]
+id = "h12-argenteos-145"
+do = "turnin"
+quest = 97249
+npc = 268682
+at = [1454, 36.53, 29.06]
+text = "Entrega «{quest:97249}» a {npc:268682}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#63"]
+note = "Polestar paso 63 «Valle de la Sabiduría», objetivo 2 (turnin)"
+
+[[step]]
+id = "h12-argenteos-146"
+do = "complete"
+quest = 97326
+obj = 1
+at = [1454, 38.4, 26.8]
+wps = [[1454, 42.0, 31.1, "Roca suave"], [1454, 45.8, 38.1, "Roca suave"]]
+text = "Recoge {item:277952} (8) de {obj:661446} para «{quest:97326}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#63"]
+note = "Polestar paso 63 «Valle de la Sabiduría», objetivo 3 (collect)"
+
+[[step]]
+id = "h12-argenteos-147"
+do = "turnin"
+quest = 97326
+npc = 268684
+at = [1454, 36.82, 29.06]
+text = "Entrega «{quest:97326}» a {npc:268684}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/03-silverpine-forest#63"]
+note = "Polestar paso 63 «Valle de la Sabiduría», objetivo 4 (turnin)"

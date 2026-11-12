@@ -1,0 +1,751 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/50-60/07-felwood
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h59-frondavil-claro"
+title = "Frondavil, Claro de la Luna y Cuna del Invierno"
+levels = [59, 60]
+map = 1448
+summary = "Ruta común de la Horda, 59-60: Frondavil, Claro de la Luna y Cuna del Invierno."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h59-frondavil-claro-001"
+do = "goto"
+at = [1420, 63.0, 74.4]
+text = "Ve a las torres del zepelín."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#1"]
+note = "Polestar paso 1 «Tirisfal Glades», objetivo 1 (goto)"
+
+[[step]]
+id = "h59-frondavil-claro-002"
+do = "goto"
+at = [1420, 60.7, 58.9]
+text = "Ve al zepelín a {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#2"]
+note = "Polestar paso 2 «Zeppelin to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h59-frondavil-claro-003"
+do = "goto"
+at = [1454, 45.3, 63.7]
+optional = true
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#3"]
+note = "Polestar paso 3 «Orgrimmar», objetivo 1 (goto) · condición no expresable: no has {'k': 'has', 'neg': True, 'n': 60, 'item': 14047}"
+
+[[step]]
+id = "h59-frondavil-claro-004"
+do = "turnin"
+quest = 7836
+npc = 14727
+at = [1454, 37.7, 87.9]
+optional = true
+text = "Entrega «{quest:7836}» a {npc:14727}."
+tip = "En {obj:172961}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#4"]
+note = "Polestar paso 4 «Vehena», objetivo 1 (turnin) · condición no expresable: has {'k': 'has', 'n': 60, 'item': 14047} · consejo de Polestar sin traducir: Sixty {item:14047}."
+
+[[step]]
+id = "h59-frondavil-claro-005"
+do = "turnin"
+quest = 7824
+npc = 14726
+at = [1454, 63.6, 51.23]
+optional = true
+text = "Entrega «{quest:7824}» a {npc:14726}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#5"]
+note = "Polestar paso 5 «Rashona Straglash», objetivo 1 (turnin) · condición no expresable: has {'k': 'has', 'n': 60, 'item': 14047} · consejo de Polestar sin traducir: Sixty {item:14047}."
+
+[[step]]
+id = "h59-frondavil-claro-006"
+do = "goto"
+at = [1454, 45.3, 63.7]
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#6"]
+note = "Polestar paso 6 «Fly to Splintertree Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h59-frondavil-claro-007"
+do = "fly"
+zone = 1448
+text = "Vuela a Puesto del Hachazo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#6"]
+note = "Polestar paso 6 «Fly to Splintertree Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h59-frondavil-claro-008"
+do = "goto"
+at = [1448, 51.2, 82.1]
+text = "Ve a {area:2479}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#7"]
+note = "Polestar paso 7 «Felwood», objetivo 1 (goto)"
+
+[[step]]
+id = "h59-frondavil-claro-009"
+do = "turnin"
+quest = 5159
+npc = 10922
+at = [1448, 51.21, 82.11]
+chain = "h59-frondavil-claro-s008-10922"
+text = "Entrega «{quest:5159}» a {npc:10922}."
+tip = "Vuela a {area:431} y cabalga hacia el noroeste por el camino que sale de {map:1440} y entra en {map:1448}. {area:2479} es el campamento de los druidas justo pasada la frontera."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#8"]
+note = "Polestar paso 8 «The Emerald Sanctuary», objetivo 1 (turnin)"
+
+[[step]]
+id = "h59-frondavil-claro-010"
+do = "accept"
+quest = 5165
+npc = 10922
+at = [1448, 51.21, 82.11]
+chain = "h59-frondavil-claro-s008-10922"
+reqlevel = 48
+text = "Coge «{quest:5165}» de {npc:10922}."
+why = "+5.650 XP · ~7 min · desbloquea «{quest:5242}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#8"]
+note = "Polestar paso 8 «The Emerald Sanctuary», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h59-frondavil-claro-011"
+do = "turnin"
+quest = 3942
+npc = 9116
+at = [1448, 51.35, 81.51]
+text = "Entrega «{quest:3942}» a {npc:9116}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#8"]
+note = "Polestar paso 8 «The Emerald Sanctuary», objetivo 3 (turnin) · consejo de Polestar sin traducir: {npc:9116}, inside."
+
+[[step]]
+id = "h59-frondavil-claro-012"
+do = "note"
+text = "Corazón de plata, de {npc:9116}, pide un {item:11173} del norte de {map:1448} y volver hasta aquí. Omítela."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#8"]
+note = "Polestar paso 8 «The Emerald Sanctuary», objetivo 4 (note)"
+
+[[step]]
+id = "h59-frondavil-claro-013"
+do = "complete"
+quest = 5165
+obj = 2
+at = [1448, 37.68, 52.69]
+text = "Usa {obj:176159} para «{quest:5165}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#9"]
+note = "Polestar paso 9 ««Sofocar las llamas de protección»», objetivo 1 (interact) · consejo de Polestar sin traducir: Ride north-west to {area:1763}. The four braziers stand among the Shadow Council's buildings; use the Cleansed Water on each one.\nCareful: Shadow Council mobs of level 53-55 fill the cave and often come in large linked groups, many with stuns. A group of 2-3 players is recommended."
+
+[[step]]
+id = "h59-frondavil-claro-014"
+do = "complete"
+quest = 5165
+obj = 3
+at = [1448, 36.73, 53.27]
+text = "Usa {obj:176160} para «{quest:5165}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#9"]
+note = "Polestar paso 9 ««Sofocar las llamas de protección»», objetivo 2 (interact)"
+
+[[step]]
+id = "h59-frondavil-claro-015"
+do = "complete"
+quest = 5165
+obj = 1
+at = [1448, 36.27, 56.3]
+text = "Usa {obj:176158} para «{quest:5165}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#9"]
+note = "Polestar paso 9 ««Sofocar las llamas de protección»», objetivo 3 (interact)"
+
+[[step]]
+id = "h59-frondavil-claro-016"
+do = "complete"
+quest = 5165
+obj = 4
+at = [1448, 36.48, 55.19]
+text = "Usa {obj:176161} para «{quest:5165}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#9"]
+note = "Polestar paso 9 ««Sofocar las llamas de protección»», objetivo 4 (interact)"
+
+[[step]]
+id = "h59-frondavil-claro-017"
+do = "turnin"
+quest = 5165
+npc = 10922
+at = [1448, 51.21, 82.11]
+chain = "h59-frondavil-claro-s010-10922"
+text = "Entrega «{quest:5165}» a {npc:10922}."
+tip = "Vuelve al sur, al Santuario; está cerca."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#10"]
+note = "Polestar paso 10 «Greta Pezuñamusgo», objetivo 1 (turnin)"
+
+[[step]]
+id = "h59-frondavil-claro-018"
+do = "accept"
+quest = 5242
+npc = 10922
+at = [1448, 51.21, 82.11]
+chain = "h59-frondavil-claro-s010-10922"
+reqlevel = 48
+text = "Coge «{quest:5242}» de {npc:10922}."
+why = "+9.978 XP · ~5,4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#10"]
+note = "Polestar paso 10 «Greta Pezuñamusgo», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h59-frondavil-claro-020"
+do = "note"
+text = "La siguiente misión de {npc:10306}, «{quest:4741}», te haría volver aquí desde {map:1452}. Omítela."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#11"]
+note = "Polestar paso 11 «Bloodvenom Post», objetivo 2 (note)"
+
+[[step]]
+id = "h59-frondavil-claro-021"
+do = "complete"
+quest = 5242
+obj = 1
+at = [1448, 38.81, 46.87]
+text = "Mata {npc:9861} (1) para «{quest:5242}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#12"]
+note = "Polestar paso 12 ««El golpe final»», objetivo 1 (kill) · consejo de Polestar sin traducir: {npc:9861}, {npc:9860} and {npc:9517} wait at the back of {area:1770}, the cave in {area:1763}'s north. Clear the tunnel as you go.\nCareful: The three bosses fight as a group. Kill the nearby mobs first so you don't pull extra enemies."
+
+[[step]]
+id = "h59-frondavil-claro-022"
+do = "complete"
+quest = 5242
+obj = 2
+at = [1448, 38.79, 46.7]
+text = "Mata {npc:9860} (1) para «{quest:5242}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#12"]
+note = "Polestar paso 12 ««El golpe final»», objetivo 2 (kill)"
+
+[[step]]
+id = "h59-frondavil-claro-023"
+do = "complete"
+quest = 5242
+obj = 3
+at = [1448, 38.82, 46.78]
+text = "Consigue {item:13207} (1) de {npc:9517} para «{quest:5242}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#12"]
+note = "Polestar paso 12 ««El golpe final»», objetivo 3 (collect)"
+
+[[step]]
+id = "h59-frondavil-claro-024"
+do = "loot"
+item = 11515
+count = 6
+at = [1448, 38.81, 46.87]
+wps = [[1448, 36.2, 56.7, "Fragmento de alma corrupto"], [1448, 39.9, 69.0, "Fragmento de alma corrupto"], [1448, 38.2, 80.7, "Fragmento de alma corrupto"]]
+text = "Consigue {item:11515} (6)."
+tip = "Fragmentos de alma corruptos de los cultistas, «{quest:5887}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#12"]
+note = "Polestar paso 12 ««El golpe final»», objetivo 4 (collect)"
+
+[[step]]
+id = "h59-frondavil-claro-025"
+do = "turnin"
+quest = 5887
+npc = 9529
+at = [1448, 46.75, 83.13]
+optional = true
+text = "Entrega «{quest:5887}» a {npc:9529}."
+tip = "De vuelta al sur hacia {npc:10922}, {npc:9529} recoge los fragmentos en el lado oeste del Santuario."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#13"]
+note = "Polestar paso 13 «Maybess Brisafluvial», objetivo 1 (turnin) · condición no expresable: available {'k': 'available', 'q': 5887, 'minLevel': 48, 'pre': [4102]}"
+
+[[step]]
+id = "h59-frondavil-claro-026"
+do = "turnin"
+quest = 5242
+npc = 10922
+at = [1448, 51.21, 82.11]
+text = "Entrega «{quest:5242}» a {npc:10922}."
+tip = "Vuelve otra vez al sur, al Santuario."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#14"]
+note = "Polestar paso 14 «Greta Pezuñamusgo», objetivo 1 (turnin)"
+
+[[step]]
+id = "h59-frondavil-claro-027"
+do = "complete"
+quest = 5086
+obj = 1
+at = [1448, 49.76, 27.4]
+wps = [[1448, 48.4, 24.3, "Gotita de horror tóxico"], [1448, 50.4, 23.2, "Gotita de horror tóxico"]]
+text = "Consigue {item:12822} (3) de {npc:7132} para «{quest:5086}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#15"]
+note = "Polestar paso 15 ««Horrores tóxicos»», objetivo 1 (collect) · consejo de Polestar sin traducir: Ride north up the {map:1448} road to {area:1767}; the «{quest:5086}» ooze between the trees, and most of them drop a droplet."
+
+[[step]]
+id = "h59-frondavil-claro-028"
+do = "goto"
+at = [1450, 44.9, 35.6]
+text = "Ve a {npc:11939}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#16"]
+note = "Polestar paso 16 «Claro de la Luna», objetivo 1 (goto)"
+
+[[step]]
+id = "h59-frondavil-claro-031"
+do = "turnin"
+quest = 5527
+npc = 11801
+at = [1450, 51.69, 45.1]
+text = "Entrega «{quest:5527}» a {npc:11801}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#18"]
+note = "Polestar paso 18 «Rabine Saturna», objetivo 1 (turnin)"
+
+[[step]]
+id = "h59-frondavil-claro-032-dr"
+do = "train"
+npc = 262560
+spells = [9867, 9876, 18658, 1235827]
+at = [1412, 33.42, 22.13]
+if = { class = ["DRUID"] }
+reqlevel = 58
+text = "Entrena con {npc:262560}, el instructor de druida."
+tip = "4 hechizos hasta el nivel 58."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#19", "trainer:druid"]
+note = "Polestar paso 19 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 57-59"
+
+[[step]]
+id = "h59-frondavil-claro-034"
+do = "note"
+text = "Fragmentos de gangrevid, de {npc:11801}, requiere {area:2577}. Omítela."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#20"]
+note = "Polestar paso 20 «Rabine Saturna», objetivo 2 (note)"
+
+[[step]]
+id = "h59-frondavil-claro-036"
+do = "goto"
+at = [1452, 31.3, 45.2]
+text = "Ve a {npc:9298}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#22"]
+note = "Polestar paso 22 «Winterspring», objetivo 1 (goto)"
+
+[[step]]
+id = "h59-frondavil-claro-037"
+do = "turnin"
+quest = 980
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h59-frondavil-claro-s023-9298"
+text = "Entrega «{quest:980}» a {npc:9298}."
+tip = "Vuelve al túnel de los Fauces de Madera y toma la salida de {map:1452}; {npc:9298} acampa junto a las aguas termales, justo fuera. De Krakle en Un'Goro."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#23"]
+note = "Polestar paso 23 «Donova Cubilnevado», objetivo 1 (turnin)"
+
+[[step]]
+id = "h59-frondavil-claro-038"
+do = "accept"
+quest = 4842
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h59-frondavil-claro-s023-9298"
+reqlevel = 51
+text = "Coge «{quest:4842}» de {npc:9298}."
+why = "+5.800 XP · ~2,7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#23"]
+note = "Polestar paso 23 «Donova Cubilnevado», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h59-frondavil-claro-039"
+do = "turnin"
+quest = 5086
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h59-frondavil-claro-s023-9298"
+text = "Entrega «{quest:5086}» a {npc:9298}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#23"]
+note = "Polestar paso 23 «Donova Cubilnevado», objetivo 3 (turnin)"
+
+[[step]]
+id = "h59-frondavil-claro-040"
+do = "accept"
+quest = 5087
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h59-frondavil-claro-s023-9298"
+reqlevel = 52
+text = "Coge «{quest:5087}» de {npc:9298}."
+why = "+6.272 XP · ~3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#23"]
+note = "Polestar paso 23 «Donova Cubilnevado», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h59-frondavil-claro-041"
+do = "complete"
+quest = 5087
+obj = 1
+at = [1452, 27.9, 34.48]
+text = "Consigue {item:12829} (1) de {npc:10916} para «{quest:5087}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#24"]
+note = "Polestar paso 24 ««Corredores Nevada»», objetivo 1 (collect) · consejo de Polestar sin traducir: The runners walk the road from {area:1769} toward {area:2244} in small groups; wait by the road near {npc:9298} and kill them as they pass. Each one carries a crate.\nCareful: Turning in spawns three or four level 56-57 Winterfall ambushers that attack you; you can escape them while mounted, in stealth or with {spell:5384}, and they then gather by the lake so you can take the next quest."
+
+[[step]]
+id = "h59-frondavil-claro-042"
+do = "turnin"
+quest = 8464
+npc = 11556
+at = [1452, 27.73, 34.5]
+optional = true
+text = "Entrega «{quest:8464}» a {npc:11556}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#25"]
+note = "Polestar paso 25 «Salfa», objetivo 1 (turnin)"
+
+[[step]]
+id = "h59-frondavil-claro-043"
+do = "goto"
+at = [1452, 31.6, 36.6]
+text = "Ve a campamento Nevada de los Baños de Fuego de Escarcha."
+tip = "Cualquier fúrbolg Nevada puede llevar las cuentas; los campamentos justo al sur de {npc:11556} son los más cercanos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#26"]
+note = "Polestar paso 26 ««Cuentas para Salfa»», objetivo 1 (goto)"
+
+[[step]]
+id = "h59-frondavil-claro-044"
+do = "loot"
+item = 21383
+count = 5
+at = [1452, 31.43, 36.3]
+wps = [[1452, 32.8, 37.3, "Cuentas de Espíritu Nevada"], [1452, 34.7, 37.0, "Cuentas de Espíritu Nevada"], [1452, 39.6, 43.5, "Cuentas de Espíritu Nevada"]]
+text = "Consigue {item:21383} (5)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#26"]
+note = "Polestar paso 26 ««Cuentas para Salfa»», objetivo 2 (collect)"
+
+[[step]]
+id = "h59-frondavil-claro-046"
+do = "turnin"
+quest = 6031
+npc = 11557
+at = [1448, 65.69, 2.81]
+optional = true
+text = "Entrega «{quest:6031}» a {npc:11557}."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#28"]
+note = "Polestar paso 28 «Meilosh», objetivo 1 (turnin) · condición no expresable: tienes lista la misión 6031 · consejo de Polestar sin traducir: With 30 «{quest:6031}» in your bags: follow the road north to {area:1769}; {npc:11557} trades just inside the entrance."
+
+[[step]]
+id = "h59-frondavil-claro-047"
+do = "turnin"
+quest = 8470
+npc = 11558
+at = [1448, 65.5, 3.52]
+optional = true
+text = "Entrega «{quest:8470}» a {npc:11558}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#29"]
+note = "Polestar paso 29 «Kernda», objetivo 1 (turnin) · condición no expresable: llevas la misión 8470 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: {npc:11558} walks around here: look inside the circle on the map. · consejo de Polestar sin traducir: The Deadwood totem from {area:1762}, if {npc:11558} didn't take it then: she waits at the tunnel mouth of {area:1769} and speaks to you from Neutral with the Timbermaw, which the Deadwood furbolgs of {map:1448} brought you to."
+
+[[step]]
+id = "h59-frondavil-claro-048"
+do = "goto"
+at = [1452, 59.8, 74.3]
+text = "Ve a {area:2256}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#30"]
+note = "Polestar paso 30 «Winterspring», objetivo 1 (goto)"
+
+[[step]]
+id = "h59-frondavil-claro-049"
+do = "goto"
+at = [1452, 59.8, 74.2]
+text = "Ve a {area:2256}."
+tip = "Cabalga al este y luego al sur bajando por {area:2249}. Los Gigantes Machacahielo de allí son élite de nivel 59: ve por el centro y no te detengas. La fuente extraña está en la boca de {area:2256}, en el extremo sur."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#31"]
+note = "Polestar paso 31 «Darkwhisper Gorge», objetivo 1 (goto)"
+
+[[step]]
+id = "h59-frondavil-claro-050"
+do = "complete"
+quest = 4842
+text = "Completa «{quest:4842}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#31"]
+note = "Polestar paso 31 «Darkwhisper Gorge», objetivo 2 (complete) · objetivos (EN): Discover Darkwhisper Gorge"
+
+[[step]]
+id = "h59-frondavil-claro-051"
+do = "goto"
+at = [1452, 60.1, 71.2]
+if = { maxlevel = 58 }
+text = "Ve a {npc:7446}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#32"]
+note = "Polestar paso 32 «Level 59.9», objetivo 1 (goto) · consejo de Polestar sin traducir: Top up here to level 59.9 before the hand-ins at {map:1452}: they take you to level 60. The Rabid Shardtooths (59) of {area:2249}, just north of the strange source, give far more experience than the furbolgs by {area:1769}. Or, with a group, run the {area:2057} dungeon or the {area:2279} dungeon instead."
+
+[[step]]
+id = "h59-frondavil-claro-052"
+do = "level"
+level = 59
+at = [1452, 60.06, 71.49]
+if = { maxlevel = 58 }
+text = "Sube al nivel 59."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#32"]
+note = "Polestar paso 32 «Level 59.9», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:7446}."
+
+[[step]]
+id = "h59-frondavil-claro-053"
+do = "turnin"
+quest = 4842
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h59-frondavil-claro-s033-9298"
+text = "Entrega «{quest:4842}» a {npc:9298}."
+tip = "Vuelve al oeste hasta {area:2246}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#33"]
+note = "Polestar paso 33 «Donova Cubilnevado», objetivo 1 (turnin)"
+
+[[step]]
+id = "h59-frondavil-claro-054"
+do = "turnin"
+quest = 5087
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h59-frondavil-claro-s033-9298"
+text = "Entrega «{quest:5087}» a {npc:9298}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#33"]
+note = "Polestar paso 33 «Donova Cubilnevado», objetivo 2 (turnin)"
+
+[[step]]
+id = "h59-frondavil-claro-055"
+do = "note"
+text = "Después {npc:9298} te envía a por {npc:10738}, un élite en su cueva. Omítela."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#33"]
+note = "Polestar paso 33 «Donova Cubilnevado», objetivo 3 (note)"
+
+[[step]]
+id = "h59-frondavil-claro-056"
+do = "complete"
+quest = 5163
+obj = 1
+at = [1452, 61.5, 38.6]
+optional = true
+text = "Mata {npc:10978} (1) para «{quest:5163}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#34"]
+note = "Polestar paso 34 ««Yeti... ¿ya hemos llegado?»», objetivo 1 (kill)"
+
+[[step]]
+id = "h59-frondavil-claro-057"
+do = "turnin"
+quest = 5163
+npc = 10305
+at = [1452, 60.88, 37.62]
+optional = true
+text = "Entrega «{quest:5163}» a {npc:10305}."
+tip = "Cabalga hacia el este por el camino hasta {area:2255}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#35"]
+note = "Polestar paso 35 «Everlook», objetivo 1 (turnin)"
+
+[[step]]
+id = "h59-frondavil-claro-058"
+do = "note"
+text = "Opcional: en grupo, una mazmorra de 55-60 sustituye al farmeo de abajo."
+tip = "Opcional. Hacer {area:2279}, {area:2057}, Cumbre de Roca Negra inferior o {area:1584} en grupo en vez de farmear te lleva antes."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#36"]
+note = "Polestar paso 36 «Dungeon instead of grinding», objetivo 1 (note)"
+
+[[step]]
+id = "h59-frondavil-claro-059"
+do = "goto"
+at = [1452, 60.1, 71.2]
+text = "Ve a {area:2249}."
+tip = "Aquí se acaban las misiones. Los Dentoesquirlas rabiosos merodean por {area:2249}, en el sur de {map:1452}, al sur del camino que sale de {area:2255}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#37"]
+note = "Polestar paso 37 «Grind to 60», objetivo 1 (goto)"
+
+[[step]]
+id = "h59-frondavil-claro-060"
+do = "level"
+level = 60
+at = [1452, 60.06, 71.49]
+text = "Sube al nivel 60."
+tip = "Farmea {npc:7446} en {area:2249}, {map:1452}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#37"]
+note = "Polestar paso 37 «Grind to 60», objetivo 2 (level)"
+
+[[step]]
+id = "h59-frondavil-claro-061-wr"
+do = "train"
+npc = 3408
+spells = [11574, 11585, 20569]
+at = [1454, 80.38, 29.5]
+if = { class = ["WARRIOR"] }
+optional = true
+reqlevel = 60
+text = "Entrena con {npc:3408}, el instructor de guerrero."
+tip = "3 hechizos hasta el nivel 60."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#37", "trainer:warrior"]
+note = "Polestar paso 37 «Grind to 60», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 59-60"
+
+[[step]]
+id = "h59-frondavil-claro-061-hu"
+do = "train"
+npc = 3407
+spells = [13544, 14268, 14287, 14311, 15632, 20904, 1299447]
+at = [1454, 67.96, 17.8]
+if = { class = ["HUNTER"] }
+optional = true
+reqlevel = 60
+text = "Entrena con {npc:3407}, el instructor de cazador."
+tip = "7 hechizos hasta el nivel 60."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#37", "trainer:hunter"]
+note = "Polestar paso 37 «Grind to 60», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 59-60"
+
+[[step]]
+id = "h59-frondavil-claro-061-ro"
+do = "train"
+npc = 3327
+spells = [1787, 11275, 11281, 11286, 11343]
+at = [1454, 42.69, 51.48]
+if = { class = ["ROGUE"] }
+optional = true
+reqlevel = 60
+text = "Entrena con {npc:3327}, el instructor de pícaro."
+tip = "5 hechizos hasta el nivel 60: nuevos {spell:11343}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#37", "trainer:rogue"]
+note = "Polestar paso 37 «Grind to 60», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 59-60"
+
+[[step]]
+id = "h59-frondavil-claro-061-pr"
+do = "train"
+npc = 5994
+spells = [10901, 10938, 10942, 10952, 10955, 10961, 15261, 19280, 27681, 27841]
+at = [1454, 35.72, 86.9]
+if = { class = ["PRIEST"] }
+optional = true
+reqlevel = 60
+text = "Entrena con {npc:5994}, el instructor de sacerdote."
+tip = "10 hechizos hasta el nivel 60: nuevos {spell:27681}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#37", "trainer:priest"]
+note = "Polestar paso 37 «Grind to 60», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 59-60"
+
+[[step]]
+id = "h59-frondavil-claro-061-sh"
+do = "train"
+npc = 13417
+spells = [10468, 10601, 16362, 20777]
+at = [1454, 38.66, 35.92]
+if = { class = ["SHAMAN"] }
+optional = true
+reqlevel = 60
+text = "Entrena con {npc:13417}, el instructor de chamán."
+tip = "4 hechizos hasta el nivel 60."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#37", "trainer:shaman"]
+note = "Polestar paso 37 «Grind to 60», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 59-60"
+
+[[step]]
+id = "h59-frondavil-claro-061-mg"
+do = "train"
+npc = 5958
+spells = [10174, 10187, 10193, 10220, 10225, 12826, 1237313]
+at = [1454, 38.68, 85.41]
+if = { class = ["MAGE"] }
+optional = true
+reqlevel = 60
+text = "Entrena con {npc:5958}, el instructor de mago."
+tip = "7 hechizos hasta el nivel 60."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#37", "trainer:mage"]
+note = "Polestar paso 37 «Grind to 60», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 59-60"
+
+[[step]]
+id = "h59-frondavil-claro-061-wl"
+do = "train"
+npc = 3326
+spells = [603, 11668, 11695, 11735, 17728, 20757]
+at = [1454, 48.47, 45.43]
+if = { class = ["WARLOCK"] }
+optional = true
+reqlevel = 60
+text = "Entrena con {npc:3326}, el instructor de brujo."
+tip = "6 hechizos hasta el nivel 60: nuevos {spell:603}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#37", "trainer:warlock"]
+note = "Polestar paso 37 «Grind to 60», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 59-60"
+
+[[step]]
+id = "h59-frondavil-claro-062-pa"
+do = "train"
+npc = 246344
+spells = [10314, 10318, 10333, 19900, 19979, 20349, 20924, 24239, 25890, 25895, 25898, 25916, 25918]
+at = [1456, 23.91, 15.44]
+if = { class = ["PALADIN"] }
+optional = true
+reqlevel = 60
+text = "Entrena con {npc:246344}, el instructor de paladín."
+tip = "13 hechizos hasta el nivel 60: nuevos {spell:25890}, {spell:25895}, {spell:25898} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#37", "trainer:paladin"]
+note = "Polestar paso 37 «Grind to 60», objetivo 4 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 59-60"
+
+[[step]]
+id = "h59-frondavil-claro-062-dr"
+do = "train"
+npc = 3034
+spells = [9863, 17402, 20748]
+at = [1456, 77.14, 27.02]
+if = { class = ["DRUID"] }
+optional = true
+reqlevel = 60
+text = "Entrena con {npc:3034}, el instructor de druida."
+tip = "3 hechizos hasta el nivel 60."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/07-felwood#37", "trainer:druid"]
+note = "Polestar paso 37 «Grind to 60», objetivo 4 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 60-60"

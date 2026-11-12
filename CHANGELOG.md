@@ -44,6 +44,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - El paquete lleva cinco carpetas (`Senda_Lookup` es la nueva); `install-dev` copia las cinco.
 - Simulador: escenarios `lookup-tip`, `lookup-slash`, `lookup-point`, `lookup-search`, `lookup-tab`, `lookup-en` y
   `lookup-dump` (este último pasa lo guardado por la herramienta de importación real). Tests de Python en `tests/test_lookup.py`.
+- **La Horda:** una guía 1-60 por raza para cualquier clase (orco y trol en Durotar, tauren en Mulgore, no-muerto en
+  Claros de Tirisfal y Skyborne en la isla de Zephras) con la ruta común 12-60 de Polestar pasada por el filtro de
+  eficiencia de Senda: unas 100 misiones menos y unas 22 h estimadas menos; textos en español con fichas, `why` en las
+  misiones que se quedan y el motivo en las opcionales. Pasos de entrenamiento por clase con los hechizos del
+  instructor de Forever. Ver docs/ROUTE-HORDE.md.
+- Ficha `{area:N}` en los textos: el cliente pone el nombre de la subzona («El Cruce», «Rémol»).
 
 ### Corregido
 - «Saltar esta misión» en un aviso como el de Lago Blackwrench (1717) saltaba toda la cadena del súcubo: los avisos
@@ -61,6 +67,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ### Cambiado
 - La barra de pestañas del panel junta un poco los botones cuando hay muchas, para que siempre quepan.
+- Los archivos de la Horda solo se cargan para personajes de la Horda; la Alianza no cambia.
+- `tools/route_score.py` calcula las bandas por facción.
 
 ## [0.6.1] - 2026-11-12
 

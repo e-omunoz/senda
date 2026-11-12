@@ -1,0 +1,301 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/30-40/06-badlands
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h39-tierras-inhospitas"
+title = "Tierras Inhóspitas"
+levels = [39, 40]
+map = 1418
+summary = "Ruta común de la Horda, 39-40: Tierras Inhóspitas."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h39-tierras-inhospitas-001"
+do = "goto"
+at = [1418, 42.3, 52.8]
+text = "Ve a {area:1877}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#1"]
+note = "Polestar paso 1 «Into the Badlands», objetivo 1 (goto) · consejo de Polestar sin traducir: Head for the Thandol Span, the great bridge at Arathi's southern edge, cross it and follow the road south through the {map:1437} to the Dun Algaz tunnel into {map:1432}. {area:144}, the dwarf town on the road in the middle of {map:1432}, has guards who attack the Horde: leave the road before it and pass the town on the hills to its west. The road leaves {map:1432} to the south into the {map:1418}; follow it to the goblin camp in the {area:1877}."
+
+[[step]]
+id = "h39-tierras-inhospitas-002"
+do = "turnin"
+quest = 1106
+npc = 4618
+at = [1418, 42.22, 52.69]
+chain = "h39-tierras-inhospitas-s002-4618"
+text = "Entrega «{quest:1106}» a {npc:4618}."
+tip = "«{quest:1106}»: la carta de Fizzle desde {area:439}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#2"]
+note = "Polestar paso 2 «Valley of Fangs», objetivo 1 (turnin)"
+
+[[step]]
+id = "h39-tierras-inhospitas-003"
+do = "accept"
+quest = 1108
+npc = 4618
+at = [1418, 42.22, 52.69]
+chain = "h39-tierras-inhospitas-s002-4618"
+reqlevel = 28
+text = "Coge «{quest:1108}» de {npc:4618}."
+why = "+7.083 XP · ~9,7 min · desbloquea «{quest:1190}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#2"]
+note = "Polestar paso 2 «Valley of Fangs», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h39-tierras-inhospitas-004"
+do = "accept"
+quest = 703
+npc = 2817
+at = [1418, 42.39, 52.93]
+optional = true
+reqlevel = 33
+text = "Coge «{quest:703}» de {npc:2817}."
+tip = "+5.968 XP · ~23 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#2"]
+note = "Polestar paso 2 «Valley of Fangs», objetivo 3 (accept)"
+
+[[step]]
+id = "h39-tierras-inhospitas-005"
+do = "accept"
+quest = 710
+npc = 2921
+at = [1418, 25.95, 44.87]
+reqlevel = 35
+text = "Coge «{quest:710}» de {npc:2921}."
+why = "+8.225 XP · ~20 min · desbloquea «{quest:711}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#3"]
+note = "Polestar paso 3 «The Dustbowl», objetivo 1 (accept) · consejo de Polestar sin traducir: Head west along the road towards {area:340}; {npc:2921}'s camp sits in the {area:1878} halfway there."
+
+[[step]]
+id = "h39-tierras-inhospitas-006"
+do = "getfp"
+npc = 2861
+node = "21"
+at = [1418, 3.99, 44.78]
+text = "Coge la ruta de vuelo de Kargath con {npc:2861}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#4"]
+note = "Polestar paso 4 «Kargath», objetivo 1 (getfp) · consejo de Polestar sin traducir: {area:340} is the Horde fortress built into the cliffs at the zone's western edge. {npc:5394} stands on {area:340}'s upper level, high above the flight master: take the ramps up, the arrow cannot tell the levels apart."
+
+[[step]]
+id = "h39-tierras-inhospitas-007"
+do = "sethearth"
+npc = 9356
+zone = 1418
+at = [1418, 2.82, 45.86]
+text = "Pon la piedra de hogar en {area:340} con {npc:9356}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#4"]
+note = "Polestar paso 4 «Kargath», objetivo 2 (sethome)"
+
+[[step]]
+id = "h39-tierras-inhospitas-009"
+do = "accept"
+quest = 1420
+npc = 5394
+at = [1418, 6.49, 47.2]
+chain = "h39-tierras-inhospitas-s004-5394"
+reqlevel = 30
+text = "Coge «{quest:1420}» de {npc:5394}."
+tip = "Para Helgrum en {area:75}, sobre el nivel 42."
+why = "+2.350 XP · <1 min · 5,9× la mediana del 41-45"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#4"]
+note = "Polestar paso 4 «Kargath», objetivo 4 (accept)"
+
+[[step]]
+id = "h39-tierras-inhospitas-011"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#4"]
+note = "Polestar paso 4 «Kargath», objetivo 6 (vendor)"
+
+[[step]]
+id = "h39-tierras-inhospitas-012"
+do = "complete"
+quest = 710
+obj = 1
+at = [1418, 13.14, 39.2]
+wps = [[1418, 14.5, 38.8, "Fragmento de piedra pequeño"], [1418, 18.6, 42.9, "Fragmento de piedra pequeño"], [1418, 21.9, 46.1, "Fragmento de piedra pequeño"]]
+text = "Consigue {item:4626} (10) de {npc:2735} para «{quest:710}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#5"]
+note = "Polestar paso 5 «Lesser Rock Elementals», objetivo 1 (collect) · consejo de Polestar sin traducir: The small elementals drift across the flats between {area:340} and {npc:2921}'s camp, on the road back east. Every rock elemental in the zone can drop {npc:6868}'s Rock Elemental Shards."
+
+[[step]]
+id = "h39-tierras-inhospitas-014"
+do = "turnin"
+quest = 710
+npc = 2921
+at = [1418, 25.95, 44.87]
+chain = "h39-tierras-inhospitas-s006-2921"
+text = "Entrega «{quest:710}» a {npc:2921}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#6"]
+note = "Polestar paso 6 «Lotwil Veriatus», objetivo 1 (turnin)"
+
+[[step]]
+id = "h39-tierras-inhospitas-015"
+do = "accept"
+quest = 711
+npc = 2921
+at = [1418, 25.95, 44.87]
+chain = "h39-tierras-inhospitas-s006-2921"
+reqlevel = 35
+text = "Coge «{quest:711}» de {npc:2921}."
+why = "+3.919 XP · ~5,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#6"]
+note = "Polestar paso 6 «Lotwil Veriatus», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h39-tierras-inhospitas-019"
+do = "complete"
+quest = 711
+obj = 1
+at = [1418, 40.4, 77.1]
+text = "Consigue {item:4627} (3) de {npc:92} para «{quest:711}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#8"]
+note = "Polestar paso 8 «Rock Elementals», objetivo 1 (collect) · consejo de Polestar sin traducir: South-east across the basin, the bigger Rock Elementals (39) stand on the slopes west of {area:345}; each one drops a slab. Every rock elemental can drop {npc:6868}'s Rock Elemental Shards."
+
+[[step]]
+id = "h39-tierras-inhospitas-021"
+do = "accept"
+quest = 709
+npc = 2785
+at = [1418, 51.39, 76.87]
+reqlevel = 30
+text = "Coge «{quest:709}» de {npc:2785}."
+why = "+6.150 XP · ~3 min · desbloquea «{quest:728}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#9"]
+note = "Polestar paso 9 «Agmond's End», objetivo 1 (accept) · consejo de Polestar sin traducir: Theldurin sits among the dwarven ruins at {area:345}, just east of the elementals."
+
+[[step]]
+id = "h39-tierras-inhospitas-022"
+do = "complete"
+quest = 1108
+obj = 1
+at = [1418, 51.18, 71.65]
+wps = [[1418, 49.8, 69.6, "Lámina de indurio"], [1418, 51.0, 66.1, "Lámina de indurio"]]
+text = "Consigue {item:5797} (10) de {npc:2893} y {npc:2894} para «{quest:1108}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#10"]
+note = "Polestar paso 10 «Stonevault troggs», objetivo 1 (collect) · consejo de Polestar sin traducir: The Stonevault troggs dig around the cave mouths south of the {area:1877}, on the way north from {area:345}; the Bonesnappers and Shamans drop the flakes. The Buzzards for {npc:2817}'s wings circle the hills between the {area:1877} and {area:345}."
+
+[[step]]
+id = "h39-tierras-inhospitas-023"
+do = "complete"
+quest = 703
+obj = 1
+at = [1418, 50.13, 77.87]
+wps = [[1418, 58.0, 73.8, "Ala de águila ratonera"], [1418, 62.5, 54.9, "Ala de águila ratonera"], [1418, 60.8, 39.7, "Ala de águila ratonera"]]
+optional = true
+text = "Consigue {item:3404} (4) para «{quest:703}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#10"]
+note = "Polestar paso 10 «Stonevault troggs», objetivo 2 (collect)"
+
+[[step]]
+id = "h39-tierras-inhospitas-024"
+do = "turnin"
+quest = 703
+npc = 2817
+at = [1418, 42.39, 52.93]
+optional = true
+text = "Entrega «{quest:703}» a {npc:2817}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#11"]
+note = "Polestar paso 11 «Valley of Fangs», objetivo 1 (turnin) · consejo de Polestar sin traducir: The road north to {area:1517} runs through the {area:1877}: {npc:2817} and {npc:4618} take the wings and the flakes on the way."
+
+[[step]]
+id = "h39-tierras-inhospitas-025"
+do = "turnin"
+quest = 1108
+npc = 4618
+at = [1418, 42.22, 52.69]
+chain = "h39-tierras-inhospitas-s011-4618"
+text = "Entrega «{quest:1108}» a {npc:4618}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#11"]
+note = "Polestar paso 11 «Valley of Fangs», objetivo 2 (turnin)"
+
+[[step]]
+id = "h39-tierras-inhospitas-026"
+do = "accept"
+quest = 1137
+npc = 4618
+at = [1418, 42.22, 52.69]
+chain = "h39-tierras-inhospitas-s011-4618"
+reqlevel = 28
+text = "Coge «{quest:1137}» de {npc:4618}."
+why = "+1.160 XP · <1 min · desbloquea «{quest:1190}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#11"]
+note = "Polestar paso 11 «Valley of Fangs», objetivo 3 (accept) · datos no importados: pre · consejo de Polestar sin traducir: For Fizzle at the {area:2240}, on the way from {area:484} to {map:1446} around level 43."
+
+[[step]]
+id = "h39-tierras-inhospitas-027"
+do = "complete"
+quest = 709
+obj = 1
+at = [1418, 39.34, 18.82]
+text = "Recoge {item:4631} (1) de {obj:126260} para «{quest:709}»."
+tip = "Sigue al norte por el camino; el cofre está en la excavación de {area:1517}, al pie de las ruinas al noroeste del camino. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#12"]
+note = "Polestar paso 12 «Cofre antiguo», objetivo 1 (collect)"
+
+[[step]]
+id = "h39-tierras-inhospitas-028"
+do = "turnin"
+quest = 709
+npc = 2785
+at = [1418, 51.39, 76.87]
+chain = "h39-tierras-inhospitas-s013-2785"
+text = "Entrega «{quest:709}» a {npc:2785}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#13"]
+note = "Polestar paso 13 «Agmond's End», objetivo 1 (turnin) · consejo de Polestar sin traducir: Head back south down the road, past the {area:1877}."
+
+[[step]]
+id = "h39-tierras-inhospitas-029"
+do = "accept"
+quest = 728
+npc = 2785
+at = [1418, 51.39, 76.87]
+chain = "h39-tierras-inhospitas-s013-2785"
+reqlevel = 30
+text = "Coge «{quest:728}» de {npc:2785}."
+why = "+775 XP · ~1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#13"]
+note = "Polestar paso 13 «Agmond's End», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h39-tierras-inhospitas-030"
+do = "turnin"
+quest = 711
+npc = 2921
+at = [1418, 25.95, 44.87]
+text = "Entrega «{quest:711}» a {npc:2921}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#14"]
+note = "Polestar paso 14 «The Dustbowl», objetivo 1 (turnin) · consejo de Polestar sin traducir: North-west across the basin to {npc:2921}'s camp. Short of Jarkal's shards? The Lesser Rock Elementals (37) on the flats west of the camp drop them about one kill in five."
+
+[[step]]
+id = "h39-tierras-inhospitas-031"
+do = "note"
+text = "El siguiente estudio de {npc:2921} pide brazales de los elementales de roca superiores (42-44) de las cañadas del suroeste, muy por encima de tu nivel: déjalo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/06-badlands#14"]
+note = "Polestar paso 14 «The Dustbowl», objetivo 2 (note) · nota de Polestar traducida por Senda: Lotwil Veriatus's next study wants bracers from the Greater Rock Elementals (42-44) in the south-western gulches, well above you: leave it."

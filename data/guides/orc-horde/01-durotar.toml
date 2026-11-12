@@ -1,0 +1,3128 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/orc/01-durotar
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "orc-durotar"
+title = "Durotar: el Valle de los Retos"
+levels = [1, 12]
+map = 1411
+summary = "Salida de orco (1-12): misiones de la zona de inicio, entrenamiento de clase y viaje al Bosque de Argénteos."
+
+[[step]]
+id = "orc-001"
+do = "accept"
+quest = 4641
+npc = 10176
+at = [1411, 43.29, 68.53]
+text = "Coge «{quest:4641}» de {npc:10176}, donde empiezas."
+tip = "{npc:3143} espera dentro de El Cubil, el edificio justo al oeste de {npc:10176}."
+why = "+40 XP · <1 min · 2,3× la mediana del 1-5"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#1"]
+note = "Polestar paso 1 «Kaltunk», objetivo 1 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "orc-002"
+do = "turnin"
+quest = 4641
+npc = 3143
+at = [1411, 42.06, 68.33]
+chain = "orc-s001-3143"
+text = "Entrega «{quest:4641}» a {npc:3143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#1"]
+note = "Polestar paso 1 «Kaltunk», objetivo 2 (turnin) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "orc-003"
+do = "accept"
+quest = 788
+npc = 3143
+at = [1411, 42.06, 68.33]
+chain = "orc-s001-3143"
+text = "Coge «{quest:788}» de {npc:3143}."
+why = "+700 XP · ~6,4 min · desbloquea «{quest:789}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#1"]
+note = "Polestar paso 1 «Kaltunk», objetivo 3 (accept)"
+
+[[step]]
+id = "orc-004"
+do = "accept"
+quest = 97279
+npc = 3143
+at = [1411, 42.06, 68.33]
+chain = "orc-s001-3143"
+text = "Coge «{quest:97279}» de {npc:3143}."
+why = "+170 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#1"]
+note = "Polestar paso 1 «Kaltunk», objetivo 4 (accept)"
+
+[[step]]
+id = "orc-005"
+do = "accept"
+quest = 1485
+npc = 5765
+at = [1411, 42.59, 69.0]
+if = { class = ["WARLOCK"] }
+text = "Coge «{quest:1485}» de {npc:5765}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#1"]
+note = "Polestar paso 1 «Kaltunk», objetivo 5 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "orc-006"
+do = "complete"
+quest = 788
+obj = 1
+at = [1411, 42.72, 71.58]
+wps = [[1411, 44.3, 71.2, "Jabalí jaspeado"], [1411, 46.1, 69.0, "Jabalí jaspeado"], [1411, 45.0, 65.7, "Jabalí jaspeado"]]
+text = "Mata {npc:3098} (10) para «{quest:788}»."
+tip = "Las armas están alrededor de El Cubil y del campo de entrenamiento; los jabalíes jaspeados recorren todo el fondo del valle."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#2"]
+note = "Polestar paso 2 «Training weapons and boars», objetivo 1 (kill)"
+
+[[step]]
+id = "orc-007"
+do = "complete"
+quest = 97279
+obj = 1
+at = [1411, 43.2, 71.7]
+wps = [[1411, 44.6, 70.9, "Arma de entrenamiento abandonada"], [1411, 41.4, 71.6, "Arma de entrenamiento abandonada"], [1411, 44.4, 66.6, "Arma de entrenamiento abandonada"]]
+text = "Recoge {item:277653} (6) de {obj:673476} para «{quest:97279}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#2"]
+note = "Polestar paso 2 «Training weapons and boars», objetivo 2 (collect)"
+
+[[step]]
+id = "orc-008"
+do = "goto"
+at = [1411, 42.4, 68.6]
+text = "Ve a {area:364}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#2"]
+note = "Polestar paso 2 «Training weapons and boars», objetivo 3 (goto)"
+
+[[step]]
+id = "orc-009"
+do = "accept"
+quest = 792
+npc = 3145
+at = [1411, 42.85, 69.15]
+if = { class = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "DRUID"] }
+reqlevel = 2
+text = "Coge «{quest:792}» de {npc:3145}."
+tip = "{npc:3143} está nada más entrar en la cueva; {npc:3159}, al fondo de la cueva, detrás de él."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 1 (accept)"
+
+[[step]]
+id = "orc-010-wr"
+do = "train"
+npc = 3153
+spells = [6673]
+at = [1411, 42.89, 69.44]
+if = { class = ["WARRIOR"] }
+reqlevel = 1
+text = "Entrena con {npc:3153}, el instructor de guerrero."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:6673}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3", "trainer:warrior"]
+note = "Polestar paso 3 «The Den», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 1-1"
+
+[[step]]
+id = "orc-010-hu"
+do = "train"
+npc = 3154
+spells = [1494]
+at = [1411, 42.84, 69.33]
+if = { class = ["HUNTER"] }
+reqlevel = 1
+text = "Entrena con {npc:3154}, el instructor de cazador."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1494}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3", "trainer:hunter"]
+note = "Polestar paso 3 «The Den», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 1-1"
+
+[[step]]
+id = "orc-010-ro"
+do = "train"
+npc = 3155
+spells = [1784]
+at = [1411, 41.28, 68.0]
+if = { class = ["ROGUE"] }
+reqlevel = 1
+text = "Entrena con {npc:3155}, el instructor de pícaro."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1784}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3", "trainer:rogue"]
+note = "Polestar paso 3 «The Den», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 1-1"
+
+[[step]]
+id = "orc-010-pr"
+do = "train"
+npc = 3707
+spells = [1243]
+at = [1411, 42.36, 68.81]
+if = { class = ["PRIEST"] }
+reqlevel = 1
+text = "Entrena con {npc:3707}, el instructor de sacerdote."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1243}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3", "trainer:priest"]
+note = "Polestar paso 3 «The Den», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 1-1"
+
+[[step]]
+id = "orc-010-mg"
+do = "train"
+npc = 5884
+spells = [1459]
+at = [1411, 42.51, 69.04]
+if = { class = ["MAGE"] }
+reqlevel = 1
+text = "Entrena con {npc:5884}, el instructor de mago."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1459}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3", "trainer:mage"]
+note = "Polestar paso 3 «The Den», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 1-1"
+
+[[step]]
+id = "orc-010-wl"
+do = "train"
+npc = 3156
+spells = [348]
+at = [1411, 40.65, 68.52]
+if = { class = ["WARLOCK"] }
+reqlevel = 1
+text = "Entrena con {npc:3156}, el instructor de brujo."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:348}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3", "trainer:warlock"]
+note = "Polestar paso 3 «The Den», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 1-1"
+
+[[step]]
+id = "orc-011"
+do = "turnin"
+quest = 788
+npc = 3143
+at = [1411, 42.06, 68.33]
+chain = "orc-s003-3143"
+text = "Entrega «{quest:788}» a {npc:3143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 3 (turnin) · consejo de Polestar sin traducir: {npc:3143}, inside."
+
+[[step]]
+id = "orc-012"
+do = "accept"
+quest = 2383
+npc = 3143
+at = [1411, 42.06, 68.33]
+if = { class = ["WARRIOR"], race = ["Orc"] }
+chain = "orc-s003-3143"
+text = "Coge «{quest:2383}» de {npc:3143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-013"
+do = "accept"
+quest = 3087
+npc = 3143
+at = [1411, 42.06, 68.33]
+if = { class = ["HUNTER"], race = ["Orc"] }
+chain = "orc-s003-3143"
+text = "Coge «{quest:3087}» de {npc:3143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-014"
+do = "accept"
+quest = 3088
+npc = 3143
+at = [1411, 42.06, 68.33]
+if = { class = ["ROGUE"], race = ["Orc"] }
+chain = "orc-s003-3143"
+text = "Coge «{quest:3088}» de {npc:3143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-015"
+do = "accept"
+quest = 3089
+npc = 3143
+at = [1411, 42.06, 68.33]
+if = { class = ["SHAMAN"], race = ["Orc"] }
+chain = "orc-s003-3143"
+text = "Coge «{quest:3089}» de {npc:3143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-016"
+do = "accept"
+quest = 98576
+npc = 3143
+at = [1411, 42.06, 68.33]
+if = { class = ["MAGE"], race = ["Orc"] }
+chain = "orc-s003-3143"
+text = "Coge «{quest:98576}» de {npc:3143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-017"
+do = "accept"
+quest = 3090
+npc = 3143
+at = [1411, 42.06, 68.33]
+if = { class = ["WARLOCK"], race = ["Orc"] }
+chain = "orc-s003-3143"
+text = "Coge «{quest:3090}» de {npc:3143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 9 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-018"
+do = "accept"
+quest = 789
+npc = 3143
+at = [1411, 42.06, 68.33]
+chain = "orc-s003-3143"
+text = "Coge «{quest:789}» de {npc:3143}."
+why = "+925 XP · ~7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 10 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-019"
+do = "turnin"
+quest = 3090
+npc = 3156
+at = [1411, 40.65, 68.52]
+if = { class = ["WARLOCK"], race = ["Orc"] }
+text = "Entrega «{quest:3090}» a {npc:3156}, el instructor de brujos, al fondo de la cueva."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 11 (turnin)"
+
+[[step]]
+id = "orc-020"
+do = "turnin"
+quest = 3088
+npc = 3155
+at = [1411, 41.28, 68.0]
+if = { class = ["ROGUE"], race = ["Orc"] }
+text = "Entrega «{quest:3088}» a {npc:3155}, el instructor de pícaros, en El Cubil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 12 (turnin)"
+
+[[step]]
+id = "orc-021"
+do = "turnin"
+quest = 2383
+npc = 3153
+at = [1411, 42.89, 69.44]
+if = { class = ["WARRIOR"], race = ["Orc"] }
+text = "Entrega «{quest:2383}» a {npc:3153}, el instructor de guerreros, junto a El Cubil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 13 (turnin)"
+
+[[step]]
+id = "orc-022"
+do = "turnin"
+quest = 3087
+npc = 3154
+at = [1411, 42.84, 69.33]
+if = { class = ["HUNTER"], race = ["Orc"] }
+text = "Entrega «{quest:3087}» a {npc:3154}, el instructor de cazadores, junto a El Cubil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 14 (turnin)"
+
+[[step]]
+id = "orc-023"
+do = "turnin"
+quest = 3089
+npc = 3157
+at = [1411, 42.39, 69.0]
+if = { class = ["SHAMAN"], race = ["Orc"] }
+text = "Entrega «{quest:3089}» a {npc:3157}, el instructor de chamanes, junto a El Cubil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 15 (turnin)"
+
+[[step]]
+id = "orc-024"
+do = "turnin"
+quest = 98576
+npc = 5884
+at = [1411, 42.51, 69.04]
+if = { class = ["MAGE"], race = ["Orc"] }
+text = "Entrega «{quest:98576}» a {npc:5884}, la instructora de magos, en la entrada de El Cubil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 16 (turnin)"
+
+[[step]]
+id = "orc-025"
+do = "turnin"
+quest = 97279
+npc = 3159
+at = [1411, 40.47, 68.0]
+text = "Entrega «{quest:97279}» a {npc:3159}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 17 (turnin) · consejo de Polestar sin traducir: {npc:3159}, at the back of the cave; below ground."
+
+[[step]]
+id = "orc-026"
+do = "accept"
+quest = 4402
+npc = 9796
+at = [1411, 42.73, 67.23]
+optional = true
+text = "Coge «{quest:4402}» de {npc:9796}, junto al fuego de cocina."
+tip = "+380 XP · ~4,7 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#3"]
+note = "Polestar paso 3 «The Den», objetivo 18 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-027"
+do = "accept"
+quest = 790
+npc = 3287
+at = [1411, 40.6, 62.58]
+text = "Coge «{quest:790}» de {npc:3287}."
+tip = "{npc:3287} yace herido al pie de las colinas, al noroeste de El Cubil."
+why = "+508 XP · ~1,5 min · desbloquea «{quest:804}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#4"]
+note = "Polestar paso 4 «Hana'zua», objetivo 1 (accept)"
+
+[[step]]
+id = "orc-028"
+do = "complete"
+quest = 789
+obj = 1
+at = [1411, 40.22, 62.07]
+wps = [[1411, 40.9, 63.7, "Cola de escórpido obrero"], [1411, 42.8, 58.7, "Cola de escórpido obrero"], [1411, 43.1, 56.4, "Cola de escórpido obrero"]]
+text = "Consigue {item:4862} (10) de {npc:3124} y {npc:3281} para «{quest:789}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#5"]
+note = "Polestar paso 5 «Valley of Trials: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: «{quest:790}», a large scorpid, prowls the slope south of {npc:3287} among the Scorpid Workers; pick the Cactus Apples by the cactuses on the way.\nThe «{quest:792}» swarm the slope below the {area:365}, the cave on the valley's north side."
+
+[[step]]
+id = "orc-029"
+do = "complete"
+quest = 4402
+obj = 1
+at = [1411, 39.63, 63.03]
+wps = [[1411, 40.9, 64.3, "Manzana de cactus"], [1411, 39.9, 68.1, "Manzana de cactus"], [1411, 44.0, 65.8, "Manzana de cactus"]]
+optional = true
+text = "Recoge {item:11583} (10) de {obj:171938} para «{quest:4402}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#5"]
+note = "Polestar paso 5 «Valley of Trials: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "orc-030"
+do = "complete"
+quest = 790
+obj = 1
+at = [1411, 40.5, 66.83]
+text = "Consigue {item:4905} (1) de {npc:3281} para «{quest:790}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#5"]
+note = "Polestar paso 5 «Valley of Trials: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "orc-031"
+do = "turnin"
+quest = 790
+npc = 3287
+at = [1411, 40.6, 62.58]
+chain = "orc-s005-3287"
+text = "Entrega «{quest:790}» a {npc:3287}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#5"]
+note = "Polestar paso 5 «Valley of Trials: kill these as you meet them», objetivo 4 (turnin)"
+
+[[step]]
+id = "orc-032"
+do = "accept"
+quest = 804
+npc = 3287
+at = [1411, 40.6, 62.58]
+chain = "orc-s005-3287"
+text = "Coge «{quest:804}» de {npc:3287}."
+why = "+110 XP · <1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#5"]
+note = "Polestar paso 5 «Valley of Trials: kill these as you meet them», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-033"
+do = "complete"
+quest = 792
+obj = 1
+at = [1411, 43.82, 58.29]
+wps = [[1411, 44.7, 57.1, "Familiar vil"], [1411, 45.5, 55.8, "Familiar vil"], [1411, 46.1, 57.3, "Familiar vil"]]
+if = { class = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "DRUID"] }
+text = "Mata {npc:3101} (12) para «{quest:792}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#5"]
+note = "Polestar paso 5 «Valley of Trials: kill these as you meet them», objetivo 6 (kill)"
+
+[[step]]
+id = "orc-034"
+do = "complete"
+quest = 1485
+obj = 1
+at = [1411, 43.82, 58.29]
+wps = [[1411, 44.7, 57.1, "Cabeza vil familiar"], [1411, 45.5, 55.8, "Cabeza vil familiar"], [1411, 46.1, 57.3, "Cabeza vil familiar"]]
+if = { class = ["WARLOCK"] }
+text = "Consigue {item:6487} (6) de {npc:3101} para «{quest:1485}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#5"]
+note = "Polestar paso 5 «Valley of Trials: kill these as you meet them», objetivo 7 (collect)"
+
+[[step]]
+id = "orc-038"
+do = "turnin"
+quest = 789
+npc = 3143
+at = [1411, 42.06, 68.33]
+chain = "orc-s009-3143"
+text = "Entrega «{quest:789}» a {npc:3143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#9"]
+note = "Polestar paso 9 «Back to the Den», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:3143}, inside."
+
+[[step]]
+id = "orc-039"
+do = "turnin"
+quest = 804
+npc = 3143
+at = [1411, 42.06, 68.33]
+chain = "orc-s009-3143"
+text = "Entrega «{quest:804}» a {npc:3143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#9"]
+note = "Polestar paso 9 «Back to the Den», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:3143}, inside."
+
+[[step]]
+id = "orc-040"
+do = "turnin"
+quest = 1485
+npc = 5765
+at = [1411, 42.59, 69.0]
+if = { class = ["WARLOCK"] }
+text = "Entrega «{quest:1485}» a {npc:5765}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#9"]
+note = "Polestar paso 9 «Back to the Den», objetivo 3 (turnin)"
+
+[[step]]
+id = "orc-041"
+do = "accept"
+quest = 1516
+npc = 5887
+at = [1411, 42.4, 69.17]
+if = { class = ["SHAMAN"] }
+reqlevel = 4
+text = "Coge «{quest:1516}» de {npc:5887}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#9"]
+note = "Polestar paso 9 «Back to the Den», objetivo 4 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "orc-042"
+do = "turnin"
+quest = 792
+npc = 3145
+at = [1411, 42.85, 69.15]
+if = { class = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "DRUID"] }
+text = "Entrega «{quest:792}» a {npc:3145}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#9"]
+note = "Polestar paso 9 «Back to the Den», objetivo 5 (turnin)"
+
+[[step]]
+id = "orc-043"
+do = "accept"
+quest = 1499
+npc = 5765
+at = [1411, 42.59, 69.0]
+if = { class = ["WARLOCK"] }
+text = "Coge «{quest:1499}» de {npc:5765}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#9"]
+note = "Polestar paso 9 «Back to the Den», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-044"
+do = "turnin"
+quest = 1499
+npc = 3145
+at = [1411, 42.85, 69.15]
+if = { class = ["WARLOCK"] }
+chain = "orc-s009-3145"
+text = "Entrega «{quest:1499}» a {npc:3145}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#9"]
+note = "Polestar paso 9 «Back to the Den», objetivo 7 (turnin)"
+
+[[step]]
+id = "orc-045"
+do = "accept"
+quest = 794
+npc = 3145
+at = [1411, 42.85, 69.15]
+chain = "orc-s009-3145"
+text = "Coge «{quest:794}» de {npc:3145}."
+why = "+741 XP · ~1,6 min · desbloquea «{quest:97225}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#9"]
+note = "Polestar paso 9 «Back to the Den», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-046"
+do = "accept"
+quest = 5441
+npc = 11378
+at = [1411, 44.63, 68.65]
+reqlevel = 3
+text = "Coge «{quest:5441}» de {npc:11378}."
+why = "+765 XP · ~4 min · desbloquea «{quest:6394}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#9"]
+note = "Polestar paso 9 «Back to the Den», objetivo 9 (accept) · consejo de Polestar sin traducir: {npc:11378}, at the lumber pile east of the Den."
+
+[[step]]
+id = "orc-047"
+do = "turnin"
+quest = 4402
+npc = 9796
+at = [1411, 42.73, 67.23]
+optional = true
+text = "Entrega «{quest:4402}» a {npc:9796}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#9"]
+note = "Polestar paso 9 «Back to the Den», objetivo 10 (turnin)"
+
+[[step]]
+id = "orc-048"
+do = "complete"
+quest = 5441
+obj = 1
+at = [1411, 44.98, 69.13]
+wps = [[1411, 46.3, 67.4, "Peón vago"], [1411, 42.8, 72.9, "Peón vago"], [1411, 40.3, 60.4, "Peón vago"]]
+text = "Mata {npc:10556} (5) para «{quest:5441}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#10"]
+note = "Polestar paso 10 ««Peones vagos»», objetivo 1 (kill)"
+
+[[step]]
+id = "orc-049"
+do = "turnin"
+quest = 5441
+npc = 11378
+at = [1411, 44.63, 68.65]
+chain = "orc-s011-11378"
+text = "Entrega «{quest:5441}» a {npc:11378}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#11"]
+note = "Polestar paso 11 «Supervisor Thazz'ril», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-050"
+do = "accept"
+quest = 6394
+npc = 11378
+at = [1411, 44.63, 68.65]
+optional = true
+chain = "orc-s011-11378"
+reqlevel = 3
+text = "Coge «{quest:6394}» de {npc:11378}."
+tip = "+450 XP · ~2,5 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#11"]
+note = "Polestar paso 11 «Supervisor Thazz'ril», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-051"
+do = "goto"
+at = [1411, 45.0, 56.0]
+text = "Ve a {area:365}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#12"]
+note = "Polestar paso 12 «Burning Blade Coven», objetivo 1 (goto)"
+
+[[step]]
+id = "orc-052"
+do = "complete"
+quest = 6394
+obj = 1
+at = [1411, 43.7, 53.8]
+optional = true
+text = "Recoge {item:16332} (1) de {obj:178087} para «{quest:6394}»."
+tip = "Dentro de la cueva, sigue recto en la primera bifurcación, luego a la derecha, y sigue el arroyo que tienes a la izquierda hasta la cascada: el pico brilla junto al agua, detrás de una columna de roca."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#13"]
+note = "Polestar paso 13 ««Pico de Thazz'ril»», objetivo 1 (collect)"
+
+[[step]]
+id = "orc-053"
+do = "complete"
+quest = 794
+obj = 1
+at = [1411, 42.71, 52.95]
+text = "Consigue {item:4859} (1) de {npc:3183} para «{quest:794}»."
+tip = "Dentro de la cueva, sigue la pared derecha durante todo el recorrido, cruzando el arroyo: {npc:3183} espera al final. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#14"]
+note = "Polestar paso 14 «Yarrog Sombróseo», objetivo 1 (collect)"
+
+[[step]]
+id = "orc-054"
+do = "complete"
+quest = 1516
+obj = 1
+at = [1411, 42.52, 53.5]
+wps = [[1411, 44.1, 54.8, "Capucha de acechador vil"], [1411, 44.6, 52.8, "Capucha de acechador vil"], [1411, 45.4, 55.5, "Capucha de acechador vil"]]
+if = { class = ["SHAMAN"] }
+text = "Consigue {item:6640} (2) de {npc:3102} para «{quest:1516}»."
+tip = "Los acechadores viles recorren la ladera bajo la cueva, en el lado norte del valle."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#15"]
+note = "Polestar paso 15 «Acechador vil hooves», objetivo 1 (collect)"
+
+[[step]]
+id = "orc-055"
+do = "goto"
+at = [1411, 42.4, 68.6]
+text = "Ve a {area:364}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#16"]
+note = "Polestar paso 16 «Back to the Den», objetivo 1 (goto)"
+
+[[step]]
+id = "orc-056"
+do = "turnin"
+quest = 1516
+npc = 5887
+at = [1411, 42.4, 69.17]
+if = { class = ["SHAMAN"] }
+chain = "orc-s016-5887"
+text = "Entrega «{quest:1516}» a {npc:5887}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#16"]
+note = "Polestar paso 16 «Back to the Den», objetivo 2 (turnin)"
+
+[[step]]
+id = "orc-057"
+do = "accept"
+quest = 1517
+npc = 5887
+at = [1411, 42.4, 69.17]
+if = { class = ["SHAMAN"] }
+chain = "orc-s016-5887"
+reqlevel = 4
+text = "Coge «{quest:1517}» de {npc:5887}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#16"]
+note = "Polestar paso 16 «Back to the Den», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-058"
+do = "turnin"
+quest = 794
+npc = 3145
+at = [1411, 42.85, 69.15]
+chain = "orc-s016-3145"
+text = "Entrega «{quest:794}» a {npc:3145}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#16"]
+note = "Polestar paso 16 «Back to the Den», objetivo 4 (turnin)"
+
+[[step]]
+id = "orc-059"
+do = "accept"
+quest = 805
+npc = 3145
+at = [1411, 42.85, 69.15]
+chain = "orc-s016-3145"
+text = "Coge «{quest:805}» de {npc:3145}."
+why = "+230 XP · <1 min · desbloquea «{quest:97225}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#16"]
+note = "Polestar paso 16 «Back to the Den», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-060"
+do = "accept"
+quest = 96652
+at = [1411, 42.79, 69.12]
+reqlevel = 4
+text = "Coge «{quest:96652}» ({obj:654925})."
+tip = "{obj:654925}, en el suelo a su lado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#16"]
+note = "Polestar paso 16 «Back to the Den», objetivo 6 (accept) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "orc-062"
+do = "turnin"
+quest = 6394
+npc = 11378
+at = [1411, 44.63, 68.65]
+optional = true
+text = "Entrega «{quest:6394}» a {npc:11378}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#16"]
+note = "Polestar paso 16 «Back to the Den», objetivo 8 (turnin)"
+
+[[step]]
+id = "orc-063"
+do = "turnin"
+quest = 1517
+npc = 5891
+at = [1411, 44.03, 76.2]
+if = { class = ["SHAMAN"] }
+chain = "orc-s017-5891"
+text = "Entrega «{quest:1517}» a {npc:5891}, en {area:639}."
+tip = "{npc:5887} está fuera de El Cubil. {area:639} es la colina justo al sur: bebe {item:6635} allí para ver a {npc:5891} y lleva {item:6656} a {npc:5887}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#17"]
+note = "Polestar paso 17 ««Clamor de Tierra»», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-064"
+do = "accept"
+quest = 1518
+npc = 5891
+at = [1411, 44.03, 76.2]
+if = { class = ["SHAMAN"] }
+chain = "orc-s017-5891"
+reqlevel = 4
+text = "Coge «{quest:1518}» de {npc:5891}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#17"]
+note = "Polestar paso 17 ««Clamor de Tierra»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-065"
+do = "turnin"
+quest = 1518
+npc = 5887
+at = [1411, 42.4, 69.17]
+if = { class = ["SHAMAN"] }
+text = "Entrega «{quest:1518}» a {npc:5887}, {npc:5873} y tu {item:5175}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#17"]
+note = "Polestar paso 17 ««Clamor de Tierra»», objetivo 3 (turnin)"
+
+[[step]]
+id = "orc-066"
+do = "accept"
+quest = 2161
+npc = 6786
+at = [1411, 52.06, 68.31]
+optional = true
+text = "Coge «{quest:2161}» de {npc:6786}."
+tip = "{npc:6786} está en el camino, en la salida este del valle. +110 XP · ~1,4 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#18"]
+note = "Polestar paso 18 «Ukor», objetivo 1 (accept)"
+
+[[step]]
+id = "orc-067"
+do = "accept"
+quest = 96873
+npc = 266881
+at = [1411, 56.69, 73.74]
+if = { prof = ["enchanting"] }
+optional = true
+reqlevel = 5
+text = "Coge «{quest:96873}» de {npc:266881}, solo encantadores; el residuo se obtiene desencantando colgantes embrujados."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#19"]
+note = "Polestar paso 19 «Sen'jin Village», objetivo 1 (accept)"
+
+[[step]]
+id = "orc-068"
+do = "accept"
+quest = 817
+npc = 3194
+at = [1411, 55.96, 73.93]
+chain = "orc-s019-3194"
+reqlevel = 5
+text = "Coge «{quest:817}» de {npc:3194}."
+why = "+1.660 XP · ~11 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#19"]
+note = "Polestar paso 19 «Sen'jin Village», objetivo 2 (accept)"
+
+[[step]]
+id = "orc-070"
+do = "accept"
+quest = 818
+npc = 3304
+at = [1411, 55.94, 74.39]
+reqlevel = 5
+text = "Coge «{quest:818}» del {npc:3304}."
+why = "+1.995 XP · ~17 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#19"]
+note = "Polestar paso 19 «Sen'jin Village», objetivo 4 (accept)"
+
+[[step]]
+id = "orc-071"
+do = "turnin"
+quest = 805
+npc = 3188
+at = [1411, 55.95, 74.72]
+text = "Entrega «{quest:805}» al {npc:3188}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#19"]
+note = "Polestar paso 19 «Sen'jin Village», objetivo 5 (turnin)"
+
+[[step]]
+id = "orc-072"
+do = "accept"
+quest = 97225
+npc = 3304
+at = [1411, 55.94, 74.39]
+reqlevel = 4
+text = "Coge «{quest:97225}» del {npc:3304}."
+why = "+775 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#19"]
+note = "Polestar paso 19 «Sen'jin Village», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-073-mg"
+do = "train"
+npc = 5880
+spells = [116, 5504]
+at = [1411, 56.31, 75.11]
+if = { class = ["MAGE"] }
+reqlevel = 4
+text = "Entrena con {npc:5880}, el instructor de mago."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:116}, {spell:5504}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#19", "trainer:mage"]
+note = "Polestar paso 19 «Sen'jin Village», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 2-4"
+
+[[step]]
+id = "orc-074"
+do = "accept"
+quest = 808
+npc = 3188
+at = [1411, 55.95, 74.72]
+chain = "orc-s019-3188"
+reqlevel = 4
+text = "Coge «{quest:808}» del {npc:3188}."
+why = "+775 XP · <1 min · 5,8× la mediana del 6-10"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#19"]
+note = "Polestar paso 19 «Sen'jin Village», objetivo 8 (accept)"
+
+[[step]]
+id = "orc-075"
+do = "accept"
+quest = 826
+npc = 3188
+at = [1411, 55.95, 74.72]
+chain = "orc-s019-3188"
+reqlevel = 4
+text = "Coge «{quest:826}» del {npc:3188}."
+why = "+2.286 XP · ~11 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#19"]
+note = "Polestar paso 19 «Sen'jin Village», objetivo 9 (accept)"
+
+[[step]]
+id = "orc-076"
+do = "accept"
+quest = 823
+npc = 3188
+at = [1411, 55.95, 74.72]
+chain = "orc-s019-3188"
+reqlevel = 4
+text = "Coge «{quest:823}» del {npc:3188}."
+why = "+320 XP · <1 min · desbloquea «{quest:827}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#19"]
+note = "Polestar paso 19 «Sen'jin Village», objetivo 10 (accept)"
+
+[[step]]
+id = "orc-077"
+do = "accept"
+quest = 97223
+npc = 7953
+at = [1411, 55.28, 75.49]
+reqlevel = 5
+text = "Coge «{quest:97223}» de {npc:7953}."
+why = "+775 XP · <1 min · 7,1× la mediana del 6-10"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#19"]
+note = "Polestar paso 19 «Sen'jin Village», objetivo 11 (accept)"
+
+[[step]]
+id = "orc-078"
+do = "accept"
+quest = 786
+npc = 3140
+at = [1411, 54.44, 74.35]
+reqlevel = 5
+text = "Coge «{quest:786}» de {npc:3140}."
+why = "+700 XP · ~5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#19"]
+note = "Polestar paso 19 «Sen'jin Village», objetivo 12 (accept)"
+
+[[step]]
+id = "orc-081"
+do = "turnin"
+quest = 96652
+npc = 265809
+at = [1411, 51.98, 47.27]
+chain = "orc-s020-265809"
+text = "Entrega «{quest:96652}» a {npc:265809}."
+tip = "{npc:265809} acampa justo al sur de {area:362}. Siéntate junto a su hoguera (/sit) hasta que aparezca el beneficio {spell:1229451}. Con una profesión aprendida, {npc:265809} también ofrece su Acampada 101, que recoge su instructor: en {area:362} o en {map:1454}, al principio de la siguiente guía."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#20"]
+note = "Polestar paso 20 «Brakk's campfire», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-086"
+do = "accept"
+quest = 97907
+npc = 265809
+at = [1411, 51.98, 47.27]
+if = { prof = ["mining"] }
+reqlevel = 4
+text = "Coge «{quest:97907}» de {npc:265809}, para {npc:3175}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#21"]
+note = "Polestar paso 21 ««Acampada para novatos: minería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230161 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "orc-087"
+do = "accept"
+quest = 97902
+npc = 265809
+at = [1411, 51.98, 47.27]
+if = { prof = ["engineering"] }
+reqlevel = 4
+text = "Coge «{quest:97902}» de {npc:265809}, para {npc:11025}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#22"]
+note = "Polestar paso 22 ««Acampada para novatos: ingeniería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230656 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "orc-088"
+do = "accept"
+quest = 97903
+npc = 265809
+at = [1411, 51.98, 47.27]
+if = { prof = ["firstaid"] }
+reqlevel = 4
+text = "Coge «{quest:97903}» de {npc:265809}, para {npc:5943}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#23"]
+note = "Polestar paso 23 ««Acampada para novatos: primeros auxilios»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230117 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "orc-089"
+do = "accept"
+quest = 97908
+npc = 265809
+at = [1411, 51.98, 47.27]
+if = { prof = ["skinning"] }
+reqlevel = 4
+text = "Coge «{quest:97908}» de {npc:265809}, para {npc:7088}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#24"]
+note = "Polestar paso 24 ««Acampada para novatos: desuello»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229517 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "orc-090"
+do = "accept"
+quest = 97906
+npc = 265809
+at = [1411, 51.98, 47.27]
+if = { prof = ["leatherworking"] }
+reqlevel = 4
+text = "Coge «{quest:97906}» de {npc:265809}, para {npc:3365}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#25"]
+note = "Polestar paso 25 ««Camping 101: Leatherworking»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229432 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "orc-091"
+do = "accept"
+quest = 96102
+npc = 265809
+at = [1411, 51.98, 47.27]
+if = { prof = ["tailoring"] }
+reqlevel = 4
+text = "Coge «{quest:96102}» de {npc:265809}, para {npc:2855}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#26"]
+note = "Polestar paso 26 ««Acampada para novatos: sastrería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229504 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "orc-092"
+do = "accept"
+quest = 97905
+npc = 265809
+at = [1411, 51.98, 47.27]
+if = { prof = ["herbalism"] }
+reqlevel = 4
+text = "Coge «{quest:97905}» de {npc:265809}, para {npc:3404}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#27"]
+note = "Polestar paso 27 ««Acampada para novatos: herboristería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229705 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "orc-093"
+do = "accept"
+quest = 97901
+npc = 265809
+at = [1411, 51.98, 47.27]
+if = { prof = ["enchanting"] }
+reqlevel = 4
+text = "Coge «{quest:97901}» de {npc:265809}, para {npc:11066}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#28"]
+note = "Polestar paso 28 ««Acampada para novatos: encantamiento»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230643 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "orc-094"
+do = "accept"
+quest = 97899
+npc = 265809
+at = [1411, 51.98, 47.27]
+if = { prof = ["alchemy"] }
+reqlevel = 4
+text = "Coge «{quest:97899}» de {npc:265809}, para {npc:11046}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#29"]
+note = "Polestar paso 29 ««Acampada para novatos: alquimia»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230564 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "orc-095"
+do = "accept"
+quest = 96822
+npc = 266940
+at = [1411, 53.95, 42.59]
+reqlevel = 3
+text = "Coge «{quest:96822}» de {npc:266940}."
+why = "+480 XP · ~2 min · 1,9× la mediana del 6-10"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#30"]
+note = "Polestar paso 30 «Razor Hill», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:266940}, on the east side of town; inside."
+
+[[step]]
+id = "orc-096"
+do = "turnin"
+quest = 823
+npc = 3142
+at = [1411, 52.24, 43.15]
+text = "Entrega «{quest:823}» a {npc:3142}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#30"]
+note = "Polestar paso 30 «Razor Hill», objetivo 2 (turnin)"
+
+[[step]]
+id = "orc-097"
+do = "accept"
+quest = 784
+npc = 3139
+at = [1411, 51.95, 43.5]
+chain = "orc-s030-3139"
+reqlevel = 3
+text = "Coge «{quest:784}» de {npc:3139}."
+why = "+1.712 XP · ~10 min · desbloquea «{quest:825}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#30"]
+note = "Polestar paso 30 «Razor Hill», objetivo 3 (accept)"
+
+[[step]]
+id = "orc-099"
+do = "accept"
+quest = 815
+npc = 3191
+at = [1411, 51.11, 42.45]
+reqlevel = 6
+text = "Coge «{quest:815}» de {npc:3191}."
+why = "+700 XP · ~4,6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#30"]
+note = "Polestar paso 30 «Razor Hill», objetivo 5 (accept)"
+
+[[step]]
+id = "orc-100"
+do = "accept"
+quest = 96825
+npc = 3191
+at = [1411, 51.11, 42.45]
+reqlevel = 3
+text = "Coge «{quest:96825}» de {npc:3191}."
+why = "+410 XP · ~1,6 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#31"]
+note = "Polestar paso 31 «Razor Hill», objetivo 1 (accept)"
+
+[[step]]
+id = "orc-101"
+do = "learn_prof"
+npc = 3191
+prof = "cooking"
+at = [1411, 51.11, 42.45]
+text = "Aprende Cocina con {npc:3191}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#31"]
+note = "Polestar paso 31 «Razor Hill», objetivo 2 (train) · consejo de Polestar sin traducir: {npc:3191}: Camping 101 asks you to learn it."
+
+[[step]]
+id = "orc-104"
+do = "turnin"
+quest = 2161
+npc = 6928
+at = [1411, 51.51, 41.64]
+optional = true
+text = "Entrega «{quest:2161}» al {npc:6928}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#31"]
+note = "Polestar paso 31 «Razor Hill», objetivo 5 (turnin) · consejo de Polestar sin traducir: {npc:6928}, inside."
+
+[[step]]
+id = "orc-105"
+do = "sethearth"
+npc = 6928
+zone = 1411
+at = [1411, 51.51, 41.64]
+text = "Pon la piedra de hogar en {area:362} con {npc:6928}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#31"]
+note = "Polestar paso 31 «Razor Hill», objetivo 6 (sethome)"
+
+[[step]]
+id = "orc-106"
+do = "accept"
+quest = 791
+npc = 3147
+at = [1411, 49.88, 40.39]
+reqlevel = 4
+text = "Coge «{quest:791}» de {npc:3147}, en la atalaya."
+why = "+2.090 XP · ~10 min · 1,5× la mediana del 6-10"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#31"]
+note = "Polestar paso 31 «Razor Hill», objetivo 7 (accept)"
+
+[[step]]
+id = "orc-107"
+do = "complete"
+quest = 97907
+at = [1411, 51.81, 40.88]
+if = { prof = ["mining"] }
+text = "Completa «{quest:97907}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#32"]
+note = "Polestar paso 32 «Krunn», objetivo 1 (complete) · condición no expresable: llevas la misión 97907 (implícita: el paso es de esa misión) · objetivos (EN): Krunn"
+
+[[step]]
+id = "orc-108"
+do = "turnin"
+quest = 97907
+npc = 3175
+at = [1411, 51.81, 40.88]
+if = { prof = ["mining"] }
+text = "Entrega «{quest:97907}» a {npc:3175}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#32"]
+note = "Polestar paso 32 «Krunn», objetivo 2 (turnin) · condición no expresable: llevas la misión 97907 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "orc-109"
+do = "complete"
+quest = 97902
+at = [1411, 52.18, 40.8]
+if = { prof = ["engineering"] }
+text = "Completa «{quest:97902}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#33"]
+note = "Polestar paso 33 «Mukdrak», objetivo 1 (complete) · condición no expresable: llevas la misión 97902 (implícita: el paso es de esa misión) · objetivos (EN): Mukdrak"
+
+[[step]]
+id = "orc-110"
+do = "turnin"
+quest = 97902
+npc = 11025
+at = [1411, 52.18, 40.8]
+if = { prof = ["engineering"] }
+text = "Entrega «{quest:97902}» a {npc:11025}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#33"]
+note = "Polestar paso 33 «Mukdrak», objetivo 2 (turnin) · condición no expresable: llevas la misión 97902 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "orc-111"
+do = "complete"
+quest = 97903
+at = [1411, 54.17, 41.93]
+if = { prof = ["firstaid"] }
+text = "Completa «{quest:97903}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#34"]
+note = "Polestar paso 34 «Rawrk», objetivo 1 (complete) · condición no expresable: llevas la misión 97903 (implícita: el paso es de esa misión) · objetivos (EN): Raise your first aid skill to 20"
+
+[[step]]
+id = "orc-112"
+do = "turnin"
+quest = 97903
+npc = 5943
+at = [1411, 54.17, 41.93]
+if = { prof = ["firstaid"] }
+text = "Entrega «{quest:97903}» a {npc:5943}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#34"]
+note = "Polestar paso 34 «Rawrk», objetivo 2 (turnin) · condición no expresable: llevas la misión 97903 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "orc-113"
+do = "complete"
+quest = 96825
+obj = 1
+at = [1411, 49.5, 47.7]
+wps = [[1411, 47.4, 49.1, "Fruto pera espinosa"], [1411, 44.4, 50.2, "Fruto pera espinosa"]]
+text = "Recoge {item:275718} (8) de {obj:656177} para «{quest:96825}»."
+tip = "Las peras espinosas crecen entre las chozas de los jabaespines, justo al oeste del pueblo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#35"]
+note = "Polestar paso 35 «Prickly pears», objetivo 1 (collect)"
+
+[[step]]
+id = "orc-114"
+do = "turnin"
+quest = 96825
+npc = 3191
+at = [1411, 51.11, 42.45]
+text = "Entrega «{quest:96825}» a {npc:3191}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#36"]
+note = "Polestar paso 36 «Cocinero Torka», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-115"
+do = "complete"
+quest = 96822
+obj = 3
+at = [1411, 56.6, 53.0]
+text = "Recoge {item:275717} (1) de {obj:656182} para «{quest:96822}»."
+tip = "El fuerte está en la costa, al sureste de {area:362}. El hacha, el arco y el escudo de asaltante están en sus alrededores. Los marineros y los soldados de marina sueltan {item:4870}. {npc:3192} espera en lo alto del fuerte; su llave abre el cofre que tiene al lado, que contiene {item:4881}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#37"]
+note = "Polestar paso 37 «Tiragarde Keep», objetivo 1 (collect)"
+
+[[step]]
+id = "orc-116"
+do = "complete"
+quest = 791
+obj = 1
+at = [1411, 56.61, 52.97]
+wps = [[1411, 57.5, 55.7, "Retales de retal"], [1411, 56.8, 57.8, "Retales de retal"], [1411, 58.8, 60.2, "Retales de retal"]]
+text = "Consigue {item:4870} (8) para «{quest:791}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#37"]
+note = "Polestar paso 37 «Tiragarde Keep», objetivo 2 (collect)"
+
+[[step]]
+id = "orc-117"
+do = "complete"
+quest = 784
+obj = 1
+at = [1411, 56.61, 52.97]
+wps = [[1411, 56.7, 55.4, "Navegante Kul Tiras"], [1411, 58.4, 53.0, "Navegante Kul Tiras"], [1411, 58.0, 57.1, "Navegante Kul Tiras"]]
+text = "Mata {npc:3128} (10) para «{quest:784}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#37"]
+note = "Polestar paso 37 «Tiragarde Keep», objetivo 3 (kill)"
+
+[[step]]
+id = "orc-118"
+do = "complete"
+quest = 784
+obj = 2
+at = [1411, 57.79, 53.79]
+wps = [[1411, 57.8, 54.9, "Marinero Kul Tiras"], [1411, 59.5, 55.5, "Marinero Kul Tiras"], [1411, 59.3, 57.8, "Marinero Kul Tiras"]]
+text = "Mata {npc:3129} (8) para «{quest:784}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#37"]
+note = "Polestar paso 37 «Tiragarde Keep», objetivo 4 (kill)"
+
+[[step]]
+id = "orc-119"
+do = "complete"
+quest = 784
+obj = 3
+at = [1411, 59.72, 58.27]
+text = "Mata {npc:3192} (1) para «{quest:784}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#37"]
+note = "Polestar paso 37 «Tiragarde Keep», objetivo 5 (kill) · consejo de Polestar sin traducir: Upstairs."
+
+[[step]]
+id = "orc-120"
+do = "loot"
+item = 4881
+count = 1
+at = [1411, 59.3, 57.6]
+text = "Recoge {item:4881} de {obj:3239}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#37"]
+note = "Polestar paso 37 «Tiragarde Keep», objetivo 6 (collect) · consejo de Polestar sin traducir: Upstairs."
+
+[[step]]
+id = "orc-121"
+do = "accept"
+quest = 830
+text = "Usa {item:4881} para empezar «{quest:830}»."
+why = "+625 XP · <1 min · desbloquea «{quest:831}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#37"]
+note = "Polestar paso 37 «Tiragarde Keep», objetivo 7 (accept)"
+
+[[step]]
+id = "orc-122"
+do = "complete"
+quest = 96822
+obj = 1
+at = [1411, 59.4, 56.4]
+text = "Recoge {item:275713} (1) de {obj:656180} para «{quest:96822}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#37"]
+note = "Polestar paso 37 «Tiragarde Keep», objetivo 8 (collect)"
+
+[[step]]
+id = "orc-123"
+do = "complete"
+quest = 96822
+obj = 2
+at = [1411, 57.4, 56.4]
+text = "Recoge {item:275716} (1) de {obj:656181} para «{quest:96822}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#37"]
+note = "Polestar paso 37 «Tiragarde Keep», objetivo 9 (collect)"
+
+[[step]]
+id = "orc-124"
+do = "turnin"
+quest = 784
+npc = 3139
+at = [1411, 51.95, 43.5]
+chain = "orc-s038-3139"
+text = "Entrega «{quest:784}» a {npc:3139}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38"]
+note = "Polestar paso 38 «Razor Hill», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back north-west to {area:362}: {npc:3139} first, then {npc:3147} in the watchtower, then {npc:3142} and {npc:266940} on the way out east to the shore."
+
+[[step]]
+id = "orc-125"
+do = "turnin"
+quest = 830
+npc = 3139
+at = [1411, 51.95, 43.5]
+optional = true
+chain = "orc-s038-3139"
+text = "Entrega «{quest:830}» a {npc:3139}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38"]
+note = "Polestar paso 38 «Razor Hill», objetivo 2 (turnin)"
+
+[[step]]
+id = "orc-126"
+do = "accept"
+quest = 831
+npc = 3139
+at = [1411, 51.95, 43.5]
+chain = "orc-s038-3139"
+text = "Coge «{quest:831}» de {npc:3139}."
+why = "+500 XP · <1 min · 1,8× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38"]
+note = "Polestar paso 38 «Razor Hill», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-127"
+do = "accept"
+quest = 825
+npc = 3139
+at = [1411, 51.95, 43.5]
+chain = "orc-s038-3139"
+reqlevel = 3
+text = "Coge «{quest:825}» de {npc:3139}."
+why = "+700 XP · ~4,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38"]
+note = "Polestar paso 38 «Razor Hill», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-128"
+do = "turnin"
+quest = 791
+npc = 3147
+at = [1411, 49.88, 40.39]
+text = "Entrega «{quest:791}» a {npc:3147}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38"]
+note = "Polestar paso 38 «Razor Hill», objetivo 5 (turnin)"
+
+[[step]]
+id = "orc-129"
+do = "accept"
+quest = 806
+npc = 3142
+at = [1411, 52.24, 43.15]
+reqlevel = 4
+text = "Coge «{quest:806}» de {npc:3142}."
+why = "+1.005 XP · ~2 min · desbloquea «{quest:827}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38"]
+note = "Polestar paso 38 «Razor Hill», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-130"
+do = "turnin"
+quest = 96822
+npc = 266940
+at = [1411, 53.95, 42.59]
+text = "Entrega «{quest:96822}» a {npc:266940}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38"]
+note = "Polestar paso 38 «Razor Hill», objetivo 7 (turnin) · consejo de Polestar sin traducir: {npc:266940}, inside."
+
+[[step]]
+id = "orc-131-wr"
+do = "train"
+npc = 3169
+spells = [100, 772, 3127, 6343]
+at = [1411, 54.19, 42.47]
+if = { class = ["WARRIOR"] }
+reqlevel = 6
+text = "Entrena con {npc:3169}, el instructor de guerrero."
+tip = "4 hechizos hasta el nivel 6: nuevos {spell:100}, {spell:772}, {spell:3127} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38", "trainer:warrior"]
+note = "Polestar paso 38 «Razor Hill», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 2-6"
+
+[[step]]
+id = "orc-131-hu"
+do = "train"
+npc = 3171
+spells = [1130, 1978, 3044, 13163]
+at = [1411, 51.85, 43.49]
+if = { class = ["HUNTER"] }
+reqlevel = 6
+text = "Entrena con {npc:3171}, el instructor de cazador."
+tip = "4 hechizos hasta el nivel 6: nuevos {spell:1130}, {spell:1978}, {spell:3044} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38", "trainer:hunter"]
+note = "Polestar paso 38 «Razor Hill», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 2-6"
+
+[[step]]
+id = "orc-131-ro"
+do = "train"
+npc = 3170
+spells = [53, 921, 1776]
+at = [1411, 51.98, 43.69]
+if = { class = ["ROGUE"] }
+reqlevel = 6
+text = "Entrena con {npc:3170}, el instructor de pícaro."
+tip = "3 hechizos hasta el nivel 6: nuevos {spell:53}, {spell:921}, {spell:1776} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38", "trainer:rogue"]
+note = "Polestar paso 38 «Razor Hill», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 2-6"
+
+[[step]]
+id = "orc-131-pr"
+do = "train"
+npc = 3706
+spells = [17, 589]
+at = [1411, 54.26, 42.93]
+if = { class = ["PRIEST"] }
+reqlevel = 6
+text = "Entrena con {npc:3706}, el instructor de sacerdote."
+tip = "2 hechizos hasta el nivel 6: nuevos {spell:17}, {spell:589}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38", "trainer:priest"]
+note = "Polestar paso 38 «Razor Hill», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 2-6"
+
+[[step]]
+id = "orc-131-sh"
+do = "train"
+npc = 3173
+spells = [2484]
+at = [1411, 54.42, 42.59]
+if = { class = ["SHAMAN"] }
+reqlevel = 6
+text = "Entrena con {npc:3173}, el instructor de chamán."
+tip = "1 hechizo hasta el nivel 6: nuevos {spell:2484}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38", "trainer:shaman"]
+note = "Polestar paso 38 «Razor Hill», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 1-6"
+
+[[step]]
+id = "orc-131-wl"
+do = "train"
+npc = 3172
+spells = [172, 702, 1454]
+at = [1411, 54.38, 41.2]
+if = { class = ["WARLOCK"] }
+reqlevel = 6
+text = "Entrena con {npc:3172}, el instructor de brujo."
+tip = "3 hechizos hasta el nivel 6: nuevos {spell:172}, {spell:702}, {spell:1454} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#38", "trainer:warlock"]
+note = "Polestar paso 38 «Razor Hill», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 2-6"
+
+[[step]]
+id = "orc-132"
+do = "complete"
+quest = 825
+obj = 1
+at = [1411, 61.94, 42.35]
+wps = [[1411, 62.1, 46.0, "Herramientas gnómicas"], [1411, 64.3, 50.2, "Herramientas gnómicas"], [1411, 64.3, 53.4, "Herramientas gnómicas"]]
+text = "Recoge {item:4863} (3) de {obj:3236} para «{quest:825}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#39"]
+note = "Polestar paso 39 «Scuttle Coast: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: Underwater. · consejo de Polestar sin traducir: The gnomish toolboxes lie in the wreckage along the shore east and south-east of {area:362}. Follow the shore south to Sen'jin.\nMakrura and surf crawlers line the beaches north-east of Sen'jin."
+
+[[step]]
+id = "orc-133"
+do = "complete"
+quest = 818
+obj = 2
+at = [1411, 60.34, 43.27]
+wps = [[1411, 63.3, 57.7, "Mucosidad de reptador"], [1411, 70.5, 69.0, "Mucosidad de reptador"], [1411, 66.1, 79.4, "Mucosidad de reptador"]]
+text = "Consigue {item:4888} (8) de {npc:3106} y {npc:3107} y {npc:3108} y {npc:3228} para «{quest:818}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#39"]
+note = "Polestar paso 39 «Scuttle Coast: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "orc-134"
+do = "complete"
+quest = 818
+obj = 1
+at = [1411, 61.07, 42.55]
+wps = [[1411, 61.6, 41.4, "Ojo de makrura intacto"], [1411, 60.1, 28.4, "Ojo de makrura intacto"], [1411, 58.0, 9.8, "Ojo de makrura intacto"]]
+text = "Consigue {item:4887} (4) de {npc:3104} y {npc:3103} y {npc:3105} y {npc:3141} y {npc:6020} para «{quest:818}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#39"]
+note = "Polestar paso 39 «Scuttle Coast: kill these as you meet them», objetivo 3 (collect) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "orc-135"
+do = "complete"
+quest = 815
+obj = 1
+at = [1411, 67.81, 69.85]
+wps = [[1411, 68.4, 70.9, "Huevo de Colazote"], [1411, 69.7, 74.6, "Huevo de Colazote"], [1411, 68.6, 81.3, "Huevo de Colazote"]]
+text = "Recoge {item:4890} (3) de {obj:3240} para «{quest:815}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#39"]
+note = "Polestar paso 39 «Scuttle Coast: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "orc-136"
+do = "complete"
+quest = 97223
+obj = 1
+at = [1411, 68.81, 71.78]
+text = "Consigue {item:277128} (1) de {npc:268530} para «{quest:97223}»."
+tip = "Cruza vadeando hasta la isla del Eco del norte. La matriarca merodea allí entre los raptores.\nLos tigres de Durotar recorren la isla y también la orilla al sur del poblado Sen'jin, y los huevos de coleador están en nidos en las islas y a lo largo de la playa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#40"]
+note = "Polestar paso 40 «Echo Isles: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "orc-137"
+do = "complete"
+quest = 817
+obj = 1
+at = [1411, 69.02, 72.42]
+wps = [[1411, 69.2, 69.7, "Pelaje de tigre de Durotar"], [1411, 67.2, 70.7, "Pelaje de tigre de Durotar"], [1411, 69.1, 80.3, "Pelaje de tigre de Durotar"]]
+text = "Consigue {item:4892} (4) para «{quest:817}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#40"]
+note = "Polestar paso 40 «Echo Isles: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "orc-138"
+do = "complete"
+quest = 97225
+obj = 1
+at = [1411, 67.8, 81.4]
+wps = [[1411, 67.5, 82.4, "Ídolo loa olvidado"], [1411, 68.7, 84.0, "Ídolo loa olvidado"], [1411, 65.1, 82.8, "Ídolo loa olvidado"]]
+text = "Recoge {item:277135} (8) de Forgotten Loa Idol para «{quest:97225}»."
+tip = "Ve al sur por las islas. Los ídolos loa están por todas las islas del sur; los trols de vudú y los trols maléficos las ocupan y sueltan los colgantes embrujados. «{quest:826}» y la jaula de Minshina están en la isla más al sur."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#41"]
+note = "Polestar paso 41 «Echo Isles: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "orc-139"
+do = "complete"
+quest = 96873
+if = { prof = ["enchanting"] }
+optional = true
+text = "Completa «{quest:96873}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#41"]
+note = "Polestar paso 41 «Echo Isles: kill these as you meet them», objetivo 2 (complete) · objetivos (EN): Luminous Residue"
+
+[[step]]
+id = "orc-140"
+do = "complete"
+quest = 826
+obj = 2
+at = [1411, 67.82, 82.06]
+wps = [[1411, 67.0, 87.1, "Trol de vudú"]]
+text = "Mata {npc:3206} (8) para «{quest:826}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#41"]
+note = "Polestar paso 41 «Echo Isles: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "orc-141"
+do = "complete"
+quest = 826
+obj = 1
+at = [1411, 68.29, 83.23]
+wps = [[1411, 66.6, 84.0, "Trol maléfico"], [1411, 67.3, 87.0, "Trol maléfico"]]
+text = "Mata {npc:3207} (8) para «{quest:826}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#41"]
+note = "Polestar paso 41 «Echo Isles: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "orc-142"
+do = "complete"
+quest = 826
+obj = 3
+at = [1411, 67.55, 87.81]
+text = "Consigue {item:4866} (1) de {npc:3205} para «{quest:826}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#41"]
+note = "Polestar paso 41 «Echo Isles: kill these as you meet them», objetivo 5 (collect)"
+
+[[step]]
+id = "orc-143"
+do = "complete"
+quest = 808
+obj = 1
+at = [1411, 67.4, 87.8]
+text = "Recoge {item:4864} (1) de {obj:3237} para «{quest:808}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#41"]
+note = "Polestar paso 41 «Echo Isles: kill these as you meet them», objetivo 6 (collect)"
+
+[[step]]
+id = "orc-144"
+do = "note"
+at = [1411, 57.2, 73.3]
+optional = true
+text = "Truco de la muerte: déjate matar aquí y reaparece en el cementerio de destino; ahorras el camino."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#42"]
+note = "Polestar paso 42 «Deathskip to Sen'jin Village», objetivo 1 (die) · consejo de Polestar sin traducir: Die to the mobs at 66.9,87.2 ({npc:3206}): a death there sends you to this graveyard. Release your spirit and take the {npc:6491}'s resurrection."
+
+[[step]]
+id = "orc-145"
+do = "turnin"
+quest = 808
+npc = 3188
+at = [1411, 55.95, 74.72]
+chain = "orc-s043-3188"
+text = "Entrega «{quest:808}» al {npc:3188}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#43"]
+note = "Polestar paso 43 «Sen'jin Village», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-146"
+do = "turnin"
+quest = 826
+npc = 3188
+at = [1411, 55.95, 74.72]
+chain = "orc-s043-3188"
+text = "Entrega «{quest:826}» al {npc:3188}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#43"]
+note = "Polestar paso 43 «Sen'jin Village», objetivo 2 (turnin)"
+
+[[step]]
+id = "orc-147"
+do = "turnin"
+quest = 97225
+npc = 3188
+at = [1411, 55.95, 74.72]
+chain = "orc-s043-3188"
+text = "Entrega «{quest:97225}» al {npc:3188}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#43"]
+note = "Polestar paso 43 «Sen'jin Village», objetivo 3 (turnin)"
+
+[[step]]
+id = "orc-148"
+do = "turnin"
+quest = 818
+npc = 3304
+at = [1411, 55.94, 74.39]
+text = "Entrega «{quest:818}» al {npc:3304}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#43"]
+note = "Polestar paso 43 «Sen'jin Village», objetivo 4 (turnin)"
+
+[[step]]
+id = "orc-149"
+do = "turnin"
+quest = 96873
+npc = 266881
+at = [1411, 56.69, 73.74]
+if = { prof = ["enchanting"] }
+optional = true
+text = "Entrega «{quest:96873}» a {npc:266881}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#43"]
+note = "Polestar paso 43 «Sen'jin Village», objetivo 5 (turnin)"
+
+[[step]]
+id = "orc-150"
+do = "turnin"
+quest = 817
+npc = 3194
+at = [1411, 55.96, 73.93]
+text = "Entrega «{quest:817}» a {npc:3194}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#43"]
+note = "Polestar paso 43 «Sen'jin Village», objetivo 6 (turnin)"
+
+[[step]]
+id = "orc-151"
+do = "turnin"
+quest = 97223
+npc = 7953
+at = [1411, 55.28, 75.49]
+text = "Entrega «{quest:97223}» a {npc:7953}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#43"]
+note = "Polestar paso 43 «Sen'jin Village», objetivo 7 (turnin)"
+
+[[step]]
+id = "orc-152-mg"
+do = "train"
+npc = 5880
+spells = [587, 2136, 1296017]
+at = [1411, 56.31, 75.11]
+if = { class = ["MAGE"] }
+reqlevel = 6
+text = "Entrena con {npc:5880}, el instructor de mago."
+tip = "3 hechizos hasta el nivel 6: nuevos {spell:587}, {spell:2136}, {spell:1296017} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#43", "trainer:mage"]
+note = "Polestar paso 43 «Sen'jin Village», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 5-7"
+
+[[step]]
+id = "orc-154"
+do = "goto"
+at = [1411, 46.3, 78.7]
+text = "Ve a {area:366}."
+tip = "Libera a {npc:275811} y sácala sana y salva del risco."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#44"]
+note = "Polestar paso 44 «Kolkar Crag», objetivo 2 (goto)"
+
+[[step]]
+id = "orc-156"
+do = "complete"
+quest = 786
+obj = 3
+at = [1411, 46.2, 78.9]
+text = "Usa {obj:3192} para «{quest:786}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#44"]
+note = "Polestar paso 44 «Kolkar Crag», objetivo 4 (interact)"
+
+[[step]]
+id = "orc-157"
+do = "complete"
+quest = 786
+obj = 2
+at = [1411, 47.7, 77.3]
+text = "Usa {obj:3190} para «{quest:786}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#44"]
+note = "Polestar paso 44 «Kolkar Crag», objetivo 5 (interact)"
+
+[[step]]
+id = "orc-158"
+do = "complete"
+quest = 786
+obj = 1
+at = [1411, 49.8, 81.3]
+text = "Usa {obj:3189} para «{quest:786}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#44"]
+note = "Polestar paso 44 «Kolkar Crag», objetivo 6 (interact)"
+
+[[step]]
+id = "orc-159"
+do = "turnin"
+quest = 786
+npc = 3140
+at = [1411, 54.44, 74.35]
+text = "Entrega «{quest:786}» a {npc:3140}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#45"]
+note = "Polestar paso 45 «Sen'jin Village», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-161"
+do = "accept"
+quest = 99048
+npc = 3142
+at = [1411, 52.24, 43.15]
+optional = true
+reqlevel = 9
+text = "Coge «{quest:99048}» de {npc:3142}."
+tip = "+90 XP · ~3 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#46"]
+note = "Polestar paso 46 «Razor Hill», objetivo 1 (accept)"
+
+[[step]]
+id = "orc-162"
+do = "turnin"
+quest = 825
+npc = 3139
+at = [1411, 51.95, 43.5]
+chain = "orc-s046-3139"
+text = "Entrega «{quest:825}» a {npc:3139}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#46"]
+note = "Polestar paso 46 «Razor Hill», objetivo 2 (turnin)"
+
+[[step]]
+id = "orc-164"
+do = "turnin"
+quest = 815
+npc = 3191
+at = [1411, 51.11, 42.45]
+text = "Entrega «{quest:815}» a {npc:3191}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#46"]
+note = "Polestar paso 46 «Razor Hill», objetivo 4 (turnin)"
+
+[[step]]
+id = "orc-165"
+do = "goto"
+at = [1411, 50.1, 49.0]
+if = { maxlevel = 9 }
+text = "Ve a {npc:3111}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#47"]
+note = "Polestar paso 47 «Level 10», objetivo 1 (goto) · consejo de Polestar sin traducir: Top up here to level 10: «{quest:840}», at {area:362}, needs level 10."
+
+[[step]]
+id = "orc-166"
+do = "level"
+level = 10
+at = [1411, 50.2, 49.6]
+if = { maxlevel = 9 }
+text = "Sube al nivel 10."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#47"]
+note = "Polestar paso 47 «Level 10», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:3111}."
+
+[[step]]
+id = "orc-167-wr"
+do = "train"
+npc = 3169
+spells = [1715, 2687, 6546]
+at = [1411, 54.19, 42.47]
+if = { class = ["WARRIOR"] }
+reqlevel = 10
+text = "Entrena con {npc:3169}, el instructor de guerrero."
+tip = "3 hechizos hasta el nivel 10: nuevos {spell:1715}, {spell:2687}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#48", "trainer:warrior"]
+note = "Polestar paso 48 «Razor Hill», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 7-10"
+
+[[step]]
+id = "orc-167-hu"
+do = "train"
+npc = 3171
+spells = [3127, 5116, 13165, 13549, 19883]
+at = [1411, 51.85, 43.49]
+if = { class = ["HUNTER"] }
+reqlevel = 10
+text = "Entrena con {npc:3171}, el instructor de cazador."
+tip = "5 hechizos hasta el nivel 10: nuevos {spell:3127}, {spell:5116}, {spell:13165} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#48", "trainer:hunter"]
+note = "Polestar paso 48 «Razor Hill», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 7-10"
+
+[[step]]
+id = "orc-167-ro"
+do = "train"
+npc = 3170
+spells = [674, 2983, 5171, 5277, 6770]
+at = [1411, 51.98, 43.69]
+if = { class = ["ROGUE"] }
+reqlevel = 10
+text = "Entrena con {npc:3170}, el instructor de pícaro."
+tip = "5 hechizos hasta el nivel 10: nuevos {spell:674}, {spell:2983}, {spell:5171} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#48", "trainer:rogue"]
+note = "Polestar paso 48 «Razor Hill», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 7-10"
+
+[[step]]
+id = "orc-167-pr"
+do = "train"
+npc = 3706
+spells = [139, 586, 594, 2006, 8092]
+at = [1411, 54.26, 42.93]
+if = { class = ["PRIEST"] }
+reqlevel = 10
+text = "Entrena con {npc:3706}, el instructor de sacerdote."
+tip = "5 hechizos hasta el nivel 10: nuevos {spell:139}, {spell:586}, {spell:2006} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#48", "trainer:priest"]
+note = "Polestar paso 48 «Razor Hill», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 7-10"
+
+[[step]]
+id = "orc-167-sh"
+do = "train"
+npc = 3173
+spells = [324, 5730, 8024, 8050, 8075]
+at = [1411, 54.42, 42.59]
+if = { class = ["SHAMAN"] }
+reqlevel = 10
+text = "Entrena con {npc:3173}, el instructor de chamán."
+tip = "5 hechizos hasta el nivel 10: nuevos {spell:324}, {spell:5730}, {spell:8024} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#48", "trainer:shaman"]
+note = "Polestar paso 48 «Razor Hill», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 7-10"
+
+[[step]]
+id = "orc-167-wl"
+do = "train"
+npc = 3172
+spells = [707, 980, 1120, 5782, 6201]
+at = [1411, 54.38, 41.2]
+if = { class = ["WARLOCK"] }
+reqlevel = 10
+text = "Entrena con {npc:3172}, el instructor de brujo."
+tip = "5 hechizos hasta el nivel 10: nuevos {spell:980}, {spell:1120}, {spell:5782} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#48", "trainer:warlock"]
+note = "Polestar paso 48 «Razor Hill», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 7-10"
+
+[[step]]
+id = "orc-168"
+do = "accept"
+quest = 840
+npc = 3336
+at = [1411, 50.84, 43.59]
+optional = true
+reqlevel = 10
+text = "Coge «{quest:840}» de {npc:3336}."
+tip = "+460 XP · ~4 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#48"]
+note = "Polestar paso 48 «Razor Hill», objetivo 2 (accept)"
+
+[[step]]
+id = "orc-169"
+do = "accept"
+quest = 1505
+npc = 3169
+at = [1411, 54.19, 42.47]
+if = { class = ["WARRIOR"] }
+reqlevel = 10
+text = "Coge «{quest:1505}» de {npc:3169}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#48"]
+note = "Polestar paso 48 «Razor Hill», objetivo 3 (accept) · datos no importados: closedBy · consejo de Polestar sin traducir: {npc:3169}, inside."
+
+[[step]]
+id = "orc-170"
+do = "accept"
+quest = 6062
+npc = 3171
+at = [1411, 51.85, 43.49]
+if = { class = ["HUNTER"] }
+reqlevel = 10
+text = "Coge «{quest:6062}» de {npc:3171}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#48"]
+note = "Polestar paso 48 «Razor Hill», objetivo 4 (accept)"
+
+[[step]]
+id = "orc-171"
+do = "accept"
+quest = 1506
+npc = 3294
+at = [1411, 54.37, 41.29]
+if = { class = ["WARLOCK"] }
+reqlevel = 10
+text = "Coge «{quest:1506}» de {npc:3294}, junto a la posada."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#48"]
+note = "Polestar paso 48 «Razor Hill», objetivo 5 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "orc-172"
+do = "accept"
+quest = 2983
+npc = 3173
+at = [1411, 54.42, 42.59]
+if = { class = ["SHAMAN"] }
+reqlevel = 10
+text = "Coge «{quest:2983}» de {npc:3173}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#48"]
+note = "Polestar paso 48 «Razor Hill», objetivo 6 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "orc-173"
+do = "turnin"
+quest = 840
+npc = 3337
+at = [1413, 62.26, 19.38]
+if = { class = ["SHAMAN"] }
+text = "Entrega «{quest:840}» a {npc:3337}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#49"]
+note = "Polestar paso 49 «Far Watch Post», objetivo 1 (turnin) · consejo de Polestar sin traducir: West over the {area:814} bridge: {npc:3337} stands at {area:379} above it, on your way to {npc:5907}."
+
+[[step]]
+id = "orc-174"
+do = "goto"
+at = [1413, 56.0, 19.9]
+if = { class = ["SHAMAN"] }
+text = "Ve a {npc:5907}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#50"]
+note = "Polestar paso 50 «The Barrens», objetivo 1 (goto)"
+
+[[step]]
+id = "orc-175"
+do = "turnin"
+quest = 1522
+npc = 5907
+at = [1413, 56.03, 19.89]
+if = { class = ["SHAMAN"] }
+text = "Entrega «{quest:1522}» a {npc:5907}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#51"]
+note = "Polestar paso 51, objetivo 1 (turnin) · condición no expresable: llevas la misión 1522 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "orc-176"
+do = "turnin"
+quest = 1523
+npc = 5907
+at = [1413, 56.03, 19.89]
+if = { class = ["SHAMAN"] }
+text = "Entrega «{quest:1523}» a {npc:5907}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#52"]
+note = "Polestar paso 52, objetivo 1 (turnin) · condición no expresable: llevas la misión 1523 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "orc-177"
+do = "turnin"
+quest = 2984
+npc = 5907
+at = [1413, 56.03, 19.89]
+if = { class = ["SHAMAN"] }
+text = "Entrega «{quest:2984}» a {npc:5907}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#53"]
+note = "Polestar paso 53, objetivo 1 (turnin) · condición no expresable: llevas la misión 2984 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "orc-178"
+do = "turnin"
+quest = 2983
+npc = 5907
+at = [1413, 56.03, 19.89]
+if = { class = ["SHAMAN"] }
+chain = "orc-s054-5907"
+text = "Entrega «{quest:2983}» a {npc:5907}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#54"]
+note = "Polestar paso 54 «Kranal Fiss», objetivo 1 (turnin) · consejo de Polestar sin traducir: West over the {area:814} bridge, past {area:379} and on along the ridge: {npc:5907} stands alone above the Razormane camp."
+
+[[step]]
+id = "orc-179"
+do = "accept"
+quest = 1524
+npc = 5907
+at = [1413, 56.03, 19.89]
+if = { class = ["SHAMAN"] }
+chain = "orc-s054-5907"
+reqlevel = 10
+text = "Coge «{quest:1524}» de {npc:5907}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#54"]
+note = "Polestar paso 54 «Kranal Fiss», objetivo 2 (accept)"
+
+[[step]]
+id = "orc-180"
+do = "turnin"
+quest = 1524
+npc = 5900
+at = [1411, 38.55, 58.96]
+if = { class = ["SHAMAN"] }
+chain = "orc-s055-5900"
+text = "Entrega «{quest:1524}» a {npc:5900}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#55"]
+note = "Polestar paso 55 «Telf Joolam», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back over the bridge and south along the {map:1411} bank of the river to where a narrow trail climbs the mountain: {npc:5900} keeps the shrine at the top. Mind the edges on the way up, and come back down the same trail."
+
+[[step]]
+id = "orc-181"
+do = "accept"
+quest = 1525
+npc = 5900
+at = [1411, 38.55, 58.96]
+if = { class = ["SHAMAN"] }
+chain = "orc-s055-5900"
+reqlevel = 10
+text = "Coge «{quest:1525}» de {npc:5900}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#55"]
+note = "Polestar paso 55 «Telf Joolam», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-186"
+do = "accept"
+quest = 834
+npc = 3293
+at = [1411, 46.37, 22.94]
+reqlevel = 7
+text = "Coge «{quest:834}» de {npc:3293}."
+why = "+775 XP · ~5 min · desbloquea «{quest:835}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#57"]
+note = "Polestar paso 57 «Rezlak», objetivo 1 (accept) · consejo de Polestar sin traducir: Head north-east to the road toward {map:1454}. {npc:3293} camps beside it; the stolen sacks lie along the road south of him."
+
+[[step]]
+id = "orc-187"
+do = "complete"
+quest = 834
+obj = 1
+at = [1411, 49.1, 22.6]
+text = "Recoge {item:4918} (5) de {obj:3290} para «{quest:834}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#57"]
+note = "Polestar paso 57 «Rezlak», objetivo 2 (collect)"
+
+[[step]]
+id = "orc-188"
+do = "turnin"
+quest = 834
+npc = 3293
+at = [1411, 46.37, 22.94]
+chain = "orc-s057-3293"
+text = "Entrega «{quest:834}» a {npc:3293}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#57"]
+note = "Polestar paso 57 «Rezlak», objetivo 3 (turnin)"
+
+[[step]]
+id = "orc-189"
+do = "accept"
+quest = 835
+npc = 3293
+at = [1411, 46.37, 22.94]
+chain = "orc-s057-3293"
+reqlevel = 7
+text = "Coge «{quest:835}» de {npc:3293}."
+why = "+2.775 XP · ~12 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#57"]
+note = "Polestar paso 57 «Rezlak», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-190"
+do = "complete"
+quest = 835
+obj = 1
+at = [1411, 51.43, 20.86]
+wps = [[1411, 52.6, 24.2, "Salvaje Viento Seco"], [1411, 53.9, 22.7, "Salvaje Viento Seco"], [1411, 54.0, 25.3, "Salvaje Viento Seco"]]
+text = "Mata {npc:3117} (12) para «{quest:835}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#58"]
+note = "Polestar paso 58 «Drygulch Ravine», objetivo 1 (kill) · consejo de Polestar sin traducir: Savages and Storm Witches nest in {area:370}, east of {npc:3293}. A Storm Witch drops the {item:277661}. Shamans: the Burning Blade Cultists by {area:371}, at the ravine's south end, drop the {item:6652}."
+
+[[step]]
+id = "orc-191"
+do = "complete"
+quest = 835
+obj = 2
+at = [1411, 51.34, 20.19]
+wps = [[1411, 51.6, 22.8, "Bruja de la Tormenta Viento Seco"], [1411, 53.7, 22.0, "Bruja de la Tormenta Viento Seco"], [1411, 53.2, 24.0, "Bruja de la Tormenta Viento Seco"]]
+text = "Mata {npc:3118} (8) para «{quest:835}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#58"]
+note = "Polestar paso 58 «Drygulch Ravine», objetivo 2 (kill)"
+
+[[step]]
+id = "orc-192"
+do = "loot"
+item = 277661
+count = 1
+at = [1411, 51.34, 20.19]
+wps = [[1411, 51.6, 23.1, "Orbe de tormenta sin brillo"], [1411, 53.7, 22.0, "Orbe de tormenta sin brillo"], [1411, 53.2, 24.2, "Orbe de tormenta sin brillo"]]
+optional = true
+text = "Consigue {item:277661}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#58"]
+note = "Polestar paso 58 «Drygulch Ravine», objetivo 3 (collect)"
+
+[[step]]
+id = "orc-193"
+do = "accept"
+quest = 97281
+optional = true
+reqlevel = 7
+text = "Usa {item:277661} para empezar «{quest:97281}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#58"]
+note = "Polestar paso 58 «Drygulch Ravine», objetivo 4 (accept)"
+
+[[step]]
+id = "orc-194"
+do = "complete"
+quest = 1525
+obj = 2
+at = [1411, 52.23, 24.54]
+if = { class = ["SHAMAN"] }
+text = "Consigue {item:6652} (1) de {npc:3199} para «{quest:1525}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#58"]
+note = "Polestar paso 58 «Drygulch Ravine», objetivo 5 (collect)"
+
+[[step]]
+id = "orc-195"
+do = "note"
+at = [1411, 47.4, 17.9]
+optional = true
+text = "Truco de la muerte: déjate matar aquí y reaparece en el cementerio de destino; ahorras el camino."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#59"]
+note = "Polestar paso 59 «Deathskip to Northern Durotar», objetivo 1 (die) · consejo de Polestar sin traducir: Die to the mobs at 52.0,21.4 ({npc:3118}): a death there sends you to this graveyard. Release your spirit and take the {npc:6491}'s resurrection."
+
+[[step]]
+id = "orc-196"
+do = "turnin"
+quest = 835
+npc = 3293
+at = [1411, 46.37, 22.94]
+chain = "orc-s060-3293"
+text = "Entrega «{quest:835}» a {npc:3293}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#60"]
+note = "Polestar paso 60 «Rezlak», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-197"
+do = "turnin"
+quest = 97281
+npc = 3293
+at = [1411, 46.37, 22.94]
+optional = true
+chain = "orc-s060-3293"
+text = "Entrega «{quest:97281}» a {npc:3293}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#60"]
+note = "Polestar paso 60 «Rezlak», objetivo 2 (turnin)"
+
+[[step]]
+id = "orc-198"
+do = "accept"
+quest = 97282
+npc = 3293
+at = [1411, 46.37, 22.94]
+optional = true
+chain = "orc-s060-3293"
+reqlevel = 6
+text = "Coge «{quest:97282}» de {npc:3293}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#60"]
+note = "Polestar paso 60 «Rezlak», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-199"
+do = "complete"
+quest = 97282
+obj = 1
+at = [1411, 43.63, 24.14]
+wps = [[1411, 40.4, 24.1, "Órgano de truenagarto cargado"], [1411, 39.2, 25.6, "Órgano de truenagarto cargado"], [1411, 40.3, 29.0, "Órgano de truenagarto cargado"]]
+text = "Consigue {item:277665} (5) de {npc:3131} y {npc:3130} para «{quest:97282}»."
+tip = "Los Truenagartos y los Lomorrayos pastan en {area:369}, justo al oeste y suroeste de {npc:3293}.\nFizzle ocupa el campamento del Filo Ardiente en {area:369}, al noroeste de {area:362}. Cazadores: domestica un {npc:3099} con la {item:15908} por el camino.\nCuidado: los fieles del Filo Ardiente rodean a Fizzle, algunos vinculados, así que atacan por parejas, y reaparecen rápido.\nCuidado: Halikor, un élite de nivel 12, recorre {area:369} entre los lagartos: localízalo antes de atraer."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#61"]
+note = "Polestar paso 61 «Thunder Ridge: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "orc-200"
+do = "complete"
+quest = 6062
+obj = 1
+at = [1411, 41.99, 31.52]
+wps = [[1411, 46.0, 34.9, "Jabalí jaspeado feroz"], [1411, 48.2, 40.2, "Jabalí jaspeado feroz"], [1411, 55.6, 39.8, "Jabalí jaspeado feroz"]]
+if = { class = ["HUNTER"] }
+text = "Mata {npc:3099} (1) para «{quest:6062}»."
+tip = "Domestícalo con {item:15908}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#61"]
+note = "Polestar paso 61 «Thunder Ridge: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "orc-201"
+do = "complete"
+quest = 806
+obj = 1
+at = [1411, 42.12, 26.66]
+text = "Consigue {item:4869} (1) de {npc:3203} para «{quest:806}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#61"]
+note = "Polestar paso 61 «Thunder Ridge: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "orc-202"
+do = "accept"
+quest = 816
+npc = 3193
+at = [1411, 43.1, 30.24]
+reqlevel = 8
+text = "Coge «{quest:816}» de {npc:3193}."
+tip = "La choza de Misha está al sur de los lagartos. Los crocoliscos de {area:814}, al oeste, llevan {item:4891}."
+why = "+1.833 XP · ~9 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#62"]
+note = "Polestar paso 62 «Misha Tor'kren», objetivo 1 (accept) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "orc-203"
+do = "complete"
+quest = 816
+obj = 1
+at = [1411, 35.24, 30.11]
+wps = [[1411, 35.3, 25.4, "Amuleto de Kron"], [1411, 36.7, 22.2, "Amuleto de Kron"], [1411, 36.9, 16.5, "Amuleto de Kron"]]
+text = "Consigue {item:4891} (1) para «{quest:816}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#62"]
+note = "Polestar paso 62 «Misha Tor'kren», objetivo 2 (collect)"
+
+[[step]]
+id = "orc-204"
+do = "turnin"
+quest = 816
+npc = 3193
+at = [1411, 43.1, 30.24]
+text = "Entrega «{quest:816}» a {npc:3193}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#62"]
+note = "Polestar paso 62 «Misha Tor'kren», objetivo 3 (turnin)"
+
+[[step]]
+id = "orc-205"
+do = "turnin"
+quest = 97282
+npc = 3293
+at = [1411, 46.37, 22.94]
+text = "Entrega «{quest:97282}» a {npc:3293}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#63"]
+note = "Polestar paso 63 «Rezlak», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-206"
+do = "turnin"
+quest = 99048
+npc = 275657
+at = [1411, 58.6, 45.6]
+optional = true
+chain = "orc-s064-275657"
+text = "Entrega «{quest:99048}» a {npc:275657}."
+tip = "{npc:275657} está en la orilla, al este de {area:362}. El tridente, el estandarte y la daga están en la playa a su alrededor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#64"]
+note = "Polestar paso 64 «Heglan Ojoumbrío», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-207"
+do = "accept"
+quest = 99049
+npc = 275657
+at = [1411, 58.6, 45.6]
+chain = "orc-s064-275657"
+reqlevel = 8
+text = "Coge «{quest:99049}» de {npc:275657}."
+why = "+875 XP · ~2,6 min · desbloquea «{quest:99052}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#64"]
+note = "Polestar paso 64 «Heglan Ojoumbrío», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-208"
+do = "complete"
+quest = 99049
+obj = 1
+at = [1411, 58.9, 44.4]
+text = "Recoge {item:286012} (1) de Abandoned Dagger para «{quest:99049}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#64"]
+note = "Polestar paso 64 «Heglan Ojoumbrío», objetivo 3 (collect)"
+
+[[step]]
+id = "orc-209"
+do = "complete"
+quest = 99049
+obj = 3
+at = [1411, 60.1, 44.8]
+text = "Recoge {item:286010} (1) de Weapon Piece para «{quest:99049}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#64"]
+note = "Polestar paso 64 «Heglan Ojoumbrío», objetivo 4 (collect)"
+
+[[step]]
+id = "orc-210"
+do = "complete"
+quest = 99049
+obj = 2
+at = [1411, 60.1, 42.4]
+text = "Recoge {item:286011} (1) de Strange Debris para «{quest:99049}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#64"]
+note = "Polestar paso 64 «Heglan Ojoumbrío», objetivo 5 (collect)"
+
+[[step]]
+id = "orc-212-pa"
+do = "train"
+npc = 246344
+spells = [498, 633, 679, 1022, 3127, 10321, 21082, 1311649]
+at = [1456, 23.91, 15.44]
+if = { class = ["PALADIN"] }
+reqlevel = 10
+text = "Entrena con {npc:246344}, el instructor de paladín."
+tip = "8 hechizos hasta el nivel 10: nuevos {spell:498}, {spell:633}, {spell:679} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#66", "trainer:paladin"]
+note = "Polestar paso 66 «Paladin trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 1-10"
+
+[[step]]
+id = "orc-213-mg"
+do = "train"
+npc = 5884
+spells = [118, 122, 205, 5143, 5505]
+at = [1411, 42.51, 69.04]
+if = { class = ["MAGE"] }
+reqlevel = 10
+text = "Entrena con {npc:5884}, el instructor de mago."
+tip = "5 hechizos hasta el nivel 10: nuevos {spell:118}, {spell:122}, {spell:5143} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#67", "trainer:mage"]
+note = "Polestar paso 67 «Mage trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 8-10"
+
+[[step]]
+id = "orc-214-dr"
+do = "train"
+npc = 3034
+spells = [467, 774, 8921]
+at = [1456, 77.14, 27.02]
+if = { class = ["DRUID"] }
+reqlevel = 6
+text = "Entrena con {npc:3034}, el instructor de druida."
+tip = "3 hechizos hasta el nivel 6: nuevos {spell:467}, {spell:774}, {spell:8921} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#68", "trainer:druid"]
+note = "Polestar paso 68 «Druid trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 1-10"
+
+[[step]]
+id = "orc-216"
+do = "turnin"
+quest = 6062
+npc = 3171
+at = [1411, 51.85, 43.49]
+if = { class = ["HUNTER"] }
+chain = "orc-s069-3171"
+text = "Entrega «{quest:6062}» a {npc:3171}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#69"]
+note = "Polestar paso 69 «Razor Hill», objetivo 2 (turnin)"
+
+[[step]]
+id = "orc-217"
+do = "accept"
+quest = 6083
+npc = 3171
+at = [1411, 51.85, 43.49]
+if = { class = ["HUNTER"] }
+chain = "orc-s069-3171"
+reqlevel = 10
+text = "Coge «{quest:6083}» de {npc:3171}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#69"]
+note = "Polestar paso 69 «Razor Hill», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-218"
+do = "turnin"
+quest = 806
+npc = 3142
+at = [1411, 52.24, 43.15]
+chain = "orc-s069-3142"
+text = "Entrega «{quest:806}» a {npc:3142}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#69"]
+note = "Polestar paso 69 «Razor Hill», objetivo 4 (turnin)"
+
+[[step]]
+id = "orc-219"
+do = "accept"
+quest = 828
+npc = 3142
+at = [1411, 52.24, 43.15]
+chain = "orc-s069-3142"
+reqlevel = 4
+text = "Coge «{quest:828}» de {npc:3142}."
+why = "+90 XP · <1 min · desbloquea «{quest:827}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#69"]
+note = "Polestar paso 69 «Razor Hill», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-220"
+do = "turnin"
+quest = 99049
+npc = 3142
+at = [1411, 52.24, 43.15]
+chain = "orc-s069-3142"
+text = "Entrega «{quest:99049}» a {npc:3142}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#69"]
+note = "Polestar paso 69 «Razor Hill», objetivo 6 (turnin)"
+
+[[step]]
+id = "orc-221"
+do = "accept"
+quest = 99051
+npc = 3142
+at = [1411, 52.24, 43.15]
+chain = "orc-s069-3142"
+reqlevel = 8
+text = "Coge «{quest:99051}» de {npc:3142}."
+why = "+875 XP · ~3,7 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#69"]
+note = "Polestar paso 69 «Razor Hill», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-223"
+do = "complete"
+quest = 99051
+obj = 1
+at = [1411, 58.9, 27.0]
+text = "Consigue {item:286008} (9) de {npc:275663} y {npc:275662} para «{quest:99051}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#70"]
+note = "Polestar paso 70 «Spitelash naga», objetivo 1 (collect) · consejo de Polestar sin traducir: North-east to the beach below {area:370}, north of {npc:275657}: Spitelash Scouts and Attendants hold it. Hunters: tame a {npc:3107} on the beach."
+
+[[step]]
+id = "orc-224"
+do = "complete"
+quest = 6083
+obj = 1
+at = [1411, 58.85, 28.34]
+wps = [[1411, 59.9, 26.5, "Correspuma"], [1411, 60.9, 17.7, "Correspuma"], [1411, 70.8, 70.2, "Correspuma"]]
+if = { class = ["HUNTER"] }
+text = "Mata {npc:3107} (1) para «{quest:6083}»."
+tip = "Domestícalo con {item:15908}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#70"]
+note = "Polestar paso 70 «Spitelash naga», objetivo 2 (kill)"
+
+[[step]]
+id = "orc-225"
+do = "turnin"
+quest = 828
+npc = 3208
+at = [1411, 56.41, 20.04]
+chain = "orc-s071-3208"
+text = "Entrega «{quest:828}» a {npc:3208}."
+tip = "«{quest:828}» acampa en la colina al oeste de la playa de los naga, al sur de «{quest:827}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#71"]
+note = "Polestar paso 71 ««Margoz»», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-226"
+do = "accept"
+quest = 827
+npc = 3208
+at = [1411, 56.41, 20.04]
+chain = "orc-s071-3208"
+reqlevel = 4
+text = "Coge «{quest:827}» de {npc:3208}."
+why = "+1.386 XP · ~5 min · desbloquea «{quest:829}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#71"]
+note = "Polestar paso 71 ««Margoz»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-227"
+do = "goto"
+at = [1454, 48.3, 45.3]
+if = { class = ["WARLOCK"] }
+text = "Ve a {npc:5875}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#72"]
+note = "Polestar paso 72 «Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "orc-228"
+do = "turnin"
+quest = 1506
+npc = 5875
+at = [1454, 48.25, 45.28]
+if = { class = ["WARLOCK"] }
+chain = "orc-s073-5875"
+text = "Entrega «{quest:1506}» a {npc:5875}."
+tip = "La puerta principal de {map:1454} está justo al oeste de {area:817}. {npc:5875} está en {obj:172960}, el cañón bajo {obj:172982}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#73"]
+note = "Polestar paso 73 «Ojo sangriento de Gan'rul», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-229"
+do = "accept"
+quest = 1501
+npc = 5875
+at = [1454, 48.25, 45.28]
+if = { class = ["WARLOCK"] }
+chain = "orc-s073-5875"
+reqlevel = 10
+text = "Coge «{quest:1501}» de {npc:5875}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#73"]
+note = "Polestar paso 73 «Ojo sangriento de Gan'rul», objetivo 2 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "orc-230"
+do = "note"
+npc = 2704
+at = [1454, 81.53, 19.63]
+if = { class = ["WARLOCK"] }
+optional = true
+text = "Entrena con {npc:2704}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#74"]
+note = "Polestar paso 74 «Hanashi», objetivo 1 (train) · condición no expresable: dinero >= 1000 cobre; no tienes Staves 1+ · train sin hechizos: manual · consejo de Polestar sin traducir: While you're here: learn Staves from {npc:2704} ({obj:172958}, 10 silver); a staff carries more spell stats than a one-hander while you level."
+
+[[step]]
+id = "orc-231"
+do = "goto"
+at = [1411, 53.1, 9.4]
+if = { class = ["WARLOCK"] }
+text = "Ve a {area:817}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#75"]
+note = "Polestar paso 75 «Back to Durotar», objetivo 1 (goto)"
+
+[[step]]
+id = "orc-232"
+do = "goto"
+at = [1411, 55.0, 10.0]
+text = "Ve a {area:817}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#76"]
+note = "Polestar paso 76 «Skull Rock's mouth», objetivo 1 (goto)"
+
+[[step]]
+id = "orc-233"
+do = "complete"
+quest = 827
+obj = 1
+at = [1411, 55.01, 9.79]
+wps = [[1411, 53.3, 8.6, "Collar abrasador"], [1411, 53.1, 10.6, "Collar abrasador"], [1411, 52.0, 9.3, "Collar abrasador"]]
+text = "Consigue {item:4871} (6) de {npc:3197} y {npc:3195} y {npc:3196} y {npc:3198} y {npc:3199} para «{quest:827}»."
+tip = "Los fieles Filo Ardiente ocupan las cuevas de «{quest:827}»; cualquiera de ellos suelta {item:4871}. {npc:3204}, un brujo de nivel 14, está en lo más hondo y suelta {item:4903}. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#77"]
+note = "Polestar paso 77 ««Roca del Cráneo»», objetivo 1 (collect)"
+
+[[step]]
+id = "orc-234"
+do = "loot"
+item = 4903
+count = 1
+at = [1411, 52.61, 8.82]
+text = "Consigue {item:4903} de {npc:3204}."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#77"]
+note = "Polestar paso 77 ««Roca del Cráneo»», objetivo 2 (collect)"
+
+[[step]]
+id = "orc-235"
+do = "accept"
+quest = 832
+reqlevel = 4
+text = "Usa {item:4903} para empezar «{quest:832}»."
+why = "+791 XP · ~3,7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#77"]
+note = "Polestar paso 77 ««Roca del Cráneo»», objetivo 3 (accept)"
+
+[[step]]
+id = "orc-236"
+do = "complete"
+quest = 1501
+obj = 1
+at = [1411, 51.62, 9.76]
+if = { class = ["WARLOCK"] }
+text = "Recoge {item:6535} (1) de {obj:58595} para «{quest:1501}»."
+tip = "{obj:58595} está en {area:817}, entre los fieles con los que acabas de luchar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#78"]
+note = "Polestar paso 78 «Tablilla de Verga», objetivo 1 (collect)"
+
+[[step]]
+id = "orc-237"
+do = "turnin"
+quest = 827
+npc = 3208
+at = [1411, 56.41, 20.04]
+chain = "orc-s079-3208"
+text = "Entrega «{quest:827}» a {npc:3208}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#79"]
+note = "Polestar paso 79 «Margoz», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-238"
+do = "accept"
+quest = 829
+npc = 3208
+at = [1411, 56.41, 20.04]
+chain = "orc-s079-3208"
+reqlevel = 4
+text = "Coge «{quest:829}» de {npc:3208}."
+why = "+460 XP · <1 min · 1,6× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#79"]
+note = "Polestar paso 79 «Margoz», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-239"
+do = "turnin"
+quest = 99051
+npc = 3142
+at = [1411, 52.24, 43.15]
+text = "Entrega «{quest:99051}» a {npc:3142}."
+tip = "Vuelve a {area:362}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#80"]
+note = "Polestar paso 80 «Razor Hill», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-240"
+do = "turnin"
+quest = 6083
+npc = 3171
+at = [1411, 51.85, 43.49]
+if = { class = ["HUNTER"] }
+chain = "orc-s080-3171"
+text = "Entrega «{quest:6083}» a {npc:3171}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#80"]
+note = "Polestar paso 80 «Razor Hill», objetivo 2 (turnin)"
+
+[[step]]
+id = "orc-241"
+do = "accept"
+quest = 6082
+npc = 3171
+at = [1411, 51.85, 43.49]
+if = { class = ["HUNTER"] }
+chain = "orc-s080-3171"
+reqlevel = 10
+text = "Coge «{quest:6082}» de {npc:3171}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#80"]
+note = "Polestar paso 80 «Razor Hill», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-242"
+do = "accept"
+quest = 99052
+npc = 3142
+at = [1411, 52.24, 43.15]
+optional = true
+reqlevel = 10
+text = "Coge «{quest:99052}» de {npc:3142}, {npc:275666}, un gigante de mar élite."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#81"]
+note = "Polestar paso 81 «Razor Hill», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 99052 · datos no importados: preAll"
+
+[[step]]
+id = "orc-243"
+do = "complete"
+quest = 99052
+obj = 1
+at = [1411, 59.22, 17.6]
+optional = true
+text = "Consigue {item:286009} (1) de {npc:275666} para «{quest:99052}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#82"]
+note = "Polestar paso 82 «Aggor el Joven», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 99052 · consejo de Polestar sin traducir: {npc:275666}, a young sea giant, walks {map:1411}'s north coast, north of the naga beach. {npc:275666} is elite: grouping up is advised."
+
+[[step]]
+id = "orc-244"
+do = "turnin"
+quest = 99052
+npc = 3142
+at = [1411, 52.24, 43.15]
+optional = true
+text = "Entrega «{quest:99052}» a {npc:3142}, de vuelta en {area:362}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#82"]
+note = "Polestar paso 82 «Aggor el Joven», objetivo 2 (turnin) · condición no expresable: vas en grupo para la misión 99052"
+
+[[step]]
+id = "orc-245"
+do = "complete"
+quest = 6082
+obj = 1
+at = [1411, 50.99, 37.7]
+wps = [[1411, 54.6, 35.2, "Escórpido acorazado"], [1411, 57.2, 29.6, "Escórpido acorazado"], [1411, 55.6, 22.3, "Escórpido acorazado"]]
+if = { class = ["HUNTER"] }
+text = "Mata {npc:3126} (1) para «{quest:6082}»."
+tip = "Los escórpidos acorazados se arrastran por las llanuras al oeste de {area:362}. Domestica uno y vuelve con {npc:3171}. Domestícalo con {item:15908}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#83"]
+note = "Polestar paso 83 «Escórpido acorazado», objetivo 1 (kill)"
+
+[[step]]
+id = "orc-246"
+do = "turnin"
+quest = 6082
+npc = 3171
+at = [1411, 51.85, 43.49]
+if = { class = ["HUNTER"] }
+chain = "orc-s083-3171"
+text = "Entrega «{quest:6082}» a {npc:3171}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#83"]
+note = "Polestar paso 83 «Escórpido acorazado», objetivo 2 (turnin)"
+
+[[step]]
+id = "orc-247"
+do = "accept"
+quest = 6081
+npc = 3171
+at = [1411, 51.85, 43.49]
+if = { class = ["HUNTER"] }
+chain = "orc-s083-3171"
+reqlevel = 10
+text = "Coge «{quest:6081}» de {npc:3171}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#83"]
+note = "Polestar paso 83 «Escórpido acorazado», objetivo 3 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:3171}: {npc:3352} in {map:1454} teaches {spell:5149}."
+
+[[step]]
+id = "orc-248"
+do = "turnin"
+quest = 840
+npc = 3337
+at = [1413, 62.26, 19.38]
+optional = true
+text = "Entrega «{quest:840}» a {npc:3337}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#84"]
+note = "Polestar paso 84 «Far Watch Post», objetivo 1 (turnin) · condición no expresable: llevas la misión 840 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: West from {area:362} over the {area:814} bridge: {npc:3337} and {npc:5810} stand together at {area:379} above it. From there the road north through {map:1411} leads to {map:1454}."
+
+[[step]]
+id = "orc-249"
+do = "turnin"
+quest = 1505
+npc = 5810
+at = [1413, 61.38, 21.12]
+if = { class = ["WARRIOR"] }
+chain = "orc-s084-5810"
+text = "Entrega «{quest:1505}» a {npc:5810}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#84"]
+note = "Polestar paso 84 «Far Watch Post», objetivo 2 (turnin) · condición no expresable: llevas la misión 840 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "orc-250"
+do = "accept"
+quest = 1498
+npc = 5810
+at = [1413, 61.38, 21.12]
+if = { class = ["WARRIOR"] }
+chain = "orc-s084-5810"
+reqlevel = 10
+text = "Coge «{quest:1498}» de {npc:5810}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#84"]
+note = "Polestar paso 84 «Far Watch Post», objetivo 3 (accept) · condición no expresable: llevas la misión 840 (implícita: el paso es de esa misión) · datos no importados: closedBy"
+
+[[step]]
+id = "orc-251"
+do = "complete"
+quest = 1498
+obj = 1
+at = [1411, 39.67, 29.24]
+wps = [[1411, 39.2, 25.6, "Escama chamuscada"], [1411, 40.4, 24.1, "Escama chamuscada"], [1411, 42.8, 24.2, "Escama chamuscada"]]
+if = { class = ["WARRIOR"] }
+text = "Consigue {item:6486} (5) de {npc:3130} y {npc:3131} para «{quest:1498}»."
+tip = "Los truenagartos y los lomorrayos pastan en {area:369}, junto al camino al norte hacia {map:1454}; cualquiera de ellos puede soltar {item:6486}. {npc:5810} la recoge cuando la siguiente guía pasa por {area:379}.\nCuidado: Halikor, un élite de nivel 12, recorre {area:369} entre los lagartos: localízalo antes de atraer."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#85"]
+note = "Polestar paso 85 «Thunder lizards on the way north», objetivo 1 (collect)"
+
+[[step]]
+id = "orc-252"
+do = "goto"
+at = [1454, 66.0, 18.5]
+if = { class = ["HUNTER"] }
+text = "Ve a {npc:3352}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#86"]
+note = "Polestar paso 86 «Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "orc-253"
+do = "turnin"
+quest = 6081
+npc = 3352
+at = [1454, 66.05, 18.53]
+if = { class = ["HUNTER"] }
+text = "Entrega «{quest:6081}» a {npc:3352}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#87"]
+note = "Polestar paso 87 «Ormak Tirosiniestro», objetivo 1 (turnin) · consejo de Polestar sin traducir: Follow the road north from {area:379} to {map:1454}'s main gate, just west of {area:817}. {npc:3352} stands with the hunter trainers in the {obj:172958}."
+
+[[step]]
+id = "orc-254"
+do = "note"
+npc = 2704
+at = [1454, 81.53, 19.63]
+if = { class = ["HUNTER"] }
+optional = true
+text = "Entrena con {npc:2704}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#88"]
+note = "Polestar paso 88 «Hanashi», objetivo 1 (train) · condición no expresable: dinero >= 1000 cobre; no tienes Staves 1+ · train sin hechizos: manual · consejo de Polestar sin traducir: While you're here: learn Staves from {npc:2704} ({obj:172958}, 10 silver); a Hunter's melee weapon is mostly its stats, and two-handers carry the most."
+
+[[step]]
+id = "orc-255"
+do = "goto"
+at = [1454, 55.6, 72.3]
+text = "Ve a {map:1454}'s {obj:172982}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#89"]
+note = "Polestar paso 89 «To Orgrimmar», objetivo 1 (goto) · consejo de Polestar sin traducir: Follow the road north from {area:379} to {map:1454}'s main gate. The next guide starts in {map:1454}: «{quest:829}» takes the cultists' quest, the trainers teach your new ranks, and the zeppelin leaves from the towers outside the gate for {map:1420} and {map:1421}. {map:1413} come after Silverpine."
+
+[[step]]
+id = "orc-256"
+do = "turnin"
+quest = 1501
+npc = 5875
+at = [1454, 48.25, 45.28]
+if = { class = ["WARLOCK"] }
+chain = "orc-s090-5875"
+text = "Entrega «{quest:1501}» a {npc:5875}."
+tip = "{npc:5875} está en {obj:172960}, el cañón bajo {obj:172982}. Entrégale {item:6535}, luego usa {item:7464} en el círculo de invocación junto a él y derrota al abisario para vincularlo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#90"]
+note = "Polestar paso 90 ««El vínculo»», objetivo 1 (turnin)"
+
+[[step]]
+id = "orc-257"
+do = "accept"
+quest = 1504
+npc = 5875
+at = [1454, 48.25, 45.28]
+if = { class = ["WARLOCK"] }
+chain = "orc-s090-5875"
+reqlevel = 10
+text = "Coge «{quest:1504}» de {npc:5875}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#90"]
+note = "Polestar paso 90 ««El vínculo»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "orc-258"
+do = "use"
+item = 7464
+at = [1454, 49.3, 50.0]
+if = { class = ["WARLOCK"] }
+text = "Usa {item:7464}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#90"]
+note = "Polestar paso 90 ««El vínculo»», objetivo 3 (use)"
+
+[[step]]
+id = "orc-259"
+do = "complete"
+quest = 1504
+obj = 1
+at = [1454, 49.3, 50.0]
+if = { class = ["WARLOCK"] }
+text = "Mata {npc:5676} (1) para «{quest:1504}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#90"]
+note = "Polestar paso 90 ««El vínculo»», objetivo 4 (kill)"
+
+[[step]]
+id = "orc-260"
+do = "turnin"
+quest = 1504
+npc = 5875
+at = [1454, 48.25, 45.28]
+if = { class = ["WARLOCK"] }
+text = "Entrega «{quest:1504}» a {npc:5875}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/orc/01-durotar#90"]
+note = "Polestar paso 90 ««El vínculo»», objetivo 5 (turnin)"

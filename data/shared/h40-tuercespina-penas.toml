@@ -1,0 +1,1718 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/40-50/01-stranglethorn-vale
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h40-tuercespina-penas"
+title = "Vega de Tuercespina y Pantano de las Penas"
+levels = [39, 43]
+map = 1434
+summary = "Ruta común de la Horda, 39-43: Vega de Tuercespina y Pantano de las Penas."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h40-tuercespina-penas-001"
+do = "goto"
+at = [1418, 4.1, 44.9]
+text = "Ve al maestro de vuelo de {area:340}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#1"]
+note = "Polestar paso 1 «Fly to Grom'gol», objetivo 1 (goto)"
+
+[[step]]
+id = "h40-tuercespina-penas-002"
+do = "fly"
+zone = 1434
+text = "Vuela a Grom'gol."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#1"]
+note = "Polestar paso 1 «Fly to Grom'gol», objetivo 2 (fly)"
+
+[[step]]
+id = "h40-tuercespina-penas-003"
+do = "turnin"
+quest = 1240
+npc = 2519
+at = [1434, 32.27, 27.71]
+chain = "h40-tuercespina-penas-s002-2519"
+text = "Entrega «{quest:1240}» a {npc:2519}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#2"]
+note = "Polestar paso 2 «Grom'gol Base Camp», objetivo 1 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-004"
+do = "accept"
+quest = 95748
+npc = 2519
+at = [1434, 32.27, 27.71]
+chain = "h40-tuercespina-penas-s002-2519"
+reqlevel = 30
+text = "Coge «{quest:95748}» de {npc:2519}."
+why = "+3.150 XP · <1 min · desbloquea «{quest:95770}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#2"]
+note = "Polestar paso 2 «Grom'gol Base Camp», objetivo 2 (accept) · consejo de Polestar sin traducir: {npc:2519}: the legend lies in Zul'Kunda, where this guide goes for {npc:1061}."
+
+[[step]]
+id = "h40-tuercespina-penas-008"
+do = "goto"
+at = [1434, 32.5, 29.3]
+text = "Ve al maestro de vuelo de Grom'gol."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#5"]
+note = "Polestar paso 5 «Fly to Booty Bay», objetivo 1 (goto)"
+
+[[step]]
+id = "h40-tuercespina-penas-009"
+do = "fly"
+zone = 1434
+text = "Vuela a Bahía del Botín."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#5"]
+note = "Polestar paso 5 «Fly to Booty Bay», objetivo 2 (fly)"
+
+[[step]]
+id = "h40-tuercespina-penas-010"
+do = "turnin"
+quest = 577
+npc = 2495
+at = [1434, 28.29, 77.59]
+chain = "h40-tuercespina-penas-s006-2495"
+text = "Entrega «{quest:577}» a {npc:2495}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:2495}: the Snapjaw skins gathered earlier; inside. · consejo de Polestar sin traducir: Gringer, the flight master, waits on {area:35}'s upper deck. The quest givers stand on the boardwalks around the harbour and in the inn."
+
+[[step]]
+id = "h40-tuercespina-penas-011"
+do = "accept"
+quest = 628
+npc = 2495
+at = [1434, 28.29, 77.59]
+chain = "h40-tuercespina-penas-s006-2495"
+reqlevel = 31
+text = "Coge «{quest:628}» de {npc:2495}, {npc:2635} toma el sol en la costa entre Zul'Kunda y Grom'gol, más adelante en este recorrido."
+why = "+3.348 XP · ~3 min · 1,6× la mediana del 41-45"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-012"
+do = "turnin"
+quest = 213
+npc = 737
+at = [1434, 27.0, 77.13]
+text = "Entrega «{quest:213}» a {npc:737}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 3 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-013"
+do = "turnin"
+quest = 1180
+npc = 4631
+at = [1434, 26.35, 73.56]
+chain = "h40-tuercespina-penas-s006-4631"
+text = "Entrega «{quest:1180}» a {npc:4631}, en los muelles: la carta de Gazlowe, si la llevas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 4 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-015"
+do = "accept"
+quest = 606
+npc = 2501
+at = [1434, 27.78, 77.07]
+reqlevel = 30
+text = "Coge «{quest:606}» de {npc:2501}."
+why = "+5.482 XP · ~6,7 min · desbloquea «{quest:609}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 6 (accept) · consejo de Polestar sin traducir: \"Sea Wolf\" MacKinley, on the top floor."
+
+[[step]]
+id = "h40-tuercespina-penas-017"
+do = "turnin"
+quest = 669
+npc = 2487
+at = [1434, 27.17, 77.01]
+text = "Entrega «{quest:669}» al {npc:2487}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 8 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-018"
+do = "accept"
+quest = 621
+npc = 2498
+at = [1434, 27.12, 77.21]
+optional = true
+chain = "h40-tuercespina-penas-s006-2498"
+reqlevel = 35
+text = "Coge «{quest:621}» de {npc:2498}."
+tip = "+13.757 XP · ~33 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 9 (accept) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h40-tuercespina-penas-019"
+do = "accept"
+quest = 600
+npc = 2498
+at = [1434, 27.12, 77.21]
+chain = "h40-tuercespina-penas-s006-2498"
+reqlevel = 30
+text = "Coge «{quest:600}» de {npc:2498}."
+why = "+6.409 XP · ~9 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 10 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-020"
+do = "accept"
+quest = 617
+npc = 2494
+at = [1434, 26.76, 76.38]
+optional = true
+reqlevel = 38
+text = "Coge «{quest:617}» de {npc:2494}."
+tip = "+10.985 XP · ~23 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 11 (accept)"
+
+[[step]]
+id = "h40-tuercespina-penas-021"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 12 (vendor)"
+
+[[step]]
+id = "h40-tuercespina-penas-022"
+do = "accept"
+quest = 595
+npc = 2490
+at = [1434, 28.1, 76.22]
+reqlevel = 37
+text = "Coge «{quest:595}» de {npc:2490}."
+why = "+2.450 XP · <1 min · desbloquea «{quest:608}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 13 (accept)"
+
+[[step]]
+id = "h40-tuercespina-penas-023"
+do = "turnin"
+quest = 595
+at = [1434, 27.28, 69.52]
+text = "Entrega «{quest:595}» en {obj:2083}."
+tip = "Sal del pueblo por el túnel; la nota está en la cala pirata justo al norte de {area:35}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#7"]
+note = "Polestar paso 7 «Correspondencia de los Velasangre», objetivo 1 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-024"
+do = "accept"
+quest = 597
+at = [1434, 27.28, 69.52]
+reqlevel = 37
+text = "Coge «{quest:597}» ({obj:2083})."
+why = "+2.450 XP · <1 min · desbloquea «{quest:608}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#7"]
+note = "Polestar paso 7 «Correspondencia de los Velasangre», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-025"
+do = "turnin"
+quest = 597
+npc = 2490
+at = [1434, 28.1, 76.22]
+chain = "h40-tuercespina-penas-s008-2490"
+text = "Entrega «{quest:597}» a {npc:2490}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#8"]
+note = "Polestar paso 8 «Booty Bay», objetivo 1 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-026"
+do = "accept"
+quest = 599
+npc = 2490
+at = [1434, 28.1, 76.22]
+chain = "h40-tuercespina-penas-s008-2490"
+reqlevel = 37
+text = "Coge «{quest:599}» de {npc:2490}."
+why = "+820 XP · <1 min · desbloquea «{quest:608}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#8"]
+note = "Polestar paso 8 «Booty Bay», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-027"
+do = "accept"
+quest = 576
+npc = 2493
+at = [1434, 28.59, 75.9]
+reqlevel = 37
+text = "Coge «{quest:576}» de {npc:2493}."
+why = "+3.900 XP · ~4,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#8"]
+note = "Polestar paso 8 «Booty Bay», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-028"
+do = "turnin"
+quest = 599
+npc = 2487
+at = [1434, 27.17, 77.01]
+chain = "h40-tuercespina-penas-s008-2487"
+text = "Entrega «{quest:599}» al {npc:2487}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#8"]
+note = "Polestar paso 8 «Booty Bay», objetivo 4 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-029"
+do = "accept"
+quest = 604
+npc = 2487
+at = [1434, 27.17, 77.01]
+chain = "h40-tuercespina-penas-s008-2487"
+reqlevel = 37
+text = "Coge «{quest:604}» del {npc:2487}."
+why = "+4.950 XP · ~6,5 min · desbloquea «{quest:608}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#8"]
+note = "Polestar paso 8 «Booty Bay», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-031"
+do = "complete"
+quest = 604
+obj = 2
+at = [1434, 26.96, 82.5]
+wps = [[1434, 29.6, 80.8, "Cartas Velasangre"]]
+text = "Recoge {item:3920} (1) de {obj:2086} para «{quest:604}»."
+tip = "Al sur de Bahía del Botín, los aventureros Velasangre acampan en {area:43}; las cartas y las órdenes están en sus tiendas. Cualquier Velasangre puede llevar tabaco y el Ojo de {npc:2493}, así que sigue matando hasta tener ambos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#9"]
+note = "Polestar paso 9 «The Wild Shore», objetivo 1 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-032"
+do = "complete"
+quest = 604
+obj = 3
+at = [1434, 26.96, 82.56]
+wps = [[1434, 29.6, 80.9, "Pedido Velasangre"]]
+text = "Recoge {item:3921} (1) de {obj:2087} para «{quest:604}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#9"]
+note = "Polestar paso 9 «The Wild Shore», objetivo 2 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-034"
+do = "complete"
+quest = 576
+obj = 1
+at = [1434, 26.84, 82.6]
+wps = [[1434, 31.0, 81.1, "Ojo de Dizzy"], [1434, 32.0, 79.5, "Ojo de Dizzy"], [1434, 33.0, 77.3, "Ojo de Dizzy"]]
+text = "Consigue {item:3897} (1) para «{quest:576}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#9"]
+note = "Polestar paso 9 «The Wild Shore», objetivo 4 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-035"
+do = "complete"
+quest = 604
+obj = 1
+at = [1434, 26.67, 82.84]
+wps = [[1434, 30.1, 87.5, "Aventurero Velasangre"], [1434, 33.9, 86.2, "Aventurero Velasangre"], [1434, 31.5, 80.3, "Aventurero Velasangre"]]
+text = "Mata {npc:1563} (10) para «{quest:604}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#9"]
+note = "Polestar paso 9 «The Wild Shore», objetivo 5 (kill)"
+
+[[step]]
+id = "h40-tuercespina-penas-037"
+do = "turnin"
+quest = 604
+npc = 2487
+at = [1434, 27.17, 77.01]
+text = "Entrega «{quest:604}» al {npc:2487}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#10"]
+note = "Polestar paso 10 «Booty Bay», objetivo 2 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-038"
+do = "turnin"
+quest = 576
+npc = 2493
+at = [1434, 28.59, 75.9]
+text = "Entrega «{quest:576}» a {npc:2493}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#10"]
+note = "Polestar paso 10 «Booty Bay», objetivo 3 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-039"
+do = "accept"
+quest = 348
+npc = 2486
+at = [1434, 27.61, 76.74]
+reqlevel = 40
+text = "Coge «{quest:348}» de {npc:2486}."
+why = "+6.144 XP · ~2 min · desbloquea «{quest:349}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#10"]
+note = "Polestar paso 10 «Booty Bay», objetivo 4 (accept)"
+
+[[step]]
+id = "h40-tuercespina-penas-040"
+do = "loot"
+item = 4056
+count = 1
+at = [1434, 29.19, 88.6]
+wps = [[1434, 30.6, 90.2, "El enigma de Cortello"], [1434, 33.6, 88.4, "El enigma de Cortello"]]
+optional = true
+text = "Recoge {item:4056} de {obj:2554}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#11"]
+note = "Polestar paso 11 «The Bloodsail ships», objetivo 1 (collect) · consejo de Polestar sin traducir: Optional, and tough at 41: the scroll, «{quest:624}», lies on the decks of the three ships off the {area:43}, crewed by pirates of 42-45 who come in pairs. Take it only if you can pull the crew to the rail one at a time, or with a friend; its chain runs on through the {map:1435}, {map:1445} and the {map:1425}."
+
+[[step]]
+id = "h40-tuercespina-penas-041"
+do = "accept"
+quest = 624
+optional = true
+reqlevel = 35
+text = "Usa {item:4056} para empezar «{quest:624}»."
+tip = "Para una parada posterior en {map:1435}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#11"]
+note = "Polestar paso 11 «The Bloodsail ships», objetivo 2 (accept)"
+
+[[step]]
+id = "h40-tuercespina-penas-042"
+do = "loot"
+item = 2799
+count = 10
+at = [1434, 38.75, 85.9]
+wps = [[1434, 41.2, 77.7, "Colmillo de gorila"], [1434, 37.8, 61.3, "Colmillo de gorila"], [1434, 33.7, 63.3, "Colmillo de gorila"]]
+text = "Consigue {item:2799} (10)."
+tip = "Los gorilas deambulan por el valle alrededor de Unbagwa. Los ancianos sueltan las tripas; cualquiera puede soltar un colmillo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#12"]
+note = "Polestar paso 12 «Mistvale gorillas», objetivo 1 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-044"
+do = "turnin"
+quest = 349
+npc = 1449
+at = [1434, 35.27, 60.41]
+text = "Entrega «{quest:349}» a {npc:1449}."
+tip = "Dale los colmillos a Unbagwa y quédate a su lado: llama a tres oleadas de gorilas y luego a {npc:1514}. Lucha contra ellos de uno en uno."
+why = "+2.633 XP · ~8 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#13"]
+note = "Polestar paso 13 «Médico brujo Unbagwa», objetivo 1 (turnin) · consejo de Polestar sin traducir: Inside {area:1742}."
+
+[[step]]
+id = "h40-tuercespina-penas-045"
+do = "complete"
+quest = 348
+obj = 1
+at = [1434, 35.05, 60.88]
+text = "Consigue {item:2797} (1) de {npc:1514} para «{quest:348}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#13"]
+note = "Polestar paso 13 «Médico brujo Unbagwa», objetivo 2 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-046"
+do = "complete"
+quest = 606
+obj = 1
+at = [1434, 34.4, 62.52]
+wps = [[1434, 34.5, 64.8, "Tripas de Velo de Bruma"], [1434, 32.6, 65.7, "Tripas de Velo de Bruma"], [1434, 33.8, 67.0, "Tripas de Velo de Bruma"]]
+text = "Consigue {item:3919} (5) de {npc:1557} para «{quest:606}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#14"]
+note = "Polestar paso 14 «Mistvale gorillas», objetivo 1 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-047"
+do = "complete"
+quest = 600
+obj = 1
+at = [1434, 42.02, 46.3]
+wps = [[1434, 42.0, 45.1, "Cristal canto azul"], [1434, 41.1, 43.5, "Cristal canto azul"], [1434, 41.8, 42.1, "Cristal canto azul"]]
+text = "Consigue {item:3917} (10) para «{quest:600}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#15"]
+note = "Polestar paso 15 «Venture Co. mine», objetivo 1 (collect) · consejo de Polestar sin traducir: Further north, the goblins of the Venture Co. dig at the mine east of the road; miners, foremen, surveyors and tinkerers all drop the crystals.\nCareful: Stealthed Shadowmaw Panthers and Stranglethorn Tigresses roam the area around the camp."
+
+[[step]]
+id = "h40-tuercespina-penas-049"
+do = "sethearth"
+npc = 5814
+zone = 1434
+at = [1434, 31.49, 29.75]
+text = "Pon la piedra de hogar en {area:117} con {npc:5814}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#16"]
+note = "Polestar paso 16 «Grom'gol Base Camp», objetivo 2 (sethome)"
+
+[[step]]
+id = "h40-tuercespina-penas-051"
+do = "turnin"
+quest = 195
+npc = 715
+at = [1434, 35.66, 10.81]
+chain = "h40-tuercespina-penas-s017-715"
+text = "Entrega «{quest:195}» a {npc:715}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#17"]
+note = "Polestar paso 17 «Nesingwary's camp», objetivo 1 (turnin) · consejo de Polestar sin traducir: Head north up the road; the hunters camp on the hill above the river."
+
+[[step]]
+id = "h40-tuercespina-penas-052"
+do = "accept"
+quest = 196
+npc = 715
+at = [1434, 35.66, 10.81]
+chain = "h40-tuercespina-penas-s017-715"
+reqlevel = 28
+text = "Coge «{quest:196}» de {npc:715}."
+why = "+4.710 XP · ~10 min · desbloquea «{quest:208}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#17"]
+note = "Polestar paso 17 «Nesingwary's camp», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-053"
+do = "turnin"
+quest = 192
+npc = 718
+at = [1434, 35.55, 10.55]
+text = "Entrega «{quest:192}» a {npc:718}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#17"]
+note = "Polestar paso 17 «Nesingwary's camp», objetivo 3 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-054"
+do = "turnin"
+quest = 339
+npc = 716
+at = [1434, 35.66, 10.53]
+optional = true
+chain = "h40-tuercespina-penas-s017-716"
+text = "Entrega «{quest:339}» a {npc:716}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#17"]
+note = "Polestar paso 17 «Nesingwary's camp», objetivo 4 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-055"
+do = "turnin"
+quest = 340
+npc = 716
+at = [1434, 35.66, 10.53]
+optional = true
+chain = "h40-tuercespina-penas-s017-716"
+text = "Entrega «{quest:340}» a {npc:716}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#17"]
+note = "Polestar paso 17 «Nesingwary's camp», objetivo 5 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-056"
+do = "turnin"
+quest = 341
+npc = 716
+at = [1434, 35.66, 10.53]
+optional = true
+chain = "h40-tuercespina-penas-s017-716"
+text = "Entrega «{quest:341}» a {npc:716}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#17"]
+note = "Polestar paso 17 «Nesingwary's camp», objetivo 6 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-057"
+do = "turnin"
+quest = 342
+npc = 716
+at = [1434, 35.66, 10.53]
+optional = true
+chain = "h40-tuercespina-penas-s017-716"
+text = "Entrega «{quest:342}» a {npc:716}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#17"]
+note = "Polestar paso 17 «Nesingwary's camp», objetivo 7 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-058"
+do = "turnin"
+quest = 338
+npc = 716
+at = [1434, 35.66, 10.53]
+optional = true
+chain = "h40-tuercespina-penas-s017-716"
+text = "Entrega «{quest:338}» a {npc:716}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#17"]
+note = "Polestar paso 17 «Nesingwary's camp», objetivo 8 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-059"
+do = "accept"
+quest = 193
+npc = 718
+at = [1434, 35.55, 10.55]
+optional = true
+reqlevel = 28
+text = "Coge «{quest:193}» de {npc:718}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#18"]
+note = "Polestar paso 18 «Nesingwary's camp», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 193 · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-060"
+do = "complete"
+quest = 584
+obj = 1
+at = [1434, 23.44, 8.12]
+text = "Consigue {item:3904} (1) de {npc:1061} para «{quest:584}»."
+tip = "Al oeste de la expedición, los jefes Cabellesangre {npc:1061} y {npc:1062} están juntos en las Ruinas de Zul'Kunda. Limpia antes a sus guardias y luego atráelos. Quédate con los Cabellesangre aquí hasta el nivel 41: «{quest:586}», en el caldero a continuación, te envía a por Machacacráneos de nivel 41-43. O bien, en grupo, haz la mazmorra de {area:1517}.\nEn la costa entre Zul'Kunda y Grom'gol, un {npc:2635} (élite de nivel 38) comparte los puntos de aparición de los crocoliscos normales: mátalo si está y coge su piel para {npc:2495}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#19"]
+note = "Polestar paso 19 «Zul'Kunda», objetivo 1 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-061"
+do = "complete"
+quest = 95748
+obj = 1
+at = [1434, 23.0, 12.0]
+text = "Recoge {item:2007} (1) de {obj:52} para «{quest:95748}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#19"]
+note = "Polestar paso 19 «Zul'Kunda», objetivo 2 (collect) · consejo de Polestar sin traducir: From the {obj:52}, in the ruins."
+
+[[step]]
+id = "h40-tuercespina-penas-062"
+do = "complete"
+quest = 584
+obj = 2
+at = [1434, 23.52, 9.53]
+text = "Consigue {item:3905} (1) de {npc:1062} para «{quest:584}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#19"]
+note = "Polestar paso 19 «Zul'Kunda», objetivo 3 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-063"
+do = "complete"
+quest = 628
+obj = 1
+at = [1434, 29.3, 22.3]
+optional = true
+text = "Consigue {item:4105} (1) de {npc:2635} para «{quest:628}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#19"]
+note = "Polestar paso 19 «Zul'Kunda», objetivo 4 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-064"
+do = "level"
+level = 41
+text = "Sube al nivel 41."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#19"]
+note = "Polestar paso 19 «Zul'Kunda», objetivo 5 (level) · consejo de Polestar sin traducir: Grind on the Bloodscalps here: «{quest:586}», at the cauldron next, sends you to Skullsplitters of 41-43."
+
+[[step]]
+id = "h40-tuercespina-penas-065"
+do = "turnin"
+quest = 584
+at = [1434, 32.22, 27.6]
+text = "Entrega «{quest:584}» en {obj:2076}."
+tip = "{obj:2076}, junto a {npc:2497}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#20"]
+note = "Polestar paso 20 «Grom'gol», objetivo 1 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-066"
+do = "turnin"
+quest = 95748
+npc = 2519
+at = [1434, 32.27, 27.71]
+text = "Entrega «{quest:95748}» a {npc:2519}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#20"]
+note = "Polestar paso 20 «Grom'gol», objetivo 2 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-067"
+do = "accept"
+quest = 586
+at = [1434, 32.22, 27.6]
+reqlevel = 30
+text = "Coge «{quest:586}» ({obj:2076})."
+why = "+8.039 XP · ~15 min · desbloquea «{quest:591}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#20"]
+note = "Polestar paso 20 «Grom'gol», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-068"
+do = "accept"
+quest = 585
+at = [1434, 32.22, 27.6]
+reqlevel = 30
+text = "Coge «{quest:585}» ({obj:2076})."
+why = "+2.350 XP · ~4 min · desbloquea «{quest:591}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#20"]
+note = "Polestar paso 20 «Grom'gol», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-069"
+do = "accept"
+quest = 2932
+npc = 2497
+at = [1434, 32.16, 27.72]
+reqlevel = 35
+text = "Coge «{quest:2932}» de {npc:2497}."
+why = "+1.380 XP · ~1,4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#20"]
+note = "Polestar paso 20 «Grom'gol», objetivo 5 (accept) · consejo de Polestar sin traducir: {npc:2497}: for the {map:1425}, around level 48."
+
+[[step]]
+id = "h40-tuercespina-penas-070"
+do = "accept"
+quest = 598
+npc = 2519
+at = [1434, 32.27, 27.71]
+optional = true
+chain = "h40-tuercespina-penas-s020-2519"
+reqlevel = 30
+text = "Coge «{quest:598}» de {npc:2519}."
+tip = "+45.963 XP · ~103 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#20"]
+note = "Polestar paso 20 «Grom'gol», objetivo 6 (accept) · datos no importados: preAll · consejo de Polestar sin traducir: {npc:2519}: the trophy skulls stand in the Skullsplitter ruins, later on this loop."
+
+[[step]]
+id = "h40-tuercespina-penas-071"
+do = "accept"
+quest = 95770
+npc = 2519
+at = [1434, 32.27, 27.71]
+chain = "h40-tuercespina-penas-s020-2519"
+reqlevel = 30
+text = "Coge «{quest:95770}» de {npc:2519}, la entrada de la caverna bajo {area:104}, al oeste del campamento."
+why = "+3.150 XP · ~1 min · 3,7× la mediana del 41-45"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#20"]
+note = "Polestar paso 20 «Grom'gol», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-072"
+do = "goto"
+at = [1434, 21.8, 27.6]
+optional = true
+text = "Ve a la entrada de la Ciudad Sumergida, bajo el agua."
+tip = "«{quest:95770}»: al oeste de Grom'gol, nada sobre {area:104} y bucea hasta la entrada de la caverna en el arrecife; la misión se completa al encontrarla. Deja la caverna por ahora: los acechadores de la selva están al sur, a lo largo de la costa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#21"]
+note = "Polestar paso 21 ««El Arrecife Mortal»», objetivo 1 (goto) · condición no expresable: llevas la misión 95770; no tienes lista la misión 95770"
+
+[[step]]
+id = "h40-tuercespina-penas-073"
+do = "complete"
+quest = 196
+obj = 1
+at = [1434, 27.31, 43.38]
+wps = [[1434, 28.6, 43.4, "Acechador de la selva"], [1434, 28.4, 45.7, "Acechador de la selva"], [1434, 27.5, 48.2, "Acechador de la selva"]]
+text = "Mata {npc:687} (10) para «{quest:196}»."
+tip = "Los acechadores de la selva cazan en la jungla al sur de Grom'gol, hacia la costa oeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#22"]
+note = "Polestar paso 22 «Jungle stalkers», objetivo 1 (kill)"
+
+[[step]]
+id = "h40-tuercespina-penas-074"
+do = "complete"
+quest = 617
+obj = 1
+at = [1434, 25.14, 58.77]
+wps = [[1434, 25.1, 61.1, "Junco akiris"], [1434, 26.8, 60.5, "Junco akiris"], [1434, 24.5, 63.4, "Junco akiris"]]
+optional = true
+text = "Consigue {item:4029} (10) para «{quest:617}»."
+tip = "Sigue la costa hacia el sur. Los exploradores naga vadean la orilla y llevan los fardos de juncos; {obj:759} burbujea en las colinas justo al este."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#23"]
+note = "Polestar paso 23 «The Cape of Stranglethorn: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-077"
+do = "turnin"
+quest = 606
+npc = 2502
+at = [1434, 26.9, 73.59]
+chain = "h40-tuercespina-penas-s024-2502"
+text = "Entrega «{quest:606}» a {npc:2502}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 1 (turnin) · consejo de Polestar sin traducir: Head south to {area:35}. Shaky Phillipe waits on the docks."
+
+[[step]]
+id = "h40-tuercespina-penas-078"
+do = "accept"
+quest = 607
+npc = 2502
+at = [1434, 26.9, 73.59]
+chain = "h40-tuercespina-penas-s024-2502"
+reqlevel = 30
+text = "Coge «{quest:607}» de {npc:2502}."
+why = "+2.450 XP · <1 min · desbloquea «{quest:609}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-079"
+do = "sethearth"
+npc = 6807
+zone = 1434
+at = [1434, 27.04, 77.31]
+text = "Pon la piedra de hogar en {area:35} con {npc:6807}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 3 (sethome) · consejo de Polestar sin traducir: {npc:6807}, upstairs."
+
+[[step]]
+id = "h40-tuercespina-penas-080"
+do = "accept"
+quest = 580
+npc = 2491
+at = [1434, 27.14, 77.45]
+reqlevel = 40
+text = "Coge «{quest:580}» de {npc:2491}."
+why = "+4.700 XP · ~5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 4 (accept) · consejo de Polestar sin traducir: {npc:2491}, in the inn: his bottles wash up on the {map:1425} coast, around level 48."
+
+[[step]]
+id = "h40-tuercespina-penas-081"
+do = "turnin"
+quest = 617
+npc = 2494
+at = [1434, 26.76, 76.38]
+optional = true
+text = "Entrega «{quest:617}» a {npc:2494}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 5 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-082"
+do = "turnin"
+quest = 600
+npc = 2498
+at = [1434, 27.12, 77.21]
+text = "Entrega «{quest:600}» a {npc:2498}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 6 (turnin) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h40-tuercespina-penas-083"
+do = "accept"
+quest = 209
+npc = 737
+at = [1434, 27.0, 77.13]
+optional = true
+reqlevel = 37
+text = "Coge «{quest:209}» de {npc:737}."
+tip = "+18.148 XP · ~38 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 7 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:737}, upstairs: the tusks come from the Skullsplitters, later on this loop."
+
+[[step]]
+id = "h40-tuercespina-penas-084"
+do = "turnin"
+quest = 607
+npc = 2501
+at = [1434, 27.78, 77.07]
+chain = "h40-tuercespina-penas-s024-2501"
+text = "Entrega «{quest:607}» a {npc:2501}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 8 (turnin) · consejo de Polestar sin traducir: \"Sea Wolf\" MacKinley, on the top floor."
+
+[[step]]
+id = "h40-tuercespina-penas-085"
+do = "accept"
+quest = 2872
+npc = 2501
+at = [1434, 27.78, 77.07]
+chain = "h40-tuercespina-penas-s024-2501"
+reqlevel = 40
+text = "Coge «{quest:2872}» de {npc:2501}."
+why = "+390 XP · <1 min · 1,9× la mediana del 41-45"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 9 (accept) · datos no importados: closedBy · consejo de Polestar sin traducir: MacKinley, on the top floor: for Stoley in {map:1446}."
+
+[[step]]
+id = "h40-tuercespina-penas-086"
+do = "accept"
+quest = 609
+npc = 2501
+at = [1434, 27.78, 77.07]
+chain = "h40-tuercespina-penas-s024-2501"
+reqlevel = 30
+text = "Coge «{quest:609}» de {npc:2501}."
+why = "+4.606 XP · ~4,6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 10 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-087"
+do = "turnin"
+quest = 348
+npc = 2486
+at = [1434, 27.61, 76.74]
+text = "Entrega «{quest:348}» a {npc:2486}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 11 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-088"
+do = "turnin"
+quest = 628
+npc = 2495
+at = [1434, 28.29, 77.59]
+optional = true
+text = "Entrega «{quest:628}» a {npc:2495}, dentro: {item:4105}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 12 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-089"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#24"]
+note = "Polestar paso 24 «Booty Bay», objetivo 13 (vendor)"
+
+[[step]]
+id = "h40-tuercespina-penas-090"
+do = "complete"
+quest = 621
+obj = 1
+at = [1434, 38.66, 59.78]
+wps = [[1434, 39.2, 58.7, "Mezcla de Zanzil"], [1434, 40.2, 57.9, "Mezcla de Zanzil"], [1434, 40.5, 59.1, "Mezcla de Zanzil"]]
+optional = true
+text = "Consigue {item:4016} (12) para «{quest:621}»."
+tip = "Al noreste de Velo de Bruma, los seguidores de Zanzil acampan en la jungla; cualquiera de ellos puede llevar la mezcla."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#25"]
+note = "Polestar paso 25 «Zanzil's camps», objetivo 1 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-091"
+do = "note"
+at = [1434, 40.0, 58.2]
+text = "Mata {npc:2537}."
+tip = "Los tres piratas fantasmales rondan la jungla al norte de {area:35}, cerca de los campamentos de Zanzil: {npc:2535} y {npc:2536} están juntos, {npc:2537} más al este."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#26"]
+note = "Polestar paso 26 «Pirate ghosts», objetivo 1 (kill)"
+
+[[step]]
+id = "h40-tuercespina-penas-092"
+do = "complete"
+quest = 609
+obj = 3
+at = [1434, 40.0, 58.24]
+text = "Consigue {item:3926} (1) de {npc:2537} para «{quest:609}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#26"]
+note = "Polestar paso 26 «Pirate ghosts», objetivo 2 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-093"
+do = "note"
+at = [1434, 35.3, 51.3]
+text = "Mata {npc:2535}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#26"]
+note = "Polestar paso 26 «Pirate ghosts», objetivo 3 (kill)"
+
+[[step]]
+id = "h40-tuercespina-penas-094"
+do = "complete"
+quest = 609
+obj = 1
+at = [1434, 35.26, 51.27]
+text = "Consigue {item:3924} (1) de {npc:2535} para «{quest:609}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#26"]
+note = "Polestar paso 26 «Pirate ghosts», objetivo 4 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-095"
+do = "note"
+at = [1434, 34.9, 51.8]
+text = "Mata {npc:2536}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#26"]
+note = "Polestar paso 26 «Pirate ghosts», objetivo 5 (kill)"
+
+[[step]]
+id = "h40-tuercespina-penas-096"
+do = "complete"
+quest = 609
+obj = 2
+at = [1434, 34.92, 51.84]
+text = "Consigue {item:3925} (1) de {npc:2536} para «{quest:609}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#26"]
+note = "Polestar paso 26 «Pirate ghosts», objetivo 6 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-097"
+do = "goto"
+at = [1434, 45.4, 36.2]
+text = "Ve a guerreros Machacacráneos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#27"]
+note = "Polestar paso 27 «Zul'Mamwe», objetivo 1 (goto) · consejo de Polestar sin traducir: Head north to the Skullsplitter ruins east of the Venture Co. mine; pull the headhunters and berserkers one at a time. {npc:1059} guards the south-western ruins, and one pile of trophy skulls stands on the ruins' north side. Every Skullsplitter can drop a tusk or a necklace: the necklaces are the slow part, so keep killing in the warriors' camp north of the ruins until you have them all."
+
+[[step]]
+id = "h40-tuercespina-penas-098"
+do = "complete"
+quest = 209
+obj = 1
+at = [1434, 45.4, 36.2]
+optional = true
+text = "Consigue {item:1524} (18) para «{quest:209}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#27"]
+note = "Polestar paso 27 «Zul'Mamwe», objetivo 2 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-099"
+do = "complete"
+quest = 586
+obj = 1
+at = [1434, 45.56, 38.64]
+wps = [[1434, 45.2, 40.0, "Cazador Machacacráneos"], [1434, 45.7, 43.3, "Cazador Machacacráneos"]]
+text = "Mata {npc:669} (8) para «{quest:586}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#27"]
+note = "Polestar paso 27 «Zul'Mamwe», objetivo 3 (kill) · consejo de Polestar sin traducir: {npc:669} walks around here: look inside the circle on the map."
+
+[[step]]
+id = "h40-tuercespina-penas-100"
+do = "complete"
+quest = 586
+obj = 2
+at = [1434, 47.68, 42.53]
+wps = [[1434, 46.1, 44.7, "Rebanacabezas Machacacráneos"], [1434, 43.6, 45.6, "Rebanacabezas Machacacráneos"]]
+text = "Mata {npc:781} (6) para «{quest:586}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#27"]
+note = "Polestar paso 27 «Zul'Mamwe», objetivo 4 (kill)"
+
+[[step]]
+id = "h40-tuercespina-penas-101"
+do = "complete"
+quest = 586
+obj = 3
+at = [1434, 47.85, 42.96]
+wps = [[1434, 47.0, 44.5, "Rabioso Machacacráneos"], [1434, 43.7, 44.6, "Rabioso Machacacráneos"]]
+text = "Mata {npc:783} (4) para «{quest:586}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#27"]
+note = "Polestar paso 27 «Zul'Mamwe», objetivo 5 (kill)"
+
+[[step]]
+id = "h40-tuercespina-penas-102"
+do = "complete"
+quest = 586
+obj = 4
+at = [1434, 44.3, 45.0]
+text = "Consigue {item:3909} (1) de {npc:1059} para «{quest:586}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#27"]
+note = "Polestar paso 27 «Zul'Mamwe», objetivo 6 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-103"
+do = "complete"
+quest = 585
+obj = 3
+at = [1434, 47.65, 39.54]
+text = "Recoge {item:3908} (1) de {obj:2893} para «{quest:585}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#27"]
+note = "Polestar paso 27 «Zul'Mamwe», objetivo 7 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-104"
+do = "complete"
+quest = 598
+obj = 1
+at = [1434, 47.41, 39.01]
+wps = [[1434, 45.8, 38.3, "Collar de hueso partido"], [1434, 43.8, 39.7, "Collar de hueso partido"], [1434, 44.8, 41.8, "Collar de hueso partido"]]
+optional = true
+text = "Consigue {item:3916} (25) para «{quest:598}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#28"]
+note = "Polestar paso 28 «Balia'mah Ruins: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: The next trophy skulls stand in the small ruins just north of the warriors' camp.\nThe last skulls are in the ruins a short walk west, on the way back to Grom'gol."
+
+[[step]]
+id = "h40-tuercespina-penas-105"
+do = "complete"
+quest = 585
+obj = 1
+at = [1434, 46.13, 32.33]
+text = "Recoge {item:3906} (1) de {obj:2891} para «{quest:585}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#28"]
+note = "Polestar paso 28 «Balia'mah Ruins: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-106"
+do = "complete"
+quest = 585
+obj = 2
+at = [1434, 42.21, 36.11]
+text = "Recoge {item:3907} (1) de {obj:2892} para «{quest:585}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#28"]
+note = "Polestar paso 28 «Balia'mah Ruins: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-107"
+do = "turnin"
+quest = 598
+npc = 2519
+at = [1434, 32.27, 27.71]
+optional = true
+chain = "h40-tuercespina-penas-s029-2519"
+text = "Entrega «{quest:598}» a {npc:2519}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#29"]
+note = "Polestar paso 29 «Grom'gol Base Camp», objetivo 1 (turnin) · consejo de Polestar sin traducir: Head west to Grom'gol."
+
+[[step]]
+id = "h40-tuercespina-penas-108"
+do = "turnin"
+quest = 95770
+npc = 2519
+at = [1434, 32.27, 27.71]
+chain = "h40-tuercespina-penas-s029-2519"
+text = "Entrega «{quest:95770}» a {npc:2519}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#29"]
+note = "Polestar paso 29 «Grom'gol Base Camp», objetivo 2 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-109"
+do = "turnin"
+quest = 586
+at = [1434, 32.22, 27.6]
+text = "Entrega «{quest:586}» en {obj:2076}."
+tip = "{obj:2076}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#29"]
+note = "Polestar paso 29 «Grom'gol Base Camp», objetivo 3 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-110"
+do = "turnin"
+quest = 585
+at = [1434, 32.22, 27.6]
+text = "Entrega «{quest:585}» en {obj:2076}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#29"]
+note = "Polestar paso 29 «Grom'gol Base Camp», objetivo 4 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-111"
+do = "accept"
+quest = 588
+at = [1434, 32.22, 27.6]
+reqlevel = 30
+text = "Coge «{quest:588}» ({obj:2076})."
+why = "+390 XP · <1 min · desbloquea «{quest:591}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#29"]
+note = "Polestar paso 29 «Grom'gol Base Camp», objetivo 5 (accept) · datos no importados: preAll · consejo de Polestar sin traducir: The {obj:2076} again: Yenniku's fate."
+
+[[step]]
+id = "h40-tuercespina-penas-112"
+do = "turnin"
+quest = 588
+npc = 2519
+at = [1434, 32.27, 27.71]
+chain = "h40-tuercespina-penas-s029-2519"
+text = "Entrega «{quest:588}» a {npc:2519}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#29"]
+note = "Polestar paso 29 «Grom'gol Base Camp», objetivo 6 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-113"
+do = "accept"
+quest = 589
+npc = 2519
+at = [1434, 32.27, 27.71]
+chain = "h40-tuercespina-penas-s029-2519"
+reqlevel = 30
+text = "Coge «{quest:589}» de {npc:2519}."
+why = "+4.954 XP · ~8 min · desbloquea «{quest:591}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#29"]
+note = "Polestar paso 29 «Grom'gol Base Camp», objetivo 7 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:2519}: the basilisks graze beside the road back from {area:35}."
+
+[[step]]
+id = "h40-tuercespina-penas-115"
+do = "goto"
+at = [1434, 32.5, 29.3]
+text = "Ve al maestro de vuelo de Grom'gol."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#30"]
+note = "Polestar paso 30 «Fly to Booty Bay», objetivo 1 (goto)"
+
+[[step]]
+id = "h40-tuercespina-penas-116"
+do = "fly"
+zone = 1434
+text = "Vuela a Bahía del Botín."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#30"]
+note = "Polestar paso 30 «Fly to Booty Bay», objetivo 2 (fly)"
+
+[[step]]
+id = "h40-tuercespina-penas-117"
+do = "turnin"
+quest = 609
+npc = 2501
+at = [1434, 27.78, 77.07]
+text = "Entrega «{quest:609}» a {npc:2501}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#31"]
+note = "Polestar paso 31 «Booty Bay», objetivo 1 (turnin) · consejo de Polestar sin traducir: \"Sea Wolf\" MacKinley, on the top floor."
+
+[[step]]
+id = "h40-tuercespina-penas-118"
+do = "turnin"
+quest = 621
+npc = 2498
+at = [1434, 27.12, 77.21]
+optional = true
+text = "Entrega «{quest:621}» a {npc:2498}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#31"]
+note = "Polestar paso 31 «Booty Bay», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:2498}, inside."
+
+[[step]]
+id = "h40-tuercespina-penas-119"
+do = "turnin"
+quest = 209
+npc = 737
+at = [1434, 27.0, 77.13]
+optional = true
+text = "Entrega «{quest:209}» a {npc:737}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#31"]
+note = "Polestar paso 31 «Booty Bay», objetivo 3 (turnin) · consejo de Polestar sin traducir: {npc:737}, upstairs."
+
+[[step]]
+id = "h40-tuercespina-penas-120"
+do = "accept"
+quest = 2864
+npc = 773
+at = [1434, 26.95, 77.21]
+reqlevel = 40
+text = "Coge «{quest:2864}» de {npc:773}."
+why = "+390 XP · <1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#31"]
+note = "Polestar paso 31 «Booty Bay», objetivo 4 (accept) · datos no importados: closedBy · consejo de Polestar sin traducir: {npc:773}, upstairs: for «{quest:2864}» in {area:976}."
+
+[[step]]
+id = "h40-tuercespina-penas-121"
+do = "complete"
+quest = 589
+obj = 1
+at = [1434, 42.6, 49.37]
+wps = [[1434, 42.4, 47.6, "Fragmento azul pulsante"], [1434, 43.8, 48.4, "Fragmento azul pulsante"], [1434, 43.4, 46.3, "Fragmento azul pulsante"]]
+text = "Consigue {item:3911} (3) de {npc:1551} para «{quest:589}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#32"]
+note = "Polestar paso 32 «Ironjaw Basilisks», objetivo 1 (collect) · consejo de Polestar sin traducir: Ride north out of {area:35} along the road; the basilisks bask on the rocks east of it in the middle of the jungle, on the way back to Grom'gol. Their shards drop often."
+
+[[step]]
+id = "h40-tuercespina-penas-122"
+do = "turnin"
+quest = 589
+npc = 2519
+at = [1434, 32.27, 27.71]
+text = "Entrega «{quest:589}» a {npc:2519}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#33"]
+note = "Polestar paso 33 «Grom'gol Base Camp», objetivo 1 (turnin) · consejo de Polestar sin traducir: Ride on north to Grom'gol."
+
+[[step]]
+id = "h40-tuercespina-penas-123"
+do = "goto"
+at = [1434, 35.7, 10.8]
+text = "Ve a {area:100}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#34"]
+note = "Polestar paso 34 «Stranglethorn Vale», objetivo 1 (goto)"
+
+[[step]]
+id = "h40-tuercespina-penas-124"
+do = "turnin"
+quest = 196
+npc = 715
+at = [1434, 35.66, 10.81]
+text = "Entrega «{quest:196}» a {npc:715}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#35"]
+note = "Polestar paso 35 «Nesingwary's Expedition», objetivo 1 (turnin) · consejo de Polestar sin traducir: Head north up the road to the hunters' camp."
+
+[[step]]
+id = "h40-tuercespina-penas-125"
+do = "accept"
+quest = 197
+npc = 715
+at = [1434, 35.66, 10.81]
+optional = true
+reqlevel = 28
+text = "Coge «{quest:197}» de {npc:715}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#36"]
+note = "Polestar paso 36 «Nesingwary's Expedition», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 197 · datos no importados: pre"
+
+[[step]]
+id = "h40-tuercespina-penas-126"
+do = "complete"
+quest = 197
+obj = 1
+at = [1434, 31.5, 41.2]
+optional = true
+text = "Consigue {item:3877} (1) de {npc:730} para «{quest:197}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#37"]
+note = "Polestar paso 37 ««Domina el raptor»», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 197 · consejo de Polestar sin traducir: These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:730} is a level 43 elite: most classes solo it at level 45, but you may need help. Skip it if you are alone: the route has you grind the XP back."
+
+[[step]]
+id = "h40-tuercespina-penas-127"
+do = "complete"
+quest = 193
+obj = 1
+at = [1434, 49.4, 24.0]
+optional = true
+text = "Consigue {item:3876} (1) de {npc:728} para «{quest:193}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#38"]
+note = "Polestar paso 38 ««Domina la pantera»», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 193 · consejo de Polestar sin traducir: These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:728} is a level 40 elite: most classes solo it at level 42, but you may need help. Skip it if you are alone: the route has you grind the XP back."
+
+[[step]]
+id = "h40-tuercespina-penas-128"
+do = "turnin"
+quest = 193
+npc = 718
+at = [1434, 35.55, 10.55]
+optional = true
+text = "Entrega «{quest:193}» a {npc:718}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#39"]
+note = "Polestar paso 39 «Sir S. J. Erlgadin», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 193"
+
+[[step]]
+id = "h40-tuercespina-penas-129"
+do = "turnin"
+quest = 197
+npc = 715
+at = [1434, 35.66, 10.81]
+optional = true
+text = "Entrega «{quest:197}» a {npc:715}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#40"]
+note = "Polestar paso 40 «Hemet Decautela», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 197"
+
+[[step]]
+id = "h40-tuercespina-penas-130"
+do = "accept"
+quest = 208
+npc = 715
+at = [1434, 35.66, 10.81]
+optional = true
+reqlevel = 28
+text = "Coge «{quest:208}» de {npc:715}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#41"]
+note = "Polestar paso 41 «Hemet Decautela», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 208 · datos no importados: preAll"
+
+[[step]]
+id = "h40-tuercespina-penas-131"
+do = "goto"
+at = [1434, 42.5, 35.7]
+if = { maxlevel = 41 }
+text = "Ve a {npc:667}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#42"]
+note = "Polestar paso 42 «Level 42.68», objetivo 1 (goto) · consejo de Polestar sin traducir: If you skipped «{quest:192}» or «{quest:195}», grind here to level 42.68 to stay on the route's plan. Or, with a group, run the {area:1517} dungeon instead."
+
+[[step]]
+id = "h40-tuercespina-penas-132"
+do = "level"
+level = 42
+at = [1434, 42.41, 35.05]
+if = { maxlevel = 41 }
+text = "Sube al nivel 42."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#42"]
+note = "Polestar paso 42 «Level 42.68», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:667}."
+
+[[step]]
+id = "h40-tuercespina-penas-133"
+do = "complete"
+quest = 208
+obj = 1
+at = [1434, 38.2, 35.6]
+optional = true
+text = "Consigue {item:3880} (1) de {npc:731} para «{quest:208}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#43"]
+note = "Polestar paso 43 ««Caza mayor»», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 208 · consejo de Polestar sin traducir: These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:731} is a level 43 elite: most classes solo it at level 45, but you may need help. Skip it if you are alone: the route has you grind the XP back.\nCareful: Tigers and stealthed shadowmaw panthers roam close to him. Clear them before you pull him. When he is pulled, {npc:731} calls for help from creatures within 20 yd."
+
+[[step]]
+id = "h40-tuercespina-penas-134"
+do = "turnin"
+quest = 208
+npc = 715
+at = [1434, 35.66, 10.81]
+optional = true
+text = "Entrega «{quest:208}» a {npc:715}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#44"]
+note = "Polestar paso 44 «Hemet Decautela», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 208"
+
+[[step]]
+id = "h40-tuercespina-penas-135"
+do = "goto"
+at = [1434, 42.5, 35.7]
+if = { maxlevel = 41 }
+optional = true
+text = "Ve a {npc:667}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#45"]
+note = "Polestar paso 45 «Level 42.74», objetivo 1 (goto) · condición no expresable: no vas en grupo para la misión 208 · consejo de Polestar sin traducir: If you skipped «{quest:208}», grind here to level 42.74 to stay on the route's plan. Or, with a group, run the {area:1517} dungeon instead."
+
+[[step]]
+id = "h40-tuercespina-penas-136"
+do = "level"
+level = 42
+at = [1434, 42.41, 35.05]
+if = { maxlevel = 41 }
+optional = true
+text = "Sube al nivel 42."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#45"]
+note = "Polestar paso 45 «Level 42.74», objetivo 2 (level) · condición no expresable: no vas en grupo para la misión 208 · consejo de Polestar sin traducir: Grind on {npc:667}."
+
+[[step]]
+id = "h40-tuercespina-penas-137"
+do = "goto"
+at = [1431, 87.8, 35.6]
+text = "Ve a {npc:5418}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#46"]
+note = "Polestar paso 46 «Duskwood», objetivo 1 (goto)"
+
+[[step]]
+id = "h40-tuercespina-penas-138"
+do = "accept"
+quest = 1372
+npc = 5418
+at = [1431, 87.81, 35.63]
+reqlevel = 37
+text = "Coge «{quest:1372}» de {npc:5418}."
+why = "+345 XP · <1 min · 2,4× la mediana del 41-45"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#47"]
+note = "Polestar paso 47 «Mortacechador Zraedus», objetivo 1 (accept)"
+
+[[step]]
+id = "h40-tuercespina-penas-139"
+do = "turnin"
+quest = 1372
+npc = 5414
+at = [1431, 87.45, 35.25]
+text = "Entrega «{quest:1372}» a {npc:5414}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#47"]
+note = "Polestar paso 47 «Mortacechador Zraedus», objetivo 2 (turnin)"
+
+[[step]]
+id = "h40-tuercespina-penas-140"
+do = "goto"
+at = [1435, 26.0, 31.4]
+text = "Ve a {npc:1776}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#48"]
+note = "Polestar paso 48 «Swamp of Sorrows», objetivo 1 (goto)"
+
+[[step]]
+id = "h40-tuercespina-penas-141"
+do = "accept"
+quest = 1389
+npc = 1776
+at = [1435, 25.98, 31.4]
+optional = true
+reqlevel = 30
+text = "Coge «{quest:1389}» de {npc:1776}."
+tip = "+1.100 XP · ~2,7 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#49"]
+note = "Polestar paso 49 «Into the Swamp of Sorrows», objetivo 1 (accept) · consejo de Polestar sin traducir: Follow the road east from {map:1431} through {map:1430} into the swamp. {npc:1776} waits at the {area:657}, the draenei camp just off the road where it comes in from {map:1430}."
+
+[[step]]
+id = "h40-tuercespina-penas-142"
+do = "accept"
+quest = 698
+npc = 5591
+at = [1435, 44.7, 57.21]
+optional = true
+chain = "h40-tuercespina-penas-s050-5591"
+reqlevel = 35
+text = "Coge «{quest:698}» de {npc:5591}."
+tip = "+8.942 XP · ~25 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#50"]
+note = "Polestar paso 50 «Stonard», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:5591}, inside. · consejo de Polestar sin traducir: Head east to {area:75}, in the reeds south of the road. Bind here."
+
+[[step]]
+id = "h40-tuercespina-penas-143"
+do = "accept"
+quest = 1430
+npc = 5591
+at = [1435, 44.7, 57.21]
+optional = true
+chain = "h40-tuercespina-penas-s050-5591"
+reqlevel = 35
+text = "Coge «{quest:1430}» de {npc:5591}."
+tip = "+24.250 XP · ~83 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#50"]
+note = "Polestar paso 50 «Stonard», objetivo 2 (accept) · consejo de Polestar sin traducir: {npc:5591}, inside."
+
+[[step]]
+id = "h40-tuercespina-penas-144"
+do = "getfp"
+npc = 6026
+node = "56"
+at = [1435, 46.07, 54.83]
+text = "Coge la ruta de vuelo de Rocal con {npc:6026}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#50"]
+note = "Polestar paso 50 «Stonard», objetivo 3 (getfp)"
+
+[[step]]
+id = "h40-tuercespina-penas-145"
+do = "turnin"
+quest = 1420
+npc = 1442
+at = [1435, 47.74, 55.2]
+text = "Entrega «{quest:1420}» a {npc:1442}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#50"]
+note = "Polestar paso 50 «Stonard», objetivo 4 (turnin) · consejo de Polestar sin traducir: {npc:1442}, upstairs."
+
+[[step]]
+id = "h40-tuercespina-penas-146"
+do = "sethearth"
+npc = 6930
+zone = 1435
+at = [1435, 45.16, 56.66]
+text = "Pon la piedra de hogar en {area:75} con {npc:6930}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#50"]
+note = "Polestar paso 50 «Stonard», objetivo 5 (sethome) · consejo de Polestar sin traducir: {npc:6930}, upstairs."
+
+[[step]]
+id = "h40-tuercespina-penas-147"
+do = "accept"
+quest = 1424
+npc = 1443
+at = [1435, 47.93, 54.78]
+reqlevel = 38
+text = "Coge «{quest:1424}» de {npc:1443}."
+why = "+4.450 XP · ~4 min · desbloquea «{quest:1429}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#50"]
+note = "Polestar paso 50 «Stonard», objetivo 6 (accept) · consejo de Polestar sin traducir: {npc:1443}, on the top floor."
+
+[[step]]
+id = "h40-tuercespina-penas-148"
+do = "complete"
+quest = 698
+obj = 1
+at = [1435, 53.6, 55.99]
+wps = [[1435, 54.9, 56.2, "Costillar de Denteserra sin preparar"], [1435, 50.4, 41.5, "Costillar de Denteserra sin preparar"], [1435, 56.5, 37.3, "Costillar de Denteserra sin preparar"]]
+optional = true
+text = "Consigue {item:6169} (8) de {npc:1082} y {npc:1087} para «{quest:698}»."
+tip = "Los crocoliscos se revuelcan en las charcas alrededor del campamento de {npc:5391} y hacia el sur hasta {area:75}; uno de cada cuatro, más o menos, suelta un flanco."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#51"]
+note = "Polestar paso 51 «Sawtooth crocolisks», objetivo 1 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-149"
+do = "note"
+at = [1435, 54.9, 34.1]
+text = "Mata {npc:5477}."
+tip = "Noboru el Garrote deambula por el claro al suroeste de {area:76}; su garrote inicia una misión."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#52"]
+note = "Polestar paso 52 ««Noboru el Garrote»», objetivo 1 (kill)"
+
+[[step]]
+id = "h40-tuercespina-penas-150"
+do = "loot"
+item = 6196
+count = 1
+at = [1435, 54.9, 34.1]
+text = "Consigue {item:6196} de {npc:5477}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#52"]
+note = "Polestar paso 52 ««Noboru el Garrote»», objetivo 2 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-151"
+do = "accept"
+quest = 1392
+reqlevel = 29
+text = "Usa {item:6196} para empezar «{quest:1392}»."
+why = "+2.416 XP · ~3,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#52"]
+note = "Polestar paso 52 ««Noboru el Garrote»», objetivo 3 (accept)"
+
+[[step]]
+id = "h40-tuercespina-penas-152"
+do = "complete"
+quest = 1389
+obj = 1
+at = [1435, 55.09, 30.08]
+wps = [[1435, 58.8, 23.6, "Cristal draenetista"], [1435, 63.6, 22.3, "Cristal draenetista"]]
+optional = true
+text = "Recoge {item:6071} (6) de {obj:22550} para «{quest:1389}»."
+tip = "Cabalga al noreste hasta {area:76}. Los cristales están a lo largo de la subida hasta la jaula de {npc:5391}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#53"]
+note = "Polestar paso 53 «Draenethyst crystals», objetivo 1 (collect)"
+
+[[step]]
+id = "h40-tuercespina-penas-153"
+do = "accept"
+quest = 1393
+npc = 5391
+at = [1435, 65.47, 18.16]
+optional = true
+escort = true
+reqlevel = 30
+text = "Coge «{quest:1393}» de {npc:5391}."
+tip = "{npc:5391} está preso en {area:76}, al noreste del pantano. Libéralo y síguelo, defendiéndolo de las criaturas del pantano que lo persiguen. +2.850 XP · ~7,5 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#54"]
+note = "Polestar paso 54 ««La huida de Galen»», objetivo 1 (accept)"
+
+[[step]]
+id = "h40-tuercespina-penas-154"
+do = "complete"
+quest = 1393
+optional = true
+escort = true
+text = "Completa «{quest:1393}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#54"]
+note = "Polestar paso 54 ««La huida de Galen»», objetivo 2 (complete) · objetivos (EN): Escort Galen out of the Fallow Sanctuary."
+
+[[step]]
+id = "h40-tuercespina-penas-155"
+do = "turnin"
+quest = 1393
+at = [1435, 47.81, 39.76]
+optional = true
+text = "Entrega «{quest:1393}» en {obj:32569}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#55"]
+note = "Polestar paso 55 «Caja fuerte de Galen», objetivo 1 (turnin) · consejo de Polestar sin traducir: His strongbox waits at his old camp north of {area:75}, on the way back west."
+
+[[step]]
+id = "h40-tuercespina-penas-156"
+do = "turnin"
+quest = 1392
+npc = 1776
+at = [1435, 25.98, 31.4]
+chain = "h40-tuercespina-penas-s056-1776"
+text = "Entrega «{quest:1392}» a {npc:1776}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#56"]
+note = "Polestar paso 56 «Harborage», objetivo 1 (turnin) · consejo de Polestar sin traducir: Ride west along the road to the draenei camp at the {area:657}, near the way in from {map:1430}. «{quest:698}» goes to {npc:5592} at {area:1978} on the next swamp visit: keep the flanks."
+
+[[step]]
+id = "h40-tuercespina-penas-157"
+do = "turnin"
+quest = 1389
+npc = 1776
+at = [1435, 25.98, 31.4]
+optional = true
+chain = "h40-tuercespina-penas-s056-1776"
+text = "Entrega «{quest:1389}» a {npc:1776}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/01-stranglethorn-vale#56"]
+note = "Polestar paso 56 «Harborage», objetivo 2 (turnin)"

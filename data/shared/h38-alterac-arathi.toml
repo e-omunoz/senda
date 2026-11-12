@@ -1,0 +1,983 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/30-40/05-arathi-highlands
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h38-alterac-arathi"
+title = "Montañas de Alterac y Tierras Altas de Arathi"
+levels = [38, 39]
+map = 1417
+summary = "Ruta común de la Horda, 38-39: Montañas de Alterac y Tierras Altas de Arathi."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h38-alterac-arathi-001"
+do = "goto"
+at = [1411, 50.8, 13.5]
+text = "Ve al zepelín a {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#1"]
+note = "Polestar paso 1 «Zeppelin to Undercity», objetivo 1 (goto)"
+
+[[step]]
+id = "h38-alterac-arathi-002-wr"
+do = "train"
+npc = 4593
+spells = [1680, 6552, 7402, 8205, 8820]
+at = [1458, 46.93, 15.23]
+if = { class = ["WARRIOR"] }
+reqlevel = 38
+text = "Entrena con {npc:4593}, el instructor de guerrero."
+tip = "5 hechizos hasta el nivel 38: nuevos {spell:1680}, {spell:6552}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#2", "trainer:warrior"]
+note = "Polestar paso 2 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 35-38"
+
+[[step]]
+id = "h38-alterac-arathi-002-pa"
+do = "train"
+npc = 260093
+spells = [642, 2495, 5615, 5627, 10278, 10299, 19852, 19891, 19940, 20166, 20419]
+at = [1458, 48.35, 14.27]
+if = { class = ["PALADIN"] }
+reqlevel = 38
+text = "Entrena con {npc:260093}, el instructor de paladín."
+tip = "11 hechizos hasta el nivel 38: nuevos {spell:642}, {spell:19891}, {spell:20166} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#2", "trainer:paladin"]
+note = "Polestar paso 2 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 34-38"
+
+[[step]]
+id = "h38-alterac-arathi-002-ro"
+do = "train"
+npc = 4582
+spells = [2837, 8633, 8640, 8650, 8691, 8694, 8721]
+at = [1458, 83.86, 72.07]
+if = { class = ["ROGUE"] }
+reqlevel = 38
+text = "Entrena con {npc:4582}, el instructor de pícaro."
+tip = "7 hechizos hasta el nivel 38: nuevos {spell:2837}, {spell:8691}, {spell:8694} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#2", "trainer:rogue"]
+note = "Polestar paso 2 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 35-38"
+
+[[step]]
+id = "h38-alterac-arathi-002-pr"
+do = "train"
+npc = 4606
+spells = [988, 2791, 6066, 6078, 8192, 9474, 15264, 19277]
+at = [1458, 49.26, 17.12]
+if = { class = ["PRIEST"] }
+reqlevel = 38
+text = "Entrena con {npc:4606}, el instructor de sacerdote."
+tip = "8 hechizos hasta el nivel 38."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#2", "trainer:priest"]
+note = "Polestar paso 2 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 35-38"
+
+[[step]]
+id = "h38-alterac-arathi-002-mg"
+do = "train"
+npc = 2492
+spells = [3552, 8408, 8413, 8427, 8439, 8451, 8495]
+at = [1458, 84.19, 15.58]
+if = { class = ["MAGE"] }
+reqlevel = 38
+text = "Entrena con {npc:2492}, el instructor de mago."
+tip = "7 hechizos hasta el nivel 38: nuevos {spell:3552}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#2", "trainer:mage"]
+note = "Polestar paso 2 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 35-38"
+
+[[step]]
+id = "h38-alterac-arathi-002-wl"
+do = "train"
+npc = 4563
+spells = [2362, 2970, 3700, 7651, 8289, 11687, 11711, 17951]
+at = [1458, 86.21, 15.93]
+if = { class = ["WARLOCK"] }
+reqlevel = 38
+text = "Entrena con {npc:4563}, el instructor de brujo."
+tip = "8 hechizos hasta el nivel 38: nuevos {spell:2362}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#2", "trainer:warlock"]
+note = "Polestar paso 2 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 35-38"
+
+[[step]]
+id = "h38-alterac-arathi-003"
+do = "goto"
+at = [1458, 63.1, 48.3]
+text = "Ve al maestro de vuelo de {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#3"]
+note = "Polestar paso 3 «Fly to Tarren Mill», objetivo 1 (goto)"
+
+[[step]]
+id = "h38-alterac-arathi-004"
+do = "fly"
+zone = 1424
+text = "Vuela a Molino Tarren."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#3"]
+note = "Polestar paso 3 «Fly to Tarren Mill», objetivo 2 (fly)"
+
+[[step]]
+id = "h38-alterac-arathi-005"
+do = "accept"
+quest = 503
+npc = 2229
+at = [1424, 63.24, 20.66]
+reqlevel = 29
+text = "Coge «{quest:503}» de {npc:2229}."
+why = "+3.011 XP · ~1,6 min · desbloquea «{quest:507}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#4"]
+note = "Polestar paso 4 «Tarren Mill», objetivo 1 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:2229}, inside the inn."
+
+[[step]]
+id = "h38-alterac-arathi-006"
+do = "accept"
+quest = 566
+at = [1424, 62.63, 20.75]
+reqlevel = 35
+text = "Coge «{quest:566}» ({obj:1763})."
+tip = "El cartel de {obj:1763} junto a la posada."
+why = "+3.409 XP · ~1,7 min · 2,9× la mediana del 36-40"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#4"]
+note = "Polestar paso 4 «Tarren Mill», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h38-alterac-arathi-007"
+do = "sethearth"
+npc = 2388
+zone = 1424
+at = [1424, 62.78, 19.03]
+text = "Pon la piedra de hogar en {area:272} con {npc:2388}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#4"]
+note = "Polestar paso 4 «Tarren Mill», objetivo 3 (sethome)"
+
+[[step]]
+id = "h38-alterac-arathi-008"
+do = "goto"
+at = [1416, 61.8, 43.0]
+text = "Ve a «{quest:503}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#5"]
+note = "Polestar paso 5 «Alterac Mountains», objetivo 1 (goto)"
+
+[[step]]
+id = "h38-alterac-arathi-009"
+do = "complete"
+quest = 503
+obj = 1
+at = [1416, 60.8, 43.6]
+wps = [[1416, 61.9, 42.6, "Llave de hierro oxidada"]]
+text = "Consigue {item:3704} (1) de {npc:2431} para «{quest:503}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#6"]
+note = "Polestar paso 6 ««Gol'dir»», objetivo 1 (collect) · consejo de Polestar sin traducir: Inside. · consejo de Polestar sin traducir: Head north past Valik's camp to {area:280}, the Syndicate-held village (35-37). {npc:2431} carries the {item:3704}; «{quest:503}» sits in a cage in the house on the north side.\nCareful: Stealthed Syndicate spies roam {area:280}, and the buildings hold many Syndicate mobs, mages among them."
+
+[[step]]
+id = "h38-alterac-arathi-010"
+do = "complete"
+quest = 503
+at = [1416, 60.6, 43.8]
+text = "Completa «{quest:503}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#6"]
+note = "Polestar paso 6 ««Gol'dir»», objetivo 2 (complete) · objetivos (EN): Rusted Iron Key; Find where Gol'dir is being held · consejo de Polestar sin traducir: Find where «{quest:503}» is held, on the top floor."
+
+[[step]]
+id = "h38-alterac-arathi-011"
+do = "turnin"
+quest = 503
+npc = 2316
+at = [1416, 59.96, 43.74]
+chain = "h38-alterac-arathi-s006-2316"
+text = "Entrega «{quest:503}» a {npc:2316}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#6"]
+note = "Polestar paso 6 ««Gol'dir»», objetivo 3 (turnin) · consejo de Polestar sin traducir: «{quest:503}», on the top floor."
+
+[[step]]
+id = "h38-alterac-arathi-012"
+do = "accept"
+quest = 506
+npc = 2316
+at = [1416, 59.96, 43.74]
+chain = "h38-alterac-arathi-s006-2316"
+reqlevel = 29
+text = "Coge «{quest:506}» de {npc:2316}."
+why = "+2.100 XP · <1 min · desbloquea «{quest:507}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#6"]
+note = "Polestar paso 6 ««Gol'dir»», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h38-alterac-arathi-013"
+do = "goto"
+at = [1424, 61.5, 20.9]
+text = "Ve a {area:272}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#7"]
+note = "Polestar paso 7 «Hillsbrad Foothills», objetivo 1 (goto)"
+
+[[step]]
+id = "h38-alterac-arathi-014"
+do = "turnin"
+quest = 506
+npc = 2229
+at = [1424, 63.24, 20.66]
+chain = "h38-alterac-arathi-s008-2229"
+text = "Entrega «{quest:506}» a {npc:2229}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#8"]
+note = "Polestar paso 8 «Tarren Mill», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:2229}, inside. · consejo de Polestar sin traducir: {npc:2229} waits inside the inn at {area:272}, back south down the road."
+
+[[step]]
+id = "h38-alterac-arathi-015"
+do = "accept"
+quest = 507
+npc = 2229
+at = [1424, 63.24, 20.66]
+chain = "h38-alterac-arathi-s008-2229"
+reqlevel = 29
+text = "Coge «{quest:507}» de {npc:2229}."
+why = "+4.570 XP · ~2 min · desbloquea «{quest:508}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#8"]
+note = "Polestar paso 8 «Tarren Mill», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h38-alterac-arathi-016"
+do = "complete"
+quest = 566
+obj = 1
+at = [1416, 55.18, 27.43]
+wps = [[1416, 56.3, 26.7, "Cabeza de Barón Vardus"], [1416, 57.8, 29.8, "Cabeza de Barón Vardus"], [1416, 53.7, 20.4, "Cabeza de Barón Vardus"]]
+text = "Consigue {item:3626} (1) de {npc:2306} para «{quest:566}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#9"]
+note = "Polestar paso 9 «Barón Vardus», objetivo 1 (collect) · consejo de Polestar sin traducir: {npc:2306} (40) carries the head. He turns up in one spot at a time: the cellar of {area:280}'s inn, or one of the Syndicate tent camps in the uplands north and north-west of the village, which lie on your way to the Perenolde manor. If you already met him while freeing «{quest:503}», this step is done."
+
+[[step]]
+id = "h38-alterac-arathi-017"
+do = "goto"
+at = [1416, 39.3, 14.6]
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#10"]
+note = "Polestar paso 10 «Alterac Mountains», objetivo 1 (goto) · destino de Polestar sin traducir: Perenolde manor"
+
+[[step]]
+id = "h38-alterac-arathi-018"
+do = "complete"
+quest = 507
+obj = 1
+at = [1416, 39.3, 14.6]
+text = "Mata {npc:2423} (1) para «{quest:507}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#11"]
+note = "Polestar paso 11 ««Lord Aliden Perenolde»», objetivo 1 (kill) · consejo de Polestar sin traducir: Head north-west through the mountains to the Perenolde manor on the northern shore of {area:1339}. «{quest:507}» (41) waits in a room upstairs: he shields himself, puts you to sleep and heals below half health. {npc:2317} stands beside him."
+
+[[step]]
+id = "h38-alterac-arathi-019"
+do = "turnin"
+quest = 507
+npc = 2317
+at = [1416, 39.3, 14.31]
+chain = "h38-alterac-arathi-s011-2317"
+text = "Entrega «{quest:507}» a {npc:2317}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#11"]
+note = "Polestar paso 11 ««Lord Aliden Perenolde»», objetivo 2 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-020"
+do = "accept"
+quest = 508
+npc = 2317
+at = [1416, 39.3, 14.31]
+chain = "h38-alterac-arathi-s011-2317"
+reqlevel = 29
+text = "Coge «{quest:508}» de {npc:2317}."
+why = "+3.900 XP · <1 min · 7,1× la mediana del 36-40"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#11"]
+note = "Polestar paso 11 ««Lord Aliden Perenolde»», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h38-alterac-arathi-021"
+do = "complete"
+quest = 545
+obj = 2
+at = [1416, 22.4, 58.6]
+text = "Mata {npc:2359} (8) para «{quest:545}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#12"]
+note = "Polestar paso 12 «Old Dalaran Ruins: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: South along the lake shore to the ruins around the {area:279} crater. The Dalaran Summoners lead Elemental Slaves; the bracers drop from the slaves."
+
+[[step]]
+id = "h38-alterac-arathi-022"
+do = "complete"
+quest = 557
+obj = 1
+at = [1416, 21.6, 61.9]
+text = "Consigue {item:3715} (4) de {npc:2359} para «{quest:557}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#12"]
+note = "Polestar paso 12 «Old Dalaran Ruins: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h38-alterac-arathi-023"
+do = "complete"
+quest = 545
+obj = 1
+at = [1416, 22.0, 57.9]
+text = "Mata {npc:2358} (6) para «{quest:545}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#12"]
+note = "Polestar paso 12 «Old Dalaran Ruins: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h38-alterac-arathi-024"
+do = "goto"
+at = [1424, 61.5, 20.9]
+text = "Ve a {area:272}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#13"]
+note = "Polestar paso 13 «Hillsbrad Foothills», objetivo 1 (goto)"
+
+[[step]]
+id = "h38-alterac-arathi-025"
+do = "turnin"
+quest = 557
+npc = 2437
+at = [1424, 61.5, 20.93]
+text = "Entrega «{quest:557}» a {npc:2437}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#14"]
+note = "Polestar paso 14 «Tarren Mill», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:2437}, inside. · consejo de Polestar sin traducir: Head back east to {area:272}."
+
+[[step]]
+id = "h38-alterac-arathi-026"
+do = "turnin"
+quest = 545
+npc = 2410
+at = [1424, 61.6, 20.85]
+text = "Entrega «{quest:545}» a {npc:2410}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#14"]
+note = "Polestar paso 14 «Tarren Mill», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:2410}, inside."
+
+[[step]]
+id = "h38-alterac-arathi-027"
+do = "note"
+text = "El magus ofrece después un encargo de mazmorra: déjalo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#14"]
+note = "Polestar paso 14 «Tarren Mill», objetivo 3 (note) · nota de Polestar traducida por Senda: The magus offers a dungeon errand next: leave it."
+
+[[step]]
+id = "h38-alterac-arathi-028"
+do = "turnin"
+quest = 508
+npc = 2229
+at = [1424, 63.24, 20.66]
+text = "Entrega «{quest:508}» a {npc:2229}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#14"]
+note = "Polestar paso 14 «Tarren Mill», objetivo 4 (turnin) · consejo de Polestar sin traducir: {npc:2229}, inside the inn."
+
+[[step]]
+id = "h38-alterac-arathi-029"
+do = "turnin"
+quest = 566
+npc = 2215
+at = [1424, 62.33, 20.45]
+text = "Entrega «{quest:566}» a la {npc:2215}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#14"]
+note = "Polestar paso 14 «Tarren Mill», objetivo 5 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-030"
+do = "goto"
+at = [1417, 32.6, 40.4]
+text = "Sigue el camino del este por {area:1057}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#15"]
+note = "Polestar paso 15 «Thoradin's Wall», objetivo 1 (goto)"
+
+[[step]]
+id = "h38-alterac-arathi-031"
+do = "complete"
+quest = 671
+obj = 1
+at = [1417, 31.78, 32.98]
+wps = [[1417, 33.0, 31.2, "Amuleto de Petrosangre"], [1417, 30.7, 28.5, "Amuleto de Petrosangre"], [1417, 34.2, 27.7, "Amuleto de Petrosangre"]]
+optional = true
+text = "Consigue {item:4495} (10) para «{quest:671}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#16"]
+note = "Polestar paso 16 «Northfold Manor», objetivo 1 (collect) · consejo de Polestar sin traducir: Head east out of {area:272} through {area:1057}. The Syndicate hold the walled manor and its farm north of the road; their Highwaymen, Mercenaries and Pathstalkers carry the Bloodstone Amulets.\nCareful: Highwaymen (level 30-31) can be in Sneak, so they may be hidden when you approach."
+
+[[step]]
+id = "h38-alterac-arathi-032"
+do = "turnin"
+quest = 635
+at = [1417, 62.5, 33.73]
+optional = true
+text = "Entrega «{quest:635}» en {obj:138492}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#17"]
+note = "Polestar paso 17 «The Fragmentos de Myzrael», objetivo 1 (turnin) · consejo de Polestar sin traducir: Follow the road east. The violet shards glow just off the road a short way west of {area:321}."
+
+[[step]]
+id = "h38-alterac-arathi-033"
+do = "accept"
+quest = 642
+at = [1417, 62.5, 33.73]
+reqlevel = 30
+text = "Coge «{quest:642}» ({obj:138492})."
+why = "+6.985 XP · ~16 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#17"]
+note = "Polestar paso 17 «The Fragmentos de Myzrael», objetivo 2 (accept)"
+
+[[step]]
+id = "h38-alterac-arathi-034"
+do = "turnin"
+quest = 638
+npc = 2703
+at = [1417, 73.8, 33.96]
+text = "Entrega «{quest:638}» a {npc:2703}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#18"]
+note = "Polestar paso 18 «Hammerfall», objetivo 1 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-035"
+do = "accept"
+quest = 678
+npc = 2771
+at = [1417, 74.24, 33.92]
+reqlevel = 30
+text = "Coge «{quest:678}» de {npc:2771}."
+why = "+5.216 XP · ~13 min · desbloquea «{quest:679}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#18"]
+note = "Polestar paso 18 «Hammerfall», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h38-alterac-arathi-036"
+do = "turnin"
+quest = 671
+npc = 2706
+at = [1417, 74.72, 36.29]
+optional = true
+chain = "h38-alterac-arathi-s018-2706"
+text = "Entrega «{quest:671}» a {npc:2706}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#18"]
+note = "Polestar paso 18 «Hammerfall», objetivo 3 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-038"
+do = "accept"
+quest = 92519
+npc = 12920
+at = [1417, 73.41, 36.89]
+reqlevel = 30
+text = "Coge «{quest:92519}» de {npc:12920}."
+why = "+2.800 XP · ~3,6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#18"]
+note = "Polestar paso 18 «Hammerfall», objetivo 5 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:12920}, at the south gate."
+
+[[step]]
+id = "h38-alterac-arathi-040"
+do = "accept"
+quest = 673
+npc = 2706
+at = [1417, 74.72, 36.29]
+optional = true
+reqlevel = 35
+text = "Coge «{quest:673}» de {npc:2706}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#20"]
+note = "Polestar paso 20 ««Magia demoníaca» with a group», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 673 · datos no importados: pre · consejo de Polestar sin traducir: {npc:2706}'s next «{quest:671}» is {npc:2783}, a level 40 elite warlock in Stromgarde's Syndicate quarter."
+
+[[step]]
+id = "h38-alterac-arathi-041"
+do = "complete"
+quest = 642
+obj = 1
+at = [1417, 77.52, 35.64]
+wps = [[1417, 78.9, 40.6, "Mota de Myzrael"], [1417, 82.4, 36.8, "Mota de Myzrael"], [1417, 76.6, 43.7, "Mota de Myzrael"]]
+text = "Consigue {item:4435} (12) de {npc:2572} y {npc:2573} y {npc:2574} para «{quest:642}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#21"]
+note = "Polestar paso 21 «Drywhisker Gorge», objetivo 1 (collect) · consejo de Polestar sin traducir: North-east of Hammerfall the Drywhisker kobolds mine the gorge; the Kobolds at the mouth and the Diggers and Surveyors deeper in all drop the Motes of Myzrael.\nCareful: Every kobold type runs off for help when low on health (Kobolds at 30%, Surveyors and Diggers at 15%), which can pull more of them."
+
+[[step]]
+id = "h38-alterac-arathi-042"
+do = "turnin"
+quest = 642
+at = [1417, 84.31, 30.95]
+text = "Entrega «{quest:642}» en {obj:2701}."
+tip = "{obj:2701} están al fondo de la garganta. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#22"]
+note = "Polestar paso 22 «Fragmentos iridiscentes», objetivo 1 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-045"
+do = "complete"
+quest = 678
+obj = 1
+at = [1417, 55.15, 72.74]
+wps = [[1417, 53.0, 74.2, "Tosco Puño de Roca"], [1417, 54.6, 79.6, "Tosco Puño de Roca"], [1417, 50.7, 77.9, "Tosco Puño de Roca"]]
+text = "Mata {npc:2566} (10) para «{quest:678}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#24"]
+note = "Polestar paso 24 «Boulderfist Hall», objetivo 1 (kill) · consejo de Polestar sin traducir: The Boulderfist Brutes camp outside the ogres' hall, far south-west of {area:321}; the Magus stand among them. Pull them one at a time."
+
+[[step]]
+id = "h38-alterac-arathi-046"
+do = "complete"
+quest = 678
+obj = 2
+at = [1417, 54.05, 71.76]
+wps = [[1417, 52.1, 75.8, "Magus Puño de Roca"], [1417, 54.2, 79.7, "Magus Puño de Roca"]]
+text = "Mata {npc:2567} (4) para «{quest:678}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#24"]
+note = "Polestar paso 24 «Boulderfist Hall», objetivo 2 (kill)"
+
+[[step]]
+id = "h38-alterac-arathi-048"
+do = "complete"
+quest = 92519
+obj = 1
+at = [1417, 60.1, 59.3]
+text = "Consigue {item:278462} (1) para «{quest:92519}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#26"]
+note = "Polestar paso 26 «Go'shek Farm», objetivo 1 (collect) · consejo de Polestar sin traducir: {npc:2733}'s lab shack stands at Go'shek Farm, north-east of the raptors' plain on the way back to {area:321}; the case of {item:278462} is inside."
+
+[[step]]
+id = "h38-alterac-arathi-049"
+do = "turnin"
+quest = 92519
+npc = 12920
+at = [1417, 73.41, 36.89]
+text = "Entrega «{quest:92519}» a {npc:12920}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#27"]
+note = "Polestar paso 27 «Back to Hammerfall», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:12920}, at the south gate. · consejo de Polestar sin traducir: Back north-east to {area:321}."
+
+[[step]]
+id = "h38-alterac-arathi-052"
+do = "turnin"
+quest = 678
+npc = 2771
+at = [1417, 74.24, 33.92]
+text = "Entrega «{quest:678}» a {npc:2771}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#27"]
+note = "Polestar paso 27 «Back to Hammerfall», objetivo 4 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-056"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#27"]
+note = "Polestar paso 27 «Back to Hammerfall», objetivo 8 (vendor)"
+
+[[step]]
+id = "h38-alterac-arathi-057"
+do = "accept"
+quest = 679
+npc = 2771
+at = [1417, 74.24, 33.92]
+optional = true
+reqlevel = 30
+text = "Coge «{quest:679}» de {npc:2771}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#28"]
+note = "Polestar paso 28 «Boulderfist quests for a group», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 679 · datos no importados: pre · consejo de Polestar sin traducir: {npc:2771}'s next «{quest:678}» and {npc:2772}'s «{quest:680}» are the elite ogres (38-40) in Stromgarde's ogre quarter, on the same group trip as the Sigil."
+
+[[step]]
+id = "h38-alterac-arathi-058"
+do = "accept"
+quest = 680
+npc = 2772
+at = [1417, 74.04, 33.07]
+optional = true
+reqlevel = 30
+text = "Coge «{quest:680}» de {npc:2772}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#28"]
+note = "Polestar paso 28 «Boulderfist quests for a group», objetivo 2 (accept) · condición no expresable: vas en grupo para la misión 679 · datos no importados: pre · consejo de Polestar sin traducir: {npc:2772}, beside him."
+
+[[step]]
+id = "h38-alterac-arathi-062"
+do = "note"
+text = "La siguiente tarea de la piedra pide a Fozruk, élite de nivel 42 que ronda al oeste de Sentencia: déjala."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#31"]
+note = "Polestar paso 31 «The Piedra de Vínculo Interior», objetivo 2 (note) · nota de Polestar traducida por Senda: The stone's next task needs Fozruk, a level 42 elite who roams west of Hammerfall: leave it."
+
+[[step]]
+id = "h38-alterac-arathi-064"
+do = "complete"
+quest = 673
+obj = 1
+at = [1417, 29.6, 63.6]
+optional = true
+text = "Consigue {item:4510} (1) de {npc:2783} para «{quest:673}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#32"]
+note = "Polestar paso 32 «Stromgarde», objetivo 2 (collect) · condición no expresable: llevas la misión 639, 673, 679, 680 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h38-alterac-arathi-065"
+do = "complete"
+quest = 679
+obj = 1
+at = [1417, 20.0, 67.4]
+optional = true
+text = "Mata {npc:2570} (15) para «{quest:679}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#32"]
+note = "Polestar paso 32 «Stromgarde», objetivo 3 (kill) · condición no expresable: llevas la misión 639, 673, 679, 680 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h38-alterac-arathi-066"
+do = "complete"
+quest = 679
+obj = 2
+at = [1417, 19.0, 67.8]
+optional = true
+text = "Mata {npc:2571} (10) para «{quest:679}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#32"]
+note = "Polestar paso 32 «Stromgarde», objetivo 4 (kill) · condición no expresable: llevas la misión 639, 673, 679, 680 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h38-alterac-arathi-067"
+do = "complete"
+quest = 680
+obj = 1
+at = [1417, 19.5, 67.2]
+text = "Consigue {item:4551} (1) de {npc:2773} para «{quest:680}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#32"]
+note = "Polestar paso 32 «Stromgarde», objetivo 5 (collect) · condición no expresable: llevas la misión 639, 673, 679, 680 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h38-alterac-arathi-068"
+do = "accept"
+quest = 663
+npc = 2766
+at = [1417, 31.78, 82.68]
+reqlevel = 35
+text = "Coge «{quest:663}» de {npc:2766}."
+why = "+690 XP · ~2 min · desbloquea «{quest:664}» y 5 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#33"]
+note = "Polestar paso 33 «Faldir's Cove», objetivo 1 (accept) · consejo de Polestar sin traducir: Head south to the goblins' cove on the southern coast. {npc:2766} keeps watch on the cliff above it."
+
+[[step]]
+id = "h38-alterac-arathi-069"
+do = "turnin"
+quest = 663
+npc = 2610
+at = [1417, 32.28, 81.38]
+text = "Entrega «{quest:663}» a {npc:2610}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#33"]
+note = "Polestar paso 33 «Faldir's Cove», objetivo 2 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-070"
+do = "accept"
+quest = 662
+npc = 2767
+at = [1417, 32.8, 81.48]
+reqlevel = 35
+text = "Coge «{quest:662}» de {npc:2767}."
+why = "+3.150 XP · ~3,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#33"]
+note = "Polestar paso 33 «Faldir's Cove», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h38-alterac-arathi-071"
+do = "accept"
+quest = 664
+npc = 2769
+at = [1417, 34.0, 80.8]
+reqlevel = 35
+text = "Coge «{quest:664}» del {npc:2769}."
+why = "+6.056 XP · ~9,4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#33"]
+note = "Polestar paso 33 «Faldir's Cove», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h38-alterac-arathi-072"
+do = "accept"
+quest = 665
+npc = 2768
+at = [1417, 33.87, 80.55]
+escort = true
+reqlevel = 35
+text = "Coge «{quest:665}» de {npc:2768}."
+why = "+3.150 XP · ~6 min · desbloquea «{quest:666}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#33"]
+note = "Polestar paso 33 «Faldir's Cove», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h38-alterac-arathi-073"
+do = "goto"
+at = [1417, 33.9, 80.6]
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#34"]
+note = "Polestar paso 34 «Profesor Fiseltor», objetivo 1 (goto) · consejo de Polestar sin traducir: Escort the professor up the hill to the cave above the cove and guard him while he works. Two level 40 water elementals ambush him there, and they are immune to frost. Hold them at the cave mouth, away from him: if the fight happens inside the cave, he joins in instead of working and more elementals keep coming."
+
+[[step]]
+id = "h38-alterac-arathi-074"
+do = "complete"
+quest = 665
+escort = true
+text = "Completa «{quest:665}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#34"]
+note = "Polestar paso 34 «Profesor Fiseltor», objetivo 2 (complete) · objetivos (EN): Defend Professor Phizzlethorpe"
+
+[[step]]
+id = "h38-alterac-arathi-075"
+do = "turnin"
+quest = 665
+npc = 2774
+at = [1417, 33.86, 80.45]
+chain = "h38-alterac-arathi-s035-2774"
+text = "Entrega «{quest:665}» a {npc:2774}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#35"]
+note = "Polestar paso 35 «Doctor Draxlegauge», objetivo 1 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-076"
+do = "accept"
+quest = 666
+npc = 2774
+at = [1417, 33.86, 80.45]
+chain = "h38-alterac-arathi-s035-2774"
+reqlevel = 35
+text = "Coge «{quest:666}» de {npc:2774}."
+why = "+3.900 XP · ~3,5 min · desbloquea «{quest:669}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#35"]
+note = "Polestar paso 35 «Doctor Draxlegauge», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h38-alterac-arathi-077"
+do = "complete"
+quest = 664
+obj = 1
+at = [1417, 25.42, 85.23]
+wps = [[1417, 23.8, 85.7, "Asaltante Espinadaga"], [1417, 25.1, 89.2, "Asaltante Espinadaga"], [1417, 22.4, 89.6, "Asaltante Espinadaga"]]
+text = "Mata {npc:2595} (10) para «{quest:664}»."
+tip = "Al oeste de la cala, los Asaltantes Espinadaga y las hechiceras (38-40) ocupan la orilla: atráelos de uno en uno. Los dos naufragios están en las aguas poco profundas, con las cartas y los diarios dentro; las gemas están en el fondo del mar alrededor de los naufragios."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#36"]
+note = "Polestar paso 36 «The Drowned Reef: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h38-alterac-arathi-078"
+do = "complete"
+quest = 666
+obj = 1
+at = [1417, 25.0, 86.0]
+wps = [[1417, 24.1, 89.1, "Gema élfica"], [1417, 21.0, 85.3, "Gema élfica"], [1417, 22.0, 90.8, "Gema élfica"]]
+text = "Recoge {item:4492} (10) de {obj:2712} para «{quest:666}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#36"]
+note = "Polestar paso 36 «The Drowned Reef: kill these as you meet them», objetivo 2 (collect) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h38-alterac-arathi-079"
+do = "complete"
+quest = 664
+obj = 2
+at = [1417, 23.75, 84.84]
+wps = [[1417, 22.2, 84.5, "Hechicera Espinadaga"], [1417, 22.8, 89.8, "Hechicera Espinadaga"]]
+text = "Mata {npc:2596} (3) para «{quest:664}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#36"]
+note = "Polestar paso 36 «The Drowned Reef: kill these as you meet them», objetivo 3 (kill) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h38-alterac-arathi-080"
+do = "complete"
+quest = 662
+obj = 2
+at = [1417, 23.39, 85.09]
+text = "Recoge {item:4489} (1) de {obj:2709} para «{quest:662}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#36"]
+note = "Polestar paso 36 «The Drowned Reef: kill these as you meet them», objetivo 4 (collect) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h38-alterac-arathi-081"
+do = "complete"
+quest = 662
+obj = 1
+at = [1417, 23.05, 84.51]
+text = "Recoge {item:4487} (1) de {obj:2707} para «{quest:662}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#36"]
+note = "Polestar paso 36 «The Drowned Reef: kill these as you meet them», objetivo 5 (collect) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h38-alterac-arathi-082"
+do = "complete"
+quest = 662
+obj = 4
+at = [1417, 20.65, 85.1]
+text = "Recoge {item:4490} (1) de {obj:2710} para «{quest:662}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#36"]
+note = "Polestar paso 36 «The Drowned Reef: kill these as you meet them», objetivo 6 (collect) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h38-alterac-arathi-083"
+do = "complete"
+quest = 662
+obj = 3
+at = [1417, 20.46, 85.61]
+text = "Recoge {item:4488} (1) de {obj:2708} para «{quest:662}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#36"]
+note = "Polestar paso 36 «The Drowned Reef: kill these as you meet them», objetivo 7 (collect) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h38-alterac-arathi-084"
+do = "turnin"
+quest = 662
+npc = 2767
+at = [1417, 32.8, 81.48]
+text = "Entrega «{quest:662}» a {npc:2767}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#37"]
+note = "Polestar paso 37 «Faldir's Cove», objetivo 1 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-085"
+do = "turnin"
+quest = 664
+npc = 2769
+at = [1417, 34.0, 80.8]
+text = "Entrega «{quest:664}» al {npc:2769}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#37"]
+note = "Polestar paso 37 «Faldir's Cove», objetivo 2 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-086"
+do = "turnin"
+quest = 666
+npc = 2774
+at = [1417, 33.86, 80.45]
+chain = "h38-alterac-arathi-s037-2774"
+text = "Entrega «{quest:666}» a {npc:2774}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#37"]
+note = "Polestar paso 37 «Faldir's Cove», objetivo 3 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-087"
+do = "accept"
+quest = 668
+npc = 2774
+at = [1417, 33.86, 80.45]
+chain = "h38-alterac-arathi-s037-2774"
+reqlevel = 35
+text = "Coge «{quest:668}» de {npc:2774}."
+why = "+1.550 XP · <1 min · desbloquea «{quest:669}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#37"]
+note = "Polestar paso 37 «Faldir's Cove», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h38-alterac-arathi-088"
+do = "turnin"
+quest = 668
+npc = 2610
+at = [1417, 32.28, 81.38]
+chain = "h38-alterac-arathi-s037-2610"
+text = "Entrega «{quest:668}» a {npc:2610}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#37"]
+note = "Polestar paso 37 «Faldir's Cove», objetivo 5 (turnin)"
+
+[[step]]
+id = "h38-alterac-arathi-089"
+do = "accept"
+quest = 669
+npc = 2610
+at = [1417, 32.28, 81.38]
+chain = "h38-alterac-arathi-s037-2610"
+reqlevel = 35
+text = "Coge «{quest:669}» de {npc:2610}."
+why = "+3.150 XP · <1 min · 7,4× la mediana del 36-40"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#37"]
+note = "Polestar paso 37 «Faldir's Cove», objetivo 6 (accept) · datos no importados: pre · consejo de Polestar sin traducir: For {npc:2487} in {area:35}, around level 41."
+
+[[step]]
+id = "h38-alterac-arathi-091"
+do = "turnin"
+quest = 673
+npc = 2706
+at = [1417, 74.72, 36.29]
+optional = true
+text = "Entrega «{quest:673}» a {npc:2706}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#38"]
+note = "Polestar paso 38 «Back to Hammerfall», objetivo 2 (turnin) · condición no expresable: llevas la misión 639, 673, 679, 680 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h38-alterac-arathi-092"
+do = "turnin"
+quest = 679
+npc = 2771
+at = [1417, 74.24, 33.92]
+optional = true
+text = "Entrega «{quest:679}» a {npc:2771}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#38"]
+note = "Polestar paso 38 «Back to Hammerfall», objetivo 3 (turnin) · condición no expresable: llevas la misión 639, 673, 679, 680 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h38-alterac-arathi-093"
+do = "turnin"
+quest = 680
+npc = 2772
+at = [1417, 74.04, 33.07]
+text = "Entrega «{quest:680}» a {npc:2772}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/05-arathi-highlands#38"]
+note = "Polestar paso 38 «Back to Hammerfall», objetivo 4 (turnin) · condición no expresable: llevas la misión 639, 673, 679, 680 (implícita: el paso es de esa misión)"

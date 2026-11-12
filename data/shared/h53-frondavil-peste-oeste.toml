@@ -1,0 +1,1443 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/50-60/02-felwood
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h53-frondavil-peste-oeste"
+title = "Frondavil y Tierras de la Peste del Oeste"
+levels = [53, 55]
+map = 1448
+summary = "Ruta común de la Horda, 53-55: Frondavil y Tierras de la Peste del Oeste."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h53-frondavil-peste-oeste-001"
+do = "accept"
+quest = 4984
+npc = 10739
+at = [1422, 53.73, 64.66]
+reqlevel = 51
+text = "Coge «{quest:4984}» de {npc:10739}."
+tip = "Acampa junto a {area:202}, al sureste de {area:200}."
+why = "+6.708 XP · ~8 min · desbloquea «{quest:4985}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#1"]
+note = "Polestar paso 1 «Mulgris Riohondo», objetivo 1 (accept) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-002"
+do = "accept"
+quest = 5542
+npc = 1855
+at = [1423, 5.16, 35.57]
+optional = true
+chain = "h53-frondavil-peste-oeste-s002-1855"
+reqlevel = 52
+text = "Coge «{quest:5542}» de {npc:1855}."
+tip = "Cabalga al norte por las colinas del este; {npc:1855} vive en una casita junto a {area:2619}, en la frontera con {map:1423}. +14.735 XP · ~39 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#2"]
+note = "Polestar paso 2 «Tirión Vadín», objetivo 1 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-003"
+do = "accept"
+quest = 5543
+npc = 1855
+at = [1423, 5.16, 35.57]
+optional = true
+chain = "h53-frondavil-peste-oeste-s002-1855"
+reqlevel = 52
+text = "Coge «{quest:5543}» de {npc:1855}."
+tip = "+14.080 XP · ~31 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#2"]
+note = "Polestar paso 2 «Tirión Vadín», objetivo 2 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-004"
+do = "accept"
+quest = 5544
+npc = 1855
+at = [1423, 5.16, 35.57]
+optional = true
+chain = "h53-frondavil-peste-oeste-s002-1855"
+reqlevel = 52
+text = "Coge «{quest:5544}» de {npc:1855}."
+tip = "+11.090 XP · ~19 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#2"]
+note = "Polestar paso 2 «Tirión Vadín», objetivo 3 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-005"
+do = "note"
+text = "Las cacerías de {npc:1855} están en {map:1423}: guárdalas para más tarde."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#2"]
+note = "Polestar paso 2 «Tirión Vadín», objetivo 4 (note)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-006"
+do = "accept"
+quest = 6164
+npc = 12384
+at = [1423, 11.36, 26.37]
+optional = true
+reqlevel = 50
+text = "Coge «{quest:6164}» de {npc:12384}."
+tip = "Cruza el río al este hasta {area:2627}, el pueblo en ruinas del noroeste de {map:1423}. {npc:12384} está sentado en una choza en sus afueras. +1.400 XP · ~2 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#3"]
+note = "Polestar paso 3 «Augustus el Agraciado», objetivo 1 (accept) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-007"
+do = "complete"
+quest = 6164
+obj = 1
+at = [1423, 14.05, 24.22]
+optional = true
+text = "Recoge {item:15884} (1) de {obj:177789} para «{quest:6164}»."
+tip = "El libro está en la posada en ruinas de {area:2627}; los no-muertos del pueblo son de nivel 54-56, así que atráelos de uno en uno.\nLos Montículos de termitas grandes están por todas las colinas al este de {area:2627}. Usa el {item:15042} en cada montículo que encuentres. Arriba."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#4"]
+note = "Polestar paso 4 «Terrordale: kill these as you meet them», objetivo 1 (collect) · coordenadas del marco de Era SIN convertir · coordenadas de Era sin transformación: centro de las apariciones en forever-db"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-009"
+do = "loot"
+item = 12840
+count = 20
+at = [1423, 16.27, 25.88]
+wps = [[1423, 6.0, 31.1, "Piedra de la Plaga de esbirro"], [1423, 13.4, 56.0, "Piedra de la Plaga de esbirro"], [1423, 21.1, 78.2, "Piedra de la Plaga de esbirro"]]
+optional = true
+text = "Consigue {item:12840} (20)."
+tip = "«{quest:5408}»: los no-muertos de {area:2627} las sueltan mientras llevas puesta la {item:12846}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#4"]
+note = "Polestar paso 4 «Terrordale: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-010"
+do = "note"
+text = "Guarda «{quest:6164}»: {npc:12384} lo recoge en la parada de {area:2627} de la guía de {map:1423}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#4"]
+note = "Polestar paso 4 «Terrordale: kill these as you meet them», objetivo 4 (note)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-011"
+do = "accept"
+quest = 6004
+npc = 11610
+at = [1422, 51.92, 28.06]
+reqlevel = 50
+text = "Coge «{quest:6004}» de {npc:11610}."
+tip = "Vuelve al oeste cruzando el río y sigue hasta {area:192}; {npc:11610} se esconde en la colina al noreste."
+why = "+8.356 XP · ~9,3 min · desbloquea «{quest:6023}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#5"]
+note = "Polestar paso 5 «Kirsta Sombraprofunda», objetivo 1 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-012"
+do = "goto"
+at = [1422, 53.1, 37.3]
+if = { maxlevel = 51 }
+text = "Ve a {npc:1826}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#6"]
+note = "Polestar paso 6 «Level 52.63», objetivo 1 (goto) · consejo de Polestar sin traducir: Top up here to level 52.63 before the hand-ins at {area:200}: they take you to level 53. The Scarlet Mages and Knights here count for {npc:11610}'s «{quest:6004}». Or, with a group, run the {area:1417} dungeon or the {area:2100} dungeon instead."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-013"
+do = "level"
+level = 52
+at = [1422, 52.77, 37.56]
+if = { maxlevel = 51 }
+text = "Sube al nivel 52."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#6"]
+note = "Polestar paso 6 «Level 52.63», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:1826}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-014"
+do = "complete"
+quest = 4984
+obj = 1
+at = [1422, 49.81, 35.61]
+wps = [[1422, 49.3, 37.6, "Lobo malsano"], [1422, 51.1, 33.1, "Lobo malsano"], [1422, 48.2, 27.8, "Lobo malsano"]]
+text = "Mata {npc:1817} (8) para «{quest:4984}»."
+tip = "Los lobos deambulan por los campos entre Andorhal, {area:200} y {area:202}. Termínalos en el camino de vuelta al este."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#7"]
+note = "Polestar paso 7 «Diseased Wolves», objetivo 1 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-015"
+do = "complete"
+quest = 6004
+obj = 1
+at = [1422, 51.76, 44.83]
+wps = [[1422, 47.3, 51.3, "Médico Escarlata"], [1422, 40.1, 52.9, "Médico Escarlata"]]
+text = "Mata {npc:10605} (2) para «{quest:6004}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#7"]
+note = "Polestar paso 7 «Diseased Wolves», objetivo 2 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-016"
+do = "complete"
+quest = 6004
+obj = 2
+at = [1422, 51.63, 44.53]
+wps = [[1422, 47.3, 51.4, "Cazador Escarlata"], [1422, 40.8, 52.4, "Cazador Escarlata"], [1422, 38.6, 56.0, "Cazador Escarlata"]]
+text = "Mata {npc:1831} (2) para «{quest:6004}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#7"]
+note = "Polestar paso 7 «Diseased Wolves», objetivo 3 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-017"
+do = "complete"
+quest = 6004
+obj = 4
+at = [1422, 50.23, 42.22]
+wps = [[1422, 50.4, 41.2, "Caballero Escarlata"], [1422, 53.2, 36.9, "Caballero Escarlata"], [1422, 49.2, 33.8, "Caballero Escarlata"]]
+text = "Mata {npc:1833} (2) para «{quest:6004}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#7"]
+note = "Polestar paso 7 «Diseased Wolves», objetivo 4 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-018"
+do = "turnin"
+quest = 5058
+at = [1422, 47.8, 50.67]
+text = "Entrega «{quest:5058}» en {obj:175926}."
+tip = "El diario está en la granja, el armario dentro y la letrina detrás. Un {npc:10816} lleva la llave de la letrina; {npc:10836} aparece al abrir la letrina y lleva la llave del armario."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#8"]
+note = "Polestar paso 8 «Dalson's Tears farmhouse», objetivo 1 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-019"
+do = "loot"
+item = 12738
+count = 1
+at = [1422, 47.7, 49.9]
+text = "Consigue {item:12738} de {npc:10816}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#8"]
+note = "Polestar paso 8 «Dalson's Tears farmhouse», objetivo 2 (collect)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-020"
+do = "loot"
+item = 12739
+count = 1
+at = [1422, 48.1, 49.7]
+text = "Consigue {item:12739} de {npc:10836}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#8"]
+note = "Polestar paso 8 «Dalson's Tears farmhouse», objetivo 3 (collect)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-021"
+do = "turnin"
+quest = 5059
+at = [1422, 48.11, 49.65]
+text = "Entrega «{quest:5059}» en {obj:175925}."
+why = "+341 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#8"]
+note = "Polestar paso 8 «Dalson's Tears farmhouse», objetivo 4 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-022"
+do = "turnin"
+quest = 5060
+at = [1422, 47.35, 49.63]
+text = "Entrega «{quest:5060}» en {obj:175924}."
+why = "+7.407 XP · ~1 min · 4,9× la mediana del 51-55"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#8"]
+note = "Polestar paso 8 «Dalson's Tears farmhouse», objetivo 5 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-023"
+do = "turnin"
+quest = 4984
+npc = 10739
+at = [1422, 53.73, 64.66]
+chain = "h53-frondavil-peste-oeste-s009-10739"
+text = "Entrega «{quest:4984}» a {npc:10739}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#9"]
+note = "Polestar paso 9 «Mulgris Riohondo», objetivo 1 (turnin) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-024"
+do = "accept"
+quest = 4985
+npc = 10739
+at = [1422, 53.73, 64.66]
+chain = "h53-frondavil-peste-oeste-s009-10739"
+reqlevel = 51
+text = "Coge «{quest:4985}» de {npc:10739}."
+why = "+7.206 XP · ~9,3 min · desbloquea «{quest:4987}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#9"]
+note = "Polestar paso 9 «Mulgris Riohondo», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-025"
+do = "complete"
+quest = 4985
+obj = 1
+at = [1422, 55.16, 64.54]
+wps = [[1422, 56.5, 59.1, "Grisezno malsano"], [1422, 59.1, 60.3, "Grisezno malsano"], [1422, 60.0, 53.9, "Grisezno malsano"]]
+text = "Mata {npc:1816} (8) para «{quest:4985}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#10"]
+note = "Polestar paso 10 «Diseased Grizzlies», objetivo 1 (kill) · consejo de Polestar sin traducir: The bears roam the hills north and east of the {area:202}. Below level 53.02, keep hunting them after the eighth: the hand-ins at the {area:202} take you to level 54. Or, with a group, run the {area:1417} dungeon or the {area:1584} dungeon instead."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-026"
+do = "level"
+level = 53
+at = [1422, 55.16, 64.54]
+text = "Sube al nivel 53."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#10"]
+note = "Polestar paso 10 «Diseased Grizzlies», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:1816}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-027"
+do = "turnin"
+quest = 4985
+npc = 10739
+at = [1422, 53.73, 64.66]
+chain = "h53-frondavil-peste-oeste-s011-10739"
+text = "Entrega «{quest:4985}» a {npc:10739}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#11"]
+note = "Polestar paso 11 «Mulgris Riohondo», objetivo 1 (turnin) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-028"
+do = "accept"
+quest = 4987
+npc = 10739
+at = [1422, 53.73, 64.66]
+chain = "h53-frondavil-peste-oeste-s011-10739"
+reqlevel = 51
+text = "Coge «{quest:4987}» de {npc:10739}."
+why = "+5.800 XP · <1 min · 11,6× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#11"]
+note = "Polestar paso 11 «Mulgris Riohondo», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-029"
+do = "note"
+text = "Guarda la rama: {npc:5770} está en {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#11"]
+note = "Polestar paso 11 «Mulgris Riohondo», objetivo 3 (note)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-030"
+do = "complete"
+quest = 6004
+obj = 4
+at = [1422, 50.23, 42.22]
+wps = [[1422, 50.4, 41.2, "Caballero Escarlata"], [1422, 53.2, 36.9, "Caballero Escarlata"], [1422, 49.2, 33.8, "Caballero Escarlata"]]
+text = "Mata {npc:1833} (2) para «{quest:6004}»."
+tip = "Caballeros y magos trabajan en {area:192}; los médicos y cazadores acampan al sur."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#12"]
+note = "Polestar paso 12 «Scarlet Crusade», objetivo 1 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-031"
+do = "complete"
+quest = 6004
+obj = 2
+at = [1422, 51.45, 44.14]
+wps = [[1422, 47.3, 51.4, "Cazador Escarlata"], [1422, 40.8, 52.4, "Cazador Escarlata"], [1422, 38.6, 56.0, "Cazador Escarlata"]]
+text = "Mata {npc:1831} (2) para «{quest:6004}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#12"]
+note = "Polestar paso 12 «Scarlet Crusade», objetivo 2 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-032"
+do = "complete"
+quest = 6004
+obj = 3
+at = [1422, 51.3, 40.48]
+wps = [[1422, 53.1, 37.3, "Mago Escarlata"], [1422, 57.5, 35.9, "Mago Escarlata"]]
+text = "Mata {npc:1826} (2) para «{quest:6004}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#12"]
+note = "Polestar paso 12 «Scarlet Crusade», objetivo 3 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-033"
+do = "complete"
+quest = 6004
+obj = 1
+at = [1422, 51.76, 44.83]
+wps = [[1422, 47.3, 51.3, "Médico Escarlata"], [1422, 40.1, 52.9, "Médico Escarlata"]]
+text = "Mata {npc:10605} (2) para «{quest:6004}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#12"]
+note = "Polestar paso 12 «Scarlet Crusade», objetivo 4 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-034"
+do = "level"
+level = 53
+at = [1422, 51.76, 44.83]
+text = "Sube al nivel 53."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#12"]
+note = "Polestar paso 12 «Scarlet Crusade», objetivo 5 (level) · consejo de Polestar sin traducir: Grind on {npc:10605}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-035"
+do = "goto"
+at = [1420, 83.2, 68.5]
+text = "Ve a {area:152}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#13"]
+note = "Polestar paso 13 «Tirisfal Glades», objetivo 1 (goto)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-036"
+do = "turnin"
+quest = 5407
+npc = 10839
+at = [1420, 83.19, 68.45]
+optional = true
+chain = "h53-frondavil-peste-oeste-s014-10839"
+text = "Entrega «{quest:5407}» a {npc:10839}."
+tip = "Cabalga al suroeste pasando la granja de Piedramácula y sigue el camino al oeste de vuelta a {area:152}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#14"]
+note = "Polestar paso 14 «The Bulwark», objetivo 1 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-037"
+do = "turnin"
+quest = 5408
+npc = 10839
+at = [1420, 83.19, 68.45]
+optional = true
+chain = "h53-frondavil-peste-oeste-s014-10839"
+text = "Entrega «{quest:5408}» a {npc:10839}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#14"]
+note = "Polestar paso 14 «The Bulwark», objetivo 2 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-038"
+do = "turnin"
+quest = 5096
+npc = 10837
+at = [1420, 83.13, 68.94]
+chain = "h53-frondavil-peste-oeste-s014-10837"
+text = "Entrega «{quest:5096}» al {npc:10837}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#14"]
+note = "Polestar paso 14 «The Bulwark», objetivo 3 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-039"
+do = "accept"
+quest = 5098
+npc = 10837
+at = [1420, 83.13, 68.94]
+chain = "h53-frondavil-peste-oeste-s014-10837"
+reqlevel = 50
+text = "Coge «{quest:5098}» del {npc:10837}."
+why = "+5.800 XP · ~6 min · desbloquea «{quest:105}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#14"]
+note = "Polestar paso 14 «The Bulwark», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-040"
+do = "accept"
+quest = 5228
+npc = 10837
+at = [1420, 83.13, 68.94]
+chain = "h53-frondavil-peste-oeste-s014-10837"
+reqlevel = 50
+text = "Coge «{quest:5228}» del {npc:10837}."
+why = "+530 XP · <1 min · desbloquea «{quest:5238}» y 8 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#14"]
+note = "Polestar paso 14 «The Bulwark», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-041"
+do = "turnin"
+quest = 5228
+npc = 11055
+at = [1420, 83.04, 71.91]
+chain = "h53-frondavil-peste-oeste-s014-11055"
+text = "Entrega «{quest:5228}» a la {npc:11055}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#14"]
+note = "Polestar paso 14 «The Bulwark», objetivo 6 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-042"
+do = "accept"
+quest = 5229
+npc = 11055
+at = [1420, 83.04, 71.91]
+chain = "h53-frondavil-peste-oeste-s014-11055"
+reqlevel = 50
+text = "Coge «{quest:5229}» de la {npc:11055}."
+why = "+5.502 XP · <1 min · desbloquea «{quest:5238}» y 7 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#14"]
+note = "Polestar paso 14 «The Bulwark», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-045"
+do = "note"
+text = "Las atalayas de Derrington, el caldero de Vandis y el barril de {npc:11615} se hacen en una visita posterior: guárdalas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#14"]
+note = "Polestar paso 14 «The Bulwark», objetivo 10 (note)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-046"
+do = "goto"
+at = [1422, 40.5, 51.8]
+if = { maxlevel = 52 }
+text = "Ve a {npc:10605}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#15"]
+note = "Polestar paso 15 «Level 53.34», objetivo 1 (goto) · consejo de Polestar sin traducir: Top up here to level 53.34 before the hand-ins at {area:1763}: they take you to level 54. Or, with a group, run the {area:1417} dungeon or the {area:1584} dungeon instead."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-047"
+do = "level"
+level = 53
+at = [1422, 40.53, 51.4]
+if = { maxlevel = 52 }
+text = "Sube al nivel 53."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#15"]
+note = "Polestar paso 15 «Level 53.34», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:10605}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-048"
+do = "goto"
+at = [1420, 61.8, 59.2]
+text = "Ve a {area:159}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#16"]
+note = "Polestar paso 16 «Tirisfal Glades», objetivo 1 (goto)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-050"
+do = "goto"
+at = [1420, 60.7, 58.9]
+text = "Ve al zepelín a {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#18"]
+note = "Polestar paso 18 «Zeppelin to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-051"
+do = "goto"
+at = [1454, 51.5, 45.6]
+text = "Ve al centro de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#19"]
+note = "Polestar paso 19 «Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-052"
+do = "turnin"
+quest = 4300
+npc = 8659
+at = [1454, 55.52, 34.08]
+optional = true
+text = "Entrega «{quest:4300}» a {npc:8659}, {obj:172960}."
+tip = "{npc:8659} recoge las garras de ravasaurio de Un'Goro; está en {obj:172960}, a poca distancia del centro de la ciudad."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#20"]
+note = "Polestar paso 20 «Jes'rimon», objetivo 1 (turnin) · condición no expresable: llevas la misión 4300 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-054-dr"
+do = "train"
+npc = 3034
+spells = [9892]
+at = [1456, 77.14, 27.02]
+if = { class = ["DRUID"] }
+reqlevel = 52
+text = "Entrena con {npc:3034}, el instructor de druida."
+tip = "1 hechizo hasta el nivel 52."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#22", "trainer:druid"]
+note = "Polestar paso 22 «Druid trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 51-53"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-055"
+do = "goto"
+at = [1454, 45.3, 63.7]
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#23"]
+note = "Polestar paso 23 «Fly to Splintertree Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-056"
+do = "fly"
+zone = 1448
+text = "Vuela a Puesto del Hachazo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#23"]
+note = "Polestar paso 23 «Fly to Splintertree Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-057"
+do = "goto"
+at = [1448, 50.9, 81.6]
+text = "Ve a {area:2479}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#24"]
+note = "Polestar paso 24 «Felwood», objetivo 1 (goto)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-058"
+do = "accept"
+quest = 5156
+npc = 10921
+at = [1448, 50.89, 81.62]
+reqlevel = 48
+text = "Coge «{quest:5156}» de {npc:10921}."
+tip = "El campamento de los druidas está justo pasada la frontera."
+why = "+7.958 XP · ~7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#25"]
+note = "Polestar paso 25 «Emerald Sanctuary», objetivo 1 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-059"
+do = "accept"
+quest = 5155
+npc = 10922
+at = [1448, 51.21, 82.11]
+reqlevel = 48
+text = "Coge «{quest:5155}» de {npc:10922}."
+why = "+9.796 XP · ~14 min · desbloquea «{quest:5242}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#25"]
+note = "Polestar paso 25 «Emerald Sanctuary», objetivo 2 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-060"
+do = "accept"
+quest = 8460
+npc = 11554
+at = [1448, 50.93, 85.01]
+reqlevel = 45
+text = "Coge «{quest:8460}» de {npc:11554}, en el borde sur del campamento."
+why = "+6.868 XP · ~10 min · desbloquea «{quest:8462}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#25"]
+note = "Polestar paso 25 «Emerald Sanctuary», objetivo 3 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-061"
+do = "accept"
+quest = 4102
+npc = 9529
+at = [1448, 46.75, 83.13]
+reqlevel = 48
+text = "Coge «{quest:4102}» de {npc:9529}, en el lado oeste del campamento."
+why = "+11.264 XP · ~14 min · desbloquea «{quest:5887}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#25"]
+note = "Polestar paso 25 «Emerald Sanctuary», objetivo 4 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-062"
+do = "complete"
+quest = 8460
+obj = 1
+at = [1448, 46.26, 89.24]
+wps = [[1448, 48.7, 91.0, "Guerrero Muertobosque"], [1448, 49.2, 88.6, "Guerrero Muertobosque"], [1448, 48.3, 93.5, "Guerrero Muertobosque"]]
+text = "Mata {npc:7153} (6) para «{quest:8460}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#26"]
+note = "Polestar paso 26 «Deadwood Village», objetivo 1 (kill) · consejo de Polestar sin traducir: The Deadwood furbolg village lies just south of the Sanctuary. Every Deadwood kill also raises your {area:1769} reputation; keep the headdress feathers. Keep killing them until level 53.92: the Sanctuary's next hand-ins and {area:1763} want it. Or, with a group, run the {area:1417} dungeon or the {area:1584} dungeon instead."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-063"
+do = "complete"
+quest = 8460
+obj = 3
+at = [1448, 46.24, 89.98]
+wps = [[1448, 48.3, 89.2, "Jardinero Muertobosque"], [1448, 48.5, 92.0, "Jardinero Muertobosque"]]
+text = "Mata {npc:7154} (6) para «{quest:8460}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#26"]
+note = "Polestar paso 26 «Deadwood Village», objetivo 2 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-064"
+do = "level"
+level = 53
+at = [1448, 46.26, 89.24]
+text = "Sube al nivel 53."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#26"]
+note = "Polestar paso 26 «Deadwood Village», objetivo 3 (level) · consejo de Polestar sin traducir: Grind on {npc:7153}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-065"
+do = "complete"
+quest = 8460
+obj = 2
+at = [1448, 46.37, 88.94]
+wps = [[1448, 48.3, 89.5, "Abrecaminos Muertobosque"], [1448, 47.4, 93.4, "Abrecaminos Muertobosque"], [1448, 49.2, 91.7, "Abrecaminos Muertobosque"]]
+text = "Mata {npc:7155} (6) para «{quest:8460}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#26"]
+note = "Polestar paso 26 «Deadwood Village», objetivo 4 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-066"
+do = "complete"
+quest = 5155
+obj = 1
+at = [1448, 38.7, 61.87]
+wps = [[1448, 38.7, 60.8, "Can de Jaedenar"], [1448, 35.1, 60.3, "Can de Jaedenar"]]
+text = "Mata {npc:7125} (4) para «{quest:5155}»."
+tip = "Sigue el camino al noroeste. El sur de {area:1763}, alrededor de su poza de la luna corrupta, está en manos de cultores, adeptos, guardias y canes del Consejo de las Sombras."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#27"]
+note = "Polestar paso 27 «Southern Jaedenar», objetivo 1 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-067"
+do = "complete"
+quest = 5155
+obj = 2
+at = [1448, 38.54, 61.13]
+wps = [[1448, 36.7, 61.8, "Guardián Jaedenar"], [1448, 35.5, 59.7, "Guardián Jaedenar"]]
+text = "Mata {npc:7113} (4) para «{quest:5155}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#27"]
+note = "Polestar paso 27 «Southern Jaedenar», objetivo 2 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-068"
+do = "complete"
+quest = 5155
+obj = 3
+at = [1448, 38.25, 61.45]
+wps = [[1448, 35.9, 61.4, "Adepto Jaedenar"]]
+text = "Mata {npc:7115} (6) para «{quest:5155}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#27"]
+note = "Polestar paso 27 «Southern Jaedenar», objetivo 3 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-069"
+do = "complete"
+quest = 5155
+obj = 4
+at = [1448, 38.15, 61.13]
+wps = [[1448, 35.6, 60.9, "Fiel Jaedenar"]]
+text = "Mata {npc:7112} (6) para «{quest:5155}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#27"]
+note = "Polestar paso 27 «Southern Jaedenar», objetivo 4 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-070"
+do = "accept"
+quest = 5202
+optional = true
+reqlevel = 49
+text = "Usa {item:13140} para empezar «{quest:5202}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#28"]
+note = "Polestar paso 28 ««Una extraña llave roja»», objetivo 1 (accept) · condición no expresable: has {'k': 'has', 'n': 1, 'item': 13140} · consejo de Polestar sin traducir: A {item:13140} dropped: use it to start the quest, then free {npc:11018} from her cage in {area:1770}, the cave at the north end of {area:1763}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-071"
+do = "turnin"
+quest = 5202
+npc = 11016
+at = [1448, 36.21, 55.47]
+text = "Entrega «{quest:5202}» a {npc:11016}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#29"]
+note = "Polestar paso 29 «Arko'narin capturado», objetivo 1 (turnin) · condición no expresable: llevas la misión 5202 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: {npc:11016}, below ground."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-072"
+do = "accept"
+quest = 5203
+npc = 11016
+at = [1448, 36.21, 55.47]
+optional = true
+escort = true
+reqlevel = 49
+text = "Coge «{quest:5203}» de {npc:11016}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#30"]
+note = "Polestar paso 30 ««El rescate en Jaedenar»», objetivo 1 (accept) · condición no expresable: available {'k': 'available', 'q': 5203, 'minLevel': 49, 'pre': [5202]} · datos no importados: pre · consejo de Polestar sin traducir: {npc:11016}, below ground."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-073"
+do = "complete"
+quest = 5203
+at = [1448, 36.2, 55.5]
+escort = true
+text = "Completa «{quest:5203}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#31"]
+note = "Polestar paso 31 ««El rescate en Jaedenar»», objetivo 1 (complete) · condición no expresable: llevas la misión 5203 (implícita: el paso es de esa misión) · objetivos (EN): Protect Arko'narin out of Shadow Hold · consejo de Polestar sin traducir: {npc:11018}, below ground. · consejo de Polestar sin traducir: Walk {npc:11018} out of {area:1770} and keep her alive until she is out of the cave."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-074"
+do = "turnin"
+quest = 5203
+npc = 11019
+at = [1448, 51.35, 82.01]
+text = "Entrega «{quest:5203}» a {npc:11019}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#32"]
+note = "Polestar paso 32 «Jessir Arcolunar», objetivo 1 (turnin) · condición no expresable: llevas la misión 5203 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: Back at the {area:2479}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-075"
+do = "accept"
+quest = 5204
+npc = 11019
+at = [1448, 51.35, 82.01]
+optional = true
+reqlevel = 49
+text = "Coge «{quest:5204}» de {npc:11019}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#33"]
+note = "Polestar paso 33 «Jessir Arcolunar», objetivo 1 (accept) · condición no expresable: available {'k': 'available', 'q': 5204, 'minLevel': 49, 'pre': [5203]} · datos no importados: pre"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-076"
+do = "turnin"
+quest = 5155
+npc = 10922
+at = [1448, 51.21, 82.11]
+chain = "h53-frondavil-peste-oeste-s034-10922"
+text = "Entrega «{quest:5155}» a {npc:10922}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#34"]
+note = "Polestar paso 34 «Emerald Sanctuary», objetivo 1 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-077"
+do = "accept"
+quest = 5157
+npc = 10922
+at = [1448, 51.21, 82.11]
+chain = "h53-frondavil-peste-oeste-s034-10922"
+reqlevel = 48
+text = "Coge «{quest:5157}» de {npc:10922}."
+why = "+3.800 XP · ~5,6 min · desbloquea «{quest:5242}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#34"]
+note = "Polestar paso 34 «Emerald Sanctuary», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-078"
+do = "turnin"
+quest = 8460
+npc = 11554
+at = [1448, 50.93, 85.01]
+chain = "h53-frondavil-peste-oeste-s034-11554"
+text = "Entrega «{quest:8460}» a {npc:11554}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#34"]
+note = "Polestar paso 34 «Emerald Sanctuary», objetivo 3 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-079"
+do = "accept"
+quest = 8462
+npc = 11554
+at = [1448, 50.93, 85.01]
+chain = "h53-frondavil-peste-oeste-s034-11554"
+reqlevel = 45
+text = "Coge «{quest:8462}» de {npc:11554}."
+why = "+560 XP · <1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#34"]
+note = "Polestar paso 34 «Emerald Sanctuary», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-081"
+do = "complete"
+quest = 5157
+obj = 1
+at = [1448, 35.2, 59.8]
+text = "Usa {item:12922} para «{quest:5157}»."
+tip = "De vuelta al norte a {area:1763}. Llena la cantimplora de {npc:10922} en la poza de la luna corrupta en el centro del campamento sur. Recoge {item:12907} (1) de {obj:176184} para «{quest:5157}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#35"]
+note = "Polestar paso 35 «The Jaedenar moonwell», objetivo 1 (use)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-082"
+do = "complete"
+quest = 5204
+obj = 1
+at = [1448, 38.3, 50.51]
+text = "Mata {npc:9518} (1) para «{quest:5204}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#36"]
+note = "Polestar paso 36 «Rakaiah», objetivo 1 (kill) · condición no expresable: llevas la misión 5204 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: The succubus {npc:9518} waits in the middle of {area:1763}, beside the {npc:11020}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-083"
+do = "turnin"
+quest = 5204
+npc = 11020
+at = [1448, 38.5, 50.41]
+text = "Entrega «{quest:5204}» a {npc:11020}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#36"]
+note = "Polestar paso 36 «Rakaiah», objetivo 2 (turnin) · condición no expresable: llevas la misión 5204 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: {npc:11020}, below ground."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-084"
+do = "accept"
+quest = 5385
+npc = 11020
+at = [1448, 38.5, 50.41]
+optional = true
+reqlevel = 49
+text = "Coge «{quest:5385}» de {npc:11020}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#37"]
+note = "Polestar paso 37 ««Restos de Trey Forjaluz»», objetivo 1 (accept) · condición no expresable: available {'k': 'available', 'q': 5385, 'minLevel': 49, 'pre': [5204]} · datos no importados: pre · consejo de Polestar sin traducir: {npc:11020}, below ground."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-085"
+do = "getfp"
+npc = 11900
+node = "48"
+at = [1448, 34.44, 53.96]
+text = "Coge la ruta de vuelo de Puesto del Veneno con {npc:11900}."
+tip = "El campamento de la Horda justo al norte de {area:1763}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#38"]
+note = "Polestar paso 38 «Bloodvenom Post», objetivo 1 (getfp)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-086"
+do = "accept"
+quest = 6162
+npc = 9620
+at = [1448, 34.8, 52.73]
+reqlevel = 46
+text = "Coge «{quest:6162}» de {npc:9620}."
+why = "+5.125 XP · ~2 min · 1,7× la mediana del 51-55"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#38"]
+note = "Polestar paso 38 «Bloodvenom Post», objetivo 2 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-088"
+do = "accept"
+quest = 4505
+npc = 9996
+at = [1448, 34.21, 52.34]
+reqlevel = 49
+text = "Coge «{quest:4505}» de {npc:9996}."
+why = "+5.450 XP · ~3,6 min · desbloquea «{quest:4506}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#38"]
+note = "Polestar paso 38 «Bloodvenom Post», objetivo 4 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-089"
+do = "goto"
+at = [1448, 41.6, 43.0]
+text = "Ve a cráter sur."
+tip = "Al este de Puesto del Veneno, el valle lleno de cráteres donde deambulan Bestias entrópicas y Horrores. Mata dos de cada y luego camina hasta cada uno de los tres cráteres de agua vil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#39"]
+note = "Polestar paso 39 «Shatter Scar Vale», objetivo 1 (goto)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-090"
+do = "goto"
+at = [1448, 40.4, 41.2]
+text = "Ve a cráter oeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#39"]
+note = "Polestar paso 39 «Shatter Scar Vale», objetivo 2 (goto)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-091"
+do = "goto"
+at = [1448, 42.2, 40.3]
+text = "Ve a cráter norte."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#39"]
+note = "Polestar paso 39 «Shatter Scar Vale», objetivo 3 (goto)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-092"
+do = "complete"
+quest = 5156
+text = "Completa «{quest:5156}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#39"]
+note = "Polestar paso 39 «Shatter Scar Vale», objetivo 4 (complete) · objetivos (EN): Entropic Beast; Entropic Horror; Explore the craters in Shatter Scar Vale"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-093"
+do = "complete"
+quest = 5156
+obj = 1
+at = [1448, 41.73, 40.15]
+wps = [[1448, 41.0, 41.3, "Bestia entrópica"], [1448, 43.1, 40.9, "Bestia entrópica"], [1448, 42.7, 38.2, "Bestia entrópica"]]
+text = "Mata {npc:9878} (2) para «{quest:5156}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#39"]
+note = "Polestar paso 39 «Shatter Scar Vale», objetivo 5 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-094"
+do = "complete"
+quest = 5156
+obj = 2
+at = [1448, 41.73, 40.15]
+wps = [[1448, 41.0, 41.3, "Horror entrópico"], [1448, 43.1, 40.9, "Horror entrópico"], [1448, 42.7, 38.2, "Horror entrópico"]]
+text = "Mata {npc:9879} (2) para «{quest:5156}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#39"]
+note = "Polestar paso 39 «Shatter Scar Vale», objetivo 6 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-097"
+do = "level"
+level = 54
+at = [1448, 53.45, 28.06]
+text = "Sube al nivel 54."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#40"]
+note = "Polestar paso 40 «Irontree Woods», objetivo 3 (level) · consejo de Polestar sin traducir: Grind on {npc:8957}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-098"
+do = "complete"
+quest = 4102
+obj = 1
+at = [1448, 57.23, 21.94]
+wps = [[1448, 59.3, 20.5, "Sangre de ámbar"], [1448, 57.6, 18.3, "Sangre de ámbar"], [1448, 55.2, 17.0, "Sangre de ámbar"]]
+text = "Consigue {item:11503} (15) de {npc:7100} y {npc:7101} para «{quest:4102}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#41"]
+note = "Polestar paso 41 «Irontree Woods», objetivo 1 (collect)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-099"
+do = "level"
+level = 54
+at = [1448, 57.39, 21.74]
+text = "Sube al nivel 54."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#41"]
+note = "Polestar paso 41 «Irontree Woods», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:7101}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-100"
+do = "accept"
+quest = 6031
+npc = 11557
+at = [1448, 65.69, 2.81]
+optional = true
+reqlevel = 50
+text = "Coge «{quest:6031}» de {npc:11557}."
+tip = "El poblado de fúrbolgs Muertobosque justo al oeste del túnel. {npc:9462} (56) está entre ellos. {npc:11557}, un fúrbolg amistoso, está sentado en el extremo norte del poblado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#42"]
+note = "Polestar paso 42 «Felpaw Village», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:11557}: keep 30 «{quest:6031}» for him; he trades only at Neutral with the Timbermaw; below ground."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-101"
+do = "turnin"
+quest = 8462
+npc = 15395
+at = [1448, 64.77, 8.13]
+chain = "h53-frondavil-peste-oeste-s043-15395"
+text = "Entrega «{quest:8462}» a {npc:15395}."
+tip = "El camino acaba en {npc:15395}, fuera del túnel de {area:1769}, en el extremo noreste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#43"]
+note = "Polestar paso 43 «Nafien», objetivo 1 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-102"
+do = "accept"
+quest = 8461
+npc = 15395
+at = [1448, 64.77, 8.13]
+chain = "h53-frondavil-peste-oeste-s043-15395"
+reqlevel = 45
+text = "Coge «{quest:8461}» de {npc:15395}."
+why = "+8.855 XP · ~8 min · desbloquea «{quest:8467}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#43"]
+note = "Polestar paso 43 «Nafien», objetivo 2 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-103"
+do = "complete"
+quest = 8461
+obj = 1
+at = [1448, 63.68, 6.05]
+wps = [[1448, 61.1, 6.8, "Vigilante del cubil Muertobosque"], [1448, 62.4, 9.6, "Vigilante del cubil Muertobosque"]]
+text = "Mata {npc:7156} (6) para «{quest:8461}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#44"]
+note = "Polestar paso 44 «Felpaw Village», objetivo 1 (kill) · consejo de Polestar sin traducir: Careful: Den Watchers are level 53-54; they call nearby allies within 25 yd once below 50% health and run off for help below 15%.\nBelow level 54.54, keep fighting the Deadwood here after {npc:15395}'s count: the hand-ins at {area:1769} and the {area:2479} take you to level 55. Or, with a group, run the {area:1584} dungeon or the {area:1417} dungeon instead.\nKeep killing them until one drops a «{quest:8470}», about one kill in thirty, then right-click it: {npc:11558} in {area:1769} takes it once the Timbermaw are Neutral to you, now if they already are, or when the last guide passes the cave again at 59."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-104"
+do = "complete"
+quest = 8461
+obj = 2
+at = [1448, 62.96, 7.33]
+wps = [[1448, 61.1, 8.4, "Vengador Muertobosque"], [1448, 63.1, 10.8, "Vengador Muertobosque"], [1448, 60.1, 6.1, "Vengador Muertobosque"]]
+text = "Mata {npc:7157} (6) para «{quest:8461}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#44"]
+note = "Polestar paso 44 «Felpaw Village», objetivo 2 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-105"
+do = "complete"
+quest = 8461
+obj = 3
+at = [1448, 62.71, 7.14]
+wps = [[1448, 60.3, 7.4, "Chamán Muertobosque"], [1448, 62.2, 10.8, "Chamán Muertobosque"], [1448, 63.0, 12.5, "Chamán Muertobosque"]]
+text = "Mata {npc:7158} (6) para «{quest:8461}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#44"]
+note = "Polestar paso 44 «Felpaw Village», objetivo 3 (kill)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-106"
+do = "loot"
+item = 20741
+count = 1
+at = [1448, 62.71, 7.14]
+wps = [[1448, 63.8, 6.4, "Tótem de ritual Muertobosque"], [1448, 63.1, 8.9, "Tótem de ritual Muertobosque"], [1448, 60.8, 8.3, "Tótem de ritual Muertobosque"]]
+text = "Consigue {item:20741}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#44"]
+note = "Polestar paso 44 «Felpaw Village», objetivo 4 (collect)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-107"
+do = "accept"
+quest = 8470
+optional = true
+reqlevel = 45
+text = "Usa {item:20741} para empezar «{quest:8470}»."
+tip = "+11.148 XP · ~13 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#44"]
+note = "Polestar paso 44 «Felpaw Village», objetivo 5 (accept)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-108"
+do = "level"
+level = 54
+at = [1448, 62.76, 8.01]
+text = "Sube al nivel 54."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#44"]
+note = "Polestar paso 44 «Felpaw Village», objetivo 6 (level) · consejo de Polestar sin traducir: Grind on {npc:7156}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-109"
+do = "turnin"
+quest = 8461
+npc = 15395
+at = [1448, 64.77, 8.13]
+chain = "h53-frondavil-peste-oeste-s045-15395"
+text = "Entrega «{quest:8461}» a {npc:15395}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#45"]
+note = "Polestar paso 45 «Nafien», objetivo 1 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-110"
+do = "accept"
+quest = 8465
+npc = 15395
+at = [1448, 64.77, 8.13]
+chain = "h53-frondavil-peste-oeste-s045-15395"
+reqlevel = 45
+text = "Coge «{quest:8465}» de {npc:15395}."
+why = "+560 XP · <1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#45"]
+note = "Polestar paso 45 «Nafien», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-111"
+do = "turnin"
+quest = 8467
+npc = 15395
+at = [1448, 64.77, 8.13]
+optional = true
+chain = "h53-frondavil-peste-oeste-s045-15395"
+text = "Entrega «{quest:8467}» a {npc:15395}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#45"]
+note = "Polestar paso 45 «Nafien», objetivo 3 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-112"
+do = "note"
+text = "Guarda «{quest:8465}» para {map:1452}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#45"]
+note = "Polestar paso 45 «Nafien», objetivo 4 (note)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-113"
+do = "turnin"
+quest = 8470
+npc = 11558
+at = [1448, 65.5, 3.52]
+optional = true
+text = "Entrega «{quest:8470}» a {npc:11558}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#46"]
+note = "Polestar paso 46 «Timbermaw Hold», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:11558}: the Timbermaw speak to you only from Neutral; walks around here: look inside the circle on the map. · consejo de Polestar sin traducir: Step into the cave: {npc:11558} stands just inside."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-114"
+do = "turnin"
+quest = 5156
+npc = 10921
+at = [1448, 50.89, 81.62]
+text = "Entrega «{quest:5156}» a {npc:10921}."
+tip = "Sigue el camino al sur por {map:1448} hasta el Santuario."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#47"]
+note = "Polestar paso 47 «Emerald Sanctuary», objetivo 1 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-115"
+do = "turnin"
+quest = 5157
+npc = 10922
+at = [1448, 51.21, 82.11]
+chain = "h53-frondavil-peste-oeste-s047-10922"
+text = "Entrega «{quest:5157}» a {npc:10922}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#47"]
+note = "Polestar paso 47 «Emerald Sanctuary», objetivo 2 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-116"
+do = "accept"
+quest = 5158
+npc = 10922
+at = [1448, 51.21, 82.11]
+chain = "h53-frondavil-peste-oeste-s047-10922"
+reqlevel = 48
+text = "Coge «{quest:5158}» de {npc:10922}."
+why = "+2.550 XP · ~2,6 min · desbloquea «{quest:5242}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#47"]
+note = "Polestar paso 47 «Emerald Sanctuary», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-117"
+do = "turnin"
+quest = 4102
+npc = 9529
+at = [1448, 46.75, 83.13]
+text = "Entrega «{quest:4102}» a {npc:9529}, en el lado oeste del Santuario."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#47"]
+note = "Polestar paso 47 «Emerald Sanctuary», objetivo 4 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-118"
+do = "note"
+text = "Guarda «{quest:5158}»: {npc:5901} está en {map:1413}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#47"]
+note = "Polestar paso 47 «Emerald Sanctuary», objetivo 5 (note)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-119"
+do = "turnin"
+quest = 5385
+npc = 11019
+at = [1448, 51.35, 82.01]
+text = "Entrega «{quest:5385}» a {npc:11019}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#48"]
+note = "Polestar paso 48 «Jessir Arcolunar», objetivo 1 (turnin) · condición no expresable: llevas la misión 5385 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-120"
+do = "complete"
+quest = 6162
+obj = 1
+at = [1448, 48.2, 94.3]
+text = "Consigue {item:15879} (1) de {npc:9464} para «{quest:6162}»."
+tip = "El Señor Supremo Ror está en el extremo sur de {area:1761}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#49"]
+note = "Polestar paso 49 «Señor Supremo Ror», objetivo 1 (collect)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-121"
+do = "goto"
+at = [1448, 46.3, 89.4]
+if = { maxlevel = 53 }
+text = "Ve a {npc:7155}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#50"]
+note = "Polestar paso 50 «Level 54.7», objetivo 1 (goto) · consejo de Polestar sin traducir: Top up here to level 54.7 before the hand-ins at {area:1997} : they take you to level 55. Or, with a group, run the {area:1584} dungeon or the {area:1417} dungeon instead."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-122"
+do = "level"
+level = 54
+at = [1448, 46.37, 88.94]
+if = { maxlevel = 53 }
+text = "Sube al nivel 54."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#50"]
+note = "Polestar paso 50 «Level 54.7», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:7155}."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-123"
+do = "complete"
+quest = 4505
+obj = 1
+at = [1448, 32.3, 66.6]
+text = "Usa {item:12566} para «{quest:4505}»."
+tip = "Vuelve al sur pasando {area:1763} hasta la poza de la luna corrupta de los sátiros Fuego de Jade y llena allí el frasco de {npc:9996}. Recoge {item:12567} (1) de {obj:148501} para «{quest:4505}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#51"]
+note = "Polestar paso 51 «The Jadefire moonwell», objetivo 1 (use)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-124"
+do = "turnin"
+quest = 6162
+npc = 9620
+at = [1448, 34.8, 52.73]
+text = "Entrega «{quest:6162}» a {npc:9620}."
+tip = "Vuelve a cabalgar al norte por el camino."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#52"]
+note = "Polestar paso 52 «Bloodvenom Post», objetivo 1 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-125"
+do = "turnin"
+quest = 4505
+npc = 9996
+at = [1448, 34.21, 52.34]
+chain = "h53-frondavil-peste-oeste-s052-9996"
+text = "Entrega «{quest:4505}» a {npc:9996}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#52"]
+note = "Polestar paso 52 «Bloodvenom Post», objetivo 2 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-126"
+do = "accept"
+quest = 4506
+npc = 9996
+at = [1448, 34.21, 52.34]
+chain = "h53-frondavil-peste-oeste-s052-9996"
+reqlevel = 49
+text = "Coge «{quest:4506}» de {npc:9996}."
+why = "+5.450 XP · ~3,7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#52"]
+note = "Polestar paso 52 «Bloodvenom Post», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-127"
+do = "complete"
+quest = 4506
+obj = 1
+at = [1448, 32.3, 66.6]
+text = "Usa {item:12565} para «{quest:4506}»."
+tip = "Lleva el gatito a la misma poza de la luna y suéltalo allí con {item:12565}; cuando se haya convertido en un {npc:10042}, llévalo de vuelta a {npc:9996} y haz clic en él para entregarlo. {item:12565}, en la poza de la luna Fuego de Jade."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#53"]
+note = "Polestar paso 53 «Winna Hazzard's kitten», objetivo 1 (use)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-128"
+do = "complete"
+quest = 4506
+text = "Usa {item:12565} y completa «{quest:4506}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#53"]
+note = "Polestar paso 53 «Winna Hazzard's kitten», objetivo 2 (complete) · objetivos (EN): Return the corrupted cat to Winna Hazzard"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-129"
+do = "turnin"
+quest = 4506
+npc = 9996
+at = [1448, 34.21, 52.34]
+text = "Entrega «{quest:4506}» a {npc:9996}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#54"]
+note = "Polestar paso 54 «Winna Hazzard», objetivo 1 (turnin)"
+
+[[step]]
+id = "h53-frondavil-peste-oeste-130"
+do = "goto"
+at = [1448, 38.3, 61.7]
+if = { maxlevel = 53 }
+text = "Ve a {npc:7125}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#55"]
+note = "Polestar paso 55 «Level 54.87», objetivo 1 (goto) · consejo de Polestar sin traducir: Top up here to level 54.87 before the hand-ins in {map:1452}: they take you to level 55. Or, with a group, run the {area:1584} dungeon or the {area:1417} dungeon instead."
+
+[[step]]
+id = "h53-frondavil-peste-oeste-131"
+do = "level"
+level = 54
+at = [1448, 38.5, 61.41]
+if = { maxlevel = 53 }
+text = "Sube al nivel 54."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/02-felwood#55"]
+note = "Polestar paso 55 «Level 54.87», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:7125}."

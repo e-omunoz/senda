@@ -149,29 +149,39 @@ def main(argv=None) -> int:
     info = {"version": db.info.get("version"), "client_build": db.info.get("client_build"),
             "commit": db.info.get("build_commit")}
     repo = Path(args.root)
-    # Las bandas salen de TODAS las guías; --guide solo limita lo que se escribe.
+    # Las bandas salen de TODAS las guías de la misma facción (las de la Horda no mueven las de la Alianza);
+    # --guide solo limita lo que se escribe.
     results = [score_guide(d, repo / "data" / "shared", world) for d in guide_dirs(repo, None)]
-    bands = band_stats(results)
+    by_faction: dict[str, list] = {}
+    for res in results:
+        by_faction.setdefault(res["meta"].get("faction") or "Alliance", []).append(res)
+    bands_of = {f: band_stats(rs) for f, rs in by_faction.items()}
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
     for res in results:
-        decide_guide(res, bands)
+        fb = bands_of[res["meta"].get("faction") or "Alliance"]
+        decide_guide(res, fb)
         gid = res["meta"]["id"]
         if args.guide and gid not in args.guide:
             continue
-        out = public(res, bands, info)
+        out = public(res, fb, info)
         (out_dir / f"{gid}.json").write_text(dump_compact(out), encoding="utf-8", newline="\n")
         if args.report:
             (out_dir / f"{gid}.report.md").write_text(report(out), encoding="utf-8", newline="\n")
         s = out["summary"]
         print(f"{gid}: {s['quests']} misiones · keep {s['keep']} · optional {s['optional']} · drop {s['drop']} · "
               f"{s['minutes_quests']:.0f} min en misiones, {s['minutes_dropped']:.0f} min descartables")
-    bands_out = {b: {k: (round(v, 2) if isinstance(v, float) else v) for k, v in st.items() if not k.startswith("_")}
-                 for b, st in bands.items()}
-    (out_dir / "bands.json").write_text(json.dumps({"rate": "% del nivel por hora", "bands": bands_out},
-                                                   ensure_ascii=False, indent=1) + "\n", encoding="utf-8",
-                                        newline="\n")
-    print(f"bandas: {len(bands)} · {time.time() - t0:.1f}s")
+    for faction, fb in sorted(bands_of.items()):
+        bands_out = {b: {k: (round(v, 2) if isinstance(v, float) else v) for k, v in st.items()
+                         if not k.startswith("_")} for b, st in fb.items()}
+        if faction == "Alliance":  # el archivo de siempre
+            name, doc = "bands.json", {"rate": "% del nivel por hora", "bands": bands_out}
+        else:
+            name = f"bands-{faction.lower()}.json"
+            doc = {"rate": "% del nivel por hora", "faction": faction, "bands": bands_out}
+        (out_dir / name).write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8",
+                                    newline="\n")
+    print(f"bandas: {', '.join(f'{f} {len(b)}' for f, b in sorted(bands_of.items()))} · {time.time() - t0:.1f}s")
     return 0
 
 

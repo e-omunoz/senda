@@ -1,5 +1,9 @@
 # Importación de Polestar: guías de la Horda (1-60)
 
+> **Sustituido en la fase 4** por las guías que se publican ([ROUTE-HORDE.md](ROUTE-HORDE.md), `tools/gen_horde.py`):
+> una guía por raza (`<raza>-horde`) con la cadena común en `data/shared/h*.toml`, filtrada con el filtro de eficiencia.
+> Las importaciones en bruto `ps-horde-*` que describe este documento no se guardan en el repositorio.
+
 Cuatro guías nuevas, una por raza de la Horda con inicio propio, importadas con `tools/import_polestar.py` (sin cambios) del clon de
 Polestar (GPL-3) en el commit `19bd636e7d6f33231770f6029c76d2d4dfc63798`. Mismo mecanismo que `nightelf-druid-ps-full`
 (`docs/IMPORT.md`, `docs/IMPORT-REPORT.md`): `order = -1` (nunca se elige sola; sale en el desplegable y se elige con

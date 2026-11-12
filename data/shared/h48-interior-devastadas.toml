@@ -1,0 +1,1359 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/40-50/05-the-hinterlands
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h48-interior-devastadas"
+title = "Tierras del Interior y Las Tierras Devastadas"
+levels = [48, 50]
+map = 1425
+summary = "Ruta común de la Horda, 48-50: Tierras del Interior y Las Tierras Devastadas."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h48-interior-devastadas-001"
+do = "goto"
+at = [1427, 34.8, 30.6]
+text = "Ve al maestro de vuelo de {area:1446}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#1"]
+note = "Polestar paso 1 «Fly to Tarren Mill», objetivo 1 (goto)"
+
+[[step]]
+id = "h48-interior-devastadas-002"
+do = "fly"
+zone = 1425
+text = "Vuela a Molino Tarren."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#1"]
+note = "Polestar paso 1 «Fly to Tarren Mill», objetivo 2 (fly)"
+
+[[step]]
+id = "h48-interior-devastadas-003"
+do = "goto"
+at = [1425, 26.7, 48.6]
+text = "Ve a campamento de {npc:7801}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#2"]
+note = "Polestar paso 2 «The Hinterlands», objetivo 1 (goto)"
+
+[[step]]
+id = "h48-interior-devastadas-004"
+do = "turnin"
+quest = 650
+npc = 7801
+at = [1425, 26.71, 48.59]
+chain = "h48-interior-devastadas-s003-7801"
+text = "Entrega «{quest:650}» a {npc:7801}."
+tip = "Ve al noreste desde {area:272} hasta {map:1425} y sigue el camino hacia el este; {npc:7801} acampa en la colina al sur de {area:350} de los elfos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#3"]
+note = "Polestar paso 3 «Gilveradin Cazasol's camp», objetivo 1 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-005"
+do = "accept"
+quest = 77
+npc = 7801
+at = [1425, 26.71, 48.59]
+chain = "h48-interior-devastadas-s003-7801"
+reqlevel = 42
+text = "Coge «{quest:77}» de {npc:7801}."
+why = "+4.400 XP · ~6,5 min · desbloquea «{quest:81}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#3"]
+note = "Polestar paso 3 «Gilveradin Cazasol's camp», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h48-interior-devastadas-006"
+do = "complete"
+quest = 2995
+obj = 3
+at = [1425, 28.56, 46.05]
+text = "Usa {obj:144073} para «{quest:2995}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#4"]
+note = "Polestar paso 4 «Highvale», objetivo 1 (interact) · consejo de Polestar sin traducir: The Highvale elves camp around {area:350}. Burn the report, the notes and the records in their camps. {npc:7780} is held inside the lodge: lead him out and fight off the ambush on the way.\nCareful: Groups of about three elves ambush the escort, usually twice."
+
+[[step]]
+id = "h48-interior-devastadas-007"
+do = "complete"
+quest = 2995
+obj = 2
+at = [1425, 29.63, 48.66]
+text = "Usa {obj:144072} para «{quest:2995}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#4"]
+note = "Polestar paso 4 «Highvale», objetivo 2 (interact)"
+
+[[step]]
+id = "h48-interior-devastadas-008"
+do = "complete"
+quest = 2995
+obj = 1
+at = [1425, 31.99, 46.82]
+text = "Usa {obj:144071} para «{quest:2995}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#4"]
+note = "Polestar paso 4 «Highvale», objetivo 3 (interact)"
+
+[[step]]
+id = "h48-interior-devastadas-009"
+do = "accept"
+quest = 2742
+npc = 7780
+at = [1425, 30.73, 46.9]
+escort = true
+reqlevel = 42
+text = "Coge «{quest:2742}» de {npc:7780}."
+why = "+4.200 XP · ~6 min · desbloquea «{quest:8273}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#4"]
+note = "Polestar paso 4 «Highvale», objetivo 4 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-010"
+do = "complete"
+quest = 2742
+escort = true
+text = "Completa «{quest:2742}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#4"]
+note = "Polestar paso 4 «Highvale», objetivo 5 (complete) · objetivos (EN): Escort Rin'ji to safety"
+
+[[step]]
+id = "h48-interior-devastadas-011"
+do = "complete"
+quest = 2641
+obj = 1
+at = [1425, 40.6, 59.7]
+text = "Recoge {item:8526} (1) de {obj:141853} para «{quest:2641}»."
+tip = "Al este del poblado, la flor violeta crece en las colinas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#5"]
+note = "Polestar paso 5 «Tragano violeta», objetivo 1 (collect) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h48-interior-devastadas-012"
+do = "accept"
+quest = 7839
+npc = 14737
+at = [1425, 77.23, 80.13]
+reqlevel = 44
+text = "Coge «{quest:7839}» de {npc:14737}."
+tip = "Sigue los caminos hacia el este a través de {map:1425} hasta el poblado trol de la costa este."
+why = "+4.400 XP · ~5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#6"]
+note = "Polestar paso 6 «Revantusk Village», objetivo 1 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-013"
+do = "sethearth"
+npc = 14731
+zone = 1425
+at = [1425, 78.14, 81.38]
+text = "Pon la piedra de hogar en {area:3317} con {npc:14731}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#6"]
+note = "Polestar paso 6 «Revantusk Village», objetivo 2 (sethome)"
+
+[[step]]
+id = "h48-interior-devastadas-014"
+do = "accept"
+quest = 7840
+npc = 14731
+at = [1425, 78.14, 81.38]
+reqlevel = 44
+text = "Coge «{quest:7840}» de {npc:14731}."
+why = "+4.840 XP · ~2 min · 3,3× la mediana del 46-50"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#6"]
+note = "Polestar paso 6 «Revantusk Village», objetivo 3 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-015"
+do = "getfp"
+npc = 4314
+node = "76"
+at = [1425, 81.7, 81.76]
+text = "Coge la ruta de vuelo de Poblado Sañadiente con {npc:4314}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#6"]
+note = "Polestar paso 6 «Revantusk Village», objetivo 4 (getfp)"
+
+[[step]]
+id = "h48-interior-devastadas-016"
+do = "accept"
+quest = 7815
+npc = 14740
+at = [1425, 80.33, 81.54]
+optional = true
+reqlevel = 44
+text = "Coge «{quest:7815}» de {npc:14740}."
+tip = "+9.410 XP · ~18 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#6"]
+note = "Polestar paso 6 «Revantusk Village», objetivo 5 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-017"
+do = "accept"
+quest = 7830
+npc = 14741
+at = [1425, 79.16, 79.53]
+chain = "h48-interior-devastadas-s006-14741"
+reqlevel = 44
+text = "Coge «{quest:7830}» de {npc:14741}."
+why = "+4.640 XP · ~1 min · 4,6× la mediana del 46-50"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#6"]
+note = "Polestar paso 6 «Revantusk Village», objetivo 6 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-018"
+do = "accept"
+quest = 7829
+npc = 14741
+at = [1425, 79.16, 79.53]
+chain = "h48-interior-devastadas-s006-14741"
+reqlevel = 44
+text = "Coge «{quest:7829}» de {npc:14741}."
+why = "+8.720 XP · ~14 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#6"]
+note = "Polestar paso 6 «Revantusk Village», objetivo 7 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-020"
+do = "accept"
+quest = 7841
+npc = 14738
+at = [1425, 79.38, 79.08]
+optional = true
+reqlevel = 44
+text = "Coge «{quest:7841}» de {npc:14738}."
+tip = "+15.980 XP · ~32 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#6"]
+note = "Polestar paso 6 «Revantusk Village», objetivo 9 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-022"
+do = "accept"
+quest = 7816
+npc = 14740
+at = [1425, 80.33, 81.54]
+optional = true
+reqlevel = 44
+text = "Coge «{quest:7816}» de {npc:14740}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#7"]
+note = "Polestar paso 7 «Revantusk Village», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 7816"
+
+[[step]]
+id = "h48-interior-devastadas-023"
+do = "accept"
+quest = 7849
+npc = 14741
+at = [1425, 79.16, 79.53]
+optional = true
+reqlevel = 46
+text = "Coge «{quest:7849}» de {npc:14741}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#8"]
+note = "Polestar paso 8 «Revantusk Village», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 7849 · consejo de Polestar sin traducir: «{quest:7849}», «{quest:7845}» and «{quest:7850}» are group quests: they send you into {area:354}, whose trolls are elite (46-50). Take them with a group of three or more; skip them if you are alone, the route has you grind the experience back.\n{npc:14736} stands up on top of the inn, above {npc:14731}: go up, the arrow cannot tell the levels apart."
+
+[[step]]
+id = "h48-interior-devastadas-024"
+do = "accept"
+quest = 7845
+npc = 14736
+at = [1425, 78.2, 81.18]
+optional = true
+chain = "h48-interior-devastadas-s008-14736"
+reqlevel = 46
+text = "Coge «{quest:7845}» de {npc:14736}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#8"]
+note = "Polestar paso 8 «Revantusk Village», objetivo 2 (accept) · condición no expresable: vas en grupo para la misión 7849"
+
+[[step]]
+id = "h48-interior-devastadas-025"
+do = "accept"
+quest = 7850
+npc = 14736
+at = [1425, 78.2, 81.18]
+optional = true
+chain = "h48-interior-devastadas-s008-14736"
+reqlevel = 46
+text = "Coge «{quest:7850}» de {npc:14736}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#8"]
+note = "Polestar paso 8 «Revantusk Village», objetivo 3 (accept) · condición no expresable: vas en grupo para la misión 7849"
+
+[[step]]
+id = "h48-interior-devastadas-026"
+do = "complete"
+quest = 7815
+obj = 1
+at = [1425, 76.17, 83.97]
+wps = [[1425, 76.8, 85.2, "Quijaforte Aguasalada"], [1425, 80.6, 77.3, "Quijaforte Aguasalada"], [1425, 80.7, 69.4, "Quijaforte Aguasalada"]]
+optional = true
+text = "Mata {npc:2505} (15) para «{quest:7815}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#9"]
+note = "Polestar paso 9 «The Overlook Cliffs: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: The big turtles crawl along the beaches north of the village, and {npc:2491}'s bottles of port lie on the same beaches, from the village up to the {area:307}: pick them up as you go. A snapjaw can drop OOX-09/HL's distress beacon, rarely: keep it."
+
+[[step]]
+id = "h48-interior-devastadas-027"
+do = "complete"
+quest = 580
+obj = 1
+at = [1425, 76.26, 85.62]
+wps = [[1425, 75.4, 86.7, "Oporto Pupellyverbos"], [1425, 77.2, 82.3, "Oporto Pupellyverbos"], [1425, 79.6, 81.6, "Oporto Pupellyverbos"]]
+text = "Recoge {item:3900} (12) de {obj:2068} para «{quest:580}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#9"]
+note = "Polestar paso 9 «The Overlook Cliffs: kill these as you meet them», objetivo 2 (collect) · consejo de Polestar sin traducir: {obj:2068}, on the beaches."
+
+[[step]]
+id = "h48-interior-devastadas-028"
+do = "loot"
+item = 8704
+count = 1
+at = [1425, 69.33, 62.4]
+wps = [[1425, 58.8, 51.1, "Localizador de emergencia OOX-09/HL"], [1425, 32.4, 56.9, "Localizador de emergencia OOX-09/HL"], [1425, 30.3, 48.0, "Localizador de emergencia OOX-09/HL"]]
+optional = true
+text = "Consigue {item:8704}."
+tip = "{item:8704}, botín poco común."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#9"]
+note = "Polestar paso 9 «The Overlook Cliffs: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-029"
+do = "complete"
+quest = 7816
+obj = 1
+at = [1425, 80.4, 58.2]
+optional = true
+text = "Consigue {item:19023} (1) de {npc:7977} para «{quest:7816}»."
+tip = "Son enemigos élite: se recomienda ir en grupo, busca a gente con quien hacerlo. {npc:7977} es élite de nivel 48: la mayoría de las clases puede con ella en solitario a nivel 50, pero quizá necesites ayuda. Sáltatela si vas solo: la ruta te hace recuperar la experiencia matando.\n{npc:7977} recorre la orilla bajo {area:307}, desde la flecha hacia el sur hasta 75,66 aprox. y hacia el norte hasta 82,52 aprox.: si no está en la flecha, sigue la orilla. Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#10"]
+note = "Polestar paso 10 «The Overlook Cliffs: kill these as you meet them», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 7816"
+
+[[step]]
+id = "h48-interior-devastadas-030"
+do = "turnin"
+quest = 2742
+at = [1425, 86.3, 59.01]
+text = "Entrega «{quest:2742}» en {obj:142127}."
+tip = "El secreto está en {area:307}, sobre la playa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#11"]
+note = "Polestar paso 11 ««El secreto de Rin'ji»», objetivo 1 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-031"
+do = "accept"
+quest = 2782
+at = [1425, 86.3, 59.01]
+reqlevel = 42
+text = "Coge «{quest:2782}» ({obj:142127})."
+tip = "Para {npc:7825} en {map:1458}, hacia el nivel 50."
+why = "+1.680 XP · <1 min · desbloquea «{quest:8273}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#11"]
+note = "Polestar paso 11 ««El secreto de Rin'ji»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h48-interior-devastadas-032"
+do = "complete"
+quest = 7840
+obj = 1
+at = [1425, 84.5, 41.2]
+text = "Consigue {item:19034} (1) de {npc:14748} para «{quest:7840}»."
+tip = "Al norte por la costa, la cesta de merienda de {npc:14731} está en el islote; la vigila un {npc:14748}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#12"]
+note = "Polestar paso 12 «Lard's lunch», objetivo 1 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-033"
+do = "turnin"
+quest = 626
+at = [1425, 80.79, 46.82]
+text = "Entrega «{quest:626}» en {obj:2556}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#13"]
+note = "Polestar paso 13 ««El enigma de Cortello»», objetivo 1 (turnin) · condición no expresable: llevas la misión 626 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h48-interior-devastadas-035"
+do = "complete"
+quest = 7839
+obj = 1
+at = [1425, 72.6, 52.9]
+wps = [[1425, 71.0, 48.6, "Herramientas perdidas de Esco"], [1425, 66.4, 44.8, "Herramientas perdidas de Esco"], [1425, 57.4, 42.6, "Herramientas perdidas de Esco"]]
+text = "Recoge {item:19033} (1) de {obj:179908} para «{quest:7839}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#14"]
+note = "Polestar paso 14 «Shaol'watha: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-038"
+do = "complete"
+quest = 7830
+obj = 1
+at = [1425, 71.2, 49.8]
+wps = [[1425, 65.0, 44.7, "Penacho de Señor del Cielo"], [1425, 61.5, 47.4, "Penacho de Señor del Cielo"], [1425, 60.5, 54.2, "Penacho de Señor del Cielo"]]
+text = "Consigue {item:19025} (1) de {npc:2659} para «{quest:7830}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#14"]
+note = "Polestar paso 14 «Shaol'watha: kill these as you meet them», objetivo 5 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-039"
+do = "complete"
+quest = 7829
+obj = 1
+at = [1425, 64.8, 50.6]
+wps = [[1425, 63.3, 50.6, "Lechubestia salvaje"], [1425, 61.6, 55.3, "Lechubestia salvaje"], [1425, 58.8, 53.1, "Lechubestia salvaje"]]
+text = "Mata {npc:2929} (20) para «{quest:7829}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#14"]
+note = "Polestar paso 14 «Shaol'watha: kill these as you meet them», objetivo 6 (kill)"
+
+[[step]]
+id = "h48-interior-devastadas-040"
+do = "complete"
+quest = 77
+obj = 1
+at = [1425, 59.99, 42.49]
+wps = [[1425, 58.2, 41.8, "Calimocho dulce de las Tierras del Interior"], [1425, 46.5, 39.4, "Calimocho dulce de las Tierras del Interior"]]
+text = "Recoge {item:8684} (10) de {obj:142191} para «{quest:77}»."
+tip = "Las cajas de {item:8684} están alrededor del campamento abandonado de la Horda en {area:351}, entre los mocos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#15"]
+note = "Polestar paso 15 «Skulk Rock», objetivo 1 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-041"
+do = "complete"
+quest = 3123
+obj = 1
+at = [1425, 61.0, 42.8]
+wps = [[1425, 62.1, 42.6, "Lechúcico muisek"], [1425, 58.8, 53.1, "Lechúcico muisek"], [1425, 65.6, 57.5, "Lechúcico muisek"]]
+text = "Consigue {item:9594} (10) para «{quest:3123}»."
+tip = "Usa {item:9618} para «{quest:3123}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#16"]
+note = "Polestar paso 16 «Lechúcico muisek», objetivo 1 (collect) · consejo de Polestar sin traducir: Careful: Stealthed wolves and griffons roam the {area:1883} area."
+
+[[step]]
+id = "h48-interior-devastadas-042"
+do = "loot"
+item = 4589
+count = 10
+at = [1425, 61.4, 42.4]
+wps = [[1425, 62.6, 41.8, "Pluma elegante larga"], [1425, 65.8, 50.0, "Pluma elegante larga"], [1425, 71.2, 49.8, "Pluma elegante larga"]]
+text = "Consigue {item:4589} (10)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#16"]
+note = "Polestar paso 16 «Lechúcico muisek», objetivo 3 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-046"
+do = "accept"
+quest = 485
+optional = true
+reqlevel = 43
+text = "Usa {item:8704} para empezar «{quest:485}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#18"]
+note = "Polestar paso 18 «OOX-09/HL», objetivo 1 (accept) · consejo de Polestar sin traducir: Only with the distress beacon: the robot sits at the head of the river west of {area:351}. Escort it east to the shore beyond the {area:307}; its reward waits with Oglethorpe in {area:35}.\nCareful: Two ambushes spawn during the escort: first three wildkin owlbeasts, then three trolls. Before each, the robot halts and announces it senses danger. Oozes, stealthed wolves and a large turtle along the path can join fights, and they respawn even if cleared beforehand."
+
+[[step]]
+id = "h48-interior-devastadas-047"
+do = "turnin"
+quest = 485
+npc = 7806
+at = [1425, 49.35, 37.66]
+optional = true
+chain = "h48-interior-devastadas-s018-7806"
+text = "Entrega «{quest:485}» a {npc:7806}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#18"]
+note = "Polestar paso 18 «OOX-09/HL», objetivo 2 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-048"
+do = "accept"
+quest = 836
+npc = 7806
+at = [1425, 49.35, 37.66]
+optional = true
+escort = true
+chain = "h48-interior-devastadas-s018-7806"
+reqlevel = 43
+text = "Coge «{quest:836}» de {npc:7806}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#18"]
+note = "Polestar paso 18 «OOX-09/HL», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h48-interior-devastadas-049"
+do = "complete"
+quest = 836
+optional = true
+escort = true
+text = "Completa «{quest:836}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#18"]
+note = "Polestar paso 18 «OOX-09/HL», objetivo 4 (complete) · objetivos (EN): Escort OOX-09/HL to the shoreline beyond Overlook Cliff"
+
+[[step]]
+id = "h48-interior-devastadas-050"
+do = "turnin"
+quest = 77
+npc = 7801
+at = [1425, 26.71, 48.59]
+chain = "h48-interior-devastadas-s019-7801"
+text = "Entrega «{quest:77}» a {npc:7801}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#19"]
+note = "Polestar paso 19 «Gilveradin Cazasol's camp», objetivo 1 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-051"
+do = "accept"
+quest = 81
+npc = 7801
+at = [1425, 26.71, 48.59]
+chain = "h48-interior-devastadas-s019-7801"
+reqlevel = 42
+text = "Coge «{quest:81}» de {npc:7801}."
+tip = "Para {npc:6986} en {map:1454}, hacia el nivel 50."
+why = "+4.400 XP · ~1,4 min · 2,5× la mediana del 51-55"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#19"]
+note = "Polestar paso 19 «Gilveradin Cazasol's camp», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h48-interior-devastadas-052"
+do = "complete"
+quest = 7841
+obj = 1
+at = [1425, 29.66, 50.05]
+wps = [[1425, 31.2, 49.5, "Explorador Vallealto"], [1425, 33.2, 49.2, "Explorador Vallealto"], [1425, 33.2, 44.7, "Explorador Vallealto"]]
+optional = true
+text = "Mata {npc:2692} (15) para «{quest:7841}»."
+tip = "Vuelve al oeste a {area:350}; los forestales y tiradores están cerca del refugio, y los exploradores y avanzadas, en las laderas al sur."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#20"]
+note = "Polestar paso 20 «Highvale», objetivo 1 (kill)"
+
+[[step]]
+id = "h48-interior-devastadas-053"
+do = "complete"
+quest = 7841
+obj = 2
+at = [1425, 29.6, 51.41]
+wps = [[1425, 33.1, 51.0, "Avanzada Vallealto"], [1425, 33.7, 48.1, "Avanzada Vallealto"], [1425, 33.7, 43.3, "Avanzada Vallealto"]]
+optional = true
+text = "Mata {npc:2691} (15) para «{quest:7841}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#20"]
+note = "Polestar paso 20 «Highvale», objetivo 2 (kill)"
+
+[[step]]
+id = "h48-interior-devastadas-054"
+do = "complete"
+quest = 7841
+obj = 3
+at = [1425, 30.25, 48.75]
+wps = [[1425, 28.6, 45.7, "Forestal Vallealto"], [1425, 30.2, 43.4, "Forestal Vallealto"]]
+optional = true
+text = "Mata {npc:2694} (15) para «{quest:7841}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#20"]
+note = "Polestar paso 20 «Highvale», objetivo 3 (kill)"
+
+[[step]]
+id = "h48-interior-devastadas-055"
+do = "complete"
+quest = 7841
+obj = 4
+at = [1425, 29.78, 48.45]
+wps = [[1425, 31.6, 47.5, "Tirador Vallealto"], [1425, 31.9, 43.1, "Tirador Vallealto"]]
+optional = true
+text = "Mata {npc:2693} (15) para «{quest:7841}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#20"]
+note = "Polestar paso 20 «Highvale», objetivo 4 (kill)"
+
+[[step]]
+id = "h48-interior-devastadas-056"
+do = "complete"
+quest = 7849
+obj = 1
+at = [1425, 58.6, 64.8]
+optional = true
+text = "Recoge {item:19069} (1) de {obj:179915} para «{quest:7849}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#21"]
+note = "Polestar paso 21 «Jintha'Alor», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 7849 · consejo de Polestar sin traducir: Huntsman Malkhor's skull lies on a pile below the Vilebranch ruins, his bones on a pile at the foot of {area:354}. The Vessels of Tainted Blood sit on the lower terraces, and {npc:14757} is held at the top. The trolls inside are elite: stay with your group and keep to the paths."
+
+[[step]]
+id = "h48-interior-devastadas-057"
+do = "turnin"
+quest = 7845
+npc = 14757
+at = [1425, 59.69, 77.84]
+optional = true
+text = "Entrega «{quest:7845}» a {npc:14757}, en la cima de {area:354}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#21"]
+note = "Polestar paso 21 «Jintha'Alor», objetivo 2 (turnin) · condición no expresable: vas en grupo para la misión 7849"
+
+[[step]]
+id = "h48-interior-devastadas-058"
+do = "note"
+optional = true
+text = "Su siguiente encargo, que continúa en {area:355}, es para grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#21"]
+note = "Polestar paso 21 «Jintha'Alor», objetivo 3 (note) · condición no expresable: vas en grupo para la misión 7849"
+
+[[step]]
+id = "h48-interior-devastadas-059"
+do = "complete"
+quest = 7849
+obj = 2
+at = [1425, 62.1, 75.3]
+optional = true
+text = "Recoge {item:19070} (1) de {obj:179914} para «{quest:7849}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#21"]
+note = "Polestar paso 21 «Jintha'Alor», objetivo 4 (collect) · condición no expresable: vas en grupo para la misión 7849"
+
+[[step]]
+id = "h48-interior-devastadas-060"
+do = "complete"
+quest = 7850
+obj = 1
+at = [1425, 63.56, 73.42]
+wps = [[1425, 62.2, 72.5, "Vasija de sangre corrupta"], [1425, 62.3, 68.4, "Vasija de sangre corrupta"], [1425, 64.9, 67.2, "Vasija de sangre corrupta"]]
+optional = true
+text = "Recoge {item:19071} (10) de {obj:179922} para «{quest:7850}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#21"]
+note = "Polestar paso 21 «Jintha'Alor», objetivo 5 (collect) · condición no expresable: vas en grupo para la misión 7849"
+
+[[step]]
+id = "h48-interior-devastadas-061"
+do = "turnin"
+quest = 7839
+npc = 14737
+at = [1425, 77.23, 80.13]
+text = "Entrega «{quest:7839}» a {npc:14737}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#22"]
+note = "Polestar paso 22 «Revantusk Village», objetivo 1 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-062"
+do = "turnin"
+quest = 7840
+npc = 14731
+at = [1425, 78.14, 81.38]
+text = "Entrega «{quest:7840}» a {npc:14731}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#22"]
+note = "Polestar paso 22 «Revantusk Village», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:14731}, inside."
+
+[[step]]
+id = "h48-interior-devastadas-063"
+do = "turnin"
+quest = 7815
+npc = 14740
+at = [1425, 80.33, 81.54]
+optional = true
+text = "Entrega «{quest:7815}» a {npc:14740}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#22"]
+note = "Polestar paso 22 «Revantusk Village», objetivo 3 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-064"
+do = "turnin"
+quest = 7830
+npc = 14741
+at = [1425, 79.16, 79.53]
+chain = "h48-interior-devastadas-s022-14741"
+text = "Entrega «{quest:7830}» a {npc:14741}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#22"]
+note = "Polestar paso 22 «Revantusk Village», objetivo 4 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-065"
+do = "turnin"
+quest = 7829
+npc = 14741
+at = [1425, 79.16, 79.53]
+chain = "h48-interior-devastadas-s022-14741"
+text = "Entrega «{quest:7829}» a {npc:14741}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#22"]
+note = "Polestar paso 22 «Revantusk Village», objetivo 5 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-067"
+do = "turnin"
+quest = 7841
+npc = 14738
+at = [1425, 79.38, 79.08]
+optional = true
+chain = "h48-interior-devastadas-s022-14738"
+text = "Entrega «{quest:7841}» a {npc:14738}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#22"]
+note = "Polestar paso 22 «Revantusk Village», objetivo 7 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-068"
+do = "accept"
+quest = 7842
+npc = 14738
+at = [1425, 79.38, 79.08]
+optional = true
+chain = "h48-interior-devastadas-s022-14738"
+reqlevel = 44
+text = "Coge «{quest:7842}» de {npc:14738}."
+tip = "+11.636 XP · ~24 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#22"]
+note = "Polestar paso 22 «Revantusk Village», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h48-interior-devastadas-070"
+do = "turnin"
+quest = 7842
+npc = 14738
+at = [1425, 79.38, 79.08]
+optional = true
+chain = "h48-interior-devastadas-s022-14738"
+text = "Entrega «{quest:7842}» a {npc:14738}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#22"]
+note = "Polestar paso 22 «Revantusk Village», objetivo 10 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-071"
+do = "accept"
+quest = 7843
+npc = 14738
+at = [1425, 79.38, 79.08]
+chain = "h48-interior-devastadas-s022-14738"
+reqlevel = 44
+text = "Coge «{quest:7843}» de {npc:14738}."
+why = "+5.900 XP · ~7,4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#22"]
+note = "Polestar paso 22 «Revantusk Village», objetivo 11 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h48-interior-devastadas-072"
+do = "turnin"
+quest = 7850
+npc = 14736
+at = [1425, 78.2, 81.18]
+optional = true
+text = "Entrega «{quest:7850}» a {npc:14736}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#23"]
+note = "Polestar paso 23 «Revantusk Village», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 7849 · consejo de Polestar sin traducir: {npc:14736} stands up on top of the inn, above {npc:14731}: go up, the arrow cannot tell the levels apart."
+
+[[step]]
+id = "h48-interior-devastadas-073"
+do = "turnin"
+quest = 7849
+npc = 14741
+at = [1425, 79.16, 79.53]
+optional = true
+text = "Entrega «{quest:7849}» a {npc:14741}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#23"]
+note = "Polestar paso 23 «Revantusk Village», objetivo 2 (turnin) · condición no expresable: vas en grupo para la misión 7849"
+
+[[step]]
+id = "h48-interior-devastadas-074"
+do = "turnin"
+quest = 7816
+npc = 14740
+at = [1425, 80.33, 81.54]
+optional = true
+text = "Entrega «{quest:7816}» a {npc:14740}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#24"]
+note = "Polestar paso 24 «Revantusk Village», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 7816"
+
+[[step]]
+id = "h48-interior-devastadas-075"
+do = "goto"
+at = [1425, 77.8, 68.9]
+if = { maxlevel = 48 }
+text = "Ve a {npc:2505}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#25"]
+note = "Polestar paso 25 «Level 49.02», objetivo 1 (goto) · consejo de Polestar sin traducir: If you skipped «{quest:7816}» or the {area:354} group quests, grind here to level 49.02 to stay on the route's plan. Or, with a group, run the {area:2100} dungeon instead."
+
+[[step]]
+id = "h48-interior-devastadas-076"
+do = "level"
+level = 49
+at = [1425, 78.17, 68.48]
+if = { maxlevel = 48 }
+text = "Sube al nivel 49."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#25"]
+note = "Polestar paso 25 «Level 49.02», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:2505}."
+
+[[step]]
+id = "h48-interior-devastadas-077"
+do = "turnin"
+quest = 1429
+npc = 5598
+at = [1425, 33.75, 75.21]
+chain = "h48-interior-devastadas-s026-5598"
+text = "Entrega «{quest:1429}» a {npc:5598}."
+tip = "De nuevo al suroeste, el exiliado se esconde junto a las ruinas de {area:353}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#26"]
+note = "Polestar paso 26 ««El exiliado Atal'ai»», objetivo 1 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-078"
+do = "accept"
+quest = 1444
+npc = 5598
+at = [1425, 33.75, 75.21]
+chain = "h48-interior-devastadas-s026-5598"
+reqlevel = 38
+text = "Coge «{quest:1444}» de {npc:5598}."
+why = "+3.750 XP · <1 min · 14,4× la mediana del 46-50"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#26"]
+note = "Polestar paso 26 ««El exiliado Atal'ai»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h48-interior-devastadas-080"
+do = "goto"
+at = [1425, 23.4, 58.1]
+text = "Ve al punto marcado."
+tip = "Al sur del refugio, los trols Secacorteza ocupan sus poblados. Todos llevan un cráneo: con veinte, usa {item:15002} para hacer el Pico cargado de Nimboya y clávalo dentro del poblado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#28"]
+note = "Polestar paso 28 ««Un macabro mensaje»», objetivo 1 (goto) · condición no expresable: llevas la misión 2932 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h48-interior-devastadas-081"
+do = "loot"
+item = 9320
+count = 20
+at = [1425, 23.12, 58.47]
+wps = [[1425, 22.8, 56.9, "Cráneo Secacorteza"], [1425, 24.6, 59.1, "Cráneo Secacorteza"], [1425, 25.5, 66.2, "Cráneo Secacorteza"]]
+text = "Consigue {item:9320} (20) de {npc:2649} y {npc:2650} y {npc:2651} y {npc:2652} y {npc:2653} y {npc:2654}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#28"]
+note = "Polestar paso 28 ««Un macabro mensaje»», objetivo 2 (collect) · condición no expresable: llevas la misión 2932 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h48-interior-devastadas-082"
+do = "use"
+item = 15002
+at = [1425, 29.5, 58.5]
+text = "Usa {item:15002}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#28"]
+note = "Polestar paso 28 ««Un macabro mensaje»», objetivo 3 (use) · condición no expresable: llevas la misión 2932 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h48-interior-devastadas-083"
+do = "use"
+item = 9319
+at = [1425, 29.5, 58.5]
+text = "Usa {item:9319}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#28"]
+note = "Polestar paso 28 ««Un macabro mensaje»», objetivo 4 (use) · condición no expresable: llevas la misión 2932 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h48-interior-devastadas-084"
+do = "complete"
+quest = 2932
+text = "Usa {item:15002} y completa «{quest:2932}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#28"]
+note = "Polestar paso 28 ««Un macabro mensaje»», objetivo 5 (complete) · condición no expresable: llevas la misión 2932 (implícita: el paso es de esa misión) · objetivos (EN): Place the grim message."
+
+[[step]]
+id = "h48-interior-devastadas-085"
+do = "goto"
+at = [1425, 14.3, 48.1]
+text = "Ve a pozo de {area:348}."
+tip = "Ve hasta el extremo oeste, a {area:348}, la ciudad de los Martillo Salvaje, y deja el mensaje junto al pozo del centro. La ciudad está llena de guardias de la Alianza: entra, déjalo y sal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#29"]
+note = "Polestar paso 29 «Aerie Peak», objetivo 1 (goto)"
+
+[[step]]
+id = "h48-interior-devastadas-086"
+do = "complete"
+quest = 7843
+text = "Usa {item:19036} y completa «{quest:7843}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#29"]
+note = "Polestar paso 29 «Aerie Peak», objetivo 2 (complete) · objetivos (EN): Message to the Wildhammer Delivered"
+
+[[step]]
+id = "h48-interior-devastadas-087"
+do = "turnin"
+quest = 7843
+npc = 14738
+at = [1425, 79.38, 79.08]
+text = "Entrega «{quest:7843}» a {npc:14738}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#30"]
+note = "Polestar paso 30 «Revantusk Village», objetivo 1 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-088"
+do = "goto"
+at = [1425, 81.7, 81.9]
+text = "Ve al maestro de vuelo de {area:3317}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#31"]
+note = "Polestar paso 31 «Fly to Stonard», objetivo 1 (goto)"
+
+[[step]]
+id = "h48-interior-devastadas-089"
+do = "fly"
+zone = 1435
+text = "Vuela a Rocal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#31"]
+note = "Polestar paso 31 «Fly to Stonard», objetivo 2 (fly)"
+
+[[step]]
+id = "h48-interior-devastadas-090"
+do = "turnin"
+quest = 1444
+npc = 1443
+at = [1435, 47.93, 54.78]
+text = "Entrega «{quest:1444}» a {npc:1443}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#32"]
+note = "Polestar paso 32 «Fel'zerul», objetivo 1 (turnin) · consejo de Polestar sin traducir: On the top floor."
+
+[[step]]
+id = "h48-interior-devastadas-091"
+do = "accept"
+quest = 2784
+npc = 7572
+at = [1435, 34.29, 66.14]
+reqlevel = 45
+text = "Coge «{quest:2784}» de {npc:7572}."
+why = "+470 XP · ~1,5 min · desbloquea «{quest:2621}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#33"]
+note = "Polestar paso 33 «Héroe caído de la Horda», objetivo 1 (accept) · consejo de Polestar sin traducir: The ghostly orc stands by the road where the swamp meets the canyon into the {map:1419}. Listen to his story."
+
+[[step]]
+id = "h48-interior-devastadas-092"
+do = "complete"
+quest = 2784
+obj = 1
+npc = 7572
+at = [1435, 34.3, 66.1]
+text = "Habla con {npc:7572} para «{quest:2784}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#34"]
+note = "Polestar paso 34 ««Pérdida de honor»», objetivo 1 (talk)"
+
+[[step]]
+id = "h48-interior-devastadas-093"
+do = "turnin"
+quest = 2784
+npc = 7572
+at = [1435, 34.29, 66.14]
+chain = "h48-interior-devastadas-s035-7572"
+text = "Entrega «{quest:2784}» a {npc:7572}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#35"]
+note = "Polestar paso 35 «Héroe caído de la Horda», objetivo 1 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-094"
+do = "accept"
+quest = 2621
+npc = 7572
+at = [1435, 34.29, 66.14]
+chain = "h48-interior-devastadas-s035-7572"
+reqlevel = 45
+text = "Coge «{quest:2621}» de {npc:7572}."
+why = "+1.200 XP · <1 min · desbloquea «{quest:2622}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#35"]
+note = "Polestar paso 35 «Héroe caído de la Horda», objetivo 2 (accept) · datos no importados: pre · consejo de Polestar sin traducir: For {npc:7623} in {area:75}, after the {map:1419}."
+
+[[step]]
+id = "h48-interior-devastadas-095"
+do = "accept"
+quest = 2583
+npc = 7505
+at = [1419, 50.55, 14.2]
+chain = "h48-interior-devastadas-s036-7505"
+reqlevel = 45
+text = "Coge «{quest:2583}» de {npc:7505}."
+tip = "Sal de {area:75} hacia el oeste y ve al sur por el cañón hasta {map:1419}; los dos magos sangrientos están junto al camino, nada más entrar."
+why = "+7.585 XP · ~9,8 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#36"]
+note = "Polestar paso 36 «The bloodmages», objetivo 1 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-096"
+do = "accept"
+quest = 2585
+npc = 7505
+at = [1419, 50.55, 14.2]
+chain = "h48-interior-devastadas-s036-7505"
+reqlevel = 45
+text = "Coge «{quest:2585}» de {npc:7505}."
+why = "+7.048 XP · ~7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#36"]
+note = "Polestar paso 36 «The bloodmages», objetivo 2 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-097"
+do = "accept"
+quest = 2581
+npc = 7505
+at = [1419, 50.55, 14.2]
+chain = "h48-interior-devastadas-s036-7505"
+reqlevel = 45
+text = "Coge «{quest:2581}» de {npc:7505}."
+why = "+6.862 XP · ~7,3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#36"]
+note = "Polestar paso 36 «The bloodmages», objetivo 3 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-098"
+do = "accept"
+quest = 2601
+npc = 7506
+at = [1419, 50.64, 14.3]
+optional = true
+chain = "h48-interior-devastadas-s036-7506"
+reqlevel = 45
+text = "Coge «{quest:2601}» de {npc:7506}."
+tip = "+14.042 XP · ~34 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#36"]
+note = "Polestar paso 36 «The bloodmages», objetivo 4 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-099"
+do = "accept"
+quest = 2603
+npc = 7506
+at = [1419, 50.64, 14.3]
+optional = true
+chain = "h48-interior-devastadas-s036-7506"
+reqlevel = 45
+text = "Coge «{quest:2603}» de {npc:7506}."
+tip = "+9.840 XP · ~17 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#36"]
+note = "Polestar paso 36 «The bloodmages», objetivo 5 (accept)"
+
+[[step]]
+id = "h48-interior-devastadas-100"
+do = "complete"
+quest = 2581
+obj = 3
+at = [1419, 50.0, 15.4]
+wps = [[1419, 49.3, 18.0, "Pinza de scorpok"], [1419, 46.9, 17.5, "Pinza de scorpok"], [1419, 45.1, 20.9, "Pinza de scorpok"]]
+text = "Consigue {item:8393} (1) de {npc:5988} y {npc:8301} para «{quest:2581}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: The five quests share the same parts: gather them all in one sweep. West of the road the {npc:5982} vultures, Starving Snickerfangs, Scorpok Stingers and Deatheye basilisks share the hills.\nEast of the road the Ashmane boars and Grunters root on the slopes beside the Redstone basilisks. Stay away from the level 52 Helboars further south.\nCareful: Scorpok Stingers use {spell:5416}; {npc:8301} adds Knockdown."
+
+[[step]]
+id = "h48-interior-devastadas-101"
+do = "complete"
+quest = 2583
+obj = 2
+at = [1419, 50.0, 15.4]
+wps = [[1419, 49.3, 18.0, "Pinza de scorpok"], [1419, 46.9, 17.5, "Pinza de scorpok"], [1419, 45.1, 20.9, "Pinza de scorpok"]]
+text = "Consigue {item:8393} (2) de {npc:5988} y {npc:8301} para «{quest:2583}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-102"
+do = "complete"
+quest = 2585
+obj = 1
+at = [1419, 50.0, 15.4]
+wps = [[1419, 49.3, 18.0, "Pinza de scorpok"], [1419, 46.9, 17.5, "Pinza de scorpok"], [1419, 45.1, 20.9, "Pinza de scorpok"]]
+text = "Consigue {item:8393} (3) de {npc:5988} y {npc:8301} para «{quest:2585}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-103"
+do = "complete"
+quest = 2601
+obj = 2
+at = [1419, 50.2, 17.2]
+wps = [[1419, 46.4, 19.0, "Molleja de buitre"], [1419, 57.6, 28.4, "Molleja de buitre"], [1419, 61.5, 27.1, "Molleja de buitre"]]
+optional = true
+text = "Consigue {item:8396} (2) para «{quest:2601}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-104"
+do = "complete"
+quest = 2585
+obj = 2
+at = [1419, 50.2, 17.2]
+wps = [[1419, 46.4, 19.0, "Molleja de buitre"], [1419, 57.6, 28.4, "Molleja de buitre"], [1419, 61.5, 27.1, "Molleja de buitre"]]
+text = "Consigue {item:8396} (2) para «{quest:2585}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 5 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-105"
+do = "complete"
+quest = 2603
+obj = 1
+at = [1419, 50.2, 17.2]
+wps = [[1419, 46.4, 19.0, "Molleja de buitre"], [1419, 57.6, 28.4, "Molleja de buitre"], [1419, 61.5, 27.1, "Molleja de buitre"]]
+optional = true
+text = "Consigue {item:8396} (10) para «{quest:2603}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 6 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-106"
+do = "complete"
+quest = 2581
+obj = 1
+at = [1419, 48.3, 17.84]
+wps = [[1419, 45.8, 17.5, "Papada de hiena risitas"], [1419, 46.6, 20.7, "Papada de hiena risitas"], [1419, 48.2, 24.0, "Papada de hiena risitas"]]
+text = "Consigue {item:8391} (3) para «{quest:2581}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 7 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-107"
+do = "complete"
+quest = 2603
+obj = 2
+at = [1419, 48.3, 17.84]
+wps = [[1419, 45.8, 17.5, "Papada de hiena risitas"], [1419, 46.6, 20.7, "Papada de hiena risitas"], [1419, 48.2, 24.0, "Papada de hiena risitas"]]
+optional = true
+text = "Consigue {item:8391} (2) para «{quest:2603}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 8 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-108"
+do = "complete"
+quest = 2601
+obj = 1
+at = [1419, 48.46, 20.34]
+wps = [[1419, 45.8, 19.6, "Cerebro de basilisco"], [1419, 44.5, 27.1, "Cerebro de basilisco"], [1419, 55.0, 29.1, "Cerebro de basilisco"]]
+optional = true
+text = "Consigue {item:8394} (10) para «{quest:2601}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 9 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-109"
+do = "complete"
+quest = 2583
+obj = 3
+at = [1419, 48.46, 20.34]
+wps = [[1419, 45.8, 19.6, "Cerebro de basilisco"], [1419, 44.5, 27.1, "Cerebro de basilisco"], [1419, 55.0, 29.1, "Cerebro de basilisco"]]
+text = "Consigue {item:8394} (1) para «{quest:2583}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 10 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-110"
+do = "complete"
+quest = 2583
+obj = 1
+at = [1419, 52.27, 27.39]
+wps = [[1419, 56.7, 29.5, "Pulmón aplastado de jabalí"], [1419, 59.3, 27.0, "Pulmón aplastado de jabalí"], [1419, 62.4, 28.3, "Pulmón aplastado de jabalí"]]
+text = "Consigue {item:8392} (3) para «{quest:2583}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 11 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-111"
+do = "complete"
+quest = 2585
+obj = 3
+at = [1419, 52.27, 27.39]
+wps = [[1419, 56.7, 29.5, "Pulmón aplastado de jabalí"], [1419, 59.3, 27.0, "Pulmón aplastado de jabalí"], [1419, 62.4, 28.3, "Pulmón aplastado de jabalí"]]
+text = "Consigue {item:8392} (1) para «{quest:2585}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 12 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-112"
+do = "complete"
+quest = 2581
+obj = 2
+at = [1419, 52.27, 27.39]
+wps = [[1419, 56.7, 29.5, "Pulmón aplastado de jabalí"], [1419, 59.3, 27.0, "Pulmón aplastado de jabalí"], [1419, 62.4, 28.3, "Pulmón aplastado de jabalí"]]
+text = "Consigue {item:8392} (2) para «{quest:2581}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#37"]
+note = "Polestar paso 37 «Serpent's Coil: kill these as you meet them», objetivo 13 (collect)"
+
+[[step]]
+id = "h48-interior-devastadas-113"
+do = "turnin"
+quest = 2601
+npc = 7506
+at = [1419, 50.64, 14.3]
+optional = true
+chain = "h48-interior-devastadas-s038-7506"
+text = "Entrega «{quest:2601}» a {npc:7506}."
+tip = "Vuelve al norte con los magos sangrientos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#38"]
+note = "Polestar paso 38 «The bloodmages», objetivo 1 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-114"
+do = "turnin"
+quest = 2603
+npc = 7506
+at = [1419, 50.64, 14.3]
+optional = true
+chain = "h48-interior-devastadas-s038-7506"
+text = "Entrega «{quest:2603}» a {npc:7506}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#38"]
+note = "Polestar paso 38 «The bloodmages», objetivo 2 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-115"
+do = "note"
+text = "Sus misiones siguientes piden otra vez las mismas partes a cambio de un objeto de mejora y no dan experiencia: déjalas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#38"]
+note = "Polestar paso 38 «The bloodmages», objetivo 3 (note)"
+
+[[step]]
+id = "h48-interior-devastadas-116"
+do = "turnin"
+quest = 2583
+npc = 7505
+at = [1419, 50.55, 14.2]
+chain = "h48-interior-devastadas-s038-7505"
+text = "Entrega «{quest:2583}» a {npc:7505}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#38"]
+note = "Polestar paso 38 «The bloodmages», objetivo 4 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-117"
+do = "turnin"
+quest = 2585
+npc = 7505
+at = [1419, 50.55, 14.2]
+chain = "h48-interior-devastadas-s038-7505"
+text = "Entrega «{quest:2585}» a {npc:7505}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#38"]
+note = "Polestar paso 38 «The bloodmages», objetivo 5 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-118"
+do = "turnin"
+quest = 2581
+npc = 7505
+at = [1419, 50.55, 14.2]
+chain = "h48-interior-devastadas-s038-7505"
+text = "Entrega «{quest:2581}» a {npc:7505}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#38"]
+note = "Polestar paso 38 «The bloodmages», objetivo 6 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-119"
+do = "turnin"
+quest = 2621
+npc = 7623
+at = [1435, 47.79, 54.94]
+chain = "h48-interior-devastadas-s039-7623"
+text = "Entrega «{quest:2621}» a {npc:7623}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#39"]
+note = "Polestar paso 39 «Stonard», objetivo 1 (turnin) · consejo de Polestar sin traducir: Ride back north through the canyon to {area:75}."
+
+[[step]]
+id = "h48-interior-devastadas-120"
+do = "accept"
+quest = 2622
+npc = 7623
+at = [1435, 47.79, 54.94]
+chain = "h48-interior-devastadas-s039-7623"
+reqlevel = 45
+text = "Coge «{quest:2622}» de {npc:7623}."
+why = "+1.200 XP · <1 min · 4,3× la mediana del 46-50"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#39"]
+note = "Polestar paso 39 «Stonard», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h48-interior-devastadas-121"
+do = "turnin"
+quest = 2622
+npc = 7643
+at = [1435, 44.97, 57.37]
+text = "Entrega «{quest:2622}» a {npc:7643}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#39"]
+note = "Polestar paso 39 «Stonard», objetivo 3 (turnin)"
+
+[[step]]
+id = "h48-interior-devastadas-122"
+do = "note"
+text = "La misión de {npc:950} que da {npc:7643} es de nivel 55: déjala."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/05-the-hinterlands#39"]
+note = "Polestar paso 39 «Stonard», objetivo 4 (note) · nota de Polestar traducida por Senda: Bengor's The Hablador del pantano is a level 55 quest: leave it."

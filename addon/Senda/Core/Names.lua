@@ -1,5 +1,6 @@
 -- Nombres en el idioma del cliente para las fichas de los textos de las guías:
 --   {quest:N} misión · {npc:N} PNJ · {item:N} objeto · {spell:N} hechizo · {map:N} zona (uiMapID)
+--   {area:N} subzona (AreaTable: C_Map.GetAreaInfo; la usan las rutas de la Horda)
 --   {obj:N} objeto del mundo (el cliente no lo nombra por id: solo el respaldo)
 --
 --   Senda.Names:Resolve(text) -> texto con las fichas sustituidas (nunca bloquea)
@@ -33,9 +34,9 @@ Senda.Names = Names
 local type, tonumber, tostring, pcall, ipairs, pairs = type, tonumber, tostring, pcall, ipairs, pairs
 local Try, IsSecret = Compat.Try, Compat.IsSecret
 
-Names.KINDS = { "quest", "npc", "item", "spell", "map", "obj" }
+Names.KINDS = { "quest", "npc", "item", "spell", "map", "obj", "area" }
 -- Los que el cliente sabe nombrar por id (los que pide /senda volcar).
-Names.CLIENT_KINDS = { "quest", "npc", "item", "spell", "map" }
+Names.CLIENT_KINDS = { "quest", "npc", "item", "spell", "map", "area" }
 
 local LOCALE = (GetLocale and GetLocale()) or "esES"
 Names.LOCALE = LOCALE
@@ -46,7 +47,7 @@ if LOCALE ~= "enUS" and ALIAS[LOCALE] ~= "enUS" then ORDER[#ORDER + 1] = "enUS" 
 
 local PLACEHOLDER = {
   quest = "QUEST_FALLBACK", npc = "NPC_FALLBACK", item = "ITEM_FALLBACK", spell = "SPELL_FALLBACK",
-  map = "MAP_FALLBACK", obj = "OBJ_FALLBACK",
+  map = "MAP_FALLBACK", obj = "OBJ_FALLBACK", area = "AREA_FALLBACK",
 }
 
 local RETRY_AFTER = 60   -- s: un nombre que el cliente no dio se vuelve a pedir pasado este tiempo
@@ -184,6 +185,10 @@ end
 
 function CLIENT.map(id)
   return Usable(Compat.MapName(id))
+end
+
+function CLIENT.area(id)
+  return Usable(Compat.AreaName(id))
 end
 
 local redrawPending = false

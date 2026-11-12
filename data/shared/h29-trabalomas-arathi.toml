@@ -1,0 +1,1454 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/30-40/01-hillsbrad-foothills
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h29-trabalomas-arathi"
+title = "Laderas de Trabalomas y Tierras Altas de Arathi"
+levels = [29, 33]
+map = 1424
+summary = "Ruta común de la Horda, 29-33: Laderas de Trabalomas y Tierras Altas de Arathi."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h29-trabalomas-arathi-001"
+do = "goto"
+at = [1441, 45.0, 49.1]
+text = "Ve al maestro de vuelo de {area:484}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#1"]
+note = "Polestar paso 1 «Freewind Post flight master», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-002"
+do = "fly"
+zone = 1413
+if = { class = ["DRUID"] }
+text = "Vuela a Cima del Trueno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#2"]
+note = "Polestar paso 2 «Thunder Bluff», objetivo 1 (fly) · consejo de Polestar sin traducir: Fly from {area:484} to {area:1638} and train with {npc:3033} on {area:1639}; fly on to the Crossroads from there."
+
+[[step]]
+id = "h29-trabalomas-arathi-003-dr"
+do = "train"
+npc = 3036
+spells = [5209, 8998]
+at = [1456, 77.15, 29.82]
+if = { class = ["DRUID"] }
+reqlevel = 28
+text = "Entrena con {npc:3036}, el instructor de druida."
+tip = "2 hechizos hasta el nivel 28: nuevos {spell:5209}, {spell:8998}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#2", "trainer:druid"]
+note = "Polestar paso 2 «Thunder Bluff», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 28-29"
+
+[[step]]
+id = "h29-trabalomas-arathi-004"
+do = "fly"
+zone = 1413
+if = { class = ["SHAMAN"] }
+text = "Vuela a Trinquete."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#3"]
+note = "Polestar paso 3 «Ratchet», objetivo 1 (fly) · consejo de Polestar sin traducir: Fly from {area:484} to {area:392}. {npc:5901} camps on the coast a short walk south of the town; fly on to the Crossroads from {area:392}."
+
+[[step]]
+id = "h29-trabalomas-arathi-005"
+do = "turnin"
+quest = 220
+npc = 5901
+at = [1413, 65.83, 43.78]
+if = { class = ["SHAMAN"] }
+chain = "h29-trabalomas-arathi-s003-5901"
+text = "Entrega «{quest:220}» a {npc:5901}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#3"]
+note = "Polestar paso 3 «Ratchet», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:5901}: your {item:6637}, for the brazier."
+
+[[step]]
+id = "h29-trabalomas-arathi-006"
+do = "accept"
+quest = 63
+npc = 5901
+at = [1413, 65.83, 43.78]
+if = { class = ["SHAMAN"] }
+chain = "h29-trabalomas-arathi-s003-5901"
+reqlevel = 20
+text = "Coge «{quest:63}» de {npc:5901}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#3"]
+note = "Polestar paso 3 «Ratchet», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h29-trabalomas-arathi-007"
+do = "goto"
+at = [1456, 46.7, 49.9]
+if = { class = ["DRUID"] }
+text = "Ve al maestro de vuelo de {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#4"]
+note = "Polestar paso 4 «Fly to the Crossroads», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-008"
+do = "fly"
+zone = 1413
+if = { class = ["DRUID"] }
+text = "Vuela a El Cruce."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#4"]
+note = "Polestar paso 4 «Fly to the Crossroads», objetivo 2 (fly)"
+
+[[step]]
+id = "h29-trabalomas-arathi-009"
+do = "goto"
+at = [1413, 63.1, 37.1]
+if = { class = ["SHAMAN"] }
+text = "Ve al maestro de vuelo de {area:392}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#5"]
+note = "Polestar paso 5 «Fly to the Crossroads», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-010"
+do = "fly"
+zone = 1413
+if = { class = ["SHAMAN"] }
+text = "Vuela a El Cruce."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#5"]
+note = "Polestar paso 5 «Fly to the Crossroads», objetivo 2 (fly)"
+
+[[step]]
+id = "h29-trabalomas-arathi-011"
+do = "fly"
+zone = 1413
+if = { class = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK"] }
+text = "Vuela a El Cruce."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#6"]
+note = "Polestar paso 6 «Fly to the Crossroads», objetivo 1 (fly)"
+
+[[step]]
+id = "h29-trabalomas-arathi-012"
+do = "accept"
+quest = 1145
+npc = 3428
+at = [1413, 51.07, 29.63]
+reqlevel = 29
+text = "Coge «{quest:1145}» de {npc:3428}."
+why = "+1.300 XP · <1 min · desbloquea «{quest:1147}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#7"]
+note = "Polestar paso 7 «Korran», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:3428}: for {npc:4485} in {map:1454}. · consejo de Polestar sin traducir: {npc:3428} stands beside the Crossroads flight master."
+
+[[step]]
+id = "h29-trabalomas-arathi-013"
+do = "goto"
+at = [1413, 51.5, 30.4]
+text = "Ve al maestro de vuelo de El Cruce."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#8"]
+note = "Polestar paso 8 «Fly to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-014"
+do = "fly"
+zone = 1454
+text = "Vuela a {area:1637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#8"]
+note = "Polestar paso 8 «Fly to Orgrimmar», objetivo 2 (fly)"
+
+[[step]]
+id = "h29-trabalomas-arathi-015"
+do = "turnin"
+quest = 93739
+npc = 4949
+at = [1454, 31.73, 37.82]
+if = { race = ["Skyborne"] }
+optional = true
+text = "Entrega «{quest:93739}» a {npc:4949}, Fuerte Grommash, si la llevas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#9"]
+note = "Polestar paso 9 «Thrall», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:4949} waits in Grommash Hold, in the {obj:172957}."
+
+[[step]]
+id = "h29-trabalomas-arathi-016-wr"
+do = "train"
+npc = 3353
+spells = [871, 1161, 6178, 7400, 7887, 8204]
+at = [1454, 79.79, 31.42]
+if = { class = ["WARRIOR"] }
+reqlevel = 28
+text = "Entrena con {npc:3353}, el instructor de guerrero."
+tip = "6 hechizos hasta el nivel 28: nuevos {spell:871}, {spell:1161}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#10", "trainer:warrior"]
+note = "Polestar paso 10 «Train», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 25-29"
+
+[[step]]
+id = "h29-trabalomas-arathi-016-hu"
+do = "train"
+npc = 3352
+spells = [3045, 3661, 13551, 13809, 14283, 14302, 14319, 19880, 20900]
+at = [1454, 66.05, 18.53]
+if = { class = ["HUNTER"] }
+reqlevel = 28
+text = "Entrena con {npc:3352}, el instructor de cazador."
+tip = "9 hechizos hasta el nivel 28: nuevos {spell:3045}, {spell:13809}, {spell:19880} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#10", "trainer:hunter"]
+note = "Polestar paso 10 «Train», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 26-29"
+
+[[step]]
+id = "h29-trabalomas-arathi-016-ro"
+do = "train"
+npc = 3327
+spells = [1767, 1833, 2070, 2591, 6768, 8639, 8649, 8687, 8724]
+at = [1454, 42.69, 51.48]
+if = { class = ["ROGUE"] }
+reqlevel = 28
+text = "Entrena con {npc:3327}, el instructor de pícaro."
+tip = "9 hechizos hasta el nivel 28: nuevos {spell:1833}, {spell:8687}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#10", "trainer:rogue"]
+note = "Polestar paso 10 «Train», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 25-29"
+
+[[step]]
+id = "h29-trabalomas-arathi-016-pr"
+do = "train"
+npc = 5994
+spells = [6063, 8104, 8124, 19276]
+at = [1454, 35.72, 86.9]
+if = { class = ["PRIEST"] }
+reqlevel = 28
+text = "Entrena con {npc:5994}, el instructor de sacerdote."
+tip = "4 hechizos hasta el nivel 28."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#10", "trainer:priest"]
+note = "Polestar paso 10 «Train», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 28-29"
+
+[[step]]
+id = "h29-trabalomas-arathi-016-sh"
+do = "train"
+npc = 3403
+spells = [546, 6391, 8008, 8038, 8053, 8184, 8227]
+at = [1454, 37.84, 36.45]
+if = { class = ["SHAMAN"] }
+reqlevel = 28
+text = "Entrena con {npc:3403}, el instructor de chamán."
+tip = "7 hechizos hasta el nivel 28: nuevos {spell:546}, {spell:8184}, {spell:8227} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#10", "trainer:shaman"]
+note = "Polestar paso 10 «Train», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 28-29"
+
+[[step]]
+id = "h29-trabalomas-arathi-016-mg"
+do = "train"
+npc = 5958
+spells = [759, 1461, 6141, 8444, 8494]
+at = [1454, 38.68, 85.41]
+if = { class = ["MAGE"] }
+reqlevel = 28
+text = "Entrena con {npc:5958}, el instructor de mago."
+tip = "5 hechizos hasta el nivel 28: nuevos {spell:759}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#10", "trainer:mage"]
+note = "Polestar paso 10 «Train», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 28-29"
+
+[[step]]
+id = "h29-trabalomas-arathi-016-wl"
+do = "train"
+npc = 3324
+spells = [132, 710, 1456, 1714, 3699, 6217, 6366, 7658, 17919]
+at = [1454, 47.98, 45.93]
+if = { class = ["WARLOCK"] }
+reqlevel = 28
+text = "Entrena con {npc:3324}, el instructor de brujo."
+tip = "9 hechizos hasta el nivel 28: nuevos {spell:132}, {spell:710}, {spell:1714} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#10", "trainer:warlock"]
+note = "Polestar paso 10 «Train», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 25-29"
+
+[[step]]
+id = "h29-trabalomas-arathi-017"
+do = "turnin"
+quest = 1145
+npc = 4485
+at = [1454, 75.23, 34.24]
+chain = "h29-trabalomas-arathi-s011-4485"
+text = "Entrega «{quest:1145}» a {npc:4485}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#11"]
+note = "Polestar paso 11 «Belgrom Destrozarroca», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:4485} stands in the {obj:172958}, on the way out to the main gate."
+
+[[step]]
+id = "h29-trabalomas-arathi-018"
+do = "accept"
+quest = 1146
+npc = 4485
+at = [1454, 75.23, 34.24]
+chain = "h29-trabalomas-arathi-s011-4485"
+reqlevel = 29
+text = "Coge «{quest:1146}» de {npc:4485}."
+why = "+1.950 XP · <1 min · desbloquea «{quest:1147}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#11"]
+note = "Polestar paso 11 «Belgrom Destrozarroca», objetivo 2 (accept) · datos no importados: pre · consejo de Polestar sin traducir: For {npc:4483} in the {area:439}, next guide."
+
+[[step]]
+id = "h29-trabalomas-arathi-019"
+do = "goto"
+at = [1411, 50.8, 13.5]
+text = "Ve al zepelín a {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#12"]
+note = "Polestar paso 12 «Zeppelin to Undercity», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-020"
+do = "note"
+text = "{item:3388}: casa de subastas o un alquimista, para «{quest:515}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#13"]
+note = "Polestar paso 13 «Entrañas», objetivo 1 (note) · consejo de Polestar sin traducir: «{quest:515}» needs a {item:3388}, an Alquimia item: buy one at the auction house if you can (or ask an alchemist). The quest text says Strong, but it takes a {item:3388}. No elixir: skip the Elixir steps in {area:287}."
+
+[[step]]
+id = "h29-trabalomas-arathi-021-pa"
+do = "train"
+npc = 260093
+spells = [680, 5614, 19876]
+at = [1458, 48.35, 14.27]
+if = { class = ["PALADIN"] }
+reqlevel = 28
+text = "Entrena con {npc:260093}, el instructor de paladín."
+tip = "3 hechizos hasta el nivel 28: nuevos {spell:19876}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#14", "trainer:paladin"]
+note = "Polestar paso 14 «Garen Largo», objetivo 1 (train) · consejo de Polestar sin traducir: {npc:260093} trains Paladins in the {map:1458}. · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 28-29"
+
+[[step]]
+id = "h29-trabalomas-arathi-022"
+do = "goto"
+at = [1458, 63.1, 48.3]
+if = { class = ["SHAMAN"] }
+text = "Ve al maestro de vuelo de {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#15"]
+note = "Polestar paso 15 «Undercity flight master», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-023"
+do = "fly"
+zone = 1421
+if = { class = ["SHAMAN"] }
+text = "Vuela a El Sepulcro."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#16"]
+note = "Polestar paso 16 «Blandón de Siemprefuente», objetivo 1 (fly) · consejo de Polestar sin traducir: Fly to the {area:228}. The {obj:113791} stands on the hill just south-west of it: beat the Corrupt Manifestation of Water beside it, place its bracers in the brazier, speak to the {npc:5895} and keep the {item:7813} for {npc:5901}. Fly on to {area:272} from the {area:228}."
+
+[[step]]
+id = "h29-trabalomas-arathi-024"
+do = "complete"
+quest = 63
+obj = 1
+at = [1421, 38.5, 44.4]
+if = { class = ["SHAMAN"] }
+text = "Usa {item:6637} para «{quest:63}»."
+tip = "Consigue {item:7812} (1) de {npc:5894} para «{quest:63}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#16"]
+note = "Polestar paso 16 «Blandón de Siemprefuente», objetivo 2 (use) · consejo de Polestar sin traducir: {item:6637}: drink it by the standing stone to see the elemental."
+
+[[step]]
+id = "h29-trabalomas-arathi-025"
+do = "turnin"
+quest = 63
+at = [1421, 38.26, 44.56]
+if = { class = ["SHAMAN"] }
+text = "Entrega «{quest:63}» en {obj:113791}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#16"]
+note = "Polestar paso 16 «Blandón de Siemprefuente», objetivo 4 (turnin)"
+
+[[step]]
+id = "h29-trabalomas-arathi-026"
+do = "accept"
+quest = 100
+at = [1421, 38.26, 44.56]
+if = { class = ["SHAMAN"] }
+reqlevel = 20
+text = "Coge «{quest:100}» ({obj:113791})."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#16"]
+note = "Polestar paso 16 «Blandón de Siemprefuente», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h29-trabalomas-arathi-027"
+do = "turnin"
+quest = 100
+npc = 5895
+at = [1421, 38.65, 44.58]
+if = { class = ["SHAMAN"] }
+chain = "h29-trabalomas-arathi-s016-5895"
+text = "Entrega «{quest:100}» a {npc:5895}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#16"]
+note = "Polestar paso 16 «Blandón de Siemprefuente», objetivo 6 (turnin)"
+
+[[step]]
+id = "h29-trabalomas-arathi-028"
+do = "accept"
+quest = 96
+npc = 5895
+at = [1421, 38.65, 44.58]
+if = { class = ["SHAMAN"] }
+chain = "h29-trabalomas-arathi-s016-5895"
+reqlevel = 20
+text = "Coge «{quest:96}» de {npc:5895}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#16"]
+note = "Polestar paso 16 «Blandón de Siemprefuente», objetivo 7 (accept) · datos no importados: pre · consejo de Polestar sin traducir: For {npc:5901}, next guide."
+
+[[step]]
+id = "h29-trabalomas-arathi-029"
+do = "goto"
+at = [1421, 45.6, 42.4]
+if = { class = ["SHAMAN"] }
+text = "Ve al maestro de vuelo de {area:228}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#17"]
+note = "Polestar paso 17 «Fly to Tarren Mill», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-030"
+do = "fly"
+zone = 1458
+if = { class = ["SHAMAN"] }
+text = "Vuela a Molino Tarren."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#17"]
+note = "Polestar paso 17 «Fly to Tarren Mill», objetivo 2 (fly)"
+
+[[step]]
+id = "h29-trabalomas-arathi-031"
+do = "goto"
+at = [1458, 63.1, 48.3]
+if = { class = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID"] }
+text = "Ve al maestro de vuelo de {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#18"]
+note = "Polestar paso 18 «Fly to Tarren Mill», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-032"
+do = "fly"
+zone = 1424
+if = { class = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "DRUID"] }
+text = "Vuela a Molino Tarren."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#18"]
+note = "Polestar paso 18 «Fly to Tarren Mill», objetivo 2 (fly)"
+
+[[step]]
+id = "h29-trabalomas-arathi-034"
+do = "accept"
+quest = 498
+npc = 2229
+at = [1424, 63.24, 20.66]
+optional = true
+reqlevel = 17
+text = "Coge «{quest:498}» de {npc:2229}."
+tip = "{npc:2229} quiere que liberes a sus dos exploradores de {area:275} antes de confiarte «Infiltración»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#20"]
+note = "Polestar paso 20 «Krusk», objetivo 1 (accept) · condición no expresable: no turnedin {'k': 'turnedin', 'neg': True, 'q': 498} · consejo de Polestar sin traducir: {npc:2229}, inside."
+
+[[step]]
+id = "h29-trabalomas-arathi-042"
+do = "complete"
+quest = 567
+obj = 4
+at = [1424, 35.88, 46.57]
+optional = true
+text = "Mata {npc:2451} (1) para «{quest:567}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#23"]
+note = "Polestar paso 23 «Hillsbrad Peasants», objetivo 2 (kill) · condición no expresable: no turnedin {'k': 'turnedin', 'neg': True, 'q': 529}"
+
+[[step]]
+id = "h29-trabalomas-arathi-045"
+do = "complete"
+quest = 498
+obj = 1
+at = [1424, 75.33, 41.5]
+optional = true
+text = "Usa {obj:1721} para «{quest:498}»."
+tip = "Al sureste del Molino Tarren. Drull y {npc:2238} están encadenados en los edificios del patio de la fortaleza: {npc:2427} lleva la {item:3467} y {npc:2428}, la {item:3499}, ambos dentro de la fortaleza. Mátalos y luego abre ambos candados. La bola y cadena de Drull."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#25"]
+note = "Polestar paso 25 «Durnholde Keep», objetivo 1 (interact) · condición no expresable: no turnedin {'k': 'turnedin', 'neg': True, 'q': 498}"
+
+[[step]]
+id = "h29-trabalomas-arathi-046"
+do = "complete"
+quest = 498
+obj = 2
+at = [1424, 79.79, 39.65]
+optional = true
+text = "Usa {obj:1722} para «{quest:498}»."
+tip = "La bola y cadena de {npc:2238}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#25"]
+note = "Polestar paso 25 «Durnholde Keep», objetivo 2 (interact) · condición no expresable: no turnedin {'k': 'turnedin', 'neg': True, 'q': 498}"
+
+[[step]]
+id = "h29-trabalomas-arathi-050"
+do = "complete"
+quest = 567
+obj = 2
+at = [1424, 32.62, 39.79]
+wps = [[1424, 34.47, 37.88, "Ciudadano Wilkes"]]
+optional = true
+text = "Mata {npc:2449} (1) para «{quest:567}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#26"]
+note = "Polestar paso 26 «The smithy», objetivo 4 (kill) · condición no expresable: no turnedin {'k': 'turnedin', 'neg': True, 'q': 529}"
+
+[[step]]
+id = "h29-trabalomas-arathi-051"
+do = "turnin"
+quest = 498
+npc = 2229
+at = [1424, 63.24, 20.66]
+optional = true
+text = "Entrega «{quest:498}» a {npc:2229}."
+tip = "Vuelve a {area:272}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#27"]
+note = "Polestar paso 27 «Krusk», objetivo 1 (turnin) · condición no expresable: no turnedin {'k': 'turnedin', 'neg': True, 'q': 498} · consejo de Polestar sin traducir: {npc:2229}, inside."
+
+[[step]]
+id = "h29-trabalomas-arathi-053"
+do = "accept"
+quest = 552
+npc = 2429
+at = [1424, 63.88, 19.66]
+reqlevel = 29
+text = "Coge «{quest:552}» de {npc:2429}."
+why = "+6.063 XP · ~13 min · desbloquea «{quest:553}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#29"]
+note = "Polestar paso 29 «Tarren Mill», objetivo 1 (accept)"
+
+[[step]]
+id = "h29-trabalomas-arathi-054"
+do = "accept"
+quest = 533
+npc = 2229
+at = [1424, 63.24, 20.66]
+reqlevel = 29
+text = "Coge «{quest:533}» de {npc:2229}."
+why = "+3.367 XP · ~2,6 min · desbloquea «{quest:507}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#29"]
+note = "Polestar paso 29 «Tarren Mill», objetivo 2 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:2229}, inside."
+
+[[step]]
+id = "h29-trabalomas-arathi-056"
+do = "sethearth"
+npc = 2388
+zone = 1424
+at = [1424, 62.78, 19.03]
+text = "Pon la piedra de hogar en {area:272} con {npc:2388}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#29"]
+note = "Polestar paso 29 «Tarren Mill», objetivo 4 (sethome)"
+
+[[step]]
+id = "h29-trabalomas-arathi-057"
+do = "buy"
+npc = 2388
+item = 3703
+count = 1
+at = [1424, 62.78, 19.03]
+text = "Compra {item:3703} al {npc:2388}."
+tip = "{item:3703}, para {npc:2333}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#29"]
+note = "Polestar paso 29 «Tarren Mill», objetivo 5 (buy)"
+
+[[step]]
+id = "h29-trabalomas-arathi-058"
+do = "complete"
+quest = 552
+obj = 1
+at = [1424, 44.5, 29.4]
+text = "Consigue {item:3708} (1) para «{quest:552}»."
+tip = "Al suroeste, los Yetis de cuevas y los Yetis feroces (30-32) llenan {area:277}, en las colinas al oeste de {area:272}; más o menos uno de cada dieciséis lleva la vara. Quédate en estas cavernas: los Yetis monteses y Yetis gigantes (32-34) de la cueva más al norte también la llevan, pero a nivel 29-30 pegan fuerte y van en parejas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#30"]
+note = "Polestar paso 30 «Vara de Helcular», objetivo 1 (collect)"
+
+[[step]]
+id = "h29-trabalomas-arathi-059"
+do = "goto"
+at = [1424, 44.0, 28.0]
+if = { maxlevel = 29 }
+text = "Ve a {area:277}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#31"]
+note = "Polestar paso 31 «Level 30», objetivo 1 (goto) · consejo de Polestar sin traducir: {area:272}'s «{quest:544}», «{quest:556}» and «{quest:676}» are offered from level 30. Below it? Keep killing the yetis in these caves until level 30. Or, with a group, run the {area:796} dungeon (Graveyard) or the {area:2797} dungeon instead."
+
+[[step]]
+id = "h29-trabalomas-arathi-060"
+do = "level"
+level = 30
+at = [1424, 43.96, 27.36]
+if = { maxlevel = 29 }
+text = "Sube al nivel 30."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#31"]
+note = "Polestar paso 31 «Level 30», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:2248}."
+
+[[step]]
+id = "h29-trabalomas-arathi-064"
+do = "complete"
+quest = 567
+obj = 1
+at = [1424, 29.51, 42.41]
+optional = true
+text = "Mata {npc:2448} (1) para «{quest:567}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#32"]
+note = "Polestar paso 32 «Town hall», objetivo 4 (kill) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h29-trabalomas-arathi-068"
+do = "turnin"
+quest = 552
+npc = 2429
+at = [1424, 63.88, 19.66]
+chain = "h29-trabalomas-arathi-s033-2429"
+text = "Entrega «{quest:552}» a {npc:2429}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#33"]
+note = "Polestar paso 33 «Tarren Mill», objetivo 3 (turnin)"
+
+[[step]]
+id = "h29-trabalomas-arathi-069"
+do = "accept"
+quest = 553
+npc = 2429
+at = [1424, 63.88, 19.66]
+chain = "h29-trabalomas-arathi-s033-2429"
+reqlevel = 29
+text = "Coge «{quest:553}» de {npc:2429}."
+why = "+3.300 XP · ~11 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#33"]
+note = "Polestar paso 33 «Tarren Mill», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h29-trabalomas-arathi-070"
+do = "accept"
+quest = 544
+npc = 2410
+at = [1424, 61.6, 20.85]
+chain = "h29-trabalomas-arathi-s033-2410"
+reqlevel = 30
+text = "Coge «{quest:544}» de {npc:2410}."
+why = "+4.210 XP · ~5 min · desbloquea «{quest:545}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#33"]
+note = "Polestar paso 33 «Tarren Mill», objetivo 5 (accept) · consejo de Polestar sin traducir: {npc:2410}, inside: offered from level 30."
+
+[[step]]
+id = "h29-trabalomas-arathi-071"
+do = "accept"
+quest = 93680
+npc = 2410
+at = [1424, 61.6, 20.85]
+chain = "h29-trabalomas-arathi-s033-2410"
+reqlevel = 30
+text = "Coge «{quest:93680}» de {npc:2410}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#33"]
+note = "Polestar paso 33 «Tarren Mill», objetivo 6 (accept) · consejo de Polestar sin traducir: {npc:2410}: «{quest:93680}», the {item:279469} is by the traitors."
+
+[[step]]
+id = "h29-trabalomas-arathi-072"
+do = "accept"
+quest = 556
+npc = 2437
+at = [1424, 61.5, 20.93]
+reqlevel = 30
+text = "Coge «{quest:556}» de {npc:2437}."
+why = "+5.332 XP · ~8,7 min · desbloquea «{quest:557}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#33"]
+note = "Polestar paso 33 «Tarren Mill», objetivo 7 (accept) · consejo de Polestar sin traducir: {npc:2437}, inside: offered from level 30."
+
+[[step]]
+id = "h29-trabalomas-arathi-073"
+do = "accept"
+quest = 676
+npc = 2770
+at = [1424, 61.87, 19.57]
+reqlevel = 30
+text = "Coge «{quest:676}» de {npc:2770}."
+why = "+6.450 XP · ~13 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#33"]
+note = "Polestar paso 33 «Tarren Mill», objetivo 8 (accept) · datos no importados: closedBy · consejo de Polestar sin traducir: {npc:2770}: for {npc:2771} in {area:321}, later in this guide (from level 30)."
+
+[[step]]
+id = "h29-trabalomas-arathi-074"
+do = "complete"
+quest = 553
+obj = 1
+at = [1424, 43.9, 28.1]
+text = "Usa {item:3710} para «{quest:553}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#34"]
+note = "Polestar paso 34 «Foothill Caverns», objetivo 1 (use) · consejo de Polestar sin traducir: Back into the yeti caves west of {area:272} with the {item:3710}. The path splits just inside: the {obj:1768} burns on the upper level to the right, the {obj:1769} on the lower level to the left, past more yetis."
+
+[[step]]
+id = "h29-trabalomas-arathi-075"
+do = "complete"
+quest = 553
+obj = 2
+at = [1424, 44.1, 26.6]
+text = "Usa {item:3710} para «{quest:553}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#34"]
+note = "Polestar paso 34 «Foothill Caverns», objetivo 2 (use)"
+
+[[step]]
+id = "h29-trabalomas-arathi-076"
+do = "complete"
+quest = 553
+obj = 3
+at = [1424, 41.7, 6.4]
+text = "Usa {item:3710} para «{quest:553}»."
+tip = "La tercera llama arde en la cueva más pequeña, arriba en las colinas al norte de las cavernas.\nCuidado: Yetis gigantes y Yetis monteses (32-34) rodean la llama, a menudo en parejas, y Faucehielo, un yeti raro (37), deambula cerca. A nivel 30-31 están por encima de tu nivel: atrae a los yetis de uno en uno desde la boca de la cueva antes de usar la Vara, y localiza a Faucehielo antes de entrar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#35"]
+note = "Polestar paso 35 «Llama de Uzel», objetivo 1 (use)"
+
+[[step]]
+id = "h29-trabalomas-arathi-077"
+do = "goto"
+at = [1416, 24.5, 82.8]
+text = "Ve a el borde oriental del cráter de {area:279}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#36"]
+note = "Polestar paso 36 «Alterac Mountains», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-078"
+do = "complete"
+quest = 544
+obj = 1
+at = [1416, 19.3, 91.5]
+text = "Consigue {item:3691} (1) de {npc:2413} para «{quest:544}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#37"]
+note = "Polestar paso 37 «The Dalaran crater», objetivo 1 (collect) · consejo de Polestar sin traducir: Head west along the foot of the mountains to the violet dome of {area:279}. {npc:2411}, {npc:2412} and {npc:2413} (33-34) stand together inside the crater's eastern rim, {npc:2414} (35) a little west of them; each carries one Bloodstone piece. The Shield Guards and Theurgists (31-33) around them drop the Worn Stone Tokens. Careful: Many guards stand in linked pairs and others patrol alone around the camp."
+
+[[step]]
+id = "h29-trabalomas-arathi-079"
+do = "complete"
+quest = 544
+obj = 2
+at = [1416, 19.5, 90.0]
+text = "Consigue {item:3689} (1) de {npc:2411} para «{quest:544}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#37"]
+note = "Polestar paso 37 «The Dalaran crater», objetivo 2 (collect)"
+
+[[step]]
+id = "h29-trabalomas-arathi-080"
+do = "complete"
+quest = 544
+obj = 3
+at = [1416, 19.6, 90.9]
+text = "Consigue {item:3690} (1) de {npc:2412} para «{quest:544}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#37"]
+note = "Polestar paso 37 «The Dalaran crater», objetivo 3 (collect)"
+
+[[step]]
+id = "h29-trabalomas-arathi-081"
+do = "complete"
+quest = 544
+obj = 4
+at = [1416, 16.8, 89.4]
+text = "Consigue {item:3688} (1) de {npc:2414} para «{quest:544}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#37"]
+note = "Polestar paso 37 «The Dalaran crater», objetivo 4 (collect)"
+
+[[step]]
+id = "h29-trabalomas-arathi-082"
+do = "complete"
+quest = 93680
+obj = 1
+at = [1416, 16.4, 89.3]
+text = "Consigue {item:279469} (1) para «{quest:93680}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#37"]
+note = "Polestar paso 37 «The Dalaran crater», objetivo 5 (collect) · consejo de Polestar sin traducir: {item:279469}: an object to loot, by the traitors."
+
+[[step]]
+id = "h29-trabalomas-arathi-083"
+do = "complete"
+quest = 556
+obj = 1
+at = [1416, 18.42, 87.99]
+wps = [[1416, 20.4, 87.6, "Muestra de piedra desgastada"], [1416, 20.6, 83.5, "Muestra de piedra desgastada"], [1416, 18.1, 83.9, "Muestra de piedra desgastada"]]
+text = "Consigue {item:3714} (10) para «{quest:556}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#37"]
+note = "Polestar paso 37 «The Dalaran crater», objetivo 6 (collect)"
+
+[[step]]
+id = "h29-trabalomas-arathi-084"
+do = "goto"
+at = [1424, 28.5, 55.0]
+text = "Ve a {area:288}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#38"]
+note = "Polestar paso 38 «Hillsbrad Foothills», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-086"
+do = "complete"
+quest = 567
+obj = 3
+at = [1424, 31.8, 52.7]
+optional = true
+text = "Mata {npc:2450} (1) para «{quest:567}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#39"]
+note = "Polestar paso 39 «Azurelode Mine», objetivo 2 (kill)"
+
+[[step]]
+id = "h29-trabalomas-arathi-088"
+do = "goto"
+at = [1424, 36.0, 68.0]
+text = "Ve a playa Rompeanca."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#40"]
+note = "Polestar paso 40 «Torn Fin murlocs», objetivo 1 (goto) · condición no expresable: llevas la misión 515 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: The Torn Fin murlocs camp on the beaches south-west of {area:271}'s bay, below the mine."
+
+[[step]]
+id = "h29-trabalomas-arathi-089"
+do = "complete"
+quest = 515
+obj = 3
+at = [1424, 36.06, 68.74]
+wps = [[1424, 39.2, 72.0, "Ojo de aleta rasgado"], [1424, 40.8, 69.0, "Ojo de aleta rasgado"], [1424, 43.3, 69.7, "Ojo de aleta rasgado"]]
+optional = true
+text = "Consigue {item:3510} (5) de {npc:2376} y {npc:2374} y {npc:2375} y {npc:2377} y {npc:14276} para «{quest:515}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#40"]
+note = "Polestar paso 40 «Torn Fin murlocs», objetivo 2 (collect) · condición no expresable: llevas la misión 515 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h29-trabalomas-arathi-090"
+do = "goto"
+at = [1424, 53.4, 48.8]
+text = "Ve al norte del cementerio de Costasur."
+tip = "Ve al este hasta el cementerio de {area:271}, en el borde noreste del pueblo: la tumba de Helcular está entre las demás. Llega desde el norte, bajando por la ladera que hay sobre el pueblo. Hay guardias de Costasur (55) en la esquina noroeste del cementerio y al sureste de la tumba: pasa entre ellos, entrega la misión y vete por donde viniste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#41"]
+note = "Polestar paso 41 «Tumba de Helcular», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-091"
+do = "turnin"
+quest = 553
+at = [1424, 52.8, 53.4]
+text = "Entrega «{quest:553}» en {obj:1767}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#41"]
+note = "Polestar paso 41 «Tumba de Helcular», objetivo 2 (turnin)"
+
+[[step]]
+id = "h29-trabalomas-arathi-092"
+do = "goto"
+at = [1424, 53.0, 65.0]
+text = "Ve a orilla Espinadaga."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#42"]
+note = "Polestar paso 42 «Daggerspine naga», objetivo 1 (goto) · condición no expresable: llevas la misión 515 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: The Daggerspine naga line the shore south-east of the town."
+
+[[step]]
+id = "h29-trabalomas-arathi-093"
+do = "complete"
+quest = 515
+obj = 2
+at = [1424, 52.73, 65.51]
+wps = [[1424, 54.6, 63.0, "Escama Dagaespinazo"], [1424, 57.6, 65.9, "Escama Dagaespinazo"], [1424, 57.0, 72.4, "Escama Dagaespinazo"]]
+optional = true
+text = "Consigue {item:3509} (5) de {npc:2369} y {npc:2368} y {npc:2370} y {npc:2371} y {npc:14277} para «{quest:515}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#42"]
+note = "Polestar paso 42 «Daggerspine naga», objetivo 2 (collect) · condición no expresable: llevas la misión 515 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h29-trabalomas-arathi-094"
+do = "accept"
+quest = 535
+npc = 2333
+at = [1416, 57.17, 69.51]
+optional = true
+chain = "h29-trabalomas-arathi-s043-2333"
+reqlevel = 29
+text = "Coge «{quest:535}» de {npc:2333}."
+tip = "Desde {area:271}, ve al norte pasando {area:272} y sigue el camino hasta las estribaciones de Alterac. «{quest:535}» espera junto al campamento del Sindicato. Solo ofrece su encargo mientras lleves «Infiltración» de {npc:2229}: dale la cerveza enseguida, y su recompensa es la Misiva de la Hermandad que quiere Krusk. Una misiva del Sindicato de aquí sirve igual: con una en tus bolsas, la guía se salta a «{quest:535}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#43"]
+note = "Polestar paso 43 «Secuaz Valik», objetivo 1 (accept) · condición no expresable: llevas la misión 533; no tienes lista la misión 533 · datos no importados: parent"
+
+[[step]]
+id = "h29-trabalomas-arathi-095"
+do = "turnin"
+quest = 535
+npc = 2333
+at = [1416, 57.17, 69.51]
+optional = true
+chain = "h29-trabalomas-arathi-s043-2333"
+text = "Entrega «{quest:535}» a {npc:2333}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#43"]
+note = "Polestar paso 43 «Secuaz Valik», objetivo 2 (turnin) · condición no expresable: llevas la misión 533; no tienes lista la misión 533"
+
+[[step]]
+id = "h29-trabalomas-arathi-096"
+do = "complete"
+quest = 533
+obj = 1
+at = [1416, 57.6, 68.54]
+wps = [[1416, 47.8, 81.7, "Misiva de la Hermandad"]]
+text = "Consigue {item:3601} (1) de {npc:2241} y {npc:2240} para «{quest:533}»."
+tip = "Solo si no conseguiste la misiva de «{quest:535}»: los Asaltantes de caminos y Ladrones del Sindicato (32-34) de los campamentos al oeste del camino también llevan misivas; más o menos uno de cada tres suelta una. Cuidado: a nivel 31-32 siguen por encima de ti y están muy juntos, con Zahoríes (34-35) entre ellos: atráelos de uno en uno desde el borde del campamento."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#44"]
+note = "Polestar paso 44 «Syndicate missives», objetivo 1 (collect)"
+
+[[step]]
+id = "h29-trabalomas-arathi-097"
+do = "turnin"
+quest = 533
+npc = 2229
+at = [1424, 63.24, 20.66]
+text = "Entrega «{quest:533}» a {npc:2229}."
+tip = "Vuelve al sur por el camino hasta {area:272}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#45"]
+note = "Polestar paso 45 «Tarren Mill», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:2229}, inside."
+
+[[step]]
+id = "h29-trabalomas-arathi-099"
+do = "turnin"
+quest = 567
+npc = 2215
+at = [1424, 62.33, 20.45]
+optional = true
+chain = "h29-trabalomas-arathi-s045-2215"
+text = "Entrega «{quest:567}» a la {npc:2215}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#45"]
+note = "Polestar paso 45 «Tarren Mill», objetivo 3 (turnin)"
+
+[[step]]
+id = "h29-trabalomas-arathi-100"
+do = "turnin"
+quest = 556
+npc = 2437
+at = [1424, 61.5, 20.93]
+text = "Entrega «{quest:556}» a {npc:2437}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#45"]
+note = "Polestar paso 45 «Tarren Mill», objetivo 4 (turnin) · consejo de Polestar sin traducir: {npc:2437}, inside."
+
+[[step]]
+id = "h29-trabalomas-arathi-101"
+do = "turnin"
+quest = 544
+npc = 2410
+at = [1424, 61.6, 20.85]
+chain = "h29-trabalomas-arathi-s045-2410"
+text = "Entrega «{quest:544}» a {npc:2410}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#45"]
+note = "Polestar paso 45 «Tarren Mill», objetivo 5 (turnin) · consejo de Polestar sin traducir: {npc:2410}, inside."
+
+[[step]]
+id = "h29-trabalomas-arathi-102"
+do = "turnin"
+quest = 93680
+npc = 2410
+at = [1424, 61.6, 20.85]
+chain = "h29-trabalomas-arathi-s045-2410"
+text = "Entrega «{quest:93680}» a {npc:2410}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#45"]
+note = "Polestar paso 45 «Tarren Mill», objetivo 6 (turnin) · consejo de Polestar sin traducir: {npc:2410}: he offers «{quest:545}» after it."
+
+[[step]]
+id = "h29-trabalomas-arathi-103"
+do = "accept"
+quest = 557
+npc = 2437
+at = [1424, 61.5, 20.93]
+reqlevel = 30
+text = "Coge «{quest:557}» de {npc:2437}."
+why = "+2.967 XP · ~2 min · 2,1× la mediana del 36-40"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#45"]
+note = "Polestar paso 45 «Tarren Mill», objetivo 7 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:2437}: for the 38-39 visit to Alterac."
+
+[[step]]
+id = "h29-trabalomas-arathi-104"
+do = "accept"
+quest = 545
+npc = 2410
+at = [1424, 61.6, 20.85]
+reqlevel = 30
+text = "Coge «{quest:545}» de {npc:2410}."
+why = "+3.175 XP · ~7,4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#45"]
+note = "Polestar paso 45 «Tarren Mill», objetivo 8 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:2410}: for the 38-39 visit to Alterac."
+
+[[step]]
+id = "h29-trabalomas-arathi-105"
+do = "note"
+text = "{npc:2229} ofrece ahora la misión de {npc:2316} (nivel 36): déjala para la visita del 38-39."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#45"]
+note = "Polestar paso 45 «Tarren Mill», objetivo 9 (note) · nota de Polestar traducida por Senda: Krusk now offers Gol'dir (level 36): leave it for the 38-39 visit."
+
+[[step]]
+id = "h29-trabalomas-arathi-106"
+do = "turnin"
+quest = 515
+npc = 2216
+at = [1424, 61.44, 19.06]
+optional = true
+text = "Entrega «{quest:515}» a {npc:2216}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#45"]
+note = "Polestar paso 45 «Tarren Mill», objetivo 10 (turnin) · consejo de Polestar sin traducir: {npc:2216}, inside."
+
+[[step]]
+id = "h29-trabalomas-arathi-107"
+do = "accept"
+quest = 517
+npc = 2216
+at = [1424, 61.44, 19.06]
+optional = true
+reqlevel = 24
+text = "Coge «{quest:517}» de {npc:2216}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#46"]
+note = "Polestar paso 46 ««Elixir de agonía» with a group», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 517; turnedin {'k': 'turnedin', 'q': 515} · datos no importados: pre · consejo de Polestar sin traducir: {npc:2216}, inside. · consejo de Polestar sin traducir: Lydon's next errand is a keg of Shindigger Stout from the cellar of {area:290}, the elite dwarven keep south-east of {area:271}: take it only if you go there with a group."
+
+[[step]]
+id = "h29-trabalomas-arathi-109"
+do = "accept"
+quest = 547
+npc = 2419
+at = [1424, 62.76, 20.21]
+optional = true
+reqlevel = 26
+text = "Coge «{quest:547}» de {npc:2419}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#48"]
+note = "Polestar paso 48 ««La espada de Humbert» with a group», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 547 · consejo de Polestar sin traducir: {npc:2419}'s sword drops from the same {area:290} dwarves (about one in twelve)."
+
+[[step]]
+id = "h29-trabalomas-arathi-114"
+do = "complete"
+quest = 547
+obj = 1
+at = [1424, 71.2, 79.0]
+text = "Consigue {item:3693} (1) para «{quest:547}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#49"]
+note = "Polestar paso 49 «Dun Garok», objetivo 5 (collect) · condición no expresable: llevas la misión 541, 547 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h29-trabalomas-arathi-117"
+do = "turnin"
+quest = 547
+npc = 2419
+at = [1424, 62.76, 20.21]
+text = "Entrega «{quest:547}» a {npc:2419}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#51"]
+note = "Polestar paso 51 «Guardia de la Muerte Humbert», objetivo 1 (turnin) · condición no expresable: llevas la misión 547 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h29-trabalomas-arathi-118"
+do = "complete"
+quest = 517
+obj = 1
+at = [1424, 72.0, 80.5]
+text = "Recoge {item:3517} (1) de {obj:1727} para «{quest:517}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#52"]
+note = "Polestar paso 52 «Shindigger keg», objetivo 1 (collect) · condición no expresable: llevas la misión 517 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: The Kegs of Shindigger Stout stand in the cellar of {area:290}, the dwarven keep south-east of {area:271}, beside {npc:2304} (32); every dwarf there is elite (28-32)."
+
+[[step]]
+id = "h29-trabalomas-arathi-119"
+do = "turnin"
+quest = 517
+npc = 2216
+at = [1424, 61.44, 19.06]
+chain = "h29-trabalomas-arathi-s053-2216"
+text = "Entrega «{quest:517}» a {npc:2216}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#53"]
+note = "Polestar paso 53 «Back to Tarren Mill», objetivo 1 (turnin) · condición no expresable: llevas la misión 517 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: {npc:2216}, inside. · consejo de Polestar sin traducir: Head back north to {area:272}."
+
+[[step]]
+id = "h29-trabalomas-arathi-120"
+do = "accept"
+quest = 524
+npc = 2216
+at = [1424, 61.44, 19.06]
+chain = "h29-trabalomas-arathi-s053-2216"
+reqlevel = 24
+text = "Coge «{quest:524}» de {npc:2216}."
+why = "+3.650 XP · ~2,3 min · 3,8× la mediana del 31-35"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#53"]
+note = "Polestar paso 53 «Back to Tarren Mill», objetivo 2 (accept) · condición no expresable: llevas la misión 517 (implícita: el paso es de esa misión) · datos no importados: pre"
+
+[[step]]
+id = "h29-trabalomas-arathi-121"
+do = "turnin"
+quest = 524
+at = [1424, 62.81, 18.73]
+text = "Entrega «{quest:524}» en {obj:1728}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#53"]
+note = "Polestar paso 53 «Back to Tarren Mill», objetivo 3 (turnin) · condición no expresable: llevas la misión 517 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: Place the {obj:1729} on the {obj:1728} beside the inn; upstairs."
+
+[[step]]
+id = "h29-trabalomas-arathi-122"
+do = "goto"
+at = [1417, 32.6, 40.4]
+text = "Ve a campamento Puño de Roca."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#54"]
+note = "Polestar paso 54 «Arathi Highlands», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-123"
+do = "complete"
+quest = 676
+obj = 1
+at = [1417, 33.15, 40.79]
+wps = [[1417, 35.9, 43.3, "Ogro Puño de Roca"], [1417, 31.1, 46.7, "Ogro Puño de Roca"], [1417, 36.7, 46.8, "Ogro Puño de Roca"]]
+text = "Mata {npc:2562} (8) para «{quest:676}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#55"]
+note = "Polestar paso 55 «Boulderfist camp», objetivo 1 (kill) · consejo de Polestar sin traducir: Head east out of {area:272} through {area:1057} and follow the road east. The Boulderfist Ogres and Enforcers (32-34) camp south of the road, south of {area:313}; the Enforcers stay in the cave there."
+
+[[step]]
+id = "h29-trabalomas-arathi-124"
+do = "complete"
+quest = 676
+obj = 2
+at = [1417, 32.82, 43.14]
+wps = [[1417, 32.2, 44.8, "Déspota Puño de Roca"], [1417, 33.8, 44.6, "Déspota Puño de Roca"]]
+text = "Mata {npc:2564} (10) para «{quest:676}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#55"]
+note = "Polestar paso 55 «Boulderfist camp», objetivo 2 (kill)"
+
+[[step]]
+id = "h29-trabalomas-arathi-125"
+do = "goto"
+at = [1417, 31.2, 48.0]
+if = { maxlevel = 30 }
+text = "Ve a campamento Puño de Roca."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#56"]
+note = "Polestar paso 56 «Level 31», objetivo 1 (goto) · consejo de Polestar sin traducir: {area:321}'s quests are 32-36. Below 31? Keep killing the Boulderfist Ogres and Enforcers at this camp until level 31. Or, with a group, run the {area:796} dungeon (Graveyard) or the {area:2797} dungeon instead."
+
+[[step]]
+id = "h29-trabalomas-arathi-126"
+do = "level"
+level = 31
+at = [1417, 31.16, 48.05]
+if = { maxlevel = 30 }
+text = "Sube al nivel 31."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#56"]
+note = "Polestar paso 56 «Level 31», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:2562}."
+
+[[step]]
+id = "h29-trabalomas-arathi-128"
+do = "getfp"
+npc = 2851
+node = "17"
+at = [1417, 73.02, 32.7]
+text = "Coge la ruta de vuelo de Sentencia con {npc:2851}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#57"]
+note = "Polestar paso 57 «Hammerfall», objetivo 2 (getfp)"
+
+[[step]]
+id = "h29-trabalomas-arathi-129"
+do = "turnin"
+quest = 8263
+npc = 15126
+at = [1417, 73.37, 29.67]
+optional = true
+text = "Entrega «{quest:8263}» a {npc:15126}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#57"]
+note = "Polestar paso 57 «Hammerfall», objetivo 3 (turnin)"
+
+[[step]]
+id = "h29-trabalomas-arathi-130"
+do = "turnin"
+quest = 676
+npc = 2771
+at = [1417, 74.24, 33.92]
+chain = "h29-trabalomas-arathi-s057-2771"
+text = "Entrega «{quest:676}» a {npc:2771}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#57"]
+note = "Polestar paso 57 «Hammerfall», objetivo 4 (turnin)"
+
+[[step]]
+id = "h29-trabalomas-arathi-131"
+do = "accept"
+quest = 677
+npc = 2771
+at = [1417, 74.24, 33.92]
+chain = "h29-trabalomas-arathi-s057-2771"
+reqlevel = 30
+text = "Coge «{quest:677}» de {npc:2771}."
+why = "+8.408 XP · ~24 min · desbloquea «{quest:679}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#57"]
+note = "Polestar paso 57 «Hammerfall», objetivo 5 (accept)"
+
+[[step]]
+id = "h29-trabalomas-arathi-134"
+do = "accept"
+quest = 671
+npc = 2706
+at = [1417, 74.72, 36.29]
+optional = true
+chain = "h29-trabalomas-arathi-s057-2706"
+reqlevel = 30
+text = "Coge «{quest:671}» de {npc:2706}."
+tip = "+4.211 XP · ~12 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#57"]
+note = "Polestar paso 57 «Hammerfall», objetivo 8 (accept) · consejo de Polestar sin traducir: {npc:2706}: its Syndicate are by the road in from {area:272}, on the 38-39 visit."
+
+[[step]]
+id = "h29-trabalomas-arathi-135"
+do = "accept"
+quest = 97539
+npc = 12920
+at = [1417, 73.41, 36.89]
+reqlevel = 30
+text = "Coge «{quest:97539}» de {npc:12920}."
+why = "+2.800 XP · ~2,5 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#57"]
+note = "Polestar paso 57 «Hammerfall», objetivo 9 (accept)"
+
+[[step]]
+id = "h29-trabalomas-arathi-136"
+do = "complete"
+quest = 677
+obj = 2
+at = [1417, 72.3, 63.7]
+wps = [[1417, 70.8, 68.3, "Rebanacabezas Secacorteza"], [1417, 69.3, 72.4, "Rebanacabezas Secacorteza"], [1417, 67.1, 70.2, "Rebanacabezas Secacorteza"]]
+text = "Mata {npc:2556} (10) para «{quest:677}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#58"]
+note = "Polestar paso 58 «Witherbark Village», objetivo 1 (kill) · consejo de Polestar sin traducir: South of Hammerfall, the Witherbark trolls hold the village in the hills. Axe Throwers guard the outer huts; the Witch Doctors and Headhunters hold the heart of the village. Careful: All three troll types flee for help at 15% health, which can pull more trolls from the nearby camps."
+
+[[step]]
+id = "h29-trabalomas-arathi-137"
+do = "complete"
+quest = 677
+obj = 1
+at = [1417, 73.03, 64.75]
+wps = [[1417, 73.2, 60.3, "Lanzahachas Secacorteza"], [1417, 71.2, 60.1, "Lanzahachas Secacorteza"], [1417, 68.2, 60.7, "Lanzahachas Secacorteza"]]
+text = "Mata {npc:2554} (10) para «{quest:677}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#58"]
+note = "Polestar paso 58 «Witherbark Village», objetivo 2 (kill)"
+
+[[step]]
+id = "h29-trabalomas-arathi-138"
+do = "complete"
+quest = 677
+obj = 3
+at = [1417, 73.74, 64.62]
+wps = [[1417, 72.2, 64.0, "Médico brujo Secacorteza"], [1417, 70.4, 68.4, "Médico brujo Secacorteza"], [1417, 66.4, 63.8, "Médico brujo Secacorteza"]]
+text = "Mata {npc:2555} (8) para «{quest:677}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#58"]
+note = "Polestar paso 58 «Witherbark Village», objetivo 3 (kill)"
+
+[[step]]
+id = "h29-trabalomas-arathi-140"
+do = "complete"
+quest = 97539
+obj = 1
+at = [1417, 69.5, 50.5]
+text = "Consigue {item:278225} (12) para «{quest:97539}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#59"]
+note = "Polestar paso 59 «Highland raptors and Plains Creepers», objetivo 2 (collect) · consejo de Polestar sin traducir: {item:278225}, from Plains Creepers."
+
+[[step]]
+id = "h29-trabalomas-arathi-141"
+do = "turnin"
+quest = 97539
+npc = 12920
+at = [1417, 73.41, 36.89]
+text = "Entrega «{quest:97539}» a {npc:12920}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#60"]
+note = "Polestar paso 60 «Hammerfall», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:12920}, at the south gate. · consejo de Polestar sin traducir: Back north to {area:321}."
+
+[[step]]
+id = "h29-trabalomas-arathi-144"
+do = "turnin"
+quest = 677
+npc = 2771
+at = [1417, 74.24, 33.92]
+text = "Entrega «{quest:677}» a {npc:2771}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#60"]
+note = "Polestar paso 60 «Hammerfall», objetivo 4 (turnin)"
+
+[[step]]
+id = "h29-trabalomas-arathi-148"
+do = "note"
+text = "Las misiones de raptores de {npc:2706}, «{quest:677}» de {npc:2771} y el reabastecimiento del doctor esperan a la visita del 38-39."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#60"]
+note = "Polestar paso 60 «Hammerfall», objetivo 8 (note) · nota de Polestar traducida por Senda: Tor'gan's Guile of the Raptor, Bombo Vil's next «Un llamamiento a las armas» and the doctor's Ward Restocking wait for the 38-39 visit."
+
+[[step]]
+id = "h29-trabalomas-arathi-149"
+do = "goto"
+at = [1417, 73.1, 32.7]
+text = "Ve al maestro de vuelo de {area:321}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#61"]
+note = "Polestar paso 61 «Fly to Undercity», objetivo 1 (goto)"
+
+[[step]]
+id = "h29-trabalomas-arathi-150"
+do = "fly"
+zone = 1458
+text = "Vuela a Entrañas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#61"]
+note = "Polestar paso 61 «Fly to Undercity», objetivo 2 (fly)"
+
+[[step]]
+id = "h29-trabalomas-arathi-152-wr"
+do = "train"
+npc = 4595
+spells = [1464, 1671, 6548, 7369, 7372, 11549, 18499, 20658]
+at = [1458, 47.4, 17.29]
+if = { class = ["WARRIOR"] }
+reqlevel = 32
+text = "Entrena con {npc:4595}, el instructor de guerrero."
+tip = "8 hechizos hasta el nivel 32: nuevos {spell:18499}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#63", "trainer:warrior"]
+note = "Polestar paso 63 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 30-33"
+
+[[step]]
+id = "h29-trabalomas-arathi-152-pa"
+do = "train"
+npc = 260093
+spells = [2800, 19752, 19888, 20116, 20165, 20306]
+at = [1458, 48.35, 14.27]
+if = { class = ["PALADIN"] }
+reqlevel = 32
+text = "Entrena con {npc:260093}, el instructor de paladín."
+tip = "6 hechizos hasta el nivel 32: nuevos {spell:19752}, {spell:19888}, {spell:20165} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#63", "trainer:paladin"]
+note = "Polestar paso 63 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 30-33"
+
+[[step]]
+id = "h29-trabalomas-arathi-152-ro"
+do = "train"
+npc = 4582
+spells = [408, 1842, 2835, 8629, 8632, 13220]
+at = [1458, 83.86, 72.07]
+if = { class = ["ROGUE"] }
+reqlevel = 32
+text = "Entrena con {npc:4582}, el instructor de pícaro."
+tip = "6 hechizos hasta el nivel 32: nuevos {spell:408}, {spell:1842}, {spell:2835} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#63", "trainer:rogue"]
+note = "Polestar paso 63 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 30-33"
+
+[[step]]
+id = "h29-trabalomas-arathi-152-pr"
+do = "train"
+npc = 4608
+spells = [552, 596, 602, 605, 976, 6065, 6077, 8131, 9473, 9579, 14752, 15263, 1309595]
+at = [1458, 47.57, 18.9]
+if = { class = ["PRIEST"] }
+reqlevel = 32
+text = "Entrena con {npc:4608}, el instructor de sacerdote."
+tip = "13 hechizos hasta el nivel 32: nuevos {spell:552}, {spell:596}, {spell:605} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#63", "trainer:priest"]
+note = "Polestar paso 63 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 30-33"
+
+[[step]]
+id = "h29-trabalomas-arathi-152-mg"
+do = "train"
+npc = 2492
+spells = [6127, 6129, 7302, 8407, 8412, 8416, 8422, 8438, 8455, 8457, 8461]
+at = [1458, 84.19, 15.58]
+if = { class = ["MAGE"] }
+reqlevel = 32
+text = "Entrena con {npc:2492}, el instructor de mago."
+tip = "11 hechizos hasta el nivel 32: nuevos {spell:7302}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#63", "trainer:mage"]
+note = "Polestar paso 63 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 30-33"
+
+[[step]]
+id = "h29-trabalomas-arathi-152-wl"
+do = "train"
+npc = 4563
+spells = [709, 1086, 1098, 1949, 2941, 6213, 6229, 7646, 20752, 1311676]
+at = [1458, 86.21, 15.93]
+if = { class = ["WARLOCK"] }
+reqlevel = 32
+text = "Entrena con {npc:4563}, el instructor de brujo."
+tip = "10 hechizos hasta el nivel 32: nuevos {spell:1098}, {spell:1949}, {spell:6229} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/01-hillsbrad-foothills#63", "trainer:warlock"]
+note = "Polestar paso 63 «Undercity trainers», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 30-33"

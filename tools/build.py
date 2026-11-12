@@ -4,6 +4,7 @@
 Genera:
   addon/Senda/Guides/<guide-id>.lua   secciones propias de la guía + RegisterGuide
   addon/Senda/Guides/Shared.lua       secciones de data/shared usadas por alguna guía (una vez cada una)
+  addon/Senda/Guides/SharedHorde.lua  las que solo usan guías de la Horda (el archivo no carga nada para la Alianza)
   addon/Senda/Guides/Followups.lua    índice misión -> misiones que dependen de ella (para «Saltar esta misión»)
   addon/Senda/Guides/Reserve.lua      Reserva de XP de la pestaña «Aparte», desde data/reserve.json (tools/reserve.py)
   addon/Senda/Guides/Guides.xml
@@ -78,8 +79,21 @@ def _strip(value, keys: set[str]):
     return value
 
 
-def _lua_file(source: str, body: list[str]) -> str:
-    head = [f"-- {GENERATED_HEADER}", f"-- Fuente: {source}", "local _, Senda = ..."]
+# Facciones cuyas guías van en archivos que solo cargan para esa facción. La Alianza no lleva guarda: sus
+# archivos no cambian. Si el cliente aún no sabe la facción al cargar (nil), se carga todo, como antes.
+GATED_FACTIONS = {"Horde"}
+
+
+def _faction_gate(faction: str | None) -> list[str]:
+    if faction not in GATED_FACTIONS:
+        return []
+    return [f"-- Solo personajes de la facción {faction}: para el resto, este archivo no registra nada.",
+            "local faction = Senda.Compat and Senda.Compat.PlayerFaction and Senda.Compat.PlayerFaction()",
+            f'if faction and faction ~= "{faction}" then return end']
+
+
+def _lua_file(source: str, body: list[str], faction: str | None = None) -> str:
+    head = [f"-- {GENERATED_HEADER}", f"-- Fuente: {source}", "local _, Senda = ..."] + _faction_gate(faction)
     return "\n".join(head) + "\n\n" + "\n\n".join(body) + "\n"
 
 
@@ -744,6 +758,7 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
 
     # --- guías
     shared_used: dict[str, validate.Section] = {}
+    shared_factions: dict[str, set] = {}
     guide_files: list[str] = []
     for g in sorted(ds.guides, key=lambda g: g.data["id"]):
         # ship = false: datos de trabajo (p. ej. rutas importadas en bruto) que no van en el addon.
@@ -753,13 +768,14 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
         for sec in g.sections:
             if sec.shared:
                 shared_used.setdefault(sec.key, sec)
+                shared_factions.setdefault(sec.key, set()).add(g.data.get("faction"))
             else:
                 body.append(_section_table(sec, step_order))
         gd = _strip(g.data, STRIP_GUIDE)
         gd["sections"] = [s.id for s in g.sections]
         body.append(f"Senda.Guides:RegisterGuide({to_lua(gd, key_order=GUIDE_ORDER, multiline=True)})")
         name = f"{g.data['id']}.lua"
-        out[paths.out_guides / name] = _lua_file(paths.rel(g.dir) + "/", body)
+        out[paths.out_guides / name] = _lua_file(paths.rel(g.dir) + "/", body, g.data.get("faction"))
         guide_files.append(name)
 
     xml_files = []
@@ -769,10 +785,21 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
     if res is not None:
         out[paths.out_guides / "Reserve.lua"] = res
         xml_files.append("Reserve.lua")
-    if shared_used:
-        body = [_section_table(sec, step_order) for _, sec in sorted(shared_used.items())]
+    # Secciones compartidas que solo usan guías de una facción con guarda: en su propio archivo.
+    gated: dict[str, dict] = {}
+    for key, sec in sorted(shared_used.items()):
+        fs = shared_factions.get(key, set())
+        only = next(iter(fs)) if len(fs) == 1 else None
+        gated.setdefault(only if only in GATED_FACTIONS else "", {})[key] = sec
+    if gated.get(""):
+        body = [_section_table(sec, step_order) for _, sec in sorted(gated[""].items())]
         out[paths.out_guides / "Shared.lua"] = _lua_file("data/shared/", body)
         xml_files.append("Shared.lua")
+    for faction in sorted(f for f in gated if f):
+        body = [_section_table(sec, step_order) for _, sec in sorted(gated[faction].items())]
+        name = f"Shared{faction}.lua"
+        out[paths.out_guides / name] = _lua_file("data/shared/", body, faction)
+        xml_files.append(name)
     xml_files += guide_files
     out[paths.out_guides / "Guides.xml"] = _xml(xml_files)
 

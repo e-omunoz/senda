@@ -1,0 +1,1412 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/30-40/02-thousand-needles
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h32-mil-agujas-desolace"
+title = "Las Mil Agujas y Desolace"
+levels = [32, 34]
+map = 1441
+summary = "Ruta común de la Horda, 32-34: Las Mil Agujas y Desolace."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h32-mil-agujas-desolace-001"
+do = "goto"
+at = [1420, 60.7, 58.8]
+text = "Ve al zepelín a {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#1"]
+note = "Polestar paso 1 «Zeppelin to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-002"
+do = "accept"
+quest = 1431
+npc = 5639
+at = [1454, 51.3, 45.9]
+reqlevel = 30
+text = "Coge «{quest:1431}» de {npc:5639}."
+tip = "El zepelín aterriza en la torre que hay fuera de la puerta principal de {map:1454}. {npc:5639} recorre La Calle Mayor: si no está en la flecha, búscalo por sus calles al suroeste. {npc:5640} está en {obj:172961}, en el lado oeste de la ciudad."
+why = "+600 XP · <1 min · desbloquea «{quest:1434}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#2"]
+note = "Polestar paso 2 ««Las relaciones de la Alianza»», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:5639}: offered from level 30."
+
+[[step]]
+id = "h32-mil-agujas-desolace-003"
+do = "turnin"
+quest = 1431
+npc = 5640
+at = [1454, 22.56, 52.63]
+chain = "h32-mil-agujas-desolace-s002-5640"
+text = "Entrega «{quest:1431}» a {npc:5640}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#2"]
+note = "Polestar paso 2 ««Las relaciones de la Alianza»», objetivo 2 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-004"
+do = "accept"
+quest = 1432
+npc = 5640
+at = [1454, 22.56, 52.63]
+chain = "h32-mil-agujas-desolace-s002-5640"
+reqlevel = 30
+text = "Coge «{quest:1432}» de {npc:5640}."
+why = "+1.200 XP · <1 min · desbloquea «{quest:1434}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#2"]
+note = "Polestar paso 2 ««Las relaciones de la Alianza»», objetivo 3 (accept) · datos no importados: pre · consejo de Polestar sin traducir: For {npc:5641} in {map:1443}, later in this guide."
+
+[[step]]
+id = "h32-mil-agujas-desolace-005-hu"
+do = "train"
+npc = 3352
+spells = [1543, 5384, 13161, 14269, 14326, 15629, 19878]
+at = [1454, 66.05, 18.53]
+if = { class = ["HUNTER"] }
+reqlevel = 32
+text = "Entrena con {npc:3352}, el instructor de cazador."
+tip = "7 hechizos hasta el nivel 32: nuevos {spell:1543}, {spell:5384}, {spell:13161} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#3", "trainer:hunter"]
+note = "Polestar paso 3 «Orgrimmar trainers», objetivo 1 (train) · consejo de Polestar sin traducir: Train while you are in the city. · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 30-32"
+
+[[step]]
+id = "h32-mil-agujas-desolace-005-sh"
+do = "train"
+npc = 3403
+spells = [421, 556, 945, 8012, 8177, 8232, 8512, 10595, 20608, 66843, 408343]
+at = [1454, 37.84, 36.45]
+if = { class = ["SHAMAN"] }
+reqlevel = 32
+text = "Entrena con {npc:3403}, el instructor de chamán."
+tip = "11 hechizos hasta el nivel 32: nuevos {spell:421}, {spell:556}, {spell:8177} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#3", "trainer:shaman"]
+note = "Polestar paso 3 «Orgrimmar trainers», objetivo 1 (train) · consejo de Polestar sin traducir: Train while you are in the city. · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 30-32"
+
+[[step]]
+id = "h32-mil-agujas-desolace-006"
+do = "accept"
+quest = 1531
+npc = 5892
+at = [1454, 37.96, 37.73]
+if = { class = ["SHAMAN"] }
+reqlevel = 30
+text = "Coge «{quest:1531}» de {npc:5892}."
+tip = "{npc:5892} está en {obj:172957}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#4"]
+note = "Polestar paso 4 «Searn Guardafogo», objetivo 1 (accept) · datos no importados: closedBy · consejo de Polestar sin traducir: {npc:5892}: for {npc:5905} by {area:484}, later in this guide."
+
+[[step]]
+id = "h32-mil-agujas-desolace-007"
+do = "accept"
+quest = 2841
+npc = 3412
+at = [1454, 75.99, 25.41]
+optional = true
+reqlevel = 25
+text = "Coge «{quest:2841}» de {npc:3412}."
+tip = "Contenido de grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#5"]
+note = "Polestar paso 5 «Nogg», objetivo 1 (accept) · condición no expresable: dungeon {'k': 'dungeon', 'name': 'Gnomeregan', 'map': 90} · consejo de Polestar sin traducir: {npc:3412}'s workshop is in the {obj:172958}. «{quest:2841}» is {area:133}'s last boss: great XP if you run it with a group. Run it whenever your group is ready; hand it in on a later {map:1454} stop."
+
+[[step]]
+id = "h32-mil-agujas-desolace-008"
+do = "goto"
+at = [1454, 45.3, 63.7]
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#7"]
+note = "Polestar paso 7 «Orgrimmar flight master», objetivo 1 (goto)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-009"
+do = "fly"
+zone = 1413
+if = { class = ["DRUID"] }
+text = "Vuela a Cima del Trueno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#8"]
+note = "Polestar paso 8 «Thunder Bluff», objetivo 1 (fly) · consejo de Polestar sin traducir: Fly from {map:1454} to {area:1638} and train with {npc:3033} on {area:1639}; fly on to {area:484} from there."
+
+[[step]]
+id = "h32-mil-agujas-desolace-010-dr"
+do = "train"
+npc = 3034
+spells = [740, 778, 783, 5225, 6785, 6800, 20739, 22568]
+at = [1456, 77.14, 27.02]
+if = { class = ["DRUID"] }
+reqlevel = 32
+text = "Entrena con {npc:3034}, el instructor de druida."
+tip = "8 hechizos hasta el nivel 32: nuevos {spell:740}, {spell:783}, {spell:5225} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#8", "trainer:druid"]
+note = "Polestar paso 8 «Thunder Bluff», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 30-32"
+
+[[step]]
+id = "h32-mil-agujas-desolace-011"
+do = "fly"
+zone = 1413
+if = { class = ["SHAMAN"] }
+text = "Vuela a Trinquete."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#9"]
+note = "Polestar paso 9 «Islen Vident'aqua», objetivo 1 (fly) · consejo de Polestar sin traducir: Fly from {map:1454} to {area:392}. {npc:5901} camps on the coast a short walk south of the town; fly on to {area:484} from {area:392}."
+
+[[step]]
+id = "h32-mil-agujas-desolace-012"
+do = "turnin"
+quest = 96
+npc = 5901
+at = [1413, 65.83, 43.78]
+if = { class = ["SHAMAN"] }
+text = "Entrega «{quest:96}» a {npc:5901}, {npc:3527} y tu {item:5177}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#9"]
+note = "Polestar paso 9 «Islen Vident'aqua», objetivo 2 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-013"
+do = "goto"
+at = [1456, 46.7, 49.9]
+if = { class = ["DRUID"] }
+text = "Ve al maestro de vuelo de {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#10"]
+note = "Polestar paso 10 «Fly to Freewind Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-014"
+do = "fly"
+zone = 1413
+if = { class = ["DRUID"] }
+text = "Vuela a Poblado Viento Libre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#10"]
+note = "Polestar paso 10 «Fly to Freewind Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-015"
+do = "goto"
+at = [1413, 63.1, 37.1]
+if = { class = ["SHAMAN"] }
+text = "Ve al maestro de vuelo de {area:392}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#11"]
+note = "Polestar paso 11 «Fly to Freewind Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-016"
+do = "fly"
+zone = 1441
+if = { class = ["SHAMAN"] }
+text = "Vuela a Poblado Viento Libre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#11"]
+note = "Polestar paso 11 «Fly to Freewind Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-017"
+do = "fly"
+zone = 1441
+if = { class = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK"] }
+text = "Vuela a Poblado Viento Libre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#12"]
+note = "Polestar paso 12 «Fly to Freewind Post», objetivo 1 (fly)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-018"
+do = "turnin"
+quest = 1531
+npc = 5905
+at = [1441, 53.54, 42.65]
+if = { class = ["SHAMAN"] }
+text = "Entrega «{quest:1531}» a {npc:5905}, tu {item:5178}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#13"]
+note = "Polestar paso 13 «Prate Nubeprofeta», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:5905} hides in a small cave in the canyon wall north-east of the post, on the way east."
+
+[[step]]
+id = "h32-mil-agujas-desolace-019"
+do = "note"
+if = { class = ["SHAMAN"] }
+text = "{npc:5905} también inicia la cadena de chamán de 33-40 en {area:1717}, hasta las armas de la Tempestad."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#13"]
+note = "Polestar paso 13 «Prate Nubeprofeta», objetivo 2 (note)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-020"
+do = "turnin"
+quest = 1146
+npc = 4483
+at = [1441, 67.58, 63.94]
+chain = "h32-mil-agujas-desolace-s014-4483"
+text = "Entrega «{quest:1146}» a {npc:4483}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#14"]
+note = "Polestar paso 14 «Moktar Krin», objetivo 1 (turnin) · consejo de Polestar sin traducir: Take the lift down and follow the canyon east. {npc:4483} camps on the north-western edge of the salt flats."
+
+[[step]]
+id = "h32-mil-agujas-desolace-021"
+do = "accept"
+quest = 1147
+npc = 4483
+at = [1441, 67.58, 63.94]
+chain = "h32-mil-agujas-desolace-s014-4483"
+reqlevel = 29
+text = "Coge «{quest:1147}» de {npc:4483}."
+why = "+3.824 XP · ~7,3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#14"]
+note = "Polestar paso 14 «Moktar Krin», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h32-mil-agujas-desolace-022"
+do = "accept"
+quest = 1110
+npc = 4452
+at = [1441, 77.79, 77.27]
+optional = true
+chain = "h32-mil-agujas-desolace-s015-4452"
+reqlevel = 28
+text = "Coge «{quest:1110}» de {npc:4452}."
+tip = "+2.500 XP · ~10 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#15"]
+note = "Polestar paso 15 «Mirage Raceway», objetivo 1 (accept) · consejo de Polestar sin traducir: The goblins and gnomes of the {area:2240} are neutral and give quests to both factions."
+
+[[step]]
+id = "h32-mil-agujas-desolace-023"
+do = "accept"
+quest = 5762
+npc = 4452
+at = [1441, 77.79, 77.27]
+chain = "h32-mil-agujas-desolace-s015-4452"
+reqlevel = 28
+text = "Coge «{quest:5762}» de {npc:4452}."
+why = "+1.250 XP · <1 min · 2,5× la mediana del 31-35"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#15"]
+note = "Polestar paso 15 «Mirage Raceway», objetivo 2 (accept) · consejo de Polestar sin traducir: {npc:4452}'s crate for «{quest:5762}» in Stranglethorn, later on the route."
+
+[[step]]
+id = "h32-mil-agujas-desolace-024"
+do = "accept"
+quest = 1104
+npc = 4454
+at = [1441, 78.06, 77.13]
+optional = true
+reqlevel = 28
+text = "Coge «{quest:1104}» de {npc:4454}."
+tip = "+14.304 XP · ~61 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#15"]
+note = "Polestar paso 15 «Mirage Raceway», objetivo 3 (accept)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-025"
+do = "accept"
+quest = 1105
+npc = 4453
+at = [1441, 78.14, 77.12]
+reqlevel = 28
+text = "Coge «{quest:1105}» de {npc:4453}."
+why = "+7.926 XP · ~25 min · desbloquea «{quest:1108}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#15"]
+note = "Polestar paso 15 «Mirage Raceway», objetivo 4 (accept)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-026"
+do = "accept"
+quest = 1176
+npc = 4630
+at = [1441, 80.18, 75.88]
+optional = true
+reqlevel = 29
+text = "Coge «{quest:1176}» de {npc:4630}."
+tip = "+3.735 XP · ~15 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#15"]
+note = "Polestar paso 15 «Mirage Raceway», objetivo 5 (accept)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-027"
+do = "accept"
+quest = 1175
+npc = 4629
+at = [1441, 81.63, 77.95]
+optional = true
+reqlevel = 28
+text = "Coge «{quest:1175}» del {npc:4629}."
+tip = "+7.686 XP · ~29 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#15"]
+note = "Polestar paso 15 «Mirage Raceway», objetivo 6 (accept)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-028"
+do = "complete"
+quest = 1175
+obj = 2
+at = [1441, 78.4, 87.9]
+optional = true
+text = "Mata {npc:4151} (10) para «{quest:1175}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#16"]
+note = "Polestar paso 16 «The southern flats», objetivo 1 (kill) · consejo de Polestar sin traducir: South of the raceway, the Saltstone Crystalhides (32-33) and Gazers (34-35) roam the far end of the flats."
+
+[[step]]
+id = "h32-mil-agujas-desolace-029"
+do = "complete"
+quest = 1175
+obj = 3
+at = [1441, 77.1, 88.4]
+optional = true
+text = "Mata {npc:4150} (6) para «{quest:1175}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#16"]
+note = "Polestar paso 16 «The southern flats», objetivo 2 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-030"
+do = "complete"
+quest = 1147
+obj = 1
+at = [1441, 69.8, 83.3]
+text = "Mata {npc:4130} (5) para «{quest:1147}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#17"]
+note = "Polestar paso 17 «The Rustmaul Dig Site», objetivo 1 (kill) · consejo de Polestar sin traducir: West of them the silithid swarm the dig site. Searchers and Hive Drones walk among the mounds; the Invaders (34-35) stay inside the hive cave. The first silithid you kill drops a {item:5877}: open it.\nCareful: Hive Drones call for help when they fall to 20% health."
+
+[[step]]
+id = "h32-mil-agujas-desolace-031"
+do = "complete"
+quest = 1147
+obj = 2
+at = [1441, 68.0, 85.7]
+text = "Mata {npc:4133} (5) para «{quest:1147}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#17"]
+note = "Polestar paso 17 «The Rustmaul Dig Site», objetivo 2 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-032"
+do = "complete"
+quest = 1147
+obj = 3
+at = [1441, 64.8, 86.0]
+text = "Mata {npc:4131} (5) para «{quest:1147}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#17"]
+note = "Polestar paso 17 «The Rustmaul Dig Site», objetivo 3 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-033"
+do = "loot"
+item = 5877
+count = 1
+at = [1441, 64.48, 85.83]
+wps = [[1441, 67.6, 86.0, "Caparazón de silítido rajado"], [1441, 68.3, 82.2, "Caparazón de silítido rajado"], [1441, 69.1, 88.5, "Caparazón de silítido rajado"]]
+text = "Consigue {item:5877} (1) de {npc:4133} y {npc:4130} y {npc:4131} y {npc:4132}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#17"]
+note = "Polestar paso 17 «The Rustmaul Dig Site», objetivo 4 (collect)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-034"
+do = "accept"
+quest = 1148
+reqlevel = 28
+text = "Usa {item:5877} para empezar «{quest:1148}»."
+why = "+3.754 XP · ~3,6 min · desbloquea «{quest:1184}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#17"]
+note = "Polestar paso 17 «The Rustmaul Dig Site», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h32-mil-agujas-desolace-035"
+do = "complete"
+quest = 1148
+obj = 1
+at = [1441, 64.48, 85.83]
+wps = [[1441, 67.6, 86.0, "Corazón de silítido"], [1441, 68.3, 82.2, "Corazón de silítido"], [1441, 69.1, 88.5, "Corazón de silítido"]]
+text = "Consigue {item:5855} (1) para «{quest:1148}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#18"]
+note = "Polestar paso 18 ««Pedazos del enjambre»», objetivo 1 (collect) · consejo de Polestar sin traducir: Keep killing silithid at the dig site for the heart, the talons and the carapaces."
+
+[[step]]
+id = "h32-mil-agujas-desolace-036"
+do = "complete"
+quest = 1148
+obj = 2
+at = [1441, 64.48, 85.83]
+wps = [[1441, 67.6, 86.0, "Espolón de silítido"], [1441, 68.3, 82.2, "Espolón de silítido"], [1441, 69.1, 88.5, "Espolón de silítido"]]
+text = "Consigue {item:5854} (5) de {npc:4133} y {npc:4130} y {npc:4131} y {npc:4132} para «{quest:1148}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#18"]
+note = "Polestar paso 18 ««Pedazos del enjambre»», objetivo 2 (collect)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-037"
+do = "complete"
+quest = 1148
+obj = 3
+at = [1441, 64.48, 85.83]
+wps = [[1441, 67.6, 86.0, "Caparazón de silítido intacto"], [1441, 68.3, 82.2, "Caparazón de silítido intacto"], [1441, 69.1, 88.5, "Caparazón de silítido intacto"]]
+text = "Consigue {item:5853} (3) de {npc:4133} y {npc:4130} y {npc:4131} y {npc:4132} para «{quest:1148}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#18"]
+note = "Polestar paso 18 ««Pedazos del enjambre»», objetivo 3 (collect)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-038"
+do = "turnin"
+quest = 1147
+npc = 4483
+at = [1441, 67.58, 63.94]
+text = "Entrega «{quest:1147}» a {npc:4483}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#19"]
+note = "Polestar paso 19 «Moktar Krin», objetivo 1 (turnin) · consejo de Polestar sin traducir: North from the dig to {npc:4483}'s camp on the western edge of the flats."
+
+[[step]]
+id = "h32-mil-agujas-desolace-039"
+do = "complete"
+quest = 1175
+obj = 1
+at = [1441, 75.7, 57.3]
+optional = true
+text = "Mata {npc:4147} (10) para «{quest:1175}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#20"]
+note = "Polestar paso 20 «Shimmering Flats: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: East onto the flats. The Saltstone Basilisks (30-31) sun themselves north-west of it; the Sparkleshell tortoises crowd round a half-buried ship in the north-east, and the Salt Flats Scavengers and Vultures circle the eastern flats. Every vulture drops a bone, about one tortoise in three a shell.\nCareful: Scavengers and Vultures use Execute when your health is low; the Snappers (34-35) hit hardest of the tortoises."
+
+[[step]]
+id = "h32-mil-agujas-desolace-040"
+do = "complete"
+quest = 1105
+obj = 1
+at = [1441, 82.1, 55.0]
+text = "Consigue {item:5795} (9) para «{quest:1105}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#20"]
+note = "Polestar paso 20 «Shimmering Flats: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-041"
+do = "complete"
+quest = 1176
+obj = 1
+at = [1441, 87.9, 65.4]
+optional = true
+text = "Consigue {item:5848} (10) de {npc:4154} y {npc:4158} para «{quest:1176}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#20"]
+note = "Polestar paso 20 «Shimmering Flats: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-042"
+do = "complete"
+quest = 1110
+obj = 1
+at = [1441, 88.86, 66.5]
+wps = [[1441, 87.2, 74.6, "Partes de coche cohete"], [1441, 88.2, 80.4, "Partes de coche cohete"], [1441, 82.3, 90.0, "Partes de coche cohete"]]
+optional = true
+text = "Recoge {item:5798} (30) de {obj:19868} para «{quest:1110}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#20"]
+note = "Polestar paso 20 «Shimmering Flats: kill these as you meet them», objetivo 4 (collect) · consejo de Polestar sin traducir: {obj:19868}, all over the northern flats."
+
+[[step]]
+id = "h32-mil-agujas-desolace-043"
+do = "complete"
+quest = 1104
+obj = 1
+at = [1441, 88.21, 69.02]
+wps = [[1441, 83.4, 72.7, "Veneno de escórpido salado"], [1441, 84.0, 80.0, "Veneno de escórpido salado"], [1441, 82.0, 87.3, "Veneno de escórpido salado"]]
+optional = true
+text = "Consigue {item:5794} (6) para «{quest:1104}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#20"]
+note = "Polestar paso 20 «Shimmering Flats: kill these as you meet them», objetivo 5 (collect) · consejo de Polestar sin traducir: «{quest:1104}», from the Scorpid Reavers of the north half."
+
+[[step]]
+id = "h32-mil-agujas-desolace-044"
+do = "turnin"
+quest = 1110
+npc = 4452
+at = [1441, 77.79, 77.27]
+optional = true
+chain = "h32-mil-agujas-desolace-s021-4452"
+text = "Entrega «{quest:1110}» a {npc:4452}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#21"]
+note = "Polestar paso 21 «Mirage Raceway», objetivo 1 (turnin) · consejo de Polestar sin traducir: South-west back to the raceway."
+
+[[step]]
+id = "h32-mil-agujas-desolace-045"
+do = "accept"
+quest = 1111
+npc = 4452
+at = [1441, 77.79, 77.27]
+chain = "h32-mil-agujas-desolace-s021-4452"
+reqlevel = 30
+text = "Coge «{quest:1111}» de {npc:4452}."
+why = "+1.400 XP · <1 min · 3,0× la mediana del 31-35"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#21"]
+note = "Polestar paso 21 «Mirage Raceway», objetivo 2 (accept) · consejo de Polestar sin traducir: {npc:4452}: his parts order goes to «{quest:1111}» in {area:392}, later on the route."
+
+[[step]]
+id = "h32-mil-agujas-desolace-046"
+do = "turnin"
+quest = 1104
+npc = 4454
+at = [1441, 78.06, 77.13]
+optional = true
+text = "Entrega «{quest:1104}» a {npc:4454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#21"]
+note = "Polestar paso 21 «Mirage Raceway», objetivo 3 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-047"
+do = "turnin"
+quest = 1105
+npc = 4453
+at = [1441, 78.14, 77.12]
+text = "Entrega «{quest:1105}» a {npc:4453}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#21"]
+note = "Polestar paso 21 «Mirage Raceway», objetivo 4 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-048"
+do = "accept"
+quest = 1106
+npc = 4454
+at = [1441, 78.06, 77.13]
+reqlevel = 26
+text = "Coge «{quest:1106}» de {npc:4454}."
+why = "+1.350 XP · <1 min · desbloquea «{quest:1108}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#21"]
+note = "Polestar paso 21 «Mirage Raceway», objetivo 5 (accept) · datos no importados: preAll · consejo de Polestar sin traducir: {npc:4454}: his letter goes to Martek in the {map:1418}, at 39."
+
+[[step]]
+id = "h32-mil-agujas-desolace-049"
+do = "turnin"
+quest = 1176
+npc = 4630
+at = [1441, 80.18, 75.88]
+optional = true
+chain = "h32-mil-agujas-desolace-s021-4630"
+text = "Entrega «{quest:1176}» a {npc:4630}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#21"]
+note = "Polestar paso 21 «Mirage Raceway», objetivo 6 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-050"
+do = "accept"
+quest = 1178
+npc = 4630
+at = [1441, 80.18, 75.88]
+chain = "h32-mil-agujas-desolace-s021-4630"
+reqlevel = 29
+text = "Coge «{quest:1178}» de {npc:4630}."
+why = "+700 XP · <1 min · desbloquea «{quest:1180}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#21"]
+note = "Polestar paso 21 «Mirage Raceway», objetivo 7 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:4630}: for Gazlowe in {area:392}, later on the route."
+
+[[step]]
+id = "h32-mil-agujas-desolace-051"
+do = "turnin"
+quest = 1175
+npc = 4629
+at = [1441, 81.63, 77.95]
+optional = true
+text = "Entrega «{quest:1175}» al {npc:4629}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#21"]
+note = "Polestar paso 21 «Mirage Raceway», objetivo 8 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-052"
+do = "goto"
+at = [1441, 77.5, 70.5]
+if = { maxlevel = 31 }
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#22"]
+note = "Polestar paso 22 «Level 32.5», objetivo 1 (goto) · destino de Polestar sin traducir: Sparkleshell Snappers · consejo de Polestar sin traducir: {map:1443}'s quests are 33-38. Still below 32.5 after the raceway's hand-ins? Keep killing the Sparkleshell Snappers on the flats just north of the raceway until level 32.5. Or, with a group, run the {area:796} dungeon (Graveyard or Library) instead."
+
+[[step]]
+id = "h32-mil-agujas-desolace-053"
+do = "level"
+level = 32
+at = [1441, 77.19, 70.87]
+if = { maxlevel = 31 }
+text = "Sube al nivel 32."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#22"]
+note = "Polestar paso 22 «Level 32.5», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:4143}."
+
+[[step]]
+id = "h32-mil-agujas-desolace-054"
+do = "accept"
+quest = 5361
+npc = 10537
+at = [1441, 45.67, 50.74]
+reqlevel = 32
+text = "Coge «{quest:5361}» de {npc:10537}."
+why = "+2.050 XP · <1 min · 7,9× la mediana del 31-35"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#23"]
+note = "Polestar paso 23 «Freewind Post», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:10537}: for {npc:11259} in {map:1443}, next. · consejo de Polestar sin traducir: West back to {area:484}. {npc:10537} stands in the middle of the post, on the way to the flight master."
+
+[[step]]
+id = "h32-mil-agujas-desolace-055"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#23"]
+note = "Polestar paso 23 «Freewind Post», objetivo 2 (vendor)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-056"
+do = "goto"
+at = [1441, 45.0, 49.1]
+text = "Ve al maestro de vuelo de {area:484}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#24"]
+note = "Polestar paso 24 «Fly to Sun Rock Retreat», objetivo 1 (goto)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-057"
+do = "fly"
+zone = 1443
+text = "Vuela a Refugio Roca del sol."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#24"]
+note = "Polestar paso 24 «Fly to Sun Rock Retreat», objetivo 2 (fly)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-058"
+do = "goto"
+at = [1443, 60.9, 61.9]
+text = "Ve a {area:2617}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#25"]
+note = "Polestar paso 25 «Desolace», objetivo 1 (goto)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-059"
+do = "accept"
+quest = 5561
+npc = 11596
+at = [1443, 60.86, 61.86]
+optional = true
+reqlevel = 30
+text = "Coge «{quest:5561}» de {npc:11596}."
+tip = "+2.000 XP · ~13 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#26"]
+note = "Polestar paso 26 «Scrabblescrew's Camp», objetivo 1 (accept) · consejo de Polestar sin traducir: Head south out of Stonetalon into {map:1443} and follow the road south to {npc:11596}'s camp."
+
+[[step]]
+id = "h32-mil-agujas-desolace-060"
+do = "accept"
+quest = 1365
+npc = 5395
+at = [1443, 56.19, 59.57]
+reqlevel = 30
+text = "Coge «{quest:1365}» de {npc:5395}."
+why = "+3.676 XP · ~4 min · desbloquea «{quest:1366}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#27"]
+note = "Polestar paso 27 «Ghost Walker Post», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:5395} stands in the post, {npc:11259} up on its rise; {npc:5641} and {npc:4498} wait on the rise west of it, above the {area:596}."
+
+[[step]]
+id = "h32-mil-agujas-desolace-061"
+do = "turnin"
+quest = 5361
+npc = 11259
+at = [1443, 55.41, 55.81]
+text = "Entrega «{quest:5361}» a {npc:11259}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#27"]
+note = "Polestar paso 27 «Ghost Walker Post», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:11259}, up on the rise."
+
+[[step]]
+id = "h32-mil-agujas-desolace-062"
+do = "turnin"
+quest = 1432
+npc = 5641
+at = [1443, 52.57, 54.39]
+chain = "h32-mil-agujas-desolace-s027-5641"
+text = "Entrega «{quest:1432}» a {npc:5641}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#27"]
+note = "Polestar paso 27 «Ghost Walker Post», objetivo 3 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-063"
+do = "accept"
+quest = 1433
+npc = 5641
+at = [1443, 52.57, 54.39]
+chain = "h32-mil-agujas-desolace-s027-5641"
+reqlevel = 30
+text = "Coge «{quest:1433}» de {npc:5641}."
+why = "+270 XP · <1 min · desbloquea «{quest:1435}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#27"]
+note = "Polestar paso 27 «Ghost Walker Post», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h32-mil-agujas-desolace-064"
+do = "accept"
+quest = 1434
+npc = 5641
+at = [1443, 52.57, 54.39]
+chain = "h32-mil-agujas-desolace-s027-5641"
+reqlevel = 25
+text = "Coge «{quest:1434}» de {npc:5641}."
+why = "+6.640 XP · ~21 min · desbloquea «{quest:1436}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#27"]
+note = "Polestar paso 27 «Ghost Walker Post», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h32-mil-agujas-desolace-065"
+do = "turnin"
+quest = 1433
+npc = 4498
+at = [1443, 52.25, 53.44]
+chain = "h32-mil-agujas-desolace-s027-4498"
+text = "Entrega «{quest:1433}» a {npc:4498}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#27"]
+note = "Polestar paso 27 «Ghost Walker Post», objetivo 6 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-066"
+do = "accept"
+quest = 1435
+npc = 4498
+at = [1443, 52.25, 53.44]
+chain = "h32-mil-agujas-desolace-s027-4498"
+reqlevel = 25
+text = "Coge «{quest:1435}» de {npc:4498}."
+why = "+2.650 XP · ~3,5 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#27"]
+note = "Polestar paso 27 «Ghost Walker Post», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h32-mil-agujas-desolace-067"
+do = "use"
+item = 13892
+at = [1443, 51.0, 58.5]
+text = "Usa {item:13892}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#28"]
+note = "Polestar paso 28 «Kodo Graveyard», objetivo 1 (use) · consejo de Polestar sin traducir: On an Aged, Dying or {npc:4702} in the graveyard; don't kill it. · consejo de Polestar sin traducir: Use {npc:11596}'s {item:13892} on an Aged, Dying or {npc:4702} in the graveyard and walk the tamed kodo back to {npc:11596}. At his camp, talk to the kodo: that counts it and lets you tame the next. Five kodos, one at a time."
+
+[[step]]
+id = "h32-mil-agujas-desolace-068"
+do = "complete"
+quest = 5561
+obj = 1
+npc = 4700
+at = [1443, 60.6, 61.6]
+optional = true
+text = "Habla con {npc:4700} para «{quest:5561}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#28"]
+note = "Polestar paso 28 «Kodo Graveyard», objetivo 2 (talk)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-069"
+do = "turnin"
+quest = 5561
+npc = 11596
+at = [1443, 60.86, 61.86]
+optional = true
+text = "Entrega «{quest:5561}» a {npc:11596}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#29"]
+note = "Polestar paso 29 «Scrabblescrew's Camp», objetivo 1 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-070"
+do = "goto"
+at = [1443, 59.9, 54.6]
+if = { maxlevel = 32 }
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#30"]
+note = "Polestar paso 30 «Level 33», objetivo 1 (goto) · destino de Polestar sin traducir: Scorpashi Lashers · consejo de Polestar sin traducir: Shadowprey's «{quest:5381}» and the coast's naga want 33. Below that? The Scorpashi Lashers on the slopes north of {npc:11596}'s camp are on your way west: kill them until level 33. Or, with a group, run the {area:796} dungeon (Library) instead."
+
+[[step]]
+id = "h32-mil-agujas-desolace-071"
+do = "level"
+level = 33
+at = [1443, 60.83, 54.52]
+if = { maxlevel = 32 }
+text = "Sube al nivel 33."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#30"]
+note = "Polestar paso 30 «Level 33», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:4697}."
+
+[[step]]
+id = "h32-mil-agujas-desolace-072"
+do = "accept"
+quest = 97265
+npc = 268705
+at = [1443, 25.35, 67.17]
+optional = true
+reqlevel = 28
+text = "Coge «{quest:97265}» de {npc:268705}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#31"]
+note = "Polestar paso 31 «Shadowprey Village», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:268705}: the Hatefury satyrs of {area:603}, later in this guide. · consejo de Polestar sin traducir: Head west to the troll village on the coast, keeping clear of the {area:606} on the way. {npc:268705} stands on the path just north of the village.\n{npc:268705} may not be here on Forever: if {npc:268705} doesn't offer «{quest:97265}», skip it."
+
+[[step]]
+id = "h32-mil-agujas-desolace-073"
+do = "accept"
+quest = 5381
+npc = 11624
+at = [1443, 25.82, 68.21]
+reqlevel = 32
+text = "Coge «{quest:5381}» de {npc:11624}."
+why = "+3.102 XP · ~6 min · desbloquea «{quest:5581}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#31"]
+note = "Polestar paso 31 «Shadowprey Village», objetivo 2 (accept)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-074"
+do = "sethearth"
+npc = 11106
+zone = 1443
+at = [1443, 24.09, 68.21]
+text = "Pon la piedra de hogar en {area:2408} con {npc:11106}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#31"]
+note = "Polestar paso 31 «Shadowprey Village», objetivo 3 (sethome)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-075"
+do = "accept"
+quest = 5763
+npc = 11877
+at = [1443, 25.05, 72.27]
+reqlevel = 28
+text = "Coge «{quest:5763}» de {npc:11877}."
+why = "+1.250 XP · <1 min · 2,7× la mediana del 31-35"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#31"]
+note = "Polestar paso 31 «Shadowprey Village», objetivo 4 (accept) · consejo de Polestar sin traducir: {npc:11877}: for «{quest:5762}» in Stranglethorn, next guide."
+
+[[step]]
+id = "h32-mil-agujas-desolace-076"
+do = "accept"
+quest = 6143
+npc = 12340
+at = [1443, 23.32, 72.87]
+reqlevel = 32
+text = "Coge «{quest:6143}» de {npc:12340}."
+why = "+5.819 XP · ~13 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#31"]
+note = "Polestar paso 31 «Shadowprey Village», objetivo 5 (accept)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-077"
+do = "accept"
+quest = 6142
+npc = 12031
+at = [1443, 22.64, 71.97]
+reqlevel = 31
+text = "Coge «{quest:6142}» de {npc:12031}."
+why = "+3.959 XP · ~5,4 min · 1,5× la mediana del 31-35"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#31"]
+note = "Polestar paso 31 «Shadowprey Village», objetivo 6 (accept)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-078"
+do = "getfp"
+npc = 6726
+node = "38"
+at = [1443, 21.6, 74.13]
+text = "Coge la ruta de vuelo de Aldea Cazasombras con {npc:6726}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#31"]
+note = "Polestar paso 31 «Shadowprey Village», objetivo 7 (getfp) · consejo de Polestar sin traducir: {npc:6726}, at the village's south-west end."
+
+[[step]]
+id = "h32-mil-agujas-desolace-079"
+do = "accept"
+quest = 5741
+npc = 11863
+at = [1443, 38.88, 27.16]
+reqlevel = 30
+text = "Coge «{quest:5741}» de {npc:11863}."
+tip = "Ve al norte por la costa y luego hacia el interior hasta la torre en ruinas de {area:2405}: {npc:11863} espera dentro. Las almejas y los naga de la costa vienen después de {area:599}, en un solo recorrido hacia el norte hasta {area:2406}."
+why = "+2.860 XP · ~7 min · desbloquea «{quest:6027}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#32"]
+note = "Polestar paso 32 «Ethel Rethor», objetivo 1 (accept)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-080"
+do = "complete"
+quest = 1435
+obj = 1
+at = [1443, 55.0, 26.5]
+text = "Consigue {item:6435} (15) para «{quest:1435}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#33"]
+note = "Polestar paso 33 «Thunder Axe Fortress», objetivo 1 (collect) · consejo de Polestar sin traducir: Head east to {area:599}. Beat a Burning Blade cultist down, then use the {item:6436} on it before it dies to fill one {item:6435}. The {npc:13019} stands on the fortress's top floor with the Sceptre. The cultists also drop a {item:20310} now and then (1-5%); if one drops, read it. «{quest:5381}»: clear the middle of the largest building, then use the {item:14523} on the red Hand of Iruxos Crystal there. A {npc:11876} (37) comes out: kill it for the {item:13542}."
+
+[[step]]
+id = "h32-mil-agujas-desolace-081"
+do = "complete"
+quest = 5741
+obj = 1
+at = [1443, 55.2, 30.1]
+text = "Consigue {item:15750} (1) de {npc:13019} para «{quest:5741}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#33"]
+note = "Polestar paso 33 «Thunder Axe Fortress», objetivo 2 (collect) · consejo de Polestar sin traducir: On the top floor."
+
+[[step]]
+id = "h32-mil-agujas-desolace-082"
+do = "complete"
+quest = 5381
+obj = 1
+at = [1443, 55.0, 26.7]
+text = "Usa {item:14523} para «{quest:5381}»."
+tip = "Consigue {item:13542} (1) de {npc:11876} para «{quest:5381}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#33"]
+note = "Polestar paso 33 «Thunder Axe Fortress», objetivo 3 (use) · consejo de Polestar sin traducir: {item:14523}, on the Hand of Iruxos Crystal."
+
+[[step]]
+id = "h32-mil-agujas-desolace-083"
+do = "loot"
+item = 20310
+count = 1
+at = [1443, 54.99, 26.19]
+wps = [[1443, 57.1, 25.8, "Piel de demonio despellejada"], [1443, 57.3, 28.3, "Piel de demonio despellejada"], [1443, 55.7, 29.8, "Piel de demonio despellejada"]]
+optional = true
+text = "Consigue {item:20310} (1)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#33"]
+note = "Polestar paso 33 «Thunder Axe Fortress», objetivo 5 (collect)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-085"
+do = "turnin"
+quest = 5741
+npc = 11863
+at = [1443, 38.88, 27.16]
+chain = "h32-mil-agujas-desolace-s034-11863"
+text = "Entrega «{quest:5741}» a {npc:11863}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#34"]
+note = "Polestar paso 34 «Ethel Rethor», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back west to {npc:11863}."
+
+[[step]]
+id = "h32-mil-agujas-desolace-086"
+do = "accept"
+quest = 6027
+npc = 11863
+at = [1443, 38.88, 27.16]
+chain = "h32-mil-agujas-desolace-s034-11863"
+reqlevel = 30
+text = "Coge «{quest:6027}» de {npc:11863}."
+why = "+3.808 XP · ~6,6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#34"]
+note = "Polestar paso 34 «Ethel Rethor», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h32-mil-agujas-desolace-087"
+do = "accept"
+quest = 6161
+at = [1443, 36.07, 30.41]
+reqlevel = 30
+text = "Coge «{quest:6161}» ({obj:177787})."
+tip = "{obj:177787} está en el suelo justo al suroeste de la torre de {npc:11863}, de camino a la orilla: léelo. Sus dos llaves solo caen mientras tienes la misión."
+why = "+3.917 XP · ~6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#35"]
+note = "Polestar paso 35 «Cuaderno de bitácora de Rackmore», objetivo 1 (accept)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-088"
+do = "complete"
+quest = 6142
+obj = 1
+at = [1443, 30.6, 31.9]
+text = "Usa {obj:177784} para «{quest:6142}»."
+tip = "Ve al oeste hasta la orilla. Las almejas gigantes de concha blanda yacen en los bajíos y los reptadores de arrecife enfurecidos recorren la playa: cada almeja que abres en el fondo del mar, y algunos reptadores, dan una {item:15874}. Ábrela en tus bolsas para obtener su carne.\nLos reptadores y tenazas Pinzaseca de la misma playa llevan {item:15878}, aproximadamente uno de cada siete. Usa {item:15874} para «{quest:6142}». Consigue {item:15924} (10) de {npc:12347} para «{quest:6142}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#36"]
+note = "Polestar paso 36 «Clam beds», objetivo 1 (interact) · consejo de Polestar sin traducir: Giant Softshell Clams, on the sea floor."
+
+[[step]]
+id = "h32-mil-agujas-desolace-089"
+do = "complete"
+quest = 6161
+obj = 1
+at = [1443, 33.4, 30.1]
+text = "Consigue {item:15878} (1) para «{quest:6161}»."
+tip = "{item:15878}, de los cangrejos Pinzaseca."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#36"]
+note = "Polestar paso 36 «Clam beds», objetivo 4 (collect)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-090"
+do = "complete"
+quest = 6143
+obj = 1
+at = [1443, 32.18, 23.38]
+wps = [[1443, 31.4, 18.6, "Mirmidón Filozante"], [1443, 33.9, 15.7, "Mirmidón Filozante"], [1443, 29.7, 14.0, "Mirmidón Filozante"]]
+text = "Mata {npc:4714} (7) para «{quest:6143}»."
+tip = "Sigue al norte hasta {area:598}. Los mirmidones, naga y hechiceras Filozante ocupan la playa; atráelos de uno en uno. Cualquier Filozante puede soltar {item:15881}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#37"]
+note = "Polestar paso 37 «Sar'theris Strand», objetivo 1 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-091"
+do = "complete"
+quest = 6143
+obj = 2
+at = [1443, 32.74, 23.92]
+wps = [[1443, 36.0, 23.3, "Naga Filozante"], [1443, 35.5, 27.2, "Naga Filozante"], [1443, 36.7, 21.2, "Naga Filozante"]]
+text = "Mata {npc:4711} (7) para «{quest:6143}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#37"]
+note = "Polestar paso 37 «Sar'theris Strand», objetivo 2 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-092"
+do = "complete"
+quest = 6143
+obj = 3
+at = [1443, 32.94, 23.32]
+wps = [[1443, 32.0, 20.8, "Hechicera Filozante"], [1443, 36.0, 26.8, "Hechicera Filozante"], [1443, 39.0, 20.1, "Hechicera Filozante"]]
+text = "Mata {npc:4712} (5) para «{quest:6143}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#37"]
+note = "Polestar paso 37 «Sar'theris Strand», objetivo 3 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-093"
+do = "complete"
+quest = 6161
+obj = 2
+at = [1443, 42.17, 19.01]
+text = "Consigue {item:15881} (1) de {npc:14229} para «{quest:6161}»."
+tip = "{item:15881}, de los naga Filozante."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#37"]
+note = "Polestar paso 37 «Sar'theris Strand», objetivo 4 (collect)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-094"
+do = "complete"
+quest = 6027
+obj = 1
+at = [1443, 28.2, 6.7]
+text = "Usa {item:15766} para «{quest:6027}»."
+tip = "Nada hasta {area:2406}, frente al extremo norte, y usa {item:15766} en Serpent Statue: aparece {npc:12369} (38); mátalo para obtener «{quest:6027}». Tiene bastante más nivel que tú: descansa hasta estar al máximo antes. {obj:177786} está en la orilla junto a la estatua: ábrelo con ambas llaves. {item:15766}, en Serpent Statue. Consigue {item:15803} (1) de {npc:12369} para «{quest:6027}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#38"]
+note = "Polestar paso 38 «The «El Libro de los Ancestros»», objetivo 1 (use)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-095"
+do = "turnin"
+quest = 6161
+at = [1443, 30.0, 8.7]
+text = "Entrega «{quest:6161}» en {obj:177786}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#38"]
+note = "Polestar paso 38 «The «El Libro de los Ancestros»», objetivo 3 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-096"
+do = "turnin"
+quest = 6027
+npc = 11863
+at = [1443, 38.88, 27.16]
+text = "Entrega «{quest:6027}» a {npc:11863}."
+tip = "Vuelve al sur hasta la torre de {npc:11863}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#39"]
+note = "Polestar paso 39 «Azore Aldamort», objetivo 1 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-097"
+do = "complete"
+quest = 1434
+obj = 1
+at = [1443, 70.92, 16.65]
+wps = [[1443, 72.6, 17.4, "Pícaro Odio Feroz"], [1443, 73.7, 10.4, "Pícaro Odio Feroz"], [1443, 74.9, 23.5, "Pícaro Odio Feroz"]]
+text = "Mata {npc:4670} (7) para «{quest:1434}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#40"]
+note = "Polestar paso 40 «Sargeron», objetivo 1 (kill) · consejo de Polestar sin traducir: Head east past {area:599} and along the northern hills to the satyrs' ruins of {area:603}. Kill every kind you meet for {npc:268705}; the Shadowstalkers walk unseen.\nCareful: Hatefury Rogues use Hide when they spawn, so they are stealthed until you find them."
+
+[[step]]
+id = "h32-mil-agujas-desolace-098"
+do = "complete"
+quest = 1434
+obj = 2
+at = [1443, 71.52, 20.12]
+wps = [[1443, 75.7, 18.5, "Jurapenas Odio Feroz"], [1443, 78.0, 14.8, "Jurapenas Odio Feroz"], [1443, 80.6, 16.3, "Jurapenas Odio Feroz"]]
+text = "Mata {npc:4672} (7) para «{quest:1434}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#40"]
+note = "Polestar paso 40 «Sargeron», objetivo 2 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-099"
+do = "complete"
+quest = 1434
+obj = 3
+at = [1443, 72.25, 18.88]
+wps = [[1443, 72.4, 16.0, "Traidor Odio Feroz"], [1443, 76.0, 21.6, "Traidor Odio Feroz"], [1443, 76.4, 25.4, "Traidor Odio Feroz"]]
+text = "Mata {npc:4673} (7) para «{quest:1434}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#40"]
+note = "Polestar paso 40 «Sargeron», objetivo 3 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-100"
+do = "complete"
+quest = 1434
+obj = 4
+at = [1443, 72.28, 19.19]
+wps = [[1443, 72.6, 18.0, "Clamainferno Odio Feroz"], [1443, 74.4, 22.7, "Clamainferno Odio Feroz"], [1443, 74.9, 16.0, "Clamainferno Odio Feroz"]]
+text = "Mata {npc:4675} (7) para «{quest:1434}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#40"]
+note = "Polestar paso 40 «Sargeron», objetivo 4 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-101"
+do = "complete"
+quest = 97265
+obj = 3
+at = [1443, 75.7, 15.8]
+optional = true
+text = "Mata {npc:4674} (2) para «{quest:97265}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#40"]
+note = "Polestar paso 40 «Sargeron», objetivo 5 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-102"
+do = "complete"
+quest = 97265
+obj = 2
+at = [1443, 75.13, 16.35]
+wps = [[1443, 72.6, 18.0, "Clamainferno Odio Feroz"], [1443, 74.8, 12.0, "Clamainferno Odio Feroz"], [1443, 79.3, 17.3, "Clamainferno Odio Feroz"]]
+optional = true
+text = "Mata {npc:4675} (2) para «{quest:97265}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#40"]
+note = "Polestar paso 40 «Sargeron», objetivo 6 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-103"
+do = "complete"
+quest = 97265
+obj = 1
+at = [1443, 76.5, 20.5]
+optional = true
+text = "Mata {npc:4671} (2) para «{quest:97265}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#40"]
+note = "Polestar paso 40 «Sargeron», objetivo 7 (kill) · consejo de Polestar sin traducir: {npc:4671}, on the way south."
+
+[[step]]
+id = "h32-mil-agujas-desolace-104"
+do = "complete"
+quest = 97265
+obj = 4
+at = [1443, 75.29, 19.28]
+wps = [[1443, 78.0, 14.8, "Jurapenas Odio Feroz"], [1443, 80.6, 16.3, "Jurapenas Odio Feroz"], [1443, 74.5, 13.4, "Jurapenas Odio Feroz"]]
+optional = true
+text = "Mata {npc:4672} (2) para «{quest:97265}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#40"]
+note = "Polestar paso 40 «Sargeron», objetivo 8 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-105"
+do = "complete"
+quest = 97265
+obj = 5
+at = [1443, 73.55, 19.11]
+wps = [[1443, 72.6, 17.4, "Pícaro Odio Feroz"], [1443, 74.9, 23.5, "Pícaro Odio Feroz"], [1443, 79.1, 20.0, "Pícaro Odio Feroz"]]
+optional = true
+text = "Mata {npc:4670} (2) para «{quest:97265}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#40"]
+note = "Polestar paso 40 «Sargeron», objetivo 9 (kill)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-106"
+do = "complete"
+quest = 1365
+obj = 1
+at = [1443, 73.2, 41.8]
+wps = [[1443, 73.8, 43.3, "Cabeza de kan Dez'hepah"], [1443, 73.7, 47.7, "Cabeza de kan Dez'hepah"]]
+text = "Consigue {item:6066} (1) de {npc:5600} para «{quest:1365}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#41"]
+note = "Polestar paso 41 ««Khan Dez'hepah»», objetivo 1 (collect) · consejo de Polestar sin traducir: South to {area:609}. «{quest:1365}» (35) walks among the tents on the east side with a Battle Lord or two (32-33): clear around him, then pull him alone at full health.\nCareful: Kolkar Battle Lords call nearby allies within 30 yd once they fall to 20% health."
+
+[[step]]
+id = "h32-mil-agujas-desolace-107"
+do = "turnin"
+quest = 1434
+npc = 5641
+at = [1443, 52.57, 54.39]
+text = "Entrega «{quest:1434}» a {npc:5641}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#42"]
+note = "Polestar paso 42 «Ghost Walker Post», objetivo 1 (turnin) · consejo de Polestar sin traducir: South-west down the road to the post."
+
+[[step]]
+id = "h32-mil-agujas-desolace-108"
+do = "turnin"
+quest = 1435
+npc = 4498
+at = [1443, 52.25, 53.44]
+chain = "h32-mil-agujas-desolace-s042-4498"
+text = "Entrega «{quest:1435}» a {npc:4498}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#42"]
+note = "Polestar paso 42 «Ghost Walker Post», objetivo 2 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-110"
+do = "accept"
+quest = 1436
+npc = 5641
+at = [1443, 52.57, 54.39]
+reqlevel = 30
+text = "Coge «{quest:1436}» de {npc:5641}."
+why = "+2.650 XP · ~2 min · 2,5× la mediana del 31-35"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#42"]
+note = "Polestar paso 42 «Ghost Walker Post», objetivo 4 (accept) · datos no importados: preAll · consejo de Polestar sin traducir: {npc:5641}: for {npc:5640} in {map:1454}, next guide."
+
+[[step]]
+id = "h32-mil-agujas-desolace-111"
+do = "note"
+text = "El siguiente encargo de {npc:5641} te manda a por un señor demoníaco con escolta élite: omítelo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#42"]
+note = "Polestar paso 42 «Ghost Walker Post», objetivo 5 (note)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-112"
+do = "turnin"
+quest = 1365
+npc = 5395
+at = [1443, 56.19, 59.57]
+chain = "h32-mil-agujas-desolace-s042-5395"
+text = "Entrega «{quest:1365}» a {npc:5395}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#42"]
+note = "Polestar paso 42 «Ghost Walker Post», objetivo 6 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-113"
+do = "accept"
+quest = 1366
+npc = 5395
+at = [1443, 56.19, 59.57]
+optional = true
+chain = "h32-mil-agujas-desolace-s042-5395"
+reqlevel = 30
+text = "Coge «{quest:1366}» de {npc:5395}."
+tip = "+13.152 XP · ~44 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#42"]
+note = "Polestar paso 42 «Ghost Walker Post», objetivo 7 (accept) · datos no importados: pre · consejo de Polestar sin traducir: For the second {map:1443} visit, in forever/horde/30-40/04-dustwallow-marsh."
+
+[[step]]
+id = "h32-mil-agujas-desolace-114"
+do = "turnin"
+quest = 97265
+npc = 268705
+at = [1443, 25.35, 67.17]
+optional = true
+text = "Entrega «{quest:97265}» a {npc:268705}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#43"]
+note = "Polestar paso 43 «Shadowprey Village», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:268705}, on the path just north of the village. · consejo de Polestar sin traducir: West to Shadowprey: your hearthstone is bound there."
+
+[[step]]
+id = "h32-mil-agujas-desolace-115"
+do = "turnin"
+quest = 5381
+npc = 11624
+at = [1443, 25.82, 68.21]
+text = "Entrega «{quest:5381}» a {npc:11624}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#43"]
+note = "Polestar paso 43 «Shadowprey Village», objetivo 2 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-116"
+do = "turnin"
+quest = 6142
+npc = 12031
+at = [1443, 22.64, 71.97]
+text = "Entrega «{quest:6142}» a {npc:12031}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#43"]
+note = "Polestar paso 43 «Shadowprey Village», objetivo 3 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-117"
+do = "turnin"
+quest = 6143
+npc = 12340
+at = [1443, 23.32, 72.87]
+text = "Entrega «{quest:6143}» a {npc:12340}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#43"]
+note = "Polestar paso 43 «Shadowprey Village», objetivo 4 (turnin)"
+
+[[step]]
+id = "h32-mil-agujas-desolace-118"
+do = "note"
+text = "Los portales de la Legión de {npc:11624} y las demás misiones 38-40 de {map:1443} esperan a la segunda visita, al 38: la ruta vuela a {map:1454} y coge el zepelín a {map:1434}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/02-thousand-needles#43"]
+note = "Polestar paso 43 «Shadowprey Village», objetivo 5 (note) · nota de Polestar traducida por Senda: Taiga Melenasabia's Portals of the Legion and Desolace's other 38-40 quests wait for the second visit, at 38: the next guides fly to Orgrimmar and take the zeppelin to Stranglethorn Vale."

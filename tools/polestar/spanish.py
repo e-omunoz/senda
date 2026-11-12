@@ -82,11 +82,12 @@ TOKEN_RE = re.compile(r"\{([a-z]+):(\d+)\}")
 _TOKEN_RE = TOKEN_RE
 
 # Tipo de ficha de Polestar -> ficha de Senda (Core/Names.lua resuelve estas en el cliente).
-# `zone` de Polestar es un uiMapID ({zone:1453} = Ventormenta) -> {map:N}. Las subzonas (area) y las
-# habilidades (skill) no tienen ficha: se escriben con su nombre.
+# `zone` de Polestar es un uiMapID ({zone:1453} = Ventormenta) -> {map:N}. Las subzonas (area) llevan {area:N}
+# (el cliente las nombra con C_Map.GetAreaInfo). Las habilidades (skill) no tienen ficha: se escriben con su nombre.
 SENDA_TOKEN: dict[str, str] = {"quest": "quest", "npc": "npc", "item": "item", "object": "obj", "spell": "spell",
-                               "zone": "map"}
-_FROM_SENDA = {"quest": "quest", "npc": "npc", "item": "item", "obj": "object", "spell": "spell", "map": "zone"}
+                               "zone": "map", "area": "area"}
+_FROM_SENDA = {"quest": "quest", "npc": "npc", "item": "item", "obj": "object", "spell": "spell", "map": "zone",
+               "area": "area"}
 
 SOURCE_POLESTAR = "polestar-esES"
 SOURCE_POLESTAR_EN = "polestar-enUS"

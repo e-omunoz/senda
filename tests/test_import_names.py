@@ -290,7 +290,8 @@ class ImporterTokenTests(unittest.TestCase):
         self.assertEqual(n.quest(456), "«{quest:456}»")
         self.assertEqual(n.token("npc", 2079), "{npc:2079}")
         self.assertEqual(n.token("zone", 1438), "{map:1438}")       # zone de Polestar = uiMapID
-        self.assertEqual(n.token("area", 186), "Dolanaar")           # subzona: sin ficha
+        self.assertEqual(n.token("area", 186), "{area:186}")         # subzona: C_Map.GetAreaInfo en el cliente
+        self.assertEqual(n.fallback["area"][186], ("Dolanaar", "senda"))
         self.assertEqual(n.token("object", 7), "{obj:7}")
         self.assertEqual(n.token("object", 8), "Old Chest")          # objeto sin nombre esES: escrito
         self.assertEqual(n.token("npc", 3595), "{npc:3595}")         # el cliente lo nombra; respaldo en inglés

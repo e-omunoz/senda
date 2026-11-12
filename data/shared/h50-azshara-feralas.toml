@@ -1,0 +1,1635 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/40-50/06-azshara
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h50-azshara-feralas"
+title = "Azshara, Feralas y Vega de Tuercespina"
+levels = [50, 51]
+map = 1447
+summary = "Ruta común de la Horda, 50-51: Azshara, Feralas y Vega de Tuercespina."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h50-azshara-feralas-001"
+do = "goto"
+at = [1435, 46.1, 54.7]
+text = "Ve a {area:75}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#1"]
+note = "Polestar paso 1 «Swamp of Sorrows», objetivo 1 (goto)"
+
+[[step]]
+id = "h50-azshara-feralas-002"
+do = "goto"
+at = [1435, 46.1, 54.7]
+text = "Ve al maestro de vuelo de {area:75}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#2"]
+note = "Polestar paso 2 «Fly to Grom'gol», objetivo 1 (goto)"
+
+[[step]]
+id = "h50-azshara-feralas-003"
+do = "fly"
+zone = 1434
+text = "Vuela a Grom'gol."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#2"]
+note = "Polestar paso 2 «Fly to Grom'gol», objetivo 2 (fly)"
+
+[[step]]
+id = "h50-azshara-feralas-004"
+do = "goto"
+at = [1434, 32.2, 27.7]
+text = "Ve a {area:117}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#3"]
+note = "Polestar paso 3 «To Grom'gol», objetivo 1 (goto) · consejo de Polestar sin traducir: The flight from {area:75} lands at {area:117}."
+
+[[step]]
+id = "h50-azshara-feralas-005"
+do = "turnin"
+quest = 2932
+npc = 2497
+at = [1434, 32.16, 27.72]
+text = "Entrega «{quest:2932}» a {npc:2497}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#4"]
+note = "Polestar paso 4 «Grom'gol Base Camp», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-006"
+do = "goto"
+at = [1434, 32.5, 29.3]
+text = "Ve al maestro de vuelo de Grom'gol."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#5"]
+note = "Polestar paso 5 «Fly to Booty Bay», objetivo 1 (goto)"
+
+[[step]]
+id = "h50-azshara-feralas-007"
+do = "fly"
+zone = 1434
+text = "Vuela a Bahía del Botín."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#5"]
+note = "Polestar paso 5 «Fly to Booty Bay», objetivo 2 (fly)"
+
+[[step]]
+id = "h50-azshara-feralas-008"
+do = "turnin"
+quest = 2767
+npc = 7406
+at = [1434, 28.36, 76.35]
+optional = true
+chain = "h50-azshara-feralas-s006-7406"
+text = "Entrega «{quest:2767}» a {npc:7406}."
+tip = "Sigue al sur hasta {area:35}. {npc:7406} tiene su taller en el anillo superior de la bahía."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:7406}, inside."
+
+[[step]]
+id = "h50-azshara-feralas-009"
+do = "turnin"
+quest = 836
+npc = 7406
+at = [1434, 28.36, 76.35]
+optional = true
+chain = "h50-azshara-feralas-s006-7406"
+text = "Entrega «{quest:836}» a {npc:7406}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 2 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-010"
+do = "turnin"
+quest = 648
+npc = 7406
+at = [1434, 28.36, 76.35]
+optional = true
+chain = "h50-azshara-feralas-s006-7406"
+text = "Entrega «{quest:648}» a {npc:7406}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 3 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-011"
+do = "turnin"
+quest = 3721
+npc = 7406
+at = [1434, 28.36, 76.35]
+optional = true
+chain = "h50-azshara-feralas-s006-7406"
+text = "Entrega «{quest:3721}» a {npc:7406}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 4 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-012"
+do = "turnin"
+quest = 580
+npc = 2491
+at = [1434, 27.14, 77.45]
+text = "Entrega «{quest:580}» a {npc:2491}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 5 (turnin) · consejo de Polestar sin traducir: {npc:2491}, in the inn."
+
+[[step]]
+id = "h50-azshara-feralas-013"
+do = "turnin"
+quest = 2874
+npc = 2501
+at = [1434, 27.78, 77.07]
+text = "Entrega «{quest:2874}» a {npc:2501}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 6 (turnin) · consejo de Polestar sin traducir: \"Sea Wolf\" MacKinley, on the top floor."
+
+[[step]]
+id = "h50-azshara-feralas-014"
+do = "accept"
+quest = 608
+npc = 2487
+at = [1434, 27.17, 77.01]
+reqlevel = 37
+text = "Coge «{quest:608}» del {npc:2487}."
+why = "+5.523 XP · ~5,4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#6"]
+note = "Polestar paso 6 «Booty Bay», objetivo 7 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:2487}, on the balcony of the same building."
+
+[[step]]
+id = "h50-azshara-feralas-015"
+do = "complete"
+quest = 608
+obj = 1
+at = [1434, 32.9, 88.2]
+text = "Mata {npc:2550} (1) para «{quest:608}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#7"]
+note = "Polestar paso 7 «The Bloodsail ships», objetivo 1 (kill) · consejo de Polestar sin traducir: South of Booty Bay, three Bloodsail ships lie off the {area:43}: {npc:2550}, {npc:2548} and {npc:2546} each stand on a deck with their crews. Swim out and work from ship to ship."
+
+[[step]]
+id = "h50-azshara-feralas-016"
+do = "complete"
+quest = 608
+obj = 2
+at = [1434, 29.3, 88.3]
+text = "Mata {npc:2548} (1) para «{quest:608}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#7"]
+note = "Polestar paso 7 «The Bloodsail ships», objetivo 2 (kill)"
+
+[[step]]
+id = "h50-azshara-feralas-017"
+do = "complete"
+quest = 608
+obj = 3
+at = [1434, 30.6, 90.6]
+text = "Mata {npc:2546} (1) para «{quest:608}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#7"]
+note = "Polestar paso 7 «The Bloodsail ships», objetivo 3 (kill)"
+
+[[step]]
+id = "h50-azshara-feralas-018"
+do = "turnin"
+quest = 608
+npc = 2487
+at = [1434, 27.17, 77.01]
+text = "Entrega «{quest:608}» al {npc:2487}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#8"]
+note = "Polestar paso 8 «Booty Bay», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-019"
+do = "loot"
+item = 3985
+count = 1
+at = [1434, 23.3, 72.1]
+optional = true
+text = "Consigue {item:3985} (1) de {npc:1493}."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#9"]
+note = "Polestar paso 9 «Fajín con monogramas», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 8552 · consejo de Polestar sin traducir: These are elite mobs: grouping up is encouraged, look for people to do it with. «{quest:8552}» needs a group of 2. Skip it if you are alone: the route has you grind the XP back."
+
+[[step]]
+id = "h50-azshara-feralas-020"
+do = "accept"
+quest = 8552
+optional = true
+reqlevel = 35
+text = "Usa {item:3985} para empezar «{quest:8552}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#9"]
+note = "Polestar paso 9 «Fajín con monogramas», objetivo 2 (accept) · condición no expresable: vas en grupo para la misión 8552"
+
+[[step]]
+id = "h50-azshara-feralas-021"
+do = "turnin"
+quest = 8552
+npc = 2500
+at = [1434, 26.69, 73.61]
+optional = true
+chain = "h50-azshara-feralas-s010-2500"
+text = "Entrega «{quest:8552}» al {npc:2500}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#10"]
+note = "Polestar paso 10 «Capitán Hecklebury Smotts», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 8552"
+
+[[step]]
+id = "h50-azshara-feralas-022"
+do = "accept"
+quest = 8553
+npc = 2500
+at = [1434, 26.69, 73.61]
+optional = true
+chain = "h50-azshara-feralas-s010-2500"
+reqlevel = 35
+text = "Coge «{quest:8553}» del {npc:2500}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#10"]
+note = "Polestar paso 10 «Capitán Hecklebury Smotts», objetivo 2 (accept) · condición no expresable: vas en grupo para la misión 8552 · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-023"
+do = "turnin"
+quest = 8553
+npc = 2594
+at = [1434, 26.66, 73.64]
+optional = true
+text = "Entrega «{quest:8553}» a {npc:2594}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#11"]
+note = "Polestar paso 11 «El Pibe», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 8552"
+
+[[step]]
+id = "h50-azshara-feralas-024"
+do = "loot"
+item = 4098
+count = 1
+at = [1434, 33.8, 77.7]
+optional = true
+text = "Recoge {item:4098} (1) de {obj:2560}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#12"]
+note = "Polestar paso 12 «Nota doblada con cuidado», objetivo 1 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-025"
+do = "accept"
+quest = 594
+optional = true
+reqlevel = 45
+text = "Usa {item:4098} para empezar «{quest:594}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#12"]
+note = "Polestar paso 12 «Nota doblada con cuidado», objetivo 2 (accept)"
+
+[[step]]
+id = "h50-azshara-feralas-026"
+do = "turnin"
+quest = 594
+npc = 2634
+at = [1434, 38.53, 80.58]
+text = "Entrega «{quest:594}» a {npc:2634}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#13"]
+note = "Polestar paso 13 «Princesa Pooh-Bah», objetivo 1 (turnin) · condición no expresable: llevas la misión 594 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h50-azshara-feralas-027"
+do = "goto"
+at = [1434, 26.8, 77.0]
+text = "Ve al maestro de vuelo de {area:35}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#14"]
+note = "Polestar paso 14 «Fly to Grom'gol», objetivo 1 (goto)"
+
+[[step]]
+id = "h50-azshara-feralas-028"
+do = "fly"
+zone = 1434
+text = "Vuela a Grom'gol."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#14"]
+note = "Polestar paso 14 «Fly to Grom'gol», objetivo 2 (fly)"
+
+[[step]]
+id = "h50-azshara-feralas-029"
+do = "accept"
+quest = 591
+npc = 2519
+at = [1434, 32.27, 27.71]
+optional = true
+reqlevel = 30
+text = "Coge «{quest:591}» de {npc:2519}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#15"]
+note = "Polestar paso 15 «Back to Grom'gol», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 591 · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-030"
+do = "complete"
+quest = 591
+obj = 1
+at = [1434, 52.9, 27.6]
+optional = true
+text = "Consigue {item:3616} (1) de {npc:818} para «{quest:591}»."
+tip = "Bajo tierra. Contenido de grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#16"]
+note = "Polestar paso 16 ««El Ojo de la Mente»», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 591 · consejo de Polestar sin traducir: These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:818} (level 47 elite) needs a group of 2. Skip it if you are alone: the route has you grind the XP back.\nCareful: Two elite caster guards, around level 45, stand with {npc:818} and join the fight together with him."
+
+[[step]]
+id = "h50-azshara-feralas-031"
+do = "turnin"
+quest = 591
+npc = 2519
+at = [1434, 32.27, 27.71]
+optional = true
+chain = "h50-azshara-feralas-s017-2519"
+text = "Entrega «{quest:591}» a {npc:2519}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#17"]
+note = "Polestar paso 17 «Kin'weelay», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 591"
+
+[[step]]
+id = "h50-azshara-feralas-032"
+do = "accept"
+quest = 592
+npc = 2519
+at = [1434, 32.27, 27.71]
+optional = true
+chain = "h50-azshara-feralas-s017-2519"
+reqlevel = 30
+text = "Coge «{quest:592}» de {npc:2519}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#17"]
+note = "Polestar paso 17 «Kin'weelay», objetivo 2 (accept) · condición no expresable: vas en grupo para la misión 591 · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-033"
+do = "complete"
+quest = 592
+obj = 1
+at = [1434, 39.0, 58.4]
+optional = true
+text = "Consigue {item:3913} (1) de {npc:2530} para «{quest:592}»."
+tip = "Contenido de grupo. Usa {item:3912} para «{quest:592}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#18"]
+note = "Polestar paso 18 ««Salvar a Yenniku»», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 591"
+
+[[step]]
+id = "h50-azshara-feralas-034"
+do = "turnin"
+quest = 592
+npc = 2497
+at = [1434, 32.16, 27.72]
+optional = true
+text = "Entrega «{quest:592}» a {npc:2497}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#19"]
+note = "Polestar paso 19 «Nimboya», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 591"
+
+[[step]]
+id = "h50-azshara-feralas-035"
+do = "goto"
+at = [1434, 31.4, 29.9]
+text = "Ve al zepelín a {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#20"]
+note = "Polestar paso 20 «Zeppelin to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h50-azshara-feralas-036"
+do = "turnin"
+quest = 32
+npc = 7010
+at = [1454, 56.26, 46.68]
+text = "Entrega «{quest:32}» a {npc:7010}, La Calada."
+tip = "De camino por {map:1454} hacia el maestro de vuelo, entra en La Calada: {npc:7010} recoge el informe de insectos de {map:1446}, y su experiencia acorta la subida hasta 50 en {map:1447}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#21"]
+note = "Polestar paso 21 «Zilzibin Tambor Sabio», objetivo 1 (turnin) · condición no expresable: llevas la misión 32 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h50-azshara-feralas-037"
+do = "turnin"
+quest = 81
+npc = 6986
+at = [1454, 59.49, 36.57]
+text = "Entrega «{quest:81}» a {npc:6986}, La Calle Mayor."
+tip = "La tienda de los Droffers está a pocos pasos más adentro de La Calada."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#22"]
+note = "Polestar paso 22 «Dran Droffers», objetivo 1 (turnin) · condición no expresable: llevas la misión 81 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h50-azshara-feralas-038"
+do = "goto"
+at = [1447, 11.4, 78.2]
+text = "Ve a {npc:11548}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#23"]
+note = "Polestar paso 23 «Azshara», objetivo 1 (goto)"
+
+[[step]]
+id = "h50-azshara-feralas-039"
+do = "accept"
+quest = 5535
+npc = 11548
+at = [1447, 11.37, 78.17]
+chain = "h50-azshara-feralas-s024-11548"
+reqlevel = 45
+text = "Coge «{quest:5535}» de {npc:11548}."
+tip = "Cabalga hacia el este por el camino desde el Puesto del Hachazo. {npc:11548} espera en {area:1235}, junto al camino, a pocos pasos al oeste de {area:3137}, de la Alianza: llega desde el oeste y evita a los Centinelas de Azshara y a Jarrodenus (élite)."
+why = "+6.624 XP · ~7,7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#24"]
+note = "Polestar paso 24 «Ride into Azshara», objetivo 1 (accept)"
+
+[[step]]
+id = "h50-azshara-feralas-040"
+do = "accept"
+quest = 5536
+npc = 11548
+at = [1447, 11.37, 78.17]
+chain = "h50-azshara-feralas-s024-11548"
+reqlevel = 45
+text = "Coge «{quest:5536}» de {npc:11548}."
+why = "+6.220 XP · ~7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#24"]
+note = "Polestar paso 24 «Ride into Azshara», objetivo 2 (accept)"
+
+[[step]]
+id = "h50-azshara-feralas-041"
+do = "complete"
+quest = 5535
+obj = 2
+at = [1447, 13.48, 73.18]
+wps = [[1447, 16.7, 71.2, "Exanimato Altonato"], [1447, 17.2, 67.5, "Exanimato Altonato"]]
+text = "Mata {npc:6117} (6) para «{quest:5535}»."
+tip = "Las apariciones de Altonato rondan las ruinas justo al norte del santuario; los sátiros Haldarr acampan un poco más al norte."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#25"]
+note = "Polestar paso 25 «Haldarr Encampment: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: {npc:6117} walks around {area:1235}: look inside the circle on the map."
+
+[[step]]
+id = "h50-azshara-feralas-042"
+do = "complete"
+quest = 5535
+obj = 1
+at = [1447, 13.96, 71.82]
+wps = [[1447, 16.2, 73.2, "Aparición de Altonato"], [1447, 17.0, 69.4, "Aparición de Altonato"], [1447, 17.5, 66.8, "Aparición de Altonato"]]
+text = "Mata {npc:6116} (6) para «{quest:5535}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#25"]
+note = "Polestar paso 25 «Haldarr Encampment: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "h50-azshara-feralas-043"
+do = "complete"
+quest = 5536
+obj = 3
+at = [1447, 19.1, 64.04]
+wps = [[1447, 20.0, 60.9, "Jurapenas Haldarr"]]
+text = "Mata {npc:6127} (2) para «{quest:5536}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#25"]
+note = "Polestar paso 25 «Haldarr Encampment: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h50-azshara-feralas-044"
+do = "complete"
+quest = 5536
+obj = 2
+at = [1447, 19.69, 63.84]
+wps = [[1447, 19.8, 62.0, "Timador Haldarr"], [1447, 20.9, 59.9, "Timador Haldarr"]]
+text = "Mata {npc:6126} (2) para «{quest:5536}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#25"]
+note = "Polestar paso 25 «Haldarr Encampment: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "h50-azshara-feralas-045"
+do = "complete"
+quest = 5536
+obj = 1
+at = [1447, 20.4, 63.69]
+wps = [[1447, 19.6, 61.9, "Sátiro Haldarr"], [1447, 21.0, 61.0, "Sátiro Haldarr"]]
+text = "Mata {npc:6125} (6) para «{quest:5536}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#25"]
+note = "Polestar paso 25 «Haldarr Encampment: kill these as you meet them», objetivo 5 (kill)"
+
+[[step]]
+id = "h50-azshara-feralas-046"
+do = "goto"
+at = [1447, 20.1, 62.0]
+if = { maxlevel = 49 }
+text = "Ve a {npc:6125}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#26"]
+note = "Polestar paso 26 «Level 50», objetivo 1 (goto) · consejo de Polestar sin traducir: Top up here to level 50: «{quest:4493}», from {npc:7010} in {map:1454} at the end of {map:1447}, needs it. Or, with a group, run the {area:2100} dungeon or the {area:1417} dungeon instead."
+
+[[step]]
+id = "h50-azshara-feralas-047"
+do = "level"
+level = 50
+at = [1447, 19.76, 62.16]
+if = { maxlevel = 49 }
+text = "Sube al nivel 50."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#26"]
+note = "Polestar paso 26 «Level 50», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:6125}."
+
+[[step]]
+id = "h50-azshara-feralas-048"
+do = "turnin"
+quest = 5535
+npc = 11548
+at = [1447, 11.37, 78.17]
+chain = "h50-azshara-feralas-s027-11548"
+text = "Entrega «{quest:5535}» a {npc:11548}."
+tip = "Vuelve con {npc:11548} al santuario; mantente al oeste de los guardias de {area:3137}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#27"]
+note = "Polestar paso 27 «Loh'atu», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-049"
+do = "turnin"
+quest = 5536
+npc = 11548
+at = [1447, 11.37, 78.17]
+chain = "h50-azshara-feralas-s027-11548"
+text = "Entrega «{quest:5536}» a {npc:11548}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#27"]
+note = "Polestar paso 27 «Loh'atu», objetivo 2 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-050"
+do = "accept"
+quest = 3381
+npc = 8395
+at = [1447, 28.11, 50.09]
+optional = true
+reqlevel = 45
+text = "Coge «{quest:3381}» de {npc:8395}, en el borde este del campamento: no da experiencia, solo un teletransporte a la torre de Azshara."
+tip = "Sigue el camino hacia el norte hasta {area:1237}, el campamento de la Horda."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#28"]
+note = "Polestar paso 28 «Valormok», objetivo 1 (accept)"
+
+[[step]]
+id = "h50-azshara-feralas-051"
+do = "getfp"
+npc = 8610
+node = "44"
+at = [1447, 21.96, 49.62]
+text = "Coge la ruta de vuelo de {area:1237} con {npc:8610}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#29"]
+note = "Polestar paso 29 «Valormok», objetivo 1 (getfp)"
+
+[[step]]
+id = "h50-azshara-feralas-052"
+do = "accept"
+quest = 3517
+npc = 8587
+at = [1447, 22.56, 51.42]
+reqlevel = 45
+text = "Coge «{quest:3517}» de {npc:8587}."
+why = "+5.100 XP · ~4 min · desbloquea «{quest:3563}» y 5 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#29"]
+note = "Polestar paso 29 «Valormok», objetivo 2 (accept)"
+
+[[step]]
+id = "h50-azshara-feralas-053"
+do = "complete"
+quest = 3381
+obj = 1
+at = [1447, 21.11, 54.18]
+wps = [[1447, 17.7, 79.4, "Pluma de hipogrifo sin estropear"], [1447, 36.8, 84.6, "Pluma de hipogrifo sin estropear"], [1447, 48.1, 84.8, "Pluma de hipogrifo sin estropear"]]
+optional = true
+text = "Consigue {item:10450} (2) para «{quest:3381}»."
+tip = "Los hipogrifos tronadores vuelan sobre las colinas justo al sur de {area:1237}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#30"]
+note = "Polestar paso 30 «Undamaged Hippogryph Feathers», objetivo 1 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-054"
+do = "turnin"
+quest = 3381
+npc = 8395
+at = [1447, 28.11, 50.09]
+optional = true
+text = "Entrega «{quest:3381}» a {npc:8395}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#31"]
+note = "Polestar paso 31 «Sanath Lim-yo», objetivo 1 (turnin) · condición no expresable: tienes lista la misión 3381"
+
+[[step]]
+id = "h50-azshara-feralas-055"
+do = "accept"
+quest = 3601
+npc = 8420
+at = [1447, 53.45, 21.82]
+reqlevel = 47
+text = "Coge «{quest:3601}» de {npc:8420}."
+tip = "Cabalga al noreste hasta el campamento del goblin en los acantilados sobre {area:1227}."
+why = "+6.550 XP · ~8 min · desbloquea «{quest:5534}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#32"]
+note = "Polestar paso 32 «Kim'jael», objetivo 1 (accept)"
+
+[[step]]
+id = "h50-azshara-feralas-056"
+do = "complete"
+quest = 3601
+obj = 1
+at = [1447, 56.4, 28.4]
+wps = [[1447, 58.5, 28.9, "Brújula de Kim'Jael"], [1447, 58.5, 25.5, "Brújula de Kim'Jael"]]
+text = "Recoge {item:10717} (1) de {obj:153123} para «{quest:3601}»."
+tip = "El campamento de los elfos de sangre está justo al sur de {npc:8420}. Sus cuatro piezas de equipo están en las cajas alrededor del campamento."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#33"]
+note = "Polestar paso 33 «Thalassian Base Camp», objetivo 1 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-057"
+do = "complete"
+quest = 3601
+obj = 2
+at = [1447, 56.4, 28.4]
+wps = [[1447, 58.5, 28.9, "Mira de Kim'Jael"], [1447, 58.5, 25.5, "Mira de Kim'Jael"]]
+text = "Recoge {item:10715} (1) de {obj:153123} para «{quest:3601}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#33"]
+note = "Polestar paso 33 «Thalassian Base Camp», objetivo 2 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-058"
+do = "complete"
+quest = 3601
+obj = 4
+at = [1447, 56.4, 28.4]
+wps = [[1447, 58.5, 28.9, "Cachivache de Kim'Jael"], [1447, 58.5, 25.5, "Cachivache de Kim'Jael"]]
+text = "Recoge {item:10718} (1) de {obj:153123} para «{quest:3601}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#33"]
+note = "Polestar paso 33 «Thalassian Base Camp», objetivo 3 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-059"
+do = "complete"
+quest = 3601
+obj = 3
+at = [1447, 56.4, 28.4]
+wps = [[1447, 58.5, 28.9, "Pollo relleno de Kim'Jael"], [1447, 58.5, 25.5, "Pollo relleno de Kim'Jael"]]
+text = "Recoge {item:10722} (1) de {obj:153123} para «{quest:3601}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#33"]
+note = "Polestar paso 33 «Thalassian Base Camp», objetivo 4 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-060"
+do = "turnin"
+quest = 3601
+npc = 8420
+at = [1447, 53.45, 21.82]
+chain = "h50-azshara-feralas-s034-8420"
+text = "Entrega «{quest:3601}» a {npc:8420}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#34"]
+note = "Polestar paso 34 «Kim'jael», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-061"
+do = "accept"
+quest = 5534
+npc = 8420
+at = [1447, 53.45, 21.82]
+chain = "h50-azshara-feralas-s034-8420"
+reqlevel = 47
+text = "Coge «{quest:5534}» de {npc:8420}."
+why = "+10.412 XP · ~15 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#34"]
+note = "Polestar paso 34 «Kim'jael», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-062"
+do = "complete"
+quest = 5534
+obj = 1
+at = [1447, 46.4, 39.75]
+wps = [[1447, 46.9, 47.7, "Algunas runas"], [1447, 45.3, 54.0, "Algunas runas"], [1447, 49.1, 57.4, "Algunas runas"]]
+text = "Consigue {item:13815} (1) para «{quest:5534}»."
+tip = "Cabalga al suroeste hasta las ruinas. Las cuatro tablillas están entre las ruinas, custodiadas por nagas Látigo de Ira; cualquier sirena o mirmidón Látigo de Ira puede llevar la runa de {npc:8420}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#35"]
+note = "Polestar paso 35 «Ruins of Eldarath: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-063"
+do = "complete"
+quest = 3517
+obj = 3
+at = [1447, 40.2, 45.0]
+wps = [[1447, 39.4, 46.9, "Tablilla de Markri"], [1447, 39.3, 57.6, "Tablilla de Markri"], [1447, 35.3, 56.3, "Tablilla de Markri"]]
+text = "Recoge {item:10540} (1) de {obj:148514} para «{quest:3517}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#35"]
+note = "Polestar paso 35 «Ruins of Eldarath: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-064"
+do = "complete"
+quest = 3517
+obj = 1
+at = [1447, 39.6, 48.14]
+wps = [[1447, 35.9, 54.4, "Tablilla de Beth'Amara"], [1447, 38.2, 61.7, "Tablilla de Beth'Amara"]]
+text = "Recoge {item:10538} (1) de {obj:148516} para «{quest:3517}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#35"]
+note = "Polestar paso 35 «Ruins of Eldarath: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-065"
+do = "complete"
+quest = 3517
+obj = 4
+at = [1447, 38.6, 47.5]
+wps = [[1447, 37.6, 48.4, "Tablilla de Sael'hai"], [1447, 36.8, 54.6, "Tablilla de Sael'hai"], [1447, 36.6, 60.2, "Tablilla de Sael'hai"]]
+text = "Recoge {item:10541} (1) de {obj:148515} para «{quest:3517}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#35"]
+note = "Polestar paso 35 «Ruins of Eldarath: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-066"
+do = "complete"
+quest = 3517
+obj = 2
+at = [1447, 38.0, 51.3]
+wps = [[1447, 38.5, 52.6, "Tablilla de Jin'yael"], [1447, 40.2, 55.8, "Tablilla de Jin'yael"], [1447, 37.0, 56.7, "Tablilla de Jin'yael"]]
+text = "Recoge {item:10539} (1) de {obj:148513} para «{quest:3517}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#35"]
+note = "Polestar paso 35 «Ruins of Eldarath: kill these as you meet them», objetivo 5 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-067"
+do = "turnin"
+quest = 5534
+npc = 8420
+at = [1447, 53.45, 21.82]
+text = "Entrega «{quest:5534}» a {npc:8420}."
+tip = "Vuelve al noreste con {npc:8420}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#36"]
+note = "Polestar paso 36 «Kim'jael», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-068"
+do = "turnin"
+quest = 3517
+npc = 8587
+at = [1447, 22.56, 51.42]
+chain = "h50-azshara-feralas-s037-8587"
+text = "Entrega «{quest:3517}» a {npc:8587}."
+tip = "Cabalga de vuelta al oeste, a {area:1237}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#37"]
+note = "Polestar paso 37 «Jediga», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-070"
+do = "accept"
+quest = 3541
+npc = 8587
+at = [1447, 22.56, 51.42]
+chain = "h50-azshara-feralas-s037-8587"
+reqlevel = 45
+text = "Coge «{quest:3541}» de {npc:8587}."
+why = "+2.550 XP · ~6,7 min · desbloquea «{quest:3563}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#37"]
+note = "Polestar paso 37 «Jediga», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-071"
+do = "accept"
+quest = 3542
+npc = 8587
+at = [1447, 22.56, 51.42]
+chain = "h50-azshara-feralas-s037-8587"
+reqlevel = 45
+text = "Coge «{quest:3542}» de {npc:8587}."
+why = "+2.550 XP · ~1,4 min · desbloquea «{quest:3564}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#37"]
+note = "Polestar paso 37 «Jediga», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-072"
+do = "accept"
+quest = 3561
+npc = 8587
+at = [1447, 22.56, 51.42]
+chain = "h50-azshara-feralas-s037-8587"
+reqlevel = 45
+text = "Coge «{quest:3561}» de {npc:8587}."
+why = "+2.550 XP · ~3,6 min · desbloquea «{quest:3565}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#37"]
+note = "Polestar paso 37 «Jediga», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-073"
+do = "note"
+text = "Guarda las entregas para {npc:4046}, {npc:8659} y {npc:6522}: pasarás por {map:1456}, {map:1454} y {map:1458} más adelante."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#37"]
+note = "Polestar paso 37 «Jediga», objetivo 6 (note)"
+
+[[step]]
+id = "h50-azshara-feralas-074"
+do = "turnin"
+quest = 3561
+npc = 8379
+at = [1447, 29.25, 40.21]
+chain = "h50-azshara-feralas-s038-8379"
+text = "Entrega «{quest:3561}» a {npc:8379}."
+tip = "La torre del Archimago Xylem está en el acantilado justo al norte de {area:1237}; el sendero sube serpenteando por su lado norte."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#38"]
+note = "Polestar paso 38 «Archimago Xylem», objetivo 1 (turnin) · consejo de Polestar sin traducir: Upstairs."
+
+[[step]]
+id = "h50-azshara-feralas-075"
+do = "accept"
+quest = 3565
+npc = 8379
+at = [1447, 29.25, 40.21]
+chain = "h50-azshara-feralas-s038-8379"
+reqlevel = 45
+text = "Coge «{quest:3565}» de {npc:8379}."
+why = "+3.800 XP · ~1,6 min · 1,9× la mediana del 51-55"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#38"]
+note = "Polestar paso 38 «Archimago Xylem», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-076"
+do = "turnin"
+quest = 3565
+npc = 8587
+at = [1447, 22.56, 51.42]
+text = "Entrega «{quest:3565}» a {npc:8587}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#39"]
+note = "Polestar paso 39 «Jediga», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-077"
+do = "goto"
+at = [1447, 22.0, 49.7]
+text = "Ve al maestro de vuelo de {area:1237}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#40"]
+note = "Polestar paso 40 «Fly to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h50-azshara-feralas-078"
+do = "fly"
+zone = 1454
+text = "Vuela a {area:1637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#40"]
+note = "Polestar paso 40 «Fly to Orgrimmar», objetivo 2 (fly)"
+
+[[step]]
+id = "h50-azshara-feralas-079"
+do = "turnin"
+quest = 32
+npc = 7010
+at = [1454, 56.26, 46.68]
+chain = "h50-azshara-feralas-s041-7010"
+text = "Entrega «{quest:32}» a {npc:7010}, La Calada: si aún lo llevas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#41"]
+note = "Polestar paso 41 «Orgrimmar», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-080"
+do = "accept"
+quest = 4494
+npc = 7010
+at = [1454, 56.26, 46.68]
+chain = "h50-azshara-feralas-s041-7010"
+reqlevel = 50
+text = "Coge «{quest:4494}» de {npc:7010}."
+why = "+530 XP · <1 min · desbloquea «{quest:4496}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#41"]
+note = "Polestar paso 41 «Orgrimmar», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-081"
+do = "turnin"
+quest = 3541
+npc = 8659
+at = [1454, 55.52, 34.08]
+chain = "h50-azshara-feralas-s041-8659"
+text = "Entrega «{quest:3541}» a {npc:8659}, {obj:172960}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#41"]
+note = "Polestar paso 41 «Orgrimmar», objetivo 3 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-082"
+do = "accept"
+quest = 3563
+npc = 8659
+at = [1454, 55.52, 34.08]
+chain = "h50-azshara-feralas-s041-8659"
+reqlevel = 45
+text = "Coge «{quest:3563}» de {npc:8659}."
+why = "+3.800 XP · <1 min · 7,9× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#41"]
+note = "Polestar paso 41 «Orgrimmar», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-083"
+do = "accept"
+quest = 4300
+npc = 8659
+at = [1454, 55.52, 34.08]
+optional = true
+chain = "h50-azshara-feralas-s041-8659"
+reqlevel = 48
+text = "Coge «{quest:4300}» de {npc:8659}."
+tip = "+15.356 XP · ~29 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#41"]
+note = "Polestar paso 41 «Orgrimmar», objetivo 5 (accept)"
+
+[[step]]
+id = "h50-azshara-feralas-084"
+do = "turnin"
+quest = 81
+npc = 6986
+at = [1454, 59.49, 36.57]
+text = "Entrega «{quest:81}» a {npc:6986}, La Calle Mayor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#41"]
+note = "Polestar paso 41 «Orgrimmar», objetivo 6 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-085"
+do = "turnin"
+quest = 2976
+npc = 4485
+at = [1454, 75.23, 34.24]
+chain = "h50-azshara-feralas-s042-4485"
+text = "Entrega «{quest:2976}» a {npc:4485}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#42"]
+note = "Polestar paso 42 «Orgrimmar», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-086"
+do = "accept"
+quest = 3504
+npc = 4485
+at = [1454, 75.23, 34.24]
+chain = "h50-azshara-feralas-s042-4485"
+reqlevel = 44
+text = "Coge «{quest:3504}» de {npc:4485}."
+why = "+2.650 XP · ~2 min · desbloquea «{quest:3505}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#42"]
+note = "Polestar paso 42 «Orgrimmar», objetivo 2 (accept)"
+
+[[step]]
+id = "h50-azshara-feralas-087-wr"
+do = "train"
+npc = 3353
+spells = [1719, 11573, 11578, 11580, 11604, 11609, 20559, 20661]
+at = [1454, 79.79, 31.42]
+if = { class = ["WARRIOR"] }
+reqlevel = 50
+text = "Entrena con {npc:3353}, el instructor de guerrero."
+tip = "8 hechizos hasta el nivel 50: nuevos {spell:1719}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#42", "trainer:warrior"]
+note = "Polestar paso 42 «Orgrimmar», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 45-50"
+
+[[step]]
+id = "h50-azshara-feralas-087-hu"
+do = "train"
+npc = 3406
+spells = [13554, 14273, 14279, 14294, 14304, 14321, 14327, 15631, 19879, 20043, 1299446]
+at = [1454, 67.24, 20.2]
+if = { class = ["HUNTER"] }
+reqlevel = 50
+text = "Entrena con {npc:3406}, el instructor de cazador."
+tip = "11 hechizos hasta el nivel 50: nuevos {spell:19879}, {spell:20043}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#42", "trainer:hunter"]
+note = "Polestar paso 42 «Orgrimmar», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 45-50"
+
+[[step]]
+id = "h50-azshara-feralas-087-ro"
+do = "train"
+npc = 3328
+spells = [3421, 8643, 11197, 11268, 11285, 11289, 11297, 11357, 13229]
+at = [1454, 43.9, 54.63]
+if = { class = ["ROGUE"] }
+reqlevel = 50
+text = "Entrena con {npc:3328}, el instructor de pícaro."
+tip = "9 hechizos hasta el nivel 50: nuevos {spell:3421}, {spell:11357}, {spell:13229} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#42", "trainer:rogue"]
+note = "Polestar paso 42 «Orgrimmar», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 45-50"
+
+[[step]]
+id = "h50-azshara-feralas-087-pr"
+do = "train"
+npc = 5994
+spells = [10875, 10881, 10893, 10899, 10916, 10928, 10937, 10941, 10945, 10951, 10960, 10963, 14819, 15266, 1309635]
+at = [1454, 35.72, 86.9]
+if = { class = ["PRIEST"] }
+reqlevel = 50
+text = "Entrena con {npc:5994}, el instructor de sacerdote."
+tip = "15 hechizos hasta el nivel 50."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#42", "trainer:priest"]
+note = "Polestar paso 42 «Orgrimmar», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 45-50"
+
+[[step]]
+id = "h50-azshara-feralas-087-sh"
+do = "train"
+npc = 3344
+spells = [2860, 10427, 10431, 10472, 10486, 10496, 10526, 10586, 10622, 15111, 16341, 16355, 20776]
+at = [1454, 38.8, 36.37]
+if = { class = ["SHAMAN"] }
+reqlevel = 50
+text = "Entrena con {npc:3344}, el instructor de chamán."
+tip = "13 hechizos hasta el nivel 50."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#42", "trainer:shaman"]
+note = "Polestar paso 42 «Orgrimmar», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 45-50"
+
+[[step]]
+id = "h50-azshara-feralas-087-mg"
+do = "train"
+npc = 5958
+spells = [10053, 10139, 10160, 10173, 10180, 10197, 10201, 10205, 10211, 10215, 10219, 10223, 22782, 1237312]
+at = [1454, 38.68, 85.41]
+if = { class = ["MAGE"] }
+reqlevel = 50
+text = "Entrena con {npc:5958}, el instructor de mago."
+tip = "14 hechizos hasta el nivel 50: nuevos {spell:10053}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#42", "trainer:mage"]
+note = "Polestar paso 42 «Orgrimmar», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 45-50"
+
+[[step]]
+id = "h50-azshara-feralas-087-wl"
+do = "train"
+npc = 3326
+spells = [6353, 11667, 11677, 11688, 11699, 11712, 11719, 11729, 11734, 11743, 17727, 17922, 17925, 17952, 18647, 20756, 1311680]
+at = [1454, 48.47, 45.43]
+if = { class = ["WARLOCK"] }
+reqlevel = 50
+text = "Entrena con {npc:3326}, el instructor de brujo."
+tip = "17 hechizos hasta el nivel 50: nuevos {spell:6353}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#42", "trainer:warlock"]
+note = "Polestar paso 42 «Orgrimmar», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 45-50"
+
+[[step]]
+id = "h50-azshara-feralas-088"
+do = "note"
+text = "Guarda el pago de {npc:8659} y «{quest:3504}» de Ag'tor Puñosangre: se entregan en {area:1237} en una visita posterior."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#42"]
+note = "Polestar paso 42 «Orgrimmar», objetivo 4 (note)"
+
+[[step]]
+id = "h50-azshara-feralas-089-pa"
+do = "train"
+npc = 246344
+spells = [1020, 2812, 6940, 10300, 10310, 19899, 19942, 19978, 20348, 20356, 20422, 20923]
+at = [1456, 23.91, 15.44]
+if = { class = ["PALADIN"] }
+reqlevel = 50
+text = "Entrena con {npc:246344}, el instructor de paladín."
+tip = "12 hechizos hasta el nivel 50: nuevos {spell:2812}, {spell:6940}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#43", "trainer:paladin"]
+note = "Polestar paso 43 «Paladin trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 46-50"
+
+[[step]]
+id = "h50-azshara-feralas-090"
+do = "goto"
+at = [1454, 45.3, 63.8]
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#44"]
+note = "Polestar paso 44 «Fly to Thunder Bluff», objetivo 1 (goto)"
+
+[[step]]
+id = "h50-azshara-feralas-091"
+do = "fly"
+zone = 1456
+text = "Vuela a Cima del Trueno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#44"]
+note = "Polestar paso 44 «Fly to Thunder Bluff», objetivo 2 (fly)"
+
+[[step]]
+id = "h50-azshara-feralas-092"
+do = "accept"
+quest = 3761
+npc = 5769
+at = [1456, 78.62, 28.56]
+reqlevel = 47
+text = "Coge «{quest:3761}» del {npc:5769}."
+tip = "Vuela a {map:1456}; está de camino a {area:1099}. ¿Aún no tienes esa ruta de vuelo? Vuela a {area:378} y cabalga al oeste por {map:1412}. Hamuul Runatótem y {npc:4046} están en {area:1639}; los druidas y paladines entrenan aquí ({npc:3033}, {npc:246344})."
+why = "+3.760 XP · ~1,6 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#45"]
+note = "Polestar paso 45 «Thunder Bluff», objetivo 1 (accept)"
+
+[[step]]
+id = "h50-azshara-feralas-093-dr"
+do = "train"
+npc = 3036
+spells = [1824, 9754, 9821, 9823, 9829, 9862, 9866, 9875, 17401, 20747, 22812, 22828, 1235826]
+at = [1456, 77.15, 29.82]
+if = { class = ["DRUID"] }
+reqlevel = 50
+text = "Entrena con {npc:3036}, el instructor de druida."
+tip = "13 hechizos hasta el nivel 50: nuevos {spell:22812}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#46", "trainer:druid"]
+note = "Polestar paso 46 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 44-50"
+
+[[step]]
+id = "h50-azshara-feralas-097"
+do = "note"
+text = "«{quest:3761}» se reúne en la siguiente guía; el pago de {npc:4046} se entrega a {npc:8587} más adelante."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#47"]
+note = "Polestar paso 47 «Thunder Bluff», objetivo 4 (note)"
+
+[[step]]
+id = "h50-azshara-feralas-098"
+do = "goto"
+at = [1456, 46.7, 49.9]
+text = "Ve al maestro de vuelo de {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#48"]
+note = "Polestar paso 48 «Fly to Camp Mojache», objetivo 1 (goto)"
+
+[[step]]
+id = "h50-azshara-feralas-099"
+do = "fly"
+zone = 1444
+text = "Vuela a Campamento Mojache."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#48"]
+note = "Polestar paso 48 «Fly to Camp Mojache», objetivo 2 (fly)"
+
+[[step]]
+id = "h50-azshara-feralas-100"
+do = "sethearth"
+npc = 7737
+zone = 1444
+at = [1444, 74.8, 45.18]
+text = "Pon la piedra de hogar en {area:1099} con {npc:7737}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#49"]
+note = "Polestar paso 49 «Camp Mojache», objetivo 1 (sethome)"
+
+[[step]]
+id = "h50-azshara-feralas-101"
+do = "turnin"
+quest = 3123
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h50-azshara-feralas-s049-8115"
+text = "Entrega «{quest:3123}» a {npc:8115}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#49"]
+note = "Polestar paso 49 «Camp Mojache», objetivo 2 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-102"
+do = "accept"
+quest = 3124
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h50-azshara-feralas-s049-8115"
+reqlevel = 40
+text = "Coge «{quest:3124}» de {npc:8115}."
+why = "+4.200 XP · ~5 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#49"]
+note = "Polestar paso 49 «Camp Mojache», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-103"
+do = "accept"
+quest = 3380
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h50-azshara-feralas-s049-8115"
+reqlevel = 46
+text = "Coge «{quest:3380}» de {npc:8115}."
+why = "+3.650 XP · <1 min · desbloquea «{quest:3444}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#49"]
+note = "Polestar paso 49 «Camp Mojache», objetivo 4 (accept)"
+
+[[step]]
+id = "h50-azshara-feralas-105"
+do = "complete"
+quest = 3124
+obj = 1
+at = [1444, 57.98, 62.83]
+wps = [[1444, 57.0, 65.8, "Muisek hipogrifo"], [1444, 55.5, 65.4, "Muisek hipogrifo"], [1444, 54.1, 65.2, "Muisek hipogrifo"]]
+text = "Consigue {item:9595} (10) para «{quest:3124}»."
+tip = "Los hipogrifos anidan en las colinas al suroeste del campamento. Mata uno y usa la Vasija de muisek hipogrifo sobre su cuerpo. Usa {item:9619} para «{quest:3124}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#50"]
+note = "Polestar paso 50 «Frayfeather Hippogryphs», objetivo 1 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-106"
+do = "loot"
+item = 8564
+count = 1
+at = [1444, 58.0, 76.3]
+optional = true
+text = "Recoge {item:8564} de {obj:141931}."
+tip = "Los nidos de hipogrifo están en las colinas al sur, alrededor de {area:2522}; cada uno contiene un huevo para {obj:142071}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#51"]
+note = "Polestar paso 51 «Hippogryph nests», objetivo 1 (collect) · condición no expresable: available {'k': 'available', 'q': 2741, 'minLevel': 42}"
+
+[[step]]
+id = "h50-azshara-feralas-107"
+do = "turnin"
+quest = 3124
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h50-azshara-feralas-s052-8115"
+text = "Entrega «{quest:3124}» a {npc:8115}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#52"]
+note = "Polestar paso 52 «Médico brujo Uzer'i», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-108"
+do = "accept"
+quest = 3125
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h50-azshara-feralas-s052-8115"
+reqlevel = 40
+text = "Coge «{quest:3125}» de {npc:8115}."
+why = "+3.120 XP · ~3 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#52"]
+note = "Polestar paso 52 «Médico brujo Uzer'i», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-109"
+do = "complete"
+quest = 3125
+obj = 1
+at = [1444, 70.15, 46.59]
+wps = [[1444, 69.5, 45.0, "Dragón feérico muisek"], [1444, 68.4, 44.5, "Dragón feérico muisek"], [1444, 67.7, 47.8, "Dragón feérico muisek"]]
+text = "Consigue {item:9596} (8) para «{quest:3125}»."
+tip = "Los dragones feéricos revolotean por el bosque justo al oeste del campamento. Usa la vasija sobre cada uno que mates. Usa {item:9620} para «{quest:3125}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#53"]
+note = "Polestar paso 53 «Sprite Darters», objetivo 1 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-110"
+do = "turnin"
+quest = 3125
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h50-azshara-feralas-s054-8115"
+text = "Entrega «{quest:3125}» a {npc:8115}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#54"]
+note = "Polestar paso 54 «Médico brujo Uzer'i», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-111"
+do = "accept"
+quest = 3126
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h50-azshara-feralas-s054-8115"
+reqlevel = 40
+text = "Coge «{quest:3126}» de {npc:8115}."
+why = "+4.700 XP · ~1,4 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#54"]
+note = "Polestar paso 54 «Médico brujo Uzer'i», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-112"
+do = "complete"
+quest = 3126
+obj = 1
+at = [1444, 73.9, 38.84]
+wps = [[1444, 73.5, 54.6, "Miniatura treant"], [1444, 54.0, 47.2, "Miniatura treant"], [1444, 57.4, 73.3, "Miniatura treant"]]
+text = "Consigue {item:9593} (3) de {npc:7584} para «{quest:3126}»."
+tip = "Los antárboles deambulan por los caminos del bosque entre el campamento y el centro de {map:1444}; hay pocos, así que búscalos por los senderos. Usa {item:9606} para «{quest:3126}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#55"]
+note = "Polestar paso 55 «Wandering Forest Walkers», objetivo 1 (collect)"
+
+[[step]]
+id = "h50-azshara-feralas-113"
+do = "turnin"
+quest = 3126
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h50-azshara-feralas-s056-8115"
+text = "Entrega «{quest:3126}» a {npc:8115}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#56"]
+note = "Polestar paso 56 «Médico brujo Uzer'i», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-114"
+do = "accept"
+quest = 3127
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h50-azshara-feralas-s056-8115"
+reqlevel = 40
+text = "Coge «{quest:3127}» de {npc:8115}."
+why = "+4.700 XP · ~7,5 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#56"]
+note = "Polestar paso 56 «Médico brujo Uzer'i», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-115"
+do = "turnin"
+quest = 7003
+npc = 14637
+at = [1444, 44.81, 43.42]
+optional = true
+chain = "h50-azshara-feralas-s057-14637"
+text = "Entrega «{quest:7003}» a {npc:14637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#57"]
+note = "Polestar paso 57 «Zorbin Hipnoviento», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-116"
+do = "turnin"
+quest = 7721
+npc = 14637
+at = [1444, 44.81, 43.42]
+optional = true
+chain = "h50-azshara-feralas-s057-14637"
+text = "Entrega «{quest:7721}» a {npc:14637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#57"]
+note = "Polestar paso 57 «Zorbin Hipnoviento», objetivo 2 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-119"
+do = "complete"
+quest = 3127
+obj = 1
+at = [1444, 39.9, 22.2]
+text = "Consigue {item:9597} (7) para «{quest:3127}»."
+tip = "Usa {item:9621} para «{quest:3127}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#58"]
+note = "Polestar paso 58 «The Forgotten Coast: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: The Sea Elementals and Sea Sprays wash along the shore around the dock.\nThe Land Walkers and Cliff Giants roam the hills north of the dock. Zap each one with {item:18904} first: shrunken, they are no longer elite. Every zapped giant drops residue; use the Muisek Vessel on its body too."
+
+[[step]]
+id = "h50-azshara-feralas-124"
+do = "turnin"
+quest = 3127
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h50-azshara-feralas-s060-8115"
+text = "Entrega «{quest:3127}» a {npc:8115}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#60"]
+note = "Polestar paso 60 «Back to Camp Mojache», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-127"
+do = "goto"
+at = [1444, 75.4, 44.3]
+text = "Ve al maestro de vuelo de {area:1099}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#61"]
+note = "Polestar paso 61 «Fly to Gadgetzan», objetivo 1 (goto)"
+
+[[step]]
+id = "h50-azshara-feralas-128"
+do = "fly"
+zone = 1446
+text = "Vuela a {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#61"]
+note = "Polestar paso 61 «Fly to Gadgetzan», objetivo 2 (fly)"
+
+[[step]]
+id = "h50-azshara-feralas-129"
+do = "turnin"
+quest = 4494
+npc = 5594
+at = [1446, 50.89, 26.96]
+text = "Entrega «{quest:4494}» a {npc:5594}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#62"]
+note = "Polestar paso 62 «Gadgetzan», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:5594}, inside."
+
+[[step]]
+id = "h50-azshara-feralas-130"
+do = "accept"
+quest = 4496
+npc = 5594
+at = [1446, 50.89, 26.96]
+optional = true
+reqlevel = 50
+text = "Coge «{quest:4496}» de {npc:5594}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#63"]
+note = "Polestar paso 63 «Alquimista Morterozugg», objetivo 1 (accept) · condición no expresable: available {'k': 'available', 'q': 4496, 'minLevel': 50, 'pre': [4493, 4494]} · datos no importados: pre · consejo de Polestar sin traducir: {npc:5594}, inside."
+
+[[step]]
+id = "h50-azshara-feralas-131"
+do = "turnin"
+quest = 2641
+npc = 7583
+at = [1446, 51.06, 26.87]
+chain = "h50-azshara-feralas-s064-7583"
+text = "Entrega «{quest:2641}» a {npc:7583}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#64"]
+note = "Polestar paso 64 «Gadgetzan», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-132"
+do = "accept"
+quest = 2661
+npc = 7583
+at = [1446, 51.06, 26.87]
+chain = "h50-azshara-feralas-s064-7583"
+reqlevel = 44
+text = "Coge «{quest:2661}» de {npc:7583}."
+why = "+455 XP · <1 min · desbloquea «{quest:2662}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#64"]
+note = "Polestar paso 64 «Gadgetzan», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-133"
+do = "accept"
+quest = 4504
+npc = 7876
+at = [1446, 51.57, 26.76]
+optional = true
+reqlevel = 48
+text = "Coge «{quest:4504}» de {npc:7876}, junto al maestro de jinetes del viento."
+tip = "+17.177 XP · ~32 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#64"]
+note = "Polestar paso 64 «Gadgetzan», objetivo 3 (accept)"
+
+[[step]]
+id = "h50-azshara-feralas-134"
+do = "turnin"
+quest = 2741
+at = [1446, 52.39, 26.97]
+optional = true
+text = "Entrega «{quest:2741}» en {obj:142071}."
+tip = "{obj:142071}, en el centro del pueblo. +495 XP · ~20 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#64"]
+note = "Polestar paso 64 «Gadgetzan», objetivo 4 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-135"
+do = "sethearth"
+npc = 7733
+zone = 1446
+at = [1446, 52.51, 27.91]
+text = "Pon la piedra de hogar en {area:976} con {npc:7733}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#64"]
+note = "Polestar paso 64 «Gadgetzan», objetivo 5 (sethome)"
+
+[[step]]
+id = "h50-azshara-feralas-136"
+do = "turnin"
+quest = 2661
+npc = 7564
+at = [1446, 51.81, 28.66]
+chain = "h50-azshara-feralas-s064-7564"
+text = "Entrega «{quest:2661}» a {npc:7564}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#64"]
+note = "Polestar paso 64 «Gadgetzan», objetivo 6 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-137"
+do = "accept"
+quest = 2662
+npc = 7564
+at = [1446, 51.81, 28.66]
+chain = "h50-azshara-feralas-s064-7564"
+reqlevel = 44
+text = "Coge «{quest:2662}» de {npc:7564}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#64"]
+note = "Polestar paso 64 «Gadgetzan», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-138"
+do = "turnin"
+quest = 2662
+npc = 7564
+at = [1446, 51.81, 28.66]
+chain = "h50-azshara-feralas-s064-7564"
+text = "Entrega «{quest:2662}» a {npc:7564}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#64"]
+note = "Polestar paso 64 «Gadgetzan», objetivo 8 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-139"
+do = "note"
+text = "El alquitrán de {npc:7876} y las muestras del Alquimista Morterozugg vienen de {map:1449}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#64"]
+note = "Polestar paso 64 «Gadgetzan», objetivo 9 (note)"
+
+[[step]]
+id = "h50-azshara-feralas-140"
+do = "turnin"
+quest = 3380
+npc = 7771
+at = [1446, 52.71, 45.92]
+chain = "h50-azshara-feralas-s065-7771"
+text = "Entrega «{quest:3380}» a {npc:7771}."
+tip = "Cabalga hacia el sur por el camino hasta {area:1938}; {npc:7771} acampa al lado. Desde aquí, el camino hacia el oeste baja a {map:1449}, donde empieza la siguiente guía."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#65"]
+note = "Polestar paso 65 «Marvon Buscarroblones», objetivo 1 (turnin)"
+
+[[step]]
+id = "h50-azshara-feralas-141"
+do = "accept"
+quest = 3444
+npc = 7771
+at = [1446, 52.71, 45.92]
+chain = "h50-azshara-feralas-s065-7771"
+reqlevel = 46
+text = "Coge «{quest:3444}» de {npc:7771}."
+why = "+3.920 XP · ~3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#65"]
+note = "Polestar paso 65 «Marvon Buscarroblones», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h50-azshara-feralas-142"
+do = "note"
+text = "Guarda «{quest:3444}»: el cofre de {npc:7771} se abre en una visita posterior."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/06-azshara#65"]
+note = "Polestar paso 65 «Marvon Buscarroblones», objetivo 3 (note)"

@@ -1,0 +1,1214 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/40-50/04-tanaris
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h46-tanaris-garganta"
+title = "Tanaris y La Garganta de Fuego"
+levels = [46, 48]
+map = 1446
+summary = "Ruta común de la Horda, 46-48: Tanaris y La Garganta de Fuego."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h46-tanaris-garganta-001"
+do = "goto"
+at = [1444, 75.4, 44.3]
+text = "Ve a {area:1099}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#1"]
+note = "Polestar paso 1 «Feralas», objetivo 1 (goto)"
+
+[[step]]
+id = "h46-tanaris-garganta-002"
+do = "goto"
+at = [1444, 75.4, 44.3]
+text = "Ve al maestro de vuelo de {area:1099}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#2"]
+note = "Polestar paso 2 «Fly to Gadgetzan», objetivo 1 (goto)"
+
+[[step]]
+id = "h46-tanaris-garganta-003"
+do = "fly"
+zone = 1446
+text = "Vuela a {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#2"]
+note = "Polestar paso 2 «Fly to Gadgetzan», objetivo 2 (fly)"
+
+[[step]]
+id = "h46-tanaris-garganta-004"
+do = "accept"
+quest = 3362
+npc = 7876
+at = [1446, 51.57, 26.76]
+optional = true
+reqlevel = 45
+text = "Coge «{quest:3362}» de {npc:7876}, junto al maestro de jinetes del viento."
+tip = "+9.764 XP · ~18 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#3"]
+note = "Polestar paso 3 «Gadgetzan», objetivo 1 (accept) · consejo de Polestar sin traducir: The flight lands beside {npc:7876}. Take the town's quests before riding west to {area:979}."
+
+[[step]]
+id = "h46-tanaris-garganta-005"
+do = "accept"
+quest = 5863
+npc = 11758
+at = [1446, 52.82, 27.4]
+optional = true
+reqlevel = 44
+text = "Coge «{quest:5863}» de {npc:11758}."
+tip = "+10.646 XP · ~20 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#3"]
+note = "Polestar paso 3 «Gadgetzan», objetivo 2 (accept)"
+
+[[step]]
+id = "h46-tanaris-garganta-006"
+do = "turnin"
+quest = 243
+npc = 7407
+at = [1446, 52.46, 28.51]
+chain = "h46-tanaris-garganta-s003-7407"
+text = "Entrega «{quest:243}» a {npc:7407}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#3"]
+note = "Polestar paso 3 «Gadgetzan», objetivo 3 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-007"
+do = "accept"
+quest = 379
+npc = 7407
+at = [1446, 52.46, 28.51]
+chain = "h46-tanaris-garganta-s003-7407"
+reqlevel = 38
+text = "Coge «{quest:379}» de {npc:7407}."
+why = "+5.054 XP · ~8,2 min · desbloquea «{quest:654}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#3"]
+note = "Polestar paso 3 «Gadgetzan», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-008"
+do = "sethearth"
+npc = 7733
+zone = 1446
+at = [1446, 52.51, 27.91]
+text = "Pon la piedra de hogar en {area:976} con {npc:7733}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#3"]
+note = "Polestar paso 3 «Gadgetzan», objetivo 5 (sethome)"
+
+[[step]]
+id = "h46-tanaris-garganta-009"
+do = "accept"
+quest = 2605
+npc = 7564
+at = [1446, 51.81, 28.66]
+reqlevel = 44
+text = "Coge «{quest:2605}» de {npc:7564}."
+why = "+7.580 XP · ~8 min · desbloquea «{quest:2641}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#3"]
+note = "Polestar paso 3 «Gadgetzan», objetivo 6 (accept)"
+
+[[step]]
+id = "h46-tanaris-garganta-010"
+do = "goto"
+at = [1446, 39.0, 29.0]
+text = "Ve a {area:979}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#4"]
+note = "Polestar paso 4 «Tanaris», objetivo 1 (goto)"
+
+[[step]]
+id = "h46-tanaris-garganta-011"
+do = "complete"
+quest = 992
+obj = 1
+at = [1446, 39.0, 29.2]
+text = "Usa {item:8584} para «{quest:992}»."
+tip = "Al oeste de Gadgetzan, usa la {item:8584} junto a la charca del campamento trol. Recoge {item:8585} (1) de {obj:144052} para «{quest:992}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#5"]
+note = "Polestar paso 5 «Sandsorrow Watch», objetivo 1 (use)"
+
+[[step]]
+id = "h46-tanaris-garganta-012"
+do = "turnin"
+quest = 992
+npc = 7724
+at = [1446, 50.21, 27.48]
+chain = "h46-tanaris-garganta-s006-7724"
+text = "Entrega «{quest:992}» a {npc:7724}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#6"]
+note = "Polestar paso 6 «Perito jefe Picoflojo», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back east to Fizzledowser on the west side of {area:976}; {npc:7771} is south from there."
+
+[[step]]
+id = "h46-tanaris-garganta-013"
+do = "accept"
+quest = 82
+npc = 7724
+at = [1446, 50.21, 27.48]
+chain = "h46-tanaris-garganta-s006-7724"
+reqlevel = 39
+text = "Coge «{quest:82}» de {npc:7724}."
+why = "+8.303 XP · ~15 min · desbloquea «{quest:4496}» y 8 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#6"]
+note = "Polestar paso 6 «Perito jefe Picoflojo», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-014"
+do = "accept"
+quest = 3161
+npc = 7771
+at = [1446, 52.71, 45.92]
+optional = true
+reqlevel = 43
+text = "Coge «{quest:3161}» de {npc:7771}."
+tip = "Ve al oeste por el camino del sur; {npc:7771} acampa junto a las ruinas de {area:1938}. Ponte su {item:9978}: muestra los adornos enterrados, aquí y alrededor de {area:983}. +4.400 XP · ~24 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#7"]
+note = "Polestar paso 7 «Marvon Buscarroblones», objetivo 1 (accept)"
+
+[[step]]
+id = "h46-tanaris-garganta-015"
+do = "complete"
+quest = 3161
+obj = 1
+at = [1446, 52.3, 45.3]
+optional = true
+text = "Recoge {item:8443} (30) de {obj:140971} para «{quest:3161}»."
+tip = "Al sur de {area:982}, los ogros Machacaduna ocupan su base, con {npc:12046} en el extremo este. Desentierra adornos de «{quest:3161}» entre combate y combate."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#8"]
+note = "Polestar paso 8 «Broken Pillar: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-016"
+do = "complete"
+quest = 5863
+obj = 1
+at = [1446, 42.68, 53.15]
+wps = [[1446, 42.7, 55.4, "Tosco Machacaduna"], [1446, 40.7, 57.3, "Tosco Machacaduna"], [1446, 40.3, 54.3, "Tosco Machacaduna"]]
+optional = true
+text = "Mata {npc:5474} (10) para «{quest:5863}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#8"]
+note = "Polestar paso 8 «Broken Pillar: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "h46-tanaris-garganta-017"
+do = "complete"
+quest = 5863
+obj = 2
+at = [1446, 42.2, 53.34]
+wps = [[1446, 40.3, 54.2, "Déspota Machacaduna"], [1446, 38.6, 53.0, "Déspota Machacaduna"], [1446, 39.9, 51.2, "Déspota Machacaduna"]]
+optional = true
+text = "Mata {npc:5472} (10) para «{quest:5863}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#8"]
+note = "Polestar paso 8 «Broken Pillar: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h46-tanaris-garganta-018"
+do = "complete"
+quest = 5863
+obj = 3
+at = [1446, 41.5, 57.8]
+optional = true
+text = "Mata {npc:12046} (1) para «{quest:5863}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#8"]
+note = "Polestar paso 8 «Broken Pillar: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "h46-tanaris-garganta-019"
+do = "complete"
+quest = 82
+obj = 1
+at = [1446, 35.09, 48.42]
+wps = [[1446, 34.0, 46.6, "Trozos de insecto centipaar"], [1446, 34.6, 45.4, "Trozos de insecto centipaar"], [1446, 32.7, 48.0, "Trozos de insecto centipaar"]]
+text = "Consigue {item:8587} (5) de {npc:5459} y {npc:5458} y {npc:5460} para «{quest:82}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#9"]
+note = "Polestar paso 9 «Noxious Lair», objetivo 1 (collect) · consejo de Polestar sin traducir: West, the Centipaar insects swarm around their hives; any of them drops the parts.\nCareful: Centipaar Swarmers cast {npc:4196} both in and out of combat, which brings small adds that interrupt you."
+
+[[step]]
+id = "h46-tanaris-garganta-020"
+do = "complete"
+quest = 3362
+obj = 1
+at = [1446, 29.34, 62.44]
+wps = [[1446, 29.3, 64.9, "Cardizal nudoso"]]
+optional = true
+text = "Mata {npc:5490} (8) para «{quest:3362}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#10"]
+note = "Polestar paso 10 ««El Valle Cardizal»: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: West of the compound the cactus creatures fill the valley; only the Dew Collectors carry a dew gland. Most mobs in {map:1446} can drop OOX-17/TN's distress beacon, rarely: keep it if you see one.\nCareful: The other thistleshrub mobs in the area are level 49-50 and wander a lot, so you can easily pull extra mobs."
+
+[[step]]
+id = "h46-tanaris-garganta-021"
+do = "loot"
+item = 8623
+count = 1
+at = [1446, 30.37, 77.65]
+wps = [[1446, 49.8, 69.2, "Localizador de emergencia OOX-17/TN"], [1446, 50.7, 90.8, "Localizador de emergencia OOX-17/TN"], [1446, 54.1, 93.0, "Localizador de emergencia OOX-17/TN"]]
+optional = true
+text = "Consigue {item:8623}."
+tip = "{item:8623}, botín poco común."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#10"]
+note = "Polestar paso 10 ««El Valle Cardizal»: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-022"
+do = "complete"
+quest = 3362
+obj = 2
+at = [1446, 29.49, 67.61]
+wps = [[1446, 30.3, 66.4, "Enraizador Cardizal"], [1446, 28.1, 66.0, "Enraizador Cardizal"], [1446, 29.4, 64.3, "Enraizador Cardizal"]]
+optional = true
+text = "Mata {npc:5485} (8) para «{quest:3362}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#10"]
+note = "Polestar paso 10 ««El Valle Cardizal»: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h46-tanaris-garganta-023"
+do = "complete"
+quest = 2605
+obj = 1
+at = [1446, 29.2, 66.1]
+text = "Consigue {item:8428} (1) de {npc:5481} para «{quest:2605}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#10"]
+note = "Polestar paso 10 ««El Valle Cardizal»: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-024"
+do = "accept"
+quest = 1560
+npc = 5955
+at = [1446, 30.0, 65.0]
+optional = true
+escort = true
+reqlevel = 40
+text = "Coge «{quest:1560}» de {npc:5955}."
+tip = "{npc:5955} espera en el valle. Acompáñalo hasta su esposa, {npc:6015}, en {area:977}, al noreste cruzando el desierto: no te alejes, ve despacio para que te siga y defiéndelo de lo que le ataque. No montes ni uses la piedra de hogar lejos de él. {npc:8579} también está en el puerto. Misión con tiempo: 30 min desde que la coges. +5.900 XP · ~12 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#11"]
+note = "Polestar paso 11 «Tooga's escort», objetivo 1 (accept)"
+
+[[step]]
+id = "h46-tanaris-garganta-025"
+do = "complete"
+quest = 1560
+at = [1446, 66.58, 25.67]
+optional = true
+escort = true
+text = "Completa «{quest:1560}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#11"]
+note = "Polestar paso 11 «Tooga's escort», objetivo 2 (complete) · objetivos (EN): Torta"
+
+[[step]]
+id = "h46-tanaris-garganta-026"
+do = "turnin"
+quest = 1560
+npc = 6015
+at = [1446, 66.58, 25.67]
+optional = true
+text = "Entrega «{quest:1560}» a {npc:6015}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#12"]
+note = "Polestar paso 12 «Steamwheedle Port», objetivo 1 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-027"
+do = "turnin"
+quest = 3520
+npc = 8579
+at = [1446, 66.99, 22.36]
+text = "Entrega «{quest:3520}» a {npc:8579}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#12"]
+note = "Polestar paso 12 «Steamwheedle Port», objetivo 2 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-028"
+do = "complete"
+quest = 379
+obj = 1
+at = [1446, 60.0, 23.4]
+text = "Consigue {item:8483} (5) de {npc:5616} y {npc:5618} para «{quest:379}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#13"]
+note = "Polestar paso 13 ««Aplacar esa sed»», objetivo 1 (collect) · consejo de Polestar sin traducir: Careful: Shadow Mages (level 42-43) call a Voidwalker while out of combat and attack with Immolate and {spell:686}. Thieves can Disarm you, Rogues move around in Sneak, and Assassins use Execute once you are at 20% health or less."
+
+[[step]]
+id = "h46-tanaris-garganta-029"
+do = "turnin"
+quest = 5863
+npc = 11758
+at = [1446, 52.82, 27.4]
+optional = true
+text = "Entrega «{quest:5863}» a {npc:11758}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#14"]
+note = "Polestar paso 14 «Gadgetzan», objetivo 1 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-030"
+do = "turnin"
+quest = 379
+npc = 7407
+at = [1446, 52.46, 28.51]
+text = "Entrega «{quest:379}» a {npc:7407}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#14"]
+note = "Polestar paso 14 «Gadgetzan», objetivo 2 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-031"
+do = "note"
+text = "Guarda la Fuente de energía modelo 4711-FTZ que te dio Bilgewhizzle: inicia «{quest:654}», con un temporizador de dos horas, así que úsala al volver al norte desde la colmena de Patagolpe."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#14"]
+note = "Polestar paso 14 «Gadgetzan», objetivo 3 (note)"
+
+[[step]]
+id = "h46-tanaris-garganta-032"
+do = "turnin"
+quest = 2605
+npc = 7564
+at = [1446, 51.81, 28.66]
+chain = "h46-tanaris-garganta-s015-7564"
+text = "Entrega «{quest:2605}» a {npc:7564}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#15"]
+note = "Polestar paso 15 «Gadgetzan», objetivo 1 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-033"
+do = "accept"
+quest = 2606
+npc = 7564
+at = [1446, 51.81, 28.66]
+chain = "h46-tanaris-garganta-s015-7564"
+reqlevel = 44
+text = "Coge «{quest:2606}» de {npc:7564}."
+why = "+455 XP · <1 min · desbloquea «{quest:2641}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#15"]
+note = "Polestar paso 15 «Gadgetzan», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-034"
+do = "turnin"
+quest = 3362
+npc = 7876
+at = [1446, 51.57, 26.76]
+optional = true
+text = "Entrega «{quest:3362}» a {npc:7876}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#15"]
+note = "Polestar paso 15 «Gadgetzan», objetivo 3 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-035"
+do = "turnin"
+quest = 2606
+npc = 7583
+at = [1446, 51.06, 26.87]
+chain = "h46-tanaris-garganta-s015-7583"
+text = "Entrega «{quest:2606}» a {npc:7583}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#15"]
+note = "Polestar paso 15 «Gadgetzan», objetivo 4 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-036"
+do = "accept"
+quest = 2641
+npc = 7583
+at = [1446, 51.06, 26.87]
+chain = "h46-tanaris-garganta-s015-7583"
+reqlevel = 44
+text = "Coge «{quest:2641}» de {npc:7583}."
+tip = "El {item:8526} crece en {map:1425}, hacia el nivel 48."
+why = "+4.550 XP · ~1,3 min · desbloquea «{quest:2661}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#15"]
+note = "Polestar paso 15 «Gadgetzan», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-037"
+do = "turnin"
+quest = 82
+npc = 5594
+at = [1446, 50.89, 26.96]
+text = "Entrega «{quest:82}» a {npc:5594}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#15"]
+note = "Polestar paso 15 «Gadgetzan», objetivo 6 (turnin) · consejo de Polestar sin traducir: {npc:5594}, inside."
+
+[[step]]
+id = "h46-tanaris-garganta-038"
+do = "accept"
+quest = 10
+npc = 7724
+at = [1446, 50.21, 27.48]
+reqlevel = 39
+text = "Coge «{quest:10}» de {npc:7724}."
+why = "+4.400 XP · ~3 min · desbloquea «{quest:4496}» y 7 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#15"]
+note = "Polestar paso 15 «Gadgetzan», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-039"
+do = "turnin"
+quest = 3161
+npc = 7771
+at = [1446, 52.71, 45.92]
+optional = true
+text = "Entrega «{quest:3161}» a {npc:7771}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#16"]
+note = "Polestar paso 16 «Marvon Buscarroblones», objetivo 1 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-040"
+do = "complete"
+quest = 10
+obj = 1
+at = [1446, 56.0, 71.2]
+text = "Recoge {item:8593} (1) de {obj:144053} para «{quest:10}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#17"]
+note = "Polestar paso 17 «Scrimshank's gear», objetivo 1 (collect) · consejo de Polestar sin traducir: Further south, Junior Surveyor Scrimshank's gear lies at the mouth of a Centipaar hive.\nCareful: One bug guards the gear. Many bugs patrol the tunnels, some of them level 50, so fights often pull extra adds."
+
+[[step]]
+id = "h46-tanaris-garganta-041"
+do = "accept"
+quest = 351
+optional = true
+reqlevel = 43
+text = "Usa {item:8623} para empezar «{quest:351}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#18"]
+note = "Polestar paso 18 «OOX-17/TN», objetivo 1 (accept) · consejo de Polestar sin traducir: Only with the distress beacon: OOX-17/TN sits south-east of Scrimshank's hive. Escort it north to {area:977}; its reward waits with Oglethorpe in {area:35}.\nCareful: The escort has two ambushes. Three level 47 scorpids attack near the start. Near the end, by the beach, three Wastewander humans attack: one mage and two assassins, around level 44."
+
+[[step]]
+id = "h46-tanaris-garganta-042"
+do = "turnin"
+quest = 351
+npc = 7784
+at = [1446, 60.23, 64.72]
+optional = true
+chain = "h46-tanaris-garganta-s018-7784"
+text = "Entrega «{quest:351}» a {npc:7784}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#18"]
+note = "Polestar paso 18 «OOX-17/TN», objetivo 2 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-043"
+do = "accept"
+quest = 648
+npc = 7784
+at = [1446, 60.23, 64.72]
+optional = true
+escort = true
+chain = "h46-tanaris-garganta-s018-7784"
+reqlevel = 43
+text = "Coge «{quest:648}» de {npc:7784}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#18"]
+note = "Polestar paso 18 «OOX-17/TN», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-044"
+do = "complete"
+quest = 648
+optional = true
+escort = true
+text = "Completa «{quest:648}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#18"]
+note = "Polestar paso 18 «OOX-17/TN», objetivo 4 (complete) · objetivos (EN): Escort OOX-17/TN to Steamwheedle Port"
+
+[[step]]
+id = "h46-tanaris-garganta-045"
+do = "accept"
+quest = 654
+reqlevel = 38
+text = "Usa {item:8524} para empezar «{quest:654}»."
+tip = "De vuelta al norte, justo al sur de {area:976}, usa ahora la {item:8524}: empieza el temporizador de dos horas. Las Hienas Zarpampolla, los Basiliscos Pielvidrio y los Cazadores escórpidos comparten aquí las dunas. Cada uno puede soltar una muestra sin analizar: úsala y, o bien resulta aceptable, o bien se pierde. Sigue matando hasta tener ocho de cada. Usa la {item:8524}. Misión con tiempo: 120 min desde que la coges."
+why = "+4.050 XP · ~4 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#19"]
+note = "Polestar paso 19 ««Recogida de muestras en Tanaris»», objetivo 1 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-046"
+do = "complete"
+quest = 654
+obj = 2
+at = [1446, 50.2, 31.6]
+text = "Consigue {item:9441} (8) para «{quest:654}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#19"]
+note = "Polestar paso 19 ««Recogida de muestras en Tanaris»», objetivo 2 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-047"
+do = "complete"
+quest = 654
+obj = 1
+at = [1446, 49.4, 31.0]
+text = "Consigue {item:9440} (8) para «{quest:654}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#19"]
+note = "Polestar paso 19 ««Recogida de muestras en Tanaris»», objetivo 3 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-048"
+do = "complete"
+quest = 654
+obj = 3
+at = [1446, 53.2, 31.2]
+text = "Consigue {item:9438} (8) para «{quest:654}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#19"]
+note = "Polestar paso 19 ««Recogida de muestras en Tanaris»», objetivo 4 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-049"
+do = "turnin"
+quest = 654
+npc = 7407
+at = [1446, 52.46, 28.51]
+chain = "h46-tanaris-garganta-s020-7407"
+text = "Entrega «{quest:654}» a {npc:7407}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#20"]
+note = "Polestar paso 20 «Gadgetzan», objetivo 1 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-050"
+do = "accept"
+quest = 864
+npc = 7407
+at = [1446, 52.46, 28.51]
+chain = "h46-tanaris-garganta-s020-7407"
+reqlevel = 38
+text = "Coge «{quest:864}» de {npc:7407}."
+why = "+3.030 XP · <1 min · 3,5× la mediana del 51-55"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#20"]
+note = "Polestar paso 20 «Gadgetzan», objetivo 2 (accept) · datos no importados: pre · consejo de Polestar sin traducir: For {npc:5204} in the {map:1458}, around level 52."
+
+[[step]]
+id = "h46-tanaris-garganta-051"
+do = "turnin"
+quest = 10
+npc = 7724
+at = [1446, 50.21, 27.48]
+chain = "h46-tanaris-garganta-s020-7724"
+text = "Entrega «{quest:10}» a {npc:7724}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#20"]
+note = "Polestar paso 20 «Gadgetzan», objetivo 3 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-052"
+do = "accept"
+quest = 110
+npc = 7724
+at = [1446, 50.21, 27.48]
+chain = "h46-tanaris-garganta-s020-7724"
+reqlevel = 39
+text = "Coge «{quest:110}» de {npc:7724}."
+why = "+440 XP · <1 min · desbloquea «{quest:4496}» y 6 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#20"]
+note = "Polestar paso 20 «Gadgetzan», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-053"
+do = "turnin"
+quest = 110
+npc = 5594
+at = [1446, 50.89, 26.96]
+chain = "h46-tanaris-garganta-s020-5594"
+text = "Entrega «{quest:110}» a {npc:5594}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#20"]
+note = "Polestar paso 20 «Gadgetzan», objetivo 5 (turnin) · consejo de Polestar sin traducir: {npc:5594}, inside."
+
+[[step]]
+id = "h46-tanaris-garganta-054"
+do = "accept"
+quest = 113
+npc = 5594
+at = [1446, 50.89, 26.96]
+chain = "h46-tanaris-garganta-s020-5594"
+reqlevel = 39
+text = "Coge «{quest:113}» de {npc:5594}."
+why = "+440 XP · <1 min · desbloquea «{quest:4496}» y 5 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#20"]
+note = "Polestar paso 20 «Gadgetzan», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-055"
+do = "turnin"
+quest = 113
+npc = 7724
+at = [1446, 50.21, 27.48]
+chain = "h46-tanaris-garganta-s020-7724"
+text = "Entrega «{quest:113}» a {npc:7724}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#20"]
+note = "Polestar paso 20 «Gadgetzan», objetivo 7 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-056"
+do = "accept"
+quest = 32
+npc = 7724
+at = [1446, 50.21, 27.48]
+chain = "h46-tanaris-garganta-s020-7724"
+reqlevel = 39
+text = "Coge «{quest:32}» de {npc:7724}."
+tip = "Para {npc:7010} en {map:1454}, hacia el nivel 50."
+why = "+5.450 XP · <1 min · desbloquea «{quest:4496}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#20"]
+note = "Polestar paso 20 «Gadgetzan», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-057"
+do = "goto"
+at = [1446, 67.6, 23.1]
+text = "Ve al barco a {area:16727}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#21"]
+note = "Polestar paso 21 «Boat to Powderfuse Port», objetivo 1 (goto)"
+
+[[step]]
+id = "h46-tanaris-garganta-058"
+do = "goto"
+at = [1427, 76.6, 56.7]
+text = "Entra en {map:1427}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#22"]
+note = "Polestar paso 22 «Into Searing Gorge», objetivo 1 (goto)"
+
+[[step]]
+id = "h46-tanaris-garganta-059"
+do = "goto"
+at = [1427, 65.6, 62.2]
+text = "Ve a {area:247}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#23"]
+note = "Polestar paso 23 «Searing Gorge», objetivo 1 (goto)"
+
+[[step]]
+id = "h46-tanaris-garganta-060"
+do = "accept"
+quest = 4449
+at = [1427, 65.59, 62.17]
+reqlevel = 43
+text = "Coge «{quest:4449}» ({obj:173265})."
+tip = "El {obj:173265}."
+why = "+5.564 XP · ~7 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#24"]
+note = "Polestar paso 24 «The Grimesilt Dig Site», objetivo 1 (accept) · consejo de Polestar sin traducir: From {area:16727}, ride into the {map:1427} by its eastern pass, then west to the dig site. The {obj:173265} stands at its southern end; the Dark Iron Geologists dig just north of it. Bring 15 {item:4306} (the Auction House sells it)."
+
+[[step]]
+id = "h46-tanaris-garganta-061"
+do = "complete"
+quest = 4449
+obj = 1
+at = [1427, 63.9, 60.39]
+wps = [[1427, 69.1, 33.4, "Geólogo Hierro Negro"]]
+text = "Mata {npc:5839} (8) para «{quest:4449}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#24"]
+note = "Polestar paso 24 «The Grimesilt Dig Site», objetivo 2 (kill)"
+
+[[step]]
+id = "h46-tanaris-garganta-062"
+do = "complete"
+quest = 4449
+obj = 2
+at = [1427, 63.9, 60.39]
+wps = [[1427, 66.0, 45.1, "Paño de seda"], [1427, 69.1, 33.4, "Paño de seda"], [1427, 47.2, 43.7, "Paño de seda"]]
+text = "Consigue {item:4306} (15) para «{quest:4449}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#24"]
+note = "Polestar paso 24 «The Grimesilt Dig Site», objetivo 3 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-063"
+do = "turnin"
+quest = 4449
+at = [1427, 65.59, 62.17]
+text = "Entrega «{quest:4449}» en {obj:173265}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#24"]
+note = "Polestar paso 24 «The Grimesilt Dig Site», objetivo 4 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-064"
+do = "goto"
+at = [1427, 37.7, 26.5]
+text = "Ve a {area:1446}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#25"]
+note = "Polestar paso 25 «Searing Gorge», objetivo 1 (goto)"
+
+[[step]]
+id = "h46-tanaris-garganta-065"
+do = "getfp"
+npc = 3305
+node = "75"
+at = [1427, 34.84, 30.87]
+text = "Coge la ruta de vuelo de Puesto del Thorium con {npc:3305}."
+tip = "Cabalga al noroeste cruzando la garganta; {area:1446} es el campamento con andamios del noroeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#26"]
+note = "Polestar paso 26 «Thorium Point», objetivo 1 (getfp)"
+
+[[step]]
+id = "h46-tanaris-garganta-066"
+do = "accept"
+quest = 7728
+at = [1427, 37.65, 26.47]
+optional = true
+reqlevel = 45
+text = "Coge «{quest:7728}» ({obj:179827})."
+tip = "El tablón {obj:179827}. +9.610 XP · ~17 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#26"]
+note = "Polestar paso 26 «Thorium Point», objetivo 2 (accept)"
+
+[[step]]
+id = "h46-tanaris-garganta-067"
+do = "accept"
+quest = 7729
+at = [1427, 37.65, 26.47]
+reqlevel = 45
+text = "Coge «{quest:7729}» ({obj:179827})."
+why = "+12.635 XP · ~21 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#26"]
+note = "Polestar paso 26 «Thorium Point», objetivo 3 (accept)"
+
+[[step]]
+id = "h46-tanaris-garganta-068"
+do = "accept"
+quest = 7723
+npc = 14627
+at = [1427, 38.58, 27.81]
+chain = "h46-tanaris-garganta-s026-14627"
+reqlevel = 45
+text = "Coge «{quest:7723}» de {npc:14627}."
+why = "+7.963 XP · ~9,6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#26"]
+note = "Polestar paso 26 «Thorium Point», objetivo 4 (accept)"
+
+[[step]]
+id = "h46-tanaris-garganta-069"
+do = "accept"
+quest = 7724
+npc = 14627
+at = [1427, 38.58, 27.81]
+optional = true
+chain = "h46-tanaris-garganta-s026-14627"
+reqlevel = 45
+text = "Coge «{quest:7724}» de {npc:14627}."
+tip = "+10.250 XP · ~18 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#26"]
+note = "Polestar paso 26 «Thorium Point», objetivo 5 (accept)"
+
+[[step]]
+id = "h46-tanaris-garganta-070"
+do = "accept"
+quest = 7727
+npc = 14627
+at = [1427, 38.58, 27.81]
+chain = "h46-tanaris-garganta-s026-14627"
+reqlevel = 45
+text = "Coge «{quest:7727}» de {npc:14627}."
+why = "+10.250 XP · ~14 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#26"]
+note = "Polestar paso 26 «Thorium Point», objetivo 6 (accept)"
+
+[[step]]
+id = "h46-tanaris-garganta-071"
+do = "accept"
+quest = 7722
+npc = 14624
+at = [1427, 38.8, 28.51]
+reqlevel = 45
+text = "Coge «{quest:7722}» del {npc:14624}."
+why = "+4.700 XP · ~1 min · 4,7× la mediana del 46-50"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#26"]
+note = "Polestar paso 26 «Thorium Point», objetivo 7 (accept)"
+
+[[step]]
+id = "h46-tanaris-garganta-072"
+do = "complete"
+quest = 7729
+obj = 1
+at = [1427, 38.03, 31.95]
+wps = [[1427, 43.4, 33.4, "Capataz Hierro Negro"], [1427, 39.8, 44.5, "Capataz Hierro Negro"], [1427, 44.9, 39.7, "Capataz Hierro Negro"]]
+text = "Mata {npc:5846} (15) para «{quest:7729}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#27"]
+note = "Polestar paso 27 «The Cauldron's slavers and golems», objetivo 1 (kill) · consejo de Polestar sin traducir: Ride south from {area:1446} into the Cauldron: the Dark Iron Taskmasters and Slavers drive the slaves on the paths, and the Heavy War Golems patrol the floor below {npc:8479}."
+
+[[step]]
+id = "h46-tanaris-garganta-073"
+do = "complete"
+quest = 7729
+obj = 2
+at = [1427, 40.25, 32.04]
+wps = [[1427, 42.4, 31.4, "Esclavista Hierro Negro"], [1427, 45.3, 26.1, "Esclavista Hierro Negro"], [1427, 39.4, 41.2, "Esclavista Hierro Negro"]]
+text = "Mata {npc:5844} (15) para «{quest:7729}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#27"]
+note = "Polestar paso 27 «The Cauldron's slavers and golems», objetivo 2 (kill)"
+
+[[step]]
+id = "h46-tanaris-garganta-074"
+do = "complete"
+quest = 7723
+obj = 1
+at = [1427, 44.76, 38.72]
+wps = [[1427, 43.1, 42.0, "Gólem de guerra pesado"], [1427, 48.3, 38.7, "Gólem de guerra pesado"], [1427, 35.4, 47.8, "Gólem de guerra pesado"]]
+text = "Mata {npc:5854} (20) para «{quest:7723}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#27"]
+note = "Polestar paso 27 «The Cauldron's slavers and golems», objetivo 3 (kill)"
+
+[[step]]
+id = "h46-tanaris-garganta-075"
+do = "accept"
+quest = 3441
+npc = 8479
+at = [1427, 39.06, 38.99]
+reqlevel = 40
+text = "Coge «{quest:3441}» de {npc:8479}."
+why = "+440 XP · ~1 min · desbloquea «{quest:3442}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#28"]
+note = "Polestar paso 28 «Kalaran Espada del Viento», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:8479} stands alone south of {area:1446}, at the edge of the Cauldron. Listen to his story."
+
+[[step]]
+id = "h46-tanaris-garganta-076"
+do = "complete"
+quest = 3441
+obj = 1
+npc = 8479
+at = [1427, 39.1, 39.0]
+text = "Habla con {npc:8479} para «{quest:3441}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#29"]
+note = "Polestar paso 29 ««Castigo divino»», objetivo 1 (talk)"
+
+[[step]]
+id = "h46-tanaris-garganta-077"
+do = "turnin"
+quest = 3441
+npc = 8479
+at = [1427, 39.06, 38.99]
+chain = "h46-tanaris-garganta-s030-8479"
+text = "Entrega «{quest:3441}» a {npc:8479}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#30"]
+note = "Polestar paso 30 «Kalaran Espada del Viento», objetivo 1 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-078"
+do = "accept"
+quest = 3442
+npc = 8479
+at = [1427, 39.06, 38.99]
+chain = "h46-tanaris-garganta-s030-8479"
+reqlevel = 40
+text = "Coge «{quest:3442}» de {npc:8479}."
+why = "+8.484 XP · ~11 min · desbloquea «{quest:3443}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#30"]
+note = "Polestar paso 30 «Kalaran Espada del Viento», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-079"
+do = "loot"
+item = 11818
+count = 1
+at = [1427, 39.14, 37.86]
+wps = [[1427, 44.1, 38.6, "Llave del excusado de Grimesilt"], [1427, 49.2, 41.3, "Llave del excusado de Grimesilt"], [1427, 58.0, 41.9, "Llave del excusado de Grimesilt"]]
+optional = true
+text = "Consigue {item:11818}."
+tip = "{item:11818}, botín poco común."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#31"]
+note = "Polestar paso 31 «Searing Gorge: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: Heavy War Golems patrol the Cauldron below {npc:8479} and drop the oil; the Magma and Blazing Elementals drifting among them drop the hearts. The Dark Iron Taskmasters and Slavers drive the slaves on the paths; a Slaver may drop the {item:11818}: keep it.\nThe Greater Lava Spiders roam the plateaus and lava pools in the south-west of the gorge.\n{area:1443} opens in the north of the Cauldron. Incendosaurs swim in its lava pools: pull them to the edge. The secret plans lie on the pit's upper ledge.\nCareful: Dark Iron Slavers (level 45-46) call for help from allies within 15 yd when pulled, cast Net from up to 15 yd, and use Rend in melee."
+
+[[step]]
+id = "h46-tanaris-garganta-080"
+do = "complete"
+quest = 3442
+obj = 1
+at = [1427, 40.69, 36.73]
+wps = [[1427, 50.6, 38.0, "Corazón de llama"], [1427, 56.9, 44.4, "Corazón de llama"], [1427, 54.3, 54.4, "Corazón de llama"]]
+text = "Consigue {item:10509} (4) para «{quest:3442}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#31"]
+note = "Polestar paso 31 «Searing Gorge: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-081"
+do = "complete"
+quest = 3442
+obj = 2
+at = [1427, 42.49, 38.61]
+wps = [[1427, 44.6, 40.3, "Aceite gólem"], [1427, 54.5, 44.9, "Aceite gólem"], [1427, 56.4, 54.5, "Aceite gólem"]]
+text = "Consigue {item:10511} (4) para «{quest:3442}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#31"]
+note = "Polestar paso 31 «Searing Gorge: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-082"
+do = "complete"
+quest = 7724
+obj = 1
+at = [1427, 38.01, 33.34]
+wps = [[1427, 31.6, 40.3, "Araña de lava abrasadora"], [1427, 28.5, 44.0, "Araña de lava abrasadora"], [1427, 27.1, 50.0, "Araña de lava abrasadora"]]
+optional = true
+text = "Mata {npc:5858} (20) para «{quest:7724}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#31"]
+note = "Polestar paso 31 «Searing Gorge: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "h46-tanaris-garganta-083"
+do = "complete"
+quest = 7727
+obj = 1
+at = [1427, 43.38, 28.26]
+wps = [[1427, 45.4, 23.2, "Incendosaurio"], [1427, 49.5, 25.3, "Incendosaurio"], [1427, 50.8, 31.9, "Incendosaurio"]]
+text = "Mata {npc:9318} (20) para «{quest:7727}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#31"]
+note = "Polestar paso 31 «Searing Gorge: kill these as you meet them», objetivo 5 (kill)"
+
+[[step]]
+id = "h46-tanaris-garganta-084"
+do = "turnin"
+quest = 3442
+npc = 8479
+at = [1427, 39.06, 38.99]
+chain = "h46-tanaris-garganta-s032-8479"
+text = "Entrega «{quest:3442}» a {npc:8479}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#32"]
+note = "Polestar paso 32 «Kalaran Espada del Viento», objetivo 1 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-085"
+do = "accept"
+quest = 3443
+npc = 8479
+at = [1427, 39.06, 38.99]
+chain = "h46-tanaris-garganta-s032-8479"
+reqlevel = 40
+text = "Coge «{quest:3443}» de {npc:8479}."
+why = "+7.059 XP · ~6,6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#32"]
+note = "Polestar paso 32 «Kalaran Espada del Viento», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h46-tanaris-garganta-086"
+do = "turnin"
+quest = 7729
+npc = 14626
+at = [1427, 38.97, 27.51]
+text = "Entrega «{quest:7729}» a {npc:14626}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#33"]
+note = "Polestar paso 33 «Thorium Point», objetivo 1 (turnin) · consejo de Polestar sin traducir: Ride back north to {area:1446}, just past {npc:8479}."
+
+[[step]]
+id = "h46-tanaris-garganta-087"
+do = "turnin"
+quest = 7727
+npc = 14627
+at = [1427, 38.58, 27.81]
+chain = "h46-tanaris-garganta-s033-14627"
+text = "Entrega «{quest:7727}» a {npc:14627}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#33"]
+note = "Polestar paso 33 «Thorium Point», objetivo 2 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-088"
+do = "turnin"
+quest = 7724
+npc = 14627
+at = [1427, 38.58, 27.81]
+optional = true
+chain = "h46-tanaris-garganta-s033-14627"
+text = "Entrega «{quest:7724}» a {npc:14627}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#33"]
+note = "Polestar paso 33 «Thorium Point», objetivo 3 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-089"
+do = "turnin"
+quest = 7723
+npc = 14627
+at = [1427, 38.58, 27.81]
+chain = "h46-tanaris-garganta-s033-14627"
+text = "Entrega «{quest:7723}» a {npc:14627}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#33"]
+note = "Polestar paso 33 «Thorium Point», objetivo 4 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-090"
+do = "complete"
+quest = 3443
+obj = 1
+at = [1427, 39.91, 27.83]
+wps = [[1427, 40.2, 23.6, "Daga bañada en torio"], [1427, 45.9, 28.8, "Daga bañada en torio"], [1427, 48.4, 42.3, "Daga bañada en torio"]]
+text = "Consigue {item:10551} (8) para «{quest:3443}»."
+tip = "Los Vapoherreros Hierro Negro trabajan en los hornos del centro de La Caldera; la mitad lleva una {item:10551} y uno de cada diez la {item:18959}. Los esclavos, Esclavistas y Capataces también llevan dagas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#34"]
+note = "Polestar paso 34 «The Steamsmiths' furnaces», objetivo 1 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-091"
+do = "complete"
+quest = 7728
+obj = 1
+at = [1427, 40.01, 48.33]
+wps = [[1427, 39.1, 49.7, "Tobera de herrería"], [1427, 43.0, 51.7, "Tobera de herrería"]]
+optional = true
+text = "Consigue {item:18959} (1) de {npc:5840} para «{quest:7728}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#34"]
+note = "Polestar paso 34 «The Steamsmiths' furnaces», objetivo 2 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-092"
+do = "turnin"
+quest = 3443
+npc = 8479
+at = [1427, 39.06, 38.99]
+text = "Entrega «{quest:3443}» a {npc:8479}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#35"]
+note = "Polestar paso 35 «Kalaran Espada del Viento», objetivo 1 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-093"
+do = "note"
+text = "Su siguiente encargo pide el {item:10552} de fieles élite: déjalo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#35"]
+note = "Polestar paso 35 «Kalaran Espada del Viento», objetivo 2 (note)"
+
+[[step]]
+id = "h46-tanaris-garganta-094"
+do = "complete"
+quest = 7722
+obj = 1
+at = [1427, 40.5, 35.7]
+text = "Recoge {item:18922} (1) de {obj:179826} para «{quest:7722}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#36"]
+note = "Polestar paso 36 «The Slag Pit», objetivo 1 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-095"
+do = "complete"
+quest = 7728
+obj = 2
+at = [1427, 33.71, 51.92]
+wps = [[1427, 33.0, 54.0, "Telescopio de vigía"], [1427, 36.1, 61.5, "Telescopio de vigía"], [1427, 42.7, 62.8, "Telescopio de vigía"]]
+optional = true
+text = "Consigue {item:18960} (1) de {npc:8566} para «{quest:7728}»."
+tip = "Los Vigías Hierro Negro vigilan las crestas alrededor de las torres de guardia al sur de La Caldera; uno de cada diez, más o menos, lleva el {item:18960}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#37"]
+note = "Polestar paso 37 «Dark Iron Lookouts», objetivo 1 (collect)"
+
+[[step]]
+id = "h46-tanaris-garganta-096"
+do = "accept"
+quest = 4451
+optional = true
+reqlevel = 43
+text = "Usa {item:11818} para empezar «{quest:4451}»."
+tip = "Solo con la {item:11818}: vuelve al este hasta el {obj:173265} de la excavación."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#38"]
+note = "Polestar paso 38 ««La llave de la libertad»», objetivo 1 (accept)"
+
+[[step]]
+id = "h46-tanaris-garganta-097"
+do = "turnin"
+quest = 4451
+at = [1427, 65.59, 62.17]
+optional = true
+text = "Entrega «{quest:4451}» en {obj:173265}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#38"]
+note = "Polestar paso 38 ««La llave de la libertad»», objetivo 2 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-098"
+do = "turnin"
+quest = 7722
+npc = 14624
+at = [1427, 38.8, 28.51]
+text = "Entrega «{quest:7722}» al {npc:14624}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#39"]
+note = "Polestar paso 39 «Thorium Point», objetivo 1 (turnin)"
+
+[[step]]
+id = "h46-tanaris-garganta-099"
+do = "turnin"
+quest = 7728
+npc = 14626
+at = [1427, 38.97, 27.51]
+optional = true
+text = "Entrega «{quest:7728}» a {npc:14626}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/04-tanaris#39"]
+note = "Polestar paso 39 «Thorium Point», objetivo 2 (turnin)"

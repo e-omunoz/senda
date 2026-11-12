@@ -26,7 +26,7 @@ STATUSES = ("verified", "unverified", "disputed")
 
 # Campos obligatorios según `do` (además de id/do/text/status, que exige el esquema).
 # Fichas de nombre en text/tip ({quest:155}): el addon las resuelve con el cliente (Core/Names.lua).
-TOKEN_KINDS = {"quest", "npc", "item", "spell", "map", "obj"}
+TOKEN_KINDS = {"quest", "npc", "item", "spell", "map", "obj", "area"}
 _TOKEN_ANY_RE = re.compile(r"\{([a-z]+):([^}\s]*)\}")
 
 DO_REQUIRES: dict[str, tuple[str, ...]] = {

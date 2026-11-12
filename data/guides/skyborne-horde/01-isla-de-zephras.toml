@@ -1,0 +1,4908 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/skyborne/01-zephras-isle
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "sky-isla-de-zephras"
+title = "Isla de Zephras"
+levels = [1, 14]
+map = 2521
+summary = "Salida de Skyborne (1-14): misiones de la zona de inicio, entrenamiento de clase y viaje al Bosque de Argénteos."
+
+[[step]]
+id = "sky-001"
+do = "accept"
+quest = 92460
+npc = 251362
+at = [2521, 42.81, 23.37]
+text = "Coge «{quest:92460}» de {npc:251362}."
+tip = "Despiertas en {area:16635}, al norte de la isla. {npc:251362} está junto al sendero y {npc:251361} en el centro del pueblo."
+why = "+40 XP · <1 min · desbloquea «{quest:92462}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#1"]
+note = "Polestar paso 1 «Thendal Village», objetivo 1 (accept)"
+
+[[step]]
+id = "sky-002"
+do = "turnin"
+quest = 92460
+npc = 251361
+at = [2521, 42.05, 23.49]
+chain = "sky-s001-251361"
+text = "Entrega «{quest:92460}» a {npc:251361}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#1"]
+note = "Polestar paso 1 «Thendal Village», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-003"
+do = "accept"
+quest = 92461
+npc = 251361
+at = [2521, 42.05, 23.49]
+chain = "sky-s001-251361"
+text = "Coge «{quest:92461}» de {npc:251361}."
+why = "+480 XP · ~4 min · desbloquea «{quest:93552}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#1"]
+note = "Polestar paso 1 «Thendal Village», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-004"
+do = "accept"
+quest = 92462
+npc = 251368
+at = [2521, 43.44, 24.79]
+text = "Coge «{quest:92462}» de {npc:251368}."
+why = "+570 XP · ~4 min · desbloquea «{quest:92463}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#1"]
+note = "Polestar paso 1 «Thendal Village», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-005"
+do = "complete"
+quest = 92461
+obj = 1
+at = [2521, 43.47, 25.42]
+wps = [[2521, 43.4, 24.0, "Vuldren juvenil"], [2521, 43.9, 27.1, "Vuldren juvenil"], [2521, 45.4, 24.7, "Vuldren juvenil"]]
+text = "Mata {npc:250873} (8) para «{quest:92461}»."
+tip = "Moscas de cirro molestas y {npc:250873} deambulan por la arboleda justo al sureste del pueblo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#2"]
+note = "Polestar paso 2 «Thendal Grove: kill these as you meet them», objetivo 1 (kill)"
+
+[[step]]
+id = "sky-006"
+do = "complete"
+quest = 92462
+obj = 1
+at = [2521, 43.6, 26.9]
+wps = [[2521, 45.7, 27.9, "Mosca de cirro molesta"], [2521, 45.4, 23.9, "Mosca de cirro molesta"], [2521, 46.3, 25.6, "Mosca de cirro molesta"]]
+text = "Mata {npc:251169} (8) para «{quest:92462}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#2"]
+note = "Polestar paso 2 «Thendal Grove: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "sky-007"
+do = "turnin"
+quest = 92462
+npc = 251368
+at = [2521, 43.44, 24.79]
+chain = "sky-s003-251368"
+text = "Entrega «{quest:92462}» a {npc:251368}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#3"]
+note = "Polestar paso 3 «Back to Thendal Village», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:257554} and {npc:263113} stand at the top of the watchtower, a few steps north-east of {npc:251368}."
+
+[[step]]
+id = "sky-008"
+do = "accept"
+quest = 92463
+npc = 251368
+at = [2521, 43.44, 24.79]
+chain = "sky-s003-251368"
+reqlevel = 2
+text = "Coge «{quest:92463}» de {npc:251368}."
+why = "+378 XP · ~2 min · 1,5× la mediana del 1-5"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#3"]
+note = "Polestar paso 3 «Back to Thendal Village», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-009"
+do = "accept"
+quest = 94414
+npc = 257554
+at = [2521, 43.77, 24.09]
+reqlevel = 2
+text = "Coge «{quest:94414}» de {npc:257554}."
+why = "+85 XP · ~1 min · 1,6× la mediana del 1-5"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#3"]
+note = "Polestar paso 3 «Back to Thendal Village», objetivo 3 (accept)"
+
+[[step]]
+id = "sky-010"
+do = "complete"
+quest = 94414
+at = [2521, 43.77, 24.08]
+text = "Completa «{quest:94414}»."
+tip = "Habla con {npc:257554}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#3"]
+note = "Polestar paso 3 «Back to Thendal Village», objetivo 4 (complete) · objetivos (EN): Halaan Hawk-Eye"
+
+[[step]]
+id = "sky-011"
+do = "turnin"
+quest = 94414
+npc = 257554
+at = [2521, 43.77, 24.09]
+text = "Entrega «{quest:94414}» a {npc:257554}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#3"]
+note = "Polestar paso 3 «Back to Thendal Village», objetivo 5 (turnin)"
+
+[[step]]
+id = "sky-012"
+do = "accept"
+quest = 92474
+npc = 263113
+at = [2521, 43.68, 24.1]
+reqlevel = 2
+text = "Coge «{quest:92474}» de {npc:263113}."
+why = "+85 XP · ~1 min · 1,7× la mediana del 1-5"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#3"]
+note = "Polestar paso 3 «Back to Thendal Village», objetivo 6 (accept)"
+
+[[step]]
+id = "sky-013"
+do = "accept"
+quest = 92598
+npc = 251487
+at = [2521, 42.61, 24.38]
+reqlevel = 2
+text = "Coge «{quest:92598}» de {npc:251487}."
+why = "+180 XP · ~1,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 1 (accept) · consejo de Polestar sin traducir: Jump off the top of the watchtower and use {spell:1259416} to float down to {npc:251361}, west of the tower."
+
+[[step]]
+id = "sky-014"
+do = "turnin"
+quest = 92461
+npc = 251361
+at = [2521, 42.05, 23.49]
+chain = "sky-s004-251361"
+text = "Entrega «{quest:92461}» a {npc:251361}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-015"
+do = "turnin"
+quest = 92474
+npc = 251361
+at = [2521, 42.05, 23.49]
+chain = "sky-s004-251361"
+text = "Entrega «{quest:92474}» a {npc:251361}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 3 (turnin)"
+
+[[step]]
+id = "sky-016"
+do = "accept"
+quest = 92464
+npc = 251361
+at = [2521, 42.05, 23.49]
+optional = true
+chain = "sky-s004-251361"
+reqlevel = 2
+text = "Coge «{quest:92464}» de {npc:251361}."
+tip = "+25 XP · <1 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-017"
+do = "accept"
+quest = 92532
+npc = 251361
+at = [2521, 42.05, 23.49]
+if = { class = ["WARRIOR"] }
+chain = "sky-s004-251361"
+reqlevel = 2
+text = "Coge «{quest:92532}» de {npc:251361}, la {item:4100}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-018"
+do = "accept"
+quest = 92482
+npc = 251361
+at = [2521, 42.05, 23.49]
+if = { class = ["HUNTER"] }
+chain = "sky-s004-251361"
+reqlevel = 2
+text = "Coge «{quest:92482}» de {npc:251361}, una nota de tu instructor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-019"
+do = "accept"
+quest = 92484
+npc = 251361
+at = [2521, 42.05, 23.49]
+if = { class = ["SHAMAN"] }
+chain = "sky-s004-251361"
+reqlevel = 2
+text = "Coge «{quest:92484}» de {npc:251361}, examina el {item:282418}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-020"
+do = "accept"
+quest = 92485
+npc = 251361
+at = [2521, 42.05, 23.49]
+if = { class = ["DRUID"] }
+chain = "sky-s004-251361"
+reqlevel = 2
+text = "Coge «{quest:92485}» de {npc:251361}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-021"
+do = "accept"
+quest = 92483
+npc = 251361
+at = [2521, 42.05, 23.49]
+if = { class = ["ROGUE"] }
+chain = "sky-s004-251361"
+reqlevel = 2
+text = "Coge «{quest:92483}» de {npc:251361}, lee la {item:9547}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 9 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-022"
+do = "turnin"
+quest = 92484
+npc = 251374
+at = [2521, 42.79, 23.58]
+if = { class = ["SHAMAN"] }
+text = "Entrega «{quest:92484}» a {npc:251374}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 10 (turnin) · consejo de Polestar sin traducir: {npc:251374}, beside {npc:251361}."
+
+[[step]]
+id = "sky-023"
+do = "turnin"
+quest = 92485
+npc = 251373
+at = [2521, 41.66, 23.33]
+if = { class = ["DRUID"] }
+text = "Entrega «{quest:92485}» a {npc:251373}, el instructor de druidas, en la planta baja del árbol detrás de {npc:251361}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 11 (turnin)"
+
+[[step]]
+id = "sky-025"
+do = "accept"
+quest = 93552
+npc = 251363
+at = [2521, 43.37, 23.98]
+reqlevel = 2
+text = "Coge «{quest:93552}» de {npc:251363}."
+why = "+360 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#4"]
+note = "Polestar paso 4 «Rorian el Buscadía's errands», objetivo 13 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-026"
+do = "complete"
+quest = 93552
+obj = 1
+at = [2521, 43.48, 23.85]
+wps = [[2521, 43.5, 25.2, "Cúmulo de piedras de viento"], [2521, 47.9, 24.9, "Cúmulo de piedras de viento"], [2521, 47.0, 30.0, "Cúmulo de piedras de viento"]]
+text = "Recoge {item:258772} (15) de {obj:613286} para «{quest:93552}»."
+tip = "Las Piedras de viento en bruto son cristales azules en las laderas alrededor del pueblo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#5"]
+note = "Polestar paso 5 «Raw Windstones», objetivo 1 (collect)"
+
+[[step]]
+id = "sky-027"
+do = "turnin"
+quest = 93552
+npc = 251363
+at = [2521, 43.37, 23.98]
+text = "Entrega «{quest:93552}» a {npc:251363}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#6"]
+note = "Polestar paso 6 «Dalia la Coleccionista», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-028"
+do = "turnin"
+quest = 92464
+npc = 249363
+at = [2521, 47.25, 21.98]
+optional = true
+chain = "sky-s007-249363"
+text = "Entrega «{quest:92464}» a {npc:249363}."
+tip = "{npc:249363} está en {area:17678}, al este del pueblo. {npc:251143} y Convertidos Al'Aketh se reúnen justo al norte de ella. Elemental Convergence está justo al noreste de ella: lanza tu habilidad racial {spell:1259686} a su lado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#7"]
+note = "Polestar paso 7 «The standing stones», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-029"
+do = "accept"
+quest = 92465
+npc = 249363
+at = [2521, 47.25, 21.98]
+chain = "sky-s007-249363"
+reqlevel = 2
+text = "Coge «{quest:92465}» de {npc:249363}."
+why = "+965 XP · ~6 min · desbloquea «{quest:92469}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#7"]
+note = "Polestar paso 7 «The standing stones», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-030"
+do = "complete"
+quest = 92465
+obj = 1
+at = [2521, 47.19, 21.63]
+wps = [[2521, 48.1, 19.6, "Convertido Al'Aketh"], [2521, 46.5, 19.0, "Convertido Al'Aketh"]]
+text = "Mata {npc:251160} (7) para «{quest:92465}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#7"]
+note = "Polestar paso 7 «The standing stones», objetivo 3 (kill)"
+
+[[step]]
+id = "sky-031"
+do = "complete"
+quest = 92465
+obj = 2
+at = [2521, 47.04, 21.82]
+wps = [[2521, 48.1, 20.5, "Vientos arremolinados"], [2521, 46.8, 19.0, "Vientos arremolinados"], [2521, 45.1, 20.3, "Vientos arremolinados"]]
+text = "Mata {npc:251143} (6) para «{quest:92465}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#7"]
+note = "Polestar paso 7 «The standing stones», objetivo 4 (kill)"
+
+[[step]]
+id = "sky-032"
+do = "complete"
+quest = 92598
+obj = 1
+at = [2521, 48.28, 20.62]
+text = "Usa Elemental Convergence para «{quest:92598}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#7"]
+note = "Polestar paso 7 «The standing stones», objetivo 5 (interact)"
+
+[[step]]
+id = "sky-033"
+do = "turnin"
+quest = 92465
+npc = 249363
+at = [2521, 47.25, 21.98]
+chain = "sky-s007-249363"
+text = "Entrega «{quest:92465}» a {npc:249363}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#7"]
+note = "Polestar paso 7 «The standing stones», objetivo 6 (turnin)"
+
+[[step]]
+id = "sky-034"
+do = "accept"
+quest = 92469
+npc = 249363
+at = [2521, 47.25, 21.98]
+chain = "sky-s007-249363"
+reqlevel = 3
+text = "Coge «{quest:92469}» de {npc:249363}."
+why = "+35 XP · <1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#7"]
+note = "Polestar paso 7 «The standing stones», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-035"
+do = "complete"
+quest = 92463
+obj = 1
+at = [2521, 47.2, 28.35]
+wps = [[2521, 48.4, 28.5, "Reina mosca de cirro"]]
+text = "Mata {npc:251404} (1) para «{quest:92463}»."
+tip = "La Reina mosca de cirro revolotea en el extremo sureste de la arboleda, de camino de vuelta de las piedras."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#8"]
+note = "Polestar paso 8 ««La reina mosca de cirro»», objetivo 1 (kill)"
+
+[[step]]
+id = "sky-036"
+do = "turnin"
+quest = 92463
+npc = 251368
+at = [2521, 43.44, 24.79]
+text = "Entrega «{quest:92463}» a {npc:251368}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-037"
+do = "turnin"
+quest = 92598
+npc = 251487
+at = [2521, 42.61, 24.38]
+text = "Entrega «{quest:92598}» a {npc:251487}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-038"
+do = "turnin"
+quest = 92469
+npc = 251361
+at = [2521, 42.05, 23.49]
+chain = "sky-s009-251361"
+text = "Entrega «{quest:92469}» a {npc:251361}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 3 (turnin)"
+
+[[step]]
+id = "sky-039"
+do = "accept"
+quest = 92471
+npc = 251361
+at = [2521, 42.05, 23.49]
+chain = "sky-s009-251361"
+reqlevel = 4
+text = "Coge «{quest:92471}» de {npc:251361}."
+why = "+35 XP · <1 min · desbloquea «{quest:92470}» y 5 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-040"
+do = "turnin"
+quest = 92482
+npc = 251376
+at = [2521, 42.49, 23.79]
+if = { class = ["HUNTER"] }
+text = "Entrega «{quest:92482}» a {npc:251376}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 5 (turnin) · consejo de Polestar sin traducir: {npc:251376}, beside {npc:251361}."
+
+[[step]]
+id = "sky-041"
+do = "turnin"
+quest = 92483
+npc = 251389
+at = [2521, 43.74, 24.36]
+if = { class = ["ROGUE"] }
+text = "Entrega «{quest:92483}» a {npc:251389}, en la atalaya."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 6 (turnin)"
+
+[[step]]
+id = "sky-042"
+do = "turnin"
+quest = 92532
+npc = 251964
+at = [2521, 43.65, 24.11]
+if = { class = ["WARRIOR"] }
+text = "Entrega «{quest:92532}» a la {npc:251964}, en la atalaya."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 7 (turnin)"
+
+[[step]]
+id = "sky-043"
+do = "turnin"
+quest = 92471
+npc = 251366
+at = [2521, 42.76, 23.66]
+chain = "sky-s009-251366"
+text = "Entrega «{quest:92471}» a {npc:251366}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 8 (turnin)"
+
+[[step]]
+id = "sky-044"
+do = "accept"
+quest = 92470
+npc = 251366
+at = [2521, 42.76, 23.66]
+chain = "sky-s009-251366"
+reqlevel = 2
+text = "Coge «{quest:92470}» de {npc:251366}."
+why = "+1.054 XP · ~6 min · desbloquea «{quest:96638}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 9 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-045-wr"
+do = "train"
+npc = 3153
+spells = [6673]
+at = [1411, 42.89, 69.44]
+if = { class = ["WARRIOR"] }
+reqlevel = 1
+text = "Entrena con {npc:3153}, el instructor de guerrero."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:6673}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9", "trainer:warrior"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 10 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 1-2"
+
+[[step]]
+id = "sky-045-hu"
+do = "train"
+npc = 3154
+spells = [1494]
+at = [1411, 42.84, 69.33]
+if = { class = ["HUNTER"] }
+reqlevel = 1
+text = "Entrena con {npc:3154}, el instructor de cazador."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1494}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9", "trainer:hunter"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 10 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 1-2"
+
+[[step]]
+id = "sky-045-ro"
+do = "train"
+npc = 3155
+spells = [1784]
+at = [1411, 41.28, 68.0]
+if = { class = ["ROGUE"] }
+reqlevel = 1
+text = "Entrena con {npc:3155}, el instructor de pícaro."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1784}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9", "trainer:rogue"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 10 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 1-2"
+
+[[step]]
+id = "sky-045-pr"
+do = "train"
+npc = 3706
+spells = [1243]
+at = [1411, 54.26, 42.93]
+if = { class = ["PRIEST"] }
+reqlevel = 1
+text = "Entrena con {npc:3706}, el instructor de sacerdote."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1243}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9", "trainer:priest"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 10 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 1-2"
+
+[[step]]
+id = "sky-045-mg"
+do = "train"
+npc = 5880
+spells = [1459]
+at = [1411, 56.31, 75.11]
+if = { class = ["MAGE"] }
+reqlevel = 1
+text = "Entrena con {npc:5880}, el instructor de mago."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1459}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9", "trainer:mage"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 10 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 1-2"
+
+[[step]]
+id = "sky-045-wl"
+do = "train"
+npc = 3156
+spells = [348]
+at = [1411, 40.65, 68.52]
+if = { class = ["WARLOCK"] }
+reqlevel = 1
+text = "Entrena con {npc:3156}, el instructor de brujo."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:348}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9", "trainer:warlock"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 10 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 1-2"
+
+[[step]]
+id = "sky-046"
+do = "accept"
+quest = 92466
+npc = 251374
+at = [2521, 42.79, 23.58]
+if = { class = ["SHAMAN"] }
+reqlevel = 3
+text = "Coge «{quest:92466}» de {npc:251374}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 11 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "sky-047"
+do = "accept"
+quest = 92473
+npc = 257551
+at = [2521, 42.41, 25.17]
+reqlevel = 3
+text = "Coge «{quest:92473}» de {npc:257551}."
+why = "+360 XP · ~1,7 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#9"]
+note = "Polestar paso 9 «Thendal Village turn-ins», objetivo 12 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-048"
+do = "complete"
+quest = 92473
+obj = 1
+at = [2521, 41.4, 26.4]
+text = "Consigue {item:251918} (6) de {npc:250926} para «{quest:92473}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#10"]
+note = "Polestar paso 10 «Thendal Grove: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: {npc:250926} prowl the slopes south-west of the village, on the way to {npc:252095}.\nThe Ursera den is west of the village. {npc:251115}, their matriarch, sits at its far end."
+
+[[step]]
+id = "sky-049"
+do = "complete"
+quest = 92470
+obj = 1
+at = [2521, 39.45, 26.86]
+wps = [[2521, 37.6, 26.1, "Ursera carroñero"], [2521, 37.0, 23.9, "Ursera carroñero"], [2521, 35.6, 25.5, "Ursera carroñero"]]
+text = "Mata {npc:250937} (8) para «{quest:92470}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#10"]
+note = "Polestar paso 10 «Thendal Grove: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "sky-050"
+do = "complete"
+quest = 92470
+obj = 2
+at = [2521, 35.65, 26.07]
+text = "Consigue {item:252665} (1) de {npc:251115} para «{quest:92470}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#10"]
+note = "Polestar paso 10 «Thendal Grove: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "sky-051"
+do = "turnin"
+quest = 92473
+npc = 257551
+at = [2521, 42.41, 25.17]
+text = "Entrega «{quest:92473}» a {npc:257551}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#11"]
+note = "Polestar paso 11 «Back to Thendal Village», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back up from the den to {npc:257551} and {npc:251366} in the village before heading south-west to {npc:252095}: the road from her camp leads on south to Shen'dar."
+
+[[step]]
+id = "sky-052"
+do = "turnin"
+quest = 92470
+npc = 251366
+at = [2521, 42.76, 23.66]
+chain = "sky-s011-251366"
+text = "Entrega «{quest:92470}» a {npc:251366}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#11"]
+note = "Polestar paso 11 «Back to Thendal Village», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-053"
+do = "accept"
+quest = 92472
+npc = 251366
+at = [2521, 42.76, 23.66]
+chain = "sky-s011-251366"
+reqlevel = 3
+text = "Coge «{quest:92472}» de {npc:251366}."
+why = "+230 XP · ~1,3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#11"]
+note = "Polestar paso 11 «Back to Thendal Village», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-054"
+do = "accept"
+quest = 96638
+npc = 251366
+at = [2521, 42.76, 23.66]
+chain = "sky-s011-251366"
+reqlevel = 4
+text = "Coge «{quest:96638}» de {npc:251366}."
+why = "+410 XP · <1 min · desbloquea «{quest:96101}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#11"]
+note = "Polestar paso 11 «Back to Thendal Village», objetivo 4 (accept) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "sky-056"
+do = "accept"
+quest = 92544
+npc = 252095
+at = [2521, 38.31, 30.18]
+reqlevel = 2
+text = "Coge «{quest:92544}» de {npc:252095}."
+why = "+1.246 XP · ~8 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#12"]
+note = "Polestar paso 12 «Hanaa Brisanoche», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:252095} waits in {area:16622}, south-west of the village. The Al'Aketh camp is just beyond her; {npc:256935} leads it.\nCareful: {npc:256935} casts shocks; drag him clear of the other cultists before fighting so they don't join in."
+
+[[step]]
+id = "sky-057"
+do = "complete"
+quest = 92544
+obj = 1
+at = [2521, 38.1, 30.8]
+text = "Mata {npc:251145} (6) para «{quest:92544}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#12"]
+note = "Polestar paso 12 «Hanaa Brisanoche», objetivo 2 (kill)"
+
+[[step]]
+id = "sky-058"
+do = "complete"
+quest = 92466
+obj = 1
+at = [2521, 38.18, 30.81]
+wps = [[2521, 38.4, 33.4, "Sello de Akir"], [2521, 35.9, 33.3, "Sello de Akir"], [2521, 46.5, 19.0, "Sello de Akir"]]
+if = { class = ["SHAMAN"] }
+text = "Consigue {item:251924} (1) para «{quest:92466}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#12"]
+note = "Polestar paso 12 «Hanaa Brisanoche», objetivo 3 (collect) · consejo de Polestar sin traducir: {item:251924}: the Al'Aketh in {npc:252095}'s camp carry it."
+
+[[step]]
+id = "sky-059"
+do = "complete"
+quest = 92544
+obj = 2
+at = [2521, 38.1, 30.7]
+text = "Mata {npc:251448} (4) para «{quest:92544}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#12"]
+note = "Polestar paso 12 «Hanaa Brisanoche», objetivo 4 (kill)"
+
+[[step]]
+id = "sky-060"
+do = "complete"
+quest = 92544
+obj = 3
+at = [2521, 36.0, 33.5]
+text = "Mata {npc:256935} (1) para «{quest:92544}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#12"]
+note = "Polestar paso 12 «Hanaa Brisanoche», objetivo 5 (kill)"
+
+[[step]]
+id = "sky-061"
+do = "turnin"
+quest = 92544
+npc = 252095
+at = [2521, 38.31, 30.18]
+text = "Entrega «{quest:92544}» a {npc:252095}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#12"]
+note = "Polestar paso 12 «Hanaa Brisanoche», objetivo 6 (turnin)"
+
+[[step]]
+id = "sky-062"
+do = "turnin"
+quest = 92466
+npc = 251374
+at = [2521, 42.79, 23.58]
+if = { class = ["SHAMAN"] }
+chain = "sky-s013-251374"
+text = "Entrega «{quest:92466}» a {npc:251374}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#13"]
+note = "Polestar paso 13 «Formavientos Boro», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back to Boro in {area:16635} with the Signet."
+
+[[step]]
+id = "sky-063"
+do = "accept"
+quest = 92467
+npc = 251374
+at = [2521, 42.79, 23.58]
+if = { class = ["SHAMAN"] }
+chain = "sky-s013-251374"
+reqlevel = 3
+text = "Coge «{quest:92467}» de {npc:251374}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#13"]
+note = "Polestar paso 13 «Formavientos Boro», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-064"
+do = "turnin"
+quest = 92467
+npc = 251166
+at = [2521, 49.67, 23.8]
+if = { class = ["SHAMAN"] }
+chain = "sky-s013-251166"
+text = "Entrega «{quest:92467}» a {npc:251166}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#13"]
+note = "Polestar paso 13 «Formavientos Boro», objetivo 3 (turnin) · consejo de Polestar sin traducir: Drink the {item:6635} at the {area:16988}, just east of the village, to see the {npc:251166}."
+
+[[step]]
+id = "sky-065"
+do = "accept"
+quest = 92468
+npc = 251166
+at = [2521, 49.67, 23.8]
+if = { class = ["SHAMAN"] }
+chain = "sky-s013-251166"
+reqlevel = 3
+text = "Coge «{quest:92468}» de {npc:251166}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#13"]
+note = "Polestar paso 13 «Formavientos Boro», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-066"
+do = "turnin"
+quest = 92468
+npc = 251374
+at = [2521, 42.79, 23.58]
+if = { class = ["SHAMAN"] }
+text = "Entrega «{quest:92468}» a {npc:251374}, {npc:5873} y tu {item:5175}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#13"]
+note = "Polestar paso 13 «Formavientos Boro», objetivo 5 (turnin)"
+
+[[step]]
+id = "sky-067"
+do = "turnin"
+quest = 92472
+npc = 251523
+at = [2521, 45.67, 45.5]
+chain = "sky-s014-251523"
+text = "Entrega «{quest:92472}» a {npc:251523}."
+tip = "Sigue el camino al sur hasta {area:16624}, en el centro de la isla. {npc:251523} está en su lado este, {npc:251902} en el centro, {npc:254089} justo al noroeste de ella y {npc:263664} junto a la hoguera del lado oeste. Con una profesión aprendida, {npc:263664} también ofrece su Acampada 101: su instructor está en el pueblo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-068"
+do = "accept"
+quest = 92514
+npc = 251523
+at = [2521, 45.67, 45.5]
+chain = "sky-s014-251523"
+reqlevel = 4
+text = "Coge «{quest:92514}» de {npc:251523}."
+why = "+179 XP · ~3 min · desbloquea «{quest:92553}» y 39 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-069"
+do = "accept"
+quest = 92595
+npc = 251902
+at = [2521, 43.51, 44.77]
+reqlevel = 4
+text = "Coge «{quest:92595}» de {npc:251902}."
+why = "+176 XP · <1 min · desbloquea «{quest:94411}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 3 (accept)"
+
+[[step]]
+id = "sky-070"
+do = "complete"
+quest = 92595
+obj = 1
+npc = 251902
+at = [2521, 43.53, 44.78]
+text = "Habla con {npc:251902} para «{quest:92595}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 4 (talk)"
+
+[[step]]
+id = "sky-071"
+do = "turnin"
+quest = 92595
+npc = 251902
+at = [2521, 43.51, 44.77]
+chain = "sky-s014-251902"
+text = "Entrega «{quest:92595}» a {npc:251902}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 5 (turnin)"
+
+[[step]]
+id = "sky-072"
+do = "accept"
+quest = 94411
+npc = 251902
+at = [2521, 43.51, 44.77]
+chain = "sky-s014-251902"
+reqlevel = 4
+text = "Coge «{quest:94411}» de {npc:251902}."
+why = "+854 XP · ~4 min · 1,7× la mediana del 6-10"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-073"
+do = "complete"
+quest = 92514
+obj = 1
+npc = 251902
+at = [2521, 43.5, 44.8]
+text = "Habla con {npc:251902} para «{quest:92514}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 7 (talk)"
+
+[[step]]
+id = "sky-074"
+do = "complete"
+quest = 92514
+obj = 2
+npc = 254089
+at = [2521, 43.05, 43.3]
+text = "Habla con {npc:254089} para «{quest:92514}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 8 (talk)"
+
+[[step]]
+id = "sky-075"
+do = "turnin"
+quest = 96638
+npc = 263664
+at = [2521, 41.66, 44.8]
+chain = "sky-s014-263664"
+text = "Entrega «{quest:96638}» a {npc:263664}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 9 (turnin)"
+
+[[step]]
+id = "sky-076"
+do = "accept"
+quest = 96101
+npc = 263664
+at = [2521, 41.66, 44.8]
+chain = "sky-s014-263664"
+reqlevel = 4
+text = "Coge «{quest:96101}» de {npc:263664}."
+why = "+410 XP · ~2 min · desbloquea «{quest:96646}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 10 (accept) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "sky-077"
+do = "complete"
+quest = 96101
+at = [2521, 41.73, 44.78]
+text = "Completa «{quest:96101}»."
+tip = "/sentarse junto a la hoguera de {npc:263664} hasta obtener {spell:1229451}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 11 (complete) · objetivos (EN): Sit near the campfire (Optional); Gain the Boosted Rest buff"
+
+[[step]]
+id = "sky-078"
+do = "turnin"
+quest = 96101
+npc = 263664
+at = [2521, 41.66, 44.8]
+chain = "sky-s014-263664"
+text = "Entrega «{quest:96101}» a {npc:263664}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 12 (turnin)"
+
+[[step]]
+id = "sky-079"
+do = "accept"
+quest = 96646
+npc = 263664
+at = [2521, 41.66, 44.8]
+chain = "sky-s014-263664"
+reqlevel = 4
+text = "Coge «{quest:96646}» de {npc:263664}."
+why = "+270 XP · ~1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#14"]
+note = "Polestar paso 14 «Shen'dar Village», objetivo 13 (accept) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "sky-080"
+do = "accept"
+quest = 97971
+npc = 263664
+at = [2521, 41.66, 44.8]
+if = { prof = ["skinning"] }
+reqlevel = 4
+text = "Coge «{quest:97971}» de {npc:263664}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#15"]
+note = "Polestar paso 15 ««Acampada para novatos: desuello»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229517 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "sky-081"
+do = "accept"
+quest = 97965
+npc = 263664
+at = [2521, 41.66, 44.8]
+if = { prof = ["firstaid"] }
+reqlevel = 4
+text = "Coge «{quest:97965}» de {npc:263664}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#16"]
+note = "Polestar paso 16 ««Acampada para novatos: primeros auxilios»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230117 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "sky-082"
+do = "accept"
+quest = 97969
+npc = 263664
+at = [2521, 41.66, 44.8]
+if = { prof = ["leatherworking"] }
+reqlevel = 4
+text = "Coge «{quest:97969}» de {npc:263664}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#17"]
+note = "Polestar paso 17 ««Camping 101: Leatherworking»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229432 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "sky-083"
+do = "accept"
+quest = 97970
+npc = 263664
+at = [2521, 41.66, 44.8]
+if = { prof = ["mining"] }
+reqlevel = 4
+text = "Coge «{quest:97970}» de {npc:263664}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#18"]
+note = "Polestar paso 18 ««Acampada para novatos: minería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230161 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "sky-084"
+do = "accept"
+quest = 97963
+npc = 263664
+at = [2521, 41.66, 44.8]
+if = { prof = ["alchemy"] }
+reqlevel = 4
+text = "Coge «{quest:97963}» de {npc:263664}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#19"]
+note = "Polestar paso 19 ««Acampada para novatos: alquimia»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230564 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "sky-085"
+do = "accept"
+quest = 97964
+npc = 263664
+at = [2521, 41.66, 44.8]
+if = { prof = ["blacksmithing"] }
+reqlevel = 4
+text = "Coge «{quest:97964}» de {npc:263664}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#20"]
+note = "Polestar paso 20 ««Acampada para novatos: herrería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230171 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "sky-086"
+do = "accept"
+quest = 97967
+npc = 263664
+at = [2521, 41.66, 44.8]
+if = { prof = ["fishing"] }
+reqlevel = 4
+text = "Coge «{quest:97967}» de {npc:263664}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#21"]
+note = "Polestar paso 21 ««Acampada para novatos: pesca»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229745 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "sky-087"
+do = "turnin"
+quest = 92514
+npc = 251523
+at = [2521, 45.67, 45.5]
+chain = "sky-s022-251523"
+text = "Entrega «{quest:92514}» a {npc:251523}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#22"]
+note = "Polestar paso 22 «Shen'dar Village», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-088"
+do = "accept"
+quest = 92517
+npc = 251523
+at = [2521, 45.67, 45.5]
+optional = true
+chain = "sky-s022-251523"
+reqlevel = 4
+text = "Coge «{quest:92517}» de {npc:251523}."
+tip = "+1.327 XP · ~9 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#22"]
+note = "Polestar paso 22 «Shen'dar Village», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-089"
+do = "accept"
+quest = 92516
+npc = 251906
+at = [2521, 44.46, 44.96]
+chain = "sky-s022-251906"
+reqlevel = 4
+text = "Coge «{quest:92516}» de {npc:251906}."
+why = "+1.754 XP · ~13 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#22"]
+note = "Polestar paso 22 «Shen'dar Village», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-090"
+do = "accept"
+quest = 93319
+npc = 251906
+at = [2521, 44.46, 44.96]
+chain = "sky-s022-251906"
+reqlevel = 4
+text = "Coge «{quest:93319}» de {npc:251906}."
+why = "+480 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#22"]
+note = "Polestar paso 22 «Shen'dar Village», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-091"
+do = "accept"
+quest = 92515
+npc = 251993
+at = [2521, 44.68, 44.52]
+reqlevel = 4
+text = "Coge «{quest:92515}» de {npc:251993}."
+why = "+550 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#22"]
+note = "Polestar paso 22 «Shen'dar Village», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-092"
+do = "accept"
+quest = 93951
+npc = 251991
+at = [2521, 44.88, 44.18]
+reqlevel = 4
+text = "Coge «{quest:93951}» de {npc:251991}."
+why = "+480 XP · ~1,4 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#22"]
+note = "Polestar paso 22 «Shen'dar Village», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-093"
+do = "learn_prof"
+npc = 251905
+prof = "cooking"
+at = [2521, 43.85, 43.84]
+text = "Aprende Cocina con {npc:251905}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#22"]
+note = "Polestar paso 22 «Shen'dar Village», objetivo 7 (train) · consejo de Polestar sin traducir: {npc:251905}: Camping 101 asks you to learn it."
+
+[[step]]
+id = "sky-094"
+do = "complete"
+quest = 96646
+at = [2521, 43.85, 43.9]
+text = "Completa «{quest:96646}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#22"]
+note = "Polestar paso 22 «Shen'dar Village», objetivo 8 (complete) · objetivos (EN): Zerril Softbreeze"
+
+[[step]]
+id = "sky-095"
+do = "turnin"
+quest = 96646
+npc = 251905
+at = [2521, 43.85, 43.84]
+chain = "sky-s022-251905"
+text = "Entrega «{quest:96646}» a {npc:251905}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#22"]
+note = "Polestar paso 22 «Shen'dar Village», objetivo 9 (turnin)"
+
+[[step]]
+id = "sky-096"
+do = "accept"
+quest = 92553
+npc = 251905
+at = [2521, 43.85, 43.84]
+optional = true
+chain = "sky-s022-251905"
+reqlevel = 4
+text = "Coge «{quest:92553}» de {npc:251905}."
+tip = "+2.465 XP · ~30 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#22"]
+note = "Polestar paso 22 «Shen'dar Village», objetivo 10 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-097"
+do = "complete"
+quest = 97971
+at = [2521, 43.29, 43.37]
+if = { prof = ["skinning"] }
+text = "Completa «{quest:97971}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#23"]
+note = "Polestar paso 23 «Mendalass Coseandrajo», objetivo 1 (complete) · condición no expresable: llevas la misión 97971 (implícita: el paso es de esa misión) · objetivos (EN): Mendalass Tattermend"
+
+[[step]]
+id = "sky-098"
+do = "turnin"
+quest = 97971
+npc = 257024
+at = [2521, 43.29, 43.37]
+if = { prof = ["skinning"] }
+text = "Entrega «{quest:97971}» a {npc:257024}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#23"]
+note = "Polestar paso 23 «Mendalass Coseandrajo», objetivo 2 (turnin) · condición no expresable: llevas la misión 97971 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "sky-099"
+do = "complete"
+quest = 97965
+at = [2521, 43.08, 46.31]
+if = { prof = ["firstaid"] }
+text = "Completa «{quest:97965}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#24"]
+note = "Polestar paso 24 «Naleeia Coseandrajo», objetivo 1 (complete) · condición no expresable: llevas la misión 97965 (implícita: el paso es de esa misión) · objetivos (EN): Naleeia Tattermend"
+
+[[step]]
+id = "sky-100"
+do = "turnin"
+quest = 97965
+npc = 257018
+at = [2521, 43.08, 46.31]
+if = { prof = ["firstaid"] }
+text = "Entrega «{quest:97965}» a {npc:257018}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#24"]
+note = "Polestar paso 24 «Naleeia Coseandrajo», objetivo 2 (turnin) · condición no expresable: llevas la misión 97965 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "sky-101"
+do = "complete"
+quest = 97969
+at = [2521, 44.68, 44.52]
+if = { prof = ["leatherworking"] }
+text = "Completa «{quest:97969}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#25"]
+note = "Polestar paso 25 «Indari Vetasol», objetivo 1 (complete) · condición no expresable: llevas la misión 97969 (implícita: el paso es de esa misión) · objetivos (EN): Indari Sunseam"
+
+[[step]]
+id = "sky-102"
+do = "turnin"
+quest = 97969
+npc = 251993
+at = [2521, 44.68, 44.52]
+if = { prof = ["leatherworking"] }
+text = "Entrega «{quest:97969}» a {npc:251993}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#25"]
+note = "Polestar paso 25 «Indari Vetasol», objetivo 2 (turnin) · condición no expresable: llevas la misión 97969 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "sky-103"
+do = "complete"
+quest = 97970
+at = [2521, 44.77, 44.56]
+if = { prof = ["mining"] }
+text = "Completa «{quest:97970}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#26"]
+note = "Polestar paso 26 «Messana Ventoblasón», objetivo 1 (complete) · condición no expresable: llevas la misión 97970 (implícita: el paso es de esa misión) · objetivos (EN): Messana Crestwind"
+
+[[step]]
+id = "sky-104"
+do = "turnin"
+quest = 97970
+npc = 257022
+at = [2521, 44.77, 44.56]
+if = { prof = ["mining"] }
+text = "Entrega «{quest:97970}» a {npc:257022}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#26"]
+note = "Polestar paso 26 «Messana Ventoblasón», objetivo 2 (turnin) · condición no expresable: llevas la misión 97970 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "sky-105"
+do = "complete"
+quest = 97963
+at = [2521, 43.69, 43.42]
+if = { prof = ["alchemy"] }
+text = "Completa «{quest:97963}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#27"]
+note = "Polestar paso 27 «Nyassa Prestobrebaje», objetivo 1 (complete) · condición no expresable: llevas la misión 97963 (implícita: el paso es de esa misión) · objetivos (EN): Nyassa Swiftdraught"
+
+[[step]]
+id = "sky-106"
+do = "turnin"
+quest = 97963
+npc = 257019
+at = [2521, 43.69, 43.42]
+if = { prof = ["alchemy"] }
+text = "Entrega «{quest:97963}» a {npc:257019}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#27"]
+note = "Polestar paso 27 «Nyassa Prestobrebaje», objetivo 2 (turnin) · condición no expresable: llevas la misión 97963 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "sky-107"
+do = "complete"
+quest = 97964
+at = [2521, 44.88, 44.37]
+if = { prof = ["blacksmithing"] }
+text = "Completa «{quest:97964}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#28"]
+note = "Polestar paso 28 «Aedi Tripleforjado», objetivo 1 (complete) · condición no expresable: llevas la misión 97964 (implícita: el paso es de esa misión) · objetivos (EN): Aedi Thriceforged"
+
+[[step]]
+id = "sky-108"
+do = "turnin"
+quest = 97964
+npc = 251913
+at = [2521, 44.88, 44.37]
+if = { prof = ["blacksmithing"] }
+text = "Entrega «{quest:97964}» a {npc:251913}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#28"]
+note = "Polestar paso 28 «Aedi Tripleforjado», objetivo 2 (turnin) · condición no expresable: llevas la misión 97964 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "sky-109"
+do = "complete"
+quest = 97967
+at = [2521, 45.02, 48.44]
+if = { prof = ["fishing"] }
+text = "Completa «{quest:97967}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#29"]
+note = "Polestar paso 29 «Fenn Buentiempo», objetivo 1 (complete) · condición no expresable: llevas la misión 97967 (implícita: el paso es de esa misión) · objetivos (EN): Fenn Fairweather"
+
+[[step]]
+id = "sky-110"
+do = "turnin"
+quest = 97967
+npc = 251992
+at = [2521, 45.02, 48.44]
+if = { prof = ["fishing"] }
+text = "Entrega «{quest:97967}» a {npc:251992}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#29"]
+note = "Polestar paso 29 «Fenn Buentiempo», objetivo 2 (turnin) · condición no expresable: llevas la misión 97967 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "sky-111"
+do = "complete"
+quest = 92553
+obj = 1
+at = [2521, 42.1, 39.4]
+optional = true
+text = "Consigue {item:6889} (3) para «{quest:92553}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#30"]
+note = "Polestar paso 30 «Shen'dar Village: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: Prideclaws and Galestriders share the meadows around {area:16624}; the Galestriders graze thickest just west of it. They drop both the Small Eggs and the {item:5469} for {npc:251905}."
+
+[[step]]
+id = "sky-112"
+do = "complete"
+quest = 92553
+obj = 2
+at = [2521, 44.54, 39.43]
+wps = [[2521, 44.9, 37.9, "Carne de zancudo"], [2521, 46.6, 43.9, "Carne de zancudo"], [2521, 47.3, 51.5, "Carne de zancudo"]]
+optional = true
+text = "Consigue {item:5469} (8) para «{quest:92553}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#30"]
+note = "Polestar paso 30 «Shen'dar Village: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "sky-113"
+do = "turnin"
+quest = 92553
+npc = 251905
+at = [2521, 43.85, 43.84]
+optional = true
+text = "Entrega «{quest:92553}» a {npc:251905}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#31"]
+note = "Polestar paso 31 «Shen'dar Village hand-ins», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:251905}, {npc:251906}, {npc:251991}, {npc:252172} and {npc:251523} all stand in {area:16624}. If you are still short of {item:5469}, the Galestriders graze just south of the village."
+
+[[step]]
+id = "sky-114"
+do = "complete"
+quest = 92515
+obj = 1
+at = [2521, 45.21, 45.21]
+wps = [[2521, 47.4, 38.5, "Pelambre de garramanada"], [2521, 40.9, 36.5, "Pelambre de garramanada"], [2521, 39.4, 42.4, "Pelambre de garramanada"]]
+text = "Consigue {item:252670} (10) de {npc:251245} para «{quest:92515}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#32"]
+note = "Polestar paso 32 «Shen'dar Highlands: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: The apprentices practise north-east of the village.\nThe bandit camps are north-east of the village; \"Badwind\" Bennic holds the top camp. Bandits carry the stolen windstones."
+
+[[step]]
+id = "sky-115"
+do = "complete"
+quest = 94411
+obj = 1
+at = [2521, 45.09, 41.45]
+wps = [[2521, 45.9, 39.3, "Aprendiz de la Orden Eminente"], [2521, 47.1, 39.1, "Aprendiz de la Orden Eminente"], [2521, 46.4, 37.3, "Aprendiz de la Orden Eminente"]]
+text = "Mata {npc:257521} (6) para «{quest:94411}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#32"]
+note = "Polestar paso 32 «Shen'dar Highlands: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "sky-116"
+do = "complete"
+quest = 93319
+obj = 1
+at = [2521, 47.57, 39.39]
+wps = [[2521, 49.5, 39.2, "Piedra de viento birlada"], [2521, 48.4, 36.7, "Piedra de viento birlada"], [2521, 49.7, 35.2, "Piedra de viento birlada"]]
+text = "Consigue {item:257945} (10) de {npc:251918} y {npc:255534} para «{quest:93319}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#32"]
+note = "Polestar paso 32 «Shen'dar Highlands: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "sky-117"
+do = "complete"
+quest = 92517
+obj = 1
+at = [2521, 47.57, 39.39]
+wps = [[2521, 49.5, 39.2, "Bandido de las Tierras Altas"], [2521, 48.4, 36.7, "Bandido de las Tierras Altas"], [2521, 49.7, 35.2, "Bandido de las Tierras Altas"]]
+optional = true
+text = "Mata {npc:251918} (10) para «{quest:92517}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#32"]
+note = "Polestar paso 32 «Shen'dar Highlands: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "sky-118"
+do = "complete"
+quest = 92517
+obj = 2
+at = [2521, 50.62, 34.27]
+optional = true
+text = "Mata {npc:255534} (1) para «{quest:92517}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#32"]
+note = "Polestar paso 32 «Shen'dar Highlands: kill these as you meet them», objetivo 5 (kill)"
+
+[[step]]
+id = "sky-119"
+do = "accept"
+quest = 93318
+at = [2521, 43.38, 45.82]
+optional = true
+reqlevel = 4
+text = "Coge «{quest:93318}» ({obj:610954})."
+tip = "El tablón de recompensas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#33"]
+note = "Polestar paso 33 «Shen'dar bounty board», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 93318 · datos no importados: pre"
+
+[[step]]
+id = "sky-120"
+do = "turnin"
+quest = 92517
+npc = 251523
+at = [2521, 45.67, 45.5]
+optional = true
+chain = "sky-s034-251523"
+text = "Entrega «{quest:92517}» a {npc:251523}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-121"
+do = "accept"
+quest = 93036
+npc = 251523
+at = [2521, 45.67, 45.5]
+chain = "sky-s034-251523"
+reqlevel = 5
+text = "Coge «{quest:93036}» de {npc:251523}."
+why = "+70 XP · <1 min · desbloquea «{quest:92947}» y 31 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-122"
+do = "turnin"
+quest = 93036
+npc = 251904
+at = [2521, 44.88, 45.53]
+chain = "sky-s034-251904"
+text = "Entrega «{quest:93036}» a {npc:251904}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 3 (turnin)"
+
+[[step]]
+id = "sky-123"
+do = "accept"
+quest = 92529
+npc = 251904
+at = [2521, 44.88, 45.53]
+chain = "sky-s034-251904"
+reqlevel = 5
+text = "Coge «{quest:92529}» de {npc:251904}."
+why = "+350 XP · <1 min · desbloquea «{quest:92947}» y 30 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-124"
+do = "turnin"
+quest = 92515
+npc = 251993
+at = [2521, 44.68, 44.52]
+text = "Entrega «{quest:92515}» a {npc:251993}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 5 (turnin)"
+
+[[step]]
+id = "sky-125"
+do = "turnin"
+quest = 93319
+npc = 251906
+at = [2521, 44.46, 44.96]
+text = "Entrega «{quest:93319}» a {npc:251906}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 6 (turnin)"
+
+[[step]]
+id = "sky-126-wr"
+do = "train"
+npc = 3153
+spells = [100, 772]
+at = [1411, 42.89, 69.44]
+if = { class = ["WARRIOR"] }
+reqlevel = 4
+text = "Entrena con {npc:3153}, el instructor de guerrero."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:100}, {spell:772}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34", "trainer:warrior"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 3-5"
+
+[[step]]
+id = "sky-126-pa"
+do = "train"
+npc = 244808
+spells = [10321]
+at = [1420, 31.1, 66.41]
+if = { class = ["PALADIN"] }
+reqlevel = 4
+text = "Entrena con {npc:244808}, el instructor de paladín."
+tip = "1 hechizo hasta el nivel 4: nuevos {spell:10321}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34", "trainer:paladin"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 1-5"
+
+[[step]]
+id = "sky-126-hu"
+do = "train"
+npc = 3154
+spells = [1978, 13163]
+at = [1411, 42.84, 69.33]
+if = { class = ["HUNTER"] }
+reqlevel = 4
+text = "Entrena con {npc:3154}, el instructor de cazador."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:1978}, {spell:13163}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34", "trainer:hunter"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 3-5"
+
+[[step]]
+id = "sky-126-ro"
+do = "train"
+npc = 3155
+spells = [53, 921]
+at = [1411, 41.28, 68.0]
+if = { class = ["ROGUE"] }
+reqlevel = 4
+text = "Entrena con {npc:3155}, el instructor de pícaro."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:53}, {spell:921}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34", "trainer:rogue"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 3-5"
+
+[[step]]
+id = "sky-126-pr"
+do = "train"
+npc = 3706
+spells = [589]
+at = [1411, 54.26, 42.93]
+if = { class = ["PRIEST"] }
+reqlevel = 4
+text = "Entrena con {npc:3706}, el instructor de sacerdote."
+tip = "1 hechizo hasta el nivel 4: nuevos {spell:589}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34", "trainer:priest"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 3-5"
+
+[[step]]
+id = "sky-126-mg"
+do = "train"
+npc = 5880
+spells = [116, 5504]
+at = [1411, 56.31, 75.11]
+if = { class = ["MAGE"] }
+reqlevel = 4
+text = "Entrena con {npc:5880}, el instructor de mago."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:116}, {spell:5504}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34", "trainer:mage"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 3-5"
+
+[[step]]
+id = "sky-126-wl"
+do = "train"
+npc = 3156
+spells = [172, 702]
+at = [1411, 40.65, 68.52]
+if = { class = ["WARLOCK"] }
+reqlevel = 4
+text = "Entrena con {npc:3156}, el instructor de brujo."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:172}, {spell:702}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34", "trainer:warlock"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 3-5"
+
+[[step]]
+id = "sky-126-dr"
+do = "train"
+npc = 3060
+spells = [774, 8921]
+at = [1412, 44.65, 76.55]
+if = { class = ["DRUID"] }
+reqlevel = 4
+text = "Entrena con {npc:3060}, el instructor de druida."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:774}, {spell:8921}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34", "trainer:druid"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 1-5"
+
+[[step]]
+id = "sky-127"
+do = "turnin"
+quest = 94411
+npc = 251902
+at = [2521, 43.51, 44.77]
+text = "Entrega «{quest:94411}» a {npc:251902}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#34"]
+note = "Polestar paso 34 «Shen'dar Village turn-ins», objetivo 8 (turnin)"
+
+[[step]]
+id = "sky-128"
+do = "complete"
+quest = 93318
+obj = 1
+at = [2521, 42.66, 52.8]
+optional = true
+text = "Consigue {item:257942} (1) de {npc:254589} para «{quest:93318}»."
+tip = "{npc:254589} acecha al sur del pueblo, entre las Garramanadas. {npc:254589} es élite: se aconseja ir en grupo. Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#35"]
+note = "Polestar paso 35 «Vulgara el Insaciable», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 93318"
+
+[[step]]
+id = "sky-129"
+do = "turnin"
+quest = 92529
+npc = 257065
+at = [2521, 46.89, 56.23]
+chain = "sky-s036-257065"
+text = "Entrega «{quest:92529}» a {npc:257065}."
+tip = "«{quest:92529}» está al sur de Shen'dar. {npc:257065} te recibe en su linde; registra el armario de la casa detrás de él."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#36"]
+note = "Polestar paso 36 ««Aldea Falaath»», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-130"
+do = "accept"
+quest = 92528
+npc = 257065
+at = [2521, 46.89, 56.23]
+chain = "sky-s036-257065"
+reqlevel = 5
+text = "Coge «{quest:92528}» de {npc:257065}."
+why = "+350 XP · ~3 min · desbloquea «{quest:92947}» y 29 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#36"]
+note = "Polestar paso 36 ««Aldea Falaath»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-131"
+do = "complete"
+quest = 92528
+at = [2521, 48.84, 53.93]
+text = "Completa «{quest:92528}»."
+tip = "Registra el armario."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#36"]
+note = "Polestar paso 36 ««Aldea Falaath»», objetivo 3 (complete) · objetivos (EN): Wardrobe"
+
+[[step]]
+id = "sky-132"
+do = "turnin"
+quest = 92528
+npc = 251523
+at = [2521, 45.67, 45.5]
+chain = "sky-s037-251523"
+text = "Entrega «{quest:92528}» a {npc:251523}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#37"]
+note = "Polestar paso 37 «Condestable Aonda», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:251523} waits in {area:16624} for what you found in the wardrobe."
+
+[[step]]
+id = "sky-133"
+do = "accept"
+quest = 92550
+npc = 251523
+at = [2521, 45.67, 45.5]
+chain = "sky-s037-251523"
+reqlevel = 5
+text = "Coge «{quest:92550}» de {npc:251523}."
+why = "+1.530 XP · ~8 min · desbloquea «{quest:92947}» y 25 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#37"]
+note = "Polestar paso 37 «Condestable Aonda», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-134"
+do = "accept"
+quest = 93926
+npc = 251523
+at = [2521, 45.67, 45.5]
+chain = "sky-s037-251523"
+reqlevel = 5
+text = "Coge «{quest:93926}» de {npc:251523}."
+why = "+350 XP · ~2,3 min · desbloquea «{quest:92947}» y 26 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#37"]
+note = "Polestar paso 37 «Condestable Aonda», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-135"
+do = "accept"
+quest = 92551
+npc = 252172
+at = [2521, 45.24, 45.18]
+reqlevel = 5
+text = "Coge «{quest:92551}» de {npc:252172}."
+why = "+525 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#37"]
+note = "Polestar paso 37 «Condestable Aonda», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-136"
+do = "complete"
+quest = 92550
+obj = 2
+at = [2521, 47.63, 50.74]
+wps = [[2521, 48.1, 54.6, "Relámpago viviente"], [2521, 50.1, 53.7, "Relámpago viviente"], [2521, 49.7, 55.6, "Relámpago viviente"]]
+text = "Mata {npc:251662} (4) para «{quest:92550}»."
+tip = "De vuelta en «{quest:92529}»: Clamatormentas Al'Aketh y {npc:251662} llenan el pueblo, los Cajones de provisiones están entre las casas y {npc:251966} espera en su extremo sureste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#38"]
+note = "Polestar paso 38 «Shen'dar Highlands: kill these as you meet them», objetivo 1 (kill)"
+
+[[step]]
+id = "sky-137"
+do = "complete"
+quest = 92551
+obj = 1
+at = [2521, 47.5, 51.62]
+wps = [[2521, 48.4, 52.9, "Suministros de Shen'dar robados"], [2521, 48.0, 54.7, "Suministros de Shen'dar robados"], [2521, 50.5, 53.7, "Suministros de Shen'dar robados"]]
+text = "Recoge {item:252760} (10) de {obj:576179} para «{quest:92551}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#38"]
+note = "Polestar paso 38 «Shen'dar Highlands: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "sky-138"
+do = "complete"
+quest = 92550
+obj = 1
+at = [2521, 47.5, 51.62]
+wps = [[2521, 48.3, 52.8, "Clamatormentas Al'Aketh"], [2521, 48.0, 54.6, "Clamatormentas Al'Aketh"], [2521, 50.2, 53.1, "Clamatormentas Al'Aketh"]]
+text = "Mata {npc:252068} (6) para «{quest:92550}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#38"]
+note = "Polestar paso 38 «Shen'dar Highlands: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "sky-139"
+do = "complete"
+quest = 92550
+obj = 3
+at = [2521, 50.39, 56.96]
+text = "Consigue {item:252661} (1) de {npc:251966} para «{quest:92550}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#38"]
+note = "Polestar paso 38 «Shen'dar Highlands: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "sky-140"
+do = "turnin"
+quest = 93318
+npc = 252172
+at = [2521, 45.24, 45.18]
+optional = true
+text = "Entrega «{quest:93318}» a {npc:252172}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#39"]
+note = "Polestar paso 39 «Danarii Velobramido», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 93318"
+
+[[step]]
+id = "sky-141"
+do = "complete"
+quest = 93926
+obj = 1
+npc = 252155
+at = [2521, 42.34, 62.1]
+text = "Habla con {npc:252155} para «{quest:93926}»."
+tip = "Ve al suroeste hasta {area:17674}. {npc:252155} está arriba; la {item:254871} está a su lado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#40"]
+note = "Polestar paso 40 «The West Pylon Watchtower», objetivo 1 (talk)"
+
+[[step]]
+id = "sky-142"
+do = "turnin"
+quest = 93926
+npc = 252155
+at = [2521, 42.35, 62.02]
+chain = "sky-s040-252155"
+text = "Entrega «{quest:93926}» a {npc:252155}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#40"]
+note = "Polestar paso 40 «The West Pylon Watchtower», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-143"
+do = "accept"
+quest = 93927
+npc = 252155
+at = [2521, 42.35, 62.02]
+chain = "sky-s040-252155"
+reqlevel = 5
+text = "Coge «{quest:93927}» de {npc:252155}."
+why = "+608 XP · ~2 min · desbloquea «{quest:92947}» y 25 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#40"]
+note = "Polestar paso 40 «The West Pylon Watchtower», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-144"
+do = "complete"
+quest = 93927
+obj = 1
+at = [2521, 42.37, 62.07]
+text = "Recoge {item:254871} (1) de {obj:617704} para «{quest:93927}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#40"]
+note = "Polestar paso 40 «The West Pylon Watchtower», objetivo 4 (collect)"
+
+[[step]]
+id = "sky-145"
+do = "complete"
+quest = 93927
+obj = 2
+at = [2521, 41.02, 64.12]
+text = "Mata {npc:256966} (1) para «{quest:93927}»."
+tip = "Aanders y los guardias caídos están justo al suroeste de la torre. Coge la Pluma de la suerte de Raani y el sello Cantosombrío de los cuerpos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#41"]
+note = "Polestar paso 41 «Sacerdote del cielo Aanders», objetivo 1 (kill)"
+
+[[step]]
+id = "sky-146"
+do = "complete"
+quest = 93927
+obj = 3
+at = [2521, 41.13, 64.07]
+text = "Recoge {item:263415} (1) de {obj:617675} para «{quest:93927}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#41"]
+note = "Polestar paso 41 «Sacerdote del cielo Aanders», objetivo 2 (collect)"
+
+[[step]]
+id = "sky-147"
+do = "complete"
+quest = 93927
+obj = 4
+at = [2521, 40.98, 64.09]
+text = "Recoge {item:263418} (1) de {obj:617674} para «{quest:93927}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#41"]
+note = "Polestar paso 41 «Sacerdote del cielo Aanders», objetivo 3 (collect)"
+
+[[step]]
+id = "sky-148"
+do = "complete"
+quest = 92516
+obj = 1
+at = [2521, 39.92, 58.37]
+wps = [[2521, 40.0, 57.2, "Hipogrifo joven"], [2521, 38.9, 56.4, "Hipogrifo joven"], [2521, 40.7, 55.1, "Hipogrifo joven"]]
+text = "Mata {npc:251291} (8) para «{quest:92516}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#42"]
+note = "Polestar paso 42 «Shen'dar Highlands: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: The hippogryph nests are north-west of the {area:17674}, west of «{quest:92529}». The Matriarch sits at their western end; {item:263493} lies on the ground around the nests."
+
+[[step]]
+id = "sky-149"
+do = "complete"
+quest = 92516
+obj = 2
+at = [2521, 38.06, 57.6]
+wps = [[2521, 36.7, 55.2, "Protector hipogrifo"], [2521, 34.9, 57.3, "Protector hipogrifo"], [2521, 37.2, 52.8, "Protector hipogrifo"]]
+text = "Mata {npc:251284} (6) para «{quest:92516}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#42"]
+note = "Polestar paso 42 «Shen'dar Highlands: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "sky-150"
+do = "complete"
+quest = 93951
+obj = 1
+at = [2521, 37.61, 58.3]
+wps = [[2521, 34.9, 57.4, "Hipogrifo caído"], [2521, 38.1, 54.0, "Hipogrifo caído"], [2521, 34.8, 54.4, "Hipogrifo caído"]]
+text = "Recoge {item:263493} (8) de {obj:617839} para «{quest:93951}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#42"]
+note = "Polestar paso 42 «Shen'dar Highlands: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "sky-151"
+do = "complete"
+quest = 92516
+obj = 3
+at = [2521, 35.23, 54.08]
+wps = [[2521, 34.6, 51.9, "Matriarca hipogrifo"], [2521, 33.0, 54.6, "Matriarca hipogrifo"]]
+text = "Mata {npc:251261} (1) para «{quest:92516}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#42"]
+note = "Polestar paso 42 «Shen'dar Highlands: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "sky-152"
+do = "turnin"
+quest = 92516
+npc = 251906
+at = [2521, 44.46, 44.96]
+text = "Entrega «{quest:92516}» a {npc:251906}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#43"]
+note = "Polestar paso 43 «Shen'dar Village hand-ins», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-153"
+do = "turnin"
+quest = 93951
+npc = 251991
+at = [2521, 44.88, 44.18]
+text = "Entrega «{quest:93951}» a {npc:251991}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#43"]
+note = "Polestar paso 43 «Shen'dar Village hand-ins», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-154"
+do = "turnin"
+quest = 92551
+npc = 252172
+at = [2521, 45.24, 45.18]
+text = "Entrega «{quest:92551}» a {npc:252172}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#43"]
+note = "Polestar paso 43 «Shen'dar Village hand-ins», objetivo 3 (turnin)"
+
+[[step]]
+id = "sky-155"
+do = "turnin"
+quest = 92550
+npc = 251523
+at = [2521, 45.67, 45.5]
+chain = "sky-s043-251523"
+text = "Entrega «{quest:92550}» a {npc:251523}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#43"]
+note = "Polestar paso 43 «Shen'dar Village hand-ins», objetivo 4 (turnin)"
+
+[[step]]
+id = "sky-156"
+do = "turnin"
+quest = 93927
+npc = 251523
+at = [2521, 45.67, 45.5]
+chain = "sky-s043-251523"
+text = "Entrega «{quest:93927}» a {npc:251523}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#43"]
+note = "Polestar paso 43 «Shen'dar Village hand-ins», objetivo 5 (turnin)"
+
+[[step]]
+id = "sky-157"
+do = "accept"
+quest = 92579
+npc = 251523
+at = [2521, 45.67, 45.5]
+chain = "sky-s043-251523"
+reqlevel = 6
+text = "Coge «{quest:92579}» de {npc:251523}."
+why = "+180 XP · <1 min · desbloquea «{quest:92947}» y 22 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#43"]
+note = "Polestar paso 43 «Shen'dar Village hand-ins», objetivo 6 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "sky-158"
+do = "accept"
+quest = 93948
+npc = 251523
+at = [2521, 45.67, 45.5]
+chain = "sky-s043-251523"
+reqlevel = 6
+text = "Coge «{quest:93948}» de {npc:251523}."
+why = "+390 XP · <1 min · desbloquea «{quest:93949}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#43"]
+note = "Polestar paso 43 «Shen'dar Village hand-ins», objetivo 7 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "sky-159"
+do = "accept"
+quest = 98512
+npc = 273017
+at = [2521, 56.81, 61.11]
+reqlevel = 6
+text = "Coge «{quest:98512}» de {npc:273017}."
+why = "+1.795 XP · ~8 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#44"]
+note = "Polestar paso 44 «Fendaal Piedraviento», objetivo 1 (accept) · consejo de Polestar sin traducir: On the road south-east to {area:16638}, {npc:273017} watches the «{quest:98512}» just north of him."
+
+[[step]]
+id = "sky-160"
+do = "complete"
+quest = 98512
+obj = 1
+at = [2521, 56.7, 60.74]
+wps = [[2521, 55.6, 61.3, "Asesino Al'Aketh"], [2521, 56.3, 58.9, "Asesino Al'Aketh"]]
+text = "Mata {npc:254626} (10) para «{quest:98512}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#44"]
+note = "Polestar paso 44 «Fendaal Piedraviento», objetivo 2 (kill)"
+
+[[step]]
+id = "sky-161"
+do = "turnin"
+quest = 98512
+npc = 273017
+at = [2521, 56.81, 61.11]
+text = "Entrega «{quest:98512}» a {npc:273017}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#44"]
+note = "Polestar paso 44 «Fendaal Piedraviento», objetivo 3 (turnin)"
+
+[[step]]
+id = "sky-162"
+do = "turnin"
+quest = 93948
+npc = 252476
+at = [2521, 66.17, 76.51]
+text = "Entrega «{quest:93948}» a {npc:252476}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#45"]
+note = "Polestar paso 45 «Valanaar», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:252476}, upstairs."
+
+[[step]]
+id = "sky-163"
+do = "turnin"
+quest = 92579
+npc = 252383
+at = [2521, 66.14, 76.67]
+chain = "sky-s045-252383"
+text = "Entrega «{quest:92579}» a {npc:252383}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#45"]
+note = "Polestar paso 45 «Valanaar», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:252383}, upstairs."
+
+[[step]]
+id = "sky-164"
+do = "accept"
+quest = 92700
+npc = 252383
+at = [2521, 66.14, 76.67]
+chain = "sky-s045-252383"
+reqlevel = 4
+text = "Coge «{quest:92700}» de {npc:252383}."
+why = "+80 XP · ~1,4 min · desbloquea «{quest:92947}» y 21 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#45"]
+note = "Polestar paso 45 «Valanaar», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-165"
+do = "accept"
+quest = 93949
+npc = 252383
+at = [2521, 66.14, 76.67]
+chain = "sky-s045-252383"
+reqlevel = 6
+text = "Coge «{quest:93949}» de {npc:252383}."
+why = "+700 XP · ~1,4 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#45"]
+note = "Polestar paso 45 «Valanaar», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-166"
+do = "accept"
+quest = 94897
+npc = 259012
+at = [2521, 66.04, 74.41]
+chain = "sky-s046-259012"
+reqlevel = 8
+text = "Coge «{quest:94897}» de {npc:259012}."
+why = "+875 XP · ~1 min · 2,5× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#46"]
+note = "Polestar paso 46 «Back to Valanaar», objetivo 1 (accept)"
+
+[[step]]
+id = "sky-167"
+do = "accept"
+quest = 94896
+npc = 259012
+at = [2521, 66.04, 74.41]
+chain = "sky-s046-259012"
+reqlevel = 8
+text = "Coge «{quest:94896}» de {npc:259012}."
+why = "+875 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#46"]
+note = "Polestar paso 46 «Back to Valanaar», objetivo 2 (accept)"
+
+[[step]]
+id = "sky-168"
+do = "accept"
+quest = 94484
+npc = 252359
+at = [2521, 63.99, 75.08]
+reqlevel = 8
+text = "Coge «{quest:94484}» de {npc:252359}."
+why = "+220 XP · <1 min · desbloquea «{quest:94489}» y 7 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#46"]
+note = "Polestar paso 46 «Back to Valanaar», objetivo 3 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "sky-169"
+do = "complete"
+quest = 93949
+obj = 1
+at = [2521, 63.63, 75.79]
+wps = [[2521, 62.3, 74.2, "Saltanubes"], [2521, 59.8, 73.8, "Saltanubes"], [2521, 59.7, 76.0, "Saltanubes"]]
+text = "Mata {npc:251727} (8) para «{quest:93949}»."
+tip = "Los Saltanubes brincan por los campos justo al oeste de Valennia."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#47"]
+note = "Polestar paso 47 «Skyhoppers», objetivo 1 (kill)"
+
+[[step]]
+id = "sky-170"
+do = "turnin"
+quest = 93949
+npc = 260628
+at = [2521, 66.11, 76.46]
+text = "Entrega «{quest:93949}» a {npc:260628}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#48"]
+note = "Polestar paso 48 «Ayessa Cantoalba», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:260628}, upstairs."
+
+[[step]]
+id = "sky-171"
+do = "turnin"
+quest = 92700
+npc = 251968
+at = [2521, 59.15, 79.78]
+chain = "sky-s048-251968"
+text = "Entrega «{quest:92700}» a {npc:251968}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#48"]
+note = "Polestar paso 48 «Ayessa Cantoalba», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-173"
+do = "accept"
+quest = 93735
+npc = 251968
+at = [2521, 59.15, 79.78]
+chain = "sky-s048-251968"
+reqlevel = 4
+text = "Coge «{quest:93735}» de {npc:251968}."
+why = "+600 XP · <1 min · desbloquea «{quest:92947}» y 19 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#48"]
+note = "Polestar paso 48 «Ayessa Cantoalba», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-176"
+do = "level"
+level = 10
+if = { class = ["SHAMAN"] }
+text = "Sube al nivel 10."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#48"]
+note = "Polestar paso 48 «Ayessa Cantoalba», objetivo 7 (level)"
+
+[[step]]
+id = "sky-177"
+do = "accept"
+quest = 97243
+npc = 252382
+at = [2521, 58.31, 78.51]
+if = { class = ["SHAMAN"] }
+reqlevel = 10
+text = "Coge «{quest:97243}» de {npc:252382}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#48"]
+note = "Polestar paso 48 «Ayessa Cantoalba», objetivo 8 (accept) · consejo de Polestar sin traducir: {npc:252382}, beside {npc:251968}: «{quest:97243}»."
+
+[[step]]
+id = "sky-178"
+do = "accept"
+quest = 93736
+npc = 254344
+at = [2521, 58.13, 78.32]
+reqlevel = 4
+text = "Coge «{quest:93736}» de {npc:254344}."
+why = "+775 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#48"]
+note = "Polestar paso 48 «Ayessa Cantoalba», objetivo 9 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-179"
+do = "sethearth"
+npc = 255940
+zone = 2521
+at = [2521, 62.19, 72.61]
+text = "Pon la piedra de hogar en {area:16638} con {npc:255940}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#49"]
+note = "Polestar paso 49 «Nyalah Brillofuego and Alvarion Campovento», objetivo 1 (sethome) · consejo de Polestar sin traducir: Innkeeper {npc:255940}, by the west gate. · consejo de Polestar sin traducir: {npc:257006} waits inside a house on {area:16638}'s western edge; {npc:252448} is close by."
+
+[[step]]
+id = "sky-180"
+do = "accept"
+quest = 92679
+npc = 252448
+at = [2521, 62.08, 73.17]
+reqlevel = 5
+text = "Coge «{quest:92679}» de {npc:252448}."
+why = "+390 XP · ~9 min · desbloquea «{quest:92682}» y 6 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#49"]
+note = "Polestar paso 49 «Nyalah Brillofuego and Alvarion Campovento», objetivo 2 (accept)"
+
+[[step]]
+id = "sky-181"
+do = "complete"
+quest = 92679
+obj = 2
+npc = 252448
+at = [2521, 62.08, 73.17]
+text = "Habla con {npc:252448} para «{quest:92679}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#49"]
+note = "Polestar paso 49 «Nyalah Brillofuego and Alvarion Campovento», objetivo 3 (talk)"
+
+[[step]]
+id = "sky-182"
+do = "level"
+level = 10
+if = { class = ["HUNTER"] }
+text = "Sube al nivel 10."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#49"]
+note = "Polestar paso 49 «Nyalah Brillofuego and Alvarion Campovento», objetivo 4 (level)"
+
+[[step]]
+id = "sky-183"
+do = "accept"
+quest = 94978
+npc = 252389
+at = [2521, 59.56, 72.63]
+if = { class = ["HUNTER"] }
+reqlevel = 10
+text = "Coge «{quest:94978}» de {npc:252389}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#49"]
+note = "Polestar paso 49 «Nyalah Brillofuego and Alvarion Campovento», objetivo 5 (accept) · consejo de Polestar sin traducir: {npc:252389}, a few steps west of {npc:257006}: «{quest:94978}», the first rod."
+
+[[step]]
+id = "sky-184"
+do = "accept"
+quest = 93317
+npc = 257006
+at = [2521, 60.64, 72.66]
+reqlevel = 4
+text = "Coge «{quest:93317}» de {npc:257006}."
+why = "+600 XP · ~1,7 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#49"]
+note = "Polestar paso 49 «Nyalah Brillofuego and Alvarion Campovento», objetivo 6 (accept) · consejo de Polestar sin traducir: {npc:257006}, inside."
+
+[[step]]
+id = "sky-185"
+do = "turnin"
+quest = 93735
+npc = 256083
+at = [2521, 59.06, 72.98]
+chain = "sky-s050-256083"
+text = "Entrega «{quest:93735}» a {npc:256083}."
+tip = "{npc:256083} está en {area:16626}, justo al noroeste del pueblo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#50"]
+note = "Polestar paso 50 «Riaani Brisanoche», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-186"
+do = "accept"
+quest = 93737
+npc = 256083
+at = [2521, 59.06, 72.98]
+chain = "sky-s050-256083"
+reqlevel = 4
+text = "Coge «{quest:93737}» de {npc:256083}."
+why = "+871 XP · ~5,6 min · desbloquea «{quest:92947}» y 18 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#50"]
+note = "Polestar paso 50 «Riaani Brisanoche», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-187"
+do = "complete"
+quest = 93737
+obj = 1
+npc = 256083
+at = [2521, 59.06, 72.98]
+text = "Habla con {npc:256083} para «{quest:93737}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#50"]
+note = "Polestar paso 50 «Riaani Brisanoche», objetivo 3 (talk)"
+
+[[step]]
+id = "sky-188"
+do = "level"
+level = 10
+if = { class = ["WARRIOR"] }
+text = "Sube al nivel 10."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#50"]
+note = "Polestar paso 50 «Riaani Brisanoche», objetivo 4 (level)"
+
+[[step]]
+id = "sky-189"
+do = "accept"
+quest = 94003
+npc = 252377
+at = [2521, 59.89, 72.87]
+if = { class = ["WARRIOR"] }
+reqlevel = 10
+text = "Coge «{quest:94003}» de {npc:252377}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#50"]
+note = "Polestar paso 50 «Riaani Brisanoche», objetivo 5 (accept) · consejo de Polestar sin traducir: {npc:252377}, beside {npc:256083}: «{quest:94003}»."
+
+[[step]]
+id = "sky-190"
+do = "complete"
+quest = 92679
+obj = 1
+npc = 252800
+at = [2521, 46.7, 81.95]
+text = "Habla con {npc:252800} para «{quest:92679}»."
+tip = "{area:16663} está al oeste de {area:16638}, por el camino de la costa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#51"]
+note = "Polestar paso 51 «Windfield Orchard», objetivo 1 (talk)"
+
+[[step]]
+id = "sky-191"
+do = "turnin"
+quest = 92679
+npc = 252800
+at = [2521, 46.7, 81.95]
+chain = "sky-s051-252800"
+text = "Entrega «{quest:92679}» a {npc:252800}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#51"]
+note = "Polestar paso 51 «Windfield Orchard», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-192"
+do = "accept"
+quest = 92682
+npc = 252800
+at = [2521, 46.7, 81.95]
+chain = "sky-s051-252800"
+reqlevel = 5
+text = "Coge «{quest:92682}» de {npc:252800}."
+why = "+1.200 XP · ~3,3 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#51"]
+note = "Polestar paso 51 «Windfield Orchard», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-193"
+do = "accept"
+quest = 92683
+npc = 252800
+at = [2521, 46.7, 81.95]
+chain = "sky-s051-252800"
+reqlevel = 5
+text = "Coge «{quest:92683}» de {npc:252800}."
+why = "+600 XP · ~1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#51"]
+note = "Polestar paso 51 «Windfield Orchard», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-194"
+do = "accept"
+quest = 92684
+npc = 252800
+at = [2521, 46.7, 81.95]
+chain = "sky-s051-252800"
+reqlevel = 5
+text = "Coge «{quest:92684}» de {npc:252800}."
+why = "+600 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#51"]
+note = "Polestar paso 51 «Windfield Orchard», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-195"
+do = "complete"
+quest = 92682
+obj = 1
+at = [2521, 46.6, 80.7]
+wps = [[2521, 46.4, 79.4, "Manzana tempestuosa madura"], [2521, 48.2, 83.5, "Manzana tempestuosa madura"]]
+text = "Recoge {item:253591} (10) de {obj:578937} para «{quest:92682}»."
+tip = "Hay Manzanas tempestuosas y Polvo de alabatiente por todo el huerto; los Bandidos hambrientos lo saquean. Los Zancavendavales pastan en los campos al este. El autómata roto flota en el borde norte del huerto."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#52"]
+note = "Polestar paso 52 «The orchard», objetivo 1 (collect) · consejo de Polestar sin traducir: Ripe Stormapples."
+
+[[step]]
+id = "sky-196"
+do = "complete"
+quest = 92682
+obj = 2
+at = [2521, 45.97, 80.47]
+wps = [[2521, 46.9, 77.9, "Bandido hambriento"], [2521, 47.5, 83.0, "Bandido hambriento"], [2521, 45.0, 76.9, "Bandido hambriento"]]
+text = "Mata {npc:252802} (5) para «{quest:92682}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#52"]
+note = "Polestar paso 52 «The orchard», objetivo 2 (kill) · consejo de Polestar sin traducir: Hungry Bandits."
+
+[[step]]
+id = "sky-197"
+do = "complete"
+quest = 92684
+obj = 1
+at = [2521, 45.83, 82.06]
+wps = [[2521, 50.4, 84.3, "Solomillo de zancavendavales de las Tierras Bajas"], [2521, 51.7, 78.0, "Solomillo de zancavendavales de las Tierras Bajas"], [2521, 48.7, 74.8, "Solomillo de zancavendavales de las Tierras Bajas"]]
+text = "Consigue {item:253597} (7) de {npc:251707} para «{quest:92684}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#52"]
+note = "Polestar paso 52 «The orchard», objetivo 3 (collect)"
+
+[[step]]
+id = "sky-198"
+do = "complete"
+quest = 92683
+obj = 1
+at = [2521, 48.0, 79.5]
+wps = [[2521, 47.3, 76.7, "Polvo de alabatiente"], [2521, 50.1, 81.2, "Polvo de alabatiente"], [2521, 50.0, 77.4, "Polvo de alabatiente"]]
+text = "Recoge {item:253595} (5) de {obj:578959} para «{quest:92683}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#52"]
+note = "Polestar paso 52 «The orchard», objetivo 4 (collect)"
+
+[[step]]
+id = "sky-199"
+do = "accept"
+quest = 92698
+npc = 250929
+at = [2521, 48.87, 78.25]
+reqlevel = 5
+text = "Coge «{quest:92698}» de {npc:250929}."
+why = "+200 XP · <1 min · 1,8× la mediana del 6-10"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#52"]
+note = "Polestar paso 52 «The orchard», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-200"
+do = "turnin"
+quest = 97243
+npc = 268592
+at = [2521, 51.24, 86.19]
+if = { class = ["SHAMAN"] }
+chain = "sky-s052-268592"
+text = "Entrega «{quest:97243}» a {npc:268592}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#52"]
+note = "Polestar paso 52 «The orchard», objetivo 6 (turnin) · consejo de Polestar sin traducir: {npc:268592}, at the Shrine of Flames just south-east of the orchard."
+
+[[step]]
+id = "sky-201"
+do = "accept"
+quest = 97244
+npc = 268592
+at = [2521, 51.24, 86.19]
+if = { class = ["SHAMAN"] }
+chain = "sky-s052-268592"
+reqlevel = 10
+text = "Coge «{quest:97244}» de {npc:268592}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#52"]
+note = "Polestar paso 52 «The orchard», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-202"
+do = "turnin"
+quest = 92682
+npc = 252800
+at = [2521, 46.7, 81.95]
+chain = "sky-s053-252800"
+text = "Entrega «{quest:92682}» a {npc:252800}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#53"]
+note = "Polestar paso 53 «Aamelia Campovento», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-203"
+do = "turnin"
+quest = 92684
+npc = 252800
+at = [2521, 46.7, 81.95]
+chain = "sky-s053-252800"
+text = "Entrega «{quest:92684}» a {npc:252800}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#53"]
+note = "Polestar paso 53 «Aamelia Campovento», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-204"
+do = "turnin"
+quest = 92683
+npc = 252800
+at = [2521, 46.7, 81.95]
+chain = "sky-s053-252800"
+text = "Entrega «{quest:92683}» a {npc:252800}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#53"]
+note = "Polestar paso 53 «Aamelia Campovento», objetivo 3 (turnin)"
+
+[[step]]
+id = "sky-205"
+do = "turnin"
+quest = 92698
+npc = 252800
+at = [2521, 46.7, 81.95]
+chain = "sky-s053-252800"
+text = "Entrega «{quest:92698}» a {npc:252800}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#53"]
+note = "Polestar paso 53 «Aamelia Campovento», objetivo 4 (turnin)"
+
+[[step]]
+id = "sky-206"
+do = "accept"
+quest = 92685
+npc = 252800
+at = [2521, 46.7, 81.95]
+chain = "sky-s053-252800"
+reqlevel = 5
+text = "Coge «{quest:92685}» de {npc:252800}."
+why = "+775 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#53"]
+note = "Polestar paso 53 «Aamelia Campovento», objetivo 5 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "sky-207"
+do = "complete"
+quest = 92685
+obj = 1
+at = [2521, 46.72, 81.74]
+wps = [[2521, 46.0, 79.0, "Máscara de bandido manchada de sangre"], [2521, 45.6, 77.2, "Máscara de bandido manchada de sangre"], [2521, 48.0, 76.5, "Máscara de bandido manchada de sangre"]]
+text = "Consigue {item:253596} (7) de {npc:252820} para «{quest:92685}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#54"]
+note = "Polestar paso 54 «Gustberry Lowlands: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: The Highwayman Bandits hold the hills north of {area:16663}; they drop the Blood-Stained Bandit Masks."
+
+[[step]]
+id = "sky-208"
+do = "complete"
+quest = 93737
+obj = 4
+at = [2521, 44.8, 76.7]
+wps = [[2521, 43.6, 75.0, "Núcleo de ensamblaje de aire"], [2521, 44.8, 73.8, "Núcleo de ensamblaje de aire"]]
+text = "Recoge {item:260880} (1) de {obj:616467} para «{quest:93737}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#54"]
+note = "Polestar paso 54 «Gustberry Lowlands: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "sky-209"
+do = "turnin"
+quest = 92685
+npc = 252800
+at = [2521, 46.7, 81.95]
+chain = "sky-s055-252800"
+text = "Entrega «{quest:92685}» a {npc:252800}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#55"]
+note = "Polestar paso 55 ««Nos mantenemos firmes»», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-210"
+do = "accept"
+quest = 92693
+npc = 252800
+at = [2521, 46.7, 81.95]
+chain = "sky-s055-252800"
+reqlevel = 5
+text = "Coge «{quest:92693}» de {npc:252800}."
+why = "+285 XP · ~2,5 min · desbloquea «{quest:92703}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#55"]
+note = "Polestar paso 55 ««Nos mantenemos firmes»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-211"
+do = "complete"
+quest = 92693
+obj = 1
+npc = 252800
+at = [2521, 46.7, 81.95]
+text = "Habla con {npc:252800} para «{quest:92693}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#55"]
+note = "Polestar paso 55 ««Nos mantenemos firmes»», objetivo 3 (talk)"
+
+[[step]]
+id = "sky-212"
+do = "complete"
+quest = 92693
+obj = 2
+at = [2521, 47.55, 78.43]
+wps = [[2521, 48.4, 76.9, "Ferauu el Cachiporra"]]
+text = "Mata {npc:252863} (1) para «{quest:92693}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#55"]
+note = "Polestar paso 55 ««Nos mantenemos firmes»», objetivo 4 (kill)"
+
+[[step]]
+id = "sky-213"
+do = "turnin"
+quest = 92693
+npc = 252800
+at = [2521, 47.41, 78.94]
+chain = "sky-s055-252800"
+text = "Entrega «{quest:92693}» a {npc:252800}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#55"]
+note = "Polestar paso 55 ««Nos mantenemos firmes»», objetivo 5 (turnin)"
+
+[[step]]
+id = "sky-214"
+do = "accept"
+quest = 92703
+npc = 252800
+at = [2521, 47.41, 78.94]
+chain = "sky-s055-252800"
+reqlevel = 5
+text = "Coge «{quest:92703}» de {npc:252800}."
+why = "+600 XP · ~3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#55"]
+note = "Polestar paso 55 ««Nos mantenemos firmes»», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-215"
+do = "complete"
+quest = 93317
+obj = 1
+at = [2521, 51.6, 71.9]
+text = "Consigue {item:257941} (6) de {npc:254588} para «{quest:93317}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#56"]
+note = "Polestar paso 56 «Shen'dar Highlands: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: The {item:260881} lies in a cave in the hills north-west of {npc:256083}."
+
+[[step]]
+id = "sky-216"
+do = "complete"
+quest = 93737
+obj = 2
+at = [2521, 51.4, 67.5]
+wps = [[2521, 52.5, 65.5, "Relámpago cristalizado"]]
+text = "Recoge {item:260881} (1) de {obj:616468} para «{quest:93737}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#56"]
+note = "Polestar paso 56 «Shen'dar Highlands: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "sky-217"
+do = "complete"
+quest = 94978
+obj = 1
+at = [2521, 51.6, 71.9]
+if = { class = ["HUNTER"] }
+text = "Mata {npc:254588} (1) para «{quest:94978}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#56"]
+note = "Polestar paso 56 «Shen'dar Highlands: kill these as you meet them», objetivo 3 (kill) · consejo de Polestar sin traducir: Tame one with {npc:252389}'s first {item:15908} while you are among them."
+
+[[step]]
+id = "sky-218"
+do = "complete"
+quest = 93737
+obj = 3
+at = [2521, 53.1, 50.8]
+wps = [[2521, 52.4, 46.7, "Girocéfiro encantado"], [2521, 50.0, 45.0, "Girocéfiro encantado"]]
+text = "Recoge {item:260883} (1) de {obj:616466} para «{quest:93737}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#57"]
+note = "Polestar paso 57 «Girocéfiro encantado», objetivo 1 (collect) · consejo de Polestar sin traducir: Underwater. · consejo de Polestar sin traducir: The Enchanted Gyrozephyrs lie under water far to the north, east of {area:16624} and south-west of {area:16625}."
+
+[[step]]
+id = "sky-219"
+do = "turnin"
+quest = 92703
+npc = 252448
+at = [2521, 62.08, 73.17]
+text = "Entrega «{quest:92703}» a {npc:252448}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#58"]
+note = "Polestar paso 58 «Alvarion Campovento and Riaani Brisanoche», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-220-wr"
+do = "train"
+npc = 3153
+spells = [1715, 2687, 3127, 6343, 6546]
+at = [1411, 42.89, 69.44]
+if = { class = ["WARRIOR"] }
+reqlevel = 10
+text = "Entrena con {npc:3153}, el instructor de guerrero."
+tip = "5 hechizos hasta el nivel 10: nuevos {spell:1715}, {spell:2687}, {spell:3127} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#59", "trainer:warrior"]
+note = "Polestar paso 59 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 6-10"
+
+[[step]]
+id = "sky-220-hu"
+do = "train"
+npc = 3154
+spells = [1130, 3044, 3127, 5116, 13165, 13549, 19883]
+at = [1411, 42.84, 69.33]
+if = { class = ["HUNTER"] }
+reqlevel = 10
+text = "Entrena con {npc:3154}, el instructor de cazador."
+tip = "7 hechizos hasta el nivel 10: nuevos {spell:1130}, {spell:3044}, {spell:3127} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#59", "trainer:hunter"]
+note = "Polestar paso 59 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 6-10"
+
+[[step]]
+id = "sky-220-ro"
+do = "train"
+npc = 3155
+spells = [674, 1776, 2983, 5171, 5277, 6770]
+at = [1411, 41.28, 68.0]
+if = { class = ["ROGUE"] }
+reqlevel = 10
+text = "Entrena con {npc:3155}, el instructor de pícaro."
+tip = "6 hechizos hasta el nivel 10: nuevos {spell:674}, {spell:1776}, {spell:2983} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#59", "trainer:rogue"]
+note = "Polestar paso 59 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 6-10"
+
+[[step]]
+id = "sky-220-sh"
+do = "train"
+npc = 252382
+spells = [324, 2484, 5730, 8024, 8050, 8075]
+at = [2521, 58.31, 78.51]
+if = { class = ["SHAMAN"] }
+reqlevel = 10
+text = "Entrena con {npc:252382}, el instructor de chamán."
+tip = "6 hechizos hasta el nivel 10: nuevos {spell:324}, {spell:2484}, {spell:5730} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#59", "trainer:shaman"]
+note = "Polestar paso 59 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 1-10"
+
+[[step]]
+id = "sky-220-dr"
+do = "train"
+npc = 3060
+spells = [467]
+at = [1412, 44.65, 76.55]
+if = { class = ["DRUID"] }
+reqlevel = 6
+text = "Entrena con {npc:3060}, el instructor de druida."
+tip = "1 hechizo hasta el nivel 6: nuevos {spell:467}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#59", "trainer:druid"]
+note = "Polestar paso 59 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 6-10"
+
+[[step]]
+id = "sky-221-wl"
+do = "train"
+npc = 3156
+spells = [707, 980, 1120, 1454, 5782, 6201]
+at = [1411, 40.65, 68.52]
+if = { class = ["WARLOCK"] }
+reqlevel = 10
+text = "Entrena con {npc:3156}, el instructor de brujo."
+tip = "6 hechizos hasta el nivel 10: nuevos {spell:980}, {spell:1120}, {spell:1454} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#60", "trainer:warlock"]
+note = "Polestar paso 60 «Warlock trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 6-10"
+
+[[step]]
+id = "sky-222"
+do = "turnin"
+quest = 93317
+npc = 257006
+at = [2521, 60.64, 72.66]
+text = "Entrega «{quest:93317}» a {npc:257006}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#61"]
+note = "Polestar paso 61 «Valanaar», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:257006}, inside."
+
+[[step]]
+id = "sky-223"
+do = "turnin"
+quest = 93737
+npc = 256083
+at = [2521, 59.06, 72.98]
+chain = "sky-s061-256083"
+text = "Entrega «{quest:93737}» a {npc:256083}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#61"]
+note = "Polestar paso 61 «Valanaar», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-224"
+do = "accept"
+quest = 93738
+npc = 256083
+at = [2521, 59.06, 72.98]
+chain = "sky-s061-256083"
+reqlevel = 4
+text = "Coge «{quest:93738}» de {npc:256083}."
+why = "+600 XP · <1 min · desbloquea «{quest:92947}» y 17 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#61"]
+note = "Polestar paso 61 «Valanaar», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-225"
+do = "turnin"
+quest = 94978
+npc = 252389
+at = [2521, 59.56, 72.63]
+if = { class = ["HUNTER"] }
+chain = "sky-s062-252389"
+text = "Entrega «{quest:94978}» a {npc:252389}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#62"]
+note = "Polestar paso 62 ««Domar a la bestia»», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:252389} takes back the first {item:15908} and hands you two more, one at a time: Ornery Galestriders and Vuldren Alphas roam the fields just north of her. Tame each with its rod and bring the rod back to her. {npc:254411}, beside her, teaches {spell:5149}."
+
+[[step]]
+id = "sky-226"
+do = "accept"
+quest = 94979
+npc = 252389
+at = [2521, 59.56, 72.63]
+if = { class = ["HUNTER"] }
+chain = "sky-s062-252389"
+reqlevel = 10
+text = "Coge «{quest:94979}» de {npc:252389}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#62"]
+note = "Polestar paso 62 ««Domar a la bestia»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-227"
+do = "complete"
+quest = 94979
+obj = 1
+at = [2521, 59.9, 69.8]
+if = { class = ["HUNTER"] }
+text = "Mata {npc:251707} (1) para «{quest:94979}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#62"]
+note = "Polestar paso 62 ««Domar a la bestia»», objetivo 3 (kill)"
+
+[[step]]
+id = "sky-228"
+do = "turnin"
+quest = 94979
+npc = 252389
+at = [2521, 59.56, 72.63]
+if = { class = ["HUNTER"] }
+chain = "sky-s062-252389"
+text = "Entrega «{quest:94979}» a {npc:252389}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#62"]
+note = "Polestar paso 62 ««Domar a la bestia»», objetivo 4 (turnin)"
+
+[[step]]
+id = "sky-229"
+do = "accept"
+quest = 94013
+npc = 252389
+at = [2521, 59.56, 72.63]
+if = { class = ["HUNTER"] }
+chain = "sky-s062-252389"
+reqlevel = 10
+text = "Coge «{quest:94013}» de {npc:252389}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#62"]
+note = "Polestar paso 62 ««Domar a la bestia»», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-230"
+do = "complete"
+quest = 94013
+obj = 1
+at = [2521, 61.6, 68.8]
+if = { class = ["HUNTER"] }
+text = "Mata {npc:250874} (1) para «{quest:94013}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#62"]
+note = "Polestar paso 62 ««Domar a la bestia»», objetivo 6 (kill)"
+
+[[step]]
+id = "sky-231"
+do = "turnin"
+quest = 94013
+npc = 252389
+at = [2521, 59.56, 72.63]
+if = { class = ["HUNTER"] }
+chain = "sky-s062-252389"
+text = "Entrega «{quest:94013}» a {npc:252389}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#62"]
+note = "Polestar paso 62 ««Domar a la bestia»», objetivo 7 (turnin)"
+
+[[step]]
+id = "sky-232"
+do = "accept"
+quest = 94050
+npc = 252389
+at = [2521, 59.56, 72.63]
+if = { class = ["HUNTER"] }
+chain = "sky-s062-252389"
+reqlevel = 10
+text = "Coge «{quest:94050}» de {npc:252389}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#62"]
+note = "Polestar paso 62 ««Domar a la bestia»», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-233"
+do = "turnin"
+quest = 94050
+npc = 254411
+at = [2521, 59.92, 72.87]
+if = { class = ["HUNTER"] }
+text = "Entrega «{quest:94050}» a {npc:254411}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#62"]
+note = "Polestar paso 62 ««Domar a la bestia»», objetivo 9 (turnin)"
+
+[[step]]
+id = "sky-234"
+do = "turnin"
+quest = 93738
+npc = 251968
+at = [2521, 59.15, 79.78]
+chain = "sky-s063-251968"
+text = "Entrega «{quest:93738}» a {npc:251968}."
+tip = "{npc:256247} espera en el camino al norte de {area:16638}, hacia {area:16629}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#63"]
+note = "Polestar paso 63 «Ayessa Cantoalba», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-235"
+do = "accept"
+quest = 93746
+npc = 251968
+at = [2521, 59.15, 79.78]
+chain = "sky-s063-251968"
+reqlevel = 4
+text = "Coge «{quest:93746}» de {npc:251968}."
+why = "+695 XP · ~5,4 min · desbloquea «{quest:92947}» y 16 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#63"]
+note = "Polestar paso 63 «Ayessa Cantoalba», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-236"
+do = "complete"
+quest = 93746
+obj = 1
+at = [2521, 59.31, 58.13]
+text = "Mata {npc:256247} (1) para «{quest:93746}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#63"]
+note = "Polestar paso 63 «Ayessa Cantoalba», objetivo 3 (kill)"
+
+[[step]]
+id = "sky-237"
+do = "turnin"
+quest = 93746
+npc = 251968
+at = [2521, 59.15, 79.78]
+chain = "sky-s063-251968"
+text = "Entrega «{quest:93746}» a {npc:251968}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#63"]
+note = "Polestar paso 63 «Ayessa Cantoalba», objetivo 4 (turnin)"
+
+[[step]]
+id = "sky-238"
+do = "accept"
+quest = 92871
+npc = 251968
+at = [2521, 59.15, 79.78]
+chain = "sky-s063-251968"
+reqlevel = 6
+text = "Coge «{quest:92871}» de {npc:251968}."
+why = "+220 XP · ~1,6 min · desbloquea «{quest:92947}» y 14 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#63"]
+note = "Polestar paso 63 «Ayessa Cantoalba», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-239"
+do = "accept"
+quest = 93740
+npc = 251968
+at = [2521, 59.15, 79.78]
+chain = "sky-s063-251968"
+reqlevel = 6
+text = "Coge «{quest:93740}» de {npc:251968}."
+why = "+650 XP · ~3,3 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#63"]
+note = "Polestar paso 63 «Ayessa Cantoalba», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-240"
+do = "turnin"
+quest = 92871
+npc = 252383
+at = [2521, 66.14, 76.67]
+chain = "sky-s064-252383"
+text = "Entrega «{quest:92871}» a {npc:252383}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#64"]
+note = "Polestar paso 64 «Valennia Puñotormenta», objetivo 1 (turnin) · consejo de Polestar sin traducir: Upstairs."
+
+[[step]]
+id = "sky-241"
+do = "accept"
+quest = 93320
+npc = 252383
+at = [2521, 66.14, 76.67]
+chain = "sky-s064-252383"
+reqlevel = 6
+text = "Coge «{quest:93320}» de {npc:252383}."
+why = "+440 XP · ~1 min · desbloquea «{quest:92947}» y 13 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#64"]
+note = "Polestar paso 64 «Valennia Puñotormenta», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-242"
+do = "accept"
+quest = 94006
+npc = 252359
+at = [2521, 63.99, 75.08]
+if = { class = ["DRUID"] }
+reqlevel = 10
+text = "Coge «{quest:94006}» de {npc:252359}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#65"]
+note = "Polestar paso 65 «Lotheluum Brisa Estelar», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:252359} stands on {area:16638}'s east side. {npc:255853} waits by the falls just north of the {area:17675}: leave town to the north, climb the ridge east of the road and glide down to him with {spell:1259416}."
+
+[[step]]
+id = "sky-243"
+do = "turnin"
+quest = 94006
+npc = 255853
+at = [2521, 69.81, 61.71]
+if = { class = ["DRUID"] }
+chain = "sky-s065-255853"
+text = "Entrega «{quest:94006}» a {npc:255853}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#65"]
+note = "Polestar paso 65 «Lotheluum Brisa Estelar», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-244"
+do = "accept"
+quest = 94638
+npc = 255853
+at = [2521, 69.81, 61.71]
+if = { class = ["DRUID"] }
+chain = "sky-s065-255853"
+reqlevel = 10
+text = "Coge «{quest:94638}» de {npc:255853}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#65"]
+note = "Polestar paso 65 «Lotheluum Brisa Estelar», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-245"
+do = "turnin"
+quest = 93320
+npc = 252378
+at = [2521, 69.65, 67.07]
+chain = "sky-s066-252378"
+text = "Entrega «{quest:93320}» a {npc:252378}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#66"]
+note = "Polestar paso 66 «The East Pylon Watchtower», objetivo 1 (turnin) · consejo de Polestar sin traducir: Head north-east to the {area:17675}. The Al'Aketh camp is just west of it, with {npc:252666} at its north end. Every cultist can drop a windstone charm."
+
+[[step]]
+id = "sky-246"
+do = "accept"
+quest = 92642
+npc = 252378
+at = [2521, 69.65, 67.07]
+chain = "sky-s066-252378"
+reqlevel = 6
+text = "Coge «{quest:92642}» de {npc:252378}."
+why = "+1.436 XP · ~7,3 min · desbloquea «{quest:92947}» y 11 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#66"]
+note = "Polestar paso 66 «The East Pylon Watchtower», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-247"
+do = "accept"
+quest = 92645
+npc = 252378
+at = [2521, 69.65, 67.07]
+chain = "sky-s066-252378"
+reqlevel = 6
+text = "Coge «{quest:92645}» de {npc:252378}."
+why = "+745 XP · ~1,3 min · desbloquea «{quest:92947}» y 11 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#66"]
+note = "Polestar paso 66 «The East Pylon Watchtower», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-248"
+do = "complete"
+quest = 92642
+obj = 1
+at = [2521, 65.0, 66.7]
+text = "Mata {npc:254596} (4) para «{quest:92642}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#66"]
+note = "Polestar paso 66 «The East Pylon Watchtower», objetivo 4 (kill)"
+
+[[step]]
+id = "sky-249"
+do = "complete"
+quest = 92642
+obj = 2
+at = [2521, 65.06, 66.71]
+wps = [[2521, 65.3, 68.9, "Camorrista Al'Aketh"], [2521, 66.0, 64.2, "Camorrista Al'Aketh"], [2521, 63.6, 68.7, "Camorrista Al'Aketh"]]
+text = "Mata {npc:270201} (8) para «{quest:92642}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#66"]
+note = "Polestar paso 66 «The East Pylon Watchtower», objetivo 5 (kill)"
+
+[[step]]
+id = "sky-250"
+do = "complete"
+quest = 92645
+obj = 1
+at = [2521, 65.58, 65.62]
+text = "Mata {npc:252666} (1) para «{quest:92645}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#66"]
+note = "Polestar paso 66 «The East Pylon Watchtower», objetivo 6 (kill)"
+
+[[step]]
+id = "sky-251"
+do = "complete"
+quest = 93740
+obj = 1
+at = [2521, 65.37, 66.18]
+wps = [[2521, 61.0, 68.8, "Talismán de piedra de viento de Al'Aketh"], [2521, 60.2, 62.1, "Talismán de piedra de viento de Al'Aketh"], [2521, 63.2, 60.5, "Talismán de piedra de viento de Al'Aketh"]]
+text = "Consigue {item:255658} (10) para «{quest:93740}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#66"]
+note = "Polestar paso 66 «The East Pylon Watchtower», objetivo 7 (collect)"
+
+[[step]]
+id = "sky-252"
+do = "complete"
+quest = 97244
+obj = 1
+at = [2521, 64.43, 63.71]
+if = { class = ["SHAMAN"] }
+text = "Consigue {item:277267} (1) de {npc:268602} para «{quest:97244}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#66"]
+note = "Polestar paso 66 «The East Pylon Watchtower», objetivo 8 (collect) · consejo de Polestar sin traducir: {npc:268602}, on the hill west of the falls just north of the watchtower."
+
+[[step]]
+id = "sky-253"
+do = "turnin"
+quest = 92642
+npc = 252378
+at = [2521, 69.65, 67.07]
+chain = "sky-s066-252378"
+text = "Entrega «{quest:92642}» a {npc:252378}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#66"]
+note = "Polestar paso 66 «The East Pylon Watchtower», objetivo 9 (turnin)"
+
+[[step]]
+id = "sky-254"
+do = "turnin"
+quest = 92645
+npc = 252378
+at = [2521, 69.65, 67.07]
+chain = "sky-s066-252378"
+text = "Entrega «{quest:92645}» a {npc:252378}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#66"]
+note = "Polestar paso 66 «The East Pylon Watchtower», objetivo 10 (turnin)"
+
+[[step]]
+id = "sky-255"
+do = "accept"
+quest = 92880
+npc = 252378
+at = [2521, 69.65, 67.07]
+chain = "sky-s066-252378"
+reqlevel = 6
+text = "Coge «{quest:92880}» de {npc:252378}."
+why = "+440 XP · <1 min · desbloquea «{quest:92947}» y 10 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#66"]
+note = "Polestar paso 66 «The East Pylon Watchtower», objetivo 11 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "sky-256"
+do = "turnin"
+quest = 93740
+npc = 251968
+at = [2521, 59.15, 79.78]
+text = "Entrega «{quest:93740}» a {npc:251968}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#67"]
+note = "Polestar paso 67 «Back to Valanaar», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-257"
+do = "turnin"
+quest = 92880
+npc = 252383
+at = [2521, 66.14, 76.67]
+chain = "sky-s067-252383"
+text = "Entrega «{quest:92880}» a {npc:252383}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#67"]
+note = "Polestar paso 67 «Back to Valanaar», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:252383}, upstairs."
+
+[[step]]
+id = "sky-258"
+do = "accept"
+quest = 92881
+npc = 252383
+at = [2521, 66.14, 76.67]
+chain = "sky-s067-252383"
+reqlevel = 6
+text = "Coge «{quest:92881}» de {npc:252383}."
+why = "+90 XP · <1 min · desbloquea «{quest:92947}» y 9 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#67"]
+note = "Polestar paso 67 «Back to Valanaar», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-259"
+do = "turnin"
+quest = 92881
+npc = 252476
+at = [2521, 66.17, 76.51]
+chain = "sky-s067-252476"
+text = "Entrega «{quest:92881}» a {npc:252476}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#67"]
+note = "Polestar paso 67 «Back to Valanaar», objetivo 4 (turnin) · consejo de Polestar sin traducir: {npc:252476}, upstairs."
+
+[[step]]
+id = "sky-260"
+do = "accept"
+quest = 92643
+npc = 252476
+at = [2521, 66.17, 76.51]
+chain = "sky-s067-252476"
+reqlevel = 6
+text = "Coge «{quest:92643}» de {npc:252476}."
+why = "+650 XP · ~4 min · desbloquea «{quest:92947}» y 8 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#67"]
+note = "Polestar paso 67 «Back to Valanaar», objetivo 5 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "sky-261"
+do = "complete"
+quest = 92643
+at = [2521, 56.0, 58.8]
+text = "Completa «{quest:92643}»."
+tip = "Registra al cultista muerto de la casa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#68"]
+note = "Polestar paso 68 «The turncoat», objetivo 1 (complete) · objetivos (EN): Find the secluded house in Shen'dar Highlands; Dead Cultist · consejo de Polestar sin traducir: The turncoat's house is in the {area:16626} north-west of {area:16638}, just north of {npc:273017}."
+
+[[step]]
+id = "sky-262"
+do = "turnin"
+quest = 92643
+npc = 253372
+at = [2521, 56.04, 58.77]
+chain = "sky-s068-253372"
+text = "Entrega «{quest:92643}» a {npc:253372}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#68"]
+note = "Polestar paso 68 «The turncoat», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:253372}, inside."
+
+[[step]]
+id = "sky-263"
+do = "accept"
+quest = 92644
+npc = 253372
+at = [2521, 56.04, 58.77]
+chain = "sky-s068-253372"
+reqlevel = 6
+text = "Coge «{quest:92644}» de {npc:253372}."
+why = "+440 XP · ~1,5 min · desbloquea «{quest:92947}» y 7 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#68"]
+note = "Polestar paso 68 «The turncoat», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-264"
+do = "complete"
+quest = 94638
+obj = 1
+at = [2521, 53.9, 64.69]
+if = { class = ["DRUID"] }
+text = "Mata {npc:258443} (1) para «{quest:94638}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#69"]
+note = "Polestar paso 69 «Ur'endra», objetivo 1 (kill) · consejo de Polestar sin traducir: {npc:258443} has her lair in a cave in the bluffs just south of the turncoat's house, where the {area:16623} meet the {area:16626}."
+
+[[step]]
+id = "sky-265"
+do = "goto"
+at = [2521, 51.2, 86.2]
+if = { class = ["SHAMAN"] }
+text = "Ve a {npc:268592}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#70"]
+note = "Polestar paso 70 «Zephras Isle», objetivo 1 (goto)"
+
+[[step]]
+id = "sky-266"
+do = "turnin"
+quest = 97244
+npc = 268592
+at = [2521, 51.24, 86.19]
+if = { class = ["SHAMAN"] }
+chain = "sky-s071-268592"
+text = "Entrega «{quest:97244}» a {npc:268592}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#71"]
+note = "Polestar paso 71 «Olariaan Ardeveloz», objetivo 1 (turnin) · consejo de Polestar sin traducir: Take {item:277267} to {npc:268592} at the Shrine of Flames, south-west of {area:16638}, then head west into the {area:16623}: {npc:268605}'s home is in the hills south of the Windsong Crawlers' lakes."
+
+[[step]]
+id = "sky-267"
+do = "accept"
+quest = 97245
+npc = 268592
+at = [2521, 51.24, 86.19]
+if = { class = ["SHAMAN"] }
+chain = "sky-s071-268592"
+reqlevel = 10
+text = "Coge «{quest:97245}» de {npc:268592}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#71"]
+note = "Polestar paso 71 «Olariaan Ardeveloz», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-268"
+do = "complete"
+quest = 97245
+obj = 1
+at = [2521, 42.44, 68.75]
+if = { class = ["SHAMAN"] }
+text = "Consigue {item:277269} (1) de {npc:268605} para «{quest:97245}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#71"]
+note = "Polestar paso 71 «Olariaan Ardeveloz», objetivo 3 (collect)"
+
+[[step]]
+id = "sky-269"
+do = "goto"
+at = [2521, 51.2, 86.2]
+if = { class = ["SHAMAN"] }
+text = "Ve a {obj:148418}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#72"]
+note = "Polestar paso 72 «Zephras Isle», objetivo 1 (goto)"
+
+[[step]]
+id = "sky-270"
+do = "turnin"
+quest = 97245
+npc = 268592
+at = [2521, 51.24, 86.19]
+if = { class = ["SHAMAN"] }
+chain = "sky-s073-268592"
+text = "Entrega «{quest:97245}» a {npc:268592}."
+tip = "Vuelve con {npc:268592}. Espera a que encienda el {npc:268762} y lleva la llama directamente al {npc:268679}, junto a {npc:252382} en {area:16638}, antes de que se acabe el tiempo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#73"]
+note = "Polestar paso 73 «The Llama eterna», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-271"
+do = "accept"
+quest = 97257
+npc = 268592
+at = [2521, 51.24, 86.19]
+if = { class = ["SHAMAN"] }
+chain = "sky-s073-268592"
+reqlevel = 10
+text = "Coge «{quest:97257}» de {npc:268592}."
+tip = "Misión con tiempo: 6 min desde que la coges."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#73"]
+note = "Polestar paso 73 «The Llama eterna», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-272"
+do = "complete"
+quest = 97257
+if = { class = ["SHAMAN"] }
+text = "Usa {item:277329} y completa «{quest:97257}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#73"]
+note = "Polestar paso 73 «The Llama eterna», objetivo 3 (complete) · objetivos (EN): Brazier of Offering; Brazier of Eternal Flame"
+
+[[step]]
+id = "sky-273"
+do = "turnin"
+quest = 97257
+npc = 252382
+at = [2521, 58.31, 78.51]
+if = { class = ["SHAMAN"] }
+text = "Entrega «{quest:97257}» a {npc:252382}, {npc:2523}, tu {item:5176} y el {item:263412}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#73"]
+note = "Polestar paso 73 «The Llama eterna», objetivo 4 (turnin)"
+
+[[step]]
+id = "sky-274"
+do = "turnin"
+quest = 92644
+npc = 252476
+at = [2521, 66.17, 76.51]
+chain = "sky-s074-252476"
+text = "Entrega «{quest:92644}» a {npc:252476}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#74"]
+note = "Polestar paso 74 ««Malas noticias»», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:252476}, upstairs."
+
+[[step]]
+id = "sky-275"
+do = "accept"
+quest = 94568
+npc = 252476
+at = [2521, 66.17, 76.51]
+chain = "sky-s074-252476"
+reqlevel = 6
+text = "Coge «{quest:94568}» de {npc:252476}."
+why = "+440 XP · ~1,5 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#74"]
+note = "Polestar paso 74 ««Malas noticias»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-276"
+do = "complete"
+quest = 94568
+at = [2521, 66.17, 76.51]
+text = "Completa «{quest:94568}»."
+tip = "Habla con {npc:252476}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#74"]
+note = "Polestar paso 74 ««Malas noticias»», objetivo 3 (complete) · objetivos (EN): Talaanis Shadowsong"
+
+[[step]]
+id = "sky-277"
+do = "turnin"
+quest = 94568
+npc = 252476
+at = [2521, 66.17, 76.51]
+chain = "sky-s074-252476"
+text = "Entrega «{quest:94568}» a {npc:252476}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#74"]
+note = "Polestar paso 74 ««Malas noticias»», objetivo 4 (turnin)"
+
+[[step]]
+id = "sky-278"
+do = "accept"
+quest = 92640
+npc = 252476
+at = [2521, 66.17, 76.51]
+optional = true
+chain = "sky-s074-252476"
+reqlevel = 6
+text = "Coge «{quest:92640}» de {npc:252476}."
+tip = "+1.050 XP · ~9,4 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#74"]
+note = "Polestar paso 74 ««Malas noticias»», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-279"
+do = "complete"
+quest = 92640
+obj = 1
+npc = 252383
+at = [2521, 66.14, 76.67]
+optional = true
+text = "Habla con {npc:252383} para «{quest:92640}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#75"]
+note = "Polestar paso 75 ««Tiempos desesperados»», objetivo 1 (talk)"
+
+[[step]]
+id = "sky-280"
+do = "complete"
+quest = 92640
+obj = 2
+npc = 251968
+at = [2521, 59.15, 79.78]
+optional = true
+text = "Habla con {npc:251968} para «{quest:92640}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#75"]
+note = "Polestar paso 75 ««Tiempos desesperados»», objetivo 2 (talk)"
+
+[[step]]
+id = "sky-281"
+do = "complete"
+quest = 92640
+obj = 3
+npc = 252475
+at = [2521, 66.59, 79.92]
+optional = true
+text = "Habla con {npc:252475} para «{quest:92640}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#75"]
+note = "Polestar paso 75 ««Tiempos desesperados»», objetivo 3 (talk)"
+
+[[step]]
+id = "sky-282"
+do = "turnin"
+quest = 92640
+npc = 252383
+at = [2521, 66.14, 76.67]
+optional = true
+chain = "sky-s075-252383"
+text = "Entrega «{quest:92640}» a {npc:252383}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#75"]
+note = "Polestar paso 75 ««Tiempos desesperados»», objetivo 4 (turnin)"
+
+[[step]]
+id = "sky-283"
+do = "accept"
+quest = 93065
+npc = 252383
+at = [2521, 66.14, 76.67]
+chain = "sky-s075-252383"
+reqlevel = 7
+text = "Coge «{quest:93065}» de {npc:252383}."
+why = "+460 XP · ~2 min · desbloquea «{quest:92947}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#75"]
+note = "Polestar paso 75 ««Tiempos desesperados»», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-284-pa"
+do = "train"
+npc = 244808
+spells = [498, 633, 679, 1022, 3127, 21082, 1311649]
+at = [1420, 31.1, 66.41]
+if = { class = ["PALADIN"] }
+reqlevel = 10
+text = "Entrena con {npc:244808}, el instructor de paladín."
+tip = "7 hechizos hasta el nivel 10: nuevos {spell:498}, {spell:633}, {spell:679} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#76", "trainer:paladin"]
+note = "Polestar paso 76 «Back to Valanaar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 6-10"
+
+[[step]]
+id = "sky-284-pr"
+do = "train"
+npc = 3706
+spells = [17, 139, 586, 594, 2006, 8092]
+at = [1411, 54.26, 42.93]
+if = { class = ["PRIEST"] }
+reqlevel = 10
+text = "Entrena con {npc:3706}, el instructor de sacerdote."
+tip = "6 hechizos hasta el nivel 10: nuevos {spell:17}, {spell:139}, {spell:586} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#76", "trainer:priest"]
+note = "Polestar paso 76 «Back to Valanaar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 6-10"
+
+[[step]]
+id = "sky-284-mg"
+do = "train"
+npc = 5880
+spells = [118, 122, 205, 587, 2136, 5143, 5505, 1296017]
+at = [1411, 56.31, 75.11]
+if = { class = ["MAGE"] }
+reqlevel = 10
+text = "Entrena con {npc:5880}, el instructor de mago."
+tip = "8 hechizos hasta el nivel 10: nuevos {spell:118}, {spell:122}, {spell:587} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#76", "trainer:mage"]
+note = "Polestar paso 76 «Back to Valanaar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 6-10"
+
+[[step]]
+id = "sky-285"
+do = "complete"
+quest = 93065
+obj = 1
+npc = 253844
+at = [2521, 61.18, 70.95]
+text = "Habla con {npc:253844} para «{quest:93065}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#77"]
+note = "Polestar paso 77 ««Tiempos desesperados»», objetivo 1 (talk)"
+
+[[step]]
+id = "sky-286"
+do = "turnin"
+quest = 93065
+npc = 253844
+at = [2521, 61.16, 70.95]
+chain = "sky-s077-253844"
+text = "Entrega «{quest:93065}» a {npc:253844}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#77"]
+note = "Polestar paso 77 ««Tiempos desesperados»», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-287"
+do = "accept"
+quest = 92947
+npc = 253844
+at = [2521, 61.16, 70.95]
+chain = "sky-s077-253844"
+reqlevel = 7
+text = "Coge «{quest:92947}» de {npc:253844}."
+why = "+2.391 XP · ~14 min · desbloquea «{quest:93958}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#77"]
+note = "Polestar paso 77 ««Tiempos desesperados»», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-288"
+do = "complete"
+quest = 94003
+obj = 1
+at = [2521, 56.5, 50.5]
+if = { class = ["WARRIOR"] }
+text = "Consigue {item:263993} (1) de {npc:257196} para «{quest:94003}»."
+tip = "{npc:257196} tiene el {item:263993} en el lado oeste del santuario."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#78"]
+note = "Polestar paso 78 «Zaal Escudo de Tormenta», objetivo 1 (collect)"
+
+[[step]]
+id = "sky-289"
+do = "turnin"
+quest = 94638
+npc = 255853
+at = [2521, 69.81, 61.71]
+if = { class = ["DRUID"] }
+text = "Entrega «{quest:94638}» a {npc:255853}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#79"]
+note = "Polestar paso 79 ««Fuerza y misericordia»», objetivo 1 (turnin) · consejo de Polestar sin traducir: On your way north from Valennia, {npc:255853} waits by the falls north-east of you, just north of the {area:17675}: from the ridge above them, glide down with {spell:1259416}."
+
+[[step]]
+id = "sky-290"
+do = "turnin"
+quest = 94484
+npc = 257944
+at = [2521, 61.7, 39.22]
+chain = "sky-s080-257944"
+text = "Entrega «{quest:94484}» a {npc:257944}."
+tip = "Ve al norte hacia {area:16631}; {npc:257944} acampa en su borde sur."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#80"]
+note = "Polestar paso 80 «Elegael Pataespina», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-291"
+do = "accept"
+quest = 94485
+npc = 257944
+at = [2521, 61.7, 39.22]
+chain = "sky-s080-257944"
+reqlevel = 8
+text = "Coge «{quest:94485}» de {npc:257944}."
+why = "+230 XP · ~1,4 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#80"]
+note = "Polestar paso 80 «Elegael Pataespina», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-292"
+do = "accept"
+quest = 94486
+npc = 257944
+at = [2521, 61.7, 39.22]
+chain = "sky-s080-257944"
+reqlevel = 8
+text = "Coge «{quest:94486}» de {npc:257944}."
+why = "+875 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#80"]
+note = "Polestar paso 80 «Elegael Pataespina», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-293"
+do = "accept"
+quest = 94487
+npc = 257944
+at = [2521, 61.7, 39.22]
+chain = "sky-s080-257944"
+reqlevel = 8
+text = "Coge «{quest:94487}» de {npc:257944}."
+why = "+875 XP · ~1,4 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#80"]
+note = "Polestar paso 80 «Elegael Pataespina», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-294"
+do = "complete"
+quest = 94485
+obj = 1
+at = [2521, 61.8, 38.9]
+wps = [[2521, 60.2, 38.8, "Musgo de lágrima de doncella"], [2521, 63.5, 39.4, "Musgo de lágrima de doncella"], [2521, 61.6, 35.9, "Musgo de lágrima de doncella"]]
+text = "Recoge {item:265105} (8) de {obj:619450} para «{quest:94485}»."
+tip = "El {item:265105} crece alrededor del campamento de {npc:257944} y los chilladores vuelan por encima. El campamento Al'Aketh al este de ella guarda la {item:265141}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#81"]
+note = "Polestar paso 81 «Shadowgale Forest: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "sky-295"
+do = "complete"
+quest = 94487
+obj = 1
+at = [2521, 62.13, 38.72]
+wps = [[2521, 62.6, 36.5, "Reliquia sangrienta"], [2521, 64.4, 38.2, "Reliquia sangrienta"], [2521, 63.8, 35.9, "Reliquia sangrienta"]]
+text = "Consigue {item:265141} (10) para «{quest:94487}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#81"]
+note = "Polestar paso 81 «Shadowgale Forest: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "sky-296"
+do = "complete"
+quest = 94486
+obj = 1
+at = [2521, 62.72, 39.41]
+wps = [[2521, 64.4, 41.0, "Pluma de chilladora prístina"], [2521, 63.6, 43.6, "Pluma de chilladora prístina"], [2521, 59.4, 42.9, "Pluma de chilladora prístina"]]
+text = "Consigue {item:265140} (20) de {npc:256092} para «{quest:94486}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#81"]
+note = "Polestar paso 81 «Shadowgale Forest: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "sky-297"
+do = "turnin"
+quest = 94485
+npc = 257944
+at = [2521, 61.7, 39.22]
+chain = "sky-s082-257944"
+text = "Entrega «{quest:94485}» a {npc:257944}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#82"]
+note = "Polestar paso 82 «Elegael Pataespina again», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-298"
+do = "turnin"
+quest = 94487
+npc = 257944
+at = [2521, 61.7, 39.22]
+chain = "sky-s082-257944"
+text = "Entrega «{quest:94487}» a {npc:257944}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#82"]
+note = "Polestar paso 82 «Elegael Pataespina again», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-299"
+do = "turnin"
+quest = 94486
+npc = 257944
+at = [2521, 61.7, 39.22]
+chain = "sky-s082-257944"
+text = "Entrega «{quest:94486}» a {npc:257944}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#82"]
+note = "Polestar paso 82 «Elegael Pataespina again», objetivo 3 (turnin)"
+
+[[step]]
+id = "sky-300"
+do = "accept"
+quest = 94488
+npc = 257944
+at = [2521, 61.7, 39.22]
+chain = "sky-s082-257944"
+reqlevel = 8
+text = "Coge «{quest:94488}» de {npc:257944}."
+why = "+875 XP · <1 min · 4,5× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#82"]
+note = "Polestar paso 82 «Elegael Pataespina again», objetivo 4 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "sky-301"
+do = "accept"
+quest = 94489
+npc = 257944
+at = [2521, 61.7, 39.22]
+chain = "sky-s082-257944"
+reqlevel = 8
+text = "Coge «{quest:94489}» de {npc:257944}."
+why = "+1.468 XP · ~5 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#82"]
+note = "Polestar paso 82 «Elegael Pataespina again», objetivo 5 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "sky-302"
+do = "accept"
+quest = 93165
+npc = 254151
+at = [2521, 63.81, 36.01]
+reqlevel = 8
+text = "Coge «{quest:93165}» de {npc:254151}."
+tip = "{npc:253622}, {npc:258130} y {npc:258134} están en el campamento del culto al este de {npc:257944}. {npc:254151} está en su borde. Haalien también suelta una «{quest:94490}»: léela para iniciar la siguiente misión. Para «{quest:94489}», entra en la Guarida Colmillo Nocturno, cura a 7 druidas heridos y encuentra a {npc:258130}."
+why = "+900 XP · ~1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#83"]
+note = "Polestar paso 83 «The Al'Aketh camp», objetivo 1 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-303"
+do = "complete"
+quest = 94488
+obj = 1
+at = [2521, 65.53, 36.32]
+text = "Consigue {item:265475} (1) de {npc:253622} para «{quest:94488}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#83"]
+note = "Polestar paso 83 «The Al'Aketh camp», objetivo 2 (collect)"
+
+[[step]]
+id = "sky-304"
+do = "complete"
+quest = 94489
+obj = 1
+at = [2521, 64.96, 34.95]
+text = "Mata {npc:258134} (1) para «{quest:94489}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#83"]
+note = "Polestar paso 83 «The Al'Aketh camp», objetivo 3 (kill)"
+
+[[step]]
+id = "sky-305"
+do = "complete"
+quest = 94489
+obj = 2
+npc = 258130
+at = [2521, 64.48, 34.74]
+text = "Habla con {npc:258130} para «{quest:94489}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#83"]
+note = "Polestar paso 83 «The Al'Aketh camp», objetivo 4 (talk)"
+
+[[step]]
+id = "sky-306"
+do = "complete"
+quest = 93165
+obj = 1
+at = [2521, 63.7, 37.1]
+text = "Consigue {item:258771} (10) para «{quest:93165}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#83"]
+note = "Polestar paso 83 «The Al'Aketh camp», objetivo 5 (collect)"
+
+[[step]]
+id = "sky-307"
+do = "turnin"
+quest = 93165
+npc = 254151
+at = [2521, 63.81, 36.01]
+text = "Entrega «{quest:93165}» a {npc:254151}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#83"]
+note = "Polestar paso 83 «The Al'Aketh camp», objetivo 6 (turnin)"
+
+[[step]]
+id = "sky-308"
+do = "loot"
+item = 265476
+count = 1
+at = [2521, 65.53, 36.32]
+optional = true
+text = "Consigue {item:265476} de {npc:253622}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#83"]
+note = "Polestar paso 83 «The Al'Aketh camp», objetivo 7 (collect)"
+
+[[step]]
+id = "sky-309"
+do = "accept"
+quest = 94490
+optional = true
+reqlevel = 9
+text = "Usa {item:265476} para empezar «{quest:94490}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#83"]
+note = "Polestar paso 83 «The Al'Aketh camp», objetivo 8 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "sky-310"
+do = "turnin"
+quest = 94488
+npc = 257944
+at = [2521, 61.7, 39.22]
+chain = "sky-s084-257944"
+text = "Entrega «{quest:94488}» a {npc:257944}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#84"]
+note = "Polestar paso 84 «Elegael Pataespina, last time», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-311"
+do = "turnin"
+quest = 94489
+npc = 257944
+at = [2521, 61.7, 39.22]
+chain = "sky-s084-257944"
+text = "Entrega «{quest:94489}» a {npc:257944}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#84"]
+note = "Polestar paso 84 «Elegael Pataespina, last time», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-312"
+do = "turnin"
+quest = 94490
+npc = 257944
+at = [2521, 61.7, 39.22]
+optional = true
+chain = "sky-s084-257944"
+text = "Entrega «{quest:94490}» a {npc:257944}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#84"]
+note = "Polestar paso 84 «Elegael Pataespina, last time», objetivo 3 (turnin)"
+
+[[step]]
+id = "sky-313"
+do = "accept"
+quest = 94491
+npc = 257944
+at = [2521, 61.7, 39.22]
+optional = true
+chain = "sky-s084-257944"
+reqlevel = 8
+text = "Coge «{quest:94491}» de {npc:257944}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#84"]
+note = "Polestar paso 84 «Elegael Pataespina, last time», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-314"
+do = "accept"
+quest = 93159
+npc = 251684
+at = [2521, 53.96, 38.9]
+reqlevel = 8
+text = "Coge «{quest:93159}» de {npc:251684}."
+why = "+301 XP · ~1,3 min · desbloquea «{quest:93172}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#85"]
+note = "Polestar paso 85 ««El ermitaño extraño»», objetivo 1 (accept) · consejo de Polestar sin traducir: The hermit lives at {area:16625}'s west shore."
+
+[[step]]
+id = "sky-315"
+do = "complete"
+quest = 93159
+obj = 1
+npc = 251684
+at = [2521, 53.96, 38.9]
+text = "Habla con {npc:251684} para «{quest:93159}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#85"]
+note = "Polestar paso 85 ««El ermitaño extraño»», objetivo 2 (talk)"
+
+[[step]]
+id = "sky-316"
+do = "turnin"
+quest = 93159
+npc = 251684
+at = [2521, 53.96, 38.9]
+chain = "sky-s085-251684"
+text = "Entrega «{quest:93159}» a {npc:251684}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#85"]
+note = "Polestar paso 85 ««El ermitaño extraño»», objetivo 3 (turnin)"
+
+[[step]]
+id = "sky-317"
+do = "accept"
+quest = 93160
+npc = 251684
+at = [2521, 53.96, 38.9]
+chain = "sky-s085-251684"
+reqlevel = 8
+text = "Coge «{quest:93160}» de {npc:251684}."
+why = "+675 XP · ~1,3 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#85"]
+note = "Polestar paso 85 ««El ermitaño extraño»», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-318"
+do = "accept"
+quest = 93172
+npc = 251684
+at = [2521, 53.96, 38.9]
+chain = "sky-s085-251684"
+reqlevel = 8
+text = "Coge «{quest:93172}» de {npc:251684}."
+why = "+1.385 XP · ~6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#85"]
+note = "Polestar paso 85 ««El ermitaño extraño»», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-319"
+do = "complete"
+quest = 93160
+obj = 1
+at = [2521, 55.7, 39.2]
+wps = [[2521, 56.9, 37.8, "Semilla de céfiro"], [2521, 58.3, 39.8, "Semilla de céfiro"], [2521, 59.4, 41.1, "Semilla de céfiro"]]
+text = "Recoge {item:257128} (8) de {obj:613238} para «{quest:93160}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#86"]
+note = "Polestar paso 86 «Windsong Lake», objetivo 1 (collect) · consejo de Polestar sin traducir: {item:257128} cones grow south of the hermit; the Wind Hollows drift east of the lake and also drop the Wind Hollow Essences for {npc:254344}'s «{quest:93736}». The refugees' belongings lie along the north shore of {area:16625}; {npc:259013} is at its north-west end."
+
+[[step]]
+id = "sky-320"
+do = "complete"
+quest = 93172
+obj = 1
+at = [2521, 56.7, 35.3]
+text = "Mata {npc:251676} (10) para «{quest:93172}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#86"]
+note = "Polestar paso 86 «Windsong Lake», objetivo 2 (kill)"
+
+[[step]]
+id = "sky-321"
+do = "complete"
+quest = 93736
+obj = 1
+at = [2521, 56.89, 35.05]
+wps = [[2521, 58.9, 33.7, "Esencia de hueco ventoso"], [2521, 58.1, 31.7, "Esencia de hueco ventoso"], [2521, 59.6, 31.8, "Esencia de hueco ventoso"]]
+text = "Consigue {item:262357} (10) de {npc:251676} para «{quest:93736}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#86"]
+note = "Polestar paso 86 «Windsong Lake», objetivo 3 (collect)"
+
+[[step]]
+id = "sky-322"
+do = "complete"
+quest = 94896
+obj = 1
+at = [2521, 56.9, 33.6]
+wps = [[2521, 57.4, 30.8, "Pertenencias abandonadas"], [2521, 58.8, 32.0, "Pertenencias abandonadas"], [2521, 59.2, 34.3, "Pertenencias abandonadas"]]
+text = "Recoge {item:266433} (8) de {obj:623295} para «{quest:94896}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#86"]
+note = "Polestar paso 86 «Windsong Lake», objetivo 4 (collect)"
+
+[[step]]
+id = "sky-323"
+do = "complete"
+quest = 94897
+obj = 1
+at = [2521, 57.05, 29.35]
+text = "Consigue {item:266434} (1) de {npc:259013} para «{quest:94897}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#86"]
+note = "Polestar paso 86 «Windsong Lake», objetivo 5 (collect)"
+
+[[step]]
+id = "sky-324"
+do = "turnin"
+quest = 93160
+npc = 251684
+at = [2521, 53.96, 38.9]
+chain = "sky-s087-251684"
+text = "Entrega «{quest:93160}» a {npc:251684}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#87"]
+note = "Polestar paso 87 ««El ermitaño extraño»», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-325"
+do = "turnin"
+quest = 93172
+npc = 251684
+at = [2521, 53.96, 38.9]
+chain = "sky-s087-251684"
+text = "Entrega «{quest:93172}» a {npc:251684}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#87"]
+note = "Polestar paso 87 ««El ermitaño extraño»», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-326"
+do = "complete"
+quest = 92947
+obj = 1
+at = [2521, 64.0, 52.1]
+text = "Mata {npc:252762} (7) para «{quest:92947}»."
+tip = "{area:16629} está al norte de {area:16638}. Ábrete paso entre los guardias hasta {npc:253576}, en su lado este."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#88"]
+note = "Polestar paso 88 «The Shrine of Akir», objetivo 1 (kill)"
+
+[[step]]
+id = "sky-327"
+do = "complete"
+quest = 92947
+obj = 2
+at = [2521, 63.0, 50.3]
+text = "Mata {npc:252763} (7) para «{quest:92947}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#88"]
+note = "Polestar paso 88 «The Shrine of Akir», objetivo 2 (kill)"
+
+[[step]]
+id = "sky-328"
+do = "complete"
+quest = 92947
+obj = 3
+at = [2521, 62.9, 50.3]
+text = "Mata {npc:252765} (7) para «{quest:92947}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#88"]
+note = "Polestar paso 88 «The Shrine of Akir», objetivo 3 (kill)"
+
+[[step]]
+id = "sky-329"
+do = "complete"
+quest = 92947
+obj = 4
+npc = 253576
+at = [2521, 63.77, 50.51]
+text = "Habla con {npc:253576} para «{quest:92947}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#88"]
+note = "Polestar paso 88 «The Shrine of Akir», objetivo 4 (talk)"
+
+[[step]]
+id = "sky-330"
+do = "turnin"
+quest = 92947
+npc = 253576
+at = [2521, 63.77, 50.51]
+chain = "sky-s088-253576"
+text = "Entrega «{quest:92947}» a {npc:253576}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#88"]
+note = "Polestar paso 88 «The Shrine of Akir», objetivo 5 (turnin)"
+
+[[step]]
+id = "sky-331"
+do = "accept"
+quest = 93958
+npc = 253576
+at = [2521, 63.77, 50.51]
+chain = "sky-s088-253576"
+reqlevel = 7
+text = "Coge «{quest:93958}» de {npc:253576}."
+why = "+900 XP · <1 min · desbloquea «{quest:92646}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#88"]
+note = "Polestar paso 88 «The Shrine of Akir», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-332"
+do = "turnin"
+quest = 93958
+npc = 253590
+at = [2521, 65.19, 50.35]
+chain = "sky-s088-253590"
+text = "Entrega «{quest:93958}» a {npc:253590}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#88"]
+note = "Polestar paso 88 «The Shrine of Akir», objetivo 7 (turnin) · consejo de Polestar sin traducir: {npc:253590}, upstairs."
+
+[[step]]
+id = "sky-333"
+do = "accept"
+quest = 92646
+npc = 253590
+at = [2521, 65.19, 50.35]
+optional = true
+chain = "sky-s088-253590"
+reqlevel = 7
+text = "Coge «{quest:92646}» de {npc:253590}."
+tip = "+460 XP · ~5,6 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#88"]
+note = "Polestar paso 88 «The Shrine of Akir», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-334"
+do = "goto"
+at = [2521, 65.6, 50.3]
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#89"]
+note = "Polestar paso 89 «Portal to Rohashi Spires», objetivo 1 (goto) · destino de Polestar sin traducir: Portal to Rohashi Spires"
+
+[[step]]
+id = "sky-335"
+do = "goto"
+at = [2521, 74.9, 53.0]
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#90"]
+note = "Polestar paso 90 ««La confrontación con Lorthuna»», objetivo 1 (goto) · consejo de Polestar sin traducir: Take the Portal to {area:16630} in the shrine up to the heights. Fight east along the ledge to the Peacekeepers at its end, ride the wind current up to the upper terrace and tell {npc:252475} you are ready. Leave the Portal to Valanaar up there alone until Rohash has withdrawn; then it takes you straight back to town."
+
+[[step]]
+id = "sky-336"
+do = "complete"
+quest = 92646
+at = [2521, 74.8, 53.4]
+optional = true
+text = "Completa «{quest:92646}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#90"]
+note = "Polestar paso 90 ««La confrontación con Lorthuna»», objetivo 2 (complete) · objetivos (EN): Confront Lorthuna"
+
+[[step]]
+id = "sky-337"
+do = "turnin"
+quest = 92646
+npc = 251968
+at = [2521, 59.15, 79.78]
+optional = true
+chain = "sky-s091-251968"
+text = "Entrega «{quest:92646}» a {npc:251968}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#91"]
+note = "Polestar paso 91 ««El destino de Zephras»», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-338"
+do = "accept"
+quest = 93836
+npc = 251968
+at = [2521, 59.15, 79.78]
+optional = true
+chain = "sky-s091-251968"
+reqlevel = 7
+text = "Coge «{quest:93836}» de {npc:251968}."
+tip = "+460 XP · ~4 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#91"]
+note = "Polestar paso 91 ««El destino de Zephras»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-339"
+do = "turnin"
+quest = 93736
+npc = 254344
+at = [2521, 58.13, 78.32]
+text = "Entrega «{quest:93736}» a {npc:254344}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#91"]
+note = "Polestar paso 91 ««El destino de Zephras»», objetivo 3 (turnin) · consejo de Polestar sin traducir: {npc:254344}, beside {npc:251968}."
+
+[[step]]
+id = "sky-340"
+do = "turnin"
+quest = 94003
+npc = 252377
+at = [2521, 59.89, 72.87]
+if = { class = ["WARRIOR"] }
+text = "Entrega «{quest:94003}» a {npc:252377}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#92"]
+note = "Polestar paso 92 «Seena Rompecielos», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:252377} stands beside {npc:256083}, just north-west of {area:16638}."
+
+[[step]]
+id = "sky-341"
+do = "complete"
+quest = 93836
+obj = 1
+npc = 252476
+at = [2521, 66.17, 76.51]
+optional = true
+text = "Habla con {npc:252476} para «{quest:93836}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#93"]
+note = "Polestar paso 93 «Valanaar», objetivo 1 (talk) · consejo de Polestar sin traducir: {npc:251968} sends you on to Kalimdor. Once you have trained, board the skycutter at the dock on {area:16638}'s south-west edge: it flies to northern {map:1412}, where {npc:259119} waits."
+
+[[step]]
+id = "sky-342"
+do = "turnin"
+quest = 93836
+npc = 252476
+at = [2521, 66.17, 76.51]
+optional = true
+chain = "sky-s093-252476"
+text = "Entrega «{quest:93836}» a {npc:252476}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#93"]
+note = "Polestar paso 93 «Valanaar», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:252476}, upstairs."
+
+[[step]]
+id = "sky-343"
+do = "accept"
+quest = 93090
+npc = 252476
+at = [2521, 66.17, 76.51]
+chain = "sky-s093-252476"
+reqlevel = 7
+text = "Coge «{quest:93090}» de {npc:252476}."
+why = "+460 XP · ~1,6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#93"]
+note = "Polestar paso 93 «Valanaar», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-344"
+do = "turnin"
+quest = 94896
+npc = 259012
+at = [2521, 66.04, 74.41]
+chain = "sky-s093-259012"
+text = "Entrega «{quest:94896}» a {npc:259012}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#93"]
+note = "Polestar paso 93 «Valanaar», objetivo 4 (turnin)"
+
+[[step]]
+id = "sky-345"
+do = "turnin"
+quest = 94897
+npc = 259012
+at = [2521, 66.04, 74.41]
+chain = "sky-s093-259012"
+text = "Entrega «{quest:94897}» a {npc:259012}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#93"]
+note = "Polestar paso 93 «Valanaar», objetivo 5 (turnin)"
+
+[[step]]
+id = "sky-346"
+do = "turnin"
+quest = 94491
+npc = 252359
+at = [2521, 63.99, 75.08]
+text = "Entrega «{quest:94491}» a {npc:252359}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#93"]
+note = "Polestar paso 93 «Valanaar», objetivo 6 (turnin)"
+
+[[step]]
+id = "sky-347-wr"
+do = "train"
+npc = 3153
+spells = [72, 5242, 7384]
+at = [1411, 42.89, 69.44]
+if = { class = ["WARRIOR"] }
+reqlevel = 12
+text = "Entrena con {npc:3153}, el instructor de guerrero."
+tip = "3 hechizos hasta el nivel 12: nuevos {spell:72}, {spell:7384}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#94", "trainer:warrior"]
+note = "Polestar paso 94 «Valanaar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 11-13"
+
+[[step]]
+id = "sky-347-pa"
+do = "train"
+npc = 244808
+spells = [678, 20162]
+at = [1420, 31.1, 66.41]
+if = { class = ["PALADIN"] }
+reqlevel = 12
+text = "Entrena con {npc:244808}, el instructor de paladín."
+tip = "2 hechizos hasta el nivel 12."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#94", "trainer:paladin"]
+note = "Polestar paso 94 «Valanaar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 11-13"
+
+[[step]]
+id = "sky-347-hu"
+do = "train"
+npc = 3154
+spells = [136, 2974, 14281, 20736]
+at = [1411, 42.84, 69.33]
+if = { class = ["HUNTER"] }
+reqlevel = 12
+text = "Entrena con {npc:3154}, el instructor de cazador."
+tip = "4 hechizos hasta el nivel 12: nuevos {spell:136}, {spell:2974}, {spell:20736} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#94", "trainer:hunter"]
+note = "Polestar paso 94 «Valanaar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 11-13"
+
+[[step]]
+id = "sky-347-ro"
+do = "train"
+npc = 3155
+spells = [1766, 2589, 3127]
+at = [1411, 41.28, 68.0]
+if = { class = ["ROGUE"] }
+reqlevel = 12
+text = "Entrena con {npc:3155}, el instructor de pícaro."
+tip = "3 hechizos hasta el nivel 12: nuevos {spell:1766}, {spell:3127}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#94", "trainer:rogue"]
+note = "Polestar paso 94 «Valanaar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 11-13"
+
+[[step]]
+id = "sky-347-pr"
+do = "train"
+npc = 3706
+spells = [588, 592, 1244]
+at = [1411, 54.26, 42.93]
+if = { class = ["PRIEST"] }
+reqlevel = 12
+text = "Entrena con {npc:3706}, el instructor de sacerdote."
+tip = "3 hechizos hasta el nivel 12: nuevos {spell:588}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#94", "trainer:priest"]
+note = "Polestar paso 94 «Valanaar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 11-13"
+
+[[step]]
+id = "sky-347-sh"
+do = "train"
+npc = 252382
+spells = [370, 2008, 408341]
+at = [2521, 58.31, 78.51]
+if = { class = ["SHAMAN"] }
+reqlevel = 12
+text = "Entrena con {npc:252382}, el instructor de chamán."
+tip = "3 hechizos hasta el nivel 12: nuevos {spell:370}, {spell:2008}, {spell:408341} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#94", "trainer:shaman"]
+note = "Polestar paso 94 «Valanaar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 11-13"
+
+[[step]]
+id = "sky-347-mg"
+do = "train"
+npc = 5880
+spells = [130, 597, 604]
+at = [1411, 56.31, 75.11]
+if = { class = ["MAGE"] }
+reqlevel = 12
+text = "Entrena con {npc:5880}, el instructor de mago."
+tip = "3 hechizos hasta el nivel 12: nuevos {spell:130}, {spell:604}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#94", "trainer:mage"]
+note = "Polestar paso 94 «Valanaar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 11-13"
+
+[[step]]
+id = "sky-347-wl"
+do = "train"
+npc = 3156
+spells = [755, 1108]
+at = [1411, 40.65, 68.52]
+if = { class = ["WARLOCK"] }
+reqlevel = 12
+text = "Entrena con {npc:3156}, el instructor de brujo."
+tip = "2 hechizos hasta el nivel 12: nuevos {spell:755}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#94", "trainer:warlock"]
+note = "Polestar paso 94 «Valanaar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 11-13"
+
+[[step]]
+id = "sky-348"
+do = "turnin"
+quest = 93090
+npc = 251968
+at = [2521, 59.15, 79.78]
+chain = "sky-s094-251968"
+text = "Entrega «{quest:93090}» a {npc:251968}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#94"]
+note = "Polestar paso 94 «Valanaar», objetivo 2 (turnin)"
+
+[[step]]
+id = "sky-350"
+do = "goto"
+at = [2521, 57.9, 80.8]
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#95"]
+note = "Polestar paso 95 «Leave Zephras Isle to Mulgore», objetivo 1 (goto) · destino de Polestar sin traducir: Leave Zephras Isle to Mulgore"
+
+[[step]]
+id = "sky-352"
+do = "accept"
+quest = 95350
+npc = 259119
+at = [1412, 33.38, 22.57]
+chain = "sky-s096-259119"
+reqlevel = 7
+text = "Coge «{quest:95350}» de {npc:259119}."
+why = "+675 XP · ~1,4 min · desbloquea «{quest:93739}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#96"]
+note = "Polestar paso 96 «Northern Mulgore», objetivo 2 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:259119}: keep it: Thrall in {map:1454}, at the start of the next guide."
+
+[[step]]
+id = "sky-353"
+do = "accept"
+quest = 94911
+npc = 259118
+at = [1412, 33.41, 22.58]
+if = { class = ["DRUID"] }
+reqlevel = 10
+text = "Coge «{quest:94911}» de {npc:259118}, junto al aterrizaje: para {npc:3033} en {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#96"]
+note = "Polestar paso 96 «Northern Mulgore», objetivo 3 (accept)"
+
+[[step]]
+id = "sky-354"
+do = "level"
+level = 12
+text = "Sube al nivel 12."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#97"]
+note = "Polestar paso 97 «Clarice Foster», objetivo 1 (level) · consejo de Polestar sin traducir: {npc:5543} stands in the {area:2197}, the cave under {area:1640}: go down inside, the arrow cannot tell the floors apart."
+
+[[step]]
+id = "sky-355"
+do = "accept"
+quest = 264
+npc = 5543
+at = [1456, 27.2, 24.4]
+reqlevel = 12
+text = "Coge «{quest:264}» de {npc:5543}."
+why = "+550 XP · <1 min · 2,2× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#97"]
+note = "Polestar paso 97 «Clarice Foster», objetivo 2 (accept)"
+
+[[step]]
+id = "sky-357"
+do = "getfp"
+npc = 2995
+node = "22"
+at = [1456, 47.0, 49.83]
+text = "Coge la ruta de vuelo de Cima del Trueno con {npc:2995}."
+tip = "{npc:269068} quiere incienso tauren: compra sus cuatro partes a {npc:3014} la herbolaria, {npc:3012} la proveedora de encantamiento, {npc:3005} el proveedor de peletería y {npc:3027} el proveedor de cocina; luego combínalas en {item:278078}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#99"]
+note = "Polestar paso 99 ««Tradiciones de la cima»», objetivo 1 (getfp)"
+
+[[step]]
+id = "sky-358"
+do = "accept"
+quest = 97485
+npc = 269068
+at = [1456, 38.0, 55.9]
+optional = true
+reqlevel = 3
+text = "Coge «{quest:97485}» de {npc:269068}."
+tip = "+420 XP · ~4 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#99"]
+note = "Polestar paso 99 ««Tradiciones de la cima»», objetivo 2 (accept)"
+
+[[step]]
+id = "sky-359"
+do = "buy"
+npc = 3014
+item = 278079
+count = 1
+at = [1456, 49.57, 39.57]
+text = "Compra {item:278079} a {npc:3014}."
+tip = "{item:278079}, de {npc:3014}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#99"]
+note = "Polestar paso 99 ««Tradiciones de la cima»», objetivo 3 (buy)"
+
+[[step]]
+id = "sky-360"
+do = "buy"
+npc = 3012
+item = 278080
+count = 1
+at = [1456, 44.99, 38.75]
+text = "Compra {item:278080} a {npc:3012}."
+tip = "{item:278080}, de {npc:3012}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#99"]
+note = "Polestar paso 99 ««Tradiciones de la cima»», objetivo 4 (buy)"
+
+[[step]]
+id = "sky-361"
+do = "buy"
+npc = 3005
+item = 278081
+count = 1
+at = [1456, 43.8, 45.12]
+text = "Compra {item:278081} a {npc:3005}."
+tip = "{item:278081}, de {npc:3005}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#99"]
+note = "Polestar paso 99 ««Tradiciones de la cima»», objetivo 5 (buy)"
+
+[[step]]
+id = "sky-362"
+do = "buy"
+npc = 3027
+item = 278083
+count = 1
+at = [1456, 50.99, 52.45]
+text = "Compra {item:278083} a {npc:3027}."
+tip = "{item:278083}, de {npc:3027}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#99"]
+note = "Polestar paso 99 ««Tradiciones de la cima»», objetivo 6 (buy)"
+
+[[step]]
+id = "sky-363"
+do = "turnin"
+quest = 94911
+npc = 3033
+at = [1456, 76.48, 27.22]
+if = { class = ["DRUID"] }
+chain = "sky-s100-3033"
+text = "Entrega «{quest:94911}» a {npc:3033}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#100"]
+note = "Polestar paso 100 «Turak Runatótem», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:3033} trains druids on {area:1639}. He teaches you {spell:18960}; {npc:11802}'s welcome waits for your {spell:499} trip at about 21 (forever/horde/02-the-barrens)."
+
+[[step]]
+id = "sky-364"
+do = "accept"
+quest = 94913
+npc = 3033
+at = [1456, 76.48, 27.22]
+if = { class = ["DRUID"] }
+chain = "sky-s100-3033"
+reqlevel = 10
+text = "Coge «{quest:94913}» de {npc:3033}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#100"]
+note = "Polestar paso 100 «Turak Runatótem», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "sky-366"
+do = "complete"
+quest = 97485
+obj = 2
+at = [1456, 53.3, 87.9]
+optional = true
+text = "Usa {item:278078} para «{quest:97485}»."
+tip = "Usa el {item:278078} en la esterilla ceremonial y el quemador del acantilado sur de {area:1641}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#101"]
+note = "Polestar paso 101 «Hunter Rise», objetivo 1 (use)"
+
+[[step]]
+id = "sky-367"
+do = "turnin"
+quest = 97485
+npc = 269068
+at = [1456, 38.0, 55.9]
+optional = true
+text = "Entrega «{quest:97485}» a {npc:269068}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#102"]
+note = "Polestar paso 102 «Eylah Solecuerno», objetivo 1 (turnin)"
+
+[[step]]
+id = "sky-368"
+do = "note"
+npc = 11869
+at = [1456, 40.93, 62.73]
+if = { class = ["WARRIOR"] }
+optional = true
+text = "Entrena con {npc:11869}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#103"]
+note = "Polestar paso 103 «Ansekhwa», objetivo 1 (train) · condición no expresable: dinero >= 1000 cobre; no tienes Two-Handed Maces 1+ · train sin hechizos: manual · consejo de Polestar sin traducir: While you're here: learn {spell:199} from {npc:11869} (10 silver); two-handers level a Warrior fastest."
+
+[[step]]
+id = "sky-369"
+do = "note"
+npc = 11869
+at = [1456, 40.93, 62.73]
+if = { class = ["HUNTER"] }
+optional = true
+text = "Entrena con {npc:11869}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#104"]
+note = "Polestar paso 104 «Ansekhwa», objetivo 1 (train) · condición no expresable: dinero >= 1000 cobre; no tienes Staves 1+ · train sin hechizos: manual · consejo de Polestar sin traducir: While you're here: learn Staves from {npc:11869} (10 silver); a Hunter's melee weapon is mostly its stats, and two-handers carry the most."
+
+[[step]]
+id = "sky-370"
+do = "goto"
+at = [1412, 42.1, 20.2]
+text = "Entra en {map:1412}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#105"]
+note = "Polestar paso 105 «Into Mulgore», objetivo 1 (goto)"
+
+[[step]]
+id = "sky-371"
+do = "goto"
+at = [1413, 41.9, 58.6]
+text = "Entra en {map:1413}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#106"]
+note = "Polestar paso 106 «Into The Barrens», objetivo 1 (goto)"
+
+[[step]]
+id = "sky-372"
+do = "goto"
+at = [1413, 52.2, 31.0]
+text = "Ve a {area:380}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#107"]
+note = "Polestar paso 107 «The Crossroads», objetivo 1 (goto)"
+
+[[step]]
+id = "sky-373"
+do = "getfp"
+npc = 3615
+node = "25"
+at = [1413, 51.5, 30.34]
+text = "Coge la ruta de vuelo de El Cruce con {npc:3615}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#108"]
+note = "Polestar paso 108 «The Crossroads», objetivo 1 (getfp) · consejo de Polestar sin traducir: Learn the flight path from {npc:3615} on the tower platform. {area:380}' own quests come after {map:1421}, in the {map:1413} guide."
+
+[[step]]
+id = "sky-374"
+do = "goto"
+at = [1454, 55.6, 72.3]
+text = "Ve a {map:1454}'s {obj:172982}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#109"]
+note = "Polestar paso 109 «To Orgrimmar», objetivo 1 (goto) · consejo de Polestar sin traducir: From the Crossroads follow the road north-east to {area:379}, cross the {area:815} into {map:1411} and keep north to {map:1454}'s main gate. The next guide starts in {map:1454}: Thrall takes «{quest:95350}», and the zeppelin leaves for {map:1420} and {map:1421}."

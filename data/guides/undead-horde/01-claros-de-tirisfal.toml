@@ -1,0 +1,3419 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/undead/01-tirisfal-glades
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "und-claros-de-tirisfal"
+title = "Claros de Tirisfal: Camposanto"
+levels = [1, 13]
+map = 1420
+summary = "Salida de no-muerto (1-13): misiones de la zona de inicio, entrenamiento de clase y viaje al Bosque de Argénteos."
+
+[[step]]
+id = "und-001"
+do = "accept"
+quest = 363
+npc = 1568
+at = [1420, 30.22, 71.65]
+text = "Coge «{quest:363}» de {npc:1568}."
+tip = "Te alzas en la cripta del extremo sur de {area:154}. {npc:1568} espera justo fuera."
+why = "+40 XP · <1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#1"]
+note = "Polestar paso 1 «Enterrador Mordo», objetivo 1 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "und-002"
+do = "turnin"
+quest = 363
+npc = 1569
+at = [1420, 30.84, 66.2]
+chain = "und-s002-1569"
+text = "Entrega «{quest:363}» a {npc:1569}."
+tip = "Sigue el sendero al norte hasta {area:154}; el Sacerdote de las Sombras Sarvis está delante de la iglesia."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#2"]
+note = "Polestar paso 2 «Sacerdote de las Sombras Sarvis», objetivo 1 (turnin) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "und-003"
+do = "accept"
+quest = 364
+npc = 1569
+at = [1420, 30.84, 66.2]
+chain = "und-s002-1569"
+text = "Coge «{quest:364}» de {npc:1569}."
+why = "+994 XP · ~8 min · desbloquea «{quest:3901}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#2"]
+note = "Polestar paso 2 «Sacerdote de las Sombras Sarvis», objetivo 2 (accept)"
+
+[[step]]
+id = "und-004"
+do = "accept"
+quest = 1470
+npc = 5667
+at = [1420, 30.98, 66.41]
+if = { class = ["WARLOCK"] }
+text = "Coge «{quest:1470}» de {npc:5667}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#2"]
+note = "Polestar paso 2 «Sacerdote de las Sombras Sarvis», objetivo 3 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "und-005"
+do = "complete"
+quest = 364
+obj = 1
+at = [1420, 30.7, 64.17]
+wps = [[1420, 31.6, 63.1, "Zombi descerebrado"], [1420, 33.9, 64.1, "Zombi descerebrado"]]
+text = "Mata {npc:1501} (8) para «{quest:364}»."
+tip = "Los zombis deambulan por el cementerio y las casas justo al este de la iglesia."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#3"]
+note = "Polestar paso 3 «Mindless Zombies», objetivo 1 (kill)"
+
+[[step]]
+id = "und-006"
+do = "complete"
+quest = 364
+obj = 2
+at = [1420, 30.33, 63.31]
+wps = [[1420, 32.0, 62.9, "Zombi desdichado"], [1420, 32.4, 61.0, "Zombi desdichado"], [1420, 33.8, 64.5, "Zombi desdichado"]]
+text = "Mata {npc:1502} (8) para «{quest:364}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#3"]
+note = "Polestar paso 3 «Mindless Zombies», objetivo 2 (kill)"
+
+[[step]]
+id = "und-007"
+do = "turnin"
+quest = 364
+npc = 1569
+at = [1420, 30.84, 66.2]
+chain = "und-s004-1569"
+text = "Entrega «{quest:364}» a {npc:1569}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 1 (turnin) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "und-008"
+do = "accept"
+quest = 3901
+npc = 1569
+at = [1420, 30.84, 66.2]
+chain = "und-s004-1569"
+text = "Coge «{quest:3901}» de {npc:1569}."
+why = "+910 XP · ~5,3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-009"
+do = "accept"
+quest = 3095
+npc = 1569
+at = [1420, 30.84, 66.2]
+if = { class = ["WARRIOR"] }
+chain = "und-s004-1569"
+text = "Coge «{quest:3095}» de {npc:1569}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-010"
+do = "accept"
+quest = 3096
+npc = 1569
+at = [1420, 30.84, 66.2]
+if = { class = ["ROGUE"] }
+chain = "und-s004-1569"
+text = "Coge «{quest:3096}» de {npc:1569}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-011"
+do = "accept"
+quest = 3097
+npc = 1569
+at = [1420, 30.84, 66.2]
+if = { class = ["PRIEST"] }
+chain = "und-s004-1569"
+text = "Coge «{quest:3097}» de {npc:1569}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-012"
+do = "accept"
+quest = 3098
+npc = 1569
+at = [1420, 30.84, 66.2]
+if = { class = ["MAGE"] }
+chain = "und-s004-1569"
+text = "Coge «{quest:3098}» de {npc:1569}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-013"
+do = "accept"
+quest = 3099
+npc = 1569
+at = [1420, 30.84, 66.2]
+if = { class = ["WARLOCK"] }
+chain = "und-s004-1569"
+text = "Coge «{quest:3099}» de {npc:1569}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-014"
+do = "accept"
+quest = 98601
+npc = 1569
+at = [1420, 30.84, 66.2]
+if = { class = ["PALADIN"] }
+chain = "und-s004-1569"
+text = "Coge «{quest:98601}» de {npc:1569}, el pergamino para {npc:244808}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-015"
+do = "accept"
+quest = 376
+npc = 1661
+at = [1420, 30.86, 66.05]
+reqlevel = 2
+text = "Coge «{quest:376}» de {npc:1661}."
+why = "+1.030 XP · ~8 min · desbloquea «{quest:380}» y 8 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 9 (accept) · consejo de Polestar sin traducir: {npc:1661}, beside the church; inside."
+
+[[step]]
+id = "und-016"
+do = "turnin"
+quest = 3095
+npc = 2119
+at = [1420, 32.69, 65.56]
+if = { class = ["WARRIOR"] }
+text = "Entrega «{quest:3095}» a {npc:2119}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 10 (turnin) · consejo de Polestar sin traducir: {npc:2119}, the warrior trainer; inside."
+
+[[step]]
+id = "und-017"
+do = "turnin"
+quest = 3096
+npc = 2122
+at = [1420, 32.53, 65.65]
+if = { class = ["ROGUE"] }
+text = "Entrega «{quest:3096}» a {npc:2122}, el instructor de pícaros."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 11 (turnin)"
+
+[[step]]
+id = "und-018"
+do = "turnin"
+quest = 3097
+npc = 2123
+at = [1420, 31.11, 66.03]
+if = { class = ["PRIEST"] }
+text = "Entrega «{quest:3097}» a {npc:2123}, el instructor de sacerdotes, en la iglesia."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 12 (turnin)"
+
+[[step]]
+id = "und-019"
+do = "turnin"
+quest = 3098
+npc = 2124
+at = [1420, 30.93, 66.06]
+if = { class = ["MAGE"] }
+text = "Entrega «{quest:3098}» a {npc:2124}, la instructora de magos, en la iglesia."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 13 (turnin)"
+
+[[step]]
+id = "und-020"
+do = "turnin"
+quest = 3099
+npc = 2126
+at = [1420, 30.91, 66.34]
+if = { class = ["WARLOCK"] }
+text = "Entrega «{quest:3099}» a {npc:2126}, el instructor de brujos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 14 (turnin)"
+
+[[step]]
+id = "und-021"
+do = "turnin"
+quest = 98601
+npc = 244808
+at = [1420, 31.1, 66.41]
+if = { class = ["PALADIN"] }
+text = "Entrega «{quest:98601}» a {npc:244808}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 15 (turnin)"
+
+[[step]]
+id = "und-022-wr"
+do = "train"
+npc = 2119
+spells = [6673]
+at = [1420, 32.69, 65.56]
+if = { class = ["WARRIOR"] }
+reqlevel = 1
+text = "Entrena con {npc:2119}, el instructor de guerrero."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:6673}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4", "trainer:warrior"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 16 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 1-1"
+
+[[step]]
+id = "und-022-hu"
+do = "train"
+npc = 987
+spells = [1494]
+at = [1435, 47.26, 53.43]
+if = { class = ["HUNTER"] }
+reqlevel = 1
+text = "Entrena con {npc:987}, el instructor de cazador."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1494}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4", "trainer:hunter"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 16 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 1-1"
+
+[[step]]
+id = "und-022-ro"
+do = "train"
+npc = 2122
+spells = [1784]
+at = [1420, 32.53, 65.65]
+if = { class = ["ROGUE"] }
+reqlevel = 1
+text = "Entrena con {npc:2122}, el instructor de pícaro."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1784}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4", "trainer:rogue"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 16 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 1-1"
+
+[[step]]
+id = "und-022-pr"
+do = "train"
+npc = 2123
+spells = [1243]
+at = [1420, 31.11, 66.03]
+if = { class = ["PRIEST"] }
+reqlevel = 1
+text = "Entrena con {npc:2123}, el instructor de sacerdote."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1243}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4", "trainer:priest"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 16 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 1-1"
+
+[[step]]
+id = "und-022-mg"
+do = "train"
+npc = 2124
+spells = [1459]
+at = [1420, 30.93, 66.06]
+if = { class = ["MAGE"] }
+reqlevel = 1
+text = "Entrena con {npc:2124}, el instructor de mago."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:1459}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4", "trainer:mage"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 16 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 1-1"
+
+[[step]]
+id = "und-022-wl"
+do = "train"
+npc = 2126
+spells = [348]
+at = [1420, 30.91, 66.34]
+if = { class = ["WARLOCK"] }
+reqlevel = 1
+text = "Entrena con {npc:2126}, el instructor de brujo."
+tip = "1 hechizo hasta el nivel 1: nuevos {spell:348}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4", "trainer:warlock"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 16 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 1-1"
+
+[[step]]
+id = "und-023"
+do = "accept"
+quest = 90902
+npc = 244808
+at = [1420, 31.1, 66.41]
+if = { class = ["PALADIN"] }
+reqlevel = 2
+text = "Coge «{quest:90902}» de {npc:244808}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#4"]
+note = "Polestar paso 4 «Sacerdote de las Sombras Sarvis», objetivo 17 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-024"
+do = "goto"
+at = [1420, 31.6, 65.8]
+if = { class = ["PALADIN"] }
+text = "Ve a {npc:259377}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#5"]
+note = "Polestar paso 5 «Guardia de la Muerte herido», objetivo 1 (goto) · consejo de Polestar sin traducir: «{quest:90902}»: the {npc:259377} lie around the church. Heal five of them with {spell:635}."
+
+[[step]]
+id = "und-025"
+do = "complete"
+quest = 90902
+if = { class = ["PALADIN"] }
+text = "Completa «{quest:90902}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#5"]
+note = "Polestar paso 5 «Guardia de la Muerte herido», objetivo 2 (complete) · objetivos (EN): Heal 5 Injured Deathguard"
+
+[[step]]
+id = "und-026"
+do = "complete"
+quest = 3901
+obj = 1
+at = [1420, 32.98, 63.0]
+wps = [[1420, 33.5, 62.0, "Esqueleto armadóseo"], [1420, 34.4, 64.7, "Esqueleto armadóseo"], [1420, 32.2, 60.4, "Esqueleto armadóseo"]]
+text = "Mata {npc:1890} (12) para «{quest:3901}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#6"]
+note = "Polestar paso 6 «Deathknell: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: Rattlecage Skeletons wander the ruined houses in the north half of {area:154}. Young Scavengers and Duskbats roam all around the village; the Ragged Scavengers and Mangy Duskbats are on its east side. {npc:1661} wants their paws and wings: kill them as you meet them while you clear the skeletons."
+
+[[step]]
+id = "und-027"
+do = "complete"
+quest = 1470
+obj = 1
+at = [1420, 32.98, 63.0]
+wps = [[1420, 33.5, 62.0, "Calavera armadósea"], [1420, 34.4, 64.7, "Calavera armadósea"], [1420, 32.2, 60.4, "Calavera armadósea"]]
+if = { class = ["WARLOCK"] }
+text = "Consigue {item:6281} (3) de {npc:1890} para «{quest:1470}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#6"]
+note = "Polestar paso 6 «Deathknell: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "und-028"
+do = "complete"
+quest = 376
+obj = 1
+at = [1420, 34.56, 62.55]
+wps = [[1420, 36.1, 62.5, "Garra de carroñero"], [1420, 35.1, 65.5, "Garra de carroñero"], [1420, 37.9, 62.5, "Garra de carroñero"]]
+text = "Consigue {item:3265} (6) de {npc:1509} y {npc:1508} para «{quest:376}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#6"]
+note = "Polestar paso 6 «Deathknell: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "und-029"
+do = "complete"
+quest = 376
+obj = 2
+at = [1420, 33.91, 61.73]
+wps = [[1420, 34.6, 57.8, "Ala de Murciumbrío"], [1420, 37.0, 57.7, "Ala de Murciumbrío"], [1420, 36.9, 64.4, "Ala de Murciumbrío"]]
+text = "Consigue {item:3264} (6) de {npc:1513} y {npc:1512} y {npc:10716} para «{quest:376}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#6"]
+note = "Polestar paso 6 «Deathknell: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "und-030"
+do = "turnin"
+quest = 376
+npc = 1661
+at = [1420, 30.86, 66.05]
+text = "Entrega «{quest:376}» a {npc:1661}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#7"]
+note = "Polestar paso 7 «Back to the church», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:1661}, inside."
+
+[[step]]
+id = "und-031"
+do = "turnin"
+quest = 90902
+npc = 244808
+at = [1420, 31.1, 66.41]
+if = { class = ["PALADIN"] }
+text = "Entrega «{quest:90902}» a {npc:244808}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#7"]
+note = "Polestar paso 7 «Back to the church», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:244808}: {spell:635}, once five {npc:259377} are healed."
+
+[[step]]
+id = "und-032"
+do = "turnin"
+quest = 1470
+npc = 5667
+at = [1420, 30.98, 66.41]
+if = { class = ["WARLOCK"] }
+text = "Entrega «{quest:1470}» a {npc:5667}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#7"]
+note = "Polestar paso 7 «Back to the church», objetivo 3 (turnin)"
+
+[[step]]
+id = "und-033"
+do = "accept"
+quest = 6395
+npc = 1661
+at = [1420, 30.86, 66.05]
+reqlevel = 3
+text = "Coge «{quest:6395}» de {npc:1661}."
+why = "+450 XP · ~2 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#7"]
+note = "Polestar paso 7 «Back to the church», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-034"
+do = "turnin"
+quest = 3901
+npc = 1569
+at = [1420, 30.84, 66.2]
+text = "Entrega «{quest:3901}» a {npc:1569}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#7"]
+note = "Polestar paso 7 «Back to the church», objetivo 5 (turnin) · consejo de Polestar sin traducir: {npc:1569}, inside."
+
+[[step]]
+id = "und-035"
+do = "accept"
+quest = 98389
+npc = 244808
+at = [1420, 31.1, 66.41]
+reqlevel = 2
+text = "Coge «{quest:98389}» de {npc:244808}."
+why = "+624 XP · ~3,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#7"]
+note = "Polestar paso 7 «Back to the church», objetivo 6 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:244808}, inside."
+
+[[step]]
+id = "und-037"
+do = "accept"
+quest = 3902
+npc = 1740
+at = [1420, 31.61, 65.6]
+reqlevel = 2
+text = "Coge «{quest:3902}» de {npc:1740}."
+why = "+320 XP · ~2 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#7"]
+note = "Polestar paso 7 «Back to the church», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-038"
+do = "accept"
+quest = 380
+npc = 1570
+at = [1420, 32.15, 66.01]
+reqlevel = 2
+text = "Coge «{quest:380}» de {npc:1570}, en la iglesia."
+why = "+1.304 XP · ~9 min · desbloquea «{quest:381}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#7"]
+note = "Polestar paso 7 «Back to the church», objetivo 9 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-039"
+do = "complete"
+quest = 3902
+obj = 1
+at = [1420, 33.01, 65.39]
+wps = [[1420, 31.9, 61.8, "Mercancías desperdiciadas"]]
+text = "Recoge {item:11127} (6) de {obj:164662} para «{quest:3902}»."
+tip = "Las {obj:164662} están junto a las casas en ruinas del norte de {area:154}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#8"]
+note = "Polestar paso 8 ««Hurgar en Camposanto»», objetivo 1 (collect)"
+
+[[step]]
+id = "und-040"
+do = "turnin"
+quest = 3902
+npc = 1740
+at = [1420, 31.61, 65.6]
+text = "Entrega «{quest:3902}» a {npc:1740}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#9"]
+note = "Polestar paso 9 «Back to Deathknell», objetivo 1 (turnin)"
+
+[[step]]
+id = "und-041"
+do = "accept"
+quest = 91208
+npc = 244808
+at = [1420, 31.1, 66.41]
+if = { class = ["PALADIN"] }
+reqlevel = 4
+text = "Coge «{quest:91208}» de {npc:244808}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#9"]
+note = "Polestar paso 9 «Back to Deathknell», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-042"
+do = "note"
+npc = 246143
+at = [1420, 27.69, 63.82]
+if = { class = ["PALADIN"] }
+text = "Habla con {npc:246143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#10"]
+note = "Polestar paso 10 «The Paladina aterrorizada», objetivo 1 (talk) · consejo de Polestar sin traducir: «{quest:91208}»: the {npc:246143} fled into the hills west of the church, on the way to {area:155}."
+
+[[step]]
+id = "und-043"
+do = "complete"
+quest = 380
+obj = 1
+at = [1420, 27.94, 60.46]
+wps = [[1420, 28.2, 59.3, "Nocturácnida joven"], [1420, 29.6, 57.5, "Nocturácnida joven"], [1420, 27.8, 56.5, "Nocturácnida joven"]]
+text = "Mata {npc:1504} (10) para «{quest:380}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#11"]
+note = "Polestar paso 11 «Night Web's Hollow», objetivo 1 (kill) · consejo de Polestar sin traducir: Head west to the cave. The Young Night Web Spiders sit outside; the Night Web Spiders and the cocooned {npc:271961} are inside.\nCareful: A low-level character can die quickly if it pulls several Night Web Spiders in the cave at the same time."
+
+[[step]]
+id = "und-044"
+do = "complete"
+quest = 380
+obj = 2
+at = [1420, 26.6, 59.5]
+wps = [[1420, 24.0, 59.7, "Araña nocturácnida"]]
+text = "Mata {npc:1505} (8) para «{quest:380}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#11"]
+note = "Polestar paso 11 «Night Web's Hollow», objetivo 2 (kill)"
+
+[[step]]
+id = "und-045"
+do = "goto"
+at = [1420, 26.0, 60.0]
+text = "Ve a {area:155}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#11"]
+note = "Polestar paso 11 «Night Web's Hollow», objetivo 3 (goto)"
+
+[[step]]
+id = "und-046"
+do = "complete"
+quest = 98389
+obj = 1
+at = [1420, 26.22, 60.2]
+wps = [[1420, 24.2, 59.5, "Renegado atrapado en telarañas"]]
+text = "Mata {npc:271961} (6) para «{quest:98389}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#11"]
+note = "Polestar paso 11 «Night Web's Hollow», objetivo 4 (kill) · consejo de Polestar sin traducir: Attack the cocoons inside the cave to free them; below ground."
+
+[[step]]
+id = "und-047"
+do = "turnin"
+quest = 98389
+npc = 244808
+at = [1420, 31.1, 66.41]
+chain = "und-s012-244808"
+text = "Entrega «{quest:98389}» a {npc:244808}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#12"]
+note = "Polestar paso 12 «Back to Deathknell», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:244808}, inside."
+
+[[step]]
+id = "und-048"
+do = "turnin"
+quest = 91208
+npc = 244808
+at = [1420, 31.1, 66.41]
+if = { class = ["PALADIN"] }
+chain = "und-s012-244808"
+text = "Entrega «{quest:91208}» a {npc:244808}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#12"]
+note = "Polestar paso 12 «Back to Deathknell», objetivo 2 (turnin)"
+
+[[step]]
+id = "und-049"
+do = "accept"
+quest = 91209
+npc = 244808
+at = [1420, 31.1, 66.41]
+if = { class = ["PALADIN"] }
+chain = "und-s012-244808"
+reqlevel = 4
+text = "Coge «{quest:91209}» de {npc:244808}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#12"]
+note = "Polestar paso 12 «Back to Deathknell», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-050"
+do = "turnin"
+quest = 380
+npc = 1570
+at = [1420, 32.15, 66.01]
+chain = "und-s012-1570"
+text = "Entrega «{quest:380}» a {npc:1570}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#12"]
+note = "Polestar paso 12 «Back to Deathknell», objetivo 4 (turnin)"
+
+[[step]]
+id = "und-051"
+do = "accept"
+quest = 381
+npc = 1570
+at = [1420, 32.15, 66.01]
+chain = "und-s012-1570"
+reqlevel = 2
+text = "Coge «{quest:381}» de {npc:1570}."
+why = "+1.226 XP · ~6,4 min · desbloquea «{quest:382}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#12"]
+note = "Polestar paso 12 «Back to Deathknell», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-052"
+do = "complete"
+quest = 381
+obj = 1
+at = [1420, 35.94, 68.59]
+wps = [[1420, 37.2, 68.4, "Banda Escarlata"], [1420, 37.8, 70.3, "Banda Escarlata"], [1420, 37.8, 65.9, "Banda Escarlata"]]
+text = "Consigue {item:3266} (12) de {npc:1506} y {npc:1507} y {npc:1667} para «{quest:381}»."
+tip = "Los Convertidos Escarlata y los Iniciados Escarlata ocupan la granja al este de {area:154}. {npc:1919} deambula entre las casas de la granja: sus restos son para «{quest:6395}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#13"]
+note = "Polestar paso 13 «The Scarlet farm», objetivo 1 (collect)"
+
+[[step]]
+id = "und-053"
+do = "loot"
+item = 16333
+count = 1
+at = [1420, 36.68, 61.56]
+text = "Consigue {item:16333} de {npc:1919}."
+tip = "{item:16333}, de {npc:1919}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#13"]
+note = "Polestar paso 13 «The Scarlet farm», objetivo 2 (collect)"
+
+[[step]]
+id = "und-054"
+do = "complete"
+quest = 6395
+obj = 1
+at = [1420, 31.17, 65.08]
+text = "Usa {obj:178090} para «{quest:6395}»."
+tip = "{obj:178090} está en el cementerio de {area:154}, junto a la iglesia."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#14"]
+note = "Polestar paso 14 «Tumba de Marla», objetivo 1 (interact)"
+
+[[step]]
+id = "und-055"
+do = "turnin"
+quest = 6395
+npc = 1661
+at = [1420, 30.86, 66.05]
+text = "Entrega «{quest:6395}» a {npc:1661}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#15"]
+note = "Polestar paso 15 «Ejecutor Arren», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:1661}, inside."
+
+[[step]]
+id = "und-056"
+do = "turnin"
+quest = 381
+npc = 1570
+at = [1420, 32.15, 66.01]
+chain = "und-s015-1570"
+text = "Entrega «{quest:381}» a {npc:1570}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#15"]
+note = "Polestar paso 15 «Ejecutor Arren», objetivo 2 (turnin)"
+
+[[step]]
+id = "und-057"
+do = "accept"
+quest = 382
+npc = 1570
+at = [1420, 32.15, 66.01]
+chain = "und-s015-1570"
+reqlevel = 2
+text = "Coge «{quest:382}» de {npc:1570}."
+why = "+739 XP · ~2 min · desbloquea «{quest:96656}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#15"]
+note = "Polestar paso 15 «Ejecutor Arren», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-058"
+do = "complete"
+quest = 382
+obj = 1
+at = [1420, 36.57, 68.54]
+text = "Consigue {item:2885} (1) de {npc:1667} para «{quest:382}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#16"]
+note = "Polestar paso 16 «Meven Korgal», objetivo 1 (collect) · consejo de Polestar sin traducir: {npc:1667} stands at the south end of the Scarlet farm.\nCareful: He is flanked by two Scarlet guards, one a convert and the other an initiate, who may join the fight."
+
+[[step]]
+id = "und-059"
+do = "turnin"
+quest = 382
+npc = 1570
+at = [1420, 32.15, 66.01]
+chain = "und-s017-1570"
+text = "Entrega «{quest:382}» a {npc:1570}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#17"]
+note = "Polestar paso 17 «Ejecutor Arren», objetivo 1 (turnin)"
+
+[[step]]
+id = "und-061"
+do = "accept"
+quest = 96656
+npc = 1570
+at = [1420, 32.15, 66.01]
+chain = "und-s017-1570"
+reqlevel = 4
+text = "Coge «{quest:96656}» de {npc:1570}."
+why = "+410 XP · <1 min · desbloquea «{quest:96607}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#17"]
+note = "Polestar paso 17 «Ejecutor Arren», objetivo 3 (accept) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-063"
+do = "accept"
+quest = 5651
+npc = 2123
+at = [1420, 31.11, 66.03]
+if = { class = ["PRIEST"] }
+reqlevel = 5
+text = "Coge «{quest:5651}» de {npc:2123}, para {npc:2129} en {area:159}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#18"]
+note = "Polestar paso 18 «Clérico oscuro Duesten», objetivo 2 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "und-064"
+do = "accept"
+quest = 8
+npc = 6784
+at = [1420, 38.23, 56.79]
+optional = true
+text = "Coge «{quest:8}» de {npc:6784}."
+tip = "+110 XP · ~1,4 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#19"]
+note = "Polestar paso 19 «Solliden Farmstead», objetivo 1 (accept) · consejo de Polestar sin traducir: Leave {area:154} by the road north-east. {npc:6784} stands by the farmhouse at the {area:156}; {npc:1519} stands by the road just past it."
+
+[[step]]
+id = "und-065"
+do = "accept"
+quest = 365
+npc = 1519
+at = [1420, 40.91, 54.17]
+optional = true
+reqlevel = 4
+text = "Coge «{quest:365}» de {npc:1519}."
+tip = "+625 XP · ~3,5 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#19"]
+note = "Polestar paso 19 «Solliden Farmstead», objetivo 2 (accept)"
+
+[[step]]
+id = "und-066"
+do = "complete"
+quest = 365
+obj = 1
+at = [1420, 37.16, 52.18]
+wps = [[1420, 36.9, 49.4, "Calabaza de Tirisfal"], [1420, 35.4, 50.6, "Calabaza de Tirisfal"], [1420, 32.1, 46.9, "Calabaza de Tirisfal"]]
+optional = true
+text = "Recoge {item:2846} (10) de {obj:375} para «{quest:365}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#20"]
+note = "Polestar paso 20 «Tirisfal Pumpkins», objetivo 1 (collect) · consejo de Polestar sin traducir: The pumpkins grow in the Scarlet-held fields just north-west of the farmhouse.\nCareful: Farmers stand close to the pumpkins, so you can pull more than one at once. Scarlet mobs are found around the edges of the farm and a bit to the northwest."
+
+[[step]]
+id = "und-069"
+do = "accept"
+quest = 404
+npc = 1496
+at = [1420, 58.2, 51.45]
+reqlevel = 4
+text = "Coge «{quest:404}» de {npc:1496}."
+why = "+1.683 XP · ~14 min · desbloquea «{quest:426}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#22"]
+note = "Polestar paso 22 «Guardia de la Muerte Dillinger», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:1496} and {npc:1742} stand at the west end of {area:159}, where the road from Solliden comes in."
+
+[[step]]
+id = "und-070"
+do = "accept"
+quest = 86784
+npc = 1742
+at = [1420, 58.47, 51.39]
+reqlevel = 4
+text = "Coge «{quest:86784}» de {npc:1742}."
+why = "+625 XP · ~2 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#22"]
+note = "Polestar paso 22 «Guardia de la Muerte Dillinger», objetivo 2 (accept) · consejo de Polestar sin traducir: {npc:1742}, beside Dillinger."
+
+[[step]]
+id = "und-073"
+do = "complete"
+quest = 86784
+obj = 1
+at = [1420, 56.5, 53.5]
+text = "Recoge {item:279991} (6) de {obj:671154} para «{quest:86784}»."
+tip = "Las ramas secas están en el suelo por el borde suroeste de {area:159}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#24"]
+note = "Polestar paso 24 «Dry Branches», objetivo 1 (collect)"
+
+[[step]]
+id = "und-074"
+do = "turnin"
+quest = 96656
+npc = 265812
+at = [1420, 57.28, 55.49]
+chain = "und-s025-265812"
+text = "Entrega «{quest:96656}» a {npc:265812}."
+tip = "Eleanor Tembleque acampa justo al suroeste del pueblo. Si has aprendido una profesión, también ofrece su Acampada 101, que recoge el instructor de esa profesión: en {area:159}, en el campamento de Linnea o en {map:1458}, en la siguiente guía."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#25"]
+note = "Polestar paso 25 «Eleanor Tembleque», objetivo 1 (turnin)"
+
+[[step]]
+id = "und-075"
+do = "accept"
+quest = 96607
+npc = 265812
+at = [1420, 57.28, 55.49]
+chain = "und-s025-265812"
+reqlevel = 4
+text = "Coge «{quest:96607}» de {npc:265812}."
+why = "+410 XP · ~2 min · desbloquea «{quest:96658}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#25"]
+note = "Polestar paso 25 «Eleanor Tembleque», objetivo 2 (accept) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-076"
+do = "complete"
+quest = 96607
+at = [1420, 57.2, 55.5]
+text = "Completa «{quest:96607}»."
+tip = "/sentarse junto a su hoguera hasta obtener {spell:1229451}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#25"]
+note = "Polestar paso 25 «Eleanor Tembleque», objetivo 3 (complete) · objetivos (EN): Sit near the campfire (Optional); Gain the Boosted Rest buff"
+
+[[step]]
+id = "und-077"
+do = "turnin"
+quest = 96607
+npc = 265812
+at = [1420, 57.28, 55.49]
+chain = "und-s025-265812"
+text = "Entrega «{quest:96607}» a {npc:265812}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#25"]
+note = "Polestar paso 25 «Eleanor Tembleque», objetivo 4 (turnin)"
+
+[[step]]
+id = "und-078"
+do = "accept"
+quest = 96658
+npc = 265812
+at = [1420, 57.28, 55.49]
+chain = "und-s025-265812"
+reqlevel = 4
+text = "Coge «{quest:96658}» de {npc:265812}."
+why = "+270 XP · ~1 min · 1,9× la mediana del 6-10"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#25"]
+note = "Polestar paso 25 «Eleanor Tembleque», objetivo 5 (accept) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-079"
+do = "turnin"
+quest = 86784
+npc = 265812
+at = [1420, 57.28, 55.49]
+chain = "und-s025-265812"
+text = "Entrega «{quest:86784}» a {npc:265812}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#25"]
+note = "Polestar paso 25 «Eleanor Tembleque», objetivo 6 (turnin)"
+
+[[step]]
+id = "und-080"
+do = "accept"
+quest = 97955
+npc = 265812
+at = [1420, 57.28, 55.49]
+if = { prof = ["firstaid"] }
+reqlevel = 4
+text = "Coge «{quest:97955}» de {npc:265812}."
+tip = "Eleanor: para {npc:5759}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#26"]
+note = "Polestar paso 26 ««Acampada para novatos: primeros auxilios»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230117 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-081"
+do = "accept"
+quest = 97953
+npc = 265812
+at = [1420, 57.28, 55.49]
+if = { prof = ["enchanting"] }
+reqlevel = 4
+text = "Coge «{quest:97953}» de {npc:265812}."
+tip = "Eleanor: para {npc:5695}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#27"]
+note = "Polestar paso 27 ««Acampada para novatos: encantamiento»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230643 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-082"
+do = "accept"
+quest = 97957
+npc = 265812
+at = [1420, 57.28, 55.49]
+if = { prof = ["herbalism"] }
+reqlevel = 4
+text = "Coge «{quest:97957}» de {npc:265812}."
+tip = "Eleanor: para {npc:2114}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#28"]
+note = "Polestar paso 28 ««Acampada para novatos: herboristería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229705 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-083"
+do = "accept"
+quest = 97951
+npc = 265812
+at = [1420, 57.28, 55.49]
+if = { prof = ["alchemy"] }
+reqlevel = 4
+text = "Coge «{quest:97951}» de {npc:265812}."
+tip = "Eleanor: para {npc:2132}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#29"]
+note = "Polestar paso 29 ««Acampada para novatos: alquimia»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230564 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-084"
+do = "accept"
+quest = 97960
+npc = 265812
+at = [1420, 57.28, 55.49]
+if = { prof = ["skinning"] }
+reqlevel = 4
+text = "Coge «{quest:97960}» de {npc:265812}."
+tip = "Eleanor: para {npc:6289}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#30"]
+note = "Polestar paso 30 ««Acampada para novatos: desuello»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229517 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-085"
+do = "accept"
+quest = 97958
+npc = 265812
+at = [1420, 57.28, 55.49]
+if = { prof = ["leatherworking"] }
+reqlevel = 4
+text = "Coge «{quest:97958}» de {npc:265812}."
+tip = "Eleanor: para {npc:3549}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#31"]
+note = "Polestar paso 31 ««Camping 101: Leatherworking»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229432 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-086"
+do = "accept"
+quest = 97961
+npc = 265812
+at = [1420, 57.28, 55.49]
+if = { prof = ["tailoring"] }
+reqlevel = 4
+text = "Coge «{quest:97961}» de {npc:265812}."
+tip = "Eleanor: para {npc:3523}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#32"]
+note = "Polestar paso 32 ««Acampada para novatos: sastrería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229504 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-087"
+do = "accept"
+quest = 97959
+npc = 265812
+at = [1420, 57.28, 55.49]
+if = { prof = ["mining"] }
+reqlevel = 4
+text = "Coge «{quest:97959}» de {npc:265812}."
+tip = "Eleanor: para {npc:4598}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#33"]
+note = "Polestar paso 33 ««Acampada para novatos: minería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230161 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-088"
+do = "accept"
+quest = 97952
+npc = 265812
+at = [1420, 57.28, 55.49]
+if = { prof = ["blacksmithing"] }
+reqlevel = 4
+text = "Coge «{quest:97952}» de {npc:265812}."
+tip = "Eleanor: para {npc:4605}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#34"]
+note = "Polestar paso 34 ««Acampada para novatos: herrería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230171 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-089"
+do = "accept"
+quest = 97954
+npc = 265812
+at = [1420, 57.28, 55.49]
+if = { prof = ["engineering"] }
+reqlevel = 4
+text = "Coge «{quest:97954}» de {npc:265812}."
+tip = "Eleanor: para {npc:4586}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#35"]
+note = "Polestar paso 35 ««Acampada para novatos: ingeniería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230656 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "und-090"
+do = "turnin"
+quest = 365
+npc = 1518
+at = [1420, 59.45, 52.4]
+optional = true
+chain = "und-s036-1518"
+text = "Entrega «{quest:365}» a {npc:1518}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#36"]
+note = "Polestar paso 36 «Brill», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:1518}, inside. · consejo de Polestar sin traducir: {npc:1518} is in the apothecary's house on the west side of the square, {npc:1515} in front of the inn with the Wanted poster beside him, {npc:1499} in the town hall on the square's north side. The inn comes last, in one go."
+
+[[step]]
+id = "und-091"
+do = "accept"
+quest = 407
+npc = 1518
+at = [1420, 59.45, 52.4]
+chain = "und-s036-1518"
+reqlevel = 4
+text = "Coge «{quest:407}» de {npc:1518}."
+why = "+160 XP · <1 min · 3,4× la mediana del 6-10"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#36"]
+note = "Polestar paso 36 «Brill», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-092"
+do = "accept"
+quest = 367
+npc = 1518
+at = [1420, 59.45, 52.4]
+chain = "und-s036-1518"
+reqlevel = 6
+text = "Coge «{quest:367}» de {npc:1518}."
+why = "+1.497 XP · ~11 min · desbloquea «{quest:368}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#36"]
+note = "Polestar paso 36 «Brill», objetivo 3 (accept)"
+
+[[step]]
+id = "und-093"
+do = "turnin"
+quest = 91209
+npc = 246152
+at = [1420, 60.22, 52.66]
+if = { class = ["PALADIN"] }
+text = "Entrega «{quest:91209}» a {npc:246152}, la instructora de paladines."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#36"]
+note = "Polestar paso 36 «Brill», objetivo 4 (turnin)"
+
+[[step]]
+id = "und-097"
+do = "accept"
+quest = 99141
+npc = 1515
+at = [1420, 60.59, 51.76]
+chain = "und-s036-1515"
+reqlevel = 4
+text = "Coge «{quest:99141}» de {npc:1515}."
+why = "+410 XP · ~2,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#36"]
+note = "Polestar paso 36 «Brill», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-098"
+do = "accept"
+quest = 398
+at = [1420, 60.74, 51.5]
+reqlevel = 6
+text = "Coge «{quest:398}» ({obj:711})."
+tip = "El cartel de Se busca junto a la posada."
+why = "+944 XP · ~1,7 min · 2,3× la mediana del 6-10"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#36"]
+note = "Polestar paso 36 «Brill», objetivo 9 (accept)"
+
+[[step]]
+id = "und-099"
+do = "accept"
+quest = 358
+npc = 1499
+at = [1420, 61.26, 50.84]
+reqlevel = 4
+text = "Coge «{quest:358}» de {npc:1499}, en el ayuntamiento."
+why = "+2.138 XP · ~12 min · desbloquea «{quest:360}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#36"]
+note = "Polestar paso 36 «Brill», objetivo 10 (accept)"
+
+[[step]]
+id = "und-100"
+do = "complete"
+quest = 97957
+at = [1420, 59.79, 52.12]
+if = { prof = ["herbalism"] }
+text = "Completa «{quest:97957}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#37"]
+note = "Polestar paso 37 «Faruza», objetivo 1 (complete) · condición no expresable: llevas la misión 97957 (implícita: el paso es de esa misión) · objetivos (EN): Faruza"
+
+[[step]]
+id = "und-101"
+do = "turnin"
+quest = 97957
+npc = 2114
+at = [1420, 59.79, 52.12]
+if = { prof = ["herbalism"] }
+text = "Entrega «{quest:97957}» a {npc:2114}, junto a Johaan: «{quest:97957}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#37"]
+note = "Polestar paso 37 «Faruza», objetivo 2 (turnin) · condición no expresable: llevas la misión 97957 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "und-102"
+do = "complete"
+quest = 97951
+at = [1420, 59.43, 52.19]
+if = { prof = ["alchemy"] }
+text = "Completa «{quest:97951}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#38"]
+note = "Polestar paso 38 «Carolai Anís», objetivo 1 (complete) · condición no expresable: llevas la misión 97951 (implícita: el paso es de esa misión) · objetivos (EN): Carolai Anise"
+
+[[step]]
+id = "und-103"
+do = "turnin"
+quest = 97951
+npc = 2132
+at = [1420, 59.43, 52.19]
+if = { prof = ["alchemy"] }
+text = "Entrega «{quest:97951}» a {npc:2132}, junto a Johaan: «{quest:97951}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#38"]
+note = "Polestar paso 38 «Carolai Anís», objetivo 2 (turnin) · condición no expresable: llevas la misión 97951 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "und-104"
+do = "accept"
+quest = 95314
+npc = 2132
+at = [1420, 59.43, 52.19]
+if = { minlevel = 7 }
+reqlevel = 7
+text = "Coge «{quest:95314}» de {npc:2132}."
+why = "+850 XP · ~8 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#39"]
+note = "Polestar paso 39 «Carolai Anís», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:2132}, beside Johaan; inside. · consejo de Polestar sin traducir: From level 7 {npc:2132}, beside Johaan in the apothecary's house, offers her elixir quest; below 7 it waits for the next {area:159} visit."
+
+[[step]]
+id = "und-105"
+do = "goto"
+at = [1420, 60.6, 52.0]
+text = "Ve a {area:159}."
+tip = "Usa la {item:286176} con cinco Guardias de la Muerte ociosos por el pueblo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#40"]
+note = "Polestar paso 40 ««Disciplina»», objetivo 1 (goto)"
+
+[[step]]
+id = "und-108"
+do = "sethearth"
+npc = 5688
+zone = 1420
+at = [1420, 61.72, 52.05]
+text = "Pon la piedra de hogar en {area:2119} con {npc:5688}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 1 (sethome) · consejo de Polestar sin traducir: Everything here is inside the inn, through its door on the south side: {npc:5688} at the bar, {npc:265944} at the north end of the ground floor, the {npc:1931} in the cellar under that end, and {npc:2128} (mages), {npc:2129} (priests), {npc:2127} (warlocks) and {npc:2130} (rogues) upstairs: take the stairs inside, the arrow cannot tell the floors apart."
+
+[[step]]
+id = "und-109"
+do = "turnin"
+quest = 8
+npc = 5688
+at = [1420, 61.72, 52.05]
+optional = true
+text = "Entrega «{quest:8}» al {npc:5688}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 2 (turnin)"
+
+[[step]]
+id = "und-110"
+do = "learn_prof"
+npc = 265944
+prof = "cooking"
+at = [1420, 61.75, 51.44]
+text = "Aprende Cocina con {npc:265944}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 3 (train) · consejo de Polestar sin traducir: {npc:265944}, at the inn's north end: Camping 101 asks you to learn it."
+
+[[step]]
+id = "und-111"
+do = "complete"
+quest = 96658
+at = [1420, 61.8, 51.5]
+text = "Completa «{quest:96658}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 4 (complete) · objetivos (EN): William Pickman"
+
+[[step]]
+id = "und-112"
+do = "turnin"
+quest = 96658
+npc = 265944
+at = [1420, 61.75, 51.44]
+text = "Entrega «{quest:96658}» a {npc:265944}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 5 (turnin)"
+
+[[step]]
+id = "und-113"
+do = "turnin"
+quest = 407
+npc = 1931
+at = [1420, 61.97, 51.29]
+text = "Entrega «{quest:407}» a {npc:1931}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 6 (turnin) · consejo de Polestar sin traducir: The {npc:1931}, in the inn's cellar."
+
+[[step]]
+id = "und-114-wr"
+do = "train"
+npc = 2131
+spells = [100, 772]
+at = [1420, 61.85, 52.54]
+if = { class = ["WARRIOR"] }
+reqlevel = 4
+text = "Entrena con {npc:2131}, el instructor de guerrero."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:100}, {spell:772}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42", "trainer:warrior"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 2-5"
+
+[[step]]
+id = "und-114-pa"
+do = "train"
+npc = 246152
+spells = [10321]
+at = [1420, 60.22, 52.66]
+if = { class = ["PALADIN"] }
+reqlevel = 4
+text = "Entrena con {npc:246152}, el instructor de paladín."
+tip = "1 hechizo hasta el nivel 4: nuevos {spell:10321}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42", "trainer:paladin"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 1-5"
+
+[[step]]
+id = "und-114-hu"
+do = "train"
+npc = 987
+spells = [1978, 13163]
+at = [1435, 47.26, 53.43]
+if = { class = ["HUNTER"] }
+reqlevel = 4
+text = "Entrena con {npc:987}, el instructor de cazador."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:1978}, {spell:13163}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42", "trainer:hunter"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 2-5"
+
+[[step]]
+id = "und-114-ro"
+do = "train"
+npc = 2130
+spells = [53, 921]
+at = [1420, 61.75, 52.0]
+if = { class = ["ROGUE"] }
+reqlevel = 4
+text = "Entrena con {npc:2130}, el instructor de pícaro."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:53}, {spell:921}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42", "trainer:rogue"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 2-5"
+
+[[step]]
+id = "und-114-pr"
+do = "train"
+npc = 2129
+spells = [589]
+at = [1420, 61.57, 52.19]
+if = { class = ["PRIEST"] }
+reqlevel = 4
+text = "Entrena con {npc:2129}, el instructor de sacerdote."
+tip = "1 hechizo hasta el nivel 4: nuevos {spell:589}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42", "trainer:priest"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 2-5"
+
+[[step]]
+id = "und-114-mg"
+do = "train"
+npc = 2128
+spells = [116, 5504]
+at = [1420, 61.97, 52.47]
+if = { class = ["MAGE"] }
+reqlevel = 4
+text = "Entrena con {npc:2128}, el instructor de mago."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:116}, {spell:5504}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42", "trainer:mage"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 2-5"
+
+[[step]]
+id = "und-114-wl"
+do = "train"
+npc = 2127
+spells = [172, 702]
+at = [1420, 61.59, 52.4]
+if = { class = ["WARLOCK"] }
+reqlevel = 4
+text = "Entrena con {npc:2127}, el instructor de brujo."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:172}, {spell:702}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42", "trainer:warlock"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 2-5"
+
+[[step]]
+id = "und-114-dr"
+do = "train"
+npc = 3060
+spells = [774, 8921]
+at = [1412, 44.65, 76.55]
+if = { class = ["DRUID"] }
+reqlevel = 4
+text = "Entrena con {npc:3060}, el instructor de druida."
+tip = "2 hechizos hasta el nivel 4: nuevos {spell:774}, {spell:8921}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42", "trainer:druid"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 7 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 1-5"
+
+[[step]]
+id = "und-115"
+do = "turnin"
+quest = 5651
+npc = 2129
+at = [1420, 61.57, 52.19]
+if = { class = ["PRIEST"] }
+chain = "und-s042-2129"
+text = "Entrega «{quest:5651}» a {npc:2129}, en el piso de arriba."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 8 (turnin)"
+
+[[step]]
+id = "und-116"
+do = "accept"
+quest = 5650
+npc = 2129
+at = [1420, 61.57, 52.19]
+if = { class = ["PRIEST"] }
+chain = "und-s042-2129"
+reqlevel = 5
+text = "Coge «{quest:5650}» de {npc:2129}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#42"]
+note = "Polestar paso 42 «Gallows' End Tavern», objetivo 9 (accept)"
+
+[[step]]
+id = "und-117"
+do = "complete"
+quest = 97955
+at = [1420, 61.82, 52.83]
+if = { prof = ["firstaid"] }
+text = "Completa «{quest:97955}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#43"]
+note = "Polestar paso 43 «Enfermera Neela», objetivo 1 (complete) · condición no expresable: llevas la misión 97955 (implícita: el paso es de esa misión) · objetivos (EN): Nurse Neela"
+
+[[step]]
+id = "und-118"
+do = "turnin"
+quest = 97955
+npc = 5759
+at = [1420, 61.82, 52.83]
+if = { prof = ["firstaid"] }
+text = "Entrega «{quest:97955}» a {npc:5759}, junto a la barra: «{quest:97955}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#43"]
+note = "Polestar paso 43 «Enfermera Neela», objetivo 2 (turnin) · condición no expresable: llevas la misión 97955 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "und-119"
+do = "complete"
+quest = 97953
+at = [1420, 61.77, 51.56]
+if = { prof = ["enchanting"] }
+text = "Completa «{quest:97953}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#44"]
+note = "Polestar paso 44 «Vance Bajopenumbra», objetivo 1 (complete) · condición no expresable: llevas la misión 97953 (implícita: el paso es de esa misión) · objetivos (EN): Vance Undergloom"
+
+[[step]]
+id = "und-120"
+do = "turnin"
+quest = 97953
+npc = 5695
+at = [1420, 61.77, 51.56]
+if = { prof = ["enchanting"] }
+text = "Entrega «{quest:97953}» a {npc:5695}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#44"]
+note = "Polestar paso 44 «Vance Bajopenumbra», objetivo 2 (turnin) · condición no expresable: llevas la misión 97953 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "und-121"
+do = "accept"
+quest = 362
+npc = 1500
+at = [1420, 61.72, 52.29]
+if = { minlevel = 7 }
+optional = true
+chain = "und-s045-1500"
+reqlevel = 7
+text = "Coge «{quest:362}» de {npc:1500}, en la posada."
+tip = "+510 XP · ~3 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#45"]
+note = "Polestar paso 45 «Coleman Lontananza and Gretchen Dedmar», objetivo 1 (accept) · consejo de Polestar sin traducir: Still in the inn: from level 7 {npc:1500} on the ground floor and {npc:1521} upstairs offer their quests; below 7 they wait for the next {area:159} visit."
+
+[[step]]
+id = "und-122"
+do = "accept"
+quest = 354
+npc = 1500
+at = [1420, 61.72, 52.29]
+if = { minlevel = 7 }
+chain = "und-s045-1500"
+reqlevel = 7
+text = "Coge «{quest:354}» de {npc:1500}."
+why = "+1.160 XP · ~5 min · desbloquea «{quest:355}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#45"]
+note = "Polestar paso 45 «Coleman Lontananza and Gretchen Dedmar», objetivo 2 (accept)"
+
+[[step]]
+id = "und-123"
+do = "accept"
+quest = 375
+npc = 1521
+at = [1420, 61.89, 52.73]
+if = { minlevel = 7 }
+optional = true
+reqlevel = 7
+text = "Coge «{quest:375}» de {npc:1521}."
+tip = "+1.625 XP · ~13 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#45"]
+note = "Polestar paso 45 «Coleman Lontananza and Gretchen Dedmar», objetivo 3 (accept) · consejo de Polestar sin traducir: {npc:1521}, upstairs."
+
+[[step]]
+id = "und-124"
+do = "complete"
+quest = 99141
+obj = 2
+at = [1420, 65.2, 60.3]
+text = "Consigue {item:286201} (1) para «{quest:99141}»."
+tip = "Sigue el camino al sureste desde {area:159}, pasando las torres de los zepelines. Linnea, Kristof y {npc:3549} acampan junto al camino. Pide su informe a {npc:251001}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#46"]
+note = "Polestar paso 46 «Guardia de la Muerte Linnea's camp», objetivo 1 (collect)"
+
+[[step]]
+id = "und-125"
+do = "accept"
+quest = 97558
+npc = 3549
+at = [1420, 65.43, 60.12]
+reqlevel = 6
+text = "Coge «{quest:97558}» de {npc:3549}."
+why = "+650 XP · ~1,3 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#46"]
+note = "Polestar paso 46 «Guardia de la Muerte Linnea's camp», objetivo 2 (accept)"
+
+[[step]]
+id = "und-126"
+do = "accept"
+quest = 356
+npc = 1495
+at = [1420, 65.49, 60.25]
+reqlevel = 6
+text = "Coge «{quest:356}» de {npc:1495}."
+why = "+1.946 XP · ~10 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#46"]
+note = "Polestar paso 46 «Guardia de la Muerte Linnea's camp», objetivo 3 (accept)"
+
+[[step]]
+id = "und-127"
+do = "complete"
+quest = 97960
+at = [1420, 65.58, 60.03]
+if = { prof = ["skinning"] }
+text = "Completa «{quest:97960}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#47"]
+note = "Polestar paso 47 «Rand Rhobart», objetivo 1 (complete) · condición no expresable: llevas la misión 97960 (implícita: el paso es de esa misión) · objetivos (EN): Rand Rhobart"
+
+[[step]]
+id = "und-128"
+do = "turnin"
+quest = 97960
+npc = 6289
+at = [1420, 65.58, 60.03]
+if = { prof = ["skinning"] }
+text = "Entrega «{quest:97960}» a {npc:6289}, junto a {npc:3549}: «{quest:97960}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#47"]
+note = "Polestar paso 47 «Rand Rhobart», objetivo 2 (turnin) · condición no expresable: llevas la misión 97960 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "und-129"
+do = "complete"
+quest = 97958
+at = [1420, 65.43, 60.12]
+if = { prof = ["leatherworking"] }
+text = "Completa «{quest:97958}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#48"]
+note = "Polestar paso 48 «Shelene Rhobart», objetivo 1 (complete) · condición no expresable: llevas la misión 97958 (implícita: el paso es de esa misión) · objetivos (EN): Shelene Rhobart"
+
+[[step]]
+id = "und-130"
+do = "turnin"
+quest = 97958
+npc = 3549
+at = [1420, 65.43, 60.12]
+if = { prof = ["leatherworking"] }
+text = "Entrega «{quest:97958}» a {npc:3549}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#48"]
+note = "Polestar paso 48 «Shelene Rhobart», objetivo 2 (turnin) · condición no expresable: llevas la misión 97958 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "und-131"
+do = "complete"
+quest = 99141
+obj = 1
+at = [1420, 58.2, 51.5]
+text = "Consigue {item:286200} (1) para «{quest:99141}»."
+tip = "Pide su informe a {npc:1496}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#49"]
+note = "Polestar paso 49 «Guardia de la Muerte Dillinger», objetivo 1 (collect) · consejo de Polestar sin traducir: Back up the road and through {area:159} to its west end."
+
+[[step]]
+id = "und-132"
+do = "complete"
+quest = 404
+obj = 1
+at = [1420, 56.11, 49.92]
+wps = [[1420, 54.8, 50.6, "Garra podrida"], [1420, 55.0, 48.5, "Garra podrida"], [1420, 56.2, 47.0, "Garra podrida"]]
+text = "Consigue {item:2855} (7) de {npc:1525} y {npc:1526} para «{quest:404}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#50"]
+note = "Polestar paso 50 «Cold Hearth Manor: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: {npc:1525} and Ravaged Corpses shamble through the fields just west of {area:159}; Decrepit Darkhounds roam there and on west along the road toward {npc:10666}. Johaan wants their blood, {npc:3549} their hides."
+
+[[step]]
+id = "und-133"
+do = "complete"
+quest = 367
+obj = 1
+at = [1420, 57.81, 52.71]
+wps = [[1420, 64.8, 61.8, "Sangre de can oscuro"], [1420, 72.0, 52.1, "Sangre de can oscuro"], [1420, 80.2, 42.4, "Sangre de can oscuro"]]
+text = "Consigue {item:2858} (5) para «{quest:367}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#50"]
+note = "Polestar paso 50 «Cold Hearth Manor: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "und-134"
+do = "complete"
+quest = 97558
+obj = 2
+at = [1420, 57.81, 52.71]
+wps = [[1420, 64.8, 61.8, "Pellejo de can oscuro"], [1420, 72.0, 52.1, "Pellejo de can oscuro"], [1420, 79.7, 60.0, "Pellejo de can oscuro"]]
+text = "Consigue {item:278243} (6) de {npc:1547} y {npc:1548} para «{quest:97558}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#50"]
+note = "Polestar paso 50 «Cold Hearth Manor: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "und-135"
+do = "complete"
+quest = 97961
+at = [1420, 52.59, 55.52]
+if = { prof = ["tailoring"] }
+text = "Completa «{quest:97961}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#51"]
+note = "Polestar paso 51 «Bowen Bribuesa», objetivo 1 (complete) · condición no expresable: llevas la misión 97961 (implícita: el paso es de esa misión) · objetivos (EN): Bowen Brisboise"
+
+[[step]]
+id = "und-136"
+do = "turnin"
+quest = 97961
+npc = 3523
+at = [1420, 52.59, 55.52]
+if = { prof = ["tailoring"] }
+text = "Entrega «{quest:97961}» a {npc:3523}, junto al camino al oeste de {area:159}: «{quest:97961}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#51"]
+note = "Polestar paso 51 «Bowen Bribuesa», objetivo 2 (turnin) · condición no expresable: llevas la misión 97961 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "und-137"
+do = "complete"
+quest = 99141
+obj = 3
+at = [1420, 53.8, 53.1]
+wps = [[1420, 51.8, 55.4, "Informe de Gordo"], [1420, 49.7, 58.0, "Informe de Gordo"], [1420, 47.3, 57.4, "Informe de Gordo"]]
+text = "Consigue {item:286202} (1) para «{quest:99141}»."
+tip = "Pide su informe a {npc:10666}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#52"]
+note = "Polestar paso 52 «Gordo», objetivo 1 (collect) · consejo de Polestar sin traducir: {npc:10666} walks the long road west of {area:159}, past {area:166}, and back: the arrow follows his road west until you meet him."
+
+[[step]]
+id = "und-143"
+do = "goto"
+at = [1420, 32.0, 46.3]
+text = "Ve a avanzada de los Cruzados."
+tip = "Escolta a {npc:275954} fuera de la avanzada."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#54"]
+note = "Polestar paso 54 «Crusader's Outpost», objetivo 3 (goto)"
+
+[[step]]
+id = "und-145"
+do = "turnin"
+quest = 404
+npc = 1496
+at = [1420, 58.2, 51.45]
+chain = "und-s055-1496"
+text = "Entrega «{quest:404}» a {npc:1496}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55"]
+note = "Polestar paso 55 «Brill», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back east along the road to {area:159}. {npc:2128} (mages), {npc:2129} (priests), {npc:2127} (warlocks) and {npc:2130} (rogues) stand upstairs in the inn: take the stairs inside, the arrow cannot tell the floors apart."
+
+[[step]]
+id = "und-146"
+do = "accept"
+quest = 426
+npc = 1496
+at = [1420, 58.2, 51.45]
+optional = true
+chain = "und-s055-1496"
+reqlevel = 6
+text = "Coge «{quest:426}» de {npc:1496}."
+tip = "+2.015 XP · ~14 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55"]
+note = "Polestar paso 55 «Brill», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-147"
+do = "turnin"
+quest = 367
+npc = 1518
+at = [1420, 59.45, 52.4]
+chain = "und-s055-1518"
+text = "Entrega «{quest:367}» a {npc:1518}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55"]
+note = "Polestar paso 55 «Brill», objetivo 3 (turnin) · consejo de Polestar sin traducir: {npc:1518}, inside."
+
+[[step]]
+id = "und-148"
+do = "accept"
+quest = 368
+npc = 1518
+at = [1420, 59.45, 52.4]
+chain = "und-s055-1518"
+reqlevel = 6
+text = "Coge «{quest:368}» de {npc:1518}."
+why = "+1.837 XP · ~8 min · desbloquea «{quest:492}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55"]
+note = "Polestar paso 55 «Brill», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-149"
+do = "accept"
+quest = 95314
+npc = 2132
+at = [1420, 59.43, 52.19]
+reqlevel = 7
+text = "Coge «{quest:95314}» de {npc:2132}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55"]
+note = "Polestar paso 55 «Brill», objetivo 5 (accept) · consejo de Polestar sin traducir: {npc:2132}, beside Johaan; inside."
+
+[[step]]
+id = "und-153"
+do = "turnin"
+quest = 99141
+npc = 1515
+at = [1420, 60.59, 51.76]
+chain = "und-s055-1515"
+text = "Entrega «{quest:99141}» a {npc:1515}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55"]
+note = "Polestar paso 55 «Brill», objetivo 9 (turnin)"
+
+[[step]]
+id = "und-155"
+do = "buy"
+npc = 2118
+item = 2320
+count = 1
+at = [1420, 61.03, 52.37]
+text = "Compra {item:2320} a {npc:2118}."
+tip = "{item:2320} de {npc:2118}, para Gretchen Dedmar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55"]
+note = "Polestar paso 55 «Brill», objetivo 11 (buy)"
+
+[[step]]
+id = "und-156"
+do = "accept"
+quest = 362
+npc = 1500
+at = [1420, 61.72, 52.29]
+optional = true
+chain = "und-s055-1500"
+reqlevel = 7
+text = "Coge «{quest:362}» de {npc:1500}, en la posada."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55"]
+note = "Polestar paso 55 «Brill», objetivo 12 (accept)"
+
+[[step]]
+id = "und-157"
+do = "accept"
+quest = 354
+npc = 1500
+at = [1420, 61.72, 52.29]
+chain = "und-s055-1500"
+reqlevel = 7
+text = "Coge «{quest:354}» de {npc:1500}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55"]
+note = "Polestar paso 55 «Brill», objetivo 13 (accept)"
+
+[[step]]
+id = "und-158"
+do = "accept"
+quest = 375
+npc = 1521
+at = [1420, 61.89, 52.73]
+optional = true
+reqlevel = 7
+text = "Coge «{quest:375}» de {npc:1521}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55"]
+note = "Polestar paso 55 «Brill», objetivo 14 (accept) · consejo de Polestar sin traducir: {npc:1521}, upstairs."
+
+[[step]]
+id = "und-159-wr"
+do = "train"
+npc = 2119
+spells = [3127, 6343]
+at = [1420, 32.69, 65.56]
+if = { class = ["WARRIOR"] }
+reqlevel = 6
+text = "Entrena con {npc:2119}, el instructor de guerrero."
+tip = "2 hechizos hasta el nivel 6: nuevos {spell:3127}, {spell:6343}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55", "trainer:warrior"]
+note = "Polestar paso 55 «Brill», objetivo 15 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 6-7"
+
+[[step]]
+id = "und-159-pa"
+do = "train"
+npc = 246389
+spells = [498, 679, 21082]
+at = [1420, 21.96, 47.25]
+if = { class = ["PALADIN"] }
+reqlevel = 6
+text = "Entrena con {npc:246389}, el instructor de paladín."
+tip = "3 hechizos hasta el nivel 6: nuevos {spell:498}, {spell:679}, {spell:21082} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55", "trainer:paladin"]
+note = "Polestar paso 55 «Brill», objetivo 15 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 6-7"
+
+[[step]]
+id = "und-159-hu"
+do = "train"
+npc = 987
+spells = [1130, 3044]
+at = [1435, 47.26, 53.43]
+if = { class = ["HUNTER"] }
+reqlevel = 6
+text = "Entrena con {npc:987}, el instructor de cazador."
+tip = "2 hechizos hasta el nivel 6: nuevos {spell:1130}, {spell:3044}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55", "trainer:hunter"]
+note = "Polestar paso 55 «Brill», objetivo 15 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 6-7"
+
+[[step]]
+id = "und-159-ro"
+do = "train"
+npc = 2122
+spells = [1776]
+at = [1420, 32.53, 65.65]
+if = { class = ["ROGUE"] }
+reqlevel = 6
+text = "Entrena con {npc:2122}, el instructor de pícaro."
+tip = "1 hechizo hasta el nivel 6: nuevos {spell:1776}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55", "trainer:rogue"]
+note = "Polestar paso 55 «Brill», objetivo 15 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 6-7"
+
+[[step]]
+id = "und-159-pr"
+do = "train"
+npc = 2123
+spells = [17]
+at = [1420, 31.11, 66.03]
+if = { class = ["PRIEST"] }
+reqlevel = 6
+text = "Entrena con {npc:2123}, el instructor de sacerdote."
+tip = "1 hechizo hasta el nivel 6: nuevos {spell:17}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55", "trainer:priest"]
+note = "Polestar paso 55 «Brill», objetivo 15 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 6-7"
+
+[[step]]
+id = "und-159-sh"
+do = "train"
+npc = 986
+spells = [2484]
+at = [1435, 48.19, 57.94]
+if = { class = ["SHAMAN"] }
+reqlevel = 6
+text = "Entrena con {npc:986}, el instructor de chamán."
+tip = "1 hechizo hasta el nivel 6: nuevos {spell:2484}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55", "trainer:shaman"]
+note = "Polestar paso 55 «Brill», objetivo 15 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 1-7"
+
+[[step]]
+id = "und-159-mg"
+do = "train"
+npc = 2124
+spells = [587, 2136, 1296017]
+at = [1420, 30.93, 66.06]
+if = { class = ["MAGE"] }
+reqlevel = 6
+text = "Entrena con {npc:2124}, el instructor de mago."
+tip = "3 hechizos hasta el nivel 6: nuevos {spell:587}, {spell:2136}, {spell:1296017} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55", "trainer:mage"]
+note = "Polestar paso 55 «Brill», objetivo 15 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 6-7"
+
+[[step]]
+id = "und-159-wl"
+do = "train"
+npc = 2126
+spells = [1454]
+at = [1420, 30.91, 66.34]
+if = { class = ["WARLOCK"] }
+reqlevel = 6
+text = "Entrena con {npc:2126}, el instructor de brujo."
+tip = "1 hechizo hasta el nivel 6: nuevos {spell:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55", "trainer:warlock"]
+note = "Polestar paso 55 «Brill», objetivo 15 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 6-7"
+
+[[step]]
+id = "und-159-dr"
+do = "train"
+npc = 3060
+spells = [467]
+at = [1412, 44.65, 76.55]
+if = { class = ["DRUID"] }
+reqlevel = 6
+text = "Entrena con {npc:3060}, el instructor de druida."
+tip = "1 hechizo hasta el nivel 6: nuevos {spell:467}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#55", "trainer:druid"]
+note = "Polestar paso 55 «Brill», objetivo 15 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 6-7"
+
+[[step]]
+id = "und-160"
+do = "complete"
+quest = 5650
+obj = 1
+at = [1420, 59.2, 46.5]
+if = { class = ["PRIEST"] }
+text = "Mata {npc:12428} (1) para «{quest:5650}»."
+tip = "{npc:12428} está arrodillado junto a la puerta norte del cementerio de {area:159}, de camino al norte. Lanza sobre él {spell:613} (rango 2) y luego {spell:1243}: si lanzas primero Entereza, no cuenta."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#56"]
+note = "Polestar paso 56 «Guardia de la Muerte Kel», objetivo 1 (kill)"
+
+[[step]]
+id = "und-161"
+do = "complete"
+quest = 375
+obj = 1
+at = [1420, 60.45, 43.15]
+wps = [[1420, 62.0, 42.7, "Pelambre Murciumbrío"], [1420, 66.8, 53.5, "Pelambre Murciumbrío"], [1420, 75.3, 54.4, "Pelambre Murciumbrío"]]
+optional = true
+text = "Consigue {item:2876} (5) de {npc:1553} y {npc:1554} para «{quest:375}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#57"]
+note = "Polestar paso 57 «Tirisfal Glades: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: Greater Duskbats fly over the fields around {area:159} and along the road north: Gretchen wants their pelts, {npc:3549} their wings.\nThe «{quest:5482}» grows in the graveyard fields just north of {area:159}, where the Rot Hide Graverobbers dig; all the Rot Hides drop the ichor.\nThe Rot Hide Mongrels hold the hills further north. {npc:1753} (level 11) stands in their camp on the hill south of the shore: clear the gnolls around him first.\nCareful: Gnoll guards stand outside the hut and can join the fight. If you slip past them and fight him inside, he fights alone.\nThe Vile Fin murlocs line the north shore: they all drop the scales, and the Minor Oracles and Muckdwellers the skins for {npc:3549}."
+
+[[step]]
+id = "und-162"
+do = "complete"
+quest = 97558
+obj = 1
+at = [1420, 60.45, 43.15]
+wps = [[1420, 62.0, 42.7, "Membrana de ala de murciumbrío"], [1420, 66.8, 53.5, "Membrana de ala de murciumbrío"], [1420, 75.3, 54.4, "Membrana de ala de murciumbrío"]]
+text = "Consigue {item:278242} (8) de {npc:1553} y {npc:1554} para «{quest:97558}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#57"]
+note = "Polestar paso 57 «Tirisfal Glades: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "und-164"
+do = "complete"
+quest = 358
+obj = 1
+at = [1420, 58.26, 42.92]
+wps = [[1420, 56.6, 44.7, "Asaltatumbas Putrepellejo"], [1420, 56.3, 40.2, "Asaltatumbas Putrepellejo"], [1420, 55.3, 42.3, "Asaltatumbas Putrepellejo"]]
+text = "Mata {npc:1941} (8) para «{quest:358}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#57"]
+note = "Polestar paso 57 «Tirisfal Glades: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "und-165"
+do = "complete"
+quest = 358
+obj = 3
+at = [1420, 58.26, 42.92]
+wps = [[1420, 58.9, 44.1, "Icor embalsamante"], [1420, 56.6, 44.7, "Icor embalsamante"], [1420, 56.6, 39.8, "Icor embalsamante"]]
+text = "Consigue {item:2834} (8) para «{quest:358}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#57"]
+note = "Polestar paso 57 «Tirisfal Glades: kill these as you meet them», objetivo 5 (collect)"
+
+[[step]]
+id = "und-166"
+do = "complete"
+quest = 358
+obj = 2
+at = [1420, 60.47, 38.82]
+wps = [[1420, 59.1, 36.7, "Bastardo Putrepellejo"], [1420, 60.0, 32.9, "Bastardo Putrepellejo"], [1420, 57.3, 34.7, "Bastardo Putrepellejo"]]
+text = "Mata {npc:1675} (5) para «{quest:358}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#57"]
+note = "Polestar paso 57 «Tirisfal Glades: kill these as you meet them», objetivo 6 (kill) · consejo de Polestar sin traducir: {npc:1675} walks around {area:164}: look inside the circle on the map."
+
+[[step]]
+id = "und-167"
+do = "complete"
+quest = 398
+obj = 1
+at = [1420, 58.66, 30.77]
+text = "Consigue {item:3635} (1) de {npc:1753} para «{quest:398}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#57"]
+note = "Polestar paso 57 «Tirisfal Glades: kill these as you meet them», objetivo 7 (collect) · consejo de Polestar sin traducir: {item:3635}; inside."
+
+[[step]]
+id = "und-168"
+do = "complete"
+quest = 368
+obj = 1
+at = [1420, 58.51, 28.79]
+wps = [[1420, 58.8, 27.7, "Escama Anca Vil"], [1420, 66.8, 27.3, "Escama Anca Vil"], [1420, 75.0, 26.8, "Escama Anca Vil"]]
+text = "Consigue {item:2859} (5) para «{quest:368}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#57"]
+note = "Polestar paso 57 «Tirisfal Glades: kill these as you meet them», objetivo 8 (collect)"
+
+[[step]]
+id = "und-169"
+do = "complete"
+quest = 97558
+obj = 3
+at = [1420, 58.34, 28.13]
+wps = [[1420, 62.2, 28.2, "Piel de múrloc Anca Vil"], [1420, 66.8, 27.3, "Piel de múrloc Anca Vil"], [1420, 70.4, 25.8, "Piel de múrloc Anca Vil"]]
+text = "Consigue {item:278244} (3) de {npc:1544} y {npc:1545} para «{quest:97558}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#57"]
+note = "Polestar paso 57 «Tirisfal Glades: kill these as you meet them», objetivo 9 (collect)"
+
+[[step]]
+id = "und-172"
+do = "turnin"
+quest = 368
+npc = 1518
+at = [1420, 59.45, 52.4]
+chain = "und-s058-1518"
+text = "Entrega «{quest:368}» a {npc:1518}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58"]
+note = "Polestar paso 58 «Brill», objetivo 3 (turnin) · consejo de Polestar sin traducir: {npc:1518}, inside."
+
+[[step]]
+id = "und-173"
+do = "accept"
+quest = 369
+npc = 1518
+at = [1420, 59.45, 52.4]
+chain = "und-s058-1518"
+reqlevel = 6
+text = "Coge «{quest:369}» de {npc:1518}."
+why = "+868 XP · ~7 min · desbloquea «{quest:492}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58"]
+note = "Polestar paso 58 «Brill», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-174"
+do = "accept"
+quest = 91282
+npc = 246152
+at = [1420, 60.22, 52.66]
+if = { class = ["PALADIN"] }
+reqlevel = 8
+text = "Coge «{quest:91282}» de {npc:246152}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58"]
+note = "Polestar paso 58 «Brill», objetivo 5 (accept) · consejo de Polestar sin traducir: {npc:246152}, the Paladin trainer: «{quest:91282}», to «{quest:96899}»."
+
+[[step]]
+id = "und-175"
+do = "turnin"
+quest = 398
+npc = 1515
+at = [1420, 60.59, 51.76]
+text = "Entrega «{quest:398}» a {npc:1515}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58"]
+note = "Polestar paso 58 «Brill», objetivo 6 (turnin)"
+
+[[step]]
+id = "und-176"
+do = "turnin"
+quest = 358
+npc = 1499
+at = [1420, 61.26, 50.84]
+chain = "und-s058-1499"
+text = "Entrega «{quest:358}» a {npc:1499}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58"]
+note = "Polestar paso 58 «Brill», objetivo 7 (turnin) · consejo de Polestar sin traducir: {npc:1499}, inside."
+
+[[step]]
+id = "und-177"
+do = "accept"
+quest = 359
+npc = 1499
+at = [1420, 61.26, 50.84]
+chain = "und-s058-1499"
+reqlevel = 6
+text = "Coge «{quest:359}» de {npc:1499}."
+why = "+200 XP · <1 min · desbloquea «{quest:360}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58"]
+note = "Polestar paso 58 «Brill», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-178"
+do = "buy"
+npc = 2118
+item = 2320
+count = 1
+at = [1420, 61.03, 52.37]
+text = "Compra {item:2320} a {npc:2118}."
+tip = "{item:2320} de {npc:2118}, para Gretchen Dedmar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58"]
+note = "Polestar paso 58 «Brill», objetivo 9 (buy)"
+
+[[step]]
+id = "und-179"
+do = "turnin"
+quest = 375
+npc = 1521
+at = [1420, 61.89, 52.73]
+optional = true
+text = "Entrega «{quest:375}» a {npc:1521}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58"]
+note = "Polestar paso 58 «Brill», objetivo 10 (turnin) · consejo de Polestar sin traducir: {npc:1521}, upstairs."
+
+[[step]]
+id = "und-180"
+do = "turnin"
+quest = 5650
+npc = 2129
+at = [1420, 61.57, 52.19]
+if = { class = ["PRIEST"] }
+text = "Entrega «{quest:5650}» a {npc:2129}, en el piso de arriba: las {item:16607}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58"]
+note = "Polestar paso 58 «Brill», objetivo 11 (turnin)"
+
+[[step]]
+id = "und-181-wr"
+do = "train"
+npc = 2131
+spells = [1715]
+at = [1420, 61.85, 52.54]
+if = { class = ["WARRIOR"] }
+reqlevel = 8
+text = "Entrena con {npc:2131}, el instructor de guerrero."
+tip = "1 hechizo hasta el nivel 8: nuevos {spell:1715}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58", "trainer:warrior"]
+note = "Polestar paso 58 «Brill», objetivo 12 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 8-8"
+
+[[step]]
+id = "und-181-pa"
+do = "train"
+npc = 246152
+spells = [3127]
+at = [1420, 60.22, 52.66]
+if = { class = ["PALADIN"] }
+reqlevel = 8
+text = "Entrena con {npc:246152}, el instructor de paladín."
+tip = "1 hechizo hasta el nivel 8: nuevos {spell:3127}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58", "trainer:paladin"]
+note = "Polestar paso 58 «Brill», objetivo 12 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 8-8"
+
+[[step]]
+id = "und-181-hu"
+do = "train"
+npc = 987
+spells = [3127, 5116]
+at = [1435, 47.26, 53.43]
+if = { class = ["HUNTER"] }
+reqlevel = 8
+text = "Entrena con {npc:987}, el instructor de cazador."
+tip = "2 hechizos hasta el nivel 8: nuevos {spell:3127}, {spell:5116}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58", "trainer:hunter"]
+note = "Polestar paso 58 «Brill», objetivo 12 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 8-8"
+
+[[step]]
+id = "und-181-ro"
+do = "train"
+npc = 2130
+spells = [5277]
+at = [1420, 61.75, 52.0]
+if = { class = ["ROGUE"] }
+reqlevel = 8
+text = "Entrena con {npc:2130}, el instructor de pícaro."
+tip = "1 hechizo hasta el nivel 8: nuevos {spell:5277}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58", "trainer:rogue"]
+note = "Polestar paso 58 «Brill», objetivo 12 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 8-8"
+
+[[step]]
+id = "und-181-pr"
+do = "train"
+npc = 2129
+spells = [139, 586]
+at = [1420, 61.57, 52.19]
+if = { class = ["PRIEST"] }
+reqlevel = 8
+text = "Entrena con {npc:2129}, el instructor de sacerdote."
+tip = "2 hechizos hasta el nivel 8: nuevos {spell:139}, {spell:586}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58", "trainer:priest"]
+note = "Polestar paso 58 «Brill», objetivo 12 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 8-8"
+
+[[step]]
+id = "und-181-sh"
+do = "train"
+npc = 986
+spells = [324, 5730]
+at = [1435, 48.19, 57.94]
+if = { class = ["SHAMAN"] }
+reqlevel = 8
+text = "Entrena con {npc:986}, el instructor de chamán."
+tip = "2 hechizos hasta el nivel 8: nuevos {spell:324}, {spell:5730}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58", "trainer:shaman"]
+note = "Polestar paso 58 «Brill», objetivo 12 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 8-8"
+
+[[step]]
+id = "und-181-mg"
+do = "train"
+npc = 2128
+spells = [118, 205, 5143]
+at = [1420, 61.97, 52.47]
+if = { class = ["MAGE"] }
+reqlevel = 8
+text = "Entrena con {npc:2128}, el instructor de mago."
+tip = "3 hechizos hasta el nivel 8: nuevos {spell:118}, {spell:5143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58", "trainer:mage"]
+note = "Polestar paso 58 «Brill», objetivo 12 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 8-8"
+
+[[step]]
+id = "und-181-wl"
+do = "train"
+npc = 2127
+spells = [980, 5782]
+at = [1420, 61.59, 52.4]
+if = { class = ["WARLOCK"] }
+reqlevel = 8
+text = "Entrena con {npc:2127}, el instructor de brujo."
+tip = "2 hechizos hasta el nivel 8: nuevos {spell:980}, {spell:5782}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#58", "trainer:warlock"]
+note = "Polestar paso 58 «Brill», objetivo 12 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 8-8"
+
+[[step]]
+id = "und-182"
+do = "accept"
+quest = 96895
+npc = 1738
+at = [1420, 61.4, 53.4]
+if = { minlevel = 10 }
+reqlevel = 10
+text = "Coge «{quest:96895}» de {npc:1738}."
+why = "+460 XP · <1 min · 2,5× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#59"]
+note = "Polestar paso 59 «Guardia de la Muerte Terrence», objetivo 1 (accept) · consejo de Polestar sin traducir: From level 10 {npc:1738} offers «{quest:96895}»: {npc:267009} waits at Linnea's camp, the next stop. Below 10 it waits for the {area:159} visit after {area:157}."
+
+[[step]]
+id = "und-183"
+do = "turnin"
+quest = 359
+npc = 1495
+at = [1420, 65.49, 60.25]
+chain = "und-s060-1495"
+text = "Entrega «{quest:359}» a {npc:1495}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#60"]
+note = "Polestar paso 60 «Guardia de la Muerte Linnea's camp», objetivo 1 (turnin) · consejo de Polestar sin traducir: Follow the road south-east from {area:159} past the zeppelin towers."
+
+[[step]]
+id = "und-184"
+do = "accept"
+quest = 360
+npc = 1495
+at = [1420, 65.49, 60.25]
+chain = "und-s060-1495"
+reqlevel = 6
+text = "Coge «{quest:360}» de {npc:1495}."
+why = "+390 XP · ~1,4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#60"]
+note = "Polestar paso 60 «Guardia de la Muerte Linnea's camp», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-185"
+do = "turnin"
+quest = 97558
+npc = 3549
+at = [1420, 65.43, 60.12]
+text = "Entrega «{quest:97558}» a {npc:3549}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#60"]
+note = "Polestar paso 60 «Guardia de la Muerte Linnea's camp», objetivo 3 (turnin)"
+
+[[step]]
+id = "und-186"
+do = "turnin"
+quest = 96895
+npc = 267009
+at = [1420, 65.93, 61.13]
+chain = "und-s061-267009"
+text = "Entrega «{quest:96895}» a {npc:267009}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#61"]
+note = "Polestar paso 61 «Hadric Harlson», objetivo 1 (turnin) · condición no expresable: llevas la misión 96895 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: {npc:267009} stands at the camp beside Linnea."
+
+[[step]]
+id = "und-187"
+do = "accept"
+quest = 96897
+npc = 267009
+at = [1420, 65.93, 61.13]
+chain = "und-s061-267009"
+reqlevel = 10
+text = "Coge «{quest:96897}» de {npc:267009}."
+why = "+2.236 XP · ~8,3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#61"]
+note = "Polestar paso 61 «Hadric Harlson», objetivo 2 (accept) · condición no expresable: llevas la misión 96895 (implícita: el paso es de esa misión) · datos no importados: pre"
+
+[[step]]
+id = "und-188"
+do = "accept"
+quest = 96898
+npc = 267009
+at = [1420, 65.93, 61.13]
+chain = "und-s061-267009"
+reqlevel = 10
+text = "Coge «{quest:96898}» de {npc:267009}."
+why = "+900 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#61"]
+note = "Polestar paso 61 «Hadric Harlson», objetivo 3 (accept) · condición no expresable: llevas la misión 96895 (implícita: el paso es de esa misión) · datos no importados: pre"
+
+[[step]]
+id = "und-189"
+do = "turnin"
+quest = 360
+npc = 1499
+at = [1420, 61.26, 50.84]
+text = "Entrega «{quest:360}» a {npc:1499}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#62"]
+note = "Polestar paso 62 «Magistrado Sevren», objetivo 1 (turnin) · consejo de Polestar sin traducir: Inside. · consejo de Polestar sin traducir: Back up the road to {area:159}, on the way north-west to {area:157}."
+
+[[step]]
+id = "und-190"
+do = "complete"
+quest = 362
+obj = 1
+at = [1420, 47.23, 40.02]
+optional = true
+text = "Consigue {item:2831} (1) de {npc:1657} para «{quest:362}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#63"]
+note = "Polestar paso 63 «Agamand Mills», objetivo 1 (collect) · consejo de Polestar sin traducir: Follow the road north-west to {area:157}. {npc:1657} walks the graveyard south of the mills; Nissa, Gregor and {npc:1656} haunt the mills themselves. Rattlecage and Cracked Skull Soldiers drop the ribs, Darkeye Bonecasters the skulls, and any of them may drop {item:2839}.\nCareful: Rotting undead and Darkeye Bonecasters near the Agamands can join a fight as adds."
+
+[[step]]
+id = "und-191"
+do = "complete"
+quest = 426
+obj = 1
+at = [1420, 45.84, 40.43]
+wps = [[1420, 44.8, 40.5, "Costilla con cortes"], [1420, 45.7, 38.6, "Costilla con cortes"], [1420, 46.4, 43.6, "Costilla con cortes"]]
+optional = true
+text = "Consigue {item:3162} (5) de {npc:1520} y {npc:1523} para «{quest:426}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#63"]
+note = "Polestar paso 63 «Agamand Mills», objetivo 2 (collect)"
+
+[[step]]
+id = "und-192"
+do = "complete"
+quest = 426
+obj = 2
+at = [1420, 46.77, 39.86]
+wps = [[1420, 47.6, 38.4, "Calavera ennegrecida"], [1420, 47.8, 42.0, "Calavera ennegrecida"], [1420, 50.2, 43.0, "Calavera ennegrecida"]]
+optional = true
+text = "Consigue {item:3163} (3) de {npc:1522} y {npc:260432} para «{quest:426}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#63"]
+note = "Polestar paso 63 «Agamand Mills», objetivo 3 (collect)"
+
+[[step]]
+id = "und-193"
+do = "complete"
+quest = 354
+obj = 2
+at = [1420, 49.74, 36.34]
+text = "Consigue {item:2828} (1) de {npc:1655} para «{quest:354}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#63"]
+note = "Polestar paso 63 «Agamand Mills», objetivo 4 (collect) · consejo de Polestar sin traducir: {npc:1655}; upstairs."
+
+[[step]]
+id = "und-194"
+do = "complete"
+quest = 354
+obj = 3
+at = [1420, 42.84, 32.54]
+text = "Consigue {item:2830} (1) de {npc:1656} para «{quest:354}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#63"]
+note = "Polestar paso 63 «Agamand Mills», objetivo 5 (collect)"
+
+[[step]]
+id = "und-195"
+do = "complete"
+quest = 354
+obj = 1
+at = [1420, 45.79, 29.39]
+text = "Consigue {item:2829} (1) de {npc:1654} para «{quest:354}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#63"]
+note = "Polestar paso 63 «Agamand Mills», objetivo 6 (collect)"
+
+[[step]]
+id = "und-196"
+do = "loot"
+item = 2839
+count = 1
+at = [1420, 46.17, 29.41]
+wps = [[1420, 47.0, 30.8, "Un carta para Yvette"], [1420, 44.6, 28.8, "Un carta para Yvette"], [1420, 44.6, 31.2, "Un carta para Yvette"]]
+optional = true
+text = "Consigue {item:2839}."
+tip = "{item:2839}, botín poco común."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#63"]
+note = "Polestar paso 63 «Agamand Mills», objetivo 7 (collect)"
+
+[[step]]
+id = "und-197"
+do = "accept"
+quest = 361
+optional = true
+reqlevel = 4
+text = "Usa {item:2839} para empezar «{quest:361}»."
+tip = "Solo si te salió la carta."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#63"]
+note = "Polestar paso 63 «Agamand Mills», objetivo 8 (accept)"
+
+[[step]]
+id = "und-198"
+do = "turnin"
+quest = 426
+npc = 1496
+at = [1420, 58.2, 51.45]
+optional = true
+chain = "und-s064-1496"
+text = "Entrega «{quest:426}» a {npc:1496}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#64"]
+note = "Polestar paso 64 «Brill», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:2128} (mages), {npc:2129} (priests), {npc:2127} (warlocks) and {npc:2130} (rogues) stand upstairs in the inn: take the stairs inside, the arrow cannot tell the floors apart."
+
+[[step]]
+id = "und-199"
+do = "accept"
+quest = 1819
+npc = 1496
+at = [1420, 58.2, 51.45]
+if = { class = ["WARRIOR"] }
+chain = "und-s064-1496"
+reqlevel = 10
+text = "Coge «{quest:1819}» de {npc:1496}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#64"]
+note = "Polestar paso 64 «Brill», objetivo 2 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "und-200"
+do = "turnin"
+quest = 362
+npc = 1500
+at = [1420, 61.72, 52.29]
+optional = true
+chain = "und-s064-1500"
+text = "Entrega «{quest:362}» a {npc:1500}, en la posada."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#64"]
+note = "Polestar paso 64 «Brill», objetivo 3 (turnin)"
+
+[[step]]
+id = "und-201"
+do = "turnin"
+quest = 354
+npc = 1500
+at = [1420, 61.72, 52.29]
+chain = "und-s064-1500"
+text = "Entrega «{quest:354}» a {npc:1500}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#64"]
+note = "Polestar paso 64 «Brill», objetivo 4 (turnin)"
+
+[[step]]
+id = "und-202"
+do = "accept"
+quest = 355
+npc = 1500
+at = [1420, 61.72, 52.29]
+optional = true
+chain = "und-s064-1500"
+reqlevel = 7
+text = "Coge «{quest:355}» de {npc:1500}."
+tip = "+85 XP · <1 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#64"]
+note = "Polestar paso 64 «Brill», objetivo 5 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "und-203"
+do = "turnin"
+quest = 361
+npc = 1560
+at = [1420, 61.58, 52.6]
+optional = true
+text = "Entrega «{quest:361}» a {npc:1560}, en la posada."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#64"]
+note = "Polestar paso 64 «Brill», objetivo 6 (turnin)"
+
+[[step]]
+id = "und-204"
+do = "accept"
+quest = 1881
+npc = 2128
+at = [1420, 61.97, 52.47]
+if = { class = ["MAGE"] }
+reqlevel = 10
+text = "Coge «{quest:1881}» de {npc:2128}, lo recoge {npc:4568}, en {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#64"]
+note = "Polestar paso 64 «Brill», objetivo 7 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "und-205"
+do = "accept"
+quest = 1478
+npc = 5724
+at = [1420, 61.62, 52.68]
+if = { class = ["WARLOCK"] }
+reqlevel = 10
+text = "Coge «{quest:1478}» de {npc:5724}, lo recoge {npc:5675}, en {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#64"]
+note = "Polestar paso 64 «Brill», objetivo 8 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "und-207"
+do = "turnin"
+quest = 355
+npc = 1499
+at = [1420, 61.26, 50.84]
+optional = true
+text = "Entrega «{quest:355}» a {npc:1499}, en el ayuntamiento."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#64"]
+note = "Polestar paso 64 «Brill», objetivo 10 (turnin)"
+
+[[step]]
+id = "und-208"
+do = "accept"
+quest = 96895
+npc = 1738
+at = [1420, 61.4, 53.4]
+reqlevel = 10
+text = "Coge «{quest:96895}» de {npc:1738}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#64"]
+note = "Polestar paso 64 «Brill», objetivo 11 (accept) · consejo de Polestar sin traducir: {npc:1738}, if you were below 10 on the last {area:159} visit."
+
+[[step]]
+id = "und-209"
+do = "complete"
+quest = 1819
+obj = 1
+at = [1420, 59.47, 48.28]
+if = { class = ["WARRIOR"] }
+text = "Mata {npc:6390} (1) para «{quest:1819}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#65"]
+note = "Polestar paso 65 ««Ulag, el cuchillero»», objetivo 1 (kill) · consejo de Polestar sin traducir: {npc:6390} waits in the mausoleum on the hill just north of town: open the gate and fight him."
+
+[[step]]
+id = "und-210"
+do = "turnin"
+quest = 1819
+npc = 1496
+at = [1420, 58.2, 51.45]
+if = { class = ["WARRIOR"] }
+text = "Entrega «{quest:1819}» a {npc:1496}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#65"]
+note = "Polestar paso 65 ««Ulag, el cuchillero»», objetivo 2 (turnin)"
+
+[[step]]
+id = "und-211"
+do = "turnin"
+quest = 1478
+npc = 5675
+at = [1458, 85.06, 25.99]
+if = { class = ["WARLOCK"] }
+chain = "und-s066-5675"
+text = "Entrega «{quest:1478}» a {npc:5675}, solo ofrece «{quest:1473}» cuando hayas entregado esta."
+tip = "Camina al sur desde {area:159} hasta {area:153} y baja a {map:1458}. {npc:5675} está en el {obj:36082}. El campamento Escarlata está justo al oeste de las ruinas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#66"]
+note = "Polestar paso 66 «Carendin Halgar», objetivo 1 (turnin)"
+
+[[step]]
+id = "und-212"
+do = "accept"
+quest = 1473
+npc = 5675
+at = [1458, 85.06, 25.99]
+if = { class = ["WARLOCK"] }
+chain = "und-s066-5675"
+reqlevel = 10
+text = "Coge «{quest:1473}» de {npc:5675}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#66"]
+note = "Polestar paso 66 «Carendin Halgar», objetivo 2 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "und-213"
+do = "turnin"
+quest = 1881
+npc = 4568
+at = [1458, 85.14, 10.03]
+if = { class = ["MAGE"] }
+chain = "und-s067-4568"
+text = "Entrega «{quest:1881}» a {npc:4568}."
+tip = "Camina al sur desde {area:159} hasta {area:153} y baja a {map:1458}. {npc:4568} está en el {obj:36082}. El campamento Escarlata está justo al oeste de las ruinas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#67"]
+note = "Polestar paso 67 «Anastasia Pozovenado», objetivo 1 (turnin)"
+
+[[step]]
+id = "und-214"
+do = "accept"
+quest = 1882
+npc = 4568
+at = [1458, 85.14, 10.03]
+if = { class = ["MAGE"] }
+chain = "und-s067-4568"
+reqlevel = 10
+text = "Coge «{quest:1882}» de {npc:4568}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#67"]
+note = "Polestar paso 67 «Anastasia Pozovenado», objetivo 2 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "und-215"
+do = "goto"
+at = [1420, 51.7, 67.6]
+if = { class = ["MAGE", "WARLOCK"] }
+text = "Ve a el campamento Escarlata."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#68"]
+note = "Polestar paso 68 «Back to Tirisfal Glades», objetivo 1 (goto)"
+
+[[step]]
+id = "und-220"
+do = "complete"
+quest = 1473
+obj = 1
+at = [1420, 51.06, 67.57]
+if = { class = ["WARLOCK"] }
+text = "Recoge {item:6285} (1) de {obj:37098} para «{quest:1473}»."
+tip = "El {obj:37098} está junto a {npc:1662}, en el extremo sur del campamento."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#70"]
+note = "Polestar paso 70 «Cofre de Perrine», objetivo 1 (collect)"
+
+[[step]]
+id = "und-224"
+do = "turnin"
+quest = 96895
+npc = 267009
+at = [1420, 65.93, 61.13]
+chain = "und-s072-267009"
+text = "Entrega «{quest:96895}» a {npc:267009}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#72"]
+note = "Polestar paso 72 «Hadric Harlson», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:267009} stands at {npc:1495}'s camp, on the road to the cult's farm."
+
+[[step]]
+id = "und-225"
+do = "accept"
+quest = 96897
+npc = 267009
+at = [1420, 65.93, 61.13]
+chain = "und-s072-267009"
+reqlevel = 10
+text = "Coge «{quest:96897}» de {npc:267009}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#72"]
+note = "Polestar paso 72 «Hadric Harlson», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-226"
+do = "accept"
+quest = 96898
+npc = 267009
+at = [1420, 65.93, 61.13]
+chain = "und-s072-267009"
+reqlevel = 10
+text = "Coge «{quest:96898}» de {npc:267009}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#72"]
+note = "Polestar paso 72 «Hadric Harlson», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-227"
+do = "complete"
+quest = 96898
+obj = 1
+at = [1420, 68.2, 64.6]
+text = "Recoge {item:275851} (12) de {obj:656366} para «{quest:96898}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#73"]
+note = "Polestar paso 73 «Tirisfal Glades: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: Follow the road south-east past {npc:1495}'s camp: the Cult of the Damned holds the farm just south-east of it. The Necrotic Crystal Fragments lie on the ground among the cultists, and the cultists carry some too."
+
+[[step]]
+id = "und-228"
+do = "complete"
+quest = 96897
+obj = 2
+at = [1420, 68.2, 64.6]
+text = "Mata {npc:275437} (8) para «{quest:96897}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#73"]
+note = "Polestar paso 73 «Tirisfal Glades: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "und-229"
+do = "complete"
+quest = 96897
+obj = 1
+at = [1420, 68.2, 64.6]
+text = "Mata {npc:267006} (8) para «{quest:96897}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#73"]
+note = "Polestar paso 73 «Tirisfal Glades: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "und-230"
+do = "complete"
+quest = 356
+obj = 1
+at = [1420, 74.16, 62.79]
+wps = [[1420, 75.9, 60.0, "Horror sangrante"], [1420, 76.7, 62.2, "Horror sangrante"], [1420, 78.2, 59.9, "Horror sangrante"]]
+text = "Mata {npc:1529} (8) para «{quest:356}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#74"]
+note = "Polestar paso 74 «Balnir Farmstead: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: Follow the road east. Bleeding Horrors and Wandering Spirits haunt the graves on the east side of the farmstead, where the «{quest:99142}» grows: Linnea wants eight of each.\nThe Scarlet Friars camp just north-east of the graves; {npc:1664} stands among them.\nThe spiders lurk in the woods at the far east end of the glades."
+
+[[step]]
+id = "und-231"
+do = "complete"
+quest = 356
+obj = 2
+at = [1420, 74.22, 61.47]
+wps = [[1420, 75.3, 60.0, "Espíritu deambulante"], [1420, 77.1, 61.2, "Espíritu deambulante"], [1420, 77.9, 59.0, "Espíritu deambulante"]]
+text = "Mata {npc:1532} (8) para «{quest:356}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#74"]
+note = "Polestar paso 74 «Balnir Farmstead: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "und-233"
+do = "complete"
+quest = 1882
+obj = 1
+at = [1420, 77.39, 61.76]
+if = { class = ["MAGE"] }
+text = "Recoge {item:7227} (1) de {obj:102985} para «{quest:1882}»."
+tip = "{item:7227}, en el jardín de la granja."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#74"]
+note = "Polestar paso 74 «Balnir Farmstead: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "und-236"
+do = "complete"
+quest = 369
+obj = 1
+at = [1420, 82.43, 54.77]
+wps = [[1420, 84.9, 51.8, "Veneno de nocturácnida sanguinaria"], [1420, 86.8, 54.9, "Veneno de nocturácnida sanguinaria"], [1420, 85.6, 48.3, "Veneno de nocturácnida sanguinaria"]]
+text = "Consigue {item:2872} (4) de {npc:1555} para «{quest:369}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#74"]
+note = "Polestar paso 74 «Balnir Farmstead: kill these as you meet them», objetivo 7 (collect)"
+
+[[step]]
+id = "und-237"
+do = "turnin"
+quest = 96897
+npc = 267009
+at = [1420, 65.93, 61.13]
+chain = "und-s075-267009"
+text = "Entrega «{quest:96897}» a {npc:267009}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#75"]
+note = "Polestar paso 75 «Guardia de la Muerte Linnea's camp», objetivo 1 (turnin)"
+
+[[step]]
+id = "und-238"
+do = "turnin"
+quest = 96898
+npc = 267009
+at = [1420, 65.93, 61.13]
+chain = "und-s075-267009"
+text = "Entrega «{quest:96898}» a {npc:267009}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#75"]
+note = "Polestar paso 75 «Guardia de la Muerte Linnea's camp», objetivo 2 (turnin)"
+
+[[step]]
+id = "und-240"
+do = "turnin"
+quest = 356
+npc = 1495
+at = [1420, 65.49, 60.25]
+text = "Entrega «{quest:356}» a {npc:1495}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#75"]
+note = "Polestar paso 75 «Guardia de la Muerte Linnea's camp», objetivo 4 (turnin)"
+
+[[step]]
+id = "und-241"
+do = "turnin"
+quest = 369
+npc = 1518
+at = [1420, 59.45, 52.4]
+chain = "und-s076-1518"
+text = "Entrega «{quest:369}» a {npc:1518}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76"]
+note = "Polestar paso 76 «Brill», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:1518}, inside. · consejo de Polestar sin traducir: Back up the road to {area:159}. {npc:2128} (mages), {npc:2129} (priests), {npc:2127} (warlocks) and {npc:2130} (rogues) stand upstairs in the inn: take the stairs inside, the arrow cannot tell the floors apart."
+
+[[step]]
+id = "und-242"
+do = "accept"
+quest = 492
+npc = 1518
+at = [1420, 59.45, 52.4]
+chain = "und-s076-1518"
+reqlevel = 6
+text = "Coge «{quest:492}» de {npc:1518}."
+why = "+875 XP · <1 min · 3,4× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76"]
+note = "Polestar paso 76 «Brill», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-243"
+do = "accept"
+quest = 445
+npc = 1518
+at = [1420, 59.45, 52.4]
+chain = "und-s076-1518"
+reqlevel = 9
+text = "Coge «{quest:445}» de {npc:1518}."
+why = "+625 XP · <1 min · 2,3× la mediana del 11-15"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76"]
+note = "Polestar paso 76 «Brill», objetivo 3 (accept) · consejo de Polestar sin traducir: {npc:1518}: for Renferrel at the {area:228}."
+
+[[step]]
+id = "und-245-wr"
+do = "train"
+npc = 2131
+spells = [2687, 6546]
+at = [1420, 61.85, 52.54]
+if = { class = ["WARRIOR"] }
+reqlevel = 10
+text = "Entrena con {npc:2131}, el instructor de guerrero."
+tip = "2 hechizos hasta el nivel 10: nuevos {spell:2687}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76", "trainer:warrior"]
+note = "Polestar paso 76 «Brill», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 9-11"
+
+[[step]]
+id = "und-245-pa"
+do = "train"
+npc = 246152
+spells = [633, 1022, 1311649]
+at = [1420, 60.22, 52.66]
+if = { class = ["PALADIN"] }
+reqlevel = 10
+text = "Entrena con {npc:246152}, el instructor de paladín."
+tip = "3 hechizos hasta el nivel 10: nuevos {spell:633}, {spell:1022}, {spell:1311649} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76", "trainer:paladin"]
+note = "Polestar paso 76 «Brill», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 9-11"
+
+[[step]]
+id = "und-245-hu"
+do = "train"
+npc = 987
+spells = [13165, 13549, 19883]
+at = [1435, 47.26, 53.43]
+if = { class = ["HUNTER"] }
+reqlevel = 10
+text = "Entrena con {npc:987}, el instructor de cazador."
+tip = "3 hechizos hasta el nivel 10: nuevos {spell:13165}, {spell:19883}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76", "trainer:hunter"]
+note = "Polestar paso 76 «Brill», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 9-11"
+
+[[step]]
+id = "und-245-ro"
+do = "train"
+npc = 2130
+spells = [674, 2983, 5171, 6770]
+at = [1420, 61.75, 52.0]
+if = { class = ["ROGUE"] }
+reqlevel = 10
+text = "Entrena con {npc:2130}, el instructor de pícaro."
+tip = "4 hechizos hasta el nivel 10: nuevos {spell:674}, {spell:2983}, {spell:5171} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76", "trainer:rogue"]
+note = "Polestar paso 76 «Brill», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 9-11"
+
+[[step]]
+id = "und-245-pr"
+do = "train"
+npc = 2129
+spells = [594, 2006, 8092]
+at = [1420, 61.57, 52.19]
+if = { class = ["PRIEST"] }
+reqlevel = 10
+text = "Entrena con {npc:2129}, el instructor de sacerdote."
+tip = "3 hechizos hasta el nivel 10: nuevos {spell:2006}, {spell:8092}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76", "trainer:priest"]
+note = "Polestar paso 76 «Brill», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 9-11"
+
+[[step]]
+id = "und-245-sh"
+do = "train"
+npc = 986
+spells = [8024, 8050, 8075]
+at = [1435, 48.19, 57.94]
+if = { class = ["SHAMAN"] }
+reqlevel = 10
+text = "Entrena con {npc:986}, el instructor de chamán."
+tip = "3 hechizos hasta el nivel 10: nuevos {spell:8024}, {spell:8050}, {spell:8075} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76", "trainer:shaman"]
+note = "Polestar paso 76 «Brill», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 9-11"
+
+[[step]]
+id = "und-245-mg"
+do = "train"
+npc = 2128
+spells = [122, 5505]
+at = [1420, 61.97, 52.47]
+if = { class = ["MAGE"] }
+reqlevel = 10
+text = "Entrena con {npc:2128}, el instructor de mago."
+tip = "2 hechizos hasta el nivel 10: nuevos {spell:122}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76", "trainer:mage"]
+note = "Polestar paso 76 «Brill», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 9-11"
+
+[[step]]
+id = "und-245-wl"
+do = "train"
+npc = 2127
+spells = [707, 1120, 6201]
+at = [1420, 61.59, 52.4]
+if = { class = ["WARLOCK"] }
+reqlevel = 10
+text = "Entrena con {npc:2127}, el instructor de brujo."
+tip = "3 hechizos hasta el nivel 10: nuevos {spell:1120}, {spell:6201}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76", "trainer:warlock"]
+note = "Polestar paso 76 «Brill», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 9-11"
+
+[[step]]
+id = "und-246"
+do = "turnin"
+quest = 492
+npc = 2211
+at = [1420, 61.94, 51.4]
+text = "Entrega «{quest:492}» a {npc:2211}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#76"]
+note = "Polestar paso 76 «Brill», objetivo 6 (turnin) · consejo de Polestar sin traducir: The {npc:2211}, in the inn's cellar."
+
+[[step]]
+id = "und-251"
+do = "accept"
+quest = 99152
+npc = 246389
+at = [1420, 21.96, 47.25]
+reqlevel = 10
+text = "Coge «{quest:99152}» de {npc:246389}."
+why = "+900 XP · ~6 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#77"]
+note = "Polestar paso 77 «Leonid Barthalomew el Venerado», objetivo 4 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "und-252"
+do = "accept"
+quest = 99153
+npc = 259190
+at = [1420, 20.17, 46.49]
+reqlevel = 10
+text = "Coge «{quest:99153}» de {npc:259190}."
+why = "+900 XP · ~3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#77"]
+note = "Polestar paso 77 «Leonid Barthalomew el Venerado», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-253"
+do = "turnin"
+quest = 91282
+npc = 246349
+at = [1420, 21.85, 45.23]
+if = { class = ["PALADIN"] }
+chain = "und-s078-246349"
+text = "Entrega «{quest:91282}» a {npc:246349}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#78"]
+note = "Polestar paso 78 «Paladin: «Castillo de Bandarion»», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:246349} waits at the keep's gate beside Leonid."
+
+[[step]]
+id = "und-254"
+do = "accept"
+quest = 91285
+npc = 246349
+at = [1420, 21.85, 45.23]
+if = { class = ["PALADIN"] }
+chain = "und-s078-246349"
+reqlevel = 7
+text = "Coge «{quest:91285}» de {npc:246349}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#78"]
+note = "Polestar paso 78 «Paladin: «Castillo de Bandarion»», objetivo 2 (accept)"
+
+[[step]]
+id = "und-255"
+do = "complete"
+quest = 91285
+obj = 1
+at = [1420, 25.66, 48.18]
+wps = [[1420, 26.8, 45.1, "Atacante Anca Vil"], [1420, 17.9, 53.4, "Atacante Anca Vil"], [1420, 16.6, 56.1, "Atacante Anca Vil"]]
+if = { class = ["PALADIN"] }
+text = "Mata {npc:250283} (8) para «{quest:91285}»."
+tip = "Atacantes Anca Vil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#79"]
+note = "Polestar paso 79 «Paladin: «Múrlocs a las puertas»», objetivo 1 (kill) · consejo de Polestar sin traducir: The Vile Fin murlocs lurk on the bluffs just east of the keep and in the camps around the lake to the south-west, on the way down to {area:16881}."
+
+[[step]]
+id = "und-256"
+do = "complete"
+quest = 91285
+obj = 2
+at = [1420, 25.63, 48.1]
+wps = [[1420, 26.3, 45.4, "Vidente Anca Vil"], [1420, 26.6, 43.6, "Vidente Anca Vil"], [1420, 28.0, 45.6, "Vidente Anca Vil"]]
+if = { class = ["PALADIN"] }
+text = "Mata {npc:250282} (8) para «{quest:91285}»."
+tip = "Videntes Anca Vil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#79"]
+note = "Polestar paso 79 «Paladin: «Múrlocs a las puertas»», objetivo 2 (kill)"
+
+[[step]]
+id = "und-257"
+do = "goto"
+at = [1420, 12.9, 65.7]
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#80"]
+note = "Polestar paso 80 «Shadowvale», objetivo 1 (goto) · destino de Polestar sin traducir: the basement under the ruined house · consejo de Polestar sin traducir: {area:16881} is the hollow at the west edge of the glades, south-west of the {area:16616}. Go down into the big basement under the ruined house (only a floor and a few pillars left, not the two-storey house): the bottles lie on its floor among the Shadowvale Lurchers and Mystics."
+
+[[step]]
+id = "und-258"
+do = "complete"
+quest = 95314
+obj = 1
+at = [1420, 11.8, 66.4]
+wps = [[1420, 9.2, 66.7, "Botella de elixir susurrante"], [1420, 9.5, 62.5, "Botella de elixir susurrante"], [1420, 9.3, 59.7, "Botella de elixir susurrante"]]
+text = "Recoge {item:268801} (8) de {obj:630871} para «{quest:95314}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#80"]
+note = "Polestar paso 80 «Shadowvale», objetivo 2 (collect)"
+
+[[step]]
+id = "und-259"
+do = "complete"
+quest = 99153
+obj = 1
+at = [1420, 9.74, 69.43]
+text = "Recoge {item:286269} (1) de {obj:694895} para «{quest:99153}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#80"]
+note = "Polestar paso 80 «Shadowvale», objetivo 3 (collect) · consejo de Polestar sin traducir: The {item:286269}, at the basement's south end."
+
+[[step]]
+id = "und-260"
+do = "complete"
+quest = 99152
+obj = 1
+at = [1420, 9.79, 69.02]
+wps = [[1420, 9.7, 67.3, "Hueso con resplandor tenue"], [1420, 9.4, 64.8, "Hueso con resplandor tenue"], [1420, 11.8, 65.6, "Hueso con resplandor tenue"]]
+text = "Consigue {item:286259} (6) de {npc:260428} y {npc:260432} para «{quest:99152}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#80"]
+note = "Polestar paso 80 «Shadowvale», objetivo 4 (collect) · consejo de Polestar sin traducir: The Shadowvale Lurchers and Mystics drop the bones; below ground."
+
+[[step]]
+id = "und-261"
+do = "turnin"
+quest = 99153
+npc = 259190
+at = [1420, 20.17, 46.49]
+text = "Entrega «{quest:99153}» a {npc:259190}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#81"]
+note = "Polestar paso 81 «Hilda la Rompedora and Ephram Barbaro», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back up to the forest's edge south of the keep's gate: {npc:246389} and {npc:259190} take the bones and the crystal."
+
+[[step]]
+id = "und-262"
+do = "turnin"
+quest = 99152
+npc = 246389
+at = [1420, 21.96, 47.25]
+text = "Entrega «{quest:99152}» a {npc:246389}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#81"]
+note = "Polestar paso 81 «Hilda la Rompedora and Ephram Barbaro», objetivo 2 (turnin)"
+
+[[step]]
+id = "und-263"
+do = "turnin"
+quest = 91285
+npc = 246349
+at = [1420, 21.85, 45.23]
+if = { class = ["PALADIN"] }
+chain = "und-s082-246349"
+text = "Entrega «{quest:91285}» a {npc:246349}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#82"]
+note = "Polestar paso 82 «Paladin: «Castillo de Bandarion»», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:259190} and {npc:246389} at the forest's edge, {npc:246349} at the gate, {npc:246393} and {npc:246394} nearby, {npc:246378} inside."
+
+[[step]]
+id = "und-264"
+do = "accept"
+quest = 91294
+npc = 246349
+at = [1420, 21.85, 45.23]
+if = { class = ["PALADIN"] }
+chain = "und-s082-246349"
+reqlevel = 8
+text = "Coge «{quest:91294}» de {npc:246349}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#82"]
+note = "Polestar paso 82 «Paladin: «Castillo de Bandarion»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-265"
+do = "note"
+npc = 246389
+at = [1420, 21.96, 47.25]
+if = { class = ["PALADIN"] }
+text = "Habla con {npc:246389}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#82"]
+note = "Polestar paso 82 «Paladin: «Castillo de Bandarion»», objetivo 3 (talk)"
+
+[[step]]
+id = "und-266"
+do = "note"
+npc = 246393
+at = [1420, 22.69, 44.7]
+if = { class = ["PALADIN"] }
+text = "Habla con {npc:246393}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#82"]
+note = "Polestar paso 82 «Paladin: «Castillo de Bandarion»», objetivo 4 (talk)"
+
+[[step]]
+id = "und-267"
+do = "note"
+npc = 246394
+at = [1420, 22.3, 49.6]
+if = { class = ["PALADIN"] }
+text = "Habla con {npc:246394}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#82"]
+note = "Polestar paso 82 «Paladin: «Castillo de Bandarion»», objetivo 5 (talk)"
+
+[[step]]
+id = "und-268"
+do = "turnin"
+quest = 91294
+npc = 246378
+at = [1420, 22.09, 44.66]
+if = { class = ["PALADIN"] }
+text = "Entrega «{quest:91294}» a {npc:246378}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#82"]
+note = "Polestar paso 82 «Paladin: «Castillo de Bandarion»», objetivo 6 (turnin) · consejo de Polestar sin traducir: {npc:246378}, inside the keep."
+
+[[step]]
+id = "und-269"
+do = "turnin"
+quest = 1473
+npc = 5675
+at = [1458, 85.06, 25.99]
+if = { class = ["WARLOCK"] }
+chain = "und-s083-5675"
+text = "Entrega «{quest:1473}» a {npc:5675}."
+tip = "{obj:1661} está bajo {area:153}, junto a las torres de los zepelines. {npc:5675} está en el {obj:36082}: usa las {item:6284} en el círculo de invocación a su lado y derrota al abisario. {npc:4606} está en el {obj:36070}. {npc:4568} también está en el {obj:36082}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#83"]
+note = "Polestar paso 83 «Entrañas», objetivo 1 (turnin)"
+
+[[step]]
+id = "und-270"
+do = "accept"
+quest = 1471
+npc = 5675
+at = [1458, 85.06, 25.99]
+if = { class = ["WARLOCK"] }
+chain = "und-s083-5675"
+reqlevel = 10
+text = "Coge «{quest:1471}» de {npc:5675}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#83"]
+note = "Polestar paso 83 «Entrañas», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "und-271"
+do = "use"
+item = 6284
+at = [1458, 86.6, 27.1]
+if = { class = ["WARLOCK"] }
+text = "Usa {item:6284}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#83"]
+note = "Polestar paso 83 «Entrañas», objetivo 3 (use)"
+
+[[step]]
+id = "und-272"
+do = "complete"
+quest = 1471
+obj = 1
+at = [1458, 86.6, 27.1]
+if = { class = ["WARLOCK"] }
+text = "Mata {npc:5676} (1) para «{quest:1471}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#83"]
+note = "Polestar paso 83 «Entrañas», objetivo 4 (kill)"
+
+[[step]]
+id = "und-273"
+do = "turnin"
+quest = 1471
+npc = 5675
+at = [1458, 85.06, 25.99]
+if = { class = ["WARLOCK"] }
+text = "Entrega «{quest:1471}» a {npc:5675}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#83"]
+note = "Polestar paso 83 «Entrañas», objetivo 5 (turnin)"
+
+[[step]]
+id = "und-274"
+do = "turnin"
+quest = 5658
+npc = 4606
+at = [1458, 49.26, 17.12]
+if = { class = ["PRIEST"] }
+text = "Entrega «{quest:5658}» a {npc:4606}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#83"]
+note = "Polestar paso 83 «Entrañas», objetivo 6 (turnin)"
+
+[[step]]
+id = "und-275"
+do = "turnin"
+quest = 1882
+npc = 4568
+at = [1458, 85.14, 10.03]
+if = { class = ["MAGE"] }
+text = "Entrega «{quest:1882}» a {npc:4568}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#83"]
+note = "Polestar paso 83 «Entrañas», objetivo 7 (turnin)"
+
+[[step]]
+id = "und-276"
+do = "goto"
+at = [1420, 59.4, 52.2]
+if = { class = ["PRIEST", "MAGE", "WARLOCK"] }
+text = "Ve a {area:159}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#84"]
+note = "Polestar paso 84 «Back to Tirisfal Glades», objetivo 1 (goto)"
+
+[[step]]
+id = "und-277"
+do = "turnin"
+quest = 95314
+npc = 2132
+at = [1420, 59.43, 52.19]
+text = "Entrega «{quest:95314}» a {npc:2132}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/undead/01-tirisfal-glades#85"]
+note = "Polestar paso 85 «Brill», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:2132}, inside."

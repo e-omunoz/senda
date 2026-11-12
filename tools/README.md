@@ -16,8 +16,9 @@ instalar nada con `pip`. Funciona igual en Windows y en Linux (CI). Los archivos
 | `enrich.py` / `verify.py` / `lookup.py` | Rellenan, comprueban y consultan datos de misiones con QuestieDB o forever-db |
 | `import_polestar.py` (+ `polestar/`) | Importa una guía compilada de Polestar a `data/guides/<id>/` (pasos `unverified`, guía solo a mano); ver `docs/IMPORT.md` |
 | `import_names.py` (+ `localenames.py`) | Pasa a `data/locale/<idioma>/*.json` los nombres que el cliente dio con `/senda volcar` (lee `SendaNamesDB` del archivo de SavedVariables que se le pasa) e informa de los cambios de nombre entre parches; los objetos del buscador (`litem`) van a `data/lookup/locale/<idioma>/items.json` y se compilan en `addon/Senda_Lookup`; ver «Nombres del juego» abajo |
-| `route_score.py` (+ `routescore/`) | Filtro de eficiencia: puntúa cada misión de una ruta (`data/scores/`) |
+| `route_score.py` (+ `routescore/`) | Filtro de eficiencia: puntúa cada misión de una ruta (`data/scores/`); bandas por facción (`bands.json` Alianza, `bands-horde.json` Horda) |
 | `audit_guides.py` | Audita las guías contra forever-db y sus correcciones (errores y dudas; [docs/AUDIT.md](../docs/AUDIT.md)) |
+| `gen_horde.py` | Rutas de la Horda: importa de Polestar las cinco salidas de raza y la cadena común 12-60, completa el entrenamiento de clase y aplica el filtro de eficiencia (`data/guides/<raza>-horde/`, `data/shared/h*.toml`); ver `docs/ROUTE-HORDE.md` |
 | `gen_travel.py` / `gen_dungeons.py` / `gen_rares.py` / `gen_lookup.py` | Generan `data/travel/`, `data/dungeons/`, `data/rares/` y `data/lookup/` desde Polestar, forever-db y tablas del cliente (ver `docs/TRAVEL.md`, `DUNGEONS.md`, `RARES.md`, `LOOKUP.md`) |
 | `gen_dungeon_journal.py` | Genera `data/dungeons/journal.json` (botín de mazmorra con estadísticas, jefes y piedras de encuentro) desde ForeverLevelingBiS (MIT, vía Polestar) y forever-db: `python tools/gen_dungeon_journal.py --polestar RUTA/polestar [--check]` (ver `docs/DUNGEONS.md`) |
 

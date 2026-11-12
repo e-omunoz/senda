@@ -1,0 +1,909 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/05-stonetalon-mountains
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h21-vallefresno-argenteos"
+title = "Vallefresno y Bosque de Argénteos"
+levels = [21, 23]
+map = 1440
+summary = "Ruta común de la Horda, 21-23: Vallefresno y Bosque de Argénteos."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h21-vallefresno-argenteos-001"
+do = "turnin"
+quest = 2458
+npc = 7233
+at = [1413, 55.44, 5.56]
+if = { class = ["ROGUE"] }
+chain = "h21-vallefresno-argenteos-s001-7233"
+text = "Entrega «{quest:2458}» a {npc:7233}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#1"]
+note = "Polestar paso 1 «Capataz Burbujita», objetivo 1 (turnin) · consejo de Polestar sin traducir: On the way north from Seereth's camp, keep east of the road to the Venture Co. tower north of the {area:382}. Before you go near Fizzule, use {item:8051} to fire two flares, then target him and /salute: he attacks anyone who comes in without signalling first."
+
+[[step]]
+id = "h21-vallefresno-argenteos-002"
+do = "accept"
+quest = 2478
+npc = 7233
+at = [1413, 55.44, 5.56]
+if = { class = ["ROGUE"] }
+optional = true
+chain = "h21-vallefresno-argenteos-s001-7233"
+reqlevel = 20
+text = "Coge «{quest:2478}» de {npc:7233}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#1"]
+note = "Polestar paso 1 «Capataz Burbujita», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h21-vallefresno-argenteos-003"
+do = "note"
+if = { class = ["ROGUE"] }
+text = "«{quest:2478}» es para nivel 23 o más: los zánganos de la torre son de nivel 25 y Gallywix es élite de nivel 23. Hazla cuando puedas, en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#1"]
+note = "Polestar paso 1 «Capataz Burbujita», objetivo 3 (note) · nota de Polestar traducida por Senda: «Misión: posible, pero no probable» is for level 23 or more: the tower's drones are 25 and Gallywix a 23 elite. Do it when you can, with a group, from the Class guide Poisons (Horde)."
+
+[[step]]
+id = "h21-vallefresno-argenteos-004"
+do = "turnin"
+quest = 6541
+npc = 8582
+at = [1413, 48.12, 5.42]
+text = "Entrega «{quest:6541}» a {npc:8582}."
+tip = "Desde el campamento de Seereth, dirígete al noreste a través de {map:1413} hasta el camino al norte del Cruce; los pícaros que vienen de la torre de Fizzule van hacia el oeste hasta él. {npc:8582} está en la torre de vigilancia de {area:1703}, donde el camino entra en {map:1440}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#2"]
+note = "Polestar paso 2 «Kadrak», objetivo 1 (turnin)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-005"
+do = "goto"
+at = [1440, 71.1, 68.1]
+text = "Sigue el camino del norte hacia {area:431}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#3"]
+note = "Polestar paso 3 «Into Ashenvale», objetivo 1 (goto)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-006"
+do = "getfp"
+npc = 12616
+node = "61"
+at = [1440, 73.18, 61.59]
+text = "Coge la ruta de vuelo de Puesto del Hachazo con {npc:12616}."
+tip = "{area:431} está justo al norte, subiendo por el camino. Entrando desde el sur, primero están el maestro de vuelo y el tablón de caza de {npc:12696} en {area:428}, y luego los mercaderes. {npc:12867}, en el aserradero, ofrece «Avanzada de Vallefresno»: déjala para la próxima visita a {map:1440}, a nivel 26."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#4"]
+note = "Polestar paso 4 «Splintertree Post», objetivo 1 (getfp)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-008"
+do = "turnin"
+quest = 6383
+npc = 12696
+at = [1440, 73.78, 61.46]
+chain = "h21-vallefresno-argenteos-s004-12696"
+text = "Entrega «{quest:6383}» a {npc:12696}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#4"]
+note = "Polestar paso 4 «Splintertree Post», objetivo 3 (turnin)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-009"
+do = "note"
+text = "Las presas de {npc:12696} (Ursangous, Shadumbra y Garrafilada) son para la próxima visita a {map:1440}, al 26."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#4"]
+note = "Polestar paso 4 «Splintertree Post», objetivo 4 (note) · nota de Polestar traducida por Senda: Senani Truenozón's hunt targets (Ursangous, Shadumbra, Sharptalon) are for the next Ashenvale visit, at 26."
+
+[[step]]
+id = "h21-vallefresno-argenteos-010"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#4"]
+note = "Polestar paso 4 «Splintertree Post», objetivo 5 (vendor)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-011"
+do = "accept"
+quest = 98251
+npc = 267214
+at = [1440, 40.4, 61.5]
+reqlevel = 18
+text = "Coge «{quest:98251}» de {npc:267214}."
+why = "+3.296 XP · ~17 min · desbloquea «{quest:98252}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#5"]
+note = "Polestar paso 5 «Va'xug Firefure», objetivo 1 (accept) · consejo de Polestar sin traducir: On the way west, {npc:267214} is stuck in a ravine south of the main road, south-east of {area:415}. Shadowhorn Stags and Ashenvale Bears roam the woods all around it."
+
+[[step]]
+id = "h21-vallefresno-argenteos-012"
+do = "complete"
+quest = 98251
+obj = 1
+at = [1440, 39.95, 63.48]
+wps = [[1440, 42.3, 59.7, "Venado Necraste"], [1440, 42.9, 68.5, "Venado Necraste"], [1440, 40.6, 72.9, "Venado Necraste"]]
+text = "Mata {npc:3817} (6) para «{quest:98251}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#5"]
+note = "Polestar paso 5 «Va'xug Firefure», objetivo 2 (kill)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-013"
+do = "complete"
+quest = 98251
+obj = 2
+at = [1440, 37.88, 62.21]
+wps = [[1440, 36.6, 69.2, "Oso de Vallefresno"], [1440, 41.5, 70.3, "Oso de Vallefresno"], [1440, 48.5, 64.2, "Oso de Vallefresno"]]
+text = "Mata {npc:3809} (6) para «{quest:98251}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#5"]
+note = "Polestar paso 5 «Va'xug Firefure», objetivo 3 (kill)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-014"
+do = "turnin"
+quest = 98251
+npc = 267214
+at = [1440, 40.46, 61.42]
+chain = "h21-vallefresno-argenteos-s005-267214"
+text = "Entrega «{quest:98251}» a {npc:267214}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#5"]
+note = "Polestar paso 5 «Va'xug Firefure», objetivo 4 (turnin)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-015"
+do = "accept"
+quest = 98252
+npc = 267214
+at = [1440, 40.46, 61.42]
+chain = "h21-vallefresno-argenteos-s005-267214"
+reqlevel = 18
+text = "Coge «{quest:98252}» de {npc:267214}."
+why = "+925 XP · ~2,6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#5"]
+note = "Polestar paso 5 «Va'xug Firefure», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h21-vallefresno-argenteos-016"
+do = "turnin"
+quest = 98252
+npc = 271181
+at = [1440, 38.2, 58.1]
+text = "Entrega «{quest:98252}» a {npc:271181}, en el camino."
+tip = "Guía el {npc:271181} de {npc:267214} fuera del barranco hasta el camino principal en menos de cuatro minutos; si se rompe la canalización, vuelve a hablar con {npc:267214}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#6"]
+note = "Polestar paso 6 ««A Void Path»», objetivo 1 (turnin)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-017"
+do = "getfp"
+npc = 11901
+node = "58"
+at = [1440, 12.24, 33.8]
+text = "Coge la ruta de vuelo de Avanzada de Zoram'gar con {npc:11901}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#7"]
+note = "Polestar paso 7 «Zoram'gar Outpost», objetivo 1 (getfp) · consejo de Polestar sin traducir: Head west along the main road across {map:1440}, past {area:415} (Alliance: keep to the road), to the coast. {area:2897} is on the {area:414} in the north-west: {npc:12719}, {npc:12721} and {npc:12757} stand around it, the {npc:12863} beside the flight master. Its other quests are for the next visit, at 26."
+
+[[step]]
+id = "h21-vallefresno-argenteos-018"
+do = "accept"
+quest = 6442
+npc = 12719
+at = [1440, 11.69, 34.91]
+reqlevel = 14
+text = "Coge «{quest:6442}» de {npc:12719}."
+why = "+3.728 XP · ~11 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#7"]
+note = "Polestar paso 7 «Zoram'gar Outpost», objetivo 2 (accept)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-019"
+do = "accept"
+quest = 6462
+npc = 12721
+at = [1440, 11.65, 34.85]
+reqlevel = 19
+text = "Coge «{quest:6462}» de {npc:12721}."
+why = "+1.950 XP · ~6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#7"]
+note = "Polestar paso 7 «Zoram'gar Outpost», objetivo 3 (accept) · consejo de Polestar sin traducir: {npc:12721}: the troll charms are in Thistlefur Hold, east of the outpost."
+
+[[step]]
+id = "h21-vallefresno-argenteos-020"
+do = "accept"
+quest = 216
+npc = 12757
+at = [1440, 11.9, 34.54]
+reqlevel = 21
+text = "Coge «{quest:216}» de {npc:12757}."
+why = "+6.054 XP · ~25 min · desbloquea «{quest:6621}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#7"]
+note = "Polestar paso 7 «Zoram'gar Outpost», objetivo 4 (accept)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-021"
+do = "accept"
+quest = 6641
+npc = 12717
+at = [1440, 12.06, 34.63]
+escort = true
+reqlevel = 20
+text = "Coge «{quest:6641}» de {npc:12717}."
+why = "+2.300 XP · ~7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#7"]
+note = "Polestar paso 7 «Zoram'gar Outpost», objetivo 5 (accept) · consejo de Polestar sin traducir: {npc:12717}: take it last, his escort starts at once."
+
+[[step]]
+id = "h21-vallefresno-argenteos-022"
+do = "goto"
+at = [1440, 9.6, 27.6]
+text = "Ve a brasero naga."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#8"]
+note = "Polestar paso 8 ««Vorsha la Azotadora»», objetivo 1 (goto) · consejo de Polestar sin traducir: {npc:12717} walks north up the strand to a naga brazier. Put the brazier out, then guard him through the naga waves until Vorsha is dead; the Wrathtail naga drop the heads {npc:12719} wants."
+
+[[step]]
+id = "h21-vallefresno-argenteos-023"
+do = "complete"
+quest = 6641
+escort = true
+text = "Completa «{quest:6641}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#8"]
+note = "Polestar paso 8 ««Vorsha la Azotadora»», objetivo 2 (complete) · objetivos (EN): Defeat Vorsha the Lasher"
+
+[[step]]
+id = "h21-vallefresno-argenteos-024"
+do = "complete"
+quest = 6442
+obj = 1
+at = [1440, 8.93, 29.1]
+wps = [[1440, 11.0, 28.9, "Cabeza Colafuria"], [1440, 11.0, 25.0, "Cabeza Colafuria"], [1440, 14.9, 25.8, "Cabeza Colafuria"]]
+text = "Consigue {item:5490} (20) de {npc:3712} y {npc:3711} y {npc:3713} y {npc:3715} y {npc:3717} y {npc:3944} para «{quest:6442}»."
+tip = "Todos los nagas Colafuria de la playa al norte del puesto sueltan cabezas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#9"]
+note = "Polestar paso 9 «Naga heads», objetivo 1 (collect)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-025"
+do = "turnin"
+quest = 6641
+npc = 12863
+at = [1440, 12.22, 34.22]
+text = "Entrega «{quest:6641}» a {npc:12863}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#10"]
+note = "Polestar paso 10 «Zoram'gar Outpost», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back to the outpost before heading east to Thistlefur."
+
+[[step]]
+id = "h21-vallefresno-argenteos-026"
+do = "turnin"
+quest = 6442
+npc = 12719
+at = [1440, 11.69, 34.91]
+text = "Entrega «{quest:6442}» a {npc:12719}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#10"]
+note = "Polestar paso 10 «Zoram'gar Outpost», objetivo 2 (turnin)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-027"
+do = "complete"
+quest = 216
+obj = 1
+at = [1440, 31.74, 38.0]
+wps = [[1440, 33.4, 37.1, "Vengador Piel de Cardo"], [1440, 36.7, 36.1, "Vengador Piel de Cardo"], [1440, 37.7, 34.2, "Vengador Piel de Cardo"]]
+text = "Mata {npc:3925} (12) para «{quest:216}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#11"]
+note = "Polestar paso 11 «Thistlefur Village», objetivo 1 (kill) · consejo de Polestar sin traducir: East of Zoram'gar, the Thistlefur furbolgs fill the village and the hills around their hold.\nCareful: A Shaman at 15% health or lower runs off to find help, which can pull extra furbolgs."
+
+[[step]]
+id = "h21-vallefresno-argenteos-028"
+do = "complete"
+quest = 216
+obj = 2
+at = [1440, 32.1, 38.93]
+wps = [[1440, 33.9, 38.9, "Chamán Piel de Cardo"], [1440, 35.9, 36.9, "Chamán Piel de Cardo"], [1440, 38.0, 35.0, "Chamán Piel de Cardo"]]
+text = "Mata {npc:3924} (12) para «{quest:216}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#11"]
+note = "Polestar paso 11 «Thistlefur Village», objetivo 2 (kill)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-029"
+do = "complete"
+quest = 6462
+obj = 1
+at = [1440, 39.88, 34.17]
+wps = [[1440, 41.5, 34.9, "Talismán trol"], [1440, 40.6, 31.6, "Talismán trol"]]
+text = "Recoge {item:16602} (8) de {obj:178144} para «{quest:6462}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#12"]
+note = "Polestar paso 12 «Thistlefur Hold», objetivo 1 (collect) · consejo de Polestar sin traducir: Inside the hold, Troll Chests lie along the tunnels. {npc:12818} is held deep inside: free him and protect him all the way out, then he runs home to {area:428}.\nCareful: Two scripted ambushes occur, each made up of three Thistlefurs (a Shaman, a Pathfinder and an Avenger, Ursa or Den Watcher): the first when you come back to the tunnel's fork inside the cave, the second just beyond the gate where {npc:3987} roams."
+
+[[step]]
+id = "h21-vallefresno-argenteos-030"
+do = "accept"
+quest = 6482
+npc = 12818
+at = [1440, 41.53, 34.49]
+escort = true
+reqlevel = 19
+text = "Coge «{quest:6482}» de {npc:12818}."
+why = "+2.400 XP · ~7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#12"]
+note = "Polestar paso 12 «Thistlefur Hold», objetivo 2 (accept) · consejo de Polestar sin traducir: {npc:12818}, below ground."
+
+[[step]]
+id = "h21-vallefresno-argenteos-031"
+do = "complete"
+quest = 6482
+escort = true
+text = "Completa «{quest:6482}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#12"]
+note = "Polestar paso 12 «Thistlefur Hold», objetivo 3 (complete) · objetivos (EN): Escort Ruul from the Thistlefurs."
+
+[[step]]
+id = "h21-vallefresno-argenteos-032"
+do = "turnin"
+quest = 216
+npc = 12757
+at = [1440, 11.9, 34.54]
+text = "Entrega «{quest:216}» a {npc:12757}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#13"]
+note = "Polestar paso 13 «Zoram'gar Outpost», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back west to Zoram'gar. {npc:12757} offers King of the Foulweald now; leave it for the next {map:1440} visit at 26, when the walk east passes the Foulweald."
+
+[[step]]
+id = "h21-vallefresno-argenteos-033"
+do = "turnin"
+quest = 6462
+npc = 12721
+at = [1440, 11.65, 34.85]
+text = "Entrega «{quest:6462}» a {npc:12721}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#13"]
+note = "Polestar paso 13 «Zoram'gar Outpost», objetivo 2 (turnin)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-034"
+do = "fly"
+zone = 1440
+text = "Vuela a Puesto del Hachazo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#14"]
+note = "Polestar paso 14 «Splintertree Post», objetivo 1 (fly) · consejo de Polestar sin traducir: Fly to {area:431}: {npc:12837} waits in the inn for news of Ruul."
+
+[[step]]
+id = "h21-vallefresno-argenteos-035"
+do = "turnin"
+quest = 6482
+npc = 12837
+at = [1440, 74.11, 60.92]
+text = "Entrega «{quest:6482}» a {npc:12837}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#14"]
+note = "Polestar paso 14 «Splintertree Post», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:12837}, inside the inn."
+
+[[step]]
+id = "h21-vallefresno-argenteos-036"
+do = "goto"
+at = [1440, 73.26, 61.67]
+text = "Ve al maestro de vuelo de {area:431}."
+tip = "Sal de la posada hacia el maestro de vuelo de {area:431} y vuela a {area:1637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#15"]
+note = "Polestar paso 15 «Fly to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-037"
+do = "fly"
+zone = 1454
+text = "Vuela a {area:1637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#15"]
+note = "Polestar paso 15 «Fly to Orgrimmar», objetivo 2 (fly)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-038-dr"
+do = "train"
+npc = 3034
+spells = [2908, 5221]
+at = [1456, 77.14, 27.02]
+if = { class = ["DRUID"] }
+reqlevel = 22
+text = "Entrena con {npc:3034}, el instructor de druida."
+tip = "2 hechizos hasta el nivel 22: nuevos {spell:2908}, {spell:5221}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#16", "trainer:druid"]
+note = "Polestar paso 16 «Druid trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 21-22"
+
+[[step]]
+id = "h21-vallefresno-argenteos-039-wr"
+do = "train"
+npc = 3353
+spells = [674, 845, 5246, 6192, 6547, 20230, 402927, 1240193]
+at = [1454, 79.79, 31.42]
+if = { class = ["WARRIOR"] }
+reqlevel = 22
+text = "Entrena con {npc:3353}, el instructor de guerrero."
+tip = "8 hechizos hasta el nivel 22: nuevos {spell:674}, {spell:845}, {spell:5246} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#17", "trainer:warrior"]
+note = "Polestar paso 17 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 19-22"
+
+[[step]]
+id = "h21-vallefresno-argenteos-039-hu"
+do = "train"
+npc = 3352
+spells = [674, 781, 1499, 3043, 3111, 5118, 14274, 14282, 14323, 19434]
+at = [1454, 66.05, 18.53]
+if = { class = ["HUNTER"] }
+reqlevel = 22
+text = "Entrena con {npc:3352}, el instructor de cazador."
+tip = "10 hechizos hasta el nivel 22: nuevos {spell:674}, {spell:781}, {spell:1499} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#17", "trainer:hunter"]
+note = "Polestar paso 17 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 19-22"
+
+[[step]]
+id = "h21-vallefresno-argenteos-039-ro"
+do = "train"
+npc = 3327
+spells = [1725, 1785, 1856, 1943, 2590, 3420, 8631]
+at = [1454, 42.69, 51.48]
+if = { class = ["ROGUE"] }
+reqlevel = 22
+text = "Entrena con {npc:3327}, el instructor de pícaro."
+tip = "7 hechizos hasta el nivel 22: nuevos {spell:1725}, {spell:1856}, {spell:1943} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#17", "trainer:rogue"]
+note = "Polestar paso 17 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 19-22"
+
+[[step]]
+id = "h21-vallefresno-argenteos-039-pr"
+do = "train"
+npc = 5994
+spells = [453, 2010, 2055, 2061, 2096, 2944, 6075, 6346, 7128, 8103, 9484, 9578, 14914]
+at = [1454, 35.72, 86.9]
+if = { class = ["PRIEST"] }
+reqlevel = 22
+text = "Entrena con {npc:5994}, el instructor de sacerdote."
+tip = "13 hechizos hasta el nivel 22: nuevos {spell:453}, {spell:2061}, {spell:2096} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#17", "trainer:priest"]
+note = "Polestar paso 17 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 19-22"
+
+[[step]]
+id = "h21-vallefresno-argenteos-039-sh"
+do = "train"
+npc = 3403
+spells = [131, 2645, 2870, 8004, 8033, 8056, 8166, 36936, 66842, 408342, 437009]
+at = [1454, 37.84, 36.45]
+if = { class = ["SHAMAN"] }
+reqlevel = 22
+text = "Entrena con {npc:3403}, el instructor de chamán."
+tip = "11 hechizos hasta el nivel 22: nuevos {spell:131}, {spell:2645}, {spell:2870} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#17", "trainer:shaman"]
+note = "Polestar paso 17 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 19-22"
+
+[[step]]
+id = "h21-vallefresno-argenteos-039-mg"
+do = "train"
+npc = 5882
+spells = [10, 543, 990, 1463, 1953, 2138, 2948, 5506, 6143, 7322, 8437, 12051, 12824]
+at = [1454, 38.35, 85.56]
+if = { class = ["MAGE"] }
+reqlevel = 22
+text = "Entrena con {npc:5882}, el instructor de mago."
+tip = "13 hechizos hasta el nivel 22: nuevos {spell:10}, {spell:543}, {spell:1463} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#17", "trainer:mage"]
+note = "Polestar paso 17 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 19-22"
+
+[[step]]
+id = "h21-vallefresno-argenteos-039-wl"
+do = "train"
+npc = 3324
+spells = [126, 698, 699, 706, 1094, 3698, 5740, 6202, 6205, 440892]
+at = [1454, 47.98, 45.93]
+if = { class = ["WARLOCK"] }
+reqlevel = 22
+text = "Entrena con {npc:3324}, el instructor de brujo."
+tip = "10 hechizos hasta el nivel 22: nuevos {spell:126}, {spell:698}, {spell:706} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#17", "trainer:warlock"]
+note = "Polestar paso 17 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 19-22"
+
+[[step]]
+id = "h21-vallefresno-argenteos-040"
+do = "turnin"
+quest = 1512
+npc = 5875
+at = [1454, 48.25, 45.28]
+if = { class = ["WARLOCK"] }
+chain = "h21-vallefresno-argenteos-s018-5875"
+text = "Entrega «{quest:1512}» a {npc:5875}."
+tip = "{npc:5875} está en {obj:172960}. Usa {item:6626} en el círculo de invocación de allí y derrota a la súcubo para atarla."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#18"]
+note = "Polestar paso 18 ««El vínculo»», objetivo 1 (turnin)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-041"
+do = "accept"
+quest = 1513
+npc = 5875
+at = [1454, 48.25, 45.28]
+if = { class = ["WARLOCK"] }
+chain = "h21-vallefresno-argenteos-s018-5875"
+reqlevel = 20
+text = "Coge «{quest:1513}» de {npc:5875}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#18"]
+note = "Polestar paso 18 ««El vínculo»», objetivo 2 (accept) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "h21-vallefresno-argenteos-042"
+do = "use"
+item = 6626
+at = [1454, 49.4, 50.0]
+if = { class = ["WARLOCK"] }
+text = "Usa {item:6626}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#18"]
+note = "Polestar paso 18 ««El vínculo»», objetivo 3 (use)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-043"
+do = "complete"
+quest = 1513
+obj = 1
+at = [1454, 49.4, 50.0]
+if = { class = ["WARLOCK"] }
+text = "Mata {npc:5677} (1) para «{quest:1513}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#18"]
+note = "Polestar paso 18 ««El vínculo»», objetivo 4 (kill)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-044"
+do = "turnin"
+quest = 1513
+npc = 5875
+at = [1454, 48.25, 45.28]
+if = { class = ["WARLOCK"] }
+text = "Entrega «{quest:1513}» a {npc:5875}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#18"]
+note = "Polestar paso 18 ««El vínculo»», objetivo 5 (turnin)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-045"
+do = "turnin"
+quest = 2478
+npc = 3401
+at = [1454, 43.05, 53.74]
+if = { class = ["ROGUE"] }
+optional = true
+chain = "h21-vallefresno-argenteos-s019-3401"
+text = "Entrega «{quest:2478}» a {npc:3401}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#19"]
+note = "Polestar paso 19 «Shenthul», objetivo 1 (turnin) · condición no expresable: tienes lista la misión 2478 · consejo de Polestar sin traducir: If you did «{quest:2478}» with a group, {npc:3401} in the {obj:172960} takes it now."
+
+[[step]]
+id = "h21-vallefresno-argenteos-046"
+do = "accept"
+quest = 2479
+npc = 3401
+at = [1454, 43.05, 53.74]
+if = { class = ["ROGUE"] }
+optional = true
+chain = "h21-vallefresno-argenteos-s019-3401"
+reqlevel = 20
+text = "Coge «{quest:2479}» de {npc:3401}."
+tip = "{npc:2391}, en {area:272}, enseña Venenos: guárdala."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#19"]
+note = "Polestar paso 19 «Shenthul», objetivo 2 (accept) · condición no expresable: tienes lista la misión 2478 · datos no importados: pre"
+
+[[step]]
+id = "h21-vallefresno-argenteos-047"
+do = "goto"
+at = [1411, 50.8, 13.5]
+text = "Ve al zepelín a {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#20"]
+note = "Polestar paso 20 «Zeppelin to Undercity», objetivo 1 (goto)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-048-pa"
+do = "train"
+npc = 244808
+spells = [19746, 20164, 20305]
+at = [1420, 31.1, 66.41]
+if = { class = ["PALADIN"] }
+reqlevel = 22
+text = "Entrena con {npc:244808}, el instructor de paladín."
+tip = "3 hechizos hasta el nivel 22: nuevos {spell:19746}, {spell:20164}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#21", "trainer:paladin"]
+note = "Polestar paso 21 «Brill», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 21-22"
+
+[[step]]
+id = "h21-vallefresno-argenteos-049"
+do = "loot"
+item = 15882
+count = 1
+at = [1421, 29.56, 29.2]
+if = { class = ["DRUID"], race = ["Tauren", "Skyborne"] }
+optional = true
+text = "Recoge {item:15882} de {obj:177790}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#22"]
+note = "Polestar paso 22 «Arcón extraño», objetivo 1 (collect) · condición no expresable: llevas la misión 30 · consejo de Polestar sin traducir: {item:15882}, from the {obj:177790}. · consejo de Polestar sin traducir: From the zeppelin towers, run south into Silverpine and west past the {area:240} to the coast: the {obj:177790} lies at the bottom of very deep water there, beside an air fissure where you can breathe. Watch your breath on the way down. It holds the {item:15882} for Trial of the Sea Lion. Then on to the {area:228}."
+
+[[step]]
+id = "h21-vallefresno-argenteos-050"
+do = "accept"
+quest = 493
+npc = 1937
+at = [1421, 42.8, 40.86]
+reqlevel = 19
+text = "Coge «{quest:493}» de {npc:1937}."
+tip = "Sigue el camino a través del Bosque de Argénteos hasta {area:228}: desde las torres de zepelín, al sur a través de Tirisfal; desde {obj:177790}, al sureste desde la costa hasta el camino. {npc:2121} y {npc:1937} están junto a la entrada de la cripta."
+why = "+1.150 XP · <1 min · 8,0× la mediana del 21-25"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#23"]
+note = "Polestar paso 23 «Sepulcher», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:1937}: Lydon in {area:272}, next guide."
+
+[[step]]
+id = "h21-vallefresno-argenteos-051"
+do = "accept"
+quest = 95981
+npc = 2121
+at = [1421, 43.98, 40.93]
+optional = true
+chain = "h21-vallefresno-argenteos-s023-2121"
+reqlevel = 10
+text = "Coge «{quest:95981}» de {npc:2121}."
+tip = "+2.982 XP · ~13 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#23"]
+note = "Polestar paso 23 «Sepulcher», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h21-vallefresno-argenteos-052"
+do = "accept"
+quest = 516
+npc = 2121
+at = [1421, 43.98, 40.93]
+chain = "h21-vallefresno-argenteos-s023-2121"
+reqlevel = 16
+text = "Coge «{quest:516}» de {npc:2121}."
+why = "+2.510 XP · ~7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#23"]
+note = "Polestar paso 23 «Sepulcher», objetivo 3 (accept) · consejo de Polestar sin traducir: {npc:2121}: «{quest:516}», south-east of {area:233}."
+
+[[step]]
+id = "h21-vallefresno-argenteos-053"
+do = "turnin"
+quest = 6324
+npc = 6389
+at = [1421, 43.42, 41.68]
+if = { race = ["Scourge"] }
+text = "Entrega «{quest:6324}» a {npc:6389}."
+tip = "{npc:6389} está justo al oeste de la entrada de la cripta: entrégale {item:16210} de {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#24"]
+note = "Polestar paso 24 «Guardia de la Muerte Podrig», objetivo 1 (turnin) · condición no expresable: llevas la misión 6324 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-054"
+do = "complete"
+quest = 95981
+obj = 2
+at = [1421, 64.85, 49.82]
+wps = [[1421, 65.2, 52.3, "Zahorí Dalaran"], [1421, 65.4, 56.4, "Zahorí Dalaran"], [1421, 63.8, 58.3, "Zahorí Dalaran"]]
+optional = true
+text = "Mata {npc:1889} (8) para «{quest:95981}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#25"]
+note = "Polestar paso 25 «Silverpine Forest: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: South down the road past Pyrewood: Dalaran Watchers and Wizards patrol the roads around {area:233}, and south-west of the town the Ravenclaw Drudgers and Guardians haunt the ruins of «{quest:516}» in the south-east of the forest."
+
+[[step]]
+id = "h21-vallefresno-argenteos-055"
+do = "complete"
+quest = 95981
+obj = 1
+at = [1421, 65.17, 56.32]
+wps = [[1421, 65.7, 58.5, "Vigilante Dalaran"], [1421, 63.5, 59.5, "Vigilante Dalaran"], [1421, 64.6, 62.8, "Vigilante Dalaran"]]
+optional = true
+text = "Mata {npc:1888} (8) para «{quest:95981}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#25"]
+note = "Polestar paso 25 «Silverpine Forest: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-056"
+do = "complete"
+quest = 516
+obj = 2
+at = [1421, 59.66, 69.88]
+wps = [[1421, 59.4, 71.0, "Guardián Corvozarpa"], [1421, 57.6, 70.7, "Guardián Corvozarpa"]]
+text = "Mata {npc:1973} (6) para «{quest:516}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#25"]
+note = "Polestar paso 25 «Silverpine Forest: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-057"
+do = "complete"
+quest = 516
+obj = 1
+at = [1421, 59.64, 70.76]
+wps = [[1421, 57.9, 70.6, "Esclavo Corvozarpa"]]
+text = "Mata {npc:1974} (6) para «{quest:516}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#25"]
+note = "Polestar paso 25 «Silverpine Forest: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-058"
+do = "accept"
+quest = 95884
+reqlevel = 20
+text = "Usa {item:271343} para empezar «{quest:95884}»."
+tip = "{item:271343}, de un {npc:1973}."
+why = "+190 XP · <1 min · desbloquea «{quest:95885}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#26"]
+note = "Polestar paso 26 ««El Desafío de Beren»», objetivo 1 (accept) · consejo de Polestar sin traducir: The Ravenclaw undead haunt the ruins of «{quest:516}», east of the road in the south-east of the forest; a {npc:1973} drops the {item:271343} that leads to the {obj:645153}.\nAn elite spirit (20) often stands beside the {obj:645153}: pull the Ravenclaws away from the stone before you fight them."
+
+[[step]]
+id = "h21-vallefresno-argenteos-059"
+do = "turnin"
+quest = 95884
+at = [1421, 58.1, 69.8]
+text = "Entrega «{quest:95884}» en {obj:645153}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#26"]
+note = "Polestar paso 26 ««El Desafío de Beren»», objetivo 2 (turnin)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-060"
+do = "accept"
+quest = 95883
+at = [1421, 58.12, 69.77]
+reqlevel = 20
+text = "Coge «{quest:95883}» ({obj:645153})."
+why = "+1.400 XP · <1 min · desbloquea «{quest:95885}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#26"]
+note = "Polestar paso 26 ««El Desafío de Beren»», objetivo 3 (accept) · datos no importados: pre · consejo de Polestar sin traducir: The {obj:645153} offers «{quest:95883}» once the {item:271343} is in; below ground."
+
+[[step]]
+id = "h21-vallefresno-argenteos-061"
+do = "complete"
+quest = 95883
+obj = 1
+at = [1421, 58.1, 69.9]
+text = "Consigue {item:271350} (1) de {npc:1973} para «{quest:95883}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#26"]
+note = "Polestar paso 26 ««El Desafío de Beren»», objetivo 4 (collect) · consejo de Polestar sin traducir: {item:271350}, from the Tortured Souls among the ruins; below ground."
+
+[[step]]
+id = "h21-vallefresno-argenteos-062"
+do = "turnin"
+quest = 95883
+at = [1421, 58.12, 69.77]
+text = "Entrega «{quest:95883}» en {obj:645153}."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#26"]
+note = "Polestar paso 26 ««El Desafío de Beren»», objetivo 5 (turnin)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-063"
+do = "goto"
+at = [1421, 58.1, 69.8]
+text = "Ve a {obj:645153}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#27"]
+note = "Polestar paso 27 ««La ofrenda de sangre»», objetivo 1 (goto) · consejo de Polestar sin traducir: The quest hands you a {item:210713}: use it beside the {obj:645153} to offer your blood, then kill the elite spirit that answers.\n«{quest:95883}» is elite: grouping up is advised."
+
+[[step]]
+id = "h21-vallefresno-argenteos-064"
+do = "accept"
+quest = 95885
+at = [1421, 58.12, 69.77]
+optional = true
+reqlevel = 20
+text = "Coge «{quest:95885}» ({obj:645153})."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#27"]
+note = "Polestar paso 27 ««La ofrenda de sangre»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h21-vallefresno-argenteos-065"
+do = "use"
+item = 210713
+at = [1421, 58.1, 69.8]
+optional = true
+text = "Usa {item:210713}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#27"]
+note = "Polestar paso 27 ««La ofrenda de sangre»», objetivo 3 (use) · consejo de Polestar sin traducir: {item:210713}, beside the {obj:645153}: summons the elite spirit."
+
+[[step]]
+id = "h21-vallefresno-argenteos-066"
+do = "complete"
+quest = 95885
+obj = 3
+at = [1421, 58.07, 69.89]
+optional = true
+text = "Mata {npc:212753} (1) para «{quest:95885}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#27"]
+note = "Polestar paso 27 ««La ofrenda de sangre»», objetivo 4 (kill)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-067"
+do = "turnin"
+quest = 95885
+at = [1421, 58.12, 69.77]
+optional = true
+text = "Entrega «{quest:95885}» en {obj:645153}."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#27"]
+note = "Polestar paso 27 ««La ofrenda de sangre»», objetivo 5 (turnin)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-068"
+do = "goto"
+at = [1424, 20.8, 47.4]
+text = "Sigue el camino del este hacia {area:285}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#28"]
+note = "Polestar paso 28 «Into Hillsbrad», objetivo 1 (goto)"
+
+[[step]]
+id = "h21-vallefresno-argenteos-069"
+do = "accept"
+quest = 494
+npc = 2214
+at = [1424, 20.79, 47.4]
+reqlevel = 19
+text = "Coge «{quest:494}» de {npc:2214}, Darthalia en {area:272}."
+tip = "Vuelve al camino hacia el sur. Donde gira al este hacia {area:287}, {npc:2214} espera en {area:285}."
+why = "+775 XP · <1 min · 9,7× la mediana del 21-25"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/05-stonetalon-mountains#29"]
+note = "Polestar paso 29 «Southpoint Tower», objetivo 1 (accept)"

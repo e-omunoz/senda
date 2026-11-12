@@ -1,0 +1,1203 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/04-the-barrens
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h24-baldios-espolon"
+title = "Los Baldíos y Sierra Espolón"
+levels = [24, 26]
+map = 1413
+summary = "Ruta común de la Horda, 24-26: Los Baldíos y Sierra Espolón."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h24-baldios-espolon-001"
+do = "goto"
+at = [1454, 45.3, 63.7]
+if = { race = ["Tauren", "Skyborne"] }
+optional = true
+text = "Ve al maestro de vuelo de {map:1454}."
+tip = "Vuela primero a {area:1638}: dos de sus ancianos dan misiones que se hacen en los recorridos de esta guía y de la siguiente."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#1"]
+note = "Polestar paso 1 «Fly to Thunder Bluff», objetivo 1 (goto) · condición no expresable: no llevas la misión 97538"
+
+[[step]]
+id = "h24-baldios-espolon-002"
+do = "fly"
+zone = 1454
+if = { race = ["Tauren", "Skyborne"] }
+optional = true
+text = "Vuela a Cima del Trueno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#1"]
+note = "Polestar paso 1 «Fly to Thunder Bluff», objetivo 2 (fly) · condición no expresable: no llevas la misión 97538"
+
+[[step]]
+id = "h24-baldios-espolon-003"
+do = "goto"
+at = [1454, 45.3, 63.7]
+if = { class = ["PALADIN"] }
+optional = true
+text = "Ve al maestro de vuelo de {map:1454}."
+tip = "Vuela primero a {area:1638}: dos de sus ancianos dan misiones que se hacen en los recorridos de esta guía y de la siguiente."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#2"]
+note = "Polestar paso 2 «Fly to Thunder Bluff», objetivo 1 (goto) · condición no expresable: no llevas la misión 97538"
+
+[[step]]
+id = "h24-baldios-espolon-004"
+do = "fly"
+zone = 1454
+if = { class = ["PALADIN"] }
+optional = true
+text = "Vuela a Cima del Trueno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#2"]
+note = "Polestar paso 2 «Fly to Thunder Bluff», objetivo 2 (fly) · condición no expresable: no llevas la misión 97538"
+
+[[step]]
+id = "h24-baldios-espolon-005"
+do = "goto"
+at = [1454, 45.3, 63.7]
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"], race = ["Orc", "Scourge", "Troll"] }
+optional = true
+text = "Ve al maestro de vuelo de {map:1454}."
+tip = "Primero {map:1456}: dos de sus ancianos dan misiones que se hacen en los recorridos de esta guía y de la siguiente. Vuela a {area:378}; desde allí, camina al oeste hasta {map:1412} y al norte hasta las mesetas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#3"]
+note = "Polestar paso 3 «Fly to Camp Taurajo», objetivo 1 (goto) · condición no expresable: no llevas la misión 97538"
+
+[[step]]
+id = "h24-baldios-espolon-006"
+do = "fly"
+zone = 1456
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"], race = ["Orc", "Scourge", "Troll"] }
+optional = true
+text = "Vuela a Campamento Taurajo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#3"]
+note = "Polestar paso 3 «Fly to Camp Taurajo», objetivo 2 (fly) · condición no expresable: no llevas la misión 97538"
+
+[[step]]
+id = "h24-baldios-espolon-007"
+do = "goto"
+at = [1456, 47.0, 49.8]
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"], race = ["Orc", "Scourge", "Troll"] }
+optional = true
+text = "Ve a meseta central de {map:1456}."
+tip = "Desde {area:378} sigue el camino al oeste y cruza la puerta hacia {map:1412}; luego al norte, pasando {area:222}, hasta {map:1456}; un elevador al pie de las mesetas te sube."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#4"]
+note = "Polestar paso 4 «To Thunder Bluff», objetivo 1 (goto) · condición no expresable: no llevas la misión 97538"
+
+[[step]]
+id = "h24-baldios-espolon-008"
+do = "getfp"
+npc = 2995
+node = "22"
+at = [1456, 47.0, 49.83]
+text = "Coge la ruta de vuelo de Cima del Trueno con {npc:2995}."
+tip = "{npc:2995}, el maestro de jinetes del viento, está en la meseta central: consigue su ruta de vuelo si no la tienes. {npc:3024} y {npc:4721} están a poca distancia al este de él."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#5"]
+note = "Polestar paso 5 «Thunder Bluff», objetivo 1 (getfp) · condición no expresable: no llevas la misión 97538 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h24-baldios-espolon-009"
+do = "accept"
+quest = 97538
+npc = 3024
+at = [1456, 54.14, 47.05]
+reqlevel = 20
+text = "Coge «{quest:97538}» de {npc:3024}, {obj:667362} crece en {area:464}, junto a Roca del Sol."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#5"]
+note = "Polestar paso 5 «Thunder Bluff», objetivo 2 (accept) · condición no expresable: no llevas la misión 97538 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h24-baldios-espolon-010"
+do = "accept"
+quest = 1195
+npc = 4721
+at = [1456, 54.97, 51.41]
+optional = true
+reqlevel = 20
+text = "Coge «{quest:1195}» de {npc:4721}, el vial viene de {map:1440}, en la siguiente guía."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#5"]
+note = "Polestar paso 5 «Thunder Bluff», objetivo 3 (accept) · condición no expresable: no llevas la misión 97538 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h24-baldios-espolon-011"
+do = "fly"
+zone = 1413
+text = "Vuela a El Cruce."
+tip = "Vuela a El Cruce desde el maestro de jinetes del viento: {npc:2995}, en la meseta central de {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#6"]
+note = "Polestar paso 6 «Fly to Crossroads», objetivo 1 (fly)"
+
+[[step]]
+id = "h24-baldios-espolon-012"
+do = "accept"
+quest = 1068
+npc = 4049
+at = [1413, 35.26, 27.88]
+optional = true
+reqlevel = 13
+text = "Coge «{quest:1068}» de {npc:4049}, {npc:4074} y {npc:4073} deambulan al este de {npc:4201}, de camino arriba."
+tip = "Sigue el camino al oeste pasando los búnkeres de Regthar: {npc:4049} acampa junto a él, en el límite de Sierra Espolón."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#7"]
+note = "Polestar paso 7 «Seereth Rompepedras», objetivo 1 (accept) · condición no expresable: turnedin {'k': 'turnedin', 'q': 1062} · datos no importados: pre"
+
+[[step]]
+id = "h24-baldios-espolon-013"
+do = "goto"
+at = [1413, 35.3, 27.9]
+text = "Ve a el camino al oeste pasando el campamento de {npc:4049}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#8"]
+note = "Polestar paso 8 «The road west», objetivo 1 (goto)"
+
+[[step]]
+id = "h24-baldios-espolon-014"
+do = "accept"
+quest = 1058
+npc = 3995
+at = [1442, 74.54, 97.94]
+optional = true
+reqlevel = 20
+text = "Coge «{quest:1058}» de {npc:3995}."
+tip = "Sigue el camino al oeste pasando los búnkeres de Regthar y el campamento de {npc:4049} hasta Sierra Espolón: {npc:3995} espera bajo tierra en {area:2539}, al pie de {area:1076}. +8.262 XP · ~68 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#9"]
+note = "Polestar paso 9 «Malaka'jin», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:3995}, below ground."
+
+[[step]]
+id = "h24-baldios-espolon-015"
+do = "complete"
+quest = 1068
+obj = 2
+at = [1442, 64.09, 56.62]
+wps = [[1442, 65.92, 55.39, "XT:9"]]
+optional = true
+text = "Mata {npc:4074} (1) para «{quest:1068}»."
+tip = "Sube por {area:1076} hasta la choza de {npc:4201}; luego al este por el camino hacia {area:461}: {npc:4074} patrulla el camino justo al este del cruce, y {npc:4073}, las laderas más al noreste bajo el risco. Ambos son robots machacadores solitarios; deambulan, así que sigue el camino hasta encontrarlos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#10"]
+note = "Polestar paso 10 ««Las sierras XT:4 y XT:9»», objetivo 1 (kill) · condición no expresable: llevas la misión 1068 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h24-baldios-espolon-016"
+do = "complete"
+quest = 1068
+obj = 1
+at = [1442, 67.2, 46.69]
+optional = true
+text = "Mata {npc:4073} (1) para «{quest:1068}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#10"]
+note = "Polestar paso 10 ««Las sierras XT:4 y XT:9»», objetivo 2 (kill) · condición no expresable: llevas la misión 1068 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h24-baldios-espolon-017"
+do = "accept"
+quest = 6562
+npc = 11862
+at = [1442, 47.36, 64.25]
+optional = true
+chain = "h24-baldios-espolon-s011-11862"
+reqlevel = 17
+text = "Coge «{quest:6562}» de {npc:11862}."
+tip = "Sube por {area:1076} pasando a {npc:4201} y ve al oeste hasta {area:460}; si vienes de {npc:4073}, vuelve al oeste pasando la choza de Ziz. +440 XP · ~2 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#11"]
+note = "Polestar paso 11 «Sun Rock Retreat», objetivo 1 (accept) · datos no importados: closedBy · consejo de Polestar sin traducir: {npc:11862}: {npc:12736} at Zoram'gar, next guide."
+
+[[step]]
+id = "h24-baldios-espolon-018"
+do = "accept"
+quest = 6393
+npc = 11862
+at = [1442, 47.36, 64.25]
+chain = "h24-baldios-espolon-s011-11862"
+reqlevel = 19
+text = "Coge «{quest:6393}» de {npc:11862}."
+why = "+4.009 XP · ~14 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#11"]
+note = "Polestar paso 11 «Sun Rock Retreat», objetivo 2 (accept)"
+
+[[step]]
+id = "h24-baldios-espolon-019"
+do = "accept"
+quest = 5881
+npc = 11860
+at = [1442, 47.2, 61.16]
+chain = "h24-baldios-espolon-s011-11860"
+reqlevel = 23
+text = "Coge «{quest:5881}» de {npc:11860}."
+why = "+1.150 XP · <1 min · 6,1× la mediana del 26-30"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#11"]
+note = "Polestar paso 11 «Sun Rock Retreat», objetivo 3 (accept) · consejo de Polestar sin traducir: {npc:11860}: {npc:12576} is at the {area:1718}, later in this guide."
+
+[[step]]
+id = "h24-baldios-espolon-020"
+do = "accept"
+quest = 86576
+npc = 11860
+at = [1442, 47.2, 61.16]
+chain = "h24-baldios-espolon-s011-11860"
+reqlevel = 18
+text = "Coge «{quest:86576}» de {npc:11860}, Piedrasoles relumbrantes de las arpías Furia Sangrienta."
+why = "+2.100 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#11"]
+note = "Polestar paso 11 «Sun Rock Retreat», objetivo 4 (accept)"
+
+[[step]]
+id = "h24-baldios-espolon-021"
+do = "accept"
+quest = 6282
+npc = 11860
+at = [1442, 47.2, 61.16]
+chain = "h24-baldios-espolon-s011-11860"
+reqlevel = 18
+text = "Coge «{quest:6282}» de {npc:11860}."
+why = "+6.510 XP · ~25 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#11"]
+note = "Polestar paso 11 «Sun Rock Retreat», objetivo 5 (accept)"
+
+[[step]]
+id = "h24-baldios-espolon-022"
+do = "sethearth"
+npc = 7731
+zone = 1442
+at = [1442, 47.47, 62.13]
+text = "Pon la piedra de hogar en {area:460} con {npc:7731}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#11"]
+note = "Polestar paso 11 «Sun Rock Retreat», objetivo 6 (sethome)"
+
+[[step]]
+id = "h24-baldios-espolon-024"
+do = "accept"
+quest = 1087
+npc = 4198
+at = [1442, 45.94, 60.42]
+optional = true
+reqlevel = 20
+text = "Coge «{quest:1087}» de {npc:4198}, fuera de la puerta."
+tip = "+3.300 XP · ~13 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#11"]
+note = "Polestar paso 11 «Sun Rock Retreat», objetivo 8 (accept)"
+
+[[step]]
+id = "h24-baldios-espolon-025"
+do = "getfp"
+npc = 4312
+node = "29"
+at = [1442, 45.12, 59.84]
+text = "Coge la ruta de vuelo de Refugio Roca del sol con {npc:4312}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#11"]
+note = "Polestar paso 11 «Sun Rock Retreat», objetivo 9 (getfp)"
+
+[[step]]
+id = "h24-baldios-espolon-026"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#11"]
+note = "Polestar paso 11 «Sun Rock Retreat», objetivo 10 (vendor)"
+
+[[step]]
+id = "h24-baldios-espolon-027"
+do = "turnin"
+quest = 6401
+npc = 11864
+at = [1442, 47.46, 58.38]
+text = "Entrega «{quest:6401}» a {npc:11864}."
+tip = "{npc:11864} está junto a la hoguera dentro del Refugio Roca del Sol: la noticia de Makaba de que Kaya está viva es para ella."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#12"]
+note = "Polestar paso 12 «Tammra Campovento», objetivo 1 (turnin) · condición no expresable: llevas la misión 6401 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h24-baldios-espolon-029"
+do = "complete"
+quest = 97538
+obj = 1
+at = [1442, 48.5, 40.2]
+text = "Recoge {item:278201} (30) de {obj:667362} para «{quest:97538}»."
+tip = "{obj:667362} crece en el fondo de {area:464}, frente a la misma orilla sur: bucea hasta las plantas y los Montones de hierbalodo secos; ambos dan vainas. Vigila tu respiración."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#14"]
+note = "Polestar paso 14 «Hierbaoscura», objetivo 1 (collect) · condición no expresable: llevas la misión 97538 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h24-baldios-espolon-030"
+do = "complete"
+quest = 1058
+obj = 3
+at = [1442, 46.76, 38.18]
+wps = [[1442, 47.1, 31.6, "Ojo de corcel"], [1442, 46.7, 27.4, "Ojo de corcel"], [1442, 44.8, 23.7, "Ojo de corcel"]]
+optional = true
+text = "Consigue {item:5585} (30) de {npc:4018} y {npc:4019} para «{quest:1058}»."
+tip = "Sigue el camino al norte hacia {area:467}. Los Antlered Coursers pastan por el camino; las Bestias de savia, los Corredores Crepusculares y los Dragones clarividentes recorren los bosques bajo el pico, y los druidas Cenarion ocupan la arboleda de allí."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#15"]
+note = "Polestar paso 15 «Stonetalon Mountains: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-031"
+do = "complete"
+quest = 1058
+obj = 1
+at = [1442, 36.8, 19.5]
+wps = [[1442, 38.2, 15.4, "Salvia de Espolón"], [1442, 40.0, 12.5, "Salvia de Espolón"], [1442, 38.1, 10.1, "Salvia de Espolón"]]
+optional = true
+text = "Consigue {item:5582} (5) de {npc:4020} para «{quest:1058}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#15"]
+note = "Polestar paso 15 «Stonetalon Mountains: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-032"
+do = "complete"
+quest = 1058
+obj = 2
+at = [1442, 39.57, 17.74]
+wps = [[1442, 39.0, 12.1, "Mostacho del Crepúsculo"], [1442, 33.9, 9.0, "Mostacho del Crepúsculo"], [1442, 32.0, 11.0, "Mostacho del Crepúsculo"]]
+optional = true
+text = "Consigue {item:5584} (5) de {npc:4067} para «{quest:1058}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#15"]
+note = "Polestar paso 15 «Stonetalon Mountains: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-033"
+do = "complete"
+quest = 1058
+obj = 4
+at = [1442, 39.77, 13.76]
+wps = [[1442, 37.4, 20.9, "Escama de dragón Fey"], [1442, 33.1, 13.2, "Escama de dragón Fey"]]
+optional = true
+text = "Consigue {item:5583} (1) de {npc:4016} y {npc:4017} para «{quest:1058}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#15"]
+note = "Polestar paso 15 «Stonetalon Mountains: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-034"
+do = "complete"
+quest = 1087
+obj = 2
+at = [1442, 38.31, 13.29]
+wps = [[1442, 36.5, 13.1, "Hija de Cenario"], [1442, 36.7, 15.6, "Hija de Cenario"], [1442, 35.3, 11.6, "Hija de Cenario"]]
+optional = true
+text = "Mata {npc:4053} (4) para «{quest:1087}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#15"]
+note = "Polestar paso 15 «Stonetalon Mountains: kill these as you meet them», objetivo 5 (kill)"
+
+[[step]]
+id = "h24-baldios-espolon-035"
+do = "complete"
+quest = 1087
+obj = 1
+at = [1442, 37.45, 13.14]
+wps = [[1442, 35.6, 12.9, "Hijo de Cenarius"]]
+optional = true
+text = "Mata {npc:4057} (4) para «{quest:1087}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#15"]
+note = "Polestar paso 15 «Stonetalon Mountains: kill these as you meet them», objetivo 6 (kill)"
+
+[[step]]
+id = "h24-baldios-espolon-036"
+do = "complete"
+quest = 1087
+obj = 3
+at = [1442, 36.97, 14.98]
+wps = [[1442, 36.4, 11.9, "Botánico Cenarion"], [1442, 34.7, 12.4, "Botánico Cenarion"]]
+optional = true
+text = "Mata {npc:4051} (4) para «{quest:1087}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#15"]
+note = "Polestar paso 15 «Stonetalon Mountains: kill these as you meet them», objetivo 7 (kill)"
+
+[[step]]
+id = "h24-baldios-espolon-039"
+do = "turnin"
+quest = 1087
+npc = 4198
+at = [1442, 45.94, 60.42]
+optional = true
+text = "Entrega «{quest:1087}» a {npc:4198}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#16"]
+note = "Polestar paso 16 «Sun Rock Retreat», objetivo 3 (turnin)"
+
+[[step]]
+id = "h24-baldios-espolon-040"
+do = "note"
+text = "La siguiente misión de {npc:4198}, Ordanus, está en el lado de la Alianza de {map:1440}. Sáltatela."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#16"]
+note = "Polestar paso 16 «Sun Rock Retreat», objetivo 4 (note)"
+
+[[step]]
+id = "h24-baldios-espolon-041"
+do = "complete"
+quest = 6393
+obj = 1
+at = [1442, 37.34, 60.45]
+wps = [[1442, 34.7, 63.3, "Incendritas"], [1442, 29.4, 65.6, "Incendritas"], [1442, 31.7, 73.3, "Incendritas"]]
+text = "Consigue {item:16312} (10) de {npc:4036} y {npc:4037} y {npc:4038} para «{quest:6393}»."
+tip = "Al suroeste del Refugio Roca del Sol está {area:465}, quemada. Planta las Semillas de Gaia en los túmulos de tierra del fondo del valle; los elementales de fuego sueltan {item:16312}. Las arpías Furia Sangrienta y las emboscadoras anidan en el lado norte; las destripadoras y las plumabribonas, al sur."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#17"]
+note = "Polestar paso 17 «The Charred Vale: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-042"
+do = "complete"
+quest = 86576
+obj = 1
+at = [1442, 35.28, 63.23]
+wps = [[1442, 32.6, 64.9, "Piedrasol relumbrante"], [1442, 30.4, 66.4, "Piedrasol relumbrante"], [1442, 29.8, 69.6, "Piedrasol relumbrante"]]
+text = "Consigue {item:277936} (15) de {npc:4026} y {npc:4027} y {npc:4022} y {npc:4023} y {npc:4024} y {npc:4025} para «{quest:86576}»."
+tip = "{item:277936}, de cualquier arpía Furia Sangrienta."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#17"]
+note = "Polestar paso 17 «The Charred Vale: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-043"
+do = "complete"
+quest = 6282
+obj = 1
+at = [1442, 35.25, 63.21]
+wps = [[1442, 34.9, 62.0, "Arpía Furia Sangrienta"], [1442, 32.1, 65.1, "Arpía Furia Sangrienta"], [1442, 31.7, 59.8, "Arpía Furia Sangrienta"]]
+text = "Mata {npc:4022} (7) para «{quest:6282}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#17"]
+note = "Polestar paso 17 «The Charred Vale: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h24-baldios-espolon-045"
+do = "complete"
+quest = 6282
+obj = 4
+at = [1442, 35.46, 66.56]
+wps = [[1442, 35.0, 69.9, "Malapluma Furia Sangrienta"], [1442, 29.8, 69.3, "Malapluma Furia Sangrienta"]]
+text = "Mata {npc:4023} (7) para «{quest:6282}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#17"]
+note = "Polestar paso 17 «The Charred Vale: kill these as you meet them», objetivo 5 (kill)"
+
+[[step]]
+id = "h24-baldios-espolon-046"
+do = "complete"
+quest = 6282
+obj = 3
+at = [1442, 36.21, 67.36]
+wps = [[1442, 36.5, 68.4, "Destripadora Furia Sangrienta"], [1442, 30.1, 68.6, "Destripadora Furia Sangrienta"], [1442, 27.8, 70.1, "Destripadora Furia Sangrienta"]]
+text = "Mata {npc:4024} (7) para «{quest:6282}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#17"]
+note = "Polestar paso 17 «The Charred Vale: kill these as you meet them», objetivo 6 (kill)"
+
+[[step]]
+id = "h24-baldios-espolon-047"
+do = "complete"
+quest = 6282
+obj = 2
+at = [1442, 35.42, 64.27]
+wps = [[1442, 31.6, 59.5, "Emboscador Furia Sangrienta"], [1442, 30.1, 61.9, "Emboscador Furia Sangrienta"]]
+text = "Mata {npc:4025} (7) para «{quest:6282}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#17"]
+note = "Polestar paso 17 «The Charred Vale: kill these as you meet them», objetivo 7 (kill)"
+
+[[step]]
+id = "h24-baldios-espolon-049"
+do = "turnin"
+quest = 6282
+npc = 11860
+at = [1442, 47.2, 61.16]
+text = "Entrega «{quest:6282}» a {npc:11860}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#18"]
+note = "Polestar paso 18 «Sun Rock Retreat», objetivo 2 (turnin)"
+
+[[step]]
+id = "h24-baldios-espolon-050"
+do = "turnin"
+quest = 86576
+npc = 11861
+at = [1442, 47.22, 64.04]
+text = "Entrega «{quest:86576}» a {npc:11861}, junto a {npc:11862}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#18"]
+note = "Polestar paso 18 «Sun Rock Retreat», objetivo 3 (turnin)"
+
+[[step]]
+id = "h24-baldios-espolon-051"
+do = "turnin"
+quest = 6393
+npc = 11862
+at = [1442, 47.36, 64.25]
+text = "Entrega «{quest:6393}» a {npc:11862}, arriba en la cornisa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#18"]
+note = "Polestar paso 18 «Sun Rock Retreat», objetivo 4 (turnin)"
+
+[[step]]
+id = "h24-baldios-espolon-052"
+do = "turnin"
+quest = 1058
+npc = 3995
+at = [1442, 74.54, 97.94]
+optional = true
+text = "Entrega «{quest:1058}» a {npc:3995}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#19"]
+note = "Polestar paso 19 «Malaka'jin», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:3995}, below ground. · consejo de Polestar sin traducir: Head back down the {area:1076} to {area:2539}."
+
+[[step]]
+id = "h24-baldios-espolon-053"
+do = "turnin"
+quest = 1068
+npc = 4049
+at = [1413, 35.26, 27.88]
+optional = true
+text = "Entrega «{quest:1068}» a {npc:4049}."
+tip = "Al este por el camino desde {area:2539} hasta el campamento de {npc:4049}, de camino a {area:378}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#20"]
+note = "Polestar paso 20 «Seereth Rompepedras», objetivo 1 (turnin) · condición no expresable: tienes lista la misión 1068"
+
+[[step]]
+id = "h24-baldios-espolon-054"
+do = "goto"
+at = [1413, 45.6, 59.0]
+text = "Ve a {area:378}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#21"]
+note = "Polestar paso 21 «To Camp Taurajo», objetivo 1 (goto)"
+
+[[step]]
+id = "h24-baldios-espolon-055"
+do = "accept"
+quest = 893
+npc = 3433
+at = [1413, 45.1, 57.68]
+reqlevel = 17
+text = "Coge «{quest:893}» de {npc:3433}, en el borde norte del campamento."
+tip = "Desde {area:2539} sigue el camino al este hasta el campamento de {npc:4049}; luego al sureste por las llanuras hasta {area:378}."
+why = "+4.614 XP · ~14 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#22"]
+note = "Polestar paso 22 «Camp Taurajo», objetivo 1 (accept)"
+
+[[step]]
+id = "h24-baldios-espolon-057"
+do = "accept"
+quest = 879
+npc = 3430
+at = [1413, 44.55, 59.26]
+reqlevel = 17
+text = "Coge «{quest:879}» de {npc:3430}, en la jaula."
+why = "+1.896 XP · ~6,6 min · desbloquea «{quest:906}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#22"]
+note = "Polestar paso 22 «Camp Taurajo», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h24-baldios-espolon-058"
+do = "sethearth"
+npc = 7714
+zone = 1413
+at = [1413, 45.58, 59.04]
+text = "Pon la piedra de hogar en {area:378} con {npc:7714}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#22"]
+note = "Polestar paso 22 «Camp Taurajo», objetivo 4 (sethome)"
+
+[[step]]
+id = "h24-baldios-espolon-059"
+do = "accept"
+quest = 97250
+npc = 5911
+at = [1413, 44.62, 59.27]
+optional = true
+reqlevel = 18
+text = "Coge «{quest:97250}» de {npc:5911}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#23"]
+note = "Polestar paso 23 «Bruto Logmar», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 97250 · consejo de Polestar sin traducir: {npc:5911}: the soldiers and the pillager camp just east of {npc:3341}, on the way south. · consejo de Polestar sin traducir: {npc:5911} stands by the flight master. His {npc:268623} (23) is elite: grouping up is advised; the two Encroaching Soldiers are not."
+
+[[step]]
+id = "h24-baldios-espolon-060"
+do = "goto"
+at = [1413, 43.4, 77.4]
+if = { class = ["SHAMAN"] }
+optional = true
+text = "Ve a {npc:5899}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#24"]
+note = "Polestar paso 24 «The Barrens», objetivo 1 (goto) · condición no expresable: llevas la misión 1536"
+
+[[step]]
+id = "h24-baldios-espolon-061"
+do = "turnin"
+quest = 1536
+npc = 5899
+at = [1413, 43.42, 77.41]
+if = { class = ["SHAMAN"] }
+chain = "h24-baldios-espolon-s025-5899"
+text = "Entrega «{quest:1536}» a {npc:5899}, el odre rojo de {area:272}."
+tip = "La choza de {npc:5899} está en la cresta sobre el abrevadero de los jabaespines, al sur de {area:378}, de camino a {area:359}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#25"]
+note = "Polestar paso 25 «Salmuera», objetivo 1 (turnin)"
+
+[[step]]
+id = "h24-baldios-espolon-062"
+do = "accept"
+quest = 1534
+npc = 5899
+at = [1413, 43.42, 77.41]
+if = { class = ["SHAMAN"] }
+chain = "h24-baldios-espolon-s025-5899"
+reqlevel = 20
+text = "Coge «{quest:1534}» de {npc:5899}, el odre azul se llena en {map:1440}, en la siguiente guía."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#25"]
+note = "Polestar paso 25 «Salmuera», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h24-baldios-espolon-063"
+do = "accept"
+quest = 843
+npc = 3341
+at = [1413, 45.89, 77.0]
+reqlevel = 17
+text = "Coge «{quest:843}» de {npc:3341}."
+why = "+4.260 XP · ~18 min · desbloquea «{quest:846}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#26"]
+note = "Polestar paso 26 «Gann Picopiedra», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:3341} walks around {area:1701}: look inside the circle on the map. · consejo de Polestar sin traducir: {npc:3341} walks the road south toward {area:359}, between about 46,75 and 46,81: if he isn't at the arrow, follow the road until you meet him. {npc:14242} sits up in the tree just east of the road at 47.9,77.5."
+
+[[step]]
+id = "h24-baldios-espolon-064"
+do = "accept"
+quest = 98093
+npc = 14242
+at = [1413, 47.8, 77.6]
+reqlevel = 18
+text = "Coge «{quest:98093}» de {npc:14242}, arriba en el árbol justo al este de {npc:3341}."
+why = "+3.432 XP · ~10 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#26"]
+note = "Polestar paso 26 «Gann Picopiedra», objetivo 2 (accept)"
+
+[[step]]
+id = "h24-baldios-espolon-065"
+do = "complete"
+quest = 97250
+obj = 1
+at = [1413, 48.8, 77.0]
+optional = true
+text = "Mata {npc:268622} (2) para «{quest:97250}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#27"]
+note = "Polestar paso 27 ««Culpa incorrecta, corregida»», objetivo 1 (kill) · condición no expresable: vas en grupo para la misión 97250 · consejo de Polestar sin traducir: A few steps east of {npc:14242}'s tree, a small camp: two Encroaching Soldiers and the {npc:268623} for Logmar. The {npc:268623} is elite: grouping up is advised."
+
+[[step]]
+id = "h24-baldios-espolon-066"
+do = "complete"
+quest = 97250
+obj = 2
+at = [1413, 48.8, 77.0]
+optional = true
+text = "Mata {npc:268623} (1) para «{quest:97250}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#27"]
+note = "Polestar paso 27 ««Culpa incorrecta, corregida»», objetivo 2 (kill) · condición no expresable: vas en grupo para la misión 97250"
+
+[[step]]
+id = "h24-baldios-espolon-067"
+do = "complete"
+quest = 843
+obj = 1
+at = [1413, 47.06, 83.87]
+wps = [[1413, 47.2, 85.6, "Excavador Bael'dun"]]
+text = "Mata {npc:3374} (15) para «{quest:843}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#28"]
+note = "Polestar paso 28 «Bael Modan», objetivo 1 (kill) · consejo de Polestar sin traducir: South of Gann, the Bael'dun dwarves dig at {area:359}. Excavators and Foremen work the pit; {npc:3392} (26) carries the journal: pull him alone.\nCareful: Excavators (level 21-22) and Foremen (level 22-23) run off for help once they fall to 15% health, so more dwarves can join the fight."
+
+[[step]]
+id = "h24-baldios-espolon-068"
+do = "complete"
+quest = 843
+obj = 2
+at = [1413, 47.41, 84.32]
+wps = [[1413, 47.4, 85.5, "Supervisor de Bael'Dun"]]
+text = "Mata {npc:3375} (5) para «{quest:843}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#28"]
+note = "Polestar paso 28 «Bael Modan», objetivo 2 (kill) · consejo de Polestar sin traducir: {npc:3375} walks around {area:359}: look inside the circle on the map."
+
+[[step]]
+id = "h24-baldios-espolon-069"
+do = "complete"
+quest = 843
+obj = 3
+at = [1413, 47.5, 85.06]
+wps = [[1413, 48.3, 86.2, "Diario de Khazgorm"]]
+text = "Consigue {item:5006} (1) de {npc:3392} para «{quest:843}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#28"]
+note = "Polestar paso 28 «Bael Modan», objetivo 3 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-070"
+do = "complete"
+quest = 879
+obj = 2
+at = [1413, 43.75, 83.26]
+text = "Consigue {item:5073} (1) de {npc:3434} para «{quest:879}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#29"]
+note = "Polestar paso 29 «Blackthorn Ridge», objetivo 1 (collect) · consejo de Polestar sin traducir: West of Gann, the Razormane hold {area:1701}. {npc:3436} is on the east side, {npc:3434} to the south, {npc:3435} at the west end. Lok (25) and the Warfrenzies (24-25) are a few levels above you; {npc:5859}, a rare elite, sometimes walks the ridge: leave him. Pathfinders and Stalkers drop the Backstabber, Seers the Wand, Warfrenzies the War Shield. «{quest:885}», a rare red wind serpent, flies over the ridge: its feather starts a quest.\nCareful: Razormane Stalkers move around in stealth and hit with {spell:1752}, so they can join a fight without warning."
+
+[[step]]
+id = "h24-baldios-espolon-071"
+do = "complete"
+quest = 893
+obj = 2
+at = [1413, 43.82, 82.81]
+wps = [[1413, 41.9, 81.9, "Varita Crines de Acero carbonizada"], [1413, 42.4, 78.7, "Varita Crines de Acero carbonizada"], [1413, 41.0, 80.6, "Varita Crines de Acero carbonizada"]]
+text = "Consigue {item:5092} (1) de {npc:3458} para «{quest:893}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#29"]
+note = "Polestar paso 29 «Blackthorn Ridge», objetivo 2 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-072"
+do = "complete"
+quest = 893
+obj = 3
+at = [1413, 42.22, 81.65]
+wps = [[1413, 40.8, 81.1, "Escudo de guerra Crines de Acero"], [1413, 41.5, 79.0, "Escudo de guerra Crines de Acero"]]
+text = "Consigue {item:5094} (1) de {npc:3459} para «{quest:893}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#29"]
+note = "Polestar paso 29 «Blackthorn Ridge», objetivo 3 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-073"
+do = "complete"
+quest = 879
+obj = 3
+at = [1413, 40.15, 80.54]
+text = "Consigue {item:5072} (1) de {npc:3435} para «{quest:879}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#29"]
+note = "Polestar paso 29 «Blackthorn Ridge», objetivo 4 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-074"
+do = "loot"
+item = 5103
+count = 1
+at = [1413, 43.15, 80.85]
+wps = [[1413, 44.8, 78.9, "Pluma de Washte Pawne"], [1413, 44.8, 74.9, "Pluma de Washte Pawne"], [1413, 47.4, 79.9, "Pluma de Washte Pawne"]]
+optional = true
+text = "Consigue {item:5103} de {npc:3472}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#29"]
+note = "Polestar paso 29 «Blackthorn Ridge», objetivo 5 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-075"
+do = "accept"
+quest = 885
+optional = true
+reqlevel = 10
+text = "Usa {item:5103} para empezar «{quest:885}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#29"]
+note = "Polestar paso 29 «Blackthorn Ridge», objetivo 6 (accept)"
+
+[[step]]
+id = "h24-baldios-espolon-076"
+do = "goto"
+at = [1413, 42.5, 81.0]
+text = "Ve a {area:1701}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#29"]
+note = "Polestar paso 29 «Blackthorn Ridge», objetivo 7 (goto)"
+
+[[step]]
+id = "h24-baldios-espolon-077"
+do = "complete"
+quest = 893
+obj = 1
+at = [1413, 42.5, 81.32]
+wps = [[1413, 43.1, 82.9, "Puñal Crines de Acero"], [1413, 44.0, 80.5, "Puñal Crines de Acero"], [1413, 41.9, 79.0, "Puñal Crines de Acero"]]
+text = "Consigue {item:5093} (1) de {npc:3457} y {npc:3456} para «{quest:893}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#29"]
+note = "Polestar paso 29 «Blackthorn Ridge», objetivo 8 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-078"
+do = "complete"
+quest = 879
+obj = 1
+at = [1413, 45.12, 80.07]
+text = "Consigue {item:5074} (1) de {npc:3436} para «{quest:879}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#29"]
+note = "Polestar paso 29 «Blackthorn Ridge», objetivo 9 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-079"
+do = "complete"
+quest = 98093
+obj = 1
+at = [1413, 45.28, 78.97]
+wps = [[1413, 45.3, 77.7, "Acechador Dentecenado"], [1413, 44.2, 76.6, "Acechador Dentecenado"], [1413, 44.4, 74.8, "Acechador Dentecenado"]]
+text = "Mata {npc:4128} (7) para «{quest:98093}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#30"]
+note = "Polestar paso 30 ««Un campo que despejar»», objetivo 1 (kill) · consejo de Polestar sin traducir: {npc:4128} walks around {area:1156}: look inside the circle on the map. · consejo de Polestar sin traducir: On the way back east to {npc:3341}: Hecklefang Stalkers and {npc:3238} lizards roam the plain between the ridge and his camp."
+
+[[step]]
+id = "h24-baldios-espolon-080"
+do = "complete"
+quest = 98093
+obj = 2
+at = [1413, 44.6, 79.24]
+wps = [[1413, 43.2, 78.4, "Tormentero"], [1413, 44.4, 76.2, "Tormentero"], [1413, 44.4, 74.0, "Tormentero"]]
+text = "Mata {npc:3238} (7) para «{quest:98093}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#30"]
+note = "Polestar paso 30 ««Un campo que despejar»», objetivo 2 (kill)"
+
+[[step]]
+id = "h24-baldios-espolon-081"
+do = "turnin"
+quest = 843
+npc = 3341
+at = [1413, 45.89, 77.0]
+chain = "h24-baldios-espolon-s031-3341"
+text = "Entrega «{quest:843}» a {npc:3341}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#31"]
+note = "Polestar paso 31 «Gann Picopiedra», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:3341} walks around {area:1701}: look inside the circle on the map."
+
+[[step]]
+id = "h24-baldios-espolon-082"
+do = "accept"
+quest = 846
+npc = 3341
+at = [1413, 45.89, 77.0]
+chain = "h24-baldios-espolon-s031-3341"
+reqlevel = 17
+text = "Coge «{quest:846}» de {npc:3341}."
+why = "+4.258 XP · ~9,3 min · desbloquea «{quest:849}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#31"]
+note = "Polestar paso 31 «Gann Picopiedra», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h24-baldios-espolon-083"
+do = "turnin"
+quest = 98093
+npc = 14242
+at = [1413, 47.8, 77.6]
+text = "Entrega «{quest:98093}» a {npc:14242}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#31"]
+note = "Polestar paso 31 «Gann Picopiedra», objetivo 3 (turnin)"
+
+[[step]]
+id = "h24-baldios-espolon-084"
+do = "complete"
+quest = 846
+obj = 1
+at = [1413, 48.45, 83.77]
+wps = [[1413, 49.5, 84.0, "Nitroglicerina"]]
+text = "Consigue {item:5017} (6) para «{quest:846}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#32"]
+note = "Polestar paso 32 «Bael'dun fortress», objetivo 1 (collect) · consejo de Polestar sin traducir: The Bael'dun Soldiers, Riflemen and Officers guard the fortress on the east side of the dig; all three items drop from them.\nCareful: Riflemen (level 24-25) Shoot from 5-30 yd, so nearby ones can join a fight from range."
+
+[[step]]
+id = "h24-baldios-espolon-085"
+do = "complete"
+quest = 846
+obj = 2
+at = [1413, 48.45, 83.77]
+wps = [[1413, 49.5, 84.0, "Pulpa de madera"]]
+text = "Consigue {item:5018} (6) para «{quest:846}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#32"]
+note = "Polestar paso 32 «Bael'dun fortress», objetivo 2 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-086"
+do = "complete"
+quest = 846
+obj = 3
+at = [1413, 48.45, 83.77]
+wps = [[1413, 49.5, 84.0, "Nitrato sódico"]]
+text = "Consigue {item:5019} (6) para «{quest:846}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#32"]
+note = "Polestar paso 32 «Bael'dun fortress», objetivo 3 (collect)"
+
+[[step]]
+id = "h24-baldios-espolon-087"
+do = "turnin"
+quest = 846
+npc = 3341
+at = [1413, 45.89, 77.0]
+chain = "h24-baldios-espolon-s033-3341"
+text = "Entrega «{quest:846}» a {npc:3341}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#33"]
+note = "Polestar paso 33 «Gann Picopiedra», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:3341} walks around {area:1701}: look inside the circle on the map."
+
+[[step]]
+id = "h24-baldios-espolon-088"
+do = "accept"
+quest = 849
+npc = 3341
+at = [1413, 45.89, 77.0]
+chain = "h24-baldios-espolon-s033-3341"
+reqlevel = 17
+text = "Coge «{quest:849}» de {npc:3341}."
+why = "+2.100 XP · ~5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#33"]
+note = "Polestar paso 33 «Gann Picopiedra», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h24-baldios-espolon-089"
+do = "complete"
+quest = 849
+obj = 1
+at = [1413, 46.97, 85.63]
+text = "Usa {obj:3644} para «{quest:849}»."
+tip = "La máquina voladora de los enanos está en su plataforma dentro de la excavación. Usa en ella {item:5021} que te dio {npc:3341}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#34"]
+note = "Polestar paso 34 «The flying machine», objetivo 1 (interact)"
+
+[[step]]
+id = "h24-baldios-espolon-090"
+do = "turnin"
+quest = 849
+npc = 3341
+at = [1413, 45.89, 77.0]
+text = "Entrega «{quest:849}» a {npc:3341}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#35"]
+note = "Polestar paso 35 «Gann Picopiedra», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:3341} walks around {area:1701}: look inside the circle on the map."
+
+[[step]]
+id = "h24-baldios-espolon-091"
+do = "goto"
+at = [1441, 31.9, 23.9]
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#36"]
+note = "Polestar paso 36 «Great Lift», objetivo 1 (goto) · destino de Polestar sin traducir: The top of the Great Lift"
+
+[[step]]
+id = "h24-baldios-espolon-092"
+do = "turnin"
+quest = 5881
+npc = 12576
+at = [1441, 31.86, 21.66]
+text = "Entrega «{quest:5881}» a {npc:12576}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#37"]
+note = "Polestar paso 37 «Great Lift», objetivo 1 (turnin) · consejo de Polestar sin traducir: South-west of Bael Modan, {npc:12576} waits at the top of the {area:1718}."
+
+[[step]]
+id = "h24-baldios-espolon-093"
+do = "goto"
+at = [1413, 44.2, 92.2]
+text = "Ve a {area:1718}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#38"]
+note = "Polestar paso 38 «The Great Lift», objetivo 1 (goto) · consejo de Polestar sin traducir: {npc:10079} stands at the top of the {area:1718}, beside {npc:12576}."
+
+[[step]]
+id = "h24-baldios-espolon-094"
+do = "accept"
+quest = 4542
+npc = 10079
+at = [1441, 32.24, 22.17]
+reqlevel = 23
+text = "Coge «{quest:4542}» de {npc:10079}, en lo alto del elevador."
+why = "+500 XP · <1 min · 5,3× la mediana del 26-30"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#38"]
+note = "Polestar paso 38 «The Great Lift», objetivo 2 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "h24-baldios-espolon-095"
+do = "goto"
+at = [1413, 45.6, 59.0]
+text = "Ve a {area:378}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#39"]
+note = "Polestar paso 39 «To Camp Taurajo», objetivo 1 (goto)"
+
+[[step]]
+id = "h24-baldios-espolon-096"
+do = "turnin"
+quest = 879
+npc = 3430
+at = [1413, 44.55, 59.26]
+chain = "h24-baldios-espolon-s040-3430"
+text = "Entrega «{quest:879}» a {npc:3430}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#40"]
+note = "Polestar paso 40 «Camp Taurajo», objetivo 1 (turnin)"
+
+[[step]]
+id = "h24-baldios-espolon-097"
+do = "accept"
+quest = 906
+npc = 3430
+at = [1413, 44.55, 59.26]
+optional = true
+chain = "h24-baldios-espolon-s040-3430"
+reqlevel = 17
+text = "Coge «{quest:906}» de {npc:3430}."
+tip = "+3.205 XP · ~22 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#40"]
+note = "Polestar paso 40 «Camp Taurajo», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h24-baldios-espolon-098"
+do = "turnin"
+quest = 885
+npc = 3387
+at = [1413, 44.86, 59.14]
+optional = true
+text = "Entrega «{quest:885}» a {npc:3387}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#40"]
+note = "Polestar paso 40 «Camp Taurajo», objetivo 3 (turnin)"
+
+[[step]]
+id = "h24-baldios-espolon-099"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#40"]
+note = "Polestar paso 40 «Camp Taurajo», objetivo 4 (vendor)"
+
+[[step]]
+id = "h24-baldios-espolon-100"
+do = "turnin"
+quest = 893
+npc = 3433
+at = [1413, 45.1, 57.68]
+text = "Entrega «{quest:893}» a {npc:3433}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#40"]
+note = "Polestar paso 40 «Camp Taurajo», objetivo 5 (turnin)"
+
+[[step]]
+id = "h24-baldios-espolon-101"
+do = "turnin"
+quest = 97250
+npc = 5911
+at = [1413, 44.62, 59.27]
+optional = true
+text = "Entrega «{quest:97250}» a {npc:5911}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#41"]
+note = "Polestar paso 41 «Bruto Logmar», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 97250 · consejo de Polestar sin traducir: {npc:5911}, beside the flight master."
+
+[[step]]
+id = "h24-baldios-espolon-102"
+do = "goto"
+at = [1413, 44.5, 59.1]
+text = "Ve al maestro de vuelo de {area:378}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#42"]
+note = "Polestar paso 42 «Fly to Crossroads», objetivo 1 (goto)"
+
+[[step]]
+id = "h24-baldios-espolon-103"
+do = "fly"
+zone = 1413
+text = "Vuela a El Cruce."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#42"]
+note = "Polestar paso 42 «Fly to Crossroads», objetivo 2 (fly)"
+
+[[step]]
+id = "h24-baldios-espolon-104"
+do = "turnin"
+quest = 906
+npc = 3429
+at = [1413, 51.5, 30.87]
+optional = true
+text = "Entrega «{quest:906}» a {npc:3429}, en lo alto de la torre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#43"]
+note = "Polestar paso 43 «The Crossroads», objetivo 1 (turnin)"
+
+[[step]]
+id = "h24-baldios-espolon-105"
+do = "goto"
+at = [1413, 51.5, 30.4]
+optional = true
+text = "Ve al maestro de vuelo de El Cruce."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#44"]
+note = "Polestar paso 44 «Fly to Ratchet», objetivo 1 (goto) · condición no expresable: llevas la misión 1094, 874, 873"
+
+[[step]]
+id = "h24-baldios-espolon-106"
+do = "fly"
+zone = 1413
+optional = true
+text = "Vuela a Trinquete."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#44"]
+note = "Polestar paso 44 «Fly to Ratchet», objetivo 2 (fly) · condición no expresable: llevas la misión 1094, 874, 873"
+
+[[step]]
+id = "h24-baldios-espolon-107"
+do = "turnin"
+quest = 1094
+npc = 3442
+at = [1413, 62.98, 37.22]
+text = "Entrega «{quest:1094}» a {npc:3442}, «{quest:1094}», de {npc:4201}."
+tip = "{npc:3442} está junto al maestro de vuelo donde aterrizas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/04-the-barrens#45"]
+note = "Polestar paso 45 «Petardol», objetivo 1 (turnin) · condición no expresable: llevas la misión 1094 (implícita: el paso es de esa misión)"

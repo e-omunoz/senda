@@ -1,0 +1,2177 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/50-60/06-silithus
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h57-silithus-pestes"
+title = "Silithus y las Tierras de la Peste"
+levels = [57, 59]
+map = 1451
+summary = "Ruta común de la Horda, 57-59: Silithus y las Tierras de la Peste."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h57-silithus-pestes-001"
+do = "sethearth"
+npc = 15174
+zone = 1451
+at = [1451, 51.89, 39.16]
+text = "Pon la piedra de hogar en {area:3425} con {npc:15174}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#1"]
+note = "Polestar paso 1 «Cenarion Hold», objetivo 1 (sethome) · consejo de Polestar sin traducir: Ride west to the walled hold in the middle of the desert. {npc:15189} stands upstairs in his building: go up inside, the arrow cannot tell the floors apart."
+
+[[step]]
+id = "h57-silithus-pestes-002"
+do = "accept"
+quest = 8277
+npc = 15189
+at = [1451, 51.61, 38.63]
+optional = true
+reqlevel = 54
+text = "Coge «{quest:8277}» de {npc:15189}."
+tip = "+11.260 XP · ~16 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#1"]
+note = "Polestar paso 1 «Cenarion Hold», objetivo 2 (accept)"
+
+[[step]]
+id = "h57-silithus-pestes-003"
+do = "turnin"
+quest = 8276
+npc = 15191
+at = [1451, 51.15, 38.29]
+chain = "h57-silithus-pestes-s001-15191"
+text = "Entrega «{quest:8276}» a {npc:15191}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#1"]
+note = "Polestar paso 1 «Cenarion Hold», objetivo 3 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-004"
+do = "accept"
+quest = 8280
+npc = 15191
+at = [1451, 51.15, 38.29]
+chain = "h57-silithus-pestes-s001-15191"
+reqlevel = 54
+text = "Coge «{quest:8280}» de {npc:15191}."
+why = "+10.225 XP · ~13 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#1"]
+note = "Polestar paso 1 «Cenarion Hold», objetivo 4 (accept)"
+
+[[step]]
+id = "h57-silithus-pestes-005"
+do = "accept"
+quest = 8284
+npc = 15183
+at = [1451, 49.67, 37.46]
+reqlevel = 54
+text = "Coge «{quest:8284}» de {npc:15183}."
+why = "+6.200 XP · ~5,3 min · desbloquea «{quest:8323}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#1"]
+note = "Polestar paso 1 «Cenarion Hold», objetivo 5 (accept)"
+
+[[step]]
+id = "h57-silithus-pestes-006"
+do = "accept"
+quest = 9416
+npc = 17081
+at = [1451, 48.95, 36.69]
+text = "Coge «{quest:9416}» de {npc:17081}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#1"]
+note = "Polestar paso 1 «Cenarion Hold», objetivo 6 (accept)"
+
+[[step]]
+id = "h57-silithus-pestes-007"
+do = "getfp"
+npc = 15178
+node = "72"
+at = [1451, 48.68, 36.67]
+text = "Coge la ruta de vuelo de Fuerte Cenarion con {npc:15178}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#1"]
+note = "Polestar paso 1 «Cenarion Hold», objetivo 7 (getfp)"
+
+[[step]]
+id = "h57-silithus-pestes-008"
+do = "complete"
+quest = 8280
+obj = 1
+at = [1451, 51.43, 31.98]
+wps = [[1451, 53.9, 32.1, "Artillero de arrastre"], [1451, 57.2, 23.6, "Artillero de arrastre"], [1451, 63.3, 22.1, "Artillero de arrastre"]]
+text = "Mata {npc:11740} (15) para «{quest:8280}»."
+tip = "Los Artilleros de arrastre, los Escórpidos Latigosólido y los Arácnidos de arena comparten la arena justo al norte del fuerte."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#2"]
+note = "Polestar paso 2 «Silithus: kill these as you meet them», objetivo 1 (kill)"
+
+[[step]]
+id = "h57-silithus-pestes-009"
+do = "complete"
+quest = 8277
+obj = 2
+at = [1451, 51.05, 30.29]
+wps = [[1451, 52.8, 29.7, "Colmillo de arácnido de arena"], [1451, 57.4, 22.5, "Colmillo de arácnido de arena"], [1451, 63.9, 28.1, "Colmillo de arácnido de arena"]]
+optional = true
+text = "Consigue {item:20376} (8) de {npc:11738} para «{quest:8277}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#2"]
+note = "Polestar paso 2 «Silithus: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-010"
+do = "complete"
+quest = 8277
+obj = 1
+at = [1451, 56.06, 30.24]
+wps = [[1451, 56.5, 32.2, "Aguijoneros escórpidos Latigosólido"], [1451, 55.3, 23.4, "Aguijoneros escórpidos Latigosólido"], [1451, 57.9, 12.3, "Aguijoneros escórpidos Latigosólido"]]
+optional = true
+text = "Consigue {item:20373} (8) de {npc:11735} para «{quest:8277}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#2"]
+note = "Polestar paso 2 «Silithus: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-011"
+do = "complete"
+quest = 8284
+obj = 1
+at = [1451, 35.6, 13.0]
+wps = [[1451, 31.1, 16.5, "Fragmento del Crepúsculo tablilla"], [1451, 28.2, 14.7, "Fragmento del Crepúsculo tablilla"], [1451, 24.6, 11.1, "Fragmento del Crepúsculo tablilla"]]
+text = "Consigue {item:20378} (8) de {npc:11744} y {npc:11746} y {npc:14455} para «{quest:8284}»."
+tip = "Los fragmentos de tablilla brillantes están alrededor del campamento Crepuscular del extremo noroeste; los Sirocosos y Estruendores del desierto de allí también los sueltan."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#3"]
+note = "Polestar paso 3 «Twilight Base Camp», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-012"
+do = "turnin"
+quest = 8284
+npc = 15183
+at = [1451, 49.67, 37.46]
+chain = "h57-silithus-pestes-s004-15183"
+text = "Entrega «{quest:8284}» a {npc:15183}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#4"]
+note = "Polestar paso 4 «Cenarion Hold», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:15189} stands upstairs in his building: go up inside, the arrow cannot tell the floors apart."
+
+[[step]]
+id = "h57-silithus-pestes-013"
+do = "accept"
+quest = 8285
+npc = 15183
+at = [1451, 49.67, 37.46]
+chain = "h57-silithus-pestes-s004-15183"
+reqlevel = 54
+text = "Coge «{quest:8285}» de {npc:15183}."
+why = "+4.800 XP · ~1 min · desbloquea «{quest:8323}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#4"]
+note = "Polestar paso 4 «Cenarion Hold», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-014"
+do = "turnin"
+quest = 8280
+npc = 15191
+at = [1451, 51.15, 38.29]
+chain = "h57-silithus-pestes-s004-15191"
+text = "Entrega «{quest:8280}» a {npc:15191}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#4"]
+note = "Polestar paso 4 «Cenarion Hold», objetivo 3 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-016"
+do = "turnin"
+quest = 8277
+npc = 15189
+at = [1451, 51.61, 38.63]
+optional = true
+chain = "h57-silithus-pestes-s004-15189"
+text = "Entrega «{quest:8277}» a {npc:15189}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#4"]
+note = "Polestar paso 4 «Cenarion Hold», objetivo 5 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-017"
+do = "accept"
+quest = 8278
+npc = 15189
+at = [1451, 51.61, 38.63]
+chain = "h57-silithus-pestes-s004-15189"
+reqlevel = 54
+text = "Coge «{quest:8278}» de {npc:15189}."
+why = "+9.746 XP · ~16 min · desbloquea «{quest:8282}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#4"]
+note = "Polestar paso 4 «Cenarion Hold», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-018"
+do = "complete"
+quest = 1126
+obj = 1
+at = [1451, 60.2, 52.4]
+text = "Consigue {item:17346} (1) de {npc:13301} para «{quest:1126}»."
+tip = "Vuelve a Viento del Sur y sube a la torre. Al remover la colmena de la cima salen Emboscadores Colmen'Ashi; uno lleva el {item:17346}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#5"]
+note = "Polestar paso 5 ««Una colmena en la torre»», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-019"
+do = "complete"
+quest = 5527
+obj = 1
+at = [1451, 63.23, 55.35]
+text = "Recoge {item:22201} (1) de {obj:179565} para «{quest:5527}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#6"]
+note = "Polestar paso 6 «The Spirits of Southwind», objetivo 1 (collect) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h57-silithus-pestes-020"
+do = "turnin"
+quest = 8285
+npc = 15194
+at = [1451, 67.19, 69.76]
+chain = "h57-silithus-pestes-s007-15194"
+text = "Entrega «{quest:8285}» a {npc:15194}."
+tip = "Cabalga al sureste hasta {area:3447}, bajo los acantilados de Un'Goro. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#7"]
+note = "Polestar paso 7 «Ermitaño Ortell», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-021"
+do = "accept"
+quest = 8279
+npc = 15194
+at = [1451, 67.19, 69.76]
+chain = "h57-silithus-pestes-s007-15194"
+reqlevel = 54
+text = "Coge «{quest:8279}» de {npc:15194}."
+why = "+9.437 XP · ~13 min · desbloquea «{quest:8323}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#7"]
+note = "Polestar paso 7 «Ermitaño Ortell», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-022"
+do = "complete"
+quest = 8278
+obj = 3
+at = [1451, 66.53, 74.27]
+wps = [[1451, 66.3, 75.6, "Colmillo de Acecharrocas"], [1451, 64.9, 86.3, "Colmillo de Acecharrocas"], [1451, 50.4, 69.8, "Colmillo de Acecharrocas"]]
+text = "Consigue {item:20377} (3) de {npc:11739} para «{quest:8278}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#7"]
+note = "Polestar paso 7 «Ermitaño Ortell», objetivo 3 (collect) · consejo de Polestar sin traducir: {item:20377} from {npc:11739}, 130 yd south-west."
+
+[[step]]
+id = "h57-silithus-pestes-024"
+do = "complete"
+quest = 8278
+obj = 1
+at = [1451, 64.17, 66.63]
+wps = [[1451, 63.4, 68.5, "Aguijonero de Cazador Latigosólido"], [1451, 67.4, 79.2, "Aguijonero de Cazador Latigosólido"], [1451, 48.5, 68.7, "Aguijonero de Cazador Latigosólido"]]
+text = "Consigue {item:20375} (3) de {npc:11737} para «{quest:8278}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#8"]
+note = "Polestar paso 8 «Dredge Crushers and Pincers», objetivo 2 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-025"
+do = "complete"
+quest = 8278
+obj = 3
+at = [1451, 66.53, 74.27]
+wps = [[1451, 66.3, 75.6, "Colmillo de Acecharrocas"], [1451, 64.9, 86.3, "Colmillo de Acecharrocas"], [1451, 50.4, 69.8, "Colmillo de Acecharrocas"]]
+text = "Consigue {item:20377} (3) de {npc:11739} para «{quest:8278}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#8"]
+note = "Polestar paso 8 «Dredge Crushers and Pincers», objetivo 3 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-026"
+do = "turnin"
+quest = 9416
+npc = 17079
+at = [1451, 50.75, 69.54]
+chain = "h57-silithus-pestes-s009-17079"
+text = "Entrega «{quest:9416}» a {npc:17079}."
+tip = "Cabalga al oeste hasta el campamento de la Horda al norte de {area:2744}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#9"]
+note = "Polestar paso 9 «General Kirika», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-027"
+do = "accept"
+quest = 9422
+npc = 17079
+at = [1451, 50.75, 69.54]
+chain = "h57-silithus-pestes-s009-17079"
+text = "Coge «{quest:9422}» de {npc:17079}."
+why = "+6.600 XP · ~2 min · 1,8× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#9"]
+note = "Polestar paso 9 «General Kirika», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-028"
+do = "complete"
+quest = 9422
+at = [1451, 50.93, 69.33]
+text = "Completa «{quest:9422}»."
+tip = "Los Géiseres de silitista brotan por todo el desierto del sur. Pisa el silitista que deja uno y llévalo al extractor de silitista de la Horda, en el campamento de la General Kirika; si luchas o montas, lo sueltas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#10"]
+note = "Polestar paso 10 ««Peinando el desierto»», objetivo 1 (complete) · objetivos (EN): Silithus Dust Turnin Quest Doodad Horde"
+
+[[step]]
+id = "h57-silithus-pestes-029"
+do = "turnin"
+quest = 9422
+npc = 17079
+at = [1451, 50.75, 69.54]
+text = "Entrega «{quest:9422}» a {npc:17079}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#10"]
+note = "Polestar paso 10 ««Peinando el desierto»», objetivo 2 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-030"
+do = "complete"
+quest = 8278
+obj = 3
+at = [1451, 48.58, 67.17]
+wps = [[1451, 48.0, 68.5, "Colmillo de Acecharrocas"], [1451, 38.9, 75.0, "Colmillo de Acecharrocas"], [1451, 33.9, 78.8, "Colmillo de Acecharrocas"]]
+text = "Consigue {item:20377} (3) de {npc:11739} para «{quest:8278}»."
+tip = "Los Cazadores Latigosólido y los Acechadores de piedra recorren las dunas al suroeste del campamento de Kirika."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#11"]
+note = "Polestar paso 11 «Flayers and Rock Stalkers», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-031"
+do = "complete"
+quest = 8278
+obj = 1
+at = [1451, 49.53, 66.58]
+wps = [[1451, 48.5, 68.7, "Aguijonero de Cazador Latigosólido"], [1451, 43.1, 73.9, "Aguijonero de Cazador Latigosólido"], [1451, 41.3, 81.1, "Aguijonero de Cazador Latigosólido"]]
+text = "Consigue {item:20375} (3) de {npc:11737} para «{quest:8278}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#11"]
+note = "Polestar paso 11 «Flayers and Rock Stalkers», objetivo 2 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-032"
+do = "complete"
+quest = 8279
+obj = 2
+at = [1451, 16.09, 86.37]
+text = "Consigue {item:20395} (1) de {npc:11803} para «{quest:8279}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#12"]
+note = "Polestar paso 12 «Twilight Vanguard», objetivo 1 (collect) · consejo de Polestar sin traducir: {npc:11803} walks the Vanguard camp in the far south-west. Keep every {item:20404} the cultists drop: {npc:15306} and Ortell want ten each later."
+
+[[step]]
+id = "h57-silithus-pestes-033"
+do = "complete"
+quest = 8278
+obj = 2
+at = [1451, 34.1, 66.8]
+wps = [[1451, 40.3, 66.7, "Aguijoneros tenazarios Latigosólido"], [1451, 42.7, 58.0, "Aguijoneros tenazarios Latigosólido"], [1451, 49.6, 64.2, "Aguijoneros tenazarios Latigosólido"]]
+text = "Consigue {item:20374} (3) de {npc:11736} para «{quest:8278}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#13"]
+note = "Polestar paso 13 «Aguijoneros tenazarios Latigosólido», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-034"
+do = "complete"
+quest = 8279
+obj = 1
+at = [1451, 26.35, 36.62]
+text = "Consigue {item:20394} (1) de {npc:15200} para «{quest:8279}»."
+tip = "{npc:15200} ocupa el campamento del oeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#14"]
+note = "Polestar paso 14 «Twilight Post», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-035"
+do = "complete"
+quest = 8279
+obj = 3
+at = [1451, 40.86, 42.22]
+text = "Consigue {item:20396} (1) de {npc:11804} para «{quest:8279}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#15"]
+note = "Polestar paso 15 «Twilight Outpost», objetivo 1 (collect) · consejo de Polestar sin traducir: {npc:11804} stands in the outpost west of {area:3425}. Keep any Encrypted Twilight Texts that drop here too."
+
+[[step]]
+id = "h57-silithus-pestes-036"
+do = "goto"
+at = [1451, 33.8, 47.8]
+if = { maxlevel = 57 }
+text = "Ve a {npc:11880}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#16"]
+note = "Polestar paso 16 «Level 58», objetivo 1 (goto) · consejo de Polestar sin traducir: {npc:15181}'s «{quest:8304}», at {area:3425}, needs level 58: top up on the Twilight Avengers, Geolords and Stonecallers west of the outpost. Or, with a group, run the {area:1583} dungeon (Lower) or the «{quest:838}» dungeon instead."
+
+[[step]]
+id = "h57-silithus-pestes-037"
+do = "level"
+level = 58
+at = [1451, 37.38, 47.12]
+if = { maxlevel = 57 }
+text = "Sube al nivel 58."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#16"]
+note = "Polestar paso 16 «Level 58», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:11880}."
+
+[[step]]
+id = "h57-silithus-pestes-038"
+do = "accept"
+quest = 8318
+npc = 15306
+at = [1451, 48.57, 37.78]
+optional = true
+reqlevel = 57
+text = "Coge «{quest:8318}» de {npc:15306}, en el lado oeste del Fuerte."
+tip = "+14.077 XP · ~23 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#17"]
+note = "Polestar paso 17 «Cenarion Hold», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:15189} and {npc:15190} stand upstairs in their building: go up inside, the arrow cannot tell the floors apart."
+
+[[step]]
+id = "h57-silithus-pestes-039"
+do = "accept"
+quest = 8304
+npc = 15181
+at = [1451, 49.2, 34.18]
+reqlevel = 58
+text = "Coge «{quest:8304}» de {npc:15181}."
+why = "+6.600 XP · ~2,4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#17"]
+note = "Polestar paso 17 «Cenarion Hold», objetivo 2 (accept)"
+
+[[step]]
+id = "h57-silithus-pestes-041"
+do = "turnin"
+quest = 8278
+npc = 15189
+at = [1451, 51.61, 38.63]
+text = "Entrega «{quest:8278}» a {npc:15189}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#17"]
+note = "Polestar paso 17 «Cenarion Hold», objetivo 4 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-042"
+do = "accept"
+quest = 8282
+npc = 15190
+at = [1451, 51.63, 38.5]
+reqlevel = 54
+text = "Coge «{quest:8282}» de {npc:15190}."
+why = "+6.200 XP · ~2,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#17"]
+note = "Polestar paso 17 «Cenarion Hold», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-043"
+do = "turnin"
+quest = 8279
+npc = 15194
+at = [1451, 67.19, 69.76]
+chain = "h57-silithus-pestes-s018-15194"
+text = "Entrega «{quest:8279}» a {npc:15194}."
+tip = "Cabalga al noreste hasta {area:3447}. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#18"]
+note = "Polestar paso 18 «Ermitaño Ortell», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-044"
+do = "accept"
+quest = 8287
+npc = 15194
+at = [1451, 67.19, 69.76]
+chain = "h57-silithus-pestes-s018-15194"
+reqlevel = 54
+text = "Coge «{quest:8287}» de {npc:15194}."
+why = "+6.600 XP · <1 min · 3,9× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#18"]
+note = "Polestar paso 18 «Ermitaño Ortell», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-045"
+do = "accept"
+quest = 8323
+npc = 15194
+at = [1451, 67.19, 69.76]
+optional = true
+chain = "h57-silithus-pestes-s018-15194"
+reqlevel = 54
+text = "Coge «{quest:8323}» de {npc:15194}."
+tip = "+13.877 XP · ~22 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#18"]
+note = "Polestar paso 18 «Ermitaño Ortell», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-046"
+do = "complete"
+quest = 8282
+obj = 1
+at = [1451, 44.56, 91.38]
+text = "Recoge {item:20379} (1) de {obj:180435} para «{quest:8282}»."
+tip = "La bolsa está en las montañas del extremo sur, pasado el Campamento Barbabronce. Pinzamorten, un escórpido élite, patrulla cerca: cógela cuando se aleje."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#19"]
+note = "Polestar paso 19 ««La cartera perdida de Noggle»», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-047"
+do = "complete"
+quest = 8304
+obj = 1
+npc = 15171
+at = [1451, 40.8, 88.9]
+text = "Habla con {npc:15171} para «{quest:8304}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#20"]
+note = "Polestar paso 20 ««Queridísima Natalia»», objetivo 1 (talk) · consejo de Polestar sin traducir: {npc:15171} and {npc:15170} camp at Bronzebeard's Encampment, just north of the satchel's mountains. Question them: go through each one's whole conversation; there is no need to fight them."
+
+[[step]]
+id = "h57-silithus-pestes-048"
+do = "complete"
+quest = 8304
+obj = 2
+npc = 15170
+at = [1451, 41.3, 88.5]
+text = "Habla con {npc:15170} para «{quest:8304}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#20"]
+note = "Polestar paso 20 ««Queridísima Natalia»», objetivo 2 (talk)"
+
+[[step]]
+id = "h57-silithus-pestes-049"
+do = "complete"
+quest = 8318
+obj = 1
+at = [1451, 21.49, 84.26]
+wps = [[1451, 18.4, 81.7, "Texto crepuscular codificado"], [1451, 22.8, 68.7, "Texto crepuscular codificado"], [1451, 24.9, 36.7, "Texto crepuscular codificado"]]
+optional = true
+text = "Consigue {item:20404} (10) para «{quest:8318}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#21"]
+note = "Polestar paso 21 «Twilight Base Camp», objetivo 1 (collect) · condición no expresable: llevas la misión 8318 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: Collect twenty Encrypted Twilight Texts from the cultists here, ten for {npc:15306} and ten for Ortell."
+
+[[step]]
+id = "h57-silithus-pestes-050"
+do = "loot"
+item = 20404
+count = 20
+at = [1451, 21.49, 84.26]
+wps = [[1451, 18.4, 81.7, "Texto crepuscular codificado"], [1451, 22.8, 68.7, "Texto crepuscular codificado"], [1451, 24.9, 36.7, "Texto crepuscular codificado"]]
+text = "Consigue {item:20404} (20)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#21"]
+note = "Polestar paso 21 «Twilight Base Camp», objetivo 2 (collect) · condición no expresable: llevas la misión 8318 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: Ten for each quest: {npc:15306} takes his ten before Ortell."
+
+[[step]]
+id = "h57-silithus-pestes-051"
+do = "complete"
+quest = 8323
+obj = 1
+at = [1451, 21.49, 84.26]
+wps = [[1451, 18.4, 81.7, "Texto crepuscular codificado"], [1451, 22.8, 68.7, "Texto crepuscular codificado"], [1451, 24.9, 36.7, "Texto crepuscular codificado"]]
+optional = true
+text = "Consigue {item:20404} (10) para «{quest:8323}»."
+tip = "Los textos sobrantes de los fieles."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#22"]
+note = "Polestar paso 22 «Twilight Base Camp», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-052"
+do = "turnin"
+quest = 8318
+npc = 15306
+at = [1451, 48.57, 37.78]
+optional = true
+text = "Entrega «{quest:8318}» a {npc:15306}, en el lado oeste del Fuerte."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#23"]
+note = "Polestar paso 23 «Back to Cenarion Hold», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:15190} stands upstairs in his building: go up inside, the arrow cannot tell the floors apart."
+
+[[step]]
+id = "h57-silithus-pestes-053"
+do = "turnin"
+quest = 8287
+npc = 15181
+at = [1451, 49.2, 34.18]
+chain = "h57-silithus-pestes-s023-15181"
+text = "Entrega «{quest:8287}» a {npc:15181}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#23"]
+note = "Polestar paso 23 «Back to Cenarion Hold», objetivo 2 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-054"
+do = "turnin"
+quest = 8304
+npc = 15181
+at = [1451, 49.2, 34.18]
+chain = "h57-silithus-pestes-s023-15181"
+text = "Entrega «{quest:8304}» a {npc:15181}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#23"]
+note = "Polestar paso 23 «Back to Cenarion Hold», objetivo 3 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-055"
+do = "turnin"
+quest = 8282
+npc = 15190
+at = [1451, 51.63, 38.5]
+text = "Entrega «{quest:8282}» a {npc:15190}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#23"]
+note = "Polestar paso 23 «Back to Cenarion Hold», objetivo 4 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-056"
+do = "note"
+text = "El siguiente encargo de Mar'alith lleva a Colmen'Regal, lleno de élites: sáltalo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#23"]
+note = "Polestar paso 23 «Back to Cenarion Hold», objetivo 5 (note) · nota de Polestar traducida por Senda: Mar'alith's next errand, Into the Maw of Madness, leads into Hive'Regal among elites. Skip it."
+
+[[step]]
+id = "h57-silithus-pestes-057"
+do = "turnin"
+quest = 8323
+npc = 15194
+at = [1451, 67.19, 69.76]
+optional = true
+text = "Entrega «{quest:8323}» a {npc:15194}."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#24"]
+note = "Polestar paso 24 «Ermitaño Ortell», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-058"
+do = "turnin"
+quest = 1126
+npc = 13220
+at = [1451, 81.87, 18.93]
+chain = "h57-silithus-pestes-s025-13220"
+text = "Entrega «{quest:1126}» a {npc:13220}."
+tip = "Cabalga al noreste hasta {area:3077}; sales de {map:1451} por el paso que hay al lado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#25"]
+note = "Polestar paso 25 «Layo Estrella», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-060"
+do = "goto"
+at = [1449, 44.7, 8.1]
+text = "Ve a {area:541}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#26"]
+note = "Polestar paso 26 «Un'Goro Crater», objetivo 1 (goto)"
+
+[[step]]
+id = "h57-silithus-pestes-061"
+do = "accept"
+quest = 4492
+npc = 9997
+at = [1449, 43.62, 8.5]
+reqlevel = 50
+text = "Coge «{quest:4492}» de {npc:9997}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#27"]
+note = "Polestar paso 27 «Marshal's Refuge», objetivo 1 (accept) · consejo de Polestar sin traducir: Through the pass and east along the northern cliffs to {area:541}. {npc:9997} stands beside the flight master."
+
+[[step]]
+id = "h57-silithus-pestes-062"
+do = "accept"
+quest = 974
+npc = 10302
+at = [1449, 30.93, 50.44]
+reqlevel = 51
+text = "Coge «{quest:974}» de {npc:10302}."
+tip = "El goblin {npc:10302} está en {area:543}, justo al este del pilón."
+why = "+5.650 XP · ~5,4 min · desbloquea «{quest:4842}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#28"]
+note = "Polestar paso 28 «Krakle», objetivo 1 (accept)"
+
+[[step]]
+id = "h57-silithus-pestes-063"
+do = "goto"
+at = [1449, 49.7, 45.6]
+text = "Ve al punto marcado."
+tip = "Cabalga hacia el este hasta {area:537}, súbelo y usa {npc:10541} en la grieta de lava cerca de la cima; después vuelve al oeste con {npc:10302}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#29"]
+note = "Polestar paso 29 «Termómetro de Krakle», objetivo 1 (goto)"
+
+[[step]]
+id = "h57-silithus-pestes-064"
+do = "complete"
+quest = 974
+at = [1449, 49.7, 45.6]
+text = "Usa {item:12472} y completa «{quest:974}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#29"]
+note = "Polestar paso 29 «Termómetro de Krakle», objetivo 2 (complete) · objetivos (EN): Fire Plume Ridge Hot Spot"
+
+[[step]]
+id = "h57-silithus-pestes-065"
+do = "turnin"
+quest = 974
+npc = 10302
+at = [1449, 30.93, 50.44]
+chain = "h57-silithus-pestes-s030-10302"
+text = "Entrega «{quest:974}» a {npc:10302}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#30"]
+note = "Polestar paso 30 «Krakle», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-066"
+do = "accept"
+quest = 980
+npc = 10302
+at = [1449, 30.93, 50.44]
+chain = "h57-silithus-pestes-s030-10302"
+reqlevel = 51
+text = "Coge «{quest:980}» de {npc:10302}."
+why = "+2.800 XP · <1 min · desbloquea «{quest:4842}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#30"]
+note = "Polestar paso 30 «Krakle», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-067"
+do = "note"
+text = "{npc:10302} te envía con {npc:9298} en {map:1452}: guárdala."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#30"]
+note = "Polestar paso 30 «Krakle», objetivo 3 (note)"
+
+[[step]]
+id = "h57-silithus-pestes-068"
+do = "complete"
+quest = 4507
+obj = 1
+at = [1449, 43.5, 81.0]
+text = "Usa {item:11833} para «{quest:4507}»."
+tip = "Consigue {item:11835} (1) de {npc:10041} para «{quest:4507}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#31"]
+note = "Polestar paso 31 ««El señuelo atrapa a la reina»», objetivo 1 (use) · consejo de Polestar sin traducir: Use the {item:11833} where the arrow points, inside the Gorishi hive of the {area:540}, to call the {npc:10041} (level 56)."
+
+[[step]]
+id = "h57-silithus-pestes-069"
+do = "accept"
+quest = 4292
+npc = 9619
+at = [1449, 71.64, 75.96]
+reqlevel = 48
+text = "Coge «{quest:4292}» de {npc:9619}."
+why = "+7.584 XP · ~5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#32"]
+note = "Polestar paso 32 «Abrecaminos Torwa», objetivo 1 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-070"
+do = "note"
+text = "Guarda el cebo: {npc:9684} es de nivel 56 y la segunda vuelta pasa por su guarida."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#32"]
+note = "Polestar paso 32 «Abrecaminos Torwa», objetivo 2 (note)"
+
+[[step]]
+id = "h57-silithus-pestes-071"
+do = "accept"
+quest = 4289
+npc = 9619
+at = [1449, 71.64, 75.96]
+reqlevel = 47
+text = "Coge «{quest:4289}» de {npc:9619}."
+why = "+6.710 XP · ~7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#32"]
+note = "Polestar paso 32 «Abrecaminos Torwa», objetivo 3 (accept)"
+
+[[step]]
+id = "h57-silithus-pestes-072"
+do = "complete"
+quest = 4292
+obj = 1
+at = [1449, 79.65, 49.83]
+text = "Consigue {item:11510} (1) de {npc:9684} para «{quest:4292}»."
+tip = "La guarida de {npc:9684} está justo al sur del pilón. Usa allí el cebo de {npc:9619}; {npc:9684} es de nivel 56 y pega fuerte, así que empieza con la salud al máximo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#33"]
+note = "Polestar paso 33 «Lar'korwi», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-073"
+do = "complete"
+quest = 4289
+obj = 1
+at = [1449, 69.05, 17.64]
+wps = [[1449, 67.9, 14.9, "Pelambre de gorila de Un'Goro"], [1449, 65.5, 15.9, "Pelambre de gorila de Un'Goro"], [1449, 62.2, 17.4, "Pelambre de gorila de Un'Goro"]]
+text = "Consigue {item:11478} (2) de {npc:6514} para «{quest:4289}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#34"]
+note = "Polestar paso 34 «Un'Goro Crater: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: Careful: Un'Goro Gorillas (level 50-51) call for help from allies within 20 yd once they drop to 25% health. There is a cave full of apes in the area, and fighting there brings many adds."
+
+[[step]]
+id = "h57-silithus-pestes-074"
+do = "complete"
+quest = 4289
+obj = 2
+at = [1449, 69.05, 17.64]
+wps = [[1449, 67.9, 14.9, "Pelambre de vapuleador de Un'Goro"], [1449, 65.5, 15.9, "Pelambre de vapuleador de Un'Goro"], [1449, 62.2, 17.4, "Pelambre de vapuleador de Un'Goro"]]
+text = "Consigue {item:11479} (2) de {npc:6513} para «{quest:4289}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#34"]
+note = "Polestar paso 34 «Un'Goro Crater: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-075"
+do = "complete"
+quest = 4289
+obj = 3
+at = [1449, 69.05, 17.64]
+wps = [[1449, 67.9, 14.9, "Pelambre de Tronador de Un'Goro"], [1449, 65.5, 15.9, "Pelambre de Tronador de Un'Goro"], [1449, 62.2, 17.4, "Pelambre de Tronador de Un'Goro"]]
+text = "Consigue {item:11480} (2) de {npc:6516} para «{quest:4289}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#34"]
+note = "Polestar paso 34 «Un'Goro Crater: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-076"
+do = "turnin"
+quest = 3941
+npc = 9117
+at = [1449, 41.92, 2.7]
+chain = "h57-silithus-pestes-s035-9117"
+text = "Entrega «{quest:3941}» a {npc:9117}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#35"]
+note = "Polestar paso 35 «Marshal's Refuge», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:9117}, below ground. · consejo de Polestar sin traducir: {npc:9117} is inside the cave."
+
+[[step]]
+id = "h57-silithus-pestes-077"
+do = "accept"
+quest = 3942
+npc = 9117
+at = [1449, 41.92, 2.7]
+chain = "h57-silithus-pestes-s035-9117"
+reqlevel = 47
+text = "Coge «{quest:3942}» de {npc:9117}."
+why = "+5.450 XP · ~1 min · 2,1× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#35"]
+note = "Polestar paso 35 «Marshal's Refuge», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-078"
+do = "note"
+text = "Guarda «{quest:3942}»: {npc:9116} está en {area:2479}, de camino por {map:1448} en la siguiente guía."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#35"]
+note = "Polestar paso 35 «Marshal's Refuge», objetivo 3 (note)"
+
+[[step]]
+id = "h57-silithus-pestes-079"
+do = "complete"
+quest = 5163
+obj = 3
+at = [1449, 43.66, 9.37]
+optional = true
+text = "Mata {npc:10977} (1) para «{quest:5163}»."
+tip = "Usa {npc:10980} con {npc:10977}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#35"]
+note = "Polestar paso 35 «Marshal's Refuge», objetivo 4 (kill)"
+
+[[step]]
+id = "h57-silithus-pestes-080"
+do = "turnin"
+quest = 4492
+npc = 9999
+at = [1449, 51.9, 49.85]
+chain = "h57-silithus-pestes-s036-9999"
+text = "Entrega «{quest:4492}» a {npc:9999}."
+tip = "{npc:9999} está sentado en la cresta, perdido y agotado. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#36"]
+note = "Polestar paso 36 «Ringo», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-081"
+do = "accept"
+quest = 4491
+npc = 9999
+at = [1449, 51.9, 49.85]
+optional = true
+escort = true
+chain = "h57-silithus-pestes-s036-9999"
+reqlevel = 50
+text = "Coge «{quest:4491}» de {npc:9999}."
+tip = "Misión con tiempo: 25 min desde que la coges. +5.650 XP · ~9,3 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#36"]
+note = "Polestar paso 36 «Ringo», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-082"
+do = "goto"
+at = [1449, 43.7, 8.3]
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#37"]
+note = "Polestar paso 37 «Escort Ringo», objetivo 1 (goto) · consejo de Polestar sin traducir: Lead {npc:9999} north to {area:541}. When he faints, use {item:11804} on him to wake him."
+
+[[step]]
+id = "h57-silithus-pestes-083"
+do = "complete"
+quest = 4491
+optional = true
+escort = true
+text = "Usa {item:11804} y completa «{quest:4491}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#37"]
+note = "Polestar paso 37 «Escort Ringo», objetivo 2 (complete) · objetivos (EN): Escort Ringo to Spraggle Frock at Marshal's Refuge"
+
+[[step]]
+id = "h57-silithus-pestes-084"
+do = "turnin"
+quest = 4491
+npc = 9997
+at = [1449, 43.62, 8.5]
+optional = true
+text = "Entrega «{quest:4491}» a {npc:9997}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#38"]
+note = "Polestar paso 38 «Marshal's Refuge», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-085"
+do = "turnin"
+quest = 4292
+npc = 9619
+at = [1449, 71.64, 75.96]
+text = "Entrega «{quest:4292}» a {npc:9619}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#39"]
+note = "Polestar paso 39 «Abrecaminos Torwa», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-086"
+do = "note"
+text = "Ahora {npc:9619} pide la piel de {npc:9622}, en la cueva del noreste: omítela."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#39"]
+note = "Polestar paso 39 «Abrecaminos Torwa», objetivo 2 (note)"
+
+[[step]]
+id = "h57-silithus-pestes-087"
+do = "turnin"
+quest = 4289
+npc = 9619
+at = [1449, 71.64, 75.96]
+text = "Entrega «{quest:4289}» a {npc:9619}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#39"]
+note = "Polestar paso 39 «Abrecaminos Torwa», objetivo 3 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-088"
+do = "goto"
+at = [1446, 52.4, 27.0]
+text = "Ve a {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#40"]
+note = "Polestar paso 40 «Tanaris», objetivo 1 (goto)"
+
+[[step]]
+id = "h57-silithus-pestes-089"
+do = "turnin"
+quest = 2741
+at = [1446, 52.39, 26.97]
+optional = true
+text = "Entrega «{quest:2741}» en {obj:142071}."
+tip = "Vuela a {area:976}. ¿Aún llevas «{quest:2741}»? La máquina está en el centro del pueblo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#41"]
+note = "Polestar paso 41 «Gadgetzan», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-090"
+do = "turnin"
+quest = 4507
+npc = 5594
+at = [1446, 50.89, 26.96]
+chain = "h57-silithus-pestes-s041-5594"
+text = "Entrega «{quest:4507}» a {npc:5594}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#41"]
+note = "Polestar paso 41 «Gadgetzan», objetivo 2 (turnin) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h57-silithus-pestes-091"
+do = "accept"
+quest = 4509
+npc = 5594
+at = [1446, 50.89, 26.96]
+chain = "h57-silithus-pestes-s041-5594"
+reqlevel = 50
+text = "Coge «{quest:4509}» de {npc:5594}."
+why = "+540 XP · <1 min · desbloquea «{quest:4511}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#41"]
+note = "Polestar paso 41 «Gadgetzan», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-092"
+do = "goto"
+at = [1446, 51.6, 25.5]
+text = "Ve al maestro de vuelo de {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#42"]
+note = "Polestar paso 42 «Fly to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h57-silithus-pestes-093"
+do = "fly"
+zone = 1454
+text = "Vuela a {area:1637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#42"]
+note = "Polestar paso 42 «Fly to Orgrimmar», objetivo 2 (fly)"
+
+[[step]]
+id = "h57-silithus-pestes-094-wr"
+do = "train"
+npc = 3354
+spells = [6554, 11581]
+at = [1454, 80.39, 32.38]
+if = { class = ["WARRIOR"] }
+reqlevel = 58
+text = "Entrena con {npc:3354}, el instructor de guerrero."
+tip = "2 hechizos hasta el nivel 58."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#43", "trainer:warrior"]
+note = "Polestar paso 43 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 57-58"
+
+[[step]]
+id = "h57-silithus-pestes-094-hu"
+do = "train"
+npc = 3406
+spells = [13555, 14271, 14295, 14322, 14325]
+at = [1454, 67.24, 20.2]
+if = { class = ["HUNTER"] }
+reqlevel = 58
+text = "Entrena con {npc:3406}, el instructor de cazador."
+tip = "5 hechizos hasta el nivel 58."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#43", "trainer:hunter"]
+note = "Polestar paso 43 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 57-58"
+
+[[step]]
+id = "h57-silithus-pestes-094-ro"
+do = "train"
+npc = 3328
+spells = [1769, 11269, 11305]
+at = [1454, 43.9, 54.63]
+if = { class = ["ROGUE"] }
+reqlevel = 58
+text = "Entrena con {npc:3328}, el instructor de pícaro."
+tip = "3 hechizos hasta el nivel 58."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#43", "trainer:rogue"]
+note = "Polestar paso 43 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 57-58"
+
+[[step]]
+id = "h57-silithus-pestes-094-pr"
+do = "train"
+npc = 6018
+spells = [10894, 10912, 10947, 10965, 20770]
+at = [1454, 35.59, 87.82]
+if = { class = ["PRIEST"] }
+reqlevel = 58
+text = "Entrena con {npc:6018}, el instructor de sacerdote."
+tip = "5 hechizos hasta el nivel 58."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#43", "trainer:priest"]
+note = "Polestar paso 43 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 57-58"
+
+[[step]]
+id = "h57-silithus-pestes-094-sh"
+do = "train"
+npc = 3403
+spells = [10428, 10473, 10538, 16356, 16387]
+at = [1454, 37.84, 36.45]
+if = { class = ["SHAMAN"] }
+reqlevel = 58
+text = "Entrena con {npc:3403}, el instructor de chamán."
+tip = "5 hechizos hasta el nivel 58."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#43", "trainer:shaman"]
+note = "Polestar paso 43 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 57-58"
+
+[[step]]
+id = "h57-silithus-pestes-094-mg"
+do = "train"
+npc = 7311
+spells = [10054, 10161, 10207, 22783]
+at = [1454, 39.16, 86.27]
+if = { class = ["MAGE"] }
+reqlevel = 58
+text = "Entrena con {npc:7311}, el instructor de mago."
+tip = "4 hechizos hasta el nivel 58: nuevos {spell:10054}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#43", "trainer:mage"]
+note = "Polestar paso 43 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 57-58"
+
+[[step]]
+id = "h57-silithus-pestes-094-wl"
+do = "train"
+npc = 3325
+spells = [11678, 11713, 11726, 11730, 17923, 17926]
+at = [1454, 48.62, 46.95]
+if = { class = ["WARLOCK"] }
+reqlevel = 58
+text = "Entrena con {npc:3325}, el instructor de brujo."
+tip = "6 hechizos hasta el nivel 58."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#43", "trainer:warlock"]
+note = "Polestar paso 43 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 57-58"
+
+[[step]]
+id = "h57-silithus-pestes-095-pa"
+do = "train"
+npc = 246344
+spells = [19943, 20357, 20423]
+at = [1456, 23.91, 15.44]
+if = { class = ["PALADIN"] }
+reqlevel = 58
+text = "Entrena con {npc:246344}, el instructor de paladín."
+tip = "3 hechizos hasta el nivel 58."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#44", "trainer:paladin"]
+note = "Polestar paso 44 «Paladin trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 57-58"
+
+[[step]]
+id = "h57-silithus-pestes-096"
+do = "turnin"
+quest = 4509
+npc = 7010
+at = [1454, 56.26, 46.68]
+chain = "h57-silithus-pestes-s045-7010"
+text = "Entrega «{quest:4509}» a {npc:7010}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#45"]
+note = "Polestar paso 45 «Zilzibin Tambor Sabio», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-097"
+do = "accept"
+quest = 4511
+npc = 7010
+at = [1454, 56.26, 46.68]
+chain = "h57-silithus-pestes-s045-7010"
+reqlevel = 50
+text = "Coge «{quest:4511}» de {npc:7010}."
+why = "+8.150 XP · <1 min · 6,7× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#45"]
+note = "Polestar paso 45 «Zilzibin Tambor Sabio», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-098"
+do = "turnin"
+quest = 4511
+npc = 3309
+at = [1454, 49.58, 69.12]
+text = "Entrega «{quest:4511}» a {npc:3309}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#46"]
+note = "Polestar paso 46 «Karus», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-099"
+do = "goto"
+at = [1411, 50.8, 13.5]
+text = "Ve al zepelín a {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#47"]
+note = "Polestar paso 47 «Zeppelin to Undercity», objetivo 1 (goto)"
+
+[[step]]
+id = "h57-silithus-pestes-100"
+do = "goto"
+at = [1422, 51.9, 28.1]
+text = "Ve a {npc:11610}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#48"]
+note = "Polestar paso 48 «Western Plaguelands», objetivo 1 (goto)"
+
+[[step]]
+id = "h57-silithus-pestes-101"
+do = "turnin"
+quest = 6004
+npc = 11610
+at = [1422, 51.92, 28.06]
+chain = "h57-silithus-pestes-s049-11610"
+text = "Entrega «{quest:6004}» a {npc:11610}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#49"]
+note = "Polestar paso 49 «Kirsta Sombraprofunda», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-102"
+do = "accept"
+quest = 6023
+npc = 11610
+at = [1422, 51.92, 28.06]
+chain = "h57-silithus-pestes-s049-11610"
+reqlevel = 50
+text = "Coge «{quest:6023}» de {npc:11610}."
+why = "+6.593 XP · ~4,4 min · desbloquea «{quest:6025}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#49"]
+note = "Polestar paso 49 «Kirsta Sombraprofunda», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-103"
+do = "complete"
+quest = 6023
+obj = 1
+at = [1422, 57.83, 36.1]
+text = "Mata {npc:11613} (1) para «{quest:6023}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#50"]
+note = "Polestar paso 50 «Radley and Durgen», objetivo 1 (kill) · consejo de Polestar sin traducir: {npc:11613} stands east of the lumber camp; {npc:11611} guards the road north-east of {npc:11610}, toward {area:190}.\nCareful: Guards stand at the tower's base and one more circles it on patrol. Clear them before you engage Durgen so they don't join the fight."
+
+[[step]]
+id = "h57-silithus-pestes-104"
+do = "complete"
+quest = 6023
+obj = 2
+at = [1422, 55.15, 23.62]
+text = "Mata {npc:11611} (1) para «{quest:6023}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#50"]
+note = "Polestar paso 50 «Radley and Durgen», objetivo 2 (kill)"
+
+[[step]]
+id = "h57-silithus-pestes-107"
+do = "turnin"
+quest = 6023
+npc = 11610
+at = [1422, 51.92, 28.06]
+chain = "h57-silithus-pestes-s052-11610"
+text = "Entrega «{quest:6023}» a {npc:11610}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#52"]
+note = "Polestar paso 52 «Kirsta Sombraprofunda», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-108"
+do = "accept"
+quest = 6025
+npc = 11610
+at = [1422, 51.92, 28.06]
+chain = "h57-silithus-pestes-s052-11610"
+reqlevel = 50
+text = "Coge «{quest:6025}» de {npc:11610}."
+why = "+6.200 XP · ~2 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#52"]
+note = "Polestar paso 52 «Kirsta Sombraprofunda», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-109"
+do = "complete"
+quest = 5168
+obj = 1
+at = [1422, 42.52, 18.99]
+text = "Recoge {item:12954} (1) de {obj:176206} para «{quest:5168}»."
+tip = "El libram está más al norte, de camino a {area:190}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#53"]
+note = "Polestar paso 53 «Tratado de Davil», objetivo 1 (collect) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h57-silithus-pestes-110"
+do = "goto"
+at = [1422, 45.8, 18.3]
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#54"]
+note = "Polestar paso 54 «Hearthglen», objetivo 1 (goto) · consejo de Polestar sin traducir: {area:190}'s Scarlets are level 58-60. Ride in to the high point marked on your map, look over the town, and get out.\nCareful: Sentinels posted at the gate can detect stealthed players. Additional sentinels are found within the town, and an elite walks a patrol route nearby."
+
+[[step]]
+id = "h57-silithus-pestes-111"
+do = "complete"
+quest = 6025
+at = [1422, 45.5, 18.6]
+text = "Completa «{quest:6025}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#54"]
+note = "Polestar paso 54 «Hearthglen», objetivo 2 (complete) · objetivos (EN): Overlook Hearthglen from a high vantage point"
+
+[[step]]
+id = "h57-silithus-pestes-112"
+do = "turnin"
+quest = 6025
+npc = 11610
+at = [1422, 51.92, 28.06]
+text = "Entrega «{quest:6025}» a {npc:11610}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#55"]
+note = "Polestar paso 55 «Kirsta Sombraprofunda», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-113"
+do = "accept"
+quest = 4971
+npc = 10667
+at = [1422, 39.46, 66.76]
+reqlevel = 53
+text = "Coge «{quest:4971}» de {npc:10667}."
+tip = "Cabalga al sur hasta Andorhal. {npc:10667} espera en la posada en ruinas del oeste del pueblo. Ponte en la entrada de cada una de las cuatro torres con la {item:12815} para marcarla; ve por los bordes del pueblo. Usa el {item:12627} junto a los silos del centro del pueblo para hacer salir a los Parásitos temporales."
+why = "+10.060 XP · ~12 min · desbloquea «{quest:4972}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#56"]
+note = "Polestar paso 56 «Andorhal watchtowers and silos», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:10667}, upstairs."
+
+[[step]]
+id = "h57-silithus-pestes-114"
+do = "complete"
+quest = 5098
+obj = 2
+at = [1422, 42.3, 66.2]
+text = "Usa {item:12815} para «{quest:5098}»."
+tip = "Mata {npc:10903} (1) para «{quest:5098}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#56"]
+note = "Polestar paso 56 «Andorhal watchtowers and silos», objetivo 2 (use)"
+
+[[step]]
+id = "h57-silithus-pestes-115"
+do = "use"
+item = 12627
+at = [1422, 45.2, 62.8]
+text = "Usa {item:12627}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#56"]
+note = "Polestar paso 56 «Andorhal watchtowers and silos», objetivo 4 (use)"
+
+[[step]]
+id = "h57-silithus-pestes-116"
+do = "complete"
+quest = 4971
+obj = 1
+at = [1422, 45.21, 62.83]
+wps = [[1422, 48.3, 63.7, "Parásito temporal"], [1422, 47.8, 66.0, "Parásito temporal"], [1422, 50.2, 66.6, "Parásito temporal"]]
+text = "Mata {npc:10717} (15) para «{quest:4971}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#56"]
+note = "Polestar paso 56 «Andorhal watchtowers and silos», objetivo 5 (kill)"
+
+[[step]]
+id = "h57-silithus-pestes-117"
+do = "complete"
+quest = 5098
+obj = 3
+at = [1422, 44.3, 63.25]
+text = "Mata {npc:10904} (1) para «{quest:5098}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#56"]
+note = "Polestar paso 56 «Andorhal watchtowers and silos», objetivo 6 (kill)"
+
+[[step]]
+id = "h57-silithus-pestes-118"
+do = "complete"
+quest = 5098
+obj = 4
+at = [1422, 46.62, 71.05]
+text = "Mata {npc:10905} (1) para «{quest:5098}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#56"]
+note = "Polestar paso 56 «Andorhal watchtowers and silos», objetivo 7 (kill)"
+
+[[step]]
+id = "h57-silithus-pestes-119"
+do = "complete"
+quest = 5098
+obj = 1
+at = [1422, 40.05, 71.6]
+text = "Mata {npc:10902} (1) para «{quest:5098}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#56"]
+note = "Polestar paso 56 «Andorhal watchtowers and silos», objetivo 8 (kill)"
+
+[[step]]
+id = "h57-silithus-pestes-120"
+do = "turnin"
+quest = 4971
+npc = 10667
+at = [1422, 39.46, 66.76]
+chain = "h57-silithus-pestes-s057-10667"
+text = "Entrega «{quest:4971}» a {npc:10667}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#57"]
+note = "Polestar paso 57 «Cromi», objetivo 1 (turnin) · consejo de Polestar sin traducir: Upstairs."
+
+[[step]]
+id = "h57-silithus-pestes-121"
+do = "accept"
+quest = 4972
+npc = 10667
+at = [1422, 39.46, 66.76]
+chain = "h57-silithus-pestes-s057-10667"
+reqlevel = 53
+text = "Coge «{quest:4972}» de {npc:10667}."
+why = "+5.800 XP · ~1,7 min · 1,6× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#57"]
+note = "Polestar paso 57 «Cromi», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-122"
+do = "complete"
+quest = 4972
+obj = 1
+at = [1422, 40.3, 68.2]
+text = "Recoge {item:12638} (5) de {obj:175802} para «{quest:4972}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#58"]
+note = "Polestar paso 58 ««Contar el tiempo»», objetivo 1 (collect) · consejo de Polestar sin traducir: The lockboxes sit in Andorhal's ruined houses around {npc:10667}'s inn. Careful: Ghouls and skeletons usually stand next to the boxes and attack when you come close. Searing ghouls also hurt anyone nearby and will break stealth."
+
+[[step]]
+id = "h57-silithus-pestes-123"
+do = "turnin"
+quest = 4972
+npc = 10667
+at = [1422, 39.46, 66.76]
+text = "Entrega «{quest:4972}» a {npc:10667}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#59"]
+note = "Polestar paso 59 «Cromi», objetivo 1 (turnin) · consejo de Polestar sin traducir: Upstairs."
+
+[[step]]
+id = "h57-silithus-pestes-124"
+do = "goto"
+at = [1420, 83.0, 71.9]
+text = "Ve a {area:152}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#60"]
+note = "Polestar paso 60 «Tirisfal Glades», objetivo 1 (goto)"
+
+[[step]]
+id = "h57-silithus-pestes-125"
+do = "turnin"
+quest = 5230
+npc = 11055
+at = [1420, 83.04, 71.91]
+chain = "h57-silithus-pestes-s061-11055"
+text = "Entrega «{quest:5230}» a la {npc:11055}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#61"]
+note = "Polestar paso 61 «The Bulwark», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-126"
+do = "accept"
+quest = 5231
+npc = 11055
+at = [1420, 83.04, 71.91]
+chain = "h57-silithus-pestes-s061-11055"
+reqlevel = 50
+text = "Coge «{quest:5231}» de la {npc:11055}."
+why = "+5.910 XP · ~1 min · desbloquea «{quest:5238}» y 5 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#61"]
+note = "Polestar paso 61 «The Bulwark», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-127"
+do = "turnin"
+quest = 5098
+npc = 10837
+at = [1420, 83.13, 68.94]
+chain = "h57-silithus-pestes-s061-10837"
+text = "Entrega «{quest:5098}» al {npc:10837}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#61"]
+note = "Polestar paso 61 «The Bulwark», objetivo 3 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-128"
+do = "accept"
+quest = 105
+npc = 10837
+at = [1420, 83.13, 68.94]
+chain = "h57-silithus-pestes-s061-10837"
+reqlevel = 50
+text = "Coge «{quest:105}» del {npc:10837}."
+why = "+8.300 XP · <1 min · 8,4× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#61"]
+note = "Polestar paso 61 «The Bulwark», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-129"
+do = "accept"
+quest = 838
+npc = 10837
+at = [1420, 83.13, 68.94]
+chain = "h57-silithus-pestes-s061-10837"
+reqlevel = 55
+text = "Coge «{quest:838}» del {npc:10837}."
+why = "+560 XP · <1 min · desbloquea «{quest:964}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#61"]
+note = "Polestar paso 61 «The Bulwark», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-130"
+do = "turnin"
+quest = 838
+npc = 11057
+at = [1420, 83.28, 69.23]
+chain = "h57-silithus-pestes-s061-11057"
+text = "Entrega «{quest:838}» a {npc:11057}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#61"]
+note = "Polestar paso 61 «The Bulwark», objetivo 6 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-131"
+do = "accept"
+quest = 964
+npc = 11057
+at = [1420, 83.28, 69.23]
+chain = "h57-silithus-pestes-s061-11057"
+reqlevel = 55
+text = "Coge «{quest:964}» de {npc:11057}."
+why = "+7.732 XP · ~7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#61"]
+note = "Polestar paso 61 «The Bulwark», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-133"
+do = "complete"
+quest = 964
+obj = 1
+at = [1422, 37.4, 55.1]
+text = "Consigue {item:14619} (15) de {npc:1783} y {npc:1784} para «{quest:964}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#62"]
+note = "Polestar paso 62 ««Fragmentos esqueléticos»», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-134"
+do = "complete"
+quest = 5231
+obj = 1
+at = [1422, 46.11, 52.61]
+text = "Consigue {item:13195} (1) de {npc:11077} para «{quest:5231}»."
+tip = "Al este por el camino, {npc:11077} vigila la caldera de {area:200}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#63"]
+note = "Polestar paso 63 «Dalson's Tears», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-135"
+do = "turnin"
+quest = 5231
+at = [1422, 46.18, 51.9]
+text = "Entrega «{quest:5231}» en {obj:177289}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#63"]
+note = "Polestar paso 63 «Dalson's Tears», objetivo 2 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-136"
+do = "accept"
+quest = 5232
+at = [1422, 46.18, 51.9]
+reqlevel = 50
+text = "Coge «{quest:5232}» ({obj:177289})."
+why = "+2.800 XP · <1 min · desbloquea «{quest:5238}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#64"]
+note = "Polestar paso 64 ««El regreso a El Baluarte»», objetivo 1 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-137"
+do = "complete"
+quest = 5168
+obj = 2
+at = [1422, 63.79, 57.19]
+text = "Recoge {item:12955} (1) de {obj:176207} para «{quest:5168}»."
+tip = "El escudo está en {area:201}, al sur de la cabaña de {npc:1855}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#65"]
+note = "Polestar paso 65 «Escudo de Rutagrana», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-138"
+do = "turnin"
+quest = 5543
+npc = 1855
+at = [1423, 5.16, 35.57]
+optional = true
+chain = "h57-silithus-pestes-s066-1855"
+text = "Entrega «{quest:5543}» a {npc:1855}."
+tip = "Cabalga al este hasta la cabaña de {npc:1855} junto al {area:2619} y escúchalo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#66"]
+note = "Polestar paso 66 «Tirión Vadín», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-139"
+do = "turnin"
+quest = 5544
+npc = 1855
+at = [1423, 5.16, 35.57]
+optional = true
+chain = "h57-silithus-pestes-s066-1855"
+text = "Entrega «{quest:5544}» a {npc:1855}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#66"]
+note = "Polestar paso 66 «Tirión Vadín», objetivo 2 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-140"
+do = "turnin"
+quest = 5542
+npc = 1855
+at = [1423, 5.16, 35.57]
+optional = true
+chain = "h57-silithus-pestes-s066-1855"
+text = "Entrega «{quest:5542}» a {npc:1855}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#66"]
+note = "Polestar paso 66 «Tirión Vadín», objetivo 3 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-141"
+do = "accept"
+quest = 5742
+npc = 1855
+at = [1423, 5.16, 35.57]
+chain = "h57-silithus-pestes-s066-1855"
+reqlevel = 52
+text = "Coge «{quest:5742}» de {npc:1855}."
+why = "+1.328 XP · ~2,5 min · desbloquea «{quest:5781}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#66"]
+note = "Polestar paso 66 «Tirión Vadín», objetivo 4 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "h57-silithus-pestes-142"
+do = "complete"
+quest = 5742
+text = "Completa «{quest:5742}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#66"]
+note = "Polestar paso 66 «Tirión Vadín», objetivo 5 (complete) · objetivos (EN): Tirion Fordring"
+
+[[step]]
+id = "h57-silithus-pestes-143"
+do = "turnin"
+quest = 5742
+npc = 1855
+at = [1423, 5.16, 35.57]
+chain = "h57-silithus-pestes-s066-1855"
+text = "Entrega «{quest:5742}» a {npc:1855}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#66"]
+note = "Polestar paso 66 «Tirión Vadín», objetivo 6 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-144"
+do = "accept"
+quest = 5781
+npc = 1855
+at = [1423, 5.16, 35.57]
+chain = "h57-silithus-pestes-s066-1855"
+reqlevel = 52
+text = "Coge «{quest:5781}» de {npc:1855}."
+why = "+6.289 XP · ~2 min · desbloquea «{quest:5845}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#66"]
+note = "Polestar paso 66 «Tirión Vadín», objetivo 7 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-145"
+do = "turnin"
+quest = 5168
+npc = 11063
+at = [1423, 71.7, 50.04]
+chain = "h57-silithus-pestes-s068-11063"
+text = "Entrega «{quest:5168}» a {npc:11063}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#68"]
+note = "Polestar paso 68 «Light's Hope Chapel», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-146"
+do = "accept"
+quest = 5206
+npc = 11063
+at = [1423, 71.7, 50.04]
+chain = "h57-silithus-pestes-s068-11063"
+reqlevel = 50
+text = "Coge «{quest:5206}» de {npc:11063}."
+why = "+6.600 XP · ~3 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#68"]
+note = "Polestar paso 68 «Light's Hope Chapel», objetivo 2 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "h57-silithus-pestes-147"
+do = "complete"
+quest = 5206
+obj = 1
+text = "Consigue {item:13155} (5) para «{quest:5206}»."
+tip = "Los Campeones de la Plaga recorren {area:2270}, al norte de la capilla. Pasa el {item:13156} de {npc:11063} sobre cada uno que mates: las calaveras que resuenan son las que quiere."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#69"]
+note = "Polestar paso 69 «Scourge Champions», objetivo 1 (collect) · coordenadas del marco de Era SIN convertir · coordenadas de Era sin transformación: sin punto (ni aparición en forever-db)"
+
+[[step]]
+id = "h57-silithus-pestes-148"
+do = "turnin"
+quest = 5206
+npc = 11063
+at = [1423, 71.7, 50.04]
+chain = "h57-silithus-pestes-s070-11063"
+text = "Entrega «{quest:5206}» a {npc:11063}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#70"]
+note = "Polestar paso 70 «Light's Hope Chapel», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-149"
+do = "accept"
+quest = 5941
+npc = 11063
+at = [1423, 71.7, 50.04]
+chain = "h57-silithus-pestes-s070-11063"
+reqlevel = 50
+text = "Coge «{quest:5941}» de {npc:11063}."
+why = "+3.300 XP · ~2 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#70"]
+note = "Polestar paso 70 «Light's Hope Chapel», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-150"
+do = "accept"
+quest = 6024
+at = [1423, 22.9, 72.96]
+optional = true
+reqlevel = 54
+text = "Coge «{quest:6024}» ({obj:177667})."
+tip = "Hay un pergamino roto en la entrada de {area:2261}, la cripta al sur de {area:2260}. Bajo tierra. +6.957 XP · ~8,3 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#71"]
+note = "Polestar paso 71 «Hameya's scroll», objetivo 1 (accept)"
+
+[[step]]
+id = "h57-silithus-pestes-151"
+do = "complete"
+quest = 5781
+obj = 1
+at = [1423, 23.85, 74.22]
+text = "Consigue {item:14613} (1) de {npc:11886} para «{quest:5781}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#72"]
+note = "Polestar paso 72 «Pamela and the Undercroft», objetivo 1 (collect) · consejo de Polestar sin traducir: Ride to {area:2262} in the south-west; Pamela plays among the houses. {npc:11886} lurks in the {area:2261}, the crypt just west of the town.\nCareful: About four non-elite adds come with Mercutio. They walk to the grave instead of appearing on the spot."
+
+[[step]]
+id = "h57-silithus-pestes-152"
+do = "turnin"
+quest = 6135
+npc = 11878
+at = [1423, 22.23, 63.51]
+optional = true
+text = "Entrega «{quest:6135}» a {npc:11878}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#73"]
+note = "Polestar paso 73 «Nathanos Clamorinfecto», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 6135"
+
+[[step]]
+id = "h57-silithus-pestes-153"
+do = "turnin"
+quest = 5781
+npc = 1855
+at = [1423, 5.16, 35.57]
+chain = "h57-silithus-pestes-s074-1855"
+text = "Entrega «{quest:5781}» a {npc:1855}."
+tip = "Cabalga al noroeste hasta la cabaña de {npc:1855}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#74"]
+note = "Polestar paso 74 «Tirión Vadín», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-154"
+do = "accept"
+quest = 5845
+npc = 1855
+at = [1423, 5.16, 35.57]
+chain = "h57-silithus-pestes-s074-1855"
+reqlevel = 52
+text = "Coge «{quest:5845}» de {npc:1855}."
+why = "+6.200 XP · ~3,7 min · desbloquea «{quest:5846}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#74"]
+note = "Polestar paso 74 «Tirión Vadín», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-155"
+do = "goto"
+at = [1422, 45.3, 69.2]
+text = "Ve a «{quest:105}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#75"]
+note = "Polestar paso 75 «Western Plaguelands», objetivo 1 (goto)"
+
+[[step]]
+id = "h57-silithus-pestes-156"
+do = "complete"
+quest = 105
+obj = 1
+at = [1422, 45.3, 69.2]
+text = "Recoge {item:17114} (1) de {obj:177241} para «{quest:105}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#76"]
+note = "Polestar paso 76 ««Ah, Andorhal»», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-157"
+do = "goto"
+at = [1422, 48.0, 64.8]
+if = { maxlevel = 58 }
+optional = true
+text = "Ve a {npc:10717}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#77"]
+note = "Polestar paso 77 «Level 59.14», objetivo 1 (goto) · condición no expresable: no vas en grupo para la misión 6135 · consejo de Polestar sin traducir: If you skipped «{quest:6135}», grind here to level 59.14 to stay on the route's plan. Or, with a group, run the «{quest:838}» dungeon or the {area:2279} dungeon instead."
+
+[[step]]
+id = "h57-silithus-pestes-158"
+do = "level"
+level = 59
+at = [1422, 48.23, 64.39]
+if = { maxlevel = 58 }
+optional = true
+text = "Sube al nivel 59."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#77"]
+note = "Polestar paso 77 «Level 59.14», objetivo 2 (level) · condición no expresable: no vas en grupo para la misión 6135 · consejo de Polestar sin traducir: Grind on {npc:10717}."
+
+[[step]]
+id = "h57-silithus-pestes-159"
+do = "turnin"
+quest = 5941
+npc = 10667
+at = [1422, 39.46, 66.76]
+text = "Entrega «{quest:5941}» a {npc:10667}."
+tip = "Cabalga al suroeste hasta {npc:10667}, en Andorhal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#78"]
+note = "Polestar paso 78 «Cromi», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-160"
+do = "note"
+text = "La Batalla de Villa Darrow, de {npc:10667}, termina contra élites. Sáltatela."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#78"]
+note = "Polestar paso 78 «Cromi», objetivo 2 (note)"
+
+[[step]]
+id = "h57-silithus-pestes-161"
+do = "turnin"
+quest = 5232
+npc = 11055
+at = [1420, 83.04, 71.91]
+chain = "h57-silithus-pestes-s079-11055"
+text = "Entrega «{quest:5232}» a la {npc:11055}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#79"]
+note = "Polestar paso 79 «The Bulwark», objetivo 1 (turnin) · consejo de Polestar sin traducir: West to the {area:152}."
+
+[[step]]
+id = "h57-silithus-pestes-162"
+do = "accept"
+quest = 5233
+npc = 11055
+at = [1420, 83.04, 71.91]
+chain = "h57-silithus-pestes-s079-11055"
+reqlevel = 50
+text = "Coge «{quest:5233}» de la {npc:11055}."
+why = "+5.914 XP · ~1,5 min · desbloquea «{quest:5238}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#79"]
+note = "Polestar paso 79 «The Bulwark», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-163"
+do = "turnin"
+quest = 964
+npc = 11057
+at = [1420, 83.28, 69.23]
+text = "Entrega «{quest:964}» a {npc:11057}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#79"]
+note = "Polestar paso 79 «The Bulwark», objetivo 3 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-164"
+do = "turnin"
+quest = 105
+npc = 10837
+at = [1420, 83.13, 68.94]
+text = "Entrega «{quest:105}» al {npc:10837}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#79"]
+note = "Polestar paso 79 «The Bulwark», objetivo 4 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-165"
+do = "complete"
+quest = 5845
+obj = 1
+at = [1423, 62.5, 26.8]
+text = "Recoge {item:14625} (1) de {obj:177264} para «{quest:5845}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#82"]
+note = "Polestar paso 82 ««Del honor perdido»», objetivo 1 (collect) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h57-silithus-pestes-166"
+do = "complete"
+quest = 6024
+obj = 1
+at = [1423, 61.96, 11.11]
+optional = true
+text = "Consigue {item:15767} (1) de {npc:12248} para «{quest:6024}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#83"]
+note = "Polestar paso 83 «Infiltrador Hameya», objetivo 1 (collect) · consejo de Polestar sin traducir: Hameya hides among the Mossflayer trolls of {area:2273}, in the north-east corner.\nCareful: The trolls along the path to {area:2273} are level 57-59. They run away at low health and call for help, so they often bring adds with them."
+
+[[step]]
+id = "h57-silithus-pestes-167"
+do = "turnin"
+quest = 5845
+npc = 1855
+at = [1423, 5.16, 35.57]
+chain = "h57-silithus-pestes-s084-1855"
+text = "Entrega «{quest:5845}» a {npc:1855}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#84"]
+note = "Polestar paso 84 «Tirión Vadín», objetivo 1 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-168"
+do = "accept"
+quest = 5846
+npc = 1855
+at = [1423, 5.16, 35.57]
+chain = "h57-silithus-pestes-s084-1855"
+reqlevel = 52
+text = "Coge «{quest:5846}» de {npc:1855}."
+why = "+6.200 XP · ~4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#84"]
+note = "Polestar paso 84 «Tirión Vadín», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-169"
+do = "turnin"
+quest = 6024
+at = [1423, 23.58, 73.79]
+optional = true
+text = "Entrega «{quest:6024}» en {obj:177675}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#85"]
+note = "Polestar paso 85 «Hameya's mound», objetivo 1 (turnin) · consejo de Polestar sin traducir: Ride south-east from {npc:1855} to the {area:2261}; the {obj:177675} is just behind it."
+
+[[step]]
+id = "h57-silithus-pestes-170"
+do = "goto"
+at = [1422, 69.7, 50.2]
+text = "Entra en {map:1422}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#86"]
+note = "Polestar paso 86 «Into Western Plaguelands», objetivo 1 (goto)"
+
+[[step]]
+id = "h57-silithus-pestes-171"
+do = "goto"
+at = [1422, 65.8, 75.4]
+text = "Ve a {npc:11936}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#87"]
+note = "Polestar paso 87 «Western Plaguelands», objetivo 1 (goto)"
+
+[[step]]
+id = "h57-silithus-pestes-172"
+do = "turnin"
+quest = 5846
+npc = 11936
+at = [1422, 65.77, 75.37]
+text = "Entrega «{quest:5846}» a {npc:11936}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#88"]
+note = "Polestar paso 88 «Artista Renfray», objetivo 1 (turnin) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h57-silithus-pestes-173"
+do = "complete"
+quest = 5233
+obj = 1
+at = [1422, 52.9, 66.1]
+text = "Consigue {item:13197} (1) de {npc:11076} para «{quest:5233}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#89"]
+note = "Polestar paso 89 ««Objetivo: El Tormento»», objetivo 1 (collect)"
+
+[[step]]
+id = "h57-silithus-pestes-174"
+do = "turnin"
+quest = 5233
+at = [1422, 53.02, 65.61]
+text = "Entrega «{quest:5233}» en {obj:176393}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#89"]
+note = "Polestar paso 89 ««Objetivo: El Tormento»», objetivo 2 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-175"
+do = "accept"
+quest = 5234
+at = [1422, 53.02, 65.61]
+reqlevel = 50
+text = "Coge «{quest:5234}» ({obj:176393})."
+why = "+2.800 XP · <1 min · desbloquea «{quest:5238}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#89"]
+note = "Polestar paso 89 ««Objetivo: El Tormento»», objetivo 3 (accept) · datos no importados: pre · consejo de Polestar sin traducir: From the cauldron, for {npc:11055} at the {area:152}."
+
+[[step]]
+id = "h57-silithus-pestes-176"
+do = "turnin"
+quest = 5234
+npc = 11055
+at = [1420, 83.04, 71.91]
+chain = "h57-silithus-pestes-s090-11055"
+text = "Entrega «{quest:5234}» a la {npc:11055}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#90"]
+note = "Polestar paso 90 «The Bulwark», objetivo 1 (turnin) · consejo de Polestar sin traducir: West to the {area:152}."
+
+[[step]]
+id = "h57-silithus-pestes-177"
+do = "accept"
+quest = 5235
+npc = 11055
+at = [1420, 83.04, 71.91]
+chain = "h57-silithus-pestes-s090-11055"
+reqlevel = 50
+text = "Coge «{quest:5235}» de la {npc:11055}."
+why = "+6.514 XP · <1 min · desbloquea «{quest:5238}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#90"]
+note = "Polestar paso 90 «The Bulwark», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-178"
+do = "complete"
+quest = 5235
+obj = 1
+at = [1422, 62.2, 59.1]
+text = "Consigue {item:13196} (1) de {npc:11078} para «{quest:5235}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#91"]
+note = "Polestar paso 91 ««Objetivo: Gangrena de Gahrron»», objetivo 1 (collect) · consejo de Polestar sin traducir: Back east past the {area:202} to {area:201}, the farm under the eastern hills: {npc:11078} guards its cauldron. Kill him for the key, then use the cauldron."
+
+[[step]]
+id = "h57-silithus-pestes-179"
+do = "turnin"
+quest = 5235
+at = [1422, 62.54, 58.47]
+text = "Entrega «{quest:5235}» en {obj:176392}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#91"]
+note = "Polestar paso 91 ««Objetivo: Gangrena de Gahrron»», objetivo 2 (turnin)"
+
+[[step]]
+id = "h57-silithus-pestes-180"
+do = "accept"
+quest = 5236
+at = [1422, 62.54, 58.47]
+reqlevel = 50
+text = "Coge «{quest:5236}» ({obj:176392})."
+why = "+3.100 XP · <1 min · desbloquea «{quest:5238}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#91"]
+note = "Polestar paso 91 ««Objetivo: Gangrena de Gahrron»», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h57-silithus-pestes-181"
+do = "turnin"
+quest = 5236
+npc = 11055
+at = [1420, 83.04, 71.91]
+text = "Entrega «{quest:5236}» a la {npc:11055}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#92"]
+note = "Polestar paso 92 «The Bulwark», objetivo 1 (turnin) · consejo de Polestar sin traducir: West to the {area:152} one last time."
+
+[[step]]
+id = "h57-silithus-pestes-182"
+do = "turnin"
+quest = 5238
+npc = 10837
+at = [1420, 83.13, 68.94]
+text = "Entrega «{quest:5238}» al {npc:10837}."
+why = "+9.300 XP · <1 min · 15,5× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/06-silithus#92"]
+note = "Polestar paso 92 «The Bulwark», objetivo 2 (turnin)"
