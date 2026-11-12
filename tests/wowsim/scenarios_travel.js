@@ -63,6 +63,67 @@ const SETUP = L_`
   function InnPt(area) local i = Inn(area); return { c = i.p.c, wx = i.p.wx, wy = i.p.wy } end
 `;
 
+// Travel planner + real walking paths together (synthetic packs, tests/wowsim/mock/nav.lua). A pack is one
+// 64x64-cell sector (about 267 yd) around a point, so every place the arrow must route to gets its own.
+// Where the ride's ends are, read from the compiled data so the packs can be built before Login: for each end the
+// map, its map position (percent), world yards and boarding point, as a Lua table literal.
+function rideEnd(id, side) {
+  const rides = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '..', '..', 'data', 'travel', 'transports.json'), 'utf8')).rows;
+  const p = rides.find((x) => x.id === id)[side];
+  const bw = p.board ? [p.board.wx, p.board.wy] : [p.wx, p.wy];
+  return `{ map = ${p.map}, c = ${p.c}, x = ${p.x}, y = ${p.y}, wn = ${p.wx}, ww = ${p.wy}, bn = ${bw[0]}, bw = ${bw[1]} }`;
+}
+const AUB = rideEnd('boat-menethil-auberdine', 'b');
+const MEN = rideEnd('boat-menethil-auberdine', 'a');
+const IF = rideEnd('tram-stormwind-ironforge', 'b');
+const SW = rideEnd('tram-stormwind-ironforge', 'a');
+
+// Travel planner + real walking paths together. The ride ends sit on their real map ids, so the mock maps are
+// refitted (1 percent = 200 yd) to agree with their world yards. Synthetic packs (tests/wowsim/mock/nav.lua) are
+// one 64x64-cell sector (about 267 yd) around a point; every place the arrow must route to gets its own.
+const NAVSETUP = L_`
+  local S0 = 20000
+  function Fit(e)
+    Sim.MAPS[e.map] = Sim.MAPS[e.map] or { name = "Zona " .. e.map, parent = e.c == 0 and 1415 or 1414, type = 3 }
+    local m = Sim.MAPS[e.map]
+    m.continent, m.sx, m.sy = e.c, S0, S0
+    m.w, m.n = e.ww + e.x / 100 * S0, e.wn + e.y / 100 * S0
+  end
+  -- map position (0-1) of world yards on map e.map
+  function MapPos(e, wn, ww)
+    local m = Sim.MAPS[e.map]
+    return (m.w - ww) / m.sx, (m.n - wn) / m.sy
+  end
+  function WorldOf(map, x, y)
+    local m = Sim.MAPS[map]
+    return m.n - y * m.sy, m.w - x * m.sx
+  end
+  function PackAt(e) local x, y = MapPos(e, e.bn, e.bw); return Sim.NavPack(e.map, x, y) end
+  function Merge(D, E) for sid, v in pairs(E.C) do D.C[sid] = v end end
+  -- a world point (dn, dw) cells from the end's boarding point, kept well inside the pack's sector
+  function Inside(D, e, dn, dw)
+    local x, y = MapPos(e, e.bn, e.bw)
+    local lx, ly = Sim.NavCell(D, e.map, x, y)
+    if lx + dn < 6 or lx + dn > 57 then dn = -dn end
+    if ly + dw < 6 or ly + dw > 57 then dw = -dw end
+    local mx, my = Sim.NavPoint(D, math.max(6, math.min(57, lx + dn)), math.max(6, math.min(57, ly + dw)))
+    return WorldOf(e.map, mx, my)
+  end
+  function Stand(e, wn, ww) local x, y = MapPos(e, wn, ww); Sim.MoveTo(e.map, x, y) end
+  function Point(e, wn, ww, label) local x, y = MapPos(e, wn, ww); S().Arrow:SetTarget(e.map, x * 100, y * 100, label, "manual") end
+  function NavSt() return S().ArrowNav.state end
+  function NavWait(maxSec)
+    local frames = 0
+    while frames * Sim.FRAME < (maxSec or 5) do
+      Sim.Advance(Sim.FRAME)
+      frames = frames + 1
+      local st = NavSt()
+      if st.status ~= "routing" and st.status ~= "idle" then break end
+    end
+    Sim.Advance(Sim.FRAME)
+  end
+`;
+
 const scenarios = [
   {
     id: 'travel',
@@ -622,6 +683,107 @@ const scenarios = [
       HUD.AsideLine = realAside
       HUD:Refresh()
       Check(Extras() <= 1, "never more than one", Extras())
+    `,
+  },
+  {
+    id: 'travel-nav-druid',
+    title: 'Travel planner ON + real paths ON: Auberdine -> Menethil by boat, path to the dock, then path to the target (night elf druid)',
+    char: 'nightelf-druid',
+    lua: SETUP + NAVSETUP + L_`
+      Sim.profileTick = 0.02
+      local AUB, MEN = ${AUB}, ${MEN}  -- the Auberdine and Menethil docks
+      Fit(AUB); Fit(MEN)
+      local abn, abw, mhn, mhw = AUB.bn, AUB.bw, MEN.bn, MEN.bw
+      local K, E = PackAt(AUB), PackAt(MEN)
+      Sim.EnableNav({ [0] = E, [1] = K })
+      Login()
+      Sim.Advance(6)
+      NoGuide()
+      Check(S().Options:Get("navPaths") and S().Options:Get("mod_travel"), "both options on")
+      Known({})
+      -- the player stands in Auberdine a few cells from the dock; the target is near the Menethil dock
+      local sn, sw = Inside(K, AUB, 20, -20)
+      local tn, tw = Inside(E, MEN, 20, 15)
+      Stand(AUB, sn, sw)
+      Point(MEN, tn, tw, "Menethil")
+      Settle()
+      NavWait(8)
+      local p = Plan()
+      Check(p ~= nil and not p.none and RideId(p.legs) == "boat-menethil-auberdine", "the plan takes the Auberdine - Menethil boat", p and Hows(p.legs))
+      Check(S().Modules.Travel.maxSliceOps <= 720, "planner slices stay small", S().Modules.Travel.maxSliceOps)
+
+      Section("leg 1: the arrow points at the dock, over a walking path")
+      local t, src = ArrowTarget()
+      Check(src == "travel" and t ~= nil and Plain(t.label or ""):find("^Muelle: ") ~= nil, "arrow target is the dock", tostring(src) .. " " .. tostring(t and t.label))
+      Check(t ~= nil and math.abs(t.wn - abn) < 0.5 and math.abs(t.ww - abw) < 0.5, "at the Auberdine boarding point")
+      local st = NavSt()
+      Check(st.status == "ok" and st.path ~= nil and st.shown, "walking path to the dock", tostring(st.status) .. " " .. tostring(st.why))
+      Check(Plain(SendaArrow.info:GetText()):find(S().L.ARROW_MODE_PATH, 1, true) == 1, "«Ruta a pie» on the arrow", SendaArrow.info:GetText())
+      Check(TravelLine():find("barco a", 1, true) ~= nil, "HUD travel line is there", TravelLine())
+
+      Section("arrive at the dock, board, land in Menethil")
+      Stand(AUB, abn, abw)
+      Sim.Advance(3)
+      local _, s2 = ArrowTarget()
+      Check(s2 == "manual", "arrow back on the destination while at the dock", s2)
+      Stand(MEN, mhn, mhw)
+      Sim.Advance(3)
+      NavWait(8)
+      Check(Plan() == nil and not SendaHUD.travel:IsShown(), "under 800 yd from the target: no travel plan")
+      local t3, s3 = ArrowTarget()
+      Check(s3 == "manual" and t3 ~= nil and t3.label == "Menethil", "the arrow aims at the target", tostring(s3))
+      st = NavSt()
+      Check(SendaNav.IsLoaded(0) and SendaNav.IsLoaded(1), "both continent packs are loaded")
+      Check(st.status == "ok" and st.path ~= nil and st.shown, "walking path from the Menethil dock to the target", tostring(st.status) .. " " .. tostring(st.why))
+      Check(Plain(SendaArrow.info:GetText()):find(S().L.ARROW_MODE_PATH, 1, true) == 1, "«Ruta a pie» again", SendaArrow.info:GetText())
+      Check(#Sim.errors == 0, "no Lua errors", #Sim.errors)
+    `,
+  },
+  {
+    id: 'travel-nav-tram',
+    title: 'Travel planner ON + real paths ON: Ironforge -> Stormwind by the Deeprun Tram, path to the tram, then path to the target (gnome warlock)',
+    char: 'gnome-warlock',
+    lua: SETUP + NAVSETUP + L_`
+      Sim.profileTick = 0.02
+      local IFE, SWE = ${IF}, ${SW}  -- Ironforge and Stormwind ends of the tram
+      Fit(IFE); Fit(SWE)
+      local ifn, ifw, swn, sww = IFE.bn, IFE.bw, SWE.bn, SWE.bw
+      local A, B = PackAt(IFE), PackAt(SWE)
+      Merge(A, B)
+      Sim.EnableNav({ [0] = A })
+      Login()
+      Sim.Advance(6)
+      NoGuide()
+      Known({})
+      local sn, sw = Inside(A, IFE, 20, -20)
+      local tn, tw = Inside(B, SWE, -20, 15)
+      Stand(IFE, sn, sw)
+      Point(SWE, tn, tw, "Distrito Comercial")
+      Settle()
+      NavWait(8)
+      local p = Plan()
+      Check(p ~= nil and not p.none and Has(p.legs, "ride", "tram-stormwind-ironforge") and not Has(p.legs, "fly"), "the plan rides the tram", p and Hows(p.legs))
+
+      Section("leg 1: path to the tram entrance")
+      local t, src = ArrowTarget()
+      Check(src == "travel" and t ~= nil, "arrow on the first leg", tostring(src))
+      Check(t ~= nil and math.abs(t.wn - ifn) < 0.5 and math.abs(t.ww - ifw) < 0.5, "at the Ironforge tram entrance")
+      local st = NavSt()
+      Check(st.status == "ok" and st.path ~= nil and st.shown, "walking path to the tram", tostring(st.status) .. " " .. tostring(st.why))
+      Sim.Out("    HUD: " .. TravelLine())
+
+      Section("ride the tram, arrive in Stormwind: path to the target")
+      Stand(IFE, ifn, ifw)
+      Sim.Advance(2)
+      Stand(SWE, swn, sww)
+      Sim.Advance(3)
+      NavWait(8)
+      Check(Plan() == nil, "no plan left once next to the target")
+      local t2, s2 = ArrowTarget()
+      Check(s2 == "manual" and t2 ~= nil and t2.label == "Distrito Comercial", "arrow on the target", tostring(s2))
+      st = NavSt()
+      Check(st.status == "ok" and st.path ~= nil and st.shown, "walking path in Stormwind", tostring(st.status) .. " " .. tostring(st.why))
+      Check(#Sim.errors == 0, "no Lua errors", #Sim.errors)
     `,
   },
 ];

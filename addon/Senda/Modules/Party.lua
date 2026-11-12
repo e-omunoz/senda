@@ -14,6 +14,7 @@
 --   1P|<índice>|<ver>|<guía> dónde vas por número (con la instantánea; informativo)
 --   2P|<paso>|<guía>         dónde vas por id de paso (el que cuenta para delante/detrás)
 --   2D|<q>,<q>,...           misiones entregadas de los pasos cerca del tuyo
+--   2K|<q>,<q>,...           misiones que ha saltado («Saltar esta misión»): sus pasos no cuentan para delante/detrás
 --   2U|<nivel>|<CLASE>|<Raza>|<ver>  quién eres (para saber qué pasos son de los dos)
 --   2G|<paso>|<guía>         «Pedir que salte a mi paso»; el otro acepta o rechaza
 --   2A|<y|n|x|=|p>           respuesta: sí, no, no puede, ya está, ya va por delante
@@ -191,6 +192,38 @@ function Party.DecodeDone(text)
   return out
 end
 
+-- Misiones saltadas: "2K|<q>,<q>,..." (las que caben en un mensaje; las demás no se descuentan).
+local SKIP_HEAD, MAX_SKIPPED = V2 .. "K|", 80
+function Party.EncodeSkipped(ids)
+  local list = {}
+  for _, q in ipairs(type(ids) == "table" and ids or {}) do
+    q = tonumber(q)
+    if q and q > 0 and q == math.floor(q) then list[#list + 1] = q end
+  end
+  table.sort(list)
+  local parts, size = {}, #SKIP_HEAD
+  for _, q in ipairs(list) do
+    local p = tostring(q)
+    local extra = (#parts > 0 and 1 or 0) + #p
+    if #parts >= MAX_SKIPPED or size + extra > Party.MAX_BYTES then break end
+    parts[#parts + 1], size = p, size + extra
+  end
+  return SKIP_HEAD .. concat(parts, ",")
+end
+function Party.DecodeSkipped(text)
+  if type(text) ~= "string" then return nil end
+  local body = text:match("^" .. V2 .. "K|([%d,]*)$")
+  if not body then return nil end
+  local out, n = {}, 0
+  if body == "" then return out end
+  for p in (body .. ","):gmatch("([^,]*),") do
+    local q = tonumber(p)
+    if not q or q <= 0 or n >= MAX_SKIPPED then return nil end
+    if not out[q] then out[q], n = true, n + 1 end
+  end
+  return out
+end
+
 -- u = { level, class ("WARLOCK"), race ("Gnome") } -> "2U|<nivel>|<CLASE>|<Raza>|<versión>".
 function Party.EncodeUnit(u)
   local level = type(u) == "table" and tonumber(u.level)
@@ -233,7 +266,7 @@ local gone = {}      -- clave -> { m, at }: desconectados (retienen la espera GO
 local released = {}  -- misión -> true: «Seguir sin él»
 local greeted = {}   -- clave -> true: ya se dijo en el chat que usa Senda
 local lastSent = {}  -- misión -> cuentas que el grupo tiene de nosotros
-local posSent, doneSent, unitSent
+local posSent, doneSent, unitSent, skipSent
 local outbox = {}    -- { { kind, text, tries } } en orden
 local retryPending = false
 local flushPending, posPending, unitPending, snapPending, pendingAsks, helloPending = false, false, false, false, false, false
@@ -395,6 +428,13 @@ function Party.MyDone()
   return out
 end
 
+function Party.MySkipped()
+  local t = Senda.db and Senda.db.skippedQuests
+  local out = {}
+  for q, v in pairs(t or {}) do if v and type(q) == "number" then out[#out + 1] = q end end
+  return out
+end
+
 function Party.MyUnit()
   local _, class = Compat.Try(UnitClass, "player")
   local _, race = Compat.Try(UnitRace, "player")
@@ -414,6 +454,11 @@ local function sendPos(force)
   if done ~= (doneSent or DONE_HEAD) or (force and done ~= DONE_HEAD) then
     queue("D", done)
     doneSent = done
+  end
+  local skipped = Party.EncodeSkipped(Party.MySkipped())
+  if skipped ~= (skipSent or SKIP_HEAD) or (force and skipped ~= SKIP_HEAD) then
+    queue("K", skipped)
+    skipSent = skipped
   end
 end
 
@@ -534,7 +579,7 @@ end
 local function forgetAll()
   local had = next(members) ~= nil or next(spoken) ~= nil or next(gone) ~= nil
   spoken, roster, units, members, gone, released, lastSent = {}, {}, {}, {}, {}, {}, {}
-  posSent, doneSent, unitSent, outbox = nil, nil, nil, {}
+  posSent, doneSent, unitSent, skipSent, outbox = nil, nil, nil, nil, {}
   sync.asked, sync.heardAt = {}, {}
   if sync.pending then
     sync.pending = nil
@@ -679,6 +724,19 @@ local function ForPartner(entry, who)
 end
 Party.ForPartner = ForPartner
 
+-- ¿Salta este paso `skipped` (conjunto de misiones saltadas)? Igual que Engine:StepSkipped: solo pasos de
+-- misión y solo si todas sus misiones están saltadas.
+local QUESTY = { accept = true, complete = true, turnin = true, dungeon = true }
+local function SkippedIn(set, step)
+  if not set or next(set) == nil or not QUESTY[step["do"]] then return false end
+  local qs = Senda.Conditions:Quests(step)
+  if not qs then return false end
+  for _, q in ipairs(qs) do
+    if not set[q] then return false end
+  end
+  return true
+end
+
 local function ForMe(entry)
   local Cond = Senda.Conditions
   return Cond:StaticFilter(entry.section and entry.section["if"]) and Cond:StaticFilter(entry.step["if"])
@@ -699,7 +757,8 @@ function Party.Who(m)
 end
 
 -- Pasos de los dos entre tu paso y el suyo: >0 va por delante, <0 por detrás; nil si su paso no está
--- en tu guía. Los pasos que solo tiene uno de los dos (los de tu clase, los suyos) no cuentan.
+-- en tu guía. Los pasos que solo tiene uno de los dos (los de tu clase, los suyos) no cuentan, ni los de
+-- misiones que alguno de los dos ha saltado.
 function Party.StepsApart(m)
   local E = Senda.Engine
   local step = E and E:CurrentStep()
@@ -709,12 +768,15 @@ function Party.StepsApart(m)
   local a, b = order.pos[step.id], order.pos[at.key]
   if not (a and b) then return nil end
   local who = Party.Who(m)
+  local mine = Senda.db and Senda.db.skippedQuests
   local lo, hi, sign = a, b, 1
   if b < a then lo, hi, sign = b, a, -1 end
   local n = 0
   for i = lo, hi - 1 do
     local e = order.list[i]
-    if ForMe(e) and ForPartner(e, who) then n = n + 1 end
+    if ForMe(e) and ForPartner(e, who) and not SkippedIn(mine, e.step) and not SkippedIn(m.skipped, e.step) then
+      n = n + 1
+    end
   end
   return n * sign
 end
@@ -1080,6 +1142,13 @@ local function onAddonMessage(_, prefix, text, channel, sender)
     changed()
     return
   end
+  local skipped = Party.DecodeSkipped(text)
+  if skipped then
+    heard(key, short, false)
+    memberFor(key, short).skipped = skipped
+    changed()
+    return
+  end
   local u = Party.DecodeUnit(text)
   if u then
     heard(key, short, false)
@@ -1190,6 +1259,7 @@ Events:On("SENDA_READY", function()
   Events:On("PLAYER_LEVEL_UP", onLevel)
   Events:On("SENDA_STEP_CHANGED", onStep)
   Events:On("SENDA_GUIDE_CHANGED", onStep)
+  Events:On("SENDA_SKIPPED", onStep)
   Events:On("SENDA_GUIDES_UPDATED", function() fullCache = {} end)
   Events:On("PLAYER_REGEN_ENABLED", function()
     if not combatOwed then return end

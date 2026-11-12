@@ -9,6 +9,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
   brujo gnomo, el mago humano y el druida elfo de la noche contra forever-db y sus correcciones (PNJ, quién da y
   recibe, coordenadas, raza y clase, requisitos, niveles, orden). Informe en [docs/AUDIT.md](docs/AUDIT.md).
 - forever-db se lee con sus correcciones (`corrections/*.json`) y las de Senda (`data/corrections/`).
+- **El HUD dice por qué toca cada paso:** una línea tenue bajo el texto del paso (por ejemplo «+3.144 XP · ~2,2 min ·
+  2,8× la media del tramo»). Opción «Mostrar por qué» (activada). También sale en el tooltip del paso (clic derecho).
+- Pareja: «va por delante» ya no cuenta los pasos de misiones que alguno de los dos ha saltado (mensaje nuevo `2K`).
+- Prueba sin luacheck: `tests/test_lua_syntax.py` compila el Lua con luac/luajit si están, y si no usa un analizador
+  léxico propio que comprueba bloques y cadenas.
 
 ### Corregido
 - «Saltar esta misión» en un aviso como el de Lago Blackwrench (1717) saltaba toda la cadena del súcubo: los avisos
@@ -21,6 +26,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - Misiones obligatorias detrás de una previa opcional (291, 3905, 14, 5742, 5781 pasan a opcionales; 106, 922 y
   4761 a obligatorias).
 - Lago Blackwrench: el paso dice que está abajo, a ras del suelo de la Caverna Abandonada.
+- Tras subir al tranvía o al barco (un salto de más de 400 yardas) la flecha vuelve a pedir ruta a pie al momento, sin
+  esperar los 20 s de reintento de la ruta que había fallado.
 
 ## [0.6.1] - 2026-11-12
 
