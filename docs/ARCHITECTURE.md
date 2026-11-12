@@ -188,7 +188,7 @@ conocimiento y, si existen, `Senda.Rares`, `Senda.Dungeons` y `Senda.Travel` (cl
 `spell`, `map`, `zone`, `quests`, `spells`, `at`, `wps`, `craft`, `mats` y las fichas de los textos), pide los
 nombres de 20 en 20 por fotograma (máximo 40 esperando), se para en combate y guarda el resultado con el idioma y
 el build en `SendaNamesDB`. Se puede parar (`/senda volcar parar`) y retomar; `/senda volcar reiniciar` empieza de
-cero. `tools/import_names.py` lo pasa a `data/locale/` (ver `tools/README.md`).
+cero. `tools/import_names.py` lo pasa a `data/locale/` (ver `tools/README.md`). Los objetos del buscador (`Senda_Lookup`, ~5.600) los apunta aparte en `litem`: los que el cliente ya tiene en caché sin pedir nada, y con `/senda volcar objetos` también los que faltan; van a `data/lookup/locale/` y se compilan en `Senda_Lookup`.
 
 ## Automatización y estado de las misiones
 
@@ -445,6 +445,8 @@ Cada carpeta tiene su `<Carpeta>.xml` y el `.toc` solo incluye esos XML, en este
 `Core\Core.xml`, `Locale\Locale.xml`, `Data\Data.xml` (generado: `Travel.lua` y `Rares.lua`, tablas de cadenas que se
 decodifican bajo demanda), `Engine\Engine.xml`, `Recorder\Recorder.xml`, `UI\UI.xml`, `Knowledge\Knowledge.xml`,
 `Guides\Guides.xml`, `Modules\Modules.xml`.
+
+Además del addon `Senda`, el paquete lleva cuatro addons `LoadOnDemand` que Senda carga fuera de combate cuando hacen falta: `Senda_Nav` y sus dos paquetes de continente (caminos de la flecha, [NAV.md](NAV.md)) y `Senda_Lookup` (buscador de objetos: línea en la descripción, `/senda objeto`, pestaña «Objetos»; `Modules/Lookup.lua` y `UI/LookupTab.lua`, datos generados por `tools/build.py` desde `data/lookup/`; [LOOKUP.md](LOOKUP.md)).
 
 ## Planificador de viaje (`Modules/Travel.lua`)
 

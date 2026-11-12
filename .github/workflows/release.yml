@@ -35,13 +35,13 @@ jobs:
       - name: Empaquetar
         run: python tools/package.py
 
-      - name: El zip lleva los cuatro addons en la raíz, con su licencia
+      - name: El zip lleva los cinco addons en la raíz, con su licencia
         run: |
           python - <<'EOF'
           import os, sys, zipfile
           z = f"dist/Senda-{os.environ['VERSION']}.zip"
           names = set(zipfile.ZipFile(z).namelist())
-          addons = ("Senda", "Senda_Nav", "Senda_Nav_EK", "Senda_Nav_Kalimdor")
+          addons = ("Senda", "Senda_Nav", "Senda_Nav_EK", "Senda_Nav_Kalimdor", "Senda_Lookup")
           need = [f"{a}/{f}" for a in addons for f in (f"{a}.toc", "LICENSE", "THIRD_PARTY.md")]
           missing = [n for n in need if n not in names]
           extra = sorted({n.split("/")[0] for n in names} - set(addons))

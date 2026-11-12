@@ -8,16 +8,22 @@ con la fuente `ingame:<build>:<fecha>` (la prioridad más alta: sustituye a `sen
 Informa de las diferencias con lo que ya había: nombres nuevos, nombres que cambian entre parches (una entrada
 `ingame` anterior con otro nombre) y respaldos corregidos (Polestar o tabla propia distintos del cliente).
 
+Los objetos del buscador de objetos (`litem` del volcado: los que no usan las guías, ~5.600 en total) no van a
+data/locale/ (eso se compila dentro de Senda y pesaría en cada inicio) sino a data/lookup/locale/<idioma>/items.json,
+que tools/build.py compila en el addon bajo demanda Senda_Lookup (addon/Senda_Lookup/Names_<idioma>.lua). El informe
+dice cuántos objetos del buscador tienen ya nombre en ese idioma.
+
 Uso:
     python tools/import_names.py "RUTA/WTF/Account/<cuenta>/SavedVariables/Senda.lua"
     python tools/import_names.py RUTA --dry-run          # solo informa
     python tools/import_names.py RUTA --report informe.md
-Después: python tools/build.py (compila addon/Senda/Locale/Names_<locale>.lua).
+Después: python tools/build.py (compila addon/Senda/Locale/Names_<locale>.lua y addon/Senda_Lookup/Names_<locale>.lua).
 """
 from __future__ import annotations
 
 import argparse
 import datetime as _dt
+import json
 import re
 import sys
 from pathlib import Path
@@ -95,7 +101,8 @@ def import_dump(data_root: Path, locale: str, dump: dict, write: bool = True,
     source = source_of(dump, today)
     data = ln.load(data_root, locale)
     res: dict[str, Any] = {"locale": locale, "source": source, "new": [], "renamed": [], "fixed": [],
-                           "same": 0, "missing": {}, "files": []}
+                           "same": 0, "missing": {}, "files": [], "lookup_new": [], "lookup_renamed": [],
+                           "lookup_fixed": [], "lookup_same": 0, "lookup_cov": None}
     touched: set[str] = set()
     for kind in ln.CLIENT_KINDS:
         names = _as_map(dump.get(kind))
@@ -116,9 +123,48 @@ def import_dump(data_root: Path, locale: str, dump: dict, write: bool = True,
         n_miss = sum(1 for k, v in miss.items() if isinstance(k, int) and v)
         if n_miss:
             res["missing"][kind] = n_miss
+    # Objetos del buscador: data/lookup/locale/<idioma>/items.json (nombres de lo que el cliente ya conocía o dio)
+    lookup_root = Path(data_root) / "lookup"
+    litems = _as_map(dump.get("litem"))
+    lk = ln.load(lookup_root, locale)
+    for ident in sorted(k for k in litems if isinstance(k, int)):
+        name = ln.clean_name(litems[ident])
+        if not name:
+            continue
+        what, old = ln.merge(lk, "item", ident, name, source)
+        if what == "new":
+            res["lookup_new"].append(ident)
+        elif what == "same":
+            res["lookup_same"] += 1
+        elif what == "renamed" and old is not None:
+            key = "lookup_renamed" if str(old.get("source", "")).startswith("ingame:") else "lookup_fixed"
+            res[key].append((ident, old["name"], old.get("source", ""), name))
+    lmiss = _as_map(_as_map(dump.get("missing")).get("litem"))
+    n_lmiss = sum(1 for k, v in lmiss.items() if isinstance(k, int) and v)
+    if n_lmiss:
+        res["missing"]["litem"] = n_lmiss
+    res["lookup_cov"] = lookup_coverage(Path(data_root), locale, lk, data["item"])
     if write:
         res["files"] = ln.save(data_root, locale, data, kinds=sorted(touched))
+        if litems:
+            res["files"] += ln.save(lookup_root, locale, lk, kinds=["item"])
     return res
+
+
+def lookup_coverage(data_root: Path, locale: str, lk: dict | None = None,
+                    guide: dict | None = None) -> tuple[int, int] | None:
+    """(objetos del buscador con nombre en este idioma, objetos del buscador) o None si no hay data/lookup/items.json.
+    Cuenta los nombres de data/lookup/locale (volcados y forever-db) y los de data/locale (objetos de las guías)."""
+    f = Path(data_root) / "lookup" / "items.json"
+    if not f.is_file():
+        return None
+    ids = {int(k) for k in json.loads(f.read_text(encoding="utf-8")).get("items", {})}
+    if lk is None:
+        lk = ln.load(Path(data_root) / "lookup", locale)
+    if guide is None:
+        guide = ln.load(Path(data_root), locale)["item"]
+    named = set(lk["item"]) | set(guide)
+    return len(ids & named), len(ids)
 
 
 def report(results: list[dict], root: Path) -> str:
@@ -129,6 +175,12 @@ def report(results: list[dict], root: Path) -> str:
         w("")
         w(f"- Nuevos: {len(r['new'])}; iguales: {r['same']}; cambios entre parches: {len(r['renamed'])}; "
           f"respaldos corregidos: {len(r['fixed'])}.")
+        if r["lookup_new"] or r["lookup_same"] or r["lookup_renamed"] or r["lookup_fixed"]:
+            w(f"- Objetos del buscador: nuevos {len(r['lookup_new'])}; iguales {r['lookup_same']}; "
+              f"cambios entre parches {len(r['lookup_renamed'])}; respaldos corregidos {len(r['lookup_fixed'])}.")
+        if r["lookup_cov"]:
+            named, total = r["lookup_cov"]
+            w(f"- Cobertura de nombres del buscador en {r['locale']}: {named}/{total} ({100 * named / total:.1f} %).")
         if r["missing"]:
             w("- Sin respuesta del cliente: " + ", ".join(f"{k} {n}" for k, n in sorted(r["missing"].items())) + ".")
         for p in r["files"]:
@@ -143,6 +195,14 @@ def report(results: list[dict], root: Path) -> str:
             w("")
             for kind, ident, old, src, new in r["renamed"]:
                 w(f"- {kind}:{ident}: «{old}» ({src}) -> «{new}»")
+        for key, title in (("lookup_renamed", "Cambios de nombre de objetos del buscador entre parches"),
+                           ("lookup_fixed", "Nombres de objetos del buscador que no coincidían con el cliente")):
+            if r[key]:
+                w("")
+                w(f"### {title}")
+                w("")
+                for ident, old, src, new in r[key]:
+                    w(f"- item:{ident}: «{old}» ({src}) -> «{new}»")
         if r["fixed"]:
             w("")
             w("### Respaldos que no coincidían con el cliente")

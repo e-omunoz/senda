@@ -1,0 +1,14 @@
+## Interface: 16001
+## Title: Senda Lookup
+## Notes: Buscador de objetos de Senda: de dónde sale cada objeto de las guías (botín, vendedores, misiones). Se carga bajo demanda.
+## Notes-enUS: Senda's item finder: where each guide item comes from (drops, vendors, quests). Loads on demand.
+## Author: omunoz
+## Version: 0.1.0
+## LoadOnDemand: 1
+## X-License: GPL-3.0
+
+# GENERADO por tools/build.py — no editar
+Items.lua
+Places.lua
+Names_enUS.lua
+Names_esES.lua

@@ -176,6 +176,15 @@ function C_AddOns.LoadAddOn(name)
   if type(name) ~= "string" and type(name) ~= "number" then error("C_AddOns.LoadAddOn: name must be a string", 2) end
   Sim.addonLoads[#Sim.addonLoads + 1] = { name = name, combat = Sim.player.combat, time = Sim.time }
   local inst = Sim.navInstalled
+  if name == "Senda_Lookup" then
+    -- the item finder: the REAL generated add-on (addon/Senda_Lookup), installed unless a scenario says otherwise
+    if Sim.lookupInstalled == false then return false, "MISSING" end
+    if Sim.player.combat then Sim.Misuse("C_AddOns.LoadAddOn", "loaded " .. name .. " in combat") end
+    if loadedSide[name] then return true end
+    local ok = Sim.LoadSideAddon(SIM_ROOT, name)
+    loadedSide[name] = ok or nil
+    return ok and true or false, ok and nil or "CORRUPT"
+  end
   if not (inst and inst[name]) then return false, "MISSING" end
   if Sim.player.combat then
     Sim.Misuse("C_AddOns.LoadAddOn", "loaded " .. name .. " in combat")

@@ -19,4 +19,5 @@
   <Script file="Travel.lua"/>
   <Script file="Rares.lua"/>
   <Script file="Dungeons.lua"/>
+  <Script file="Lookup.lua"/>
 </Ui>

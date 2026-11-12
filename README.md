@@ -32,9 +32,9 @@ inglés): https://e-omunoz.github.io/senda/metricas/ (se generan con `tools/site
 ## Instalación
 
 1. Descarga `Senda-x.y.z.zip` desde [Releases](https://github.com/e-omunoz/senda/releases).
-2. Descomprímelo en `World of Warcraft\_forever_\Interface\AddOns\`. Deben quedar cuatro carpetas: `Senda`,
-   `Senda_Nav`, `Senda_Nav_EK` y `Senda_Nav_Kalimdor` (las tres últimas son los caminos a pie de la flecha; Senda
-   las carga solo cuando hacen falta, fuera de combate).
+2. Descomprímelo en `World of Warcraft\_forever_\Interface\AddOns\`. Deben quedar cinco carpetas: `Senda`,
+   `Senda_Nav`, `Senda_Nav_EK`, `Senda_Nav_Kalimdor` y `Senda_Lookup` (las tres primeras llevan los caminos a pie de la
+   flecha y `Senda_Lookup` el buscador de objetos; Senda las carga solo cuando hacen falta, fuera de combate).
 3. En el juego, escribe `/senda`.
 
 | Comando | Qué hace |
@@ -43,6 +43,7 @@ inglés): https://e-omunoz.github.io/senda/metricas/ (se generan con `tools/site
 | `/senda hud` | Muestra u oculta el HUD |
 | `/senda way 45.2 60.1 Texto` | Pone la flecha en un punto del mapa actual |
 | `/senda map` | Muestra el mapa y las coordenadas actuales |
+| `/senda objeto agua` | De dónde sale un objeto (botín, vendedores, misiones) y «Señalar» el sitio más cercano |
 
 ## Cómo se mantiene la información al día
 

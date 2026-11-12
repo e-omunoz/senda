@@ -352,7 +352,7 @@ class PackageTests(unittest.TestCase):
                 names = zf.namelist()
             self.assertIn("Senda/Senda.toc", names)
             self.assertIn("Senda/Guides/Guides.xml", names)
-            # los cuatro addons en la raíz del zip, cada uno con su licencia
+            # los cinco addons en la raíz del zip, cada uno con su licencia
             for addon in package.ADDONS:
                 self.assertIn(f"{addon}/{addon}.toc", names)
                 self.assertIn(f"{addon}/LICENSE", names)
@@ -381,7 +381,7 @@ class PackageTests(unittest.TestCase):
             self.assertEqual(rc, 1)
             self.assertFalse((addons / "Senda").exists())
             shutil.rmtree(addons / "Senda_Nav")
-            # instalación correcta de los cuatro; Questie intacto
+            # instalación correcta de los cinco; Questie intacto
             rc, out, err = quiet(package.main, ["--root", str(root), "--install-dev", "--target", str(addons)])
             self.assertEqual(rc, 0, err)
             for addon in package.ADDONS:
@@ -389,7 +389,7 @@ class PackageTests(unittest.TestCase):
             self.assertTrue((addons / "Senda_Nav" / "SendaNav.lua").exists())
             self.assertEqual((other / "Questie.toc").read_text(), "keep")
             self.assertEqual(sorted(p.name for p in addons.iterdir()), sorted(["Questie", *package.ADDONS]))
-            # otra vez: reemplaza las cuatro carpetas
+            # otra vez: reemplaza las cinco carpetas
             rc, out, err = quiet(package.main, ["--root", str(root), "--install-dev", "--target", str(addons)])
             self.assertEqual(rc, 0, err)
             # el destino debe llamarse AddOns

@@ -2,18 +2,18 @@
 """Empaquetado e instalación de desarrollo de Senda.
 
     python tools/package.py                         # dist/Senda-<versión>.zip (Senda/, Senda_Nav/, Senda_Nav_EK/ y
-                                                    #   Senda_Nav_Kalimdor/ en la raíz del zip)
+                                                    #   Senda_Nav_Kalimdor/ y Senda_Lookup/ en la raíz del zip)
     python tools/package.py --changelog 0.1.0       # imprime la sección de CHANGELOG.md de esa versión
     python tools/package.py --install-dev --target "C:/.../_forever_/Interface/AddOns"
 
-El paquete lleva los cuatro addons: Senda y los de navegación que carga bajo demanda (Senda_Nav, el
+El paquete lleva los cinco addons: Senda, el buscador de objetos (Senda_Lookup, bajo demanda) y los de navegación que carga bajo demanda (Senda_Nav, el
 runtime, y los paquetes por continente Senda_Nav_EK y Senda_Nav_Kalimdor; docs/NAV.md). Cada carpeta lleva
 LICENSE y THIRD_PARTY.md (GPL-3: la licencia viaja con cada addon).
 
-`--install-dev` copia addon/<addon> a <target>/<addon> para los cuatro. Por seguridad:
+`--install-dev` copia addon/<addon> a <target>/<addon> para los cinco. Por seguridad:
   - exige --target explícito (no hay ruta por defecto);
   - el destino debe existir y llamarse AddOns (salvo --allow-any-dir);
-  - solo crea/reemplaza esas cuatro carpetas; nunca toca otras;
+  - solo crea/reemplaza esas cinco carpetas; nunca toca otras;
   - se niega (sin tocar nada) si alguna existe y no es ese addon (sin su .toc),
     o si es un enlace simbólico/unión (podría apuntar al repo).
 """
@@ -31,7 +31,7 @@ from common import Paths, read_version, setup_stdio  # noqa: E402
 
 ADDON_NAME = "Senda"
 # Addons que van en el paquete y en la instalación de desarrollo, en este orden (addon/<nombre>/<nombre>.toc).
-ADDONS = ("Senda", "Senda_Nav", "Senda_Nav_EK", "Senda_Nav_Kalimdor")
+ADDONS = ("Senda", "Senda_Nav", "Senda_Nav_EK", "Senda_Nav_Kalimdor", "Senda_Lookup")
 LICENSE_FILES = ("LICENSE", "THIRD_PARTY.md")
 # Fecha fija en las entradas del zip: el paquete es reproducible.
 ZIP_DATE = (2026, 1, 1, 0, 0, 0)
@@ -154,7 +154,7 @@ def install_dev(paths: Paths, target: str, allow_any_dir: bool = False) -> int:
     if tgt.name.lower() != "addons" and not allow_any_dir:
         print(f"install-dev: {tgt} no se llama 'AddOns'; usa --allow-any-dir si es intencionado", file=sys.stderr)
         return 2
-    # Todas las comprobaciones antes de tocar nada: o se instalan los cuatro o ninguno.
+    # Todas las comprobaciones antes de tocar nada: o se instalan los cinco o ninguno.
     plan: list[tuple[str, Path, Path]] = []
     for name in ADDONS:
         src = addon_dir(paths, name).resolve()
@@ -201,7 +201,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--out", help="carpeta de salida del zip (por defecto dist/)")
     ap.add_argument("--changelog", metavar="VERSION", help="imprime la sección del CHANGELOG y sale")
     ap.add_argument("--install-dev", action="store_true",
-                    help="copia addon/{Senda,Senda_Nav,Senda_Nav_EK,Senda_Nav_Kalimdor} a --target")
+                    help="copia addon/{Senda,Senda_Nav,Senda_Nav_EK,Senda_Nav_Kalimdor,Senda_Lookup} a --target")
     ap.add_argument("--target", help="ruta ABSOLUTA de la carpeta Interface/AddOns (obligatoria con --install-dev)")
     ap.add_argument("--allow-any-dir", action="store_true", help="permite un --target que no se llame AddOns")
     args = ap.parse_args(argv)
