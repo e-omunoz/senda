@@ -2,7 +2,7 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado [SemVer](https://semver.org/lang/es/).
 
-## [Sin publicar]
+## [0.5.0] - 2026-11-12
 
 ### Añadido
 - **Nombres en español sacados del juego.** Los textos de las guías pueden llevar fichas (`{quest:155}`, `{npc:467}`, `{item:N}`, `{spell:N}`, `{map:N}`, `{obj:N}`) y Senda pone el nombre exacto del cliente al mostrarlas; mientras el juego no responde usa un respaldo compilado de `data/locale/`. El prototipo de Teldrassil ya las usa.
@@ -20,6 +20,15 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - Simulador: modo de dos jugadores (`duo` en `tests/wowsim/run.js`) con dos clientes que se pasan los mensajes de addon y fallos de envío simulados (`Sim.addonFault`).
 - **Grabador de partidas (esquema 2),** apagado por defecto (Opciones o `/senda grabar on|off|estado|limpiar|rastro on|off`): pasos con su motivo, XP, combate, ausencias, muertes, misiones y un rastro de posición opcional, en fragmentos compactos con tope de 4 MiB. No guarda nombres de personaje ni de reino, chat ni compañeros de grupo (solo si vas en pareja o no). Ver `docs/RECORDING.md`.
 - `tools/ingest_recording.py` (tiempo activo por paso con AFK a cero y huecos de 5 min como máximo, XP/hora, yardas, muertes) y `tools/route_report.py` (medido frente a estimado por paso, pasos a más del doble, error mediano; exporta rastros a `data/recordings/traces/`).
+
+## [0.4.1] - 2026-11-12
+
+### Corregido
+- **Listas del instructor de brujo, mago y druida regeneradas con los datos reales de Forever:** niveles, rangos y costes de los instructores de Forever (vía Polestar, GPL-3) y nombres en español leídos del propio cliente esES. Faltaban las subidas de rango (p. ej. al 20 el brujo entrena Descarga de las Sombras rango 4, Inmolar rango 3 y Cauce de salud rango 2).
+- Ids de Classic que tu cliente no reconoce: Maldición de los elementos ya no sale como «#1490» (en Forever es 440892); Revivir del druida en las barras usaba el rango 5 desde el nivel 12.
+- **Hechizos que tu build no usa, marcados como opcionales** con su motivo, y fuera de los pasos de entrenar: brujo (Lluvia de fuego, Maldición de los elementos, de debilidad y de temeridad, Drenar maná, Captar demonios, Detectar invisibilidad, piedras de fuego y de hechizos, Subyugar demonio, Llamas infernales, Fuego de alma, Custodia de las Sombras, Terror de fatalidad, Ritual de condena), mago (Empapar y Amplificar magia, custodias, portales salvo el de Ventormenta, Polimorfia: vaca, Resplandor Arcano) y druida (Calmar animal, Tranquilidad, Huracán).
+- La pestaña de hechizos ya no dice «entrena ya» en los opcionales ni en los de mascota o misión.
+- La tarjeta de nivel muestra el coste real de lo que toca entrenar.
 
 ## [0.4.0] - 2026-11-12
 

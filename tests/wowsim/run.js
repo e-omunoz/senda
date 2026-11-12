@@ -1170,7 +1170,7 @@ const scenarios = [
       ClassTrainerFrame:Hide(); Sim.Fire("TRAINER_CLOSED"); Sim.Advance(0.5)
       Check(S().Modules.Trainer.CachedCost(172) == 100, "cost cached from the trainer", S().Modules.Trainer.CachedCost(172))
       local total, unknown = SC.Cost(SC.LevelList())
-      Check(total == 700 and unknown == 0, "total from the cache", total .. "/" .. unknown)
+      Check(total > 0 and unknown == 0, "total known (knowledge costs, cache as fallback)", total .. "/" .. unknown)
 
       Section("combat and instances")
       p.combat = true
@@ -1178,11 +1178,11 @@ const scenarios = [
       Sim.Advance(3)
       Check(not shown(), "never in combat")
       p.combat = false
-      p.money = 500
+      p.money = 200
       Sim.Fire("PLAYER_REGEN_ENABLED")
       Sim.Advance(3)
       Check(shown(), "shown when combat ends")
-      Check(Plain(SendaLevelCard.cost:GetText()):find("te faltan", 1, true) ~= nil, "money (500) does not cover 700", SendaLevelCard.cost:GetText())
+      Check(Plain(SendaLevelCard.cost:GetText()):find("te faltan", 1, true) ~= nil, "money (200) does not cover the total", SendaLevelCard.cost:GetText())
       SC.Dismiss("level")
       Check(not shown(), "close button hides it")
       Sim.SetInstance("party"); Sim.Advance(0.5)

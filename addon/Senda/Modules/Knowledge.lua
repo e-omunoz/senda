@@ -111,7 +111,7 @@ function K.TrainList()
       if type(tr) == "table" and tr.level and type(tr.spells) == "table" then
         for _, id in ipairs(tr.spells) do
           table.insert(out, { level = tr.level, spell = id, cost = tr.cost, note = tr.note, status = tr.status or p.status,
-            pet = tr.pet, quest = tr.quest, optional = tr.optional, trainer = tr.trainer })
+            pet = tr.pet, quest = tr.quest, optional = tr.optional, talent = tr.talent, trainer = tr.trainer })
         end
       end
     end
@@ -127,7 +127,7 @@ function K.TrainNow(level)
   for _, e in ipairs(K.TrainList()) do
     -- Solo lo que enseña el instructor y la guía recomienda: fuera habilidades de la mascota (pet),
     -- hechizos de misión (quest) y los que no usa tu build (optional).
-    if e.level <= level and not e.pet and not e.quest and not e.optional and not seen[e.spell] and not M.Known(e.spell) then
+    if e.level <= level and not e.pet and not e.quest and not e.optional and not e.talent and not seen[e.spell] and not M.Known(e.spell) then
       seen[e.spell] = true
       table.insert(out, e)
     end
@@ -308,6 +308,8 @@ local function RefreshSpells()
         local known = M.Known(id)
         local right, hl
         if known then right, hl = READY .. " |cff7cc66f" .. (L.MOD_KNOWN or "sabido") .. "|r", nil
+        elseif tr.optional and tr.level <= level then right, hl = NOT .. " |cff888888" .. (L.MOD_OPTIONAL or "opcional") .. "|r", "dim"
+        elseif (tr.pet or tr.quest or tr.talent) and tr.level <= level then right, hl = NOT .. " |cff888888" .. (L.MOD_NOT_TRAINER or "no es del instructor") .. "|r", "dim"
         elseif tr.level <= level then right, hl = WAIT .. " |cffff8040" .. (L.MOD_TRAIN_IT or "entrena ya") .. "|r", "warn"
         else right, hl = NOT .. " |cff888888" .. string.format(L.MOD_AT_LEVEL or "nivel %d", tr.level) .. "|r", "dim" end
         table.insert(nodes, { t = "row", raw = true, icon = M.SpellIcon(id) or "Interface\\Icons\\INV_Misc_QuestionMark",
@@ -449,7 +451,10 @@ M.On("PLAYER_LEVEL_UP", function(_, level)
   if not M.Opt("mod_levelmsg") then return end
   local trains = {}
   for _, e in ipairs(K.TrainList()) do
-    if e.level == level then table.insert(trains, M.SpellName(e.spell) or ("#" .. e.spell)) end
+    -- Solo lo que vende el instructor y usa tu build (fuera mascota, misión, talento y opcionales).
+    if e.level == level and not e.pet and not e.quest and not e.talent and not e.optional then
+      table.insert(trains, M.SpellName(e.spell) or ("#" .. e.spell))
+    end
   end
   if #trains > 0 then
     M.Print("|cffffd100" .. (L.MOD_GO_TRAIN or "Ve al instructor:") .. "|r " .. table.concat(trains, ", "))
