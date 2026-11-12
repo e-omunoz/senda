@@ -1,0 +1,763 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/50-60/04-azshara
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h56-azshara-baldios"
+title = "Azshara y Los Baldíos"
+levels = [56, 56]
+map = 1447
+summary = "Ruta común de la Horda, 56-56: Azshara y Los Baldíos."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h56-azshara-baldios-001"
+do = "turnin"
+quest = 4300
+npc = 8659
+at = [1454, 55.52, 34.08]
+optional = true
+text = "Entrega «{quest:4300}» a {npc:8659}, {obj:172960}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#1"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-002"
+do = "sethearth"
+npc = 6929
+zone = 1454
+at = [1454, 54.1, 68.41]
+text = "Pon la piedra de hogar en {area:1637} con {npc:6929}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#1"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 2 (sethome)"
+
+[[step]]
+id = "h56-azshara-baldios-003"
+do = "accept"
+quest = 8276
+npc = 15188
+at = [1454, 47.64, 65.76]
+reqlevel = 54
+text = "Coge «{quest:8276}» de {npc:15188}, {obj:172957}: guárdala para {map:1451}."
+why = "+2.800 XP · <1 min · 3,2× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#1"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 3 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "h56-azshara-baldios-004"
+do = "accept"
+quest = 3504
+npc = 4485
+at = [1454, 75.23, 34.24]
+reqlevel = 44
+text = "Coge «{quest:3504}» de {npc:4485}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#1"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 4 (accept) · consejo de Polestar sin traducir: {npc:4485}, {obj:172958}: carried from the first {map:1447} visit, else take it here for {npc:8576} in {area:1237}."
+
+[[step]]
+id = "h56-azshara-baldios-005-wr"
+do = "train"
+npc = 3353
+spells = [7373, 11556, 11601, 11605, 20560, 20662]
+at = [1454, 79.79, 31.42]
+if = { class = ["WARRIOR"] }
+reqlevel = 56
+text = "Entrena con {npc:3353}, el instructor de guerrero."
+tip = "6 hechizos hasta el nivel 56."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#1", "trainer:warrior"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 53-56"
+
+[[step]]
+id = "h56-azshara-baldios-005-hu"
+do = "train"
+npc = 3406
+spells = [14280, 14305, 14317, 20190]
+at = [1454, 67.24, 20.2]
+if = { class = ["HUNTER"] }
+reqlevel = 56
+text = "Entrena con {npc:3406}, el instructor de cazador."
+tip = "4 hechizos hasta el nivel 56."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#1", "trainer:hunter"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 53-56"
+
+[[step]]
+id = "h56-azshara-baldios-005-ro"
+do = "train"
+npc = 3328
+spells = [11198, 11290, 11358, 13230]
+at = [1454, 43.9, 54.63]
+if = { class = ["ROGUE"] }
+reqlevel = 56
+text = "Entrena con {npc:3328}, el instructor de pícaro."
+tip = "4 hechizos hasta el nivel 56: nuevos {spell:11358}, {spell:13230}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#1", "trainer:rogue"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 53-56"
+
+[[step]]
+id = "h56-azshara-baldios-005-pr"
+do = "train"
+npc = 5994
+spells = [10876, 10890, 10900, 10917, 10929, 10958, 15267, 1309636]
+at = [1454, 35.72, 86.9]
+if = { class = ["PRIEST"] }
+reqlevel = 56
+text = "Entrena con {npc:5994}, el instructor de sacerdote."
+tip = "8 hechizos hasta el nivel 56."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#1", "trainer:priest"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 53-56"
+
+[[step]]
+id = "h56-azshara-baldios-005-sh"
+do = "train"
+npc = 3344
+spells = [10432, 10479, 10497, 10587, 10605, 10623, 10627, 15112, 16342]
+at = [1454, 38.8, 36.37]
+if = { class = ["SHAMAN"] }
+reqlevel = 56
+text = "Entrena con {npc:3344}, el instructor de chamán."
+tip = "9 hechizos hasta el nivel 56."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#1", "trainer:shaman"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 53-56"
+
+[[step]]
+id = "h56-azshara-baldios-005-mg"
+do = "train"
+npc = 5958
+spells = [10157, 10170, 10181, 10199, 10202, 10212, 10216, 10230]
+at = [1454, 38.68, 85.41]
+if = { class = ["MAGE"] }
+reqlevel = 56
+text = "Entrena con {npc:5958}, el instructor de mago."
+tip = "8 hechizos hasta el nivel 56."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#1", "trainer:mage"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 53-56"
+
+[[step]]
+id = "h56-azshara-baldios-005-wl"
+do = "train"
+npc = 3326
+spells = [6215, 11672, 11684, 11689, 11700, 11704, 11717, 17924, 17928, 17953]
+at = [1454, 48.47, 45.43]
+if = { class = ["WARLOCK"] }
+reqlevel = 56
+text = "Entrena con {npc:3326}, el instructor de brujo."
+tip = "10 hechizos hasta el nivel 56."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#1", "trainer:warlock"]
+note = "Polestar paso 1 «Orgrimmar», objetivo 5 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 53-56"
+
+[[step]]
+id = "h56-azshara-baldios-006"
+do = "goto"
+at = [1454, 45.3, 63.7]
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#2"]
+note = "Polestar paso 2 «Fly to Ratchet», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-azshara-baldios-007"
+do = "fly"
+zone = 1413
+text = "Vuela a Trinquete."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#2"]
+note = "Polestar paso 2 «Fly to Ratchet», objetivo 2 (fly)"
+
+[[step]]
+id = "h56-azshara-baldios-008"
+do = "turnin"
+quest = 4147
+npc = 8496
+at = [1413, 62.45, 38.73]
+text = "Entrega «{quest:4147}» a {npc:8496}."
+tip = "El taller de Liv está en el extremo norte de los muelles de {area:392}; {obj:149036} está dentro."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#3"]
+note = "Polestar paso 3 «Liv Rizzlefix», objetivo 1 (turnin) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h56-azshara-baldios-009"
+do = "complete"
+quest = 3444
+obj = 1
+at = [1413, 62.5, 38.54]
+text = "Recoge {item:10556} (1) de {obj:149036} para «{quest:3444}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#3"]
+note = "Polestar paso 3 «Liv Rizzlefix», objetivo 2 (collect)"
+
+[[step]]
+id = "h56-azshara-baldios-010"
+do = "turnin"
+quest = 5158
+npc = 5901
+at = [1413, 65.83, 43.78]
+chain = "h56-azshara-baldios-s004-5901"
+text = "Entrega «{quest:5158}» a {npc:5901}."
+tip = "{npc:5901} acampa en la orilla, justo al norte de {area:392}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#4"]
+note = "Polestar paso 4 «Islen Vident'aqua», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-011"
+do = "accept"
+quest = 5159
+npc = 5901
+at = [1413, 65.83, 43.78]
+chain = "h56-azshara-baldios-s004-5901"
+reqlevel = 48
+text = "Coge «{quest:5159}» de {npc:5901}."
+why = "+2.700 XP · ~1 min · desbloquea «{quest:5242}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#4"]
+note = "Polestar paso 4 «Islen Vident'aqua», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-azshara-baldios-012"
+do = "note"
+text = "El agua purificada se entrega en {area:2479}, en {map:1448}: guárdala para más adelante."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#4"]
+note = "Polestar paso 4 «Islen Vident'aqua», objetivo 3 (note)"
+
+[[step]]
+id = "h56-azshara-baldios-013"
+do = "loot"
+item = 248765
+count = 1
+text = "Consigue {item:248765}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#5"]
+note = "Polestar paso 5 «Dokimi's crates», objetivo 1 (collect) · consejo de Polestar sin traducir: Ride north up the road to the Crossroads; {npc:256386} stands there. Open each crate she hands you and bring back what is inside. Fly on to {area:1237} from the Crossroads."
+
+[[step]]
+id = "h56-azshara-baldios-014"
+do = "turnin"
+quest = 91899
+npc = 256386
+at = [1413, 50.13, 29.37]
+text = "Entrega «{quest:91899}» a {npc:256386}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#5"]
+note = "Polestar paso 5 «Dokimi's crates», objetivo 2 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-015"
+do = "loot"
+item = 248770
+count = 1
+text = "Consigue {item:248770}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#5"]
+note = "Polestar paso 5 «Dokimi's crates», objetivo 3 (collect)"
+
+[[step]]
+id = "h56-azshara-baldios-016"
+do = "turnin"
+quest = 91904
+npc = 256386
+at = [1413, 50.13, 29.37]
+text = "Entrega «{quest:91904}» a {npc:256386}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#5"]
+note = "Polestar paso 5 «Dokimi's crates», objetivo 4 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-017"
+do = "goto"
+at = [1413, 51.5, 30.4]
+text = "Ve al maestro de vuelo de El Cruce."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#6"]
+note = "Polestar paso 6 «Fly to Valormok», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-azshara-baldios-018"
+do = "fly"
+zone = 1447
+text = "Vuela a {area:1237}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#6"]
+note = "Polestar paso 6 «Fly to Valormok», objetivo 2 (fly)"
+
+[[step]]
+id = "h56-azshara-baldios-020"
+do = "turnin"
+quest = 3563
+npc = 8587
+at = [1447, 22.56, 51.42]
+chain = "h56-azshara-baldios-s007-8587"
+text = "Entrega «{quest:3563}» a {npc:8587}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#7"]
+note = "Polestar paso 7 «Valormok», objetivo 2 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-021"
+do = "turnin"
+quest = 3564
+npc = 8587
+at = [1447, 22.56, 51.42]
+chain = "h56-azshara-baldios-s007-8587"
+text = "Entrega «{quest:3564}» a {npc:8587}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#7"]
+note = "Polestar paso 7 «Valormok», objetivo 3 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-022"
+do = "turnin"
+quest = 3504
+npc = 8576
+at = [1447, 22.26, 51.48]
+chain = "h56-azshara-baldios-s007-8576"
+text = "Entrega «{quest:3504}» a {npc:8576}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#7"]
+note = "Polestar paso 7 «Valormok», objetivo 4 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-023"
+do = "accept"
+quest = 3505
+npc = 8576
+at = [1447, 22.26, 51.48]
+optional = true
+chain = "h56-azshara-baldios-s007-8576"
+reqlevel = 44
+text = "Coge «{quest:3505}» de {npc:8576}."
+tip = "+8.530 XP · ~15 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#7"]
+note = "Polestar paso 7 «Valormok», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-azshara-baldios-024"
+do = "goto"
+at = [1447, 35.0, 55.0]
+text = "Ve a {area:1221}."
+tip = "Ve al este, a las ruinas de la costa. Llena los cuatro viales del químico Cuely en las pozas de marea de la orilla; los naga Látigo de Ira patrullan entre ellas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#8"]
+note = "Polestar paso 8 «Ruins of Eldarath», objetivo 1 (goto) · condición no expresable: llevas la misión 3568 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h56-azshara-baldios-025"
+do = "complete"
+quest = 3568
+text = "Usa {item:10695} y completa «{quest:3568}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#8"]
+note = "Polestar paso 8 «Ruins of Eldarath», objetivo 2 (complete) · condición no expresable: llevas la misión 3568 (implícita: el paso es de esa misión) · objetivos (EN): Filled Vial Labeled #1; Filled Vial Labeled #2; Filled Vial Labeled #3; Filled Vial Labeled #4"
+
+[[step]]
+id = "h56-azshara-baldios-026"
+do = "complete"
+quest = 3505
+obj = 1
+at = [1447, 55.6, 30.13]
+wps = [[1447, 55.9, 27.3, "Reivindicador elfo de sangre"], [1447, 58.3, 28.0, "Reivindicador elfo de sangre"], [1447, 57.0, 25.9, "Reivindicador elfo de sangre"]]
+optional = true
+text = "Mata {npc:6199} (10) para «{quest:3505}»."
+tip = "Los elfos de sangre acampan en los acantilados del noreste, junto a {area:1227}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#9"]
+note = "Polestar paso 9 «Thalassian Base Camp», objetivo 1 (kill)"
+
+[[step]]
+id = "h56-azshara-baldios-027"
+do = "complete"
+quest = 3505
+obj = 2
+at = [1447, 55.46, 29.5]
+wps = [[1447, 57.4, 28.1, "Perito elfo de sangre"], [1447, 58.4, 26.9, "Perito elfo de sangre"]]
+optional = true
+text = "Mata {npc:6198} (10) para «{quest:3505}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#9"]
+note = "Polestar paso 9 «Thalassian Base Camp», objetivo 2 (kill)"
+
+[[step]]
+id = "h56-azshara-baldios-028"
+do = "complete"
+quest = 3505
+at = [1447, 59.53, 31.47]
+optional = true
+text = "Completa «{quest:3505}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#10"]
+note = "Polestar paso 10 «Magus Rimtori's camp», objetivo 1 (complete) · objetivos (EN): Blood Elf Reclaimer; Blood Elf Surveyor; Find Magus Rimtori's camp · consejo de Polestar sin traducir: Rimtori's camp is at the east end of the base camp. Read the {obj:151286} there, then kill the Magus.\nCareful: Which crystal is linked to Rimtori is random. Each of the other two summons a hostile infernal instead."
+
+[[step]]
+id = "h56-azshara-baldios-029"
+do = "turnin"
+quest = 3505
+at = [1447, 59.51, 31.3]
+optional = true
+text = "Entrega «{quest:3505}» en {obj:151286}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#10"]
+note = "Polestar paso 10 «Magus Rimtori's camp», objetivo 2 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-030"
+do = "accept"
+quest = 3506
+at = [1447, 59.51, 31.3]
+reqlevel = 44
+text = "Coge «{quest:3506}» ({obj:151286})."
+why = "+4.500 XP · ~2,5 min · desbloquea «{quest:3507}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#10"]
+note = "Polestar paso 10 «Magus Rimtori's camp», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-azshara-baldios-031"
+do = "complete"
+quest = 3506
+obj = 1
+at = [1447, 59.51, 31.37]
+text = "Consigue {item:10597} (1) de {npc:8578} para «{quest:3506}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#10"]
+note = "Polestar paso 10 «Magus Rimtori's camp», objetivo 4 (collect)"
+
+[[step]]
+id = "h56-azshara-baldios-032"
+do = "turnin"
+quest = 3506
+npc = 8576
+at = [1447, 22.26, 51.48]
+chain = "h56-azshara-baldios-s011-8576"
+text = "Entrega «{quest:3506}» a {npc:8576}."
+tip = "Vuelve al oeste a {area:1237}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#11"]
+note = "Polestar paso 11 «Ag'tor Puñosangre», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-033"
+do = "accept"
+quest = 3507
+npc = 8576
+at = [1447, 22.26, 51.48]
+optional = true
+chain = "h56-azshara-baldios-s011-8576"
+reqlevel = 44
+text = "Coge «{quest:3507}» de {npc:8576}."
+tip = "+7.450 XP · ~13 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#11"]
+note = "Polestar paso 11 «Ag'tor Puñosangre», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-azshara-baldios-034"
+do = "goto"
+at = [1447, 22.0, 49.7]
+text = "Ve al maestro de vuelo de {area:1237}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#12"]
+note = "Polestar paso 12 «Fly to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-azshara-baldios-035"
+do = "fly"
+zone = 1454
+text = "Vuela a {area:1637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#12"]
+note = "Polestar paso 12 «Fly to Orgrimmar», objetivo 2 (fly)"
+
+[[step]]
+id = "h56-azshara-baldios-036-pa"
+do = "train"
+npc = 246344
+spells = [10301, 19898]
+at = [1456, 23.91, 15.44]
+if = { class = ["PALADIN"] }
+reqlevel = 56
+text = "Entrena con {npc:246344}, el instructor de paladín."
+tip = "2 hechizos hasta el nivel 56."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#13", "trainer:paladin"]
+note = "Polestar paso 13 «Paladin trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 56-56"
+
+[[step]]
+id = "h56-azshara-baldios-038"
+do = "turnin"
+quest = 3507
+npc = 4485
+at = [1454, 75.23, 34.24]
+optional = true
+text = "Entrega «{quest:3507}» a {npc:4485}."
+tip = "Vuela a {map:1454}; {npc:4485} está en {obj:172958}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#15"]
+note = "Polestar paso 15 «Belgrom Destrozarroca», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-039"
+do = "goto"
+at = [1411, 45.5, 12.3]
+text = "Entra en {map:1411}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#16"]
+note = "Polestar paso 16 «Into Durotar», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-azshara-baldios-040"
+do = "goto"
+at = [1411, 50.8, 13.5]
+text = "Ve al zepelín a {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#17"]
+note = "Polestar paso 17 «Zeppelin to Undercity», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-azshara-baldios-041"
+do = "turnin"
+quest = 3568
+npc = 8390
+at = [1458, 48.71, 71.39]
+chain = "h56-azshara-baldios-s018-8390"
+text = "Entrega «{quest:3568}» a {npc:8390}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#18"]
+note = "Polestar paso 18 «Químico Cuely», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:8390} and {npc:8393} work in the Apothecarium."
+
+[[step]]
+id = "h56-azshara-baldios-042"
+do = "accept"
+quest = 3569
+npc = 8390
+at = [1458, 48.71, 71.39]
+chain = "h56-azshara-baldios-s018-8390"
+reqlevel = 45
+text = "Coge «{quest:3569}» de {npc:8390}."
+why = "+510 XP · <1 min · desbloquea «{quest:3570}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#18"]
+note = "Polestar paso 18 «Químico Cuely», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-azshara-baldios-043"
+do = "turnin"
+quest = 3569
+npc = 8393
+at = [1458, 49.04, 70.8]
+text = "Entrega «{quest:3569}» a {npc:8393}, a su lado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#18"]
+note = "Polestar paso 18 «Químico Cuely», objetivo 3 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-044"
+do = "turnin"
+quest = 3570
+npc = 8390
+at = [1458, 48.71, 71.39]
+text = "Entrega «{quest:3570}» a {npc:8390}."
+why = "+5.100 XP · <1 min · 29,5× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#18"]
+note = "Polestar paso 18 «Químico Cuely», objetivo 4 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-045"
+do = "accept"
+quest = 5961
+npc = 10181
+at = [1458, 58.05, 91.79]
+reqlevel = 54
+text = "Coge «{quest:5961}» de {npc:10181}."
+tip = "Lady Sylvanas está en {obj:36126}."
+why = "+1.450 XP · <1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#19"]
+note = "Polestar paso 19 «Entrañas», objetivo 1 (accept)"
+
+[[step]]
+id = "h56-azshara-baldios-046"
+do = "turnin"
+quest = 5023
+npc = 10781
+at = [1458, 69.79, 43.16]
+text = "Entrega «{quest:5023}» a {npc:10781}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#20"]
+note = "Polestar paso 20 «Barrio Real», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-047"
+do = "accept"
+quest = 5049
+npc = 10781
+at = [1458, 69.79, 43.16]
+optional = true
+reqlevel = 50
+text = "Coge «{quest:5049}» de {npc:10781}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#21"]
+note = "Polestar paso 21 «Sobrestante real Bauhaus», objetivo 1 (accept) · condición no expresable: available {'k': 'available', 'q': 5049, 'minLevel': 50, 'pre': [5023]} · datos no importados: pre"
+
+[[step]]
+id = "h56-azshara-baldios-048"
+do = "turnin"
+quest = 5049
+npc = 8403
+at = [1458, 67.6, 44.16]
+text = "Entrega «{quest:5049}» a {npc:8403}, cerca."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#22"]
+note = "Polestar paso 22 «Jeremiah Payson», objetivo 1 (turnin) · condición no expresable: llevas la misión 5049 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h56-azshara-baldios-049"
+do = "accept"
+quest = 5050
+npc = 8403
+at = [1458, 67.6, 44.16]
+optional = true
+reqlevel = 50
+text = "Coge «{quest:5050}» de {npc:8403}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#23"]
+note = "Polestar paso 23 «Jeremiah Payson», objetivo 1 (accept) · condición no expresable: available {'k': 'available', 'q': 5050, 'minLevel': 50, 'pre': [5048, 5049]} · datos no importados: pre"
+
+[[step]]
+id = "h56-azshara-baldios-050"
+do = "note"
+optional = true
+text = "«{quest:5050}» se entrega a {npc:10778} en {map:1422}: guárdala."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#23"]
+note = "Polestar paso 23 «Jeremiah Payson», objetivo 2 (note) · condición no expresable: available {'k': 'available', 'q': 5050, 'minLevel': 50, 'pre': [5048, 5049]}"
+
+[[step]]
+id = "h56-azshara-baldios-053"
+do = "goto"
+at = [1420, 83.0, 71.9]
+text = "Ve a {area:152}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#25"]
+note = "Polestar paso 25 «Tirisfal Glades», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-azshara-baldios-054"
+do = "turnin"
+quest = 6029
+npc = 10839
+at = [1420, 83.19, 68.45]
+text = "Entrega «{quest:6029}» a {npc:10839}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#26"]
+note = "Polestar paso 26 «The Bulwark», objetivo 1 (turnin) · consejo de Polestar sin traducir: Ride east out of the {map:1458} along the road; the {area:152} guards the way into the {map:1422}."
+
+[[step]]
+id = "h56-azshara-baldios-055"
+do = "goto"
+at = [1422, 36.9, 57.4]
+text = "Ve a {area:199}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#27"]
+note = "Polestar paso 27 «Western Plaguelands», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-azshara-baldios-056"
+do = "complete"
+quest = 5229
+obj = 1
+at = [1422, 36.9, 57.4]
+text = "Consigue {item:13194} (1) de {npc:11075} para «{quest:5229}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#28"]
+note = "Polestar paso 28 «Felstone Field», objetivo 1 (collect) · consejo de Polestar sin traducir: {npc:10778}'s farm is the first one east of the {area:152}. Jabbering Ghouls on the farm carry the other half of her charm; {npc:11075} guards the cauldron in the field.\nCareful: One or two undead usually fight alongside him, and more cauldron lords can attack after you use the cauldron."
+
+[[step]]
+id = "h56-azshara-baldios-057"
+do = "turnin"
+quest = 5229
+at = [1422, 37.25, 56.78]
+text = "Entrega «{quest:5229}» en {obj:176361}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#28"]
+note = "Polestar paso 28 «Felstone Field», objetivo 2 (turnin)"
+
+[[step]]
+id = "h56-azshara-baldios-058"
+do = "accept"
+quest = 5230
+at = [1422, 37.25, 56.78]
+reqlevel = 50
+text = "Coge «{quest:5230}» ({obj:176361})."
+why = "+2.650 XP · <1 min · desbloquea «{quest:5238}» y 6 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#28"]
+note = "Polestar paso 28 «Felstone Field», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-azshara-baldios-059"
+do = "turnin"
+quest = 5050
+npc = 10778
+at = [1422, 38.4, 54.05]
+text = "Entrega «{quest:5050}» a {npc:10778}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#29"]
+note = "Polestar paso 29 «Janice Piedra Mácula», objetivo 1 (turnin) · condición no expresable: llevas la misión 5050 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: Upstairs."
+
+[[step]]
+id = "h56-azshara-baldios-060"
+do = "accept"
+quest = 5051
+npc = 10778
+at = [1422, 38.4, 54.05]
+optional = true
+reqlevel = 50
+text = "Coge «{quest:5051}» de {npc:10778}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#30"]
+note = "Polestar paso 30 «Janice Piedra Mácula», objetivo 1 (accept) · condición no expresable: available {'k': 'available', 'q': 5051, 'minLevel': 50, 'pre': [5050]} · datos no importados: pre · consejo de Polestar sin traducir: Upstairs."
+
+[[step]]
+id = "h56-azshara-baldios-061"
+do = "loot"
+item = 12722
+count = 1
+at = [1422, 38.4, 55.4]
+wps = [[1422, 37.5, 56.6, "La otra mitad del talismán de buena suerte"]]
+text = "Consigue {item:12722} (1) de {npc:10801}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#31"]
+note = "Polestar paso 31 «La otra mitad del talismán de buena suerte», objetivo 1 (collect) · condición no expresable: llevas la misión 5051 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h56-azshara-baldios-062"
+do = "complete"
+quest = 5051
+text = "Usa {item:12721} y completa «{quest:5051}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#31"]
+note = "Polestar paso 31 «La otra mitad del talismán de buena suerte», objetivo 2 (complete) · condición no expresable: llevas la misión 5051 (implícita: el paso es de esa misión) · objetivos (EN): Good Luck Charm"
+
+[[step]]
+id = "h56-azshara-baldios-063"
+do = "turnin"
+quest = 5051
+npc = 10778
+at = [1422, 38.4, 54.05]
+text = "Entrega «{quest:5051}» a {npc:10778}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/04-azshara#31"]
+note = "Polestar paso 31 «La otra mitad del talismán de buena suerte», objetivo 3 (turnin) · condición no expresable: llevas la misión 5051 (implícita: el paso es de esa misión)"

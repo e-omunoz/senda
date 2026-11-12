@@ -1,0 +1,1353 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/50-60/05-eastern-plaguelands
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h56-peste-del-este"
+title = "Tierras de la Peste del Este, Cuna del Invierno y Tanaris"
+levels = [56, 57]
+map = 1423
+summary = "Ruta común de la Horda, 56-57: Tierras de la Peste del Este, Cuna del Invierno y Tanaris."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h56-peste-del-este-001"
+do = "getfp"
+npc = 12636
+node = "68"
+at = [1423, 70.53, 47.55]
+text = "Coge la ruta de vuelo de Capilla de la Esperanza de la Luz con {npc:12636}."
+tip = "Sigue el camino hacia el este desde {map:1422}, cruza el río y atraviesa todas {map:1423} hasta la capilla de {obj:92525}, en el extremo este."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#2"]
+note = "Polestar paso 2 «Light's Hope Chapel», objetivo 1 (getfp)"
+
+[[step]]
+id = "h56-peste-del-este-002"
+do = "sethearth"
+npc = 16256
+zone = 1423
+at = [1423, 71.8, 48.52]
+text = "Pon la piedra de hogar en {area:2268} con {npc:16256}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#2"]
+note = "Polestar paso 2 «Light's Hope Chapel», objetivo 2 (sethome)"
+
+[[step]]
+id = "h56-peste-del-este-003"
+do = "accept"
+quest = 5281
+npc = 11038
+at = [1423, 69.93, 53.72]
+chain = "h56-peste-del-este-s002-11038"
+reqlevel = 55
+text = "Coge «{quest:5281}» de {npc:11038}."
+why = "+6.600 XP · ~1 min · 2,9× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#2"]
+note = "Polestar paso 2 «Light's Hope Chapel», objetivo 3 (accept)"
+
+[[step]]
+id = "h56-peste-del-este-004"
+do = "accept"
+quest = 6021
+npc = 11038
+at = [1423, 69.93, 53.72]
+chain = "h56-peste-del-este-s002-11038"
+reqlevel = 50
+text = "Coge «{quest:6021}» de {npc:11038}."
+why = "+4.500 XP · ~5,7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#2"]
+note = "Polestar paso 2 «Light's Hope Chapel», objetivo 4 (accept)"
+
+[[step]]
+id = "h56-peste-del-este-005"
+do = "turnin"
+quest = 6030
+npc = 11039
+at = [1423, 71.63, 50.09]
+text = "Entrega «{quest:6030}» a {npc:11039}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#2"]
+note = "Polestar paso 2 «Light's Hope Chapel», objetivo 5 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-006"
+do = "accept"
+quest = 5149
+npc = 10926
+at = [1423, 31.15, 77.98]
+reqlevel = 50
+text = "Coge «{quest:5149}» de {npc:10926}."
+tip = "El fantasma de {npc:10926} está en las ruinas de {area:2262}, al suroeste."
+why = "+2.800 XP · ~4 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#3"]
+note = "Polestar paso 3 «Pamela Rutagrana», objetivo 1 (accept)"
+
+[[step]]
+id = "h56-peste-del-este-007"
+do = "loot"
+item = 12886
+count = 1
+at = [1423, 32.58, 79.56]
+wps = [[1423, 34.1, 77.3, "Cabeza de la muñeca de Pamela"]]
+text = "Recoge {item:12886} de {obj:176116}."
+tip = "La cabeza de la muñeca y sus dos costados están en las casas alrededor de {npc:10926}; únelos desde tus bolsas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#4"]
+note = "Polestar paso 4 ««La muñeca de Pamela»», objetivo 1 (collect) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h56-peste-del-este-008"
+do = "loot"
+item = 12887
+count = 1
+at = [1423, 32.72, 79.12]
+text = "Recoge {item:12887} de {obj:176142}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#4"]
+note = "Polestar paso 4 ««La muñeca de Pamela»», objetivo 2 (collect)"
+
+[[step]]
+id = "h56-peste-del-este-009"
+do = "loot"
+item = 12888
+count = 1
+at = [1423, 33.1, 79.67]
+wps = [[1423, 33.9, 77.3, "Parte derecha de la muñeca de Pamela"]]
+text = "Recoge {item:12888} de {obj:176143}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#4"]
+note = "Polestar paso 4 ««La muñeca de Pamela»», objetivo 3 (collect) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h56-peste-del-este-010"
+do = "complete"
+quest = 5149
+obj = 1
+text = "Consigue {item:12885} (1) para «{quest:5149}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#4"]
+note = "Polestar paso 4 ««La muñeca de Pamela»», objetivo 4 (collect) · coordenadas del marco de Era SIN convertir · coordenadas de Era sin transformación: sin punto (ni aparición en forever-db)"
+
+[[step]]
+id = "h56-peste-del-este-011"
+do = "turnin"
+quest = 5149
+npc = 10926
+at = [1423, 31.15, 77.98]
+chain = "h56-peste-del-este-s005-10926"
+text = "Entrega «{quest:5149}» a {npc:10926}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#5"]
+note = "Polestar paso 5 «Pamela Rutagrana», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-012"
+do = "accept"
+quest = 5152
+npc = 10926
+at = [1423, 31.15, 77.98]
+chain = "h56-peste-del-este-s005-10926"
+reqlevel = 50
+text = "Coge «{quest:5152}» de {npc:10926}."
+why = "+2.900 XP · <1 min · desbloquea «{quest:5206}» y 6 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#5"]
+note = "Polestar paso 5 «Pamela Rutagrana», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-013"
+do = "accept"
+quest = 5241
+npc = 10926
+at = [1423, 31.15, 77.98]
+chain = "h56-peste-del-este-s005-10926"
+reqlevel = 50
+text = "Coge «{quest:5241}» de {npc:10926}."
+tip = "Un mensaje para {npc:11063} en {area:2268}."
+why = "+2.900 XP · <1 min · 4,3× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#5"]
+note = "Polestar paso 5 «Pamela Rutagrana», objetivo 3 (accept) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "h56-peste-del-este-014"
+do = "note"
+text = "Guarda «{quest:5152}»: {npc:10927} vive en {area:197}, en {map:1422}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#5"]
+note = "Polestar paso 5 «Pamela Rutagrana», objetivo 4 (note)"
+
+[[step]]
+id = "h56-peste-del-este-015"
+do = "complete"
+quest = 6021
+obj = 1
+at = [1423, 23.07, 72.63]
+text = "Consigue {item:15785} (1) de {npc:12250} para «{quest:6021}»."
+tip = "Zaeldarr acecha justo al oeste de {area:2262}. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#6"]
+note = "Polestar paso 6 ««Zaeldarr el Marginado»», objetivo 1 (collect)"
+
+[[step]]
+id = "h56-peste-del-este-016"
+do = "loot"
+item = 12840
+count = 20
+at = [1423, 21.14, 78.22]
+wps = [[1423, 13.4, 56.0, "Piedra de la Plaga de esbirro"], [1423, 6.0, 31.1, "Piedra de la Plaga de esbirro"], [1423, 18.1, 17.7, "Piedra de la Plaga de esbirro"]]
+optional = true
+text = "Consigue {item:12840} (20)."
+tip = "Cuidado: {npc:10411} se vuelve invisible fuera de combate y llama a gárgolas Alarroca en cuanto empieza el combate. Solo hay 3 y reaparecen cada 15 min."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#7"]
+note = "Polestar paso 7 «Pestilent Scar», objetivo 1 (collect)"
+
+[[step]]
+id = "h56-peste-del-este-017"
+do = "turnin"
+quest = 6021
+npc = 11038
+at = [1423, 69.93, 53.72]
+text = "Entrega «{quest:6021}» a {npc:11038}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#8"]
+note = "Polestar paso 8 «Back to Light's Hope Chapel», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-018"
+do = "turnin"
+quest = 5241
+npc = 11063
+at = [1423, 71.7, 50.04]
+chain = "h56-peste-del-este-s008-11063"
+text = "Entrega «{quest:5241}» a {npc:11063}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#8"]
+note = "Polestar paso 8 «Back to Light's Hope Chapel», objetivo 2 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-020"
+do = "note"
+text = "Los espíritus de «{quest:5211}» llegan con la parada en {area:2264} más adelante en esta guía: guárdala."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#8"]
+note = "Polestar paso 8 «Back to Light's Hope Chapel», objetivo 4 (note)"
+
+[[step]]
+id = "h56-peste-del-este-021"
+do = "turnin"
+quest = 5510
+npc = 11039
+at = [1423, 71.63, 50.09]
+optional = true
+text = "Entrega «{quest:5510}» a {npc:11039}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#8"]
+note = "Polestar paso 8 «Back to Light's Hope Chapel», objetivo 5 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-022"
+do = "fly"
+zone = 1422
+text = "Vuela a Molino Tarren."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#9"]
+note = "Polestar paso 9 «Fly to Tarren Mill», objetivo 2 (fly)"
+
+[[step]]
+id = "h56-peste-del-este-023"
+do = "goto"
+at = [1422, 49.2, 78.6]
+text = "Ve a {area:197}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#10"]
+note = "Polestar paso 10 «To Sorrow Hill», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-024"
+do = "turnin"
+quest = 5152
+npc = 10927
+at = [1422, 49.17, 78.57]
+chain = "h56-peste-del-este-s011-10927"
+text = "Entrega «{quest:5152}» a {npc:10927}, en el piso de arriba."
+tip = "Sube por el camino hacia el norte desde {area:272}. La casa de {npc:10927} está junto al camino en {area:197}, y el monumento de {npc:10936} está en el cementerio de detrás."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#11"]
+note = "Polestar paso 11 «Sorrow Hill», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-025"
+do = "accept"
+quest = 5153
+npc = 10927
+at = [1422, 49.17, 78.57]
+chain = "h56-peste-del-este-s011-10927"
+reqlevel = 50
+text = "Coge «{quest:5153}» de {npc:10927}."
+why = "+4.350 XP · <1 min · desbloquea «{quest:5206}» y 5 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#11"]
+note = "Polestar paso 11 «Sorrow Hill», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-026"
+do = "complete"
+quest = 5153
+obj = 1
+at = [1422, 49.7, 76.8]
+text = "Recoge {item:12894} (1) de {obj:176145} para «{quest:5153}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#11"]
+note = "Polestar paso 11 «Sorrow Hill», objetivo 3 (collect)"
+
+[[step]]
+id = "h56-peste-del-este-027"
+do = "turnin"
+quest = 5153
+npc = 10667
+at = [1422, 39.46, 66.76]
+chain = "h56-peste-del-este-s012-10667"
+text = "Entrega «{quest:5153}» a {npc:10667}."
+tip = "Ve al noroeste hacia Andorhal. {npc:10667} espera en la posada en ruinas del lado oeste del pueblo; los esqueletos de dentro son de nivel 54-57, así que mantente por los bordes. Piso de arriba."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#12"]
+note = "Polestar paso 12 «Cromi», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-028"
+do = "accept"
+quest = 5154
+npc = 10667
+at = [1422, 39.46, 66.76]
+chain = "h56-peste-del-este-s012-10667"
+reqlevel = 50
+text = "Coge «{quest:5154}» de {npc:10667}."
+why = "+5.800 XP · ~1,3 min · desbloquea «{quest:5206}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#12"]
+note = "Polestar paso 12 «Cromi», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-029"
+do = "complete"
+quest = 5154
+obj = 1
+at = [1422, 43.4, 69.5]
+text = "Recoge {item:12900} (1) de {obj:176150} para «{quest:5154}»."
+tip = "Los Anales están entre los tomos mohosos del ayuntamiento de Andorhal; ábrelos hasta encontrar el correcto."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#13"]
+note = "Polestar paso 13 ««Los Anales de Villa Darrow»», objetivo 1 (collect)"
+
+[[step]]
+id = "h56-peste-del-este-030"
+do = "turnin"
+quest = 5154
+npc = 10667
+at = [1422, 39.46, 66.76]
+chain = "h56-peste-del-este-s014-10667"
+text = "Entrega «{quest:5154}» a {npc:10667}."
+tip = "Piso de arriba."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#14"]
+note = "Polestar paso 14 «Cromi», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-031"
+do = "accept"
+quest = 5210
+npc = 10667
+at = [1422, 39.46, 66.76]
+chain = "h56-peste-del-este-s014-10667"
+reqlevel = 50
+text = "Coge «{quest:5210}» de {npc:10667}."
+why = "+2.900 XP · <1 min · desbloquea «{quest:5206}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#14"]
+note = "Polestar paso 14 «Cromi», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-032"
+do = "goto"
+at = [1424, 60.2, 18.8]
+text = "Ve al maestro de vuelo de {area:272}."
+tip = "Vuelve al sur hasta {area:272} y vuela a {area:2268}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#15"]
+note = "Polestar paso 15 «Fly to Light's Hope Chapel», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-033"
+do = "fly"
+zone = 1423
+text = "Vuela a Capilla de la Esperanza de la Luz."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#15"]
+note = "Polestar paso 15 «Fly to Light's Hope Chapel», objetivo 2 (fly)"
+
+[[step]]
+id = "h56-peste-del-este-034"
+do = "turnin"
+quest = 5210
+npc = 11063
+at = [1423, 71.7, 50.04]
+chain = "h56-peste-del-este-s016-11063"
+text = "Entrega «{quest:5210}» a {npc:11063}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#16"]
+note = "Polestar paso 16 «Light's Hope Chapel», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-035"
+do = "accept"
+quest = 5168
+npc = 11063
+at = [1423, 71.7, 50.04]
+chain = "h56-peste-del-este-s016-11063"
+reqlevel = 50
+text = "Coge «{quest:5168}» de {npc:11063}."
+why = "+5.800 XP · ~9,5 min · desbloquea «{quest:5206}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#16"]
+note = "Polestar paso 16 «Light's Hope Chapel», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-036"
+do = "accept"
+quest = 5181
+npc = 11063
+at = [1423, 71.7, 50.04]
+chain = "h56-peste-del-este-s016-11063"
+reqlevel = 50
+text = "Coge «{quest:5181}» de {npc:11063}."
+why = "+6.000 XP · ~8 min · desbloquea «{quest:5206}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#16"]
+note = "Polestar paso 16 «Light's Hope Chapel», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-037"
+do = "note"
+text = "Los objetos de «{quest:5168}» están en zonas de las Tierras de la Peste que verás más adelante: guárdala."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#16"]
+note = "Polestar paso 16 «Light's Hope Chapel», objetivo 4 (note)"
+
+[[step]]
+id = "h56-peste-del-este-038"
+do = "complete"
+quest = 5542
+obj = 2
+at = [1423, 68.18, 56.27]
+wps = [[1423, 67.3, 54.2, "Can de la Peste"], [1423, 66.3, 59.5, "Can de la Peste"], [1423, 70.3, 60.4, "Can de la Peste"]]
+optional = true
+text = "Mata {npc:8597} (5) para «{quest:5542}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#17"]
+note = "Polestar paso 17 «Eastern Plaguelands: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: Plaguehounds and their runts roam the shores of the lake south-west of the chapel; Plaguebats and Carrion Grubs share the ground.\nThe shattered sword lies on the ground north-west of the lake."
+
+[[step]]
+id = "h56-peste-del-este-039"
+do = "complete"
+quest = 5542
+obj = 1
+at = [1423, 62.72, 69.78]
+wps = [[1423, 61.4, 69.4, "Cachorro de can de la Peste"], [1423, 55.2, 62.8, "Cachorro de can de la Peste"], [1423, 45.2, 65.5, "Cachorro de can de la Peste"]]
+optional = true
+text = "Mata {npc:8596} (20) para «{quest:5542}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#17"]
+note = "Polestar paso 17 «Eastern Plaguelands: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "h56-peste-del-este-040"
+do = "complete"
+quest = 5181
+obj = 2
+at = [1423, 46.86, 55.43]
+text = "Recoge {item:12957} (1) de {obj:176209} para «{quest:5181}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#17"]
+note = "Polestar paso 17 «Eastern Plaguelands: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h56-peste-del-este-041"
+do = "complete"
+quest = 5543
+obj = 1
+at = [1423, 47.8, 64.37]
+wps = [[1423, 48.3, 66.5, "Murcipeste"], [1423, 53.5, 74.2, "Murcipeste"], [1423, 57.3, 65.5, "Murcipeste"]]
+optional = true
+text = "Mata {npc:8600} (30) para «{quest:5543}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#17"]
+note = "Polestar paso 17 «Eastern Plaguelands: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "h56-peste-del-este-042"
+do = "complete"
+quest = 5544
+obj = 1
+at = [1423, 47.51, 66.59]
+wps = [[1423, 48.3, 67.6, "Trozo de carne de gusano carroñero"], [1423, 62.3, 68.0, "Trozo de carne de gusano carroñero"], [1423, 67.3, 51.4, "Trozo de carne de gusano carroñero"]]
+optional = true
+text = "Consigue {item:13853} (15) de {npc:8603} y {npc:8605} para «{quest:5544}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#17"]
+note = "Polestar paso 17 «Eastern Plaguelands: kill these as you meet them», objetivo 5 (collect)"
+
+[[step]]
+id = "h56-peste-del-este-043"
+do = "accept"
+quest = 6022
+npc = 11878
+at = [1423, 22.23, 63.51]
+chain = "h56-peste-del-este-s018-11878"
+reqlevel = 54
+text = "Coge «{quest:6022}» de {npc:11878}."
+tip = "El campeón de {npc:15193} ocupa la granja de {area:2260}, al norte de {area:2261}."
+why = "+6.200 XP · ~1,3 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#18"]
+note = "Polestar paso 18 «Nathanos Clamorinfecto», objetivo 1 (accept)"
+
+[[step]]
+id = "h56-peste-del-este-044"
+do = "turnin"
+quest = 5961
+npc = 11878
+at = [1423, 22.23, 63.51]
+chain = "h56-peste-del-este-s018-11878"
+text = "Entrega «{quest:5961}» a {npc:11878}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#18"]
+note = "Polestar paso 18 «Nathanos Clamorinfecto», objetivo 2 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-045"
+do = "accept"
+quest = 6042
+npc = 11878
+at = [1423, 22.23, 63.51]
+optional = true
+chain = "h56-peste-del-este-s018-11878"
+reqlevel = 54
+text = "Coge «{quest:6042}» de {npc:11878}."
+tip = "+15.610 XP · ~41 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#18"]
+note = "Polestar paso 18 «Nathanos Clamorinfecto», objetivo 3 (accept)"
+
+[[step]]
+id = "h56-peste-del-este-046"
+do = "accept"
+quest = 6133
+npc = 11878
+at = [1423, 22.23, 63.51]
+optional = true
+chain = "h56-peste-del-este-s018-11878"
+reqlevel = 54
+text = "Coge «{quest:6133}» de {npc:11878}."
+tip = "+15.448 XP · ~27 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#18"]
+note = "Polestar paso 18 «Nathanos Clamorinfecto», objetivo 4 (accept)"
+
+[[step]]
+id = "h56-peste-del-este-047"
+do = "complete"
+quest = 5542
+obj = 1
+at = [1423, 20.8, 60.51]
+wps = [[1423, 26.7, 51.5, "Cachorro de can de la Peste"], [1423, 36.7, 55.2, "Cachorro de can de la Peste"], [1423, 30.8, 70.5, "Cachorro de can de la Peste"]]
+optional = true
+text = "Mata {npc:8596} (20) para «{quest:5542}»."
+tip = "Los Cachorros de can de la Peste y los Murcipestes recorren las colinas al norte de {area:2260}, y las Larvas carroñeras se arrastran entre ellos; avanza hacia el norte, hacia {area:2627}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#19"]
+note = "Polestar paso 19 «Eastern Plaguelands: kill these as you meet them», objetivo 1 (kill)"
+
+[[step]]
+id = "h56-peste-del-este-048"
+do = "complete"
+quest = 5544
+obj = 1
+at = [1423, 19.13, 61.85]
+wps = [[1423, 19.4, 60.7, "Trozo de carne de gusano carroñero"], [1423, 20.9, 79.8, "Trozo de carne de gusano carroñero"], [1423, 35.7, 70.7, "Trozo de carne de gusano carroñero"]]
+optional = true
+text = "Consigue {item:13853} (15) de {npc:8603} y {npc:8605} para «{quest:5544}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#19"]
+note = "Polestar paso 19 «Eastern Plaguelands: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h56-peste-del-este-049"
+do = "complete"
+quest = 5543
+obj = 1
+at = [1423, 20.13, 56.23]
+wps = [[1423, 18.4, 56.2, "Murcipeste"], [1423, 26.4, 54.1, "Murcipeste"], [1423, 29.6, 63.1, "Murcipeste"]]
+optional = true
+text = "Mata {npc:8600} (30) para «{quest:5543}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#19"]
+note = "Polestar paso 19 «Eastern Plaguelands: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h56-peste-del-este-050"
+do = "turnin"
+quest = 5281
+npc = 11140
+at = [1423, 11.36, 26.6]
+text = "Entrega «{quest:5281}» a {npc:11140}."
+tip = "{npc:11140}, el fantasma, está junto a una cabaña en {area:2627}, en la esquina noroeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#20"]
+note = "Polestar paso 20 «Egan», objetivo 1 (turnin) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h56-peste-del-este-051"
+do = "turnin"
+quest = 6164
+npc = 12384
+at = [1423, 11.36, 26.37]
+optional = true
+text = "Entrega «{quest:6164}» a {npc:12384}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#20"]
+note = "Polestar paso 20 «Egan», objetivo 2 (turnin) · consejo de Polestar sin traducir: Inside."
+
+[[step]]
+id = "h56-peste-del-este-052"
+do = "complete"
+quest = 6042
+obj = 2
+at = [1423, 15.64, 28.97]
+wps = [[1423, 17.0, 29.4, "murcípeste monstruoso"], [1423, 16.1, 17.7, "murcípeste monstruoso"], [1423, 27.0, 33.0, "murcípeste monstruoso"]]
+optional = true
+text = "Mata {npc:8602} (10) para «{quest:6042}»."
+tip = "Los canes de la Peste demenciados y los murcipestes monstruosos comparten los campos alrededor de {area:2272} y {area:2271}, al sur de {area:2273}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#21"]
+note = "Polestar paso 21 «Plaguewood: kill these as you meet them», objetivo 1 (kill)"
+
+[[step]]
+id = "h56-peste-del-este-053"
+do = "complete"
+quest = 5542
+obj = 3
+at = [1423, 18.91, 28.03]
+wps = [[1423, 16.5, 18.9, "Can de la Peste demenciado"], [1423, 29.8, 33.5, "Can de la Peste demenciado"], [1423, 43.6, 32.3, "Can de la Peste demenciado"]]
+optional = true
+text = "Mata {npc:8598} (5) para «{quest:5542}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#21"]
+note = "Polestar paso 21 «Plaguewood: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "h56-peste-del-este-054"
+do = "complete"
+quest = 6042
+obj = 1
+at = [1423, 39.47, 53.82]
+wps = [[1423, 39.6, 54.9, "murcipeste tóxico"], [1423, 43.1, 51.2, "murcipeste tóxico"], [1423, 43.4, 45.1, "murcipeste tóxico"]]
+optional = true
+text = "Mata {npc:8601} (20) para «{quest:6042}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#21"]
+note = "Polestar paso 21 «Plaguewood: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h56-peste-del-este-055"
+do = "complete"
+quest = 6042
+obj = 1
+at = [1423, 39.47, 53.82]
+wps = [[1423, 39.6, 54.9, "murcipeste tóxico"], [1423, 43.1, 51.2, "murcipeste tóxico"], [1423, 43.4, 45.1, "murcipeste tóxico"]]
+optional = true
+text = "Mata {npc:8601} (20) para «{quest:6042}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#22"]
+note = "Polestar paso 22 «Eastern Plaguelands: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: The high elf Rangers, Pathstriders and Woodsmen guard the lodge by {area:2275}; the Registry lies inside. Rangers reach 60: pull one at a time. Noxious Plaguebats fly over the fields on the way.\nThe skull sits in the {area:2622}, among Blighted Horrors and Plague Monstrosities."
+
+[[step]]
+id = "h56-peste-del-este-056"
+do = "complete"
+quest = 5181
+obj = 1
+at = [1423, 44.34, 41.18]
+text = "Recoge {item:12956} (1) de {obj:176208} para «{quest:5181}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#22"]
+note = "Polestar paso 22 «Eastern Plaguelands: kill these as you meet them», objetivo 2 (collect) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h56-peste-del-este-057"
+do = "complete"
+quest = 6133
+obj = 1
+at = [1423, 44.69, 15.29]
+wps = [[1423, 46.7, 11.4, "Zancamino"]]
+optional = true
+text = "Mata {npc:8565} (8) para «{quest:6133}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#23"]
+note = "Polestar paso 23 «Zancamino», objetivo 1 (kill) · consejo de Polestar sin traducir: {npc:8565} walks around {area:2276}: look inside the circle on the map."
+
+[[step]]
+id = "h56-peste-del-este-058"
+do = "complete"
+quest = 6133
+obj = 2
+at = [1423, 44.57, 15.75]
+wps = [[1423, 45.6, 12.4, "Especialista"]]
+optional = true
+text = "Mata {npc:8564} (8) para «{quest:6133}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#23"]
+note = "Polestar paso 23 «Zancamino», objetivo 2 (kill)"
+
+[[step]]
+id = "h56-peste-del-este-059"
+do = "complete"
+quest = 6133
+obj = 3
+at = [1423, 44.93, 15.74]
+wps = [[1423, 46.0, 14.1, "Leñantro"], [1423, 43.9, 12.1, "Leñantro"]]
+optional = true
+text = "Mata {npc:8563} (8) para «{quest:6133}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#23"]
+note = "Polestar paso 23 «Zancamino», objetivo 3 (kill)"
+
+[[step]]
+id = "h56-peste-del-este-060"
+do = "complete"
+quest = 6133
+obj = 4
+at = [1423, 45.27, 12.7]
+optional = true
+text = "Recoge {item:15847} (1) de {obj:177747} para «{quest:6133}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#23"]
+note = "Polestar paso 23 «Zancamino», objetivo 4 (collect)"
+
+[[step]]
+id = "h56-peste-del-este-061"
+do = "goto"
+at = [1423, 52.3, 58.2]
+text = "Ve a {area:2264}."
+tip = "Ve al sur desde el refugio hasta {area:2264}, por el camino. {item:15447} se echa a perder en diez minutos: mata rápido a la Plaga del pueblo y muele los siete trozos con {item:15454} enseguida.\nCuidado: los sirvientes invisibles piden ayuda en un radio de 25 m cuando bajan al 40 % de salud. Fuera de combate, además, se vuelven invisibles con {spell:10228}. Si piden ayuda dentro del pueblo, puede unirse al combate un gran número de enemigos. Luchar cerca de las afueras reduce este riesgo.\nCon «{quest:5211}» en tu registro (de {npc:11063}, al principio de esta guía), la Plaga alrededor del pueblo deja espíritus de Villa Darrow: habla con cada uno para liberarlo. Libéralos antes de empezar con {item:15447}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#24"]
+note = "Polestar paso 24 «Corin's Crossing», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-063"
+do = "loot"
+item = 15447
+count = 7
+at = [1423, 51.72, 58.32]
+wps = [[1423, 54.3, 56.2, "Caña viva"], [1423, 38.0, 25.7, "Caña viva"], [1423, 31.5, 24.4, "Caña viva"]]
+text = "Consigue {item:15447} (7) de {npc:8531} y {npc:8541} y {npc:8538} y {npc:8543} y {npc:8525} y {npc:8526}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#24"]
+note = "Polestar paso 24 «Corin's Crossing», objetivo 3 (collect)"
+
+[[step]]
+id = "h56-peste-del-este-064"
+do = "complete"
+quest = 6022
+text = "Usa {item:15454} y completa «{quest:6022}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#24"]
+note = "Polestar paso 24 «Corin's Crossing», objetivo 4 (complete) · objetivos (EN): Coagulated Rot"
+
+[[step]]
+id = "h56-peste-del-este-065"
+do = "turnin"
+quest = 6133
+npc = 11878
+at = [1423, 22.23, 63.51]
+optional = true
+chain = "h56-peste-del-este-s025-11878"
+text = "Entrega «{quest:6133}» a {npc:11878}."
+tip = "Ve al oeste a {area:2260}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#25"]
+note = "Polestar paso 25 «Nathanos Clamorinfecto», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-066"
+do = "turnin"
+quest = 6042
+npc = 11878
+at = [1423, 22.23, 63.51]
+optional = true
+chain = "h56-peste-del-este-s025-11878"
+text = "Entrega «{quest:6042}» a {npc:11878}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#25"]
+note = "Polestar paso 25 «Nathanos Clamorinfecto», objetivo 2 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-067"
+do = "turnin"
+quest = 6022
+npc = 11878
+at = [1423, 22.23, 63.51]
+chain = "h56-peste-del-este-s025-11878"
+text = "Entrega «{quest:6022}» a {npc:11878}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#25"]
+note = "Polestar paso 25 «Nathanos Clamorinfecto», objetivo 3 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-068"
+do = "accept"
+quest = 6135
+npc = 11878
+at = [1423, 22.23, 63.51]
+optional = true
+reqlevel = 56
+text = "Coge «{quest:6135}» de {npc:11878}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#26"]
+note = "Polestar paso 26 «Nathanos Clamorinfecto», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 6135 · datos no importados: preAll"
+
+[[step]]
+id = "h56-peste-del-este-069"
+do = "complete"
+quest = 6135
+obj = 1
+at = [1423, 26.1, 59.0]
+optional = true
+text = "Consigue {item:15850} (1) de {npc:11897} para «{quest:6135}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#27"]
+note = "Polestar paso 27 ««Alatardecer, cómo te odio…»», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 6135 · consejo de Polestar sin traducir: These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:11897} is a level 60 elite: most classes solo it at level 62, but you may need help. Skip it if you are alone: the route has you grind the XP back."
+
+[[step]]
+id = "h56-peste-del-este-070"
+do = "turnin"
+quest = 5181
+npc = 11063
+at = [1423, 71.7, 50.04]
+chain = "h56-peste-del-este-s028-11063"
+text = "Entrega «{quest:5181}» a {npc:11063}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#28"]
+note = "Polestar paso 28 «Carlin Rutagrana», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-072"
+do = "fly"
+zone = 1420
+text = "Vuela a Entrañas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#29"]
+note = "Polestar paso 29 «Fly to Undercity», objetivo 2 (fly)"
+
+[[step]]
+id = "h56-peste-del-este-073"
+do = "goto"
+at = [1420, 60.7, 58.9]
+text = "Ve al zepelín a {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#30"]
+note = "Polestar paso 30 «Zeppelin to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-074"
+do = "goto"
+at = [1454, 45.3, 63.7]
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK"] }
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#31"]
+note = "Polestar paso 31 «Fly to Bloodvenom Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-075"
+do = "fly"
+zone = 1454
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK"] }
+text = "Vuela a Puesto del Veneno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#31"]
+note = "Polestar paso 31 «Fly to Bloodvenom Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h56-peste-del-este-076"
+do = "goto"
+at = [1454, 45.3, 63.7]
+if = { class = ["PALADIN", "DRUID"] }
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#32"]
+note = "Polestar paso 32 «Fly to Thunder Bluff», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-077"
+do = "fly"
+zone = 1456
+if = { class = ["PALADIN", "DRUID"] }
+text = "Vuela a Cima del Trueno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#32"]
+note = "Polestar paso 32 «Fly to Thunder Bluff», objetivo 2 (fly)"
+
+[[step]]
+id = "h56-peste-del-este-078-dr"
+do = "train"
+npc = 3034
+spells = [9827, 22829]
+at = [1456, 77.14, 27.02]
+if = { class = ["DRUID"] }
+reqlevel = 56
+text = "Entrena con {npc:3034}, el instructor de druida."
+tip = "2 hechizos hasta el nivel 56."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#33", "trainer:druid"]
+note = "Polestar paso 33 «Thunder Bluff», objetivo 1 (train) · consejo de Polestar sin traducir: {npc:3033} (Druids) trains on {area:1639}, {npc:246344} (Paladins) in the city too. · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 56-56"
+
+[[step]]
+id = "h56-peste-del-este-079"
+do = "goto"
+at = [1456, 46.6, 49.9]
+if = { class = ["PALADIN", "DRUID"] }
+text = "Ve al maestro de vuelo de {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#34"]
+note = "Polestar paso 34 «Fly to Bloodvenom Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-080"
+do = "fly"
+zone = 1448
+if = { class = ["PALADIN", "DRUID"] }
+text = "Vuela a Puesto del Veneno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#34"]
+note = "Polestar paso 34 «Fly to Bloodvenom Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h56-peste-del-este-083"
+do = "turnin"
+quest = 5084
+at = [1448, 60.2, 5.84]
+text = "Entrega «{quest:5084}» en {obj:176091}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#36"]
+note = "Polestar paso 36 «Caldera de Muertobosque», objetivo 1 (turnin) · consejo de Polestar sin traducir: Ride north up the road. The cauldron stands in {area:1762}, just south-west of {area:1769}; the Deadwood furbolgs there are hostile."
+
+[[step]]
+id = "h56-peste-del-este-084"
+do = "accept"
+quest = 5085
+at = [1448, 60.2, 5.84]
+reqlevel = 52
+text = "Coge «{quest:5085}» ({obj:176091})."
+why = "+4.350 XP · <1 min · desbloquea «{quest:5087}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#36"]
+note = "Polestar paso 36 «Caldera de Muertobosque», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-085"
+do = "turnin"
+quest = 8471
+npc = 11558
+at = [1448, 65.5, 3.52]
+optional = true
+text = "Entrega «{quest:8471}» a {npc:11558}."
+tip = "Solo si te ha caído «{quest:8471}»: {npc:11558} espera en la entrada de {area:1769} del lado de {map:1448}, y solo te habla si eres Neutral con el Bastión de los Fauces de Madera."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#37"]
+note = "Polestar paso 37 «Kernda», objetivo 1 (turnin) · condición no expresable: llevas la misión 8471 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: {npc:11558} walks around here: look inside the circle on the map."
+
+[[step]]
+id = "h56-peste-del-este-086"
+do = "goto"
+at = [1450, 51.7, 45.1]
+text = "Ve a «{quest:1123}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#38"]
+note = "Polestar paso 38 «Claro de la Luna», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-087"
+do = "accept"
+quest = 5527
+npc = 11801
+at = [1450, 51.69, 45.1]
+reqlevel = 56
+text = "Coge «{quest:5527}» de {npc:11801}."
+tip = "Atraviesa {area:1769} y toma el ramal del túnel hacia {map:1450}. {npc:11801} está en {area:2361}."
+why = "+6.600 XP · <1 min · 3,2× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#39"]
+note = "Polestar paso 39 «Rabine Saturna», objetivo 1 (accept)"
+
+[[step]]
+id = "h56-peste-del-este-089"
+do = "turnin"
+quest = 1123
+npc = 11801
+at = [1450, 51.69, 45.1]
+chain = "h56-peste-del-este-s041-11801"
+text = "Entrega «{quest:1123}» a {npc:11801}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#41"]
+note = "Polestar paso 41 ««Rabine Saturna»», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-090"
+do = "accept"
+quest = 1124
+npc = 11801
+at = [1450, 51.69, 45.1]
+chain = "h56-peste-del-este-s041-11801"
+reqlevel = 54
+text = "Coge «{quest:1124}» de {npc:11801}."
+why = "+2.800 XP · <1 min · desbloquea «{quest:1125}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#41"]
+note = "Polestar paso 41 ««Rabine Saturna»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-091"
+do = "note"
+text = "Las dos misiones llevan a {map:1451}: guárdalas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#41"]
+note = "Polestar paso 41 ««Rabine Saturna»», objetivo 3 (note)"
+
+[[step]]
+id = "h56-peste-del-este-092"
+do = "goto"
+at = [1452, 31.3, 45.2]
+text = "Ve a {npc:9298}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#42"]
+note = "Polestar paso 42 «Winterspring», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-093"
+do = "turnin"
+quest = 5085
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h56-peste-del-este-s043-9298"
+text = "Entrega «{quest:5085}» a {npc:9298}."
+tip = "Vuelve por el túnel, toma la salida a {map:1452} y ve al sur hasta {area:2246}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#43"]
+note = "Polestar paso 43 «Donova Cubilnevado», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-094"
+do = "accept"
+quest = 5086
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h56-peste-del-este-s043-9298"
+reqlevel = 52
+text = "Coge «{quest:5086}» de {npc:9298}."
+why = "+5.164 XP · ~6 min · desbloquea «{quest:5087}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#43"]
+note = "Polestar paso 43 «Donova Cubilnevado», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-095"
+do = "turnin"
+quest = 3909
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h56-peste-del-este-s043-9298"
+text = "Entrega «{quest:3909}» a {npc:9298}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#43"]
+note = "Polestar paso 43 «Donova Cubilnevado», objetivo 3 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-096"
+do = "accept"
+quest = 3912
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h56-peste-del-este-s043-9298"
+reqlevel = 47
+text = "Coge «{quest:3912}» de {npc:9298}."
+why = "+5.100 XP · <1 min · desbloquea «{quest:3942}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#43"]
+note = "Polestar paso 43 «Donova Cubilnevado», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-097"
+do = "note"
+text = "«{quest:5086}» se hace en {map:1448}, en un viaje posterior: guárdala."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#43"]
+note = "Polestar paso 43 «Donova Cubilnevado», objetivo 5 (note) · nota de Polestar traducida por Senda: «Horrores tóxicos» are in Felwood, on a later trip: keep it."
+
+[[step]]
+id = "h56-peste-del-este-099"
+do = "goto"
+at = [1452, 60.5, 36.3]
+text = "Ve a {area:2255}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#45"]
+note = "Polestar paso 45 «Winterspring», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-100"
+do = "goto"
+at = [1452, 60.5, 36.3]
+text = "Ve al maestro de vuelo de {area:2255}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#46"]
+note = "Polestar paso 46 «Fly to Gadgetzan», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-101"
+do = "fly"
+zone = 1446
+text = "Vuela a {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#46"]
+note = "Polestar paso 46 «Fly to Gadgetzan», objetivo 2 (fly)"
+
+[[step]]
+id = "h56-peste-del-este-102"
+do = "use"
+item = 11243
+at = [1446, 54.0, 28.7]
+text = "Usa {item:11243}."
+tip = "Bebe el {item:11243} en el cementerio justo al este de {area:976}: te mata, y solo como fantasma puedes ver a {npc:9299}, en una grieta rocosa de las colinas justo al norte. Habla con él allí, luego corre de vuelta a tu cuerpo y resucita: la Lápida llamativa a la que te envía está en ese cementerio."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#47"]
+note = "Polestar paso 47 «Gaeriyan», objetivo 1 (use)"
+
+[[step]]
+id = "h56-peste-del-este-103"
+do = "turnin"
+quest = 3912
+npc = 9299
+at = [1446, 53.92, 23.33]
+chain = "h56-peste-del-este-s047-9299"
+text = "Entrega «{quest:3912}» a {npc:9299}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#47"]
+note = "Polestar paso 47 «Gaeriyan», objetivo 2 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-104"
+do = "accept"
+quest = 3913
+npc = 9299
+at = [1446, 53.92, 23.33]
+chain = "h56-peste-del-este-s047-9299"
+reqlevel = 47
+text = "Coge «{quest:3913}» de {npc:9299}."
+why = "+2.550 XP · <1 min · desbloquea «{quest:3942}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#47"]
+note = "Polestar paso 47 «Gaeriyan», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-105"
+do = "complete"
+quest = 5163
+obj = 2
+at = [1446, 51.06, 26.87]
+optional = true
+text = "Mata {npc:7583} (1) para «{quest:5163}»."
+tip = "Usa {item:12928} con {npc:7583}, la niña goblin de {area:976}. A {npc:10977} y {npc:10978} se les asusta más adelante en la ruta. Usa {item:12928} para «{quest:5163}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#48"]
+note = "Polestar paso 48 «Roxio», objetivo 1 (kill)"
+
+[[step]]
+id = "h56-peste-del-este-106"
+do = "turnin"
+quest = 3913
+at = [1446, 53.81, 29.06]
+text = "Entrega «{quest:3913}» en {obj:148504}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#49"]
+note = "Polestar paso 49 «Gaeriyan», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-107"
+do = "accept"
+quest = 3914
+at = [1446, 53.81, 29.06]
+reqlevel = 47
+text = "Coge «{quest:3914}» ({obj:148504})."
+why = "+5.100 XP · <1 min · desbloquea «{quest:3942}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#49"]
+note = "Polestar paso 49 «Gaeriyan», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-108"
+do = "note"
+text = "«{quest:3914}» se entrega a {npc:8737} en el Cráter de Un'Goro: guárdala."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#49"]
+note = "Polestar paso 49 «Gaeriyan», objetivo 3 (note)"
+
+[[step]]
+id = "h56-peste-del-este-109"
+do = "turnin"
+quest = 3444
+npc = 7771
+at = [1446, 52.71, 45.92]
+text = "Entrega «{quest:3444}» a {npc:7771}."
+tip = "{npc:7771} acampa junto al camino de {area:1336}, al sur de {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#50"]
+note = "Polestar paso 50 «Marvon Buscarroblones», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-110"
+do = "goto"
+at = [1446, 51.6, 25.5]
+text = "Ve al maestro de vuelo de {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#51"]
+note = "Polestar paso 51 «Fly to Marshal's Refuge», objetivo 1 (goto)"
+
+[[step]]
+id = "h56-peste-del-este-111"
+do = "fly"
+zone = 1449
+text = "Vuela a Refugio de Marshal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#51"]
+note = "Polestar paso 51 «Fly to Marshal's Refuge», objetivo 2 (fly)"
+
+[[step]]
+id = "h56-peste-del-este-112"
+do = "accept"
+quest = 4492
+npc = 9997
+at = [1449, 43.62, 8.5]
+reqlevel = 50
+text = "Coge «{quest:4492}» de {npc:9997}."
+why = "+2.800 XP · ~1,3 min · desbloquea «{quest:4491}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#52"]
+note = "Polestar paso 52 «Marshal's Refuge», objetivo 1 (accept) · consejo de Polestar sin traducir: The flight lands at {area:541}: {npc:9997} stands beside the flight master, and {npc:8737} by the cave a few steps away. {npc:9997}'s work is in Un'Goro on the next guide's way back north."
+
+[[step]]
+id = "h56-peste-del-este-113"
+do = "turnin"
+quest = 3914
+npc = 8737
+at = [1449, 44.66, 8.1]
+chain = "h56-peste-del-este-s052-8737"
+text = "Entrega «{quest:3914}» a {npc:8737}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#52"]
+note = "Polestar paso 52 «Marshal's Refuge», objetivo 2 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-114"
+do = "accept"
+quest = 3941
+npc = 8737
+at = [1449, 44.66, 8.1]
+chain = "h56-peste-del-este-s052-8737"
+reqlevel = 47
+text = "Coge «{quest:3941}» de {npc:8737}."
+why = "+1.000 XP · ~1 min · desbloquea «{quest:3942}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#52"]
+note = "Polestar paso 52 «Marshal's Refuge», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-115"
+do = "turnin"
+quest = 1124
+npc = 13220
+at = [1451, 81.87, 18.93]
+chain = "h56-peste-del-este-s053-13220"
+text = "Entrega «{quest:1124}» a {npc:13220}."
+tip = "El paso desde Un'Goro sale en {area:3077}, el cementerio del noreste de {map:1451}. {npc:13220} está entre las tumbas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#53"]
+note = "Polestar paso 53 «Layo Estrella», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-116"
+do = "accept"
+quest = 1125
+npc = 13220
+at = [1451, 81.87, 18.93]
+chain = "h56-peste-del-este-s053-13220"
+reqlevel = 54
+text = "Coge «{quest:1125}» de {npc:13220}."
+why = "+10.530 XP · ~14 min · desbloquea «{quest:1126}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#53"]
+note = "Polestar paso 53 «Layo Estrella», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h56-peste-del-este-117"
+do = "complete"
+quest = 1125
+obj = 1
+at = [1451, 64.92, 47.2]
+wps = [[1451, 61.9, 50.2, "Druida torturado"], [1451, 62.6, 53.8, "Druida torturado"], [1451, 59.8, 53.7, "Druida torturado"]]
+text = "Mata {npc:12178} (8) para «{quest:1125}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#54"]
+note = "Polestar paso 54 ««Los espíritus de Viento del Sur»», objetivo 1 (kill) · consejo de Polestar sin traducir: Ride south-west to the ruins of {area:2738}. The {obj:179565} for «{quest:1123}» sits inside one of the ruined houses."
+
+[[step]]
+id = "h56-peste-del-este-118"
+do = "complete"
+quest = 1125
+obj = 2
+at = [1451, 65.91, 48.49]
+wps = [[1451, 62.7, 49.5, "Centinela torturada"], [1451, 63.5, 53.1, "Centinela torturada"], [1451, 62.6, 56.2, "Centinela torturada"]]
+text = "Mata {npc:12179} (8) para «{quest:1125}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#54"]
+note = "Polestar paso 54 ««Los espíritus de Viento del Sur»», objetivo 2 (kill)"
+
+[[step]]
+id = "h56-peste-del-este-119"
+do = "turnin"
+quest = 1125
+npc = 13220
+at = [1451, 81.87, 18.93]
+chain = "h56-peste-del-este-s055-13220"
+text = "Entrega «{quest:1125}» a {npc:13220}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#55"]
+note = "Polestar paso 55 «Layo Estrella», objetivo 1 (turnin)"
+
+[[step]]
+id = "h56-peste-del-este-120"
+do = "accept"
+quest = 1126
+npc = 13220
+at = [1451, 81.87, 18.93]
+chain = "h56-peste-del-este-s055-13220"
+reqlevel = 54
+text = "Coge «{quest:1126}» de {npc:13220}."
+why = "+6.305 XP · ~5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/05-eastern-plaguelands#55"]
+note = "Polestar paso 55 «Layo Estrella», objetivo 2 (accept) · datos no importados: pre"

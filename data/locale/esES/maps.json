@@ -2,6 +2,7 @@
   "kind": "map",
   "locale": "esES",
   "names": {
+    "1450": {"name": "Claro de la Luna", "source": "senda"},
     "1457": {"name": "Darnassus", "source": "senda"}
   }
 }

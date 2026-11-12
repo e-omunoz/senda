@@ -3,8 +3,14 @@
   <Script file="Followups.lua"/>
   <Script file="Reserve.lua"/>
   <Script file="Shared.lua"/>
+  <Script file="SharedHorde.lua"/>
   <Script file="gnome-warlock.lua"/>
   <Script file="human-mage.lua"/>
   <Script file="nightelf-druid.lua"/>
   <Script file="nightelf-druid-ps.lua"/>
+  <Script file="orc-horde.lua"/>
+  <Script file="skyborne-horde.lua"/>
+  <Script file="tauren-horde.lua"/>
+  <Script file="troll-horde.lua"/>
+  <Script file="undead-horde.lua"/>
 </Ui>

@@ -34,6 +34,17 @@ Sim.CHARS = {
     equipped = {} },
   ["nightelf-warrior"] = { race = "NightElf", class = "WARRIOR", level = 3, map = 1438, x = 0.58, y = 0.44,
     bag = { [1] = { 6948 } }, equipped = {} },
+  -- Horda (fase 4): una guía por raza, para cualquier clase.
+  ["orc-warrior"] = { race = "Orc", class = "WARRIOR", faction = "Horde", level = 1, map = 1411, x = 0.433, y = 0.685,
+    spells = { 6673 }, bag = { [1] = { 6948 } }, equipped = {} },
+  ["undead-mage"] = { race = "Scourge", class = "MAGE", faction = "Horde", level = 1, map = 1420, x = 0.302, y = 0.716,
+    spells = { 133, 168 }, bag = { [1] = { 6948 }, [2] = { 159, 4 } }, equipped = {} },
+  ["tauren-druid"] = { race = "Tauren", class = "DRUID", faction = "Horde", level = 1, map = 1412, x = 0.445, y = 0.775,
+    spells = { 5176, 5185 }, bag = { [1] = { 6948 }, [2] = { 159, 4 } }, equipped = {} },
+  ["troll-shaman"] = { race = "Troll", class = "SHAMAN", faction = "Horde", level = 1, map = 1411, x = 0.433, y = 0.685,
+    bag = { [1] = { 6948 } }, equipped = {} },
+  ["skyborne-hunter"] = { race = "Skyborne", class = "HUNTER", faction = "Horde", level = 1, map = 2521, x = 0.428, y = 0.234,
+    bag = { [1] = { 6948 } }, equipped = {} },
 }
 
 -- Captures registrations the add-on keeps in locals (tabs, module slash subcommands) by wrapping the public

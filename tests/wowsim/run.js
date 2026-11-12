@@ -2785,6 +2785,7 @@ scenarios.push(...require('./scenarios_rec').scenarios);
 scenarios.push(...require('./scenarios_nav').scenarios);
 scenarios.push(...require('./scenarios_travel').scenarios);
 scenarios.push(...require('./scenarios_rares').scenarios);
+scenarios.push(...require('./scenarios_horde').scenarios);
 
 // ---------------------------------------------------------------------------
 // Runner

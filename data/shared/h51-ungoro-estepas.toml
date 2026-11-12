@@ -1,0 +1,1663 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/50-60/01-un-goro-crater
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h51-ungoro-estepas"
+title = "Cráter de Un'Goro, Las Estepas Ardientes y Tierras de la Peste del Oeste"
+levels = [51, 53]
+map = 1449
+summary = "Ruta común de la Horda, 51-53: Cráter de Un'Goro, Las Estepas Ardientes y Tierras de la Peste del Oeste."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h51-ungoro-estepas-001"
+do = "goto"
+at = [1449, 41.9, 2.7]
+text = "Ve a {area:541}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#1"]
+note = "Polestar paso 1 «Un'Goro Crater», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-002"
+do = "getfp"
+npc = 10583
+node = "79"
+at = [1449, 45.23, 5.83]
+text = "Coge la ruta de vuelo de Refugio de Marshal con {npc:10583}."
+tip = "Desde {area:1938} cabalga hacia el oeste hasta la larga rampa que baja serpenteando a {map:1449}; después sigue la pared norte del cráter hasta {area:541}, un campamento en las cuevas del acantilado. Aquí todos son neutrales."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#2"]
+note = "Polestar paso 2 «Into Un'Goro Crater», objetivo 1 (getfp)"
+
+[[step]]
+id = "h51-ungoro-estepas-003"
+do = "accept"
+quest = 4501
+at = [1449, 43.53, 8.44]
+optional = true
+reqlevel = 49
+text = "Coge «{quest:4501}» ({obj:174682})."
+tip = "+13.000 XP · ~27 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#2"]
+note = "Polestar paso 2 «Into Un'Goro Crater», objetivo 2 (accept) · consejo de Polestar sin traducir: The wooden sign beside {npc:9997}, by the flight master: the pterrordax are on this guide's ground."
+
+[[step]]
+id = "h51-ungoro-estepas-004"
+do = "accept"
+quest = 4284
+npc = 9117
+at = [1449, 41.92, 2.7]
+reqlevel = 47
+text = "Coge «{quest:4284}» de {npc:9117}."
+why = "+5.250 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#2"]
+note = "Polestar paso 2 «Into Un'Goro Crater», objetivo 3 (accept) · consejo de Polestar sin traducir: {npc:9117}, at the back of the cave; below ground."
+
+[[step]]
+id = "h51-ungoro-estepas-005"
+do = "accept"
+quest = 3882
+npc = 9272
+at = [1449, 43.5, 7.42]
+reqlevel = 49
+text = "Coge «{quest:3882}» de {npc:9272}."
+why = "+4.900 XP · ~5,4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#2"]
+note = "Polestar paso 2 «Into Un'Goro Crater», objetivo 4 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-006"
+do = "accept"
+quest = 3883
+npc = 9271
+at = [1449, 43.89, 7.24]
+reqlevel = 48
+text = "Coge «{quest:3883}» de {npc:9271}."
+why = "+2.550 XP · ~1 min · 1,6× la mediana del 51-55"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#2"]
+note = "Polestar paso 2 «Into Un'Goro Crater», objetivo 5 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-007"
+do = "accept"
+quest = 3881
+npc = 9270
+at = [1449, 43.95, 7.14]
+optional = true
+reqlevel = 48
+text = "Coge «{quest:3881}» de {npc:9270}."
+tip = "+3.950 XP · ~6,5 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#2"]
+note = "Polestar paso 2 «Into Un'Goro Crater», objetivo 6 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-008"
+do = "accept"
+quest = 4145
+npc = 9118
+at = [1449, 45.54, 8.72]
+optional = true
+reqlevel = 47
+text = "Coge «{quest:4145}» de {npc:9118}."
+tip = "+10.765 XP · ~22 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#2"]
+note = "Polestar paso 2 «Into Un'Goro Crater», objetivo 7 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-009"
+do = "accept"
+quest = 4503
+npc = 9998
+at = [1449, 44.23, 11.59]
+optional = true
+reqlevel = 49
+text = "Coge «{quest:4503}» de {npc:9998}, en la entrada del refugio."
+tip = "+26.728 XP · ~78 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#3"]
+note = "Polestar paso 3 «Out of the refuge», objetivo 1 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-010"
+do = "accept"
+quest = 4243
+npc = 9618
+at = [1449, 46.38, 13.44]
+reqlevel = 48
+text = "Coge «{quest:4243}» de {npc:9618}, justo fuera."
+why = "+2.650 XP · ~1 min · 1,8× la mediana del 51-55"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#3"]
+note = "Polestar paso 3 «Out of the refuge», objetivo 2 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-011"
+do = "note"
+text = "A partir de aquí recoge cada Cristal de poder (azul, verde, rojo, amarillo) y cada montón de «{quest:3761}» que encuentres: 25 de tierra en total, 20 para Hamuul y 5 para Morterozugg."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#3"]
+note = "Polestar paso 3 «Out of the refuge», objetivo 3 (note)"
+
+[[step]]
+id = "h51-ungoro-estepas-012"
+do = "complete"
+quest = 4504
+obj = 1
+at = [1449, 45.72, 15.49]
+wps = [[1449, 44.2, 17.8, "Alquitrán muy pegajoso"], [1449, 42.8, 20.9, "Alquitrán muy pegajoso"], [1449, 47.9, 20.7, "Alquitrán muy pegajoso"]]
+optional = true
+text = "Consigue {item:11834} (12) para «{quest:4504}»."
+tip = "Los pozos de alquitrán están justo al sur del refugio. Las Bestias Tar, los Rondadores Tar y los Trepadores Tar sueltan el {item:11834}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#4"]
+note = "Polestar paso 4 «Lakkari Tar Pits», objetivo 1 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-013"
+do = "complete"
+quest = 4145
+obj = 4
+at = [1449, 61.11, 27.56]
+wps = [[1449, 64.2, 31.3, "Trillador pétalo de sangre"], [1449, 67.1, 35.8, "Trillador pétalo de sangre"], [1449, 69.5, 31.3, "Trillador pétalo de sangre"]]
+optional = true
+text = "Mata {npc:6511} (5) para «{quest:4145}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#4"]
+note = "Polestar paso 4 «Lakkari Tar Pits», objetivo 2 (kill)"
+
+[[step]]
+id = "h51-ungoro-estepas-014"
+do = "complete"
+quest = 4503
+obj = 2
+at = [1449, 56.8, 11.7]
+wps = [[1449, 39.2, 19.6, "Escama de pterrordax de telaraña"], [1449, 41.6, 38.2, "Escama de pterrordax de telaraña"], [1449, 32.6, 37.2, "Escama de pterrordax de telaraña"]]
+optional = true
+text = "Consigue {item:11831} (8) para «{quest:4503}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#5"]
+note = "Polestar paso 5 «Pterrordax», objetivo 1 (collect) · consejo de Polestar sin traducir: Pterrordax fly over the east of the crater, from the slopes below the refuge southward; their webbed scales are for {npc:9998}."
+
+[[step]]
+id = "h51-ungoro-estepas-015"
+do = "complete"
+quest = 4501
+obj = 1
+at = [1449, 56.4, 11.4]
+wps = [[1449, 57.2, 8.5, "Pterrordáctilo"], [1449, 50.5, 11.3, "Pterrordáctilo"], [1449, 43.6, 87.1, "Pterrordáctilo"]]
+optional = true
+text = "Mata {npc:9166} (10) para «{quest:4501}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#5"]
+note = "Polestar paso 5 «Pterrordax», objetivo 2 (kill)"
+
+[[step]]
+id = "h51-ungoro-estepas-016"
+do = "level"
+level = 51
+at = [1449, 56.4, 11.4]
+text = "Sube al nivel 51."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#5"]
+note = "Polestar paso 5 «Pterrordax», objetivo 3 (level) · consejo de Polestar sin traducir: Grind on Pterrordax."
+
+[[step]]
+id = "h51-ungoro-estepas-017"
+do = "complete"
+quest = 4284
+obj = 1
+at = [1449, 55.8, 7.9]
+wps = [[1449, 62.6, 26.9, "Cristal de poder rojo"], [1449, 74.8, 29.6, "Cristal de poder rojo"], [1449, 59.0, 49.6, "Cristal de poder rojo"]]
+text = "Recoge {item:11186} (7) de {obj:164660} para «{quest:4284}»."
+tip = "Los grupos de cristales están por todo el cráter, muchos alrededor de {area:537}. Coge unos cuantos de más de cada color para los pilones."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#6"]
+note = "Polestar paso 6 «Power Crystals and soil», objetivo 1 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-018"
+do = "complete"
+quest = 4284
+obj = 2
+at = [1449, 55.8, 7.9]
+wps = [[1449, 62.6, 26.9, "Cristal de poder amarillo"], [1449, 74.8, 29.6, "Cristal de poder amarillo"], [1449, 59.0, 49.6, "Cristal de poder amarillo"]]
+text = "Recoge {item:11188} (7) de {obj:164661} para «{quest:4284}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#6"]
+note = "Polestar paso 6 «Power Crystals and soil», objetivo 2 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-019"
+do = "complete"
+quest = 4284
+obj = 3
+at = [1449, 55.8, 7.9]
+wps = [[1449, 62.6, 26.9, "Cristal de poder verde"], [1449, 74.8, 29.6, "Cristal de poder verde"], [1449, 59.0, 49.6, "Cristal de poder verde"]]
+text = "Recoge {item:11185} (7) de {obj:164659} para «{quest:4284}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#6"]
+note = "Polestar paso 6 «Power Crystals and soil», objetivo 3 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-020"
+do = "complete"
+quest = 4284
+obj = 4
+at = [1449, 55.8, 7.9]
+wps = [[1449, 62.6, 26.9, "Cristal de poder azul"], [1449, 74.8, 29.6, "Cristal de poder azul"], [1449, 59.0, 49.6, "Cristal de poder azul"]]
+text = "Recoge {item:11184} (7) de {obj:164658} para «{quest:4284}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#6"]
+note = "Polestar paso 6 «Power Crystals and soil», objetivo 4 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-021"
+do = "complete"
+quest = 4145
+obj = 3
+at = [1449, 54.19, 13.68]
+wps = [[1449, 46.4, 22.2, "Despellejador pétalo de sangre"], [1449, 50.8, 34.5, "Despellejador pétalo de sangre"], [1449, 55.6, 30.2, "Despellejador pétalo de sangre"]]
+optional = true
+text = "Mata {npc:6510} (5) para «{quest:4145}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#7"]
+note = "Polestar paso 7 «Lakkari Tar Pits: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: Ride south-west to {area:537}, the volcano in the middle of the crater. Bloodpetal Flayers grow around its foot.\nSouth of the hot springs, Stegodons graze and Dinosaur Bones drop from them or lie on the ground; Diemetradons nearby carry the scales {npc:9998} wants. Ravasaurs hunt in packs in the south-west: their claws are for {npc:8659}, and now and then one carries a Mangled Journal (a rare drop: take its quest only if you get one). Avoid Gruff, a level 57 Stegodon.\nRide south-west along the western cliffs. {npc:9167} fly over the west side, and Bloodpetal Trappers grow in the same jungle."
+
+[[step]]
+id = "h51-ungoro-estepas-022"
+do = "complete"
+quest = 3882
+obj = 1
+at = [1449, 36.26, 65.16]
+wps = [[1449, 35.5, 66.3, "Hueso de dinosaurio"], [1449, 35.5, 72.4, "Hueso de dinosaurio"], [1449, 30.9, 71.6, "Hueso de dinosaurio"]]
+text = "Recoge {item:11114} (8) de {obj:161527} para «{quest:3882}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#7"]
+note = "Polestar paso 7 «Lakkari Tar Pits: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-023"
+do = "complete"
+quest = 4503
+obj = 1
+at = [1449, 35.61, 61.13]
+wps = [[1449, 34.9, 62.8, "Escama diemetradón de telaraña"], [1449, 30.3, 75.8, "Escama diemetradón de telaraña"], [1449, 39.8, 82.4, "Escama diemetradón de telaraña"]]
+optional = true
+text = "Consigue {item:11830} (8) para «{quest:4503}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#7"]
+note = "Polestar paso 7 «Lakkari Tar Pits: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-024"
+do = "complete"
+quest = 4501
+obj = 2
+at = [1449, 34.6, 65.6]
+wps = [[1449, 32.4, 78.6, "Pterrordáctilo demente"], [1449, 40.1, 76.4, "Pterrordáctilo demente"], [1449, 41.5, 52.8, "Pterrordáctilo demente"]]
+optional = true
+text = "Mata {npc:9167} (15) para «{quest:4501}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#7"]
+note = "Polestar paso 7 «Lakkari Tar Pits: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "h51-ungoro-estepas-025"
+do = "complete"
+quest = 4145
+obj = 2
+at = [1449, 34.74, 62.75]
+wps = [[1449, 36.1, 66.9, "Trampero pétalo de sangre"], [1449, 33.8, 76.1, "Trampero pétalo de sangre"], [1449, 39.4, 80.2, "Trampero pétalo de sangre"]]
+optional = true
+text = "Mata {npc:6512} (5) para «{quest:4145}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#7"]
+note = "Polestar paso 7 «Lakkari Tar Pits: kill these as you meet them», objetivo 5 (kill)"
+
+[[step]]
+id = "h51-ungoro-estepas-026"
+do = "complete"
+quest = 3881
+obj = 2
+at = [1449, 38.5, 66.1]
+optional = true
+text = "Recoge {item:11112} (1) de {obj:161521} para «{quest:3881}»."
+tip = "El equipo perdido de la expedición está en la jungla del suroeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#8"]
+note = "Polestar paso 8 «Equipo de investigación», objetivo 1 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-027"
+do = "complete"
+quest = 4496
+obj = 1
+at = [1449, 45.5, 72.3]
+wps = [[1449, 46.4, 73.4, "Glándula secretora de olor Gorishi"], [1449, 44.4, 76.7, "Glándula secretora de olor Gorishi"], [1449, 47.7, 76.5, "Glándula secretora de olor Gorishi"]]
+text = "Consigue {item:11837} (1) para «{quest:4496}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#9"]
+note = "Polestar paso 9 «The Slithering Scar», objetivo 1 (collect) · consejo de Polestar sin traducir: Careful: Gorishi Workers that drop below 45% health have a 50% chance to call for help from allies within 25 yd."
+
+[[step]]
+id = "h51-ungoro-estepas-028"
+do = "level"
+level = 51
+at = [1449, 46.37, 74.48]
+text = "Sube al nivel 51."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#9"]
+note = "Polestar paso 9 «The Slithering Scar», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:6551}."
+
+[[step]]
+id = "h51-ungoro-estepas-029"
+do = "complete"
+quest = 3883
+obj = 1
+at = [1449, 48.7, 85.3]
+text = "Usa {item:11132} para «{quest:3883}»."
+tip = "Recoge {item:11131} (1) de {obj:174793} para «{quest:3883}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#10"]
+note = "Polestar paso 10 «The Slithering Scar», objetivo 1 (use)"
+
+[[step]]
+id = "h51-ungoro-estepas-030"
+do = "loot"
+item = 11116
+count = 1
+at = [1449, 57.36, 77.14]
+wps = [[1449, 58.3, 78.2, "Un diario destrozado"], [1449, 63.0, 80.3, "Un diario destrozado"], [1449, 63.9, 73.4, "Un diario destrozado"]]
+optional = true
+text = "Consigue {item:11116}."
+tip = "{item:11116}, botín raro."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#11"]
+note = "Polestar paso 11 «Stegodons and ravasaurs», objetivo 1 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-031"
+do = "accept"
+quest = 3884
+optional = true
+reqlevel = 48
+text = "Usa {item:11116} para empezar «{quest:3884}»."
+tip = "Usa Un diario destrozado para empezarla."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#11"]
+note = "Polestar paso 11 «Stegodons and ravasaurs», objetivo 2 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-032"
+do = "accept"
+quest = 4290
+npc = 9619
+at = [1449, 71.64, 75.96]
+reqlevel = 48
+text = "Coge «{quest:4290}» de {npc:9619}."
+tip = "{npc:9619} acampa en la esquina sureste del cráter."
+why = "+5.250 XP · ~2,7 min · desbloquea «{quest:4292}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#12"]
+note = "Polestar paso 12 «Abrecaminos Torwa», objetivo 1 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-033"
+do = "complete"
+quest = 4290
+obj = 1
+at = [1449, 68.74, 56.71]
+text = "Recoge {item:11504} (1) de {obj:166863} para «{quest:4290}»."
+tip = "Al norte de Torwa yace un trillanodonte muerto junto al agua."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#13"]
+note = "Polestar paso 13 «Cadáver reciente de Tresadon», objetivo 1 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-034"
+do = "turnin"
+quest = 4290
+npc = 9619
+at = [1449, 71.64, 75.96]
+chain = "h51-ungoro-estepas-s014-9619"
+text = "Entrega «{quest:4290}» a {npc:9619}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#14"]
+note = "Polestar paso 14 «Abrecaminos Torwa», objetivo 1 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-035"
+do = "accept"
+quest = 4291
+npc = 9619
+at = [1449, 71.64, 75.96]
+chain = "h51-ungoro-estepas-s014-9619"
+reqlevel = 48
+text = "Coge «{quest:4291}» de {npc:9619}."
+why = "+5.762 XP · ~3 min · desbloquea «{quest:4292}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#14"]
+note = "Polestar paso 14 «Abrecaminos Torwa», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-036"
+do = "complete"
+quest = 4291
+obj = 1
+at = [1449, 67.0, 73.0]
+wps = [[1449, 65.0, 66.0, "Glándula de feromonas de ravasaurio"], [1449, 68.5, 60.3, "Glándula de feromonas de ravasaurio"], [1449, 62.5, 78.5, "Glándula de feromonas de ravasaurio"]]
+text = "Consigue {item:11509} (2) de {npc:9683} para «{quest:4291}»."
+tip = "Los Amigos de Lar'korwi merodean por la jungla al noroeste de {npc:9619}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#15"]
+note = "Polestar paso 15 «Lar'korwi Mates», objetivo 1 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-037"
+do = "accept"
+quest = 3844
+at = [1449, 63.02, 68.6]
+reqlevel = 47
+text = "Coge «{quest:3844}» ({obj:161505})."
+tip = "La balsa está en la orilla del lago del sureste; la mochila pequeña está en el agua, a su lado."
+why = "+1.250 XP · <1 min · desbloquea «{quest:3942}» y 8 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#16"]
+note = "Polestar paso 16 «Una balsa estropeada», objetivo 1 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-038"
+do = "turnin"
+quest = 3844
+at = [1449, 63.11, 69.06]
+text = "Entrega «{quest:3844}» en {obj:161504}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#16"]
+note = "Polestar paso 16 «Una balsa estropeada», objetivo 2 (turnin) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h51-ungoro-estepas-039"
+do = "accept"
+quest = 3845
+at = [1449, 63.11, 69.06]
+reqlevel = 47
+text = "Coge «{quest:3845}» ({obj:161504})."
+why = "+5.100 XP · <1 min · desbloquea «{quest:3942}» y 7 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#16"]
+note = "Polestar paso 16 «Una balsa estropeada», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-040"
+do = "complete"
+quest = 3845
+obj = 1
+at = [1449, 63.1, 69.1]
+text = "Consigue {item:11104} (1) para «{quest:3845}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#16"]
+note = "Polestar paso 16 «Una balsa estropeada», objetivo 4 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-041"
+do = "complete"
+quest = 3845
+obj = 2
+at = [1449, 63.1, 69.1]
+text = "Consigue {item:11105} (1) para «{quest:3845}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#16"]
+note = "Polestar paso 16 «Una balsa estropeada», objetivo 5 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-042"
+do = "complete"
+quest = 3845
+obj = 3
+at = [1449, 63.1, 69.1]
+text = "Consigue {item:11106} (1) para «{quest:3845}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#16"]
+note = "Polestar paso 16 «Una balsa estropeada», objetivo 6 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-043"
+do = "turnin"
+quest = 4291
+npc = 9619
+at = [1449, 71.64, 75.96]
+text = "Entrega «{quest:4291}» a {npc:9619}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#17"]
+note = "Polestar paso 17 «Abrecaminos Torwa», objetivo 1 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-044"
+do = "complete"
+quest = 4145
+obj = 4
+at = [1449, 75.1, 48.6]
+wps = [[1449, 72.3, 39.2, "Trillador pétalo de sangre"], [1449, 67.1, 35.8, "Trillador pétalo de sangre"], [1449, 69.5, 31.3, "Trillador pétalo de sangre"]]
+optional = true
+text = "Mata {npc:6511} (5) para «{quest:4145}»."
+tip = "Cabalga hacia el norte por el lado este. La jungla está llena de Latigadores y Trilladores pétalo de sangre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#18"]
+note = "Polestar paso 18 «Lashers and Threshers», objetivo 1 (kill)"
+
+[[step]]
+id = "h51-ungoro-estepas-045"
+do = "level"
+level = 51
+at = [1449, 76.1, 48.01]
+text = "Sube al nivel 51."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#18"]
+note = "Polestar paso 18 «Lashers and Threshers», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:6511}."
+
+[[step]]
+id = "h51-ungoro-estepas-046"
+do = "complete"
+quest = 4145
+obj = 1
+at = [1449, 75.04, 44.69]
+wps = [[1449, 74.3, 37.5, "Latigador pétalo de sangre"], [1449, 69.0, 34.6, "Latigador pétalo de sangre"], [1449, 70.5, 29.6, "Latigador pétalo de sangre"]]
+optional = true
+text = "Mata {npc:6509} (5) para «{quest:4145}»."
+tip = "El cajón de la expedición está en un campamento abandonado de la jungla oriental."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#19"]
+note = "Polestar paso 19 «Un'Goro Crater: kill these as you meet them», objetivo 1 (kill)"
+
+[[step]]
+id = "h51-ungoro-estepas-047"
+do = "complete"
+quest = 3881
+obj = 1
+at = [1449, 68.5, 36.5]
+optional = true
+text = "Recoge {item:11113} (1) de {obj:161526} para «{quest:3881}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#19"]
+note = "Polestar paso 19 «Un'Goro Crater: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-048"
+do = "turnin"
+quest = 4503
+npc = 9998
+at = [1449, 44.23, 11.59]
+optional = true
+text = "Entrega «{quest:4503}» a {npc:9998}, en la entrada."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 1 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-049"
+do = "turnin"
+quest = 4501
+npc = 9997
+at = [1449, 43.62, 8.5]
+optional = true
+text = "Entrega «{quest:4501}» a {npc:9997}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:9997}, beside the flight master."
+
+[[step]]
+id = "h51-ungoro-estepas-050"
+do = "turnin"
+quest = 4145
+npc = 9118
+at = [1449, 45.54, 8.72]
+optional = true
+chain = "h51-ungoro-estepas-s020-9118"
+text = "Entrega «{quest:4145}» a {npc:9118}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 3 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-051"
+do = "accept"
+quest = 4147
+npc = 9118
+at = [1449, 45.54, 8.72]
+chain = "h51-ungoro-estepas-s020-9118"
+reqlevel = 47
+text = "Coge «{quest:4147}» de {npc:9118}."
+why = "+2.550 XP · <1 min · 5,8× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-052"
+do = "turnin"
+quest = 3845
+npc = 8737
+at = [1449, 44.66, 8.1]
+chain = "h51-ungoro-estepas-s020-8737"
+text = "Entrega «{quest:3845}» a {npc:8737}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 5 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-053"
+do = "accept"
+quest = 3908
+npc = 8737
+at = [1449, 44.66, 8.1]
+chain = "h51-ungoro-estepas-s020-8737"
+reqlevel = 47
+text = "Coge «{quest:3908}» de {npc:8737}."
+why = "+5.100 XP · <1 min · desbloquea «{quest:3942}» y 6 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-054"
+do = "turnin"
+quest = 3881
+npc = 9270
+at = [1449, 43.95, 7.14]
+optional = true
+chain = "h51-ungoro-estepas-s020-9270"
+text = "Entrega «{quest:3881}» a {npc:9270}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 7 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-055"
+do = "turnin"
+quest = 3884
+npc = 9270
+at = [1449, 43.95, 7.14]
+optional = true
+chain = "h51-ungoro-estepas-s020-9270"
+text = "Entrega «{quest:3884}» a {npc:9270}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 8 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-056"
+do = "turnin"
+quest = 3883
+npc = 9271
+at = [1449, 43.89, 7.24]
+text = "Entrega «{quest:3883}» a {npc:9271}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 9 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-057"
+do = "turnin"
+quest = 3882
+npc = 9272
+at = [1449, 43.5, 7.42]
+text = "Entrega «{quest:3882}» a {npc:9272}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 10 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-058"
+do = "turnin"
+quest = 4284
+npc = 9117
+at = [1449, 41.92, 2.7]
+chain = "h51-ungoro-estepas-s020-9117"
+text = "Entrega «{quest:4284}» a {npc:9117}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 11 (turnin) · consejo de Polestar sin traducir: {npc:9117}, below ground."
+
+[[step]]
+id = "h51-ungoro-estepas-059"
+do = "accept"
+quest = 4285
+npc = 9117
+at = [1449, 41.92, 2.7]
+chain = "h51-ungoro-estepas-s020-9117"
+reqlevel = 47
+text = "Coge «{quest:4285}» de {npc:9117}."
+why = "+3.950 XP · ~2 min · desbloquea «{quest:4321}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 12 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-060"
+do = "accept"
+quest = 4287
+npc = 9117
+at = [1449, 41.92, 2.7]
+chain = "h51-ungoro-estepas-s020-9117"
+reqlevel = 47
+text = "Coge «{quest:4287}» de {npc:9117}."
+why = "+3.950 XP · ~2,4 min · desbloquea «{quest:4321}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 13 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-061"
+do = "accept"
+quest = 4288
+npc = 9117
+at = [1449, 41.92, 2.7]
+chain = "h51-ungoro-estepas-s020-9117"
+reqlevel = 47
+text = "Coge «{quest:4288}» de {npc:9117}."
+why = "+3.950 XP · ~4 min · desbloquea «{quest:4321}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 14 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-062"
+do = "note"
+text = "Guarda «{quest:4147}», de {npc:9118}, y la carta de {npc:8737} para guías posteriores."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#20"]
+note = "Polestar paso 20 «Marshal's Refuge», objetivo 15 (note)"
+
+[[step]]
+id = "h51-ungoro-estepas-063"
+do = "goto"
+at = [1449, 56.5, 12.5]
+text = "Ve a {obj:164955}."
+tip = "El pilón está en la ladera al este del refugio."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#21"]
+note = "Polestar paso 21 «Northern Pylon», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-064"
+do = "complete"
+quest = 4285
+obj = 1
+at = [1449, 56.52, 12.54]
+text = "Usa {obj:164955} para «{quest:4285}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#21"]
+note = "Polestar paso 21 «Northern Pylon», objetivo 2 (interact)"
+
+[[step]]
+id = "h51-ungoro-estepas-065"
+do = "turnin"
+quest = 4243
+npc = 9623
+at = [1449, 67.66, 16.76]
+text = "Entrega «{quest:4243}» a {npc:9623}."
+tip = "Los gorilas viven en la meseta del noreste. No entres en la cueva más profunda: allí vive {npc:9622}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#22"]
+note = "Polestar paso 22 «Gorillas», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:9623}, the robot on the plateau; below ground."
+
+[[step]]
+id = "h51-ungoro-estepas-066"
+do = "note"
+text = "Después {npc:9623} pide una {item:10561}, un objeto de Ingeniería. Omítela salvo que tengas una."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#22"]
+note = "Polestar paso 22 «Gorillas», objetivo 2 (note)"
+
+[[step]]
+id = "h51-ungoro-estepas-067"
+do = "complete"
+quest = 3761
+obj = 1
+at = [1449, 69.22, 20.48]
+wps = [[1449, 55.6, 28.7, "Tierra de Un'Goro"], [1449, 63.8, 42.3, "Tierra de Un'Goro"], [1449, 75.1, 48.6, "Tierra de Un'Goro"]]
+text = "Consigue {item:11018} (20) para «{quest:3761}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#23"]
+note = "Polestar paso 23 «Un'Goro Crater: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: Careful: Gorishi Workers may call for help within 25 yd when below 45% health; silithids cast {spell:8137} and Tunnelers and the Hive Guard use {spell:14120}."
+
+[[step]]
+id = "h51-ungoro-estepas-068"
+do = "complete"
+quest = 4496
+obj = 2
+at = [1449, 69.22, 20.48]
+wps = [[1449, 55.6, 28.7, "Tierra de Un'Goro"], [1449, 63.8, 42.3, "Tierra de Un'Goro"], [1449, 75.1, 48.6, "Tierra de Un'Goro"]]
+text = "Consigue {item:11018} (5) para «{quest:4496}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#23"]
+note = "Polestar paso 23 «Un'Goro Crater: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-069"
+do = "goto"
+at = [1449, 77.2, 50.0]
+text = "Ve a {obj:164957}."
+tip = "Baja por el lado este del cráter hasta el pilón de los acantilados orientales."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#24"]
+note = "Polestar paso 24 «Eastern Pylon», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-070"
+do = "complete"
+quest = 4287
+obj = 1
+at = [1449, 77.16, 49.98]
+text = "Usa {obj:164957} para «{quest:4287}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#24"]
+note = "Polestar paso 24 «Eastern Pylon», objetivo 2 (interact)"
+
+[[step]]
+id = "h51-ungoro-estepas-071"
+do = "complete"
+quest = 4300
+obj = 1
+at = [1449, 79.65, 49.83]
+wps = [[1449, 70.6, 45.4, "Garra de ravasaurio blanco"], [1449, 67.3, 51.1, "Garra de ravasaurio blanco"], [1449, 63.0, 54.3, "Garra de ravasaurio blanco"]]
+optional = true
+text = "Consigue {item:11477} (8) para «{quest:4300}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#25"]
+note = "Polestar paso 25 «The Marshlands», objetivo 1 (collect) · consejo de Polestar sin traducir: Careful: There are many ravasaurs roaming the area, so you can easily pull several at the same time.\nBelow level 52, keep hunting the ravasaurs here after the eighth claw: «{quest:4061}» at {area:340} needs level 52, and the Plaguelands quests at the end of this guide are level 55. Or, with a group, run the {area:1417} dungeon or the {area:2100} dungeon instead."
+
+[[step]]
+id = "h51-ungoro-estepas-072"
+do = "level"
+level = 52
+at = [1449, 67.48, 60.2]
+text = "Sube al nivel 52."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#25"]
+note = "Polestar paso 25 «The Marshlands», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on Ravasaur."
+
+[[step]]
+id = "h51-ungoro-estepas-073"
+do = "goto"
+at = [1449, 23.9, 59.2]
+text = "Ve a {obj:164956}."
+tip = "Cruza el sur del cráter hasta el pilón de los acantilados occidentales."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#26"]
+note = "Polestar paso 26 «Western Pylon», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-074"
+do = "complete"
+quest = 4288
+obj = 1
+at = [1449, 23.86, 59.19]
+text = "Usa {obj:164956} para «{quest:4288}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#26"]
+note = "Polestar paso 26 «Western Pylon», objetivo 2 (interact)"
+
+[[step]]
+id = "h51-ungoro-estepas-075"
+do = "turnin"
+quest = 4285
+npc = 9117
+at = [1449, 41.92, 2.7]
+chain = "h51-ungoro-estepas-s027-9117"
+text = "Entrega «{quest:4285}» a {npc:9117}."
+tip = "Vuelve al norte, a {area:541}. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#27"]
+note = "Polestar paso 27 «J.D. Collie», objetivo 1 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-076"
+do = "turnin"
+quest = 4287
+npc = 9117
+at = [1449, 41.92, 2.7]
+chain = "h51-ungoro-estepas-s027-9117"
+text = "Entrega «{quest:4287}» a {npc:9117}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#27"]
+note = "Polestar paso 27 «J.D. Collie», objetivo 2 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-077"
+do = "turnin"
+quest = 4288
+npc = 9117
+at = [1449, 41.92, 2.7]
+chain = "h51-ungoro-estepas-s027-9117"
+text = "Entrega «{quest:4288}» a {npc:9117}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#27"]
+note = "Polestar paso 27 «J.D. Collie», objetivo 3 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-078"
+do = "accept"
+quest = 4321
+npc = 9117
+at = [1449, 41.92, 2.7]
+optional = true
+chain = "h51-ungoro-estepas-s027-9117"
+reqlevel = 47
+text = "Coge «{quest:4321}» de {npc:9117}."
+tip = "+530 XP · ~1,3 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#27"]
+note = "Polestar paso 27 «J.D. Collie», objetivo 4 (accept) · datos no importados: preAll"
+
+[[step]]
+id = "h51-ungoro-estepas-079"
+do = "turnin"
+quest = 4321
+npc = 9117
+at = [1449, 41.92, 2.7]
+optional = true
+chain = "h51-ungoro-estepas-s027-9117"
+text = "Entrega «{quest:4321}» a {npc:9117}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#27"]
+note = "Polestar paso 27 «J.D. Collie», objetivo 5 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-080"
+do = "goto"
+at = [1446, 52.5, 27.9]
+text = "Ve a {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#28"]
+note = "Polestar paso 28 «To Gadgetzan», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-081"
+do = "turnin"
+quest = 4504
+npc = 7876
+at = [1446, 51.57, 26.76]
+optional = true
+text = "Entrega «{quest:4504}» a {npc:7876}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#29"]
+note = "Polestar paso 29 «Gadgetzan», objetivo 1 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-082"
+do = "turnin"
+quest = 4496
+npc = 5594
+at = [1446, 50.89, 26.96]
+chain = "h51-ungoro-estepas-s029-5594"
+text = "Entrega «{quest:4496}» a {npc:5594}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#29"]
+note = "Polestar paso 29 «Gadgetzan», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:5594}, inside."
+
+[[step]]
+id = "h51-ungoro-estepas-083"
+do = "accept"
+quest = 4507
+npc = 5594
+at = [1446, 50.89, 26.96]
+chain = "h51-ungoro-estepas-s029-5594"
+reqlevel = 50
+text = "Coge «{quest:4507}» de {npc:5594}."
+why = "+5.734 XP · ~2,5 min · desbloquea «{quest:4511}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#29"]
+note = "Polestar paso 29 «Gadgetzan», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-084"
+do = "fly"
+zone = 1454
+if = { class = ["HUNTER", "SHAMAN"] }
+text = "Vuela a {area:1637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#30"]
+note = "Polestar paso 30 «Orgrimmar», objetivo 1 (fly) · consejo de Polestar sin traducir: Fly to {area:1637} and train before the boat to {area:16727}: the {map:1458} stop later in this guide has no Hunter or Shaman trainer."
+
+[[step]]
+id = "h51-ungoro-estepas-085-hu"
+do = "train"
+npc = 3406
+spells = [13543, 14286, 20903]
+at = [1454, 67.24, 20.2]
+if = { class = ["HUNTER"] }
+reqlevel = 52
+text = "Entrena con {npc:3406}, el instructor de cazador."
+tip = "3 hechizos hasta el nivel 52."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#30", "trainer:hunter"]
+note = "Polestar paso 30 «Orgrimmar», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 51-52"
+
+[[step]]
+id = "h51-ungoro-estepas-085-sh"
+do = "train"
+npc = 3403
+spells = [10442, 10448, 10467, 10614, 408345]
+at = [1454, 37.84, 36.45]
+if = { class = ["SHAMAN"] }
+reqlevel = 52
+text = "Entrena con {npc:3403}, el instructor de chamán."
+tip = "5 hechizos hasta el nivel 52."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#30", "trainer:shaman"]
+note = "Polestar paso 30 «Orgrimmar», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 51-52"
+
+[[step]]
+id = "h51-ungoro-estepas-086"
+do = "goto"
+at = [1454, 45.3, 63.7]
+if = { class = ["HUNTER", "SHAMAN"] }
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#31"]
+note = "Polestar paso 31 «Back to Gadgetzan», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-087"
+do = "fly"
+zone = 1446
+if = { class = ["HUNTER", "SHAMAN"] }
+text = "Vuela a {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#31"]
+note = "Polestar paso 31 «Back to Gadgetzan», objetivo 2 (fly)"
+
+[[step]]
+id = "h51-ungoro-estepas-088"
+do = "goto"
+at = [1446, 67.6, 23.1]
+text = "Ve al barco a {area:16727}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#32"]
+note = "Polestar paso 32 «Boat to Powderfuse Port», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-089"
+do = "accept"
+quest = 4324
+npc = 9706
+at = [1446, 67.04, 24.01]
+reqlevel = 48
+text = "Coge «{quest:4324}» de {npc:9706}."
+why = "+2.650 XP · ~2,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#32"]
+note = "Polestar paso 32 «Boat to Powderfuse Port», objetivo 2 (accept) · datos no importados: closedBy · consejo de Polestar sin traducir: {npc:9706}, by the dock: for «{quest:4324}» at {area:251}, later in this guide."
+
+[[step]]
+id = "h51-ungoro-estepas-090"
+do = "goto"
+at = [1418, 3.4, 48.1]
+text = "Ve a {area:340}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#33"]
+note = "Polestar paso 33 «Badlands», objetivo 1 (goto) · consejo de Polestar sin traducir: Leave {map:2548} on foot to the north-west, north of {area:16685}, into the {map:1418}."
+
+[[step]]
+id = "h51-ungoro-estepas-091"
+do = "accept"
+quest = 3821
+npc = 9082
+at = [1418, 3.36, 48.06]
+reqlevel = 48
+text = "Coge «{quest:3821}» de {npc:9082}."
+why = "+5.100 XP · <1 min · desbloquea «{quest:3822}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#34"]
+note = "Polestar paso 34 «Kargath», objetivo 1 (accept) · consejo de Polestar sin traducir: {area:340} is built into the cliffs on the {map:1418}' west edge."
+
+[[step]]
+id = "h51-ungoro-estepas-093"
+do = "goto"
+at = [1427, 34.8, 83.0]
+text = "Ve a puente hacia {area:254}."
+tip = "Toma el paso del lado oeste de {area:340} hacia {map:1427}; después cabalga hacia el sur cruzando la garganta hasta el largo puente que entra en {area:254}. Dentro, baja por las pasarelas de cadenas y sal por la salida sur; no tomes los caminos a los portales de las mazmorras."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#35"]
+note = "Polestar paso 35 «Into the Searing Gorge», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-094"
+do = "getfp"
+npc = 13177
+node = "70"
+at = [1428, 65.69, 24.22]
+text = "Coge la ruta de vuelo de Peñasco Llamarada con {npc:13177}."
+tip = "La montaña te deja salir junto a {area:252}, lleno de orcos de nivel 55-57. Sigue el camino hacia el este por los acantilados del norte hasta el campamento de la Horda en {area:251}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#36"]
+note = "Polestar paso 36 «Flame Crest», objetivo 1 (getfp)"
+
+[[step]]
+id = "h51-ungoro-estepas-095"
+do = "accept"
+quest = 4296
+npc = 9536
+at = [1428, 65.15, 23.91]
+reqlevel = 50
+text = "Coge «{quest:4296}» de {npc:9536}."
+why = "+2.350 XP · ~2 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#36"]
+note = "Polestar paso 36 «Flame Crest», objetivo 2 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-096"
+do = "accept"
+quest = 4726
+npc = 10267
+at = [1428, 65.24, 24.0]
+reqlevel = 50
+text = "Coge «{quest:4726}» de {npc:10267}."
+why = "+5.100 XP · ~6 min · desbloquea «{quest:4808}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#36"]
+note = "Polestar paso 36 «Flame Crest», objetivo 3 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-097"
+do = "turnin"
+quest = 4324
+npc = 9544
+at = [1428, 66.06, 21.95]
+text = "Entrega «{quest:4324}» a {npc:9544}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#36"]
+note = "Polestar paso 36 «Flame Crest», objetivo 4 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-098"
+do = "turnin"
+quest = 3821
+npc = 9136
+at = [1428, 79.95, 45.4]
+chain = "h51-ungoro-estepas-s037-9136"
+text = "Entrega «{quest:3821}» a {npc:9136}."
+tip = "Sigue los acantilados hacia el sur hasta «{quest:3821}», la colina de los ogros Pirontraña. Los restos de {npc:9136} están al pie."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#37"]
+note = "Polestar paso 37 «Sha'ni Colminilludo», objetivo 1 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-099"
+do = "accept"
+quest = 3822
+npc = 9136
+at = [1428, 79.95, 45.4]
+chain = "h51-ungoro-estepas-s037-9136"
+reqlevel = 48
+text = "Coge «{quest:3822}» de {npc:9136}."
+why = "+5.586 XP · ~1,6 min · 2,6× la mediana del 51-55"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#37"]
+note = "Polestar paso 37 «Sha'ni Colminilludo», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-100"
+do = "complete"
+quest = 3822
+obj = 1
+at = [1428, 79.66, 47.43]
+text = "Consigue {item:11058} (1) de {npc:8977} para «{quest:3822}»."
+tip = "«{quest:3822}» recorre las cuevas y túneles de mina de «{quest:3821}»; si no está, limpia los ogros de las entradas hasta que vuelva. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#38"]
+note = "Polestar paso 38 ««Krom'Grul»», objetivo 1 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-102"
+do = "complete"
+quest = 4726
+obj = 1
+at = [1428, 81.0, 28.0]
+text = "Recoge {item:12283} (8) de {obj:175264} para «{quest:4726}»."
+tip = "Usa {item:12284} para «{quest:4726}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#39"]
+note = "Polestar paso 39 «Ruins of Thaurissan: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-103"
+do = "complete"
+quest = 4296
+obj = 1
+at = [1428, 54.1, 40.8]
+text = "Recoge {item:11470} (1) de {obj:169294} para «{quest:4296}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#39"]
+note = "Polestar paso 39 «Ruins of Thaurissan: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "h51-ungoro-estepas-104"
+do = "turnin"
+quest = 4296
+npc = 9536
+at = [1428, 65.15, 23.91]
+text = "Entrega «{quest:4296}» a {npc:9536}."
+tip = "Vuelve al noreste, a {area:251}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#40"]
+note = "Polestar paso 40 «Flame Crest», objetivo 1 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-105"
+do = "turnin"
+quest = 4726
+npc = 10267
+at = [1428, 65.24, 24.0]
+chain = "h51-ungoro-estepas-s040-10267"
+text = "Entrega «{quest:4726}» a {npc:10267}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#40"]
+note = "Polestar paso 40 «Flame Crest», objetivo 2 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-106"
+do = "accept"
+quest = 4808
+npc = 10267
+at = [1428, 65.24, 24.0]
+chain = "h51-ungoro-estepas-s040-10267"
+reqlevel = 50
+text = "Coge «{quest:4808}» de {npc:10267}."
+why = "+2.700 XP · <1 min · 3,6× la mediana del 51-55"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#40"]
+note = "Polestar paso 40 «Flame Crest», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-107"
+do = "note"
+text = "Guarda la carta de {npc:10267}: «{quest:4808}» está en {area:2255}, {map:1452}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#40"]
+note = "Polestar paso 40 «Flame Crest», objetivo 4 (note)"
+
+[[step]]
+id = "h51-ungoro-estepas-108"
+do = "fly"
+zone = 1418
+text = "Vuela a Kargath."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#41"]
+note = "Polestar paso 41 «Kargath», objetivo 1 (fly)"
+
+[[step]]
+id = "h51-ungoro-estepas-109"
+do = "turnin"
+quest = 3822
+npc = 9082
+at = [1418, 3.36, 48.06]
+text = "Entrega «{quest:3822}» a {npc:9082}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#41"]
+note = "Polestar paso 41 «Kargath», objetivo 2 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-111"
+do = "note"
+text = "El siguiente encargo de Theodora te lleva con Lotwil, al este del pueblo, y luego a {area:1584}: omítelo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#41"]
+note = "Polestar paso 41 «Kargath», objetivo 4 (note)"
+
+[[step]]
+id = "h51-ungoro-estepas-112"
+do = "goto"
+at = [1418, 4.1, 44.9]
+text = "Ve al maestro de vuelo de {area:340}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#42"]
+note = "Polestar paso 42 «Fly to Tarren Mill», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-113"
+do = "fly"
+zone = 1424
+text = "Vuela a Molino Tarren."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#42"]
+note = "Polestar paso 42 «Fly to Tarren Mill», objetivo 2 (fly)"
+
+[[step]]
+id = "h51-ungoro-estepas-115"
+do = "goto"
+at = [1424, 60.2, 18.8]
+text = "Ve al maestro de vuelo de {area:272}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#44"]
+note = "Polestar paso 44 «Fly to Undercity», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-116"
+do = "fly"
+zone = 1458
+text = "Vuela a Entrañas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#44"]
+note = "Polestar paso 44 «Fly to Undercity», objetivo 2 (fly)"
+
+[[step]]
+id = "h51-ungoro-estepas-117"
+do = "accept"
+quest = 5094
+npc = 10879
+at = [1458, 63.9, 44.08]
+reqlevel = 50
+text = "Coge «{quest:5094}» de {npc:10879}, {obj:36078}, junto al maestro de murciélagos."
+why = "+470 XP · <1 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#45"]
+note = "Polestar paso 45 «Presagista Balthazad», objetivo 1 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "h51-ungoro-estepas-118"
+do = "turnin"
+quest = 2782
+npc = 7825
+at = [1458, 73.06, 32.85]
+chain = "h51-ungoro-estepas-s046-7825"
+text = "Entrega «{quest:2782}» a {npc:7825}."
+tip = "{npc:7825} está en {obj:36082}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#46"]
+note = "Polestar paso 46 «Oran Contorpiente», objetivo 1 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-119"
+do = "turnin"
+quest = 2995
+npc = 7825
+at = [1458, 73.06, 32.85]
+chain = "h51-ungoro-estepas-s046-7825"
+text = "Entrega «{quest:2995}» a {npc:7825}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#46"]
+note = "Polestar paso 46 «Oran Contorpiente», objetivo 2 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-120"
+do = "turnin"
+quest = 8273
+npc = 7825
+at = [1458, 73.06, 32.85]
+chain = "h51-ungoro-estepas-s046-7825"
+text = "Entrega «{quest:8273}» a {npc:7825}."
+why = "+3.360 XP · <1 min · 16,3× la mediana del 51-55"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#46"]
+note = "Polestar paso 46 «Oran Contorpiente», objetivo 3 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-121"
+do = "accept"
+quest = 3568
+npc = 8390
+at = [1458, 48.71, 71.39]
+reqlevel = 45
+text = "Coge «{quest:3568}» de {npc:8390}, El Apothecarium: los viales se llenan más tarde en {map:1447}."
+why = "+2.550 XP · <1 min · desbloquea «{quest:3570}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#47"]
+note = "Polestar paso 47 «Undercity», objetivo 1 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-122"
+do = "turnin"
+quest = 864
+npc = 5204
+at = [1458, 50.14, 67.97]
+text = "Entrega «{quest:864}» a {npc:5204}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#47"]
+note = "Polestar paso 47 «Undercity», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:5204}, near Cuely in the Apothecarium."
+
+[[step]]
+id = "h51-ungoro-estepas-123-wr"
+do = "train"
+npc = 4595
+spells = [1672, 11551]
+at = [1458, 47.4, 17.29]
+if = { class = ["WARRIOR"] }
+reqlevel = 52
+text = "Entrena con {npc:4595}, el instructor de guerrero."
+tip = "2 hechizos hasta el nivel 52."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#47", "trainer:warrior"]
+note = "Polestar paso 47 «Undercity», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 51-52"
+
+[[step]]
+id = "h51-ungoro-estepas-123-pa"
+do = "train"
+npc = 260093
+spells = [10313, 10326, 10332, 19896, 20308, 24274, 25782]
+at = [1458, 48.35, 14.27]
+if = { class = ["PALADIN"] }
+reqlevel = 52
+text = "Entrena con {npc:260093}, el instructor de paladín."
+tip = "7 hechizos hasta el nivel 52: nuevos {spell:25782}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#47", "trainer:paladin"]
+note = "Polestar paso 47 «Undercity», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 51-52"
+
+[[step]]
+id = "h51-ungoro-estepas-123-ro"
+do = "train"
+npc = 4582
+spells = [11274, 11280, 11303, 11342, 11400]
+at = [1458, 83.86, 72.07]
+if = { class = ["ROGUE"] }
+reqlevel = 52
+text = "Entrena con {npc:4582}, el instructor de pícaro."
+tip = "5 hechizos hasta el nivel 52: nuevos {spell:11342}, {spell:11400}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#47", "trainer:rogue"]
+note = "Polestar paso 47 «Undercity», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 51-52"
+
+[[step]]
+id = "h51-ungoro-estepas-123-pr"
+do = "train"
+npc = 4608
+spells = [10946, 10953, 10964, 19279]
+at = [1458, 47.57, 18.9]
+if = { class = ["PRIEST"] }
+reqlevel = 52
+text = "Entrena con {npc:4608}, el instructor de sacerdote."
+tip = "4 hechizos hasta el nivel 52."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#47", "trainer:priest"]
+note = "Polestar paso 47 «Undercity», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 51-52"
+
+[[step]]
+id = "h51-ungoro-estepas-123-mg"
+do = "train"
+npc = 2492
+spells = [10145, 10177, 10186, 10192, 10206]
+at = [1458, 84.19, 15.58]
+if = { class = ["MAGE"] }
+reqlevel = 52
+text = "Entrena con {npc:2492}, el instructor de mago."
+tip = "5 hechizos hasta el nivel 52."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#47", "trainer:mage"]
+note = "Polestar paso 47 «Undercity», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 51-52"
+
+[[step]]
+id = "h51-ungoro-estepas-123-wl"
+do = "train"
+npc = 4563
+spells = [11675, 11694, 11708, 11740]
+at = [1458, 86.21, 15.93]
+if = { class = ["WARLOCK"] }
+reqlevel = 52
+text = "Entrena con {npc:4563}, el instructor de brujo."
+tip = "4 hechizos hasta el nivel 52."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#47", "trainer:warlock"]
+note = "Polestar paso 47 «Undercity», objetivo 3 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 51-52"
+
+[[step]]
+id = "h51-ungoro-estepas-124"
+do = "turnin"
+quest = 3542
+npc = 6522
+at = [1458, 54.81, 76.33]
+chain = "h51-ungoro-estepas-s047-6522"
+text = "Entrega «{quest:3542}» a {npc:6522}, {obj:36073}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#47"]
+note = "Polestar paso 47 «Undercity», objetivo 4 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-125"
+do = "accept"
+quest = 3564
+npc = 6522
+at = [1458, 54.81, 76.33]
+chain = "h51-ungoro-estepas-s047-6522"
+reqlevel = 45
+text = "Coge «{quest:3564}» de {npc:6522}."
+why = "+3.800 XP · <1 min · 8,2× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#47"]
+note = "Polestar paso 47 «Undercity», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-126"
+do = "goto"
+at = [1420, 83.3, 72.3]
+text = "Ve a {area:152}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#48"]
+note = "Polestar paso 48 «Tirisfal Glades», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-128"
+do = "note"
+text = "Coge una {obj:176092} del cajón junto a Derrington para «{quest:5096}», que harás a la vuelta. Equípate «{quest:5405}»: las Piedras de la Plaga solo caen mientras lo llevas puesto."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#49"]
+note = "Polestar paso 49 «The Bulwark», objetivo 2 (note)"
+
+[[step]]
+id = "h51-ungoro-estepas-129"
+do = "turnin"
+quest = 5094
+npc = 10837
+at = [1420, 83.13, 68.94]
+chain = "h51-ungoro-estepas-s049-10837"
+text = "Entrega «{quest:5094}» al {npc:10837}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#49"]
+note = "Polestar paso 49 «The Bulwark», objetivo 3 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-130"
+do = "accept"
+quest = 5096
+npc = 10837
+at = [1420, 83.13, 68.94]
+chain = "h51-ungoro-estepas-s049-10837"
+reqlevel = 50
+text = "Coge «{quest:5096}» del {npc:10837}."
+why = "+5.250 XP · ~1,4 min · desbloquea «{quest:5238}» y 13 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#49"]
+note = "Polestar paso 49 «The Bulwark», objetivo 4 (accept)"
+
+[[step]]
+id = "h51-ungoro-estepas-131"
+do = "turnin"
+quest = 5405
+npc = 10839
+at = [1420, 83.19, 68.45]
+text = "Entrega «{quest:5405}» a {npc:10839}."
+why = "+560 XP · <1 min · desbloquea «{quest:5407}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#49"]
+note = "Polestar paso 49 «The Bulwark», objetivo 5 (turnin)"
+
+[[step]]
+id = "h51-ungoro-estepas-132"
+do = "goto"
+at = [1422, 40.7, 52.0]
+text = "Ve al punto marcado."
+tip = "Desde {area:152}, sigue el camino hacia el este hasta {map:1422}. Las tiendas de la Cruzada Escarlata están justo pasada la Granja Piedra Vil, entre {area:199} y {area:200}. Incendia la tienda de mando con la {obj:176092} y planta el estandarte de la Plaga."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#50"]
+note = "Polestar paso 50 «Scarlet forward camp», objetivo 1 (goto)"
+
+[[step]]
+id = "h51-ungoro-estepas-133"
+do = "note"
+at = [1422, 40.69, 51.93]
+text = "Usa Scarlet Crusade Forward Camp."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#50"]
+note = "Polestar paso 50 «Scarlet forward camp», objetivo 2 (interact)"
+
+[[step]]
+id = "h51-ungoro-estepas-134"
+do = "complete"
+quest = 5096
+text = "Usa {item:12807} y completa «{quest:5096}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#50"]
+note = "Polestar paso 50 «Scarlet forward camp», objetivo 3 (complete) · objetivos (EN): Destroy the command tent and plant the Scourge banner in the camp"
+
+[[step]]
+id = "h51-ungoro-estepas-135"
+do = "accept"
+quest = 5021
+npc = 10778
+at = [1422, 38.4, 54.05]
+reqlevel = 50
+text = "Coge «{quest:5021}» de {npc:10778}."
+tip = "Retrocede unos pasos hacia el oeste hasta la Granja Piedra Vil, la primera granja del camino; {npc:10778} espera en la casa."
+why = "+2.550 XP · <1 min · desbloquea «{quest:5051}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#51"]
+note = "Polestar paso 51 «Janice Piedra Mácula», objetivo 1 (accept) · consejo de Polestar sin traducir: Upstairs."
+
+[[step]]
+id = "h51-ungoro-estepas-136"
+do = "turnin"
+quest = 5021
+at = [1422, 38.73, 55.24]
+text = "Entrega «{quest:5021}» en {obj:175894}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#51"]
+note = "Polestar paso 51 «Janice Piedra Mácula», objetivo 2 (turnin) · consejo de Polestar sin traducir: {obj:175894}, beside the house; inside."
+
+[[step]]
+id = "h51-ungoro-estepas-137"
+do = "accept"
+quest = 5023
+at = [1422, 38.73, 55.24]
+reqlevel = 50
+text = "Coge «{quest:5023}» ({obj:175894})."
+why = "+2.550 XP · <1 min · desbloquea «{quest:5051}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#51"]
+note = "Polestar paso 51 «Janice Piedra Mácula», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h51-ungoro-estepas-138"
+do = "note"
+text = "Guarda el paquete: {npc:10781} está en {map:1458}. Guarda «{quest:5901}»: sus montículos de termitas están en {area:2627}, de camino a Tirion en la siguiente guía. La siguiente guía empieza con {npc:10739} junto a {area:202}, al sureste de aquí."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/01-un-goro-crater#51"]
+note = "Polestar paso 51 «Janice Piedra Mácula», objetivo 4 (note)"

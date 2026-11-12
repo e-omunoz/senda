@@ -268,6 +268,9 @@ pequeñas, textos, pruebas). Cada fase termina con el simulador en verde y una v
 | 3 | Todas las razas de Alianza, planificador de viaje, grafo de caminos, «Mientras estás aquí», alertas de raros | 0.6.0 |
 | 4 | Horda, diario de mazmorras, buscador de objetos, métricas en la web | 1.0.0 |
 
+Fase 4, Horda: rama `fase4-horda`, [ROUTE-HORDE.md](ROUTE-HORDE.md) (cinco salidas de raza, ruta común 12-60,
+filtro de eficiencia con bandas propias, entrenamiento de clase de `data/knowledge/trainer`).
+
 ## 9. Riesgos
 
 - **Divergencia con Polestar:** sus rutas cambian casi a diario. El importador se vuelve a ejecutar y

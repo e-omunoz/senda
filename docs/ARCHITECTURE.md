@@ -35,7 +35,7 @@ addon/Senda/              Addon (esta carpeta se copia a Interface/AddOns/Senda)
 data/
   guides/<guide-id>/      Secciones TOML de cada guía (orden por prefijo numérico)
   guides/<guide-id>/guide.toml   Metadatos de la guía (raza/clase/facción, secciones)
-  shared/                 Secciones compartidas (rutas de Alianza, etc.)
+  shared/                 Secciones compartidas: a*.toml (ruta de la Alianza), h*.toml (ruta de la Horda)
   knowledge/<class>/      Conocimiento por clase (talentos, rotación, macros, profesiones)
   observations/           Observaciones ingeridas desde SavedVariables (JSON, sin datos personales)
   locale/<locale>/        Nombres del cliente por tipo (quests, npcs, items, spells, maps, objects .json) con fuente
@@ -150,6 +150,12 @@ Senda.Guides:RegisterGuide({ id = "gnome-warlock", title = "...", faction = "All
 ```
 
 `sources` y `checked` **no** se incluyen en el Lua (solo `status`), para no inflar el addon.
+
+**Guarda de facción:** las guías con `faction = "Horde"` y las secciones compartidas que solo usan ellas
+(`SharedHorde.lua`) empiezan con una guarda: si `Compat.PlayerFaction()` ya es otra facción, el archivo vuelve sin
+registrar nada (un personaje de la Alianza no carga los ~1 MB de la Horda ni las ve en la lista). Si el cliente aún
+no da la facción al cargar, se registra todo y `Guides:Score` filtra por `faction`, como antes. Los archivos de la
+Alianza no llevan guarda (no cambian). Ver [ROUTE-HORDE.md](ROUTE-HORDE.md).
 El `.toc` incluye `Guides\Guides.xml`, que también genera el build.
 
 ## SavedVariables
@@ -174,6 +180,7 @@ del cliente:
 | `{item:N}` | objeto | `C_Item.GetItemNameByID`; si no, `Item:CreateFromItemID(N):ContinueOnItemLoad` |
 | `{spell:N}` | hechizo | `C_Spell.GetSpellName` |
 | `{map:N}` | zona (uiMapID) | `C_Map.GetMapInfo(N).name` |
+| `{area:N}` | subzona (AreaTable: «El Cruce», «Rémol») | `C_Map.GetAreaInfo(N)` |
 | `{obj:N}` | objeto del mundo | no se puede: solo el respaldo |
 
 Nunca bloquea: lo que el cliente aún no sabe se le pide y, mientras, se muestra el volcado guardado

@@ -29,9 +29,10 @@ from typing import Any
 # tipo de ficha -> nombre del archivo
 KINDS: dict[str, str] = {
     "quest": "quests", "npc": "npcs", "item": "items", "spell": "spells", "map": "maps", "obj": "objects",
+    "area": "areas",
 }
 # tipos que el cliente sabe nombrar por id (los que pide /senda volcar)
-CLIENT_KINDS = ("quest", "npc", "item", "spell", "map")
+CLIENT_KINDS = ("quest", "npc", "item", "spell", "map", "area")
 
 TOKEN_RE = re.compile(r"\{([a-z]+):(\d+)\}")
 LOCALE_RE = re.compile(r"^[a-z]{2}[A-Z]{2}$")
@@ -153,7 +154,7 @@ def pack(entries: dict[int, dict[str, str]]) -> str:
 
 
 PLACEHOLDER_ES = {"quest": "Misión #{}", "npc": "PNJ #{}", "item": "Objeto #{}", "spell": "Hechizo #{}",
-                  "map": "Zona #{}", "obj": "Objeto del mundo #{}"}
+                  "map": "Zona #{}", "obj": "Objeto del mundo #{}", "area": "Lugar #{}"}
 
 
 def resolver(data_root: Path, locales: tuple[str, ...] = ("esES", "enUS")):

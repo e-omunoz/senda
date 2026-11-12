@@ -1,0 +1,41 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/**
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "tauren-horde"
+title = "Tauren 1-60 (Horda)"
+summary = "Ruta de la Horda para cualquier clase: salida de raza y ruta común 12-60 (Polestar filtrada con el filtro de eficiencia de Senda)."
+faction = "Horde"
+races = ["Tauren"]
+classes = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"]
+levels = [1, 60]
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/tauren/01-mulgore", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde"]
+sections = [
+  "01-mulgore",
+  "shared:h12-argenteos",
+  "shared:h14-los-baldios",
+  "shared:h21-vallefresno-argenteos",
+  "shared:h22-trabalomas",
+  "shared:h24-baldios-espolon",
+  "shared:h26-vallefresno-mil-agujas",
+  "shared:h29-trabalomas-arathi",
+  "shared:h32-mil-agujas-desolace",
+  "shared:h34-tuercespina",
+  "shared:h36-revolcafango-desolace",
+  "shared:h38-alterac-arathi",
+  "shared:h39-tierras-inhospitas",
+  "shared:h40-tuercespina-penas",
+  "shared:h43-feralas-tanaris",
+  "shared:h45-feralas-revolcafango",
+  "shared:h46-tanaris-garganta",
+  "shared:h48-interior-devastadas",
+  "shared:h50-azshara-feralas",
+  "shared:h51-ungoro-estepas",
+  "shared:h53-frondavil-peste-oeste",
+  "shared:h55-cuna-del-invierno",
+  "shared:h56-azshara-baldios",
+  "shared:h56-peste-del-este",
+  "shared:h57-silithus-pestes",
+  "shared:h59-frondavil-claro",
+]

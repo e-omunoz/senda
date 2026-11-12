@@ -1,0 +1,896 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/50-60/03-winterspring
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h55-cuna-del-invierno"
+title = "Cuna del Invierno"
+levels = [55, 56]
+map = 1452
+summary = "Ruta común de la Horda, 55-56: Cuna del Invierno."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h55-cuna-del-invierno-001"
+do = "goto"
+at = [1452, 28.0, 34.6]
+text = "Entra en {map:1452}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#1"]
+note = "Polestar paso 1 «Into Winterspring», objetivo 1 (goto)"
+
+[[step]]
+id = "h55-cuna-del-invierno-002"
+do = "turnin"
+quest = 8465
+npc = 11556
+at = [1452, 27.73, 34.5]
+chain = "h55-cuna-del-invierno-s002-11556"
+text = "Entrega «{quest:8465}» a {npc:11556}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#2"]
+note = "Polestar paso 2 «Salfa», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:11556} stands right at the {map:1452} exit of {area:1769}'s tunnel, where you come out."
+
+[[step]]
+id = "h55-cuna-del-invierno-003"
+do = "accept"
+quest = 8464
+npc = 11556
+at = [1452, 27.73, 34.5]
+optional = true
+chain = "h55-cuna-del-invierno-s002-11556"
+reqlevel = 45
+text = "Coge «{quest:8464}» de {npc:11556}."
+tip = "+12.866 XP · ~31 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#2"]
+note = "Polestar paso 2 «Salfa», objetivo 2 (accept)"
+
+[[step]]
+id = "h55-cuna-del-invierno-004"
+do = "turnin"
+quest = 3908
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h55-cuna-del-invierno-s003-9298"
+text = "Entrega «{quest:3908}» a {npc:9298}."
+tip = "La carta de Linken."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#3"]
+note = "Polestar paso 3 «Donova Cubilnevado», objetivo 1 (turnin) · consejo de Polestar sin traducir: Ride south from the tunnel: {npc:9298} camps among the steaming pools of {area:2246}, in the west of the valley."
+
+[[step]]
+id = "h55-cuna-del-invierno-005"
+do = "accept"
+quest = 3909
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h55-cuna-del-invierno-s003-9298"
+reqlevel = 47
+text = "Coge «{quest:3909}» de {npc:9298}."
+why = "+5.100 XP · ~1,6 min · desbloquea «{quest:3942}» y 5 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#3"]
+note = "Polestar paso 3 «Donova Cubilnevado», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h55-cuna-del-invierno-006"
+do = "accept"
+quest = 5082
+npc = 9298
+at = [1452, 31.27, 45.16]
+optional = true
+chain = "h55-cuna-del-invierno-s003-9298"
+reqlevel = 52
+text = "Coge «{quest:5082}» de {npc:9298}."
+tip = "+11.554 XP · ~19 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#3"]
+note = "Polestar paso 3 «Donova Cubilnevado», objetivo 3 (accept)"
+
+[[step]]
+id = "h55-cuna-del-invierno-007"
+do = "note"
+text = "«{quest:3909}» la da {npc:7775} en {map:1444}, más adelante en esta guía."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#3"]
+note = "Polestar paso 3 «Donova Cubilnevado», objetivo 4 (note)"
+
+[[step]]
+id = "h55-cuna-del-invierno-008"
+do = "complete"
+quest = 5082
+obj = 1
+at = [1452, 33.36, 37.72]
+wps = [[1452, 34.7, 37.0, "Abrecaminos Nevada"], [1452, 30.9, 35.7, "Abrecaminos Nevada"], [1452, 39.0, 42.8, "Abrecaminos Nevada"]]
+optional = true
+text = "Mata {npc:7442} (8) para «{quest:5082}»."
+tip = "Abrecaminos, vigilantes del cubil y totémicos comparten los campamentos fúrbolg alrededor de las fuentes termales; las Lechubestias andrajosas deambulan por las laderas entre ellos. Mata primero a los totémicos. Guarda todo el {item:14047} que consigas para Meilosh."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#4"]
+note = "Polestar paso 4 «Frostfire Hot Springs: kill these as you meet them», objetivo 1 (kill)"
+
+[[step]]
+id = "h55-cuna-del-invierno-009"
+do = "complete"
+quest = 5082
+obj = 3
+at = [1452, 33.03, 36.83]
+wps = [[1452, 30.1, 36.4, "Totémico Nevada"], [1452, 39.9, 43.0, "Totémico Nevada"], [1452, 39.6, 44.3, "Totémico Nevada"]]
+optional = true
+text = "Mata {npc:7441} (8) para «{quest:5082}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#4"]
+note = "Polestar paso 4 «Frostfire Hot Springs: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "h55-cuna-del-invierno-010"
+do = "complete"
+quest = 5082
+obj = 2
+at = [1452, 30.5, 36.92]
+wps = [[1452, 41.6, 42.6, "Vigilante del cubil Nevada"], [1452, 66.5, 34.9, "Vigilante del cubil Nevada"], [1452, 67.6, 35.9, "Vigilante del cubil Nevada"]]
+optional = true
+text = "Mata {npc:7440} (8) para «{quest:5082}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#4"]
+note = "Polestar paso 4 «Frostfire Hot Springs: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h55-cuna-del-invierno-011"
+do = "complete"
+quest = 8464
+obj = 2
+at = [1452, 30.5, 36.92]
+wps = [[1452, 41.6, 42.6, "Vigilante del cubil Nevada"], [1452, 66.5, 34.9, "Vigilante del cubil Nevada"], [1452, 67.6, 35.9, "Vigilante del cubil Nevada"]]
+optional = true
+text = "Mata {npc:7440} (8) para «{quest:8464}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#4"]
+note = "Polestar paso 4 «Frostfire Hot Springs: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "h55-cuna-del-invierno-013"
+do = "loot"
+item = 12771
+count = 1
+at = [1452, 33.36, 37.72]
+wps = [[1452, 34.7, 37.0, "Frasco vacío de piroagua"], [1452, 30.3, 36.3, "Frasco vacío de piroagua"], [1452, 27.9, 34.5, "Frasco vacío de piroagua"]]
+text = "Consigue {item:12771}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#4"]
+note = "Polestar paso 4 «Frostfire Hot Springs: kill these as you meet them», objetivo 6 (collect) · consejo de Polestar sin traducir: {item:12771}: about one Winterfall furbolg in ten carries one; keep killing them until it drops."
+
+[[step]]
+id = "h55-cuna-del-invierno-014"
+do = "accept"
+quest = 5083
+reqlevel = 52
+text = "Usa {item:12771} para empezar «{quest:5083}»."
+why = "+4.060 XP · ~4 min · desbloquea «{quest:5087}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#4"]
+note = "Polestar paso 4 «Frostfire Hot Springs: kill these as you meet them», objetivo 7 (accept)"
+
+[[step]]
+id = "h55-cuna-del-invierno-015"
+do = "loot"
+item = 20742
+count = 1
+at = [1452, 33.36, 37.72]
+wps = [[1452, 34.7, 37.0, "Tótem de ritual Nevada"], [1452, 30.3, 36.3, "Tótem de ritual Nevada"], [1452, 27.9, 34.5, "Tótem de ritual Nevada"]]
+optional = true
+text = "Consigue {item:20742}."
+tip = "«{quest:8471}», botín raro de los fúrbolgs Nevada."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#4"]
+note = "Polestar paso 4 «Frostfire Hot Springs: kill these as you meet them», objetivo 8 (collect)"
+
+[[step]]
+id = "h55-cuna-del-invierno-016"
+do = "accept"
+quest = 8471
+optional = true
+reqlevel = 50
+text = "Usa {item:20742} para empezar «{quest:8471}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#4"]
+note = "Polestar paso 4 «Frostfire Hot Springs: kill these as you meet them», objetivo 9 (accept)"
+
+[[step]]
+id = "h55-cuna-del-invierno-017"
+do = "turnin"
+quest = 5082
+npc = 9298
+at = [1452, 31.27, 45.16]
+optional = true
+chain = "h55-cuna-del-invierno-s005-9298"
+text = "Entrega «{quest:5082}» a {npc:9298}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#5"]
+note = "Polestar paso 5 «Donova Cubilnevado», objetivo 1 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-018"
+do = "turnin"
+quest = 5083
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h55-cuna-del-invierno-s005-9298"
+text = "Entrega «{quest:5083}» a {npc:9298}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#5"]
+note = "Polestar paso 5 «Donova Cubilnevado», objetivo 2 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-019"
+do = "accept"
+quest = 5084
+npc = 9298
+at = [1452, 31.27, 45.16]
+chain = "h55-cuna-del-invierno-s005-9298"
+reqlevel = 52
+text = "Coge «{quest:5084}» de {npc:9298}."
+why = "+4.350 XP · <1 min · desbloquea «{quest:5087}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#5"]
+note = "Polestar paso 5 «Donova Cubilnevado», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h55-cuna-del-invierno-020"
+do = "note"
+text = "«{quest:5084}» se entrega en el {obj:176091} de {map:1448}, en un viaje posterior."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#5"]
+note = "Polestar paso 5 «Donova Cubilnevado», objetivo 4 (note)"
+
+[[step]]
+id = "h55-cuna-del-invierno-022"
+do = "goto"
+at = [1452, 60.7, 38.2]
+text = "Ve a {area:2255}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#7"]
+note = "Polestar paso 7 «Winterspring», objetivo 1 (goto)"
+
+[[step]]
+id = "h55-cuna-del-invierno-023"
+do = "getfp"
+npc = 11139
+node = "53"
+at = [1452, 60.47, 36.3]
+text = "Coge la ruta de vuelo de Vista Eterna con {npc:11139}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#8"]
+note = "Polestar paso 8 «Everlook», objetivo 1 (getfp) · consejo de Polestar sin traducir: {area:2255} is the goblin town on the east side of the valley, past the owlbeast hills."
+
+[[step]]
+id = "h55-cuna-del-invierno-024"
+do = "note"
+text = "Las misiones de Gregor llevan a otras zonas: guárdalas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#8"]
+note = "Polestar paso 8 «Everlook», objetivo 2 (note)"
+
+[[step]]
+id = "h55-cuna-del-invierno-025"
+do = "accept"
+quest = 3783
+npc = 10305
+at = [1452, 60.88, 37.62]
+optional = true
+reqlevel = 52
+text = "Coge «{quest:3783}» de {npc:10305}."
+tip = "+14.812 XP · ~28 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#8"]
+note = "Polestar paso 8 «Everlook», objetivo 3 (accept)"
+
+[[step]]
+id = "h55-cuna-del-invierno-026"
+do = "sethearth"
+npc = 11118
+zone = 1452
+at = [1452, 61.36, 38.83]
+text = "Pon la piedra de hogar en {area:2255} con {npc:11118}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#8"]
+note = "Polestar paso 8 «Everlook», objetivo 4 (sethome)"
+
+[[step]]
+id = "h55-cuna-del-invierno-027"
+do = "accept"
+quest = 6029
+npc = 10431
+at = [1452, 61.35, 38.97]
+chain = "h55-cuna-del-invierno-s008-10431"
+reqlevel = 50
+text = "Coge «{quest:6029}» de {npc:10431}."
+why = "+2.550 XP · <1 min · 3,2× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#8"]
+note = "Polestar paso 8 «Everlook», objetivo 5 (accept) · consejo de Polestar sin traducir: {npc:10431}, inside."
+
+[[step]]
+id = "h55-cuna-del-invierno-028"
+do = "accept"
+quest = 6030
+npc = 10431
+at = [1452, 61.35, 38.97]
+chain = "h55-cuna-del-invierno-s008-10431"
+reqlevel = 50
+text = "Coge «{quest:6030}» de {npc:10431}."
+why = "+2.550 XP · <1 min · 2,2× la mediana del 56-60"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#8"]
+note = "Polestar paso 8 «Everlook», objetivo 6 (accept)"
+
+[[step]]
+id = "h55-cuna-del-invierno-029"
+do = "turnin"
+quest = 4808
+npc = 10468
+at = [1452, 61.63, 38.61]
+chain = "h55-cuna-del-invierno-s008-10468"
+text = "Entrega «{quest:4808}» a {npc:10468}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#8"]
+note = "Polestar paso 8 «Everlook», objetivo 7 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-031"
+do = "complete"
+quest = 3783
+obj = 1
+at = [1452, 64.05, 39.83]
+wps = [[1452, 67.7, 46.3, "Pelaje de yeti grueso"], [1452, 71.5, 40.2, "Pelaje de yeti grueso"], [1452, 57.8, 29.0, "Pelaje de yeti grueso"]]
+optional = true
+text = "Consigue {item:12366} (10) para «{quest:3783}»."
+tip = "Las colinas de los yetis empiezan justo al sureste de {area:2255}. Todos los yetis sueltan pelaje; solo las matriarcas y patriarcas sueltan cuernos, así que déjalos para después de la entrega."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#9"]
+note = "Polestar paso 9 «Ice Thistle yetis», objetivo 1 (collect)"
+
+[[step]]
+id = "h55-cuna-del-invierno-032"
+do = "turnin"
+quest = 3783
+npc = 10305
+at = [1452, 60.88, 37.62]
+optional = true
+chain = "h55-cuna-del-invierno-s010-10305"
+text = "Entrega «{quest:3783}» a {npc:10305}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#10"]
+note = "Polestar paso 10 «Umi Risitas», objetivo 1 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-033"
+do = "accept"
+quest = 977
+npc = 10305
+at = [1452, 60.88, 37.62]
+optional = true
+chain = "h55-cuna-del-invierno-s010-10305"
+reqlevel = 52
+text = "Coge «{quest:977}» de {npc:10305}."
+tip = "+11.690 XP · ~21 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#10"]
+note = "Polestar paso 10 «Umi Risitas», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h55-cuna-del-invierno-034"
+do = "goto"
+at = [1452, 67.0, 44.2]
+if = { maxlevel = 54 }
+text = "Ve a {npc:7460}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#11"]
+note = "Polestar paso 11 «Level 55.04», objetivo 1 (goto) · consejo de Polestar sin traducir: Top up here to level 55.04 before the hand-ins at {area:2255}: they take you to level 56. Or, with a group, run the {area:1584} dungeon or the {area:1583} dungeon (Lower) instead."
+
+[[step]]
+id = "h55-cuna-del-invierno-035"
+do = "level"
+level = 55
+at = [1452, 66.85, 44.94]
+if = { maxlevel = 54 }
+text = "Sube al nivel 55."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#11"]
+note = "Polestar paso 11 «Level 55.04», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:7460}."
+
+[[step]]
+id = "h55-cuna-del-invierno-036"
+do = "complete"
+quest = 977
+obj = 1
+at = [1452, 66.85, 44.94]
+wps = [[1452, 67.7, 46.3, "Cuerno de yeti prístino"], [1452, 65.9, 43.6, "Cuerno de yeti prístino"], [1452, 66.8, 41.4, "Cuerno de yeti prístino"]]
+optional = true
+text = "Consigue {item:12367} (2) para «{quest:977}»."
+tip = "Las matriarcas y patriarcas pegan fuerte: atráelos de uno en uno. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#12"]
+note = "Polestar paso 12 «Pristine Yeti Horns», objetivo 1 (collect)"
+
+[[step]]
+id = "h55-cuna-del-invierno-038"
+do = "turnin"
+quest = 977
+npc = 10305
+at = [1452, 60.88, 37.62]
+optional = true
+chain = "h55-cuna-del-invierno-s014-10305"
+text = "Entrega «{quest:977}» a {npc:10305}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#14"]
+note = "Polestar paso 14 «Umi Risitas», objetivo 1 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-039"
+do = "accept"
+quest = 5163
+npc = 10305
+at = [1452, 60.88, 37.62]
+optional = true
+chain = "h55-cuna-del-invierno-s014-10305"
+reqlevel = 52
+text = "Coge «{quest:5163}» de {npc:10305}."
+tip = "+8.080 XP · ~59 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#14"]
+note = "Polestar paso 14 «Umi Risitas», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h55-cuna-del-invierno-040"
+do = "note"
+text = "La tercera broma de Umi va contra goblins de {area:976} y Un'Goro: guárdala para más tarde."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#14"]
+note = "Polestar paso 14 «Umi Risitas», objetivo 3 (note)"
+
+[[step]]
+id = "h55-cuna-del-invierno-042"
+do = "complete"
+quest = 8464
+obj = 2
+at = [1452, 65.95, 34.97]
+wps = [[1452, 67.6, 35.9, "Vigilante del cubil Nevada"], [1452, 68.3, 34.7, "Vigilante del cubil Nevada"], [1452, 41.6, 42.6, "Vigilante del cubil Nevada"]]
+optional = true
+text = "Mata {npc:7440} (8) para «{quest:8464}»."
+tip = "El poblado fúrbolg llena el valle al noreste de {area:2255}. Mata primero a los chamanes; curan. {npc:10738}, en la cueva del fondo, es élite: no entres."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#15"]
+note = "Polestar paso 15 «Winterfall Village», objetivo 1 (kill)"
+
+[[step]]
+id = "h55-cuna-del-invierno-043"
+do = "complete"
+quest = 8464
+obj = 3
+at = [1452, 66.66, 37.07]
+wps = [[1452, 67.2, 39.4, "Ursa Nevada"], [1452, 68.3, 37.6, "Ursa Nevada"]]
+optional = true
+text = "Mata {npc:7438} (8) para «{quest:8464}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#15"]
+note = "Polestar paso 15 «Winterfall Village», objetivo 2 (kill)"
+
+[[step]]
+id = "h55-cuna-del-invierno-044"
+do = "complete"
+quest = 8464
+obj = 1
+at = [1452, 67.59, 35.66]
+wps = [[1452, 68.0, 37.5, "Chamán Nevada"], [1452, 69.5, 38.3, "Chamán Nevada"], [1452, 67.5, 39.8, "Chamán Nevada"]]
+optional = true
+text = "Mata {npc:7439} (8) para «{quest:8464}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#15"]
+note = "Polestar paso 15 «Winterfall Village», objetivo 3 (kill)"
+
+[[step]]
+id = "h55-cuna-del-invierno-045"
+do = "goto"
+at = [1452, 60.5, 36.3]
+text = "Ve al maestro de vuelo de {area:2255}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#16"]
+note = "Polestar paso 16 «Fly to Camp Mojache», objetivo 1 (goto)"
+
+[[step]]
+id = "h55-cuna-del-invierno-046"
+do = "fly"
+zone = 1444
+text = "Vuela a Campamento Mojache."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#16"]
+note = "Polestar paso 16 «Fly to Camp Mojache», objetivo 2 (fly)"
+
+[[step]]
+id = "h55-cuna-del-invierno-048"
+do = "loot"
+item = 11242
+count = 1
+at = [1444, 44.5, 10.2]
+text = "Recoge {item:11242} de {obj:164798}."
+tip = "La {item:11242} crece dentro de un edificio en ruinas al norte del campamento de {npc:7775}, al este de {area:1114} de las arpías: entra por la parte rota de su muro."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#18"]
+note = "Polestar paso 18 «Raíz del mal», objetivo 1 (collect)"
+
+[[step]]
+id = "h55-cuna-del-invierno-049"
+do = "turnin"
+quest = 4041
+npc = 7775
+at = [1444, 45.12, 25.57]
+text = "Entrega «{quest:4041}» a {npc:7775}."
+tip = "Vuelve al sur con {npc:7775}. Guarda el elixir y no lo bebas todavía: te mata, y así es como conocerás más tarde a Gaeriyan junto a {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#19"]
+note = "Polestar paso 19 ««El Elixir de Videre»», objetivo 1 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-050"
+do = "complete"
+quest = 3909
+obj = 1
+at = [1444, 45.12, 25.57]
+text = "Consigue {item:11243} (1) de {npc:7775} para «{quest:3909}»."
+tip = "{item:11243}, la recompensa de {npc:7775}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#19"]
+note = "Polestar paso 19 ««El Elixir de Videre»», objetivo 2 (collect)"
+
+[[step]]
+id = "h55-cuna-del-invierno-051"
+do = "goto"
+at = [1443, 21.6, 74.0]
+text = "Ve a {area:2408}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#20"]
+note = "Polestar paso 20 «Desolace», objetivo 1 (goto)"
+
+[[step]]
+id = "h55-cuna-del-invierno-052"
+do = "goto"
+at = [1443, 21.6, 74.0]
+text = "Ve al maestro de vuelo de {area:2408}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#21"]
+note = "Polestar paso 21 «Fly to Thunder Bluff», objetivo 1 (goto)"
+
+[[step]]
+id = "h55-cuna-del-invierno-053"
+do = "fly"
+zone = 1456
+text = "Vuela a Cima del Trueno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#21"]
+note = "Polestar paso 21 «Fly to Thunder Bluff», objetivo 2 (fly)"
+
+[[step]]
+id = "h55-cuna-del-invierno-054"
+do = "accept"
+quest = 1000
+npc = 10881
+at = [1456, 44.33, 58.76]
+reqlevel = 54
+text = "Coge «{quest:1000}» de {npc:10881}."
+why = "+560 XP · <1 min · desbloquea «{quest:1125}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#22"]
+note = "Polestar paso 22 «Asaltaviento Correbrisa», objetivo 1 (accept) · datos no importados: closedBy · consejo de Polestar sin traducir: {npc:10881} and {npc:14728} stand on {area:1641}. Each of Rumstag's donations takes sixty Wool, Silk or Mageweave from your bags: hand in what you carry, skip the rest."
+
+[[step]]
+id = "h55-cuna-del-invierno-055"
+do = "turnin"
+quest = 7820
+npc = 14728
+at = [1456, 43.05, 42.72]
+optional = true
+chain = "h55-cuna-del-invierno-s022-14728"
+text = "Entrega «{quest:7820}» a {npc:14728}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#22"]
+note = "Polestar paso 22 «Asaltaviento Correbrisa», objetivo 2 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-056"
+do = "turnin"
+quest = 7821
+npc = 14728
+at = [1456, 43.05, 42.72]
+optional = true
+chain = "h55-cuna-del-invierno-s022-14728"
+text = "Entrega «{quest:7821}» a {npc:14728}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#22"]
+note = "Polestar paso 22 «Asaltaviento Correbrisa», objetivo 3 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-057"
+do = "turnin"
+quest = 7822
+npc = 14728
+at = [1456, 43.05, 42.72]
+optional = true
+chain = "h55-cuna-del-invierno-s022-14728"
+text = "Entrega «{quest:7822}» a {npc:14728}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#22"]
+note = "Polestar paso 22 «Asaltaviento Correbrisa», objetivo 4 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-058"
+do = "turnin"
+quest = 3761
+npc = 9076
+at = [1456, 77.46, 21.97]
+text = "Entrega «{quest:3761}» a {npc:9076}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#23"]
+note = "Polestar paso 23 «Elder Rise», objetivo 1 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-059"
+do = "accept"
+quest = 3782
+npc = 5769
+at = [1456, 78.62, 28.56]
+chain = "h55-cuna-del-invierno-s023-5769"
+reqlevel = 47
+text = "Coge «{quest:3782}» del {npc:5769}."
+why = "+376 XP · <1 min · desbloquea «{quest:3786}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#23"]
+note = "Polestar paso 23 «Elder Rise», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h55-cuna-del-invierno-060"
+do = "turnin"
+quest = 1000
+npc = 5769
+at = [1456, 78.62, 28.56]
+chain = "h55-cuna-del-invierno-s023-5769"
+text = "Entrega «{quest:1000}» al {npc:5769}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#23"]
+note = "Polestar paso 23 «Elder Rise», objetivo 3 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-061"
+do = "accept"
+quest = 1123
+npc = 5769
+at = [1456, 78.62, 28.56]
+chain = "h55-cuna-del-invierno-s023-5769"
+reqlevel = 54
+text = "Coge «{quest:1123}» del {npc:5769}."
+why = "+1.400 XP · <1 min · desbloquea «{quest:1125}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#23"]
+note = "Polestar paso 23 «Elder Rise», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h55-cuna-del-invierno-062"
+do = "turnin"
+quest = 4987
+npc = 5770
+at = [1456, 75.65, 31.61]
+text = "Entrega «{quest:4987}» a {npc:5770}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#23"]
+note = "Polestar paso 23 «Elder Rise», objetivo 5 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-063-pa"
+do = "train"
+npc = 246344
+spells = [19854, 20729, 25894]
+at = [1456, 23.91, 15.44]
+if = { class = ["PALADIN"] }
+reqlevel = 54
+text = "Entrena con {npc:246344}, el instructor de paladín."
+tip = "3 hechizos hasta el nivel 54: nuevos {spell:25894}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#23", "trainer:paladin"]
+note = "Polestar paso 23 «Elder Rise», objetivo 6 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 53-55"
+
+[[step]]
+id = "h55-cuna-del-invierno-063-dr"
+do = "train"
+npc = 3036
+spells = [9830, 9901, 9904, 9907, 9908]
+at = [1456, 77.15, 29.82]
+if = { class = ["DRUID"] }
+reqlevel = 54
+text = "Entrena con {npc:3036}, el instructor de druida."
+tip = "5 hechizos hasta el nivel 54."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#23", "trainer:druid"]
+note = "Polestar paso 23 «Elder Rise», objetivo 6 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 54-55"
+
+[[step]]
+id = "h55-cuna-del-invierno-064"
+do = "note"
+text = "«{quest:1123}» espera en {map:1450}: guárdala para más tarde."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#23"]
+note = "Polestar paso 23 «Elder Rise», objetivo 7 (note)"
+
+[[step]]
+id = "h55-cuna-del-invierno-065"
+do = "turnin"
+quest = 3782
+npc = 9087
+at = [1456, 71.06, 34.19]
+chain = "h55-cuna-del-invierno-s024-9087"
+text = "Entrega «{quest:3782}» a {npc:9087}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#24"]
+note = "Polestar paso 24 «Bashana Runatótem», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:9087} buys {item:11040} grown from your «{quest:3761}». «{quest:3782}» wants ten, and the {item:11020} gives one try every ten minutes: take it only if you already have the grain."
+
+[[step]]
+id = "h55-cuna-del-invierno-066"
+do = "accept"
+quest = 3786
+npc = 9087
+at = [1456, 71.06, 34.19]
+optional = true
+chain = "h55-cuna-del-invierno-s024-9087"
+reqlevel = 47
+text = "Coge «{quest:3786}» de {npc:9087}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#24"]
+note = "Polestar paso 24 «Bashana Runatótem», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h55-cuna-del-invierno-067"
+do = "complete"
+quest = 3786
+optional = true
+text = "Usa {item:11020} y completa «{quest:3786}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#24"]
+note = "Polestar paso 24 «Bashana Runatótem», objetivo 3 (complete) · objetivos (EN): Morrowgrain"
+
+[[step]]
+id = "h55-cuna-del-invierno-068"
+do = "turnin"
+quest = 3786
+npc = 9087
+at = [1456, 71.06, 34.19]
+text = "Entrega «{quest:3786}» a {npc:9087}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#24"]
+note = "Polestar paso 24 «Bashana Runatótem», objetivo 4 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-069"
+do = "loot"
+item = 11040
+count = 10
+optional = true
+text = "Consigue {item:11040} (10)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#24"]
+note = "Polestar paso 24 «Bashana Runatótem», objetivo 5 (collect)"
+
+[[step]]
+id = "h55-cuna-del-invierno-070"
+do = "turnin"
+quest = 3804
+npc = 9087
+at = [1456, 71.06, 34.19]
+text = "Entrega «{quest:3804}» a {npc:9087}."
+why = "+560 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#24"]
+note = "Polestar paso 24 «Bashana Runatótem», objetivo 6 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-071"
+do = "goto"
+at = [1456, 46.6, 49.9]
+text = "Ve al maestro de vuelo de {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#25"]
+note = "Polestar paso 25 «Fly to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h55-cuna-del-invierno-072"
+do = "fly"
+zone = 1454
+text = "Vuela a {area:1637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#25"]
+note = "Polestar paso 25 «Fly to Orgrimmar», objetivo 2 (fly)"
+
+[[step]]
+id = "h55-cuna-del-invierno-073"
+do = "turnin"
+quest = 7833
+npc = 14727
+at = [1454, 37.7, 87.9]
+optional = true
+chain = "h55-cuna-del-invierno-s026-14727"
+text = "Entrega «{quest:7833}» a {npc:14727}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#26"]
+note = "Polestar paso 26 «Vehena», objetivo 1 (turnin) · consejo de Polestar sin traducir: In the {obj:172961}. Each donation takes sixty Wool, Silk or Mageweave from your bags: hand in what you carry, skip the rest."
+
+[[step]]
+id = "h55-cuna-del-invierno-074"
+do = "turnin"
+quest = 7834
+npc = 14727
+at = [1454, 37.7, 87.9]
+optional = true
+chain = "h55-cuna-del-invierno-s026-14727"
+text = "Entrega «{quest:7834}» a {npc:14727}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#26"]
+note = "Polestar paso 26 «Vehena», objetivo 2 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-075"
+do = "turnin"
+quest = 7835
+npc = 14727
+at = [1454, 37.7, 87.9]
+optional = true
+chain = "h55-cuna-del-invierno-s026-14727"
+text = "Entrega «{quest:7835}» a {npc:14727}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#26"]
+note = "Polestar paso 26 «Vehena», objetivo 3 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-076"
+do = "turnin"
+quest = 7826
+npc = 14726
+at = [1454, 63.6, 51.23]
+optional = true
+chain = "h55-cuna-del-invierno-s027-14726"
+text = "Entrega «{quest:7826}» a {npc:14726}."
+tip = "En {obj:172958}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#27"]
+note = "Polestar paso 27 «Rashona Straglash», objetivo 1 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-077"
+do = "turnin"
+quest = 7827
+npc = 14726
+at = [1454, 63.6, 51.23]
+optional = true
+chain = "h55-cuna-del-invierno-s027-14726"
+text = "Entrega «{quest:7827}» a {npc:14726}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#27"]
+note = "Polestar paso 27 «Rashona Straglash», objetivo 2 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-078"
+do = "turnin"
+quest = 7831
+npc = 14726
+at = [1454, 63.6, 51.23]
+optional = true
+chain = "h55-cuna-del-invierno-s027-14726"
+text = "Entrega «{quest:7831}» a {npc:14726}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#27"]
+note = "Polestar paso 27 «Rashona Straglash», objetivo 3 (turnin)"
+
+[[step]]
+id = "h55-cuna-del-invierno-079"
+do = "note"
+text = "Las dos donaciones de {item:14047} se entregan más adelante en la ruta: guarda sesenta {item:14047} para cada una si las vas a hacer."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/50-60/03-winterspring#27"]
+note = "Polestar paso 27 «Rashona Straglash», objetivo 4 (note) · nota de Polestar traducida por Senda: Both Paño rúnico donations are handed in later in the route: save sixty Paño rúnico for each if you want them."

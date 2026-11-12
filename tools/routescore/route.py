@@ -701,6 +701,10 @@ def demand_seconds(d: Demand, cls: str | None) -> float:
 
 def score_guide(guide_dir: Path, shared_dir: Path, world: World) -> dict:
     meta, sections = load_guide(guide_dir, shared_dir)
+    if len(meta.get("classes") or []) > 1:
+        # Guía para varias clases (las de la Horda, para cualquier clase): se puntúa la ruta común, sin los
+        # pasos de una clase concreta.
+        meta = {k: v for k, v in meta.items() if k != "classes"}
     cls = (meta.get("classes") or [None])[0]
     travel = Travel(world.travel, meta.get("faction", "Alliance"), cls)
     steps = flatten(meta, sections)

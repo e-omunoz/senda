@@ -1,0 +1,1953 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/40-50/02-feralas
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h43-feralas-tanaris"
+title = "Feralas y Tanaris"
+levels = [43, 45]
+map = 1444
+summary = "Ruta común de la Horda, 43-45: Feralas y Tanaris."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h43-feralas-tanaris-001"
+do = "goto"
+at = [1435, 46.1, 54.7]
+text = "Ve a {area:75}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#1"]
+note = "Polestar paso 1 «Swamp of Sorrows», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-002"
+do = "goto"
+at = [1435, 46.1, 54.7]
+text = "Ve al maestro de vuelo de {area:75}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#2"]
+note = "Polestar paso 2 «Fly to Grom'gol», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-003"
+do = "fly"
+zone = 1434
+text = "Vuela a Grom'gol."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#2"]
+note = "Polestar paso 2 «Fly to Grom'gol», objetivo 2 (fly)"
+
+[[step]]
+id = "h43-feralas-tanaris-004"
+do = "goto"
+at = [1434, 31.4, 29.9]
+text = "Ve al zepelín a {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#3"]
+note = "Polestar paso 3 «Zeppelin to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-005"
+do = "goto"
+at = [1454, 51.5, 45.6]
+text = "Ve al centro de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#4"]
+note = "Polestar paso 4 «Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-006-wr"
+do = "train"
+npc = 3353
+spells = [750, 11550, 11572, 11608, 20660]
+at = [1454, 79.79, 31.42]
+if = { class = ["WARRIOR"] }
+reqlevel = 42
+text = "Entrena con {npc:3353}, el instructor de guerrero."
+tip = "5 hechizos hasta el nivel 42: nuevos {spell:750}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#5", "trainer:warrior"]
+note = "Polestar paso 5 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 39-43"
+
+[[step]]
+id = "h43-feralas-tanaris-006-hu"
+do = "train"
+npc = 3406
+spells = [1510, 8737, 13159, 13553, 14267, 14310, 14320, 14324, 15630, 19882, 1299445]
+at = [1454, 67.24, 20.2]
+if = { class = ["HUNTER"] }
+reqlevel = 42
+text = "Entrena con {npc:3406}, el instructor de cazador."
+tip = "11 hechizos hasta el nivel 42: nuevos {spell:1510}, {spell:8737}, {spell:13159} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#5", "trainer:hunter"]
+note = "Polestar paso 5 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 38-43"
+
+[[step]]
+id = "h43-feralas-tanaris-006-ro"
+do = "train"
+npc = 3327
+spells = [1768, 1786, 1857, 1860, 6774, 8637, 11267, 13228]
+at = [1454, 42.69, 51.48]
+if = { class = ["ROGUE"] }
+reqlevel = 42
+text = "Entrena con {npc:3327}, el instructor de pícaro."
+tip = "8 hechizos hasta el nivel 42: nuevos {spell:1860}, {spell:13228}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#5", "trainer:rogue"]
+note = "Polestar paso 5 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 39-43"
+
+[[step]]
+id = "h43-feralas-tanaris-006-pr"
+do = "train"
+npc = 5994
+spells = [996, 1006, 2060, 8106, 9485, 9592, 10874, 10888, 10892, 10898, 10957, 14818, 15265, 1309633]
+at = [1454, 35.72, 86.9]
+if = { class = ["PRIEST"] }
+reqlevel = 42
+text = "Entrena con {npc:5994}, el instructor de sacerdote."
+tip = "14 hechizos hasta el nivel 42: nuevos {spell:2060}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#5", "trainer:priest"]
+note = "Polestar paso 5 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 39-43"
+
+[[step]]
+id = "h43-feralas-tanaris-006-sh"
+do = "train"
+npc = 3344
+spells = [930, 1064, 6392, 8134, 8161, 8170, 8235, 8249, 8737, 8835, 10447, 10456, 10478, 10537, 10613, 66844, 408344]
+at = [1454, 38.8, 36.37]
+if = { class = ["SHAMAN"] }
+reqlevel = 42
+text = "Entrena con {npc:3344}, el instructor de chamán."
+tip = "17 hechizos hasta el nivel 42: nuevos {spell:1064}, {spell:8170}, {spell:8737} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#5", "trainer:shaman"]
+note = "Polestar paso 5 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 38-43"
+
+[[step]]
+id = "h43-feralas-tanaris-006-mg"
+do = "train"
+npc = 5958
+spells = [6131, 7320, 8417, 8423, 8446, 8458, 8462, 10138, 10144, 10156, 10159, 10169, 12825, 401502]
+at = [1454, 38.68, 85.41]
+if = { class = ["MAGE"] }
+reqlevel = 42
+text = "Entrena con {npc:5958}, el instructor de mago."
+tip = "14 hechizos hasta el nivel 42: nuevos {spell:401502}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#5", "trainer:mage"]
+note = "Polestar paso 5 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 39-43"
+
+[[step]]
+id = "h43-feralas-tanaris-006-wl"
+do = "train"
+npc = 3325
+spells = [5484, 6789, 7659, 11665, 11683, 11707, 11733, 11739, 17921, 20755, 1311677]
+at = [1454, 48.62, 46.95]
+if = { class = ["WARLOCK"] }
+reqlevel = 42
+text = "Entrena con {npc:3325}, el instructor de brujo."
+tip = "11 hechizos hasta el nivel 42: nuevos {spell:5484}, {spell:6789}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#5", "trainer:warlock"]
+note = "Polestar paso 5 «Orgrimmar», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 39-43"
+
+[[step]]
+id = "h43-feralas-tanaris-007"
+do = "accept"
+quest = 3631
+npc = 3326
+at = [1454, 48.47, 45.43]
+if = { class = ["WARLOCK"] }
+reqlevel = 40
+text = "Coge «{quest:3631}» de {npc:3326}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#5"]
+note = "Polestar paso 5 «Orgrimmar», objetivo 2 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "h43-feralas-tanaris-008"
+do = "note"
+npc = 4752
+at = [1454, 69.41, 13.1]
+if = { race = ["Orc"], minlevel = 40 }
+optional = true
+text = "Entrena con {npc:4752}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#6"]
+note = "Polestar paso 6 «Riding at 40», objetivo 1 (train) · train sin hechizos: manual · consejo de Polestar sin traducir: Riding needs level 40 and costs 100 gold; learning it gives you a mount. {npc:4752} teaches Orcs in the {obj:172958}, by {npc:3362}'s kennel. Skyborne learn it from {npc:265756} at the {area:17684} in {area:16638} on Zephras Isle, with a Galestrider: the skyboat to the isle leaves the cliffs south of {area:17045}, north of {map:1456}, about every five minutes. Your race's other mounts are 20 gold each: Collectibles, Mounts · Level 40 has a guide for each."
+
+[[step]]
+id = "h43-feralas-tanaris-009"
+do = "note"
+if = { race = ["Orc"], minlevel = 40 }
+text = "Lobos: {npc:3362}, junto a {npc:4752}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#6"]
+note = "Polestar paso 6 «Riding at 40», objetivo 2 (note)"
+
+[[step]]
+id = "h43-feralas-tanaris-010"
+do = "note"
+if = { race = ["Skyborne"], minlevel = 40 }
+text = "Equitación y monturas de Zephras: {npc:265756}, en los establos de Valanaar, en la isla de Zephras."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#6"]
+note = "Polestar paso 6 «Riding at 40», objetivo 3 (note) · nota de Polestar traducida por Senda: Riding and Galestriders: Genn Buentiempo, at the Fairweather Stables in Valanaar on Zephras Isle."
+
+[[step]]
+id = "h43-feralas-tanaris-011"
+do = "accept"
+quest = 2981
+npc = 4485
+at = [1454, 75.23, 34.24]
+reqlevel = 38
+text = "Coge «{quest:2981}» de {npc:4485}."
+why = "+890 XP · <1 min · 1,8× la mediana del 41-45"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#7"]
+note = "Polestar paso 7 «Belgrom Destrozarroca», objetivo 1 (accept) · datos no importados: closedBy"
+
+[[step]]
+id = "h43-feralas-tanaris-012"
+do = "note"
+npc = 7953
+at = [1411, 55.28, 75.49]
+if = { race = ["Troll"], minlevel = 40 }
+optional = true
+text = "Entrena con {npc:7953}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#8"]
+note = "Polestar paso 8 «Riding at 40», objetivo 1 (train) · train sin hechizos: manual · consejo de Polestar sin traducir: Riding needs level 40 and costs 100 gold; learning it gives you a mount. Each race learns it from its own race's trainer: yours is {npc:7953} in {area:367}, a short ride south of {map:1454} down the {map:1411} road, with Zjolnir's raptors (20 gold each) beside him. Ride back to {map:1454}'s flight master afterwards."
+
+[[step]]
+id = "h43-feralas-tanaris-013"
+do = "note"
+if = { race = ["Troll"], minlevel = 40 }
+text = "Raptores: Zjolnir, junto a {npc:7953}, en {area:367}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#8"]
+note = "Polestar paso 8 «Riding at 40», objetivo 2 (note)"
+
+[[step]]
+id = "h43-feralas-tanaris-014"
+do = "goto"
+at = [1454, 45.3, 63.7]
+if = { class = ["PALADIN", "DRUID"] }
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#9"]
+note = "Polestar paso 9 «Fly to Thunder Bluff», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-015"
+do = "fly"
+zone = 1454
+if = { class = ["PALADIN", "DRUID"] }
+text = "Vuela a Cima del Trueno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#9"]
+note = "Polestar paso 9 «Fly to Thunder Bluff», objetivo 2 (fly)"
+
+[[step]]
+id = "h43-feralas-tanaris-016"
+do = "goto"
+at = [1454, 45.3, 63.7]
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK"], race = ["Tauren"], minlevel = 40 }
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#10"]
+note = "Polestar paso 10 «Fly to Thunder Bluff», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-017"
+do = "fly"
+zone = 1412
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK"], race = ["Tauren"], minlevel = 40 }
+text = "Vuela a Cima del Trueno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#10"]
+note = "Polestar paso 10 «Fly to Thunder Bluff», objetivo 2 (fly)"
+
+[[step]]
+id = "h43-feralas-tanaris-018-pa"
+do = "train"
+npc = 246344
+spells = [750, 4987, 19895, 19941, 19977, 20307, 20347, 20421, 20922]
+at = [1456, 23.91, 15.44]
+if = { class = ["PALADIN"] }
+reqlevel = 42
+text = "Entrena con {npc:246344}, el instructor de paladín."
+tip = "9 hechizos hasta el nivel 42: nuevos {spell:750}, {spell:4987}, {spell:19977} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#11", "trainer:paladin"]
+note = "Polestar paso 11 «Thunder Bluff», objetivo 1 (train) · consejo de Polestar sin traducir: Your trainer is in {map:1456}: {npc:3033} (Druids) on {area:1639}, {npc:246344} (Paladins). · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 39-43"
+
+[[step]]
+id = "h43-feralas-tanaris-018-dr"
+do = "train"
+npc = 3034
+spells = [6787, 8918, 8951, 8955, 8992, 9000, 9634, 9749, 16914, 18657, 20719, 20742, 22827, 29166, 414644]
+at = [1456, 77.14, 27.02]
+if = { class = ["DRUID"] }
+reqlevel = 42
+text = "Entrena con {npc:3034}, el instructor de druida."
+tip = "15 hechizos hasta el nivel 42: nuevos {spell:9634}, {spell:16914}, {spell:20719} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#11", "trainer:druid"]
+note = "Polestar paso 11 «Thunder Bluff», objetivo 1 (train) · consejo de Polestar sin traducir: Your trainer is in {map:1456}: {npc:3033} (Druids) on {area:1639}, {npc:246344} (Paladins). · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 38-43"
+
+[[step]]
+id = "h43-feralas-tanaris-019"
+do = "goto"
+at = [1412, 46.8, 62.0]
+if = { race = ["Tauren"], minlevel = 40 }
+text = "Ve a {area:222}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#12"]
+note = "Polestar paso 12 «Mulgore», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-020"
+do = "note"
+npc = 3690
+at = [1412, 46.79, 61.97]
+if = { race = ["Tauren"], minlevel = 40 }
+optional = true
+text = "Entrena con {npc:3690}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#13"]
+note = "Polestar paso 13 «Riding at 40», objetivo 1 (train) · train sin hechizos: manual · consejo de Polestar sin traducir: Riding needs level 40 and costs 100 gold; learning it gives you a mount. Each race learns it from its own race's trainer: yours is {npc:3690} in {area:222}, with {npc:3685}'s kodos (20 gold each) beside him. Ride back up to {map:1456}'s flight master afterwards."
+
+[[step]]
+id = "h43-feralas-tanaris-021"
+do = "note"
+if = { race = ["Tauren"], minlevel = 40 }
+text = "Kodos: {npc:3685}, junto a {npc:3690}, en {area:222}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#13"]
+note = "Polestar paso 13 «Riding at 40», objetivo 2 (note)"
+
+[[step]]
+id = "h43-feralas-tanaris-022"
+do = "goto"
+at = [1456, 46.7, 49.9]
+if = { class = ["PALADIN", "DRUID"] }
+text = "Ve al maestro de vuelo de {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#14"]
+note = "Polestar paso 14 «Fly to Freewind Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-023"
+do = "fly"
+zone = 1456
+if = { class = ["PALADIN", "DRUID"] }
+text = "Vuela a Poblado Viento Libre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#14"]
+note = "Polestar paso 14 «Fly to Freewind Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h43-feralas-tanaris-024"
+do = "goto"
+at = [1456, 46.7, 49.9]
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK"], race = ["Tauren"], minlevel = 40 }
+text = "Ve al maestro de vuelo de {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#15"]
+note = "Polestar paso 15 «Fly to Freewind Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-025"
+do = "fly"
+zone = 1454
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK"], race = ["Tauren"], minlevel = 40 }
+text = "Vuela a Poblado Viento Libre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#15"]
+note = "Polestar paso 15 «Fly to Freewind Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h43-feralas-tanaris-026"
+do = "goto"
+at = [1454, 45.3, 63.7]
+if = { class = ["WARLOCK"] }
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#16"]
+note = "Polestar paso 16 «Ratchet for the Felsteed», objetivo 1 (goto) · consejo de Polestar sin traducir: Fly from {map:1454} to {area:392}; {npc:6251} stands on the hill above the docks."
+
+[[step]]
+id = "h43-feralas-tanaris-027"
+do = "fly"
+zone = 1413
+if = { class = ["WARLOCK"] }
+text = "Vuela a Trinquete."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#16"]
+note = "Polestar paso 16 «Ratchet for the Felsteed», objetivo 2 (fly)"
+
+[[step]]
+id = "h43-feralas-tanaris-028"
+do = "turnin"
+quest = 3631
+npc = 6251
+at = [1413, 62.63, 35.5]
+if = { class = ["WARLOCK"] }
+chain = "h43-feralas-tanaris-s016-6251"
+text = "Entrega «{quest:3631}» a {npc:6251}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#16"]
+note = "Polestar paso 16 «Ratchet for the Felsteed», objetivo 3 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-029"
+do = "accept"
+quest = 4490
+npc = 6251
+at = [1413, 62.63, 35.5]
+if = { class = ["WARLOCK"] }
+chain = "h43-feralas-tanaris-s016-6251"
+reqlevel = 40
+text = "Coge «{quest:4490}» de {npc:6251}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#16"]
+note = "Polestar paso 16 «Ratchet for the Felsteed», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-030"
+do = "turnin"
+quest = 4490
+npc = 6251
+at = [1413, 62.63, 35.5]
+if = { class = ["WARLOCK"] }
+chain = "h43-feralas-tanaris-s016-6251"
+text = "Entrega «{quest:4490}» a {npc:6251}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#16"]
+note = "Polestar paso 16 «Ratchet for the Felsteed», objetivo 5 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-031"
+do = "goto"
+at = [1413, 63.1, 37.1]
+if = { class = ["WARLOCK"] }
+text = "Ve al maestro de vuelo de {area:392}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#17"]
+note = "Polestar paso 17 «Fly to Freewind Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-032"
+do = "fly"
+zone = 1454
+if = { class = ["WARLOCK"] }
+text = "Vuela a Poblado Viento Libre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#17"]
+note = "Polestar paso 17 «Fly to Freewind Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h43-feralas-tanaris-033"
+do = "goto"
+at = [1454, 45.3, 63.7]
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE"], race = ["Orc", "Scourge", "Troll", "Skyborne"] }
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#18"]
+note = "Polestar paso 18 «Fly to Freewind Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-034"
+do = "fly"
+zone = 1454
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE"], race = ["Orc", "Scourge", "Troll", "Skyborne"] }
+text = "Vuela a Poblado Viento Libre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#18"]
+note = "Polestar paso 18 «Fly to Freewind Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h43-feralas-tanaris-035"
+do = "goto"
+at = [1454, 45.3, 63.7]
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE"], race = ["Tauren"], maxlevel = 39 }
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#19"]
+note = "Polestar paso 19 «Fly to Freewind Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-036"
+do = "fly"
+zone = 1441
+if = { class = ["WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE"], race = ["Tauren"], maxlevel = 39 }
+text = "Vuela a Poblado Viento Libre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#19"]
+note = "Polestar paso 19 «Fly to Freewind Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h43-feralas-tanaris-037"
+do = "turnin"
+quest = 1137
+npc = 4454
+at = [1441, 78.06, 77.13]
+text = "Entrega «{quest:1137}» a {npc:4454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#20"]
+note = "Polestar paso 20 «Mirage Raceway», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:4454}: «{quest:1137}», from Martek in the {map:1418}. · consejo de Polestar sin traducir: The road from {area:484} to {map:1446} runs past the {area:2240} on the {area:439}: {npc:4454} is in the gnomes' camp beside the track, {npc:4630} and {npc:4709} by the goblins' camp. {npc:4630} first, then {npc:4709}, who runs off to keep Rizzle busy; then take Rizzle's plans from the gnomes' camp and bring them back to {npc:4630}."
+
+[[step]]
+id = "h43-feralas-tanaris-038"
+do = "accept"
+quest = 1190
+npc = 4630
+at = [1441, 80.18, 75.88]
+chain = "h43-feralas-tanaris-s020-4630"
+reqlevel = 29
+text = "Coge «{quest:1190}» de {npc:4630}."
+why = "+1.650 XP · <1 min · desbloquea «{quest:1194}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#20"]
+note = "Polestar paso 20 «Mirage Raceway», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-042"
+do = "turnin"
+quest = 1191
+npc = 4709
+at = [1441, 79.81, 77.03]
+text = "Entrega «{quest:1191}» a {npc:4709}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#20"]
+note = "Polestar paso 20 «Mirage Raceway», objetivo 6 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-043"
+do = "turnin"
+quest = 1190
+at = [1441, 77.21, 77.39]
+text = "Entrega «{quest:1190}» en {obj:20805}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#20"]
+note = "Polestar paso 20 «Mirage Raceway», objetivo 7 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-044"
+do = "accept"
+quest = 1194
+at = [1441, 77.21, 77.39]
+reqlevel = 29
+text = "Coge «{quest:1194}» ({obj:20805})."
+why = "+1.650 XP · <1 min · 3,8× la mediana del 41-45"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#20"]
+note = "Polestar paso 20 «Mirage Raceway», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-045"
+do = "turnin"
+quest = 1194
+npc = 4630
+at = [1441, 80.18, 75.88]
+text = "Entrega «{quest:1194}» a {npc:4630}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#20"]
+note = "Polestar paso 20 «Mirage Raceway», objetivo 9 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-046"
+do = "goto"
+at = [1446, 50.2, 27.5]
+text = "Ve a {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#21"]
+note = "Polestar paso 21 «To Gadgetzan», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-047"
+do = "getfp"
+npc = 7824
+node = "40"
+at = [1446, 51.6, 25.44]
+text = "Coge la ruta de vuelo de {area:976} con {npc:7824}."
+tip = "{area:976} es el pueblo goblin amurallado justo pasada la frontera de {map:1446}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#22"]
+note = "Polestar paso 22 «Gadgetzan», objetivo 1 (getfp)"
+
+[[step]]
+id = "h43-feralas-tanaris-048"
+do = "accept"
+quest = 992
+npc = 7724
+at = [1446, 50.21, 27.48]
+reqlevel = 38
+text = "Coge «{quest:992}» de {npc:7724}."
+why = "+3.050 XP · ~3 min · desbloquea «{quest:4496}» y 9 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#22"]
+note = "Polestar paso 22 «Gadgetzan», objetivo 2 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-049"
+do = "turnin"
+quest = 2864
+npc = 7876
+at = [1446, 51.57, 26.76]
+text = "Entrega «{quest:2864}» a {npc:7876}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#22"]
+note = "Polestar paso 22 «Gadgetzan», objetivo 3 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-050"
+do = "accept"
+quest = 1690
+npc = 7407
+at = [1446, 52.46, 28.51]
+reqlevel = 40
+text = "Coge «{quest:1690}» de {npc:7407}."
+why = "+5.871 XP · ~9,7 min · desbloquea «{quest:1691}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#22"]
+note = "Polestar paso 22 «Gadgetzan», objetivo 4 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-051"
+do = "accept"
+quest = 1707
+npc = 7408
+at = [1446, 52.49, 28.45]
+reqlevel = 40
+text = "Coge «{quest:1707}» de {npc:7408}."
+why = "+4.498 XP · ~6 min · desbloquea «{quest:1878}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#22"]
+note = "Polestar paso 22 «Gadgetzan», objetivo 5 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-052"
+do = "complete"
+quest = 1707
+obj = 1
+at = [1446, 59.01, 23.42]
+wps = [[1446, 63.2, 30.8, "Faltriquera de agua de Deambulador"], [1446, 63.3, 33.3, "Faltriquera de agua de Deambulador"], [1446, 61.9, 35.0, "Faltriquera de agua de Deambulador"]]
+text = "Consigue {item:8483} (5) de {npc:5616} y {npc:5617} y {npc:5618} y {npc:5615} y {npc:5623} y {npc:7805} para «{quest:1707}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#23"]
+note = "Polestar paso 23 «Noonshade Ruins: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: The bandits and thieves camp in the dunes east of {area:976}. Every Wastewander can carry a water pouch: keep ten, five for each of Luglunket's bounties.\nCareful: Wastewander Rogues (level 43-44) move stealthed, so they can approach unseen."
+
+[[step]]
+id = "h43-feralas-tanaris-053"
+do = "loot"
+item = 8483
+count = 10
+at = [1446, 59.01, 23.42]
+wps = [[1446, 63.2, 30.8, "Faltriquera de agua de Deambulador"], [1446, 63.3, 33.3, "Faltriquera de agua de Deambulador"], [1446, 61.9, 35.0, "Faltriquera de agua de Deambulador"]]
+text = "Consigue {item:8483} (10) de {npc:5616} y {npc:5617} y {npc:5618} y {npc:5615} y {npc:5623} y {npc:7805}."
+tip = "Bolsas de agua en tus bolsas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#23"]
+note = "Polestar paso 23 «Noonshade Ruins: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h43-feralas-tanaris-054"
+do = "complete"
+quest = 1690
+obj = 2
+at = [1446, 59.01, 23.42]
+wps = [[1446, 63.9, 29.3, "Ladrón Deambulador"], [1446, 63.2, 30.8, "Ladrón Deambulador"], [1446, 63.4, 33.1, "Ladrón Deambulador"]]
+text = "Mata {npc:5616} (10) para «{quest:1690}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#23"]
+note = "Polestar paso 23 «Noonshade Ruins: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h43-feralas-tanaris-055"
+do = "complete"
+quest = 1690
+obj = 1
+at = [1446, 59.4, 24.71]
+wps = [[1446, 60.4, 24.3, "Bandido Deambulador"], [1446, 63.5, 30.0, "Bandido Deambulador"], [1446, 65.4, 32.4, "Bandido Deambulador"]]
+text = "Mata {npc:5618} (10) para «{quest:1690}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#23"]
+note = "Polestar paso 23 «Noonshade Ruins: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "h43-feralas-tanaris-056"
+do = "turnin"
+quest = 1690
+npc = 7407
+at = [1446, 52.46, 28.51]
+chain = "h43-feralas-tanaris-s024-7407"
+text = "Entrega «{quest:1690}» a {npc:7407}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#24"]
+note = "Polestar paso 24 «Gadgetzan», objetivo 1 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-057"
+do = "accept"
+quest = 1691
+npc = 7407
+at = [1446, 52.46, 28.51]
+optional = true
+chain = "h43-feralas-tanaris-s024-7407"
+reqlevel = 40
+text = "Coge «{quest:1691}» de {npc:7407}."
+tip = "+9.620 XP · ~19 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#24"]
+note = "Polestar paso 24 «Gadgetzan», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-058"
+do = "turnin"
+quest = 1707
+npc = 7408
+at = [1446, 52.49, 28.45]
+text = "Entrega «{quest:1707}» a {npc:7408}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#24"]
+note = "Polestar paso 24 «Gadgetzan», objetivo 3 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-059"
+do = "accept"
+quest = 8365
+npc = 15165
+at = [1446, 66.56, 22.27]
+optional = true
+reqlevel = 40
+text = "Coge «{quest:8365}» de {npc:15165}."
+tip = "Cabalga hacia el noreste hasta Puerto Bonvapor, el puerto goblin de la costa. +54.610 XP · ~121 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#25"]
+note = "Polestar paso 25 «Steamwheedle Port», objetivo 1 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-060"
+do = "accept"
+quest = 2781
+at = [1446, 66.82, 22.29]
+reqlevel = 39
+text = "Coge «{quest:2781}» ({obj:142122})."
+why = "+5.342 XP · ~2,5 min · 2,7× la mediana del 41-45"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#25"]
+note = "Polestar paso 25 «Steamwheedle Port», objetivo 2 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-061"
+do = "accept"
+quest = 2875
+at = [1446, 66.82, 22.29]
+reqlevel = 40
+text = "Coge «{quest:2875}» ({obj:142122})."
+why = "+4.178 XP · ~1,6 min · 3,4× la mediana del 41-45"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#25"]
+note = "Polestar paso 25 «Steamwheedle Port», objetivo 3 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-062"
+do = "accept"
+quest = 8366
+npc = 7882
+at = [1446, 67.06, 23.89]
+optional = true
+reqlevel = 40
+text = "Coge «{quest:8366}» de {npc:7882}."
+tip = "+14.121 XP · ~28 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#25"]
+note = "Polestar paso 25 «Steamwheedle Port», objetivo 4 (accept) · consejo de Polestar sin traducir: {npc:7882}, inside."
+
+[[step]]
+id = "h43-feralas-tanaris-063"
+do = "turnin"
+quest = 2872
+npc = 7881
+at = [1446, 67.11, 23.98]
+chain = "h43-feralas-tanaris-s025-7881"
+text = "Entrega «{quest:2872}» a {npc:7881}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#25"]
+note = "Polestar paso 25 «Steamwheedle Port», objetivo 5 (turnin) · consejo de Polestar sin traducir: {npc:7881}, inside."
+
+[[step]]
+id = "h43-feralas-tanaris-064"
+do = "accept"
+quest = 2873
+npc = 7881
+at = [1446, 67.11, 23.98]
+chain = "h43-feralas-tanaris-s025-7881"
+reqlevel = 40
+text = "Coge «{quest:2873}» de {npc:7881}."
+why = "+3.900 XP · <1 min · desbloquea «{quest:2874}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#25"]
+note = "Polestar paso 25 «Steamwheedle Port», objetivo 6 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-065"
+do = "accept"
+quest = 3520
+npc = 8579
+at = [1446, 66.99, 22.36]
+reqlevel = 40
+text = "Coge «{quest:3520}» de {npc:8579}."
+why = "+3.750 XP · ~4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#25"]
+note = "Polestar paso 25 «Steamwheedle Port», objetivo 7 (accept) · consejo de Polestar sin traducir: {npc:8579}: the screechers live in {map:1444}, on the next {map:1444} visit."
+
+[[step]]
+id = "h43-feralas-tanaris-066"
+do = "complete"
+quest = 8366
+obj = 1
+at = [1446, 70.9, 42.48]
+wps = [[1446, 72.3, 44.4, "Pirata del Mar del Sur"], [1446, 71.4, 45.8, "Pirata del Mar del Sur"], [1446, 73.6, 46.2, "Pirata del Mar del Sur"]]
+optional = true
+text = "Mata {npc:7855} (10) para «{quest:8366}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#26"]
+note = "Polestar paso 26 «Lost Rigger Cove: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: South along the coast, the Southsea pirates hold the cove. {npc:7883} and the stolen cargo are on the docks at its far end. Any pirate can drop a hat, the kidnappers most often.\nCareful: Two or three pirates stand with {npc:7883}, and many more pirates from the town join the fight once it starts."
+
+[[step]]
+id = "h43-feralas-tanaris-067"
+do = "complete"
+quest = 8365
+obj = 1
+at = [1446, 70.9, 42.48]
+wps = [[1446, 72.2, 44.6, "Sombrero pirata de los Mares del Sur"], [1446, 71.6, 46.6, "Sombrero pirata de los Mares del Sur"], [1446, 73.4, 46.3, "Sombrero pirata de los Mares del Sur"]]
+optional = true
+text = "Consigue {item:20519} (20) para «{quest:8365}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#26"]
+note = "Polestar paso 26 «Lost Rigger Cove: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h43-feralas-tanaris-068"
+do = "complete"
+quest = 8366
+obj = 2
+at = [1446, 70.95, 43.14]
+wps = [[1446, 72.0, 44.6, "Filibustero del Mar del Sur"], [1446, 71.3, 46.6, "Filibustero del Mar del Sur"], [1446, 73.0, 45.2, "Filibustero del Mar del Sur"]]
+optional = true
+text = "Mata {npc:7856} (10) para «{quest:8366}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#26"]
+note = "Polestar paso 26 «Lost Rigger Cove: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h43-feralas-tanaris-069"
+do = "complete"
+quest = 8366
+obj = 4
+at = [1446, 72.18, 46.65]
+wps = [[1446, 75.4, 45.6, "Aventurero del Mar del Sur"]]
+optional = true
+text = "Mata {npc:7858} (10) para «{quest:8366}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#26"]
+note = "Polestar paso 26 «Lost Rigger Cove: kill these as you meet them», objetivo 4 (kill)"
+
+[[step]]
+id = "h43-feralas-tanaris-070"
+do = "complete"
+quest = 2873
+obj = 1
+at = [1446, 72.1, 46.7]
+text = "Recoge {item:9244} (1) de {obj:142181} para «{quest:2873}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#26"]
+note = "Polestar paso 26 «Lost Rigger Cove: kill these as you meet them», objetivo 5 (collect) · consejo de Polestar sin traducir: Upstairs."
+
+[[step]]
+id = "h43-feralas-tanaris-071"
+do = "complete"
+quest = 8366
+obj = 3
+at = [1446, 72.94, 47.83]
+wps = [[1446, 74.1, 47.7, "Portuario del Mar del Sur"]]
+optional = true
+text = "Mata {npc:7857} (10) para «{quest:8366}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#26"]
+note = "Polestar paso 26 «Lost Rigger Cove: kill these as you meet them», objetivo 6 (kill)"
+
+[[step]]
+id = "h43-feralas-tanaris-072"
+do = "complete"
+quest = 2875
+obj = 1
+at = [1446, 73.4, 47.1]
+text = "Consigue {item:9246} (1) de {npc:7883} para «{quest:2875}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#26"]
+note = "Polestar paso 26 «Lost Rigger Cove: kill these as you meet them», objetivo 7 (collect)"
+
+[[step]]
+id = "h43-feralas-tanaris-073"
+do = "complete"
+quest = 1691
+obj = 3
+at = [1446, 65.21, 39.97]
+wps = [[1446, 63.8, 40.6, "Mago oscuro Deambulador"], [1446, 63.7, 37.9, "Mago oscuro Deambulador"], [1446, 65.6, 36.6, "Mago oscuro Deambulador"]]
+optional = true
+text = "Mata {npc:5617} (10) para «{quest:1691}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#27"]
+note = "Polestar paso 27 «Waterspring Field: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: The shadow mages, rogues and assassins camp south-east of {area:976}.\nSouth-east of Gadgetzan the Wastewander bandits camp in the dunes; {npc:7847} stands in the eastern camp.\nCareful: Wastewander Rogues keep Sneak up while out of combat, so hidden rogues can join a fight you start at a camp.\nCareful: Two stealthed Wastewander Rogues travel with him wherever he goes. At his spawn camp, two shadowmages and their minions are close enough to join a fight with him. Out by the towers you can fight him without them."
+
+[[step]]
+id = "h43-feralas-tanaris-074"
+do = "complete"
+quest = 1691
+obj = 2
+at = [1446, 64.71, 40.03]
+wps = [[1446, 65.4, 37.1, "Asesino Vagayermo"], [1446, 60.7, 32.8, "Asesino Vagayermo"], [1446, 59.5, 37.5, "Asesino Vagayermo"]]
+optional = true
+text = "Mata {npc:5623} (6) para «{quest:1691}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#27"]
+note = "Polestar paso 27 «Waterspring Field: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "h43-feralas-tanaris-075"
+do = "complete"
+quest = 1691
+obj = 1
+at = [1446, 64.64, 39.32]
+wps = [[1446, 63.5, 38.0, "Pícaro Vagayermo"], [1446, 61.7, 38.2, "Pícaro Vagayermo"], [1446, 60.6, 39.2, "Pícaro Vagayermo"]]
+optional = true
+text = "Mata {npc:5615} (8) para «{quest:1691}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#27"]
+note = "Polestar paso 27 «Waterspring Field: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h43-feralas-tanaris-076"
+do = "complete"
+quest = 2781
+obj = 1
+at = [1446, 61.8, 38.2]
+text = "Consigue {item:8723} (1) de {npc:7847} para «{quest:2781}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#27"]
+note = "Polestar paso 27 «Waterspring Field: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "h43-feralas-tanaris-077"
+do = "turnin"
+quest = 8365
+npc = 15165
+at = [1446, 66.56, 22.27]
+optional = true
+text = "Entrega «{quest:8365}» a {npc:15165}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#28"]
+note = "Polestar paso 28 «Steamwheedle Port», objetivo 1 (turnin) · consejo de Polestar sin traducir: Ride north-east back to the port: {npc:7881}, the {npc:15165} and the Security Chief take what {area:1336} gave you. {area:976} is west of it."
+
+[[step]]
+id = "h43-feralas-tanaris-078"
+do = "turnin"
+quest = 2873
+npc = 7881
+at = [1446, 67.11, 23.98]
+chain = "h43-feralas-tanaris-s028-7881"
+text = "Entrega «{quest:2873}» a {npc:7881}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#28"]
+note = "Polestar paso 28 «Steamwheedle Port», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:7881}, inside."
+
+[[step]]
+id = "h43-feralas-tanaris-079"
+do = "accept"
+quest = 2874
+npc = 7881
+at = [1446, 67.11, 23.98]
+chain = "h43-feralas-tanaris-s028-7881"
+reqlevel = 40
+text = "Coge «{quest:2874}» de {npc:7881}."
+tip = "Para {area:35}, hacia el nivel 50."
+why = "+3.900 XP · <1 min · 15,3× la mediana del 46-50"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#28"]
+note = "Polestar paso 28 «Steamwheedle Port», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-080"
+do = "turnin"
+quest = 2875
+npc = 7882
+at = [1446, 67.06, 23.89]
+chain = "h43-feralas-tanaris-s028-7882"
+text = "Entrega «{quest:2875}» a {npc:7882}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#28"]
+note = "Polestar paso 28 «Steamwheedle Port», objetivo 4 (turnin) · consejo de Polestar sin traducir: {npc:7882}, inside."
+
+[[step]]
+id = "h43-feralas-tanaris-081"
+do = "turnin"
+quest = 8366
+npc = 7882
+at = [1446, 67.06, 23.89]
+optional = true
+chain = "h43-feralas-tanaris-s028-7882"
+text = "Entrega «{quest:8366}» a {npc:7882}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#28"]
+note = "Polestar paso 28 «Steamwheedle Port», objetivo 5 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-082"
+do = "turnin"
+quest = 1878
+npc = 7408
+at = [1446, 52.49, 28.45]
+optional = true
+text = "Entrega «{quest:1878}» a {npc:7408}."
+tip = "+3.262 XP · ~11 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#29"]
+note = "Polestar paso 29 «Gadgetzan», objetivo 1 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-083"
+do = "turnin"
+quest = 2781
+npc = 7407
+at = [1446, 52.46, 28.51]
+chain = "h43-feralas-tanaris-s029-7407"
+text = "Entrega «{quest:2781}» a {npc:7407}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#29"]
+note = "Polestar paso 29 «Gadgetzan», objetivo 2 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-084"
+do = "turnin"
+quest = 1691
+npc = 7407
+at = [1446, 52.46, 28.51]
+optional = true
+chain = "h43-feralas-tanaris-s029-7407"
+text = "Entrega «{quest:1691}» a {npc:7407}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#29"]
+note = "Polestar paso 29 «Gadgetzan», objetivo 3 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-085"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#29"]
+note = "Polestar paso 29 «Gadgetzan», objetivo 4 (vendor)"
+
+[[step]]
+id = "h43-feralas-tanaris-086"
+do = "goto"
+at = [1446, 51.6, 25.5]
+text = "Ve al maestro de vuelo de {area:976}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#30"]
+note = "Polestar paso 30 «Fly to Freewind Post», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-087"
+do = "fly"
+zone = 1444
+text = "Vuela a Poblado Viento Libre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#30"]
+note = "Polestar paso 30 «Fly to Freewind Post», objetivo 2 (fly)"
+
+[[step]]
+id = "h43-feralas-tanaris-088"
+do = "goto"
+at = [1444, 75.7, 44.3]
+text = "Ve a {area:1099}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#31"]
+note = "Polestar paso 31 «Feralas», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-089"
+do = "getfp"
+npc = 8020
+node = "42"
+at = [1444, 75.45, 44.36]
+text = "Coge la ruta de vuelo de Campamento Mojache con {npc:8020}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#32"]
+note = "Polestar paso 32 «Camp Mojache», objetivo 1 (getfp)"
+
+[[step]]
+id = "h43-feralas-tanaris-090"
+do = "sethearth"
+npc = 7737
+zone = 1444
+at = [1444, 74.8, 45.18]
+text = "Pon la piedra de hogar en {area:1099} con {npc:7737}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#32"]
+note = "Polestar paso 32 «Camp Mojache», objetivo 2 (sethome)"
+
+[[step]]
+id = "h43-feralas-tanaris-091"
+do = "accept"
+quest = 2987
+npc = 8021
+at = [1444, 75.7, 44.31]
+reqlevel = 38
+text = "Coge «{quest:2987}» de {npc:8021}."
+why = "+3.600 XP · ~6 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#32"]
+note = "Polestar paso 32 «Camp Mojache», objetivo 3 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-092"
+do = "turnin"
+quest = 2981
+npc = 7777
+at = [1444, 75.8, 43.58]
+chain = "h43-feralas-tanaris-s032-7777"
+text = "Entrega «{quest:2981}» a {npc:7777}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#32"]
+note = "Polestar paso 32 «Camp Mojache», objetivo 4 (turnin) · consejo de Polestar sin traducir: {npc:7777} walks around {area:1099}: look inside the circle on the map."
+
+[[step]]
+id = "h43-feralas-tanaris-093"
+do = "accept"
+quest = 2975
+npc = 7777
+at = [1444, 75.8, 43.58]
+optional = true
+chain = "h43-feralas-tanaris-s032-7777"
+reqlevel = 38
+text = "Coge «{quest:2975}» de {npc:7777}."
+tip = "+7.640 XP · ~16 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#32"]
+note = "Polestar paso 32 «Camp Mojache», objetivo 5 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-094"
+do = "accept"
+quest = 3121
+npc = 8115
+at = [1444, 74.42, 43.36]
+reqlevel = 40
+text = "Coge «{quest:3121}» de {npc:8115}, para {map:1454}, hacia el nivel 45."
+why = "+1.950 XP · <1 min · desbloquea «{quest:3126}» y 5 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#32"]
+note = "Polestar paso 32 «Camp Mojache», objetivo 6 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-095"
+do = "accept"
+quest = 2822
+npc = 7854
+at = [1444, 74.43, 42.91]
+reqlevel = 40
+text = "Coge «{quest:2822}» de {npc:7854}."
+why = "+7.663 XP · ~11 min · desbloquea «{quest:7734}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#32"]
+note = "Polestar paso 32 «Camp Mojache», objetivo 7 (accept) · consejo de Polestar sin traducir: {npc:7854}, inside."
+
+[[step]]
+id = "h43-feralas-tanaris-096"
+do = "sethearth"
+npc = 7737
+zone = 1444
+at = [1444, 74.8, 45.18]
+text = "Pon la piedra de hogar en {area:1099} con {npc:7737}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#32"]
+note = "Polestar paso 32 «Camp Mojache», objetivo 8 (sethome)"
+
+[[step]]
+id = "h43-feralas-tanaris-097"
+do = "accept"
+quest = 2862
+npc = 7875
+at = [1444, 74.91, 42.46]
+reqlevel = 39
+text = "Coge «{quest:2862}» de {npc:7875}."
+why = "+5.866 XP · ~9,4 min · desbloquea «{quest:4496}» y 10 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#32"]
+note = "Polestar paso 32 «Camp Mojache», objetivo 9 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-098"
+do = "accept"
+quest = 2973
+npc = 4544
+at = [1444, 75.94, 42.74]
+optional = true
+reqlevel = 38
+text = "Coge «{quest:2973}» de {npc:4544}."
+tip = "+17.730 XP · ~39 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#32"]
+note = "Polestar paso 32 «Camp Mojache», objetivo 10 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-099"
+do = "complete"
+quest = 2987
+obj = 1
+at = [1444, 74.5, 30.2]
+text = "Usa {item:9466} para «{quest:2987}»."
+tip = "Al norte de los gnolls, los ogros ocupan un puesto en lo alto de una colina; atrae hacia ti a los magos ogros. El cobalto está en los montículos de tierra alrededor del puesto, y el pergamino está en el suelo, dentro. Recoge {item:9463} (12) de {obj:144064} para «{quest:2987}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#33"]
+note = "Polestar paso 33 «Gordunni Outpost», objetivo 1 (use)"
+
+[[step]]
+id = "h43-feralas-tanaris-100"
+do = "complete"
+quest = 2975
+obj = 1
+at = [1444, 75.21, 29.62]
+wps = [[1444, 74.6, 28.4, "Ogro Gordunni"], [1444, 74.8, 26.0, "Ogro Gordunni"], [1444, 76.6, 29.8, "Ogro Gordunni"]]
+optional = true
+text = "Mata {npc:5229} (10) para «{quest:2975}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#33"]
+note = "Polestar paso 33 «Gordunni Outpost», objetivo 3 (kill)"
+
+[[step]]
+id = "h43-feralas-tanaris-101"
+do = "complete"
+quest = 2975
+obj = 2
+at = [1444, 74.79, 29.29]
+wps = [[1444, 76.2, 29.8, "Mago ogro Gordunni"], [1444, 75.8, 33.8, "Mago ogro Gordunni"], [1444, 79.9, 34.7, "Mago ogro Gordunni"]]
+optional = true
+text = "Mata {npc:5237} (10) para «{quest:2975}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#33"]
+note = "Polestar paso 33 «Gordunni Outpost», objetivo 4 (kill)"
+
+[[step]]
+id = "h43-feralas-tanaris-102"
+do = "complete"
+quest = 2975
+obj = 3
+at = [1444, 74.68, 29.56]
+wps = [[1444, 74.7, 27.7, "Tosco Gordunni"], [1444, 75.1, 25.7, "Tosco Gordunni"], [1444, 76.6, 33.4, "Tosco Gordunni"]]
+optional = true
+text = "Mata {npc:5232} (5) para «{quest:2975}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#33"]
+note = "Polestar paso 33 «Gordunni Outpost», objetivo 5 (kill)"
+
+[[step]]
+id = "h43-feralas-tanaris-103"
+do = "loot"
+item = 9370
+count = 1
+at = [1444, 75.13, 29.73]
+wps = [[1444, 74.5, 27.9, "Pergamino Gordunni"], [1444, 80.6, 34.3, "Pergamino Gordunni"]]
+text = "Recoge {item:9370} de {obj:143980}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#33"]
+note = "Polestar paso 33 «Gordunni Outpost», objetivo 6 (collect)"
+
+[[step]]
+id = "h43-feralas-tanaris-104"
+do = "accept"
+quest = 2978
+reqlevel = 38
+text = "Usa {item:9370} para empezar «{quest:2978}»."
+why = "+1.800 XP · ~2,4 min · desbloquea «{quest:2979}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#33"]
+note = "Polestar paso 33 «Gordunni Outpost», objetivo 7 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-105"
+do = "complete"
+quest = 2862
+obj = 1
+at = [1444, 73.16, 35.56]
+wps = [[1444, 72.7, 39.3, "Crin de gnoll Zarpaleña"], [1444, 69.7, 51.0, "Crin de gnoll Zarpaleña"], [1444, 71.5, 54.5, "Crin de gnoll Zarpaleña"]]
+text = "Consigue {item:9237} (10) de {npc:5249} y {npc:5251} y {npc:5253} y {npc:5254} y {npc:5255} y {npc:5258} para «{quest:2862}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#34"]
+note = "Polestar paso 34 «Woodpaw north camp», objetivo 1 (collect) · consejo de Polestar sin traducir: The Woodpaw gnolls camp in the hills just north-west of Mojache; any of them can drop a mane.\nCareful: Every Woodpaw gnoll except the Alpha runs off for help at 15% health, which can pull more gnolls into the fight."
+
+[[step]]
+id = "h43-feralas-tanaris-106"
+do = "turnin"
+quest = 2862
+npc = 7875
+at = [1444, 74.91, 42.46]
+chain = "h43-feralas-tanaris-s035-7875"
+text = "Entrega «{quest:2862}» a {npc:7875}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#35"]
+note = "Polestar paso 35 «Camp Mojache», objetivo 1 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-107"
+do = "accept"
+quest = 2863
+npc = 7875
+at = [1444, 74.91, 42.46]
+chain = "h43-feralas-tanaris-s035-7875"
+reqlevel = 39
+text = "Coge «{quest:2863}» de {npc:7875}."
+tip = "«{quest:2863}»: dentro de una hora. Misión con tiempo: 60 min desde que la coges."
+why = "+4.025 XP · ~5 min · desbloquea «{quest:4496}» y 9 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#35"]
+note = "Polestar paso 35 «Camp Mojache», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-108"
+do = "turnin"
+quest = 2975
+npc = 7777
+at = [1444, 75.8, 43.58]
+optional = true
+chain = "h43-feralas-tanaris-s035-7777"
+text = "Entrega «{quest:2975}» a {npc:7777}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#35"]
+note = "Polestar paso 35 «Camp Mojache», objetivo 3 (turnin) · consejo de Polestar sin traducir: {npc:7777} walks around {area:1099}: look inside the circle on the map."
+
+[[step]]
+id = "h43-feralas-tanaris-109"
+do = "turnin"
+quest = 2978
+npc = 7777
+at = [1444, 75.8, 43.58]
+chain = "h43-feralas-tanaris-s035-7777"
+text = "Entrega «{quest:2978}» a {npc:7777}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#35"]
+note = "Polestar paso 35 «Camp Mojache», objetivo 4 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-110"
+do = "accept"
+quest = 2979
+npc = 7777
+at = [1444, 75.8, 43.58]
+chain = "h43-feralas-tanaris-s035-7777"
+reqlevel = 38
+text = "Coge «{quest:2979}» de {npc:7777}."
+why = "+4.334 XP · ~3 min · 1,7× la mediana del 41-45"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#35"]
+note = "Polestar paso 35 «Camp Mojache», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-112"
+do = "turnin"
+quest = 2987
+npc = 8021
+at = [1444, 75.7, 44.31]
+text = "Entrega «{quest:2987}» a {npc:8021}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#35"]
+note = "Polestar paso 35 «Camp Mojache», objetivo 7 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-113"
+do = "complete"
+quest = 2973
+obj = 1
+at = [1444, 70.15, 46.59]
+wps = [[1444, 68.4, 48.5, "Ala de duende dardo iridiscente"], [1444, 66.3, 47.4, "Ala de duende dardo iridiscente"], [1444, 64.7, 48.4, "Ala de duende dardo iridiscente"]]
+optional = true
+text = "Consigue {item:9369} (10) de {npc:5278} y {npc:7997} para «{quest:2973}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#36"]
+note = "Polestar paso 36 «Feralas: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: The sprite darters flit over the grove just west of Mojache; nearly every one drops a wing. The Woodpaw alphas lead the camps south-west of it: kill them within the hour.\nCareful: Most Alphas sit in small tent camps with 2-4 other gnolls that join the fight, and other gnolls patrol between the camps."
+
+[[step]]
+id = "h43-feralas-tanaris-114"
+do = "complete"
+quest = 2863
+obj = 1
+at = [1444, 66.09, 51.56]
+wps = [[1444, 68.9, 55.0, "Alfa Zarpaleña"], [1444, 72.4, 56.2, "Alfa Zarpaleña"], [1444, 74.9, 55.7, "Alfa Zarpaleña"]]
+text = "Mata {npc:5258} (5) para «{quest:2863}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#36"]
+note = "Polestar paso 36 «Feralas: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "h43-feralas-tanaris-115"
+do = "turnin"
+quest = 2973
+npc = 4544
+at = [1444, 75.94, 42.74]
+optional = true
+chain = "h43-feralas-tanaris-s037-4544"
+text = "Entrega «{quest:2973}» a {npc:4544}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#37"]
+note = "Polestar paso 37 «Camp Mojache», objetivo 1 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-116"
+do = "accept"
+quest = 2974
+npc = 4544
+at = [1444, 75.94, 42.74]
+chain = "h43-feralas-tanaris-s037-4544"
+reqlevel = 38
+text = "Coge «{quest:2974}» de {npc:4544}."
+why = "+9.077 XP · ~15 min · desbloquea «{quest:2976}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#37"]
+note = "Polestar paso 37 «Camp Mojache», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-117"
+do = "turnin"
+quest = 2863
+npc = 7875
+at = [1444, 74.91, 42.46]
+chain = "h43-feralas-tanaris-s037-7875"
+text = "Entrega «{quest:2863}» a {npc:7875}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#37"]
+note = "Polestar paso 37 «Camp Mojache», objetivo 3 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-118"
+do = "accept"
+quest = 2902
+npc = 7875
+at = [1444, 74.91, 42.46]
+chain = "h43-feralas-tanaris-s037-7875"
+reqlevel = 39
+text = "Coge «{quest:2902}» de {npc:7875}."
+why = "+1.800 XP · <1 min · desbloquea «{quest:4496}» y 8 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#37"]
+note = "Polestar paso 37 «Camp Mojache», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-119"
+do = "complete"
+quest = 2974
+obj = 1
+at = [1444, 69.93, 39.96]
+wps = [[1444, 68.9, 38.4, "Cuerno de Tótem Siniestro"], [1444, 66.8, 38.8, "Cuerno de Tótem Siniestro"], [1444, 66.8, 46.3, "Cuerno de Tótem Siniestro"]]
+text = "Consigue {item:9460} (20) de {npc:7727} y {npc:7725} y {npc:7726} para «{quest:2974}»."
+tip = "Los tauren Tótem Siniestro acampan junto a la arboleda de los duendes dardo; asaltantes, naturalistas y chamanes llevan cuernos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#38"]
+note = "Polestar paso 38 «Grimtotem camp», objetivo 1 (collect)"
+
+[[step]]
+id = "h43-feralas-tanaris-120"
+do = "turnin"
+quest = 2902
+at = [1444, 71.63, 55.92]
+text = "Entrega «{quest:2902}» en {obj:142195}."
+tip = "El mapa de batalla está en el campamento Zarpaleña al sur de Mojache."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#39"]
+note = "Polestar paso 39 «Woodpaw battle map», objetivo 1 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-121"
+do = "accept"
+quest = 2903
+at = [1444, 71.63, 55.92]
+reqlevel = 39
+text = "Coge «{quest:2903}» ({obj:142195})."
+why = "+3.600 XP · <1 min · desbloquea «{quest:4496}» y 7 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#39"]
+note = "Polestar paso 39 «Woodpaw battle map», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-122"
+do = "turnin"
+quest = 2974
+npc = 4544
+at = [1444, 75.94, 42.74]
+chain = "h43-feralas-tanaris-s040-4544"
+text = "Entrega «{quest:2974}» a {npc:4544}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#40"]
+note = "Polestar paso 40 «Camp Mojache», objetivo 1 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-123"
+do = "accept"
+quest = 2976
+npc = 4544
+at = [1444, 75.94, 42.74]
+chain = "h43-feralas-tanaris-s040-4544"
+reqlevel = 37
+text = "Coge «{quest:2976}» de {npc:4544}."
+tip = "Para {map:1454}, hacia el nivel 45."
+why = "+3.880 XP · ~1,5 min · 2,0× la mediana del 51-55"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#40"]
+note = "Polestar paso 40 «Camp Mojache», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-124"
+do = "turnin"
+quest = 2903
+npc = 7875
+at = [1444, 74.91, 42.46]
+chain = "h43-feralas-tanaris-s040-7875"
+text = "Entrega «{quest:2903}» a {npc:7875}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#40"]
+note = "Polestar paso 40 «Camp Mojache», objetivo 3 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-125"
+do = "accept"
+quest = 7730
+npc = 7875
+at = [1444, 74.91, 42.46]
+chain = "h43-feralas-tanaris-s040-7875"
+reqlevel = 39
+text = "Coge «{quest:7730}» de {npc:7875}."
+why = "+8.919 XP · ~14 min · desbloquea «{quest:4496}» y 5 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#40"]
+note = "Polestar paso 40 «Camp Mojache», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-126"
+do = "accept"
+quest = 7731
+npc = 7875
+at = [1444, 74.91, 42.46]
+chain = "h43-feralas-tanaris-s040-7875"
+reqlevel = 39
+text = "Coge «{quest:7731}» de {npc:7875}."
+why = "+4.483 XP · ~1,7 min · desbloquea «{quest:4496}» y 5 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#40"]
+note = "Polestar paso 40 «Camp Mojache», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-127"
+do = "complete"
+quest = 7730
+obj = 1
+at = [1444, 76.22, 59.25]
+wps = [[1444, 75.5, 61.5, "Caparazón Zukk'ash"], [1444, 74.6, 60.1, "Caparazón Zukk'ash"], [1444, 77.2, 61.8, "Caparazón Zukk'ash"]]
+text = "Consigue {item:18961} (20) de {npc:5246} y {npc:5244} y {npc:5245} y {npc:5247} y {npc:14661} para «{quest:7730}»."
+tip = "La colmena Zukk'ash excava en las colinas al sureste del campamento; «{quest:7731}» espera en su cámara más profunda."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#41"]
+note = "Polestar paso 41 «The Writhing Deep», objetivo 1 (collect)"
+
+[[step]]
+id = "h43-feralas-tanaris-128"
+do = "complete"
+quest = 7731
+obj = 1
+at = [1444, 75.6, 60.9]
+text = "Consigue {item:18962} (1) de {npc:14661} para «{quest:7731}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#41"]
+note = "Polestar paso 41 «The Writhing Deep», objetivo 2 (collect)"
+
+[[step]]
+id = "h43-feralas-tanaris-132"
+do = "complete"
+quest = 2979
+obj = 1
+at = [1444, 60.27, 67.24]
+wps = [[1444, 60.8, 70.4, "Orbe Gordunni"], [1444, 62.6, 68.8, "Orbe Gordunni"], [1444, 58.1, 71.0, "Orbe Gordunni"]]
+text = "Consigue {item:9371} (1) de {npc:5239} para «{quest:2979}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#42"]
+note = "Polestar paso 42 «Ruins of Isildien: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "h43-feralas-tanaris-133"
+do = "complete"
+quest = 2822
+obj = 1
+at = [1444, 55.88, 58.81]
+wps = [[1444, 55.9, 56.8, "Pellejo de yeti grueso"], [1444, 54.9, 56.0, "Pellejo de yeti grueso"], [1444, 55.4, 54.4, "Pellejo de yeti grueso"]]
+text = "Consigue {item:8973} (10) de {npc:5292} y {npc:5293} y {npc:5295} y {npc:5346} y {npc:7848} para «{quest:2822}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#43"]
+note = "Polestar paso 43 «Feral Scar Vale yetis», objetivo 1 (collect) · consejo de Polestar sin traducir: North-west of the ruins, the yetis den in {area:1105}; every yeti there can drop a thick hide."
+
+[[step]]
+id = "h43-feralas-tanaris-134"
+do = "loot"
+item = 8705
+count = 1
+at = [1444, 55.29, 53.76]
+wps = [[1444, 43.1, 53.0, "Localizador de emergencia OOX-22/FE"], [1444, 45.0, 66.4, "Localizador de emergencia OOX-22/FE"], [1444, 55.6, 74.2, "Localizador de emergencia OOX-22/FE"]]
+optional = true
+text = "Consigue {item:8705}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#44"]
+note = "Polestar paso 44 «Robot mensajero OOX-22/FE», objetivo 1 (collect) · consejo de Polestar sin traducir: Only with the distress beacon: any beast, gnoll or ogre in {map:1444} can drop it, about one kill in a hundred; use it to start the quest. The robot sits in a small cave on the north side of {area:1105}, just north-west of the ruins. Escort it to the dock on the {area:1108}; yetis and gorillas ambush you on the way. Its reward waits in {area:35} for a later visit.\nCareful: Three ambushes spawn during the escort, and the robot warns you before each one. The first is 3 yetis, just after the robot leaves the cave and climbs toward the road. The second is 3 gorillas, on the path that runs along the cliff. The third is about 4 gnolls, one of them a caster, where the route turns off toward the dock."
+
+[[step]]
+id = "h43-feralas-tanaris-135"
+do = "accept"
+quest = 2766
+optional = true
+reqlevel = 40
+text = "Usa {item:8705} para empezar «{quest:2766}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#44"]
+note = "Polestar paso 44 «Robot mensajero OOX-22/FE», objetivo 2 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-136"
+do = "turnin"
+quest = 2766
+npc = 7807
+at = [1444, 53.35, 55.7]
+optional = true
+chain = "h43-feralas-tanaris-s044-7807"
+text = "Entrega «{quest:2766}» a {npc:7807}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#44"]
+note = "Polestar paso 44 «Robot mensajero OOX-22/FE», objetivo 3 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-137"
+do = "accept"
+quest = 2767
+npc = 7807
+at = [1444, 53.35, 55.7]
+optional = true
+escort = true
+chain = "h43-feralas-tanaris-s044-7807"
+reqlevel = 40
+text = "Coge «{quest:2767}» de {npc:7807}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#44"]
+note = "Polestar paso 44 «Robot mensajero OOX-22/FE», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-138"
+do = "complete"
+quest = 2767
+optional = true
+escort = true
+text = "Completa «{quest:2767}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#44"]
+note = "Polestar paso 44 «Robot mensajero OOX-22/FE», objetivo 5 (complete) · objetivos (EN): Escort OOX-22/FE to the dock along the Forgotten Coast"
+
+[[step]]
+id = "h43-feralas-tanaris-139"
+do = "turnin"
+quest = 7730
+npc = 7875
+at = [1444, 74.91, 42.46]
+chain = "h43-feralas-tanaris-s045-7875"
+text = "Entrega «{quest:7730}» a {npc:7875}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#45"]
+note = "Polestar paso 45 «Camp Mojache», objetivo 1 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-140"
+do = "turnin"
+quest = 7731
+npc = 7875
+at = [1444, 74.91, 42.46]
+chain = "h43-feralas-tanaris-s045-7875"
+text = "Entrega «{quest:7731}» a {npc:7875}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#45"]
+note = "Polestar paso 45 «Camp Mojache», objetivo 2 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-141"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#45"]
+note = "Polestar paso 45 «Camp Mojache», objetivo 3 (vendor)"
+
+[[step]]
+id = "h43-feralas-tanaris-142"
+do = "turnin"
+quest = 2822
+npc = 7854
+at = [1444, 74.43, 42.91]
+chain = "h43-feralas-tanaris-s045-7854"
+text = "Entrega «{quest:2822}» a {npc:7854}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#45"]
+note = "Polestar paso 45 «Camp Mojache», objetivo 4 (turnin) · consejo de Polestar sin traducir: {npc:7854}, inside."
+
+[[step]]
+id = "h43-feralas-tanaris-143"
+do = "accept"
+quest = 7734
+npc = 7854
+at = [1444, 74.43, 42.91]
+optional = true
+chain = "h43-feralas-tanaris-s045-7854"
+reqlevel = 40
+text = "Coge «{quest:7734}» de {npc:7854}."
+tip = "+8.282 XP · ~15 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#45"]
+note = "Polestar paso 45 «Camp Mojache», objetivo 5 (accept) · datos no importados: pre · consejo de Polestar sin traducir: The Rage Scar yetis, on the next visit to {map:1444}."
+
+[[step]]
+id = "h43-feralas-tanaris-144"
+do = "accept"
+quest = 7732
+npc = 7875
+at = [1444, 74.91, 42.46]
+reqlevel = 39
+text = "Coge «{quest:7732}» de {npc:7875}."
+why = "+4.400 XP · <1 min · desbloquea «{quest:4496}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#45"]
+note = "Polestar paso 45 «Camp Mojache», objetivo 6 (accept) · datos no importados: preAll · consejo de Polestar sin traducir: {npc:7875}: for {npc:7010} in {map:1454}."
+
+[[step]]
+id = "h43-feralas-tanaris-146"
+do = "turnin"
+quest = 2979
+npc = 7777
+at = [1444, 75.8, 43.58]
+chain = "h43-feralas-tanaris-s045-7777"
+text = "Entrega «{quest:2979}» a {npc:7777}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#45"]
+note = "Polestar paso 45 «Camp Mojache», objetivo 8 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-148"
+do = "goto"
+at = [1444, 75.4, 44.3]
+text = "Ve al maestro de vuelo de {area:1099}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#46"]
+note = "Polestar paso 46 «Fly to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h43-feralas-tanaris-149"
+do = "fly"
+zone = 1454
+text = "Vuela a {area:1637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#46"]
+note = "Polestar paso 46 «Fly to Orgrimmar», objetivo 2 (fly)"
+
+[[step]]
+id = "h43-feralas-tanaris-150"
+do = "turnin"
+quest = 3121
+npc = 3216
+at = [1454, 49.47, 50.59]
+chain = "h43-feralas-tanaris-s047-3216"
+text = "Entrega «{quest:3121}» a {npc:3216}."
+tip = "Vuela a {map:1454}. Desde el maestro de vuelo: {obj:172960}, luego La Calada, luego {obj:172958}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 1 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-151"
+do = "accept"
+quest = 3122
+npc = 3216
+at = [1454, 49.47, 50.59]
+chain = "h43-feralas-tanaris-s047-3216"
+reqlevel = 40
+text = "Coge «{quest:3122}» de {npc:3216}."
+why = "+970 XP · <1 min · desbloquea «{quest:3126}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-152"
+do = "turnin"
+quest = 7732
+npc = 7010
+at = [1454, 56.26, 46.68]
+text = "Entrega «{quest:7732}» a {npc:7010}, La Calada."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 3 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-153"
+do = "accept"
+quest = 649
+npc = 6986
+at = [1454, 59.49, 36.57]
+reqlevel = 42
+text = "Coge «{quest:649}» de {npc:6986}, La Calle Mayor."
+why = "+440 XP · <1 min · desbloquea «{quest:650}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 4 (accept)"
+
+[[step]]
+id = "h43-feralas-tanaris-154"
+do = "turnin"
+quest = 649
+npc = 6987
+at = [1454, 59.65, 36.94]
+chain = "h43-feralas-tanaris-s047-6987"
+text = "Entrega «{quest:649}» a {npc:6987}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 5 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-155"
+do = "accept"
+quest = 650
+npc = 6987
+at = [1454, 59.65, 36.94]
+chain = "h43-feralas-tanaris-s047-6987"
+reqlevel = 42
+text = "Coge «{quest:650}» de {npc:6987}."
+tip = "Para {map:1425}, hacia el nivel 48."
+why = "+4.400 XP · <1 min · desbloquea «{quest:77}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h43-feralas-tanaris-156"
+do = "turnin"
+quest = 2976
+npc = 4485
+at = [1454, 75.23, 34.24]
+text = "Entrega «{quest:2976}» a {npc:4485}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 7 (turnin)"
+
+[[step]]
+id = "h43-feralas-tanaris-157-wr"
+do = "train"
+npc = 3353
+spells = [11555, 11584, 11600]
+at = [1454, 79.79, 31.42]
+if = { class = ["WARRIOR"] }
+reqlevel = 44
+text = "Entrena con {npc:3353}, el instructor de guerrero."
+tip = "3 hechizos hasta el nivel 44."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47", "trainer:warrior"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/warrior.json, niveles 44-44"
+
+[[step]]
+id = "h43-feralas-tanaris-157-hu"
+do = "train"
+npc = 3406
+spells = [13542, 14270, 14285, 14316, 20902]
+at = [1454, 67.24, 20.2]
+if = { class = ["HUNTER"] }
+reqlevel = 44
+text = "Entrena con {npc:3406}, el instructor de cazador."
+tip = "5 hechizos hasta el nivel 44."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47", "trainer:hunter"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 44-44"
+
+[[step]]
+id = "h43-feralas-tanaris-157-ro"
+do = "train"
+npc = 3328
+spells = [11273, 11279, 11341]
+at = [1454, 43.9, 54.63]
+if = { class = ["ROGUE"] }
+reqlevel = 44
+text = "Entrena con {npc:3328}, el instructor de pícaro."
+tip = "3 hechizos hasta el nivel 44: nuevos {spell:11341}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47", "trainer:rogue"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/rogue.json, niveles 44-44"
+
+[[step]]
+id = "h43-feralas-tanaris-157-pr"
+do = "train"
+npc = 5994
+spells = [10909, 10911, 10915, 10927, 19278]
+at = [1454, 35.72, 86.9]
+if = { class = ["PRIEST"] }
+reqlevel = 44
+text = "Entrena con {npc:5994}, el instructor de sacerdote."
+tip = "5 hechizos hasta el nivel 44."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47", "trainer:priest"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 44-44"
+
+[[step]]
+id = "h43-feralas-tanaris-157-sh"
+do = "train"
+npc = 3344
+spells = [10466, 10600]
+at = [1454, 38.8, 36.37]
+if = { class = ["SHAMAN"] }
+reqlevel = 44
+text = "Entrena con {npc:3344}, el instructor de chamán."
+tip = "2 hechizos hasta el nivel 44."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47", "trainer:shaman"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 44-44"
+
+[[step]]
+id = "h43-feralas-tanaris-157-mg"
+do = "train"
+npc = 5958
+spells = [10179, 10185, 10191]
+at = [1454, 38.68, 85.41]
+if = { class = ["MAGE"] }
+reqlevel = 44
+text = "Entrena con {npc:5958}, el instructor de mago."
+tip = "3 hechizos hasta el nivel 44."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47", "trainer:mage"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 44-44"
+
+[[step]]
+id = "h43-feralas-tanaris-157-wl"
+do = "train"
+npc = 3326
+spells = [11671, 11693, 11703, 11725]
+at = [1454, 48.47, 45.43]
+if = { class = ["WARLOCK"] }
+reqlevel = 44
+text = "Entrena con {npc:3326}, el instructor de brujo."
+tip = "4 hechizos hasta el nivel 44."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/02-feralas#47", "trainer:warlock"]
+note = "Polestar paso 47 «Orgrimmar», objetivo 8 (train) · entrenamiento de clase: data/knowledge/trainer/warlock.json, niveles 44-44"

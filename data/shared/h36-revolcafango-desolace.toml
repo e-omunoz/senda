@@ -1,0 +1,1039 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/30-40/04-dustwallow-marsh
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h36-revolcafango-desolace"
+title = "Marjal Revolcafango y Desolace"
+levels = [36, 38]
+map = 1445
+summary = "Ruta común de la Horda, 36-38: Marjal Revolcafango y Desolace."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h36-revolcafango-desolace-001"
+do = "goto"
+at = [1434, 31.4, 29.9]
+text = "Ve al zepelín a {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#1"]
+note = "Polestar paso 1 «Zeppelin to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h36-revolcafango-desolace-002"
+do = "goto"
+at = [1454, 51.5, 45.6]
+text = "Ve al centro de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#2"]
+note = "Polestar paso 2 «Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h36-revolcafango-desolace-003"
+do = "buy"
+item = 3713
+count = 3
+text = "Compra {item:3713} (3)."
+tip = "{item:3713}, para \"Ojolodo\" Jarl."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#3"]
+note = "Polestar paso 3 «Orgrimmar», objetivo 1 (buy)"
+
+[[step]]
+id = "h36-revolcafango-desolace-004"
+do = "accept"
+quest = 1718
+npc = 3354
+at = [1454, 80.39, 32.38]
+if = { class = ["WARRIOR"] }
+reqlevel = 30
+text = "Coge «{quest:1718}» de {npc:3354}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#3"]
+note = "Polestar paso 3 «Orgrimmar», objetivo 2 (accept) · consejo de Polestar sin traducir: {npc:3354}, {obj:172958}: for {area:720}, later in this guide (offered from level 30)."
+
+[[step]]
+id = "h36-revolcafango-desolace-005"
+do = "goto"
+at = [1454, 45.3, 63.7]
+text = "Ve al maestro de vuelo de {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#4"]
+note = "Polestar paso 4 «Fly to the Crossroads», objetivo 1 (goto)"
+
+[[step]]
+id = "h36-revolcafango-desolace-006"
+do = "fly"
+zone = 1413
+text = "Vuela a El Cruce."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#4"]
+note = "Polestar paso 4 «Fly to the Crossroads», objetivo 2 (fly)"
+
+[[step]]
+id = "h36-revolcafango-desolace-007"
+do = "turnin"
+quest = 1148
+npc = 3428
+at = [1413, 51.07, 29.63]
+chain = "h36-revolcafango-desolace-s005-3428"
+text = "Entrega «{quest:1148}» a {npc:3428}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#5"]
+note = "Polestar paso 5 «Korran», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:3428} stands beside the Crossroads flight master."
+
+[[step]]
+id = "h36-revolcafango-desolace-008"
+do = "accept"
+quest = 1184
+npc = 3428
+at = [1413, 51.07, 29.63]
+chain = "h36-revolcafango-desolace-s005-3428"
+reqlevel = 28
+text = "Coge «{quest:1184}» de {npc:3428}."
+why = "+1.350 XP · <1 min · 8,1× la mediana del 36-40"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#5"]
+note = "Polestar paso 5 «Korran», objetivo 2 (accept) · datos no importados: pre · consejo de Polestar sin traducir: For {npc:4485} in {map:1454}, at the end of this guide."
+
+[[step]]
+id = "h36-revolcafango-desolace-009"
+do = "goto"
+at = [1413, 51.5, 30.4]
+text = "Ve al maestro de vuelo de El Cruce."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#6"]
+note = "Polestar paso 6 «Fly to Camp Taurajo», objetivo 1 (goto)"
+
+[[step]]
+id = "h36-revolcafango-desolace-010"
+do = "fly"
+zone = 1445
+text = "Vuela a Campamento Taurajo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#6"]
+note = "Polestar paso 6 «Fly to Camp Taurajo», objetivo 2 (fly)"
+
+[[step]]
+id = "h36-revolcafango-desolace-011"
+do = "goto"
+at = [1445, 29.7, 47.6]
+text = "Ve a {area:403}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#7"]
+note = "Polestar paso 7 «Dustwallow Marsh», objetivo 1 (goto)"
+
+[[step]]
+id = "h36-revolcafango-desolace-012"
+do = "accept"
+quest = 1268
+at = [1445, 29.7, 47.64]
+reqlevel = 30
+text = "Coge «{quest:1268}» ({obj:21015})."
+why = "+1.350 XP · <1 min · 5,7× la mediana del 36-40"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#8"]
+note = "Polestar paso 8 «Shady Rest Inn», objetivo 1 (accept) · consejo de Polestar sin traducir: Head east from {area:378} along the road into the marsh. The burned-out {area:403} stands beside it just past the border; the shield, the badge and the hoofprints are in and beside the ruin."
+
+[[step]]
+id = "h36-revolcafango-desolace-013"
+do = "accept"
+quest = 1251
+at = [1445, 29.63, 48.62]
+reqlevel = 30
+text = "Coge «{quest:1251}» ({obj:20992})."
+why = "+700 XP · <1 min · desbloquea «{quest:1322}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#8"]
+note = "Polestar paso 8 «Shady Rest Inn», objetivo 2 (accept)"
+
+[[step]]
+id = "h36-revolcafango-desolace-014"
+do = "accept"
+quest = 1269
+at = [1445, 29.83, 48.24]
+reqlevel = 30
+text = "Coge «{quest:1269}» ({obj:21042})."
+why = "+700 XP · <1 min · desbloquea «{quest:1273}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#8"]
+note = "Polestar paso 8 «Shady Rest Inn», objetivo 3 (accept)"
+
+[[step]]
+id = "h36-revolcafango-desolace-015"
+do = "goto"
+at = [1445, 35.1, 38.3]
+text = "Ve a {area:496}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#9"]
+note = "Polestar paso 9 «Dustwallow Marsh», objetivo 1 (goto)"
+
+[[step]]
+id = "h36-revolcafango-desolace-016"
+do = "accept"
+quest = 1177
+npc = 4503
+at = [1445, 35.15, 38.26]
+optional = true
+reqlevel = 32
+text = "Coge «{quest:1177}» de {npc:4503}, en el borde sur del poblado, donde entra el camino."
+tip = "En el cruce, toma el camino del norte hasta el poblado ogro de Murohelecho. +10.665 XP · ~31 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#10"]
+note = "Polestar paso 10 «Brackenwall Village», objetivo 1 (accept)"
+
+[[step]]
+id = "h36-revolcafango-desolace-017"
+do = "turnin"
+quest = 1269
+npc = 4926
+at = [1445, 36.42, 31.88]
+chain = "h36-revolcafango-desolace-s010-4926"
+text = "Entrega «{quest:1269}» a {npc:4926}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#10"]
+note = "Polestar paso 10 «Brackenwall Village», objetivo 2 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-018"
+do = "turnin"
+quest = 1251
+npc = 4926
+at = [1445, 36.42, 31.88]
+chain = "h36-revolcafango-desolace-s010-4926"
+text = "Entrega «{quest:1251}» a {npc:4926}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#10"]
+note = "Polestar paso 10 «Brackenwall Village», objetivo 3 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-019"
+do = "accept"
+quest = 1321
+npc = 4926
+at = [1445, 36.42, 31.88]
+chain = "h36-revolcafango-desolace-s010-4926"
+reqlevel = 30
+text = "Coge «{quest:1321}» de {npc:4926}."
+why = "+280 XP · <1 min · desbloquea «{quest:1322}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#10"]
+note = "Polestar paso 10 «Brackenwall Village», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h36-revolcafango-desolace-020"
+do = "turnin"
+quest = 1268
+npc = 4926
+at = [1445, 36.42, 31.88]
+chain = "h36-revolcafango-desolace-s010-4926"
+text = "Entrega «{quest:1268}» a {npc:4926}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#10"]
+note = "Polestar paso 10 «Brackenwall Village», objetivo 5 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-021"
+do = "getfp"
+npc = 11899
+node = "55"
+at = [1445, 35.56, 31.88]
+text = "Coge la ruta de vuelo de Poblado Murohelecho con {npc:11899}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#10"]
+note = "Polestar paso 10 «Brackenwall Village», objetivo 6 (getfp)"
+
+[[step]]
+id = "h36-revolcafango-desolace-022"
+do = "accept"
+quest = 1201
+npc = 4791
+at = [1445, 35.21, 30.66]
+reqlevel = 30
+text = "Coge «{quest:1201}» de {npc:4791}."
+why = "+4.604 XP · ~7 min · desbloquea «{quest:1202}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#10"]
+note = "Polestar paso 10 «Brackenwall Village», objetivo 7 (accept)"
+
+[[step]]
+id = "h36-revolcafango-desolace-023"
+do = "turnin"
+quest = 1321
+npc = 5087
+at = [1445, 36.53, 30.79]
+chain = "h36-revolcafango-desolace-s010-5087"
+text = "Entrega «{quest:1321}» a {npc:5087}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#10"]
+note = "Polestar paso 10 «Brackenwall Village», objetivo 8 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-024"
+do = "accept"
+quest = 1322
+npc = 5087
+at = [1445, 36.53, 30.79]
+chain = "h36-revolcafango-desolace-s010-5087"
+reqlevel = 30
+text = "Coge «{quest:1322}» de {npc:5087}."
+why = "+8.288 XP · ~22 min · desbloquea «{quest:1323}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#10"]
+note = "Polestar paso 10 «Brackenwall Village», objetivo 9 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h36-revolcafango-desolace-025"
+do = "accept"
+quest = 1273
+npc = 4983
+at = [1445, 40.96, 36.69]
+reqlevel = 30
+text = "Coge «{quest:1273}» de {npc:4983}."
+tip = "{npc:4983} espera en {area:2302}, al este del poblado. Síguelo hasta Reethe y mantenlo con vida en la pelea que se desata."
+why = "+3.550 XP · ~7,3 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#11"]
+note = "Polestar paso 11 ««El interrogatorio de Reethe»», objetivo 1 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h36-revolcafango-desolace-026"
+do = "complete"
+quest = 1273
+at = [1445, 42.6, 38.1]
+text = "Completa «{quest:1273}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#11"]
+note = "Polestar paso 11 ««El interrogatorio de Reethe»», objetivo 2 (complete) · objetivos (EN): Paval Reethe; Question Reethe with Ogron"
+
+[[step]]
+id = "h36-revolcafango-desolace-027"
+do = "accept"
+quest = 1270
+npc = 4880
+at = [1445, 46.88, 17.52]
+optional = true
+escort = true
+reqlevel = 30
+text = "Coge «{quest:1270}» de {npc:4880}."
+tip = "+2.850 XP · ~8 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#12"]
+note = "Polestar paso 12 «Stinky Ignatz», objetivo 1 (accept) · consejo de Polestar sin traducir: Head north to {area:502}. Stinky stands at the foot of the hill; escort him while he gathers Bogbean Leaves just south of it."
+
+[[step]]
+id = "h36-revolcafango-desolace-028"
+do = "complete"
+quest = 1270
+optional = true
+escort = true
+text = "Completa «{quest:1270}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#12"]
+note = "Polestar paso 12 «Stinky Ignatz», objetivo 2 (complete) · objetivos (EN): Help Stinky find Bogbean Leaves"
+
+[[step]]
+id = "h36-revolcafango-desolace-029"
+do = "complete"
+quest = 1177
+obj = 1
+at = [1445, 53.78, 15.15]
+wps = [[1445, 58.6, 15.8, "Cabeza de Ancalodo"], [1445, 57.7, 20.1, "Cabeza de Ancalodo"], [1445, 56.9, 22.0, "Cabeza de Ancalodo"]]
+optional = true
+text = "Consigue {item:5847} (12) para «{quest:1177}»."
+tip = "Los múrlocs Ancalodo abarrotan la costa al este y noreste de {area:502}; todos sueltan cabezas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#13"]
+note = "Polestar paso 13 «Mirefin murlocs», objetivo 1 (collect)"
+
+[[step]]
+id = "h36-revolcafango-desolace-030"
+do = "accept"
+quest = 1238
+at = [1445, 55.44, 25.92]
+reqlevel = 30
+text = "Coge «{quest:1238}» ({obj:20985})."
+tip = "Jarl vive en la {area:497}, al sureste de {area:502}. {obj:20985}, junto a la mansión."
+why = "+2.050 XP · <1 min · desbloquea «{quest:1240}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#14"]
+note = "Polestar paso 14 «Swamp Eye Jarl», objetivo 1 (accept)"
+
+[[step]]
+id = "h36-revolcafango-desolace-031"
+do = "accept"
+quest = 1218
+npc = 4792
+at = [1445, 55.44, 26.27]
+reqlevel = 30
+text = "Coge «{quest:1218}» de {npc:4792}."
+why = "+1.350 XP · ~1,5 min · desbloquea «{quest:1206}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#14"]
+note = "Polestar paso 14 «Swamp Eye Jarl», objetivo 2 (accept)"
+
+[[step]]
+id = "h36-revolcafango-desolace-032"
+do = "buy"
+item = 3713
+count = 3
+text = "Compra {item:3713} (3)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#14"]
+note = "Polestar paso 14 «Swamp Eye Jarl», objetivo 3 (buy) · consejo de Polestar sin traducir: «{quest:1218}», if you did not buy them in {map:1454}."
+
+[[step]]
+id = "h36-revolcafango-desolace-033"
+do = "turnin"
+quest = 1218
+npc = 4792
+at = [1445, 55.44, 26.27]
+chain = "h36-revolcafango-desolace-s014-4792"
+text = "Entrega «{quest:1218}» a {npc:4792}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#14"]
+note = "Polestar paso 14 «Swamp Eye Jarl», objetivo 4 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-034"
+do = "accept"
+quest = 1206
+npc = 4792
+at = [1445, 55.44, 26.27]
+chain = "h36-revolcafango-desolace-s014-4792"
+reqlevel = 30
+text = "Coge «{quest:1206}» de {npc:4792}."
+why = "+11.851 XP · ~29 min · desbloquea «{quest:1203}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#14"]
+note = "Polestar paso 14 «Swamp Eye Jarl», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h36-revolcafango-desolace-035"
+do = "complete"
+quest = 1322
+obj = 1
+at = [1445, 56.3, 23.8]
+wps = [[1445, 52.3, 32.7, "Glándula de veneno ácido"], [1445, 45.0, 27.3, "Glándula de veneno ácido"], [1445, 44.6, 37.1, "Glándula de veneno ácido"]]
+text = "Consigue {item:5959} (6) para «{quest:1322}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#15"]
+note = "Polestar paso 15 «Brackenwall Village: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: Head west back across the marsh. The Darkfang Venomspitters on the ridges north of Brackenwall drop the venom sacs. Theramore Infiltrators (35-36) sneak through the same woods: they are stealthed, so look closely.\nThe Darkmist spiders swarm the cavern mouth north-west of Brackenwall; every kind drops eyes.\nCareful: Darkfang Lurkers (level 36-37) use Sneak to stealth while out of combat and cast Poison once fighting.\nCareful: Stealthed spiders in the same area will attack you on sight.\nCareful: Darkmist Lurkers move about stealthed and use poison once in combat. The spiders stand close together, so adds are common; pulling single targets from the outer edge cuts down on them."
+
+[[step]]
+id = "h36-revolcafango-desolace-036"
+do = "complete"
+quest = 1206
+obj = 1
+at = [1445, 35.73, 21.05]
+wps = [[1445, 34.6, 21.3, "Ojo Niebla Negra sin reventar"], [1445, 34.6, 24.0, "Ojo Niebla Negra sin reventar"], [1445, 32.7, 22.4, "Ojo Niebla Negra sin reventar"]]
+text = "Consigue {item:5884} (40) de {npc:4379} y {npc:4376} y {npc:4377} y {npc:4378} y {npc:4380} para «{quest:1206}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#15"]
+note = "Polestar paso 15 «Brackenwall Village: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h36-revolcafango-desolace-037"
+do = "complete"
+quest = 1201
+obj = 1
+at = [1445, 38.05, 23.59]
+wps = [[1445, 38.2, 26.3, "Infiltrador de Theramore"], [1445, 41.6, 25.8, "Infiltrador de Theramore"], [1445, 44.0, 27.3, "Infiltrador de Theramore"]]
+text = "Mata {npc:4834} (9) para «{quest:1201}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#15"]
+note = "Polestar paso 15 «Brackenwall Village: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h36-revolcafango-desolace-038"
+do = "turnin"
+quest = 1238
+npc = 4791
+at = [1445, 35.21, 30.66]
+chain = "h36-revolcafango-desolace-s016-4791"
+text = "Entrega «{quest:1238}» a {npc:4791}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#16"]
+note = "Polestar paso 16 «Brackenwall Village», objetivo 1 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-039"
+do = "turnin"
+quest = 1201
+npc = 4791
+at = [1445, 35.21, 30.66]
+chain = "h36-revolcafango-desolace-s016-4791"
+text = "Entrega «{quest:1201}» a {npc:4791}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#16"]
+note = "Polestar paso 16 «Brackenwall Village», objetivo 2 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-040"
+do = "accept"
+quest = 1202
+npc = 4791
+at = [1445, 35.21, 30.66]
+chain = "h36-revolcafango-desolace-s016-4791"
+reqlevel = 30
+text = "Coge «{quest:1202}» de {npc:4791}."
+why = "+2.750 XP · ~6,4 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#16"]
+note = "Polestar paso 16 «Brackenwall Village», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h36-revolcafango-desolace-041"
+do = "turnin"
+quest = 1322
+npc = 5087
+at = [1445, 36.53, 30.79]
+chain = "h36-revolcafango-desolace-s016-5087"
+text = "Entrega «{quest:1322}» a {npc:5087}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#16"]
+note = "Polestar paso 16 «Brackenwall Village», objetivo 4 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-042"
+do = "accept"
+quest = 1323
+npc = 5087
+at = [1445, 36.53, 30.79]
+chain = "h36-revolcafango-desolace-s016-5087"
+reqlevel = 30
+text = "Coge «{quest:1323}» de {npc:5087}."
+why = "+1.400 XP · <1 min · 6,5× la mediana del 36-40"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#16"]
+note = "Polestar paso 16 «Brackenwall Village», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h36-revolcafango-desolace-043"
+do = "turnin"
+quest = 1323
+npc = 4926
+at = [1445, 36.42, 31.88]
+chain = "h36-revolcafango-desolace-s016-4926"
+text = "Entrega «{quest:1323}» a {npc:4926}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#16"]
+note = "Polestar paso 16 «Brackenwall Village», objetivo 6 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-044"
+do = "turnin"
+quest = 1273
+npc = 4926
+at = [1445, 36.42, 31.88]
+chain = "h36-revolcafango-desolace-s016-4926"
+text = "Entrega «{quest:1273}» a {npc:4926}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#16"]
+note = "Polestar paso 16 «Brackenwall Village», objetivo 7 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-045"
+do = "accept"
+quest = 1239
+at = [1445, 55.44, 25.92]
+reqlevel = 30
+text = "Coge «{quest:1239}» ({obj:20985})."
+tip = "{obj:20985}, ahora que {npc:4791} ha leído el informe."
+why = "+2.050 XP · ~1 min · desbloquea «{quest:1240}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#17"]
+note = "Polestar paso 17 «Swamp Eye Jarl», objetivo 1 (accept) · datos no importados: pre · consejo de Polestar sin traducir: Head east back to the {area:497}."
+
+[[step]]
+id = "h36-revolcafango-desolace-046"
+do = "turnin"
+quest = 1206
+npc = 4792
+at = [1445, 55.44, 26.27]
+chain = "h36-revolcafango-desolace-s017-4792"
+text = "Entrega «{quest:1206}» a {npc:4792}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#17"]
+note = "Polestar paso 17 «Swamp Eye Jarl», objetivo 2 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-047"
+do = "accept"
+quest = 1203
+npc = 4792
+at = [1445, 55.44, 26.27]
+optional = true
+chain = "h36-revolcafango-desolace-s017-4792"
+reqlevel = 30
+text = "Coge «{quest:1203}» de {npc:4792}."
+tip = "Solo si llevas una {item:3853} (Herrería o la casa de subastas)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#17"]
+note = "Polestar paso 17 «Swamp Eye Jarl», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h36-revolcafango-desolace-048"
+do = "turnin"
+quest = 1203
+npc = 4792
+at = [1445, 55.44, 26.27]
+optional = true
+chain = "h36-revolcafango-desolace-s017-4792"
+text = "Entrega «{quest:1203}» a {npc:4792}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#17"]
+note = "Polestar paso 17 «Swamp Eye Jarl», objetivo 4 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-049"
+do = "complete"
+quest = 1202
+obj = 1
+at = [1445, 71.5, 51.2]
+text = "Recoge {item:5882} (1) de {obj:20925} para «{quest:1202}»."
+tip = "Al sureste desde la mansión hasta {area:513}: {obj:20925} está en el fondo del mar frente a los muelles del lado este de la isla. Entra y sal a nado y mantente lejos de los muelles y del pueblo: los guardias de Theramore son de nivel 53-57."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#18"]
+note = "Polestar paso 18 ««El puerto de Theramore»», objetivo 1 (collect) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h36-revolcafango-desolace-050"
+do = "turnin"
+quest = 1177
+npc = 4503
+at = [1445, 35.15, 38.26]
+optional = true
+text = "Entrega «{quest:1177}» a {npc:4503}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#19"]
+note = "Polestar paso 19 «Brackenwall Village», objetivo 1 (turnin) · consejo de Polestar sin traducir: Head back west to Brackenwall with the head: {npc:4503} stands at the south edge of the village where the road comes in, {npc:4791} in the village."
+
+[[step]]
+id = "h36-revolcafango-desolace-051"
+do = "turnin"
+quest = 1202
+npc = 4791
+at = [1445, 35.21, 30.66]
+chain = "h36-revolcafango-desolace-s019-4791"
+text = "Entrega «{quest:1202}» a {npc:4791}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#19"]
+note = "Polestar paso 19 «Brackenwall Village», objetivo 2 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-052"
+do = "turnin"
+quest = 1239
+npc = 4791
+at = [1445, 35.21, 30.66]
+chain = "h36-revolcafango-desolace-s019-4791"
+text = "Entrega «{quest:1239}» a {npc:4791}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#19"]
+note = "Polestar paso 19 «Brackenwall Village», objetivo 3 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-053"
+do = "accept"
+quest = 1240
+npc = 4791
+at = [1445, 35.21, 30.66]
+chain = "h36-revolcafango-desolace-s019-4791"
+reqlevel = 30
+text = "Coge «{quest:1240}» de {npc:4791}."
+why = "+2.750 XP · <1 min · 8,7× la mediana del 36-40"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#19"]
+note = "Polestar paso 19 «Brackenwall Village», objetivo 4 (accept) · datos no importados: pre · consejo de Polestar sin traducir: For {npc:2519} at Grom'gol, in forever/horde/40-50/01-stranglethorn-vale."
+
+[[step]]
+id = "h36-revolcafango-desolace-054"
+do = "goto"
+at = [1445, 31.4, 22.2]
+if = { maxlevel = 36 }
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#20"]
+note = "Polestar paso 20 «Level 37.5», objetivo 1 (goto) · destino de Polestar sin traducir: Darkmist cavern · consejo de Polestar sin traducir: {map:1443}'s last quests and Alterac are 38-41. Still below 37.5 after Brackenwall's hand-ins? The Darkmist spiders and Lurkers (35-38) by the cavern north-west of the village are the closest: kill them until level 37.5. Or, with a group, run the {area:1316} dungeon or the {area:796} dungeon (Armory) instead."
+
+[[step]]
+id = "h36-revolcafango-desolace-055"
+do = "level"
+level = 37
+at = [1445, 31.4, 22.4]
+if = { maxlevel = 36 }
+text = "Sube al nivel 37."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#20"]
+note = "Polestar paso 20 «Level 37.5», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:4377}."
+
+[[step]]
+id = "h36-revolcafango-desolace-056"
+do = "goto"
+at = [1445, 35.6, 31.8]
+text = "Ve al maestro de vuelo de {area:496}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#21"]
+note = "Polestar paso 21 «Fly to Ratchet», objetivo 1 (goto)"
+
+[[step]]
+id = "h36-revolcafango-desolace-057"
+do = "fly"
+zone = 1413
+text = "Vuela a Trinquete."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#21"]
+note = "Polestar paso 21 «Fly to Ratchet», objetivo 2 (fly)"
+
+[[step]]
+id = "h36-revolcafango-desolace-058"
+do = "turnin"
+quest = 1270
+npc = 3446
+at = [1413, 62.37, 37.62]
+optional = true
+text = "Entrega «{quest:1270}» a {npc:3446}."
+tip = "{npc:3446} está debajo de la casa de Gazlowe, junto al maestro de vuelo, hacia los muelles."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#22"]
+note = "Polestar paso 22 «Ratchet», objetivo 1 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-059"
+do = "turnin"
+quest = 1718
+npc = 6236
+at = [1413, 68.62, 49.16]
+if = { class = ["WARRIOR"] }
+chain = "h36-revolcafango-desolace-s023-6236"
+text = "Entrega «{quest:1718}» a {npc:6236}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#23"]
+note = "Polestar paso 23 ««La Reyerta»», objetivo 1 (turnin) · consejo de Polestar sin traducir: Head south along the coast from {area:392} to {area:720}. {npc:6236} stands by the arena: step on the grate to start the fight; the challengers come one at a time, then {npc:6238} (33)."
+
+[[step]]
+id = "h36-revolcafango-desolace-060"
+do = "accept"
+quest = 1719
+npc = 6236
+at = [1413, 68.62, 49.16]
+if = { class = ["WARRIOR"] }
+chain = "h36-revolcafango-desolace-s023-6236"
+reqlevel = 30
+text = "Coge «{quest:1719}» de {npc:6236}."
+tip = "Misión con tiempo: 10 min desde que la coges."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#23"]
+note = "Polestar paso 23 ««La Reyerta»», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h36-revolcafango-desolace-061"
+do = "complete"
+quest = 1719
+at = [1413, 68.6, 48.7]
+if = { class = ["WARRIOR"] }
+text = "Completa «{quest:1719}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#23"]
+note = "Polestar paso 23 ««La Reyerta»», objetivo 3 (complete) · objetivos (EN): Big Will; Step on the grate to begin the Affray"
+
+[[step]]
+id = "h36-revolcafango-desolace-062"
+do = "turnin"
+quest = 1719
+npc = 6236
+at = [1413, 68.62, 49.16]
+if = { class = ["WARRIOR"] }
+text = "Entrega «{quest:1719}» a {npc:6236}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#23"]
+note = "Polestar paso 23 ««La Reyerta»», objetivo 4 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-063"
+do = "goto"
+at = [1413, 63.1, 37.1]
+text = "Ve al maestro de vuelo de {area:392}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#24"]
+note = "Polestar paso 24 «Fly to Shadowprey Village», objetivo 1 (goto)"
+
+[[step]]
+id = "h36-revolcafango-desolace-064"
+do = "fly"
+zone = 1443
+text = "Vuela a Aldea Cazasombras."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#24"]
+note = "Polestar paso 24 «Fly to Shadowprey Village», objetivo 2 (fly)"
+
+[[step]]
+id = "h36-revolcafango-desolace-065"
+do = "accept"
+quest = 5581
+npc = 11624
+at = [1443, 25.82, 68.21]
+optional = true
+reqlevel = 32
+text = "Coge «{quest:5581}» de {npc:11624}."
+tip = "+5.002 XP · ~16 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#25"]
+note = "Polestar paso 25 «Shadowprey Village», objetivo 1 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:11624} stands in the village."
+
+[[step]]
+id = "h36-revolcafango-desolace-066"
+do = "goto"
+at = [1443, 52.0, 78.0]
+text = "Ve a {area:602}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#26"]
+note = "Polestar paso 26 ««Los portales de la Legión»», objetivo 1 (goto) · consejo de Polestar sin traducir: Head east to {area:602}. With the «{quest:5381}» from {npc:11624} in your bags, open a demon portal's ring: a {npc:11937} (38-39) comes out; kill it to close that portal. Six portals. Careful: Infernals, Doomguards and Burning Blade Summoners walk close by many portals and may join in; kill nearby mobs first or drag the guardian away, for example toward the coven's central lake."
+
+[[step]]
+id = "h36-revolcafango-desolace-067"
+do = "complete"
+quest = 5581
+optional = true
+text = "Usa {item:14547} y completa «{quest:5581}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#26"]
+note = "Polestar paso 26 ««Los portales de la Legión»», objetivo 2 (complete) · objetivos (EN): Portals Banished"
+
+[[step]]
+id = "h36-revolcafango-desolace-068"
+do = "accept"
+quest = 93225
+npc = 5412
+at = [1443, 56.29, 59.68]
+reqlevel = 30
+text = "Coge «{quest:93225}» de {npc:5412}."
+why = "+2.350 XP · ~7 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#27"]
+note = "Polestar paso 27 «Ghost Walker Post», objetivo 1 (accept) · consejo de Polestar sin traducir: North to the post; {npc:5412} stands beside {npc:5395}."
+
+[[step]]
+id = "h36-revolcafango-desolace-069"
+do = "complete"
+quest = 93225
+obj = 1
+at = [1443, 65.59, 70.3]
+wps = [[1443, 66.3, 71.5, "Tótem de los centauros tallado"], [1443, 70.8, 75.5, "Tótem de los centauros tallado"], [1443, 76.0, 75.9, "Tótem de los centauros tallado"]]
+text = "Consigue {item:254432} (5) para «{quest:93225}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#28"]
+note = "Polestar paso 28 «Valley of Spears», objetivo 1 (collect) · consejo de Polestar sin traducir: West of the post, the Maraudine centaurs hold the {area:607}. Every Maraudine can drop a {item:254432} and an ear for {npc:5395}'s «{quest:1366}»."
+
+[[step]]
+id = "h36-revolcafango-desolace-070"
+do = "complete"
+quest = 1366
+obj = 1
+at = [1443, 65.59, 70.3]
+wps = [[1443, 66.3, 71.5, "Oreja centauro"], [1443, 68.3, 82.5, "Oreja centauro"], [1443, 76.0, 75.9, "Oreja centauro"]]
+optional = true
+text = "Consigue {item:6067} (15) para «{quest:1366}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#28"]
+note = "Polestar paso 28 «Valley of Spears», objetivo 2 (collect)"
+
+[[step]]
+id = "h36-revolcafango-desolace-074"
+do = "accept"
+quest = 6134
+npc = 6019
+at = [1443, 47.83, 61.83]
+optional = true
+chain = "h36-revolcafango-desolace-s030-6019"
+reqlevel = 34
+text = "Coge «{quest:6134}» de {npc:6019}."
+tip = "+4.600 XP · ~54 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#30"]
+note = "Polestar paso 30 «Hornizz Zumbala», objetivo 2 (accept)"
+
+[[step]]
+id = "h36-revolcafango-desolace-075"
+do = "complete"
+quest = 6134
+obj = 1
+at = [1443, 63.5, 91.6]
+optional = true
+text = "Usa {item:15848} para «{quest:6134}»."
+tip = "Consigue {item:15849} (8) de {npc:11560} para «{quest:6134}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#31"]
+note = "Polestar paso 31 «The Valley of Bones», objetivo 1 (use) · consejo de Polestar sin traducir: Head south-east to the bone fields of the {area:2657}, where Undead Ravagers roam. At the far south-east, use the {item:15848} to draw the Magrami Spectres: they drop the ghost-o-plasm."
+
+[[step]]
+id = "h36-revolcafango-desolace-076"
+do = "turnin"
+quest = 6134
+npc = 6019
+at = [1443, 47.83, 61.83]
+optional = true
+text = "Entrega «{quest:6134}» a {npc:6019}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#32"]
+note = "Polestar paso 32 «Hornizz Zumbala», objetivo 1 (turnin) · consejo de Polestar sin traducir: North to the goblin camp on the west side of the {area:596}."
+
+[[step]]
+id = "h36-revolcafango-desolace-077"
+do = "turnin"
+quest = 1366
+npc = 5395
+at = [1443, 56.19, 59.57]
+optional = true
+text = "Entrega «{quest:1366}» a {npc:5395}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#33"]
+note = "Polestar paso 33 «Ghost Walker Post», objetivo 1 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-078"
+do = "turnin"
+quest = 93225
+npc = 5412
+at = [1443, 56.29, 59.68]
+text = "Entrega «{quest:93225}» a {npc:5412}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#33"]
+note = "Polestar paso 33 «Ghost Walker Post», objetivo 2 (turnin)"
+
+[[step]]
+id = "h36-revolcafango-desolace-079"
+do = "turnin"
+quest = 5581
+npc = 11624
+at = [1443, 25.82, 68.21]
+optional = true
+text = "Entrega «{quest:5581}» a {npc:11624}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#34"]
+note = "Polestar paso 34 «Shadowprey», objetivo 1 (turnin) · consejo de Polestar sin traducir: West to Shadowprey."
+
+[[step]]
+id = "h36-revolcafango-desolace-080"
+do = "fly"
+zone = 1443
+if = { class = ["DRUID"] }
+text = "Vuela a Cima del Trueno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#35"]
+note = "Polestar paso 35 «Thunder Bluff», objetivo 1 (fly) · consejo de Polestar sin traducir: Fly from {area:2408} to {area:1638} and train with {npc:3033} on {area:1639}; fly on to {map:1454} from there."
+
+[[step]]
+id = "h36-revolcafango-desolace-081-dr"
+do = "train"
+npc = 3033
+spells = [9005, 22842]
+at = [1456, 76.48, 27.22]
+if = { class = ["DRUID"] }
+reqlevel = 36
+text = "Entrena con {npc:3033}, el instructor de druida."
+tip = "2 hechizos hasta el nivel 36: nuevos {spell:9005}, {spell:22842}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#35", "trainer:druid"]
+note = "Polestar paso 35 «Thunder Bluff», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 35-37"
+
+[[step]]
+id = "h36-revolcafango-desolace-082"
+do = "goto"
+at = [1443, 21.6, 74.0]
+if = { class = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK"] }
+text = "Ve al maestro de vuelo de {area:2408}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#36"]
+note = "Polestar paso 36 «Fly to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h36-revolcafango-desolace-083"
+do = "fly"
+zone = 1456
+if = { class = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK"] }
+text = "Vuela a {area:1637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#36"]
+note = "Polestar paso 36 «Fly to Orgrimmar», objetivo 2 (fly)"
+
+[[step]]
+id = "h36-revolcafango-desolace-084"
+do = "goto"
+at = [1456, 46.7, 49.9]
+if = { class = ["DRUID"] }
+text = "Ve al maestro de vuelo de {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#37"]
+note = "Polestar paso 37 «Back to Orgrimmar», objetivo 1 (goto)"
+
+[[step]]
+id = "h36-revolcafango-desolace-085"
+do = "fly"
+zone = 1454
+if = { class = ["DRUID"] }
+text = "Vuela a {area:1637}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#37"]
+note = "Polestar paso 37 «Back to Orgrimmar», objetivo 2 (fly)"
+
+[[step]]
+id = "h36-revolcafango-desolace-086"
+do = "turnin"
+quest = 1184
+npc = 4485
+at = [1454, 75.23, 34.24]
+text = "Entrega «{quest:1184}» a {npc:4485}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#38"]
+note = "Polestar paso 38 «Belgrom Destrozarroca», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:4485} stands in the {obj:172958}."
+
+[[step]]
+id = "h36-revolcafango-desolace-087"
+do = "turnin"
+quest = 2841
+npc = 3412
+at = [1454, 75.99, 25.41]
+optional = true
+text = "Entrega «{quest:2841}» a {npc:3412}."
+tip = "Contenido de grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#39"]
+note = "Polestar paso 39 «Nogg», objetivo 1 (turnin) · condición no expresable: tienes lista la misión 2841 · consejo de Polestar sin traducir: {npc:3412}'s workshop is in the {obj:172958} beside {npc:4485}: hand in «{quest:2841}» if you ran {area:133}."
+
+[[step]]
+id = "h36-revolcafango-desolace-088-hu"
+do = "train"
+npc = 3406
+spells = [3034, 3662, 14284, 14303, 20901]
+at = [1454, 67.24, 20.2]
+if = { class = ["HUNTER"] }
+reqlevel = 36
+text = "Entrena con {npc:3406}, el instructor de cazador."
+tip = "5 hechizos hasta el nivel 36: nuevos {spell:3034}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#40", "trainer:hunter"]
+note = "Polestar paso 40 «Orgrimmar trainers», objetivo 1 (train) · consejo de Polestar sin traducir: Train while you are in the city; everyone else trains in the {map:1458}, next. · entrenamiento de clase: data/knowledge/trainer/hunter.json, niveles 35-37"
+
+[[step]]
+id = "h36-revolcafango-desolace-088-sh"
+do = "train"
+npc = 3344
+spells = [8010, 10495, 10585, 15107, 16339, 20610]
+at = [1454, 38.8, 36.37]
+if = { class = ["SHAMAN"] }
+reqlevel = 36
+text = "Entrena con {npc:3344}, el instructor de chamán."
+tip = "6 hechizos hasta el nivel 36: nuevos {spell:15107}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#40", "trainer:shaman"]
+note = "Polestar paso 40 «Orgrimmar trainers», objetivo 1 (train) · consejo de Polestar sin traducir: Train while you are in the city; everyone else trains in the {map:1458}, next. · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 35-37"
+
+[[step]]
+id = "h36-revolcafango-desolace-089"
+do = "note"
+if = { class = ["HUNTER", "SHAMAN"] }
+text = "La ruta sigue en el zepelín a {map:1458}, desde la torre de fuera de la puerta principal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/30-40/04-dustwallow-marsh#40"]
+note = "Polestar paso 40 «Orgrimmar trainers», objetivo 2 (note) · nota de Polestar traducida por Senda: The next guide takes the Undercity zeppelin from the tower outside the main gate."

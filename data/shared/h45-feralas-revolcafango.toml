@@ -1,0 +1,1186 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/40-50/03-feralas
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h45-feralas-revolcafango"
+title = "Feralas, Marjal Revolcafango y Pantano de las Penas"
+levels = [45, 47]
+map = 1444
+summary = "Ruta común de la Horda, 45-47: Feralas, Marjal Revolcafango y Pantano de las Penas."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h45-feralas-revolcafango-001"
+do = "goto"
+at = [1411, 50.8, 13.5]
+text = "Ve al zepelín a {map:1458}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#1"]
+note = "Polestar paso 1 «Zeppelin to Undercity», objetivo 1 (goto)"
+
+[[step]]
+id = "h45-feralas-revolcafango-002"
+do = "accept"
+quest = 232
+npc = 5204
+at = [1458, 50.14, 67.97]
+reqlevel = 38
+text = "Coge «{quest:232}» de {npc:5204}."
+why = "+390 XP · <1 min · desbloquea «{quest:379}» y 4 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#2"]
+note = "Polestar paso 2 «Boticaria Zinge», objetivo 1 (accept)"
+
+[[step]]
+id = "h45-feralas-revolcafango-003"
+do = "turnin"
+quest = 232
+npc = 7683
+at = [1458, 58.61, 54.68]
+chain = "h45-feralas-revolcafango-s002-7683"
+text = "Entrega «{quest:232}» a {npc:7683}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#2"]
+note = "Polestar paso 2 «Boticaria Zinge», objetivo 2 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-004"
+do = "accept"
+quest = 238
+npc = 7683
+at = [1458, 58.61, 54.68]
+chain = "h45-feralas-revolcafango-s002-7683"
+reqlevel = 38
+text = "Coge «{quest:238}» de {npc:7683}."
+why = "+390 XP · <1 min · desbloquea «{quest:379}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#2"]
+note = "Polestar paso 2 «Boticaria Zinge», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-005"
+do = "turnin"
+quest = 728
+npc = 2934
+at = [1458, 53.74, 54.46]
+text = "Entrega «{quest:728}» a {npc:2934}, de camino de vuelta a Zinge."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#2"]
+note = "Polestar paso 2 «Boticaria Zinge», objetivo 4 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-006"
+do = "turnin"
+quest = 238
+npc = 5204
+at = [1458, 50.14, 67.97]
+chain = "h45-feralas-revolcafango-s002-5204"
+text = "Entrega «{quest:238}» a {npc:5204}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#2"]
+note = "Polestar paso 2 «Boticaria Zinge», objetivo 5 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-007"
+do = "accept"
+quest = 243
+npc = 5204
+at = [1458, 50.14, 67.97]
+chain = "h45-feralas-revolcafango-s002-5204"
+reqlevel = 38
+text = "Coge «{quest:243}» de {npc:5204}."
+why = "+2.000 XP · <1 min · desbloquea «{quest:379}» y 2 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#2"]
+note = "Polestar paso 2 «Boticaria Zinge», objetivo 6 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-008"
+do = "loot"
+item = 8523
+count = 1
+at = [1458, 58.61, 54.68]
+text = "Consigue {item:8523} de {npc:7683}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#2"]
+note = "Polestar paso 2 «Boticaria Zinge», objetivo 7 (collect) · consejo de Polestar sin traducir: The {item:8523} from these errands: keep it, Tanaris Field Sampling hands it back in {area:976}."
+
+[[step]]
+id = "h45-feralas-revolcafango-009"
+do = "accept"
+quest = 2995
+npc = 7825
+at = [1458, 73.06, 32.85]
+reqlevel = 42
+text = "Coge «{quest:2995}» de {npc:7825}, {obj:36126}."
+why = "+2.520 XP · ~2 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#3"]
+note = "Polestar paso 3 «Undercity», objetivo 1 (accept)"
+
+[[step]]
+id = "h45-feralas-revolcafango-010-pa"
+do = "train"
+npc = 260093
+spells = [5569, 10312, 19853, 19897, 24275]
+at = [1458, 48.35, 14.27]
+if = { class = ["PALADIN"] }
+reqlevel = 44
+text = "Entrena con {npc:260093}, el instructor de paladín."
+tip = "5 hechizos hasta el nivel 44: nuevos {spell:24275}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#3", "trainer:paladin"]
+note = "Polestar paso 3 «Undercity», objetivo 2 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 44-45"
+
+[[step]]
+id = "h45-feralas-revolcafango-011"
+do = "note"
+npc = 4773
+at = [1420, 60.08, 52.57]
+if = { race = ["Scourge"], minlevel = 40 }
+optional = true
+text = "Entrena con {npc:4773}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#4"]
+note = "Polestar paso 4 «Riding at 40», objetivo 1 (train) · train sin hechizos: manual · consejo de Polestar sin traducir: Riding needs level 40 and costs 100 gold; learning it gives you a mount. Each race learns it from its own race's trainer: yours is {npc:4773} in {area:159}, a short ride north of the zeppelin towers, with {npc:4731}'s skeletal horses (20 gold each) beside her. Ride back to the towers for the Grom'gol zeppelin."
+
+[[step]]
+id = "h45-feralas-revolcafango-012"
+do = "note"
+if = { race = ["Scourge"], minlevel = 40 }
+text = "Caballos esqueléticos: {npc:4731}, junto a {npc:4773}, en {area:159}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#4"]
+note = "Polestar paso 4 «Riding at 40», objetivo 2 (note)"
+
+[[step]]
+id = "h45-feralas-revolcafango-013"
+do = "goto"
+at = [1420, 61.8, 59.2]
+text = "Ve al zepelín a Grom'gol."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#5"]
+note = "Polestar paso 5 «Zeppelin to Grom'gol», objetivo 1 (goto)"
+
+[[step]]
+id = "h45-feralas-revolcafango-014"
+do = "goto"
+at = [1434, 32.5, 29.3]
+text = "Ve al maestro de vuelo de Grom'gol."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#6"]
+note = "Polestar paso 6 «Fly to Stonard», objetivo 1 (goto)"
+
+[[step]]
+id = "h45-feralas-revolcafango-015"
+do = "fly"
+zone = 1435
+text = "Vuela a Rocal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#6"]
+note = "Polestar paso 6 «Fly to Stonard», objetivo 2 (fly)"
+
+[[step]]
+id = "h45-feralas-revolcafango-016"
+do = "accept"
+quest = 698
+npc = 5591
+at = [1435, 44.7, 57.21]
+optional = true
+chain = "h45-feralas-revolcafango-s007-5591"
+reqlevel = 35
+text = "Coge «{quest:698}» de {npc:5591}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#7"]
+note = "Polestar paso 7 «Stonard», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:5591}, inside. · consejo de Polestar sin traducir: Coming from Stranglethorn, you carry these already. Starting here: {npc:5591} stands inside {area:75}'s great hall and {npc:1443} on its top floor."
+
+[[step]]
+id = "h45-feralas-revolcafango-017"
+do = "accept"
+quest = 1430
+npc = 5591
+at = [1435, 44.7, 57.21]
+optional = true
+chain = "h45-feralas-revolcafango-s007-5591"
+reqlevel = 35
+text = "Coge «{quest:1430}» de {npc:5591}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#7"]
+note = "Polestar paso 7 «Stonard», objetivo 2 (accept) · consejo de Polestar sin traducir: {npc:5591}, inside."
+
+[[step]]
+id = "h45-feralas-revolcafango-018"
+do = "accept"
+quest = 1424
+npc = 1443
+at = [1435, 47.93, 54.78]
+reqlevel = 38
+text = "Coge «{quest:1424}» de {npc:1443}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#7"]
+note = "Polestar paso 7 «Stonard», objetivo 3 (accept) · consejo de Polestar sin traducir: {npc:1443}, on the top floor."
+
+[[step]]
+id = "h45-feralas-revolcafango-019"
+do = "turnin"
+quest = 624
+at = [1435, 22.87, 48.19]
+text = "Entrega «{quest:624}» en {obj:2553}."
+tip = "Cabalga hacia el oeste por el camino; el pergamino está a la orilla del agua, en el extremo oeste del pantano."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#8"]
+note = "Polestar paso 8 «Un viejo pergamino», objetivo 1 (turnin) · condición no expresable: llevas la misión 624 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h45-feralas-revolcafango-020"
+do = "accept"
+quest = 625
+at = [1435, 22.87, 48.19]
+optional = true
+reqlevel = 35
+text = "Coge «{quest:625}» ({obj:2553})."
+tip = "Para {obj:2555} en {map:1445}, más adelante en esta guía."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#8"]
+note = "Polestar paso 8 «Un viejo pergamino», objetivo 2 (accept) · condición no expresable: llevas la misión 624 (implícita: el paso es de esa misión) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-021"
+do = "complete"
+quest = 698
+obj = 1
+at = [1435, 47.55, 43.03]
+wps = [[1435, 50.4, 41.5, "Costillar de Denteserra sin preparar"], [1435, 56.5, 37.3, "Costillar de Denteserra sin preparar"], [1435, 62.0, 31.5, "Costillar de Denteserra sin preparar"]]
+optional = true
+text = "Consigue {item:6169} (8) de {npc:1082} y {npc:1087} para «{quest:698}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#9"]
+note = "Polestar paso 9 «Sawtooth crocolisks», objetivo 1 (collect) · consejo de Polestar sin traducir: The crocolisks wallow in the pools around Galen's old camp, just north of {area:75}, on the way back east; about one in four drops a flank."
+
+[[step]]
+id = "h45-feralas-revolcafango-022"
+do = "complete"
+quest = 1424
+obj = 1
+at = [1435, 62.41, 52.9]
+wps = [[1435, 62.0, 55.4, "Artefacto Atal'ai"], [1435, 66.5, 51.4, "Artefacto Atal'ai"], [1435, 66.0, 57.4, "Artefacto Atal'ai"]]
+text = "Recoge {item:6175} (10) de {obj:30854} para «{quest:1424}»."
+tip = "Vuelve al este pasando {area:75}: los artefactos Atal'ai están en el agua y en las orillas de «{quest:1424}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#10"]
+note = "Polestar paso 10 ««Charca de Lágrimas»», objetivo 1 (collect)"
+
+[[step]]
+id = "h45-feralas-revolcafango-023"
+do = "turnin"
+quest = 698
+npc = 5592
+at = [1435, 81.32, 80.97]
+optional = true
+chain = "h45-feralas-revolcafango-s011-5592"
+text = "Entrega «{quest:698}» a {npc:5592}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#11"]
+note = "Polestar paso 11 «Misty Reed Post», objetivo 1 (turnin) · consejo de Polestar sin traducir: Follow the road south-east to the small Horde post on the shore. {npc:5592} takes the crocolisk flanks from the last swamp visit."
+
+[[step]]
+id = "h45-feralas-revolcafango-024"
+do = "accept"
+quest = 699
+npc = 5592
+at = [1435, 81.32, 80.97]
+chain = "h45-feralas-revolcafango-s011-5592"
+reqlevel = 35
+text = "Coge «{quest:699}» de {npc:5592}."
+why = "+4.815 XP · ~9 min · desbloquea «{quest:1426}» y 3 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#11"]
+note = "Polestar paso 11 «Misty Reed Post», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-025"
+do = "complete"
+quest = 699
+obj = 1
+at = [1435, 83.8, 95.42]
+wps = [[1435, 82.3, 97.2, "Garra de pargos denteserra"], [1435, 75.7, 99.1, "Garra de pargos denteserra"], [1435, 84.7, 64.1, "Garra de pargos denteserra"]]
+text = "Consigue {item:6168} (6) de {npc:1087} para «{quest:699}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#12"]
+note = "Polestar paso 12 «The Forbidding Sea: kill these as you meet them», objetivo 1 (collect) · consejo de Polestar sin traducir: The snappers line the strand south of the post.\nThe Monstrous Crawlers walk the beaches of the east coast, few and far between: kill every one you see, the ones on the ride down from the pool too."
+
+[[step]]
+id = "h45-feralas-revolcafango-026"
+do = "complete"
+quest = 1430
+obj = 1
+at = [1435, 85.0, 97.2]
+wps = [[1435, 87.2, 93.7, "Pata de reptador monstruoso"], [1435, 90.1, 86.7, "Pata de reptador monstruoso"], [1435, 98.8, 91.9, "Pata de reptador monstruoso"]]
+optional = true
+text = "Consigue {item:6184} (10) de {npc:1088} para «{quest:1430}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#12"]
+note = "Polestar paso 12 «The Forbidding Sea: kill these as you meet them», objetivo 2 (collect) · consejo de Polestar sin traducir: Underwater."
+
+[[step]]
+id = "h45-feralas-revolcafango-027"
+do = "turnin"
+quest = 699
+npc = 5592
+at = [1435, 81.32, 80.97]
+chain = "h45-feralas-revolcafango-s013-5592"
+text = "Entrega «{quest:699}» a {npc:5592}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#13"]
+note = "Polestar paso 13 «Misty Reed Post», objetivo 1 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-028"
+do = "accept"
+quest = 1422
+npc = 5592
+at = [1435, 81.32, 80.97]
+chain = "h45-feralas-revolcafango-s013-5592"
+reqlevel = 35
+text = "Coge «{quest:1422}» de {npc:5592}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#13"]
+note = "Polestar paso 13 «Misty Reed Post», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-029"
+do = "turnin"
+quest = 1422
+npc = 5593
+at = [1435, 83.76, 80.41]
+chain = "h45-feralas-revolcafango-s013-5593"
+text = "Entrega «{quest:1422}» a {npc:5593}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#13"]
+note = "Polestar paso 13 «Misty Reed Post», objetivo 3 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-030"
+do = "accept"
+quest = 1426
+npc = 5593
+at = [1435, 83.76, 80.41]
+chain = "h45-feralas-revolcafango-s013-5593"
+reqlevel = 35
+text = "Coge «{quest:1426}» de {npc:5593}."
+why = "+8.315 XP · ~13 min · desbloquea «{quest:1428}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#13"]
+note = "Polestar paso 13 «Misty Reed Post», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-031"
+do = "complete"
+quest = 1426
+obj = 1
+at = [1435, 87.1, 80.66]
+wps = [[1435, 85.6, 85.9, "Múrloc del pantano"], [1435, 83.1, 93.9, "Múrloc del pantano"]]
+text = "Mata {npc:747} (10) para «{quest:1426}»."
+tip = "Los Múrlocs del pantano viven en la playa al sur del puesto; los Vomitatintas están en la orilla al este y los Comecarnes más al oeste, alrededor de las chozas de la orilla oeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#14"]
+note = "Polestar paso 14 «Murlocs of the Misty Reed», objetivo 1 (kill)"
+
+[[step]]
+id = "h45-feralas-revolcafango-032"
+do = "complete"
+quest = 1426
+obj = 3
+at = [1435, 71.8, 97.6]
+wps = [[1435, 63.5, 89.6, "Comecarnes del pantano"], [1435, 62.0, 83.3, "Comecarnes del pantano"], [1435, 66.4, 83.1, "Comecarnes del pantano"]]
+text = "Mata {npc:751} (10) para «{quest:1426}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#14"]
+note = "Polestar paso 14 «Murlocs of the Misty Reed», objetivo 2 (kill)"
+
+[[step]]
+id = "h45-feralas-revolcafango-033"
+do = "complete"
+quest = 1426
+obj = 2
+at = [1435, 68.88, 96.89]
+wps = [[1435, 65.0, 87.2, "Vomitatintas del pantano"], [1435, 64.2, 80.9, "Vomitatintas del pantano"], [1435, 67.1, 75.8, "Vomitatintas del pantano"]]
+text = "Mata {npc:750} (10) para «{quest:1426}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#14"]
+note = "Polestar paso 14 «Murlocs of the Misty Reed», objetivo 3 (kill)"
+
+[[step]]
+id = "h45-feralas-revolcafango-034"
+do = "turnin"
+quest = 1426
+npc = 5593
+at = [1435, 83.76, 80.41]
+chain = "h45-feralas-revolcafango-s015-5593"
+text = "Entrega «{quest:1426}» a {npc:5593}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#15"]
+note = "Polestar paso 15 «Misty Reed Post», objetivo 1 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-035"
+do = "accept"
+quest = 1427
+npc = 5593
+at = [1435, 83.76, 80.41]
+chain = "h45-feralas-revolcafango-s015-5593"
+reqlevel = 35
+text = "Coge «{quest:1427}» de {npc:5593}."
+why = "+3.600 XP · <1 min · desbloquea «{quest:1428}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#15"]
+note = "Polestar paso 15 «Misty Reed Post», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-036"
+do = "turnin"
+quest = 1427
+npc = 5592
+at = [1435, 81.32, 80.97]
+text = "Entrega «{quest:1427}» a {npc:5592}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#15"]
+note = "Polestar paso 15 «Misty Reed Post», objetivo 3 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-037"
+do = "accept"
+quest = 1428
+npc = 5593
+at = [1435, 83.76, 80.41]
+reqlevel = 35
+text = "Coge «{quest:1428}» de {npc:5593}."
+why = "+8.215 XP · ~15 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#15"]
+note = "Polestar paso 15 «Misty Reed Post», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-038"
+do = "complete"
+quest = 1428
+obj = 1
+at = [1435, 85.33, 82.92]
+wps = [[1435, 87.2, 82.2, "Vomitatintas del pantano"], [1435, 89.6, 77.4, "Vomitatintas del pantano"], [1435, 92.1, 68.4, "Vomitatintas del pantano"]]
+text = "Mata {npc:750} (10) para «{quest:1428}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#16"]
+note = "Polestar paso 16 ««La amenaza continua»», objetivo 1 (kill) · consejo de Polestar sin traducir: The same murloc shore again: Inkspewers east of the post, Flesheaters around the western huts, and the Oracles among both."
+
+[[step]]
+id = "h45-feralas-revolcafango-039"
+do = "complete"
+quest = 1428
+obj = 2
+at = [1435, 71.8, 97.6]
+wps = [[1435, 63.5, 89.6, "Comecarnes del pantano"], [1435, 62.0, 83.3, "Comecarnes del pantano"], [1435, 66.4, 83.1, "Comecarnes del pantano"]]
+text = "Mata {npc:751} (10) para «{quest:1428}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#16"]
+note = "Polestar paso 16 ««La amenaza continua»», objetivo 2 (kill)"
+
+[[step]]
+id = "h45-feralas-revolcafango-040"
+do = "complete"
+quest = 1428
+obj = 3
+at = [1435, 63.59, 86.78]
+wps = [[1435, 61.9, 86.2, "Oráculo del pantano"], [1435, 63.2, 80.4, "Oráculo del pantano"], [1435, 89.1, 78.5, "Oráculo del pantano"]]
+text = "Mata {npc:752} (10) para «{quest:1428}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#16"]
+note = "Polestar paso 16 ««La amenaza continua»», objetivo 3 (kill)"
+
+[[step]]
+id = "h45-feralas-revolcafango-041"
+do = "turnin"
+quest = 1428
+npc = 5593
+at = [1435, 83.76, 80.41]
+text = "Entrega «{quest:1428}» a {npc:5593}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#17"]
+note = "Polestar paso 17 «Misty Reed Post», objetivo 1 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-042"
+do = "turnin"
+quest = 1424
+npc = 1443
+at = [1435, 47.93, 54.78]
+chain = "h45-feralas-revolcafango-s018-1443"
+text = "Entrega «{quest:1424}» a {npc:1443}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#18"]
+note = "Polestar paso 18 «Stonard», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:1443}, on the top floor."
+
+[[step]]
+id = "h45-feralas-revolcafango-043"
+do = "accept"
+quest = 1429
+npc = 1443
+at = [1435, 47.93, 54.78]
+chain = "h45-feralas-revolcafango-s018-1443"
+reqlevel = 38
+text = "Coge «{quest:1429}» de {npc:1443}."
+tip = "Para {npc:5598} en {map:1425}, hacia el nivel 48."
+why = "+3.750 XP · ~1 min · desbloquea «{quest:1444}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#18"]
+note = "Polestar paso 18 «Stonard», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-044"
+do = "turnin"
+quest = 1430
+npc = 5591
+at = [1435, 44.7, 57.21]
+optional = true
+text = "Entrega «{quest:1430}» a {npc:5591}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#18"]
+note = "Polestar paso 18 «Stonard», objetivo 3 (turnin) · consejo de Polestar sin traducir: {npc:5591}, inside."
+
+[[step]]
+id = "h45-feralas-revolcafango-045"
+do = "goto"
+at = [1444, 74.8, 45.2]
+text = "Ve a {area:1099}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#19"]
+note = "Polestar paso 19 «To Camp Mojache», objetivo 1 (goto)"
+
+[[step]]
+id = "h45-feralas-revolcafango-046"
+do = "sethearth"
+npc = 7737
+zone = 1444
+at = [1444, 74.8, 45.18]
+text = "Pon la piedra de hogar en {area:1099} con {npc:7737}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#20"]
+note = "Polestar paso 20 «Camp Mojache», objetivo 1 (sethome)"
+
+[[step]]
+id = "h45-feralas-revolcafango-047"
+do = "turnin"
+quest = 3122
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h45-feralas-revolcafango-s020-8115"
+text = "Entrega «{quest:3122}» a {npc:8115}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#20"]
+note = "Polestar paso 20 «Camp Mojache», objetivo 2 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-048"
+do = "accept"
+quest = 3123
+npc = 8115
+at = [1444, 74.42, 43.36]
+chain = "h45-feralas-revolcafango-s020-8115"
+reqlevel = 40
+text = "Coge «{quest:3123}» de {npc:8115}."
+tip = "Para las lechubestias de {map:1425}, hacia el nivel 48."
+why = "+4.200 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#20"]
+note = "Polestar paso 20 «Camp Mojache», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-050"
+do = "accept"
+quest = 3063
+npc = 7776
+at = [1444, 76.18, 43.83]
+optional = true
+reqlevel = 45
+text = "Coge «{quest:3063}» de {npc:7776}."
+tip = "+8.478 XP · ~18 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#20"]
+note = "Polestar paso 20 «Camp Mojache», objetivo 5 (accept)"
+
+[[step]]
+id = "h45-feralas-revolcafango-051"
+do = "goto"
+at = [1444, 75.4, 44.3]
+text = "Ve al maestro de vuelo de {area:1099}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#21"]
+note = "Polestar paso 21 «Fly to Brackenwall Village», objetivo 1 (goto)"
+
+[[step]]
+id = "h45-feralas-revolcafango-052"
+do = "fly"
+zone = 1445
+text = "Vuela a Poblado Murohelecho."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#21"]
+note = "Polestar paso 21 «Fly to Brackenwall Village», objetivo 2 (fly)"
+
+[[step]]
+id = "h45-feralas-revolcafango-053"
+do = "accept"
+quest = 1166
+npc = 4500
+at = [1445, 36.29, 31.41]
+reqlevel = 38
+text = "Coge «{quest:1166}» de {npc:4500}."
+why = "+4.450 XP · ~4 min · 1,5× la mediana del 46-50"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#22"]
+note = "Polestar paso 22 «Brackenwall Village», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:4500}, {npc:4502} and {npc:4501} (below ground) are in the village; their quests are for the {area:511} on this trip."
+
+[[step]]
+id = "h45-feralas-revolcafango-054"
+do = "accept"
+quest = 1168
+npc = 4502
+at = [1445, 37.37, 31.39]
+reqlevel = 38
+text = "Coge «{quest:1168}» de {npc:4502}."
+why = "+10.135 XP · ~18 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#22"]
+note = "Polestar paso 22 «Brackenwall Village», objetivo 2 (accept)"
+
+[[step]]
+id = "h45-feralas-revolcafango-055"
+do = "accept"
+quest = 1169
+npc = 4501
+at = [1445, 37.15, 33.09]
+optional = true
+reqlevel = 38
+text = "Coge «{quest:1169}» de {npc:4501}."
+tip = "+16.270 XP · ~40 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#22"]
+note = "Polestar paso 22 «Brackenwall Village», objetivo 3 (accept) · consejo de Polestar sin traducir: {npc:4501}, below ground."
+
+[[step]]
+id = "h45-feralas-revolcafango-056"
+do = "goto"
+at = [1445, 31.1, 66.1]
+optional = true
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#23"]
+note = "Polestar paso 23 «Dustwallow Marsh», objetivo 1 (goto) · condición no expresable: llevas la misión 625 · destino de Polestar sin traducir: The Pergamino enmohecido"
+
+[[step]]
+id = "h45-feralas-revolcafango-057"
+do = "turnin"
+quest = 625
+at = [1445, 31.11, 66.14]
+text = "Entrega «{quest:625}» en {obj:2555}."
+tip = "{obj:2555}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#24"]
+note = "Polestar paso 24 «The Pergamino enmohecido», objetivo 1 (turnin) · condición no expresable: llevas la misión 625 (implícita: el paso es de esa misión) · consejo de Polestar sin traducir: Ride south-west to the {obj:2555}."
+
+[[step]]
+id = "h45-feralas-revolcafango-058"
+do = "accept"
+quest = 626
+at = [1445, 31.11, 66.14]
+optional = true
+reqlevel = 35
+text = "Coge «{quest:626}» ({obj:2555})."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#24"]
+note = "Polestar paso 24 «The Pergamino enmohecido», objetivo 2 (accept) · condición no expresable: llevas la misión 625 (implícita: el paso es de esa misión) · datos no importados: pre · consejo de Polestar sin traducir: Inside {area:498}."
+
+[[step]]
+id = "h45-feralas-revolcafango-059"
+do = "complete"
+quest = 1168
+obj = 2
+at = [1445, 36.8, 69.0]
+wps = [[1445, 37.7, 67.9, "Ceniazote Pirocabello"], [1445, 38.8, 64.6, "Ceniazote Pirocabello"], [1445, 43.0, 66.2, "Ceniazote Pirocabello"]]
+text = "Mata {npc:4331} (10) para «{quest:1168}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#25"]
+note = "Polestar paso 25 «The Dragonmurk: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: East through the {area:511}: the Firemane scouts and ash tails roam its northern edge with the Searing hatchlings and whelps; the scalebanes guard the dragon caves further south-east. Mok'Morokk's snuff, grog and strongbox lie in the dragonkin camps."
+
+[[step]]
+id = "h45-feralas-revolcafango-060"
+do = "complete"
+quest = 1168
+obj = 3
+at = [1445, 36.6, 69.61]
+wps = [[1445, 37.5, 68.4, "Horrocrusto Pirocabello"], [1445, 49.7, 75.0, "Horrocrusto Pirocabello"], [1445, 53.6, 72.5, "Horrocrusto Pirocabello"]]
+text = "Mata {npc:4328} (5) para «{quest:1168}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#25"]
+note = "Polestar paso 25 «The Dragonmurk: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "h45-feralas-revolcafango-061"
+do = "complete"
+quest = 1168
+obj = 1
+at = [1445, 36.8, 69.0]
+wps = [[1445, 37.8, 68.0, "Explorador Pirocabello"], [1445, 40.6, 66.0, "Explorador Pirocabello"], [1445, 44.1, 65.2, "Explorador Pirocabello"]]
+text = "Mata {npc:4329} (15) para «{quest:1168}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#25"]
+note = "Polestar paso 25 «The Dragonmurk: kill these as you meet them», objetivo 3 (kill) · consejo de Polestar sin traducir: {npc:4329} walks around {area:510}: look inside the circle on the map."
+
+[[step]]
+id = "h45-feralas-revolcafango-062"
+do = "complete"
+quest = 1166
+obj = 3
+at = [1445, 36.6, 69.6]
+text = "Recoge {item:5836} (1) de {obj:19906} para «{quest:1166}»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#25"]
+note = "Polestar paso 25 «The Dragonmurk: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "h45-feralas-revolcafango-063"
+do = "complete"
+quest = 1169
+obj = 1
+at = [1445, 37.4, 74.2]
+wps = [[1445, 39.8, 68.9, "Lengua abrasadora"], [1445, 41.0, 63.6, "Lengua abrasadora"], [1445, 46.3, 67.4, "Lengua abrasadora"]]
+optional = true
+text = "Consigue {item:5840} (15) de {npc:4324} y {npc:4323} para «{quest:1169}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#25"]
+note = "Polestar paso 25 «The Dragonmurk: kill these as you meet them», objetivo 5 (collect)"
+
+[[step]]
+id = "h45-feralas-revolcafango-064"
+do = "complete"
+quest = 1169
+obj = 2
+at = [1445, 37.4, 74.2]
+wps = [[1445, 39.8, 68.9, "Corazón abrasador"], [1445, 41.0, 63.6, "Corazón abrasador"], [1445, 46.3, 67.4, "Corazón abrasador"]]
+optional = true
+text = "Consigue {item:5841} (15) de {npc:4324} y {npc:4323} para «{quest:1169}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#25"]
+note = "Polestar paso 25 «The Dragonmurk: kill these as you meet them», objetivo 6 (collect)"
+
+[[step]]
+id = "h45-feralas-revolcafango-065"
+do = "complete"
+quest = 1166
+obj = 2
+at = [1445, 38.7, 65.6]
+text = "Recoge {item:5835} (1) de {obj:19905} para «{quest:1166}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#25"]
+note = "Polestar paso 25 «The Dragonmurk: kill these as you meet them», objetivo 7 (collect)"
+
+[[step]]
+id = "h45-feralas-revolcafango-066"
+do = "complete"
+quest = 1166
+obj = 1
+at = [1445, 44.5, 66.0]
+text = "Recoge {item:5834} (1) de {obj:19904} para «{quest:1166}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#25"]
+note = "Polestar paso 25 «The Dragonmurk: kill these as you meet them», objetivo 8 (collect)"
+
+[[step]]
+id = "h45-feralas-revolcafango-067"
+do = "turnin"
+quest = 1169
+npc = 4501
+at = [1445, 37.15, 33.09]
+optional = true
+chain = "h45-feralas-revolcafango-s026-4501"
+text = "Entrega «{quest:1169}» a {npc:4501}."
+tip = "Vuelve cabalgando al norte, a Murohelecho."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#26"]
+note = "Polestar paso 26 «Brackenwall Village», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:4501}, below ground."
+
+[[step]]
+id = "h45-feralas-revolcafango-068"
+do = "accept"
+quest = 1170
+npc = 4501
+at = [1445, 37.15, 33.09]
+optional = true
+chain = "h45-feralas-revolcafango-s026-4501"
+reqlevel = 38
+text = "Coge «{quest:1170}» de {npc:4501}."
+tip = "+360 XP · ~1,3 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#26"]
+note = "Polestar paso 26 «Brackenwall Village», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-069"
+do = "turnin"
+quest = 1168
+npc = 4502
+at = [1445, 37.37, 31.39]
+text = "Entrega «{quest:1168}» a {npc:4502}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#26"]
+note = "Polestar paso 26 «Brackenwall Village», objetivo 3 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-070"
+do = "turnin"
+quest = 1170
+npc = 4500
+at = [1445, 36.29, 31.41]
+optional = true
+chain = "h45-feralas-revolcafango-s026-4500"
+text = "Entrega «{quest:1170}» a {npc:4500}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#26"]
+note = "Polestar paso 26 «Brackenwall Village», objetivo 4 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-071"
+do = "accept"
+quest = 1171
+npc = 4500
+at = [1445, 36.29, 31.41]
+chain = "h45-feralas-revolcafango-s026-4500"
+reqlevel = 38
+text = "Coge «{quest:1171}» de {npc:4500}."
+why = "+360 XP · <1 min · desbloquea «{quest:1172}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#26"]
+note = "Polestar paso 26 «Brackenwall Village», objetivo 5 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-072"
+do = "turnin"
+quest = 1166
+npc = 4500
+at = [1445, 36.29, 31.41]
+chain = "h45-feralas-revolcafango-s026-4500"
+text = "Entrega «{quest:1166}» a {npc:4500}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#26"]
+note = "Polestar paso 26 «Brackenwall Village», objetivo 6 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-073"
+do = "turnin"
+quest = 1171
+npc = 4501
+at = [1445, 37.15, 33.09]
+chain = "h45-feralas-revolcafango-s026-4501"
+text = "Entrega «{quest:1171}» a {npc:4501}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#26"]
+note = "Polestar paso 26 «Brackenwall Village», objetivo 7 (turnin)"
+
+[[step]]
+id = "h45-feralas-revolcafango-074"
+do = "accept"
+quest = 1172
+npc = 4501
+at = [1445, 37.15, 33.09]
+chain = "h45-feralas-revolcafango-s026-4501"
+reqlevel = 38
+text = "Coge «{quest:1172}» de {npc:4501}."
+why = "+4.850 XP · ~9 min · desbloquea «{quest:1173}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#26"]
+note = "Polestar paso 26 «Brackenwall Village», objetivo 8 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h45-feralas-revolcafango-075"
+do = "goto"
+at = [1445, 53.4, 74.7]
+text = "Ve a cuevas de dragones."
+tip = "Los Huevos de Onyxia están en las cuevas de dragones del sureste de {area:511}, guardados por los Horrocrustos; destroza cinco."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#27"]
+note = "Polestar paso 27 «Onyxia's eggs», objetivo 1 (goto)"
+
+[[step]]
+id = "h45-feralas-revolcafango-076"
+do = "complete"
+quest = 1172
+obj = 1
+at = [1445, 53.56, 72.51]
+text = "Usa {obj:20359} para «{quest:1172}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#27"]
+note = "Polestar paso 27 «Onyxia's eggs», objetivo 2 (interact)"
+
+[[step]]
+id = "h45-feralas-revolcafango-077"
+do = "goto"
+at = [1445, 37.5, 68.3]
+if = { maxlevel = 44 }
+optional = true
+text = "Ve a {npc:4329}."
+tip = "El desafío de {npc:4500}, de vuelta en Murohelecho, requiere un grupo de tres. Si vas solo, mata Exploradores Pirocabello aquí, en el borde norte de {area:511}, hasta el nivel 45.37 antes de volver cabalgando al norte, para no tener que bajar otra vez a por ello. O bien, con un grupo, haz en su lugar la mazmorra de {area:978} o la de {area:1517}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#28"]
+note = "Polestar paso 28 «Level 45.37», objetivo 1 (goto) · condición no expresable: no vas en grupo para la misión 1173"
+
+[[step]]
+id = "h45-feralas-revolcafango-078"
+do = "level"
+level = 45
+at = [1445, 36.8, 69.0]
+if = { maxlevel = 44 }
+optional = true
+text = "Sube al nivel 45."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#28"]
+note = "Polestar paso 28 «Level 45.37», objetivo 2 (level) · condición no expresable: no vas en grupo para la misión 1173 · consejo de Polestar sin traducir: Grind on {npc:4329}."
+
+[[step]]
+id = "h45-feralas-revolcafango-079"
+do = "turnin"
+quest = 1172
+npc = 4501
+at = [1445, 37.15, 33.09]
+text = "Entrega «{quest:1172}» a {npc:4501}."
+tip = "Vuelve cabalgando al norte, a Murohelecho."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#29"]
+note = "Polestar paso 29 «Brackenwall Village», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:4501}, below ground."
+
+[[step]]
+id = "h45-feralas-revolcafango-080"
+do = "accept"
+quest = 1173
+npc = 4500
+at = [1445, 36.29, 31.41]
+optional = true
+reqlevel = 38
+text = "Coge «{quest:1173}» de {npc:4500}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#30"]
+note = "Polestar paso 30 ««Desafiar al Señor Supremo Mok'Morokk»», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 1173 · datos no importados: pre · consejo de Polestar sin traducir: These are elite mobs: grouping up is encouraged, look for people to do it with. «{quest:1173}» needs a group of 3. Skip it if you are alone: the route has you grind the XP back.\n{npc:4500} is elite: grouping up is advised. Beat him down until he gives up, then report to {npc:4501}."
+
+[[step]]
+id = "h45-feralas-revolcafango-081"
+do = "complete"
+quest = 1173
+optional = true
+text = "Completa «{quest:1173}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#30"]
+note = "Polestar paso 30 ««Desafiar al Señor Supremo Mok'Morokk»», objetivo 2 (complete) · condición no expresable: vas en grupo para la misión 1173 · objetivos (EN): Drive Overlord Mok'Morokk from Brackenwall Village"
+
+[[step]]
+id = "h45-feralas-revolcafango-082"
+do = "turnin"
+quest = 1173
+npc = 4501
+at = [1445, 37.15, 33.09]
+optional = true
+text = "Entrega «{quest:1173}» a {npc:4501}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#30"]
+note = "Polestar paso 30 ««Desafiar al Señor Supremo Mok'Morokk»», objetivo 3 (turnin) · condición no expresable: vas en grupo para la misión 1173 · consejo de Polestar sin traducir: {npc:4501}, below ground."
+
+[[step]]
+id = "h45-feralas-revolcafango-083"
+do = "goto"
+at = [1445, 35.6, 31.8]
+text = "Ve al maestro de vuelo de {area:496}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#31"]
+note = "Polestar paso 31 «Fly to Camp Mojache», objetivo 1 (goto)"
+
+[[step]]
+id = "h45-feralas-revolcafango-084"
+do = "fly"
+zone = 1444
+text = "Vuela a Campamento Mojache."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#31"]
+note = "Polestar paso 31 «Fly to Camp Mojache», objetivo 2 (fly)"
+
+[[step]]
+id = "h45-feralas-revolcafango-089"
+do = "accept"
+quest = 7003
+npc = 14637
+at = [1444, 44.81, 43.42]
+optional = true
+chain = "h45-feralas-revolcafango-s034-14637"
+reqlevel = 45
+text = "Coge «{quest:7003}» de {npc:14637}."
+tip = "Cabalga hacia el noroeste hasta {area:1108}; {npc:14637} espera en el muelle. +8.880 XP · ~18 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#34"]
+note = "Polestar paso 34 «Zorbin Hipnoviento», objetivo 1 (accept)"
+
+[[step]]
+id = "h45-feralas-revolcafango-090"
+do = "accept"
+quest = 7721
+npc = 14637
+at = [1444, 44.81, 43.42]
+optional = true
+chain = "h45-feralas-revolcafango-s034-14637"
+reqlevel = 45
+text = "Coge «{quest:7721}» de {npc:14637}."
+tip = "+10.280 XP · ~21 min: por debajo de la media del tramo, aunque rinde más que matar bichos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#34"]
+note = "Polestar paso 34 «Zorbin Hipnoviento», objetivo 2 (accept)"
+
+[[step]]
+id = "h45-feralas-revolcafango-091"
+do = "complete"
+quest = 3520
+obj = 1
+at = [1444, 45.0, 38.0]
+text = "Usa {item:10699} para «{quest:3520}»."
+tip = "Mata {npc:8612} (3) para «{quest:3520}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#35"]
+note = "Polestar paso 35 «Rogue Vale screechers», objetivo 1 (use) · consejo de Polestar sin traducir: Rogue Vale opens just north of {npc:14637}'s dock. Kill a {npc:5308}, use {item:10699} on its body and kill the spirit that rises."
+
+[[step]]
+id = "h45-feralas-revolcafango-092"
+do = "complete"
+quest = 7721
+obj = 1
+at = [1444, 44.75, 38.83]
+wps = [[1444, 40.4, 37.5, "Núcleo elemental de Agua"], [1444, 37.7, 33.3, "Núcleo elemental de Agua"], [1444, 34.6, 34.6, "Núcleo elemental de Agua"]]
+optional = true
+text = "Consigue {item:18958} (10) de {npc:5461} y {npc:5462} para «{quest:7721}»."
+tip = "Elementales marinos y Rocíos del mar recorren la orilla alrededor del muelle. Dispara primero a los gigantes con {item:18904}: encogidos, pierden su fuerza de élite. Los Zancacostas vadean en el agua; los Caminantes de la tierra y los Gigantes del risco recorren las colinas más al norte."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#36"]
+note = "Polestar paso 36 «Forgotten Coast: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "h45-feralas-revolcafango-093"
+do = "complete"
+quest = 7003
+obj = 1
+at = [1444, 40.15, 38.65]
+wps = [[1444, 38.0, 34.7, "Resíduo de reducción"], [1444, 36.4, 36.1, "Resíduo de reducción"], [1444, 34.5, 34.0, "Resíduo de reducción"]]
+optional = true
+text = "Consigue {item:18956} (15) para «{quest:7003}»."
+tip = "Usa {item:18904} para «{quest:7003}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#36"]
+note = "Polestar paso 36 «Forgotten Coast: kill these as you meet them», objetivo 2 (collect)"
+
+[[step]]
+id = "h45-feralas-revolcafango-094"
+do = "complete"
+quest = 3063
+obj = 1
+at = [1444, 37.81, 15.94]
+wps = [[1444, 40.3, 14.5, "Arpía Nortearroyo"]]
+optional = true
+text = "Mata {npc:5362} (4) para «{quest:3063}»."
+tip = "Las Arpías Nortearroyo anidan en las crestas del extremo noroeste. Son de nivel 48-50, unos niveles por encima de ti: las Clamavientos curan, así que mátalas primero y atráelas de una en una."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#37"]
+note = "Polestar paso 37 «Northspring harpies», objetivo 1 (kill)"
+
+[[step]]
+id = "h45-feralas-revolcafango-095"
+do = "complete"
+quest = 3063
+obj = 2
+at = [1444, 37.44, 15.62]
+wps = [[1444, 38.6, 16.1, "Malapluma Nortearroyo"], [1444, 38.2, 12.1, "Malapluma Nortearroyo"], [1444, 39.7, 10.4, "Malapluma Nortearroyo"]]
+optional = true
+text = "Mata {npc:5363} (4) para «{quest:3063}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#37"]
+note = "Polestar paso 37 «Northspring harpies», objetivo 2 (kill)"
+
+[[step]]
+id = "h45-feralas-revolcafango-096"
+do = "complete"
+quest = 3063
+obj = 3
+at = [1444, 37.92, 15.92]
+wps = [[1444, 39.1, 10.7, "Destripadora Nortearroyo"]]
+optional = true
+text = "Mata {npc:5364} (4) para «{quest:3063}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#37"]
+note = "Polestar paso 37 «Northspring harpies», objetivo 3 (kill)"
+
+[[step]]
+id = "h45-feralas-revolcafango-097"
+do = "complete"
+quest = 3063
+obj = 4
+at = [1444, 38.56, 14.3]
+wps = [[1444, 39.7, 14.2, "Clamaviento Nortearroyo"], [1444, 39.4, 11.6, "Clamaviento Nortearroyo"]]
+optional = true
+text = "Mata {npc:5366} (4) para «{quest:3063}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#37"]
+note = "Polestar paso 37 «Northspring harpies», objetivo 4 (kill)"
+
+[[step]]
+id = "h45-feralas-revolcafango-098"
+do = "complete"
+quest = 7734
+obj = 1
+at = [1444, 51.8, 30.79]
+wps = [[1444, 52.9, 31.9, "Pellejo de yeti de Cicatriz de ira"], [1444, 54.9, 32.9, "Pellejo de yeti de Cicatriz de ira"]]
+optional = true
+text = "Consigue {item:18947} (10) de {npc:5296} y {npc:7848} y {npc:5297} y {npc:5299} para «{quest:7734}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#38"]
+note = "Polestar paso 38 «Rage Scar yetis», objetivo 1 (collect) · consejo de Polestar sin traducir: On the way back south-east from the harpies, the Rage Scar yetis live around the caves in the hills by the road. Any of them can also drop a «{quest:7738}», which starts a quest of its own."
+
+[[step]]
+id = "h45-feralas-revolcafango-099"
+do = "loot"
+item = 18972
+count = 1
+at = [1444, 51.8, 30.79]
+wps = [[1444, 52.9, 31.9, "Pellejo de yeti perfecto"], [1444, 54.9, 32.9, "Pellejo de yeti perfecto"]]
+optional = true
+text = "Consigue {item:18972}."
+tip = "«{quest:7738}», botín raro."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#38"]
+note = "Polestar paso 38 «Rage Scar yetis», objetivo 2 (collect)"
+
+[[step]]
+id = "h45-feralas-revolcafango-101"
+do = "turnin"
+quest = 7734
+npc = 7854
+at = [1444, 74.43, 42.91]
+optional = true
+chain = "h45-feralas-revolcafango-s039-7854"
+text = "Entrega «{quest:7734}» a {npc:7854}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#39"]
+note = "Polestar paso 39 «Camp Mojache», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:7854}, inside."
+
+[[step]]
+id = "h45-feralas-revolcafango-104"
+do = "turnin"
+quest = 3063
+npc = 7776
+at = [1444, 76.18, 43.83]
+optional = true
+text = "Entrega «{quest:3063}» a {npc:7776}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/40-50/03-feralas#39"]
+note = "Polestar paso 39 «Camp Mojache», objetivo 4 (turnin)"

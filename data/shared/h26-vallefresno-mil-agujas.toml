@@ -1,0 +1,1957 @@
+# GENERADO por tools/gen_horde.py desde Polestar (GPL-3), forever/horde/07-ashenvale
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas. Textos en español con fichas ({quest:N},
+# {npc:N}...); entrenamiento de clase con data/knowledge/trainer; filtro de eficiencia de tools/route_score.py
+# (misiones quitadas, opcionales y `why`). No editar a mano: vuelve a generar. Ver docs/ROUTE-HORDE.md.
+id = "h26-vallefresno-mil-agujas"
+title = "Vallefresno y Las Mil Agujas"
+levels = [26, 30]
+map = 1440
+summary = "Ruta común de la Horda, 26-30: Vallefresno y Las Mil Agujas."
+if = { faction = "Horde" }
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-001"
+do = "goto"
+at = [1413, 63.1, 37.1]
+text = "Ve al maestro de vuelo de {area:392}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#1"]
+note = "Polestar paso 1 «Fly to Zoram'gar Outpost», objetivo 1 (goto)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-002"
+do = "fly"
+zone = 1440
+text = "Vuela a Avanzada de Zoram'gar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#1"]
+note = "Polestar paso 1 «Fly to Zoram'gar Outpost», objetivo 2 (fly)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-003"
+do = "turnin"
+quest = 6562
+npc = 12736
+at = [1440, 11.56, 34.29]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s002-12736"
+text = "Entrega «{quest:6562}» a {npc:12736}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#2"]
+note = "Polestar paso 2 «Zoram'gar Outpost», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:12736} stands in the outpost."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-005"
+do = "goto"
+at = [1440, 14.5, 14.2]
+text = "Ve a ruinas de {area:2797}."
+tip = "El camino a los zafiros pasa por las ruinas sumergidas del extremo norte de la playa: baja las escaleras hasta el foso."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#3"]
+note = "Polestar paso 3 «Blackfathom Deeps ruins», objetivo 1 (goto)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-007"
+do = "note"
+text = "{npc:12736} te ofrece después una misión de {area:2797}; déjala salvo que tengas grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#5"]
+note = "Polestar paso 5 «Zoram'gar Outpost», objetivo 1 (note) · consejo de Polestar sin traducir: Back to Zoram'gar from the ruins before heading east for good."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-009"
+do = "accept"
+quest = 6621
+npc = 12757
+at = [1440, 11.9, 34.54]
+reqlevel = 21
+text = "Coge «{quest:6621}» de {npc:12757}."
+why = "+2.650 XP · ~8 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#5"]
+note = "Polestar paso 5 «Zoram'gar Outpost», objetivo 3 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-010"
+do = "complete"
+quest = 1534
+obj = 1
+at = [1440, 33.55, 67.47]
+if = { class = ["SHAMAN"] }
+text = "Recoge {item:7770} (1) de {obj:107047} para «{quest:1534}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#6"]
+note = "Polestar paso 6 «Ruins of Stardust fountain», objetivo 1 (collect) · consejo de Polestar sin traducir: The fountain stands in the middle of the {area:418}, where {npc:12678} roams: use the {item:7767} there."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-011"
+do = "loot"
+item = 16303
+count = 1
+at = [1440, 39.76, 65.21]
+optional = true
+text = "Consigue {item:16303} de {npc:12678}."
+tip = "Sigue el camino principal al este, pasado {area:415} (Alianza: no te salgas del camino). {npc:12678}, un gran oso pardo, recorre {area:418} al sur del camino, al oeste de {area:421}. Su zarpa inicia la siguiente misión de caza."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#7"]
+note = "Polestar paso 7 «Ursangous», objetivo 1 (collect) · condición no expresable: turnedin {'k': 'turnedin', 'q': 6383}"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-012"
+do = "accept"
+quest = 23
+optional = true
+reqlevel = 20
+text = "Usa {item:16303} para empezar «{quest:23}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#7"]
+note = "Polestar paso 7 «Ursangous», objetivo 2 (accept) · condición no expresable: turnedin {'k': 'turnedin', 'q': 6383} · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-013"
+do = "goto"
+at = [1440, 42.4, 70.0]
+if = { class = ["WARRIOR"] }
+text = "Ve a {npc:210995}."
+tip = "{npc:210995}, un añadido de Forever, está en la orilla oeste de {area:421} con tres misiones rápidas de cazadragones."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#8"]
+note = "Polestar paso 8 «Alonso», objetivo 1 (goto)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-014"
+do = "accept"
+quest = 78132
+npc = 210995
+at = [1440, 42.4, 70.0]
+if = { class = ["WARRIOR"] }
+optional = true
+chain = "h26-vallefresno-mil-agujas-s008-210995"
+reqlevel = 15
+text = "Coge «{quest:78132}» de {npc:210995}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#8"]
+note = "Polestar paso 8 «Alonso», objetivo 2 (accept) · consejo de Polestar sin traducir: {npc:210995} walks around the {area:1276}: the map marks where to look."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-015"
+do = "turnin"
+quest = 78132
+npc = 210995
+at = [1440, 42.4, 70.0]
+if = { class = ["WARRIOR"] }
+chain = "h26-vallefresno-mil-agujas-s008-210995"
+text = "Entrega «{quest:78132}» a {npc:210995}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#8"]
+note = "Polestar paso 8 «Alonso», objetivo 3 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-016"
+do = "accept"
+quest = 78133
+npc = 210995
+at = [1440, 42.4, 70.0]
+if = { class = ["WARRIOR"] }
+optional = true
+chain = "h26-vallefresno-mil-agujas-s008-210995"
+reqlevel = 15
+text = "Coge «{quest:78133}» de {npc:210995}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#8"]
+note = "Polestar paso 8 «Alonso», objetivo 4 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-017"
+do = "turnin"
+quest = 78133
+npc = 210995
+at = [1440, 42.4, 70.0]
+if = { class = ["WARRIOR"] }
+chain = "h26-vallefresno-mil-agujas-s008-210995"
+text = "Entrega «{quest:78133}» a {npc:210995}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#8"]
+note = "Polestar paso 8 «Alonso», objetivo 5 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-018"
+do = "accept"
+quest = 78134
+npc = 210995
+at = [1440, 42.4, 70.0]
+if = { class = ["WARRIOR"] }
+optional = true
+chain = "h26-vallefresno-mil-agujas-s008-210995"
+reqlevel = 15
+text = "Coge «{quest:78134}» de {npc:210995}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#8"]
+note = "Polestar paso 8 «Alonso», objetivo 6 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-019"
+do = "turnin"
+quest = 78134
+npc = 210995
+at = [1440, 42.4, 70.0]
+if = { class = ["WARRIOR"] }
+chain = "h26-vallefresno-mil-agujas-s008-210995"
+text = "Entrega «{quest:78134}» a {npc:210995}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#8"]
+note = "Polestar paso 8 «Alonso», objetivo 7 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-020"
+do = "complete"
+quest = 6621
+obj = 1
+at = [1440, 56.4, 63.5]
+text = "Usa {item:16972} para «{quest:6621}»."
+tip = "Los fúrbolgs Maderiza ocupan los bosques al este de {area:421}, al sur del camino. Coloca {item:16972} en Foulweald Totem Mound y protégelo: los fúrbolgs vienen a derribarlo. {npc:12918} llega el último; su tótem cae en la cesta. Consigue {item:16976} (1) de {npc:12918} para «{quest:6621}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#9"]
+note = "Polestar paso 9 ««El rey de los Corrupto»», objetivo 1 (use)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-021"
+do = "accept"
+quest = 6544
+npc = 12858
+at = [1440, 68.34, 75.3]
+escort = true
+reqlevel = 20
+text = "Coge «{quest:6544}» de {npc:12858}."
+tip = "Sigue al este por el camino. {npc:12858} espera al suroeste del Aserradero Grito de Guerra. Él y sus gruñones asaltan {area:2360}: deja que ellos atraigan a los enemigos y quédate con {npc:12858} hasta que muera {npc:12860}."
+why = "+2.400 XP · ~9 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#10"]
+note = "Polestar paso 10 ««El asalto de Torek»», objetivo 1 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-022"
+do = "complete"
+quest = 6544
+escort = true
+text = "Completa «{quest:6544}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#10"]
+note = "Polestar paso 10 ««El asalto de Torek»», objetivo 2 (complete) · objetivos (EN): Take Silverwing Outpost."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-023"
+do = "accept"
+quest = 6503
+npc = 12867
+at = [1440, 71.11, 68.12]
+reqlevel = 19
+text = "Coge «{quest:6503}» de {npc:12867}."
+tip = "Desde {area:2360}, ve al noreste hasta el Aserradero Grito de Guerra, junto al camino: allí está {npc:12867}."
+why = "+3.030 XP · ~7 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#11"]
+note = "Polestar paso 11 «Warsong lumber camp», objetivo 1 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-024"
+do = "complete"
+quest = 6503
+obj = 1
+at = [1440, 72.5, 69.5]
+text = "Mata {npc:12856} (9) para «{quest:6503}»."
+tip = "Los elfos de la noche de «{quest:6503}» (23-24) acechan en los bosques al sur y al sureste del aserradero; usan sigilo, así que estate atento."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#12"]
+note = "Polestar paso 12 ««Avanzada de Vallefresno»», objetivo 1 (kill)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-025"
+do = "loot"
+item = 16305
+count = 1
+at = [1440, 74.98, 70.06]
+optional = true
+text = "Consigue {item:16305} de {npc:12676}."
+tip = "{npc:12676}, una gran sable de la noche, merodea por los mismos bosques más al este, de camino al norte hacia el Puesto del Hachazo. Su garra inicia la siguiente misión de caza."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#13"]
+note = "Polestar paso 13 «Garrafilada», objetivo 1 (collect) · condición no expresable: turnedin {'k': 'turnedin', 'q': 6383}"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-026"
+do = "accept"
+quest = 2
+optional = true
+reqlevel = 20
+text = "Usa {item:16305} para empezar «{quest:2}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#13"]
+note = "Polestar paso 13 «Garrafilada», objetivo 2 (accept) · condición no expresable: turnedin {'k': 'turnedin', 'q': 6383} · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-027"
+do = "turnin"
+quest = 6503
+npc = 12867
+at = [1440, 71.11, 68.12]
+text = "Entrega «{quest:6503}» a {npc:12867}."
+tip = "Vuelve con {npc:12867} al aserradero, en el camino al norte hacia el Puesto del Hachazo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#14"]
+note = "Polestar paso 14 «Warsong lumber camp», objetivo 1 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-028"
+do = "turnin"
+quest = 6544
+npc = 12877
+at = [1440, 73.03, 62.47]
+text = "Entrega «{quest:6544}» a {npc:12877}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#15"]
+note = "Polestar paso 15 «Splintertree Post», objetivo 1 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-029"
+do = "accept"
+quest = 6441
+npc = 12724
+at = [1440, 73.06, 61.48]
+optional = true
+reqlevel = 21
+text = "Coge «{quest:6441}» de {npc:12724}."
+tip = "+7.846 XP · ~30 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#15"]
+note = "Polestar paso 15 «Splintertree Post», objetivo 2 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-030"
+do = "turnin"
+quest = 6383
+npc = 12696
+at = [1440, 73.78, 61.46]
+optional = true
+text = "Entrega «{quest:6383}» a {npc:12696}."
+tip = "{npc:12696} tiene el tablón de caza en {area:428}, junto al maestro de vuelo: acepta «{quest:6383}» y entrégala de inmediato. {npc:12678}, {npc:12676} y {npc:12677} solo sueltan sus trofeos después."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#16"]
+note = "Polestar paso 16 «Senani Truenozón», objetivo 1 (turnin) · condición no expresable: no turnedin {'k': 'turnedin', 'neg': True, 'q': 6383}"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-031"
+do = "turnin"
+quest = 23
+npc = 12696
+at = [1440, 73.78, 61.46]
+text = "Entrega «{quest:23}» a {npc:12696}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#17"]
+note = "Polestar paso 17 «Splintertree Post», objetivo 1 (turnin) · condición no expresable: llevas la misión 23 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-032"
+do = "accept"
+quest = 25
+npc = 12737
+at = [1440, 73.67, 60.0]
+reqlevel = 23
+text = "Coge «{quest:25}» de {npc:12737}."
+why = "+3.440 XP · ~9 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#18"]
+note = "Polestar paso 18 «Splintertree Post», objetivo 1 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-033"
+do = "sethearth"
+npc = 12196
+zone = 1440
+at = [1440, 73.99, 60.65]
+text = "Pon la piedra de hogar en {area:431} con {npc:12196}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#18"]
+note = "Polestar paso 18 «Splintertree Post», objetivo 2 (sethome) · consejo de Polestar sin traducir: {npc:12196}, beside her."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-034"
+do = "accept"
+quest = 6504
+npc = 12718
+at = [1440, 70.01, 71.16]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s018-12718"
+reqlevel = 23
+text = "Coge «{quest:6504}» de {npc:12718}, solo si llevas las páginas del manual."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#18"]
+note = "Polestar paso 18 «Splintertree Post», objetivo 3 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-035"
+do = "turnin"
+quest = 6504
+npc = 12718
+at = [1440, 70.01, 71.16]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s018-12718"
+text = "Entrega «{quest:6504}» a {npc:12718}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#18"]
+note = "Polestar paso 18 «Splintertree Post», objetivo 4 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-036"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#18"]
+note = "Polestar paso 18 «Splintertree Post», objetivo 5 (vendor)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-037"
+do = "complete"
+quest = 6441
+obj = 1
+at = [1440, 66.73, 57.17]
+wps = [[1440, 66.5, 54.5, "Cuernos de sátiro"], [1440, 66.5, 52.2, "Cuernos de sátiro"], [1440, 68.4, 53.7, "Cuernos de sátiro"]]
+optional = true
+text = "Consigue {item:5481} (16) para «{quest:6441}»."
+tip = "Al noroeste del Puesto del Hachazo, los sátiros Putredores acampan en el bosque. Cualquier sátiro puede soltar cuernos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#19"]
+note = "Polestar paso 19 «Felmusk satyrs», objetivo 1 (collect)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-038"
+do = "loot"
+item = 16304
+count = 1
+at = [1440, 57.5, 56.05]
+optional = true
+text = "Consigue {item:16304} de {npc:12677}."
+tip = "{npc:12677}, una pantera de las sombras, acecha en los bosques alrededor de {area:426}, al oeste del campamento Putredor. Su cabeza inicia la siguiente misión de caza."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#20"]
+note = "Polestar paso 20 «Shadumbra», objetivo 1 (collect) · condición no expresable: turnedin {'k': 'turnedin', 'q': 6383}"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-039"
+do = "accept"
+quest = 24
+optional = true
+reqlevel = 20
+text = "Usa {item:16304} para empezar «{quest:24}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#20"]
+note = "Polestar paso 20 «Shadumbra», objetivo 2 (accept) · condición no expresable: turnedin {'k': 'turnedin', 'q': 6383} · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-040"
+do = "loot"
+item = 5867
+count = 1
+at = [1440, 59.0, 56.1]
+optional = true
+text = "Consigue {item:5867} de {npc:4054}."
+tip = "Las Hermanas risueñas, dríadas, deambulan por {area:426}, alrededor de los bosques de {npc:12677}; una de ellas suelta el {item:5867} de {npc:4721}, y puede hacer falta matar a varias. {item:5867}, de una {npc:4054}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#21"]
+note = "Polestar paso 21 «Laughing Sisters», objetivo 1 (collect) · condición no expresable: llevas la misión 1195"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-041"
+do = "complete"
+quest = 1195
+obj = 1
+at = [1440, 60.2, 72.9]
+text = "Usa {item:5867} para «{quest:1195}»."
+tip = "Al sur del refugio, el pozo de la luna está en una hondonada al oeste del río, difícil de ver desde el camino; {area:421} queda al oeste. Usa el {item:5867} en el pozo de la luna para llenarlo. {item:5867}, en {obj:20806}. Recoge {item:5868} (1) de {obj:20806} para «{quest:1195}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#22"]
+note = "Polestar paso 22 «Poza de la Luna de Vallefresno», objetivo 1 (use) · condición no expresable: llevas la misión 1195 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-042"
+do = "loot"
+item = 16408
+count = 1
+at = [1440, 46.0, 70.0]
+text = "Consigue {item:16408} de {npc:12759}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#23"]
+note = "Polestar paso 23 «Tideress», objetivo 1 (collect) · consejo de Polestar sin traducir: Back south-west to {area:421}. {npc:12759}, a corrupted water elemental, drifts around the lake's island and under the water. She drops the {item:16408} only once you have «{quest:25}» from {npc:12737}; it starts a quest for Splintertree."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-044"
+do = "complete"
+quest = 25
+obj = 1
+at = [1440, 46.09, 69.92]
+wps = [[1440, 47.5, 71.2, "Elemental de agua podrida"], [1440, 47.8, 69.1, "Elemental de agua podrida"], [1440, 46.8, 67.4, "Elemental de agua podrida"]]
+text = "Mata {npc:3917} (12) para «{quest:25}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#24"]
+note = "Polestar paso 24 «Mystral Lake», objetivo 1 (kill) · consejo de Polestar sin traducir: Underwater. · consejo de Polestar sin traducir: Befouled Water Elementals drift around the lake's shores; the gazebo stands on the island, overlooking the Alliance outpost."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-045"
+do = "goto"
+at = [1440, 48.9, 69.6]
+text = "Ve a cenador."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#24"]
+note = "Polestar paso 24 «Mystral Lake», objetivo 2 (goto)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-046"
+do = "complete"
+quest = 25
+text = "Completa «{quest:25}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#24"]
+note = "Polestar paso 24 «Mystral Lake», objetivo 3 (complete) · objetivos (EN): Befouled Water Elemental; Scout the gazebo on Mystral Lake that overlooks the nearby Alliance outpost."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-047"
+do = "loot"
+item = 16303
+count = 1
+at = [1440, 39.8, 65.2]
+optional = true
+text = "Consigue {item:16303} de {npc:12678}."
+tip = "Al oeste del Lago Mystral, {npc:12678}, un gran oso pardo, recorre {area:418}: ahora ya te suelta su zarpa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#25"]
+note = "Polestar paso 25 «Ursangous», objetivo 1 (collect) · condición no expresable: turnedin {'k': 'turnedin', 'q': 6383}; no llevas la misión 23 (implícita: el paso es de esa misión); no turnedin {'k': 'turnedin', 'neg': True, 'q': 23}"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-048"
+do = "accept"
+quest = 23
+optional = true
+reqlevel = 20
+text = "Usa {item:16303} para empezar «{quest:23}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#25"]
+note = "Polestar paso 25 «Ursangous», objetivo 2 (accept) · condición no expresable: turnedin {'k': 'turnedin', 'q': 6383}; no llevas la misión 23 (implícita: el paso es de esa misión); no turnedin {'k': 'turnedin', 'neg': True, 'q': 23} · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-049"
+do = "loot"
+item = 16305
+count = 1
+at = [1440, 75.0, 70.1]
+optional = true
+text = "Consigue {item:16305} de {npc:12676}."
+tip = "De vuelta al noreste hacia el Puesto del Hachazo: {npc:12676} merodea por los bosques al sureste del Aserradero Grito de Guerra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#26"]
+note = "Polestar paso 26 «Garrafilada», objetivo 1 (collect) · condición no expresable: turnedin {'k': 'turnedin', 'q': 6383}; no llevas la misión 2 (implícita: el paso es de esa misión); no turnedin {'k': 'turnedin', 'neg': True, 'q': 2}"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-050"
+do = "accept"
+quest = 2
+optional = true
+reqlevel = 20
+text = "Usa {item:16305} para empezar «{quest:2}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#26"]
+note = "Polestar paso 26 «Garrafilada», objetivo 2 (accept) · condición no expresable: turnedin {'k': 'turnedin', 'q': 6383}; no llevas la misión 2 (implícita: el paso es de esa misión); no turnedin {'k': 'turnedin', 'neg': True, 'q': 2} · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-051"
+do = "turnin"
+quest = 23
+npc = 12696
+at = [1440, 73.78, 61.46]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s027-12696"
+text = "Entrega «{quest:23}» a {npc:12696}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#27"]
+note = "Polestar paso 27 «Splintertree Post», objetivo 1 (turnin) · condición no expresable: llevas la misión 2, 23, 24 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-052"
+do = "turnin"
+quest = 2
+npc = 12696
+at = [1440, 73.78, 61.46]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s027-12696"
+text = "Entrega «{quest:2}» a {npc:12696}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#27"]
+note = "Polestar paso 27 «Splintertree Post», objetivo 2 (turnin) · condición no expresable: llevas la misión 2, 23, 24 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-053"
+do = "turnin"
+quest = 24
+npc = 12696
+at = [1440, 73.78, 61.46]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s027-12696"
+text = "Entrega «{quest:24}» a {npc:12696}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#27"]
+note = "Polestar paso 27 «Splintertree Post», objetivo 3 (turnin) · condición no expresable: llevas la misión 2, 23, 24 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-054"
+do = "turnin"
+quest = 247
+npc = 12696
+at = [1440, 73.78, 61.46]
+text = "Entrega «{quest:247}» a {npc:12696}."
+why = "+3.050 XP · <1 min · 20,4× la mediana del 26-30"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#28"]
+note = "Polestar paso 28 «Splintertree Post», objetivo 1 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-055"
+do = "turnin"
+quest = 6441
+npc = 12724
+at = [1440, 73.06, 61.48]
+optional = true
+text = "Entrega «{quest:6441}» a {npc:12724}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#28"]
+note = "Polestar paso 28 «Splintertree Post», objetivo 2 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-056"
+do = "turnin"
+quest = 25
+npc = 12737
+at = [1440, 73.67, 60.0]
+text = "Entrega «{quest:25}» a {npc:12737}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#29"]
+note = "Polestar paso 29 «Splintertree Post», objetivo 1 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-059"
+do = "fly"
+zone = 1440
+text = "Vuela a Avanzada de Zoram'gar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#31"]
+note = "Polestar paso 31 «Zoram'gar Outpost», objetivo 1 (fly)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-060"
+do = "turnin"
+quest = 6621
+npc = 12757
+at = [1440, 11.9, 34.54]
+text = "Entrega «{quest:6621}» a {npc:12757}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#31"]
+note = "Polestar paso 31 «Zoram'gar Outpost», objetivo 2 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-062"
+do = "goto"
+at = [1440, 12.2, 33.8]
+text = "Ve al maestro de vuelo de {area:2897}."
+tip = "Vuela a {area:1638} desde Zoram'gar. Si no conoces su ruta de vuelo, vuela a {area:378} y ve a pie al norte por {map:1412}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#33"]
+note = "Polestar paso 33 «Fly to Thunder Bluff», objetivo 1 (goto)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-063"
+do = "fly"
+zone = 1412
+text = "Vuela a Cima del Trueno."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#33"]
+note = "Polestar paso 33 «Fly to Thunder Bluff», objetivo 2 (fly)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-064"
+do = "accept"
+quest = 96260
+npc = 264072
+at = [1412, 32.47, 19.98]
+reqlevel = 23
+text = "Coge «{quest:96260}» de {npc:264072}."
+why = "+2.450 XP · ~1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#36"]
+note = "Polestar paso 36 «The Earthen Ring», objetivo 1 (accept) · consejo de Polestar sin traducir: The Earthen Ring camp stands north of the bluffs: {npc:264074}, {npc:264072} and {npc:259118}. From {map:1456}, take a lift down; coming on foot from {area:378}, keep north past the bluffs."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-065"
+do = "accept"
+quest = 96241
+npc = 264074
+at = [1412, 32.5, 20.6]
+reqlevel = 23
+text = "Coge «{quest:96241}» de {npc:264074}."
+why = "+2.450 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#36"]
+note = "Polestar paso 36 «The Earthen Ring», objetivo 2 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-066"
+do = "accept"
+quest = 96259
+npc = 259118
+at = [1412, 33.41, 22.58]
+reqlevel = 23
+text = "Coge «{quest:96259}» de {npc:259118}."
+why = "+5.225 XP · ~11 min · desbloquea «{quest:96261}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#36"]
+note = "Polestar paso 36 «The Earthen Ring», objetivo 3 (accept) · consejo de Polestar sin traducir: {npc:259118}: «{quest:96261}» comes once this is handed in."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-067"
+do = "complete"
+quest = 96260
+obj = 1
+at = [1412, 33.28, 14.6]
+wps = [[1412, 33.2, 13.6, "Seda cristalina"], [1412, 32.5, 11.1, "Seda cristalina"], [1412, 35.7, 11.8, "Seda cristalina"]]
+text = "Consigue {item:273181} (3) de {npc:264081} para «{quest:96260}»."
+tip = "Al norte del campamento, las arañas invaden el cementerio de {area:17044}. Usa el {item:273015} de {npc:264074} en los {npc:264096}; las tejedoras sueltan {item:273181}. {npc:264082} está en el extremo norte: su {item:273658} inicia «{quest:96294}». {item:273181}, de {npc:264081}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#37"]
+note = "Polestar paso 37 «Gloomrise: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-068"
+do = "complete"
+quest = 96259
+obj = 2
+at = [1412, 33.03, 14.21]
+wps = [[1412, 32.5, 11.2, "Gloomrise Soldier"], [1412, 35.0, 12.3, "Gloomrise Soldier"], [1412, 34.2, 10.5, "Gloomrise Soldier"]]
+text = "Mata {npc:264083} (5) para «{quest:96259}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#37"]
+note = "Polestar paso 37 «Gloomrise: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-069"
+do = "complete"
+quest = 96259
+obj = 1
+at = [1412, 32.81, 14.44]
+wps = [[1412, 33.3, 12.2, "Gloomrise Hatchling"], [1412, 35.1, 12.0, "Gloomrise Hatchling"], [1412, 33.4, 9.6, "Gloomrise Hatchling"]]
+text = "Mata {npc:264079} (10) para «{quest:96259}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#37"]
+note = "Polestar paso 37 «Gloomrise: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-070"
+do = "complete"
+quest = 96241
+obj = 1
+at = [1412, 33.62, 12.77]
+wps = [[1412, 33.6, 11.6, "Muestra de toxina de altopenumbra"], [1412, 34.4, 10.4, "Muestra de toxina de altopenumbra"], [1412, 35.5, 12.3, "Muestra de toxina de altopenumbra"]]
+text = "Consigue {item:273001} (5) de {npc:264096} para «{quest:96241}»."
+tip = "Muestras de toxina de altopenumbra, de los {npc:264096}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#37"]
+note = "Polestar paso 37 «Gloomrise: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-071"
+do = "turnin"
+quest = 96260
+npc = 264072
+at = [1412, 32.47, 19.98]
+text = "Entrega «{quest:96260}» a {npc:264072}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#38"]
+note = "Polestar paso 38 «The Earthen Ring», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:259118} offers «{quest:96261}» only once «{quest:96259}» is handed in."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-072"
+do = "turnin"
+quest = 96241
+npc = 264074
+at = [1412, 32.5, 20.66]
+text = "Entrega «{quest:96241}» a {npc:264074}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#38"]
+note = "Polestar paso 38 «The Earthen Ring», objetivo 2 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-073"
+do = "turnin"
+quest = 96259
+npc = 259118
+at = [1412, 33.41, 22.58]
+text = "Entrega «{quest:96259}» a {npc:259118}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#38"]
+note = "Polestar paso 38 «The Earthen Ring», objetivo 3 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-074"
+do = "accept"
+quest = 96261
+npc = 259118
+at = [1412, 33.41, 22.58]
+optional = true
+reqlevel = 23
+text = "Coge «{quest:96261}» de {npc:259118}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#39"]
+note = "Polestar paso 39 ««The Broodmother»», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 96261 · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-075"
+do = "complete"
+quest = 96261
+obj = 1
+at = [1412, 33.24, 10.74]
+wps = [[1412, 33.5, 7.8, "Broodmother Valraxx"]]
+optional = true
+text = "Mata {npc:264082} (1) para «{quest:96261}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#40"]
+note = "Polestar paso 40 «Broodmother Valraxx», objetivo 1 (kill) · condición no expresable: vas en grupo para la misión 96261 · consejo de Polestar sin traducir: {npc:264082} sits at the north end of {area:17044}; her {item:273658} starts «{quest:96294}». {npc:264082} is elite: grouping up is advised."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-076"
+do = "loot"
+item = 273658
+count = 1
+at = [1412, 33.4, 7.6]
+optional = true
+text = "Consigue {item:273658} de {npc:264082}."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#40"]
+note = "Polestar paso 40 «Broodmother Valraxx», objetivo 2 (collect) · condición no expresable: vas en grupo para la misión 96261 · consejo de Polestar sin traducir: {item:273658}, from {npc:264082}: it does not drop for everyone."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-077"
+do = "accept"
+quest = 96294
+optional = true
+reqlevel = 23
+text = "Usa {item:273658} para empezar «{quest:96294}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#40"]
+note = "Polestar paso 40 «Broodmother Valraxx», objetivo 3 (accept) · condición no expresable: vas en grupo para la misión 96261"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-078"
+do = "turnin"
+quest = 96261
+npc = 259118
+at = [1412, 33.41, 22.58]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s041-259118"
+text = "Entrega «{quest:96261}» a {npc:259118}."
+tip = "Vuelve al sur al campamento y sube a {map:1456} para volar a {area:378}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#41"]
+note = "Polestar paso 41 «The Earthen Ring», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 96261"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-079"
+do = "turnin"
+quest = 96294
+npc = 259118
+at = [1412, 33.41, 22.58]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s041-259118"
+text = "Entrega «{quest:96294}» a {npc:259118}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#41"]
+note = "Polestar paso 41 «The Earthen Ring», objetivo 2 (turnin) · condición no expresable: vas en grupo para la misión 96261"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-080-pa"
+do = "train"
+npc = 246344
+spells = [1038, 10298, 19939, 20163]
+at = [1456, 23.91, 15.44]
+if = { class = ["PALADIN"] }
+reqlevel = 26
+text = "Entrena con {npc:246344}, el instructor de paladín."
+tip = "4 hechizos hasta el nivel 26: nuevos {spell:1038}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#42", "trainer:paladin"]
+note = "Polestar paso 42 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/paladin.json, niveles 25-27"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-080-pr"
+do = "train"
+npc = 3044
+spells = [992, 6076, 9472]
+at = [1456, 25.32, 15.27]
+if = { class = ["PRIEST"] }
+reqlevel = 26
+text = "Entrena con {npc:3044}, el instructor de sacerdote."
+tip = "3 hechizos hasta el nivel 26."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#42", "trainer:priest"]
+note = "Polestar paso 42 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/priest.json, niveles 25-27"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-080-sh"
+do = "train"
+npc = 3032
+spells = [5675, 6196, 8030, 8190]
+at = [1456, 21.99, 18.8]
+if = { class = ["SHAMAN"] }
+reqlevel = 26
+text = "Entrena con {npc:3032}, el instructor de chamán."
+tip = "4 hechizos hasta el nivel 26: nuevos {spell:5675}, {spell:6196}, {spell:8190} y más."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#42", "trainer:shaman"]
+note = "Polestar paso 42 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/shaman.json, niveles 26-27"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-080-mg"
+do = "train"
+npc = 3047
+spells = [120, 865, 8406]
+at = [1456, 22.76, 14.53]
+if = { class = ["MAGE"] }
+reqlevel = 26
+text = "Entrena con {npc:3047}, el instructor de mago."
+tip = "3 hechizos hasta el nivel 26: nuevos {spell:120}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#42", "trainer:mage"]
+note = "Polestar paso 42 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/mage.json, niveles 25-27"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-080-dr"
+do = "train"
+npc = 3033
+spells = [1850, 2893, 8949]
+at = [1456, 76.48, 27.22]
+if = { class = ["DRUID"] }
+reqlevel = 26
+text = "Entrena con {npc:3033}, el instructor de druida."
+tip = "3 hechizos hasta el nivel 26: nuevos {spell:1850}, {spell:2893}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#42", "trainer:druid"]
+note = "Polestar paso 42 «Class trainer», objetivo 1 (train) · entrenamiento de clase: data/knowledge/trainer/druid.json, niveles 25-27"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-081"
+do = "goto"
+at = [1456, 47.0, 49.8]
+text = "Ve a meseta central de {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#43"]
+note = "Polestar paso 43 «Thunder Bluff», objetivo 1 (goto)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-082"
+do = "getfp"
+npc = 2995
+node = "22"
+at = [1456, 47.0, 49.83]
+text = "Coge la ruta de vuelo de Cima del Trueno con {npc:2995}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#44"]
+note = "Polestar paso 44 «Thunder Bluff», objetivo 1 (getfp) · consejo de Polestar sin traducir: Into {area:1638} by a lift: {npc:2995}, the wind rider master, stands on the central rise. Take his flight path if you don't know it yet."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-083"
+do = "complete"
+quest = 93739
+obj = 3
+at = [1456, 60.3, 51.68]
+if = { race = ["Skyborne"] }
+optional = true
+text = "Mata {npc:3057} (1) para «{quest:93739}»."
+tip = "Habla con {npc:3057}, en {area:1638}: «{quest:93739}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#44"]
+note = "Polestar paso 44 «Thunder Bluff», objetivo 2 (kill)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-084"
+do = "turnin"
+quest = 1195
+npc = 4721
+at = [1456, 54.97, 51.41]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s045-4721"
+text = "Entrega «{quest:1195}» a {npc:4721}."
+tip = "{npc:4721} está a poca distancia al este de {npc:2995}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#45"]
+note = "Polestar paso 45 «Zangen Pezuñapétrea», objetivo 1 (turnin) · condición no expresable: tienes lista la misión 1195"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-085"
+do = "accept"
+quest = 1196
+npc = 4721
+at = [1456, 54.97, 51.41]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s045-4721"
+reqlevel = 20
+text = "Coge «{quest:1196}» de {npc:4721}, {npc:4722} en {area:484}, más adelante en esta guía."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#45"]
+note = "Polestar paso 45 «Zangen Pezuñapétrea», objetivo 2 (accept) · condición no expresable: tienes lista la misión 1195 · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-086"
+do = "turnin"
+quest = 97538
+npc = 3024
+at = [1456, 54.14, 47.05]
+optional = true
+text = "Entrega «{quest:97538}» a {npc:3024}."
+tip = "{npc:3024} está junto a {npc:4721}, al este de {npc:2995}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#46"]
+note = "Polestar paso 46 «Tah Pezuña Invernal», objetivo 1 (turnin) · condición no expresable: tienes lista la misión 97538"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-087"
+do = "note"
+npc = 11869
+at = [1456, 40.93, 62.73]
+if = { class = ["WARRIOR"] }
+optional = true
+text = "Entrena con {npc:11869}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#47"]
+note = "Polestar paso 47 «Ansekhwa», objetivo 1 (train) · condición no expresable: dinero >= 1000 cobre; no tienes Two-Handed Maces 1+ · train sin hechizos: manual · consejo de Polestar sin traducir: While you're here: learn {spell:199} from {npc:11869} (10 silver); two-handers level a Warrior fastest."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-088"
+do = "goto"
+at = [1456, 46.7, 49.9]
+text = "Ve al maestro de vuelo de {map:1456}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#48"]
+note = "Polestar paso 48 «Fly to Camp Taurajo», objetivo 1 (goto)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-089"
+do = "fly"
+zone = 1413
+text = "Vuela a Campamento Taurajo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#48"]
+note = "Polestar paso 48 «Fly to Camp Taurajo», objetivo 2 (fly)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-090"
+do = "turnin"
+quest = 1534
+npc = 5899
+at = [1413, 43.42, 77.41]
+if = { class = ["SHAMAN"] }
+chain = "h26-vallefresno-mil-agujas-s049-5899"
+text = "Entrega «{quest:1534}» a {npc:5899}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#49"]
+note = "Polestar paso 49 «Salmuera», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:5899}'s hut stands on the ridge above the quilboar watering hole south of {area:378}, on the road to the {area:485}."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-091"
+do = "accept"
+quest = 220
+npc = 5899
+at = [1413, 43.42, 77.41]
+if = { class = ["SHAMAN"] }
+chain = "h26-vallefresno-mil-agujas-s049-5899"
+reqlevel = 20
+text = "Coge «{quest:220}» de {npc:5899}."
+tip = "Para {npc:5901}, al sur de {area:392}: siguiente guía."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#49"]
+note = "Polestar paso 49 «Salmuera», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-092"
+do = "accept"
+quest = 857
+npc = 3421
+at = [1413, 48.97, 86.31]
+reqlevel = 22
+text = "Coge «{quest:857}» de {npc:3421}."
+why = "+2.450 XP · ~4,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#50"]
+note = "Polestar paso 50 «Lágrima de las lunas», objetivo 1 (accept) · consejo de Polestar sin traducir: On the road south to the {area:485}, turn east into the {area:359} dig. {npc:3421} hides at its south edge. {obj:3646} stands on the bottom floor of the dwarves' fortress, beside {npc:3414} (30) and his Officers (26): pull them to you one at a time."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-093"
+do = "complete"
+quest = 857
+obj = 1
+at = [1413, 49.1, 84.3]
+text = "Recoge {item:5038} (1) de {obj:3646} para «{quest:857}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#50"]
+note = "Polestar paso 50 «Lágrima de las lunas», objetivo 2 (collect) · consejo de Polestar sin traducir: {obj:3646}; below ground."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-094"
+do = "turnin"
+quest = 857
+npc = 3421
+at = [1413, 48.97, 86.31]
+text = "Entrega «{quest:857}» a {npc:3421}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#50"]
+note = "Polestar paso 50 «Lágrima de las lunas», objetivo 3 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-095"
+do = "goto"
+at = [1441, 31.9, 23.9]
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#51"]
+note = "Polestar paso 51 «Great Lift», objetivo 1 (goto) · destino de Polestar sin traducir: Great Lift, down into Thousand Needles"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-096"
+do = "goto"
+at = [1441, 44.9, 48.9]
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#52"]
+note = "Polestar paso 52 «Freewind Post's lift», objetivo 1 (goto) · destino de Polestar sin traducir: Freewind Post's lift"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-097"
+do = "getfp"
+npc = 4317
+node = "30"
+at = [1441, 45.14, 49.11]
+text = "Coge la ruta de vuelo de Poblado Viento Libre con {npc:4317}."
+tip = "Baja en el elevador y sigue el camino al este por los cañones hasta {area:484}, un poblado tauren en lo alto de las mesetas. Su elevador está en el lado norte."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#53"]
+note = "Polestar paso 53 «Freewind Post», objetivo 1 (getfp)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-098"
+do = "accept"
+quest = 4767
+npc = 10377
+at = [1441, 44.93, 48.92]
+optional = true
+reqlevel = 25
+text = "Coge «{quest:4767}» de {npc:10377}, junto al maestro de jinetes del viento."
+tip = "+1.750 XP · ~11 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#53"]
+note = "Polestar paso 53 «Freewind Post», objetivo 2 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-099"
+do = "accept"
+quest = 4821
+npc = 10539
+at = [1441, 44.64, 50.29]
+reqlevel = 24
+text = "Coge «{quest:4821}» de {npc:10539}."
+why = "+2.100 XP · ~2,4 min · desbloquea «{quest:4865}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#53"]
+note = "Polestar paso 53 «Freewind Post», objetivo 3 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-100"
+do = "turnin"
+quest = 4542
+npc = 10537
+at = [1441, 45.67, 50.74]
+chain = "h26-vallefresno-mil-agujas-s053-10537"
+text = "Entrega «{quest:4542}» a {npc:10537}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#53"]
+note = "Polestar paso 53 «Freewind Post», objetivo 4 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-101"
+do = "accept"
+quest = 4841
+npc = 10537
+at = [1441, 45.67, 50.74]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s053-10537"
+reqlevel = 23
+text = "Coge «{quest:4841}» de {npc:10537}."
+tip = "+4.890 XP · ~17 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#53"]
+note = "Polestar paso 53 «Freewind Post», objetivo 5 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-102"
+do = "accept"
+quest = 5147
+at = [1441, 46.0, 50.86]
+reqlevel = 25
+text = "Coge «{quest:5147}» ({obj:176115})."
+tip = "El cartel de Se busca junto a {npc:10537}."
+why = "+2.540 XP · ~1,3 min · 3,7× la mediana del 26-30"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#53"]
+note = "Polestar paso 53 «Freewind Post», objetivo 6 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-103"
+do = "accept"
+quest = 98070
+npc = 4877
+at = [1441, 46.21, 51.51]
+chain = "h26-vallefresno-mil-agujas-s053-4877"
+reqlevel = 25
+text = "Coge «{quest:98070}» de {npc:4877}."
+why = "+5.170 XP · ~11 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#53"]
+note = "Polestar paso 53 «Freewind Post», objetivo 7 (accept) · consejo de Polestar sin traducir: {npc:4877}, the trade supplies vendor: the Screeching harpies of {area:487}; inside the inn."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-104"
+do = "accept"
+quest = 98069
+npc = 4877
+at = [1441, 46.21, 51.51]
+chain = "h26-vallefresno-mil-agujas-s053-4877"
+reqlevel = 25
+text = "Coge «{quest:98069}» de {npc:4877}."
+why = "+2.450 XP · <1 min · sin datos de botín: no se filtra"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#53"]
+note = "Polestar paso 53 «Freewind Post», objetivo 8 (accept) · consejo de Polestar sin traducir: {npc:4877}: her stolen supplies lie in the same harpy den."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-105"
+do = "turnin"
+quest = 1196
+npc = 4722
+at = [1441, 46.14, 51.71]
+chain = "h26-vallefresno-mil-agujas-s054-4722"
+text = "Entrega «{quest:1196}» a {npc:4722}."
+tip = "{npc:4722} está en {area:484}: el vial lleno de {npc:4721} es para él."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#54"]
+note = "Polestar paso 54 «Rau Abiscorredor», objetivo 1 (turnin) · condición no expresable: llevas la misión 1196 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-106"
+do = "accept"
+quest = 1197
+npc = 4722
+at = [1441, 46.14, 51.71]
+chain = "h26-vallefresno-mil-agujas-s054-4722"
+reqlevel = 20
+text = "Coge «{quest:1197}» de {npc:4722}, {obj:20807} en {area:1557}, entre los campamentos Galak."
+why = "+2.350 XP · ~1 min · 3,8× la mediana del 26-30"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#54"]
+note = "Polestar paso 54 «Rau Abiscorredor», objetivo 2 (accept) · condición no expresable: llevas la misión 1196 (implícita: el paso es de esa misión) · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-107"
+do = "complete"
+quest = 4821
+obj = 1
+at = [1441, 37.6, 56.1]
+text = "Recoge {item:12467} (1) de {obj:175565} para «{quest:4821}»."
+tip = "Baja en el elevador. El huevo está en un nido en el fondo del cañón, en uno de tres sitios: al sureste de las mesetas (52.3,55.2), al este (56.4,50.4) o al suroeste (37.6,56.1)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#55"]
+note = "Polestar paso 55 ««Un huevo extraño»», objetivo 1 (collect)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-108"
+do = "complete"
+quest = 4841
+obj = 1
+at = [1441, 45.53, 43.54]
+wps = [[1441, 45.7, 40.1, "Explorador Galak"], [1441, 47.5, 41.6, "Explorador Galak"], [1441, 43.2, 37.4, "Explorador Galak"]]
+optional = true
+text = "Mata {npc:4094} (12) para «{quest:4841}»."
+tip = "Los campamentos Galak llenan el cañón al norte del Poblado Viento Libre; exploradores, vaqueros y cazavientos comparten todos los campamentos. Un {npc:10617} solitario recorre un largo camino entre los campamentos: si te lo encuentras, mátalo; su nota inicia una misión para {area:2237}. No lo esperes."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#56"]
+note = "Polestar paso 56 «Galak centaurs», objetivo 1 (kill)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-109"
+do = "complete"
+quest = 4841
+obj = 2
+at = [1441, 46.13, 41.88]
+wps = [[1441, 48.2, 40.9, "Vaquero Galak"], [1441, 44.2, 40.0, "Vaquero Galak"], [1441, 41.7, 37.6, "Vaquero Galak"]]
+optional = true
+text = "Mata {npc:4093} (10) para «{quest:4841}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#56"]
+note = "Polestar paso 56 «Galak centaurs», objetivo 2 (kill)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-110"
+do = "complete"
+quest = 4841
+obj = 3
+at = [1441, 46.57, 41.16]
+wps = [[1441, 44.8, 40.6, "Cazavientos Galak"], [1441, 48.5, 41.1, "Cazavientos Galak"], [1441, 43.7, 36.4, "Cazavientos Galak"]]
+optional = true
+text = "Mata {npc:4096} (6) para «{quest:4841}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#56"]
+note = "Polestar paso 56 «Galak centaurs», objetivo 3 (kill)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-111"
+do = "loot"
+item = 12564
+count = 1
+at = [1441, 39.43, 33.1]
+optional = true
+text = "Consigue {item:12564} de {npc:10617}."
+tip = "«{quest:4881}» de {npc:10617}, si te lo encuentras."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#56"]
+note = "Polestar paso 56 «Galak centaurs», objetivo 4 (collect)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-112"
+do = "accept"
+quest = 4881
+optional = true
+reqlevel = 23
+text = "Usa {item:12564} para empezar «{quest:4881}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#56"]
+note = "Polestar paso 56 «Galak centaurs», objetivo 5 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-113"
+do = "complete"
+quest = 1197
+obj = 1
+at = [1441, 42.0, 31.5]
+text = "Usa {item:5868} para «{quest:1197}»."
+tip = "A poca distancia al norte de los campamentos Galak, la cueva de {area:1557} baja hasta su cámara más profunda, donde arde {obj:20807}. Usa en él el {item:5868} y despoja enseguida la {item:5869}: la llama solo se apaga un momento, y si vuelve a encenderse pierdes el vial. Después ve al este, a la meseta de {npc:2986}.\nCuidado: dos guardias de llamas Galak (30) están junto al brasero y un guardia centauro recorre la cueva: atráelos de uno en uno antes de apagar la llama. {item:5868}, en {obj:20807}. Recoge {item:5869} (1) de {obj:20807} para «{quest:1197}». {item:5869}, de {obj:20807}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#57"]
+note = "Polestar paso 57 «Splithoof Hold», objetivo 1 (use) · condición no expresable: llevas la misión 1197 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-114"
+do = "accept"
+quest = 1149
+npc = 2986
+at = [1441, 53.95, 41.49]
+reqlevel = 25
+text = "Coge «{quest:1149}» de {npc:2986}."
+tip = "{npc:2986} está en lo alto de una meseta al este de los campamentos Galak. Para «{quest:1149}», salta desde el final de los tablones a su lado: aterrizarás sano y salvo."
+why = "+1.050 XP · ~2 min · desbloquea «{quest:1151}» y 1 más"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#58"]
+note = "Polestar paso 58 «Dorn Acechallanos», objetivo 1 (accept) · consejo de Polestar sin traducir: {npc:2986}, below ground."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-115"
+do = "complete"
+quest = 1149
+text = "Completa «{quest:1149}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#58"]
+note = "Polestar paso 58 «Dorn Acechallanos», objetivo 2 (complete) · objetivos (EN): If you have faith, leap from the planks overlooking Thousand Needles."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-116"
+do = "turnin"
+quest = 1149
+npc = 2986
+at = [1441, 53.95, 41.49]
+chain = "h26-vallefresno-mil-agujas-s058-2986"
+text = "Entrega «{quest:1149}» a {npc:2986}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#58"]
+note = "Polestar paso 58 «Dorn Acechallanos», objetivo 3 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-117"
+do = "accept"
+quest = 1150
+npc = 2986
+at = [1441, 53.95, 41.49]
+chain = "h26-vallefresno-mil-agujas-s058-2986"
+reqlevel = 25
+text = "Coge «{quest:1150}» de {npc:2986}."
+why = "+2.655 XP · ~2,3 min · desbloquea «{quest:1151}»"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#58"]
+note = "Polestar paso 58 «Dorn Acechallanos», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-118"
+do = "turnin"
+quest = 4841
+npc = 10537
+at = [1441, 45.67, 50.74]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s059-10537"
+text = "Entrega «{quest:4841}» a {npc:10537}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#59"]
+note = "Polestar paso 59 «Freewind Post», objetivo 1 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-119"
+do = "accept"
+quest = 5064
+npc = 10537
+at = [1441, 45.67, 50.74]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s059-10537"
+reqlevel = 24
+text = "Coge «{quest:5064}» de {npc:10537}."
+tip = "+2.300 XP · ~7,5 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#59"]
+note = "Polestar paso 59 «Freewind Post», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-120"
+do = "turnin"
+quest = 4821
+npc = 10539
+at = [1441, 44.64, 50.29]
+chain = "h26-vallefresno-mil-agujas-s059-10539"
+text = "Entrega «{quest:4821}» a {npc:10539}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#59"]
+note = "Polestar paso 59 «Freewind Post», objetivo 3 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-121"
+do = "accept"
+quest = 4865
+npc = 10539
+at = [1441, 44.64, 50.29]
+chain = "h26-vallefresno-mil-agujas-s059-10539"
+reqlevel = 24
+text = "Coge «{quest:4865}» de {npc:10539}."
+why = "+1.050 XP · <1 min · 4,9× la mediana del 26-30"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#59"]
+note = "Polestar paso 59 «Freewind Post», objetivo 4 (accept) · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-122"
+do = "sethearth"
+npc = 11116
+zone = 1441
+at = [1441, 46.07, 51.52]
+text = "Pon la piedra de hogar en {area:484} con {npc:11116}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#59"]
+note = "Polestar paso 59 «Freewind Post», objetivo 5 (sethome) · consejo de Polestar sin traducir: {npc:11116}, beside {npc:4877}."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-123"
+do = "turnin"
+quest = 1197
+npc = 4722
+at = [1441, 46.14, 51.71]
+optional = true
+text = "Entrega «{quest:1197}» a {npc:4722}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#60"]
+note = "Polestar paso 60 «Rau Abiscorredor», objetivo 1 (turnin) · condición no expresable: tienes lista la misión 1197"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-124"
+do = "complete"
+quest = 5064
+obj = 3
+at = [1441, 39.3, 41.5]
+optional = true
+text = "Usa {obj:190484} para «{quest:5064}»."
+tip = "Al oeste del Poblado Viento Libre, los campamentos Tótem Siniestro bajo {area:2097}. Las Notas secretas están en Cofres de documentos en los campamentos del sureste, suroeste y noroeste. {obj:176344}, campamento del sureste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#61"]
+note = "Polestar paso 61 «Darkcloud Pinnacle», objetivo 1 (interact)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-125"
+do = "complete"
+quest = 5064
+obj = 2
+at = [1441, 33.8, 40.0]
+optional = true
+text = "Usa {obj:190483} para «{quest:5064}»."
+tip = "{obj:176344}, campamento del suroeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#61"]
+note = "Polestar paso 61 «Darkcloud Pinnacle», objetivo 2 (interact)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-126"
+do = "complete"
+quest = 5064
+obj = 1
+at = [1441, 31.8, 32.6]
+optional = true
+text = "Usa {obj:176344} para «{quest:5064}»."
+tip = "{obj:176344}, campamento del noroeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#61"]
+note = "Polestar paso 61 «Darkcloud Pinnacle», objetivo 3 (interact)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-127"
+do = "goto"
+at = [1441, 35.0, 31.5]
+if = { maxlevel = 27 }
+text = "Ve al punto marcado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#62"]
+note = "Polestar paso 62 «Level 28.9», objetivo 1 (goto) · destino de Polestar sin traducir: Grimtotem camps below Darkcloud Pinnacle · consejo de Polestar sin traducir: Short of 28.9? The Grimtotem around these camps (25-28) are the right level: kill a few more before the climb to {npc:10646}. Past it, this step skips itself. Or, with a group, run the {area:2797} dungeon or the {area:1717} dungeon instead."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-128"
+do = "level"
+level = 28
+at = [1441, 34.96, 31.03]
+if = { maxlevel = 27 }
+text = "Sube al nivel 28."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#62"]
+note = "Polestar paso 62 «Level 28.9», objetivo 2 (level) · consejo de Polestar sin traducir: Grind on {npc:10759}."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-129"
+do = "complete"
+quest = 5147
+obj = 1
+at = [1441, 38.1, 26.9]
+text = "Consigue {item:12884} (1) de {npc:10896} para «{quest:5147}»."
+tip = "Sube por el sendero hasta lo alto de {area:2097}. {npc:10646} está cautiva junto a {npc:10896} (29): acaba primero con los guardias y con {npc:10896}, luego libérala y protégela en la bajada; te atacarán emboscadores Tótem Siniestro por el camino."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#63"]
+note = "Polestar paso 63 «Lakota Canzalvaje», objetivo 1 (collect)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-130"
+do = "accept"
+quest = 4904
+npc = 10646
+at = [1441, 37.95, 26.45]
+escort = true
+reqlevel = 25
+text = "Coge «{quest:4904}» de {npc:10646}."
+why = "+2.350 XP · ~6,5 min"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#63"]
+note = "Polestar paso 63 «Lakota Canzalvaje», objetivo 2 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-131"
+do = "complete"
+quest = 4904
+escort = true
+text = "Completa «{quest:4904}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#63"]
+note = "Polestar paso 63 «Lakota Canzalvaje», objetivo 3 (complete) · objetivos (EN): Escort Lakota Windsong from the Darkcloud Pinnacle."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-132"
+do = "complete"
+quest = 4767
+obj = 1
+at = [1441, 18.02, 41.68]
+wps = [[1441, 11.7, 36.9, "Huevo de dracoleón de Nido Alto"], [1441, 11.4, 33.7, "Huevo de dracoleón de Nido Alto"]]
+optional = true
+text = "Recoge {item:12356} (10) de {obj:175384} para «{quest:4767}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#64"]
+note = "Polestar paso 64 «Highperch», objetivo 1 (collect) · consejo de Polestar sin traducir: West of Whitereach the wyverns nest on the {area:482} cliffs; the eggs lie in the nests. {npc:10427} waits on the east side of the nesting grounds: free him and keep him alive on the walk back to {area:2237}.\nCareful: Wyverns at level 28-29 fly overhead and can be pulled without warning. A group of three wyverns can ambush you once you pass the first pillar at the bottom."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-133"
+do = "accept"
+quest = 4770
+npc = 10427
+at = [1441, 17.89, 40.57]
+optional = true
+escort = true
+reqlevel = 25
+text = "Coge «{quest:4770}» de {npc:10427}."
+tip = "+2.350 XP · ~7,6 min: por debajo de la media del tramo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#64"]
+note = "Polestar paso 64 «Highperch», objetivo 2 (accept)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-134"
+do = "complete"
+quest = 4770
+optional = true
+escort = true
+text = "Completa «{quest:4770}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#64"]
+note = "Polestar paso 64 «Highperch», objetivo 3 (complete) · objetivos (EN): Escort Pao'ka from Highperch"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-135"
+do = "turnin"
+quest = 4770
+npc = 10428
+at = [1441, 21.54, 32.35]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s065-10428"
+text = "Entrega «{quest:4770}» a {npc:10428}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#65"]
+note = "Polestar paso 65 «Whitereach Post», objetivo 1 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-136"
+do = "turnin"
+quest = 4865
+npc = 10428
+at = [1441, 21.54, 32.35]
+chain = "h26-vallefresno-mil-agujas-s065-10428"
+text = "Entrega «{quest:4865}» a {npc:10428}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#65"]
+note = "Polestar paso 65 «Whitereach Post», objetivo 2 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-137"
+do = "note"
+text = "La siguiente misión de {npc:10428}, El fuego Sagrado, termina en {map:1456}, fuera de esta ruta. Omítela."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#65"]
+note = "Polestar paso 65 «Whitereach Post», objetivo 3 (note)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-138"
+do = "turnin"
+quest = 4881
+npc = 10638
+at = [1441, 21.25, 32.06]
+chain = "h26-vallefresno-mil-agujas-s066-10638"
+text = "Entrega «{quest:4881}» a {npc:10638}."
+tip = "Solo si {npc:10617} te soltó su plan: {npc:10638} está en {area:2237}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#66"]
+note = "Polestar paso 66 «Kanati Nubegris», objetivo 1 (turnin) · condición no expresable: llevas la misión 4881, 4966 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-139"
+do = "accept"
+quest = 4966
+npc = 10638
+at = [1441, 21.25, 32.06]
+chain = "h26-vallefresno-mil-agujas-s066-10638"
+reqlevel = 23
+text = "Coge «{quest:4966}» de {npc:10638}."
+why = "+2.468 XP · ~1,3 min · 3,7× la mediana del 26-30"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#66"]
+note = "Polestar paso 66 «Kanati Nubegris», objetivo 2 (accept) · condición no expresable: llevas la misión 4881, 4966 (implícita: el paso es de esa misión) · datos no importados: pre"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-140"
+do = "accept"
+quest = 5151
+npc = 10941
+at = [1441, 21.43, 32.55]
+optional = true
+reqlevel = 24
+text = "Coge «{quest:5151}» de {npc:10941}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#67"]
+note = "Polestar paso 67 «Wizlo Rodabrillante», objetivo 1 (accept) · condición no expresable: vas en grupo para la misión 5151"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-141"
+do = "complete"
+quest = 5151
+obj = 1
+at = [1441, 22.8, 24.6]
+optional = true
+text = "Consigue {item:12946} (1) de {npc:10992} para «{quest:5151}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#68"]
+note = "Polestar paso 68 ««Hipercondensador»», objetivo 1 (collect) · condición no expresable: vas en grupo para la misión 5151 · consejo de Polestar sin traducir: These are elite mobs: grouping up is encouraged, look for people to do it with. {npc:10992} is a level 30 elite: most classes solo it at level 32, but you may need help. Skip it if you are alone: the route has you grind the XP back."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-142"
+do = "complete"
+quest = 4966
+at = [1441, 21.25, 32.06]
+text = "Completa «{quest:4966}»."
+tip = "Mata al {npc:10720} que viene a por {npc:10638}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#69"]
+note = "Polestar paso 69 «Whitereach Post», objetivo 1 (complete) · condición no expresable: llevas la misión 4966 (implícita: el paso es de esa misión) · objetivos (EN): Galak Assassin"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-143"
+do = "turnin"
+quest = 4966
+npc = 10638
+at = [1441, 21.25, 32.06]
+text = "Entrega «{quest:4966}» a {npc:10638}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#70"]
+note = "Polestar paso 70 «Whitereach Post», objetivo 1 (turnin) · condición no expresable: llevas la misión 4966 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-144"
+do = "turnin"
+quest = 5151
+npc = 10941
+at = [1441, 21.43, 32.55]
+optional = true
+text = "Entrega «{quest:5151}» a {npc:10941}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#71"]
+note = "Polestar paso 71 «Wizlo Rodabrillante», objetivo 1 (turnin) · condición no expresable: vas en grupo para la misión 5151"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-145"
+do = "goto"
+at = [1441, 27.0, 51.9]
+if = { maxlevel = 28 }
+optional = true
+text = "Ve a {npc:4101}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#72"]
+note = "Polestar paso 72 «Level 29.49», objetivo 1 (goto) · condición no expresable: no vas en grupo para la misión 5151 · consejo de Polestar sin traducir: If you skipped «{quest:5151}» and are still short of 29.49, kill harpies here first: {area:487} is your next stop anyway. Past it, this step skips itself. Or, with a group, run the {area:2797} dungeon or the {area:796} dungeon (Graveyard) instead."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-146"
+do = "level"
+level = 29
+at = [1441, 27.17, 52.24]
+if = { maxlevel = 28 }
+optional = true
+text = "Sube al nivel 29."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#72"]
+note = "Polestar paso 72 «Level 29.49», objetivo 2 (level) · condición no expresable: no vas en grupo para la misión 5151 · consejo de Polestar sin traducir: Grind on {npc:4101}."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-147"
+do = "complete"
+quest = 98070
+obj = 2
+at = [1441, 27.17, 52.24]
+wps = [[1441, 27.9, 50.5, "Malapluma estridente"], [1441, 26.9, 55.6, "Malapluma estridente"], [1441, 27.3, 47.7, "Malapluma estridente"]]
+text = "Mata {npc:4101} (5) para «{quest:98070}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#73"]
+note = "Polestar paso 73 «The Screeching Canyon: kill these as you meet them», objetivo 1 (kill) · consejo de Polestar sin traducir: South of Darkcloud, the harpies of {area:487}. {npc:4490} (31) walks among them: thin out the harpies around her before you pull her. The Screeching Harpies, Roguefeathers and Windcallers there are {npc:4877}'s; her «{quest:98069}» lie on the ground along the foot of the cliff and in the cave up on top."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-148"
+do = "complete"
+quest = 98070
+obj = 3
+at = [1441, 26.72, 52.1]
+wps = [[1441, 26.6, 53.2, "Clamavientos estridente"], [1441, 26.3, 56.0, "Clamavientos estridente"]]
+text = "Mata {npc:4104} (5) para «{quest:98070}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#73"]
+note = "Polestar paso 73 «The Screeching Canyon: kill these as you meet them», objetivo 2 (kill)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-149"
+do = "complete"
+quest = 98070
+obj = 1
+at = [1441, 26.49, 52.26]
+wps = [[1441, 26.4, 55.3, "Arpía estridente"], [1441, 28.1, 48.4, "Arpía estridente"]]
+text = "Mata {npc:4100} (5) para «{quest:98070}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#73"]
+note = "Polestar paso 73 «The Screeching Canyon: kill these as you meet them», objetivo 3 (kill)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-150"
+do = "complete"
+quest = 98069
+obj = 1
+at = [1441, 27.0, 51.9]
+text = "Consigue {item:279383} (8) para «{quest:98069}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#73"]
+note = "Polestar paso 73 «The Screeching Canyon: kill these as you meet them», objetivo 4 (collect) · consejo de Polestar sin traducir: «{quest:98069}», on the ground around the den."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-151"
+do = "complete"
+quest = 1150
+obj = 1
+at = [1441, 26.8, 55.4]
+text = "Consigue {item:5843} (1) de {npc:4490} para «{quest:1150}»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#73"]
+note = "Polestar paso 73 «The Screeching Canyon: kill these as you meet them», objetivo 5 (collect)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-152"
+do = "turnin"
+quest = 4767
+npc = 10377
+at = [1441, 44.93, 48.92]
+optional = true
+text = "Entrega «{quest:4767}» a {npc:10377}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#74"]
+note = "Polestar paso 74 «Freewind Post», objetivo 1 (turnin) · consejo de Polestar sin traducir: Back east to {area:484}: it lies on the way from {area:487} to {npc:2986}'s mesa."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-153"
+do = "turnin"
+quest = 5147
+npc = 10537
+at = [1441, 45.67, 50.74]
+chain = "h26-vallefresno-mil-agujas-s074-10537"
+text = "Entrega «{quest:5147}» a {npc:10537}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#74"]
+note = "Polestar paso 74 «Freewind Post», objetivo 2 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-154"
+do = "turnin"
+quest = 5064
+npc = 10537
+at = [1441, 45.67, 50.74]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s074-10537"
+text = "Entrega «{quest:5064}» a {npc:10537}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#74"]
+note = "Polestar paso 74 «Freewind Post», objetivo 3 (turnin)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-155"
+do = "turnin"
+quest = 4904
+npc = 10645
+at = [1441, 45.97, 51.61]
+text = "Entrega «{quest:4904}» a {npc:10645}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#74"]
+note = "Polestar paso 74 «Freewind Post», objetivo 4 (turnin) · consejo de Polestar sin traducir: {npc:10645}, inside."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-156"
+do = "turnin"
+quest = 98070
+npc = 4877
+at = [1441, 46.21, 51.51]
+chain = "h26-vallefresno-mil-agujas-s074-4877"
+text = "Entrega «{quest:98070}» a {npc:4877}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#74"]
+note = "Polestar paso 74 «Freewind Post», objetivo 5 (turnin) · consejo de Polestar sin traducir: {npc:4877}, inside."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-157"
+do = "turnin"
+quest = 98069
+npc = 4877
+at = [1441, 46.21, 51.51]
+chain = "h26-vallefresno-mil-agujas-s074-4877"
+text = "Entrega «{quest:98069}» a {npc:4877}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#74"]
+note = "Polestar paso 74 «Freewind Post», objetivo 6 (turnin) · consejo de Polestar sin traducir: {npc:4877}, inside."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-158"
+do = "note"
+optional = true
+text = "Vende lo que no sirve y repara con el vendedor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#74"]
+note = "Polestar paso 74 «Freewind Post», objetivo 7 (vendor)"
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-159"
+do = "turnin"
+quest = 1150
+npc = 2986
+at = [1441, 53.95, 41.49]
+chain = "h26-vallefresno-mil-agujas-s075-2986"
+text = "Entrega «{quest:1150}» a {npc:2986}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#75"]
+note = "Polestar paso 75 ««Prueba de resistencia»», objetivo 1 (turnin) · consejo de Polestar sin traducir: {npc:2986}, below ground. · consejo de Polestar sin traducir: {npc:2986}'s mesa is north-east of Freewind."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-160"
+do = "accept"
+quest = 1151
+npc = 2986
+at = [1441, 53.95, 41.49]
+optional = true
+chain = "h26-vallefresno-mil-agujas-s075-2986"
+reqlevel = 25
+text = "Coge «{quest:1151}» de {npc:2986}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#75"]
+note = "Polestar paso 75 ««Prueba de resistencia»», objetivo 2 (accept) · datos no importados: pre · consejo de Polestar sin traducir: {npc:2986} offers «{quest:1151}» once «{quest:1150}» is in."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-161"
+do = "complete"
+quest = 1151
+obj = 1
+at = [1441, 17.1, 38.1]
+wps = [[1441, 10.6, 23.1, "Fragmentos de Rok'Alim"]]
+optional = true
+text = "Consigue {item:5844} (1) de {npc:4499} para «{quest:1151}»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#76"]
+note = "Polestar paso 76 «Rok'Alim el Aporreador», objetivo 1 (collect) · consejo de Polestar sin traducir: {npc:4499}, a hard-hitting rock elemental, walks the cliffs of {area:482}, back west past {area:2237}. {npc:4499} is elite: grouping up is advised."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-162"
+do = "turnin"
+quest = 1151
+npc = 2986
+at = [1441, 53.95, 41.49]
+optional = true
+text = "Entrega «{quest:1151}» a {npc:2986}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#76"]
+note = "Polestar paso 76 «Rok'Alim el Aporreador», objetivo 2 (turnin) · consejo de Polestar sin traducir: {npc:2986}, below ground."
+
+[[step]]
+id = "h26-vallefresno-mil-agujas-163"
+do = "note"
+text = "La ruta sigue en vuelo desde aquí a El Cruce y {map:1454}."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/07-ashenvale#77"]
+note = "Polestar paso 77 «Freewind Post», objetivo 1 (note) · nota de Polestar traducida por Senda: The next guide flies on from here to the Crossroads and Orgrimmar. · consejo de Polestar sin traducir: Back to {area:484}. The {area:2240}'s quests come with the next visit to the {area:439}, at 33."
