@@ -1,7 +1,7 @@
 # LOOKUP: de dónde sale cada objeto
 
-Conjunto de datos `data/lookup/` y su generador `tools/gen_lookup.py`. Alimenta la línea de tooltip
-«Se consigue en: ...» y, más adelante, el buscador de objetos (PLAN-POLESTAR 6b). Todo lo pesado se
+Conjunto de datos `data/lookup/` y su generador `tools/gen_lookup.py`. Alimenta la línea de descripción
+«Senda: lo suelta ... en ...» y el buscador de objetos (`/senda objeto`, pestaña «Objetos»; PLAN-POLESTAR 6b). Todo lo pesado se
 calcula fuera del juego (principio 6a): en el juego solo hay Lua compacto, cargado bajo demanda.
 
 ## Fuentes y licencia
@@ -43,6 +43,8 @@ vendedor sin spawn cuyo sitio sale de un paso de guía. Los nombres no se guarda
 (6c, `{npc:id}` / `C_Item`).
 
 `data/lookup/coverage.json`: cobertura medida y lista de fallos (regenerada con cada ejecución).
+
+`data/lookup/locale/<idioma>/items.json`: nombres de los objetos del buscador (formato de `tools/localenames.py`, con la fuente de cada nombre): `forever-db` en inglés (de `gen_lookup.py`) y `ingame:<build>:<fecha>` (de `/senda volcar` + `import_names.py`).
 
 ## Reproducir
 
@@ -111,49 +113,91 @@ Cómo cerrar el hueco con datos reales, no con suposiciones (todo en otros paque
 22432 Devilsaur Barb. La lista completa de fallos del nivel 1 (584) está en `coverage.json`
 (`any_source.all.misses`, con nombre en inglés de forever-db).
 
-## Diseño dentro del juego
+## Diseño dentro del juego (implementado)
 
-Objetivos: ninguna espera, consulta < 2 ms por fotograma, memoria solo mientras se usa.
+Objetivos: ninguna espera, consulta < 2 ms por fotograma, memoria solo mientras se usa. Código:
+`addon/Senda/Modules/Lookup.lua` (datos, línea de descripción, `/senda objeto`, «Señalar», búsqueda),
+`addon/Senda/UI/LookupTab.lua` (pestaña «Objetos») y la parte de objetos de `Core/NamesDump.lua`.
 
-**Paquete bajo demanda.** Addon aparte `Senda_Lookup` (`LoadOnDemand: 1` en el `.toc`), que no se
-carga al arrancar. Se carga con `C_AddOns.LoadAddOn` la primera vez que se pide, siempre fuera de
-combate (`InCombatLockdown()`); en combate la línea simplemente no aparece y se reintenta al salir.
-Es un único fichero porque 200 KB de Lua tardan unos milisegundos en analizarse; si el tamaño crece, se
-parte por rango de id (`itemId // 4096`) y cada trozo se carga al primer uso.
+**Paquete bajo demanda.** Addon aparte `Senda_Lookup` (`LoadOnDemand: 1`), generado por `tools/build.py` desde
+`data/lookup/` (`Items.lua`, `Places.lua`, `Names_<idioma>.lua` y el `.toc` que los lista; el zip y `install-dev`
+llevan ya cinco carpetas). No se carga al arrancar: `Lookup.Load()` llama a `C_AddOns.LoadAddOn` la primera vez que
+se mira un objeto o se busca, siempre fuera de combate (`InCombatLockdown()`): en combate la línea simplemente no
+sale y el comando avisa. Son ~0,4 MB de Lua (180 KB de objetos, 87 KB de lugares, 156 KB de nombres): unos
+milisegundos, una sola vez por sesión. Si faltara la carpeta, todo se apaga sin error («Falta la carpeta
+Senda_Lookup»).
 
-**Formato compacto.** Una cadena por objeto, analizada solo al consultar y guardada en una caché pequeña:
-
-```
-Senda_Lookup_Items = { [159] = "n3577:100,n3662:100,o3658:100|v6736|q8c", ... }
-Senda_Lookup_Places = { n = { [3577] = "1429,52.4,61.2" }, o = { ... } }
-```
-
-Claves del trozo: `n`/`o`/`i` + id + `:` + prob.; `v` vendedores; `g` lugar de ruta; `q` recompensa
-(`c` = a elegir); `o` objetivo. Solo se desempaqueta la entrada pedida; nada de tablas anidadas para
-5.600 objetos al cargar.
-
-**Tooltip.** Gancho `TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, fn)`:
-lee el id del objeto, busca la entrada y añade **una sola** línea (o dos con Mayús pulsado):
+**Formato compacto.** Una cadena por objeto, desempaquetada solo al consultarlo (caché de 200 entradas):
 
 ```
-Se consigue en: Cerdo Jabalí 12%, Grunt Rotacuernos 8% (+3)   -- botín: mejor probabilidad primero
-Se consigue en: comprado a Belm, Tabernero (Dun Morogh)       -- vendedor
-Se consigue en: recompensa de «Costillas para Ragnar»         -- misión
-Objetivo de «Costillas para Ragnar»                           -- nivel 2
+Senda_Lookup.items  = { [159] = "s=n3577:100,o3658:100,n3141:10.4;N=257;v=6736;q=8c,381;Q=7", ... }
+Senda_Lookup.places = { n = { [3577] = "1421,62.6,65,0,1" }, o = { ... } }   -- uiMapa,x%,y%,mapa,apariciones
+Senda_Lookup.names  = { enUS = "159\tRefreshing Spring Water\n...", esES = "..." }
 ```
 
-Los nombres salen del cliente (`C_QuestLog.GetTitleForQuestID`, tooltip de criatura por id; si no están
-en caché se piden y la línea se refresca al llegar), el sitio de `C_Map.GetMapInfo(uiMap).name`. Solo se
-muestran fuentes de la zona del jugador primero y la facción correcta; el resto, tras «+N». Se
-limita a una vez por objeto y tooltip y se salta si la línea ya está.
+Campos: `s` botín (`n` PNJ, `o` objeto del mundo, `i` objeto contenedor, `:probabilidad`), `N` total real de fuentes,
+`v` vendedores, `g` sitio de la ruta (`mapa:x:y`), `q` recompensa de misión (`c` = a elegir) y `Q` total, `o`
+objetivo de misión y `O` total. Los nombres son una cadena por idioma (lo de forever-db en inglés, lo que da el
+cliente en el idioma del jugador): al cargar se registran como respaldo de `{item:N}` en `Senda.Names` y el addon
+no guarda otra copia.
 
-**Buscador (`/senda buscar <objeto>`).** La misma tabla al revés (nombre -> id) se construye bajo
-demanda, repartida en varios fotogramas con una corrutina. Al elegir una fuente, la flecha apunta a su
-lugar (`places`), con el mismo punto representativo; ese punto puede no ser el PNJ más cercano al
-jugador, por eso se muestran todos los spawns solo en el mapa de zona cuando se amplíe el paquete.
+**Línea de la descripción** (`TooltipDataProcessor.AddTooltipPostCall` sobre objetos, `GameTooltip` e
+`ItemRefTooltip`; opción «Decir en la descripción de los objetos de dónde salen», activada, sección Objetos). Una
+sola línea, de verde Senda, con fichas que resuelve `Senda.Names`; una sola fuente, la mejor:
+
+```
+Senda: lo sueltan {npc:1211} (80%) y {npc:8503} (80%) en {map:1426}   botín de PNJ; los de tu zona primero (+N más)
+Senda: se saca de un objeto del mundo en {map:1426}                     objeto del mundo (el cliente no los nombra por id)
+Senda: sale de {item:159}                                               objeto contenedor
+Senda: lo vende {npc:1247} en {map:1426}                                vendedor (de los pasos «buy» de las guías)
+Senda: recógelo en {map:1446}                                           sitio de la ruta donde la guía lo recoge
+Senda: recompensa de {quest:46}                                         recompensa de misión
+Senda: para {quest:3181}                                                objetivo de misión (nivel 2: real, no dice dónde)
+```
+
+Orden de preferencia: botín de PNJ > objeto del mundo > contenedor > vendedor > sitio de la ruta > recompensa >
+objetivo. Si el nombre de un PNJ o misión aún no está en caché, sale «PNJ #N» y se pide al cliente; cuando llega
+(`SENDA_NAMES_UPDATED`) la descripción que se está viendo se rehace una vez (`RefreshData`). Una mazmorra (`uiMapa`
+0) dice «en una mazmorra». No se promete lo que forever-db no da: sin `%` si no hay dato.
+
+**`/senda objeto <nombre, número o enlace>`** busca y, si hay un único resultado o un nombre exacto, enseña de dónde
+sale (botín con zona y probabilidad, objetos del mundo, contenedor, vendedores, sitio de la ruta, recompensas y
+objetivos); si hay varios, lista hasta 8 y pide el número. `/senda objeto señalar <objeto>` (sin objeto, el último
+mirado) apunta la flecha a la fuente más cercana; `/senda objeto borrar` la quita. La pestaña «Objetos» del panel
+hace lo mismo con una caja de búsqueda (busca sola al dejar de escribir 0,4 s), una lista con «Señalar» por fila y
+el detalle debajo.
+
+**Fuente más cercana.** Entre las fuentes con sitio en un mapa real (botín de PNJ y de objeto, vendedores, sitio de
+la ruta; los contenedores cuentan por los PNJ que los sueltan) se elige la de menor distancia en yardas
+(`Compat.WorldDistance`) desde el jugador. Si ninguna es medible (otro continente, sin posición) se queda la
+primera, la de mejor probabilidad, y el planificador de viaje de la flecha se encarga del camino. Las mazmorras
+(`uiMapa` 0) no se pueden señalar y lo dice; lo que solo es recompensa u objetivo de misión no tiene sitio que
+señalar. La fuente de la flecha es `lookup`: va por delante de la guía y por detrás de un punto manual y del
+cadáver; al llegar se quita sola como los demás.
+
+**Búsqueda.** Nada se construye hasta la primera búsqueda. Entonces una corrutina, a razón de 500 operaciones o
+1,5 ms por fotograma (en combate espera), recorre los nombres compilados (`Senda.Names:PackStrings("item")`) y
+arma el índice: por objeto, sus nombres normalizados (minúsculas, sin tildes) del cliente (solo los que ya tiene en
+caché: `C_Item.IsItemDataCachedByID`), del volcado (`SendaNamesDB`) y del respaldo en el idioma del cliente y en
+inglés, de modo que «canon» encuentra «Cañón» y se puede buscar en inglés. Coinciden los objetos cuyo nombre contiene
+todas las palabras; se ordena por exacto, empieza por, palabra que empieza y contiene, luego por número, y se
+devuelven 20. El índice se suelta a los 90 s sin buscar. Una búsqueda nueva sustituye a la anterior.
+
+**Nombres del juego para el buscador.** forever-db da el nombre en inglés de 5.606 de los 5.623 objetos
+(`data/lookup/locale/enUS/items.json`, fuente `forever-db`, la prioridad más baja). Para tener los nombres reales en
+tu idioma, `/senda volcar` apunta en `SendaNamesDB.locales.<idioma>.litem` los objetos del buscador (los que no
+usan las guías) que el cliente **ya tiene en caché**: no pide nada al servidor. `/senda volcar objetos` pide además
+los que faltan, al ritmo de siempre (20 por fotograma, 40 a la vez, parado en combate). `tools/import_names.py` lee
+`litem` y lo escribe en `data/lookup/locale/<idioma>/items.json` con fuente `ingame:<build>:<fecha>` (lo de las
+guías sigue yendo a `data/locale/`), e informa de la cobertura de nombres del buscador en ese idioma;
+`tools/build.py` compila ambos en `addon/Senda_Lookup/Names_<idioma>.lua`. Nada de QuestieDB entra en este camino.
+Para poner los nombres en inglés de forever-db a objetos nuevos sin regenerar todo:
+`python -I tools/gen_lookup.py --names-only`.
 
 **Qué no hace.** No promete probabilidades que forever-db no da (sin `%` si no hay dato); no muestra el
-botín con probabilidad 0; no mezcla nivel 1 y 2 en la misma línea.
+botín con probabilidad 0; no mezcla nivel 1 y 2 en la misma línea; no pide al servidor los nombres de 5.600
+objetos por su cuenta (solo con `/senda volcar objetos`); no tiene todos los spawns (un punto representativo por
+fuente, ver «Esquema»).
 
 ## Validación
 

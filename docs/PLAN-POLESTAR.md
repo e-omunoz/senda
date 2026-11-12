@@ -266,7 +266,7 @@ pequeñas, textos, pruebas). Cada fase termina con el simulador en verde y una v
 | 1 | Importador + prototipo Teldrassil + funciones 1, 2, 3, 6 y 7 | 0.4.x |
 | 2 | Nombres desde el juego (fichas y volcado), filtro de eficiencia, grabador ampliado, las 3 guías actuales completas, seguimiento por objetivo, saltar con Deshacer, informe de errores, pareja sincronizada | 0.5.0 |
 | 3 | Todas las razas de Alianza, planificador de viaje, grafo de caminos, «Mientras estás aquí», alertas de raros | 0.6.0 |
-| 4 | Horda, diario de mazmorras, buscador de objetos, métricas en la web | 1.0.0 |
+| 4 | Horda, diario de mazmorras, buscador de objetos (hecho en la rama `fase4-objetos`: línea en la descripción, `/senda objeto`, pestaña «Objetos», «Señalar» y nombres del juego; [LOOKUP.md](LOOKUP.md)), métricas en la web | 1.0.0 |
 
 ## 9. Riesgos
 

@@ -15,6 +15,9 @@ Genera:
                                       bajo demanda, Modules/Travel.lua); solo si existe data/travel/
   addon/Senda/Data/Rares.lua          raros compactos desde data/rares/rares.json (id, niveles, rango, apariciones)
   addon/Senda/Data/Data.xml           (siempre: el .toc lo carga; incluye Travel.lua y Rares.lua si existen)
+  addon/Senda_Lookup/{Items,Places,Names_<locale>}.lua + Senda_Lookup.toc
+                                      el buscador de objetos (addon bajo demanda) desde data/lookup/ (docs/LOOKUP.md);
+                                      solo si existe data/lookup/items.json
 Y estampa la versión de VERSION en la línea `## Version:` de Senda.toc.
 
 Uso:
@@ -401,6 +404,124 @@ def render_rares(paths: Paths, extra: list[str] | None = None) -> dict[Path, str
     return out
 
 
+# ---------------------------------------------------------------- buscador de objetos (Senda_Lookup)
+def _lk(v) -> str:
+    """Número de data/lookup/*.json sin ceros de más (6.0 -> 6)."""
+    return str(int(v)) if float(v).is_integer() else str(v)
+
+
+def lookup_entry(e: dict) -> str:
+    """Una cadena por objeto: campos `k=valor` separados por `;` (el addon los lee solo al consultar ese objeto).
+      s=n3577:100,o3658,i12     botín: n PNJ, o objeto del mundo, i objeto contenedor; id y :probabilidad %
+      N=257                     total real de fuentes si se cortó la lista
+      v=6736,6737               vendedores (PNJ)
+      g=1429:52.4:61.2          sitio de la ruta donde la guía recoge el objeto (mapa:x:y)
+      q=8c,9                    recompensa de misión (c = a elegir); Q = total
+      o=3181,3182               objetivo de misión (solo enlace); O = total"""
+    parts = []
+    if e.get("s"):
+        parts.append("s=" + ",".join(f"{r[0]}{r[1]}" + (f":{_lk(r[2])}" if len(r) > 2 else "") for r in e["s"]))
+    if e.get("n"):
+        parts.append(f"N={e['n']}")
+    if e.get("v"):
+        parts.append("v=" + ",".join(str(r[0]) for r in e["v"]))
+    if e.get("g"):
+        parts.append("g=" + ",".join(f"{p[0]}:{_lk(p[1])}:{_lk(p[2])}" for p in e["g"]))
+    if e.get("q"):
+        parts.append("q=" + ",".join(f"{q}{'c' if ch else ''}" for q, ch in e["q"]))
+    if e.get("nq"):
+        parts.append(f"Q={e['nq']}")
+    if e.get("o"):
+        parts.append("o=" + ",".join(str(q) for q in e["o"]))
+    if e.get("no"):
+        parts.append(f"O={e['no']}")
+    return ";".join(parts)
+
+
+LOOKUP_TOC = """## Interface: 16001
+## Title: Senda Lookup
+## Notes: Buscador de objetos de Senda: de dónde sale cada objeto de las guías (botín, vendedores, misiones). Se carga bajo demanda.
+## Notes-enUS: Senda's item finder: where each guide item comes from (drops, vendors, quests). Loads on demand.
+## Author: omunoz
+## Version: {version}
+## LoadOnDemand: 1
+## X-License: GPL-3.0
+
+# {header}
+{files}
+"""
+
+
+def lookup_names(paths: Paths, locale: str) -> dict[int, dict[str, str]]:
+    """Nombres de objeto de un idioma para el buscador: los de data/lookup/locale (fuente forever-db en inglés, o
+    volcados del juego) y los de data/locale (los objetos de las guías); a igual prioridad gana el de la guía."""
+    merged: dict[str, dict[int, dict[str, str]]] = {"item": {}}
+    for root in (paths.lookup, paths.data):
+        for ident, e in localenames.load(root, locale)["item"].items():
+            localenames.merge(merged, "item", ident, e["name"], e["source"])
+    return merged["item"]
+
+
+def render_lookup(paths: Paths) -> dict[Path, str]:
+    """data/lookup/{items,places}.json + nombres -> addon/Senda_Lookup/ (un addon aparte, LoadOnDemand: no pesa
+    hasta que alguien mira un objeto). Datos globales `Senda_Lookup.items|places|names`; ver lookup_entry."""
+    src = paths.lookup / "items.json"
+    if not src.exists():
+        return {}
+    with open(src, encoding="utf-8") as fh:
+        items_doc = json.load(fh)
+    places_doc = {}
+    pf = paths.lookup / "places.json"
+    if pf.exists():
+        with open(pf, encoding="utf-8") as fh:
+            places_doc = json.load(fh)
+    meta = items_doc.get("meta", {})
+    out: dict[Path, str] = {}
+    head = [f"-- {GENERATED_HEADER}",
+            f"-- Fuente: data/lookup/ (forever-db {meta.get('forever_db_version', '?')}, cliente "
+            f"{meta.get('client_build', '?')}, GPL-3.0; docs/LOOKUP.md)"]
+    files: list[str] = []
+
+    items = items_doc.get("items", {})
+    lines = [f'  [{i}] = "{lookup_entry(items[str(i)])}",' for i in sorted(int(k) for k in items)]
+    body = ["Senda_Lookup = Senda_Lookup or {}",
+            f"Senda_Lookup.meta = {{ forever_db = {lua_string(str(meta.get('forever_db_version', '?')))}, "
+            f"build = {lua_string(str(meta.get('client_build', '?')))}, items = {len(lines)} }}",
+            '-- [idObjeto] = "s=n3577:100,o3658;N=257;v=6736;g=mapa:x:y;q=8c;Q=9;o=3181;O=4" (ver tools/build.py)',
+            "Senda_Lookup.items = {"] + lines + ["}"]
+    out[paths.out_lookup / "Items.lua"] = "\n".join(head + [""] + body) + "\n"
+    files.append("Items.lua")
+
+    places = places_doc.get("places", {})
+    body = ["Senda_Lookup = Senda_Lookup or {}",
+            '-- n = PNJ, o = objetos del mundo: [id] = "uiMapa,x%,y%,mapa,apariciones" (uiMapa 0 = mazmorra: x, y en yardas)',
+            "Senda_Lookup.places = {"]
+    for kind in ("n", "o"):
+        body.append(f"  {kind} = {{")
+        for i in sorted(int(k) for k in places.get(kind, {})):
+            p = places[kind][str(i)]
+            body.append(f'    [{i}] = "{",".join(_lk(v) for v in p)}",')
+        body.append("  },")
+    body.append("}")
+    out[paths.out_lookup / "Places.lua"] = "\n".join(head + [""] + body) + "\n"
+    files.append("Places.lua")
+
+    for loc in sorted(set(localenames.locales(paths.lookup)) | set(localenames.locales(paths.data))):
+        names = {i: e for i, e in lookup_names(paths, loc).items() if str(i) in items}
+        if not names:
+            continue
+        name = f"Names_{loc}.lua"
+        body = ["Senda_Lookup = Senda_Lookup or {}", "Senda_Lookup.names = Senda_Lookup.names or {}",
+                f'-- "<id>\\t<nombre>" por línea ({len(names)} objetos); el addon la recorre bajo demanda',
+                f"Senda_Lookup.names[{lua_string(loc)}] = {lua_string(localenames.pack(names))}"]
+        out[paths.out_lookup / name] = "\n".join(head + [""] + body) + "\n"
+        files.append(name)
+
+    out[paths.out_lookup / "Senda_Lookup.toc"] = LOOKUP_TOC.format(
+        version="0.1.0", header=GENERATED_HEADER, files="\n".join(files))
+    return out
+
+
 def render(ds: validate.Dataset) -> dict[Path, str]:
     """Devuelve {ruta: contenido} de todo lo generado. Determinista."""
     paths = ds.paths
@@ -461,6 +582,7 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
         out[paths.out_data / "Travel.lua"] = travel
         data_files.append("Travel.lua")
     out.update(render_rares(paths, data_files))
+    out.update(render_lookup(paths))
     return out
 
 
@@ -519,7 +641,7 @@ def build(paths: Paths, check: bool = False, quiet: bool = False) -> int:
 
     # Archivos generados que ya no corresponden a nada (solo los que llevan nuestra cabecera).
     stale: list[str] = []
-    for d in (paths.out_guides, paths.out_knowledge, paths.out_locale, paths.out_data):
+    for d in (paths.out_guides, paths.out_knowledge, paths.out_locale, paths.out_data, paths.out_lookup):
         if not d.is_dir():
             continue
         for p in sorted(d.iterdir()):

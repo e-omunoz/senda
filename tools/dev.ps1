@@ -1,7 +1,7 @@
 # Atajos de desarrollo de Senda (Windows PowerShell 5.1+ / PowerShell 7). Ver tools/README.md.
 #   .\tools\dev.ps1 build | validate [-Json] | check | test | package | all
 #   .\tools\dev.ps1 install-dev -Target "C:\...\_forever_\Interface\AddOns"
-#   (install-dev copia los cuatro addons: Senda, Senda_Nav, Senda_Nav_EK y Senda_Nav_Kalimdor)
+#   (install-dev copia los cinco addons: Senda, Senda_Nav, Senda_Nav_EK, Senda_Nav_Kalimdor y Senda_Lookup)
 [CmdletBinding()]
 param(
     [Parameter(Position = 0)]
@@ -40,7 +40,7 @@ switch ($Command) {
     }
     'install-dev' {
         # Sin ruta por defecto: -Target es obligatorio y package.py lo vuelve a comprobar. Copia Senda,
-        # Senda_Nav, Senda_Nav_EK y Senda_Nav_Kalimdor (los de navegación los carga Senda bajo demanda).
+        # Senda_Nav, Senda_Nav_EK, Senda_Nav_Kalimdor y Senda_Lookup (los carga Senda bajo demanda).
         if (-not $Target) {
             [Console]::Error.WriteLine('install-dev: falta -Target <ruta a Interface\AddOns>. No hay ruta por defecto.')
             exit 2

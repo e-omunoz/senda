@@ -12,6 +12,7 @@
   <Script file="Minimap.lua"/>
   <Script file="GuideTab.lua"/>
   <Script file="AsideTab.lua"/>
+  <Script file="LookupTab.lua"/>
   <Script file="Report.lua"/>
   <Script file="OptionsTab.lua"/>
 </Ui>

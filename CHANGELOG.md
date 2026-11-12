@@ -4,6 +4,24 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ## [Sin publicar]
 
+### Añadido
+- **Buscador de objetos** ([docs/LOOKUP.md](docs/LOOKUP.md)). Los datos (5.623 objetos de las guías: botín, vendedores,
+  recompensas y objetivos de misión) viven en un addon aparte, `Senda_Lookup`, que no se carga hasta que lo necesitas y
+  nunca en combate. Esto lo aprovecha en tres sitios:
+  - **Una línea en la descripción** de los objetos de las guías: «Senda: lo sueltan X y Y en Dun Morogh», «Senda: lo vende
+    X en...», «Senda: recompensa de «misión»», «Senda: para «misión»». Una sola línea y solo si se sabe; se apaga en
+    Opciones > Objetos.
+  - **`/senda objeto <nombre, número o enlace>`:** de dónde sale (botín con zona y probabilidad, vendedores, recompensas y
+    objetivos). `/senda objeto señalar <objeto>` apunta la flecha a la fuente más cercana y `/senda objeto borrar` la quita.
+    Busca sin tildes ni mayúsculas y también por el nombre en inglés.
+  - **Pestaña «Objetos»** del panel: caja de búsqueda, resultados con «Señalar» y el detalle de cada uno.
+- **`/senda volcar` también guarda los nombres de los objetos del buscador** (`litem`): los que el cliente ya conoce, sin
+  pedir nada al servidor, y con `/senda volcar objetos` los que faltan. `tools/import_names.py` los pasa a
+  `data/lookup/locale/<idioma>/` y dice cuántos objetos del buscador tienen ya nombre en tu idioma.
+- El paquete lleva cinco carpetas (`Senda_Lookup` es la nueva); `install-dev` copia las cinco.
+- Simulador: escenarios `lookup-tip`, `lookup-slash`, `lookup-point`, `lookup-search`, `lookup-tab`, `lookup-en` y
+  `lookup-dump` (este último pasa lo guardado por la herramienta de importación real). Tests de Python en `tests/test_lookup.py`.
+
 ## [0.6.1] - 2026-11-12
 
 ### Añadido

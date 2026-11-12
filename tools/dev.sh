@@ -2,7 +2,7 @@
 # Atajos de desarrollo de Senda (Linux/macOS/Git Bash). Ver tools/README.md.
 #   tools/dev.sh build | validate [--json] | check | test | package | all
 #   tools/dev.sh install-dev --target "/ruta/a/_forever_/Interface/AddOns"
-#   (install-dev copia los cuatro addons: Senda, Senda_Nav, Senda_Nav_EK y Senda_Nav_Kalimdor)
+#   (install-dev copia los cinco addons: Senda, Senda_Nav, Senda_Nav_EK, Senda_Nav_Kalimdor y Senda_Lookup)
 set -eu
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -27,7 +27,7 @@ case "$cmd" in
     ;;
   install-dev)
     # Sin ruta por defecto: --target es obligatorio y package.py lo vuelve a comprobar. Copia Senda,
-    # Senda_Nav, Senda_Nav_EK y Senda_Nav_Kalimdor (los de navegación los carga Senda bajo demanda).
+    # Senda_Nav, Senda_Nav_EK, Senda_Nav_Kalimdor y Senda_Lookup (los carga Senda bajo demanda).
     case " $* " in
       *" --target "*|*" --target="*) ;;
       *) echo "install-dev: falta --target <ruta a Interface/AddOns>. No hay ruta por defecto." >&2; exit 2 ;;

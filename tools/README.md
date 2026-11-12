@@ -15,7 +15,7 @@ instalar nada con `pip`. Funciona igual en Windows y en Linux (CI). Los archivos
 | `fetch_foreverdb.py` | Descarga y comprueba la forever-db fijada en `foreverdb/PIN` |
 | `enrich.py` / `verify.py` / `lookup.py` | Rellenan, comprueban y consultan datos de misiones con QuestieDB o forever-db |
 | `import_polestar.py` (+ `polestar/`) | Importa una guía compilada de Polestar a `data/guides/<id>/` (pasos `unverified`, guía solo a mano); ver `docs/IMPORT.md` |
-| `import_names.py` (+ `localenames.py`) | Pasa a `data/locale/<idioma>/*.json` los nombres que el cliente dio con `/senda volcar` (lee `SendaNamesDB` del archivo de SavedVariables que se le pasa) e informa de los cambios de nombre entre parches; ver «Nombres del juego» abajo |
+| `import_names.py` (+ `localenames.py`) | Pasa a `data/locale/<idioma>/*.json` los nombres que el cliente dio con `/senda volcar` (lee `SendaNamesDB` del archivo de SavedVariables que se le pasa) e informa de los cambios de nombre entre parches; los objetos del buscador (`litem`) van a `data/lookup/locale/<idioma>/items.json` y se compilan en `addon/Senda_Lookup`; ver «Nombres del juego» abajo |
 | `route_score.py` (+ `routescore/`) | Filtro de eficiencia: puntúa cada misión de una ruta (`data/scores/`) |
 | `gen_travel.py` / `gen_dungeons.py` / `gen_rares.py` / `gen_lookup.py` | Generan `data/travel/`, `data/dungeons/`, `data/rares/` y `data/lookup/` desde Polestar, forever-db y tablas del cliente (ver `docs/TRAVEL.md`, `DUNGEONS.md`, `RARES.md`, `LOOKUP.md`) |
 
@@ -165,20 +165,20 @@ python tools/package.py --changelog 0.1.0                   # sección de CHANGE
 python tools/package.py --install-dev --target RUTA_ADDONS [--allow-any-dir]
 ```
 
-- El zip contiene cuatro carpetas en la raíz: `Senda/`, `Senda_Nav/`, `Senda_Nav_EK/` y `Senda_Nav_Kalimdor/`
+- El zip contiene cinco carpetas en la raíz: `Senda/`, `Senda_Nav/`, `Senda_Nav_EK/`, `Senda_Nav_Kalimdor/` y `Senda_Lookup/`
   (formato que esperan CurseForge, Wago y la instalación manual), cada una con `LICENSE` y `THIRD_PARTY.md`. Excluye archivos de desarrollo (ocultos, `tests/`, `*.bak`, `*.py`, `Thumbs.db`...). Las entradas
   van ordenadas y con fecha fija: el zip es reproducible.
-- Falla si falta el `.toc` de alguno de los cuatro, `Guides.xml` o `Knowledge.xml`, o si la versión del `.toc` no coincide con `VERSION`
+- Falla si falta el `.toc` de alguno de los cinco, `Guides.xml` o `Knowledge.xml`, o si la versión del `.toc` no coincide con `VERSION`
   (ejecuta antes `build.py`).
 
 ### install-dev (seguridad)
 
-Copia `addon/Senda`, `addon/Senda_Nav`, `addon/Senda_Nav_EK` y `addon/Senda_Nav_Kalimdor` a `<target>/<addon>`
+Copia `addon/Senda`, `addon/Senda_Nav`, `addon/Senda_Nav_EK`, `addon/Senda_Nav_Kalimdor` y `addon/Senda_Lookup` a `<target>/<addon>`
 para probar en el juego. Reglas:
 
 - **`--target` es obligatorio** y debe ser una ruta absoluta existente. **No hay ruta por defecto.**
 - El destino debe llamarse `AddOns` (o pasar `--allow-any-dir`); si apuntas a la carpeta de uno de los addons, se niega.
-- **Solo toca esas cuatro carpetas.** Nunca lee, modifica ni borra otras carpetas de `AddOns` (Questie, etc.).
+- **Solo toca esas cinco carpetas.** Nunca lee, modifica ni borra otras carpetas de `AddOns` (Questie, etc.).
 - Si alguna existe pero no tiene su `.toc`, o es un enlace simbólico/unión, se niega sin instalar ninguna.
 
 ## CI y releases

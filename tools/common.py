@@ -45,6 +45,8 @@ class Paths:
         self.out_data = self.addon / "Data"
         self.travel = self.data / "travel"
         self.rares = self.data / "rares"
+        self.lookup = self.data / "lookup"
+        self.out_lookup = self.root / "addon" / "Senda_Lookup"
         self.toc = self.addon / "Senda.toc"
         self.version_file = self.root / "VERSION"
         self.dist = self.root / "dist"

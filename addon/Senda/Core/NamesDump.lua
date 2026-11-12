@@ -4,14 +4,20 @@
 -- tools/import_names.py lo pasa a data/locale/<idioma>/ como dato verificado en el juego.
 --
 --   /senda volcar             empieza o retoma (solo pide lo que falta en este build)
+--   /senda volcar objetos     además pide al juego los nombres de TODOS los objetos del buscador (/senda objeto)
 --   /senda volcar parar       se detiene; se retoma con /senda volcar
 --   /senda volcar reiniciar   borra lo guardado de este idioma y empieza de cero
+--
+-- Objetos del buscador (Senda_Lookup, ~5.600): además de los de las guías, el volcado apunta en `litem` los que el
+-- cliente YA tiene en caché (C_Item.IsItemDataCachedByID; no pide nada al servidor, así que no cuesta nada), y con
+-- «objetos» pide los que faltan al ritmo de siempre. tools/import_names.py los pasa a data/lookup/locale/<idioma>/.
 --
 -- Nunca bloquea: todo va en una corrutina que avanza un poco cada fotograma (recorrer los datos cede cada
 -- WALK_STEP nodos; las peticiones salen de PER_SLICE en PER_SLICE, con un máximo de MAX_INFLIGHT esperando
 -- respuesta) y se para en combate. SendaNamesDB:
 --   { version = 1, locales = { esES = { build, date, done, quest = { [id] = nombre }, npc, item, spell, map,
---                                        missing = { quest = { [id] = true }, ... } } } }
+--                                        litem = { [id] = nombre },   -- objetos del buscador que no usan las guías
+--                                        missing = { quest = { [id] = true }, ..., litem = { ... } } } } }
 local _, Senda = ...
 local Compat, Events, Names = Senda.Compat, Senda.Events, Senda.Names
 local L = Senda.L
@@ -61,6 +67,8 @@ local function LocaleDB(reset)
     if type(d[k]) ~= "table" then d[k] = {} end
     if type(d.missing[k]) ~= "table" then d.missing[k] = {} end
   end
+  if type(d.litem) ~= "table" then d.litem = {} end
+  if type(d.missing.litem) ~= "table" then d.missing.litem = {} end
   return d
 end
 
@@ -133,7 +141,89 @@ local function Pct()
   return math.floor((job.have + job.answered) * 100 / job.total)
 end
 
-local function Body(d)
+-- Pide al cliente la cola [kind, id, kind, id...] al ritmo de siempre (PER_SLICE por fotograma, MAX_INFLIGHT a la
+-- vez); store(kind, id, nombre|nil) guarda cada respuesta. Dentro de la corrutina.
+local function Drain(queue, store)
+  local i = 1
+  while i <= #queue do
+    local started = 0
+    while i <= #queue and started < PER_SLICE and job.inflight < MAX_INFLIGHT do
+      local kind, id = queue[i], queue[i + 1]
+      i = i + 2
+      started = started + 1
+      job.started = job.started + 1
+      job.inflight = job.inflight + 1
+      local j = job -- una respuesta tardía de un volcado parado o reiniciado no cuenta en el siguiente
+      Names:Request(kind, id, function(name)
+        j.inflight = j.inflight - 1
+        j.answered = j.answered + 1
+        store(kind, id, name)
+        if name then j.ok = j.ok + 1 else j.miss = j.miss + 1 end
+      end)
+    end
+    coroutine.yield()
+  end
+  while job.inflight > 0 do coroutine.yield() end
+end
+
+-- Objetos del buscador. Siempre: los que el cliente ya tiene en caché pasan a d.litem (nada se pide al servidor).
+-- Con ask (/senda volcar objetos): los demás se piden con Drain.
+local LOOKUP_STEP = 300
+local function LookupPass(d, ask)
+  local LK = Senda.Lookup
+  local ok, why = false, "missing"
+  if LK and LK.Load then ok, why = LK.Load() end
+  if not ok then
+    Senda:Print(L.NAMES_DUMP_LOOKUP_UNAVAILABLE, tostring(why))
+    return
+  end
+  local data = rawget(_G, "Senda_Lookup")
+  local ids = {}
+  for id in pairs(data.items) do ids[#ids + 1] = id end
+  table.sort(ids)
+  coroutine.yield()
+  local canRead = C_Item and C_Item.IsItemDataCachedByID
+  if not canRead and not ask then
+    Senda:Print(L.NAMES_DUMP_LOOKUP_NOCACHE)
+    return
+  end
+  local new, named, want = 0, 0, {}
+  for n, id in ipairs(ids) do
+    if d.item[id] or d.litem[id] then
+      named = named + 1
+    else
+      local name = canRead and LK.ClientCached(id)
+      if name then
+        d.litem[id] = name
+        d.missing.litem[id] = nil
+        new, named = new + 1, named + 1
+      else
+        want[#want + 1] = id
+      end
+    end
+    if n % LOOKUP_STEP == 0 then coroutine.yield() end
+  end
+  Senda:Print(L.NAMES_DUMP_LOOKUP_SEEN, new, named, #ids)
+  if not ask or #want == 0 then return end
+  Senda:Print(L.NAMES_DUMP_LOOKUP_ASK, #want, named, #ids)
+  job.total = job.total + #want
+  local queue = {}
+  for _, id in ipairs(want) do
+    queue[#queue + 1] = "item"
+    queue[#queue + 1] = id
+  end
+  Drain(queue, function(_, id, name)
+    if name then
+      d.litem[id] = name
+      d.missing.litem[id] = nil
+    else
+      d.missing.litem[id] = true
+    end
+  end)
+  job.quiet = nil -- hubo peticiones: al terminar sale el resumen
+end
+
+local function Body(d, ask)
   local ids = {}
   for _, k in ipairs(KINDS) do ids[k] = {} end
   Collect(ids)
@@ -155,35 +245,19 @@ local function Body(d)
     d.done, d.date = true, Today()
     Senda:Print(L.NAMES_DUMP_NOTHING, total)
     job.quiet = true
-    return
+  else
+    Senda:Print(L.NAMES_DUMP_START, job.todo, total)
+    Drain(queue, function(kind, id, name)
+      if name then
+        d[kind][id] = name
+        d.missing[kind][id] = nil
+      else
+        d.missing[kind][id] = true
+      end
+    end)
+    d.done, d.date = true, Today()
   end
-  Senda:Print(L.NAMES_DUMP_START, job.todo, total)
-  local i = 1
-  while i <= #queue do
-    local started = 0
-    while i <= #queue and started < PER_SLICE and job.inflight < MAX_INFLIGHT do
-      local kind, id = queue[i], queue[i + 1]
-      i = i + 2
-      started = started + 1
-      job.started = job.started + 1
-      job.inflight = job.inflight + 1
-      local j = job -- una respuesta tardía de un volcado parado o reiniciado no cuenta en el siguiente
-      Names:Request(kind, id, function(name)
-        j.inflight = j.inflight - 1
-        j.answered = j.answered + 1
-        if name then
-          d[kind][id] = name
-          d.missing[kind][id] = nil
-          j.ok = j.ok + 1
-        else
-          d.missing[kind][id] = true
-          j.miss = j.miss + 1
-        end
-      end)
-    end
-    coroutine.yield()
-  end
-  while job.inflight > 0 do coroutine.yield() end
+  LookupPass(d, ask)
   d.done, d.date = true, Today()
 end
 
@@ -233,7 +307,7 @@ function Dump:Progress()
   return job.have + job.answered, job.total, job.ok, job.miss
 end
 
-function Dump:Start(reset)
+function Dump:Start(reset, ask)
   if co then
     Senda:Print(L.NAMES_DUMP_RUNNING, job.have + job.answered, job.total)
     return false
@@ -242,7 +316,7 @@ function Dump:Start(reset)
   d.done = false
   job = { total = 0, have = 0, todo = 0, answered = 0, ok = 0, miss = 0, inflight = 0, started = 0, lastPrint = 0 }
   job.lastPrint = (GetTime and GetTime()) or 0
-  co = coroutine.create(function() Body(d) end)
+  co = coroutine.create(function() Body(d, ask) end)
   if not frame then
     frame = CreateFrame("Frame")
     frame:SetScript("OnUpdate", Step)
@@ -267,7 +341,9 @@ Senda.Slash:Register("volcar", function(_, args)
     Dump:Stop()
   elseif sub == "reiniciar" or sub == "reset" then
     if co then Stop() end
-    Dump:Start(true)
+    Dump:Start(true, (args[3] or ""):lower() == "objetos")
+  elseif sub == "objetos" or sub == "items" then
+    Dump:Start(false, true)
   elseif sub == "help" or sub == "ayuda" then
     Senda:Print(L.NAMES_DUMP_HELP)
   else

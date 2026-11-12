@@ -744,6 +744,10 @@ function C_Item.GetItemInfoInstant(item)
   local it = Sim.ItemData(id)
   return id, "Tipo", "Subtipo", it.loc or "", iconOf(id), it.class, it.sub
 end
+function C_Item.IsItemDataCachedByID(item)
+  local id = itemArg(item, "C_Item.IsItemDataCachedByID")
+  return id ~= nil and itemCached(id)
+end
 function C_Item.GetItemNameByID(item)
   local id = itemArg(item, "C_Item.GetItemNameByID")
   if not id then return nil end

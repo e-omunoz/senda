@@ -538,8 +538,16 @@ function TooltipM:Lines() return self.__lines or {} end
 function TooltipM:SetHyperlink(link)
   usage(type(link) == "string", "Usage: GameTooltip:SetHyperlink(link)")
   self.__lines = { link }
-  if link:find("item:", 1, true) then self.__item = link end
+  if link:find("item:", 1, true) then self.__item = link; self.__refreshLink = link end
   Sim.TooltipDataPosted(self, link)
+end
+-- Retail's tooltip:RefreshData(): rebuilds the current data and runs the post-calls again.
+function TooltipM:RefreshData()
+  if self.__item then
+    local owner = self.__owner
+    self:SetOwner(owner)
+    self:SetHyperlink(self.__refreshLink or "")
+  end
 end
 function TooltipM:SetItemByID(id) self:SetHyperlink("item:" .. tostring(id)) end
 function TooltipM:SetBagItem(bag, slot)

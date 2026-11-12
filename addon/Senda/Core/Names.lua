@@ -7,6 +7,7 @@
 --   Senda.Names:Request(kind, id, fn) -> fn(nombre|nil, kind, id) cuando el cliente responde (solo el cliente)
 --   Senda.Names:Cached(kind, id) -> nombre que el cliente ya dio en esta sesión, o nil
 --   Senda.Names:AddFallback(locale, kind, packed) -- lo llaman los archivos generados Locale/Names_<locale>.lua
+--                                                    y el buscador de objetos (Modules/Lookup.lua) al cargar Senda_Lookup
 --   Senda.Names:WantsLocale(locale) -> ¿le sirve a este cliente el respaldo de ese idioma?
 --
 -- Orden: lo que el cliente ya dio en esta sesión; si no, se le pide (sin esperar) y mientras tanto se usa lo que
@@ -114,9 +115,31 @@ end
 local function FromDump(kind, id)
   local db = rawget(_G, "SendaNamesDB")
   local d = type(db) == "table" and type(db.locales) == "table" and db.locales[LOCALE]
-  local t = type(d) == "table" and d[kind]
+  if type(d) ~= "table" then return nil end
+  local t = d[kind]
   local v = type(t) == "table" and t[id]
+  -- Los objetos del buscador (Modules/Lookup.lua) que el volcado ve aparte, en `litem`.
+  if not v and kind == "item" and type(d.litem) == "table" then v = d.litem[id] end
   return type(v) == "string" and v ~= "" and v or nil
+end
+
+-- Nombre del volcado guardado (SendaNamesDB), sin mirar el respaldo compilado.
+function Names:Dumped(kind, id)
+  id = tonumber(id)
+  if not id or not cache[kind] then return nil end
+  return FromDump(kind, id)
+end
+
+-- Respaldo compilado de un tipo: lista { { idioma, texto }, ... } en el orden de preferencia, con el texto en el
+-- formato de AddFallback (una línea "id<TAB>nombre" por nombre). Lo recorre el buscador de objetos por rebanadas; no
+-- se copia.
+function Names:PackStrings(kind)
+  local out = {}
+  for _, loc in ipairs(ORDER) do
+    local s = packs[loc] and packs[loc][kind]
+    if s then out[#out + 1] = { loc, s } end
+  end
+  return out
 end
 
 -- Respaldo sin preguntar al cliente (volcado guardado o compilado).

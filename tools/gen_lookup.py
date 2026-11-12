@@ -10,6 +10,9 @@ Outputs (deterministic, sorted keys):
   data/lookup/items.json     item -> sources and rewarding quests
   data/lookup/places.json    npc/object -> one representative place (uiMap, x%, y%, map, spawns)
   data/lookup/coverage.json  coverage of the items Senda's guides use, with the misses
+  data/lookup/locale/enUS/items.json  English item names of forever-db for the lookup items (source
+                             "forever-db", the lowest priority: names that /senda volcar read in the game and
+                             tools/import_names.py ingested (data/lookup/locale/<locale>/) always win)
 
 Usage: python -I tools/gen_lookup.py [--foreverdb DIR] [--out DIR] [--check]
 forever-db root: --foreverdb, env SENDA_FOREVERDB, or <repo>/.cache/foreverdb.
@@ -26,11 +29,13 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "tools"))
+import localenames as ln  # noqa: E402
 from foreverdb.db import Frames, read_jsonl, resolve_foreverdb  # noqa: E402
 
 MAX_SOURCES = 8       # sources kept per item (best chance first); the true total goes in "n"
 MAX_QUESTS = 6        # rewarding quests kept per item; the true total goes in "nq"
 GUIDE_DIRS = ("data/guides", "data/shared")
+NAME_SOURCE = "forever-db"
 
 
 def dump(obj) -> str:
@@ -90,11 +95,24 @@ def guide_usage():
     return quests, items, files, vendors, loots
 
 
+def write_names(out, names, ids):
+    """English names for the lookup (search by name before the game has told us the real ones). Merged through
+    localenames, so a name read in the game (source ingame:..., tools/import_names.py) is never overwritten."""
+    nm = ln.load(out, "enUS")
+    for it in ids:
+        if names.get(it):
+            ln.merge(nm, "item", it, names[it], NAME_SOURCE)
+    return ln.save(out, "enUS", nm, kinds=["item"])
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--foreverdb")
     ap.add_argument("--out", default=str(REPO / "data" / "lookup"))
     ap.add_argument("--check", action="store_true", help="exit 1 if coverage < 95%%")
+    ap.add_argument("--names-only", action="store_true",
+                    help="only (re)write data/lookup/locale/enUS/items.json for the items already in "
+                         "data/lookup/items.json (no guides needed)")
     a = ap.parse_args()
 
     root = resolve_foreverdb(a.foreverdb)
@@ -103,6 +121,13 @@ def main():
     version, build = index.get("version"), index.get("clientBuild")
 
     names = {r["id"]: r["name"] for r in read_jsonl(dd / "item.jsonl")}
+    if a.names_only:
+        out = Path(a.out)
+        ids = [int(i) for i in json.loads((out / "items.json").read_text(encoding="utf-8"))["items"]]
+        changed = write_names(out, names, ids)
+        print(f"names: {sum(1 for i in ids if i in names)}/{len(ids)} items named by forever-db "
+              f"({len(changed)} file written)")
+        return
     sources = defaultdict(list)       # item -> [(kind, id, chance|None)]
     for r in read_jsonl(dd / "item_source.jsonl"):
         sources[r["item"]].append((r["kind"], r["id"], r.get("chance")))
@@ -265,6 +290,8 @@ def main():
              "coverage.json": coverage}
     for name, obj in files.items():
         (out / name).write_text(dump(obj) + "\n", encoding="utf-8", newline="\n")
+
+    write_names(out, names, [int(i) for i in items])
 
     kinds = Counter(r[0] for e in items.values() for r in e.get("s", []))
     print(f"forever-db {version} (client {build})")
