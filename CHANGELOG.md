@@ -2,6 +2,16 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado [SemVer](https://semver.org/lang/es/).
 
+## [Sin publicar]
+
+### Añadido
+- **Pestaña «Aparte»** con tres bloques coordinados; la flecha sigue la ruta o el desvío, nunca los dos, y el HUD solo añade una línea cuando hay algo útil justo ahí.
+  - **Para después:** el reloj del HUD y el clic derecho en un paso («Dejar para después») aparcan la misión y las que dependen de ella, o la cadena de clase entera (súcubo, manáfago, corcel nefasto e inferno del brujo; misiones y teletransportes del mago; formas del druida), sin darla por hecha ni saltada. Te la recuerda («Pendiente aquí: X · Retomar») cuando estás en el mapa de alguno de sus pasos, cerca del siguiente o al llegar al nivel de su pista («cuando la ruta vaya a Vallefresno (22-26): desde Astranaar se baja a Los Baldíos»).
+  - **Reserva de XP:** misiones que puedes coger ya en tu mapa y en los vecinos (las opcionales, las que el filtro de eficiencia quitó y las de las rutas de Polestar que no van en la tuya), por XP por minuto y cercanía. Se ofrece cuando el siguiente paso te pide más nivel («Te faltan N XP para el siguiente paso: estas misiones te los dan en ~M min»), cuando la ruta no tiene nada para ti en ese mapa o con «Más misiones aquí».
+  - **Desvío activo:** lo que coges de la reserva y lo aparcado que retomas se convierte en una sub-ruta (coger, completar, entregar) que siguen el HUD y la flecha; al acabar o cancelar vuelves a la ruta donde la dejaste, y lo hecho cuenta para la ruta. Sobrevive a una recarga.
+- `python tools/build.py --refresh-reserve` (`tools/reserve.py`) genera `data/reserve.json` y el build lo compila en `Guides/Reserve.lua`. Campos de sección nuevos: `parkable`, `later_hint`, `later_level`, `later_map`.
+- Simulador: escenarios `park`, `park-reload`, `park-quest`, `park-druid`, `reserve`, `detour-route` y `detour-reload`.
+
 ## [0.5.0] - 2026-11-12
 
 ### Añadido

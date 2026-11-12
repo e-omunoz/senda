@@ -5,6 +5,12 @@ levels = [40, 41]
 map = 1453
 summary = "Nivel 40: Portal: Ventormenta y Forjaz."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "En tu próxima visita a {map:1453}."
+later_level = 40
+later_map = 1453
+
 [[step]]
 id = "mg-40-train-001"
 do = "train"

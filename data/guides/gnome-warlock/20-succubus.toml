@@ -8,6 +8,12 @@ map = 1453
 summary = "Gakin te manda con Takar el Vidente en Los Baldíos. Eliges Súcubo (corazón de madera) o Íncubo (figurilla de madera), ambos en Vallefresno, y haces la vinculación en Ventormenta."
 if = { class = ["WARLOCK"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta vaya a Vallefresno (22-26): desde Astranaar se baja a Los Baldíos."
+later_level = 22
+later_map = 1440
+
 [[step]]
 id = "wl-succubus-001"
 do = "accept"

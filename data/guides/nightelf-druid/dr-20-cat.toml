@@ -8,6 +8,12 @@ map = 1450
 summary = "Nivel 20: Gran Espíritu del Felino en el sur del Claro de la Luna, tres reliquias en el Túmulo de Tempestira y Forma felina con Acechar."
 if = { class = ["DRUID"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Al 20, con Teletransporte: Claro de la Luna: el Túmulo de Tempestira está en {map:1450}."
+later_level = 20
+later_map = 1450
+
 [[step]]
 id = "dr-20-cat-001"
 do = "train"

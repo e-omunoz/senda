@@ -6,6 +6,7 @@
 -- Gira según la orientación del jugador (GetPlayerFacing puede devolver nil o un valor secreto: se tolera),
 -- muestra distancia (m o yd) y tiempo estimado, se pone verde al acercarse y marca "has llegado".
 -- Modo cadáver: siendo fantasma apunta a C_DeathInfo.GetCorpseMapPosition y vuelve a la guía al resucitar.
+-- En un desvío activo (Engine/Aside.lua) el objetivo de la guía es el paso del desvío («Desvío: ...»).
 local _, Senda = ...
 local UI, Compat, Events = Senda.UI, Senda.Compat, Senda.Events
 local L = Senda.L
@@ -298,9 +299,13 @@ local problemKey = ""
 function Arrow:FollowStep()
   local step = Senda.Engine and Senda.Engine:CurrentStep()
   problemKey = ""
+  -- En un desvío (Engine/Aside.lua) la flecha sigue el desvío, nunca la ruta y el desvío a la vez.
+  local A = Senda.Aside
+  local detour = A and A:Active()
+  if detour then step = A:CurrentStep() end
   if not step then targets.guide = nil; Update(); return end
   -- Misión fallida o abandonada: la flecha vuelve a quien la daba.
-  local pr = Senda.Engine.Problem and Senda.Engine:Problem()
+  local pr = (not detour) and Senda.Engine.Problem and Senda.Engine:Problem()
   local at = pr and pr.accept and pr.accept.step.at
   if type(at) == "table" and at[1] then
     problemKey = pr.kind .. ":" .. pr.quest
@@ -308,6 +313,7 @@ function Arrow:FollowStep()
     return
   end
   local label = GuideLabel(step)
+  if detour then label = string.format(L.ARROW_DETOUR, label) end
   local radius = step["do"] == "goto" and step.radius or nil
   if type(step.at) == "table" and step.at[1] then
     local extra = { radius = radius }
@@ -373,6 +379,7 @@ Events:On("SENDA_READY", function()
   Arrow:ApplyVisibility()
   Events:On("SENDA_STEP_CHANGED", function() Arrow:FollowStep() end)
   Events:On("SENDA_GUIDE_CHANGED", function() Arrow:FollowStep() end)
+  Events:On("SENDA_ASIDE_CHANGED", function() Arrow:FollowStep() end)
   -- Una misión puede fallar o abandonarse sin cambiar de paso: se recalcula solo si cambia el problema.
   Events:On("SENDA_STEP_UPDATED", function()
     local E = Senda.Engine

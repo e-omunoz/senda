@@ -7,6 +7,12 @@ map = 1448
 summary = "Tres esencias viles impecables (Jaedenar, Azshara y el Portal Oscuro) y el núcleo de Kroshius, élite 55 en Frondavil. Lleva grupo para Kroshius."
 if = { class = ["WARLOCK"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta vaya a {map:1448}; para Kroshius (élite 55) busca grupo."
+later_level = 50
+later_map = 1448
+
 [[step]]
 id = "wl-inferno-001"
 do = "accept"

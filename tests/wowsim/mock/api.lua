@@ -95,6 +95,9 @@ Sim.MAPS = {
   [1432] = { name = "Loch Modan", parent = 1415, type = 3, continent = 0, n = 1000, w = -2000, sx = 2758, sy = 1839 },
   [1429] = { name = "Bosque de Elwynn", parent = 1415, type = 3, continent = 0, n = -7000, w = 1500, sx = 3470, sy = 2314 },
   [1453] = { name = "Ventormenta", parent = 1429, type = 3, continent = 0, n = -7500, w = 1200, sx = 1737, sy = 1158 },
+  -- Kalimdor (cadena de la súcubo del brujo: Los Baldíos y Vallefresno)
+  [1413] = { name = "Los Baldíos", parent = 1414, type = 3, continent = 1, n = 1500, w = 1000, sx = 6000, sy = 4000 },
+  [1440] = { name = "Vallefresno", parent = 1414, type = 3, continent = 1, n = 4000, w = 2000, sx = 5700, sy = 3800 },
   [1436] = { name = "Páramos de Poniente", parent = 1415, type = 3, continent = 0, n = -9500, w = 2500, sx = 3500, sy = 2333 },
 }
 local function mapData(id)

@@ -249,6 +249,45 @@ nada de acciones protegidas en combate):
   Polestar) sale en la lista y se elige con `/senda guide <id>`, pero `Engine:AutoSelect()` nunca la coge
   (`Guides:IsManualOnly`).
 
+## Aparte: para después, reserva de XP y desvío activo
+
+Pestaña «Aparte» (`UI/AsideTab.lua`), fuera de la guía principal, con tres bloques coordinados (plan 6d). La flecha
+sigue o la ruta o el desvío, nunca los dos; el HUD solo añade una línea cuando hay algo útil justo ahí, y esa línea
+abre la pestaña en su bloque.
+
+- **Para después** (`Engine/Aside.lua`). El reloj de la cabecera del HUD y el clic derecho en un paso («Dejar para
+  después») aparcan la misión y las que dependen de ella (`Guides:Followups`) que aún no tienes; en una sección de
+  clase con `parkable = true` aparcan la sección entera y las secciones de clase que siguen la cadena (las que tienen
+  misiones que dependen de las suyas: la Forma de oso del druida arrastra a Lunaclaw). Se guarda por guía en
+  `progress.parked[clave] = { kind, list, section, sections, when, level, map, x, y, from, hint, hintLevel, hintMap }`.
+  Un paso aparcado no está hecho ni saltado: `Engine:StepParked(entry)` hace que el motor lo pase por encima (como
+  los no aplicables) sin marcarlo. Recordatorio (`Aside:Reminder()`): «Pendiente aquí: X · Retomar» si estás en el
+  mapa de alguno de sus pasos (o en `later_map`), a menos de `parkRemindDistance` metros del siguiente, o al llegar a
+  `later_level`; clic derecho lo calla en ese sitio durante la sesión. Lo que termines por tu cuenta sale de la lista
+  y sus pasos quedan marcados por el juego. Campos de sección: `parkable`, `later_hint` (español, admite fichas),
+  `later_level`, `later_map`.
+- **Reserva de XP** (`Engine/Reserve.lua`, datos en `Guides/Reserve.lua`). `python tools/build.py --refresh-reserve
+  [--reserve-from RAIZ]` (`tools/reserve.py`) junta las puntuaciones de `tools/route_score.py` (decisión keep,
+  optional o drop, XP y minutos) de las guías de Senda y de las rutas de Polestar importadas en local, los PNJ y
+  coordenadas de sus pasos y forever-db (nivel mínimo, XP completa, razas y clases, requisitos, objetivos y un punto
+  de los objetivos), solo lo que pueden coger el gnomo brujo, el humano mago y el elfo druida, en la instantánea
+  `data/reserve.json`; `tools/build.py` la compila (una cadena por zona, ~100 KB). En el juego se descodifica la
+  primera vez que hace falta, fuera de combate y 150 misiones por fotograma. `Reserve:Offers()` da las que puedes coger
+  ya (nivel, facción, raza y clase, requisitos entregados, no en el registro ni hechas ni saltadas, y no las que la
+  ruta te pide más adelante) en tu mapa o a menos de `reserveRadius` metros, por XP por minuto contando el camino
+  hasta quien la da; la XP baja si la misión es gris (100% hasta su nivel + 5, luego 80/60/40/20/10%, como Polestar).
+  Se ofrece (`Reserve:State()`) si el siguiente paso de la ruta pide más nivel (`Engine:WaitLevel` y
+  `Engine:LevelGated`): «Te faltan N XP para el siguiente paso: estas misiones te los dan en ~M min»; si la ruta no
+  tiene nada para ti en este mapa; o con «Más misiones aquí» (`Reserve:Ask()`, en el menú del HUD y en la pestaña).
+- **Desvío activo** (`Aside:Start(items)`, guardado en `SendaDB.aside.detour`). Las misiones de la reserva que coges
+  y lo aparcado que retomas forman una sub-ruta temporal: los pasos de lo aparcado (los mismos de la guía: al
+  hacerlos se marcan en la ruta) y, para cada misión de la reserva, coger → completar → entregar (pasos generados con
+  fichas: «Coge «{quest:N}» de {npc:M}»), ordenados por cercanía. El HUD enseña «Desvío i/n», el paso del desvío,
+  «Al acabar vuelves a: <paso de la ruta>» y «Cancelar desvío»; Hecho, Saltar y Atrás actúan sobre el desvío; la
+  flecha apunta al paso del desvío («Desvío: ...»); la automatización coge y entrega sus misiones. La ruta sigue
+  evaluándose (lo que hagas cuenta para ella: las misiones entregadas se detectan solas) salvo los «ve a», que no se
+  dan por hechos por pasar cerca. Al acabar o cancelar vuelves a la ruta donde la dejaste.
+
 ## Harness de verificación
 
 1. **Estático** (`tools/validate.py`): esquema, ids únicos, orden de niveles, referencias.
@@ -346,6 +385,12 @@ Senda.Engine:WantsQuest("accept"|"turnin", questId)  -- ¿la guía quiere esa ac
 Senda.Engine:Problem([entry]) -> { kind = "failed"|"abandoned", quest, accept }   -- Engine/Quests.lua
 Senda.Engine:StepTimers(step) -> { { quest, left }, ... }, :RetakeQuest(q), :SkipQuest(q), :IsAbandoned(q)
 Senda.Engine:SkipQuestTree(q) -> info, :UndoSkip([info]), :UnskipAll(), :LastSkip(), :IsQuestSkipped(q)   -- Engine/Skip.lua
+Senda.Engine:Park(entry) -> info, :Unpark(key), :ParkInfo(entry), :StepParked(entry), :Parked()   -- Engine/Aside.lua
+Senda.Aside:Start(items), :Add(items), :Active(), :CurrentStep(), :Advance(), :Skip(), :Back(), :Cancel(), :Reminder()
+                                       --   eventos internos SENDA_PARKED, SENDA_ASIDE_CHANGED
+Senda.Reserve:Load([fn]), :Offers(opts), :Need(), :State(), :Ask(), :QuestXP(e[, nivel])   -- Engine/Reserve.lua
+                                       --   eventos internos SENDA_RESERVE_READY, SENDA_RESERVE_UPDATED
+Senda.AsideTab:Open("parked"|"reserve"|"detour")                                  -- UI/AsideTab.lua
 Senda.Guides:Followups(q) -> misiones que dependen de q (índice de Guides/Followups.lua)
 Senda.Report:Open(), :Context(), :Text(desc), :IssueURL(desc); Senda.Errors:Add(err), .list   -- informe de errores
 Senda.Visibility:Hidden(), :SetHidden(b), :Toggle()  -- ocultar HUD y flecha (instancias o a mano)

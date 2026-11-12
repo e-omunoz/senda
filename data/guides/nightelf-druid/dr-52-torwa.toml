@@ -8,6 +8,12 @@ map = 1449
 summary = "Opcional: veneno de pétalo de sangre, prueba con un demosaurio y la enredadera pútrida del Templo Sumergido."
 if = { class = ["DRUID"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta vaya a {map:1449}."
+later_level = 50
+later_map = 1449
+
 [[step]]
 id = "dr-52-torwa-001"
 do = "accept"

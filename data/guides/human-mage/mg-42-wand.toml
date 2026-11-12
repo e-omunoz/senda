@@ -5,6 +5,12 @@ levels = [40, 44]
 map = 1445
 summary = "Materiales y entrega de la Varita de mago (y, opcional, el Orbe celestial)."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta vuelva a {map:1445}; los materiales salen de {map:1417}, {map:1420} y {map:1443}."
+later_level = 40
+later_map = 1445
+
 [[step]]
 id = "mg-42-wand-001"
 do = "complete"

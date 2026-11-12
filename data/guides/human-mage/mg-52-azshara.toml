@@ -5,6 +5,12 @@ levels = [52, 55]
 map = 1447
 summary = "Cadena de clase con el Archimago Xylem en Azshara."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta vaya a {map:1447}."
+later_level = 52
+later_map = 1447
+
 [[step]]
 id = "mg-52-azshara-001"
 do = "turnin"

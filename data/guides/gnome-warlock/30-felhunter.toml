@@ -7,6 +7,11 @@ map = 1413
 summary = "Strahad Farsan (Trinquete) te manda con Krom Stoutarm (Forjaz). Juntas el tomo mohoso (Trabalomas), el manuscrito (Mil Agujas) y 3 varas de canalización (Los Humedales) y haces la vinculación en la torre de Strahad."
 if = { class = ["WARLOCK"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta pase por {map:1424}, {map:1441} y {map:1437}: allí están el tomo, el manuscrito y las varas."
+later_level = 30
+
 [[step]]
 id = "wl-felhunter-001"
 do = "accept"

@@ -5,6 +5,7 @@ Genera:
   addon/Senda/Guides/<guide-id>.lua   secciones propias de la guía + RegisterGuide
   addon/Senda/Guides/Shared.lua       secciones de data/shared usadas por alguna guía (una vez cada una)
   addon/Senda/Guides/Followups.lua    índice misión -> misiones que dependen de ella (para «Saltar esta misión»)
+  addon/Senda/Guides/Reserve.lua      Reserva de XP de la pestaña «Aparte», desde data/reserve.json (tools/reserve.py)
   addon/Senda/Guides/Guides.xml
   addon/Senda/Knowledge/<carpeta>.lua una por carpeta de data/knowledge (warlock, mage, general...)
   addon/Senda/Knowledge/Knowledge.xml
@@ -17,6 +18,7 @@ Uso:
     python tools/build.py --check     # no escribe; falla si lo generado difiere de lo que hay en disco
     python tools/build.py --root RUTA # otra raíz (fixtures)
     python tools/build.py --refresh-prereq  # relee los requisitos de forever-db y guarda data/prereq.json
+    python tools/build.py --refresh-reserve [--reserve-from RAIZ]  # rehace data/reserve.json (tools/reserve.py)
 
 Requisitos de misión («Saltar esta misión»): el índice sale de data/prereq.json (instantánea de los requisitos
 de forever-db, versionada para que el resultado no dependa de la caché local); sin ese archivo, de la caché
@@ -35,13 +37,15 @@ from common import (  # noqa: E402
     GENERATED_HEADER, Paths, lua_string, read_version, setup_stdio, to_lua, write_text_lf,
 )
 import localenames  # noqa: E402
+import reserve  # noqa: E402
 import validate  # noqa: E402
 
 # Campos que no viajan al addon.
 STRIP_GUIDE = {"sources", "checked", "note"}
 STRIP_KNOWLEDGE = {"sources", "checked"}  # en conocimiento `note` es texto visible (talentos, macros...)
 
-SECTION_ORDER = ["id", "title", "levels", "map", "summary", "link", "if", "steps"]
+SECTION_ORDER = ["id", "title", "levels", "map", "summary", "link", "if", "parkable", "later_hint", "later_level",
+                 "later_map", "steps"]
 GUIDE_ORDER = ["id", "title", "summary", "faction", "races", "classes", "levels", "order", "icon",
                "link", "author", "status", "sections"]
 # Orden de claves de un paso en el Lua (como en el contrato de docs/ARCHITECTURE.md);
@@ -273,6 +277,10 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
     xml_files = []
     out[paths.out_guides / "Followups.lua"] = render_followups(ds)
     xml_files.append("Followups.lua")
+    res = reserve.render(paths)
+    if res is not None:
+        out[paths.out_guides / "Reserve.lua"] = res
+        xml_files.append("Reserve.lua")
     if shared_used:
         body = [_section_table(sec, step_order) for _, sec in sorted(shared_used.items())]
         out[paths.out_guides / "Shared.lua"] = _lua_file("data/shared/", body)
@@ -399,8 +407,21 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--check", action="store_true", help="no escribir; fallar si hay diferencias")
     ap.add_argument("--refresh-prereq", action="store_true",
                     help="relee los requisitos de forever-db (.cache) y guarda data/prereq.json")
+    ap.add_argument("--refresh-reserve", action="store_true",
+                    help="rehace data/reserve.json (puntuaciones, guías y forever-db; ver tools/reserve.py)")
+    ap.add_argument("--reserve-from", help="raíz de donde leer las rutas importadas de Polestar y sus puntuaciones")
+    ap.add_argument("--foreverdb", help="carpeta de forever-db para --refresh-reserve (o SENDA_FOREVERDB)")
     ap.add_argument("-q", "--quiet", action="store_true")
     args = ap.parse_args(argv)
+    if args.refresh_reserve:
+        paths = Paths(args.root)
+        try:
+            snap = reserve.refresh(paths, args.reserve_from, args.foreverdb)
+        except FileNotFoundError as exc:
+            print(f"build: {exc}", file=sys.stderr)
+            return 1
+        reserve.write_snapshot(paths, snap)
+        print(f"data/{reserve.RESERVE_FILE}: {len(snap['quests'])} misiones ({', '.join(snap['scores'])})")
     if args.refresh_prereq:
         paths = Paths(args.root)
         edges = foreverdb_prereq_edges(paths.root)

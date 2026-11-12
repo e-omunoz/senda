@@ -134,6 +134,7 @@ end
 local function Applicable(entry)
   return entry and Cond:LevelFilter(entry.step["if"]) and not Engine:WaitLevel(entry)
     and not Engine:NotTaken(entry) and not Engine:NoSkill(entry)
+    and not (Engine.StepParked and Engine:StepParked(entry)) -- «Para después» (Engine/Aside.lua)
 end
 
 -- Las siguientes funciones las usan Quests.lua y Automation.lua.
@@ -357,6 +358,9 @@ function Engine:Evaluate(reason)
       self:EnterStep()
     else
       local r = Cond:Check(step, self.state)
+      -- En un desvío (Engine/Aside.lua) pasar cerca de un «ve a» de la ruta no lo da por hecho: al volver, la
+      -- ruta sigue donde la dejaste.
+      if r == true and step["do"] == "goto" and Senda.Aside and Senda.Aside:Active() then r = false end
       if r ~= true and step["do"] == "goto" and self:GotoObsolete(self.index) then r = true end
       if r == true and Senda.Party and Senda.Party.Holds and Senda.Party.Holds(e) then
         r = false -- en pareja: tu compañero aún necesita objetivos de este paso (Modules/Party.lua)
@@ -386,6 +390,7 @@ function Engine:Evaluate(reason)
     Events:Fire("SENDA_STEP_UPDATED", self.steps[self.index])
   end
   self.objSig = self:ObjectiveSignature() -- el HUD ya se redibuja con el evento anterior
+  if Senda.Aside and Senda.Aside:Active() then Senda.Aside:Evaluate(reason) end
 end
 
 -- Evaluación diferida y agrupada (muchos eventos seguidos -> una sola evaluación).

@@ -5,6 +5,12 @@ levels = [60, 60]
 map = 1453
 summary = "Polimorfia: vaca y la cadena del Señor de la guerra Krellian."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Al 60, en {map:1447}."
+later_level = 60
+later_map = 1447
+
 [[step]]
 id = "mg-60-krellian-001"
 do = "train"

@@ -41,6 +41,25 @@
     "if": {
       "$ref": "#/$defs/filter"
     },
+    "parkable": {
+      "type": "boolean",
+      "description": "Cadena de clase: «Dejar para después» aparca la sección entera (pestaña Aparte)."
+    },
+    "later_hint": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Pista en español del mejor momento para retomarla (puede llevar fichas {map:N}, {npc:N}...)."
+    },
+    "later_level": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 60,
+      "description": "Nivel a partir del cual el HUD recuerda la sección aparcada."
+    },
+    "later_map": {
+      "type": "integer",
+      "description": "uiMapID donde el HUD recuerda la sección aparcada (además de los mapas de sus pasos)."
+    },
     "step": {
       "type": "array",
       "minItems": 1,

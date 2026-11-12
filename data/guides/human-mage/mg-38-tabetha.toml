@@ -5,6 +5,12 @@ levels = [38, 40]
 map = 1445
 summary = "Misiones de clase con Tabetha, en el Pantano de Fangos Oscuros."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta vaya a {map:1445}."
+later_level = 38
+later_map = 1445
+
 [[step]]
 id = "mg-38-tabetha-001"
 do = "turnin"

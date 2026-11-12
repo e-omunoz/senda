@@ -4,6 +4,10 @@
 -- "Leer más" si el paso tiene `link` y un punto de estado de los datos (verificado/sin verificar/disputado).
 -- Clic derecho en un paso de misión: "Saltar esta misión" (y las que dependen de ella), con aviso y Deshacer.
 -- Botón del bicho en la cabecera: ventana de informe de errores (UI/Report.lua).
+-- «Aparte» (Engine/Aside.lua, Engine/Reserve.lua): el reloj de la cabecera y el clic derecho dejan el paso para
+-- después; en un desvío el HUD enseña el paso del desvío (cabecera «Desvío i/n», «Cancelar desvío» y a qué paso de
+-- la ruta vuelves); y una sola línea discreta cuando hay algo útil justo ahí (lo aparcado de este mapa o la reserva
+-- de XP si te falta nivel), que abre la pestaña Aparte en su bloque.
 local _, Senda = ...
 local UI, Compat, Events = Senda.UI, Senda.Compat, Senda.Events
 local L = Senda.L
@@ -197,9 +201,15 @@ local function Create()
   f.bug.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
   UI:Tooltip(f.bug, L.REPORT_BUTTON, L.REPORT_BUTTON_TIP)
 
+  -- Reloj: dejar el paso para después (Engine:Park)
+  f.park = UI:IconButton(head, "Interface\\Icons\\INV_Misc_PocketWatch_01", 14, function() HUD:ParkCurrent() end)
+  f.park:SetPoint("RIGHT", f.bug, "LEFT", -5, 0)
+  f.park.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+  UI:Tooltip(f.park, L.HUD_PARK, function() return HUD.parkTip end)
+
   f.dot = CreateFrame("Frame", nil, head)
   f.dot:SetSize(14, 14)
-  f.dot:SetPoint("RIGHT", f.bug, "LEFT", -5, 0)
+  f.dot:SetPoint("RIGHT", f.park, "LEFT", -5, 0)
   f.dot.tex = f.dot:CreateTexture(nil, "OVERLAY")
   f.dot.tex:SetAllPoints()
   f.dot:EnableMouse(true)
@@ -252,7 +262,7 @@ local function Create()
     Senda:SaveFramePos(f, "hud")
   end)
   f.hit:SetScript("OnClick", function(_, btn) if btn == "RightButton" then HUD:ShowSkipMenu() end end)
-  UI:Tooltip(f.hit, function() return HUD.hitTip end, function() return HUD.hitTip and L.SKIP_HINT or nil end)
+  UI:Tooltip(f.hit, function() return rawget(HUD, "hitTip") end, function() return rawget(HUD, "hitBody") end)
 
   f.objectives = FS(f, "GameFontHighlightSmall")
   f.objectives:SetPoint("TOPLEFT", f.text, "BOTTOMLEFT", 0, -4)
@@ -276,6 +286,34 @@ local function Create()
   f.advice = FS(f, "GameFontHighlightSmall", C.accent[1], C.accent[2], C.accent[3])
   f.advice:SetPoint("TOPLEFT", f.escort, "BOTTOMLEFT", 0, -4)
   f.advice:SetPoint("RIGHT", -PAD, 0)
+
+  -- Aparte: «Pendiente aquí: X · Retomar» o la reserva de XP (clic: pestaña Aparte en su bloque)
+  f.aside = CreateFrame("Button", nil, f)
+  f.aside:SetHeight(14)
+  f.aside:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+  f.aside.text = FS(f.aside, "GameFontHighlightSmall", 0.95, 0.8, 0.45)
+  f.aside.text:SetAllPoints()
+  f.aside:SetScript("OnClick", function(self, btn)
+    if btn == "RightButton" then
+      local rem = rawget(self, "reminder")
+      if rem and Senda.Aside then Senda.Aside:Dismiss(rem) end
+      HUD:RequestRefresh()
+      return
+    end
+    if Senda.AsideTab then Senda.AsideTab:Open(rawget(self, "block")) else UI:ShowPanel("aside") end
+  end)
+  UI:Tooltip(f.aside, function() return rawget(f.aside, "tipTitle") end, function() return rawget(f.aside, "tip") end)
+  f.aside:Hide()
+
+  -- Desvío: a qué paso de la ruta vuelves y el botón de cancelarlo
+  f.detour = FS(f, "GameFontHighlightSmall", C.dim[1], C.dim[2], C.dim[3])
+  f.detour:SetPoint("RIGHT", -PAD, 0)
+  f.detour:Hide()
+  f.cancelDetour = UI:Button(f, L.ASIDE_HUD_CANCEL, 120, 20, function()
+    if Senda.Aside then Senda.Aside:Cancel() end
+  end)
+  UI:Tooltip(f.cancelDetour, L.ASIDE_HUD_CANCEL, L.ASIDE_HUD_CANCEL_TIP)
+  f.cancelDetour:Hide()
 
   -- Aviso de misión saltada con Deshacer
   f.banner = CreateFrame("Frame", nil, f)
@@ -352,10 +390,16 @@ local function Create()
   end
 
   -- Botones ------------------------------------------------------------------
-  f.back = UI:Button(f, "<", 26, 20, function() Senda.Engine:Back() end)
+  -- En un desvío los tres botones actúan sobre el desvío (Engine/Aside.lua), no sobre la ruta.
+  local function Target()
+    local A = Senda.Aside
+    if A and A:Active() then return A end
+    return Senda.Engine
+  end
+  f.back = UI:Button(f, "<", 26, 20, function() Target():Back() end)
   UI:Tooltip(f.back, L.HUD_BACK)
-  f.done = UI:Button(f, L.HUD_DONE, 70, 20, function() Senda.Engine:Advance() end)
-  f.skip = UI:Button(f, L.HUD_SKIP, 60, 20, function() Senda.Engine:Skip() end)
+  f.done = UI:Button(f, L.HUD_DONE, 70, 20, function() Target():Advance() end)
+  f.skip = UI:Button(f, L.HUD_SKIP, 60, 20, function() Target():Skip() end)
   f.more = UI:Button(f, L.HUD_MORE, 74, 20, function()
     local step = Senda.Engine:CurrentStep()
     local link = step and (step.link or (Senda.Engine:CurrentSection() or {}).link)
@@ -376,14 +420,25 @@ function HUD:Refresh()
   if not hud or not hud:IsShown() then return end
   local f = hud
   local Engine = Senda.Engine
+  local A = Senda.Aside
+  local detour = A and A:Active() or false
   local step, entry = Engine:CurrentStep()
+  local mainStep = step
+  if detour then
+    local dentry
+    step, dentry = A:CurrentStep()
+    entry = dentry and dentry.origin or nil
+  end
   local collapsed = Senda.db.hudCollapsed
 
   f.collapse.icon:SetTexture(collapsed and "Interface\\Buttons\\UI-PlusButton-Up" or "Interface\\Buttons\\UI-MinusButton-Up")
 
   -- Cabecera
-  local sec = entry and entry.section
-  if sec then
+  local sec = (not detour) and entry and entry.section or nil
+  if detour then
+    local di, dn = A:Index(), #A:Steps()
+    f.section:SetText(UI:Color("gold", string.format(L.ASIDE_HUD_HEADER, math.min(di, dn), dn)))
+  elseif sec then
     local lv = sec.levels and string.format(" |cff8c949e%d-%d|r", sec.levels[1] or 0, sec.levels[2] or 0) or ""
     f.section:SetText((sec.title or sec.id) .. lv)
   elseif not Engine:GuideId() then
@@ -392,7 +447,7 @@ function HUD:Refresh()
     f.section:SetText(L.GUIDE_FINISHED_SHORT)
   end
   local done, total = Engine:Progress()
-  f.progress:SetText(total > 0 and string.format("%d/%d", done, total) or "")
+  f.progress:SetText((total > 0 and not detour) and string.format("%d/%d", done, total) or "")
   local status = step and step.status or nil
   local st = STATUS[status or ""]
   f.dot:SetShown(st ~= nil)
@@ -401,7 +456,7 @@ function HUD:Refresh()
 
   -- Paso
   local y = 28
-  local problem = step and Engine.Problem and Engine:Problem(entry) or nil
+  local problem = (step and not detour and Engine.Problem) and Engine:Problem(entry) or nil
   f.icon:SetDesaturated(problem ~= nil)
   if step then
     f.icon:SetTexture(Cond:Icon(step))
@@ -491,11 +546,57 @@ function HUD:Refresh()
   f.advice:SetShown(advH > 0)
   y = y + objH + statusH + tipH + escortH + advH
 
+  -- Desvío: a qué paso de la ruta vuelves
+  if detour and not collapsed then
+    local back = mainStep and self:StepTitle(mainStep) or ""
+    if back == "" and mainStep then back = self:StepText(mainStep) end
+    if not mainStep then back = L.ASIDE_DETOUR_ROUTE_END end
+    f.detour:SetText(string.format(L.ASIDE_HUD_RETURN, back))
+    f.detour:ClearAllPoints()
+    f.detour:SetPoint("TOPLEFT", PAD, -y)
+    f.detour:SetPoint("RIGHT", -PAD, 0)
+    f.detour:Show()
+    y = y + f.detour:GetStringHeight() + 4
+    f.cancelDetour:ClearAllPoints()
+    f.cancelDetour:SetPoint("TOPLEFT", PAD, -y)
+    f.cancelDetour:Show()
+    y = y + 24
+  else
+    f.detour:Hide()
+    f.cancelDetour:Hide()
+  end
+
+  -- Aparte: una sola línea, solo si hay algo útil justo aquí
+  local aline = (not collapsed) and self:AsideLine(detour) or nil
+  if aline then
+    f.aside.text:SetText(aline.text)
+    f.aside.block, f.aside.reminder = aline.block, aline.reminder
+    f.aside.tipTitle, f.aside.tip = aline.tipTitle, aline.tip
+    f.aside:ClearAllPoints()
+    f.aside:SetPoint("TOPLEFT", PAD, -y)
+    f.aside:SetPoint("RIGHT", -PAD, 0)
+    local h = math.max(14, f.aside.text:GetStringHeight())
+    f.aside:SetHeight(h)
+    f.aside:Show()
+    y = y + h + 4
+  else
+    f.aside.block, f.aside.reminder = nil, nil
+    f.aside:Hide()
+  end
+  self.asideLine = aline
+
+  -- Reloj de la cabecera: dejar para después
+  local pinfo = (step and entry and not detour and Engine.ParkInfo) and Engine:ParkInfo(entry) or nil
+  f.park:SetEnabled(pinfo ~= nil)
+  f.park.icon:SetDesaturated(pinfo == nil)
+  self.parkTip = pinfo and L.HUD_PARK_TIP or L.HUD_PARK_NONE
+
   -- Zona de clic derecho del paso (solo pasos de misión)
-  local skipQs = step and self:SkippableQuests(step) or {}
-  f.hit:SetShown(#skipQs > 0)
+  local skipQs = (step and not detour) and self:SkippableQuests(step) or {}
+  f.hit:SetShown(step ~= nil)
   f.hit:SetHeight(math.max(28, titleH + textH))
   self.hitTip = #skipQs > 0 and L.SKIP_MENU or nil
+  self.hitBody = #skipQs > 0 and L.SKIP_HINT or nil
 
   -- Aviso de misión saltada
   local last = Engine.LastSkip and Engine:LastSkip() or nil
@@ -554,7 +655,7 @@ function HUD:Refresh()
   end
 
   -- Misiones aplazadas por nivel
-  local gated = (not collapsed and Engine.LevelGated) and Engine:LevelGated() or {}
+  local gated = (not collapsed and not detour and Engine.LevelGated) and Engine:LevelGated() or {}
   f.gated.index, f.gated.tip = nil, nil
   if #gated > 0 then
     local ready, waiting, tip = {}, {}, {}
@@ -597,7 +698,7 @@ function HUD:Refresh()
 
   -- Vista previa
   local showPreview = not collapsed and Opt("hudPreview")
-  local nexts = showPreview and Engine:NextSteps(2) or {}
+  local nexts = showPreview and (detour and A:NextSteps(2) or Engine:NextSteps(2)) or {}
   if #nexts > 0 then
     f.sep:ClearAllPoints()
     f.sep:SetPoint("TOPLEFT", PAD, -y - 2)
@@ -638,7 +739,11 @@ function HUD:Refresh()
     f.more:SetShown(link ~= nil)
     f.done:SetEnabled(hasStep)
     f.skip:SetEnabled(hasStep)
-    f.back:SetEnabled(Engine:GuideId() ~= nil and Engine:Index() > 1)
+    if detour then
+      f.back:SetEnabled(A:Index() > 1)
+    else
+      f.back:SetEnabled(Engine:GuideId() ~= nil and Engine:Index() > 1)
+    end
     y = y + 20
   end
   f:SetHeight(y + PAD)
@@ -663,7 +768,11 @@ function HUD:ShowSkipMenu()
     skipMenu = UI:Dropdown(UIParent, 240, function()
       local items = {}
       local Engine = Senda.Engine
-      local step = Engine:CurrentStep()
+      if Senda.Aside and Senda.Aside:Active() then
+        items[#items + 1] = { value = "cancelDetour", text = L.ASIDE_MENU_CANCEL }
+        return items
+      end
+      local step, entry = Engine:CurrentStep()
       local qs = step and HUD:SkippableQuests(step) or {}
       for _, q in ipairs(qs) do
         local _, n = Engine:SkipPlan(q)
@@ -674,13 +783,31 @@ function HUD:ShowSkipMenu()
         else text = L.SKIP_MENU end
         items[#items + 1] = { value = q, text = text }
       end
+      -- «Dejar para después» (Engine/Aside.lua) y «Más misiones aquí» (Engine/Reserve.lua)
+      local pinfo = entry and Engine.ParkInfo and Engine:ParkInfo(entry)
+      if pinfo then
+        local text
+        if pinfo.kind == "section" then text = string.format(L.PARK_MENU_SECTION, pinfo.title or "")
+        elseif (pinfo.count or 0) > 1 then text = string.format(L.PARK_MENU_N, pinfo.count)
+        elseif pinfo.count == 1 then text = L.PARK_MENU_1
+        else text = L.PARK_MENU end
+        items[#items + 1] = { value = "park", text = text }
+      end
+      if Senda.Reserve then items[#items + 1] = { value = "reserve", text = L.RESERVE_MENU } end
       local total = Engine:SkippedCount()
       if total > 0 then
         items[#items + 1] = { value = "restore", text = string.format(L.SKIP_RESTORE_ALL, total) }
       end
       return items
     end, function(value)
-      if value == "restore" then
+      if value == "park" then
+        HUD:ParkCurrent()
+      elseif value == "reserve" then
+        Senda.Reserve:Ask()
+        if Senda.AsideTab then Senda.AsideTab:Open("reserve") end
+      elseif value == "cancelDetour" then
+        if Senda.Aside then Senda.Aside:Cancel() end
+      elseif value == "restore" then
         local n = Senda.Engine:UnskipAll()
         Senda:Print(L.SKIP_RESTORED, n)
       elseif type(value) == "number" then
@@ -693,6 +820,59 @@ function HUD:ShowSkipMenu()
   skipMenu:ClearAllPoints()
   skipMenu:SetPoint("TOPLEFT", hud, "BOTTOMLEFT", 0, 0)
   skipMenu:Click("LeftButton")
+end
+
+-- «Dejar para después» del paso actual (reloj de la cabecera y clic derecho).
+function HUD:ParkCurrent()
+  local Engine = Senda.Engine
+  if Senda.Aside and Senda.Aside:Active() then return end
+  local _, entry = Engine:CurrentStep()
+  local info = entry and Engine.Park and Engine:Park(entry)
+  if not info then
+    Senda:Print(L.HUD_PARK_NONE)
+    return
+  end
+  Senda:Print(L.PARK_DONE, Senda.Aside:ItemName(info))
+end
+
+-- 12345 -> "12.345"
+local function Thousands(n)
+  local s = tostring(math.floor((n or 0) + 0.5))
+  local out = s:reverse():gsub("(%d%d%d)", "%1."):reverse()
+  return (out:gsub("^%.", ""))
+end
+HUD.Thousands = Thousands
+
+-- La línea de «Aparte» (una sola, la más útil aquí): lo aparcado de este sitio o la reserva de XP.
+-- Devuelve { text, block, reminder, tipTitle, tip } o nil.
+function HUD:AsideLine(detour)
+  local A, R = Senda.Aside, Senda.Reserve
+  if not A or detour then return nil end
+  local rem = A:Reminder()
+  if rem then
+    local name = A:ItemName(rem.item)
+    local key = rem.reason == "level" and "ASIDE_REMIND_LEVEL" or "ASIDE_REMIND"
+    return { text = "|TInterface\\Icons\\INV_Misc_PocketWatch_01:12:12:0:0|t " .. string.format(L[key], name),
+      block = "parked", reminder = rem, tipTitle = L.ASIDE_BLOCK_PARKED, tip = L.ASIDE_REMIND_TIP }
+  end
+  if not R or Senda.Options:Get("reserveHint") == false then return nil end
+  local st = R:State()
+  if st.reason == "gate" and not st.loading then
+    local text
+    if #(st.offers or {}) == 0 then
+      text = string.format(L.RESERVE_NEED_NONE, Thousands(st.need.xp))
+    elseif (st.planXP or 0) >= st.need.xp then
+      text = string.format(L.RESERVE_NEED, Thousands(st.need.xp), math.max(1, math.floor(st.planMins + 0.5)))
+    else
+      text = string.format(L.RESERVE_NEED_SHORT, Thousands(st.need.xp), Thousands(st.planXP or 0),
+        math.max(1, math.floor((st.planMins or 0) + 0.5)))
+    end
+    return { text = UI:Color("dim", text), block = "reserve", tipTitle = L.ASIDE_BLOCK_RESERVE, tip = L.RESERVE_HUD_TIP }
+  elseif st.reason == "empty" and not st.loading and #(st.offers or {}) > 0 then
+    return { text = UI:Color("dim", string.format(L.RESERVE_EMPTY, #st.offers)), block = "reserve",
+      tipTitle = L.ASIDE_BLOCK_RESERVE, tip = L.RESERVE_HUD_TIP }
+  end
+  return nil
 end
 
 -- Aviso corto de un módulo (p. ej. "Tienes puntos de talento sin gastar"). nil o "" lo quita.
@@ -754,6 +934,10 @@ Events:On("SENDA_READY", function()
   Events:On("SENDA_OBJECTIVES_UPDATED", refresh)
   Events:On("SENDA_GUIDE_CHANGED", refresh)
   Events:On("SENDA_SKIPPED", refresh)
+  Events:On("SENDA_PARKED", refresh)
+  Events:On("SENDA_ASIDE_CHANGED", refresh)
+  Events:On("SENDA_RESERVE_UPDATED", refresh)
+  Events:On("ZONE_CHANGED_NEW_AREA", refresh)
   Events:On("SENDA_ADVICE", function(_, text)
     if HUD.advice ~= text then HUD:SetAdvice(text) end
   end)
