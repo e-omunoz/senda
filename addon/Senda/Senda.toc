@@ -3,7 +3,7 @@
 ## Notes: Guía de leveo paso a paso para WoW Forever (1-60): flecha propia, detección automática de pasos, modo cadáver y datos verificados. Escribe /senda
 ## Notes-enUS: Step-by-step leveling guide for WoW Forever (1-60) with its own arrow, automatic step detection and verified data. Type /senda
 ## Author: omunoz
-## Version: 0.3.4
+## Version: 0.3.5
 ## IconTexture: Interface\Icons\INV_Misc_Map_01
 ## SavedVariablesPerCharacter: SendaDB
 ## SavedVariables: SendaRecorderDB

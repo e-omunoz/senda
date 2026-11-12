@@ -39,7 +39,7 @@ body = """
 - **12:** Cauce de salud.
 - **14:** Drenar vida, Maldición de temeridad.
 - **16:** Fuerza inmortal.
-- **18:** Crear piedra de alma, Dolor abrasador."""
+- **18:** Crear piedra de alma. Dolor abrasador es opcional: es de Fuego, gasta mucho maná y le quita el enemigo al Abisario; esta build no lo usa."""
 
 [[block]]
 heading = "Talentos"

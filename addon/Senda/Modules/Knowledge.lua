@@ -111,7 +111,7 @@ function K.TrainList()
       if type(tr) == "table" and tr.level and type(tr.spells) == "table" then
         for _, id in ipairs(tr.spells) do
           table.insert(out, { level = tr.level, spell = id, cost = tr.cost, note = tr.note, status = tr.status or p.status,
-            pet = tr.pet, quest = tr.quest })
+            pet = tr.pet, quest = tr.quest, optional = tr.optional })
         end
       end
     end
@@ -125,8 +125,9 @@ function K.TrainNow(level)
   level = level or M.Level()
   local out, seen = {}, {}
   for _, e in ipairs(K.TrainList()) do
-    -- Solo lo que enseña el instructor: fuera habilidades de la mascota (pet) y hechizos de misión (quest).
-    if e.level <= level and not e.pet and not e.quest and not seen[e.spell] and not M.Known(e.spell) then
+    -- Solo lo que enseña el instructor y la guía recomienda: fuera habilidades de la mascota (pet),
+    -- hechizos de misión (quest) y los que no usa tu build (optional).
+    if e.level <= level and not e.pet and not e.quest and not e.optional and not seen[e.spell] and not M.Known(e.spell) then
       seen[e.spell] = true
       table.insert(out, e)
     end

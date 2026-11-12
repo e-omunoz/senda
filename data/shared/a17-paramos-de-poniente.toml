@@ -669,10 +669,11 @@ sources = ["questie:npc/523"]
 id = "a17wf-065"
 do = "train"
 reqlevel = 18
-spells = [693, 5676]
+spells = [693]
 npc = 5495
 at = [1453, 39.9, 84.2]
-text = "Brujo: entrena lo del 18 (Crear piedra de alma, Dolor abrasador) en el sótano de El Cordero Degollado."
+text = "Brujo: entrena Crear piedra de alma (nivel 18) en el sótano de El Cordero Degollado."
+tip = "Dolor abrasador no hace falta: es de Fuego, gasta mucho maná y le quita el enemigo al Abisario. Esta build no lo usa."
 if = { class = ["WARLOCK"] }
 status = "unverified"
 sources = ["questie:npc/5495", "knowledge:warlock-spells"]

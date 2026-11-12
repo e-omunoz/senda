@@ -2,6 +2,12 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.3.5] - 2026-11-12
+
+### Cambiado
+- Brujo: Dolor abrasador pasa a opcional. La build de Aflicción no lo usa (es de Fuego, gasta mucho maná y le quita el enemigo al Abisario), así que el paso del 18 solo pide Crear piedra de alma, y ni el asesor ni el instructor lo cuentan como pendiente.
+- Nuevo campo `optional` en los `[[train]]` del conocimiento.
+
 ## [0.3.4] - 2026-11-11
 
 ### Corregido

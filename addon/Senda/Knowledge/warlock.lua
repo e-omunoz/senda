@@ -36,7 +36,7 @@ Senda.Knowledge:Register({
   block = {
     { heading = "Zonas", body = "- **10-14:** Loch Modan.\n- **14-18:** Páramos de Poniente.\n- **17-20:** Costa Oscura.\n\nMazmorras:\n- **Hall of Thanes** (13-18): dentro de Forjaz, en la Antigua Forjaz.\n- **Ruins of Lordaeron** (15-20).\n- **Minas de la Muerte** (17-22).\n\nSus misiones dan más del doble de experiencia que en Classic y, desde el 8 de noviembre, los enemigos de mazmorra dan un 50% más (solo los enemigos, no las misiones)." },
     { heading = "Demonio", body = "**Abisario** desde el 10 (pestaña Guía). En pasivo: lo envías con SND_Abrir.\n- **Tormento** para recuperar la amenaza.\n- **Consumir sombras** fuera de combate.\n- **Sacrificio** si vas a morir." },
-    { heading = "Hechizos", body = "- **10:** Drenar alma, Crear piedra de salud.\n- **12:** Cauce de salud.\n- **14:** Drenar vida, Maldición de temeridad.\n- **16:** Fuerza inmortal.\n- **18:** Crear piedra de alma, Dolor abrasador." },
+    { heading = "Hechizos", body = "- **10:** Drenar alma, Crear piedra de salud.\n- **12:** Cauce de salud.\n- **14:** Drenar vida, Maldición de temeridad.\n- **16:** Fuerza inmortal.\n- **18:** Crear piedra de alma. Dolor abrasador es opcional: es de Fuego, gasta mucho maná y le quita el enemigo al Abisario; esta build no lo usa." },
     { heading = "Talentos", body = "- **10-14:** Corrupción mejorada 5/5 (instantánea).\n- **15-17:** Supresión 3/5.\n- **18-19:** Alcance macabro 2/2.\n\nFuente: ConquestCapped, 8 nov." },
     { heading = "Rotación", body = "Terror de agonía desde lejos → Corrupción → Abisario → Inmolar → varita. Drenar vida (desde el 14) si te falta vida. Drenar alma al enemigo casi muerto si tienes menos de 3 fragmentos." },
     { heading = "Macros", body = "- **Al 10:** SND_Drenar, SND_Piedra, SND_Sacrificio.\n- **Al 14:** SND_Drenar pasa a ser Drenar vida, y Drenar alma con Alt." },
@@ -219,7 +219,8 @@ Senda.Knowledge:Register({
     { level = 12, names = {"Cauce de salud"}, spells = {755}, ids_added = {755} },
     { level = 14, names = {"Maldición de temeridad", "Drenar vida"}, spells = {704, 689}, ids_added = {704} },
     { level = 16, names = {"Fuerza inmortal"}, spells = {}, no_id = {"Fuerza inmortal"}, cost = 1600, status = "verified", note = "Confirmado en el juego: Demisette Cloyce la enseña al 16 por 16 platas, junto a Transfusión de vida (rango 2). Es el hechizo de respirar bajo el agua (el equivalente de Aliento inagotable de Classic, id 5697 sin confirmar en Forever). Opcional: solo hace falta para misiones bajo el agua; no la cuentes como pendiente." },
-    { level = 18, names = {"Crear piedra de alma", "Dolor abrasador"}, spells = {693, 5676}, ids_added = {5676} },
+    { level = 18, names = {"Crear piedra de alma"}, spells = {693} },
+    { level = 18, names = {"Dolor abrasador"}, spells = {5676}, ids_added = {5676}, optional = true, note = "Opcional: la build es de Aflicción (daño de Sombras con maldiciones y Corrupción, y varita), y Dolor abrasador es de Fuego, gasta mucho maná y genera mucha amenaza, así que le quita el enemigo al Abisario. Solo sirve para rematar a un enemigo que huye. Ahorra el dinero." },
     { level = 20, names = {"Maldición de los elementos", "Armadura demoníaca", "Ritual de invocación", "Lluvia de fuego"}, spells = {1490, 706, 698, 5740}, ids_added = {5740}, note = "Maldición de los elementos al 20 es un cambio de Forever (en Classic, al 32)." },
     { level = 22, names = {"Ojo de Kilrogg"}, spells = {126} },
     { level = 24, names = {"Drenar maná", "Captar demonios"}, spells = {5138, 5500}, ids_added = {5138, 5500} },

@@ -73,9 +73,16 @@ note = "Confirmado en el juego: Demisette Cloyce la enseña al 16 por 16 platas,
 
 [[train]]
 level = 18
-names = ["Crear piedra de alma", "Dolor abrasador"]
-spells = [693, 5676]
+names = ["Crear piedra de alma"]
+spells = [693]
+
+[[train]]
+level = 18
+names = ["Dolor abrasador"]
+spells = [5676]
 ids_added = [5676]
+optional = true
+note = "Opcional: la build es de Aflicción (daño de Sombras con maldiciones y Corrupción, y varita), y Dolor abrasador es de Fuego, gasta mucho maná y genera mucha amenaza, así que le quita el enemigo al Abisario. Solo sirve para rematar a un enemigo que huye. Ahorra el dinero."
 
 [[train]]
 level = 20
