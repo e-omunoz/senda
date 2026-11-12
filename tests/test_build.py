@@ -219,7 +219,7 @@ class BuildTests(unittest.TestCase):
             g = root / "addon/Senda/Guides"
             k = root / "addon/Senda/Knowledge"
             names = sorted(p.name for p in g.iterdir())
-            self.assertEqual(names, ["Guides.xml", "Shared.lua", "gnome-warlock.lua", "human-mage.lua"])
+            self.assertEqual(names, ["Followups.lua", "Guides.xml", "Shared.lua", "gnome-warlock.lua", "human-mage.lua"])
             self.assertEqual(sorted(p.name for p in k.iterdir()), ["Knowledge.xml", "general.lua", "warlock.lua"])
 
             gw = (g / "gnome-warlock.lua").read_bytes()
@@ -268,6 +268,64 @@ class BuildTests(unittest.TestCase):
             self.assertIn("old-guide.lua", err)
             quiet(build.main, ["--root", str(root)])
             self.assertFalse((g / "old-guide.lua").exists())
+
+    # -- índice de misiones dependientes («Saltar esta misión») ----------------------------------
+    def _add_quest_steps(self, root, quests):
+        """Añade a la guía gnome-warlock del fixture entrega + coger, en ese orden, por misión."""
+        p = root / "data/guides/gnome-warlock/01-coldridge.toml"
+        extra = ""
+        for i, (q, npc, do) in enumerate(quests):
+            extra += (f'\n[[step]]\nid = "coldridge-x{i:02d}"\ndo = "{do}"\nquest = {q}\nnpc = {npc}\n'
+                      f'at = [1426, 30, 70]\ntext = "x"\nstatus = "unverified"\n')
+        p.write_text(p.read_text(encoding="utf-8") + extra, encoding="utf-8")
+
+    def test_followups_from_snapshot(self):
+        """Con data/prereq.json: cierre transitivo, también a través de misiones que ninguna guía usa."""
+        with TempRepo() as root:
+            self._add_quest_steps(root, [(1001, 5, "accept"), (1002, 6, "accept"), (1004, 7, "accept")])
+            (root / "data/prereq.json").write_text(
+                json.dumps({"edges": [[179, 1001], [1001, 9999], [9999, 1002], [1001, 1004], [1002, 1002]]}),
+                encoding="utf-8")
+            rc, _, err = quiet(build.main, ["--root", str(root)])
+            self.assertEqual(rc, 0, err)
+            text = (root / "addon/Senda/Guides/Followups.lua").read_text(encoding="utf-8")
+            self.assertTrue(text.startswith(f"-- {GENERATED_HEADER}\n"))
+            self.assertIn("-- Fuente: data/prereq.json", text)
+            # 179 -> 1001 -> (9999 ->) 1002 y 1004; 9999 no sale (ninguna guía lo usa); 1002 no depende de sí misma
+            self.assertIn('RegisterFollowups("179>1001,1002,1004;1001>1002,1004")', text)
+            xml = (root / "addon/Senda/Guides/Guides.xml").read_text(encoding="utf-8")
+            self.assertIn("Followups.lua", xml)
+            rc, _, _ = quiet(build.main, ["--root", str(root), "--check"])
+            self.assertEqual(rc, 0)
+
+    def test_followups_fallback_from_guide_order(self):
+        """Sin forever-db ni instantánea: B sigue a A si se coge justo después de entregar A al mismo PNJ."""
+        with TempRepo() as root:
+            self._add_quest_steps(root, [(2001, 77, "turnin"), (2002, 77, "accept"),
+                                         (2003, 88, "turnin"), (2004, 99, "accept")])
+            rc, _, err = quiet(build.main, ["--root", str(root)])
+            self.assertEqual(rc, 0, err)
+            text = (root / "addon/Senda/Guides/Followups.lua").read_text(encoding="utf-8")
+            self.assertIn("-- Fuente: orden de las guías", text)
+            self.assertIn('RegisterFollowups("2001>2002")', text)  # otro PNJ: no hay relación
+
+    def test_refresh_prereq_needs_foreverdb(self):
+        with TempRepo() as root:
+            rc, _, err = quiet(build.main, ["--root", str(root), "--refresh-prereq"])
+            self.assertEqual(rc, 1)
+            self.assertIn("forever-db", err)
+            self.assertFalse((root / "data/prereq.json").exists())
+            # con una caché mínima, guarda las aristas duras (all sin miga de pan, y any con una sola previa)
+            d = root / ".cache/foreverdb/data"
+            d.mkdir(parents=True)
+            rows = [{"mode": "all", "pre": 1, "quest": 2}, {"mode": "all", "pre": 3, "quest": 2, "breadcrumb": True},
+                    {"mode": "any", "pre": 4, "quest": 5}, {"mode": "any", "pre": 6, "quest": 7},
+                    {"mode": "any", "pre": 8, "quest": 7}]
+            (d / "quest_prereq.jsonl").write_text("\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8")
+            rc, _, err = quiet(build.main, ["--root", str(root), "--refresh-prereq"])
+            self.assertEqual(rc, 0, err)
+            snap = json.loads((root / "data/prereq.json").read_text(encoding="utf-8"))
+            self.assertEqual(snap["edges"], [[1, 2], [4, 5]])
 
     def test_build_fails_on_invalid(self):
         with TempRepo() as root:

@@ -25,6 +25,10 @@ from common import Paths, load_toml, setup_stdio  # noqa: E402
 STATUSES = ("verified", "unverified", "disputed")
 
 # Campos obligatorios según `do` (además de id/do/text/status, que exige el esquema).
+# Fichas de nombre en text/tip ({quest:155}): el addon las resuelve con el cliente (Core/Names.lua).
+TOKEN_KINDS = {"quest", "npc", "item", "spell", "map", "obj"}
+_TOKEN_ANY_RE = re.compile(r"\{([a-z]+):([^}\s]*)\}")
+
 DO_REQUIRES: dict[str, tuple[str, ...]] = {
     "accept": ("quest",),
     "turnin": ("quest",),
@@ -419,6 +423,15 @@ def run_checks(ds: Dataset) -> Dataset:
             if isinstance(flt, dict) and isinstance(flt.get("minlevel"), int) \
                     and isinstance(flt.get("maxlevel"), int) and flt["minlevel"] > flt["maxlevel"]:
                 ds.err(sec.path, f"{where} · campo 'if'", "minlevel > maxlevel")
+            for fld in ("text", "tip"):
+                val = st.get(fld)
+                if isinstance(val, str):
+                    for m in _TOKEN_ANY_RE.finditer(val):
+                        if m.group(1) not in TOKEN_KINDS:
+                            ds.err(sec.path, f"{where} · campo '{fld}'",
+                                   f"ficha desconocida {m.group(0)} (tipos: {', '.join(sorted(TOKEN_KINDS))})")
+                        elif not m.group(2).isdigit() or int(m.group(2)) <= 0:
+                            ds.err(sec.path, f"{where} · campo '{fld}'", f"ficha sin id numérico: {m.group(0)}")
             _check_provenance(ds, sec.path, where, st)
 
     # --- guías

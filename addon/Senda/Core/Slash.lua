@@ -1,4 +1,4 @@
--- Comandos de chat: /senda [hud | hide | reset | guide <id> | way x y [texto] | map | debug | export | help]
+-- Comandos de chat: /senda [hud | hide | reset | guide <id> | way x y [texto] | map | debug | export | informe | help]
 local _, Senda = ...
 local L = Senda.L
 local Util, Compat = Senda.Util, Senda.Compat
@@ -117,6 +117,10 @@ commands.export = function()
   end
 end
 
+commands.informe = function()
+  if Senda.Report and Senda.Report.Open then Senda.Report:Open() end
+end
+
 commands.help = function()
   Senda:Print(L.SLASH_HELP_HEADER, Senda.VERSION)
   for _, line in ipairs(L.SLASH_HELP_LINES) do Senda:Print("  " .. line) end
@@ -132,6 +136,8 @@ commands.guia = commands.guide
 commands.ayuda = commands.help
 commands.reiniciar = commands.reset
 commands.exportar = commands.export
+commands.report = commands.informe
+commands.bug = commands.informe
 
 SLASH_SENDA1 = "/senda"
 SlashCmdList.SENDA = function(msg)

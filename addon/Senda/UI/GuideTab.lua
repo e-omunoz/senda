@@ -125,7 +125,8 @@ local function Row(i)
     local title = HUD:StepTitle(e.step)
     GameTooltip:SetText(HUD:TypeLabel(e.step) .. (title ~= "" and (": " .. title) or ""), 1, 1, 1)
     GameTooltip:AddLine(HUD:StepText(e.step), 0.85, 0.85, 0.85, true)
-    if e.step.tip then GameTooltip:AddLine(e.step.tip, 1, 0.82, 0.25, true) end
+    local tip = HUD:StepTip(e.step)
+    if tip then GameTooltip:AddLine(tip, 1, 0.82, 0.25, true) end
     local st = HUD.STATUS[e.step.status or ""]
     if st then GameTooltip:AddLine(L[st[2]], 0.6, 0.6, 0.6) end
     GameTooltip:AddLine(e.step.id, 0.45, 0.45, 0.45)
@@ -231,4 +232,5 @@ local function Live()
 end
 Events:On("SENDA_STEP_COMPLETED", Live)
 Events:On("SENDA_STEP_UPDATED", Live)
+Events:On("SENDA_NAMES_UPDATED", Live)
 Events:On("SENDA_GUIDE_CHANGED", function() view.secIndex = nil end)

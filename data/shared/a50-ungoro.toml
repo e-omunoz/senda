@@ -33,7 +33,7 @@ id = "a50-ungoro-003"
 do = "train"
 reqlevel = 50
 npc = 5144
-spells = [10180, 10219, 11419]
+spells = [10180, 10219]
 at = [1455, 27.2, 8.3]
 text = "Mago: entrena los hechizos del nivel 50."
 if = { class = ["MAGE"], minlevel = 50 }

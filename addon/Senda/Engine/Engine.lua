@@ -5,8 +5,10 @@
 --   Senda.Engine:Back()         -- vuelve al paso aplicable anterior
 --   Senda.Engine:Complete(id)   -- marca un paso por id (si es el actual, avanza)
 --   Senda.Engine:SetGuide(id), :JumpTo(index), :Reset()
+--   Senda.Engine:Place(reason)  -- recalcula el paso actual con lo que sabe el juego (solo adelanta)
 -- El progreso se guarda por id de paso (estable entre versiones de la guía).
--- Eventos internos: SENDA_GUIDE_CHANGED, SENDA_STEP_CHANGED, SENDA_STEP_COMPLETED, SENDA_STEP_UPDATED.
+-- Eventos internos: SENDA_GUIDE_CHANGED, SENDA_STEP_CHANGED, SENDA_STEP_COMPLETED, SENDA_STEP_UPDATED,
+-- SENDA_OBJECTIVES_UPDATED (cambian los contadores del paso actual; también en combate).
 local _, Senda = ...
 local Compat, Events = Senda.Compat, Senda.Events
 
@@ -36,9 +38,40 @@ local function Progress()
   return Senda:GuideProgress(Engine.guideId)
 end
 
+-- Pasos de misión: los que "Saltar esta misión" deja fuera junto con la misión (Engine:SkipQuestTree).
+local QUESTY = { accept = true, complete = true, turnin = true, dungeon = true }
+
+local function SkipSet()
+  local t = Senda.db and Senda.db.skippedQuests
+  if t and next(t) then return t end
+  return nil
+end
+
+-- ¿Salta este paso una misión saltada? Vale para todas las guías: el conjunto es del personaje, no de la
+-- guía. Un `goto` justo antes de un paso saltado (en la misma sección) se salta con él.
+function Engine:StepSkipped(entry, depth)
+  local set = SkipSet()
+  if not set or not entry then return false end
+  local s = entry.step
+  local qs = Cond:Quests(s)
+  if qs and QUESTY[s["do"]] then
+    for _, q in ipairs(qs) do
+      if not set[q] then return false end
+    end
+    return true
+  end
+  depth = depth or 0
+  if s["do"] == "goto" and depth < 3 and entry.index then
+    local nxt = Engine.steps[entry.index + 1]
+    if nxt and nxt.secIndex == entry.secIndex then return Engine:StepSkipped(nxt, depth + 1) end
+  end
+  return false
+end
+
 local function DoneMark(entry)
   local p = Progress()
-  return p and entry and p.done[entry.step.id]
+  if not p or not entry then return nil end
+  return p.done[entry.step.id] or (Engine:StepSkipped(entry) and "s" or nil)
 end
 
 -- Una misión cuenta como "cogida" si está en el registro o ya se entregó.
@@ -151,7 +184,7 @@ function Engine:LevelGated()
     else
       finished = e and QuestTaken(e.step.quest)
     end
-    if not e or mark == "a" or mark == "d" or finished then
+    if not e or mark == "a" or mark == "d" or finished or self:StepSkipped(e) then
       p.gated[id] = nil -- ya cogida, hecha o fuera de la guía: se olvida
     else
       out[#out + 1] = { entry = e, index = i, level = req, ready = lvl >= req }
@@ -193,7 +226,7 @@ function Engine:Progress()
   local p = Progress()
   for _, e in ipairs(self.steps) do
     total = total + 1
-    if p and p.done[e.step.id] then done = done + 1 end
+    if p and DoneMark(e) then done = done + 1 end
   end
   return done, total
 end
@@ -243,6 +276,8 @@ function Engine:Save()
   local e = self.steps[self.index]
   p.current = e and e.step.id or nil
   p.index = self.index
+  -- Paso al que se volvió a mano: la colocación al iniciar sesión lo respeta (no adelanta).
+  p.held = (e and self.held and self.held.id == e.step.id) and e.step.id or nil
 end
 
 -- Mueve el puntero a `i` (sin marcar nada).
@@ -302,7 +337,12 @@ end
 
 function Engine:Evaluate(reason)
   if not self.guideId then return end
-  if Compat.InCombat() then dirty = true; return end
+  if Compat.InCombat() then
+    dirty = true
+    -- En combate no se avanza, pero los contadores (6/8) se ven al momento.
+    self:CheckObjectives()
+    return
+  end
   dirty = false
   local start = self.index
   local loops = 0
@@ -342,6 +382,7 @@ function Engine:Evaluate(reason)
   else
     Events:Fire("SENDA_STEP_UPDATED", self.steps[self.index])
   end
+  self.objSig = self:ObjectiveSignature() -- el HUD ya se redibuja con el evento anterior
 end
 
 -- Evaluación diferida y agrupada (muchos eventos seguidos -> una sola evaluación).
@@ -385,7 +426,7 @@ end
 -- Vuelve al paso aplicable anterior y lo desmarca.
 function Engine:Back()
   local i = math.min(self.index, #self.steps + 1) - 1
-  while i >= 1 and not Applicable(self.steps[i]) do i = i - 1 end
+  while i >= 1 and (not Applicable(self.steps[i]) or self:StepSkipped(self.steps[i])) do i = i - 1 end
   if i < 1 then return end
   self:JumpTo(i)
 end
@@ -399,6 +440,7 @@ function Engine:JumpTo(i)
   local was = Cond:Check(e.step, { turnedIn = self.turnedIn }) == true
   self:MoveTo(i, true)
   self.held = { id = e.step.id, wasDone = was }
+  self:Save()
   Events:Fire("SENDA_STEP_CHANGED", e)
 end
 
@@ -429,19 +471,231 @@ end
 -- Guía activa
 ------------------------------------------------------------------------------
 
--- Índice donde reanudar si no hay progreso: tras la última misión ya entregada de la ruta.
-function Engine:ResumeIndex()
-  local best = 0
-  for i, e in ipairs(self.steps) do
-    if e.step["do"] == "turnin" and Cond:Check(e.step, { turnedIn = self.turnedIn }) == true then
-      best = i
+------------------------------------------------------------------------------
+-- Contadores de objetivos del paso actual
+------------------------------------------------------------------------------
+
+-- Firma de los objetivos de las misiones del paso actual ("" si no es un paso de misión).
+-- Es barata: solo mira el paso actual, nunca la guía entera.
+function Engine:ObjectiveSignature()
+  local s = self:CurrentStep()
+  if not s or not s.quest and not s.quests then return "" end
+  local d = s["do"]
+  if d ~= "complete" and d ~= "turnin" and d ~= "accept" then return "" end
+  local parts = {}
+  for _, q in ipairs(Cond:Quests(s) or {}) do
+    parts[#parts + 1] = tostring(q)
+    for _, o in ipairs(Compat.QuestObjectives(q)) do
+      parts[#parts + 1] = string.format("%s/%s%s", tostring(o.have), tostring(o.need), o.finished and "+" or "")
     end
   end
-  return math.max(1, best)
+  return table.concat(parts, ",")
+end
+
+-- Si cambiaron los contadores del paso actual, avisa al HUD (sin evaluar ni mover el puntero).
+function Engine:CheckObjectives()
+  local sig = self:ObjectiveSignature()
+  if sig == self.objSig then return false end
+  self.objSig = sig
+  Events:Fire("SENDA_OBJECTIVES_UPDATED", self.steps[self.index])
+  return true
+end
+
+------------------------------------------------------------------------------
+-- Colocación desde el registro de misiones
+------------------------------------------------------------------------------
+-- Al iniciar sesión, al recargar y al cambiar de guía, el puntero se recalcula con lo que sabe el juego
+-- (misiones entregadas, misiones en el registro y sus objetivos, nivel, hechizos conocidos), no solo con el
+-- índice guardado: si se pierden las SavedVariables o juegas sin el addon, la guía no te deja atrás.
+-- Idea tomada de Polestar (Core/Engine.lua, place/anchorStep/leadsToDone); el código es propio.
+--
+-- * Ancla: el último paso de misión con progreso en el juego (entregada, en el registro, objetivos
+--   empezados). Los pasos de clase o raza, los opcionales y los que saltaste no cuentan: no demuestran
+--   por dónde va la ruta.
+-- * Antes del ancla, un paso sin misión (ir a, piedra de hogar, instructor, profesión, nota...) se da por
+--   pasado si la siguiente misión de la ruta ya está hecha o en curso; un paso opcional, también.
+-- * Un paso de misión pendiente (sin coger, objetivos a medias, sin entregar) siempre retiene: es trabajo
+--   que falta. Los pasos marcados (hechos o saltados a mano) siempre pasan.
+-- * Solo adelanta: nunca te devuelve a un paso anterior al guardado, ni mueve un paso al que volviste a
+--   mano (Atrás o la lista de la guía).
+
+local QUEST_DO = { accept = true, complete = true, turnin = true }
+local PLACE_SLICE = 120 -- pasos por fotograma (cada paso: unas pocas llamadas a C_QuestLog)
+
+local function ClassOrRace(f)
+  return type(f) == "table" and (f.class ~= nil or f.race ~= nil)
+end
+
+local function IsQuestStep(s)
+  return QUEST_DO[s["do"]] and (s.quest ~= nil or s.quests ~= nil)
+end
+
+local function TurnedInNow(q)
+  return (Engine.turnedIn and Engine.turnedIn[q]) or Compat.IsQuestDone(q)
+end
+
+-- ¿Algún objetivo con avance (o la misión lista para entregar)?
+local function ObjectivesStarted(q, obj)
+  if Compat.IsQuestComplete(q) then return true end
+  for i, o in ipairs(Compat.QuestObjectives(q)) do
+    if (not obj or obj == i) and (o.finished or (o.have and o.have > 0)) then return true end
+  end
+  return false
+end
+
+-- Progreso en el juego que demuestra que la ruta llegó a este paso.
+local function QuestEvidence(s)
+  local d = s["do"]
+  for _, q in ipairs(Cond:Quests(s) or {}) do
+    if TurnedInNow(q) then return true end
+    if Compat.IsOnQuest(q) and (d == "accept" or (d == "complete" and ObjectivesStarted(q, s.obj))) then
+      return true
+    end
+  end
+  return false
+end
+
+-- La misión del paso está hecha o en curso (para saber si los pasos sin misión anteriores ya se pasaron).
+local function QuestUnderWay(s)
+  local d = s["do"]
+  for _, q in ipairs(Cond:Quests(s) or {}) do
+    if TurnedInNow(q) or (d ~= "turnin" and Compat.IsOnQuest(q)) then return true end
+  end
+  return false
+end
+
+-- Núcleo de la colocación. Devuelve el índice donde situarse y el ancla (0 si no hay progreso).
+-- `tick` (opcional) se llama una vez por paso mirado: la versión repartida en fotogramas cede ahí.
+function Engine:PlaceCore(tick)
+  local steps = self.steps
+  local n = #steps
+  local lead, anchor, nextQ = {}, 0, true
+  -- 1) Hacia atrás: ancla y "la siguiente misión ya está hecha o en curso" para cada paso.
+  for i = n, 1, -1 do
+    if tick then tick() end
+    local e = steps[i]
+    local s = e.step
+    lead[i] = nextQ
+    if IsQuestStep(s) then
+      local mark = DoneMark(e)
+      if mark ~= "s" and Cond:LevelFilter(s["if"]) and not self:WaitLevel(e) then
+        nextQ = QuestUnderWay(s) or mark == "a" or mark == "d"
+        if anchor == 0 and not s.optional and not ClassOrRace(s["if"]) and not ClassOrRace(e.section and e.section["if"])
+          and QuestEvidence(s) then
+          anchor = i
+        end
+      end
+    end
+  end
+  -- 2) Hacia delante: el primer paso que retiene.
+  local state = { turnedIn = self.turnedIn }
+  local i = 1
+  while i <= n do
+    if tick then tick() end
+    local e = steps[i]
+    local s = e.step
+    local passes = DoneMark(e) or not Applicable(e) or Cond:Check(s, state) == true
+    if not passes and i < anchor and lead[i] then
+      passes = s.optional or not IsQuestStep(s)
+    end
+    if not passes then break end
+    i = i + 1
+  end
+  return i, anchor
+end
+
+-- Índice donde reanudar según el juego (versión directa, sin repartir en fotogramas).
+function Engine:ResumeIndex()
+  local i = self:PlaceCore()
+  return math.max(1, math.min(i, #self.steps + 1))
+end
+
+local placeCo, placeFrame, placeJob
+
+-- Aplica el resultado: adelanta el puntero (nunca lo retrasa) y marca lo pasado como hecho por el juego.
+function Engine:ApplyPlacement(job, target, anchor)
+  if job.guideId ~= self.guideId or job.steps ~= self.steps then
+    self:Place(job.reason) -- la guía cambió mientras se calculaba: otra vez
+    return
+  end
+  local from = self.index
+  Senda:Debug("Colocación (%s): ancla %d, paso %d (guardado %d)", tostring(job.reason), anchor, target, from)
+  if self.held or target <= from then return end
+  local p = Progress()
+  if not p then return end
+  local passed = 0
+  for i = from, math.min(target, #self.steps + 1) - 1 do
+    local e = self.steps[i]
+    if not DoneMark(e) then
+      if Applicable(e) then
+        p.done[e.step.id] = "a"
+        passed = passed + 1
+      elseif self:WaitLevel(e) then
+        self:RememberGated(e)
+      end
+    end
+  end
+  self:MoveTo(target)
+  if passed > 0 then Senda:Print(Senda.L.PLACED_FROM_LOG, passed) end
+  if self:IsFinished() then Senda:Print(Senda.L.GUIDE_FINISHED) end
+  self:RequestEvaluate(0.1, "placed")
+end
+
+local function PlaceStep()
+  if not placeCo then
+    if placeFrame then placeFrame:Hide() end
+    return
+  end
+  if Compat.InCombat() then return end -- los valores pueden ser secretos en combate: espera
+  local ok, target, anchor = coroutine.resume(placeCo)
+  if not ok then
+    placeCo = nil
+    placeFrame:Hide()
+    Senda:Debug("Error en la colocación: %s", tostring(target))
+    return
+  end
+  if coroutine.status(placeCo) == "dead" then
+    placeCo = nil
+    placeFrame:Hide()
+    Engine:ApplyPlacement(placeJob, target, anchor)
+  end
+end
+
+-- Recalcula el paso actual con lo que sabe el juego, repartido en fotogramas (PLACE_SLICE pasos por
+-- fotograma). Si el registro de misiones aún no cargó, espera a que cargue.
+function Engine:Place(reason)
+  if not self.guideId or #self.steps == 0 then return end
+  if not self.logReady then
+    self.placeWanted = reason or "log"
+    return
+  end
+  self.placeWanted = nil
+  placeJob = { guideId = self.guideId, steps = self.steps, reason = reason }
+  local k = 0
+  placeCo = coroutine.create(function()
+    return Engine:PlaceCore(function()
+      k = k + 1
+      if k % PLACE_SLICE == 0 then coroutine.yield() end
+    end)
+  end)
+  if not placeFrame then
+    placeFrame = CreateFrame("Frame")
+    placeFrame:SetScript("OnUpdate", PlaceStep)
+  end
+  placeFrame:Show()
+end
+
+function Engine:Placing() return placeCo ~= nil end
+
+-- El registro de misiones ya se puede leer: lanza la colocación que esperaba.
+function Engine:SetLogReady()
+  if self.logReady then return end
+  self.logReady = true
+  if self.placeWanted then self:Place(self.placeWanted) end
 end
 
 -- Reconstruye la lista plana (al cambiar de guía o de profesión) conservando el paso actual.
-function Engine:Rebuild()
+function Engine:Rebuild(placeReason)
   local p = Progress()
   self.steps = Senda.Guides:Resolve(self.guideId)
   self.questWait = BuildQuestWait(self.steps)
@@ -459,8 +713,16 @@ function Engine:Rebuild()
     end
     idx = self:NextPending(last + 1)
   end
-  if not idx then idx = self:ResumeIndex() end
-  self:MoveTo(idx, true)
+  -- Sin progreso guardado se empieza por el principio; la colocación (abajo) adelanta según el juego.
+  local heldId = p and p.held
+  self:MoveTo(idx or 1, true)
+  local cur = self.steps[self.index]
+  if heldId and cur and cur.step.id == heldId then
+    self.held = { id = heldId, wasDone = Cond:Check(cur.step, { turnedIn = self.turnedIn }) == true }
+    self:Save()
+  end
+  self.objSig = nil
+  self:Place(placeReason or "rebuild")
 end
 
 function Engine:SetGuide(id, silent)
@@ -471,7 +733,7 @@ function Engine:SetGuide(id, silent)
   self.guideId = id
   Senda.db.guide = id
   self.held = nil
-  self:Rebuild()
+  self:Rebuild("guide")
   Events:Fire("SENDA_GUIDE_CHANGED", id)
   Events:Fire("SENDA_STEP_CHANGED", self.steps[self.index])
   if not silent then
@@ -486,7 +748,7 @@ function Engine:Reset()
   if not self.guideId then return end
   Senda.db.progress[self.guideId] = { done = {} }
   self.held = nil
-  self:Rebuild()
+  self:Rebuild("reset")
   Events:Fire("SENDA_STEP_CHANGED", self.steps[self.index])
   self:RequestEvaluate(0.3, "reset")
 end
@@ -615,7 +877,7 @@ Events:On("SENDA_READY", function()
   Events:On("QUEST_TURNED_IN", OnTurnedIn)
   Events:On("QUEST_REMOVED", Req("removed", 0.3))
   Events:On("QUEST_LOG_UPDATE", function()
-    Engine.logReady = true
+    Engine:SetLogReady()
     Engine:RequestEvaluate(0.4, "log")
   end)
   Events:On("UNIT_QUEST_LOG_CHANGED", Req("log", 0.4))
@@ -660,7 +922,12 @@ Events:On("SENDA_READY", function()
   -- Al iniciar sesión, la caché de misiones puede tardar: se reevalúa un par de veces.
   Engine:RequestEvaluate(1, "login")
   Compat.After(5, function()
-    Engine.logReady = true
+    if Engine.logReady then
+      -- La caché de misiones ya debería estar completa: segunda colocación (solo adelanta).
+      Engine:Place("login2")
+    else
+      Engine:SetLogReady()
+    end
     Engine:RequestEvaluate(0, "login2")
   end)
 end)

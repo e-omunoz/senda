@@ -134,6 +134,7 @@ sources = ["questie:quest/7562", "questie:npc/14436", "legacy:BrujoGnomoGuia 4.1
 [[step]]
 id = "wl-endgame-012"
 do = "train"
+reqlevel = 60
 spells = [23161]
 text = "Al acabar la cadena tienes el Corcel de la muerte."
 optional = true

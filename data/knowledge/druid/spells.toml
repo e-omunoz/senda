@@ -1,7 +1,11 @@
-# Druida: qué se aprende en cada nivel. Escrito para Senda (no migrado).
-# Mismo formato que data/knowledge/mage/spells.toml (spells, names, no_id, [[check]], [ids]).
-# Solo hechizos nuevos (los rangos nuevos de lo que ya tienes no se listan). Ids de rango 1 de Classic salvo donde
-# la nota dice que son de Forever. `quest = true`: no lo vende el instructor, sale de una misión de clase.
+# [[train]]: lo que enseña el instructor de druida en Forever, para un elfo de la noche (docs/TRAINER.md).
+#   Los que llevan sources = ["trainer:..."] los genera tools/gen_trainer.py --rewrite (no editar a mano: cambia
+#   data/knowledge/trainer/policy.json y regenera). Uno por nivel con todo lo que la build necesita (hechizos nuevos
+#   y subidas de rango) y uno aparte por cada hechizo opcional (optional = true: no cuenta como pendiente).
+#   names   nombres del cliente esES, en el orden de spells; cost = suma en cobre.
+#   Los demás [[train]] son a mano: lo de inicio, las formas y habilidades de misión (quest) y lo que falta en la lista.
+#   La lista capturada del instructor no trae los niveles 8 a 14: esos salen del nivel del cliente (SpellLevels).
+# [[check]]: hechizos clave del análisis del personaje (aviso si no se conocen 2 niveles después).
 id = "druid-spells"
 class = "DRUID"
 kind = "spells"
@@ -9,126 +13,414 @@ title = "Hechizos del instructor de druida"
 levels = [1, 60]
 order = 80
 status = "unverified"
-sources = ["https://www.warcrafttavern.com/forever/guides/druid-leveling/", "https://www.warcrafttavern.com/forever/guides/druid/", "questie:quest/5931", "questie:quest/5061", "questie:quest/98393", "questie:npc/4217", "questie:npc/12042"]
-checked = "2026-11-11"
-note = "Niveles: lista «Abilities by level» de Warcraft Tavern (Forever). Los ids salen de memoria (Classic), salvo los marcados de Forever, que da Warcraft Tavern: todos sin comprobar en el cliente. Instructores: Mardant Strongoak (Cañada Umbría), Kal (Dolanaar), Mathrengyl Bearwalker, Denatharion y Fylerian Nightwing (Darnassus, Enclave Cenarion) y Loganaar (Claro de la Luna)."
-
-[[train]]
-level = 1
-names = ["Cólera", "Toque de sanación", "Marca de lo Salvaje"]
-spells = [5176, 5185, 1126]
-note = "Se conocen al empezar o se aprenden con Mardant Strongoak al nivel 1."
+sources = ["polestar:19bd636e/addon/Polestar/QoL/ClassSpells.lua", "ingame-client:1.60.1.70888", "https://www.warcrafttavern.com/forever/guides/druid-leveling/", "questie:quest/5931", "questie:quest/5061", "questie:quest/98393", "questie:npc/4217", "questie:npc/12042"]
+checked = "2026-11-12"
+note = "Niveles, ids y costes: listas del instructor de Forever (TrinityCore forever, vía Polestar); nombres del cliente esES. Instructores: Mardant Strongoak (Cañada Umbría), Kal (Dolanaar), Mathrengyl Bearwalker, Denatharion y Fylerian Nightwing (Darnassus, Enclave Cenarion) y Loganaar (Claro de la Luna)."
 
 [[train]]
 level = 4
-names = ["Fuego lunar", "Rejuvenecimiento"]
-spells = [8921, 774]
+names = ["Rejuvenecimiento", "Fuegolunar"]
+spells = [774, 8921]
+cost = 200
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 6
-names = ["Espinas"]
-spells = [467]
+names = ["Espinas", "Cólera (rango 2)"]
+spells = [467, 5177]
+cost = 200
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 8
-names = ["Raíces enredadoras"]
-spells = [339]
-note = "En Forever se puede lanzar en interiores."
+names = ["Enredaderas", "Toque curativo (rango 2)"]
+spells = [339, 5186]
+status = "unverified"
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "La lista capturada del instructor no trae los niveles 8 a 14 del druida: nivel de SpellLevels del cliente; coste sin confirmar."
 
 [[train]]
 level = 10
-names = ["Forma de oso", "Gruñido", "Magullar", "Rugido desmoralizador", "Teletransporte: Claro de la Luna", "Garras de la naturaleza"]
-spells = [5487, 6795, 6807, 99, 18960, 16689]
-quest = true
-note = "Forma de oso sale de la cadena Atender la llamada → Claro de la Luna → Gran espíritu del oso → De vuelta a Darnassus (5923/5925, 5921, 5929, 5931). Warcraft Tavern dice que la misión también da Gruñido, Magullar y Teletransporte: Claro de la Luna. Garras de la naturaleza es de base en Forever (en Classic era un hechizo del 10 también)."
+names = ["Clamor desmoralizador", "Rejuvenecimiento (rango 2)", "Marca de lo salvaje (rango 2)", "Machaque", "Fuegolunar (rango 2)", "Gracia de la naturaleza", "Teletransporte a: Claro de la Luna"]
+spells = [99, 1058, 5232, 6807, 8924, 16689, 18960]
+status = "unverified"
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "La lista capturada del instructor no trae los niveles 8 a 14 del druida: nivel de SpellLevels del cliente; coste sin confirmar. Warcraft Tavern dice que la misión del oso también da Machaque y Teletransporte a: Claro de la Luna: si ya los tienes, no hace falta entrenarlos."
 
 [[train]]
 level = 12
-names = ["Recrecimiento", "Enfurecer", "Revivir"]
-spells = [8936, 5229, 1237951]
-note = "Revivir (resurrección fuera de combate) es nuevo en Forever; id 1237951 de Warcraft Tavern."
+names = ["Enfurecer", "Recrecimiento", "Revivir"]
+spells = [5229, 8936, 437138]
+status = "unverified"
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "La lista capturada del instructor no trae los niveles 8 a 14 del druida: nivel de SpellLevels del cliente; coste sin confirmar. Revivir (resurrección fuera de combate) es nuevo en Forever."
 
 [[train]]
 level = 14
-names = ["Azote", "Curar envenenamiento"]
-spells = [5211, 8946]
-note = "Curar envenenamiento sale de la cadena Lecciones de nuevo (6121-6125)."
+names = ["Espinas (rango 2)", "Cólera (rango 3)", "Toque curativo (rango 3)", "Azote", "Curar veneno"]
+spells = [782, 5178, 5187, 5211, 8946]
+status = "unverified"
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "La lista capturada del instructor no trae los niveles 8 a 14 del druida: nivel de SpellLevels del cliente; coste sin confirmar. Curar veneno puede venir de la cadena Lecciones de nuevo (6121-6125)."
 
 [[train]]
 level = 16
-names = ["Flagelo", "Forma acuática"]
-spells = [779, 1066]
-quest = true
-note = "Forma acuática sale de la cadena Una lección que aprender (26, 29, 272, 5061)."
+names = ["Flagelo", "Rejuvenecimiento (rango 3)", "Fuegolunar (rango 3)"]
+spells = [779, 1430, 8925]
+cost = 4200
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 18
-names = ["Fuego feérico", "Hibernar"]
-spells = [770, 2637]
-note = "Fuego feérico es de base en Forever (ya no es talento) y se usa en cualquier forma según las rotaciones de Warcraft Tavern; puede que sea otro id en forma."
+names = ["Fuego feérico", "Enredaderas (rango 2)", "Hibernar", "Machaque (rango 2)", "Recrecimiento (rango 2)", "Gracia de la naturaleza (rango 2)"]
+spells = [770, 1062, 2637, 6808, 8938, 16810]
+cost = 9000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 20
-names = ["Forma felina", "Arañazo", "Acechar", "Destripar", "Triturar", "Fuego estelar", "Renacer", "Augurio de claridad"]
-spells = [768, 1082, 5215, 1079, 5221, 2912, 20484, 16864]
-quest = true
-note = "Forma felina, Arañazo, Acechar y Destripar salen de la misión El gran espíritu felino (98393 → 98394 → 98396 → 98397), nueva en Forever. Triturar baja del 22 al 20. Augurio de claridad es de base (en Classic era talento). Renacer pide un componente según el rango. Desde el 20 se pueden aprender armas de asta (Woo Ping, Ventormenta)."
+names = ["Clamor desmoralizador (rango 2)", "Fuego estelar", "Toque curativo (rango 4)", "Marca de lo salvaje (rango 3)", "Augurio de claridad", "Renacer"]
+spells = [1735, 2912, 5188, 6756, 16864, 20484]
+cost = 14400
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Desde el 20 se pueden aprender armas de asta (Woo Ping, Ventormenta). Renacer pide un componente según el rango."
+
+[[train]]
+level = 22
+names = ["Rejuvenecimiento (rango 4)", "Cólera (rango 4)", "Triturar", "Fuegolunar (rango 4)"]
+spells = [2090, 5179, 5221, 8926]
+cost = 13200
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 22
 names = ["Calmar animal"]
 spells = [2908]
+cost = 3300
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: calma a una bestia enemiga; no sirve para subir."
 
 [[train]]
 level = 24
-names = ["Eliminar maldición", "Arañar", "Mordedura feroz"]
-spells = [2782, 1822, 22568]
-note = "Mordedura feroz baja del 32 al 24 en Forever. Furia del tigre (5217, 24 en Classic) no aparece en la lista de Warcraft Tavern: compruébalo en el instructor."
+names = ["Flagelo (rango 2)", "Espinas (rango 3)", "Arañazo", "Deshacer maldición", "Recrecimiento (rango 3)", "Revivir (rango 2)"]
+spells = [780, 1075, 1822, 2782, 8939, 1237948]
+cost = 25800
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 26
-names = ["Carrerilla", "Suprimir veneno"]
-spells = [1850, 2893]
+names = ["Diligencia", "Suprimir veneno", "Toque curativo (rango 5)", "Machaque (rango 3)", "Fuego estelar (rango 2)"]
+spells = [1850, 2893, 5189, 6809, 8949]
+cost = 22000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 28
-names = ["Rugido desafiante", "Agazaparse"]
-spells = [5209, 8998]
+names = ["Rejuvenecimiento (rango 5)", "Zarpa (rango 2)", "Enredaderas (rango 3)", "Clamor desafiante", "Fuegolunar (rango 5)", "Pavor", "Destripar (rango 2)", "Gracia de la naturaleza (rango 3)"]
+spells = [2091, 3029, 5195, 5209, 8927, 8998, 9492, 16811]
+cost = 36000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 30
-names = ["Forma de viaje", "Tranquilidad"]
-spells = [783, 740]
+names = ["Fuego feérico (rango 2)", "Forma de viaje", "Cólera (rango 5)", "Marca de lo salvaje (rango 4)", "Azote (rango 2)", "Triturar (rango 2)", "Recrecimiento (rango 4)", "Renacer (rango 2)"]
+spells = [778, 783, 5180, 5234, 6798, 6800, 8940, 20739]
+cost = 36800
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 note = "Forma de viaje: instantánea, +40% de velocidad al aire libre; diez niveles antes que la montura."
 
 [[train]]
+level = 30
+names = ["Tranquilidad"]
+spells = [740]
+cost = 4600
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: sanación de grupo canalizada; a solas no se usa."
+
+[[train]]
+level = 30
+names = ["Enjambre de insectos (rango 2)"]
+spells = [24974]
+cost = 4600
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Enjambre de insectos», que esta build no coge."
+
+[[train]]
 level = 32
-names = ["Rastrear humanoides", "Devastar"]
-spells = [5225, 6785]
-no_id = ["Aplomo (Poised)"]
-note = "Warcraft Tavern lista «Poised» al 32 (felino): habilidad o pasiva nueva sin id conocido."
+names = ["Rastrear humanoides", "Toque curativo (rango 6)", "Devastar", "Clamor desmoralizador (rango 3)", "Mordedura feroz (rango 2)"]
+spells = [5225, 6778, 6785, 9490, 22568]
+cost = 30000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 34
+names = ["Flagelo (rango 3)", "Arañazo (rango 2)", "Rejuvenecimiento (rango 6)", "Espinas (rango 4)", "Fuegolunar (rango 6)", "Fuego estelar (rango 3)", "Machaque (rango 4)"]
+spells = [769, 1823, 3627, 8914, 8928, 8950, 8972]
+cost = 49000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 36
-names = ["Regeneración frenética", "Abalanzarse"]
-spells = [22842, 9005]
+names = ["Recrecimiento (rango 5)", "Lanzarse", "Destripar (rango 3)", "Regeneración frenética", "Revivir (rango 3)"]
+spells = [8941, 9005, 9493, 22842, 1237949]
+cost = 40000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 38
+names = ["Enredaderas (rango 4)", "Zarpa (rango 3)", "Cólera (rango 6)", "Toque curativo (rango 7)", "Triturar (rango 3)", "Gracia de la naturaleza (rango 4)", "Hibernar (rango 2)"]
+spells = [5196, 5201, 6780, 8903, 8992, 16812, 18657]
+cost = 63000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 38
+names = ["Calmar animal (rango 2)"]
+spells = [8955]
+cost = 9000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: calma a una bestia enemiga; no sirve para subir."
 
 [[train]]
 level = 40
-names = ["Forma de oso temible", "Estimular", "Huracán", "Gracia felina"]
-spells = [9634, 29166, 16914, 20719]
+names = ["Acechar (rango 2)", "Marca de lo salvaje (rango 5)", "Rejuvenecimiento (rango 7)", "Fuegolunar (rango 7)", "Pavor (rango 2)", "Forma de oso nefasto", "Gracia felina", "Renacer (rango 3)", "Mordedura feroz (rango 3)", "Enervar"]
+spells = [6783, 8907, 8910, 8929, 9000, 9634, 20719, 20742, 22827, 29166]
+cost = 100000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 note = "Al 40 también: equitación de aprendiz y doble especialización."
 
 [[train]]
+level = 40
+names = ["Tranquilidad (rango 2)"]
+spells = [8918]
+cost = 10000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: sanación de grupo canalizada; a solas no se usa."
+
+[[train]]
+level = 40
+names = ["Huracán"]
+spells = [16914]
+cost = 10000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: área de Naturaleza canalizada para grupos; en forma felina u osuna no se usa."
+
+[[train]]
+level = 40
+names = ["Enjambre de insectos (rango 3)"]
+spells = [24975]
+cost = 10000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Enjambre de insectos», que esta build no coge."
+
+[[train]]
+level = 41
+names = ["Mordisco primigenio (rango 2)"]
+spells = [1238069]
+cost = 8000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Rango de talento: Mordisco primigenio (rango 2) lo tiene el instructor al 36, pero pide el talento, que la build coge al 41."
+
+[[train]]
+level = 42
+names = ["Devastar (rango 2)", "Fuego estelar (rango 4)", "Machaque (rango 5)", "Clamor desmoralizador (rango 4)", "Fuego feérico (rango 3)", "Recrecimiento (rango 6)", "Lacerar (rango 3)"]
+spells = [6787, 8951, 9745, 9747, 9749, 9750, 414644]
+cost = 91000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
 level = 44
-names = ["Piel de corteza"]
-spells = [22812]
+names = ["Arañazo (rango 3)", "Destripar (rango 4)", "Flagelo (rango 4)", "Espinas (rango 5)", "Toque curativo (rango 8)", "Pielcorteza"]
+spells = [1824, 9752, 9754, 9756, 9758, 22812]
+cost = 84000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 46
+names = ["Cólera (rango 7)", "Azote (rango 3)", "Diligencia (rango 2)", "Lanzarse (rango 2)", "Triturar (rango 4)", "Fuegolunar (rango 8)", "Rejuvenecimiento (rango 8)"]
+spells = [8905, 8983, 9821, 9823, 9829, 9833, 9839]
+cost = 112000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 48
+names = ["Zarpa (rango 4)", "Enredaderas (rango 5)", "Recrecimiento (rango 7)", "Gracia de la naturaleza (rango 5)", "Mordedura feroz (rango 4)", "Revivir (rango 4)", "Mordisco primigenio (rango 3)"]
+spells = [9849, 9852, 9856, 16813, 22828, 1237950, 1238070]
+cost = 119000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 50
-names = ["Don de lo Salvaje"]
+names = ["Devastar (rango 3)", "Fuego estelar (rango 5)", "Machaque (rango 6)", "Marca de lo salvaje (rango 6)", "Toque curativo (rango 9)", "Renacer (rango 4)", "Lacerar (rango 4)"]
+spells = [9866, 9875, 9880, 9884, 9888, 20747, 1235826]
+cost = 126000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 50
+names = ["Tranquilidad (rango 3)"]
+spells = [9862]
+cost = 18000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: sanación de grupo canalizada; a solas no se usa."
+
+[[train]]
+level = 50
+names = ["Huracán (rango 2)"]
+spells = [17401]
+cost = 18000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: área de Naturaleza canalizada para grupos; en forma felina u osuna no se usa."
+
+[[train]]
+level = 50
+names = ["Enjambre de insectos (rango 4)"]
+spells = [24976]
+cost = 18000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Enjambre de insectos», que esta build no coge."
+
+[[train]]
+level = 50
+names = ["Crecimiento salvaje (rango 2)"]
+spells = [1238214]
+cost = 18000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Crecimiento salvaje», que esta build no coge."
+
+[[train]]
+level = 52
+names = ["Fuegolunar (rango 9)", "Rejuvenecimiento (rango 9)", "Pavor (rango 3)", "Destripar (rango 5)", "Clamor desmoralizador (rango 5)"]
+spells = [9834, 9840, 9892, 9894, 9898]
+cost = 115000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 54
+names = ["Triturar (rango 5)", "Recrecimiento (rango 8)", "Arañazo (rango 4)", "Fuego feérico (rango 4)", "Flagelo (rango 5)", "Espinas (rango 6)", "Cólera (rango 8)"]
+spells = [9830, 9857, 9904, 9907, 9908, 9910, 9912]
+cost = 168000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 54
+names = ["Calmar animal (rango 3)"]
+spells = [9901]
+cost = 24000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: calma a una bestia enemiga; no sirve para subir."
+
+[[train]]
+level = 56
+names = ["Lanzarse (rango 3)", "Toque curativo (rango 10)", "Mordedura feroz (rango 5)"]
+spells = [9827, 9889, 22829]
+cost = 75000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 58
+names = ["Fuegolunar (rango 10)", "Rejuvenecimiento (rango 10)", "Zarpa (rango 5)", "Enredaderas (rango 6)", "Devastar (rango 4)", "Fuego estelar (rango 6)", "Machaque (rango 7)", "Gracia de la naturaleza (rango 6)", "Hibernar (rango 3)", "Lacerar (rango 5)"]
+spells = [9835, 9841, 9850, 9853, 9867, 9876, 9881, 17329, 18658, 1235827]
+cost = 260000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 60
+names = ["Recrecimiento (rango 9)", "Marca de lo salvaje (rango 7)", "Destripar (rango 6)", "Acechar (rango 3)", "Renacer (rango 5)", "Revivir (rango 5)", "Mordisco primigenio (rango 4)"]
+spells = [9858, 9885, 9896, 9913, 20748, 1237951, 1238073]
+cost = 196000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 60
+names = ["Tranquilidad (rango 4)"]
+spells = [9863]
+cost = 28000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: sanación de grupo canalizada; a solas no se usa."
+
+[[train]]
+level = 60
+names = ["Huracán (rango 3)"]
+spells = [17402]
+cost = 28000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: área de Naturaleza canalizada para grupos; en forma felina u osuna no se usa."
+
+[[train]]
+level = 60
+names = ["Enjambre de insectos (rango 5)"]
+spells = [24977]
+cost = 28000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Enjambre de insectos», que esta build no coge."
+
+[[train]]
+level = 60
+names = ["Crecimiento salvaje (rango 3)"]
+spells = [1238215]
+cost = 28000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Crecimiento salvaje», que esta build no coge."
+
+[[train]]
+level = 1
+names = ["Cólera", "Toque curativo", "Marca de lo salvaje"]
+spells = [5176, 5185, 1126]
+note = "Se conocen al empezar."
+
+# Formas y habilidades de misión (no las vende el instructor)
+[[train]]
+level = 10
+names = ["Forma de oso", "Bramido"]
+spells = [5487, 6795]
+quest = true
+note = "Cadena Atender la llamada → Claro de la Luna → Gran espíritu del oso → De vuelta a Darnassus (5923/5925, 5921, 5929, 5931)."
+
+[[train]]
+level = 16
+names = ["Forma acuática"]
+spells = [1066]
+quest = true
+note = "Cadena Una lección que aprender (26, 29, 272, 5061)."
+
+[[train]]
+level = 20
+names = ["Forma felina", "Zarpa", "Acechar", "Destripar"]
+spells = [768, 1082, 5215, 1079]
+quest = true
+note = "Misión El gran espíritu felino (98393 → 98394 → 98396 → 98397), nueva en Forever."
+
+# No está en la lista capturada del instructor (nivel del cliente; coste sin confirmar)
+[[train]]
+level = 50
+names = ["Regalo de lo salvaje"]
 spells = [21849]
-note = "No aparece en la lista de Warcraft Tavern; en Classic es del 50. Pide Baya espinosa salvaje."
+status = "unverified"
+note = "Versión de grupo de Marca de lo salvaje; pide Baya espinosa salvaje. No sale en la lista capturada del instructor: compruébalo en el juego."
+
+[[train]]
+level = 60
+names = ["Regalo de lo salvaje (rango 2)"]
+spells = [21850]
+status = "unverified"
+note = "No sale en la lista capturada del instructor: compruébalo en el juego."
 
 [[check]]
 spell = 5487

@@ -18,7 +18,7 @@ id = "a40-ciudad-002"
 do = "train"
 reqlevel = 40
 npc = 5144
-spells = [10059, 11416]
+spells = [10059]
 at = [1455, 27.25, 8.3]
 if = { class = ["MAGE"] }
 text = "Entrena el 40 con Bink: portales a Ventormenta y Forjaz."
@@ -30,7 +30,7 @@ sources = ["questie:npc/5144"]
 id = "a40-ciudad-dr-40"
 do = "train"
 reqlevel = 40
-spells = [9634, 29166, 16914]
+spells = [9634, 29166]
 npc = 12042
 at = [1450, 52.53, 40.57]
 text = "Druida: lanza Teletransporte: Claro de la Luna y entrena el 40 con Loganaar: Forma de oso temible, Estimular y Huracán."
@@ -45,7 +45,7 @@ id = "a40-ciudad-003"
 do = "train"
 reqlevel = 40
 npc = 5172
-spells = [2362, 5484]
+spells = [5484]
 at = [1455, 50.35, 5.66]
 if = { class = ["WARLOCK"] }
 text = "Entrena del 36 al 40 con Briarthorn: piedra de hechizos y Aullido de terror."

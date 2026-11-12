@@ -1,8 +1,9 @@
 -- Registro de guías y secciones.
 --   Senda.Guides:RegisterSection(t)  -- { id, title, levels = {a, b}, map, summary, link, ["if"], steps = {...} }
 --   Senda.Guides:RegisterGuide(t)    -- { id, title, faction, races, classes, sections = { "id" | "shared:id", ... } }
---   Senda.Guides:Get(id), :GetSection(id), :List(), :ForPlayer()
+--   Senda.Guides:Get(id), :GetSection(id), :AllSections(), :List(), :ForPlayer()
 --   Senda.Guides:Resolve(guideId) -> lista plana de entradas { step, section, secIndex, index }
+--   Senda.Guides:RegisterFollowups(texto), :Followups(questId) -> lista de misiones que dependen de ella
 -- Las secciones pueden registrarse antes o después que las guías: se resuelven tarde.
 local _, Senda = ...
 local Util, Compat = Senda.Util, Senda.Compat
@@ -44,6 +45,39 @@ end
 function Guides:Get(id) return id and guides[id] end
 function Guides:GetSection(id) return id and sections[SectionKey(id)] end
 function Guides:GetStep(id) return id and stepIndex[id] end
+
+-- Índice de dependencias entre misiones (lo genera tools/build.py en Guides/Followups.lua):
+-- cadena "q>d1,d2;q>d1" con, para cada misión de las guías, todas las que dependen de ella (cierre
+-- transitivo). Se lee una sola vez, en el primer uso.
+local followupText, followups = nil, nil
+
+function Guides:RegisterFollowups(text)
+  followupText = type(text) == "string" and text or nil
+  followups = nil
+end
+
+function Guides:Followups(q)
+  if not followups then
+    followups = {}
+    for entry in (followupText or ""):gmatch("[^;]+") do
+      local id, list = entry:match("^(%d+)>(.+)$")
+      if id then
+        local t = {}
+        for d in list:gmatch("%d+") do t[#t + 1] = tonumber(d) end
+        followups[tonumber(id)] = t
+      end
+    end
+  end
+  return followups[q]
+end
+
+-- Todas las secciones registradas, en orden de id (las recorre /senda volcar).
+function Guides:AllSections()
+  local out = {}
+  for _, sec in pairs(sections) do out[#out + 1] = sec end
+  table.sort(out, function(a, b) return a.id < b.id end)
+  return out
+end
 
 function Guides:List()
   local out = {}

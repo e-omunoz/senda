@@ -13,7 +13,8 @@ Principios:
 3. **El juego es la fuente de verdad final.** El addon registra observaciones reales
    (misiones aceptadas/entregadas, posición, id del PNJ) que el harness usa para verificar.
 4. **Nombres por id, no por texto.** Misiones, PNJ, objetos y hechizos se referencian por id;
-   el nombre se resuelve en el cliente (así coincide con el idioma del jugador).
+   el nombre se resuelve en el cliente (así coincide con el idioma del jugador). Dentro de `text` y `tip` se
+   escriben como fichas (`Coge «{quest:155}» de {npc:467}.`): ver «Nombres del juego» abajo.
 5. **No se copian datos de terceros con licencia restrictiva.** QuestieDB es "all rights
    reserved": solo se lee en local para verificar (`.cache/`, ignorado por git) o en tiempo de
    ejecución si el usuario tiene Questie instalado. Nunca se commitea.
@@ -28,6 +29,7 @@ addon/Senda/              Addon (esta carpeta se copia a Interface/AddOns/Senda)
   UI/                     HUD, flecha, panel principal, opciones, botón de minimapa
   Recorder/               Observaciones en juego para el harness
   Knowledge/              Paneles de conocimiento (rotaciones, talentos, macros...) generados
+  Locale/                 GENERADO: nombres de respaldo por idioma (Names_<locale>.lua) desde data/locale/
   Guides/                 GENERADO por tools/build.py desde data/ (sí se commitea)
 data/
   guides/<guide-id>/      Secciones TOML de cada guía (orden por prefijo numérico)
@@ -35,6 +37,7 @@ data/
   shared/                 Secciones compartidas (rutas de Alianza, etc.)
   knowledge/<class>/      Conocimiento por clase (talentos, rotación, macros, profesiones)
   observations/           Observaciones ingeridas desde SavedVariables (JSON, sin datos personales)
+  locale/<locale>/        Nombres del cliente por tipo (quests, npcs, items, spells, maps, objects .json) con fuente
 schema/                   JSON Schema de los TOML (fuente de verdad del formato)
 tools/                    Python stdlib: build, validate, verify, ingest, site, package
 harness/                  Harness de IA: fuentes, agentes de investigación, informes
@@ -153,6 +156,36 @@ El `.toc` incluye `Guides\Guides.xml`, que también genera el build.
 - `SendaRecorderDB` (cuenta): observaciones `{ t, kind, quest, npc, map, x, y, level, race, class, build }`.
   `kind` ∈ `accept`, `turnin`, `npc_seen` (trainer/vendor/gossip), `fp`, `bind`. Sin nombres de
   personaje ni de reino.
+- `SendaNamesDB` (cuenta): lo que guarda `/senda volcar`.
+  `{ version = 1, locales = { esES = { build, date, done, quest = { [id] = nombre }, npc, item, spell, map,
+  missing = { quest = { [id] = true }, ... } } } }`. Un build nuevo empieza de cero. Solo nombres del juego.
+
+## Nombres del juego (fichas)
+
+`text` y `tip` pueden llevar fichas que `Core/Names.lua` resuelve al mostrarlas, con el nombre exacto del idioma
+del cliente:
+
+| Ficha | Qué | Cómo lo pide al cliente |
+|---|---|---|
+| `{quest:N}` | misión | `C_QuestLog.GetTitleForQuestID`; si no está en caché, `RequestLoadQuestByID` y `QUEST_DATA_LOAD_RESULT` |
+| `{npc:N}` | PNJ | `C_TooltipInfo.GetHyperlink("unit:Creature-0-0-0-0-N-0")`, primera línea (reintentos cortos) |
+| `{item:N}` | objeto | `C_Item.GetItemNameByID`; si no, `Item:CreateFromItemID(N):ContinueOnItemLoad` |
+| `{spell:N}` | hechizo | `C_Spell.GetSpellName` |
+| `{map:N}` | zona (uiMapID) | `C_Map.GetMapInfo(N).name` |
+| `{obj:N}` | objeto del mundo | no se puede: solo el respaldo |
+
+Nunca bloquea: lo que el cliente aún no sabe se le pide y, mientras, se muestra el volcado guardado
+(`SendaNamesDB`, mismo idioma), el respaldo compilado (`Locale/Names_<locale>.lua` desde `data/locale/<locale>/`;
+el inglés como último recurso) o «Misión #N». Los nombres que llegan y se están mostrando lanzan un único
+`SENDA_NAMES_UPDATED` agrupado y el HUD se redibuja una vez. Los valores secretos (combate) cuentan como «sin
+respuesta». Caché por sesión.
+
+`/senda volcar` (`Core/NamesDump.lua`) recorre en una corrutina todas las secciones registradas, las páginas de
+conocimiento y, si existen, `Senda.Rares`, `Senda.Dungeons` y `Senda.Travel` (claves `quest`, `npc`, `item`,
+`spell`, `map`, `zone`, `quests`, `spells`, `at`, `wps`, `craft`, `mats` y las fichas de los textos), pide los
+nombres de 20 en 20 por fotograma (máximo 40 esperando), se para en combate y guarda el resultado con el idioma y
+el build en `SendaNamesDB`. Se puede parar (`/senda volcar parar`) y retomar; `/senda volcar reiniciar` empieza de
+cero. `tools/import_names.py` lo pasa a `data/locale/` (ver `tools/README.md`).
 
 ## Automatización y estado de las misiones
 
@@ -172,6 +205,17 @@ nada de acciones protegidas en combate):
   paso actual es un `complete`/`turnin` de esa misión. El motor no salta esos pasos en silencio: el HUD los
   atenúa, explica el motivo y ofrece «Volver a cogerla» (vuelve al paso `accept`) y «Saltar misión»; la flecha
   apunta al `at` del paso `accept`.
+- **Saltar una misión y sus dependientes** (`Engine/Skip.lua`, `Guides:Followups`). Clic derecho en un paso de
+  misión del HUD: «Saltar esta misión». `SendaDB.skippedQuests[q] = true` (por personaje) guarda la misión y las
+  que dependen de ella y aún no tienes (índice compilado en `Guides/Followups.lua` por `tools/build.py`); el motor
+  trata esos pasos como saltados (`DoneMark` devuelve `"s"`, también un `goto` justo antes) en todas las guías, sin
+  tocar el progreso de cada una. El HUD enseña «Saltada «X» y N misiones que dependen de ella · Deshacer»
+  (`Engine:LastSkip()`, evento `SENDA_SKIPPED`); el menú ofrece restaurar todas (`Engine:UnskipAll()`).
+- **Informe de errores** (`UI/Report.lua`, `Core/Events.lua`). `Senda.Errors` guarda los últimos 20 errores que
+  Senda captura (`Senda:ReportError`, sin rutas ni el nombre del personaje o del reino). `/senda informe` y el botón
+  del bicho del HUD abren la ventana: texto libre + contexto (guía, paso, posición, nivel/raza/clase, versiones,
+  addons, estado de las misiones del paso, errores) en una caja de solo lectura que «Copiar» selecciona, y el enlace
+  `https://github.com/e-omunoz/senda/issues/new?title=…&body=…` (cuerpo corto, siempre < 2000 caracteres).
 - **Visibilidad** (`UI/Visibility.lua`). Opción `hideInInstance` (por defecto sí): HUD y flecha se ocultan en
   mazmorras, bandas, campos de batalla y arenas (`IsInInstance`) y vuelven al salir. «Ocultar todo»
   (`db.hideAll`): clic en el botón del minimapa o `/senda hide`; el clic derecho del botón abre un menú con panel,
@@ -180,6 +224,27 @@ nada de acciones protegidas en combate):
   nivel, los hechizos que ya puedes entrenar con su coste, si te llega el dinero y dónde entrenar (botón
   «Señalar»); tras aprender hechizos, los rangos antiguos que quedan en tus barras con «Renovar» (`PickupSpell` +
   `PlaceAction`, nunca en combate: espera a `PLAYER_REGEN_ENABLED`; nunca toca macros ni objetos). `/senda renovar`.
+- **Seguimiento por objetivo.** En los pasos `complete` (y `accept`/`turnin`) el HUD lista los objetivos de
+  `C_QuestLog.GetQuestObjectives` con el texto del propio cliente (ya traducido; si no trae la cuenta, se añade
+  `6/8`) y en verde los cumplidos; con `obj = N` solo ese objetivo, y el paso se da por hecho en cuanto ese
+  objetivo se cumple aunque la misión siga abierta. `QUEST_LOG_UPDATE` y `UNIT_QUEST_LOG_CHANGED` piden una
+  evaluación agrupada (`Engine:RequestEvaluate`: una sola pasada por ráfaga). En combate el motor no avanza, pero
+  compara la firma de los contadores del paso actual (`Engine:ObjectiveSignature`) y, si cambió, lanza
+  `SENDA_OBJECTIVES_UPDATED` para que el HUD se redibuje: los contadores se ven al momento. Nunca se recorre la
+  guía por fotograma.
+- **Colocación desde el registro de misiones** (`Engine:Place`, idea de Polestar; código propio). Al iniciar
+  sesión o recargar (cuando el registro ya se puede leer, y otra vez a los 5 s), al cambiar de guía y al
+  reiniciarla, el paso actual se recalcula con lo que sabe el juego: misiones entregadas
+  (`C_QuestLog.IsQuestFlaggedCompleted`), misiones en el registro y sus objetivos, nivel, hechizos y profesiones
+  (las mismas comprobaciones de cada paso). El **ancla** es el último paso de misión con progreso (entregada, en el
+  registro, objetivos empezados); no cuentan los pasos de clase o raza, los opcionales ni los saltados. Antes del
+  ancla, los pasos sin misión (ir a, piedra de hogar, instructor, profesión, notas) y los opcionales se dan por
+  pasados si la siguiente misión de la ruta ya está hecha o en curso; un paso de misión pendiente siempre retiene.
+  Solo adelanta: nunca vuelve antes del paso guardado, respeta las marcas a mano (hechas o saltadas) y no mueve un
+  paso al que volviste con Atrás o desde la lista (`progress.held`). Lo pasado se marca `a` y el chat lo dice. El
+  cálculo va en una corrutina, 120 pasos por fotograma, y espera fuera de combate. `Engine:ResumeIndex()` da el
+  mismo resultado sin repartir. Así, si se pierden las SavedVariables o juegas sin el addon, la guía no te deja
+  atrás.
 - **Guías solo a mano.** Una guía con `order` negativo en `guide.toml` (los prototipos y las rutas importadas de
   Polestar) sale en la lista y se elige con `/senda guide <id>`, pero `Engine:AutoSelect()` nunca la coge
   (`Guides:IsManualOnly`).
@@ -236,18 +301,23 @@ Senda:Print(msg)                       -- mensaje con prefijo en el chat
 Senda:Debug(msg)                       -- solo si db.opts.debug
 Senda.Events:On(event, fn)             -- varios suscriptores por evento; fn(event, ...)
 Senda.Events:Fire(name, ...)           -- eventos internos: "SENDA_STEP_CHANGED", "SENDA_GUIDE_CHANGED",
-                                       --   "SENDA_STEP_COMPLETED", "SENDA_READY"
+                                       --   "SENDA_STEP_COMPLETED", "SENDA_READY", "SENDA_NAMES_UPDATED"
 Senda.Compat.*                         -- capa sobre la API moderna con fallbacks:
                                        --   QuestTitle(id), IsQuestDone(id), IsOnQuest(id), QuestObjectives(id),
                                        --   SpellName(id), SpellIcon(id), IsSpellKnown(id), ItemName(id),
                                        --   ItemIcon(id), ItemCount(id), PlayerMapPos() -> map, x, y (0-1),
                                        --   WorldDistance(map1,x1,y1, map2,x2,y2) -> metros, angulo
                                        --   NpcIdFromGUID(guid) -> id o nil, ProfessionRank(key) -> rango, max
-Senda.Guides:RegisterSection(t), :RegisterGuide(t), :Get(id), :ForPlayer() -> lista de guías válidas
+Senda.Names:Resolve(text), :Get(kind, id) -> nombre, origen, :Request(kind, id, fn), :Cached(kind, id)
+Senda.Names.Dump:Start(reset), :Stop(), :Running(), :Progress()   -- /senda volcar
+Senda.Guides:RegisterSection(t), :RegisterGuide(t), :Get(id), :AllSections(), :ForPlayer() -> lista de guías válidas
 Senda.Engine:CurrentStep(), :Advance(), :Back(), :Skip(), :Complete(stepId), :SetGuide(id)
 Senda.Engine:WantsQuest("accept"|"turnin", questId)  -- ¿la guía quiere esa acción ahora? (Engine/Automation.lua)
 Senda.Engine:Problem([entry]) -> { kind = "failed"|"abandoned", quest, accept }   -- Engine/Quests.lua
 Senda.Engine:StepTimers(step) -> { { quest, left }, ... }, :RetakeQuest(q), :SkipQuest(q), :IsAbandoned(q)
+Senda.Engine:SkipQuestTree(q) -> info, :UndoSkip([info]), :UnskipAll(), :LastSkip(), :IsQuestSkipped(q)   -- Engine/Skip.lua
+Senda.Guides:Followups(q) -> misiones que dependen de q (índice de Guides/Followups.lua)
+Senda.Report:Open(), :Context(), :Text(desc), :IssueURL(desc); Senda.Errors:Add(err), .list   -- informe de errores
 Senda.Visibility:Hidden(), :SetHidden(b), :Toggle()  -- ocultar HUD y flecha (instancias o a mano)
 Senda.Arrow:SetTarget(map, x, y, label, source), :Clear(source)
 Senda.Knowledge:Register(t), :ForClass(class) -> lista de páginas
@@ -263,7 +333,7 @@ Propietarios de carpetas del addon:
 - `Guides/` y `Knowledge/`: los genera `tools/build.py`.
 
 Cada carpeta tiene su `<Carpeta>.xml` y el `.toc` solo incluye esos XML, en este orden:
-`Core\Core.xml`, `Engine\Engine.xml`, `Recorder\Recorder.xml`, `UI\UI.xml`, `Knowledge\Knowledge.xml`,
+`Core\Core.xml`, `Locale\Locale.xml`, `Engine\Engine.xml`, `Recorder\Recorder.xml`, `UI\UI.xml`, `Knowledge\Knowledge.xml`,
 `Guides\Guides.xml`, `Modules\Modules.xml`.
 
 ## Formato de conocimiento (TOML)

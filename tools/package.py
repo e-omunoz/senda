@@ -61,7 +61,7 @@ def make_zip(paths: Paths, out_dir: Path | None = None) -> Path:
     version = read_version(paths)
     if not paths.toc.exists():
         raise SystemExit(f"package: falta {paths.rel(paths.toc)}")
-    for needed in (paths.out_guides / "Guides.xml", paths.out_knowledge / "Knowledge.xml"):
+    for needed in (paths.out_guides / "Guides.xml", paths.out_knowledge / "Knowledge.xml", paths.out_locale / "Locale.xml"):
         if not needed.exists():
             raise SystemExit(f"package: falta {paths.rel(needed)}; ejecuta antes tools/build.py")
     tv = toc_version(paths)

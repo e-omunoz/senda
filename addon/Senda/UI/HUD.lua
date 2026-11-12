@@ -2,6 +2,8 @@
 -- Muestra sección + rango de niveles, icono por tipo de paso, título resuelto en el idioma del cliente,
 -- progreso de objetivos, consejo, los 2 pasos siguientes atenuados, botones Atrás/Hecho/Saltar,
 -- "Leer más" si el paso tiene `link` y un punto de estado de los datos (verificado/sin verificar/disputado).
+-- Clic derecho en un paso de misión: "Saltar esta misión" (y las que dependen de ella), con aviso y Deshacer.
+-- Botón del bicho en la cabecera: ventana de informe de errores (UI/Report.lua).
 local _, Senda = ...
 local UI, Compat, Events = Senda.UI, Senda.Compat, Senda.Events
 local L = Senda.L
@@ -18,12 +20,15 @@ local hud
 -- Texto de los pasos (también lo usa la lista de la guía)
 ------------------------------------------------------------------------------
 
+local Names = Senda.Names
+
+-- Nombres en el idioma del cliente (Core/Names.lua): del cliente, del volcado o del respaldo compilado.
 local function QuestName(id)
-  return Compat.QuestTitle(id) or string.format(L.QUEST_FALLBACK, tostring(id))
+  return Names:Get("quest", id) or Names:Placeholder("quest", id)
 end
 
 local function ItemText(id, count)
-  local name = Compat.ItemName(id) or string.format(L.ITEM_FALLBACK, tostring(id))
+  local name = Names:Get("item", id) or Names:Placeholder("item", id)
   if count and count > 1 then name = name .. " x" .. count end
   return name
 end
@@ -44,7 +49,7 @@ function HUD:StepTitle(step)
     local names = {}
     for i, id in ipairs(step.spells) do
       if i > 4 then names[#names + 1] = "…"; break end
-      names[#names + 1] = Compat.SpellName(id) or ("#" .. id)
+      names[#names + 1] = Names:Get("spell", id) or ("#" .. id)
     end
     return table.concat(names, ", ")
   elseif (d == "buy" or d == "have" or d == "loot" or d == "use") and step.item then
@@ -56,24 +61,33 @@ function HUD:StepTitle(step)
     if d == "skill" and step.skill then p = p .. " " .. step.skill end
     return p
   elseif (d == "fly" or d == "hearth") and step.zone then
-    return Compat.MapName(step.zone) or ("#" .. step.zone)
+    return Names:Get("map", step.zone) or ("#" .. step.zone)
   elseif d == "getfp" and step.node then
     return tostring(step.node)
   elseif step.at then
-    return step.at[4] or Compat.MapName(step.at[1]) or ""
+    return step.at[4] or Names:Get("map", step.at[1]) or ""
   end
   return ""
 end
 
--- Texto de instrucción con sustitución de {quest}, {item}, {zone}.
+-- Texto de instrucción: {quest}, {item} y {zone} (los del propio paso) y las fichas {quest:N}, {npc:N},
+-- {item:N}, {spell:N}, {map:N} y {obj:N} con el nombre en el idioma del cliente (Core/Names.lua).
 function HUD:StepText(step)
   local t = step and step.text or ""
   if t:find("{", 1, true) then
     t = t:gsub("{quest}", function() return step.quest and QuestName(step.quest) or "" end)
     t = t:gsub("{item}", function() return step.item and ItemText(step.item) or "" end)
-    t = t:gsub("{zone}", function() return step.zone and (Compat.MapName(step.zone) or "") or "" end)
+    t = t:gsub("{zone}", function() return step.zone and (Names:Get("map", step.zone) or "") or "" end)
+    t = Names:Resolve(t)
   end
   return t
+end
+
+-- Consejo del paso con sus fichas resueltas (o nil si no tiene).
+function HUD:StepTip(step)
+  local tip = step and step.tip
+  if type(tip) ~= "string" or tip == "" then return nil end
+  return Names:Resolve(tip)
 end
 
 function HUD:TypeLabel(step)
@@ -81,7 +95,9 @@ function HUD:TypeLabel(step)
   return (d and L["DO_" .. d]) or L.DO_unknown
 end
 
--- Líneas de objetivos de la misión del paso: { text, finished }.
+-- Líneas de objetivos de la misión del paso: { text, finished, have, need }. El texto es el del propio
+-- cliente (ya traducido, p. ej. «Sable de la noche joven muerto: 6/7»); si no trae la cuenta, se añade.
+-- Con `obj = N` solo sale ese objetivo.
 function HUD:ObjectiveLines(step)
   local out = {}
   local d = step and step["do"]
@@ -93,10 +109,13 @@ function HUD:ObjectiveLines(step)
       for i, o in ipairs(Compat.QuestObjectives(q)) do
         if not step.obj or step.obj == i then
           local text = o.text
+          local count = (o.have and o.need and o.kind ~= "progressbar") and string.format("%d/%d", o.have, o.need) or nil
           if not text or text == "" then
-            text = (o.have and o.need) and string.format("%d/%d", o.have, o.need) or "?"
+            text = count or "?"
+          elseif count and o.need > 1 and not text:find("%d+%s*/%s*%d+") then
+            text = text .. " " .. count
           end
-          out[#out + 1] = { text = text, finished = o.finished }
+          out[#out + 1] = { text = text, finished = o.finished, have = o.have, need = o.need }
         end
       end
     end
@@ -171,9 +190,16 @@ local function Create()
   f.collapse:SetPoint("LEFT", 5, 0)
   UI:Tooltip(f.collapse, L.HUD_COLLAPSE)
 
+  f.bug = UI:IconButton(head, "Interface\\Icons\\INV_Misc_Bug_01", 14, function()
+    if Senda.Report then Senda.Report:Open() end
+  end)
+  f.bug:SetPoint("RIGHT", -5, 0)
+  f.bug.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+  UI:Tooltip(f.bug, L.REPORT_BUTTON, L.REPORT_BUTTON_TIP)
+
   f.dot = CreateFrame("Frame", nil, head)
   f.dot:SetSize(14, 14)
-  f.dot:SetPoint("RIGHT", -5, 0)
+  f.dot:SetPoint("RIGHT", f.bug, "LEFT", -5, 0)
   f.dot.tex = f.dot:CreateTexture(nil, "OVERLAY")
   f.dot.tex:SetAllPoints()
   f.dot:EnableMouse(true)
@@ -212,6 +238,22 @@ local function Create()
   f.text:SetPoint("RIGHT", -PAD, 0)
   if f.text.SetSpacing then f.text:SetSpacing(2) end
 
+  -- Zona del paso: clic derecho = menú de saltar misión (el arrastre con el izquierdo mueve el HUD)
+  f.hit = CreateFrame("Button", nil, f)
+  f.hit:SetPoint("TOPLEFT", PAD, -26)
+  f.hit:SetPoint("RIGHT", -PAD, 0)
+  f.hit:SetHeight(30)
+  f.hit:RegisterForClicks("RightButtonUp")
+  f.hit:RegisterForDrag("LeftButton")
+  f.hit:SetFrameLevel(f:GetFrameLevel() + 1)
+  f.hit:SetScript("OnDragStart", function() if not Opt("hudLocked") then f:StartMoving() end end)
+  f.hit:SetScript("OnDragStop", function()
+    f:StopMovingOrSizing()
+    Senda:SaveFramePos(f, "hud")
+  end)
+  f.hit:SetScript("OnClick", function(_, btn) if btn == "RightButton" then HUD:ShowSkipMenu() end end)
+  UI:Tooltip(f.hit, function() return HUD.hitTip end, function() return HUD.hitTip and L.SKIP_HINT or nil end)
+
   f.objectives = FS(f, "GameFontHighlightSmall")
   f.objectives:SetPoint("TOPLEFT", f.text, "BOTTOMLEFT", 0, -4)
   f.objectives:SetPoint("RIGHT", -PAD, 0)
@@ -234,6 +276,21 @@ local function Create()
   f.advice = FS(f, "GameFontHighlightSmall", C.accent[1], C.accent[2], C.accent[3])
   f.advice:SetPoint("TOPLEFT", f.escort, "BOTTOMLEFT", 0, -4)
   f.advice:SetPoint("RIGHT", -PAD, 0)
+
+  -- Aviso de misión saltada con Deshacer
+  f.banner = CreateFrame("Frame", nil, f)
+  f.banner:SetPoint("RIGHT", -PAD, 0)
+  f.banner.text = FS(f.banner, "GameFontHighlightSmall", 0.95, 0.8, 0.45)
+  f.banner.close = UI:IconButton(f.banner, "Interface\\Buttons\\UI-StopButton", 12, function()
+    Senda.Engine.lastSkip = nil
+    HUD:Refresh()
+  end)
+  f.banner.close:SetPoint("TOPRIGHT", 0, -1)
+  f.banner.undo = UI:Button(f.banner, L.SKIP_UNDO, 66, 18, function() Senda.Engine:UndoSkip() end)
+  f.banner.undo:SetPoint("RIGHT", f.banner.close, "LEFT", -4, 0)
+  f.banner.text:SetPoint("TOPLEFT", 0, -2)
+  f.banner.text:SetPoint("RIGHT", f.banner.undo, "LEFT", -6, 0)
+  f.banner:Hide()
 
   -- Botones de una misión fallida o abandonada
   f.retake = UI:Button(f, L.QUEST_RETAKE, 110, 20, function()
@@ -399,8 +456,9 @@ function HUD:Refresh()
     f.status:SetText(table.concat(st, "\n"))
     statusH = #st > 0 and (f.status:GetStringHeight() + 4) or 0
 
-    f.tip:SetText(step.tip and ("|TInterface\\COMMON\\help-i:14:14:0:0|t" .. step.tip) or "")
-    tipH = step.tip and (f.tip:GetStringHeight() + 4) or 0
+    local tip = self:StepTip(step)
+    f.tip:SetText(tip and ("|TInterface\\COMMON\\help-i:14:14:0:0|t" .. tip) or "")
+    tipH = tip and (f.tip:GetStringHeight() + 4) or 0
     f.escort:SetText(step.escort and L.ESCORT_NOTE or "")
     escortH = step.escort and (f.escort:GetStringHeight() + 4) or 0
   else
@@ -422,6 +480,32 @@ function HUD:Refresh()
   end
   f.advice:SetShown(advH > 0)
   y = y + objH + statusH + tipH + escortH + advH
+
+  -- Zona de clic derecho del paso (solo pasos de misión)
+  local skipQs = step and self:SkippableQuests(step) or {}
+  f.hit:SetShown(#skipQs > 0)
+  f.hit:SetHeight(math.max(28, titleH + textH))
+  self.hitTip = #skipQs > 0 and L.SKIP_MENU or nil
+
+  -- Aviso de misión saltada
+  local last = Engine.LastSkip and Engine:LastSkip() or nil
+  if last then
+    local name = QuestName(last.quest)
+    local msg
+    if last.count > 1 then msg = string.format(L.SKIP_BANNER_N, name, last.count)
+    elseif last.count == 1 then msg = string.format(L.SKIP_BANNER_1, name)
+    else msg = string.format(L.SKIP_BANNER_0, name) end
+    f.banner.text:SetText(msg)
+    local bh = math.max(f.banner.text:GetStringHeight() + 4, 20)
+    f.banner:ClearAllPoints()
+    f.banner:SetPoint("TOPLEFT", PAD, -y)
+    f.banner:SetPoint("RIGHT", -PAD, 0)
+    f.banner:SetHeight(bh)
+    f.banner:Show()
+    y = y + bh + 4
+  else
+    f.banner:Hide()
+  end
 
   -- Misión fallida o abandonada: volver a cogerla o saltarla
   local showProblem = problem ~= nil and not collapsed
@@ -525,6 +609,57 @@ function HUD:Refresh()
   f:SetHeight(y + PAD)
 end
 
+-- Misiones del paso que se pueden saltar (con id y aún no saltadas).
+function HUD:SkippableQuests(step)
+  local out = {}
+  local d = step and step["do"]
+  if d ~= "accept" and d ~= "complete" and d ~= "turnin" and d ~= "dungeon" then return out end
+  for _, q in ipairs(Cond:Quests(step) or {}) do
+    if not Senda.Engine:IsQuestSkipped(q) then out[#out + 1] = q end
+  end
+  return out
+end
+
+-- Menú del clic derecho: un desplegable invisible anclado al HUD (reutiliza UI:Dropdown).
+local skipMenu
+function HUD:ShowSkipMenu()
+  if not hud then return end
+  if not skipMenu then
+    skipMenu = UI:Dropdown(UIParent, 240, function()
+      local items = {}
+      local Engine = Senda.Engine
+      local step = Engine:CurrentStep()
+      local qs = step and HUD:SkippableQuests(step) or {}
+      for _, q in ipairs(qs) do
+        local _, n = Engine:SkipPlan(q)
+        local text
+        if #qs > 1 then text = string.format(L.SKIP_MENU_NAMED, QuestName(q))
+        elseif n > 1 then text = string.format(L.SKIP_MENU_N, n)
+        elseif n == 1 then text = L.SKIP_MENU_1
+        else text = L.SKIP_MENU end
+        items[#items + 1] = { value = q, text = text }
+      end
+      local total = Engine:SkippedCount()
+      if total > 0 then
+        items[#items + 1] = { value = "restore", text = string.format(L.SKIP_RESTORE_ALL, total) }
+      end
+      return items
+    end, function(value)
+      if value == "restore" then
+        local n = Senda.Engine:UnskipAll()
+        Senda:Print(L.SKIP_RESTORED, n)
+      elseif type(value) == "number" then
+        Senda.Engine:SkipQuestTree(value)
+      end
+    end)
+    skipMenu:SetAlpha(0)
+    skipMenu:EnableMouse(false)
+  end
+  skipMenu:ClearAllPoints()
+  skipMenu:SetPoint("TOPLEFT", hud, "BOTTOMLEFT", 0, 0)
+  skipMenu:Click("LeftButton")
+end
+
 -- Aviso corto de un módulo (p. ej. "Tienes puntos de talento sin gastar"). nil o "" lo quita.
 function HUD:SetAdvice(text)
   self.advice = text
@@ -581,7 +716,9 @@ Events:On("SENDA_READY", function()
   local refresh = function() HUD:RequestRefresh() end
   Events:On("SENDA_STEP_CHANGED", refresh)
   Events:On("SENDA_STEP_UPDATED", refresh)
+  Events:On("SENDA_OBJECTIVES_UPDATED", refresh)
   Events:On("SENDA_GUIDE_CHANGED", refresh)
+  Events:On("SENDA_SKIPPED", refresh)
   Events:On("SENDA_ADVICE", function(_, text)
     if HUD.advice ~= text then HUD:SetAdvice(text) end
   end)
@@ -590,6 +727,7 @@ Events:On("SENDA_READY", function()
     if step and #Senda.Engine:StepTimers(step) > 0 then refresh() end
   end)
   Events:On("QUEST_DATA_LOAD_RESULT", refresh)
+  Events:On("SENDA_NAMES_UPDATED", refresh)
   Events:On("GET_ITEM_INFO_RECEIVED", refresh)
   Events:On("PLAYER_REGEN_DISABLED", function()
     if Opt("hudCombatHide") and hud then hud:Hide() end

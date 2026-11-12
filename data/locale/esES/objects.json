@@ -1,0 +1,29 @@
+{
+  "kind": "obj",
+  "locale": "esES",
+  "names": {
+    "1673": {"name": "Cono inferi", "source": "polestar-esES"},
+    "2739": {"name": "Cofre de la pluma negra", "source": "polestar-esES"},
+    "2740": {"name": "Cofre de la garra del cuervo", "source": "polestar-esES"},
+    "2741": {"name": "Cofre del cielo", "source": "polestar-esES"},
+    "2742": {"name": "Cofre del nidal", "source": "polestar-esES"},
+    "4406": {"name": "Huevos de maderácnida", "source": "polestar-esES"},
+    "4608": {"name": "Brote de brezomadera", "source": "polestar-esES"},
+    "6751": {"name": "Planta extraña con frutos", "source": "polestar-esES"},
+    "6752": {"name": "Planta extraña con frutos", "source": "polestar-esES"},
+    "7510": {"name": "Fronda crecida", "source": "polestar-esES"},
+    "17182": {"name": "Caja mecánica 827", "source": "polestar-esES"},
+    "19549": {"name": "Pozo de Cañada Umbría", "source": "polestar-esES"},
+    "19550": {"name": "Poza de la Luna de Brisa Estelar", "source": "polestar-esES"},
+    "19551": {"name": "Estanques de la Poza de la Luna de Arlithrien", "source": "polestar-esES"},
+    "19552": {"name": "Poza de la Luna de El Claro del Oráculo", "source": "polestar-esES"},
+    "126158": {"name": "Vestidor de Tallonkai", "source": "polestar-esES"},
+    "152094": {"name": "Champiñón de Hyacinth", "source": "polestar-esES"},
+    "152095": {"name": "Lirio alunado", "source": "polestar-esES"},
+    "175207": {"name": "Criatura marina varada", "source": "polestar-esES"},
+    "175320": {"name": "¡Se busca: Viscoso!", "source": "polestar-esES"},
+    "177525": {"name": "Piedra de lechúcico lunar", "source": "polestar-esES"},
+    "654846": {"name": "Diario perdido", "source": "polestar-esES"},
+    "673378": {"name": "Corteza de árbol de oráculo", "source": "polestar-esES"}
+  }
+}

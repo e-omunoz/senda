@@ -1,0 +1,10 @@
+{
+  "kind": "spell",
+  "locale": "esES",
+  "names": {
+    "5487": {"name": "Forma de oso", "source": "senda"},
+    "18960": {"name": "Teletransporte: Claro de la Luna", "source": "senda"},
+    "1229451": {"name": "Descanso mejorado", "source": "senda"},
+    "1259799": {"name": "Luz de Elune", "source": "senda"}
+  }
+}

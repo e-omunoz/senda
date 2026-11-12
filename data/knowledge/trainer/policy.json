@@ -1,0 +1,105 @@
+{
+ "_doc": "Decisiones de Senda para reescribir los [[train]] de data/knowledge/<clase>/spells.toml con tools/gen_trainer.py --rewrite (docs/TRAINER.md). Las cadenas de rangos se nombran por su raíz: el id del rango más bajo al que se llega siguiendo `prev` (aunque ese rango no lo venda el instructor: hechizos de inicio, de misión o de talento). optional: raíz -> nota (todas sus filas van en su propia entrada con optional = true). talents: raíz de un talento -> nivel en que la build lo coge (0: la build no lo coge; sus rangos son opcionales). extra: hechizos que el instructor enseña pero faltan en la lista capturada (nivel de SpellLevels del cliente, coste desconocido). level_notes: nota de la entrada de cada nivel.",
+ "warlock": {
+  "class": "WARLOCK",
+  "race": 7,
+  "race_name": "Gnomo",
+  "talents": {
+   "18265": 36,
+   "17877": 0,
+   "1293817": 0,
+   "412758": 0
+  },
+  "optional": {
+   "702": "Opcional: Agonía es tu maldición, y Debilidad no se acumula con ella; solo resta un poco de daño cuerpo a cuerpo.",
+   "704": "Opcional: quita el miedo al enemigo y le sube el ataque; no sirve para subir de nivel.",
+   "5676": "Opcional: es de Fuego (la build pega con Sombras), gasta mucho maná y le quita el enemigo al Abisario.",
+   "5740": "Opcional: área de Fuego para grupos; a solas con el Abisario no compensa el maná.",
+   "440892": "Opcional: solo en grupo con un mago de Fuego o Escarcha, en élites; Agonía es tu maldición.",
+   "5138": "Opcional: solo sirve contra enemigos con maná; tu maná sale de Transfusión de vida.",
+   "5500": "Opcional: marca los demonios en el minimapa; no hace falta para subir.",
+   "132": "Opcional: solo para ver enemigos invisibles en alguna mazmorra.",
+   "6366": "Opcional: la piedra de fuego sube el daño de Fuego, y la build pega con Sombras.",
+   "1098": "Opcional: para controlar un demonio enemigo; a solas no hace falta.",
+   "1949": "Opcional: área de Fuego a tu alrededor que también te quema; para grupos.",
+   "2362": "Opcional: imbuido de arma que sube el daño de Sombras; caro y la build no lo necesita.",
+   "6353": "Opcional: Fuego, lento y gasta un fragmento de alma en cada lanzamiento.",
+   "6229": "Opcional: absorbe daño de Sombras; solo contra enemigos concretos.",
+   "603": "Opcional: maldición de un minuto para élites; mientras subes, Agonía rinde más.",
+   "5697": "Opcional: respirar bajo el agua; solo hace falta para misiones bajo el agua, no la cuentes como pendiente."
+  },
+  "level_notes": {
+   "1": "Al empezar ya conoces Descarga de las Sombras y Piel de demonio; el Diablillo se aprende con la misión de nivel 1.",
+   "16": "Visto en el juego (Demisette Cloyce, 11-nov-2026): Fuerza inmortal por 16 platas, junto a Transfusión de vida (rango 2); la lista capturada del instructor da 12 platas por cada uno."
+  },
+  "extra": []
+ },
+ "mage": {
+  "class": "MAGE",
+  "race": 1,
+  "race_name": "Humano",
+  "talents": {
+   "1312002": 22,
+   "11426": 40,
+   "11366": 0,
+   "11113": 0,
+   "400574": 0
+  },
+  "optional": {
+   "604": "Opcional: reduce el daño de hechizos recibido pero también la sanación; a solas no compensa.",
+   "1008": "Opcional: sube la sanación recibida y también el daño de hechizos que te hacen; para grupos.",
+   "543": "Opcional: absorbe daño de Fuego; solo contra enemigos concretos.",
+   "6143": "Opcional: absorbe daño de Escarcha; solo contra enemigos concretos."
+  },
+  "level_notes": {
+   "1": "Al empezar ya conoces Bola de Fuego y Armadura de Escarcha.",
+   "6": "Entender pergamino es la habilidad nueva del mago en Forever.",
+   "26": "En Forever, Cono de frío ralentiza un 40% durante 6 s.",
+   "40": "Descarga de Pirofrío es nueva en Forever (Fuego y Escarcha a la vez; ralentiza un 40%)."
+  },
+  "extra": []
+ },
+ "druid": {
+  "class": "DRUID",
+  "race": 4,
+  "race_name": "Elfo de la noche",
+  "talents": {
+   "407995": 41,
+   "5570": 0,
+   "408120": 0
+  },
+  "optional": {
+   "2908": "Opcional: calma a una bestia enemiga; no sirve para subir.",
+   "740": "Opcional: sanación de grupo canalizada; a solas no se usa.",
+   "16914": "Opcional: área de Naturaleza canalizada para grupos; en forma felina u osuna no se usa."
+  },
+  "level_notes": {
+   "8": "La lista capturada del instructor no trae los niveles 8 a 14 del druida: nivel de SpellLevels del cliente; coste sin confirmar.",
+   "10": "La lista capturada del instructor no trae los niveles 8 a 14 del druida: nivel de SpellLevels del cliente; coste sin confirmar. Warcraft Tavern dice que la misión del oso también da Machaque y Teletransporte a: Claro de la Luna: si ya los tienes, no hace falta entrenarlos.",
+   "12": "La lista capturada del instructor no trae los niveles 8 a 14 del druida: nivel de SpellLevels del cliente; coste sin confirmar. Revivir (resurrección fuera de combate) es nuevo en Forever.",
+   "14": "La lista capturada del instructor no trae los niveles 8 a 14 del druida: nivel de SpellLevels del cliente; coste sin confirmar. Curar veneno puede venir de la cadena Lecciones de nuevo (6121-6125).",
+   "20": "Desde el 20 se pueden aprender armas de asta (Woo Ping, Ventormenta). Renacer pide un componente según el rango.",
+   "30": "Forma de viaje: instantánea, +40% de velocidad al aire libre; diez niveles antes que la montura.",
+   "40": "Al 40 también: equitación de aprendiz y doble especialización."
+  },
+  "extra": [
+   5186,
+   339,
+   5232,
+   1058,
+   8924,
+   6807,
+   99,
+   16689,
+   18960,
+   8936,
+   5229,
+   437138,
+   5178,
+   5187,
+   782,
+   5211,
+   8946
+  ]
+ }
+}

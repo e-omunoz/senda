@@ -16,6 +16,7 @@ local DEFAULTS = {
   frames = {},        -- posiciones de marcos: [nombre] = { point, relPoint, x, y }
   minimapAngle = 215,
   hudCollapsed = false,
+  skippedQuests = {}, -- [questId] = true: misiones saltadas con "Saltar esta misión" (valen para todas las guías)
   modules = {},       -- datos persistentes de los módulos (Modules/)
   char = {
     fps = {},         -- nodos de vuelo conocidos: [nodeID] = nombre

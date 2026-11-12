@@ -2,6 +2,16 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado [SemVer](https://semver.org/lang/es/).
 
+## [Sin publicar]
+
+### Añadido
+- **Nombres en español sacados del juego.** Los textos de las guías pueden llevar fichas (`{quest:155}`, `{npc:467}`, `{item:N}`, `{spell:N}`, `{map:N}`, `{obj:N}`) y Senda pone el nombre exacto del cliente al mostrarlas; mientras el juego no responde usa un respaldo compilado de `data/locale/`. El prototipo de Teldrassil ya las usa.
+- **Seguimiento por objetivo:** el HUD muestra los contadores de cada objetivo («Sable de la noche joven muerto: 6/7») con el texto del juego y los actualiza al momento, también en combate. Un paso con `obj` se completa en cuanto se cumple su objetivo, aunque la misión siga abierta.
+- **Colocación desde el registro de misiones:** al entrar, al recargar y al cambiar de guía, Senda mira qué misiones has entregado, cuáles llevas y cómo van, y te sitúa en el paso que toca. Si pierdes las SavedVariables o juegas un rato sin el addon, la guía ya no se queda atrás. Solo adelanta, respeta lo que saltaste y no mueve un paso al que volviste a propósito.
+- **Saltar una misión y todas las que dependen de ella:** clic derecho en un paso de misión del HUD, «Saltar esta misión». Se saltan sus pasos y los de las misiones que la necesitan (requisitos de forever-db, compilados en `Guides/Followups.lua`), en todas tus guías, con un aviso «Saltada «X» y N misiones que dependen de ella · Deshacer». El menú también restaura todas las saltadas.
+- **Informe de errores:** el botón del bicho del HUD y `/senda informe` abren una ventana con tu texto libre y el contexto (guía, paso, posición, nivel, raza y clase, versión de Senda, build y idioma del cliente, otros addons, estado de las misiones del paso y los últimos 20 errores de Lua de Senda), sin nombre de personaje ni de reino. «Copiar» selecciona el informe y sale un enlace de GitHub con título y cuerpo corto (menos de 2000 caracteres).
+- **`/senda volcar`:** pide al juego los nombres de todas las misiones, PNJ, objetos, hechizos y zonas de las guías y los guarda en `SendaNamesDB` (poco a poco, nunca en combate; se puede parar y retomar). `tools/import_names.py` los pasa a `data/locale/` y avisa de los nombres que cambian entre parches.
+
 ## [0.4.0] - 2026-11-12
 
 ### Cambiado

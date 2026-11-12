@@ -6,12 +6,13 @@
 ## Version: 0.4.0
 ## IconTexture: Interface\Icons\INV_Misc_Map_01
 ## SavedVariablesPerCharacter: SendaDB
-## SavedVariables: SendaRecorderDB
+## SavedVariables: SendaRecorderDB, SendaNamesDB
 ## OptionalDeps: TomTom, Questie
 ## X-Website: https://e-omunoz.github.io/senda/
 ## X-License: GPL-3.0
 
 Core\Core.xml
+Locale\Locale.xml
 Engine\Engine.xml
 Recorder\Recorder.xml
 UI\UI.xml

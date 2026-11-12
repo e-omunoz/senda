@@ -283,7 +283,7 @@ local function GuideLabel(step)
   if step.at and step.at[4] then return step.at[4] end
   local title = Senda.HUD and Senda.HUD:StepTitle(step) or ""
   if title ~= "" then return title end
-  local text = step.text or ""
+  local text = Senda.HUD and Senda.HUD:StepText(step) or step.text or ""
   if #text > 40 then
     -- Corte por bytes sin partir un carácter UTF-8 (los textos son español: á, ñ...).
     local cut = 38

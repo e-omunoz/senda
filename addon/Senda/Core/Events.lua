@@ -3,7 +3,47 @@
 --   Senda.Events:Off(event, fn)
 --   Senda.Events:Fire(name, ...)
 -- Los errores de un suscriptor no impiden que se ejecuten los demás (se envían al manejador de errores).
+-- Registro de errores: Senda.Errors:Add(err) guarda los últimos 20 errores de Lua que Senda captura (sin rutas ni
+-- el nombre del personaje ni del reino) para la ventana de informe (UI/Report.lua); Senda:ReportError(err) los
+-- guarda y los pasa al manejador de errores del juego.
 local _, Senda = ...
+
+local Errors = { list = {}, max = 20, maxLen = 400 }
+Senda.Errors = Errors
+
+local function Scrub(msg)
+  msg = tostring(msg or "?")
+  msg = msg:gsub("[Ii]nterface[\\/][Aa]dd[Oo]ns[\\/]", "")
+  local function hide(value, label)
+    if type(value) == "string" and #value >= 2 then
+      msg = msg:gsub((value:gsub("%p", "%%%0")), label)
+    end
+  end
+  if UnitName then hide((UnitName("player")), "<pj>") end
+  if GetRealmName then hide(GetRealmName(), "<reino>") end
+  if #msg > Errors.maxLen then msg = msg:sub(1, Errors.maxLen) .. "…" end
+  return msg
+end
+
+function Errors:Add(err)
+  local ok, msg = pcall(Scrub, err)
+  if not ok then msg = "?" end
+  local last = self.list[#self.list]
+  if last and last.msg == msg then
+    last.n = last.n + 1
+    return
+  end
+  self.list[#self.list + 1] = { msg = msg, n = 1 }
+  while #self.list > self.max do table.remove(self.list, 1) end
+end
+
+function Errors:Count() return #self.list end
+
+function Senda:ReportError(err)
+  Errors:Add(err)
+  local h = geterrorhandler and geterrorhandler()
+  if h then h(err) else Senda:Print(tostring(err)) end
+end
 
 local Events = {}
 Senda.Events = Events
@@ -16,10 +56,7 @@ local function IsInternal(event)
   return type(event) == "string" and event:sub(1, 6) == "SENDA_"
 end
 
-local function Report(err)
-  local h = geterrorhandler and geterrorhandler()
-  if h then h(err) else Senda:Print(tostring(err)) end
-end
+local function Report(err) Senda:ReportError(err) end
 
 local function Dispatch(event, ...)
   local list = handlers[event]

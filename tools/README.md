@@ -7,7 +7,7 @@ instalar nada con `pip`. Funciona igual en Windows y en Linux (CI). Los archivos
 |---|---|
 | `common.py` | Utilidades compartidas: raíz del repo, carga de TOML, serializador Lua, escritura UTF-8/LF |
 | `validate.py` | Validación de `data/` contra `schema/*.json` y reglas semánticas |
-| `build.py` | Compila `data/` a `addon/Senda/Guides` y `addon/Senda/Knowledge`; estampa la versión en el `.toc` |
+| `build.py` | Compila `data/` a `addon/Senda/Guides`, `addon/Senda/Knowledge` y `addon/Senda/Locale` (nombres de respaldo de `data/locale/`); estampa la versión en el `.toc` |
 | `package.py` | Crea `dist/Senda-<versión>.zip`, extrae notas del CHANGELOG e instala en modo desarrollo |
 | `dev.ps1` / `dev.sh` | Atajos para todo lo anterior |
 | `questiedb/` | Lector de la QuestieDB instalada en local (solo verificar; «all rights reserved») |
@@ -15,6 +15,7 @@ instalar nada con `pip`. Funciona igual en Windows y en Linux (CI). Los archivos
 | `fetch_foreverdb.py` | Descarga y comprueba la forever-db fijada en `foreverdb/PIN` |
 | `enrich.py` / `verify.py` / `lookup.py` | Rellenan, comprueban y consultan datos de misiones con QuestieDB o forever-db |
 | `import_polestar.py` (+ `polestar/`) | Importa una guía compilada de Polestar a `data/guides/<id>/` (pasos `unverified`, guía solo a mano); ver `docs/IMPORT.md` |
+| `import_names.py` (+ `localenames.py`) | Pasa a `data/locale/<idioma>/*.json` los nombres que el cliente dio con `/senda volcar` (lee `SendaNamesDB` del archivo de SavedVariables que se le pasa) e informa de los cambios de nombre entre parches; ver «Nombres del juego» abajo |
 | `route_score.py` (+ `routescore/`) | Filtro de eficiencia: puntúa cada misión de una ruta (`data/scores/`) |
 | `gen_travel.py` / `gen_dungeons.py` / `gen_rares.py` / `gen_lookup.py` | Generan `data/travel/`, `data/dungeons/`, `data/rares/` y `data/lookup/` desde Polestar, forever-db y tablas del cliente (ver `docs/TRAVEL.md`, `DUNGEONS.md`, `RARES.md`, `LOOKUP.md`) |
 
@@ -84,7 +85,7 @@ Código de salida: `0` sin errores, `1` con errores (o con avisos si `--strict`)
 ## build.py
 
 ```
-python tools/build.py [--check] [--quiet] [--root RUTA]
+python tools/build.py [--check] [--quiet] [--root RUTA] [--refresh-prereq]
 ```
 
 1. Ejecuta la validación; si hay errores, no genera nada y sale con `1`.
@@ -92,10 +93,18 @@ python tools/build.py [--check] [--quiet] [--root RUTA]
    - `addon/Senda/Guides/<guide-id>.lua`: `Senda.Guides:RegisterSection(...)` de las secciones propias de la guía
      y `Senda.Guides:RegisterGuide(...)` con la lista de ids de sección.
    - `addon/Senda/Guides/Shared.lua`: las secciones de `data/shared/` que usa alguna guía, **una sola vez**.
-   - `addon/Senda/Guides/Guides.xml` (primero `Shared.lua`, luego las guías por orden alfabético).
+   - `addon/Senda/Guides/Followups.lua`: índice misión -> misiones de las guías que dependen de ella (cierre
+     transitivo), para «Saltar esta misión». Sale de `data/prereq.json` (instantánea de los requisitos duros de
+     forever-db: `all` sin migas de pan y `any` con una sola previa); si no existe, de `.cache/foreverdb`; y si
+     tampoco, del orden de las guías (coger B justo después de entregar A al mismo PNJ, o el mismo `chain`).
+     `python tools/build.py --refresh-prereq` regenera la instantánea desde forever-db.
+   - `addon/Senda/Guides/Guides.xml` (primero `Followups.lua` y `Shared.lua`, luego las guías por orden alfabético).
    - `addon/Senda/Knowledge/<carpeta>.lua`: una por carpeta de `data/knowledge/` (`warlock.lua`, `mage.lua`,
      `general.lua`...) con `Senda.Knowledge:Register(...)` por página, ordenadas por `order` e `id`.
    - `addon/Senda/Knowledge/Knowledge.xml`.
+   - `addon/Senda/Locale/Names_<idioma>.lua`: una por carpeta de `data/locale/` con entradas, con una cadena
+     `"<id>\t<nombre>"` por tipo (`Senda.Names:AddFallback`); solo la carga el cliente de ese idioma (y la de
+     `enUS` como último recurso). `addon/Senda/Locale/Locale.xml` se genera siempre (el `.toc` lo carga).
 3. Copia la versión de `VERSION` a la línea `## Version:` de `addon/Senda/Senda.toc` (solo esa línea).
 4. Borra los `.lua`/`.xml` generados que ya no corresponden a nada (solo los que llevan la cabecera de generado).
 
@@ -110,6 +119,35 @@ Detalles del Lua:
   cual. Las palabras reservadas de Lua como clave se escriben `["do"]`, `["if"]`.
 
 `--check` no escribe nada y falla si algún archivo generado (o la línea de versión del `.toc`) no está al día.
+
+## Nombres del juego: /senda volcar e import_names.py
+
+Los textos de las guías llevan fichas que el addon resuelve con el cliente (`Core/Names.lua`):
+`{quest:N}` misión, `{npc:N}` PNJ, `{item:N}` objeto, `{spell:N}` hechizo, `{map:N}` zona (uiMapID) y `{obj:N}`
+objeto del mundo (este solo con el respaldo: el cliente no lo nombra por id). `validate.py` da error con una ficha
+de otro tipo o sin id numérico.
+
+El respaldo vive en `data/locale/<idioma>/{quests,npcs,items,spells,maps,objects}.json`, una entrada por id con su
+fuente (`tools/localenames.py`):
+
+| Fuente | Quién la escribe | Prioridad |
+|---|---|---|
+| `ingame:<build>:<fecha>` | `import_names.py` desde `/senda volcar` | 3 (la verdad) |
+| `senda` | tablas propias comprobadas (`tools/polestar/spanish.py`) vía el importador | 2 |
+| `polestar-esES` / `polestar-enUS` | nombres de Polestar vía `import_polestar.py` | 1 |
+
+Una entrada solo la sustituye otra de prioridad igual o mayor.
+
+```
+# en el juego: /senda volcar   (espera a «Volcado terminado» y sal del juego o /reload)
+python tools/import_names.py "RUTA/WTF/Account/<cuenta>/SavedVariables/Senda.lua" [--dry-run] [--report r.md]
+python tools/build.py
+```
+
+`import_names.py` nunca adivina la cuenta: la ruta del archivo se pasa siempre. Lee `SendaNamesDB` sin ejecutar
+Lua (`polestar/luaparse.py`), escribe un archivo por tipo con la fuente `ingame:<build>:<fecha>` e informa de los
+nombres nuevos, de los que **cambian entre parches** (una entrada `ingame` anterior con otro nombre) y de los
+respaldos que no coincidían con el cliente.
 
 ## package.py
 

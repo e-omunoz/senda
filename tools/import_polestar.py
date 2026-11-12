@@ -30,6 +30,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import REPO_ROOT, load_toml, setup_stdio, write_text_lf  # noqa: E402
+import localenames  # noqa: E402
 from polestar.source import PolestarSource  # noqa: E402
 from polestar.spanish import (  # noqa: E402
     AREA_ZONE, PROFS_ES, SKILLLINE_PROF, ZONES_ES, Namer, TOKEN_RE as _TOKEN_RE, npc_with, sentence,
@@ -270,13 +271,20 @@ class Importer:
         if not txt:
             return None
         if not ok:
-            self.log["untranslated"].append(f"{where}: {txt}")
+            self.log["untranslated"].append(f"{where}: {self.namer.unrender(txt)}")
             return "[EN] " + sentence(txt)
         return sentence(txt)
 
     def npc_name(self, goal: dict) -> str | None:
+        """Nombre escrito del PNJ (para decidir el artículo y para etiquetas de puntos)."""
         if goal.get("npc"):
             return self.namer.name("npc", goal["npc"], goal.get("npcName"))
+        return None
+
+    def npc_token(self, goal: dict) -> str | None:
+        """Ficha {npc:N} del PNJ para el texto (el cliente pone el nombre)."""
+        if goal.get("npc"):
+            return self.namer.token("npc", goal["npc"], goal.get("npcName"))
         return None
 
     # --- objetivos -> pasos
@@ -302,7 +310,7 @@ class Importer:
             if pst.get(key) is not None:
                 extra_notes.append(f"{key} = {pst[key]!r}")
         if lost:
-            self.log["lost_when"].append((si, self.namer.render(pst.get("title") or ""), lost))
+            self.log["lost_when"].append((si, self.namer.render(pst.get("title") or "", tokens=False), lost))
         if extra_notes:
             self.log["flags"].append((si, "paso: " + ", ".join(extra_notes)))
         title_en = pst.get("title")
@@ -329,7 +337,7 @@ class Importer:
                 st["if"] = f
             if g.get("optional") or w_optional:
                 st["optional"] = True
-            notes = [f"Polestar paso {si}" + (f" «{self.namer.render(title_en)}»" if title_en else "")
+            notes = [f"Polestar paso {si}" + (f" «{self.namer.render(title_en, tokens=False)}»" if title_en else "")
                      + f", objetivo {gi} ({g.get('t')})"]
             if g.get("f") == "e" and g.get("map") in ERA_DIFFERS:
                 notes.append("coordenadas del marco de Era" + (" convertidas a Forever"
@@ -385,7 +393,7 @@ class Importer:
         if notes:
             out["note"] = " · ".join(notes)
         if out["do"] in ("note", "use"):
-            self.log["manual"].append((out["id"], out["do"], out["text"]))
+            self.log["manual"].append((out["id"], out["do"], self.namer.unrender(out["text"])))
         if out.get("at"):
             self.last_at = out["at"]
         self.steps.append(out)
@@ -397,6 +405,7 @@ class Importer:
         q = g.get("quest")
         qn = self.namer.quest(q, g.get("title")) if q else None
         npc = self.npc_name(g)
+        npc_t = self.npc_token(g)
         st: dict[str, Any] = {}
         tips: list[str] = []
         escort = False
@@ -407,14 +416,15 @@ class Importer:
         if goal_note and not re.search(r"[A-Za-z]", _TOKEN_RE.sub("", goal_note)):
             note_txt = None
         # «{npc:X}, junto al sendero» -> se añade al texto del paso cuando habla del mismo PNJ
-        if note_txt and g.get("npc") and npc and goal_note.startswith(f"{{npc:{g['npc']}}}") and note_ok:
-            rest = note_txt[len(npc):].lstrip(" ,:;")
+        if note_txt and g.get("npc") and npc_t and goal_note.startswith(f"{{npc:{g['npc']}}}") and note_ok \
+                and note_txt.startswith(npc_t):
+            rest = note_txt[len(npc_t):].lstrip(" ,:;")
             if rest:
                 suffix = ", " + rest.rstrip(".")
             note_txt = None
         if note_txt:
             if not note_ok:
-                log["untranslated"].append(f"paso {si}.{gi}: {note_txt}")
+                log["untranslated"].append(f"paso {si}.{gi}: {self.namer.unrender(note_txt)}")
                 tips.append("[EN] " + sentence(note_txt))
             else:
                 tips.append(sentence(note_txt))
@@ -437,25 +447,27 @@ class Importer:
         if lost_fields:
             notes.append("datos no importados: " + ", ".join(lost_fields))
 
-        def item_name() -> str:
-            return self.namer.name("item", g.get("item"), g.get("itemName"))
+        def item_name(label: bool = False) -> str:
+            """Ficha del objeto para el texto; con label=True, su nombre escrito (etiqueta de un punto)."""
+            fn = self.namer.name if label else self.namer.token
+            return fn("item", g.get("item"), g.get("itemName"))
 
         def from_text() -> str:
             if g.get("fromKind") == "npc" and g.get("fromNpcs"):
-                names = [self.namer.name("npc", n.get("npc"), n.get("npcName")) for n in g["fromNpcs"]
+                names = [self.namer.token("npc", n.get("npc"), n.get("npcName")) for n in g["fromNpcs"]
                          if isinstance(n, dict)]
                 return " de " + " y ".join(dict.fromkeys(names)) if names else ""
             if g.get("fromKind") == "object" and g.get("fromId"):
-                return " de " + self.namer.name("object", g["fromId"], g.get("from"))
+                return " de " + self.namer.token("object", g["fromId"], g.get("from"))
             return ""
 
         if t == "accept":
             st = {"do": "accept", "quest": q}
             if g.get("npc"):
                 st["npc"] = g["npc"]
-                text = f"Coge {qn} {npc_with('de', npc)}{suffix}."
+                text = f"Coge {qn} {npc_with('de', npc, npc_t)}{suffix}."
             elif g.get("object"):
-                text = f"Coge {qn} ({self.namer.name('object', g['object'], g.get('objName'))}){suffix}."
+                text = f"Coge {qn} ({self.namer.token('object', g['object'], g.get('objName'))}){suffix}."
             elif g.get("item"):
                 text = f"Usa {item_name()} para empezar {qn}."
             else:
@@ -466,22 +478,23 @@ class Importer:
             st = {"do": "turnin", "quest": q}
             if g.get("npc"):
                 st["npc"] = g["npc"]
-                text = f"Entrega {qn} {npc_with('a', npc)}{suffix}."
+                text = f"Entrega {qn} {npc_with('a', npc, npc_t)}{suffix}."
             elif g.get("object"):
-                text = f"Entrega {qn} en {self.namer.name('object', g['object'], g.get('objName'))}{suffix}."
+                text = f"Entrega {qn} en {self.namer.token('object', g['object'], g.get('objName'))}{suffix}."
             else:
                 text = f"Entrega {qn}."
         elif t == "kill":
             target = self.namer.name("npc", g.get("npc"), g.get("target")) if g.get("npc") else g.get("target")
+            target_t = self.namer.token("npc", g.get("npc"), g.get("target")) if g.get("npc") else g.get("target")
             count = f" ({g['count']})" if g.get("count") else ""
             if q:
                 st = {"do": "complete", "quest": q}
                 if g.get("oi"):
                     st["obj"] = g["oi"]
-                text = f"Mata {target}{count} para {qn}."
+                text = f"Mata {target_t}{count} para {qn}."
             else:
                 st = {"do": "note"}
-                text = f"Mata {target}{count}."
+                text = f"Mata {target_t}{count}."
             if at:
                 st["wps"] = spots(g, at, target, log)
         elif t == "collect":
@@ -496,15 +509,15 @@ class Importer:
                 st = {"do": "loot", "item": g.get("item"), "count": int(g.get("count") or 1)}
                 text = f"{verb} {item_name()}{count}{from_text()}."
             if at:
-                st["wps"] = spots(g, at, item_name(), log)
+                st["wps"] = spots(g, at, item_name(label=True), log)
         elif t in ("complete", "interact"):
             st = {"do": "complete", "quest": q} if q else {"do": "note"}
             if q and g.get("oi"):
                 st["obj"] = g["oi"]
             if g.get("startItem"):
-                text = f"Usa {self.namer.name('item', g['startItem'], g.get('startItemName'))} y completa {qn}."
+                text = f"Usa {self.namer.token('item', g['startItem'], g.get('startItemName'))} y completa {qn}."
             elif t == "interact" and g.get("object"):
-                text = f"Usa {self.namer.name('object', g['object'], g.get('objName'))}" + (f" para {qn}." if q else ".")
+                text = f"Usa {self.namer.token('object', g['object'], g.get('objName'))}" + (f" para {qn}." if q else ".")
             else:
                 text = f"Completa {qn}." if q else "Completa el objetivo."
             objs = [o.get("text") for o in g.get("objs") or [] if isinstance(o, dict) and o.get("text")]
@@ -522,7 +535,7 @@ class Importer:
             if g.get("text"):
                 dest, ok = self.tr(g["text"])
                 if not ok and re.search(r"[A-Za-z]", _TOKEN_RE.sub("", g["text"])):
-                    log["untranslated"].append(f"paso {si}.{gi} (destino): {dest}")
+                    log["untranslated"].append(f"paso {si}.{gi} (destino): {self.namer.unrender(dest)}")
             elif g.get("area"):
                 dest = self.namer.name("area", g["area"])
             st = {"do": "goto"}
@@ -532,7 +545,7 @@ class Importer:
             if g.get("npc"):
                 st["npc"] = g["npc"]
             loc = self.place(g)
-            text = f"Coge la ruta de vuelo de {loc}" + (f" con {npc}." if npc else ".")
+            text = f"Coge la ruta de vuelo de {loc}" + (f" con {npc_t}." if npc_t else ".")
         elif t == "fly":
             zone = self.zone_for(g, si)
             st = {"do": "fly"}
@@ -546,7 +559,7 @@ class Importer:
             zone = g.get("map") or self.zone_for(g, si)
             if zone:
                 st["zone"] = zone
-            text = f"Pon la piedra de hogar en {self.place(g)}" + (f" con {npc}." if npc else ".")
+            text = f"Pon la piedra de hogar en {self.place(g)}" + (f" con {npc_t}." if npc_t else ".")
         elif t == "hearth":
             st = {"do": "hearth"}
             zone = self.zone_for(g, si)
@@ -559,14 +572,14 @@ class Importer:
                 if g.get("npc"):
                     st["npc"] = g["npc"]
                 prof = PROFS_ES.get(g["skill"], g["skill"])
-                text = f"Aprende {prof} con {npc}." if npc else f"Aprende {prof}."
+                text = f"Aprende {prof} con {npc_t}." if npc_t else f"Aprende {prof}."
             elif g.get("class"):
                 cand = self.pick_trainer(g)
                 st = {"do": "note"}
                 if cand:
                     st["npc"] = cand["npc"]
                     at = point(cand, log)
-                    tname = self.namer.name("npc", cand["npc"], cand.get("npcName"))
+                    tname = self.namer.token("npc", cand["npc"], cand.get("npcName"))
                     text = f"Entrena tus hechizos de clase con {tname}."
                 else:
                     text = "Entrena tus hechizos de clase."
@@ -575,14 +588,14 @@ class Importer:
                 st = {"do": "note"}
                 if g.get("npc"):
                     st["npc"] = g["npc"]
-                text = f"Entrena con {npc}." if npc else (self.namer.render(g.get("text") or "") or "Entrena.")
+                text = f"Entrena con {npc_t}." if npc_t else (self.namer.render(g.get("text") or "") or "Entrena.")
                 notes.append("train sin hechizos: manual")
         elif t == "buy":
             st = {"do": "buy", "item": g.get("item"), "count": int(g.get("count") or 1)}
             if g.get("npc"):
                 st["npc"] = g["npc"]
             count = f" ({g['count']})" if g.get("count") and g["count"] > 1 else ""
-            text = f"Compra {item_name()}{count}" + (f" {npc_with('a', npc)}." if npc else ".")
+            text = f"Compra {item_name()}{count}" + (f" {npc_with('a', npc, npc_t)}." if npc else ".")
         elif t == "level":
             st = {"do": "level", "level": int(g.get("level") or 1)}
             text = f"Sube al nivel {st['level']}."
@@ -590,7 +603,7 @@ class Importer:
             st = {"do": "note"}
             txt, ok = self.tr(g.get("text"))
             if not ok:
-                log["untranslated"].append(f"paso {si}.{gi}: {txt}")
+                log["untranslated"].append(f"paso {si}.{gi}: {self.namer.unrender(txt or '')}")
                 text = "[EN] " + sentence(txt or "")
             else:
                 text = sentence(txt or "Nota.")
@@ -925,6 +938,24 @@ def guide_toml(meta: dict, header: list[str]) -> str:
     return "\n".join(out) + "\n"
 
 
+def write_fallback_names(namer, data_root: Path) -> tuple[int, list[Path]]:
+    """Los nombres que el importador conoce van a data/locale/ como respaldo de las fichas del texto: los esES
+    (Polestar o tabla propia) a esES/ y los ingleses de Polestar a enUS/ (cliente en inglés, y último recurso
+    si no hay nombre esES). Nunca pisan un nombre sacado del juego (prioridad, ver localenames.py)."""
+    changed, files = 0, []
+    for locale, table in (("esES", namer.fallback), ("enUS", namer.fallback_en)):
+        if not table:
+            continue
+        data = localenames.load(data_root, locale)
+        for kind, entries in table.items():
+            for ident, (name, source) in entries.items():
+                what, _ = localenames.merge(data, kind, ident, name, source)
+                if what in ("new", "renamed"):
+                    changed += 1
+        files += localenames.save(data_root, locale, data, kinds=sorted(table))
+    return changed, files
+
+
 def main(argv: list[str] | None = None) -> int:
     setup_stdio()
     ap = argparse.ArgumentParser(description="Importa una guía compilada de Polestar a Senda.")
@@ -939,6 +970,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--compare-sections", default="01-shadowglen,02-teldrassil")
     ap.add_argument("--report", help="informe Markdown (por defecto <out>/REPORT.md)")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--no-names", action="store_true",
+                    help="no escribir los nombres esES de respaldo en data/locale/esES/")
     args = ap.parse_args(argv)
 
     src = PolestarSource(args.polestar)
@@ -966,7 +999,8 @@ def main(argv: list[str] | None = None) -> int:
         f"GENERADO por tools/import_polestar.py desde Polestar (GPL-3), {args.guide}",
         f"commit {imp.commit}. Adaptado de Polestar: ruta, coordenadas y notas; textos en español",
         "de plantilla (o de la traducción esES de Polestar) salvo los pasos que ya estaban en Senda, que conservan",
-        "su texto. No editar a mano: vuelve a importar. Ver docs/IMPORT.md y REPORT.md.",
+        "su texto. Los nombres van como fichas ({quest:N}, {npc:N}...) que pone el cliente al mostrarlas; el",
+        "respaldo esES está en data/locale/esES/. No editar a mano: vuelve a importar. Ver docs/IMPORT.md y REPORT.md.",
     ]
     sec = {
         "id": sec_id,
@@ -998,6 +1032,9 @@ def main(argv: list[str] | None = None) -> int:
     write_text_lf(out_dir / f"{sec_file}.toml", section_toml(sec, steps, header))
     rep = Path(args.report) if args.report else out_dir / "REPORT.md"
     write_text_lf(rep, report)
+    if not args.no_names:
+        n_new, files = write_fallback_names(imp.namer, REPO_ROOT / "data")
+        print(f"nombres de respaldo (data/locale/esES y enUS): {n_new} nuevos o cambiados en {len(files)} archivos")
     print(f"{gid}: {len(steps)} pasos en {out_dir.relative_to(REPO_ROOT).as_posix() if out_dir.is_relative_to(REPO_ROOT) else out_dir}")
     print(f"ya en Senda: {len(merges)} · sin traducir: {len(imp.log['untranslated'])} · "
           f"condiciones perdidas: {len(imp.log['lost_when'])} · informe: {rep}")

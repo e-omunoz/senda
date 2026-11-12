@@ -9,5 +9,6 @@
   <Script file="Visibility.lua"/>
   <Script file="Minimap.lua"/>
   <Script file="GuideTab.lua"/>
+  <Script file="Report.lua"/>
   <Script file="OptionsTab.lua"/>
 </Ui>

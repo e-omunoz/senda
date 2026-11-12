@@ -100,7 +100,7 @@ id = "a55-burning-steppes-006"
 do = "train"
 reqlevel = 56
 npc = 5495
-spells = [11689, 17924]
+spells = [11689]
 at = [1453, 39.9, 84.2]
 text = "Brujo: entrena los hechizos del nivel 56."
 if = { class = ["WARLOCK"], minlevel = 56 }

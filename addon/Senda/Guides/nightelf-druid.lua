@@ -10,10 +10,10 @@ Senda.Guides:RegisterSection({
   summary = "Del 1 al 6 en la Cañada Umbría, alrededor de Aldrassil. Acabas con la cadena de la Corona de la Tierra y bajas a Dolanaar.",
   link = "https://games.gg/world-of-warcraft/guides/wow-forever-teldrassil-leveling/",
   steps = {
-    { id = "nesg-001", ["do"] = "accept", quest = 456, npc = 2079, at = {1438, 58.69, 44.27}, text = "Coge la misión del Conservador Ilthalaine, delante de Aldrassil.", tip = "Vende los grises en cada vendedor. Mata todo lo que te cruces: la Cañada se acaba rápido.", status = "unverified" },
-    { id = "nesg-002", ["do"] = "accept", quest = 458, npc = 2077, at = {1438, 59.92, 42.47}, text = "Coge la misión de Melithar Staghelm, junto al camino.", status = "unverified" },
+    { id = "nesg-001", ["do"] = "accept", quest = 456, npc = 2079, at = {1438, 58.69, 44.27}, text = "Coge la misión del {npc:2079}, delante de Aldrassil.", tip = "Vende los grises en cada vendedor. Mata todo lo que te cruces: la Cañada se acaba rápido.", status = "unverified" },
+    { id = "nesg-002", ["do"] = "accept", quest = 458, npc = 2077, at = {1438, 59.92, 42.47}, text = "Coge la misión de {npc:2077}, junto al camino.", status = "unverified" },
     { id = "nesg-003", ["do"] = "complete", quest = 456, at = {1438, 59.5, 43.5}, wps = {{1438, 61.5, 42.0, "Sables al este"}, {1438, 57.5, 43.0, "Jabalíes al oeste"}}, text = "Mata 7 sables de la noche jóvenes y 4 jabalíes de cardo jóvenes alrededor de Aldrassil.", status = "unverified" },
-    { id = "nesg-004", ["do"] = "turnin", quest = 456, npc = 2079, at = {1438, 58.69, 44.27}, text = "Entrega la misión al Conservador Ilthalaine.", status = "unverified" },
+    { id = "nesg-004", ["do"] = "turnin", quest = 456, npc = 2079, at = {1438, 58.69, 44.27}, text = "Entrega la misión al {npc:2079}.", status = "unverified" },
     { id = "nesg-005", ["do"] = "accept", quest = 457, npc = 2079, at = {1438, 58.69, 44.27}, text = "Coge la segunda parte: ahora sables y jabalíes adultos, más al norte.", status = "unverified" },
     { id = "nesg-006", ["do"] = "accept", quest = 97979, npc = 3595, at = {1438, 59.17, 40.44}, text = "Sube a Aldrassil y coge la misión de Shanda (nueva de Forever).", status = "unverified" },
     { id = "nesg-007", ["do"] = "complete", quest = 97979, at = {1438, 59.17, 40.44}, text = "Lanza Luz de Elune y Fusión de las sombras para completar la misión.", tip = "Son habilidades raciales: arrástralas a la barra. Fusión de las sombras te sirve luego para beber sin que te ataquen.", status = "unverified" },
@@ -230,7 +230,7 @@ Senda.Guides:RegisterSection({
   summary = "Nivel 10: entrena con Kal en Dolanaar, aprende Teletransporte: Claro de la Luna y habla con el Gran Espíritu del Oso.",
   ["if"] = { class = {"DRUID"} },
   steps = {
-    { id = "dr-10-bear-001", ["do"] = "train", npc = 3602, spells = {8924, 1058}, at = {1438, 55.95, 61.56}, text = "Nivel 10: entrena con Kal, el instructor de druidas de Dolanaar (nuevos rangos de Fuego lunar y Rejuvenecimiento).", tip = "Aprende también Garra de la naturaleza si te la ofrece: en Forever es de instructor al 10.", status = "unverified" },
+    { id = "dr-10-bear-001", ["do"] = "train", npc = 3602, spells = {8924, 1058}, at = {1438, 55.95, 61.56}, text = "Nivel 10: entrena con Kal, el instructor de druidas de Dolanaar (nuevos rangos de Fuego lunar y Rejuvenecimiento).", tip = "Aprende también Garra de la naturaleza si te la ofrece: en Forever es de instructor al 10.", status = "unverified", reqlevel = 10 },
     { id = "dr-10-bear-002", ["do"] = "accept", quest = 5925, npc = 3602, at = {1438, 55.95, 61.56}, text = "Coge con Kal la misión que te manda al Enclave Cenarion de Darnassus.", tip = "Si estás ya en Darnassus, Denatharion da la misma misión en el Enclave Cenarion.", status = "unverified", reqlevel = 10 },
     { id = "dr-10-bear-003", ["do"] = "turnin", quest = 5925, npc = 4217, at = {1457, 35.37, 8.4}, text = "Ve al oeste hasta Darnassus y entrega a Mathrengyl, en el Enclave Cenarion (noroeste de la ciudad).", status = "unverified" },
     { id = "dr-10-bear-004", ["do"] = "accept", quest = 5921, npc = 4217, at = {1457, 35.37, 8.4}, text = "Coge con Mathrengyl la misión del Claro de la Luna.", status = "unverified", reqlevel = 10 },

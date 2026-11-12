@@ -23,10 +23,11 @@ sources = ["questie:quest/1798", "questie:npc/6120", "legacy:BrujoGnomoGuia 4.1.
 id = "wl-felhunter-002"
 do = "train"
 reqlevel = 30
-spells = [1098, 1949]
+spells = [709, 1086, 2941, 20752]
 npc = 5172
 at = [1455, 50.4, 5.7]
-text = "Entrena el 30 con Briarthorn: Subyugar demonio y Piroinferno."
+text = "Entrena el 30 con Briarthorn: Drenar vida, Armadura demoníaca, Inmolar y Crear piedra de alma (rangos nuevos)."
+tip = "Subyugar demonio y Llamas infernales son opcionales: esta build no los usa."
 status = "unverified"
 sources = ["questie:npc/5172", "legacy:BrujoGnomoGuia 4.1.0"]
 
@@ -170,6 +171,7 @@ sources = ["questie:quest/1795", "questie:npc/6251"]
 [[step]]
 id = "wl-felhunter-016"
 do = "train"
+reqlevel = 30
 spells = [691]
 at = [1413, 62.6, 35.5]
 text = "Ya puedes invocar al Manáfago."

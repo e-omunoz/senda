@@ -1330,6 +1330,588 @@ const scenarios = [
       Check(said, "/senda renovar says the bars are fine", table.concat(lines, "|"))
     `,
   },
+  {
+    id: 'names',
+    title: 'Name tokens: cached and uncached quest, NPC tooltip, fallback table, secret values, one batched redraw',
+    char: 'gnome-warlock',
+    lua: L_`
+      -- the NPC 467 tooltip comes back as a secret value (combat): it must count as "no answer"
+      local realSecret = issecretvalue
+      issecretvalue = function(v) return v == "El Defias Traidor" end
+      Login()
+      local N, G, E, HUD = S().Names, S().Guides, S().Engine, S().HUD
+      Check(N ~= nil and N.Resolve ~= nil, "Senda.Names is loaded")
+      Section("compiled fallback (Locale/Names_esES.lua, Names_enUS.lua as last resort)")
+      local n, src = N:Get("quest", 456)
+      Check(n == "El equilibrio de la naturaleza" and src == "pack", "uncached quest 456 shows the esES fallback", tostring(n) .. " / " .. tostring(src))
+      n, src = N:Get("npc", 3595)
+      Check(n == "Shanda" and src == "pack", "NPC without an esES name falls back to the English one", tostring(n) .. " / " .. tostring(src))
+      N:AddFallback("esES", "obj", "999999\tCofre de pruebas")
+      N:AddFallback("frFR", "obj", "999998\tCoffre")
+      Check(N:Get("obj", 999999) == "Cofre de pruebas", "game object token uses the fallback table")
+      Check(N:Get("obj", 999998) == nil, "a fallback of another client language is ignored")
+
+      Section("a step with tokens: synchronous answer first, never blocks")
+      Sim.questCache[179] = true -- quest 179 is in the client cache, 783 is not
+      G:RegisterSection({ id = "sim-names", title = "Fichas", levels = { 1, 2 }, map = 1426, steps = {
+        { id = "sim-names-001", ["do"] = "note",
+          text = "Coge «{quest:179}» y «{quest:783}» de {npc:658}; usa {item:6948} y {spell:686} en {map:1426} junto a {obj:999999}. {foo:3}",
+          tip = "Pregunta a {npc:3595} y a {npc:467}.", status = "unverified" } } })
+      G:RegisterGuide({ id = "sim-names", title = "Fichas", sections = { "sim-names" }, order = -1 })
+      local updates = 0
+      S().Events:On("SENDA_NAMES_UPDATED", function() updates = updates + 1 end)
+      E:SetGuide("sim-names")
+      local step = E:CurrentStep()
+      Check(step and step.id == "sim-names-001", "token step is current", step and step.id)
+      local t = Plain(HUD:StepText(step))
+      Check(t:find("«Avituallamiento enano»", 1, true) ~= nil, "cached quest resolves at once", t)
+      Check(t:find("«Misión #783»", 1, true) ~= nil, "uncached quest shows a placeholder meanwhile", t)
+      Check(t:find("PNJ #658", 1, true) ~= nil, "uncached creature shows a placeholder meanwhile", t)
+      Check(t:find("Piedra de hogar", 1, true) ~= nil, "item in the bags resolves at once", t)
+      Check(t:find("Descarga de las Sombras", 1, true) ~= nil, "spell resolves (C_Spell.GetSpellName)", t)
+      Check(t:find("en Dun Morogh", 1, true) ~= nil, "map resolves (C_Map.GetMapInfo)", t)
+      Check(t:find("junto a Cofre de pruebas", 1, true) ~= nil, "game object resolves from the fallback", t)
+      Check(t:find("{foo:3}", 1, true) ~= nil, "unknown token kinds are left alone", t)
+
+      Section("QUEST_DATA_LOAD_RESULT and the creature tooltip arrive: one batched redraw")
+      Sim.Advance(2)
+      local hud = Plain(HudText())
+      Check(hud:find("«Una amenaza interior»", 1, true) ~= nil, "HUD shows the quest title after QUEST_DATA_LOAD_RESULT", hud)
+      Check(hud:find("de Sten Brazorrecio", 1, true) ~= nil, "HUD shows the NPC name read from the tooltip's first line", hud)
+      Check(not hud:find("#", 1, true), "no placeholder left in the HUD", hud)
+      Check(updates >= 1 and updates <= 2, "names arriving together fire one batched SENDA_NAMES_UPDATED", updates)
+      local tip = Plain(SendaHUD.tip:GetText() or "")
+      Check(tip:find("Pregunta a Shanda", 1, true) ~= nil, "tip tokens resolve too", tip)
+      Check(tip:find("PNJ #467", 1, true) ~= nil, "a secret tooltip name is never shown or cached", tip)
+      Check(N:Cached("npc", 467) == nil and N:Cached("npc", 658) == "Sten Brazorrecio", "session cache holds client answers only")
+      n, src = N:Get("quest", 456)
+      Check(src == "client" and n == "Misión 456", "the client's name replaces the fallback once it arrives", tostring(n) .. " / " .. tostring(src))
+
+      Section("Request: asynchronous callback, item through Item:ContinueOnItemLoad")
+      local got
+      N:Request("item", 2589, function(name) got = name end)
+      Check(type(got) == "string" and got ~= "", "item in bags answers at once", got)
+      local got2
+      Sim.itemCache[12345] = nil
+      N:Request("item", 12345, function(name) got2 = name or false end)
+      Check(got2 == nil, "uncached item answers later, not at once")
+      Sim.Advance(1)
+      Check(type(got2) == "string" and got2 ~= "", "Item:ContinueOnItemLoad delivers the name", got2)
+      local got3
+      N:Request("obj", 5, function(name) got3 = name or false end)
+      Check(got3 == false, "game objects cannot be asked to the client (nil at once)")
+
+      Section("other views resolve tokens")
+      RunAllTabs()
+      HoverAll()
+      local target = ArrowTarget()
+      Check(true, "arrow, guide list and tooltips ran with tokens")
+      issecretvalue = realSecret
+    `,
+  },
+  {
+    id: 'volcar',
+    title: '/senda volcar: every id of the compiled guides into SendaNamesDB, throttled, paused in combat, resumable',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      local D = S().Names.Dump
+      Check(D ~= nil, "dump module loaded")
+      local lines = Slash("volcar")
+      Check(D:Running(), "/senda volcar starts the dump")
+      local said = false
+      for _, l in ipairs(lines) do if l:find("Volcando los nombres del juego", 1, true) then said = true end end
+      local frames = 0
+      while select(2, D:Progress()) == 0 and frames < 2000 do Sim.Advance(0.05); frames = frames + 1 end
+      Sim.Out("    collected in " .. frames .. " frames")
+      local done1, total = D:Progress()
+      Check(total and total > 200, "ids collected from guides and knowledge", total)
+      Check(said or done1 ~= nil, "start line in chat", table.concat(lines, " | "))
+
+      Section("throttled: at most 20 new requests per frame and 40 waiting")
+      local maxStep, maxWait, last = 0, 0, D:Started()
+      for _ = 1, 40 do
+        Sim.Advance(0.05)
+        local now = D:Started()
+        maxStep = math.max(maxStep, now - last)
+        maxWait = math.max(maxWait, D:InFlight())
+        last = now
+      end
+      Check(maxStep > 0 and maxStep <= 20, "requests per frame-slice <= 20", maxStep)
+      Check(maxWait <= 40, "requests waiting for an answer <= 40", maxWait)
+
+      Section("paused in combat")
+      Sim.player.combat = true
+      Sim.Advance(0.2)
+      local p1 = D:Progress()
+      Sim.Advance(2)
+      local p2 = D:Progress()
+      Check(p2 - p1 <= 40, "no new requests during combat (only answers already in flight)", p1 .. " -> " .. p2)
+      local paused = false
+      for _, l in ipairs(Sim.chat) do if l:find("en pausa", 1, true) then paused = true end end
+      Check(paused, "chat says the dump is paused")
+      Sim.player.combat = false
+
+      Section("stop and resume")
+      Sim.Advance(1)
+      Slash("volcar parar")
+      Check(not D:Running(), "/senda volcar parar stops it")
+      local d = SendaNamesDB.locales.esES
+      local saved = 0
+      for _ in pairs(d.quest) do saved = saved + 1 end
+      Check(saved > 0, "names saved so far are kept", saved)
+      Slash("volcar")
+      Check(D:Running(), "/senda volcar resumes")
+      for _ = 1, 400 do if select(2, D:Progress()) > 0 then break end Sim.Advance(0.05) end
+      local doneR, totalR = D:Progress()
+      Check(doneR >= saved and totalR == total, "resume skips what is already saved", doneR .. "/" .. totalR)
+
+      local t0 = Sim.time
+      for _ = 1, 600 do
+        Sim.Advance(1)
+        if not D:Running() then break end
+      end
+      Check(not D:Running(), "dump finished", string.format("%.0f s simulated", Sim.time - t0))
+      local done, tot, ok, miss = D:Progress()
+      Check(done == tot, "every id answered", done .. "/" .. tot)
+      Sim.Out(string.format("    %d ids, %d new names, %d without answer, %.0f s simulated", tot, ok, miss, Sim.time - t0))
+      Check(d.build == "1.60.1.70291", "build recorded", d.build)
+      Check(type(d.date) == "string" and d.date:match("^%d%d%d%d%-%d%d%-%d%d$") ~= nil, "date recorded", d.date)
+      Check(d.done == true, "marked done")
+      Check(d.quest[456] ~= nil, "quest of the guide saved", d.quest[456])
+      Check(d.npc[2079] == "Conservador Ilthalaine", "NPC name from the creature tooltip", d.npc[2079])
+      Check(d.map[1438] == "Teldrassil", "map name", d.map[1438])
+      local nItem, nSpell = 0, 0
+      for _ in pairs(d.item) do nItem = nItem + 1 end
+      for _ in pairs(d.spell) do nSpell = nSpell + 1 end
+      Check(nItem > 0 and nSpell > 0, "items and spells (knowledge) saved", nItem .. " items, " .. nSpell .. " spells")
+      local fin = false
+      for _, l in ipairs(Sim.chat) do if l:find("Volcado terminado", 1, true) then fin = true end end
+      Check(fin, "chat says it finished")
+      local mark = #Sim.chat
+      Slash("volcar")
+      for _ = 1, 400 do if not D:Running() then break end Sim.Advance(0.05) end
+      local nothing = false
+      for i = mark + 1, #Sim.chat do if Sim.chat[i]:find("Ya tienes los", 1, true) then nothing = true end end
+      Check(nothing and not D:Running(), "a second run has nothing left to ask", Sim.chat[#Sim.chat])
+      local sv = Sim.SaveVariables()
+      Check(sv:find("SendaNamesDB = {", 1, true) ~= nil, "SendaNamesDB is a saved variable")
+      Check(sv:find('"Conservador Ilthalaine"', 1, true) ~= nil, "names reach the SavedVariables file")
+      Section("the dump is used as fallback")
+      Check(S().Names:Get("npc", 2079) == "Conservador Ilthalaine", "dumped name available")
+    `,
+  },
+  {
+    id: 'objcount',
+    title: 'Objective counters: live 6/7 on the HUD (also in combat), one evaluation per debounce',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      local E = S().Engine
+      local evals = 0
+      local orig = E.Evaluate
+      E.Evaluate = function(self, ...) evals = evals + 1; return orig(self, ...) end
+      Sim.AcceptQuest(456, { { "Sable de la noche joven muerto", 7 }, { "Jabalí de cardo joven muerto: 0/4", 4 } })
+      Sim.AcceptQuest(458, { { "Cosas", 1 } })
+      Sim.Advance(1.5)
+      Check(StepId() == "nesg-003", "current step is 'complete 456'", StepId())
+      local obj = Plain(SendaHUD.objectives:GetText())
+      Check(obj:find("Sable de la noche joven muerto 0/7", 1, true) ~= nil, "HUD adds the count when the client text has none", obj)
+      Check(obj:find("Jabalí de cardo joven muerto: 0/4", 1, true) ~= nil and not obj:find("0/4 0/4", 1, true),
+        "the client's own text (with its count) is shown as is", obj)
+
+      Section("counters update in combat, without moving the step")
+      Sim.player.combat = true
+      Sim.Fire("PLAYER_REGEN_DISABLED")
+      local nUpd = 0
+      S().Events:On("SENDA_OBJECTIVES_UPDATED", function() nUpd = nUpd + 1 end)
+      Sim.ProgressQuest(456, 1, 6)
+      Sim.Advance(1)
+      obj = Plain(SendaHUD.objectives:GetText())
+      Check(obj:find("muerto 6/7", 1, true) ~= nil, "HUD shows 6/7 during combat", obj)
+      Check(nUpd == 1, "one SENDA_OBJECTIVES_UPDATED for the change", nUpd)
+      Sim.Fire("QUEST_LOG_UPDATE"); Sim.Advance(1)
+      Check(nUpd == 1, "no redraw when the counters did not change", nUpd)
+      Sim.ProgressQuest(456, 1, 7)
+      Sim.ProgressQuest(456, 2, 4)
+      Sim.Advance(1)
+      Check(StepId() == "nesg-003", "the step does not move in combat", StepId())
+      obj = SendaHUD.objectives:GetText()
+      Check(Plain(obj):find("muerto 7/7", 1, true) ~= nil and obj:find(S().UI.HEX.green, 1, true) ~= nil,
+        "finished objectives turn green", obj)
+
+      Section("one evaluation per debounce")
+      evals = 0
+      for _ = 1, 12 do Sim.Fire("QUEST_LOG_UPDATE"); Sim.Fire("UNIT_QUEST_LOG_CHANGED", "player") end
+      Sim.Advance(1)
+      Check(evals == 1, "a burst of 24 log events -> 1 evaluation", evals)
+      Sim.player.combat = false
+      Sim.Fire("PLAYER_REGEN_ENABLED")
+      Sim.Advance(1)
+      Check(StepId() == "nesg-004", "leaving combat completes the step", StepId())
+    `,
+  },
+  {
+    id: 'objstep',
+    title: 'A complete step with obj=N finishes with its objective, before the quest',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      local E = S().Engine
+      Sim.player.level = 30
+      Sim.Fire("PLAYER_LEVEL_UP", 30, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      Sim.AcceptQuest(1802, { { "Tomo mohoso", 1, "item" }, { "Manuscrito", 1, "item" } })
+      Sim.Advance(1)
+      E:JumpTo(StepIndexOf("wl-felhunter-007"))
+      Sim.Advance(1)
+      Check(StepId() == "wl-felhunter-007", "on the obj=1 step", StepId())
+      local obj = Plain(SendaHUD.objectives:GetText())
+      Check(obj:find("Tomo mohoso", 1, true) ~= nil and not obj:find("Manuscrito", 1, true), "HUD lists only objective 1", obj)
+      Sim.ProgressQuest(1802, 2, 1)
+      Sim.Advance(1)
+      Check(StepId() == "wl-felhunter-007", "finishing another objective does not complete it", StepId())
+      Sim.ProgressQuest(1802, 1, 1)
+      Sim.Advance(1.5)
+      local p = S():GuideProgress("gnome-warlock")
+      Check(p.done["wl-felhunter-007"] == "a", "obj=1 step completed by its objective", p.done["wl-felhunter-007"])
+      Check(StepId() ~= "wl-felhunter-007", "the route moved on", StepId())
+      Section("obj step completes while the quest is still open")
+      Sim.player.quests[1802].objectives[1].have = 0
+      Sim.player.quests[1802].objectives[1].finished = false
+      Sim.player.quests[1802].objectives[2].have = 0
+      Sim.player.quests[1802].objectives[2].finished = false
+      Sim.Fire("QUEST_LOG_UPDATE")
+      E:JumpTo(StepIndexOf("wl-felhunter-008"))
+      Sim.Advance(1)
+      Check(StepId() == "wl-felhunter-008", "on the obj=2 step", StepId())
+      Sim.ProgressQuest(1802, 2, 1)
+      Sim.Advance(1.5)
+      Check(not S().Compat.IsQuestComplete(1802), "the quest itself is not complete")
+      Check(p.done["wl-felhunter-008"] == "a", "obj=2 step completed anyway", p.done["wl-felhunter-008"])
+    `,
+  },
+  {
+    id: 'skiptree',
+    title: 'Skip a quest and the quests that depend on it (right-click on the HUD), banner and Undo, in every guide',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      local E, L = S().Engine, S().L
+      Check(StepId() == "nesg-001", "starts at the accept step of 456", StepId())
+      Check(SendaHUD.hit:IsShown(), "the step area takes a right-click on a quest step")
+      Check(SendaHUD.bug:IsShown(), "the bug button is in the HUD header")
+      local fl = S().Guides:Followups(456)
+      local has457 = false
+      for _, q in ipairs(fl or {}) do if q == 457 then has457 = true end end
+      Check(has457, "the compiled index says 457 follows 456")
+      Check(S().Guides:Followups(99999999) == nil, "unknown quests have no follow-ups")
+
+      Section("right-click opens the menu")
+      Sim.Click(SendaHUD.hit, "RightButton")
+      Check(SendaDropdownList and SendaDropdownList:IsShown(), "right-click opens the skip menu")
+      local rows = {}
+      for _, r in ipairs(SendaDropdownList.rows) do if r:IsShown() then rows[#rows + 1] = Plain(r.fs:GetText()) end end
+      Check(#rows == 1 and rows[1]:find("Saltar esta misión", 1, true) ~= nil, "one entry: skip this quest", table.concat(rows, "|"))
+      Check(rows[1]:find("que dependen", 1, true) ~= nil or rows[1]:find("que depende", 1, true) ~= nil,
+        "the entry says how many depend on it", rows[1])
+      local n = select(2, E:SkipPlan(456))
+      Check(n >= 1, "at least one dependent quest is in this guide", n)
+      Sim.Click(SendaDropdownList.rows[1]); Sim.Advance(0.5)
+
+      Section("everything of 456 and its dependents is skipped")
+      local p = S():GuideProgress("nightelf-druid")
+      Check(E:IsQuestSkipped(456) and E:IsQuestSkipped(457), "456 and 457 are in the skipped set")
+      for _, id in ipairs({ "nesg-001", "nesg-003", "nesg-004", "nesg-005", "nesg-018", "nesg-022" }) do
+        Check(E:IsDone(StepIndexOf(id)) == "s", id .. " reads as skipped", E:IsDone(StepIndexOf(id)))
+      end
+      Check(StepId() == "nesg-002", "the guide moves on to the next quest (458)", StepId())
+      Check(S().db.skippedQuests[456] == true, "saved in the character's database")
+      Check(p.done["nesg-001"] == nil, "the progress of the guide itself is not touched")
+      Check(not E:IsQuestSkipped(458), "an unrelated quest is not skipped")
+      local last = E:LastSkip()
+      Check(last and last.quest == 456 and last.count == n, "the skip is remembered for the banner", last and last.count)
+      Check(SendaHUD.banner:IsShown(), "banner shown")
+      local banner = Plain(SendaHUD.banner.text:GetText())
+      local qname = Plain(S().Names:Get("quest", 456) or "")
+      local expect = n == 1 and string.format(L.SKIP_BANNER_1, qname) or string.format(L.SKIP_BANNER_N, qname, n)
+      Check(banner:find("Saltada «", 1, true) == 1 and banner:find("depende", 1, true) ~= nil, "banner: skipped X and N that depend on it", banner)
+      Check(banner == Plain(expect), "banner text matches the strings", banner)
+      Check(Plain(SendaHUD.banner.undo:GetText()) == "Deshacer", "banner has the Undo button")
+      local done, total = E:Progress()
+      Check(done >= 6, "progress counts the skipped steps", done .. "/" .. total)
+
+      Section("the skip is shared by every guide")
+      local function questsOf(guide)
+        local out = {}
+        for _, e in ipairs(S().Guides:Resolve(guide)) do
+          for _, q in ipairs(S().Conditions:Quests(e.step) or {}) do out[q] = true end
+        end
+        return out
+      end
+      local a, b = questsOf("human-mage"), questsOf("gnome-warlock")
+      local common
+      for q in pairs(a) do if b[q] and not (S().db.skippedQuests[q]) then common = q end end
+      if common then
+        E:SkipQuestTree(common)
+        local stepsSkipped = 0
+        for _, guide in ipairs({ "human-mage", "gnome-warlock" }) do
+          E:SetGuide(guide, true)
+          Sim.Advance(0.5)
+          for _, e in ipairs(E:Steps()) do
+            for _, q in ipairs(S().Conditions:Quests(e.step) or {}) do
+              if q == common and E:IsDone(e) == "s" then stepsSkipped = stepsSkipped + 1 end
+            end
+          end
+        end
+        Check(stepsSkipped >= 2, "quest " .. common .. " reads as skipped in both guides", stepsSkipped)
+        E:UndoSkip()
+        E:SetGuide("nightelf-druid", true)
+        Sim.Advance(0.5)
+      else
+        Check(false, "the two guides share a quest")
+      end
+
+      Section("Undo")
+      E:UndoSkip(last)
+      Sim.Advance(0.5)
+      Check(not E:IsQuestSkipped(456) and not E:IsQuestSkipped(457), "the quests are back")
+      Check(StepId() == "nesg-001", "back at the first step of the quest", StepId())
+      Check(E:IsDone(StepIndexOf("nesg-005")) == nil, "its steps are pending again")
+      Check(not SendaHUD.banner:IsShown(), "the banner goes away")
+      Check(E:LastSkip() == nil, "nothing left to undo")
+
+      Section("skip again from the HUD, close the banner, restore everything from the menu")
+      Sim.Click(SendaHUD.hit, "RightButton")
+      Sim.Click(SendaDropdownList.rows[1]); Sim.Advance(0.5)
+      Check(E:IsQuestSkipped(456) and SendaHUD.banner:IsShown(), "skipped again")
+      Sim.Click(SendaHUD.banner.close); Sim.Advance(0.3)
+      Check(not SendaHUD.banner:IsShown() and E:IsQuestSkipped(456), "closing the banner keeps the skip")
+      Sim.Click(SendaHUD.hit, "RightButton")
+      rows = {}
+      for _, r in ipairs(SendaDropdownList.rows) do if r:IsShown() then rows[#rows + 1] = Plain(r.fs:GetText()) end end
+      Check(#rows >= 1 and rows[#rows]:find("Restaurar las", 1, true) ~= nil, "the menu offers to restore the skipped quests", table.concat(rows, "|"))
+      Sim.Click(SendaDropdownList.rows[#rows]); Sim.Advance(0.5)
+      Check(E:SkippedCount() == 0 and StepId() == "nesg-001", "all restored", StepId())
+
+      Section("skipped steps survive a reload")
+      E:SkipQuestTree(456)
+      Sim.Advance(0.5)
+      __report("saved", Sim.SaveVariables())
+      __report("world", Sim.ExportWorld())
+    `,
+  },
+  {
+    id: 'skiptree-reload',
+    title: 'Skipped quests are still skipped after a reload; the English client says it in English',
+    char: 'nightelf-druid',
+    locale: 'enUS',
+    needs: 'skiptree',
+    lua: L_`
+      Login()
+      local E, L = S().Engine, S().L
+      Check(E:IsQuestSkipped(456), "456 still skipped after the reload")
+      Check(StepId() == "nesg-002", "the guide did not go back", StepId())
+      Check(E:IsDone(StepIndexOf("nesg-003")) == "s", "its steps still read as skipped")
+      Check(S().Guides:Followups(456) ~= nil, "the follow-up index is loaded")
+      Check(L.SKIP_MENU == "Skip this quest", "English strings", L.SKIP_MENU)
+      Sim.Click(SendaHUD.hit, "RightButton")
+      local rows = {}
+      for _, r in ipairs(SendaDropdownList.rows) do if r:IsShown() then rows[#rows + 1] = Plain(r.fs:GetText()) end end
+      Check(#rows >= 1 and rows[#rows]:find("Restore the", 1, true) ~= nil, "the restore entry is in English", table.concat(rows, "|"))
+      SendaDropdownList:Hide()
+      E:SkipQuestTree(458)
+      Sim.Advance(0.5)
+      local banner = Plain(SendaHUD.banner.text:GetText())
+      Check(banner:find("Skipped “", 1, true) == 1, "banner in English", banner)
+      E:UndoSkip()
+      Sim.Advance(0.3)
+      Check(Plain(SendaHUD.banner.undo:GetText()) == "Undo", "Undo button in English")
+    `,
+  },
+  {
+    id: 'report',
+    title: 'Bug report window: context, last 20 caught errors, no names, copy box and GitHub link under 2000 characters',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      local R, E, L = S().Report, S().Engine, S().L
+      Sim.addons = { { name = "Senda", loaded = true }, { name = "Questie", loaded = true }, { name = "TomTom", loaded = true },
+        { name = "Blizzard_Foo", loaded = true }, { name = "Apagado", loaded = false } }
+      local me = Sim.player.name
+      Check(me and #me >= 2, "the test character has a name", me)
+
+      Section("the errors Senda catches are kept (last 20, scrubbed)")
+      local handled = 0
+      local old = geterrorhandler()
+      seterrorhandler(function() handled = handled + 1 end)
+      local n = 0
+      S().Events:On("SENDA_TEST_ERROR", function() n = n + 1; error("fallo " .. n .. " de " .. me .. " en " .. GetRealmName()) end)
+      for _ = 1, 25 do S().Events:Fire("SENDA_TEST_ERROR") end
+      seterrorhandler(old)
+      Check(handled == 25, "the errors still reach the game's handler", handled)
+      Check(S().Errors:Count() == 20, "only the last 20 are kept", S().Errors:Count())
+      local list = S().Errors.list
+      Check(list[1].msg:find("fallo 6 ", 1, true) ~= nil and list[20].msg:find("fallo 25 ", 1, true) ~= nil, "oldest dropped first", list[1].msg)
+      Check(not list[20].msg:find(me, 1, true) and not list[20].msg:find(GetRealmName(), 1, true), "no character or realm name", list[20].msg)
+      Check(list[20].msg:find("<pj>", 1, true) ~= nil and list[20].msg:find("<reino>", 1, true) ~= nil, "replaced by placeholders", list[20].msg)
+
+      Section("/senda informe opens the window")
+      Slash("informe")
+      Check(SendaReportFrame and SendaReportFrame:IsShown(), "/senda informe opens the report window")
+      SendaReportFrame:Hide()
+      Slash("report")
+      Check(SendaReportFrame:IsShown(), "/senda report is an alias")
+      SendaReportFrame:Hide()
+      Sim.Click(SendaHUD.bug)
+      Check(SendaReportFrame:IsShown(), "the HUD bug button opens it too")
+      local f = SendaReportFrame
+      local text = f.report:GetText()
+      local function has(s) return text:find(s, 1, true) ~= nil end
+      Check(has("Senda: " .. S().VERSION), "Senda version")
+      Check(has("1.60.1.70291") and has("esES"), "client build and locale")
+      Check(has("NightElf") and has("DRUID"), "race and class")
+      Check(has("nightelf-druid") and has("nesg-001") and has("[accept]"), "guide and step id")
+      Check(has("Texto: Coge la misión"), "step text", text)
+      Check(has("1438"), "map", text)
+      Check(has("456 sin coger"), "quest log state of the step's quest", text)
+      Check(has("Questie") and has("TomTom") and not has("Blizzard_Foo") and not has("Apagado"), "other enabled addons only", text)
+      Check(has("Errores de Senda (últimos 20)"), "error section header")
+      local count = 0
+      for _ in text:gmatch("fallo %d+ de <pj>") do count = count + 1 end
+      Check(count == 20, "20 errors listed", count)
+      Check(not has(me) and not has(GetRealmName()), "no character or realm name anywhere in the report")
+
+      Section("quest log state follows the game")
+      Sim.AcceptQuest(456, { { "Sable de la noche joven muerto", 7 } })
+      Sim.ProgressQuest(456, 1, 3)
+      Sim.Advance(1)
+      E:JumpTo(StepIndexOf("nesg-003"))
+      Sim.Advance(0.5)
+      local t2 = R:Text("", R:Context())
+      Check(t2:find("456 en el registro 3/7", 1, true) ~= nil, "in the log with the objective counter", t2)
+      Check(t2:find("Descripción", 1, true) == nil, "no description line when empty")
+
+      Section("description, copy box and link")
+      local words = {}
+      for i = 1, 150 do words[i] = "ñandú" end
+      f.desc:SetText("La flecha no se mueve. " .. table.concat(words, " "))
+      Sim.RunScript(f.desc, "OnTextChanged", true)
+      text = f.report:GetText()
+      Check(text:find("Descripción: La flecha no se mueve.", 1, true) ~= nil, "the description goes first in the report")
+      local url = f.url:GetText()
+      Check(url:sub(1, 52) == "https://github.com/e-omunoz/senda/issues/new?title=P", "link to the GitHub new-issue page", url:sub(1, 70))
+      Check(#url <= 2000 and #url <= R.URL_MAX, "link under 2000 characters", #url)
+      Check(url:find("&body=", 1, true) ~= nil and url:find("Problema%20en%20el%20paso%20nesg", 1, true) ~= nil, "title with the step", url:sub(1, 120))
+      Check(url:find("La%20flecha%20no%20se%20mueve", 1, true) ~= nil, "the description is in the body")
+      Check(url:find("%E2%80%A6", 1, true) ~= nil, "a long description is cut with an ellipsis")
+      Check(not url:find("%%[^0-9A-F]") and not url:find("%%[0-9A-F][^0-9A-F]"), "the link is well encoded")
+      Check(not url:find(me, 1, true), "no character name in the link")
+      Check(f.url.fixed == url and f.report.fixed == text, "boxes are read-only copies")
+      f.desc:SetText("Corto")
+      Sim.RunScript(f.desc, "OnTextChanged", true)
+      url = f.url:GetText()
+      Check(url:find("body=Corto%0A%0ASenda", 1, true) ~= nil, "short body: description, then the minimal context", url)
+      Check(#url < 900, "a short report gives a short link", #url)
+      Sim.Click(f.copy)
+      Check(f.report:HasFocus() and f.report.__highlight ~= nil, "Copy selects all the text of the copy box")
+      Check(f.url:IsShown() and f.url:GetText() == url, "the link sits in its own copyable line")
+
+      Section("the window reflects when it was opened")
+      f:Hide()
+      E:SkipQuestTree(458)
+      Sim.Advance(0.3)
+      R:Open()
+      Check(f.report:GetText():find("Misiones saltadas: ", 1, true) ~= nil, "skipped quests are counted in the report", f.report:GetText())
+      f:Hide()
+      Check(#Sim.errors == 0, "no Lua errors")
+    `,
+  },
+  {
+    id: 'place',
+    title: 'Placement (setup): play into Teldrassil; keep early SavedVariables and the later world',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      Check(StepId() == "nesg-001", "fresh character starts at nesg-001", StepId())
+      -- A manual skip saved early: placement must keep it (and it vouches for nothing).
+      S():GuideProgress("nightelf-druid").done["netd-013"] = "s"
+      local early = Sim.SaveVariables()
+      S():GuideProgress("nightelf-druid").done["netd-013"] = nil
+      local n = 0
+      while StepId() ~= "netd-013" and n < 120 do AutoPlay(1); n = n + 1 end
+      Check(StepId() == "netd-013", "played up to netd-013 (turn in 97944)", tostring(StepId()) .. " after " .. n .. " steps")
+      Check(n >= 10, "more than 10 steps played", n)
+      __report("saved", early)
+      __report("world", Sim.ExportWorld())
+    `,
+  },
+  {
+    id: 'place-wiped',
+    title: 'Placement: SavedVariables wiped mid-guide -> the step is recomputed from the quest log',
+    char: 'nightelf-druid',
+    needs: 'place',
+    wipeSaved: true,
+    lua: L_`
+      Login()
+      local E = S().Engine
+      Check(StepId() == "netd-013", "placed at the first pending quest step", StepId())
+      local p = S():GuideProgress("nightelf-druid")
+      Check(p.done["nesg-043"] == "a", "the goto to Dolanaar behind the progress passes", p.done["nesg-043"])
+      Check(p.done["netd-002"] == "a", "the hearthstone bind behind the progress passes", p.done["netd-002"])
+      Check(p.done["netd-021"] == "a", "a profession step behind the progress passes (profession not known now)", p.done["netd-021"])
+      Check(E:ResumeIndex() == StepIndexOf("netd-013"), "ResumeIndex gives the same place", E:ResumeIndex())
+      local said = false
+      for _, l in ipairs(Sim.chat) do if l:find("registro de misiones", 1, true) then said = true end end
+      Check(said, "chat explains the placement")
+
+      Section("sliced over frames")
+      E:Place("test")
+      Check(E:Placing(), "placement runs in the background")
+      local frames = 0
+      while E:Placing() and frames < 400 do Sim.Advance(Sim.FRAME); frames = frames + 1 end
+      Check(not E:Placing() and frames >= 2, "placement takes several frames for " .. #E:Steps() .. " steps", frames)
+      Check(StepId() == "netd-013", "a second placement changes nothing", StepId())
+    `,
+  },
+  {
+    id: 'place-stale',
+    title: 'Placement: character that played without the add-on is placed after those steps; skips respected',
+    char: 'nightelf-druid',
+    needs: 'place',
+    lua: L_`
+      Login()
+      local E = S().Engine
+      local p = S():GuideProgress("nightelf-druid")
+      Check(p.done["netd-013"] == "s", "manual skip kept", p.done["netd-013"])
+      -- netd-015 hands in a profession quest this character no longer qualifies for (no profession after the
+      -- relog), so the first pending step after the skipped netd-013 is netd-017.
+      Check(StepId() == "netd-017", "placed after the steps played without the add-on (and the skipped one)", StepId())
+      Check(p.done["nesg-004"] == "a" and p.done["nesg-043"] == "a", "steps passed are marked done")
+      Section("Back is respected across a reload")
+      E:JumpTo(StepIndexOf("nesg-043"))
+      Sim.Advance(1)
+      Check(StepId() == "nesg-043", "went back to nesg-043", StepId())
+      Check(p.held == "nesg-043", "the held step is saved", p.held)
+      __report("expectStep", StepId())
+      __report("saved", Sim.SaveVariables())
+      __report("world", Sim.ExportWorld())
+    `,
+  },
+  {
+    id: 'place-held',
+    title: 'Placement: a step you went back to is not moved by the placement after a reload',
+    char: 'nightelf-druid',
+    needs: 'place-stale',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      Check(StepId() == SIM_EXPECT_STEP, "still on the step you went back to", tostring(StepId()) .. " vs " .. tostring(SIM_EXPECT_STEP))
+      Sim.Click(SendaHUD.done)
+      Sim.Advance(1)
+      Check(StepId() == "netd-017", "Done moves on to where you were", StepId())
+    `,
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -1345,7 +1927,7 @@ function runScenario(sc, carry) {
   }
   let err = runFile(L, SCENARIO_HELPERS);
   if (err) return { report, fatal: 'scenario.lua: ' + err };
-  const saved = carry.saved || '';
+  const saved = sc.wipeSaved ? '' : carry.saved || ''; // wipeSaved: the SavedVariables were lost
   const prelude = `
     SIM_ROOT = ${JSON.stringify(ADDON_ROOT)}
     Sim.verbose = ${VERBOSE}

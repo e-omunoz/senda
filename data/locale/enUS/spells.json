@@ -1,0 +1,12 @@
+{
+  "kind": "spell",
+  "locale": "enUS",
+  "names": {
+    "613": {"name": "Lesser Heal", "source": "polestar-enUS"},
+    "1243": {"name": "Power Word: Fortitude", "source": "polestar-enUS"},
+    "5487": {"name": "Bear Form", "source": "polestar-enUS"},
+    "18960": {"name": "Teleport: Moonglade", "source": "polestar-enUS"},
+    "1229451": {"name": "Boosted Rest", "source": "polestar-enUS"},
+    "1259799": {"name": "Elune's Light", "source": "polestar-enUS"}
+  }
+}

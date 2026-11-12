@@ -75,6 +75,7 @@ function Sim.SetupCharacter(cfg)
   Sim.purchases = {}
   Sim.learned = {}
   Sim.questCache = {}
+  Sim.npcCache = {}
   Sim.shift = false
   return p
 end
@@ -226,6 +227,7 @@ function UnitExists(u)
 end
 local function partyOf(u) local n = u:match("^party(%d)$"); return n and Sim.party[tonumber(n)] end
 function UnitIsPlayer(u) unitArg(u, "UnitIsPlayer"); return u == "player" or partyOf(u) ~= nil end
+function GetRealmName() return Sim.realm or "Reino de Prueba" end
 function UnitName(u)
   unitArg(u, "UnitName")
   if u == "player" then return Sim.player.name end
@@ -606,6 +608,7 @@ local function itemCached(id)
   for _, eid in pairs(Sim.player.equipped) do if eid == id then return true end end
   return false
 end
+Sim.itemWaiters = {} -- id -> { fn, ... } (Item:ContinueOnItemLoad)
 local function requestItem(id)
   if Sim.itemCache[id] or Sim.itemPending and Sim.itemPending[id] then return end
   Sim.itemPending = Sim.itemPending or {}
@@ -614,6 +617,9 @@ local function requestItem(id)
     Sim.itemPending[id] = nil
     Sim.itemCache[id] = true
     Sim.Fire("GET_ITEM_INFO_RECEIVED", id, true)
+    local list = Sim.itemWaiters[id]
+    Sim.itemWaiters[id] = nil
+    for _, fn in ipairs(list or {}) do Sim.SafeCall("Item:ContinueOnItemLoad callback", fn) end
   end)
 end
 function C_Item.GetItemInfo(item)
@@ -636,6 +642,31 @@ function C_Item.GetItemNameByID(item)
   if not itemCached(id) then requestItem(id); return nil end
   return Sim.ItemData(id).name
 end
+-- ItemMixin (Item:CreateFromItemID): the async way to wait for an item's data.
+Item = {}
+local ItemObj = {}
+ItemObj.__index = ItemObj
+function Item:CreateFromItemID(id)
+  if self ~= Item then bad("Item.CreateFromItemID", "call it with ':' (Item:CreateFromItemID(id))") end
+  num(id, "Item:CreateFromItemID", "itemID")
+  return setmetatable({ itemID = id }, ItemObj)
+end
+function ItemObj:GetItemID() return self.itemID end
+function ItemObj:IsItemEmpty() return self.itemID == nil end
+function ItemObj:IsItemDataCached() return itemCached(self.itemID) end
+function ItemObj:GetItemName()
+  if not itemCached(self.itemID) then return nil end
+  return Sim.ItemData(self.itemID).name
+end
+function ItemObj:ContinueOnItemLoad(fn)
+  if type(fn) ~= "function" then bad("ItemMixin:ContinueOnItemLoad", "callback must be a function") end
+  if itemCached(self.itemID) then fn(); return end
+  local w = Sim.itemWaiters[self.itemID] or {}
+  Sim.itemWaiters[self.itemID] = w
+  w[#w + 1] = fn
+  requestItem(self.itemID)
+end
+
 function C_Item.GetItemIconByID(item) local id = itemArg(item, "C_Item.GetItemIconByID"); return id and iconOf(id) end
 function C_Item.GetItemQualityByID(item) local id = itemArg(item, "C_Item.GetItemQualityByID"); return id and Sim.ItemData(id).quality end
 function C_Item.RequestLoadItemDataByID(item) local id = itemArg(item, "C_Item.RequestLoadItemDataByID"); if id then requestItem(id) end end
@@ -967,13 +998,48 @@ function C_AddOns.GetAddOnMetadata(name, field)
   if name ~= Sim.addonName then return nil end
   return Sim.tocMeta and Sim.tocMeta[field]
 end
-function C_AddOns.IsAddOnLoaded(name) return name == Sim.addonName, name == Sim.addonName end
-function C_AddOns.GetAddOnInfo(name) return name, name, "", true, "INSECURE", false end
+-- Installed add-ons (tests can add more): Sim.addons = { { name = "Questie", loaded = true }, ... }
+local function addonList() return Sim.addons or { { name = Sim.addonName, loaded = true } } end
+function C_AddOns.GetNumAddOns() return #addonList() end
+function C_AddOns.IsAddOnLoaded(nameOrIndex)
+  local list = addonList()
+  if type(nameOrIndex) == "number" then
+    local a = list[nameOrIndex]
+    return a ~= nil and a.loaded == true, a ~= nil and a.loaded == true
+  end
+  for _, a in ipairs(list) do
+    if a.name == nameOrIndex then return a.loaded == true, a.loaded == true end
+  end
+  return false, false
+end
+function C_AddOns.GetAddOnInfo(nameOrIndex)
+  local a = type(nameOrIndex) == "number" and addonList()[nameOrIndex] or { name = nameOrIndex }
+  if not a then return nil end
+  return a.name, a.name, "", true, "INSECURE", false
+end
 function C_AddOns.LoadAddOn(name) return false, "MISSING" end
 
+-- Creature names (the client caches them lazily: the first tooltip of an unseen creature comes back empty).
+Sim.NPC_NAMES = { [658] = "Sten Brazorrecio", [2079] = "Conservador Ilthalaine", [3595] = "Shanda", [467] = "El Defias Traidor" }
+Sim.npcCache = {}
 C_TooltipInfo = {}
 function C_TooltipInfo.GetHyperlink(link)
   str(link, "C_TooltipInfo.GetHyperlink", "hyperlink")
+  if link:sub(1, 5) == "unit:" then
+    local id = tonumber(link:match("^unit:Creature%-0%-0%-0%-0%-(%d+)%-0$"))
+    if not id then bad("C_TooltipInfo.GetHyperlink", "unit hyperlink must be unit:Creature-0-0-0-0-<npcID>-0 (got " .. link .. ")") end
+    Sim.npcLookups = (Sim.npcLookups or 0) + 1
+    if not Sim.npcCache[id] then
+      if not Sim.npcPending then Sim.npcPending = {} end
+      if not Sim.npcPending[id] then
+        Sim.npcPending[id] = true
+        C_Timer.After(0.3, function() Sim.npcPending[id] = nil; Sim.npcCache[id] = true end)
+      end
+      return { type = Enum.TooltipDataType.Unit, lines = {} }
+    end
+    return { type = Enum.TooltipDataType.Unit, id = id,
+      lines = { { leftText = Sim.NPC_NAMES[id] or ("Criatura " .. id) }, { leftText = "Nivel 5" } } }
+  end
   local id = Sim.ItemIdOf(link)
   local d = id and Sim.ItemData(id)
   local lines = { { leftText = d and d.name or link } }

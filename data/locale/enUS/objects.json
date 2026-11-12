@@ -1,0 +1,29 @@
+{
+  "kind": "obj",
+  "locale": "enUS",
+  "names": {
+    "1673": {"name": "Fel Cone", "source": "polestar-enUS"},
+    "2739": {"name": "Chest of the Black Feather", "source": "polestar-enUS"},
+    "2740": {"name": "Chest of the Raven Claw", "source": "polestar-enUS"},
+    "2741": {"name": "Chest of the Sky", "source": "polestar-enUS"},
+    "2742": {"name": "Chest of Nesting", "source": "polestar-enUS"},
+    "4406": {"name": "Webwood Eggs", "source": "polestar-enUS"},
+    "4608": {"name": "Timberling Sprout", "source": "polestar-enUS"},
+    "6751": {"name": "Strange Fruited Plant", "source": "polestar-enUS"},
+    "6752": {"name": "Strange Fronded Plant", "source": "polestar-enUS"},
+    "7510": {"name": "Sprouted Frond", "source": "polestar-enUS"},
+    "17182": {"name": "Buzzbox 827", "source": "polestar-enUS"},
+    "19549": {"name": "Shadowglen Moonwell", "source": "polestar-enUS"},
+    "19550": {"name": "Starbreeze Village Moonwell", "source": "polestar-enUS"},
+    "19551": {"name": "Pools of Arlithrien Moonwell", "source": "polestar-enUS"},
+    "19552": {"name": "Oracle Glade Moonwell", "source": "polestar-enUS"},
+    "126158": {"name": "Tallonkai's Dresser", "source": "polestar-enUS"},
+    "152094": {"name": "Hyacinth Mushroom", "source": "polestar-enUS"},
+    "152095": {"name": "Moonpetal Lily", "source": "polestar-enUS"},
+    "175207": {"name": "Beached Sea Creature", "source": "polestar-enUS"},
+    "175320": {"name": "WANTED: Murkdeep!", "source": "polestar-enUS"},
+    "177525": {"name": "Moonkin Stone", "source": "polestar-enUS"},
+    "654846": {"name": "Lost Journal", "source": "polestar-enUS"},
+    "673378": {"name": "Oracle Tree Bark", "source": "polestar-enUS"}
+  }
+}

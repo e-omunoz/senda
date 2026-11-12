@@ -170,7 +170,8 @@ function A.Items()
   if Senda.Engine and Senda.Engine.CurrentStep then
     local ok, step = pcall(Senda.Engine.CurrentStep, Senda.Engine)
     if ok and type(step) == "table" and step.text then
-      add((L.MOD_ADV_STEP or "Siguiente paso de la guía:") .. " " .. step.text, "Interface\\Icons\\INV_Misc_Map_01", "now")
+      local text = Senda.HUD and Senda.HUD:StepText(step) or step.text
+      add((L.MOD_ADV_STEP or "Siguiente paso de la guía:") .. " " .. text, "Interface\\Icons\\INV_Misc_Map_01", "now")
     end
   end
   local focus

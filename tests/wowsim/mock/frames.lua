@@ -448,7 +448,7 @@ function EditBoxM:SetTextInsets() end
 function EditBoxM:SetFocus() if not self.__focus then self.__focus = true; Sim.RunScript(self, "OnEditFocusGained") end end
 function EditBoxM:ClearFocus() if self.__focus then self.__focus = false; Sim.RunScript(self, "OnEditFocusLost") end end
 function EditBoxM:HasFocus() return self.__focus or false end
-function EditBoxM:HighlightText() end
+function EditBoxM:HighlightText(a, b) self.__highlight = { a or 0, b or -1 } end
 function EditBoxM:SetCursorPosition() end
 function EditBoxM:SetFontObject(f) usage(f ~= nil, "Usage: SetFontObject(font)") end
 function EditBoxM:SetFont() return true end

@@ -105,7 +105,7 @@ function UI:ShowTab(key)
         local e = UI:Label(f, "Error: " .. tostring(err))
         e:SetPoint("TOPLEFT", 8, -8)
         e:SetPoint("RIGHT", -8, 0)
-        geterrorhandler()(err)
+        Senda:ReportError(err)
       end
     end
   end

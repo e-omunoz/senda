@@ -16,7 +16,7 @@ do = "accept"
 quest = 456
 npc = 2079
 at = [1438, 58.69, 44.27]
-text = "Coge la misión del Conservador Ilthalaine, delante de Aldrassil."
+text = "Coge la misión del {npc:2079}, delante de Aldrassil."
 tip = "Vende los grises en cada vendedor. Mata todo lo que te cruces: la Cañada se acaba rápido."
 status = "unverified"
 sources = ["questie:quest/456", "questie:npc/2079"]
@@ -27,7 +27,7 @@ do = "accept"
 quest = 458
 npc = 2077
 at = [1438, 59.92, 42.47]
-text = "Coge la misión de Melithar Staghelm, junto al camino."
+text = "Coge la misión de {npc:2077}, junto al camino."
 status = "unverified"
 sources = ["questie:quest/458", "questie:npc/2077"]
 
@@ -47,7 +47,7 @@ do = "turnin"
 quest = 456
 npc = 2079
 at = [1438, 58.69, 44.27]
-text = "Entrega la misión al Conservador Ilthalaine."
+text = "Entrega la misión al {npc:2079}."
 status = "unverified"
 sources = ["questie:quest/456", "questie:npc/2079"]
 

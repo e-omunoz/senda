@@ -48,7 +48,7 @@ id = "a34-desolace-003"
 do = "train"
 reqlevel = 32
 npc = 5172
-spells = [6229]
+spells = [6213]
 at = [1455, 50.35, 5.66]
 if = { class = ["WARLOCK"] }
 text = "Entrena el 32-34 con Briarthorn, en la Caverna Desolada de Forjaz."

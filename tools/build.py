@@ -4,15 +4,23 @@
 Genera:
   addon/Senda/Guides/<guide-id>.lua   secciones propias de la guía + RegisterGuide
   addon/Senda/Guides/Shared.lua       secciones de data/shared usadas por alguna guía (una vez cada una)
+  addon/Senda/Guides/Followups.lua    índice misión -> misiones que dependen de ella (para «Saltar esta misión»)
   addon/Senda/Guides/Guides.xml
   addon/Senda/Knowledge/<carpeta>.lua una por carpeta de data/knowledge (warlock, mage, general...)
   addon/Senda/Knowledge/Knowledge.xml
+  addon/Senda/Locale/Names_<locale>.lua  nombres del cliente de respaldo, desde data/locale/<locale>/*.json
+  addon/Senda/Locale/Locale.xml       (siempre, aunque no haya idiomas: el .toc lo carga)
 Y estampa la versión de VERSION en la línea `## Version:` de Senda.toc.
 
 Uso:
     python tools/build.py             # valida y genera
     python tools/build.py --check     # no escribe; falla si lo generado difiere de lo que hay en disco
     python tools/build.py --root RUTA # otra raíz (fixtures)
+    python tools/build.py --refresh-prereq  # relee los requisitos de forever-db y guarda data/prereq.json
+
+Requisitos de misión («Saltar esta misión»): el índice sale de data/prereq.json (instantánea de los requisitos
+de forever-db, versionada para que el resultado no dependa de la caché local); sin ese archivo, de la caché
+de forever-db si está (tools/foreverdb); y sin ninguna, del orden de coger/entregar y los `chain` de las guías.
 """
 from __future__ import annotations
 
@@ -24,8 +32,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (  # noqa: E402
-    GENERATED_HEADER, Paths, read_version, setup_stdio, to_lua, write_text_lf,
+    GENERATED_HEADER, Paths, lua_string, read_version, setup_stdio, to_lua, write_text_lf,
 )
+import localenames  # noqa: E402
 import validate  # noqa: E402
 
 # Campos que no viajan al addon.
@@ -81,6 +90,160 @@ def _section_table(sec: validate.Section, step_order: list[str]) -> str:
     return f"Senda.Guides:RegisterSection({to_lua(d, key_order=SECTION_ORDER, multiline=True)})"
 
 
+# ---------------------------------------------------------------- requisitos de misión
+PREREQ_FILE = "prereq.json"
+
+
+def _step_quests(step: dict) -> list[int]:
+    out = []
+    if isinstance(step.get("quest"), int):
+        out.append(step["quest"])
+    out += [q for q in (step.get("quests") or []) if isinstance(q, int)]
+    return out
+
+
+def foreverdb_prereq_edges(root: Path) -> list[tuple[int, int]] | None:
+    """Aristas (previa, misión) duras de forever-db: `all` sin migas de pan y `any` con una sola previa
+    (con varias previas alternativas, saltar una no pierde la misión). None si no hay forever-db."""
+    f = root / ".cache" / "foreverdb" / "data" / "quest_prereq.jsonl"
+    if not f.exists():
+        return None
+    rows: dict[int, dict[str, list[int]]] = {}
+    with open(f, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if not line:
+                continue
+            r = json.loads(line)
+            if r.get("breadcrumb"):
+                continue
+            rows.setdefault(int(r["quest"]), {"all": [], "any": []})[r["mode"]].append(int(r["pre"]))
+    edges = set()
+    for q, m in rows.items():
+        for p in m["all"]:
+            edges.add((p, q))
+        if len(m["any"]) == 1:
+            edges.add((m["any"][0], q))
+    return sorted(edges)
+
+
+def read_prereq_snapshot(paths: Paths) -> list[tuple[int, int]] | None:
+    f = paths.data / PREREQ_FILE
+    if not f.exists():
+        return None
+    with open(f, encoding="utf-8") as fh:
+        data = json.load(fh)
+    return sorted((int(a), int(b)) for a, b in data.get("edges", []))
+
+
+def write_prereq_snapshot(paths: Paths, edges: list[tuple[int, int]]) -> None:
+    pin = ""
+    pf = paths.root / "tools" / "foreverdb" / "PIN"
+    if pf.exists():
+        m = re.search(r"^version\s*=\s*(\S+)", pf.read_text(encoding="utf-8"), re.MULTILINE)
+        pin = m.group(1) if m else ""
+    head = {"_": "Requisitos duros de misión de forever-db (GPL-3.0, ver THIRD_PARTY.md); los lee tools/build.py. "
+                 "Se regenera con `python tools/build.py --refresh-prereq`.",
+            "forever_db": pin}
+    text = json.dumps(head, ensure_ascii=False)[:-1] + ', "edges": [' + ",".join(f"[{a},{b}]" for a, b in edges) + "]}\n"
+    write_text_lf(paths.data / PREREQ_FILE, text)
+
+
+def guide_prereq_edges(ds: validate.Dataset) -> list[tuple[int, int]]:
+    """Respaldo sin forever-db: con el orden de las guías. B sigue a A si comparten `chain` (en orden de coger)
+    o si B se coge justo después de entregar A al mismo PNJ."""
+    edges: set[tuple[int, int]] = set()
+    for g in ds.guides:
+        if g.data.get("ship") is False:
+            continue
+        steps = [st for sec in g.sections for st in (sec.data.get("step") or [])]
+        by_chain: dict[str, list[int]] = {}
+        for i, st in enumerate(steps):
+            if st.get("do") == "accept" and isinstance(st.get("quest"), int) and st.get("chain"):
+                by_chain.setdefault(st["chain"], []).append(st["quest"])
+            if st.get("do") == "accept" and isinstance(st.get("quest"), int) and i > 0:
+                prev = steps[i - 1]
+                if (prev.get("do") == "turnin" and isinstance(prev.get("quest"), int) and prev["quest"] != st["quest"]
+                        and prev.get("npc") is not None and prev.get("npc") == st.get("npc")):
+                    edges.add((prev["quest"], st["quest"]))
+        for qs in by_chain.values():
+            for a, b in zip(qs, qs[1:]):
+                if a != b:
+                    edges.add((a, b))
+    return sorted(edges)
+
+
+def render_followups(ds: validate.Dataset) -> str:
+    """Guides/Followups.lua: para cada misión de las guías, las misiones de las guías que dependen de ella
+    (cierre transitivo, también a través de misiones que ninguna guía usa). Cadena «q>d1,d2;...»."""
+    paths = ds.paths
+    edges = read_prereq_snapshot(paths)
+    source = f"data/{PREREQ_FILE}"
+    if edges is None:
+        edges = foreverdb_prereq_edges(paths.root)
+        source = "forever-db (.cache)"
+    if edges is None:
+        edges = guide_prereq_edges(ds)
+        source = "orden de las guías"
+    mine: set[int] = set()
+    for g in ds.guides:
+        if g.data.get("ship") is False:
+            continue
+        for sec in g.sections:
+            for st in sec.data.get("step") or []:
+                mine.update(_step_quests(st))
+    child: dict[int, list[int]] = {}
+    for a, b in edges:
+        child.setdefault(a, []).append(b)
+    parts = []
+    n_pairs = 0
+    for q in sorted(mine):
+        seen: set[int] = set()
+        todo = list(child.get(q, ()))
+        while todo:
+            x = todo.pop()
+            if x in seen or x == q:
+                continue
+            seen.add(x)
+            todo.extend(child.get(x, ()))
+        d = sorted(x for x in seen if x in mine)
+        if d:
+            n_pairs += len(d)
+            parts.append(f"{q}>" + ",".join(map(str, d)))
+    head = [f"-- {GENERATED_HEADER}",
+            f"-- Fuente: {source}; {len(parts)} misiones con dependientes ({n_pairs} pares)",
+            "local _, Senda = ..."]
+    return "\n".join(head) + "\n\nSenda.Guides:RegisterFollowups(" + lua_string(";".join(parts)) + ")\n"
+
+
+def render_locale(paths: Paths) -> dict[Path, str]:
+    """data/locale/<locale>/*.json -> addon/Senda/Locale/Names_<locale>.lua (+ Locale.xml).
+
+    Compacto: una cadena "<id>\\t<nombre>" por línea y tipo; el addon la lee bajo demanda (Core/Names.lua) y solo
+    la del idioma del cliente (el archivo de otro idioma sale en la primera línea)."""
+    out: dict[Path, str] = {}
+    files = []
+    for loc in localenames.locales(paths.root / "data"):
+        data = localenames.load(paths.root / "data", loc)
+        body = [f"if not (Senda.Names and Senda.Names:WantsLocale({lua_string(loc)})) then return end",
+                "local N = Senda.Names"]
+        count = 0
+        for kind in localenames.KINDS:
+            entries = data.get(kind) or {}
+            if not entries:
+                continue
+            count += len(entries)
+            body.append(f"N:AddFallback({lua_string(loc)}, {lua_string(kind)}, {lua_string(localenames.pack(entries))})")
+        if count == 0:
+            continue
+        name = f"Names_{loc}.lua"
+        head = [f"-- {GENERATED_HEADER}", f"-- Fuente: data/locale/{loc}/ ({count} nombres)", "local _, Senda = ..."]
+        out[paths.out_locale / name] = "\n".join(head + body) + "\n"
+        files.append(name)
+    out[paths.out_locale / "Locale.xml"] = _xml(files)
+    return out
+
+
 def render(ds: validate.Dataset) -> dict[Path, str]:
     """Devuelve {ruta: contenido} de todo lo generado. Determinista."""
     paths = ds.paths
@@ -108,6 +271,8 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
         guide_files.append(name)
 
     xml_files = []
+    out[paths.out_guides / "Followups.lua"] = render_followups(ds)
+    xml_files.append("Followups.lua")
     if shared_used:
         body = [_section_table(sec, step_order) for _, sec in sorted(shared_used.items())]
         out[paths.out_guides / "Shared.lua"] = _lua_file("data/shared/", body)
@@ -128,6 +293,7 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
         out[paths.out_knowledge / name] = _lua_file(f"data/knowledge/{group}/", body)
         kfiles.append(name)
     out[paths.out_knowledge / "Knowledge.xml"] = _xml(kfiles)
+    out.update(render_locale(paths))
     return out
 
 
@@ -171,7 +337,11 @@ def build(paths: Paths, check: bool = False, quiet: bool = False) -> int:
         print(f"build: {exc}", file=sys.stderr)
         return 1
 
-    outputs = render(ds)
+    try:
+        outputs = render(ds)
+    except (ValueError, OSError) as exc:  # data/locale/*.json mal formado
+        print(f"build: {exc}", file=sys.stderr)
+        return 1
     changed: list[str] = []
     for path, text in sorted(outputs.items()):
         data = text.encode("utf-8")
@@ -182,7 +352,7 @@ def build(paths: Paths, check: bool = False, quiet: bool = False) -> int:
 
     # Archivos generados que ya no corresponden a nada (solo los que llevan nuestra cabecera).
     stale: list[str] = []
-    for d in (paths.out_guides, paths.out_knowledge):
+    for d in (paths.out_guides, paths.out_knowledge, paths.out_locale):
         if not d.is_dir():
             continue
         for p in sorted(d.iterdir()):
@@ -227,8 +397,18 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Compila data/ a addon/Senda/{Guides,Knowledge}.")
     ap.add_argument("--root", help="raíz alternativa (por defecto, el repo)")
     ap.add_argument("--check", action="store_true", help="no escribir; fallar si hay diferencias")
+    ap.add_argument("--refresh-prereq", action="store_true",
+                    help="relee los requisitos de forever-db (.cache) y guarda data/prereq.json")
     ap.add_argument("-q", "--quiet", action="store_true")
     args = ap.parse_args(argv)
+    if args.refresh_prereq:
+        paths = Paths(args.root)
+        edges = foreverdb_prereq_edges(paths.root)
+        if edges is None:
+            print("build: no hay forever-db en .cache (ejecuta `python tools/fetch_foreverdb.py`).", file=sys.stderr)
+            return 1
+        write_prereq_snapshot(paths, edges)
+        print(f"data/{PREREQ_FILE}: {len(edges)} requisitos")
     return build(Paths(args.root), check=args.check, quiet=args.quiet)
 
 

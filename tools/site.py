@@ -34,6 +34,9 @@ from pathlib import Path
 from string import Template
 from urllib.parse import urlparse
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import localenames  # noqa: E402
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SITE_SRC = REPO_ROOT / "site"
 
@@ -683,6 +686,8 @@ class Site:
         self.base_path = urlparse(SITE_URL).path or "/"
         self.broken: list[str] = []
         self.names = self._collect_names()
+        # Fichas de nombre de los textos ({quest:N}, {npc:N}...): data/locale/ (la web no tiene cliente).
+        self.resolve = localenames.resolver(self.root / "data")
 
     def _collect_names(self) -> dict:
         """Nombres de hechizos y objetos que ya aparecen en data/knowledge (la web no tiene cliente)."""
@@ -848,14 +853,14 @@ class Site:
         extra = ""
         if s.get("tip"):
             extra += (f'<div class="tip">{icon("tip")}<div><strong>Consejo:</strong> '
-                      f'{inline_md(s["tip"])}</div></div>')
+                      f'{inline_md(self.resolve(s["tip"]))}</div></div>')
         if s.get("note"):
             extra += f'<p class="step-note">{inline_md(s["note"])}</p>'
         if s.get("link"):
             self.links.append((f"{page_path} · paso {s.get('id', num)}", str(s["link"])))
             extra += (f'<a class="more" href="{esc(site_href(s["link"]))}">Leer más'
                       f'<span class="sr-only"> sobre el paso {num}</span> →</a>')
-        text = str(s.get("text") or "")
+        text = self.resolve(str(s.get("text") or ""))
         self.index(text or label, f"{page_path}/#{sid}", "Paso", "", f"{guide_title} · {sec_title}")
         checked = s.get("checked")
         return (
@@ -1467,7 +1472,7 @@ class Site:
                         continue
                     seen.add(s.get("id"))
                     items.append(f'<li><a href="{ROOT}{guide_path(g)}/#{esc(slugify(s.get("id")))}"><code>{esc(s.get("id"))}</code></a> '
-                                 f'{esc(excerpt(s.get("text", ""), 120))}</li>')
+                                 f'{esc(excerpt(self.resolve(s.get("text", "")), 120))}</li>')
                 out.append(f'<h2 id="disputa">Pasos en disputa</h2><ul class="plain">{"".join(items[:200])}</ul>')
         else:
             out.append('<p class="empty">Todavía no hay guías publicadas.</p>')

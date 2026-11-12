@@ -66,45 +66,69 @@ _MASC = ("Conservador", "Posadero", "Capitán", "Sargento", "Alguacil", "Guardi�
 _FEM = ("Centinela", "Sacerdotisa", "Posadera", "Suma", "Guardiana", "Maestra", "Hermana", "Capitana", "Tabernera")
 
 
-def npc_with(prep: str, name: str) -> str:
-    """'de' / 'a' + PNJ, con artículo si el nombre empieza por un título: «del Conservador X», «a la Centinela Y»."""
+def npc_with(prep: str, name: str, shown: str | None = None) -> str:
+    """'de' / 'a' + PNJ, con artículo si el nombre empieza por un título: «del Conservador X», «a la Centinela Y».
+    El artículo se decide con `name` (el nombre conocido); se escribe `shown` (p. ej. la ficha {npc:N})."""
     first = name.split(" ", 1)[0]
+    out = shown if shown is not None else name
     if first in _MASC:
-        return ("del " if prep == "de" else "al ") + name
+        return ("del " if prep == "de" else "al ") + out
     if first in _FEM:
-        return ("de la " if prep == "de" else "a la ") + name
-    return f"{prep} {name}"
+        return ("de la " if prep == "de" else "a la ") + out
+    return f"{prep} {out}"
 
 
 TOKEN_RE = re.compile(r"\{([a-z]+):(\d+)\}")
 _TOKEN_RE = TOKEN_RE
 
+# Tipo de ficha de Polestar -> ficha de Senda (Core/Names.lua resuelve estas en el cliente).
+# `zone` de Polestar es un uiMapID ({zone:1453} = Ventormenta) -> {map:N}. Las subzonas (area) y las
+# habilidades (skill) no tienen ficha: se escriben con su nombre.
+SENDA_TOKEN: dict[str, str] = {"quest": "quest", "npc": "npc", "item": "item", "object": "obj", "spell": "spell",
+                               "zone": "map"}
+_FROM_SENDA = {"quest": "quest", "npc": "npc", "item": "item", "obj": "object", "spell": "spell", "map": "zone"}
+
+SOURCE_POLESTAR = "polestar-esES"
+SOURCE_POLESTAR_EN = "polestar-enUS"
+SOURCE_SENDA = "senda"
+
 
 class Namer:
-    """Pone nombres en español a ids de Polestar; recuerda los que se quedan en inglés."""
+    """Pone nombres en español a ids de Polestar; recuerda los que se quedan en inglés.
 
-    def __init__(self, name_es: Callable[[str, Any], str | None], guide_names: dict[str, str]):
+    Con `tokens` (por defecto) los textos llevan fichas de Senda ({quest:N}, {npc:N}...): el nombre lo pone el
+    cliente al mostrarlo. Los nombres esES conocidos se guardan en `fallback` ({tipo de Senda: {id: (nombre,
+    fuente)}}) para escribirlos como respaldo en data/locale/esES/ (fuente polestar-esES o senda)."""
+
+    def __init__(self, name_es: Callable[[str, Any], str | None], guide_names: dict[str, str], tokens: bool = True):
         self._es = name_es
         self._en = guide_names or {}
+        self.tokens = tokens
         self.missing: set[str] = set()
+        self.fallback: dict[str, dict[int, tuple[str, str]]] = {}
+        # nombres en inglés de Polestar (enUS): respaldo de último recurso y el de un cliente en inglés
+        self.fallback_en: dict[str, dict[int, tuple[str, str]]] = {}
+
+    def es_name(self, kind: str, i: int) -> tuple[str | None, str]:
+        """(nombre esES, fuente) o (None, "")."""
+        if kind == "area":
+            return AREAS_ES.get(i), SOURCE_SENDA
+        if kind in ("zone", "map"):
+            return ZONES_ES.get(i), SOURCE_SENDA
+        if kind == "spell":
+            return SPELLS_ES.get(i), SOURCE_SENDA
+        if kind == "skill":
+            en = self._en.get(f"skill:{i}")
+            return PROFS_ES.get(en or ""), SOURCE_SENDA
+        return self._es(kind, i), SOURCE_POLESTAR
 
     def name(self, kind: str, ident: Any, fallback: str | None = None) -> str:
+        """Nombre escrito (esES si se conoce; si no, el inglés de Polestar)."""
         try:
             i = int(ident)
         except (TypeError, ValueError):
             return fallback or str(ident)
-        es: str | None = None
-        if kind == "area":
-            es = AREAS_ES.get(i)
-        elif kind in ("zone", "map"):
-            es = ZONES_ES.get(i)
-        elif kind == "spell":
-            es = SPELLS_ES.get(i)
-        elif kind == "skill":
-            en = self._en.get(f"skill:{i}")
-            es = PROFS_ES.get(en or "")
-        else:
-            es = self._es(kind, i)
+        es, _ = self.es_name(kind, i)
         if es:
             return es
         en = self._en.get(f"{kind}:{i}") or fallback
@@ -112,17 +136,48 @@ class Namer:
             self.missing.add(f"{kind}:{i} {en or '?'}")
         return en or f"{kind}:{i}"
 
-    def quest(self, ident: Any, fallback: str | None = None) -> str:
-        return "«" + self.name("quest", ident, fallback) + "»"
+    def token(self, kind: str, ident: Any, fallback: str | None = None) -> str:
+        """Ficha de Senda ({npc:467}) para el texto, guardando el nombre esES como respaldo. Sin ficha (área,
+        habilidad, objeto del mundo sin nombre esES, que el cliente no sabe nombrar) se escribe el nombre."""
+        sk = SENDA_TOKEN.get(kind)
+        if not self.tokens or not sk:
+            return self.name(kind, ident, fallback)
+        try:
+            i = int(ident)
+        except (TypeError, ValueError):
+            return self.name(kind, ident, fallback)
+        es, src = self.es_name(kind, i)
+        en = self._en.get(f"{kind}:{i}") or fallback
+        if en and not str(en).isdigit():
+            self.fallback_en.setdefault(sk, {})[i] = (str(en), SOURCE_POLESTAR_EN)
+        if not es:
+            if sk == "obj":
+                return self.name(kind, ident, fallback)
+            self.name(kind, ident, fallback)  # lo anota en `missing` para el informe
+        else:
+            self.fallback.setdefault(sk, {})[i] = (es, src)
+        return "{%s:%d}" % (sk, i)
 
-    def render(self, text: str) -> str:
-        """Sustituye los {kind:id} de un texto de Polestar por sus nombres."""
+    def quest(self, ident: Any, fallback: str | None = None) -> str:
+        return "«" + self.token("quest", ident, fallback) + "»"
+
+    def render(self, text: str, tokens: bool | None = None) -> str:
+        """Sustituye los {kind:id} de un texto de Polestar por fichas de Senda (o por nombres si tokens=False)."""
+        use = self.tokens if tokens is None else tokens
+
         def sub(m: re.Match) -> str:
             kind, i = m.group(1), m.group(2)
             if kind == "quest":
-                return self.quest(i)
-            return self.name(kind, i)
+                return "«" + (self.token(kind, i) if use else self.name(kind, i)) + "»"
+            return self.token(kind, i) if use else self.name(kind, i)
         return _TOKEN_RE.sub(sub, text)
+
+    def unrender(self, text: str) -> str:
+        """Fichas de Senda -> nombres (para informes legibles)."""
+        def sub(m: re.Match) -> str:
+            kind = _FROM_SENDA.get(m.group(1))
+            return self.name(kind, m.group(2)) if kind else m.group(0)
+        return _TOKEN_RE.sub(sub, text or "")
 
 
 def sentence(s: str) -> str:

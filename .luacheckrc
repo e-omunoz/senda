@@ -15,7 +15,7 @@ ignore = {
 }
 
 globals = {
-  "Senda", "SendaDB", "SendaRecorderDB",
+  "Senda", "SendaDB", "SendaRecorderDB", "SendaNamesDB",
   "SLASH_SENDA1", "SLASH_SENDA2", "SLASH_SENDA3", "SLASH_SENDAWAY1", "SLASH_SENDAWAY2",
   "SlashCmdList", "StaticPopupDialogs", "UISpecialFrames", "BINDING_HEADER_SENDA",
   "BINDING_NAME_SENDA_TOGGLE", "BINDING_NAME_SENDA_NEXT", "BINDING_NAME_SENDA_PREV",
@@ -102,7 +102,7 @@ read_globals = {
   "C_Spell", "C_SpellBook", "C_Item", "C_Container", "C_TradeSkillUI", "C_Professions", "C_MerchantFrame",
   "C_PetJournal", "C_ToyBox", "C_MountJournal", "C_ActionBar", "C_EquipmentSet", "C_PaperDollInfo",
   "C_Macro", "C_ChatInfo", "C_FriendList", "C_BattleNet", "C_LFGList", "C_Texture", "C_CurrencyInfo",
-  "C_Bank", "C_Tooltip", "C_TooltipInfo", "TooltipDataProcessor", "C_NewItems", "C_EncodingUtil",
+  "C_Bank", "C_Tooltip", "C_TooltipInfo", "Item", "TooltipDataProcessor", "C_NewItems", "C_EncodingUtil",
   "Enum", "Constants", "GetSpellInfo", "GetSpellLink", "GetSpellTexture", "IsSpellKnown",
   "IsPlayerSpell", "GetSpellCooldown", "GetSpellBookItemInfo", "GetNumSpellTabs", "GetSpellTabInfo",
   "GetItemInfo", "GetItemInfoInstant", "GetItemCount", "GetItemIcon", "GetItemQualityColor",

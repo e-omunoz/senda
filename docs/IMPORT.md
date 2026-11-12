@@ -38,13 +38,18 @@ Lo generado no se edita a mano: se vuelve a importar. Lo que haya que escribir a
    altura, camps de aparición). `tools/polestar/source.py` localiza el bloque `-- Source: <guía>.guide` y
    `tools/polestar/luaparse.py` lo lee con un **analizador de literales Lua propio**: tablas, cadenas, números y
    las referencias a locales del bloque (`candidateRecords[6]`, `candidateLists[1]`). No ejecuta Lua.
-2. **Nombres en español:** `addon/Polestar_esES/Names.lua` (`<id>\t<nombre>` por tipo: misión, PNJ, objeto,
-   objeto del mundo, ruta de vuelo). Las subzonas y algunos hechizos no están ahí (los pone el cliente): van en
-   una tabla propia (`tools/polestar/spanish.py`) solo con nombres comprobados; el resto se queda en inglés y
-   el informe los lista.
+2. **Nombres: fichas, no texto.** Los textos generados llevan fichas de Senda (`Coge «{quest:155}» de {npc:467}.`;
+   `{zone:N}` de Polestar pasa a `{map:N}`) y el addon pone el nombre del cliente al mostrarlos
+   ([ARCHITECTURE.md](ARCHITECTURE.md), «Nombres del juego»). Los nombres esES de Polestar
+   (`addon/Polestar_esES/Names.lua`) y los de la tabla propia (`tools/polestar/spanish.py`: subzonas, zonas y
+   algunos hechizos comprobados) se escriben solo como **respaldo** en `data/locale/esES/*.json` (fuentes
+   `polestar-esES` y `senda`, por debajo de `ingame:` de `/senda volcar`), y los ingleses de Polestar en
+   `data/locale/enUS/` (`polestar-enUS`, último recurso). `--no-names` no escribe el respaldo. Sin ficha quedan las
+   subzonas, las habilidades y los objetos del mundo sin nombre esES (el cliente no los nombra por id). Las
+   etiquetas de los puntos (`wps`), las notas internas y el informe usan nombres escritos.
 3. **Notas traducidas:** `guides/locales/esES/<guía>.lua` (`{ ["inglés"] = "español" }`). La nota del paso de
    Polestar pasa al `tip` del primer paso de Senda que genera; la del objetivo, al `tip` de su paso, o al final
-   del `text` cuando solo describe al PNJ («Coge «X» de Melithar Staghelm, junto al sendero.»). Lo que no tiene
+   del `text` cuando solo describe al PNJ («Coge «{quest:458}» de {npc:2077}, junto al sendero.»). Lo que no tiene
    traducción se queda en inglés con la marca `[EN]` y sale en el informe.
 4. **Un objetivo, un paso.** Cada paso de Polestar tiene ~2,6 objetivos; en Senda cada paso es una acción.
    Las cogidas y entregas seguidas en el mismo PNJ de un paso de Polestar se agrupan con `chain` (una sola

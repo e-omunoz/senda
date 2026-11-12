@@ -7,4 +7,6 @@
   <Script file="Options.lua"/>
   <Script file="DB.lua"/>
   <Script file="Slash.lua"/>
+  <Script file="Names.lua"/>
+  <Script file="NamesDump.lua"/>
 </Ui>

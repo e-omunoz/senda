@@ -196,7 +196,7 @@ function C.ExportText()
   if Senda.Engine and Senda.Engine.CurrentStep then
     local ok, step = pcall(Senda.Engine.CurrentStep, Senda.Engine)
     if ok and type(step) == "table" then
-      Ln(string.format("Paso actual de la guía: %s - %s", tostring(step.id or "?"), M.StripColors(step.text or "")))
+      Ln(string.format("Paso actual de la guía: %s - %s", tostring(step.id or "?"), M.StripColors(Senda.HUD and Senda.HUD:StepText(step) or step.text or "")))
     end
   end
   Ln("")

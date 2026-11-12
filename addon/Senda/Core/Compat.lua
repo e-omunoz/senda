@@ -106,6 +106,25 @@ function Compat.IsAddOnLoaded(name)
   return r and true or false
 end
 
+-- Nombres de los addons cargados (sin los de Blizzard), para la ventana de informe. Como mucho `max`.
+function Compat.LoadedAddons(max)
+  local out = {}
+  local ns = C_AddOns or _G
+  local count = Try(ns.GetNumAddOns or _G.GetNumAddOns)
+  local info = ns.GetAddOnInfo or _G.GetAddOnInfo
+  local loaded = ns.IsAddOnLoaded or _G.IsAddOnLoaded
+  if type(count) ~= "number" or not info or not loaded then return out end
+  for i = 1, count do
+    local name = Try(info, i)
+    if type(name) == "table" then name = name.name end
+    if type(name) == "string" and not name:find("^Blizzard_") and Try(loaded, i) then
+      out[#out + 1] = name
+      if #out >= (max or 40) then break end
+    end
+  end
+  return out
+end
+
 ------------------------------------------------------------------------------
 -- Misiones
 ------------------------------------------------------------------------------

@@ -1,11 +1,10 @@
-# Migrado de BrujoGnomoGuia 4.1.0 (Data.lua ns.TRAIN; ids de BrujoGnomoGuia.lua, Macros.lua, Bars.lua y Data.lua).
-# [[train]]: hechizos nuevos del instructor por nivel.
-#   spells       ids (rango que se aprende a ese nivel; ids de Classic).
-#   names        nombres en el cliente esES, en el mismo orden que la fuente.
-#   ids_added    ids que NO venían en la fuente: los puso la migración a partir de Classic (verificar en Forever).
-#   no_id        nombres de la fuente sin id conocido (nuevos o dudosos en Forever).
-# [[alias]]: nombres alternativos del cliente esES por si el id de Classic no existe en Forever
-#   (BrujoGnomoGuia.lua, SPELL_NAMES: se usaba el primero que estuviera en el libro de hechizos).
+# [[train]]: lo que enseña el instructor de brujo en Forever, para un gnomo (docs/TRAINER.md).
+#   Los que llevan sources = ["trainer:..."] los genera tools/gen_trainer.py --rewrite (no editar a mano: cambia
+#   data/knowledge/trainer/policy.json y regenera). Uno por nivel con todo lo que la build necesita (hechizos nuevos
+#   y subidas de rango) y uno aparte por cada hechizo opcional (optional = true: no cuenta como pendiente).
+#   names   nombres del cliente esES, en el orden de spells; cost = suma en cobre.
+#   Los demás [[train]] son a mano: invocaciones de misión (quest), habilidades de demonio (pet), talentos.
+# [[alias]]: nombres alternativos del cliente esES (BrujoGnomoGuia.lua, SPELL_NAMES).
 # [ids]: listas de ids que usaba la lógica del addon antiguo.
 id = "warlock-spells"
 class = "WARLOCK"
@@ -14,163 +13,858 @@ title = "Hechizos del instructor de brujo"
 levels = [1, 60]
 order = 80
 status = "unverified"
-sources = ["legacy:BrujoGnomoGuia 4.1.0"]
-note = "Los ids son de Classic (rango 1 o el rango que se aprende a ese nivel). Forever puede usar otros ids: el addon antiguo comprobaba también por nombre."
+sources = ["polestar:19bd636e/addon/Polestar/QoL/ClassSpells.lua", "ingame-client:1.60.1.70888", "legacy:BrujoGnomoGuia 4.1.0"]
+checked = "2026-11-12"
+note = "Niveles, ids y costes: listas del instructor de Forever (TrinityCore forever, vía Polestar); nombres del cliente esES. Las invocaciones llegan con misiones."
 
 [[train]]
 level = 1
 names = ["Inmolar"]
 spells = [348]
-note = "Al empezar ya conoces Descarga de las Sombras (686) y Piel de demonio (687); el Diablillo (688) se aprende con la misión de nivel 1."
+cost = 10
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Al empezar ya conoces Descarga de las Sombras y Piel de demonio; el Diablillo se aprende con la misión de nivel 1."
 
 [[train]]
 level = 4
-names = ["Corrupción", "Maldición de debilidad"]
-spells = [172, 702]
-ids_added = [702]
+names = ["Corrupción"]
+spells = [172]
+cost = 100
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 4
+names = ["Maldición de debilidad"]
+spells = [702]
+cost = 100
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: Agonía es tu maldición, y Debilidad no se acumula con ella; solo resta un poco de daño cuerpo a cuerpo."
 
 [[train]]
 level = 6
-names = ["Transfusión de vida"]
-spells = [1454]
+names = ["Descarga de las Sombras (rango 2)", "Transfusión de vida"]
+spells = [695, 1454]
+cost = 200
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 8
 names = ["Terror de agonía", "Miedo"]
 spells = [980, 5782]
-note = "«Terror de agonía» es el nombre que daba la fuente con «(?)»; alias posibles: Maldición de agonía, Agonía."
-status = "unverified"
+cost = 400
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 10
-names = ["Drenar alma", "Crear piedra de salud", "Piel de demonio (rango 2)", "Inmolar (rango 2)"]
-spells = [1120, 6201, 696, 707]
-ids_added = [707]
-note = "Invocar a abisario (697) llega con la misión de nivel 10."
+names = ["Piel de demonio (rango 2)", "Inmolar (rango 2)", "Drenar alma", "Crear piedra de salud"]
+spells = [696, 707, 1120, 6201]
+cost = 1200
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 12
-names = ["Cauce de salud"]
-spells = [755]
-ids_added = [755]
+names = ["Descarga de las Sombras (rango 3)", "Cauce de salud"]
+spells = [705, 755]
+cost = 1200
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 12
+names = ["Maldición de debilidad (rango 2)"]
+spells = [1108]
+cost = 600
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: Agonía es tu maldición, y Debilidad no se acumula con ella; solo resta un poco de daño cuerpo a cuerpo."
 
 [[train]]
 level = 14
-names = ["Maldición de temeridad", "Drenar vida"]
-spells = [704, 689]
-ids_added = [704]
+names = ["Drenar vida", "Corrupción (rango 2)"]
+spells = [689, 6222]
+cost = 1800
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 14
+names = ["Maldición de Temeridad"]
+spells = [704]
+cost = 900
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: quita el miedo al enemigo y le sube el ataque; no sirve para subir de nivel."
+
+[[train]]
+level = 16
+names = ["Transfusión de vida (rango 2)"]
+spells = [1455]
+cost = 1200
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Visto en el juego (Demisette Cloyce, 11-nov-2026): Fuerza inmortal por 16 platas, junto a Transfusión de vida (rango 2); la lista capturada del instructor da 12 platas por cada uno."
 
 [[train]]
 level = 16
 names = ["Fuerza inmortal"]
-spells = []
-no_id = ["Fuerza inmortal"]
-cost = 1600
-status = "verified"
-sources = ["ingame:2026-11-11 instructor Demisette Cloyce (captura del jugador)"]
-checked = "2026-11-11"
-note = "Confirmado en el juego: Demisette Cloyce la enseña al 16 por 16 platas, junto a Transfusión de vida (rango 2). Es el hechizo de respirar bajo el agua (el equivalente de Aliento inagotable de Classic, id 5697 sin confirmar en Forever). Opcional: solo hace falta para misiones bajo el agua; no la cuentes como pendiente."
+spells = [5697]
+cost = 1200
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: respirar bajo el agua; solo hace falta para misiones bajo el agua, no la cuentes como pendiente."
 
 [[train]]
 level = 18
-names = ["Crear piedra de alma"]
-spells = [693]
+names = ["Crear piedra de alma", "Terror de agonía (rango 2)"]
+spells = [693, 1014]
+cost = 3000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 18
 names = ["Dolor abrasador"]
 spells = [5676]
-ids_added = [5676]
+cost = 1500
 optional = true
-note = "Opcional: la build es de Aflicción (daño de Sombras con maldiciones y Corrupción, y varita), y Dolor abrasador es de Fuego, gasta mucho maná y genera mucha amenaza, así que le quita el enemigo al Abisario. Solo sirve para rematar a un enemigo que huye. Ahorra el dinero."
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: es de Fuego (la build pega con Sombras), gasta mucho maná y le quita el enemigo al Abisario."
 
 [[train]]
 level = 20
-names = ["Maldición de los elementos", "Armadura demoníaca", "Ritual de invocación", "Lluvia de fuego"]
-spells = [1490, 706, 698, 5740]
-ids_added = [5740]
-note = "Maldición de los elementos al 20 es un cambio de Forever (en Classic, al 32)."
+names = ["Ritual de invocación", "Armadura demoníaca", "Descarga de las Sombras (rango 4)", "Inmolar (rango 3)", "Cauce de salud (rango 2)"]
+spells = [698, 706, 1088, 1094, 3698]
+cost = 10000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 20
+names = ["Lluvia de Fuego"]
+spells = [5740]
+cost = 2000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: área de Fuego para grupos; a solas con el Abisario no compensa el maná."
+
+[[train]]
+level = 20
+names = ["Maldición de los Elementos"]
+spells = [440892]
+cost = 2000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo en grupo con un mago de Fuego o Escarcha, en élites; Agonía es tu maldición."
 
 [[train]]
 level = 22
-names = ["Ojo de Kilrogg"]
-spells = [126]
+names = ["Ojo de Kilrogg", "Drenar vida (rango 2)", "Crear piedra de salud (rango 2)"]
+spells = [126, 699, 6202]
+cost = 7500
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 22
+names = ["Maldición de debilidad (rango 3)"]
+spells = [6205]
+cost = 2500
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: Agonía es tu maldición, y Debilidad no se acumula con ella; solo resta un poco de daño cuerpo a cuerpo."
 
 [[train]]
 level = 24
-names = ["Drenar maná", "Captar demonios"]
-spells = [5138, 5500]
-ids_added = [5138, 5500]
+names = ["Corrupción (rango 3)", "Drenar alma (rango 2)"]
+spells = [6223, 8288]
+cost = 6000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 24
+names = ["Drenar maná"]
+spells = [5138]
+cost = 3000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo sirve contra enemigos con maná; tu maná sale de Transfusión de vida."
+
+[[train]]
+level = 24
+names = ["Captar demonios"]
+spells = [5500]
+cost = 3000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: marca los demonios en el minimapa; no hace falta para subir."
+
+[[train]]
+level = 24
+names = ["Quemadura de las Sombras (rango 2)"]
+spells = [18867]
+cost = 150
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Quemadura de las Sombras», que esta build no coge."
 
 [[train]]
 level = 26
-names = ["Maldición de la lengua", "Detectar invisibilidad"]
-spells = [1714, 132]
-ids_added = [132]
-note = "En Classic es «Detectar invisibilidad inferior» (132)."
+names = ["Transfusión de vida (rango 3)", "Maldición de la lengua"]
+spells = [1456, 1714]
+cost = 8000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 26
+names = ["Detectar invisibilidad"]
+spells = [132]
+cost = 4000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo para ver enemigos invisibles en alguna mazmorra."
+
+[[train]]
+level = 26
+names = ["Dolor abrasador (rango 2)"]
+spells = [17919]
+cost = 4000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: es de Fuego (la build pega con Sombras), gasta mucho maná y le quita el enemigo al Abisario."
 
 [[train]]
 level = 28
-names = ["Desterrar", "Crear pirorroca"]
-spells = [710, 6366]
+names = ["Desterrar", "Descarga de las Sombras (rango 5)", "Cauce de salud (rango 3)", "Terror de agonía (rango 3)"]
+spells = [710, 1106, 3699, 6217]
+cost = 20000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 28
+names = ["Crear piedra de fuego"]
+spells = [6366]
+cost = 5000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: la piedra de fuego sube el daño de Fuego, y la build pega con Sombras."
+
+[[train]]
+level = 28
+names = ["Maldición de Temeridad (rango 2)"]
+spells = [7658]
+cost = 5000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: quita el miedo al enemigo y le sube el ataque; no sirve para subir de nivel."
 
 [[train]]
 level = 30
-names = ["Subyugar demonio", "Piroinferno"]
-spells = [1098, 1949]
-ids_added = [1098, 1949]
-note = "Invocar a manáfago (691) llega con la cadena de nivel 30."
+names = ["Drenar vida (rango 3)", "Armadura demoníaca (rango 2)", "Inmolar (rango 4)", "Crear piedra de alma (rango 2)"]
+spells = [709, 1086, 2941, 20752]
+cost = 24000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 30
+names = ["Subyugar demonio"]
+spells = [1098]
+cost = 6000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: para controlar un demonio enemigo; a solas no hace falta."
+
+[[train]]
+level = 30
+names = ["Piroinferno"]
+spells = [1949]
+cost = 6000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: área de Fuego a tu alrededor que también te quema; para grupos."
+
+[[train]]
+level = 30
+names = ["Maldición de los Elementos (rango 2)"]
+spells = [1311676]
+cost = 6000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo en grupo con un mago de Fuego o Escarcha, en élites; Agonía es tu maldición."
+
+[[train]]
+level = 32
+names = ["Miedo (rango 2)"]
+spells = [6213]
+cost = 7000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 32
 names = ["Custodia de las Sombras"]
 spells = [6229]
-ids_added = [6229]
+cost = 7000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: absorbe daño de Sombras; solo contra enemigos concretos."
+
+[[train]]
+level = 32
+names = ["Maldición de debilidad (rango 4)"]
+spells = [7646]
+cost = 7000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: Agonía es tu maldición, y Debilidad no se acumula con ella; solo resta un poco de daño cuerpo a cuerpo."
+
+[[train]]
+level = 32
+names = ["Quemadura de las Sombras (rango 3)"]
+spells = [18868]
+cost = 350
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Quemadura de las Sombras», que esta build no coge."
+
+[[train]]
+level = 32
+names = ["Conflagrar (rango 2)"]
+spells = [1293818]
+cost = 300
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Conflagrar», que esta build no coge."
+
+[[train]]
+level = 34
+names = ["Crear piedra de salud (rango 3)", "Corrupción (rango 4)"]
+spells = [5699, 7648]
+cost = 16000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 34
+names = ["Lluvia de Fuego (rango 2)"]
+spells = [6219]
+cost = 8000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: área de Fuego para grupos; a solas con el Abisario no compensa el maná."
+
+[[train]]
+level = 34
+names = ["Drenar maná (rango 2)"]
+spells = [6226]
+cost = 8000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo sirve contra enemigos con maná; tu maná sale de Transfusión de vida."
+
+[[train]]
+level = 34
+names = ["Dolor abrasador (rango 3)"]
+spells = [17920]
+cost = 8000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: es de Fuego (la build pega con Sombras), gasta mucho maná y le quita el enemigo al Abisario."
+
+[[train]]
+level = 36
+names = ["Cauce de salud (rango 4)", "Descarga de las Sombras (rango 6)", "Transfusión de vida (rango 4)"]
+spells = [3700, 7641, 11687]
+cost = 27000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 36
 names = ["Crear piedra de hechizos"]
 spells = [2362]
-note = "En Forever es un imbuido de arma que aumenta el daño de Sombras y se acumula con el Aceite de zahorí."
+cost = 9000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: imbuido de arma que sube el daño de Sombras; caro y la build no lo necesita."
+
+[[train]]
+level = 36
+names = ["Crear pirorroca (rango 2)"]
+spells = [17951]
+cost = 9000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: la piedra de fuego sube el daño de Fuego, y la build pega con Sombras."
+
+[[train]]
+level = 38
+names = ["Drenar vida (rango 4)", "Drenar alma (rango 3)", "Terror de agonía (rango 4)", "Succionar vida (rango 2)"]
+spells = [7651, 8289, 11711, 18879]
+cost = 31000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 38
+names = ["Detectar invisibilidad (rango 2)"]
+spells = [2970]
+cost = 10000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo para ver enemigos invisibles en alguna mazmorra."
 
 [[train]]
 level = 40
-names = ["Aullido de terror"]
-spells = [5484]
-note = "Invocar a corcel nefasto (5784) llega con la misión gratuita de Strahad Farsan."
+names = ["Aullido de terror", "Inmolar (rango 5)", "Armadura demoníaca (rango 3)", "Crear piedra de alma (rango 3)"]
+spells = [5484, 11665, 11733, 20755]
+cost = 44000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 40
+names = ["Conflagrar (rango 3)"]
+spells = [17962]
+cost = 500
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Conflagrar», que esta build no coge."
+
+[[train]]
+level = 40
+names = ["Quemadura de las Sombras (rango 4)"]
+spells = [18869]
+cost = 550
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Quemadura de las Sombras», que esta build no coge."
+
+[[train]]
+level = 40
+names = ["Maldición de los Elementos (rango 3)"]
+spells = [1311677]
+cost = 11000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo en grupo con un mago de Fuego o Escarcha, en élites; Agonía es tu maldición."
 
 [[train]]
 level = 42
 names = ["Espiral mortal"]
 spells = [6789]
+cost = 11000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 42
+names = ["Maldición de Temeridad (rango 3)"]
+spells = [7659]
+cost = 11000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: quita el miedo al enemigo y le sube el ataque; no sirve para subir de nivel."
+
+[[train]]
+level = 42
+names = ["Piroinferno (rango 2)"]
+spells = [11683]
+cost = 11000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: área de Fuego a tu alrededor que también te quema; para grupos."
+
+[[train]]
+level = 42
+names = ["Maldición de debilidad (rango 5)"]
+spells = [11707]
+cost = 11000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: Agonía es tu maldición, y Debilidad no se acumula con ella; solo resta un poco de daño cuerpo a cuerpo."
+
+[[train]]
+level = 42
+names = ["Custodia de las Sombras (rango 2)"]
+spells = [11739]
+cost = 11000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: absorbe daño de Sombras; solo contra enemigos concretos."
+
+[[train]]
+level = 42
+names = ["Dolor abrasador (rango 4)"]
+spells = [17921]
+cost = 11000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: es de Fuego (la build pega con Sombras), gasta mucho maná y le quita el enemigo al Abisario."
+
+[[train]]
+level = 44
+names = ["Descarga de las Sombras (rango 7)", "Corrupción (rango 5)", "Cauce de salud (rango 5)"]
+spells = [11659, 11671, 11693]
+cost = 36000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 44
+names = ["Drenar maná (rango 3)"]
+spells = [11703]
+cost = 12000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo sirve contra enemigos con maná; tu maná sale de Transfusión de vida."
+
+[[train]]
+level = 44
+names = ["Subyugar demonio (rango 2)"]
+spells = [11725]
+cost = 12000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: para controlar un demonio enemigo; a solas no hace falta."
+
+[[train]]
+level = 46
+names = ["Transfusión de vida (rango 5)", "Drenar vida (rango 5)", "Crear piedra de salud (rango 4)"]
+spells = [11688, 11699, 11729]
+cost = 39000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 46
+names = ["Lluvia de Fuego (rango 3)"]
+spells = [11677]
+cost = 13000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: área de Fuego para grupos; a solas con el Abisario no compensa el maná."
+
+[[train]]
+level = 46
+names = ["Crear piedra de fuego (rango 3)"]
+spells = [17952]
+cost = 13000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: la piedra de fuego sube el daño de Fuego, y la build pega con Sombras."
+
+[[train]]
+level = 48
+names = ["Terror de agonía (rango 5)", "Desterrar (rango 2)", "Succionar vida (rango 3)"]
+spells = [11712, 18647, 18880]
+cost = 29400
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
 [[train]]
 level = 48
 names = ["Fuego de alma"]
 spells = [6353]
-ids_added = [6353]
+cost = 14000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: Fuego, lento y gasta un fragmento de alma en cada lanzamiento."
+
+[[train]]
+level = 48
+names = ["Crear piedra de hechizo (rango 2)"]
+spells = [17727]
+cost = 14000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: imbuido de arma que sube el daño de Sombras; caro y la build no lo necesita."
+
+[[train]]
+level = 48
+names = ["Quemadura de las Sombras (rango 5)"]
+spells = [18870]
+cost = 700
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Quemadura de las Sombras», que esta build no coge."
+
+[[train]]
+level = 48
+names = ["Conflagrar (rango 4)"]
+spells = [18930]
+cost = 700
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Conflagrar», que esta build no coge."
 
 [[train]]
 level = 50
-names = ["Inferno (misión)"]
-spells = [1122]
+names = ["Inmolar (rango 6)", "Maldición de la lengua (rango 2)", "Armadura demoníaca (rango 4)", "Espiral mortal (rango 2)", "Crear piedra de alma (rango 4)"]
+spells = [11667, 11719, 11734, 17925, 20756]
+cost = 75000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 50
+names = ["Detectar invisibilidad (rango 3)"]
+spells = [11743]
+cost = 15000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo para ver enemigos invisibles en alguna mazmorra."
+
+[[train]]
+level = 50
+names = ["Dolor abrasador (rango 5)"]
+spells = [17922]
+cost = 15000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: es de Fuego (la build pega con Sombras), gasta mucho maná y le quita el enemigo al Abisario."
+
+[[train]]
+level = 50
+names = ["Incinerar (rango 2)"]
+spells = [1293812]
+cost = 900
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Incinerar», que esta build no coge."
+
+[[train]]
+level = 50
+names = ["Maldición de los Elementos (rango 4)"]
+spells = [1311680]
+cost = 15000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo en grupo con un mago de Fuego o Escarcha, en élites; Agonía es tu maldición."
+
+[[train]]
+level = 52
+names = ["Descarga de las Sombras (rango 8)", "Drenar alma (rango 4)", "Cauce de salud (rango 6)"]
+spells = [11660, 11675, 11694]
+cost = 54000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 52
+names = ["Maldición de debilidad (rango 6)"]
+spells = [11708]
+cost = 18000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: Agonía es tu maldición, y Debilidad no se acumula con ella; solo resta un poco de daño cuerpo a cuerpo."
+
+[[train]]
+level = 52
+names = ["Custodia de las Sombras (rango 3)"]
+spells = [11740]
+cost = 18000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: absorbe daño de Sombras; solo contra enemigos concretos."
+
+[[train]]
+level = 54
+names = ["Corrupción (rango 6)", "Drenar vida (rango 6)", "Aullido de terror (rango 2)"]
+spells = [11672, 11700, 17928]
+cost = 60000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 54
+names = ["Piroinferno (rango 3)"]
+spells = [11684]
+cost = 20000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: área de Fuego a tu alrededor que también te quema; para grupos."
+
+[[train]]
+level = 54
+names = ["Drenar maná (rango 4)"]
+spells = [11704]
+cost = 20000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo sirve contra enemigos con maná; tu maná sale de Transfusión de vida."
+
+[[train]]
+level = 54
+names = ["Conflagrar (rango 5)"]
+spells = [18931]
+cost = 1000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Conflagrar», que esta build no coge."
+
+[[train]]
+level = 56
+names = ["Miedo (rango 3)", "Transfusión de vida (rango 6)"]
+spells = [6215, 11689]
+cost = 44000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 56
+names = ["Maldición de Temeridad (rango 4)"]
+spells = [11717]
+cost = 22000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: quita el miedo al enemigo y le sube el ataque; no sirve para subir de nivel."
+
+[[train]]
+level = 56
+names = ["Fuego de alma (rango 2)"]
+spells = [17924]
+cost = 22000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: Fuego, lento y gasta un fragmento de alma en cada lanzamiento."
+
+[[train]]
+level = 56
+names = ["Crear piedra de fuego (rango 4)"]
+spells = [17953]
+cost = 22000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: la piedra de fuego sube el daño de Fuego, y la build pega con Sombras."
+
+[[train]]
+level = 56
+names = ["Quemadura de las Sombras (rango 6)"]
+spells = [18871]
+cost = 1100
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Quemadura de las Sombras», que esta build no coge."
+
+[[train]]
+level = 58
+names = ["Terror de agonía (rango 6)", "Crear piedra de salud (rango 5)", "Espiral mortal (rango 3)", "Succionar vida (rango 4)"]
+spells = [11713, 11730, 17926, 18881]
+cost = 74400
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+
+[[train]]
+level = 58
+names = ["Lluvia de Fuego (rango 4)"]
+spells = [11678]
+cost = 24000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: área de Fuego para grupos; a solas con el Abisario no compensa el maná."
+
+[[train]]
+level = 58
+names = ["Subyugar demonio (rango 3)"]
+spells = [11726]
+cost = 24000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: para controlar un demonio enemigo; a solas no hace falta."
+
+[[train]]
+level = 58
+names = ["Dolor abrasador (rango 6)"]
+spells = [17923]
+cost = 24000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: es de Fuego (la build pega con Sombras), gasta mucho maná y le quita el enemigo al Abisario."
 
 [[train]]
 level = 60
-names = ["Terror de fatalidad", "Ritual de condena"]
-spells = [603, 18540]
-ids_added = [603]
-note = "«Terror de fatalidad» es Curse of Doom (603). Corcel de la muerte (23161) llega con la cadena de Jubahl Corpseseeker."
+names = ["Descarga de las Sombras (rango 9)", "Inmolar (rango 7)", "Cauce de salud (rango 7)", "Armadura demoníaca (rango 5)", "Crear piedra de alma (rango 5)"]
+spells = [11661, 11668, 11695, 11735, 20757]
+cost = 130000
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
 
-# Hechizos de demonio y de misión que referenciaba la fuente
+[[train]]
+level = 60
+names = ["Terror de fatalidad"]
+spells = [603]
+cost = 26000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: maldición de un minuto para élites; mientras subes, Agonía rinde más."
+
+[[train]]
+level = 60
+names = ["Crear piedra de hechizo (rango 3)"]
+spells = [17728]
+cost = 26000
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: imbuido de arma que sube el daño de Sombras; caro y la build no lo necesita."
+
+[[train]]
+level = 60
+names = ["Conflagrar (rango 6)"]
+spells = [18932]
+cost = 1300
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Conflagrar», que esta build no coge."
+
+[[train]]
+level = 60
+names = ["Incinerar (rango 3)"]
+spells = [1293813]
+cost = 1100
+optional = true
+sources = ["trainer:polestar-19bd636e", "ingame-client:1.60.1.70888"]
+note = "Opcional: solo con el talento «Incinerar», que esta build no coge."
+
+# Invocaciones de misión (no las vende el instructor)
+[[train]]
+level = 1
+names = ["Invocar a diablillo"]
+spells = [688]
+quest = true
+
 [[train]]
 level = 10
+names = ["Invocar a abisario"]
+spells = [697]
+quest = true
+
+[[train]]
+level = 20
+names = ["Invocar a súcubo"]
+spells = [712]
+quest = true
+
+[[train]]
+level = 30
+names = ["Invocar a manáfago"]
+spells = [691]
+quest = true
+
+[[train]]
+level = 40
+names = ["Invocar a corcel nefasto"]
+spells = [5784]
+quest = true
+note = "Misión gratuita de Strahad Farsan."
+
+[[train]]
+level = 50
+names = ["Inferno"]
+spells = [1122]
+quest = true
+
+[[train]]
+level = 60
+names = ["Invocar a corcel de la muerte"]
+spells = [23161]
+quest = true
+note = "Cadena de Jubahl Corpseseeker."
+
+[[train]]
+level = 60
+names = ["Ritual de condena"]
+spells = [18540]
+optional = true
+note = "Opcional: no lo vende el instructor (en Classic era un libro); invoca un demonio para grupos de cinco."
+
+[[train]]
+level = 16
 names = ["Sacrificio (Abisario)"]
 spells = [7812]
 pet = true
 
 [[train]]
-level = 30
+level = 36
 names = ["Bloqueo de hechizo (Manáfago)"]
 spells = [19244]
 pet = true
@@ -180,6 +874,7 @@ level = 36
 names = ["Succionar vida (talento)"]
 spells = [18265]
 talent = true
+note = "Talento de Aflicción que la build coge al 36; sus rangos 2 a 4 sí los vende el instructor (38, 48 y 58)."
 
 [[alias]]
 spell = 5019
