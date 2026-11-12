@@ -10,6 +10,13 @@ instalar nada con `pip`. Funciona igual en Windows y en Linux (CI). Los archivos
 | `build.py` | Compila `data/` a `addon/Senda/Guides` y `addon/Senda/Knowledge`; estampa la versión en el `.toc` |
 | `package.py` | Crea `dist/Senda-<versión>.zip`, extrae notas del CHANGELOG e instala en modo desarrollo |
 | `dev.ps1` / `dev.sh` | Atajos para todo lo anterior |
+| `questiedb/` | Lector de la QuestieDB instalada en local (solo verificar; «all rights reserved») |
+| `foreverdb/` | Adaptador de forever-db (datos abiertos de Polestar, GPL-3) con la misma interfaz, y el selector de fuente |
+| `fetch_foreverdb.py` | Descarga y comprueba la forever-db fijada en `foreverdb/PIN` |
+| `enrich.py` / `verify.py` / `lookup.py` | Rellenan, comprueban y consultan datos de misiones con QuestieDB o forever-db |
+| `import_polestar.py` (+ `polestar/`) | Importa una guía compilada de Polestar a `data/guides/<id>/` (pasos `unverified`, guía solo a mano); ver `docs/IMPORT.md` |
+| `route_score.py` (+ `routescore/`) | Filtro de eficiencia: puntúa cada misión de una ruta (`data/scores/`) |
+| `gen_travel.py` / `gen_dungeons.py` / `gen_rares.py` / `gen_lookup.py` | Generan `data/travel/`, `data/dungeons/`, `data/rares/` y `data/lookup/` desde Polestar, forever-db y tablas del cliente (ver `docs/TRAVEL.md`, `DUNGEONS.md`, `RARES.md`, `LOOKUP.md`) |
 
 ## Atajos
 
@@ -150,9 +157,56 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 ## enrich.py
 
-Añade a los datos hechos del juego que el cliente no puede consultar. Hoy rellena `reqlevel` (nivel mínimo para coger la misión) en los pasos `accept`, leyendo la QuestieDB local. Ejecútalo después de añadir o cambiar rutas:
+Añade a los datos hechos del juego que el cliente no puede consultar. Hoy rellena `reqlevel` (nivel mínimo para coger la misión) en los pasos `accept`, y `reqskill` (profesión requerida), leyendo la QuestieDB local o, si no está, forever-db (ver abajo). Ejecútalo después de añadir o cambiar rutas:
 
 ```bash
 python tools/enrich.py           # aplica
 python tools/enrich.py --check   # solo comprueba
 ```
+
+Con forever-db no se toca `reqskill` (no tiene ese dato) y algún `reqlevel` puede diferir de QuestieDB
+(en la 2026.11.1, 6 pasos): el valor que cuenta es el de QuestieDB, así que aplica los cambios solo con ella.
+
+## Datos de misiones: QuestieDB y forever-db
+
+`enrich.py`, `verify.py` y `lookup.py` leen una de dos fuentes con la misma interfaz (`QuestDB`):
+
+| | QuestieDB (`questiedb/`) | forever-db (`foreverdb/`) |
+|---|---|---|
+| Licencia | Todos los derechos reservados: solo en local | GPL-3.0 (tablas) y CC BY 4.0 (su capa propia) |
+| Dónde | La instalada en el juego (`--questiedb`, `SENDA_QUESTIEDB`) | `.cache/foreverdb` (`--foreverdb`, `SENDA_FOREVERDB`), descargada por `fetch_foreverdb.py` |
+| Tiene | Todo lo que usan las herramientas | Nivel mínimo, prerrequisitos y «breadcrumbs», quién da y recoge, objetivos, apariciones, XP, recompensas, botín |
+| No tiene | | `exclusiveTo`, `requiredSkill`, `npcFlags` (rol del PNJ), vendedores, rutas de patrulla, nombres de zona |
+
+`--db auto` (por defecto, o `SENDA_DB`) usa QuestieDB si está instalada, igual que antes, y si no forever-db
+(así funciona en CI). `--db questiedb` o `--db foreverdb` fuerzan una. Lo que falta en forever-db sale como
+`None`: `verify.py` da «unknown» en el rol del PNJ y `enrich.py` deja `reqskill` como esté. QuestieDB sigue
+siendo la fuente local de esos datos, que guardamos como hechos en los TOML (`reqlevel`, `reqskill`).
+
+```bash
+python tools/fetch_foreverdb.py                 # descarga la versión de foreverdb/PIN (no hace nada si ya está)
+python tools/fetch_foreverdb.py --check         # comprueba los sha256 de .cache/foreverdb
+python tools/fetch_foreverdb.py --latest        # versión fijada y última publicada
+python tools/fetch_foreverdb.py --from RUTA     # copia una carpeta forever-db/ (o su .zip) local
+python tools/foreverdb                          # resumen: 3 misiones y 3 PNJ con coordenadas convertidas
+python tools/lookup.py --db foreverdb npc 234   # cualquier consulta de lookup con forever-db
+python tools/verify.py --db foreverdb --no-report
+```
+
+`fetch_foreverdb.py` baja `forever-db-<versión>.zip` de la release `data-v<versión>` de `fitzforge/polestar`,
+comprueba su sha256 contra `SHA256SUMS` y el de cada tabla contra `datapackage.json`, y lo extrae en
+`.cache/foreverdb` (ignorada por git). Sin red no falla: avisa y sigue con la copia que haya.
+
+**Coordenadas.** forever-db guarda las apariciones en yardas de mundo (x norte, y oeste) sobre el mapa del
+cliente, y `ui_map` da los bordes de cada mapa en yardas: `x% = (y - left) / (right - left) * 100`,
+`y% = (x - top) / (bottom - top) * 100` (como `LibForeverData.ToUiMap` de Polestar). Los marcos de zona se
+solapan en los bordes; el adaptador elige ciudad > zona donde el punto queda más centrado > continente
+(coincide con la zona de QuestieDB en el 88% de los PNJ) y guarda el punto también en los demás marcos
+(`altSpawns`), así que `verify.py` acepta una coordenada en la zona vecina. Contra QuestieDB, la distancia
+mediana es 0,01 puntos de mapa (p90 0,13); Gryan Stoutmantle (234) sale en 56,33, 47,53 (QuestieDB y la guía:
+56,33, 47,52). Las apariciones en mazmorras no tienen marco: quedan solo en `world`.
+
+**Versiones.** `.github/workflows/foreverdb.yml` mira cada semana si hay una `data-v*` más nueva que la de
+`PIN` y abre una incidencia con su CHANGELOG (no cambia nada). Para subir: lee el CHANGELOG, cambia `version`
+en `foreverdb/PIN`, ejecuta `fetch_foreverdb.py` y `verify.py --db foreverdb`, actualiza `THIRD_PARTY.md` y
+commitea. El workflow del harness descarga la versión fijada antes de ejecutarse.

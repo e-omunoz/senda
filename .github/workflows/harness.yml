@@ -71,6 +71,17 @@ jobs:
       - name: Dependencias
         run: pip install -r harness/requirements.txt
 
+      # Datos abiertos de misiones (forever-db, GPL-3) para tools/verify.py y tools/lookup.py: QuestieDB no
+      # está en CI. Versión fijada en tools/foreverdb/PIN; si no se puede descargar, el harness sigue sin ella.
+      - name: Caché de forever-db
+        uses: actions/cache@v4
+        with:
+          path: .cache/foreverdb
+          key: foreverdb-${{ hashFiles('tools/foreverdb/PIN') }}
+
+      - name: forever-db
+        run: python tools/fetch_foreverdb.py || echo "::warning::No se pudo preparar forever-db; verify.py y lookup.py no tendrán datos."
+
       - name: Tests del harness (sin red ni API)
         run: python -m unittest discover -s harness/tests -t . -v
 

@@ -20,6 +20,7 @@
     },
     "levels": { "type": "array", "items": { "type": "integer", "minimum": 1, "maximum": 60 }, "minItems": 2, "maxItems": 2 },
     "order": { "type": "integer" },
+    "ship": { "type": "boolean", "description": "false: la guía se queda en data/ y no se compila en el addon" },
     "icon": { "type": ["string", "integer"] },
     "link": { "type": "string" },
     "author": { "type": "string" },

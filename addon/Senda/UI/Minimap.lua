@@ -1,10 +1,37 @@
 -- Botón del minimapa (arrastrable alrededor del minimapa, sin LibDBIcon).
--- Clic: panel. Clic derecho: HUD. Mayús+clic: flecha.
+-- Clic: panel. Clic derecho: menú (panel, HUD, flecha, ocultar todo). Mayús+clic: flecha.
+-- Ctrl+clic: ocultar / mostrar todo (HUD y flecha).
 local _, Senda = ...
 local Events = Senda.Events
 local L = Senda.L
 
-local button
+local button, menu
+
+-- Menú del clic derecho: un desplegable invisible anclado al botón (reutiliza UI:Dropdown).
+local function ShowMenu()
+  if not button then return end
+  if not menu then
+    menu = Senda.UI:Dropdown(UIParent, 170, function()
+      local hidden = Senda.db and Senda.db.hideAll
+      return {
+        { value = "panel", text = L.MENU_PANEL },
+        { value = "hud", text = L.MENU_HUD .. ": " .. (Senda.Options:Get("hud") and "|cff59d966ON|r" or "|cfff24d4dOFF|r") },
+        { value = "arrow", text = L.MENU_ARROW .. ": " .. (Senda.Options:Get("arrow") and "|cff59d966ON|r" or "|cfff24d4dOFF|r") },
+        { value = "hide", text = hidden and L.MENU_SHOW_ALL or L.MENU_HIDE_ALL },
+      }
+    end, function(value)
+      if value == "panel" then Senda.UI:TogglePanel()
+      elseif value == "hud" then Senda.HUD:Toggle()
+      elseif value == "arrow" then Senda.Options:Set("arrow", not Senda.Options:Get("arrow"))
+      elseif value == "hide" then Senda.Visibility:Toggle() end
+    end)
+    menu:SetAlpha(0)
+    menu:EnableMouse(false)
+  end
+  menu:ClearAllPoints()
+  menu:SetPoint("TOPRIGHT", button, "BOTTOMLEFT", 0, 0)
+  menu:Click("LeftButton")
+end
 
 local function Place()
   if not button or not Minimap then return end
@@ -43,9 +70,11 @@ local function Create()
 
   b:SetScript("OnClick", function(_, btn)
     if btn == "RightButton" then
-      Senda.HUD:Toggle()
+      ShowMenu()
     elseif IsShiftKeyDown() then
       Senda.Options:Set("arrow", not Senda.Options:Get("arrow"))
+    elseif IsControlKeyDown() then
+      Senda.Visibility:Toggle()
     else
       Senda.UI:TogglePanel()
     end

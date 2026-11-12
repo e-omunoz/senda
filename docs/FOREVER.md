@@ -82,9 +82,23 @@ Comunitarias:
 - https://gamer-guides.com/wiki/wow-forever/
 - https://kami-labs.fr/en/addons-wow-forever/
 
+Datos abiertos:
+- **forever-db** de Polestar (https://github.com/fitzforge/polestar/tree/main/forever-db): misiones, PNJ,
+  objetos, apariciones y marcos de mapa de Forever en JSONL. Tablas GPL-3.0, capa propia CC BY 4.0. Senda
+  fija una release `data-v*` (hoy 2026.11.1, cliente 1.60.1.70532) en `tools/foreverdb/PIN`; se descarga con
+  `python tools/fetch_foreverdb.py` en `.cache/foreverdb`. Es la fuente de las herramientas cuando no hay
+  QuestieDB (CI). Créditos en [THIRD_PARTY.md](../THIRD_PARTY.md).
+  - Las apariciones vienen en yardas de mundo; `tools/foreverdb` las pasa a % de mapa con los marcos de `ui_map`.
+    Comprobado: Gryan Stoutmantle (234) da 56,33, 47,53 en Páramos de Poniente (1436); QuestieDB y la guía,
+    56,33, 47,52. Mediana de la diferencia con QuestieDB en 8.367 PNJ: 0,01 puntos de mapa.
+  - **No tiene** misiones excluyentes (`exclusiveTo`), profesión requerida (`requiredSkill`), rol de PNJ
+    (`npcFlags`) ni vendedores. Para eso seguimos con QuestieDB en local y guardamos el hecho en el TOML.
+
 Base de datos local:
 - QuestieDB (flavor `Forever`) instalada por el usuario. Licencia «all rights reserved»: se usa solo para
-  verificar en local y **no se redistribuye**.
+  verificar en local y **no se redistribuye**. Si está instalada, las herramientas la prefieren a forever-db.
+
+Detalles de las dos fuentes y del selector (`--db`): [tools/README.md](../tools/README.md#datos-de-misiones-questiedb-y-forever-db).
 
 ## Competencia
 

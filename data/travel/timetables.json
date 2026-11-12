@@ -1,0 +1,26 @@
+{
+ "note": "periods and stops only; the motion frames of Polestar's file are not kept",
+ "rows": [
+  {"id":"lift-freewind-post","kind":"lift","period_ms":30000,"stops":[{"arrive_ms":0,"c":1,"car":1,"depart_ms":5000,"wx":-5399.2,"wy":-2504.6,"z":89},{"arrive_ms":0,"c":1,"car":2,"depart_ms":5000,"wx":-5382.5,"wy":-2489.4,"z":-40.5},{"arrive_ms":15000,"c":1,"car":2,"depart_ms":20000,"wx":-5382.5,"wy":-2489.4,"z":89},{"arrive_ms":15000,"c":1,"car":1,"depart_ms":20000,"wx":-5399.2,"wy":-2504.6,"z":-40.3}]},
+  {"id":"lift-great-lift","kind":"lift","period_ms":30000,"stops":[{"arrive_ms":0,"c":1,"car":1,"depart_ms":5000,"wx":-4665.4,"wy":-1827.7,"z":85.4},{"arrive_ms":0,"c":1,"car":2,"depart_ms":5000,"wx":-4670.8,"wy":-1849.6,"z":-44.1},{"arrive_ms":15000,"c":1,"car":2,"depart_ms":20000,"wx":-4670.8,"wy":-1849.6,"z":85.4},{"arrive_ms":15000,"c":1,"car":1,"depart_ms":20000,"wx":-4665.4,"wy":-1827.7,"z":-43.9}]},
+  {"id":"lift-thunder-bluff-north-1","kind":"lift","period_ms":30000,"stops":[{"arrive_ms":0,"c":1,"car":1,"depart_ms":5000,"wx":-1028,"wy":-28.4,"z":69},{"arrive_ms":15000,"c":1,"car":1,"depart_ms":20000,"wx":-1028,"wy":-28.4,"z":140.5}]},
+  {"id":"lift-thunder-bluff-north-2","kind":"lift","period_ms":30033,"stops":[{"arrive_ms":0,"c":1,"car":1,"depart_ms":5000,"wx":-1037.3,"wy":-49.2,"z":140.5},{"arrive_ms":15000,"c":1,"car":1,"depart_ms":20000,"wx":-1037.3,"wy":-49.2,"z":69.3}]},
+  {"id":"lift-thunder-bluff-west-1","kind":"lift","period_ms":30033,"stops":[{"arrive_ms":0,"c":1,"car":1,"depart_ms":5000,"wx":-1286.2,"wy":189.7,"z":130.1},{"arrive_ms":15000,"c":1,"car":1,"depart_ms":20000,"wx":-1286.2,"wy":189.7,"z":68.8}]},
+  {"id":"lift-thunder-bluff-west-2","kind":"lift","period_ms":30000,"stops":[{"arrive_ms":0,"c":1,"car":1,"depart_ms":5000,"wx":-1308.4,"wy":185.3,"z":68.6},{"arrive_ms":15000,"c":1,"car":1,"depart_ms":20000,"wx":-1308.4,"wy":185.3,"z":130.1}]},
+  {"id":"lift-undercity-east","kind":"lift","period_ms":16667,"stops":[{"arrive_ms":3667,"c":0,"car":1,"depart_ms":8500,"wx":1595.3,"wy":188.6,"z":55.7},{"arrive_ms":11833,"c":0,"car":1,"depart_ms":167,"wx":1595.3,"wy":188.6,"z":-40.8}]},
+  {"id":"lift-undercity-south","kind":"lift","period_ms":16667,"stops":[{"arrive_ms":7000,"c":0,"car":1,"depart_ms":11833,"wx":1544.2,"wy":240.8,"z":55.7},{"arrive_ms":15167,"c":0,"car":1,"depart_ms":3500,"wx":1544.2,"wy":240.8,"z":-40.8}]},
+  {"id":"lift-undercity-west","kind":"lift","period_ms":16667,"stops":[{"arrive_ms":1833,"c":0,"car":1,"depart_ms":6833,"wx":1596.2,"wy":291.8,"z":-40.8},{"arrive_ms":10333,"c":0,"car":1,"depart_ms":15167,"wx":1596.2,"wy":291.8,"z":55.7}]},
+  {"id":"path-11167","kind":"boat","period_ms":486155,"stops":[{"arrive_ms":43530,"c":0,"depart_ms":103554,"wx":-3709.5,"wy":-575.1},{"arrive_ms":245597,"c":0,"depart_ms":305621,"wx":-1102.6,"wy":-554.7},{"arrive_ms":390196,"c":1,"depart_ms":450219,"wx":6406.2,"wy":823.1}]},
+  {"id":"path-11391","kind":"boat","period_ms":271091,"stops":[{"arrive_ms":37913,"c":1,"depart_ms":97936,"wx":-6932.6,"wy":-4950.8},{"arrive_ms":174415,"c":0,"depart_ms":234438,"wx":-8232.3,"wy":-5800.8}]},
+  {"id":"path-11616","kind":"boat","period_ms":247081,"stops":[{"arrive_ms":34802,"c":1,"depart_ms":94825,"wx":6548.3,"wy":942.2},{"arrive_ms":162080,"c":0,"depart_ms":222103,"wx":-8654.5,"wy":1344.4}]},
+  {"id":"path-241","kind":"boat","period_ms":350818,"stops":[{"arrive_ms":66861,"c":1,"depart_ms":126887,"wx":-1005.6,"wy":-3841.6},{"arrive_ms":233741,"c":0,"depart_ms":293768,"wx":-14277.7,"wy":582.9}]},
+  {"id":"path-285","kind":"zeppelin","period_ms":303463,"stops":[{"arrive_ms":38573,"c":0,"depart_ms":98603,"wx":-12464,"wy":231.6},{"arrive_ms":203559,"c":1,"depart_ms":263589,"wx":1360.9,"wy":-4631.3}]},
+  {"id":"path-292","kind":"boat","period_ms":329313,"stops":[{"arrive_ms":54297,"c":0,"depart_ms":114325,"wx":-3905.2,"wy":-585.8},{"arrive_ms":217967,"c":1,"depart_ms":277995,"wx":-4016.4,"wy":-4740.6}]},
+  {"id":"path-293","kind":"boat","period_ms":316251,"stops":[{"arrive_ms":41862,"c":1,"depart_ms":101875,"wx":8533.7,"wy":1025.1},{"arrive_ms":206420,"c":1,"depart_ms":266433,"wx":6594.4,"wy":759.8}]},
+  {"id":"path-301","kind":"zeppelin","period_ms":333044,"stops":[{"arrive_ms":53810,"c":0,"depart_ms":113840,"wx":-12406.9,"wy":211.8},{"arrive_ms":230877,"c":0,"depart_ms":290907,"wx":2062.6,"wy":235.3}]},
+  {"id":"path-302","kind":"zeppelin","period_ms":356284,"stops":[{"arrive_ms":49775,"c":1,"depart_ms":109793,"wx":1318.1,"wy":-4658},{"arrive_ms":240706,"c":0,"depart_ms":300725,"wx":2062.4,"wy":293}]},
+  {"id":"path-303","kind":"boat","period_ms":317038,"stops":[{"arrive_ms":287026,"c":1,"depart_ms":30012,"wx":-4197.3,"wy":3286.6},{"arrive_ms":90127,"c":1,"depart_ms":150150,"wx":-4347.8,"wy":2444.4}]},
+  {"id":"tram-176080","kind":"tram","period_ms":143333,"stops":[{"arrive_ms":58633,"c":369,"car":1,"depart_ms":71667,"wx":4.6,"wy":2510.5,"z":7.2},{"arrive_ms":130300,"c":369,"car":1,"depart_ms":143333,"wx":4.6,"wy":28.2,"z":7}]},
+  {"id":"tram-176082","kind":"tram","period_ms":143333,"stops":[{"arrive_ms":59067,"c":369,"car":1,"depart_ms":71167,"wx":-45.4,"wy":9.8,"z":7.2},{"arrive_ms":129800,"c":369,"car":1,"depart_ms":433,"wx":-45.4,"wy":2492.8,"z":7}]}
+ ]
+}

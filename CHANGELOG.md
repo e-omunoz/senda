@@ -2,6 +2,23 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.4.0] - 2026-11-12
+
+### Cambiado
+- **Licencia GPL-3.0.** Senda pasa de MIT a GPL-3 para poder incorporar datos y código de Polestar. Las versiones hasta la 0.3.5 siguen siendo MIT. Créditos en `THIRD_PARTY.md`, que viaja dentro del paquete junto con la licencia.
+- Botón del minimapa: clic, panel; clic derecho, menú (panel, HUD, flecha, ocultar todo); Mayús+clic, flecha; Ctrl+clic, ocultar o mostrar todo.
+
+### Añadido
+- **Aceptar y entregar solo** las misiones que pide la guía (las del paso actual y los siguientes). Mayús lo evita; si hay que elegir recompensa, la ventana se queda abierta. Se puede apagar en Opciones.
+- **Misiones con tiempo:** cuenta atrás en el HUD y avisos a los 5 y 1 minutos.
+- **Misiones fallidas o abandonadas:** el HUD lo dice, la flecha vuelve a quien te la dio y puedes volver a cogerla o saltarla.
+- **Avisos de escolta:** «si el PNJ no está, alguien la está haciendo; espera a que reaparezca» (p. ej. el Traidor Defias).
+- **Ocultar en mazmorras** (activado por defecto) y `/senda hide` para ocultar todo.
+- **Tarjeta al subir de nivel:** hechizos nuevos, coste total, si te llega el dinero y dónde entrenar, con botón para la flecha.
+- **Renovar rangos en las barras:** cuando aprendes un rango nuevo, un botón cambia los rangos viejos de tus barras (nunca en combate; no toca macros ni objetos).
+- **Prototipo de Teldrassil importado de Polestar** para compararlo con nuestra guía: `/senda guide nightelf-druid-ps`. Nunca se elige solo.
+- Herramientas: base de datos abierta forever-db (`tools/foreverdb`, `tools/fetch_foreverdb.py`) como alternativa a QuestieDB, también en GitHub Actions; importador de rutas de Polestar (`tools/import_polestar.py`); datos de viaje, raros, mazmorras y objetos (`data/travel`, `data/rares`, `data/dungeons`, `data/lookup`) para las próximas versiones.
+
 ## [0.3.5] - 2026-11-12
 
 ### Cambiado

@@ -1,0 +1,18 @@
+# GENERADO por tools/import_polestar.py desde Polestar (GPL-3), forever/alliance/nightelf/01-teldrassil
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas; textos en español
+# de plantilla (o de la traducción esES de Polestar) salvo los pasos que ya estaban en Senda, que conservan
+# su texto. No editar a mano: vuelve a importar. Ver docs/IMPORT.md y REPORT.md.
+id = "nightelf-druid-ps"
+title = "Druida elfo de la noche: Teldrassil (prototipo Polestar)"
+summary = "Ruta importada de Polestar para compararla en el juego con la guía de Senda. Solo se elige a mano: /senda guide nightelf-druid-ps."
+faction = "Alliance"
+races = ["NightElf"]
+classes = ["DRUID"]
+levels = [1, 12]
+order = -1
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil"]
+note = "order = -1: guía de prueba, nunca se elige sola (Engine:AutoSelect). Ver docs/IMPORT.md."
+sections = [
+  "01-teldrassil",
+]

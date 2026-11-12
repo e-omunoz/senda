@@ -1,0 +1,968 @@
+{
+ "schema": 1,
+ "generator": "tools/gen_dungeons.py",
+ "sources": {
+  "forever-db": {
+   "version": "2026.11.1",
+   "clientBuild": "1.60.1.70532",
+   "licence": "GPL-3.0 (tables), CC BY 4.0 (step/mechanic text)",
+   "url": "https://github.com/fitzforge/polestar (folder forever-db)"
+  },
+  "client-tables": {
+   "build": "1.60.1.70450",
+   "tables": [
+    "Map",
+    "LFGDungeons",
+    "ContentTuning",
+    "MapDifficulty",
+    "DungeonEncounter",
+    "AreaTable"
+   ],
+   "origin": "wago.tools CSV exports of the Forever client's DB2 tables (facts only)"
+  }
+ },
+ "not_used": [
+  "QuestieDB",
+  "DingDB",
+  "AtlasLoot",
+  "RareScanner",
+  "DungeonJournal",
+  "Polestar Codex",
+  "Leffe nav maps",
+  "ForeverLevelingBiS (loot not included)"
+ ],
+ "metrics": {
+  "dungeons": 23,
+  "excluded_maps": 14,
+  "entrances": 19,
+  "entrances_missing": 4,
+  "quest_rows": 766,
+  "quests_unique": 671,
+  "givers_without_spawn_quests": 85,
+  "type81_unplaced": 55,
+  "validation_errors": 0
+ },
+ "per_dungeon": {
+  "shadowfang-keep": {
+   "quests": 3,
+   "in_dungeon_quests": 3,
+   "chain_quests": 0,
+   "alliance": 0,
+   "horde": 3,
+   "giver_no_spawn": 0,
+   "giver_missing": 0,
+   "started_inside": 0,
+   "started_outside": 3,
+   "started_unknown": 0,
+   "quest_level_range": [
+    25,
+    27
+   ]
+  },
+  "stormwind-stockade": {
+   "quests": 10,
+   "in_dungeon_quests": 6,
+   "chain_quests": 4,
+   "alliance": 10,
+   "horde": 0,
+   "giver_no_spawn": 0,
+   "giver_missing": 0,
+   "started_inside": 0,
+   "started_outside": 10,
+   "started_unknown": 0,
+   "quest_level_range": [
+    25,
+    29
+   ]
+  },
+  "deadmines": {
+   "quests": 24,
+   "in_dungeon_quests": 8,
+   "chain_quests": 16,
+   "alliance": 24,
+   "horde": 0,
+   "giver_no_spawn": 0,
+   "giver_missing": 0,
+   "started_inside": 0,
+   "started_outside": 22,
+   "started_unknown": 2,
+   "quest_level_range": [
+    17,
+    22
+   ]
+  },
+  "wailing-caverns": {
+   "quests": 17,
+   "in_dungeon_quests": 10,
+   "chain_quests": 7,
+   "alliance": 8,
+   "horde": 16,
+   "giver_no_spawn": 0,
+   "giver_missing": 1,
+   "started_inside": 1,
+   "started_outside": 15,
+   "started_unknown": 0,
+   "quest_level_range": [
+    16,
+    26
+   ]
+  },
+  "razorfen-kraul": {
+   "quests": 32,
+   "in_dungeon_quests": 11,
+   "chain_quests": 21,
+   "alliance": 17,
+   "horde": 17,
+   "giver_no_spawn": 2,
+   "giver_missing": 0,
+   "started_inside": 0,
+   "started_outside": 29,
+   "started_unknown": 3,
+   "quest_level_range": [
+    26,
+    36
+   ]
+  },
+  "blackfathom-deeps": {
+   "quests": 15,
+   "in_dungeon_quests": 13,
+   "chain_quests": 2,
+   "alliance": 7,
+   "horde": 10,
+   "giver_no_spawn": 2,
+   "giver_missing": 1,
+   "started_inside": 3,
+   "started_outside": 11,
+   "started_unknown": 0,
+   "quest_level_range": [
+    22,
+    30
+   ]
+  },
+  "uldaman": {
+   "quests": 56,
+   "in_dungeon_quests": 30,
+   "chain_quests": 26,
+   "alliance": 40,
+   "horde": 25,
+   "giver_no_spawn": 7,
+   "giver_missing": 0,
+   "started_inside": 0,
+   "started_outside": 49,
+   "started_unknown": 7,
+   "quest_level_range": [
+    35,
+    47
+   ]
+  },
+  "gnomeregan": {
+   "quests": 29,
+   "in_dungeon_quests": 27,
+   "chain_quests": 2,
+   "alliance": 24,
+   "horde": 16,
+   "giver_no_spawn": 12,
+   "giver_missing": 0,
+   "started_inside": 0,
+   "started_outside": 16,
+   "started_unknown": 13,
+   "quest_level_range": [
+    26,
+    35
+   ]
+  },
+  "sunken-temple": {
+   "quests": 55,
+   "in_dungeon_quests": 15,
+   "chain_quests": 40,
+   "alliance": 46,
+   "horde": 47,
+   "giver_no_spawn": 1,
+   "giver_missing": 0,
+   "started_inside": 2,
+   "started_outside": 52,
+   "started_unknown": 1,
+   "quest_level_range": [
+    50,
+    60
+   ]
+  },
+  "razorfen-downs": {
+   "quests": 7,
+   "in_dungeon_quests": 7,
+   "chain_quests": 0,
+   "alliance": 4,
+   "horde": 6,
+   "giver_no_spawn": 2,
+   "giver_missing": 0,
+   "started_inside": 3,
+   "started_outside": 4,
+   "started_unknown": 0,
+   "quest_level_range": [
+    35,
+    42
+   ]
+  },
+  "scarlet-monastery": {
+   "quests": 20,
+   "in_dungeon_quests": 8,
+   "chain_quests": 12,
+   "alliance": 6,
+   "horde": 14,
+   "giver_no_spawn": 1,
+   "giver_missing": 0,
+   "started_inside": 1,
+   "started_outside": 19,
+   "started_unknown": 0,
+   "quest_level_range": [
+    33,
+    42
+   ]
+  },
+  "zulfarrak": {
+   "quests": 23,
+   "in_dungeon_quests": 10,
+   "chain_quests": 13,
+   "alliance": 17,
+   "horde": 16,
+   "giver_no_spawn": 0,
+   "giver_missing": 0,
+   "started_inside": 0,
+   "started_outside": 23,
+   "started_unknown": 0,
+   "quest_level_range": [
+    45,
+    50
+   ]
+  },
+  "blackrock-spire": {
+   "quests": 133,
+   "in_dungeon_quests": 69,
+   "chain_quests": 64,
+   "alliance": 87,
+   "horde": 94,
+   "giver_no_spawn": 10,
+   "giver_missing": 0,
+   "started_inside": 0,
+   "started_outside": 120,
+   "started_unknown": 13,
+   "quest_level_range": [
+    58,
+    60
+   ]
+  },
+  "blackrock-depths": {
+   "quests": 68,
+   "in_dungeon_quests": 44,
+   "chain_quests": 24,
+   "alliance": 49,
+   "horde": 44,
+   "giver_no_spawn": 15,
+   "giver_missing": 0,
+   "started_inside": 0,
+   "started_outside": 52,
+   "started_unknown": 16,
+   "quest_level_range": [
+    1,
+    60
+   ]
+  },
+  "scholomance": {
+   "quests": 49,
+   "in_dungeon_quests": 32,
+   "chain_quests": 17,
+   "alliance": 37,
+   "horde": 37,
+   "giver_no_spawn": 1,
+   "giver_missing": 1,
+   "started_inside": 1,
+   "started_outside": 46,
+   "started_unknown": 1,
+   "quest_level_range": [
+    58,
+    60
+   ]
+  },
+  "stratholme": {
+   "quests": 110,
+   "in_dungeon_quests": 43,
+   "chain_quests": 67,
+   "alliance": 79,
+   "horde": 84,
+   "giver_no_spawn": 4,
+   "giver_missing": 1,
+   "started_inside": 3,
+   "started_outside": 104,
+   "started_unknown": 2,
+   "quest_level_range": [
+    60,
+    60
+   ]
+  },
+  "maraudon": {
+   "quests": 11,
+   "in_dungeon_quests": 11,
+   "chain_quests": 0,
+   "alliance": 8,
+   "horde": 8,
+   "giver_no_spawn": 2,
+   "giver_missing": 0,
+   "started_inside": 2,
+   "started_outside": 9,
+   "started_unknown": 0,
+   "quest_level_range": [
+    42,
+    51
+   ]
+  },
+  "ragefire-chasm": {
+   "quests": 10,
+   "in_dungeon_quests": 6,
+   "chain_quests": 4,
+   "alliance": 0,
+   "horde": 10,
+   "giver_no_spawn": 1,
+   "giver_missing": 0,
+   "started_inside": 1,
+   "started_outside": 9,
+   "started_unknown": 0,
+   "quest_level_range": [
+    15,
+    16
+   ]
+  },
+  "dire-maul": {
+   "quests": 54,
+   "in_dungeon_quests": 40,
+   "chain_quests": 14,
+   "alliance": 48,
+   "horde": 50,
+   "giver_no_spawn": 21,
+   "giver_missing": 1,
+   "started_inside": 26,
+   "started_outside": 21,
+   "started_unknown": 6,
+   "quest_level_range": [
+    52,
+    60
+   ]
+  },
+  "city-of-dalaran": {
+   "quests": 8,
+   "in_dungeon_quests": 8,
+   "chain_quests": 0,
+   "alliance": 4,
+   "horde": 4,
+   "giver_no_spawn": 1,
+   "giver_missing": 0,
+   "started_inside": 1,
+   "started_outside": 7,
+   "started_unknown": 0,
+   "quest_level_range": [
+    33,
+    33
+   ]
+  },
+  "excavation-site-wetlands": {
+   "quests": 14,
+   "in_dungeon_quests": 14,
+   "chain_quests": 0,
+   "alliance": 9,
+   "horde": 5,
+   "giver_no_spawn": 3,
+   "giver_missing": 0,
+   "started_inside": 3,
+   "started_outside": 9,
+   "started_unknown": 2,
+   "quest_level_range": [
+    28,
+    31
+   ]
+  },
+  "ruins-of-lordaeron": {
+   "quests": 13,
+   "in_dungeon_quests": 13,
+   "chain_quests": 0,
+   "alliance": 4,
+   "horde": 9,
+   "giver_no_spawn": 1,
+   "giver_missing": 0,
+   "started_inside": 1,
+   "started_outside": 7,
+   "started_unknown": 5,
+   "quest_level_range": [
+    21,
+    22
+   ]
+  },
+  "the-hall-of-thanes": {
+   "quests": 5,
+   "in_dungeon_quests": 4,
+   "chain_quests": 1,
+   "alliance": 5,
+   "horde": 1,
+   "giver_no_spawn": 1,
+   "giver_missing": 0,
+   "started_inside": 1,
+   "started_outside": 3,
+   "started_unknown": 1,
+   "quest_level_range": [
+    15,
+    16
+   ]
+  }
+ },
+ "excluded": [
+  {
+   "map": 13,
+   "name": "Test Dungeon",
+   "reason": "mapa de pruebas"
+  },
+  {
+   "map": 29,
+   "name": "CashTest",
+   "reason": "mapa de pruebas"
+  },
+  {
+   "map": 44,
+   "name": "<unused> Monastery",
+   "reason": "Monasterio sin usar (no es la instancia viva)"
+  },
+  {
+   "map": 269,
+   "name": "Caverns of Time",
+   "reason": "Cavernas del Tiempo: entrada nivel 65, fuera del tope de Forever"
+  },
+  {
+   "map": 2720,
+   "name": "The Searing Basin",
+   "reason": "sin fila en LFGDungeons ni nivel de entrada en MapDifficulty"
+  },
+  {
+   "map": 2784,
+   "name": "Demon Fall Canyon",
+   "reason": "sin fila en LFGDungeons ni nivel de entrada en MapDifficulty"
+  },
+  {
+   "map": 2806,
+   "name": "Shadow Hold",
+   "reason": "sin fila en LFGDungeons ni nivel de entrada en MapDifficulty"
+  },
+  {
+   "map": 2807,
+   "name": "Burning of Andorhal",
+   "reason": "sin fila en LFGDungeons ni nivel de entrada en MapDifficulty"
+  },
+  {
+   "map": 2817,
+   "name": "Starfall Barrow Den",
+   "reason": "sin fila en LFGDungeons ni nivel de entrada en MapDifficulty"
+  },
+  {
+   "map": 2853,
+   "name": "Deadwind Pass",
+   "reason": "sin fila en LFGDungeons ni nivel de entrada en MapDifficulty"
+  },
+  {
+   "map": 2875,
+   "name": "Karazhan Crypts",
+   "reason": "sin fila en LFGDungeons ni nivel de entrada en MapDifficulty"
+  },
+  {
+   "map": 2902,
+   "name": "The Scarab Dais",
+   "reason": "sin fila en LFGDungeons ni nivel de entrada en MapDifficulty"
+  },
+  {
+   "map": 2921,
+   "name": "Naxxramas",
+   "reason": "sin fila en LFGDungeons ni nivel de entrada en MapDifficulty"
+  },
+  {
+   "map": 3109,
+   "name": "Manor Mistmantle",
+   "reason": "sin fila en LFGDungeons ni nivel de entrada en MapDifficulty"
+  }
+ ],
+ "unplaced_dungeon_quests": [
+  {
+   "id": 1442,
+   "title": "Seeking the Kor Gem",
+   "level": 22,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 1653,
+   "title": "The Test of Righteousness",
+   "level": 21,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 1740,
+   "title": "The Orb of Soran'ruk",
+   "level": 25,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 1951,
+   "title": "Rituals of Power",
+   "level": 40,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 2769,
+   "title": "The Brassbolts Brothers",
+   "level": 46,
+   "zone_area": 400,
+   "candidates": []
+  },
+  {
+   "id": 3906,
+   "title": "Disharmony of Flame",
+   "level": 52,
+   "zone_area": 25,
+   "candidates": [
+    "blackrock-depths",
+    "blackrock-spire"
+   ]
+  },
+  {
+   "id": 4143,
+   "title": "Haze of Evil",
+   "level": 52,
+   "zone_area": 490,
+   "candidates": []
+  },
+  {
+   "id": 4148,
+   "title": "Bloodpetal Zapper",
+   "level": 53,
+   "zone_area": 490,
+   "candidates": []
+  },
+  {
+   "id": 4262,
+   "title": "Overmaster Pyron",
+   "level": 52,
+   "zone_area": 25,
+   "candidates": [
+    "blackrock-depths",
+    "blackrock-spire"
+   ]
+  },
+  {
+   "id": 5103,
+   "title": "Hot Fiery Death",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 5281,
+   "title": "The Restless Souls",
+   "level": 60,
+   "zone_area": 139,
+   "candidates": []
+  },
+  {
+   "id": 5522,
+   "title": "Leonid Barthalomew",
+   "level": 60,
+   "zone_area": 46,
+   "candidates": []
+  },
+  {
+   "id": 5526,
+   "title": "Shards of the Felvine",
+   "level": 60,
+   "zone_area": 493,
+   "candidates": []
+  },
+  {
+   "id": 6643,
+   "title": "Favor Amongst the Brotherhood, Fiery Core",
+   "level": 60,
+   "zone_area": 2717,
+   "candidates": []
+  },
+  {
+   "id": 6644,
+   "title": "Favor Amongst the Brotherhood, Lava Core",
+   "level": 60,
+   "zone_area": 2717,
+   "candidates": []
+  },
+  {
+   "id": 6645,
+   "title": "Favor Amongst the Brotherhood, Core Leather",
+   "level": 60,
+   "zone_area": 2717,
+   "candidates": []
+  },
+  {
+   "id": 7581,
+   "title": "The Prison's Bindings",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 7629,
+   "title": "Imp Delivery",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 7631,
+   "title": "Dreadsteed of Xoroth",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 7642,
+   "title": "Collection of Goods",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 7643,
+   "title": "Ancient Equine Spirit",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 7647,
+   "title": "Judgment and Redemption",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 7649,
+   "title": "Enchanted Thorium Platemail: Volume I",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 7651,
+   "title": "Enchanted Thorium Platemail: Volume III",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 7666,
+   "title": "Again Into the Great Ossuary",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 7737,
+   "title": "Gaining Acceptance",
+   "level": 60,
+   "zone_area": 51,
+   "candidates": []
+  },
+  {
+   "id": 7848,
+   "title": "Attunement to the Core",
+   "level": 60,
+   "zone_area": 2717,
+   "candidates": []
+  },
+  {
+   "id": 8258,
+   "title": "The Darkreaver Menace",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 8418,
+   "title": "Forging the Mightstone",
+   "level": 52,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 8422,
+   "title": "Trolls of a Feather",
+   "level": 52,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 8425,
+   "title": "Voodoo Feathers",
+   "level": 52,
+   "zone_area": null,
+   "candidates": []
+  },
+  {
+   "id": 8905,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8906,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8907,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8908,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8909,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8910,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8911,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8912,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8913,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1637,
+   "candidates": []
+  },
+  {
+   "id": 8914,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1637,
+   "candidates": []
+  },
+  {
+   "id": 8915,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1637,
+   "candidates": []
+  },
+  {
+   "id": 8916,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1637,
+   "candidates": []
+  },
+  {
+   "id": 8917,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1637,
+   "candidates": []
+  },
+  {
+   "id": 8918,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1637,
+   "candidates": []
+  },
+  {
+   "id": 8919,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1637,
+   "candidates": []
+  },
+  {
+   "id": 8920,
+   "title": "An Earnest Proposition",
+   "level": 60,
+   "zone_area": 1637,
+   "candidates": []
+  },
+  {
+   "id": 8926,
+   "title": "Just Compensation",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8927,
+   "title": "Just Compensation",
+   "level": 60,
+   "zone_area": 1637,
+   "candidates": []
+  },
+  {
+   "id": 8932,
+   "title": "Just Compensation",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8933,
+   "title": "Just Compensation",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8936,
+   "title": "Just Compensation",
+   "level": 60,
+   "zone_area": 1537,
+   "candidates": []
+  },
+  {
+   "id": 8939,
+   "title": "Just Compensation",
+   "level": 60,
+   "zone_area": 1637,
+   "candidates": []
+  },
+  {
+   "id": 8943,
+   "title": "Just Compensation",
+   "level": 60,
+   "zone_area": 1637,
+   "candidates": []
+  },
+  {
+   "id": 9269,
+   "title": "Atiesh, Greatstaff of the Guardian",
+   "level": 60,
+   "zone_area": null,
+   "candidates": []
+  }
+ ],
+ "givers_without_spawn": [
+  1051,
+  1142,
+  1144,
+  1193,
+  1200,
+  2201,
+  2204,
+  2240,
+  2278,
+  2279,
+  2280,
+  2318,
+  2904,
+  2947,
+  2949,
+  2951,
+  2952,
+  2953,
+  3523,
+  3525,
+  3982,
+  4001,
+  4004,
+  4083,
+  4201,
+  4242,
+  4282,
+  4295,
+  4322,
+  4342,
+  4361,
+  4363,
+  4601,
+  4602,
+  4603,
+  4604,
+  4605,
+  4606,
+  4742,
+  4743,
+  4867,
+  4982,
+  4983,
+  5001,
+  5002,
+  5047,
+  5122,
+  5125,
+  5160,
+  5464,
+  5518,
+  5519,
+  5525,
+  5528,
+  5724,
+  6561,
+  6642,
+  6646,
+  7046,
+  7066,
+  7429,
+  7461,
+  7462,
+  7463,
+  7478,
+  7479,
+  7480,
+  7483,
+  7484,
+  7485,
+  7508,
+  7703,
+  7877,
+  8733,
+  8946,
+  8949,
+  8950,
+  8996,
+  9015,
+  95250,
+  95682,
+  95795,
+  95809,
+  96395,
+  96987
+ ],
+ "validation_errors": []
+}

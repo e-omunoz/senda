@@ -1,0 +1,45 @@
+{
+  "dataset": "rares",
+  "source": {
+    "name": "forever-db (Polestar data for WoW: Forever)",
+    "dataset": "polestar-data-forever",
+    "version": "2026.11.1",
+    "clientBuild": "1.60.1.70532",
+    "producerCommit": "6d0de256e66674512e453a2990076d84f7e979bb",
+    "tables": [
+      "npc",
+      "spawn",
+      "ui_map"
+    ],
+    "licence": "GPL-3.0-only (tablas) / CC BY 4.0 (capa propia); ver THIRD_PARTY.md"
+  },
+  "rank_filter": {
+    "4": "rare",
+    "2": "rareelite"
+  },
+  "level_band_size": 10,
+  "counts": {
+    "total": 411,
+    "rare": 276,
+    "rareelite": 135,
+    "with_spawns": 346,
+    "without_spawns": 65,
+    "spawn_points": 964,
+    "zones": 43
+  },
+  "per_continent": {
+    "Reinos del Este": {
+      "total": 178,
+      "with_spawns": 178
+    },
+    "Kalimdor": {
+      "total": 165,
+      "with_spawns": 165
+    },
+    "Otros mapas (instancias o sin mapa)": {
+      "total": 68,
+      "with_spawns": 3
+    }
+  },
+  "faction_friendliness": "no disponible: forever-db solo trae faction_template (id de cliente); no se inventa amistad por faccion (ver docs/RARES.md)"
+}

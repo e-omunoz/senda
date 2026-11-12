@@ -68,14 +68,21 @@ function Guides:Score(g)
   return score
 end
 
--- Guías válidas para el jugador, de mejor a peor.
+-- Guía solo a mano (`order` negativo en guide.toml, p. ej. un prototipo importado): sale en la lista y se
+-- puede elegir con /senda guide <id>, pero la elección automática nunca la coge.
+function Guides:IsManualOnly(g)
+  return type(g) == "table" and type(g.order) == "number" and g.order < 0
+end
+
+-- Guías válidas para el jugador, de mejor a peor (las de solo a mano, al final).
 function Guides:ForPlayer()
   local out = {}
   for i, id in ipairs(guideOrder) do
     local s = self:Score(guides[id])
-    if s > 0 then out[#out + 1] = { g = guides[id], s = s, i = i } end
+    if s > 0 then out[#out + 1] = { g = guides[id], s = s, i = i, m = self:IsManualOnly(guides[id]) } end
   end
   table.sort(out, function(a, b)
+    if a.m ~= b.m then return not a.m end
     if a.s ~= b.s then return a.s > b.s end
     return a.i < b.i
   end)

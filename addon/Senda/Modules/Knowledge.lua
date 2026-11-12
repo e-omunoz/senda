@@ -111,7 +111,7 @@ function K.TrainList()
       if type(tr) == "table" and tr.level and type(tr.spells) == "table" then
         for _, id in ipairs(tr.spells) do
           table.insert(out, { level = tr.level, spell = id, cost = tr.cost, note = tr.note, status = tr.status or p.status,
-            pet = tr.pet, quest = tr.quest, optional = tr.optional })
+            pet = tr.pet, quest = tr.quest, optional = tr.optional, trainer = tr.trainer })
         end
       end
     end

@@ -237,6 +237,10 @@
         "optional": {
           "type": "boolean"
         },
+        "escort": {
+          "type": "boolean",
+          "description": "Misión de escolta: el HUD avisa de que, si el PNJ no está, alguien la está haciendo."
+        },
         "chain": {
           "type": "string"
         },

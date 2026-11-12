@@ -79,6 +79,14 @@ def make_zip(paths: Paths, out_dir: Path | None = None) -> Path:
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16
             zf.writestr(info, p.read_bytes())
+        # GPL-3: la licencia y los créditos de terceros viajan dentro del paquete.
+        for extra in ("LICENSE", "THIRD_PARTY.md"):
+            src = paths.root / extra
+            if src.exists():
+                info = zipfile.ZipInfo(f"{ADDON_NAME}/{extra}", date_time=ZIP_DATE)
+                info.compress_type = zipfile.ZIP_DEFLATED
+                info.external_attr = 0o644 << 16
+                zf.writestr(info, src.read_bytes())
     print(f"package: {paths.rel(zpath)} ({len(files)} archivos, {zpath.stat().st_size} bytes)")
     return zpath
 

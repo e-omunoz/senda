@@ -10,6 +10,24 @@ local L = M.L
 local T = {}
 Senda.Modules.Trainer = T
 
+-- Precios vistos en el instructor, guardados por nombre y rango (los usa la tarjeta de subida de nivel).
+local function CostKey(name, rank)
+  return tostring(name):lower() .. "|" .. tostring(tonumber(tostring(rank or ""):match("(%d+)")) or 0)
+end
+local function CostCache()
+  local db = M.DB()
+  if type(db.trainerCost) ~= "table" then db.trainerCost = {} end
+  return db.trainerCost
+end
+-- Coste (cobre) que viste en el instructor de un hechizo (id), o nil.
+function T.CachedCost(id)
+  local name = M.SpellName(id)
+  if not name then return nil end
+  local rank = Senda.Modules.SpellCards and Senda.Modules.SpellCards.RankOf and Senda.Modules.SpellCards.RankOf(id)
+  local c = CostCache()
+  return c[CostKey(name, rank)] or (not rank and c[CostKey(name, 1)]) or nil
+end
+
 -- { i, name, rank, cost, rec }
 local function Services()
   local out = {}
@@ -44,6 +62,7 @@ local function Services()
         local okc, c = pcall(GetTrainerServiceCost, i); if okc then cost = c or 0 end
       end
       local lname = name:lower()
+      if cost > 0 then CostCache()[CostKey(name, rank)] = cost end
       table.insert(out, { i = i, name = name, rank = rank, cost = cost,
         rec = recNames[lname] or profNames[lname] ~= nil })
     end

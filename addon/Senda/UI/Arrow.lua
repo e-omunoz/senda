@@ -262,6 +262,7 @@ function Arrow:ApplyVisibility()
   local f = Create()
   f:SetScale(Opt("arrowScale") or 1)
   local show = Opt("arrow") and active ~= nil and not (Opt("arrowCombatHide") and Compat.InCombat())
+    and not (Senda.Visibility and Senda.Visibility:Hidden())
   f:SetShown(show and true or false)
 end
 
@@ -292,9 +293,20 @@ local function GuideLabel(step)
   return text
 end
 
+local problemKey = ""
+
 function Arrow:FollowStep()
   local step = Senda.Engine and Senda.Engine:CurrentStep()
+  problemKey = ""
   if not step then targets.guide = nil; Update(); return end
+  -- Misión fallida o abandonada: la flecha vuelve a quien la daba.
+  local pr = Senda.Engine.Problem and Senda.Engine:Problem()
+  local at = pr and pr.accept and pr.accept.step.at
+  if type(at) == "table" and at[1] then
+    problemKey = pr.kind .. ":" .. pr.quest
+    self:SetTarget(at[1], at[2], at[3], string.format(L.ARROW_RETAKE, GuideLabel(pr.accept.step)), "guide")
+    return
+  end
   local label = GuideLabel(step)
   local radius = step["do"] == "goto" and step.radius or nil
   if type(step.at) == "table" and step.at[1] then
@@ -361,6 +373,11 @@ Events:On("SENDA_READY", function()
   Arrow:ApplyVisibility()
   Events:On("SENDA_STEP_CHANGED", function() Arrow:FollowStep() end)
   Events:On("SENDA_GUIDE_CHANGED", function() Arrow:FollowStep() end)
+  -- Una misión puede fallar o abandonarse sin cambiar de paso: se recalcula solo si cambia el problema.
+  Events:On("SENDA_STEP_UPDATED", function()
+    local E = Senda.Engine
+    if E and E.ProblemKey and E:ProblemKey() ~= problemKey then Arrow:FollowStep() end
+  end)
   -- El estado de fantasma puede tardar un instante en reflejarse: se comprueba también con retraso.
   local corpse = function()
     Arrow:UpdateCorpse()

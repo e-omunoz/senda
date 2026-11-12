@@ -12,6 +12,9 @@ plateada) y avisarte cuando subes al nivel necesario.
 Y `reqskill = [línea, rango]` en pasos `accept` cuya misión pide una profesión (las lecciones
 «Camping 101» de oficio exigen saberlo ya): el motor salta el paso si no llegas a ese rango.
 
+Fuente: la QuestieDB local si está instalada; si no, forever-db (`--db`, ver tools/README.md). Con
+forever-db no se toca `reqskill` (no tiene ese dato).
+
 Edición mínima por líneas: inserta o actualiza `reqlevel = N` justo después de `quest = X` y respeta
 los comentarios y el formato.
 
@@ -30,6 +33,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
 from questiedb import QuestDB  # noqa: E402
+from foreverdb import add_db_arguments, missing, open_db  # noqa: E402
 
 STEP_RE = re.compile(r"^\[\[step\]\]\s*$")
 TABLE_RE = re.compile(r"^\[")
@@ -142,7 +146,8 @@ def process(path: Path, db: QuestDB, levels: dict[str, dict[int, int]]) -> tuple
             elif block[rline] != text:
                 block[rline] = text
                 changes += 1
-        if do == "accept" and qline is not None:
+        if do == "accept" and qline is not None and "requiredSkill" not in missing(db):
+            # forever-db no tiene la profesión requerida: con ella se deja `reqskill` como esté.
             q = db.quest(int(QUEST_RE.match(block[qline]).group(1)))
             rs = q.get("requiredSkill") if q else None
             sline = next((k for k, l in enumerate(block) if SKILL_RE.match(l)), None)
@@ -166,8 +171,9 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--check", action="store_true", help="no escribe; sale con 1 si hay cambios pendientes")
     ap.add_argument("--questiedb", help="carpeta de QuestieDB (por defecto, la del juego)")
+    add_db_arguments(ap)   # --db auto|questiedb|foreverdb, --foreverdb
     args = ap.parse_args()
-    db = QuestDB.open(args.questiedb)
+    db = open_db(args)
     levels = spell_levels()
     total = 0
     for path in files():

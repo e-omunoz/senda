@@ -159,7 +159,9 @@ const SCENARIO_E = L_`
       ClickAll(SendaHUD)
       ClickAll(SendaArrow)
       Sim.shift = true; ClickAll(SendaMinimapButton); Sim.shift = false
-      ClickAll(SendaMinimapButton)
+      ClickAll(SendaMinimapButton)  -- left click = hide-all toggle, right click = menu
+      if SendaDropdownList then SendaDropdownList:Hide() end
+      S().Visibility:SetHidden(false)
       Sim.RunScript(SendaMinimapButton, "OnDragStart"); Sim.Advance(0.2); Sim.RunScript(SendaMinimapButton, "OnDragStop")
       Check(#Sim.errors == errs, "UI click pass raised no errors")
 
@@ -723,6 +725,36 @@ const scenarios = [
     `,
   },
   {
+    id: 'ps',
+    title: 'Polestar prototype (nightelf-druid-ps): never auto-selected, loads by hand and plays through',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      local E, G = S().Engine, S().Guides
+      Check(G:Get("nightelf-druid-ps") ~= nil, "prototype guide registered")
+      Check(G:IsManualOnly(G:Get("nightelf-druid-ps")), "prototype is manual-only (order < 0)")
+      Check(E:GuideId() == "nightelf-druid", "auto-selection keeps nightelf-druid", E:GuideId())
+      local list = G:ForPlayer()
+      -- Las guías solo a mano (prototipo y rutas importadas de Polestar) van detrás de todas las demás.
+      local seenManual, order, hasProto = false, true, false
+      for _, g in ipairs(list) do
+        if G:IsManualOnly(g) then seenManual = true elseif seenManual then order = false end
+        if g.id == "nightelf-druid-ps" then hasProto = true end
+      end
+      Check(hasProto, "prototype listed among the valid guides")
+      Check(order and list[1].id == "nightelf-druid", "manual-only guides listed after the hand-written one", list[1] and list[1].id)
+      Slash("guide nightelf-druid-ps")
+      Check(E:GuideId() == "nightelf-druid-ps", "/senda guide nightelf-druid-ps selects it", E:GuideId())
+      Check(StepId() == "ps-teld-001", "starts at the first imported step", StepId())
+      RunAllTabs()
+      local r = AutoPlay(1000)
+      Sim.Out(string.format("    auto %d, manual %d, stuck %d", r.auto, r.manual, #r.stuck))
+      if #r.stuck > 0 then Sim.Out("    stuck: " .. table.concat(r.stuck, ", ")) end
+      Check(E:IsFinished(), "prototype guide finished", StepId())
+      Check(#r.stuck == 0, "no auto-detectable step got stuck", table.concat(r.stuck, ", "))
+    `,
+  },
+  {
     id: 's',
     title: 'Profession lessons (reqskill): skipped without the profession, offered once learned',
     char: 'nightelf-druid',
@@ -863,6 +895,439 @@ const scenarios = [
         "marks kept with their kind (a/d/s)")
       local ok = Plain(HudTitle()) ~= ""
       Check(ok, "HUD shows the restored step", HudTitle())
+    `,
+  },
+  {
+    id: 'auto',
+    title: 'Quest automation: accepts/turns in only the guide quests, no reward choice, Shift and the option suppress it',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E = S().Engine
+      local function logHas(s) for _, l in ipairs(Sim.autoLog) do if l == s then return true end end return false end
+      Check(StepId() == "nesg-001", "starts at the first accept (quest 456)", StepId())
+      Section("accept")
+      Sim.OpenQuest("detail", 9999); Sim.Advance(0.3)
+      Check(not logHas("accept 9999"), "a quest the guide does not list is never accepted")
+      Sim.OpenQuest("detail", 3519); Sim.Advance(0.3)
+      Check(not logHas("accept 3519"), "a quest far ahead in the guide is not accepted")
+      Sim.shift = true
+      Sim.OpenQuest("detail", 456); Sim.Advance(0.3)
+      Check(not logHas("accept 456"), "holding Shift suppresses the accept")
+      Sim.shift = false
+      S().Options:Set("autoQuests", false)
+      Sim.OpenQuest("detail", 456); Sim.Advance(0.3)
+      Check(not logHas("accept 456"), "the option off suppresses the accept")
+      S().Options:Set("autoQuests", true)
+      Sim.player.combat = true
+      Sim.OpenQuest("detail", 456); Sim.Advance(0.3)
+      Check(not logHas("accept 456"), "no accept in combat")
+      Sim.player.combat = false
+      Sim.OpenQuest("detail", 456); Sim.Advance(0.5)
+      Check(logHas("accept 456"), "the current step's quest is accepted")
+      Check(S().Compat.IsOnQuest(456), "quest 456 is in the log")
+      Sim.OpenQuest("detail", 458); Sim.Advance(0.5)
+      Check(logHas("accept 458"), "the next step's quest (upcoming few steps) is accepted too")
+      Section("turn in")
+      Sim.FinishQuestObjectives(456); Sim.Advance(1)
+      Check(StepId() == "nesg-004", "after finishing, the turn-in of 456 is current", StepId())
+      Sim.OpenQuest("progress", 458); Sim.Advance(0.3)
+      Check(not logHas("complete 458"), "a quest the current step does not turn in is left alone")
+      Sim.qwin = nil
+      Sim.OpenQuest("progress", 456); Sim.Advance(0.5)
+      Check(logHas("complete 456") and logHas("reward 456 0"), "the turn-in is completed with no choice")
+      Check(S().Compat.IsQuestDone(456), "quest 456 is turned in")
+      Section("reward choice")
+      Sim.Advance(1)
+      E:JumpTo(StepIndexOf("nesg-009"))
+      Sim.FinishQuestObjectives(458); Sim.Advance(1)
+      Check(StepId() == "nesg-009", "turn-in step of 458 is current", StepId())
+      Sim.OpenQuest("progress", 458, { choices = { 6948, 2589 } }); Sim.Advance(0.3)
+      Check(logHas("complete 458"), "progress window is completed")
+      Check(not logHas("reward 458 0") and not logHas("reward 458 1") and not logHas("reward 458 2"),
+        "with several choices the window stays open")
+      Check(Sim.qwin ~= nil and Sim.qwin.kind == "complete", "the reward window is still open")
+      CloseQuest()
+      Sim.OpenQuest("progress", 458, { choices = { 2589 } }); Sim.Advance(0.3)
+      Check(logHas("reward 458 1"), "a single choice is taken")
+      Section("gossip and greeting")
+      Sim.Advance(1)
+      local want
+      for _, e in ipairs(E:Steps()) do
+        if e.step["do"] == "accept" and E:WantsQuest("accept", e.step.quest) then want = e.step.quest; break end
+      end
+      Check(want ~= nil, "there is a next accept in the route", tostring(want))
+      Sim.OpenNpc("gossip", {}, { 9999, want }); Sim.Advance(0.3)
+      Check(logHas("select-available " .. want), "gossip: the guide's quest is picked from the list", tostring(want))
+      Check(not logHas("select-available 9999"), "gossip: the other quest is not picked")
+      Sim.Advance(1)
+      want = nil
+      for _, e in ipairs(E:Steps()) do
+        if e.step["do"] == "accept" and E:WantsQuest("accept", e.step.quest) then want = e.step.quest; break end
+      end
+      Sim.qwin = nil
+      Sim.OpenNpc("greeting", {}, { 9999, want }); Sim.Advance(0.3)
+      Check(logHas("select-available " .. want) or (Sim.qwin and Sim.qwin.id == want), "greeting: opens the guide's quest", tostring(want))
+      Check(not logHas("select-available 9999"), "greeting: the other quest is not picked")
+    `,
+  },
+  {
+    id: 'timed',
+    title: 'Timed quests: countdown on the HUD, chat warnings at 5 and 1 minute, failure notice',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E = S().Engine
+      Sim.AcceptQuest(456, { { "Bichos", 3 } }, { timeLimit = 400 })
+      Sim.Advance(1.5)
+      E:JumpTo(StepIndexOf("nesg-003")); Sim.Advance(1.5)
+      local txt = Plain(SendaHUD.status:GetText())
+      Check(txt:find("6:3", 1, true) ~= nil or txt:find("6:4", 1, true) ~= nil, "HUD shows the countdown (about 6:3x)", txt)
+      Check(SendaHUD.status:IsShown(), "the countdown line is visible")
+      local function said(from, needle)
+        for k = from + 1, #Sim.chat do if Sim.chat[k]:find(needle, 1, true) then return true end end
+        return false
+      end
+      local before = #Sim.chat
+      Sim.Advance(110)
+      Check(said(before, "te quedan 5:00") or said(before, "te quedan 4:59") or said(before, "te quedan 4:5"), "chat warns at 5 minutes", Sim.chat[#Sim.chat])
+      before = #Sim.chat
+      Sim.Advance(240)
+      Check(said(before, "te quedan 1:00") or said(before, "te quedan 0:59") or said(before, "te quedan 0:5"), "chat warns at 1 minute", Sim.chat[#Sim.chat])
+      before = #Sim.chat
+      Sim.Advance(60)
+      Sim.FailQuest(456)
+      Sim.Advance(2)
+      Check(said(before, "se acabó el tiempo"), "chat says the time ran out")
+      txt = Plain(SendaHUD.status:GetText())
+      Check(txt:find("Fallida", 1, true) ~= nil, "HUD says the quest failed", txt)
+      Check(SendaHUD.retake:IsShown() and SendaHUD.skipq:IsShown(), "HUD offers retake / skip buttons")
+      local t = ArrowTarget()
+      Check(t and math.abs(t.x * 100 - 58.69) < 0.01 and math.abs(t.y * 100 - 44.27) < 0.01, "arrow points back to the quest giver (accept step)")
+      Check(t and Plain(t.label):find("coger de nuevo", 1, true) ~= nil, "arrow label says take it again", t and t.label)
+    `,
+  },
+  {
+    id: 'lost',
+    title: 'Failed / abandoned quests: retake goes back to the accept step, skip drops the rest of the quest',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E = S().Engine
+      Sim.AcceptQuest(456, { { "Bichos", 3 } })
+      Sim.AcceptQuest(458, { { "Cosas", 1 } })
+      Sim.Advance(1.5)
+      Check(StepId() == "nesg-003", "current step is 'complete 456'", StepId())
+      Section("abandoned then skip")
+      Sim.AbandonQuest(456); Sim.Advance(1.5)
+      Check(StepId() == "nesg-003", "the step is not silently skipped when you abandon the quest", StepId())
+      Check(E:IsAbandoned(456), "the engine remembers the abandonment")
+      Check(Plain(SendaHUD.status:GetText()):find("abandonaste", 1, true) ~= nil, "HUD says you abandoned it", SendaHUD.status:GetText())
+      Check(SendaHUD.retake:IsShown(), "retake button visible")
+      local t = ArrowTarget()
+      Check(t and math.abs(t.x * 100 - 58.69) < 0.01, "arrow points to the quest giver")
+      Sim.Click(SendaHUD.skipq); Sim.Advance(1)
+      local p = S():GuideProgress("nightelf-druid")
+      Check(p.done["nesg-003"] == "s" and p.done["nesg-004"] == "s", "skip marks the rest of the quest as skipped")
+      Check(not E:IsAbandoned(456), "the abandonment is cleared")
+      Check(StepId() ~= "nesg-003" and StepId() ~= "nesg-004", "the route moved on", StepId())
+      Section("failed, abandon, retake")
+      local p2 = S():GuideProgress("nightelf-druid")
+      p2.done["nesg-003"] = nil; p2.done["nesg-004"] = nil
+      Sim.AcceptQuest(456, { { "Bichos", 3 } }); Sim.Advance(1)
+      E:JumpTo(StepIndexOf("nesg-003")); Sim.Advance(0.5)
+      Sim.FailQuest(456); Sim.Advance(1.5)
+      Check(E:Problem() and E:Problem().kind == "failed", "failed quest is detected")
+      Sim.AbandonQuest(456); Sim.Advance(1.5)
+      Check(E:Problem() and E:Problem().kind == "abandoned", "abandoning the failed quest leaves it 'abandoned'")
+      Sim.Click(SendaHUD.retake); Sim.Advance(0.5)
+      Check(StepId() == "nesg-001", "retake goes back to the accept step", StepId())
+      Sim.OpenQuest("detail", 456); Sim.Advance(1)
+      Check(S().Compat.IsOnQuest(456), "taking the quest again (automation)")
+      Check(not E:IsAbandoned(456), "the flag is cleared")
+      Check(StepId() == "nesg-003", "the route continues at the complete step", StepId())
+    `,
+  },
+  {
+    id: 'escort',
+    title: 'Escort steps show the escort note; guides mark their escort quests',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E = S().Engine
+      Sim.player.level = 12
+      Sim.Fire("PLAYER_LEVEL_UP", 12, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      local i = StepIndexOf("netd-065")
+      Check(i ~= nil, "escort accept step exists")
+      Check(E:Entry(i).step.escort == true, "step netd-065 carries escort = true")
+      E:JumpTo(i); Sim.Advance(1)
+      Check(StepId() == "netd-065", "on the escort step", StepId())
+      Check(SendaHUD.escort:IsShown() and Plain(SendaHUD.escort:GetText()):find("Escolta:", 1, true) ~= nil, "HUD shows the escort note", SendaHUD.escort:GetText())
+      E:JumpTo(StepIndexOf("nesg-001")); Sim.Advance(1)
+      Check(not SendaHUD.escort:IsShown(), "no escort note on ordinary steps")
+      local n = 0
+      for _, e in ipairs(E:Steps()) do if e.step.escort then n = n + 1 end end
+      Check(n >= 4, "the druid guide marks its escort steps: " .. n)
+    `,
+  },
+  {
+    id: 'hide',
+    title: 'Hide in instances, hide-all (minimap click and /senda hide), minimap menu',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      Check(SendaHUD:IsShown() and SendaArrow:IsShown(), "HUD and arrow shown outside instances")
+      Section("instances")
+      for _, kind in ipairs({ "party", "raid", "pvp", "arena" }) do
+        Sim.SetInstance(kind); Sim.Advance(0.5)
+        Check(not SendaHUD:IsShown() and not SendaArrow:IsShown(), "hidden in " .. kind)
+        Sim.SetInstance(nil); Sim.Advance(0.5)
+        Check(SendaHUD:IsShown() and SendaArrow:IsShown(), "back after leaving " .. kind)
+      end
+      S().Options:Set("hideInInstance", false)
+      Sim.SetInstance("party"); Sim.Advance(0.5)
+      Check(SendaHUD:IsShown(), "the option off keeps the HUD in dungeons")
+      Sim.SetInstance(nil)
+      S().Options:Set("hideInInstance", true)
+      Section("hide all")
+      Slash("hide")
+      Check(not SendaHUD:IsShown() and not SendaArrow:IsShown(), "/senda hide hides HUD and arrow")
+      Check(S().db.hideAll == true, "the state is saved")
+      Slash("hide")
+      Check(SendaHUD:IsShown() and SendaArrow:IsShown(), "/senda hide again shows them")
+      Sim.ctrl = true
+      SendaMinimapButton:Click("LeftButton", false); Sim.Advance(0.3)
+      Check(not SendaHUD:IsShown() and not SendaArrow:IsShown(), "minimap ctrl+click hides everything")
+      SendaMinimapButton:Click("LeftButton", false); Sim.Advance(0.3)
+      Check(SendaHUD:IsShown() and SendaArrow:IsShown(), "minimap ctrl+click again shows everything")
+      Sim.ctrl = false
+      Section("minimap menu")
+      SendaMinimapButton:Click("RightButton", false); Sim.Advance(0.3)
+      Check(SendaDropdownList and SendaDropdownList:IsShown(), "right-click opens the menu")
+      local rows = 0
+      for _, r in ipairs(SendaDropdownList.rows) do if r:IsShown() then rows = rows + 1 end end
+      Check(rows == 4, "menu has panel / HUD / arrow / hide-all", rows)
+      Sim.Click(SendaDropdownList.rows[2]); Sim.Advance(0.3)
+      Check(not SendaHUD:IsShown(), "menu entry toggles the HUD")
+      S().HUD:Toggle(); Sim.Advance(0.3)
+      Check(SendaHUD:IsShown(), "HUD back on")
+    `,
+  },
+  {
+    id: 'lcard',
+    title: 'Level-up card: new class spells, cost, where; quiet in combat/instances',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      Sim.player.spells[348] = true -- level-1 Immolate: nothing pending below level 4
+      Sim.Advance(6)
+      local E, SC = S().Engine, S().Modules.SpellCards
+      local p = Sim.player
+      local function shown() return SendaLevelCard and SendaLevelCard:IsShown() end
+      Section("a level with nothing new says nothing")
+      p.level = 2
+      Sim.Fire("PLAYER_LEVEL_UP", 2, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(3)
+      Check(not shown(), "no card at level 2")
+
+      Section("level 6")
+      p.level = 6
+      Sim.Fire("PLAYER_LEVEL_UP", 6, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(3)
+      Check(shown(), "card shown at level 6")
+      local head = Plain(SendaLevelCard.head:GetText())
+      Check(head:find("Nivel 6", 1, true) and head:find("3 hechizos", 1, true), "head says level and count", head)
+      local n = 0
+      for _, b in ipairs(SendaLevelCard.icons) do if b:IsShown() then n = n + 1 end end
+      Check(n == 3, "one icon per spell", n)
+      Check(SendaLevelCard.icons[1].spell == 172, "icons are in level order", SendaLevelCard.icons[1].spell)
+      local errs = #Sim.errors
+      for _, b in ipairs(SendaLevelCard.icons) do Sim.RunScript(b, "OnEnter"); Sim.RunScript(b, "OnLeave") end
+      Check(#Sim.errors == errs, "icon tooltips run without errors")
+      Check(Plain(SendaLevelCard.cost:GetText()):find("El precio lo ver", 1, true) ~= nil, "unknown prices are said", SendaLevelCard.cost:GetText())
+      local w = SC.Where(SC.LevelList())
+      Check(w and w.kind == "trainer" and w.at and w.at[1] == 1426, "falls back to the guide's trainer on this map", w and w.kind)
+      Check(SendaLevelCard.point:IsShown(), "point button offered")
+      Sim.Click(SendaLevelCard.point); Sim.Advance(0.3)
+      local t, src = ArrowTarget()
+      Check(src == "trainer" and t and t.map == 1426, "the arrow points to the trainer", src)
+
+      Section("auto-hide")
+      Sim.Advance(46)
+      Check(not shown(), "the card goes away by itself")
+
+      Section("trainer visit caches the cost")
+      CreateFrame("Frame", "ClassTrainerFrame", UIParent)
+      Sim.trainer = { { spell = 172, cost = 100 }, { spell = 702, cost = 100 }, { spell = 1454, cost = 500 } }
+      Sim.Fire("TRAINER_SHOW"); Sim.Advance(1)
+      ClassTrainerFrame:Hide(); Sim.Fire("TRAINER_CLOSED"); Sim.Advance(0.5)
+      Check(S().Modules.Trainer.CachedCost(172) == 100, "cost cached from the trainer", S().Modules.Trainer.CachedCost(172))
+      local total, unknown = SC.Cost(SC.LevelList())
+      Check(total == 700 and unknown == 0, "total from the cache", total .. "/" .. unknown)
+
+      Section("combat and instances")
+      p.combat = true
+      Sim.Fire("PLAYER_LEVEL_UP", 6, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(3)
+      Check(not shown(), "never in combat")
+      p.combat = false
+      p.money = 500
+      Sim.Fire("PLAYER_REGEN_ENABLED")
+      Sim.Advance(3)
+      Check(shown(), "shown when combat ends")
+      Check(Plain(SendaLevelCard.cost:GetText()):find("te faltan", 1, true) ~= nil, "money (500) does not cover 700", SendaLevelCard.cost:GetText())
+      SC.Dismiss("level")
+      Check(not shown(), "close button hides it")
+      Sim.SetInstance("party"); Sim.Advance(0.5)
+      Sim.Fire("PLAYER_LEVEL_UP", 6, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(3)
+      Check(not shown(), "never in an instance")
+      Sim.SetInstance(nil); Sim.Advance(3)
+      Check(shown(), "shown after leaving the instance")
+      p.money = 100000; Sim.Fire("SPELLS_CHANGED"); Sim.Advance(1.5)
+      Check(Plain(SendaLevelCard.cost:GetText()):find("te llega", 1, true) ~= nil, "enough money is said", SendaLevelCard.cost:GetText())
+
+      Section("learning everything removes the card")
+      for _, s in ipairs(SC.LevelList()) do Sim.LearnSpell(s.id) end
+      Sim.Advance(2)
+      Check(not shown(), "nothing left to train: card gone")
+    `,
+  },
+  {
+    id: 'lcard2',
+    title: 'Level-up card: guide step nearby, green line not duplicated, login with pending spells',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      Sim.player.spells[348] = true -- level-1 Immolate: nothing pending below level 4
+      local E, SC = S().Engine, S().Modules.SpellCards
+      local p = Sim.player
+      p.level = 6
+      local function shown() return SendaLevelCard and SendaLevelCard:IsShown() end
+      Sim.Advance(14)
+      Check(shown(), "pending spells at login show the card once")
+      SC.Dismiss("level")
+      Section("a guide train step a few steps ahead")
+      local i = StepIndexOf("dun-morogh-006")
+      Check(i ~= nil, "step dun-morogh-006 exists")
+      E:JumpTo(i - 2); Sim.Advance(1)
+      local w = SC.Where(SC.LevelList())
+      Check(w and w.kind == "guide" and w.steps >= 1 and w.steps <= 3, "the guide's train step is near", w and (w.kind .. "/" .. tostring(w.steps)))
+      E:JumpTo(i); Sim.Advance(1)
+      w = SC.Where(SC.LevelList())
+      Check(w and w.kind == "current", "on the train step itself", w and w.kind)
+      Section("the green line owns the message")
+      p.level = 16
+      Sim.Fire("PLAYER_LEVEL_UP", 16, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      local j = StepIndexOf("a17wf-064")
+      E:JumpTo(j); E:Advance(); Sim.Advance(1)
+      local before = #Sim.chat
+      p.level = 18
+      Sim.Fire("PLAYER_LEVEL_UP", 18, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(3)
+      local said = 0
+      for k = before + 1, #Sim.chat do if Sim.chat[k]:find("Ya puedes entrenar", 1, true) then said = said + 1 end end
+      Check(said == 1, "the engine says it once", said)
+      Check(SendaHUD.gated:IsShown(), "green line in the HUD")
+      Check(shown(), "the card lists the spells")
+      Check(SC.Where(SC.LevelList()).kind == "gate", "where: left to the green line")
+      Check(not SendaLevelCard.route:IsShown() and not SendaLevelCard.point:IsShown(), "no second route or button")
+    `,
+  },
+  {
+    id: 'lcard-en',
+    title: 'Level-up and rank cards in English',
+    char: 'gnome-warlock',
+    locale: 'enUS',
+    lua: L_`
+      Login()
+      Sim.player.spells[348] = true -- level-1 Immolate: nothing pending below level 4
+      Sim.Advance(6)
+      local p = Sim.player
+      p.level = 6
+      Sim.Fire("PLAYER_LEVEL_UP", 6, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(3)
+      Check(SendaLevelCard and SendaLevelCard:IsShown(), "card shown")
+      local head = Plain(SendaLevelCard.head:GetText())
+      Check(head:find("Level 6: you can train 3 spells", 1, true) ~= nil, "English head", head)
+      Check(Plain(SendaLevelCard.cost:GetText()):find("see the price", 1, true) ~= nil, "English cost line", SendaLevelCard.cost:GetText())
+      Sim.actions[1] = { "spell", 116 }
+      Sim.LearnSpell(116); Sim.LearnSpell(837); Sim.Advance(14)
+      Check(SendaRankCard and SendaRankCard:IsShown(), "rank card shown")
+      Check(Plain(SendaRankCard.rows[1].text:GetText()):find("rank 1 to 3", 1, true) ~= nil, "English rank line", SendaRankCard.rows[1].text:GetText())
+      Check(Plain(SendaRankCard.upgrade:GetText()) == "Upgrade", "English button")
+    `,
+  },
+  {
+    id: 'rankcard',
+    title: 'Action-bar rank upgrade: card, upgrade out of combat only, never macros/items, keep a rank',
+    char: 'human-mage',
+    lua: L_`
+      Login()
+      Sim.Advance(14)
+      local SC = S().Modules.SpellCards
+      local p = Sim.player
+      local function shown() return SendaRankCard and SendaRankCard:IsShown() end
+      Check(not shown(), "nothing to renew at the start")
+      CreateMacro("SND_Prueba", 136243, "/cast Bola de Fuego", true)
+      Sim.actions[1] = { "spell", 116 }
+      Sim.actions[2] = { "macro", GetMacroIndexByName("SND_Prueba") }
+      Sim.actions[3] = { "item", 6948 }
+      Sim.actions[4] = { "spell", 205 }
+      Sim.actions[5] = { "spell", 133 }       -- no rank: never listed
+      Sim.actions[7] = { "spell", 116 }
+      Sim.LearnSpell(116); Sim.LearnSpell(205)
+      Sim.Advance(3)
+      Check(shown(), "the card shows rank 1 as old (rank 2 is the best)")
+      local list, slots = SC.OldRanks()
+      Check(#list == 1 and list[1].id == 116 and list[1].bestId == 205 and slots == 2, "only rank 1 is old (2 slots)", #list .. "/" .. slots)
+      Sim.LearnSpell(837)
+      Sim.Advance(3)
+      list, slots = SC.OldRanks()
+      Check(#list == 2 and slots == 3, "after learning rank 3: two old spells, 3 slots", #list .. "/" .. slots)
+      Check(Plain(SendaRankCard.rows[1].text:GetText()):find("rango 1 a 3", 1, true) ~= nil, "line says rank 1 to 3", SendaRankCard.rows[1].text:GetText())
+      Check(Plain(SendaRankCard.rows[2].text:GetText()):find("rango 2 a 3", 1, true) ~= nil, "line says rank 2 to 3", SendaRankCard.rows[2].text:GetText())
+      local errs = #Sim.errors
+      Sim.RunScript(SendaRankCard.rows[1], "OnEnter"); Sim.RunScript(SendaRankCard.rows[1], "OnLeave")
+      Check(#Sim.errors == errs, "row tooltip runs")
+
+      Section("combat: nothing happens until it ends")
+      p.combat = true
+      Sim.Click(SendaRankCard.upgrade); Sim.Advance(0.5)
+      Check(Sim.actions[1][2] == 116 and Sim.actions[4][2] == 205, "bars untouched in combat")
+      p.combat = false
+      Sim.Fire("PLAYER_REGEN_ENABLED"); Sim.Advance(2)
+      Check(Sim.actions[1][2] == 837 and Sim.actions[7][2] == 837 and Sim.actions[4][2] == 837, "upgraded after combat")
+      Check(Sim.actions[2][1] == "macro" and Sim.actions[3][1] == "item" and Sim.actions[5][2] == 133, "macro, item and unranked spell untouched")
+      Check(not shown(), "the card goes away")
+
+      Section("busy cursor")
+      Sim.actions[1] = { "spell", 116 }
+      SC.Check(true); Sim.Advance(0.5)
+      Check(shown(), "card back for a new old rank")
+      Sim.cursor = { "item", 6948 }
+      Sim.Click(SendaRankCard.upgrade); Sim.Advance(0.5)
+      Check(Sim.actions[1][2] == 116, "nothing placed with something on the cursor")
+      Sim.cursor = nil
+
+      Section("keep this rank")
+      Sim.Click(SendaRankCard.rows[1], "RightButton"); Sim.Advance(0.5)
+      Check(S().db.modules.cards.keptRanks[116] == true, "the choice is saved")
+      Check(not shown(), "kept spell is not listed any more")
+      Sim.Fire("SPELLS_CHANGED"); Sim.Advance(3)
+      Check(not shown() and Sim.actions[1][2] == 116, "it does not come back; the kept rank stays on the bar")
+      Section("slash")
+      local lines = Slash("renovar")
+      local said = false
+      for _, l in ipairs(lines) do if l:find("ya tienen el rango", 1, true) then said = true end end
+      Check(said, "/senda renovar says the bars are fine", table.concat(lines, "|"))
     `,
   },
 ];

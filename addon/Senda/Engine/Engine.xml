@@ -4,4 +4,6 @@
   <Script file="Knowledge.lua"/>
   <Script file="Conditions.lua"/>
   <Script file="Engine.lua"/>
+  <Script file="Quests.lua"/>
+  <Script file="Automation.lua"/>
 </Ui>

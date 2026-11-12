@@ -1,0 +1,8 @@
+{
+ "rows": [
+  {"a":{"area":1657,"c":1,"frame":"e","map":1457,"name":"Darnassus","wx":9947.5,"wy":2630,"x":29.13,"y":41.21,"z":1318.7},"area":702,"b":{"area":702,"c":1,"frame":"e","map":1438,"name":"Rut'theran Village","wx":8785.8,"wy":967,"x":55.93,"y":89.74,"z":30.2},"id":"portal-ruttheran","mask":3,"name":"Rut'theran Village","seconds":5},
+  {"a":{"area":702,"c":1,"frame":"e","map":1438,"name":"Rut'theran Village","wx":8799.4,"wy":969.8,"x":55.87,"y":89.34,"z":30.4},"area":1657,"b":{"area":1657,"c":1,"frame":"e","map":1457,"name":"Darnassus","wx":9946.3,"wy":2613,"x":30.75,"y":41.39,"z":1316.3},"id":"portal-darnassus","mask":3,"name":"Darnassus","seconds":5},
+  {"a":{"area":16629,"c":2991,"frame":"l","map":2521,"name":"Shrine of Akir","wx":3089.5,"wy":584.5,"x":65.56,"y":50.34,"z":844.3},"area":16630,"b":{"area":16630,"c":2991,"frame":"l","map":2521,"name":"Rohashi Spires","wx":3079.8,"wy":426.5,"x":68.4,"y":50.6},"id":"portal-rohashi-spires","mask":3,"name":"Rohashi Spires","seconds":5},
+  {"a":{"area":16630,"c":2991,"frame":"l","map":2521,"name":"Rohashi Spires","wx":2981.6,"wy":54.9,"x":75.08,"y":53.25,"z":1181.9},"area":16638,"b":{"area":16638,"c":2991,"frame":"l","map":2521,"name":"Valanaar","wx":2000.7,"wy":543.3,"x":66.3,"y":79.7,"z":658.7},"id":"portal-valanaar","mask":3,"name":"Valanaar","seconds":5}
+ ]
+}

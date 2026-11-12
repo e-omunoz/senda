@@ -1,0 +1,5 @@
+# forever-db fijada para Senda (la lee tools/fetch_foreverdb.py y .github/workflows/foreverdb.yml).
+# Para subir de versión: lee su CHANGELOG, cambia `version`, ejecuta `python tools/fetch_foreverdb.py`
+# y `python tools/verify.py --db foreverdb`, y commitea.
+repo = fitzforge/polestar
+version = 2026.11.1

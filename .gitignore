@@ -6,3 +6,13 @@ __pycache__/
 .env
 harness/reports/tmp/
 tests/wowsim/node_modules/
+
+# Navigation pipeline (nav/): build output and the client-derived grid stay local
+nav/target/
+nav/out/
+
+# Rutas de Polestar importadas en bruto (se regeneran con tools/import_polestar.py; ship = false)
+data/guides/ps-*/
+data/guides/gnome-warlock-ps/
+data/guides/human-mage-ps/
+data/guides/nightelf-druid-ps-full/

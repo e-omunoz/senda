@@ -1,0 +1,12 @@
+{
+ "rows": [
+  {"cast_s":10,"class":"SHAMAN","faction":"both","name":"Astral Recall","spell":556,"to":"bind"},
+  {"cast_s":10,"class":"MAGE","faction":"alliance","name":"Teleport: Stormwind","reagents":[{"count":1,"item":17031}],"spell":3561,"to":{"area":1519,"c":0,"frame":"l","map":1453,"name":"Stormwind","wx":-9003.5,"wy":870,"x":49.09,"y":86.99}},
+  {"cast_s":10,"class":"MAGE","faction":"alliance","name":"Teleport: Ironforge","reagents":[{"count":1,"item":17031}],"spell":3562,"to":{"area":1537,"c":0,"frame":"e","map":1455,"name":"Ironforge","wx":-4613.6,"wy":-915.4,"x":25.52,"y":8.41}},
+  {"cast_s":10,"class":"MAGE","faction":"horde","name":"Teleport: Undercity","reagents":[{"count":1,"item":17031}],"spell":3563,"to":{"area":1497,"c":0,"frame":"e","map":1458,"name":"Undercity","wx":1773.5,"wy":61.1,"x":84.65,"y":16.32}},
+  {"cast_s":10,"class":"MAGE","faction":"alliance","name":"Teleport: Darnassus","reagents":[{"count":1,"item":17031}],"spell":3565,"to":{"area":1657,"c":1,"frame":"e","map":1457,"name":"Darnassus","wx":9664.1,"wy":2526.4,"x":38.93,"y":81.36}},
+  {"cast_s":10,"class":"MAGE","faction":"horde","name":"Teleport: Thunder Bluff","reagents":[{"count":1,"item":17031}],"spell":3566,"to":{"area":1638,"c":1,"frame":"e","map":1456,"name":"Thunder Bluff","wx":-965,"wy":283.4,"x":22.35,"y":16.52}},
+  {"cast_s":10,"class":"MAGE","faction":"horde","name":"Teleport: Orgrimmar","reagents":[{"count":1,"item":17031}],"spell":3567,"to":{"area":1637,"c":1,"frame":"e","map":1454,"name":"Orgrimmar","wx":1469.9,"wy":-4221.5,"x":38.57,"y":85.95}},
+  {"cast_s":10,"class":"DRUID","faction":"both","name":"Teleport: Moonglade","spell":18960,"to":{"area":493,"c":1,"frame":"e","map":1450,"name":"Moonglade","wx":7991.9,"wy":-2679.8,"x":56.26,"y":32.46}}
+ ]
+}

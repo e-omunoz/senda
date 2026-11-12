@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Query the local QuestieDB (WoW Forever) from the command line.
+"""Query the local QuestieDB (WoW Forever), or forever-db, from the command line.
 
 Examples:
   python tools/lookup.py quest 179
@@ -10,7 +10,9 @@ Examples:
   python tools/lookup.py chain 179
   python tools/lookup.py info
 Add --json for machine-readable output (for agents). Data is read from the user's
-installed QuestieDB ("all rights reserved"): print it, never commit it.
+installed QuestieDB ("all rights reserved"): print it, never commit it. Without QuestieDB (or with
+--db foreverdb) it reads forever-db (GPL-3, tools/fetch_foreverdb.py), which lacks exclusiveTo,
+requiredSkill, npcFlags, vendors and waypoints.
 """
 
 from __future__ import annotations
@@ -22,7 +24,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from questiedb import QuestDB  # noqa: E402
+from foreverdb import add_db_arguments, open_db  # noqa: E402
 from questiedb.constants import classes_in_mask, races_in_mask  # noqa: E402
 
 
@@ -200,6 +202,7 @@ def main(argv=None):
     ap.add_argument("--faction", default="Alliance", help="faction for dynamic corrections (Alliance/Horde)")
     ap.add_argument("--json", action="store_true", help="JSON output (also accepted after the subcommand)")
     ap.add_argument("--rebuild", action="store_true", help="force rebuilding the decoded cache")
+    add_db_arguments(ap)
     common = argparse.ArgumentParser(add_help=False)
     common.add_argument("--json", action="store_true", default=argparse.SUPPRESS, help="JSON output")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -220,7 +223,7 @@ def main(argv=None):
     sub.add_parser("info", parents=[common])
     args = ap.parse_args(argv)
 
-    db = QuestDB.open(args.questiedb, faction=args.faction, rebuild=args.rebuild)
+    db = open_db(args, faction=args.faction, rebuild=args.rebuild)
     js = args.json
 
     def emit(obj):

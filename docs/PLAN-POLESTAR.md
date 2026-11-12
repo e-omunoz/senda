@@ -145,8 +145,81 @@ Ordenadas por valor para quien sube de nivel frente al esfuerzo.
 | 10 | «Mientras estás aquí»: entregas y recogidas cercanas primero, objetivos después | Medio-alto | No |
 | 11 | Alertas de raros (viñetas del minimapa) | Bajo-medio | No |
 
-**Fuera por ahora:** el router de caminos con mapas de navegación (licencia de Leffe, ~38 MB y mucha
-memoria), el buscador de objetos y el diario de mazmorras (necesitan una base de datos tipo Codex).
+## 6a. Principios técnicos
+
+- **Dentro del juego solo hay Lua 5.1.** Un addon no puede ejecutar Rust, ni programas externos, ni abrir
+  red, ni leer ficheros: solo Lua y sus SavedVariables, que se escriben al salir. Un programa externo no
+  puede hablar con el juego en directo (leer la pantalla o inyectar va contra las condiciones de Blizzard).
+- **Por eso, todo lo pesado se calcula fuera, en Rust, al compilar.** En el juego solo se consultan datos
+  ya calculados. Herramientas en Rust (y Python para lo ligero) generan los paquetes de datos; el addon los
+  lee como cadenas compactas.
+- **Ninguna espera en el juego:** cada consulta cabe en menos de 2 ms por fotograma; lo que no quepa se
+  reparte en varios fotogramas con corrutinas, nunca se bloquea. Los paquetes grandes se cargan bajo
+  demanda, por continente, fuera de combate, y se descargan de memoria cuando no hacen falta.
+- **Datos reales y objetivos:** terreno y tablas del cliente, forever-db, partidas grabadas en el juego.
+  Nada estimado a ojo: si un dato no tiene fuente, no entra.
+
+**Navegación (decisión):** malla de navegación real generada desde el terreno del cliente de Forever, sin
+pasar por un grafo hecho a mano:
+
+1. Extracción del terreno y los edificios del cliente (CASC) y malla con Recast, en Rust. Shortest Path
+   Forever y Polestar ya lo hacen (el constructor en Rust de Polestar, `forge-navbuild`, es GPL-3 y lo
+   podemos reutilizar). Nunca se publica nada del cliente, solo las celdas transitables derivadas.
+2. Precálculo jerárquico (HPA*): la malla se divide en sectores con sus pasos entre sectores y los caminos
+   entre pasos ya resueltos. En el juego, una ruta de continente es un A* sobre unos pocos cientos de nodos
+   y el detalle se resuelve solo cerca del jugador.
+3. Paquetes por continente comprimidos, con objetivo de memoria por debajo de Polestar (~26 MB cargados).
+4. Validación con las 50 rutas de prueba, comparando con rastros reales del grabador.
+
+## 6b. Lo que Polestar hace y no podemos copiar: alternativas abiertas
+
+No copiamos los mapas de navegación de Leffe ni el Codex de Polestar (permisos personales). Para cada una
+de esas funciones hay una vía abierta o propia, con su forma de comprobar que cumple su objetivo.
+
+| Función | Cómo la hacemos | Licencia | Tamaño | Esfuerzo |
+|---|---|---|---|---|
+| Caminos reales | Malla real desde el terreno del cliente (Recast en Rust) con precálculo jerárquico; en el juego, A* sobre el grafo de sectores y detalle solo cerca (ver 6a) | Propia + GPL-3 (SPF, `forge-navbuild`) | Por continente, bajo demanda; objetivo < 26 MB cargados | Alto |
+| Planificador de viaje | Datos de vuelos, barcos, zepelines, tranvías y portales de Polestar (GPL-3, con el aviso de Shortest Path Forever), nodos conocidos con `C_TaxiMap`, Dijkstra con andar/volar/barco/piedra de hogar. Después, los regeneramos nosotros desde wago.tools, classic-db e InFlight | GPL-3 / MIT | ~70 KB | Medio |
+| Buscador de objetos | forever-db (objetos de misión) + ForeverLevelingBiS (MIT: botín de mazmorra y equipo de subida) + tablas del cliente para monturas y mascotas, en un addon aparte que se carga al usarlo | GPL-3 + MIT + datos del cliente | 0,3-0,5 MB | Medio |
+| Diario de mazmorras | El cliente de Forever no trae Diario de encuentros: misiones de cada mazmorra desde forever-db, niveles desde las tablas del cliente, entradas comprobadas, botín útil por clase desde ForeverLevelingBiS con los pesos de Senda | GPL-3 + MIT | 80-150 KB | Medio |
+| Alertas de raros | Detección por viñetas del minimapa (`C_VignetteInfo`, comprobado en el cliente de Forever), placas de nombre y objetivo; lista de 411 raros con sus apariciones desde forever-db | GPL-3 (lógica adaptada de Polestar) | ~25 KB | Bajo-medio |
+| Grupo y pareja | Protocolo propio por `C_ChatInfo.SendAddonMessage` inspirado en Polestar: saludo, progreso por misión con contadores, quién va por delante, pedir al compañero que salte a tu paso, esperar al compañero. Sin librerías | Propia | Pequeño | Medio |
+| Grabador | Ampliar el `Recorder` de Senda: pasos, XP, combate, ausencia, muertes y rastro de posición opcional, sin nombres. Herramientas que calculan el tiempo real de cada paso y lo comparan con el filtro de eficiencia; los rastros alimentan el grafo de caminos | Propia | — | Medio-alto |
+
+**Cómo validamos cada una:**
+
+- **Caminos:** 40-60 rutas de prueba (entrada de Minas de la Muerte, ascensores de Cima del Trueno, Entrañas,
+  túnel Humedal-Dun Morogh, puentes de Mil Agujas) en el simulador. La línea nunca cruza celdas imposibles
+  (comprobado contra una malla de referencia que no se publica); la ruta mide como mucho 1,3 veces lo que
+  mide un paseo real grabado; cero atascos donde la flecha recta sí se atasca; menos de 2 ms por fotograma.
+  En el juego: las mismas 10 caminatas con flecha recta y con la nuestra, cronometradas.
+- **Viaje:** respuestas esperadas en el simulador (Ventormenta → Costa Oscura por el barco de Menethil;
+  «andando es más rápido» por debajo de 400 m; nunca un nodo desconocido o de la otra facción). En el juego:
+  error mediano del tiempo previsto frente al real ≤ 15% en 20 viajes.
+- **Buscador:** ≥ 95% de los objetos de las listas de subida con al menos una fuente; 20 objetos conocidos
+  comprobados en el simulador; 10 monturas y mascotas en el juego.
+- **Mazmorras:** misiones previas en el orden correcto antes de cada paso `dungeon`; 3 entradas recorridas
+  en el juego.
+- **Raros:** pruebas de la lógica de decisión (rebote, combate, muerto); cobertura 346 de 411 con
+  aparición conocida; 5 raros conocidos comprobados en el juego (Madre Colmillo, Thuros).
+- **Pareja:** modo de dos jugadores en el simulador (los mensajes de uno llegan al otro, con fallos de
+  envío simulados); en el juego, contadores iguales a los del compañero, menos de 10 mensajes por minuto
+  y ningún aviso de límite en una hora.
+- **Grabador:** sesiones grabadas reproducidas en el simulador con tiempos exactos; prueba de privacidad
+  (falla si se guarda un nombre o un reino); error mediano entre tiempo medido y estimado ≤ 30% por paso.
+
+## 6c. Nombres en español sacados del juego
+
+Los nombres oficiales en español (misiones, PNJ, objetos, hechizos, zonas) los pone el propio cliente:
+
+- **Fichas en el texto:** los pasos se escriben como `Coge «{quest:155}» de {npc:467}` y Senda pone el
+  nombre al mostrarlo (`C_QuestLog.GetTitleForQuestID`, tooltip de criatura por id, `C_Item`, `C_Spell`,
+  `C_Map`). Siempre sale el nombre exacto del idioma del cliente; si aún no está en caché, se pide al
+  servidor y el HUD se actualiza al llegar.
+- **Volcado desde el cliente:** `/senda volcar` pide al juego los nombres de todos los ids de las guías y
+  los guarda; una herramienta los pasa a `data/locale/esES/`. Sirven de respaldo, para la web y como dato
+  **verificado en el juego**. Un nuevo volcado detecta los cambios de nombre de cada parche.
+- Las explicaciones, los trucos y el porqué de cada paso los seguimos escribiendo nosotros.
 
 ## 7. Calidad: cómo sabremos que somos mejores
 
@@ -167,9 +240,9 @@ pequeñas, textos, pruebas). Cada fase termina con el simulador en verde y una v
 |---|---|---|
 | 0 | Licencia GPL-3, `THIRD_PARTY.md`, forever-db fijada y adaptador en `tools/` | 0.4.0 |
 | 1 | Importador + prototipo Teldrassil + funciones 1, 2, 3, 6 y 7 | 0.4.x |
-| 2 | Filtro de eficiencia, las 3 guías actuales completas, seguimiento por objetivo, saltar con Deshacer, informe de errores | 0.5.0 |
-| 3 | Todas las razas de Alianza, planificador de viaje, «Mientras estás aquí» | 0.6.0 |
-| 4 | Horda, alertas de raros, métricas en la web | 1.0.0 |
+| 2 | Nombres desde el juego (fichas y volcado), filtro de eficiencia, grabador ampliado, las 3 guías actuales completas, seguimiento por objetivo, saltar con Deshacer, informe de errores, pareja sincronizada | 0.5.0 |
+| 3 | Todas las razas de Alianza, planificador de viaje, grafo de caminos, «Mientras estás aquí», alertas de raros | 0.6.0 |
+| 4 | Horda, diario de mazmorras, buscador de objetos, métricas en la web | 1.0.0 |
 
 ## 9. Riesgos
 

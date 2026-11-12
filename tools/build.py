@@ -38,7 +38,7 @@ GUIDE_ORDER = ["id", "title", "summary", "faction", "races", "classes", "levels"
 # Orden de claves de un paso en el Lua (como en el contrato de docs/ARCHITECTURE.md);
 # las claves no listadas van al final en el orden del esquema.
 STEP_ORDER = ["id", "do", "quest", "quests", "obj", "npc", "item", "count", "spells", "level", "prof", "skill",
-              "at", "wps", "radius", "node", "zone", "if", "optional", "chain", "text", "tip", "link", "status"]
+              "at", "wps", "radius", "node", "zone", "if", "optional", "escort", "chain", "text", "tip", "link", "status"]
 KNOWLEDGE_ORDER = ["id", "class", "kind", "title", "summary", "levels", "order", "icon", "link", "status"]
 
 
@@ -91,6 +91,9 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
     shared_used: dict[str, validate.Section] = {}
     guide_files: list[str] = []
     for g in sorted(ds.guides, key=lambda g: g.data["id"]):
+        # ship = false: datos de trabajo (p. ej. rutas importadas en bruto) que no van en el addon.
+        if g.data.get("ship") is False:
+            continue
         body = []
         for sec in g.sections:
             if sec.shared:

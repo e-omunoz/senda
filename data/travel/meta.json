@@ -1,0 +1,56 @@
+{
+ "constants": {
+  "faction_mask": {
+   "1": "alliance",
+   "2": "horde",
+   "3": "both"
+  },
+  "flight_seconds": "yards / flight_speed + flight_stop; add take_off once per journey leg",
+  "flight_speed_yd_s": 30.0,
+  "flight_stop_s": 2.0,
+  "hearth_cast_s": 10.0,
+  "hearth_cooldown_s": 3600,
+  "hearth_item": 6948,
+  "hearth_margin_s": 120.0,
+  "hearth_min_trip_s": 180.0,
+  "hearth_total_s": 15.0,
+  "run_speed_yd_s": 7.0,
+  "take_off_s": 4.0,
+  "teleport_margin_s": 60.0,
+  "teleport_share": 0.2,
+  "walk_detour": 1.25
+ },
+ "counts": {
+  "flights": 268,
+  "inns": 47,
+  "lifts": 7,
+  "portals": 4,
+  "taxi_nodes": 63,
+  "teleports": 8,
+  "timetable_routes": 21,
+  "timetable_stops": 47,
+  "transports": 13,
+  "transports_by_kind": {
+   "boat": 9,
+   "tram": 1,
+   "zeppelin": 3
+  }
+ },
+ "frames": "map/x/y: UiMap id and map percent; frame 'e' = Classic Era map, 'l' = WoW Forever redrawn map. c/wx/wy: continent id and world yards (wx north-south, wy east-west, as forever-db spawns).",
+ "name": "senda-travel",
+ "schema": 1,
+ "sources": {
+  "era_client_build": "1.15.9.70576",
+  "forever_db": {
+   "clientBuild": "1.60.1.70532",
+   "licence": "GPL-3.0 / CC BY 4.0 (own layer)",
+   "version": "2026.11.1"
+  },
+  "polestar": {
+   "commit": "19bd636e7d6f33231770f6029c76d2d4dfc63798",
+   "file": "addon/Polestar/Nav/TravelData.lua",
+   "header": "Blizzard Classic Era client tables (wago.tools build 1.15.9.70576) + WoW Forever client TaxiPathNode/TransportAnimation/spell tables (build 1.60.1.70532) + CMaNGOS classic-db 22b5146, after Shortest Path Forever (C) 2026 Cillian Berragan",
+   "licence": "GPL-3.0-or-later"
+  }
+ }
+}

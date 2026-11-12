@@ -101,6 +101,7 @@ sources = ["questie:quest/179"]
 | `zone` | int | uiMapID de llegada (hearth/fly) |
 | `if` | tabla | Filtros: `class`, `race`, `faction`, `prof`, `minlevel`, `maxlevel` |
 | `optional` | bool | Se puede saltar sin penalización |
+| `escort` | bool | Misión de escolta: el HUD añade «Escolta: si el PNJ no está, alguien la está haciendo; espera a que reaparezca.» |
 | `chain` | string | Pasos que se completan juntos |
 | `link` | string | Ruta en la web (GitHub Pages) para leer más |
 | `status` | enum | Obligatorio: `verified`, `unverified`, `disputed` |
@@ -152,6 +153,36 @@ El `.toc` incluye `Guides\Guides.xml`, que también genera el build.
 - `SendaRecorderDB` (cuenta): observaciones `{ t, kind, quest, npc, map, x, y, level, race, class, build }`.
   `kind` ∈ `accept`, `turnin`, `npc_seen` (trainer/vendor/gossip), `fp`, `bind`. Sin nombres de
   personaje ni de reino.
+
+## Automatización y estado de las misiones
+
+Funciones tomadas de Polestar (GPL-3), adaptadas a la arquitectura de Senda y a la API de Forever (Midnight 12.x;
+nada de acciones protegidas en combate):
+
+- **Automatización** (`Engine/Automation.lua`, opción `autoQuests`, activa por defecto). Con `QUEST_DETAIL`,
+  `QUEST_PROGRESS`, `QUEST_COMPLETE`, `QUEST_GREETING` y `GOSSIP_SHOW` (con `C_GossipInfo`) acepta las misiones
+  que el paso actual o los 6 pasos pendientes siguientes aceptan, y entrega las del paso actual (y su `chain`;
+  si el actual es un `goto`, también el siguiente). Nunca acepta lo que la guía no lista, no actúa en combate ni
+  con Mayús pulsado, y si la entrega tiene varias recompensas a elegir deja la ventana abierta.
+- **Misiones con tiempo** (`Engine/Quests.lua`). `C_QuestLog.GetTimeAllowed` da el tiempo; el HUD muestra la
+  cuenta atrás `M:SS` de las misiones del paso actual y el chat avisa a los 5 y a 1 minuto (opción
+  `questTimerAlerts`). El evento interno `SENDA_QUEST_TIMER` se lanza cada segundo mientras corre alguna.
+- **Fallidas y abandonadas.** `Engine:Problem()` devuelve `failed` (`C_QuestLog.IsFailed`) o `abandoned`
+  (`QUEST_REMOVED` sin entrega de una misión ya cogida por la guía; se guarda en `progress.abandoned`) cuando el
+  paso actual es un `complete`/`turnin` de esa misión. El motor no salta esos pasos en silencio: el HUD los
+  atenúa, explica el motivo y ofrece «Volver a cogerla» (vuelve al paso `accept`) y «Saltar misión»; la flecha
+  apunta al `at` del paso `accept`.
+- **Visibilidad** (`UI/Visibility.lua`). Opción `hideInInstance` (por defecto sí): HUD y flecha se ocultan en
+  mazmorras, bandas, campos de batalla y arenas (`IsInInstance`) y vuelven al salir. «Ocultar todo»
+  (`db.hideAll`): clic en el botón del minimapa o `/senda hide`; el clic derecho del botón abre un menú con panel,
+  HUD, flecha y ocultar todo.
+- **Tarjetas de hechizos** (`Modules/SpellCards.lua`, opciones `mod_card_level` y `mod_card_rank`). Al subir de
+  nivel, los hechizos que ya puedes entrenar con su coste, si te llega el dinero y dónde entrenar (botón
+  «Señalar»); tras aprender hechizos, los rangos antiguos que quedan en tus barras con «Renovar» (`PickupSpell` +
+  `PlaceAction`, nunca en combate: espera a `PLAYER_REGEN_ENABLED`; nunca toca macros ni objetos). `/senda renovar`.
+- **Guías solo a mano.** Una guía con `order` negativo en `guide.toml` (los prototipos y las rutas importadas de
+  Polestar) sale en la lista y se elige con `/senda guide <id>`, pero `Engine:AutoSelect()` nunca la coge
+  (`Guides:IsManualOnly`).
 
 ## Harness de verificación
 
@@ -214,6 +245,10 @@ Senda.Compat.*                         -- capa sobre la API moderna con fallback
                                        --   NpcIdFromGUID(guid) -> id o nil, ProfessionRank(key) -> rango, max
 Senda.Guides:RegisterSection(t), :RegisterGuide(t), :Get(id), :ForPlayer() -> lista de guías válidas
 Senda.Engine:CurrentStep(), :Advance(), :Back(), :Skip(), :Complete(stepId), :SetGuide(id)
+Senda.Engine:WantsQuest("accept"|"turnin", questId)  -- ¿la guía quiere esa acción ahora? (Engine/Automation.lua)
+Senda.Engine:Problem([entry]) -> { kind = "failed"|"abandoned", quest, accept }   -- Engine/Quests.lua
+Senda.Engine:StepTimers(step) -> { { quest, left }, ... }, :RetakeQuest(q), :SkipQuest(q), :IsAbandoned(q)
+Senda.Visibility:Hidden(), :SetHidden(b), :Toggle()  -- ocultar HUD y flecha (instancias o a mano)
 Senda.Arrow:SetTarget(map, x, y, label, source), :Clear(source)
 Senda.Knowledge:Register(t), :ForClass(class) -> lista de páginas
 Senda.UI:RegisterTab({ key, title, icon, order, build = function(parent) end, refresh = function() end })

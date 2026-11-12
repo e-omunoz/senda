@@ -1,0 +1,11 @@
+{
+ "rows": [
+  {"area":484,"board_s":2,"bottom_z":-40.4,"c":1,"dir":null,"id":"lift-freewind-post","name":"Freewind Post","ride_s":10,"routes":[{"a":[1,3],"b":[2,4],"route":"lift-freewind-post"}],"top_z":89,"wait_s":9.5,"wx":-5390.8,"wy":-2497},
+  {"area":485,"board_s":2,"bottom_z":-44,"c":1,"dir":null,"id":"lift-great-lift","name":"The Great Lift","ride_s":10,"routes":[{"a":[1,3],"b":[2,4],"route":"lift-great-lift"}],"top_z":85.4,"wait_s":9.5,"wx":-4668.1,"wy":-1838.6},
+  {"area":1638,"board_s":2,"bottom_z":69.1,"c":1,"dir":"north","id":"lift-thunder-bluff-north","name":"Thunder Bluff, north lift","ride_s":10,"routes":[{"a":[2],"b":[1],"route":"lift-thunder-bluff-north-1"},{"a":[1],"b":[2],"route":"lift-thunder-bluff-north-2"}],"top_z":140.5,"wait_s":12,"wx":-1032.7,"wy":-38.8},
+  {"area":1638,"board_s":2,"bottom_z":68.7,"c":1,"dir":"west","id":"lift-thunder-bluff-west","name":"Thunder Bluff, west lift","ride_s":10,"routes":[{"a":[1],"b":[2],"route":"lift-thunder-bluff-west-1"},{"a":[2],"b":[1],"route":"lift-thunder-bluff-west-2"}],"top_z":130.1,"wait_s":12,"wx":-1297.3,"wy":187.5},
+  {"area":1497,"board_s":2,"bottom_z":-40.8,"c":0,"dir":"east","id":"lift-undercity-east","name":"Undercity, east lift","ride_s":3.3,"routes":[{"a":[1],"b":[2],"route":"lift-undercity-east"}],"top_z":55.7,"wait_s":10.3,"wx":1595.3,"wy":188.6},
+  {"area":1497,"board_s":2,"bottom_z":-40.8,"c":0,"dir":"south","id":"lift-undercity-south","name":"Undercity, south lift","ride_s":3.3,"routes":[{"a":[1],"b":[2],"route":"lift-undercity-south"}],"top_z":55.7,"wait_s":10.3,"wx":1544.2,"wy":240.8},
+  {"area":1497,"board_s":2,"bottom_z":-40.8,"c":0,"dir":"west","id":"lift-undercity-west","name":"Undercity, west lift","ride_s":3.3,"routes":[{"a":[2],"b":[1],"route":"lift-undercity-west"}],"top_z":55.7,"wait_s":10.3,"wx":1596.2,"wy":291.8}
+ ]
+}

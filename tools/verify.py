@@ -12,6 +12,8 @@ Per step and per guide the verdict is ``confirm`` / ``conflict`` / ``unknown`` w
       source (URL classified official/community_curated by harness/sources.toml).
 It never downgrades: conflicts on verified steps are reported as suggestions.
 Reports contain ids, verdicts and distances only (QuestieDB is "all rights reserved").
+Without a local QuestieDB (CI) it checks against forever-db (``--db``, see tools/README.md); forever-db
+has no npcFlags, so NPC roles are then "unknown", and promoted steps cite ``foreverdb:`` instead of ``questie:``.
 """
 
 from __future__ import annotations
@@ -28,6 +30,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from questiedb import QuestDB  # noqa: E402
+from foreverdb import add_db_arguments, open_db, source_of  # noqa: E402
 from questiedb.constants import (NPC_FLAGS, class_allowed, classes_in_mask, race_allowed,  # noqa: E402
                                  races_in_mask)
 
@@ -298,7 +301,9 @@ def check_step(db, guide, section, step, state, observations, tol):
         if at:
             checks.append(coords_check(db, "npc", npc, at, tol, "step"))
         role = ROLE_FOR_STEP.get(do)
-        if role:
+        if role and db.npc(npc).get("npcFlags") is None:
+            checks.append(_chk("npc_role", "unknown", f"npc {npc}: no npc flags in {source_of(db)}"))
+        elif role:
             flags = db.npc(npc)["npcFlags"]
             ok = bool(flags & NPC_FLAGS[role])
             checks.append(_chk("npc_role", "confirm" if ok else "conflict",
@@ -521,8 +526,11 @@ def _find_step(doc: dict, step_id: str) -> dict | None:
 
 def render_markdown(report: dict) -> str:
     s = report["summary"]
-    out = [f"# Verificación contra QuestieDB — {report['generated']}", "",
-           f"QuestieDB {report['questiedb'].get('flavor')} (commit {str(report['questiedb'].get('build_commit'))[:10]}),"
+    db = report["questiedb"]
+    name = (f"forever-db {db.get('version')}" if db.get("source") == "foreverdb"
+            else f"QuestieDB {db.get('flavor')}")
+    out = [f"# Verificación contra {name.split(' ')[0]} — {report['generated']}", "",
+           f"{name} (commit {str(db.get('build_commit'))[:10]}),"
            f" tolerancia {report['tolerance']} % de mapa, {report['observations']} observaciones de juego.", "",
            "| Guía | Pasos | confirm | conflict | unknown |", "|---|---:|---:|---:|---:|"]
     for gid, g in s["by_guide"].items():
@@ -562,6 +570,7 @@ def main(argv=None):
     ap.add_argument("--root", default=str(REPO_ROOT), help="repository root (default: this repo)")
     ap.add_argument("--guide", help="only this guide id")
     ap.add_argument("--questiedb", help="QuestieDB addon folder (or env SENDA_QUESTIEDB)")
+    add_db_arguments(ap)
     ap.add_argument("--tolerance", type=float, default=2.0, help="coordinate tolerance in map %% (default 2.0)")
     ap.add_argument("--json", action="store_true", help="print the JSON report on stdout")
     ap.add_argument("--apply-status", action="store_true", help="promote unverified -> verified where allowed")
@@ -583,7 +592,7 @@ def main(argv=None):
     for g in guides:
         faction = g["meta"].get("faction", "Alliance")
         if faction not in dbs:
-            dbs[faction] = QuestDB.open(args.questiedb, faction=faction)
+            dbs[faction] = open_db(args, faction=faction)
         db = dbs[faction]
         state = {"accepted": set(), "turned_in": set()}
         for sec in g["sections"]:
@@ -627,10 +636,11 @@ def main(argv=None):
                                if tiers.tier(s) == "official" or s.startswith("harness:")]
                 if independent or rule:
                     rule = rule or "c"
+                    tag = "questie" if source_of(next(iter(dbs.values()))) == "questiedb" else "foreverdb"
                     if first["quest"]:
-                        add += [f"questie:quest/{q}" for q in first["quest"]]
+                        add += [f"{tag}:quest/{q}" for q in first["quest"]]
                     elif first["npc"]:
-                        add.append(f"questie:npc/{first['npc']}")
+                        add.append(f"{tag}:npc/{first['npc']}")
             if not rule:
                 continue
             edits.setdefault(file, []).append((sid, rule, add))
@@ -665,9 +675,11 @@ def main(argv=None):
         g["steps"] += 1
         g[r["verdict"]] += 1
     if not dbs:
-        dbs["Alliance"] = QuestDB.open(args.questiedb, faction="Alliance")
+        dbs["Alliance"] = open_db(args, faction="Alliance")
     any_db = next(iter(dbs.values()), None)
     info = {k: any_db.info.get(k) for k in ("flavor", "faction", "build_commit", "build_time", "version")} if any_db else {}
+    if any_db:
+        info["source"] = source_of(any_db)
     report = {"generated": dt.datetime.now().strftime("%Y-%m-%d %H:%M"), "root": root.name,
               "questiedb": info, "tolerance": args.tolerance, "observations": len(observations),
               "summary": summary, "applied": applied, "dry_run": bool(args.dry_run and args.apply_status),

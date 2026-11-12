@@ -523,3 +523,66 @@ end
 function Compat.NewTicker(sec, fn)
   if C_Timer and C_Timer.NewTicker then return C_Timer.NewTicker(sec, fn) end
 end
+
+------------------------------------------------------------------------------
+-- Misiones fallidas y con tiempo
+------------------------------------------------------------------------------
+
+-- ¿Está la misión en el registro y fallida (escolta perdida, tiempo agotado)?
+-- Adaptado de Polestar, Core/Compat.lua (IsQuestFailed).
+function Compat.IsQuestFailed(id)
+  id = tonumber(id)
+  local QLg = _G.C_QuestLog
+  if not id or not (QLg and QLg.IsFailed) or not Compat.IsOnQuest(id) then return false end
+  local r = Try(QLg.IsFailed, id)
+  if IsSecret(r) then return false end
+  return r and true or false
+end
+
+-- Segundos que le quedan a una misión con tiempo, o nil si no lo tiene (o ya terminó/falló).
+-- C_QuestLog.GetTimeAllowed(id) -> total, transcurrido.
+function Compat.QuestTimeLeft(id)
+  id = tonumber(id)
+  local QLg = _G.C_QuestLog
+  if not id or not (QLg and QLg.GetTimeAllowed) then return nil end
+  local total, elapsed = Try(QLg.GetTimeAllowed, id)
+  total, elapsed = Num(total), Num(elapsed)
+  if not total or total <= 0 then return nil end
+  local left = total - (elapsed or 0)
+  if left <= 0 then return nil end
+  return left
+end
+
+-- Ids de las misiones del registro que tienen cuenta atrás, con sus segundos restantes: { [id] = left }.
+function Compat.TimedQuests()
+  local out = {}
+  local QLg = _G.C_QuestLog
+  if not (QLg and QLg.GetNumQuestLogEntries and QLg.GetInfo and QLg.GetTimeAllowed) then return out end
+  local n = Num(Try(QLg.GetNumQuestLogEntries)) or 0
+  for i = 1, n do
+    local info = Try(QLg.GetInfo, i)
+    local q = type(info) == "table" and not info.isHeader and Num(info.questID)
+    if q and q > 0 and not Compat.IsQuestFailed(q) then
+      local left = Compat.QuestTimeLeft(q)
+      if left then out[q] = left end
+    end
+  end
+  return out
+end
+
+------------------------------------------------------------------------------
+-- Instancias y teclas
+------------------------------------------------------------------------------
+
+-- Tipo de instancia ("party", "raid", "pvp", "arena", "scenario", "none") o nil.
+function Compat.InstanceType()
+  local inst, kind = Try(_G.IsInInstance)
+  if IsSecret(inst) or IsSecret(kind) then return nil end
+  if not inst then return "none" end
+  return type(kind) == "string" and kind or "party"
+end
+
+function Compat.ShiftDown()
+  local r = Try(_G.IsShiftKeyDown)
+  return (not IsSecret(r)) and r and true or false
+end

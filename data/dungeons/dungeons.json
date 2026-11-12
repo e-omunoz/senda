@@ -1,0 +1,2658 @@
+{
+ "schema": 1,
+ "dungeons": [
+  {
+   "key": "shadowfang-keep",
+   "map": 33,
+   "name": "Shadowfang Keep",
+   "directory": "Shadowfang",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 11,
+    "recommended": 18,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     25,
+     27
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    209
+   ],
+   "encounters": [
+    {
+     "name": "Rethilgore",
+     "id": 2748,
+     "order": 0
+    },
+    {
+     "name": "Razorclaw the Butcher",
+     "id": 2749,
+     "order": 1000
+    },
+    {
+     "name": "Baron Silverlaine",
+     "id": 2750,
+     "order": 2000
+    },
+    {
+     "name": "Commander Springvale",
+     "id": 2751,
+     "order": 3000
+    },
+    {
+     "name": "Odo the Blindwatcher",
+     "id": 2752,
+     "order": 4000
+    },
+    {
+     "name": "Fenrus the Devourer",
+     "id": 2753,
+     "order": 5000
+    },
+    {
+     "name": "Wolf Master Nandos",
+     "id": 2754,
+     "order": 6000
+    },
+    {
+     "name": "Archmage Arugal",
+     "id": 2755,
+     "order": 7000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1421,
+    "x": 44.7,
+    "y": 67.8,
+    "world": {
+     "map": 0,
+     "x": -231.0,
+     "y": 1571.6
+    },
+    "other_frames": [],
+    "ambiguous_frame": false,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 3,
+    "in_dungeon_quests": 3,
+    "chain_quests": 0,
+    "alliance": 0,
+    "horde": 3,
+    "giver_no_spawn": 0,
+    "giver_missing": 0,
+    "started_inside": 0,
+    "started_outside": 3,
+    "started_unknown": 0,
+    "quest_level_range": [
+     25,
+     27
+    ]
+   }
+  },
+  {
+   "key": "stormwind-stockade",
+   "map": 34,
+   "name": "Stormwind Stockade",
+   "directory": "StormwindJail",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 15,
+    "recommended": 23,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     25,
+     29
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "A"
+   ],
+   "wings": [
+    {
+     "lfg": 11,
+     "name": "Stormwind Stockades",
+     "recommended": 23
+    }
+   ],
+   "area_ids": [
+    717
+   ],
+   "encounters": [
+    {
+     "name": "Targorr the Dread",
+     "id": 2756,
+     "order": 0
+    },
+    {
+     "name": "Kam Deepfury",
+     "id": 2757,
+     "order": 1000
+    },
+    {
+     "name": "Hamhock",
+     "id": 2758,
+     "order": 2000
+    },
+    {
+     "name": "Dextren Ward",
+     "id": 2759,
+     "order": 3000
+    },
+    {
+     "name": "Bazil Thredd",
+     "id": 2760,
+     "order": 4000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1453,
+    "x": 50.4,
+    "y": 66.2,
+    "world": {
+     "map": 0,
+     "x": -8762.4,
+     "y": 848.0
+    },
+    "other_frames": [
+     [
+      1429,
+      19.8,
+      35.5
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 10,
+    "in_dungeon_quests": 6,
+    "chain_quests": 4,
+    "alliance": 10,
+    "horde": 0,
+    "giver_no_spawn": 0,
+    "giver_missing": 0,
+    "started_inside": 0,
+    "started_outside": 10,
+    "started_unknown": 0,
+    "quest_level_range": [
+     25,
+     29
+    ]
+   }
+  },
+  {
+   "key": "deadmines",
+   "map": 36,
+   "name": "Deadmines",
+   "directory": "DeadminesInstance",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 10,
+    "recommended": 16,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     17,
+     22
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    1581
+   ],
+   "encounters": [
+    {
+     "name": "Rhahk'Zor",
+     "id": 2741,
+     "order": 0
+    },
+    {
+     "name": "Sneed",
+     "id": 2742,
+     "order": 1000
+    },
+    {
+     "name": "Miner Johnson",
+     "id": 3676,
+     "order": 1500
+    },
+    {
+     "name": "Gilnid",
+     "id": 2743,
+     "order": 2000
+    },
+    {
+     "name": "Captain Greenskin",
+     "id": 2744,
+     "order": 3000
+    },
+    {
+     "name": "Mr. Smite",
+     "id": 2745,
+     "order": 4000
+    },
+    {
+     "name": "Cookie",
+     "id": 2746,
+     "order": 5000
+    },
+    {
+     "name": "Edwin VanCleef",
+     "id": 2747,
+     "order": 6000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1436,
+    "x": 38.2,
+    "y": 77.5,
+    "world": {
+     "map": 0,
+     "x": -11207.8,
+     "y": 1681.2
+    },
+    "other_frames": [
+     [
+      1434,
+      8.5,
+      0.9
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 24,
+    "in_dungeon_quests": 8,
+    "chain_quests": 16,
+    "alliance": 24,
+    "horde": 0,
+    "giver_no_spawn": 0,
+    "giver_missing": 0,
+    "started_inside": 0,
+    "started_outside": 22,
+    "started_unknown": 2,
+    "quest_level_range": [
+     17,
+     22
+    ]
+   }
+  },
+  {
+   "key": "wailing-caverns",
+   "map": 43,
+   "name": "Wailing Caverns",
+   "directory": "WailingCaverns",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 10,
+    "recommended": 17,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     16,
+     26
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    718
+   ],
+   "encounters": [
+    {
+     "name": "Lady Anacondra",
+     "id": 585,
+     "order": 0
+    },
+    {
+     "name": "Lord Cobrahn",
+     "id": 586,
+     "order": 1000
+    },
+    {
+     "name": "Kresh",
+     "id": 587,
+     "order": 2000
+    },
+    {
+     "name": "Lord Pythas",
+     "id": 588,
+     "order": 3000
+    },
+    {
+     "name": "Skum",
+     "id": 589,
+     "order": 4000
+    },
+    {
+     "name": "Lord Serpentis",
+     "id": 590,
+     "order": 5000
+    },
+    {
+     "name": "Verdan the Everliving",
+     "id": 591,
+     "order": 6000
+    },
+    {
+     "name": "Mutanus the Devourer",
+     "id": 592,
+     "order": 7000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1413,
+    "x": 47.7,
+    "y": 35.0,
+    "world": {
+     "map": 1,
+     "x": -751.1,
+     "y": -2209.2
+    },
+    "other_frames": [
+     [
+      1412,
+      76.2,
+      24.8
+     ],
+     [
+      1411,
+      4.7,
+      72.6
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 17,
+    "in_dungeon_quests": 10,
+    "chain_quests": 7,
+    "alliance": 8,
+    "horde": 16,
+    "giver_no_spawn": 0,
+    "giver_missing": 1,
+    "started_inside": 1,
+    "started_outside": 15,
+    "started_unknown": 0,
+    "quest_level_range": [
+     16,
+     26
+    ]
+   }
+  },
+  {
+   "key": "razorfen-kraul",
+   "map": 47,
+   "name": "Razorfen Kraul",
+   "directory": "RazorfenKraulInstance",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 25,
+    "recommended": 24,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     26,
+     36
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    491
+   ],
+   "encounters": [
+    {
+     "name": "Roogug",
+     "id": 2773,
+     "order": 0
+    },
+    {
+     "name": "Aggem Thorncurse",
+     "id": 2774,
+     "order": 1000
+    },
+    {
+     "name": "Death Speaker Jargba",
+     "id": 2775,
+     "order": 2000
+    },
+    {
+     "name": "Overlord Ramtusk",
+     "id": 2776,
+     "order": 3000
+    },
+    {
+     "name": "Agathelos the Raging",
+     "id": 2777,
+     "order": 4000
+    },
+    {
+     "name": "Charlga Razorflank",
+     "id": 2778,
+     "order": 5000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1441,
+    "x": 27.9,
+    "y": 16.8,
+    "world": {
+     "map": 1,
+     "x": -4459.4,
+     "y": -1660.2
+    },
+    "other_frames": [
+     [
+      1413,
+      42.3,
+      89.9
+     ],
+     [
+      1445,
+      13.1,
+      69.3
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 32,
+    "in_dungeon_quests": 11,
+    "chain_quests": 21,
+    "alliance": 17,
+    "horde": 17,
+    "giver_no_spawn": 2,
+    "giver_missing": 0,
+    "started_inside": 0,
+    "started_outside": 29,
+    "started_unknown": 3,
+    "quest_level_range": [
+     26,
+     36
+    ]
+   }
+  },
+  {
+   "key": "blackfathom-deeps",
+   "map": 48,
+   "name": "Blackfathom Deeps",
+   "directory": "Blackfathom",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 15,
+    "recommended": 22,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     22,
+     30
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    719
+   ],
+   "encounters": [
+    {
+     "name": "Ghamoo-ra",
+     "id": 2916,
+     "order": -6000
+    },
+    {
+     "name": "Lady Sarevess",
+     "id": 2915,
+     "order": -5000
+    },
+    {
+     "name": "Geilhast",
+     "id": 2914,
+     "order": -4000
+    },
+    {
+     "name": "Lorgus Jett",
+     "id": 2913,
+     "order": -3000
+    },
+    {
+     "name": "Old Serra'kis",
+     "id": 2912,
+     "order": -2000
+    },
+    {
+     "name": "Twilight Lord Kelris",
+     "id": 2911,
+     "order": -1000
+    },
+    {
+     "name": "Baron Aquanis",
+     "id": 2694,
+     "order": 0
+    },
+    {
+     "name": "Ghamoo-ra",
+     "id": 2761,
+     "order": 0
+    },
+    {
+     "name": "Aku'mai",
+     "id": 2910,
+     "order": 0
+    },
+    {
+     "name": "Ghamoo-ra",
+     "id": 2697,
+     "order": 1000
+    },
+    {
+     "name": "Lady Sarevess",
+     "id": 2762,
+     "order": 1000
+    },
+    {
+     "name": "Lady Sarevess",
+     "id": 2699,
+     "order": 2000
+    },
+    {
+     "name": "Geilhast",
+     "id": 2763,
+     "order": 2000
+    },
+    {
+     "name": "Gelihast",
+     "id": 2704,
+     "order": 3000
+    },
+    {
+     "name": "Lorgus Jett",
+     "id": 2764,
+     "order": 3000
+    },
+    {
+     "name": "Lorgus Jett",
+     "id": 2710,
+     "order": 4000
+    },
+    {
+     "name": "Old Serra'kis",
+     "id": 2765,
+     "order": 4000
+    },
+    {
+     "name": "Twilight Lord Kelris",
+     "id": 2766,
+     "order": 5000
+    },
+    {
+     "name": "Aku'mai",
+     "id": 2767,
+     "order": 6000
+    },
+    {
+     "name": "Twilight Lord Kelris",
+     "id": 2825,
+     "order": 7000
+    },
+    {
+     "name": "Aku'mai",
+     "id": 2891,
+     "order": 8000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1448,
+    "x": 15.5,
+    "y": 75.2,
+    "world": {
+     "map": 1,
+     "x": 4249.1,
+     "y": 748.4
+    },
+    "other_frames": [
+     [
+      1439,
+      33.5,
+      93.5
+     ],
+     [
+      1440,
+      16.5,
+      11.0
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 15,
+    "in_dungeon_quests": 13,
+    "chain_quests": 2,
+    "alliance": 7,
+    "horde": 10,
+    "giver_no_spawn": 2,
+    "giver_missing": 1,
+    "started_inside": 3,
+    "started_outside": 11,
+    "started_unknown": 0,
+    "quest_level_range": [
+     22,
+     30
+    ]
+   }
+  },
+  {
+   "key": "uldaman",
+   "map": 70,
+   "name": "Uldaman",
+   "directory": "Uldaman",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 30,
+    "recommended": 35,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     35,
+     47
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    1337
+   ],
+   "encounters": [
+    {
+     "name": "Revelosh",
+     "id": 547,
+     "order": 0
+    },
+    {
+     "name": "The Lost Dwarves",
+     "id": 548,
+     "order": 1000
+    },
+    {
+     "name": "Ironaya",
+     "id": 549,
+     "order": 2000
+    },
+    {
+     "name": "Obsidian Sentinel",
+     "id": 1887,
+     "order": 3000
+    },
+    {
+     "name": "Ancient Stone Keeper",
+     "id": 551,
+     "order": 4000
+    },
+    {
+     "name": "Galgann Firehammer",
+     "id": 552,
+     "order": 5000
+    },
+    {
+     "name": "Grimlok",
+     "id": 553,
+     "order": 6000
+    },
+    {
+     "name": "Archaedas",
+     "id": 554,
+     "order": 7000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1432,
+    "x": 34.9,
+    "y": 85.5,
+    "world": {
+     "map": 0,
+     "x": -6060.2,
+     "y": -2955.0
+    },
+    "other_frames": [
+     [
+      1418,
+      35.2,
+      10.3
+     ],
+     [
+      1426,
+      96.6,
+      66.5
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 56,
+    "in_dungeon_quests": 30,
+    "chain_quests": 26,
+    "alliance": 40,
+    "horde": 25,
+    "giver_no_spawn": 7,
+    "giver_missing": 0,
+    "started_inside": 0,
+    "started_outside": 49,
+    "started_unknown": 7,
+    "quest_level_range": [
+     35,
+     47
+    ]
+   }
+  },
+  {
+   "key": "gnomeregan",
+   "map": 90,
+   "name": "Gnomeregan",
+   "directory": "GnomeragonInstance",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 19,
+    "recommended": 25,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     26,
+     35
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    721
+   ],
+   "encounters": [
+    {
+     "name": "Grubbis",
+     "id": 2768,
+     "order": 0
+    },
+    {
+     "name": "Viscous Fallout",
+     "id": 2769,
+     "order": 1000
+    },
+    {
+     "name": "Electrocutioner 6000",
+     "id": 2770,
+     "order": 2000
+    },
+    {
+     "name": "Crowd Pummeler 9-60",
+     "id": 2771,
+     "order": 3000
+    },
+    {
+     "name": "Mekgineer Thermaplugg",
+     "id": 2772,
+     "order": 4000
+    },
+    {
+     "name": "Grubbis",
+     "id": 2925,
+     "order": 4000
+    },
+    {
+     "name": "Viscous Fallout",
+     "id": 2928,
+     "order": 4500
+    },
+    {
+     "name": "Crowd Pummeler 9-60",
+     "id": 2899,
+     "order": 5000
+    },
+    {
+     "name": "Electrocutioner 6000",
+     "id": 2927,
+     "order": 6000
+    },
+    {
+     "name": "Mechanical Menagerie",
+     "id": 2935,
+     "order": 7000
+    },
+    {
+     "name": "Mekgineer Thermaplugg",
+     "id": 2940,
+     "order": 8000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1426,
+    "x": 17.7,
+    "y": 39.1,
+    "world": {
+     "map": 0,
+     "x": -5162.7,
+     "y": 931.6
+    },
+    "other_frames": [],
+    "ambiguous_frame": false,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 29,
+    "in_dungeon_quests": 27,
+    "chain_quests": 2,
+    "alliance": 24,
+    "horde": 16,
+    "giver_no_spawn": 12,
+    "giver_missing": 0,
+    "started_inside": 0,
+    "started_outside": 16,
+    "started_unknown": 13,
+    "quest_level_range": [
+     26,
+     35
+    ]
+   }
+  },
+  {
+   "key": "sunken-temple",
+   "map": 109,
+   "name": "Sunken Temple",
+   "directory": "SunkenTemple",
+   "max_players": 20,
+   "forever_only": false,
+   "levels": {
+    "entry": 45,
+    "recommended": 45,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     50,
+     60
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    1417
+   ],
+   "encounters": [
+    {
+     "name": "Avatar of Hakkar",
+     "id": 492,
+     "order": -500
+    },
+    {
+     "name": "Atal'alarion",
+     "id": 2952,
+     "order": 0
+    },
+    {
+     "name": "Atal'alarion",
+     "id": 3582,
+     "order": 0
+    },
+    {
+     "name": "Jammal'an the Prophet",
+     "id": 488,
+     "order": 500
+    },
+    {
+     "name": "Dreamscythe",
+     "id": 486,
+     "order": 1000
+    },
+    {
+     "name": "Festering Rotslime",
+     "id": 2953,
+     "order": 1000
+    },
+    {
+     "name": "Avatar of Hakkar",
+     "id": 3583,
+     "order": 1000
+    },
+    {
+     "name": "Weaver",
+     "id": 487,
+     "order": 2000
+    },
+    {
+     "name": "Atal'ai Defenders",
+     "id": 2954,
+     "order": 2000
+    },
+    {
+     "name": "Shade of Eranikus",
+     "id": 3584,
+     "order": 2000
+    },
+    {
+     "name": "Dreamscythe and Weaver",
+     "id": 2955,
+     "order": 3000
+    },
+    {
+     "name": "Hazzas",
+     "id": 3585,
+     "order": 3000
+    },
+    {
+     "name": "Avatar of Hakkar",
+     "id": 2956,
+     "order": 4000
+    },
+    {
+     "name": "Morphaz",
+     "id": 3586,
+     "order": 4000
+    },
+    {
+     "name": "Morphaz",
+     "id": 490,
+     "order": 5000
+    },
+    {
+     "name": "Jammal'an and Ogom",
+     "id": 2957,
+     "order": 5000
+    },
+    {
+     "name": "Weaver",
+     "id": 3587,
+     "order": 5000
+    },
+    {
+     "name": "Hazzas",
+     "id": 491,
+     "order": 6000
+    },
+    {
+     "name": "Morphaz and Hazzas",
+     "id": 2958,
+     "order": 6000
+    },
+    {
+     "name": "Dreamscythe",
+     "id": 3588,
+     "order": 6000
+    },
+    {
+     "name": "Shade of Eranikus",
+     "id": 2959,
+     "order": 7000
+    },
+    {
+     "name": "Jammal'an the Prophet",
+     "id": 3589,
+     "order": 7000
+    },
+    {
+     "name": "Shade of Eranikus",
+     "id": 493,
+     "order": 8000
+    },
+    {
+     "name": "Atal'alarion",
+     "id": 2814,
+     "order": 9000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1435,
+    "x": 77.3,
+    "y": 35.9,
+    "world": {
+     "map": 0,
+     "x": -10170.1,
+     "y": -3996.0
+    },
+    "other_frames": [],
+    "ambiguous_frame": false,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 55,
+    "in_dungeon_quests": 15,
+    "chain_quests": 40,
+    "alliance": 46,
+    "horde": 47,
+    "giver_no_spawn": 1,
+    "giver_missing": 0,
+    "started_inside": 2,
+    "started_outside": 52,
+    "started_unknown": 1,
+    "quest_level_range": [
+     50,
+     60
+    ]
+   }
+  },
+  {
+   "key": "razorfen-downs",
+   "map": 129,
+   "name": "Razorfen Downs",
+   "directory": "RazorfenDowns",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 35,
+    "recommended": 34,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     35,
+     42
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    722
+   ],
+   "encounters": [
+    {
+     "name": "Tuten'kash",
+     "id": 2780,
+     "order": 0
+    },
+    {
+     "name": "Plaguemaw the Rotting",
+     "id": 2781,
+     "order": 1000
+    },
+    {
+     "name": "Mordresh Fire Eye",
+     "id": 2782,
+     "order": 2000
+    },
+    {
+     "name": "Ragglesnout",
+     "id": 2783,
+     "order": 3000
+    },
+    {
+     "name": "Glutton",
+     "id": 2784,
+     "order": 4000
+    },
+    {
+     "name": "Amnennar the Coldbringer",
+     "id": 2785,
+     "order": 5000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1441,
+    "x": 47.8,
+    "y": 23.7,
+    "world": {
+     "map": 1,
+     "x": -4662.9,
+     "y": -2535.9
+    },
+    "other_frames": [
+     [
+      1445,
+      29.7,
+      75.1
+     ],
+     [
+      1413,
+      50.9,
+      92.9
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 7,
+    "in_dungeon_quests": 7,
+    "chain_quests": 0,
+    "alliance": 4,
+    "horde": 6,
+    "giver_no_spawn": 2,
+    "giver_missing": 0,
+    "started_inside": 3,
+    "started_outside": 4,
+    "started_unknown": 0,
+    "quest_level_range": [
+     35,
+     42
+    ]
+   }
+  },
+  {
+   "key": "scarlet-monastery",
+   "map": 189,
+   "name": "Scarlet Monastery",
+   "directory": "MonasteryInstances",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 20,
+    "recommended": 30,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     33,
+     42
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    796
+   ],
+   "encounters": [
+    {
+     "name": "Interrogator Vishas",
+     "id": 444,
+     "order": 0
+    },
+    {
+     "name": "Bloodmage Thalnos",
+     "id": 2779,
+     "order": 1000
+    },
+    {
+     "name": "Houndmaster Loksey",
+     "id": 446,
+     "order": 2000
+    },
+    {
+     "name": "Arcanist Doan",
+     "id": 447,
+     "order": 3000
+    },
+    {
+     "name": "Herod",
+     "id": 448,
+     "order": 4000
+    },
+    {
+     "name": "High Inquisitor Fairbanks",
+     "id": 449,
+     "order": 5000
+    },
+    {
+     "name": "High Inquisitor Whitemane",
+     "id": 450,
+     "order": 6000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1420,
+    "x": 85.1,
+    "y": 31.4,
+    "world": {
+     "map": 0,
+     "x": 2892.2,
+     "y": -811.3
+    },
+    "other_frames": [
+     [
+      1422,
+      28.6,
+      16.6
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 20,
+    "in_dungeon_quests": 8,
+    "chain_quests": 12,
+    "alliance": 6,
+    "horde": 14,
+    "giver_no_spawn": 1,
+    "giver_missing": 0,
+    "started_inside": 1,
+    "started_outside": 19,
+    "started_unknown": 0,
+    "quest_level_range": [
+     33,
+     42
+    ]
+   }
+  },
+  {
+   "key": "zulfarrak",
+   "map": 209,
+   "name": "Zul'Farrak",
+   "directory": "TanarisInstance",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 39,
+    "recommended": 42,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     45,
+     50
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [
+    {
+     "lfg": 23,
+     "name": "Zul'Farak",
+     "recommended": 42
+    }
+   ],
+   "area_ids": [
+    1176
+   ],
+   "encounters": [
+    {
+     "name": "Hydromancer Velratha",
+     "id": 593,
+     "order": 0
+    },
+    {
+     "name": "Gahz'rilla",
+     "id": 594,
+     "order": 1000
+    },
+    {
+     "name": "Antu'sul",
+     "id": 595,
+     "order": 2000
+    },
+    {
+     "name": "Theka the Martyr",
+     "id": 596,
+     "order": 3000
+    },
+    {
+     "name": "Witch Doctor Zum'rah",
+     "id": 597,
+     "order": 4000
+    },
+    {
+     "name": "Nekrum Gutchewer",
+     "id": 598,
+     "order": 5000
+    },
+    {
+     "name": "Shadowpriest Sezz'ziz",
+     "id": 599,
+     "order": 6000
+    },
+    {
+     "name": "Chief Ukorz Sandscalp",
+     "id": 600,
+     "order": 7000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1446,
+    "x": 38.7,
+    "y": 19.9,
+    "world": {
+     "map": 1,
+     "x": -6790.6,
+     "y": -2891.3
+    },
+    "other_frames": [
+     [
+      1449,
+      92.6,
+      33.4
+     ],
+     [
+      1441,
+      55.9,
+      96.3
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 23,
+    "in_dungeon_quests": 10,
+    "chain_quests": 13,
+    "alliance": 17,
+    "horde": 16,
+    "giver_no_spawn": 0,
+    "giver_missing": 0,
+    "started_inside": 0,
+    "started_outside": 23,
+    "started_unknown": 0,
+    "quest_level_range": [
+     45,
+     50
+    ]
+   }
+  },
+  {
+   "key": "blackrock-spire",
+   "map": 229,
+   "name": "Blackrock Spire",
+   "directory": "BlackRockSpire",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 48,
+    "recommended": 53,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     58,
+     60
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [
+    {
+     "lfg": 31,
+     "name": "Lower Blackrock Spire",
+     "recommended": 53
+    },
+    {
+     "lfg": 43,
+     "name": "Upper Blackrock Spire",
+     "recommended": 53
+    }
+   ],
+   "area_ids": [
+    17804
+   ],
+   "encounters": [
+    {
+     "name": "Highlord Omokk",
+     "id": 267,
+     "order": 0
+    },
+    {
+     "name": "Shadow Hunter Vosh'gajin",
+     "id": 268,
+     "order": 1000
+    },
+    {
+     "name": "War Master Voone",
+     "id": 269,
+     "order": 2000
+    },
+    {
+     "name": "Mother Smolderweb",
+     "id": 270,
+     "order": 3000
+    },
+    {
+     "name": "Urok Doomhowl",
+     "id": 271,
+     "order": 4000
+    },
+    {
+     "name": "Quartermaster Zigris",
+     "id": 272,
+     "order": 5000
+    },
+    {
+     "name": "Halycon",
+     "id": 274,
+     "order": 5500
+    },
+    {
+     "name": "Gizrul the Slavener",
+     "id": 273,
+     "order": 6000
+    },
+    {
+     "name": "Overlord Wyrmthalak",
+     "id": 275,
+     "order": 8000
+    },
+    {
+     "name": "Pyroguard Emberseer",
+     "id": 3062,
+     "order": 9000
+    },
+    {
+     "name": "Warchief Rend Blackhand",
+     "id": 3063,
+     "order": 10000
+    },
+    {
+     "name": "The Beast",
+     "id": 3068,
+     "order": 11000
+    },
+    {
+     "name": "General Drakkisath",
+     "id": 3069,
+     "order": 12000
+    },
+    {
+     "name": "Lord Valthalak",
+     "id": 3070,
+     "order": 13000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1428,
+    "x": 33.0,
+    "y": 25.2,
+    "world": {
+     "map": 0,
+     "x": -7522.5,
+     "y": -1233.0
+    },
+    "other_frames": [
+     [
+      1427,
+      40.8,
+      95.6
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 133,
+    "in_dungeon_quests": 69,
+    "chain_quests": 64,
+    "alliance": 87,
+    "horde": 94,
+    "giver_no_spawn": 10,
+    "giver_missing": 0,
+    "started_inside": 0,
+    "started_outside": 120,
+    "started_unknown": 13,
+    "quest_level_range": [
+     58,
+     60
+    ]
+   }
+  },
+  {
+   "key": "blackrock-depths",
+   "map": 230,
+   "name": "Blackrock Depths",
+   "directory": "BlackrockDepths",
+   "max_players": 5,
+   "forever_only": false,
+   "levels": {
+    "entry": 42,
+    "recommended": 48,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     1,
+     60
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    17803
+   ],
+   "encounters": [
+    {
+     "name": "High Interrogator Gerstahn",
+     "id": 227,
+     "order": 0
+    },
+    {
+     "name": "Lord Roccor",
+     "id": 228,
+     "order": 1000
+    },
+    {
+     "name": "Houndmaster Grebmar",
+     "id": 229,
+     "order": 2000
+    },
+    {
+     "name": "Ring of Law",
+     "id": 230,
+     "order": 3000
+    },
+    {
+     "name": "Pyromancer Loregrain",
+     "id": 231,
+     "order": 4000
+    },
+    {
+     "name": "Lord Incendius",
+     "id": 232,
+     "order": 5000
+    },
+    {
+     "name": "Warder Stilgiss",
+     "id": 233,
+     "order": 6000
+    },
+    {
+     "name": "Fineous Darkvire",
+     "id": 234,
+     "order": 7000
+    },
+    {
+     "name": "Bael'Gar",
+     "id": 235,
+     "order": 8000
+    },
+    {
+     "name": "General Angerforge",
+     "id": 236,
+     "order": 9000
+    },
+    {
+     "name": "Golem Lord Argelmach",
+     "id": 237,
+     "order": 10000
+    },
+    {
+     "name": "Hurley Blackbreath",
+     "id": 238,
+     "order": 11000
+    },
+    {
+     "name": "Phalanx",
+     "id": 239,
+     "order": 12000
+    },
+    {
+     "name": "Ribbly Screwspigot",
+     "id": 240,
+     "order": 13000
+    },
+    {
+     "name": "Plugger Spazzring",
+     "id": 241,
+     "order": 14000
+    },
+    {
+     "name": "The Vault",
+     "id": 2791,
+     "order": 14500
+    },
+    {
+     "name": "Ambassador Flamelash",
+     "id": 242,
+     "order": 15000
+    },
+    {
+     "name": "The Seven",
+     "id": 243,
+     "order": 16000
+    },
+    {
+     "name": "Magmus",
+     "id": 244,
+     "order": 17000
+    },
+    {
+     "name": "Princess Moira Bronzebeard",
+     "id": 2789,
+     "order": 18000
+    },
+    {
+     "name": "Emperor Dagran Thaurissan",
+     "id": 2790,
+     "order": 19000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1427,
+    "x": 27.1,
+    "y": 72.5,
+    "world": {
+     "map": 0,
+     "x": -7178.1,
+     "y": -928.6
+    },
+    "other_frames": [
+     [
+      1428,
+      22.6,
+      7.5
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 68,
+    "in_dungeon_quests": 44,
+    "chain_quests": 24,
+    "alliance": 49,
+    "horde": 44,
+    "giver_no_spawn": 15,
+    "giver_missing": 0,
+    "started_inside": 0,
+    "started_outside": 52,
+    "started_unknown": 16,
+    "quest_level_range": [
+     1,
+     60
+    ]
+   }
+  },
+  {
+   "key": "scholomance",
+   "map": 289,
+   "name": "Scholomance",
+   "directory": "SchoolofNecromancy",
+   "max_players": 5,
+   "forever_only": false,
+   "levels": {
+    "entry": 33,
+    "recommended": 57,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     58,
+     60
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    2057
+   ],
+   "encounters": [
+    {
+     "name": "Kirtonos",
+     "id": 2805,
+     "order": -1000
+    },
+    {
+     "name": "Jandice Barov",
+     "id": 2804,
+     "order": -500
+    },
+    {
+     "name": "Rattlegore",
+     "id": 2811,
+     "order": -250
+    },
+    {
+     "name": "Marduk Blackpool",
+     "id": 2809,
+     "order": -125
+    },
+    {
+     "name": "Vectus",
+     "id": 2813,
+     "order": -62
+    },
+    {
+     "name": "Kormok",
+     "id": 3055,
+     "order": -46
+    },
+    {
+     "name": "Ras Frostwhisperer",
+     "id": 2810,
+     "order": -31
+    },
+    {
+     "name": "Instructor Malicia",
+     "id": 2803,
+     "order": -15
+    },
+    {
+     "name": "Doctor Theolen Krastinov",
+     "id": 2802,
+     "order": -7
+    },
+    {
+     "name": "Lorekeeper Polkelt",
+     "id": 2808,
+     "order": 7000
+    },
+    {
+     "name": "The Ravenian",
+     "id": 2812,
+     "order": 11000
+    },
+    {
+     "name": "Lord Alexei Barov",
+     "id": 2807,
+     "order": 11250
+    },
+    {
+     "name": "Lady Illucia Barov",
+     "id": 2806,
+     "order": 11500
+    },
+    {
+     "name": "Darkmaster Gandling",
+     "id": 2801,
+     "order": 12000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1422,
+    "x": 69.0,
+    "y": 73.0,
+    "world": {
+     "map": 0,
+     "x": 1274.8,
+     "y": -2552.6
+    },
+    "other_frames": [
+     [
+      1425,
+      25.4,
+      7.5
+     ],
+     [
+      1423,
+      6.9,
+      84.3
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 49,
+    "in_dungeon_quests": 32,
+    "chain_quests": 17,
+    "alliance": 37,
+    "horde": 37,
+    "giver_no_spawn": 1,
+    "giver_missing": 1,
+    "started_inside": 1,
+    "started_outside": 46,
+    "started_unknown": 1,
+    "quest_level_range": [
+     58,
+     60
+    ]
+   }
+  },
+  {
+   "key": "stratholme",
+   "map": 329,
+   "name": "Stratholme",
+   "directory": "Stratholme",
+   "max_players": 5,
+   "forever_only": false,
+   "levels": {
+    "entry": 37,
+    "recommended": 55,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     60,
+     60
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    2017
+   ],
+   "encounters": [
+    {
+     "name": "Hearthsinger Forresten",
+     "id": 473,
+     "order": 1000
+    },
+    {
+     "name": "Timmy the Cruel",
+     "id": 474,
+     "order": 2000
+    },
+    {
+     "name": "Malor the Zealous",
+     "id": 476,
+     "order": 2500
+    },
+    {
+     "name": "Cannon Master Willey",
+     "id": 475,
+     "order": 3000
+    },
+    {
+     "name": "Archivist Galford",
+     "id": 477,
+     "order": 5000
+    },
+    {
+     "name": "Balnazzar",
+     "id": 478,
+     "order": 6000
+    },
+    {
+     "name": "The Unforgiven",
+     "id": 472,
+     "order": 6500
+    },
+    {
+     "name": "Baroness Anastari",
+     "id": 479,
+     "order": 7000
+    },
+    {
+     "name": "Nerub'enkan",
+     "id": 480,
+     "order": 8000
+    },
+    {
+     "name": "Maleki the Pallid",
+     "id": 481,
+     "order": 9000
+    },
+    {
+     "name": "Magistrate Barthilas",
+     "id": 482,
+     "order": 10000
+    },
+    {
+     "name": "Ramstein the Gorger",
+     "id": 483,
+     "order": 11000
+    },
+    {
+     "name": "Baron Rivendare",
+     "id": 484,
+     "order": 12000
+    },
+    {
+     "name": "Black Guard Swordsmith",
+     "id": 2795,
+     "order": 13000
+    },
+    {
+     "name": "Crimson Hammersmith",
+     "id": 2796,
+     "order": 14000
+    },
+    {
+     "name": "Ezra Grimm",
+     "id": 2797,
+     "order": 15000
+    },
+    {
+     "name": "Postmaster Malown",
+     "id": 2798,
+     "order": 16000
+    },
+    {
+     "name": "Skul",
+     "id": 2799,
+     "order": 17000
+    },
+    {
+     "name": "Stonespine",
+     "id": 2800,
+     "order": 18000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1423,
+    "x": 26.1,
+    "y": 10.4,
+    "world": {
+     "map": 0,
+     "x": 3392.3,
+     "y": -3378.5
+    },
+    "other_frames": [],
+    "ambiguous_frame": false,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 110,
+    "in_dungeon_quests": 43,
+    "chain_quests": 67,
+    "alliance": 79,
+    "horde": 84,
+    "giver_no_spawn": 4,
+    "giver_missing": 1,
+    "started_inside": 3,
+    "started_outside": 104,
+    "started_unknown": 2,
+    "quest_level_range": [
+     60,
+     60
+    ]
+   }
+  },
+  {
+   "key": "maraudon",
+   "map": 349,
+   "name": "Maraudon",
+   "directory": "Mauradon",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 25,
+    "recommended": 42,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     42,
+     51
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    2100
+   ],
+   "encounters": [
+    {
+     "name": "Noxxion",
+     "id": 422,
+     "order": 0
+    },
+    {
+     "name": "Razorlash",
+     "id": 423,
+     "order": 1000
+    },
+    {
+     "name": "Tinkerer Gizlock",
+     "id": 427,
+     "order": 1500
+    },
+    {
+     "name": "Lord Vyletongue",
+     "id": 424,
+     "order": 2000
+    },
+    {
+     "name": "Celebras the Cursed",
+     "id": 425,
+     "order": 3000
+    },
+    {
+     "name": "Landslide",
+     "id": 426,
+     "order": 4000
+    },
+    {
+     "name": "Rotgrip",
+     "id": 428,
+     "order": 6000
+    },
+    {
+     "name": "Princess Theradras",
+     "id": 429,
+     "order": 7000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1443,
+    "x": 29.1,
+    "y": 62.9,
+    "world": {
+     "map": 1,
+     "x": -1432.7,
+     "y": 2925.0
+    },
+    "other_frames": [],
+    "ambiguous_frame": false,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 11,
+    "in_dungeon_quests": 11,
+    "chain_quests": 0,
+    "alliance": 8,
+    "horde": 8,
+    "giver_no_spawn": 2,
+    "giver_missing": 0,
+    "started_inside": 2,
+    "started_outside": 9,
+    "started_unknown": 0,
+    "quest_level_range": [
+     42,
+     51
+    ]
+   }
+  },
+  {
+   "key": "ragefire-chasm",
+   "map": 389,
+   "name": "Ragefire Chasm",
+   "directory": "OrgrimmarInstance",
+   "max_players": 10,
+   "forever_only": false,
+   "levels": {
+    "entry": 10,
+    "recommended": 13,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     15,
+     16
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "H"
+   ],
+   "wings": [],
+   "area_ids": [
+    2437
+   ],
+   "encounters": [
+    {
+     "name": "Oggleflint",
+     "id": 2732,
+     "order": 0
+    },
+    {
+     "name": "Taragaman the Hungerer",
+     "id": 2733,
+     "order": 1000
+    },
+    {
+     "name": "Jergosh the Invoker",
+     "id": 2734,
+     "order": 2000
+    },
+    {
+     "name": "Bazzalan",
+     "id": 2735,
+     "order": 3000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1454,
+    "x": 53.0,
+    "y": 48.9,
+    "world": {
+     "map": 1,
+     "x": 1816.8,
+     "y": -4423.4
+    },
+    "other_frames": [],
+    "ambiguous_frame": false,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 10,
+    "in_dungeon_quests": 6,
+    "chain_quests": 4,
+    "alliance": 0,
+    "horde": 10,
+    "giver_no_spawn": 1,
+    "giver_missing": 0,
+    "started_inside": 1,
+    "started_outside": 9,
+    "started_unknown": 0,
+    "quest_level_range": [
+     15,
+     16
+    ]
+   }
+  },
+  {
+   "key": "dire-maul",
+   "map": 429,
+   "name": "Dire Maul",
+   "directory": "DireMaul",
+   "max_players": 5,
+   "forever_only": false,
+   "levels": {
+    "entry": 31,
+    "recommended": 54,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     52,
+     60
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [
+    {
+     "lfg": 33,
+     "name": "Dire Maul - East",
+     "recommended": 54
+    },
+    {
+     "lfg": 35,
+     "name": "Dire Maul - West",
+     "recommended": 54
+    },
+    {
+     "lfg": 37,
+     "name": "Dire Maul - North",
+     "recommended": 54
+    }
+   ],
+   "area_ids": [
+    2557
+   ],
+   "encounters": [
+    {
+     "name": "Zevrim Thornhoof",
+     "id": 343,
+     "order": 0
+    },
+    {
+     "name": "Hydrospawn",
+     "id": 344,
+     "order": 1000
+    },
+    {
+     "name": "Lethtendris",
+     "id": 345,
+     "order": 2000
+    },
+    {
+     "name": "Pusillin",
+     "id": 2792,
+     "order": 2500
+    },
+    {
+     "name": "Alzzin the Wildshaper",
+     "id": 346,
+     "order": 3000
+    },
+    {
+     "name": "Tendris Warpwood",
+     "id": 350,
+     "order": 3500
+    },
+    {
+     "name": "Illyanna Ravenoak",
+     "id": 347,
+     "order": 4000
+    },
+    {
+     "name": "Magister Kalendris",
+     "id": 348,
+     "order": 5000
+    },
+    {
+     "name": "Immol'thar",
+     "id": 349,
+     "order": 6000
+    },
+    {
+     "name": "Prince Tortheldrin",
+     "id": 361,
+     "order": 7000
+    },
+    {
+     "name": "Guard Mol'dar",
+     "id": 362,
+     "order": 8000
+    },
+    {
+     "name": "Stomper Kreeg",
+     "id": 363,
+     "order": 9000
+    },
+    {
+     "name": "Guard Fengus",
+     "id": 364,
+     "order": 10000
+    },
+    {
+     "name": "Guard Slip'kik",
+     "id": 365,
+     "order": 11000
+    },
+    {
+     "name": "Captain Kromcrush",
+     "id": 366,
+     "order": 12000
+    },
+    {
+     "name": "Cho'Rush the Observer",
+     "id": 367,
+     "order": 13000
+    },
+    {
+     "name": "King Gordok",
+     "id": 368,
+     "order": 14000
+    },
+    {
+     "name": "Lord Hel'nurath",
+     "id": 2793,
+     "order": 15000
+    },
+    {
+     "name": "Tsu'zee",
+     "id": 2794,
+     "order": 16000
+    }
+   ],
+   "match": "lfg+mapdifficulty",
+   "entrance": {
+    "uiMapId": 1444,
+    "x": 62.0,
+    "y": 33.3,
+    "world": {
+     "map": 1,
+     "x": -3908.0,
+     "y": 1130.0
+    },
+    "other_frames": [
+     [
+      1413,
+      14.7,
+      81.7
+     ]
+    ],
+    "ambiguous_frame": true,
+    "source": "client Map CorpseMapID/Corpse_0/Corpse_1 -> forever-db ui_map frame",
+    "kind": "corpse-point"
+   },
+   "quest_stats": {
+    "quests": 54,
+    "in_dungeon_quests": 40,
+    "chain_quests": 14,
+    "alliance": 48,
+    "horde": 50,
+    "giver_no_spawn": 21,
+    "giver_missing": 1,
+    "started_inside": 26,
+    "started_outside": 21,
+    "started_unknown": 6,
+    "quest_level_range": [
+     52,
+     60
+    ]
+   }
+  },
+  {
+   "key": "city-of-dalaran",
+   "map": 2959,
+   "name": "City of Dalaran",
+   "directory": "2959",
+   "max_players": 5,
+   "forever_only": true,
+   "levels": {
+    "entry": null,
+    "recommended": 28,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     33,
+     33
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    16544
+   ],
+   "encounters": [
+    {
+     "name": "Arcane Anomaly",
+     "id": 3298,
+     "order": 0
+    },
+    {
+     "name": "Fel Ancient",
+     "id": 3299,
+     "order": 1000
+    },
+    {
+     "name": "Mana Devourer",
+     "id": 3300,
+     "order": 2000
+    },
+    {
+     "name": "Mana Elemental",
+     "id": 3301,
+     "order": 3000
+    },
+    {
+     "name": "Unstable Sentinel",
+     "id": 3302,
+     "order": 4000
+    },
+    {
+     "name": "Shade of the Archmage",
+     "id": 3303,
+     "order": 5000
+    },
+    {
+     "name": "Lyn the Ignored",
+     "id": 3310,
+     "order": 6000
+    },
+    {
+     "name": "Atrexis the Grave Knight",
+     "id": 3311,
+     "order": 7000
+    },
+    {
+     "name": "Mana Wraith",
+     "id": 3312,
+     "order": 8000
+    }
+   ],
+   "match": "lfg",
+   "entrance": null,
+   "entrance_status": "no client corpse point (Forever-only instance): entrance not derivable from the open sources",
+   "quest_stats": {
+    "quests": 8,
+    "in_dungeon_quests": 8,
+    "chain_quests": 0,
+    "alliance": 4,
+    "horde": 4,
+    "giver_no_spawn": 1,
+    "giver_missing": 0,
+    "started_inside": 1,
+    "started_outside": 7,
+    "started_unknown": 0,
+    "quest_level_range": [
+     33,
+     33
+    ]
+   }
+  },
+  {
+   "key": "excavation-site-wetlands",
+   "map": 2998,
+   "name": "Excavation Site: Wetlands",
+   "directory": "2998",
+   "max_players": 5,
+   "forever_only": true,
+   "levels": {
+    "entry": null,
+    "recommended": 26,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     28,
+     31
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    16732
+   ],
+   "encounters": [
+    {
+     "name": "Saltspine",
+     "id": 3480,
+     "order": 0
+    },
+    {
+     "name": "Shadetooth",
+     "id": 3481,
+     "order": 1000
+    },
+    {
+     "name": "Highland Horror",
+     "id": 3644,
+     "order": 1500
+    },
+    {
+     "name": "Relic Guardian",
+     "id": 3482,
+     "order": 2000
+    }
+   ],
+   "match": "lfg",
+   "entrance": null,
+   "entrance_status": "no client corpse point (Forever-only instance): entrance not derivable from the open sources",
+   "quest_stats": {
+    "quests": 14,
+    "in_dungeon_quests": 14,
+    "chain_quests": 0,
+    "alliance": 9,
+    "horde": 5,
+    "giver_no_spawn": 3,
+    "giver_missing": 0,
+    "started_inside": 3,
+    "started_outside": 9,
+    "started_unknown": 2,
+    "quest_level_range": [
+     28,
+     31
+    ]
+   }
+  },
+  {
+   "key": "ruins-of-lordaeron",
+   "map": 2999,
+   "name": "Ruins of Lordaeron",
+   "directory": "2999",
+   "max_players": 5,
+   "forever_only": true,
+   "levels": {
+    "entry": null,
+    "recommended": 15,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     21,
+     22
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    16611
+   ],
+   "encounters": [
+    {
+     "name": "Witherfang",
+     "id": 3353,
+     "order": 0
+    },
+    {
+     "name": "The Abandoned",
+     "id": 3357,
+     "order": 250
+    },
+    {
+     "name": "The Butcher",
+     "id": 3355,
+     "order": 500
+    },
+    {
+     "name": "Rath'mael",
+     "id": 3354,
+     "order": 1000
+    },
+    {
+     "name": "Lordaeron Captain",
+     "id": 3408,
+     "order": 2000
+    },
+    {
+     "name": "Viktor the Vile",
+     "id": 3411,
+     "order": 3000
+    },
+    {
+     "name": "Bjork",
+     "id": 3412,
+     "order": 4000
+    }
+   ],
+   "match": "lfg",
+   "entrance": null,
+   "entrance_status": "no client corpse point (Forever-only instance): entrance not derivable from the open sources",
+   "quest_stats": {
+    "quests": 13,
+    "in_dungeon_quests": 13,
+    "chain_quests": 0,
+    "alliance": 4,
+    "horde": 9,
+    "giver_no_spawn": 1,
+    "giver_missing": 0,
+    "started_inside": 1,
+    "started_outside": 7,
+    "started_unknown": 5,
+    "quest_level_range": [
+     21,
+     22
+    ]
+   }
+  },
+  {
+   "key": "the-hall-of-thanes",
+   "map": 3065,
+   "name": "The Hall of Thanes",
+   "directory": "3065",
+   "max_players": 5,
+   "forever_only": true,
+   "levels": {
+    "entry": null,
+    "recommended": 13,
+    "source": "client MapDifficulty message (entry) + LFGDungeons -> ContentTuning MinLevelSquish (recommended)",
+    "quest_range": [
+     15,
+     16
+    ],
+    "range_note": "recommended es un nivel (el cliente no trae rango); quest_range sale de las misiones de la mazmorra"
+   },
+   "lfg_faction": [
+    "AH"
+   ],
+   "wings": [],
+   "area_ids": [
+    16919
+   ],
+   "encounters": [
+    {
+     "name": "Faldrim Anvilmar",
+     "id": 3493,
+     "order": 0
+    },
+    {
+     "name": "Infurnus",
+     "id": 3495,
+     "order": 2000
+    },
+    {
+     "name": "Plunder",
+     "id": 3494,
+     "order": 2500
+    },
+    {
+     "name": "Durgen Dirgehammer",
+     "id": 3496,
+     "order": 3000
+    }
+   ],
+   "match": "lfg",
+   "entrance": null,
+   "entrance_status": "no client corpse point (Forever-only instance): entrance not derivable from the open sources",
+   "quest_stats": {
+    "quests": 5,
+    "in_dungeon_quests": 4,
+    "chain_quests": 1,
+    "alliance": 5,
+    "horde": 1,
+    "giver_no_spawn": 1,
+    "giver_missing": 0,
+    "started_inside": 1,
+    "started_outside": 3,
+    "started_unknown": 1,
+    "quest_level_range": [
+     15,
+     16
+    ]
+   }
+  }
+ ]
+}

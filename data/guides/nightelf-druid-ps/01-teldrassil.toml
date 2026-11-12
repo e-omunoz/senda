@@ -1,0 +1,3233 @@
+# GENERADO por tools/import_polestar.py desde Polestar (GPL-3), forever/alliance/nightelf/01-teldrassil
+# commit 19bd636e7d6f33231770f6029c76d2d4dfc63798. Adaptado de Polestar: ruta, coordenadas y notas; textos en español
+# de plantilla (o de la traducción esES de Polestar) salvo los pasos que ya estaban en Senda, que conservan
+# su texto. No editar a mano: vuelve a importar. Ver docs/IMPORT.md y REPORT.md.
+id = "ps-teldrassil"
+title = "Teldrassil (ruta de Polestar)"
+levels = [1, 12]
+map = 1438
+summary = "Prototipo: la ruta de Polestar para Teldrassil (1-12), importada sin verificar."
+
+[[step]]
+id = "ps-teld-001"
+do = "accept"
+quest = 456
+npc = 2079
+at = [1438, 58.69, 44.27]
+text = "Coge la misión del Conservador Ilthalaine, delante de Aldrassil."
+tip = "Vende los grises en cada vendedor. Mata todo lo que te cruces: la Cañada se acaba rápido."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#1"]
+note = "Polestar paso 1 «Aldrassil», objetivo 1 (accept) · ya en Senda: nesg-001"
+
+[[step]]
+id = "ps-teld-002"
+do = "accept"
+quest = 458
+npc = 2077
+at = [1438, 59.92, 42.47]
+text = "Coge la misión de Melithar Staghelm, junto al camino."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#1"]
+note = "Polestar paso 1 «Aldrassil», objetivo 2 (accept) · ya en Senda: nesg-002"
+
+[[step]]
+id = "ps-teld-003"
+do = "turnin"
+quest = 458
+npc = 1992
+at = [1438, 57.83, 45.21]
+chain = "ps-teld-s001-1992"
+text = "Baja y entrega a Tarindrella, al oeste de Aldrassil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#1"]
+note = "Polestar paso 1 «Aldrassil», objetivo 3 (turnin) · ya en Senda: nesg-009"
+
+[[step]]
+id = "ps-teld-004"
+do = "accept"
+quest = 459
+npc = 1992
+at = [1438, 57.83, 45.21]
+chain = "ps-teld-s001-1992"
+text = "Coge la misión del musgo vil de Tarindrella."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#1"]
+note = "Polestar paso 1 «Aldrassil», objetivo 4 (accept) · datos no importados: pre · ya en Senda: nesg-010"
+
+[[step]]
+id = "ps-teld-005"
+do = "accept"
+quest = 97977
+npc = 1992
+at = [1438, 57.83, 45.21]
+chain = "ps-teld-s001-1992"
+text = "Coge también la de los tótems Tuercepinos (nueva de Forever)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#1"]
+note = "Polestar paso 1 «Aldrassil», objetivo 5 (accept) · datos no importados: pre · ya en Senda: nesg-011"
+
+[[step]]
+id = "ps-teld-006"
+do = "complete"
+quest = 456
+obj = 1
+at = [1438, 57.87, 44.69]
+wps = [[1438, 58.5, 46.1, "Sable de la Noche joven"], [1438, 61.3, 44.9, "Sable de la Noche joven"], [1438, 61.5, 40.1, "Sable de la Noche joven"]]
+text = "Mata Sable de la Noche joven (7) para «El equilibrio de la naturaleza»."
+tip = "Los sables de la Noche jóvenes y los jóvenes jabalíes Cardo deambulan alrededor de Aldrassil. Los grells llevan Musgovil en el bosque al oeste del árbol, donde están los tótems Tuercepinos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#2"]
+note = "Polestar paso 2 «Cañada Umbría: kill these as you meet them», objetivo 1 (kill) · ya en Senda: nesg-003"
+
+[[step]]
+id = "ps-teld-007"
+do = "complete"
+quest = 456
+obj = 2
+at = [1438, 57.44, 45.02]
+wps = [[1438, 59.0, 44.7, "Joven jabalí Cardo"], [1438, 55.7, 42.4, "Joven jabalí Cardo"], [1438, 60.9, 46.0, "Joven jabalí Cardo"]]
+text = "Mata Joven jabalí Cardo (4) para «El equilibrio de la naturaleza»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#2"]
+note = "Polestar paso 2 «Cañada Umbría: kill these as you meet them», objetivo 2 (kill) · ya en Senda: nesg-003"
+
+[[step]]
+id = "ps-teld-008"
+do = "complete"
+quest = 459
+obj = 1
+at = [1438, 56.16, 45.81]
+wps = [[1438, 54.6, 44.1, "Musgovil"], [1438, 55.8, 41.6, "Musgovil"], [1438, 56.2, 38.5, "Musgovil"]]
+text = "Consigue Musgovil (8) de Grell y Grellín para «La protectora de los bosques»."
+tip = "Los tótems están entre los grells: haz las dos misiones a la vez."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#2"]
+note = "Polestar paso 2 «Cañada Umbría: kill these as you meet them», objetivo 3 (collect) · ya en Senda: nesg-012"
+
+[[step]]
+id = "ps-teld-009"
+do = "complete"
+quest = 97977
+obj = 1
+at = [1438, 56.0, 46.1]
+wps = [[1438, 54.9, 44.0, "Tótem Tuercepinos"], [1438, 54.4, 39.3, "Tótem Tuercepinos"]]
+text = "Consigue Tótem Tuercepinos (4) para «Nature's Call»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#2"]
+note = "Polestar paso 2 «Cañada Umbría: kill these as you meet them», objetivo 4 (collect) · ya en Senda: nesg-013"
+
+[[step]]
+id = "ps-teld-010"
+do = "turnin"
+quest = 459
+npc = 1992
+at = [1438, 57.83, 45.21]
+chain = "ps-teld-s003-1992"
+text = "Entrega el musgo vil a Tarindrella."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#3"]
+note = "Polestar paso 3 «Back at Aldrassil», objetivo 1 (turnin) · ya en Senda: nesg-014"
+
+[[step]]
+id = "ps-teld-011"
+do = "turnin"
+quest = 97977
+npc = 1992
+at = [1438, 57.83, 45.21]
+chain = "ps-teld-s003-1992"
+text = "Entrega los tótems a Tarindrella."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#3"]
+note = "Polestar paso 3 «Back at Aldrassil», objetivo 2 (turnin) · ya en Senda: nesg-015"
+
+[[step]]
+id = "ps-teld-012"
+do = "turnin"
+quest = 456
+npc = 2079
+at = [1438, 58.69, 44.27]
+chain = "ps-teld-s003-2079"
+text = "Entrega la misión al Conservador Ilthalaine."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#3"]
+note = "Polestar paso 3 «Back at Aldrassil», objetivo 3 (turnin) · ya en Senda: nesg-004"
+
+[[step]]
+id = "ps-teld-013"
+do = "accept"
+quest = 457
+npc = 2079
+at = [1438, 58.69, 44.27]
+chain = "ps-teld-s003-2079"
+text = "Coge la segunda parte: ahora sables y jabalíes adultos, más al norte."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#3"]
+note = "Polestar paso 3 «Back at Aldrassil», objetivo 4 (accept) · datos no importados: pre · ya en Senda: nesg-005"
+
+[[step]]
+id = "ps-teld-014"
+do = "accept"
+quest = 3120
+npc = 2079
+at = [1438, 58.69, 44.27]
+if = { class = ["DRUID"] }
+chain = "ps-teld-s003-2079"
+text = "Coge «El sigilo verde» del Conservador Ilthalaine."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#3"]
+note = "Polestar paso 3 «Back at Aldrassil», objetivo 9 (accept) · datos no importados: pre"
+
+[[step]]
+id = "ps-teld-015"
+do = "accept"
+quest = 916
+npc = 2082
+at = [1438, 57.81, 41.65]
+reqlevel = 3
+text = "Entra en Aldrassil y coge la misión del veneno de Gilshalan Windwalker."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#3"]
+note = "Polestar paso 3 «Back at Aldrassil», objetivo 10 (accept) · ya en Senda: nesg-016"
+
+[[step]]
+id = "ps-teld-016"
+do = "accept"
+quest = 97979
+npc = 3595
+at = [1438, 59.17, 40.44]
+text = "Sube a Aldrassil y coge la misión de Shanda (nueva de Forever)."
+tip = "[EN] Shanda: in at the tree's front entrance and up the ramp; upstairs."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#3"]
+note = "Polestar paso 3 «Back at Aldrassil», objetivo 11 (accept) · datos no importados: pre · ya en Senda: nesg-006"
+
+[[step]]
+id = "ps-teld-017"
+do = "note"
+text = "«La diosa provee»: lanza Luz de Elune y Fusión de las Sombras, y luego entrégasela a Shanda."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#3"]
+note = "Polestar paso 3 «Back at Aldrassil», objetivo 12 (note)"
+
+[[step]]
+id = "ps-teld-018"
+do = "turnin"
+quest = 97979
+npc = 3595
+at = [1438, 59.17, 40.44]
+text = "Entrega la misión a Shanda."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#3"]
+note = "Polestar paso 3 «Back at Aldrassil», objetivo 13 (turnin) · ya en Senda: nesg-008"
+
+[[step]]
+id = "ps-teld-019"
+do = "accept"
+quest = 4495
+npc = 8583
+at = [1438, 60.9, 41.96]
+reqlevel = 2
+text = "Coge la misión de Dirania Silvershine, al este de Aldrassil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#3"]
+note = "Polestar paso 3 «Back at Aldrassil», objetivo 14 (accept) · ya en Senda: nesg-017"
+
+[[step]]
+id = "ps-teld-020"
+do = "complete"
+quest = 457
+obj = 1
+at = [1438, 61.25, 39.08]
+wps = [[1438, 62.4, 38.0, "Sable de la Noche sarnoso"], [1438, 62.4, 35.4, "Sable de la Noche sarnoso"], [1438, 60.1, 35.3, "Sable de la Noche sarnoso"]]
+text = "Mata Sable de la Noche sarnoso (7) para «El equilibrio de la naturaleza»."
+tip = "[EN] Mangy Nightsabers and Thistle Boars roam north of Aldrassil, on the way to the cave. Githyiss la Vil sits deep inside. Iverron waits in the trees west of the cave mouth."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#4"]
+note = "Polestar paso 4 «North to Shadowthread Cave», objetivo 1 (kill) · ya en Senda: nesg-018"
+
+[[step]]
+id = "ps-teld-021"
+do = "complete"
+quest = 457
+obj = 2
+at = [1438, 61.83, 38.65]
+wps = [[1438, 59.9, 37.9, "Jabalí Cardo"], [1438, 61.7, 35.4, "Jabalí Cardo"], [1438, 60.0, 34.5, "Jabalí Cardo"]]
+text = "Mata Jabalí Cardo (7) para «El equilibrio de la naturaleza»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#4"]
+note = "Polestar paso 4 «North to Shadowthread Cave», objetivo 2 (kill) · ya en Senda: nesg-018"
+
+[[step]]
+id = "ps-teld-022"
+do = "complete"
+quest = 916
+obj = 1
+at = [1438, 58.76, 33.43]
+wps = [[1438, 57.1, 33.0, "Glándula venenosa de Tejemadera"], [1438, 56.7, 29.9, "Glándula venenosa de Tejemadera"], [1438, 57.7, 27.1, "Glándula venenosa de Tejemadera"]]
+text = "Consigue Glándula venenosa de Tejemadera (10) de Araña Tejemadera para «El veneno de la Tejemadera»."
+tip = "No entres aún en la cueva: los huevos y Githyiss vienen en la siguiente misión. [EN] Webwood Spiders; below ground."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#4"]
+note = "Polestar paso 4 «North to Shadowthread Cave», objetivo 3 (collect) · ya en Senda: nesg-021"
+
+[[step]]
+id = "ps-teld-023"
+do = "turnin"
+quest = 4495
+npc = 8584
+at = [1438, 54.59, 32.99]
+chain = "ps-teld-s004-8584"
+text = "Busca a Iverron al noroeste, junto a la cueva de las arañas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#4"]
+note = "Polestar paso 4 «North to Shadowthread Cave», objetivo 4 (turnin) · ya en Senda: nesg-019"
+
+[[step]]
+id = "ps-teld-024"
+do = "accept"
+quest = 3519
+npc = 8584
+at = [1438, 54.59, 32.99]
+chain = "ps-teld-s004-8584"
+reqlevel = 2
+text = "Coge la misión de Iverron: vuelve con Dirania."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#4"]
+note = "Polestar paso 4 «North to Shadowthread Cave», objetivo 5 (accept) · datos no importados: pre · ya en Senda: nesg-020"
+
+[[step]]
+id = "ps-teld-025"
+do = "turnin"
+quest = 916
+npc = 2082
+at = [1438, 57.81, 41.65]
+chain = "ps-teld-s005-2082"
+text = "Entrega los sacos de veneno a Gilshalan."
+tip = "[EN] The trainers stand upstairs inside Aldrassil, along the ramp that winds up the tree: Alyissia and Frahun Sombrusurro on the first level, Shanda above them, Ayanna Semprerguida and Mardant Cebaforte at the top. The arrow cannot tell the levels apart."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#5"]
+note = "Polestar paso 5 «Aldrassil», objetivo 1 (turnin) · ya en Senda: nesg-025"
+
+[[step]]
+id = "ps-teld-026"
+do = "accept"
+quest = 917
+npc = 2082
+at = [1438, 57.81, 41.65]
+chain = "ps-teld-s005-2082"
+text = "Coge la misión de los huevos de araña."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#5"]
+note = "Polestar paso 5 «Aldrassil», objetivo 2 (accept) · datos no importados: pre · ya en Senda: nesg-026"
+
+[[step]]
+id = "ps-teld-027"
+do = "turnin"
+quest = 457
+npc = 2079
+at = [1438, 58.69, 44.27]
+text = "Vuelve a Aldrassil y entrega los sables y jabalíes al Conservador."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#5"]
+note = "Polestar paso 5 «Aldrassil», objetivo 3 (turnin) · ya en Senda: nesg-022"
+
+[[step]]
+id = "ps-teld-028"
+do = "turnin"
+quest = 3519
+npc = 8583
+at = [1438, 60.9, 41.96]
+chain = "ps-teld-s005-8583"
+text = "Entrega a Dirania Silvershine."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#5"]
+note = "Polestar paso 5 «Aldrassil», objetivo 4 (turnin) · ya en Senda: nesg-023"
+
+[[step]]
+id = "ps-teld-029"
+do = "accept"
+quest = 3521
+npc = 8583
+at = [1438, 60.9, 41.96]
+chain = "ps-teld-s005-8583"
+reqlevel = 2
+text = "Coge el antídoto de Iverron."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#5"]
+note = "Polestar paso 5 «Aldrassil», objetivo 5 (accept) · datos no importados: pre · ya en Senda: nesg-024"
+
+[[step]]
+id = "ps-teld-030"
+do = "turnin"
+quest = 3120
+npc = 3597
+at = [1438, 58.63, 40.29]
+if = { class = ["DRUID"] }
+text = "Entrega «El sigilo verde» a Mardant Cebaforte, el instructor de druidas en Aldrassil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#5"]
+note = "Polestar paso 5 «Aldrassil», objetivo 10 (turnin)"
+
+[[step]]
+id = "ps-teld-031"
+do = "note"
+npc = 3597
+at = [1438, 58.63, 40.29]
+text = "Entrena tus hechizos de clase con Mardant Cebaforte."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#5"]
+note = "Polestar paso 5 «Aldrassil», objetivo 11 (train) · train class: Senda necesita la lista de hechizos (spells) para detectarlo solo"
+
+[[step]]
+id = "ps-teld-032"
+do = "complete"
+quest = 3521
+obj = 1
+at = [1438, 58.58, 41.47]
+wps = [[1438, 57.2, 45.1, "Champiñón jacinto"], [1438, 59.5, 46.5, "Champiñón jacinto"], [1438, 62.7, 43.8, "Champiñón jacinto"]]
+text = "Recoge Champiñón jacinto (7) de Champiñón de Hyacinth para «En antídoto de Iverron»."
+tip = "Los champiñones también caen de los grells. Coge los que veas por el camino. Los Huevos de maderácnida están al fondo de Shadowthread Cave: toma el sendero central, luego a la izquierda donde se divide, hasta la cornisa alta. Los grells sueltan champiñones jacinto; los lirios alunados crecen junto a las charcas al norte de Aldrassil. [EN] Grells."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#6"]
+note = "Polestar paso 6 ««Huevo de Tejemadera» and the antidote», objetivo 1 (collect) · ya en Senda: nesg-027"
+
+[[step]]
+id = "ps-teld-033"
+do = "complete"
+quest = 3521
+obj = 2
+at = [1438, 57.34, 39.67]
+wps = [[1438, 57.0, 38.3, "Lirio alunado"], [1438, 58.5, 38.0, "Lirio alunado"], [1438, 58.0, 36.3, "Lirio alunado"]]
+text = "Recoge Lirio alunado (4) de Lirio alunado para «En antídoto de Iverron»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#6"]
+note = "Polestar paso 6 ««Huevo de Tejemadera» and the antidote», objetivo 2 (collect) · ya en Senda: nesg-027"
+
+[[step]]
+id = "ps-teld-034"
+do = "goto"
+at = [1438, 56.69, 31.29]
+text = "Ve a Shadowthread Cave."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#7"]
+note = "Polestar paso 7 «Shadowthread Cave», objetivo 1 (goto)"
+
+[[step]]
+id = "ps-teld-035"
+do = "complete"
+quest = 917
+obj = 1
+at = [1438, 57.01, 26.49]
+text = "Recoge Huevo de Tejemadera (1) de Huevos de maderácnida para «Huevo de Tejemadera»."
+tip = "Los huevos están al fondo. Mata a Githyiss la Vil, al final de la cueva: suelta un colmillo que inicia misión. Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#8"]
+note = "Polestar paso 8 «Cañada Umbría», objetivo 1 (collect) · ya en Senda: nesg-028"
+
+[[step]]
+id = "ps-teld-036"
+do = "loot"
+item = 277190
+count = 1
+at = [1438, 56.65, 26.31]
+optional = true
+text = "Consigue Colmillo de Githyiss de Githyiss la Vil."
+tip = "[EN] «Fang of Githyiss»; below ground."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#8"]
+note = "Polestar paso 8 «Cañada Umbría», objetivo 2 (collect)"
+
+[[step]]
+id = "ps-teld-037"
+do = "accept"
+quest = 97236
+optional = true
+text = "Si te cayó el Colmillo de Githyiss, úsalo para empezar la misión (nueva de Forever)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#8"]
+note = "Polestar paso 8 «Cañada Umbría», objetivo 3 (accept) · ya en Senda: nesg-029"
+
+[[step]]
+id = "ps-teld-038"
+do = "complete"
+quest = 3521
+obj = 3
+at = [1438, 56.88, 26.28]
+wps = [[1438, 56.2, 27.3, "Icor Tejemadera"], [1438, 56.7, 29.9, "Icor Tejemadera"], [1438, 57.1, 33.0, "Icor Tejemadera"]]
+text = "Consigue Icor Tejemadera (1) de Araña Tejemadera para «En antídoto de Iverron»."
+tip = "[EN] Webwood Spiders; below ground."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#8"]
+note = "Polestar paso 8 «Cañada Umbría», objetivo 4 (collect) · ya en Senda: nesg-027"
+
+[[step]]
+id = "ps-teld-039"
+do = "complete"
+quest = 3521
+obj = 2
+at = [1438, 58.08, 35.6]
+wps = [[1438, 58.5, 38.0, "Lirio alunado"], [1438, 57.0, 38.3, "Lirio alunado"]]
+text = "Recoge Lirio alunado (4) de Lirio alunado para «En antídoto de Iverron»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#8"]
+note = "Polestar paso 8 «Cañada Umbría», objetivo 5 (collect) · ya en Senda: nesg-027"
+
+[[step]]
+id = "ps-teld-040"
+do = "turnin"
+quest = 97236
+npc = 2082
+at = [1438, 57.81, 41.65]
+optional = true
+chain = "ps-teld-s009-2082"
+text = "Entrega el colmillo de Githyiss a Gilshalan."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#9"]
+note = "Polestar paso 9 «Aldrassil», objetivo 1 (turnin) · ya en Senda: nesg-034"
+
+[[step]]
+id = "ps-teld-041"
+do = "turnin"
+quest = 917
+npc = 2082
+at = [1438, 57.81, 41.65]
+chain = "ps-teld-s009-2082"
+text = "Vuelve a Aldrassil y entrega los huevos a Gilshalan."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#9"]
+note = "Polestar paso 9 «Aldrassil», objetivo 2 (turnin) · ya en Senda: nesg-033"
+
+[[step]]
+id = "ps-teld-042"
+do = "accept"
+quest = 920
+npc = 2082
+at = [1438, 57.81, 41.65]
+chain = "ps-teld-s009-2082"
+text = "Coge la misión que te manda arriba, con Tenaron Stormgrip."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#9"]
+note = "Polestar paso 9 «Aldrassil», objetivo 3 (accept) · datos no importados: pre · ya en Senda: nesg-035"
+
+[[step]]
+id = "ps-teld-043"
+do = "turnin"
+quest = 3521
+npc = 8583
+at = [1438, 60.9, 41.96]
+text = "Vuelve con Dirania y entrega los ingredientes."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#9"]
+note = "Polestar paso 9 «Aldrassil», objetivo 4 (turnin) · ya en Senda: nesg-030"
+
+[[step]]
+id = "ps-teld-044"
+do = "turnin"
+quest = 920
+npc = 3514
+at = [1438, 59.06, 39.45]
+chain = "ps-teld-s009-3514"
+text = "Sube a lo alto de Aldrassil y entrega a Tenaron Stormgrip."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#9"]
+note = "Polestar paso 9 «Aldrassil», objetivo 5 (turnin) · ya en Senda: nesg-036"
+
+[[step]]
+id = "ps-teld-045"
+do = "accept"
+quest = 921
+npc = 3514
+at = [1438, 59.06, 39.45]
+chain = "ps-teld-s009-3514"
+text = "Coge la primera misión de la Corona de la Tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#9"]
+note = "Polestar paso 9 «Aldrassil», objetivo 6 (accept) · datos no importados: pre · ya en Senda: nesg-037"
+
+[[step]]
+id = "ps-teld-046"
+do = "complete"
+quest = 921
+obj = 1
+at = [1438, 60.0, 33.0]
+text = "Usa Ampolla de cristal para «La corona de la Tierra»."
+tip = "[EN] The moonwell sits north of Aldrassil. Recoge Ampolla de cristal llena (1) de Pozo de Cañada Umbría para «La corona de la Tierra». Usa la Ampolla de cristal en el pozo de la luna."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#10"]
+note = "Polestar paso 10 «The moonwell», objetivo 1 (use) · ya en Senda: nesg-038"
+
+[[step]]
+id = "ps-teld-047"
+do = "turnin"
+quest = 921
+npc = 3514
+at = [1438, 59.06, 39.45]
+chain = "ps-teld-s011-3514"
+text = "Vuelve con Tenaron y entrega la redoma llena."
+tip = "Vuelve a lo alto de Aldrassil. El Diario perdido está a su lado. [EN] Upstairs."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#11"]
+note = "Polestar paso 11 «Tenaron Tormentagarre», objetivo 1 (turnin) · ya en Senda: nesg-039"
+
+[[step]]
+id = "ps-teld-048"
+do = "accept"
+quest = 928
+npc = 3514
+at = [1438, 59.06, 39.45]
+chain = "ps-teld-s011-3514"
+text = "Coge la siguiente Corona de la Tierra: se entrega en Dolanaar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#11"]
+note = "Polestar paso 11 «Tenaron Tormentagarre», objetivo 2 (accept) · datos no importados: pre · ya en Senda: nesg-040"
+
+[[step]]
+id = "ps-teld-049"
+do = "accept"
+quest = 96630
+at = [1438, 59.07, 39.55]
+reqlevel = 4
+text = "Junto a Tenaron, abre el Diario perdido: misión del aventurero para Dolanaar (nueva de Forever)."
+tip = "Abre el campamento de Forever: hoguera, saco de dormir y lecciones de profesión."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#11"]
+note = "Polestar paso 11 «Tenaron Tormentagarre», objetivo 3 (accept) · datos no importados: pre, closedBy · ya en Senda: nesg-041"
+
+[[step]]
+id = "ps-teld-050"
+do = "accept"
+quest = 3522
+npc = 8583
+at = [1438, 60.9, 41.96]
+reqlevel = 2
+text = "Coge el antídoto: llévaselo a Iverron."
+tip = "Tiene tiempo límite: ve directo a la cueva."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#12"]
+note = "Polestar paso 12 ««En antídoto de Iverron»», objetivo 1 (accept) · datos no importados: pre · ya en Senda: nesg-031"
+
+[[step]]
+id = "ps-teld-051"
+do = "turnin"
+quest = 3522
+npc = 8584
+at = [1438, 54.59, 32.99]
+text = "Dale el antídoto a Iverron, junto a la cueva."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#12"]
+note = "Polestar paso 12 ««En antídoto de Iverron»», objetivo 2 (turnin) · ya en Senda: nesg-032"
+
+[[step]]
+id = "ps-teld-052"
+do = "accept"
+quest = 2159
+npc = 6780
+at = [1438, 61.16, 47.64]
+text = "Al salir por la rampa del sur, coge la entrega de Porthannius."
+tip = "Sal de Cañada Umbría por el sendero al sureste de Aldrassil: Porthannius está a su lado, donde baja hacia el camino a Dolanaar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#13"]
+note = "Polestar paso 13 «Porthannius», objetivo 1 (accept) · ya en Senda: nesg-042"
+
+[[step]]
+id = "ps-teld-053"
+do = "accept"
+quest = 488
+npc = 2150
+at = [1438, 60.35, 56.16]
+reqlevel = 4
+text = "Al este del pueblo, coge la misión de Zenn Foulhoof (el sátiro)."
+tip = "Colmillos de sable, plumas de lechuza y seda de araña: se consiguen solos mientras haces lo demás."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#14"]
+note = "Polestar paso 14 «Zenn Nauseapezuña», objetivo 1 (accept) · ya en Senda: netd-028"
+
+[[step]]
+id = "ps-teld-054"
+do = "turnin"
+quest = 96630
+npc = 265811
+at = [1438, 57.58, 56.64]
+chain = "ps-teld-s015-265811"
+text = "Lleva el diario a Lyreena Duskblade, junto a la hoguera al norte del pueblo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#15"]
+note = "Polestar paso 15 «Dolanaar», objetivo 1 (turnin) · ya en Senda: netd-005"
+
+[[step]]
+id = "ps-teld-055"
+do = "accept"
+quest = 96606
+npc = 265811
+at = [1438, 57.58, 56.64]
+chain = "ps-teld-s015-265811"
+reqlevel = 4
+text = "Coge la misión del campamento de Lyreena."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#15"]
+note = "Polestar paso 15 «Dolanaar», objetivo 2 (accept) · datos no importados: pre, closedBy · ya en Senda: netd-006"
+
+[[step]]
+id = "ps-teld-056"
+do = "complete"
+quest = 96606
+at = [1438, 57.7, 56.7]
+text = "Siéntate junto a la hoguera de Lyreena hasta recibir el beneficio de descanso."
+tip = "Con una profesión aprendida, Lyreena Hoja Umbría también ofrece su Acampada 101, que recibe su instructor: alquimia y herboristería junto a Zarrin, Primeros auxilios con Byancie en la posada, desuello y peletería en el campamento de los Tejecrín, en el camino al oeste. /sentarse junto a la hoguera de Lyreena Hoja Umbría hasta que tengas Descanso mejorado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#16"]
+note = "Polestar paso 16 ««El gran mundo exterior»», objetivo 1 (complete) · objetivos (EN): Sit near the campfire (Optional); Gain the Boosted Rest buff · ya en Senda: netd-007"
+
+[[step]]
+id = "ps-teld-057"
+do = "turnin"
+quest = 96606
+npc = 265811
+at = [1438, 57.58, 56.64]
+chain = "ps-teld-s016-265811"
+text = "Entrega la misión a Lyreena."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#16"]
+note = "Polestar paso 16 ««El gran mundo exterior»», objetivo 2 (turnin) · ya en Senda: netd-008"
+
+[[step]]
+id = "ps-teld-058"
+do = "accept"
+quest = 96634
+npc = 265811
+at = [1438, 57.58, 56.64]
+chain = "ps-teld-s016-265811"
+reqlevel = 4
+text = "Coge la lección de Cocina."
+tip = "Si Lyreena no deja coger tantas, quédate con Herboristería y Alquimia: son tus principales."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#16"]
+note = "Polestar paso 16 ««El gran mundo exterior»», objetivo 3 (accept) · datos no importados: pre, closedBy · ya en Senda: netd-012"
+
+[[step]]
+id = "ps-teld-059"
+do = "accept"
+quest = 97938
+npc = 265811
+at = [1438, 57.58, 56.64]
+if = { prof = ["alchemy"] }
+reqlevel = 4
+reqskill = [171, 1]
+text = "Coge la lección de Alquimia."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#17"]
+note = "Polestar paso 17 ««Acampada para novatos: alquimia»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230564 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy · ya en Senda: netd-010"
+
+[[step]]
+id = "ps-teld-060"
+do = "accept"
+quest = 97944
+npc = 265811
+at = [1438, 57.58, 56.64]
+if = { prof = ["herbalism"] }
+reqlevel = 4
+reqskill = [182, 1]
+text = "Vuelve con Lyreena y coge la lección de campamento de Herboristería (pide saber ya la profesión)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#18"]
+note = "Polestar paso 18 ««Acampada para novatos: herboristería»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229705 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy · ya en Senda: netd-009"
+
+[[step]]
+id = "ps-teld-061"
+do = "accept"
+quest = 97942
+npc = 265811
+at = [1438, 57.58, 56.64]
+if = { prof = ["firstaid"] }
+reqlevel = 4
+reqskill = [129, 1]
+text = "Coge la lección de Primeros auxilios."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#19"]
+note = "Polestar paso 19 ««Acampada para novatos: primeros auxilios»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1230117 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy · ya en Senda: netd-011"
+
+[[step]]
+id = "ps-teld-062"
+do = "accept"
+quest = 97949
+npc = 265811
+at = [1438, 57.58, 56.64]
+if = { prof = ["skinning"] }
+reqlevel = 4
+reqskill = [393, 1]
+text = "Coge «Camping 101: Skinning» de Lyreena Hoja Umbría, para Radnaal Tejecrín, junto al camino al oeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#20"]
+note = "Polestar paso 20 ««Acampada para novatos: desuello»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229517 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "ps-teld-063"
+do = "accept"
+quest = 97946
+npc = 265811
+at = [1438, 57.58, 56.64]
+if = { prof = ["leatherworking"] }
+reqlevel = 4
+reqskill = [165, 1]
+text = "Coge «Camping 101: Leatherworking» de Lyreena Hoja Umbría, para Nadyia Tejecrín, junto al camino al oeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#21"]
+note = "Polestar paso 21 ««Camping 101: Leatherworking»», objetivo 1 (accept) · condición no expresable: no conoces el hechizo 1229432 (si ya lo sabes, la misión ya estará hecha) · datos no importados: pre, closedBy"
+
+[[step]]
+id = "ps-teld-064"
+do = "learn_prof"
+npc = 6286
+prof = "cooking"
+at = [1438, 57.12, 61.3]
+text = "Aprende Cocina con Zarrin."
+tip = "[EN] Zarrin, south of the inn: Camping 101 asks you to learn it."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#22"]
+note = "Polestar paso 22 «Zarrin», objetivo 1 (train)"
+
+[[step]]
+id = "ps-teld-065"
+do = "complete"
+quest = 96634
+at = [1438, 57.1, 61.3]
+text = "Completa «Acampada para novatos: cocinar»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#22"]
+note = "Polestar paso 22 «Zarrin», objetivo 2 (complete) · objetivos (EN): Zarrin"
+
+[[step]]
+id = "ps-teld-066"
+do = "turnin"
+quest = 96634
+npc = 6286
+at = [1438, 57.12, 61.3]
+chain = "ps-teld-s022-6286"
+text = "Entrega la lección a Zarrin, el cocinero."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#22"]
+note = "Polestar paso 22 «Zarrin», objetivo 3 (turnin) · ya en Senda: netd-017"
+
+[[step]]
+id = "ps-teld-067"
+do = "accept"
+quest = 4161
+reqskill = [185, 1]
+npc = 6286
+at = [1438, 57.12, 61.3]
+if = { prof = ["cooking"] }
+chain = "ps-teld-s022-6286"
+text = "Coge la receta de Zarrin: patas de araña pequeñas de las arañas de Teldrassil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#22"]
+note = "Polestar paso 22 «Zarrin», objetivo 4 (accept) · ya en Senda: netd-019"
+
+[[step]]
+id = "ps-teld-068"
+do = "complete"
+quest = 97938
+at = [1438, 57.64, 60.8]
+if = { prof = ["alchemy"] }
+text = "Completa «Camping 101: Alchemy»."
+tip = "Habla con el instructor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#23"]
+note = "Polestar paso 23 «Cyndra Suavesurro», objetivo 1 (complete) · condición no expresable: llevas la misión 97938 (implícita: el paso es de esa misión) · objetivos (EN): Cyndra Kindwhisper"
+
+[[step]]
+id = "ps-teld-069"
+do = "turnin"
+quest = 97938
+npc = 3603
+at = [1438, 57.64, 60.8]
+if = { prof = ["alchemy"] }
+text = "Entrega la lección a Cyndra Kindwhisper, al lado."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#23"]
+note = "Polestar paso 23 «Cyndra Suavesurro», objetivo 2 (turnin) · condición no expresable: llevas la misión 97938 (implícita: el paso es de esa misión) · ya en Senda: netd-015"
+
+[[step]]
+id = "ps-teld-070"
+do = "complete"
+quest = 97944
+at = [1438, 57.72, 60.64]
+if = { prof = ["herbalism"] }
+text = "Completa «Acampada para novatos: herboristería»."
+tip = "Habla con el instructor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#24"]
+note = "Polestar paso 24 «Malorne Filohoja», objetivo 1 (complete) · condición no expresable: llevas la misión 97944 (implícita: el paso es de esa misión) · objetivos (EN): Malorne Bladeleaf"
+
+[[step]]
+id = "ps-teld-071"
+do = "turnin"
+quest = 97944
+npc = 3604
+at = [1438, 57.72, 60.64]
+if = { prof = ["herbalism"] }
+text = "Baja otra vez al sur y entrega la lección a Malorne Bladeleaf."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#24"]
+note = "Polestar paso 24 «Malorne Filohoja», objetivo 2 (turnin) · condición no expresable: llevas la misión 97944 (implícita: el paso es de esa misión) · ya en Senda: netd-013"
+
+[[step]]
+id = "ps-teld-072"
+do = "complete"
+quest = 97942
+at = [1438, 55.29, 56.82]
+if = { prof = ["firstaid"] }
+text = "Completa «Acampada para novatos: primeros auxilios»."
+tip = "Habla con el instructor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#25"]
+note = "Polestar paso 25 «Byancie», objetivo 1 (complete) · condición no expresable: llevas la misión 97942 (implícita: el paso es de esa misión) · objetivos (EN): Byancie"
+
+[[step]]
+id = "ps-teld-073"
+do = "turnin"
+quest = 97942
+npc = 6094
+at = [1438, 55.29, 56.82]
+if = { prof = ["firstaid"] }
+text = "Entrega la lección de Primeros auxilios a Byancie, en la casa del oeste."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#25"]
+note = "Polestar paso 25 «Byancie», objetivo 2 (turnin) · condición no expresable: llevas la misión 97942 (implícita: el paso es de esa misión) · ya en Senda: netd-020"
+
+[[step]]
+id = "ps-teld-074"
+do = "turnin"
+quest = 928
+npc = 3515
+at = [1438, 56.14, 61.71]
+chain = "ps-teld-s026-3515"
+text = "Entrega la Corona de la Tierra a Corithras Moonrage, al este de la posada."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 1 (turnin) · ya en Senda: netd-003"
+
+[[step]]
+id = "ps-teld-075"
+do = "accept"
+quest = 929
+npc = 3515
+at = [1438, 56.14, 61.71]
+chain = "ps-teld-s026-3515"
+text = "Coge la siguiente Corona de la Tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 2 (accept) · datos no importados: pre · ya en Senda: netd-004"
+
+[[step]]
+id = "ps-teld-076"
+do = "sethearth"
+npc = 6736
+zone = 1438
+at = [1438, 55.62, 59.79]
+text = "Pon la piedra de hogar en Dolanaar con Tabernero Keldamyr."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 3 (sethome)"
+
+[[step]]
+id = "ps-teld-077"
+do = "turnin"
+quest = 2159
+npc = 6736
+at = [1438, 55.62, 59.79]
+text = "Entrega el paquete de Porthannius al posadero Keldamyr."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 4 (turnin) · ya en Senda: netd-001"
+
+[[step]]
+id = "ps-teld-078"
+do = "accept"
+quest = 99046
+npc = 2081
+at = [1438, 56.0, 59.52]
+reqlevel = 4
+text = "Coge la misión del corredor perdido de la Centinela Kyra Starsong (nueva de Forever)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 5 (accept) · datos no importados: closedBy · ya en Senda: netd-060"
+
+[[step]]
+id = "ps-teld-079"
+do = "note"
+npc = 3602
+at = [1438, 55.95, 61.56]
+text = "Entrena tus hechizos de clase con Kal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 6 (train) · train class: Senda necesita la lista de hechizos (spells) para detectarlo solo"
+
+[[step]]
+id = "ps-teld-080"
+do = "accept"
+quest = 997
+npc = 2083
+at = [1438, 56.08, 57.72]
+reqlevel = 4
+text = "Coge la misión de la tierra de Denalan de Syral Bladeleaf."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 7 (accept) · ya en Senda: netd-026"
+
+[[step]]
+id = "ps-teld-081"
+do = "accept"
+quest = 475
+npc = 2078
+at = [1438, 55.96, 57.27]
+reqlevel = 4
+text = "Coge la misión de Athridas Bearmantle."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 8 (accept) · ya en Senda: netd-022"
+
+[[step]]
+id = "ps-teld-082"
+do = "accept"
+quest = 87288
+npc = 3608
+at = [1438, 55.51, 57.15]
+reqlevel = 4
+text = "Coge la misión de las pieles de sable de Aldia (nueva de Forever)."
+tip = "[EN] Aldia, upstairs."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 9 (accept) · ya en Senda: netd-025"
+
+[[step]]
+id = "ps-teld-083"
+do = "accept"
+quest = 2438
+npc = 3567
+at = [1438, 55.57, 56.95]
+chain = "ps-teld-s026-3567"
+text = "Coge la misión del atrapasueños de Tallonkai Swiftroot."
+tip = "[EN] Upstairs."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 10 (accept) · ya en Senda: netd-023"
+
+[[step]]
+id = "ps-teld-084"
+do = "accept"
+quest = 932
+npc = 3567
+at = [1438, 55.57, 56.95]
+chain = "ps-teld-s026-3567"
+reqlevel = 4
+text = "Coge también la de Lord Melenas de Tallonkai."
+tip = "[EN] Tallonkai Cruzarraíz, upstairs."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 11 (accept) · ya en Senda: netd-024"
+
+[[step]]
+id = "ps-teld-085"
+do = "accept"
+quest = 98391
+npc = 3600
+at = [1438, 55.56, 56.75]
+reqlevel = 5
+text = "Coge la misión de Laurna Morninglight para el Templo de la Luna."
+tip = "[EN] Laurna Luzdelalba, inside."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#26"]
+note = "Polestar paso 26 «Dolanaar», objetivo 12 (accept) · datos no importados: closedBy · ya en Senda: netd-083"
+
+[[step]]
+id = "ps-teld-086"
+do = "accept"
+quest = 487
+npc = 2151
+at = [1438, 52.91, 57.2]
+reqlevel = 5
+text = "Toma el camino al oeste. Coge la misión de la Sacerdotisa lunar Amara, que patrulla el camino."
+tip = "Amara recorre el camino hacia el oeste: si no está en el punto, síguelo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#27"]
+note = "Polestar paso 27 «Dolanaar», objetivo 1 (accept) · ya en Senda: netd-061"
+
+[[step]]
+id = "ps-teld-087"
+do = "complete"
+quest = 488
+obj = 1
+at = [1438, 52.86, 58.53]
+wps = [[1438, 49.1, 51.0, "Colmillo de Sable de Hielo"], [1438, 45.6, 41.5, "Colmillo de Sable de Hielo"], [1438, 39.5, 35.2, "Colmillo de Sable de Hielo"]]
+text = "Consigue Colmillo de Sable de Hielo (3) para «Las apuestas de Zenn»."
+tip = "[EN] Nightsabers, Strigid Owls and Webwood Lurkers roam all around Dolanaar and along the road east; the lurkers also drop the recipe's spider legs. The moonwell is at the west edge of Villa Brisa Estelar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#28"]
+note = "Polestar paso 28 ««Teldrassil»: kill these as you meet them», objetivo 1 (collect)"
+
+[[step]]
+id = "ps-teld-088"
+do = "complete"
+quest = 87288
+obj = 1
+at = [1438, 52.86, 58.53]
+wps = [[1438, 51.2, 61.9, "Pelambre de sable de la noche suave"], [1438, 54.8, 65.2, "Pelambre de sable de la noche suave"], [1438, 59.5, 62.4, "Pelambre de sable de la noche suave"]]
+text = "Consigue Pelambre de sable de la noche suave (6) de Sable de la Noche para «Los pelambres de sable de la noche suaves»."
+tip = "Cuentan también para los colmillos de Zenn. Sables de la Noche."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#28"]
+note = "Polestar paso 28 ««Teldrassil»: kill these as you meet them», objetivo 2 (collect) · ya en Senda: netd-033"
+
+[[step]]
+id = "ps-teld-089"
+do = "complete"
+quest = 488
+obj = 2
+at = [1438, 52.21, 59.33]
+wps = [[1438, 53.3, 59.6, "Pluma de lechuza estrígida"], [1438, 62.2, 51.3, "Pluma de lechuza estrígida"], [1438, 68.0, 62.0, "Pluma de lechuza estrígida"]]
+text = "Consigue Pluma de lechuza estrígida (3) para «Las apuestas de Zenn»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#28"]
+note = "Polestar paso 28 ««Teldrassil»: kill these as you meet them», objetivo 3 (collect)"
+
+[[step]]
+id = "ps-teld-090"
+do = "complete"
+quest = 488
+obj = 3
+at = [1438, 51.76, 58.49]
+wps = [[1438, 61.0, 54.8, "Seda de araña Tejemadera"], [1438, 69.8, 60.3, "Seda de araña Tejemadera"], [1438, 60.6, 74.9, "Seda de araña Tejemadera"]]
+text = "Consigue Seda de araña Tejemadera (3) para «Las apuestas de Zenn»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#28"]
+note = "Polestar paso 28 ««Teldrassil»: kill these as you meet them», objetivo 4 (collect)"
+
+[[step]]
+id = "ps-teld-091"
+do = "complete"
+quest = 4161
+obj = 1
+at = [1438, 51.76, 58.49]
+wps = [[1438, 61.0, 54.8, "Pata de araña pequeña"], [1438, 69.8, 60.3, "Pata de araña pequeña"], [1438, 60.6, 74.9, "Pata de araña pequeña"]]
+if = { prof = ["cooking"] }
+text = "Consigue Pata de araña pequeña (7) para «La receta de los Kaldorei»."
+tip = "Rondadores Tejemadera."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#28"]
+note = "Polestar paso 28 ««Teldrassil»: kill these as you meet them», objetivo 5 (collect)"
+
+[[step]]
+id = "ps-teld-092"
+do = "turnin"
+quest = 488
+npc = 2150
+at = [1438, 60.35, 56.16]
+text = "Entrega los colmillos, plumas y seda a Zenn."
+tip = "Si te falta algo, hazlo en el lago: hay arañas, lechuzas y sables al sur."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#29"]
+note = "Polestar paso 29 «Zenn Nauseapezuña», objetivo 1 (turnin) · ya en Senda: netd-046"
+
+[[step]]
+id = "ps-teld-093"
+do = "complete"
+quest = 929
+obj = 1
+at = [1438, 63.4, 58.1]
+text = "Usa Ampolla de jade para «La corona de la Tierra»."
+tip = "[EN] Gaerolas Talvethren stands upstairs in a house in the village, east of the moonwell: go up inside, the arrow cannot tell the floors apart. Vestidor de Tallonkai is in the house on the hill at the east end of the village. Recoge Ampolla de jade llena (1) de Poza de la Luna de Brisa Estelar para «La corona de la Tierra». Usa la Ampolla de jade en el pozo de la luna."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#30"]
+note = "Polestar paso 30 «Villa Brisa Estelar», objetivo 1 (use) · ya en Senda: netd-032"
+
+[[step]]
+id = "ps-teld-094"
+do = "turnin"
+quest = 475
+npc = 2107
+at = [1438, 66.26, 58.52]
+chain = "ps-teld-s030-2107"
+text = "Ve al este a Villa Brisa Estelar y entrega a Gaerolas Talvethren."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#30"]
+note = "Polestar paso 30 «Villa Brisa Estelar», objetivo 3 (turnin) · ya en Senda: netd-029"
+
+[[step]]
+id = "ps-teld-095"
+do = "accept"
+quest = 476
+npc = 2107
+at = [1438, 66.26, 58.52]
+chain = "ps-teld-s030-2107"
+reqlevel = 4
+text = "Coge su misión: vuelve con Athridas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#30"]
+note = "Polestar paso 30 «Villa Brisa Estelar», objetivo 4 (accept) · datos no importados: pre · ya en Senda: netd-030"
+
+[[step]]
+id = "ps-teld-096"
+do = "complete"
+quest = 2438
+obj = 1
+at = [1438, 68.0, 59.6]
+text = "Recoge Cazasueños Esmeralda (1) de Vestidor de Tallonkai para «EL cazasueños esmeralda»."
+tip = "[EN] Vestidor de Tallonkai; inside."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#30"]
+note = "Polestar paso 30 «Villa Brisa Estelar», objetivo 5 (collect) · ya en Senda: netd-031"
+
+[[step]]
+id = "ps-teld-097"
+do = "turnin"
+quest = 997
+npc = 2080
+at = [1438, 60.9, 68.49]
+chain = "ps-teld-s031-2080"
+text = "Baja al lago del sur y entrega la tierra a Denalan."
+tip = "[EN] South-west of Starbreeze, south of Zenn Nauseapezuña. Denalan tends his saplings on the shore; Lasher Sproutlings and Timberlings wander around him, and the «Brotes de Brezomadera» grow among them."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#31"]
+note = "Polestar paso 31 «Lago Al'Ameth», objetivo 1 (turnin) · ya en Senda: netd-048"
+
+[[step]]
+id = "ps-teld-098"
+do = "accept"
+quest = 918
+npc = 2080
+at = [1438, 60.9, 68.49]
+chain = "ps-teld-s031-2080"
+reqlevel = 4
+text = "Coge la misión de las semillas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#31"]
+note = "Polestar paso 31 «Lago Al'Ameth», objetivo 2 (accept) · ya en Senda: netd-049"
+
+[[step]]
+id = "ps-teld-099"
+do = "accept"
+quest = 919
+npc = 2080
+at = [1438, 60.9, 68.49]
+chain = "ps-teld-s031-2080"
+reqlevel = 4
+text = "Coge la de los brotes."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#31"]
+note = "Polestar paso 31 «Lago Al'Ameth», objetivo 3 (accept) · ya en Senda: netd-050"
+
+[[step]]
+id = "ps-teld-100"
+do = "complete"
+quest = 918
+obj = 1
+at = [1438, 61.53, 69.35]
+wps = [[1438, 61.8, 67.3, "Semilla de Brezomadera"], [1438, 60.3, 65.3, "Semilla de Brezomadera"], [1438, 57.4, 65.0, "Semilla de Brezomadera"]]
+text = "Consigue Semilla de Brezomadera (8) para «Semillas de Brezomadera»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#31"]
+note = "Polestar paso 31 «Lago Al'Ameth», objetivo 4 (collect) · ya en Senda: netd-051"
+
+[[step]]
+id = "ps-teld-101"
+do = "complete"
+quest = 919
+obj = 1
+at = [1438, 61.19, 69.94]
+wps = [[1438, 59.4, 72.4, "Brote de Brezomadera"], [1438, 61.9, 68.7, "Brote de Brezomadera"], [1438, 61.2, 65.9, "Brote de Brezomadera"]]
+text = "Recoge Brote de Brezomadera (12) de Brote de brezomadera para «Brotes de Brezomadera»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#31"]
+note = "Polestar paso 31 «Lago Al'Ameth», objetivo 5 (collect) · ya en Senda: netd-052"
+
+[[step]]
+id = "ps-teld-102"
+do = "turnin"
+quest = 918
+npc = 2080
+at = [1438, 60.9, 68.49]
+chain = "ps-teld-s031-2080"
+text = "Entrega las semillas a Denalan."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#31"]
+note = "Polestar paso 31 «Lago Al'Ameth», objetivo 6 (turnin) · ya en Senda: netd-054"
+
+[[step]]
+id = "ps-teld-103"
+do = "accept"
+quest = 922
+npc = 2080
+at = [1438, 60.9, 68.49]
+chain = "ps-teld-s031-2080"
+reqlevel = 4
+text = "Coge la misión que te manda a Darnassus con Rellian Greenspyre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#31"]
+note = "Polestar paso 31 «Lago Al'Ameth», objetivo 7 (accept) · datos no importados: pre · ya en Senda: netd-056"
+
+[[step]]
+id = "ps-teld-104"
+do = "turnin"
+quest = 919
+npc = 2080
+at = [1438, 60.9, 68.49]
+chain = "ps-teld-s031-2080"
+text = "Entrega los brotes a Denalan."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#31"]
+note = "Polestar paso 31 «Lago Al'Ameth», objetivo 8 (turnin) · ya en Senda: netd-055"
+
+[[step]]
+id = "ps-teld-105"
+do = "turnin"
+quest = 4161
+npc = 6286
+at = [1438, 57.12, 61.3]
+if = { prof = ["cooking"] }
+text = "Entrega las patas de araña a Zarrin."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#33"]
+note = "Polestar paso 33 «Dolanaar», objetivo 1 (turnin) · ya en Senda: netd-058"
+
+[[step]]
+id = "ps-teld-106"
+do = "turnin"
+quest = 929
+npc = 3515
+at = [1438, 56.14, 61.71]
+chain = "ps-teld-s033-3515"
+text = "Entrega la redoma de jade a Corithras."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#33"]
+note = "Polestar paso 33 «Dolanaar», objetivo 2 (turnin) · ya en Senda: netd-039"
+
+[[step]]
+id = "ps-teld-107"
+do = "accept"
+quest = 933
+npc = 3515
+at = [1438, 56.14, 61.71]
+chain = "ps-teld-s033-3515"
+text = "Coge la siguiente Corona de la Tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#33"]
+note = "Polestar paso 33 «Dolanaar», objetivo 3 (accept) · datos no importados: pre · ya en Senda: netd-040"
+
+[[step]]
+id = "ps-teld-108"
+do = "accept"
+quest = 489
+npc = 2081
+at = [1438, 56.0, 59.52]
+reqlevel = 4
+text = "En Dolanaar, coge con Syral Bladeleaf la misión de los conos viles para Zenn."
+tip = "Los conos viles están por el suelo alrededor del lago del sur."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#33"]
+note = "Polestar paso 33 «Dolanaar», objetivo 4 (accept) · datos no importados: pre · ya en Senda: netd-047"
+
+[[step]]
+id = "ps-teld-109"
+do = "turnin"
+quest = 87288
+npc = 3608
+at = [1438, 55.51, 57.15]
+text = "Entrega las pieles a Aldia."
+tip = "[EN] Aldia, upstairs."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#33"]
+note = "Polestar paso 33 «Dolanaar», objetivo 5 (turnin) · ya en Senda: netd-038"
+
+[[step]]
+id = "ps-teld-110"
+do = "turnin"
+quest = 2438
+npc = 3567
+at = [1438, 55.57, 56.95]
+chain = "ps-teld-s033-3567"
+text = "Entrega el atrapasueños a Tallonkai."
+tip = "[EN] Tallonkai Cruzarraíz, upstairs."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#33"]
+note = "Polestar paso 33 «Dolanaar», objetivo 6 (turnin) · ya en Senda: netd-036"
+
+[[step]]
+id = "ps-teld-111"
+do = "accept"
+quest = 2459
+npc = 3567
+at = [1438, 55.57, 56.95]
+chain = "ps-teld-s033-3567"
+text = "Coge la misión de Ferocitas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#33"]
+note = "Polestar paso 33 «Dolanaar», objetivo 7 (accept) · datos no importados: pre · ya en Senda: netd-037"
+
+[[step]]
+id = "ps-teld-112"
+do = "turnin"
+quest = 476
+npc = 2078
+at = [1438, 55.96, 57.27]
+chain = "ps-teld-s033-2078"
+text = "Vuelve a Dolanaar y entrega a Athridas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#33"]
+note = "Polestar paso 33 «Dolanaar», objetivo 8 (turnin) · ya en Senda: netd-034"
+
+[[step]]
+id = "ps-teld-113"
+do = "accept"
+quest = 483
+npc = 2078
+at = [1438, 55.96, 57.27]
+chain = "ps-teld-s033-2078"
+reqlevel = 4
+text = "Coge las reliquias del despertar (Ban'ethil): las harás más tarde."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#33"]
+note = "Polestar paso 33 «Dolanaar», objetivo 9 (accept) · datos no importados: pre · ya en Senda: netd-035"
+
+[[step]]
+id = "ps-teld-114"
+do = "note"
+npc = 3602
+at = [1438, 55.95, 61.56]
+text = "Entrena tus hechizos de clase con Kal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#33"]
+note = "Polestar paso 33 «Dolanaar», objetivo 10 (train) · train class: Senda necesita la lista de hechizos (spells) para detectarlo solo"
+
+[[step]]
+id = "ps-teld-115"
+do = "goto"
+at = [1438, 54.59, 52.12]
+text = "Ve a Roca Vil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#34"]
+note = "Polestar paso 34 «Roca Vil's mouth», objetivo 1 (goto)"
+
+[[step]]
+id = "ps-teld-116"
+do = "complete"
+quest = 932
+obj = 1
+at = [1438, 52.82, 50.21]
+wps = [[1438, 51.3, 50.5, "Cabeza de Melenas"]]
+text = "Consigue Cabeza de Melenas (1) de Lord Melenis para «Odio enraizado»."
+tip = "Es un sátiro débil al fondo de la cueva. Mata a los grells de la entrada solo si te cortan el paso. Lord Melenis espera dentro de la cueva, abajo o arriba en la cornisa; ve por la derecha. [EN] Lord Melenis; below ground."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#35"]
+note = "Polestar paso 35 «Roca Vil», objetivo 1 (collect) · ya en Senda: netd-043"
+
+[[step]]
+id = "ps-teld-117"
+do = "complete"
+quest = 487
+obj = 1
+at = [1438, 48.29, 53.55]
+wps = [[1438, 46.3, 52.1, "Emboscador Tuercepinos"], [1438, 46.0, 53.8, "Emboscador Tuercepinos"]]
+text = "Mata Emboscador Tuercepinos (6) para «El camino a Darnassus»."
+tip = "Los emboscadores Tuercepinos se esconden a lo largo del camino al oeste de Roca Vil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#36"]
+note = "Polestar paso 36 «The road to Darnassus», objetivo 1 (kill) · ya en Senda: netd-062"
+
+[[step]]
+id = "ps-teld-118"
+do = "complete"
+quest = 97949
+at = [1438, 42.09, 49.96]
+if = { prof = ["skinning"] }
+text = "Completa «Camping 101: Skinning»."
+tip = "Habla con el instructor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#37"]
+note = "Polestar paso 37 «Radnaal Tejecrín», objetivo 1 (complete) · condición no expresable: llevas la misión 97949 (implícita: el paso es de esa misión) · objetivos (EN): Radnaal Maneweaver"
+
+[[step]]
+id = "ps-teld-119"
+do = "turnin"
+quest = 97949
+npc = 6287
+at = [1438, 42.09, 49.96]
+if = { prof = ["skinning"] }
+text = "Entrega «Camping 101: Skinning» a Radnaal Tejecrín, acampado junto al camino antes de Shayla."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#37"]
+note = "Polestar paso 37 «Radnaal Tejecrín», objetivo 2 (turnin) · condición no expresable: llevas la misión 97949 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "ps-teld-120"
+do = "complete"
+quest = 97946
+at = [1438, 41.88, 49.44]
+if = { prof = ["leatherworking"] }
+text = "Completa «Camping 101: Leatherworking»."
+tip = "Habla con el instructor."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#38"]
+note = "Polestar paso 38 «Nadyia Tejecrín», objetivo 1 (complete) · condición no expresable: llevas la misión 97946 (implícita: el paso es de esa misión) · objetivos (EN): Nadyia Maneweaver"
+
+[[step]]
+id = "ps-teld-121"
+do = "turnin"
+quest = 97946
+npc = 3605
+at = [1438, 41.88, 49.44]
+if = { prof = ["leatherworking"] }
+text = "Entrega «Camping 101: Leatherworking» a Nadyia Tejecrín, junto a Radnaal Tejecrín."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#38"]
+note = "Polestar paso 38 «Nadyia Tejecrín», objetivo 2 (turnin) · condición no expresable: llevas la misión 97946 (implícita: el paso es de esa misión)"
+
+[[step]]
+id = "ps-teld-122"
+do = "accept"
+quest = 490
+npc = 2155
+at = [1438, 42.22, 51.27]
+reqlevel = 5
+text = "Sigue al oeste y coge la recompensa de la Centinela Shayla Nightbreeze."
+tip = "Al oeste por el camino hacia la ciudad. Shayla recorre este tramo del camino, desde la flecha al suroeste hasta la curva en torno a 38,54, y vuelta: si no está en la flecha, sigue el camino al suroeste. Todos los fúrbolg Tuercepinos sueltan colmillos: cuentan los emboscadores de este camino, los del túmulo y los de Gnarlpine Hold."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#39"]
+note = "Polestar paso 39 «Centinela Shayla Brisa Nocturna», objetivo 1 (accept) · ya en Senda: netd-063"
+
+[[step]]
+id = "ps-teld-123"
+do = "turnin"
+quest = 922
+npc = 3517
+at = [1457, 38.18, 21.64]
+chain = "ps-teld-s040-3517"
+text = "Ve por el camino del oeste a Darnassus. En el Enclave Cenarion, entrega a Rellian Greenspyre."
+tip = "Darnassus no tiene ruta de vuelo: el vuelo está abajo, en Rut'theran."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#40"]
+note = "Polestar paso 40 «Darnassus», objetivo 1 (turnin) · ya en Senda: netd-084"
+
+[[step]]
+id = "ps-teld-124"
+do = "accept"
+quest = 923
+npc = 3517
+at = [1457, 38.18, 21.64]
+chain = "ps-teld-s040-3517"
+reqlevel = 4
+text = "Coge la misión de los tumores."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#40"]
+note = "Polestar paso 40 «Darnassus», objetivo 2 (accept) · datos no importados: pre · ya en Senda: netd-085"
+
+[[step]]
+id = "ps-teld-125"
+do = "turnin"
+quest = 98391
+npc = 7316
+at = [1457, 28.94, 45.8]
+chain = "ps-teld-s040-7316"
+text = "Entrega la carta de Laurna a la Hermana Aquinne, en el jardín del Templo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#40"]
+note = "Polestar paso 40 «Darnassus», objetivo 3 (turnin) · ya en Senda: netd-087"
+
+[[step]]
+id = "ps-teld-126"
+do = "accept"
+quest = 2519
+npc = 7316
+at = [1457, 28.94, 45.8]
+chain = "ps-teld-s040-7316"
+reqlevel = 5
+text = "Coge su misión para el Templo de la Luna."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#40"]
+note = "Polestar paso 40 «Darnassus», objetivo 4 (accept) · datos no importados: closedBy · ya en Senda: netd-088"
+
+[[step]]
+id = "ps-teld-127"
+do = "turnin"
+quest = 2519
+npc = 7313
+at = [1457, 36.65, 85.93]
+chain = "ps-teld-s040-7313"
+text = "Entra en el Templo de la Luna y entrega a la Sacerdotisa A'moora."
+tip = "[EN] Sacerdotisa A'moora, in the Temple of the Moon."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#40"]
+note = "Polestar paso 40 «Darnassus», objetivo 5 (turnin) · ya en Senda: netd-089"
+
+[[step]]
+id = "ps-teld-128"
+do = "accept"
+quest = 2518
+npc = 7313
+at = [1457, 36.65, 85.93]
+chain = "ps-teld-s040-7313"
+reqlevel = 5
+text = "Coge la misión de las Lágrimas de la Luna (Lady Sathrah, al norte de Teldrassil)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#40"]
+note = "Polestar paso 40 «Darnassus», objetivo 6 (accept) · ya en Senda: netd-090"
+
+[[step]]
+id = "ps-teld-129"
+do = "accept"
+quest = 98067
+npc = 8396
+at = [1457, 39.65, 89.54]
+text = "En el Templo, coge la misión de la Centinela Dalia Sunblade (nueva de Forever)."
+tip = "[EN] Centinela Dalia Filosol, beside her."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#40"]
+note = "Polestar paso 40 «Darnassus», objetivo 7 (accept) · ya en Senda: netd-091"
+
+[[step]]
+id = "ps-teld-130"
+do = "complete"
+quest = 98067
+obj = 2
+at = [1457, 41.04, 43.55]
+text = "Usa Colgante lunar para «Ojos de los centinelas»."
+tip = "[EN] Colgante lunar: the bank, on the way out."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#40"]
+note = "Polestar paso 40 «Darnassus», objetivo 8 (use) · ya en Senda: netd-092"
+
+[[step]]
+id = "ps-teld-131"
+do = "complete"
+quest = 98067
+obj = 4
+at = [1457, 89.14, 34.76]
+text = "Usa Colgante lunar para «Ojos de los centinelas»."
+tip = "[EN] The city gate."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#40"]
+note = "Polestar paso 40 «Darnassus», objetivo 9 (use) · ya en Senda: netd-092"
+
+[[step]]
+id = "ps-teld-132"
+do = "goto"
+at = [1438, 44.3, 57.9]
+text = "Ve a Túmulo de Ban'ethil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#41"]
+note = "Polestar paso 41 «Túmulo de Ban'ethil's entrance», objetivo 1 (goto)"
+
+[[step]]
+id = "ps-teld-133"
+do = "complete"
+quest = 490
+obj = 1
+at = [1438, 44.36, 58.54]
+wps = [[1438, 48.2, 53.6, "Colmillo Tuercepinos"], [1438, 49.7, 66.7, "Colmillo Tuercepinos"], [1438, 47.0, 77.7, "Colmillo Tuercepinos"]]
+text = "Consigue Colmillo Tuercepinos (15) para «Recompensa: Fúrbolg Tuercepino»."
+tip = "[EN] The barrow is south of the road. Sentinel Lynessa Duskblossom is held inside, Oben Garrafuria sleeps in its depths, and the four relic chests sit in the lower rooms. Its furbolgs drop Shayla's fangs. [EN] Colmillo Tuercepinos: any Gnarlpine furbolg."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#42"]
+note = "Polestar paso 42 «Túmulo de Ban'ethil», objetivo 1 (collect) · ya en Senda: netd-068"
+
+[[step]]
+id = "ps-teld-134"
+do = "complete"
+quest = 483
+obj = 1
+at = [1438, 45.65, 57.44]
+text = "Recoge Talismán de garra de cuervo (1) de Cofre de la garra del cuervo para «Las Reliquias del Despertar»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#42"]
+note = "Polestar paso 42 «Túmulo de Ban'ethil», objetivo 2 (collect) · ya en Senda: netd-066"
+
+[[step]]
+id = "ps-teld-135"
+do = "accept"
+quest = 2541
+npc = 7317
+at = [1438, 44.94, 61.59]
+reqlevel = 3
+text = "Baja al túmulo de Ban'ethil y coge la misión de Oben Rageclaw, dentro."
+tip = "[EN] Oben Garrafuria, below ground."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#42"]
+note = "Polestar paso 42 «Túmulo de Ban'ethil», objetivo 3 (accept) · ya en Senda: netd-064"
+
+[[step]]
+id = "ps-teld-136"
+do = "complete"
+quest = 483
+obj = 2
+at = [1438, 43.7, 61.22]
+text = "Recoge Cañón de pluma negra (1) de Cofre de la pluma negra para «Las Reliquias del Despertar»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#42"]
+note = "Polestar paso 42 «Túmulo de Ban'ethil», objetivo 4 (collect) · ya en Senda: netd-066"
+
+[[step]]
+id = "ps-teld-137"
+do = "complete"
+quest = 483
+obj = 3
+at = [1438, 44.7, 62.44]
+text = "Recoge Zafiro de cielo (1) de Cofre del cielo para «Las Reliquias del Despertar»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#42"]
+note = "Polestar paso 42 «Túmulo de Ban'ethil», objetivo 5 (collect) · ya en Senda: netd-066"
+
+[[step]]
+id = "ps-teld-138"
+do = "complete"
+quest = 483
+obj = 4
+at = [1438, 44.4, 60.66]
+text = "Recoge Runa de Nidal (1) de Cofre del nidal para «Las Reliquias del Despertar»."
+tip = "Bajo tierra."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#42"]
+note = "Polestar paso 42 «Túmulo de Ban'ethil», objetivo 6 (collect) · ya en Senda: netd-066"
+
+[[step]]
+id = "ps-teld-139"
+do = "complete"
+quest = 2541
+obj = 1
+at = [1438, 44.49, 60.47]
+wps = [[1438, 45.3, 59.4, "Talismán de vudú chamán"], [1438, 44.7, 57.8, "Talismán de vudú chamán"], [1438, 50.3, 62.8, "Talismán de vudú chamán"]]
+text = "Consigue Talismán de vudú chamán (1) de Chamán Tuercepinos para «El druida durmiente»."
+tip = "Chamanes Tuercepinos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#42"]
+note = "Polestar paso 42 «Túmulo de Ban'ethil», objetivo 7 (collect) · ya en Senda: netd-067"
+
+[[step]]
+id = "ps-teld-140"
+do = "turnin"
+quest = 2541
+npc = 7317
+at = [1438, 44.94, 61.59]
+chain = "ps-teld-s042-7317"
+text = "Entrega los amuletos a Oben Rageclaw."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#42"]
+note = "Polestar paso 42 «Túmulo de Ban'ethil», objetivo 8 (turnin) · ya en Senda: netd-069"
+
+[[step]]
+id = "ps-teld-141"
+do = "accept"
+quest = 2561
+npc = 7317
+at = [1438, 44.94, 61.59]
+chain = "ps-teld-s042-7317"
+reqlevel = 3
+text = "Coge la misión de Rageclaw."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#42"]
+note = "Polestar paso 42 «Túmulo de Ban'ethil», objetivo 9 (accept) · datos no importados: pre · ya en Senda: netd-070"
+
+[[step]]
+id = "ps-teld-142"
+do = "complete"
+quest = 2561
+obj = 1
+at = [1438, 45.53, 58.58]
+text = "Mata Zarpafurecida (1) para «El druida de la garra»."
+tip = "[EN] Zarpafurecida, in the den; walks around Ban'ethil Hollow: look inside the circle on the map. Usa Talismán vudú para «El druida de la garra»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#42"]
+note = "Polestar paso 42 «Túmulo de Ban'ethil», objetivo 10 (kill) · ya en Senda: netd-071"
+
+[[step]]
+id = "ps-teld-143"
+do = "turnin"
+quest = 2561
+npc = 7317
+at = [1438, 44.94, 61.59]
+text = "Vuelve con Oben y entrega."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#42"]
+note = "Polestar paso 42 «Túmulo de Ban'ethil», objetivo 12 (turnin) · ya en Senda: netd-072"
+
+[[step]]
+id = "ps-teld-144"
+do = "accept"
+quest = 99053
+npc = 275744
+at = [1438, 44.68, 58.92]
+reqlevel = 4
+text = "En el túmulo, habla con la Centinela Lynessa Duskblossom y acepta su escolta (nueva de Forever)."
+tip = "Haz antes las reliquias y los amuletos: la escolta acaba fuera y no tendrás que volver a entrar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#43"]
+note = "Polestar paso 43 ««Escaping Ban'ethil»», objetivo 1 (accept) · ya en Senda: netd-065"
+
+[[step]]
+id = "ps-teld-145"
+do = "goto"
+at = [1438, 46.4, 57.3]
+text = "Ve a Ban'ethil Hollow, fuera del túmulo."
+tip = "Saca a Lynessa y mantenla con vida."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#43"]
+note = "Polestar paso 43 ««Escaping Ban'ethil»», objetivo 2 (goto)"
+
+[[step]]
+id = "ps-teld-146"
+do = "complete"
+quest = 99053
+escort = true
+text = "Escolta a Lynessa hasta la salida del túmulo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#43"]
+note = "Polestar paso 43 ««Escaping Ban'ethil»», objetivo 3 (complete) · objetivos (EN): Escort Lynessa Duskblossom out of Ban'ethil · ya en Senda: netd-073"
+
+[[step]]
+id = "ps-teld-147"
+do = "complete"
+quest = 933
+obj = 1
+at = [1438, 42.4, 67.1]
+text = "Usa Ampolla de turmalina para «La corona de la Tierra»."
+tip = "Al suroeste del túmulo. El pozo de la luna está junto a las charcas. Recoge Ampolla de turmalina llena (1) de Estanques de la Poza de la Luna de Arlithrien para «La corona de la Tierra». Usa la Ampolla de turmalina en el pozo de la luna."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#44"]
+note = "Polestar paso 44 «The Pozas de Arlithrien», objetivo 1 (use) · ya en Senda: netd-074"
+
+[[step]]
+id = "ps-teld-148"
+do = "accept"
+quest = 930
+at = [1438, 42.61, 76.19]
+reqlevel = 4
+text = "Al sur de las pozas, examina la planta de frutos extraños: misión para Denalan."
+tip = "[EN] South of the pools. The Planta extraña con frutos grows by the Hold; the furbolgs around it drop the rest of the fangs."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#45"]
+note = "Polestar paso 45 «Gnarlpine Hold», objetivo 1 (accept) · datos no importados: pre · ya en Senda: netd-075"
+
+[[step]]
+id = "ps-teld-149"
+do = "complete"
+quest = 490
+obj = 1
+at = [1438, 41.3, 77.01]
+wps = [[1438, 38.8, 80.0, "Colmillo Tuercepinos"], [1438, 41.4, 72.8, "Colmillo Tuercepinos"], [1438, 38.3, 66.7, "Colmillo Tuercepinos"]]
+text = "Consigue Colmillo Tuercepinos (15) para «Recompensa: Fúrbolg Tuercepino»."
+tip = "[EN] Colmillo Tuercepinos: any Gnarlpine furbolg."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#45"]
+note = "Polestar paso 45 «Gnarlpine Hold», objetivo 2 (collect) · ya en Senda: netd-068"
+
+[[step]]
+id = "ps-teld-150"
+do = "turnin"
+quest = 487
+npc = 2151
+at = [1438, 52.91, 57.2]
+text = "De vuelta hacia Dolanaar, entrega los emboscadores a Amara."
+tip = "Sacerdotisa Lunar Amara patrulla el camino al oeste de la aldea: si no está en la flecha, sigue el camino hasta encontrarla."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#46"]
+note = "Polestar paso 46 «Dolanaar», objetivo 1 (turnin) · ya en Senda: netd-077"
+
+[[step]]
+id = "ps-teld-151"
+do = "turnin"
+quest = 932
+npc = 3567
+at = [1438, 55.57, 56.95]
+text = "Entrega la cabeza de Melenas a Tallonkai."
+tip = "[EN] Tallonkai Cruzarraíz, upstairs."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#46"]
+note = "Polestar paso 46 «Dolanaar», objetivo 2 (turnin) · ya en Senda: netd-044"
+
+[[step]]
+id = "ps-teld-152"
+do = "turnin"
+quest = 483
+npc = 2078
+at = [1438, 55.96, 57.27]
+chain = "ps-teld-s046-2078"
+text = "Entrega las reliquias a Athridas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#46"]
+note = "Polestar paso 46 «Dolanaar», objetivo 3 (turnin) · ya en Senda: netd-079"
+
+[[step]]
+id = "ps-teld-153"
+do = "accept"
+quest = 486
+npc = 2078
+at = [1438, 55.96, 57.27]
+chain = "ps-teld-s046-2078"
+reqlevel = 4
+text = "Coge la misión de Ursal el Triturador: hazla al 12 o sáltatela."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#46"]
+note = "Polestar paso 46 «Dolanaar», objetivo 4 (accept) · datos no importados: pre · ya en Senda: netd-080"
+
+[[step]]
+id = "ps-teld-154"
+do = "turnin"
+quest = 99053
+npc = 2081
+at = [1438, 56.0, 59.52]
+text = "En Dolanaar, entrega la escolta a la Centinela Kyra Starsong."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#46"]
+note = "Polestar paso 46 «Dolanaar», objetivo 5 (turnin) · ya en Senda: netd-078"
+
+[[step]]
+id = "ps-teld-155"
+do = "turnin"
+quest = 933
+npc = 3515
+at = [1438, 56.14, 61.71]
+chain = "ps-teld-s046-3515"
+text = "Entrega la redoma de turmalina a Corithras."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#46"]
+note = "Polestar paso 46 «Dolanaar», objetivo 6 (turnin) · ya en Senda: netd-081"
+
+[[step]]
+id = "ps-teld-156"
+do = "accept"
+quest = 7383
+npc = 3515
+at = [1438, 56.14, 61.71]
+chain = "ps-teld-s046-3515"
+text = "Coge la siguiente Corona de la Tierra: poza del Claro del Oráculo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#46"]
+note = "Polestar paso 46 «Dolanaar», objetivo 7 (accept) · datos no importados: pre · ya en Senda: netd-082"
+
+[[step]]
+id = "ps-teld-157"
+do = "complete"
+quest = 489
+obj = 1
+at = [1438, 61.6, 53.4]
+text = "Recoge Cono inferi (3) de Cono inferi para «¡Búsqueda de redención!»."
+tip = "[EN] Fel Cones lie under the trees all around Dolanaar and Zenn Nauseapezuña: pick them up on the road east and hand them to Zenn Nauseapezuña on the way to Ferocitas el Comesueños."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#47"]
+note = "Polestar paso 47 ««¡Búsqueda de redención!»», objetivo 1 (collect) · ya en Senda: netd-053"
+
+[[step]]
+id = "ps-teld-158"
+do = "turnin"
+quest = 489
+npc = 2150
+at = [1438, 60.35, 56.16]
+text = "Vuelve a Dolanaar y entrega los conos a Zenn."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#47"]
+note = "Polestar paso 47 ««¡Búsqueda de redención!»», objetivo 2 (turnin) · ya en Senda: netd-057"
+
+[[step]]
+id = "ps-teld-159"
+do = "complete"
+quest = 2459
+obj = 1
+at = [1438, 68.27, 52.18]
+text = "Mata Místico Tuercepinos (7) para «Ferocitas el Comesueños»."
+tip = "Ferocitas lleva místicos con él: llévalos de uno en uno. Si hay cola, sáltatela. [EN] Gnarlpine Mystics and Ferocitas el Comesueños camp north-east of Villa Brisa Estelar. Ferocitas el Comesueños drops the Collar Tuercepinos: open it for the jewel.\nCareful: Ferocitas el Comesueños waits near the camp fire with mystics around him, so pulling him without adds is hard."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#48"]
+note = "Polestar paso 48 ««Ferocitas el Comesueños»», objetivo 1 (kill) · ya en Senda: netd-041"
+
+[[step]]
+id = "ps-teld-160"
+do = "loot"
+item = 8049
+count = 1
+at = [1438, 69.37, 53.41]
+text = "Consigue Collar Tuercepinos de Ferocitas el Comesueños."
+tip = "[EN] Collar Tuercepinos, from Ferocitas el Comesueños."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#48"]
+note = "Polestar paso 48 ««Ferocitas el Comesueños»», objetivo 2 (collect)"
+
+[[step]]
+id = "ps-teld-161"
+do = "complete"
+quest = 2459
+obj = 2
+at = [1438, 69.4, 53.4]
+text = "Consigue Joya de Tallonkai (1) para «Ferocitas el Comesueños»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#48"]
+note = "Polestar paso 48 ««Ferocitas el Comesueños»», objetivo 3 (collect) · ya en Senda: netd-041"
+
+[[step]]
+id = "ps-teld-162"
+do = "turnin"
+quest = 2459
+npc = 3567
+at = [1438, 55.57, 56.95]
+chain = "ps-teld-s049-3567"
+text = "Vuelve a Dolanaar y entrega a Tallonkai."
+tip = "[EN] The road west to the Claro del Oráculo runs through Dolanaar: hand Tallonkai Cruzarraíz the jewel on the way. [EN] Tallonkai Cruzarraíz, upstairs."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#49"]
+note = "Polestar paso 49 «Dolanaar», objetivo 1 (turnin) · ya en Senda: netd-042"
+
+[[step]]
+id = "ps-teld-163"
+do = "accept"
+quest = 98403
+npc = 3567
+at = [1438, 55.57, 56.95]
+optional = true
+chain = "ps-teld-s049-3567"
+reqlevel = 4
+text = "Coge la continuación (nueva de Forever): arañas corruptas y musgo vil al norte. Hazla al 10-11."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#49"]
+note = "Polestar paso 49 «Dolanaar», objetivo 2 (accept) · datos no importados: pre · ya en Senda: netd-045"
+
+[[step]]
+id = "ps-teld-164"
+do = "complete"
+quest = 98403
+obj = 1
+at = [1438, 49.72, 52.97]
+wps = [[1438, 48.9, 49.7, "Befouled Webwood"], [1438, 47.2, 49.7, "Befouled Webwood"], [1438, 49.5, 46.1, "Befouled Webwood"]]
+optional = true
+text = "Mata Befouled Webwood (8) para «Odio enraizado»."
+tip = "Al noroeste de Dolanaar, camino del Claro del Oráculo, los Tejemadera infectos merodean por el bosque; Xethorr the Wicked ronda por su borde este y lleva el Musgovil maduro.\nXethorr the Wicked es élite (nivel 12): se recomienda ir en grupo. Despeja primero las arañas a su alrededor y atráelo a él solo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#50"]
+note = "Polestar paso 50 «Befouled Webwoods», objetivo 1 (kill) · condición no expresable: vas en grupo para la misión 98403; llevas la misión 98403 (implícita: el paso es de esa misión) · ya en Senda: netd-138"
+
+[[step]]
+id = "ps-teld-165"
+do = "complete"
+quest = 98403
+obj = 2
+at = [1438, 51.37, 45.5]
+wps = [[1438, 51.3, 43.8, "Musgovil maduro"]]
+optional = true
+text = "Consigue Musgovil maduro (1) de Xethorr the Wicked para «Odio enraizado»."
+tip = "Élite: mejor en grupo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#50"]
+note = "Polestar paso 50 «Befouled Webwoods», objetivo 2 (collect) · condición no expresable: vas en grupo para la misión 98403; llevas la misión 98403 (implícita: el paso es de esa misión) · ya en Senda: netd-138"
+
+[[step]]
+id = "ps-teld-166"
+do = "complete"
+quest = 923
+obj = 1
+at = [1438, 43.91, 42.69]
+wps = [[1438, 42.3, 41.7, "Tumor musgoso"], [1438, 43.8, 40.0, "Tumor musgoso"], [1438, 42.2, 37.8, "Tumor musgoso"]]
+text = "Consigue Tumor musgoso (5) de Pisoteador Brezomadera y Bestia del lodo Brezomadera y Ancestro Cuaderna para «Los tumores»."
+tip = "Al oeste desde las arañas hasta el Wellspring River y luego al norte por su curso hasta el claro: los brezomaderas de sus orillas sueltan los tumores musgosos. [EN] Tumor musgoso: timberlings."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#51"]
+note = "Polestar paso 51 «The Wellspring River», objetivo 1 (collect) · ya en Senda: netd-112"
+
+[[step]]
+id = "ps-teld-167"
+do = "accept"
+quest = 937
+npc = 3519
+at = [1438, 38.32, 34.36]
+reqlevel = 6
+text = "Coge la misión de la Centinela Arynia Cloudsbreak, junto a la poza."
+tip = "El pozo de la luna está en el centro del claro. La Planta extraña con frutos crece en su extremo norte."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#52"]
+note = "Polestar paso 52 «Claro del Oráculo», objetivo 1 (accept) · ya en Senda: netd-098"
+
+[[step]]
+id = "ps-teld-168"
+do = "complete"
+quest = 7383
+obj = 1
+at = [1438, 38.4, 34.1]
+text = "Usa Ampolla de amatista para «La corona de la Tierra»."
+tip = "Recoge Ampolla de amatista llena (1) de Poza de la Luna de El Claro del Oráculo para «La corona de la Tierra». Usa la Ampolla de amatista en el pozo de la luna."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#52"]
+note = "Polestar paso 52 «Claro del Oráculo», objetivo 2 (use) · ya en Senda: netd-097"
+
+[[step]]
+id = "ps-teld-169"
+do = "turnin"
+quest = 99046
+npc = 275683
+at = [1438, 37.54, 36.81]
+chain = "ps-teld-s052-275683"
+text = "Sal de Darnassus y sube al norte, al Claro del Oráculo. Entrega a la Centinela Eralya Leafshadow."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#52"]
+note = "Polestar paso 52 «Claro del Oráculo», objetivo 4 (turnin) · ya en Senda: netd-095"
+
+[[step]]
+id = "ps-teld-170"
+do = "accept"
+quest = 99047
+npc = 275683
+at = [1438, 37.54, 36.81]
+chain = "ps-teld-s052-275683"
+reqlevel = 4
+text = "Coge su misión: vuelve con Byancie a Dolanaar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#52"]
+note = "Polestar paso 52 «Claro del Oráculo», objetivo 5 (accept) · ya en Senda: netd-096"
+
+[[step]]
+id = "ps-teld-171"
+do = "complete"
+quest = 937
+obj = 1
+at = [1438, 37.32, 37.79]
+wps = [[1438, 35.6, 38.0, "Cinturón Sangrepluma"], [1438, 34.5, 35.0, "Cinturón Sangrepluma"], [1438, 32.2, 32.3, "Cinturón Sangrepluma"]]
+text = "Consigue Cinturón Sangrepluma (6) para «El claro encantado»."
+tip = "[EN] The Bloodfeather harpies nest on the slopes west and north of the glade. «Niebla», an injured sabercat, lies by the glade's west wall among them: lead her back to Sentinel Arynia at the moonwell before her time runs out.\nCareful: The harpies stand packed together, so extra ones often join a fight. Casters are mixed in among them."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#53"]
+note = "Polestar paso 53 «Bloodfeather harpies», objetivo 1 (collect) · ya en Senda: netd-099"
+
+[[step]]
+id = "ps-teld-172"
+do = "accept"
+quest = 938
+npc = 3568
+at = [1438, 31.54, 31.61]
+escort = true
+reqlevel = 7
+text = "Al oeste del claro, habla con Mist, la cría de sable, y empieza la escolta."
+tip = "[EN] «Niebla», by the west wall. Misión con tiempo: 9 min desde que la coges."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#53"]
+note = "Polestar paso 53 «Bloodfeather harpies», objetivo 2 (accept) · ya en Senda: netd-107"
+
+[[step]]
+id = "ps-teld-173"
+do = "complete"
+quest = 938
+at = [1438, 38.3, 34.4]
+text = "Lleva a Mist hasta Arynia sin perderla."
+tip = "Ve despacio y no tires grupos: si Mist muere hay que volver a por ella."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#53"]
+note = "Polestar paso 53 «Bloodfeather harpies», objetivo 3 (complete) · objetivos (EN): Lead Mist safely to Sentinel Arynia Cloudsbreak · ya en Senda: netd-108"
+
+[[step]]
+id = "ps-teld-174"
+do = "turnin"
+quest = 937
+npc = 3519
+at = [1438, 38.32, 34.36]
+chain = "ps-teld-s054-3519"
+text = "Entrega los cinturones a Arynia."
+tip = "Vuelve al pozo de la luna."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#54"]
+note = "Polestar paso 54 «Centinela Arynia Quiebranubes», objetivo 1 (turnin) · ya en Senda: netd-100"
+
+[[step]]
+id = "ps-teld-175"
+do = "turnin"
+quest = 938
+npc = 3519
+at = [1438, 38.32, 34.36]
+chain = "ps-teld-s054-3519"
+text = "Entrega a Arynia."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#54"]
+note = "Polestar paso 54 «Centinela Arynia Quiebranubes», objetivo 2 (turnin) · ya en Senda: netd-109"
+
+[[step]]
+id = "ps-teld-176"
+do = "accept"
+quest = 98392
+npc = 3519
+at = [1438, 38.32, 34.36]
+chain = "ps-teld-s054-3519"
+reqlevel = 6
+text = "Coge la continuación (nueva de Forever): tres arpías con nombre."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#54"]
+note = "Polestar paso 54 «Centinela Arynia Quiebranubes», objetivo 3 (accept) · datos no importados: pre · ya en Senda: netd-101"
+
+[[step]]
+id = "ps-teld-177"
+do = "complete"
+quest = 98392
+obj = 1
+at = [1438, 35.05, 39.29]
+text = "Consigue Amuleto de Chillaodio (1) de Chillaodio para «Oscuridad en el claro»."
+tip = "Limpia alrededor antes de atacar a cada una. Arysa, al norte, es la más dura. Chillaodio y Señora del viento Gaedress vuelan justo al oeste del pozo de la luna, Bruja madre Arysa más al norte."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#55"]
+note = "Polestar paso 55 «The named harpies», objetivo 1 (collect) · ya en Senda: netd-102"
+
+[[step]]
+id = "ps-teld-178"
+do = "complete"
+quest = 98392
+obj = 2
+at = [1438, 33.18, 36.13]
+text = "Consigue Amuleto de la señora del viento Gaedress (1) de Señora del viento Gaedress para «Oscuridad en el claro»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#55"]
+note = "Polestar paso 55 «The named harpies», objetivo 2 (collect) · ya en Senda: netd-102"
+
+[[step]]
+id = "ps-teld-179"
+do = "complete"
+quest = 98392
+obj = 3
+at = [1438, 34.22, 27.94]
+text = "Consigue Amuleto de la bruja madre Arysa (1) de Bruja madre Arysa para «Oscuridad en el claro»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#55"]
+note = "Polestar paso 55 «The named harpies», objetivo 3 (collect) · ya en Senda: netd-102"
+
+[[step]]
+id = "ps-teld-180"
+do = "accept"
+quest = 931
+at = [1438, 34.61, 28.76]
+reqlevel = 4
+text = "Al norte, examina la planta de frondas extrañas: misión para Denalan."
+tip = "[EN] The Planta extraña con frutos grows at the glade's north end, on the way: then north of Bruja madre Arysa, along the island's northern edge by Wellspring Lake, Lady Sathrah, a level 12 spider, lurks."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#56"]
+note = "Polestar paso 56 «Lady Sathrah», objetivo 1 (accept) · datos no importados: pre · ya en Senda: netd-110"
+
+[[step]]
+id = "ps-teld-181"
+do = "complete"
+quest = 2518
+obj = 1
+at = [1438, 39.4, 25.4]
+wps = [[1438, 41.5, 25.4, "Espineretas de plata"], [1438, 46.2, 24.4, "Espineretas de plata"], [1438, 48.1, 25.5, "Espineretas de plata"]]
+text = "Consigue Espineretas de plata (1) de Lady Sathrah para «Las lagrimas de la Luna»."
+tip = "Patrulla entre los árboles del norte. Si hay otros jugadores, espera a que reaparezca."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#56"]
+note = "Polestar paso 56 «Lady Sathrah», objetivo 2 (collect) · ya en Senda: netd-111"
+
+[[step]]
+id = "ps-teld-182"
+do = "turnin"
+quest = 98392
+npc = 3519
+at = [1438, 38.32, 34.36]
+chain = "ps-teld-s057-3519"
+text = "Entrega los amuletos a Arynia."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#57"]
+note = "Polestar paso 57 «Sentinel Arynia again», objetivo 1 (turnin) · ya en Senda: netd-103"
+
+[[step]]
+id = "ps-teld-183"
+do = "accept"
+quest = 98398
+npc = 3519
+at = [1438, 38.32, 34.36]
+chain = "ps-teld-s057-3519"
+reqlevel = 6
+text = "Coge la misión del Árbol del Oráculo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#57"]
+note = "Polestar paso 57 «Sentinel Arynia again», objetivo 2 (accept) · datos no importados: pre · ya en Senda: netd-104"
+
+[[step]]
+id = "ps-teld-184"
+do = "turnin"
+quest = 98398
+at = [1438, 36.97, 34.04]
+text = "Toca la corteza del Árbol del Oráculo, junto a la poza."
+tip = "Corteza de árbol de oráculo, justo al oeste del pozo de la luna."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#57"]
+note = "Polestar paso 57 «Sentinel Arynia again», objetivo 3 (turnin) · ya en Senda: netd-105"
+
+[[step]]
+id = "ps-teld-185"
+do = "accept"
+quest = 940
+at = [1438, 36.97, 34.04]
+reqlevel = 6
+text = "Coge de la corteza la misión para el Archidruida Fandral Staghelm."
+tip = "[EN] The same Corteza de árbol de oráculo: Fandral in Darnassus takes it."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#57"]
+note = "Polestar paso 57 «Sentinel Arynia again», objetivo 4 (accept) · datos no importados: pre · ya en Senda: netd-106"
+
+[[step]]
+id = "ps-teld-186"
+do = "turnin"
+quest = 490
+npc = 2155
+at = [1438, 42.22, 51.27]
+text = "Vuelve al camino y entrega los colmillos a Shayla."
+tip = "Al sur desde el claro hacia Ursal: Shayla recorre el camino al oeste de Dolanaar, desde donde lo cruza el sendero que baja del claro, al suroeste hasta la curva en torno a 38,54, y vuelta."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#58"]
+note = "Polestar paso 58 «Centinela Shayla Brisa Nocturna», objetivo 1 (turnin) · ya en Senda: netd-076"
+
+[[step]]
+id = "ps-teld-187"
+do = "complete"
+quest = 486
+obj = 1
+at = [1438, 38.83, 79.81]
+text = "Mata Ursal el Violento (1) para «Ursal el Violento»."
+tip = "[EN] Walk south along the west side of the island. Ursal prowls the far south, below the Pozas de Arlithrien.\nCareful: Gnarlpine of roughly level 9-12 crowd the camp and sit close together, so it is easy to pull several at once. Take them on singly before you engage Ursal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#59"]
+note = "Polestar paso 59 ««Ursal el Violento»», objetivo 1 (kill) · ya en Senda: netd-140"
+
+[[step]]
+id = "ps-teld-188"
+do = "turnin"
+quest = 99047
+npc = 6094
+at = [1438, 55.29, 56.82]
+chain = "ps-teld-s060-6094"
+text = "Entrega la misión de Eralya a Byancie."
+tip = "Al noreste desde la guarida de Ursal, de vuelta a Dolanaar. [EN] Byancie, inside."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#60"]
+note = "Polestar paso 60 «Dolanaar», objetivo 1 (turnin) · ya en Senda: netd-122"
+
+[[step]]
+id = "ps-teld-189"
+do = "accept"
+quest = 99050
+npc = 6094
+at = [1438, 55.29, 56.82]
+chain = "ps-teld-s060-6094"
+reqlevel = 4
+text = "Coge la misión de Byancie (nueva de Forever): frondas, vial y agua."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#60"]
+note = "Polestar paso 60 «Dolanaar», objetivo 2 (accept) · datos no importados: pre · ya en Senda: netd-123"
+
+[[step]]
+id = "ps-teld-190"
+do = "buy"
+npc = 3614
+item = 3371
+count = 1
+at = [1438, 55.27, 57.15]
+text = "Compra Vial vacío a Narret Sombrarboleda."
+tip = "Vial vacío de Narret Sombrarboleda, junto a Byancie."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#60"]
+note = "Polestar paso 60 «Dolanaar», objetivo 3 (buy)"
+
+[[step]]
+id = "ps-teld-191"
+do = "turnin"
+quest = 486
+npc = 2078
+at = [1438, 55.96, 57.27]
+text = "Entrega a Athridas."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#60"]
+note = "Polestar paso 60 «Dolanaar», objetivo 5 (turnin) · ya en Senda: netd-141"
+
+[[step]]
+id = "ps-teld-192"
+do = "note"
+npc = 3602
+at = [1438, 55.95, 61.56]
+text = "Entrena tus hechizos de clase con Kal."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#60"]
+note = "Polestar paso 60 «Dolanaar», objetivo 6 (train) · train class: Senda necesita la lista de hechizos (spells) para detectarlo solo"
+
+[[step]]
+id = "ps-teld-193"
+do = "buy"
+npc = 6736
+item = 159
+count = 1
+at = [1438, 55.62, 59.79]
+text = "Compra Agua de manantial refrescante al Tabernero Keldamyr."
+tip = "Agua de manantial refrescante de Tabernero Keldamyr, para Byancie."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#60"]
+note = "Polestar paso 60 «Dolanaar», objetivo 7 (buy)"
+
+[[step]]
+id = "ps-teld-194"
+do = "turnin"
+quest = 7383
+npc = 3515
+at = [1438, 56.14, 61.71]
+chain = "ps-teld-s060-3515"
+text = "Entrega la redoma de amatista a Corithras."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#60"]
+note = "Polestar paso 60 «Dolanaar», objetivo 9 (turnin) · ya en Senda: netd-125"
+
+[[step]]
+id = "ps-teld-195"
+do = "accept"
+quest = 935
+npc = 3515
+at = [1438, 56.14, 61.71]
+chain = "ps-teld-s060-3515"
+text = "Coge la última Corona de la Tierra: para Fandral, en Darnassus."
+tip = "La recibe Fandral en Darnassus."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#60"]
+note = "Polestar paso 60 «Dolanaar», objetivo 10 (accept) · datos no importados: pre · ya en Senda: netd-126"
+
+[[step]]
+id = "ps-teld-196"
+do = "accept"
+quest = 5925
+npc = 3602
+at = [1438, 55.95, 61.56]
+if = { class = ["DRUID"] }
+reqlevel = 10
+text = "Coge con Kal la misión que te manda al Enclave Cenarion de Darnassus."
+tip = "Si estás ya en Darnassus, Denatharion da la misma misión en el Enclave Cenarion."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#60"]
+note = "Polestar paso 60 «Dolanaar», objetivo 11 (accept) · datos no importados: closedBy · ya en Senda: dr-10-bear-002"
+
+[[step]]
+id = "ps-teld-197"
+do = "turnin"
+quest = 98403
+npc = 3567
+at = [1438, 55.57, 56.95]
+optional = true
+text = "Entrega a Tallonkai."
+tip = "Vuelve arriba con Tallonkai Cruzarraíz con las arañas hechas y el musgo de Xethorr the Wicked. [EN] Tallonkai Cruzarraíz, upstairs."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#61"]
+note = "Polestar paso 61 «Tallonkai Cruzarraíz», objetivo 1 (turnin) · condición no expresable: tienes lista la misión 98403 · ya en Senda: netd-139"
+
+[[step]]
+id = "ps-teld-198"
+do = "turnin"
+quest = 930
+npc = 2080
+at = [1438, 60.9, 68.49]
+chain = "ps-teld-s062-2080"
+text = "Entrega el fruto extraño a Denalan."
+tip = "Al sureste de Dolanaar, hasta Denalan. Los brotes azotadores deambulan a su alrededor en la orilla."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#62"]
+note = "Polestar paso 62 «Lago Al'Ameth», objetivo 1 (turnin) · ya en Senda: netd-131"
+
+[[step]]
+id = "ps-teld-199"
+do = "turnin"
+quest = 931
+npc = 2080
+at = [1438, 60.9, 68.49]
+chain = "ps-teld-s062-2080"
+text = "Entrega la fronda extraña a Denalan."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#62"]
+note = "Polestar paso 62 «Lago Al'Ameth», objetivo 2 (turnin) · ya en Senda: netd-129"
+
+[[step]]
+id = "ps-teld-200"
+do = "turnin"
+quest = 2399
+at = [1438, 60.75, 68.56]
+text = "Completa las frondas brotadas en la maceta de Denalan."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#62"]
+note = "Polestar paso 62 «Lago Al'Ameth», objetivo 3 (turnin) · ya en Senda: netd-132"
+
+[[step]]
+id = "ps-teld-201"
+do = "complete"
+quest = 99050
+obj = 1
+at = [1438, 62.07, 68.84]
+wps = [[1438, 61.0, 69.3, "Fronda húmeda de azotadora"], [1438, 57.8, 71.2, "Fronda húmeda de azotadora"], [1438, 57.6, 66.0, "Fronda húmeda de azotadora"]]
+text = "Consigue Fronda húmeda de azotadora (6) para «El Gran Árbol provee»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#62"]
+note = "Polestar paso 62 «Lago Al'Ameth», objetivo 4 (collect) · ya en Senda: netd-133"
+
+[[step]]
+id = "ps-teld-202"
+do = "turnin"
+quest = 99050
+npc = 6094
+at = [1438, 55.29, 56.82]
+chain = "ps-teld-s063-6094"
+text = "Vuelve a Dolanaar y entrega a Byancie."
+tip = "[EN] Byancie takes a Agua de manantial refrescante with the fronds and the vial: if you drank yours, buy another from Tabernero Keldamyr in this inn before you hand in. [EN] Byancie, inside."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#63"]
+note = "Polestar paso 63 «Dolanaar again», objetivo 1 (turnin) · ya en Senda: netd-136"
+
+[[step]]
+id = "ps-teld-203"
+do = "accept"
+quest = 99073
+npc = 6094
+at = [1438, 55.29, 56.82]
+chain = "ps-teld-s063-6094"
+reqlevel = 4
+text = "Coge su siguiente misión: llévale el remedio a Eralya."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#63"]
+note = "Polestar paso 63 «Dolanaar again», objetivo 2 (accept) · datos no importados: pre · ya en Senda: netd-137"
+
+[[step]]
+id = "ps-teld-204"
+do = "turnin"
+quest = 99073
+npc = 275683
+at = [1438, 37.54, 36.81]
+text = "Ve al Claro del Oráculo y entrega el remedio a Eralya."
+tip = "Toma otra vez el camino al noroeste desde Dolanaar; sigue tendida a su lado, camino de Darnassus."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#65"]
+note = "Polestar paso 65 «Centinela Eralya Sombra de Hoja», objetivo 1 (turnin) · ya en Senda: netd-143"
+
+[[step]]
+id = "ps-teld-205"
+do = "accept"
+quest = 6344
+npc = 4241
+at = [1457, 70.68, 45.38]
+if = { class = ["PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"] }
+reqlevel = 10
+text = "Junto a la entrada de la ciudad, coge con Mydrannul la misión de Nessa Shadowsong."
+tip = "Te da el vuelo gratis a Costa Oscura al acabar Teldrassil."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#71"]
+note = "Polestar paso 71 «Darnassus», objetivo 2 (accept) · datos no importados: closedBy · ya en Senda: netd-094"
+
+[[step]]
+id = "ps-teld-206"
+do = "complete"
+quest = 98067
+obj = 3
+at = [1457, 66.46, 15.35]
+text = "Usa Colgante lunar para «Ojos de los centinelas»."
+tip = "[EN] Colgante lunar: the inn on the Craftsmen's Terrace."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#71"]
+note = "Polestar paso 71 «Darnassus», objetivo 3 (use) · ya en Senda: netd-092"
+
+[[step]]
+id = "ps-teld-207"
+do = "goto"
+at = [1457, 35.8, 11.6]
+text = "Ve a Enclave Cenarion."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#72"]
+note = "Polestar paso 72 «Enclave Cenarion», objetivo 1 (goto)"
+
+[[step]]
+id = "ps-teld-208"
+do = "turnin"
+quest = 935
+npc = 3516
+at = [1457, 34.81, 9.26]
+chain = "ps-teld-s073-3516"
+text = "Entra en Darnassus y entrega la última Corona de la Tierra a Fandral."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#73"]
+note = "Polestar paso 73 «Darnassus», objetivo 1 (turnin) · ya en Senda: netd-144"
+
+[[step]]
+id = "ps-teld-209"
+do = "turnin"
+quest = 940
+npc = 3516
+at = [1457, 34.81, 9.26]
+chain = "ps-teld-s073-3516"
+text = "Vuelve a Darnassus y entrega la corteza al Archidruida Fandral Staghelm, en el Enclave Cenarion."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#73"]
+note = "Polestar paso 73 «Darnassus», objetivo 2 (turnin) · ya en Senda: netd-113"
+
+[[step]]
+id = "ps-teld-210"
+do = "accept"
+quest = 952
+npc = 3516
+at = [1457, 34.81, 9.26]
+chain = "ps-teld-s073-3516"
+reqlevel = 6
+text = "Coge la misión del Bosque de los Ancestros: se entrega a Onu, en Costa Oscura."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#73"]
+note = "Polestar paso 73 «Darnassus», objetivo 3 (accept) · datos no importados: pre · ya en Senda: netd-114"
+
+[[step]]
+id = "ps-teld-211"
+do = "accept"
+quest = 98046
+npc = 3516
+at = [1457, 34.81, 9.26]
+text = "Coge la continuación (nueva de Forever): para Lariia, en el Templo de la Luna."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#74"]
+note = "Polestar paso 74 «Enclave Cenarion», objetivo 1 (accept) · datos no importados: pre · ya en Senda: netd-145"
+
+[[step]]
+id = "ps-teld-212"
+do = "goto"
+at = [1457, 35.8, 11.6]
+if = { class = ["DRUID"] }
+text = "Ve a Enclave Cenarion."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#75"]
+note = "Polestar paso 75 «Enclave Cenarion», objetivo 1 (goto)"
+
+[[step]]
+id = "ps-teld-213"
+do = "turnin"
+quest = 5925
+npc = 4217
+at = [1457, 35.37, 8.4]
+if = { class = ["DRUID"] }
+chain = "ps-teld-s076-4217"
+text = "Ve al oeste hasta Darnassus y entrega a Mathrengyl, en el Enclave Cenarion (noroeste de la ciudad)."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 1 (turnin) · ya en Senda: dr-10-bear-003"
+
+[[step]]
+id = "ps-teld-214"
+do = "accept"
+quest = 5921
+npc = 4217
+at = [1457, 35.37, 8.4]
+if = { class = ["DRUID"] }
+chain = "ps-teld-s076-4217"
+reqlevel = 10
+text = "Coge con Mathrengyl la misión del Claro de la Luna."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 2 (accept) · ya en Senda: dr-10-bear-004"
+
+[[step]]
+id = "ps-teld-215"
+do = "complete"
+quest = 98067
+obj = 1
+at = [1457, 33.39, 16.77]
+text = "Usa Colgante lunar para «Ojos de los centinelas»."
+tip = "[EN] The tunnel mouth below Cenarion Hold, on the way south."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 3 (use) · ya en Senda: netd-092"
+
+[[step]]
+id = "ps-teld-216"
+do = "turnin"
+quest = 923
+npc = 3517
+at = [1457, 38.18, 21.64]
+text = "Entrega los tumores a Rellian."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 4 (turnin) · ya en Senda: netd-115"
+
+[[step]]
+id = "ps-teld-217"
+do = "turnin"
+quest = 98046
+npc = 4092
+at = [1457, 40.35, 88.68]
+chain = "ps-teld-s076-4092"
+text = "En el Templo de la Luna, entrega a Lariia."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 5 (turnin) · ya en Senda: netd-146"
+
+[[step]]
+id = "ps-teld-218"
+do = "accept"
+quest = 98065
+npc = 4092
+at = [1457, 40.35, 88.68]
+chain = "ps-teld-s076-4092"
+text = "Coge la última parte: para Tyrande Whisperwind."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 6 (accept) · datos no importados: pre · ya en Senda: netd-147"
+
+[[step]]
+id = "ps-teld-219"
+do = "turnin"
+quest = 98065
+npc = 7999
+at = [1457, 39.1, 81.59]
+text = "Sube al balcón del Templo y entrega a Tyrande Whisperwind."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 7 (turnin) · ya en Senda: netd-148"
+
+[[step]]
+id = "ps-teld-220"
+do = "turnin"
+quest = 2518
+npc = 7313
+at = [1457, 36.65, 85.93]
+chain = "ps-teld-s076-7313"
+text = "En el Templo de la Luna, entrega las hileras a A'moora."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 8 (turnin) · ya en Senda: netd-117"
+
+[[step]]
+id = "ps-teld-221"
+do = "accept"
+quest = 2520
+npc = 7313
+at = [1457, 36.65, 85.93]
+chain = "ps-teld-s076-7313"
+reqlevel = 5
+text = "Coge el sacrificio de Sathrah."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 9 (accept) · datos no importados: pre · ya en Senda: netd-118"
+
+[[step]]
+id = "ps-teld-222"
+do = "complete"
+quest = 2520
+obj = 1
+at = [1457, 39.18, 85.59]
+text = "Usa Sacrificio de Sathrah para «El Sacrificio de Sathrah»."
+tip = "[EN] «El Sacrificio de Sathrah», standing in the temple's central fountain."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 10 (use) · ya en Senda: netd-119"
+
+[[step]]
+id = "ps-teld-223"
+do = "turnin"
+quest = 2520
+npc = 7313
+at = [1457, 36.65, 85.93]
+text = "Entrega a A'moora."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 11 (turnin) · ya en Senda: netd-120"
+
+[[step]]
+id = "ps-teld-224"
+do = "turnin"
+quest = 98067
+npc = 8396
+at = [1457, 39.65, 89.54]
+text = "Vuelve al Templo y entrega a Dalia."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#76"]
+note = "Polestar paso 76 «Enclave Cenarion», objetivo 12 (turnin) · ya en Senda: netd-093"
+
+[[step]]
+id = "ps-teld-225"
+do = "goto"
+at = [1457, 29.1, 41.2]
+text = "Ve a Portal to «Teldrassil»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#79"]
+note = "Polestar paso 79 «Portal to «Teldrassil»», objetivo 1 (goto)"
+
+[[step]]
+id = "ps-teld-226"
+do = "turnin"
+quest = 6344
+npc = 10118
+at = [1438, 56.26, 92.44]
+chain = "ps-teld-s080-10118"
+text = "En Rut'theran, entrega a Nessa Shadowsong, en el muelle."
+tip = "[EN] Take the portal down to Aldea Rut'theran. Nessa Cantosombrío stands on the dock, Vesprystus by the hippogryphs. Once you have «Vuela a Auberdine», talk to Vesprystus again and choose the flight to Auberdine: it is free and lands beside Laird. If the flight map opens instead, close it and talk to him again holding Shift."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#80"]
+note = "Polestar paso 80 «Aldea Rut'theran», objetivo 1 (turnin) · ya en Senda: netd-150"
+
+[[step]]
+id = "ps-teld-227"
+do = "accept"
+quest = 6341
+npc = 10118
+at = [1438, 56.26, 92.44]
+chain = "ps-teld-s080-10118"
+reqlevel = 10
+text = "Coge la misión de Nessa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#80"]
+note = "Polestar paso 80 «Aldea Rut'theran», objetivo 2 (accept) · ya en Senda: netd-151"
+
+[[step]]
+id = "ps-teld-228"
+do = "getfp"
+npc = 3838
+node = "27"
+at = [1438, 58.4, 94.02]
+text = "Coge la ruta de vuelo de Aldea Rut'theran con Vesprystus."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#80"]
+note = "Polestar paso 80 «Aldea Rut'theran», objetivo 3 (getfp)"
+
+[[step]]
+id = "ps-teld-229"
+do = "turnin"
+quest = 6341
+npc = 3838
+at = [1438, 58.4, 94.02]
+chain = "ps-teld-s080-3838"
+text = "Entrega a Vesprystus, el maestro de hipogrifos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#80"]
+note = "Polestar paso 80 «Aldea Rut'theran», objetivo 4 (turnin) · ya en Senda: netd-152"
+
+[[step]]
+id = "ps-teld-230"
+do = "accept"
+quest = 6342
+npc = 3838
+at = [1438, 58.4, 94.02]
+chain = "ps-teld-s080-3838"
+reqlevel = 10
+text = "Coge el vuelo a Auberdine."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#80"]
+note = "Polestar paso 80 «Aldea Rut'theran», objetivo 5 (accept) · datos no importados: pre · ya en Senda: netd-154"
+
+[[step]]
+id = "ps-teld-231"
+do = "fly"
+zone = 1439
+text = "Vuela a Auberdine."
+tip = "[EN] Talk to Vesprystus again: free with «Vuela a Auberdine»."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#80"]
+note = "Polestar paso 80 «Aldea Rut'theran», objetivo 6 (fly)"
+
+[[step]]
+id = "ps-teld-232"
+do = "turnin"
+quest = 6342
+npc = 4200
+at = [1439, 36.77, 44.28]
+chain = "ps-teld-s081-4200"
+text = "En Auberdine, entrega el vuelo a Laird, el vendedor de pescado."
+tip = "No cojas la vuelta con Nessa: no vas a volver a Rut'theran."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#81"]
+note = "Polestar paso 81 «Auberdine», objetivo 1 (turnin) · ya en Senda: neds-001"
+
+[[step]]
+id = "ps-teld-233"
+do = "accept"
+quest = 6343
+npc = 4200
+at = [1439, 36.77, 44.28]
+chain = "ps-teld-s081-4200"
+reqlevel = 10
+text = "Coge «Vuelve con Nessa» de Laird."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#81"]
+note = "Polestar paso 81 «Auberdine», objetivo 2 (accept) · datos no importados: pre"
+
+[[step]]
+id = "ps-teld-234"
+do = "accept"
+quest = 3524
+npc = 10219
+at = [1439, 36.62, 45.59]
+reqlevel = 11
+text = "Coge la misión de Gwennyth Bly'Leggonde, junto al muelle."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#81"]
+note = "Polestar paso 81 «Auberdine», objetivo 3 (accept) · ya en Senda: neds-006"
+
+[[step]]
+id = "ps-teld-235"
+do = "accept"
+quest = 98025
+at = [1439, 37.22, 44.22]
+reqlevel = 10
+text = "Coge en el cartel de la posada el aviso de Jai'vhanel (nuevo de Forever)."
+tip = "El cartel de SE BUSCA a la puerta de la posada."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#81"]
+note = "Polestar paso 81 «Auberdine», objetivo 4 (accept) · ya en Senda: neds-005"
+
+[[step]]
+id = "ps-teld-236"
+do = "accept"
+quest = 983
+npc = 3666
+at = [1439, 36.97, 44.13]
+reqlevel = 7
+text = "Coge la misión del buzón de Wizbang Cranktoggle, en la posada."
+tip = "[EN] Maniveo Zumbang, upstairs in the inn: take the stairs inside, the arrow cannot tell the floors apart."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#81"]
+note = "Polestar paso 81 «Auberdine», objetivo 5 (accept) · ya en Senda: neds-004"
+
+[[step]]
+id = "ps-teld-237"
+do = "getfp"
+npc = 3841
+node = "26"
+at = [1439, 36.34, 45.58]
+text = "Coge la ruta de vuelo de Auberdine con Caylais Plumalunar."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#81"]
+note = "Polestar paso 81 «Auberdine», objetivo 6 (getfp)"
+
+[[step]]
+id = "ps-teld-238"
+do = "complete"
+quest = 3524
+obj = 1
+at = [1439, 36.4, 50.9]
+text = "Recoge Huesos de criatura marina (1) de Criatura marina varada para «Varado»."
+tip = "Los corremareas corretean por la orilla bajo el pueblo; «La caja mecánica 827» está en la playa, justo al sur de los muelles. Los trilladores de la Costa Oscura nadan en las aguas poco profundas. Criatura marina varada yace en la orilla, justo al sur del pueblo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#83"]
+note = "Polestar paso 83 «The Long Wash», objetivo 1 (collect) · ya en Senda: neds-015"
+
+[[step]]
+id = "ps-teld-239"
+do = "complete"
+quest = 983
+obj = 1
+at = [1439, 35.6, 47.1]
+text = "Consigue Pata de reptador (6) de Corremareas Marepígmeo y Joven reptador Correarrecifes para «La caja mecánica 827»."
+tip = "[EN] Crawler Legs: the Tide Crawlers."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#83"]
+note = "Polestar paso 83 «The Long Wash», objetivo 2 (collect) · ya en Senda: neds-014"
+
+[[step]]
+id = "ps-teld-240"
+do = "turnin"
+quest = 983
+at = [1439, 36.64, 46.26]
+text = "Echa las patas en el Buzón 827 de la playa."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#83"]
+note = "Polestar paso 83 «The Long Wash», objetivo 3 (turnin) · ya en Senda: neds-016"
+
+[[step]]
+id = "ps-teld-241"
+do = "turnin"
+quest = 3524
+npc = 10219
+at = [1439, 36.62, 45.59]
+chain = "ps-teld-s084-10219"
+text = "Entrega los huesos a Gwennyth."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#84"]
+note = "Polestar paso 84 «Auberdine», objetivo 1 (turnin) · ya en Senda: neds-038"
+
+[[step]]
+id = "ps-teld-242"
+do = "accept"
+quest = 4681
+npc = 10219
+at = [1439, 36.62, 45.59]
+chain = "ps-teld-s084-10219"
+reqlevel = 11
+text = "Coge la segunda misión de Gwennyth."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#84"]
+note = "Polestar paso 84 «Auberdine», objetivo 2 (accept) · datos no importados: pre · ya en Senda: neds-039"
+
+[[step]]
+id = "ps-teld-243"
+do = "accept"
+quest = 954
+npc = 3649
+at = [1439, 37.4, 40.13]
+chain = "ps-teld-s084-3649"
+reqlevel = 7
+text = "Coge la misión de Bashal'Aran de Thundris Windweaver, al norte del pueblo."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#84"]
+note = "Polestar paso 84 «Auberdine», objetivo 3 (accept) · ya en Senda: neds-012"
+
+[[step]]
+id = "ps-teld-244"
+do = "accept"
+quest = 958
+npc = 3649
+at = [1439, 37.4, 40.13]
+chain = "ps-teld-s084-3649"
+reqlevel = 9
+text = "Coge también las herramientas de los altonatos."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#84"]
+note = "Polestar paso 84 «Auberdine», objetivo 4 (accept) · ya en Senda: neds-013"
+
+[[step]]
+id = "ps-teld-245"
+do = "accept"
+quest = 984
+npc = 3693
+at = [1439, 39.37, 43.48]
+reqlevel = 10
+text = "Coge la amenaza de Terenthis, junto al camino del este."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#84"]
+note = "Polestar paso 84 «Auberdine», objetivo 5 (accept) · ya en Senda: neds-011"
+
+[[step]]
+id = "ps-teld-246"
+do = "accept"
+quest = 2118
+npc = 3701
+at = [1439, 38.84, 43.42]
+reqlevel = 10
+text = "Coge la misión de los osos de Tharnariun Treetender."
+tip = "Te da una trampa: si la pierdes, pide otra a Tharnariun."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#84"]
+note = "Polestar paso 84 «Auberdine», objetivo 6 (accept) · ya en Senda: neds-010"
+
+[[step]]
+id = "ps-teld-247"
+do = "accept"
+quest = 1141
+npc = 10216
+at = [1439, 36.1, 44.93]
+if = { prof = ["fishing"] }
+optional = true
+reqlevel = 10
+text = "Coge «La familia y la caña de pescar» de Gubber Blump."
+tip = "[EN] Fishers only: Gubber Blump stands on the pier. His Mero de Costa Oscura is fished from the pier itself. [EN] Gubber Blump, on the pier."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#85"]
+note = "Polestar paso 85 «Gubber Blump», objetivo 1 (accept)"
+
+[[step]]
+id = "ps-teld-248"
+do = "turnin"
+quest = 5921
+npc = 11802
+at = [1450, 56.21, 30.64]
+if = { class = ["DRUID"] }
+chain = "ps-teld-s086-11802"
+text = "Lanza Teletransporte: Claro de la Luna. Sube al piso alto del edificio del pueblo y entrega a Dendrite."
+tip = "Llegas junto a la maestra de vuelo; Dendrite está al noreste de ese punto."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#86"]
+note = "Polestar paso 86 «Claro de la Luna», objetivo 1 (turnin) · ya en Senda: dr-10-bear-006"
+
+[[step]]
+id = "ps-teld-249"
+do = "accept"
+quest = 5929
+npc = 11802
+at = [1450, 56.21, 30.64]
+if = { class = ["DRUID"] }
+chain = "ps-teld-s086-11802"
+reqlevel = 10
+text = "Coge con Dendrite la misión del Gran Espíritu del Oso."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#86"]
+note = "Polestar paso 86 «Claro de la Luna», objetivo 2 (accept) · datos no importados: pre · ya en Senda: dr-10-bear-007"
+
+[[step]]
+id = "ps-teld-250"
+do = "complete"
+quest = 5929
+at = [1450, 39.1, 27.5]
+if = { class = ["DRUID"] }
+text = "Ve al noroeste del Claro de la Luna y habla con el Gran Espíritu del Oso hasta el final."
+tip = "Los bichos del Claro son amistosos: puedes ir en línea recta."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#86"]
+note = "Polestar paso 86 «Claro de la Luna», objetivo 3 (complete) · objetivos (EN): Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear. · ya en Senda: dr-10-bear-008"
+
+[[step]]
+id = "ps-teld-251"
+do = "turnin"
+quest = 5929
+npc = 11802
+at = [1450, 56.21, 30.64]
+if = { class = ["DRUID"] }
+chain = "ps-teld-s086-11802"
+text = "Vuelve con Dendrite y entrega."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#86"]
+note = "Polestar paso 86 «Claro de la Luna», objetivo 4 (turnin) · ya en Senda: dr-10-bear-009"
+
+[[step]]
+id = "ps-teld-252"
+do = "accept"
+quest = 5931
+npc = 11802
+at = [1450, 56.21, 30.64]
+if = { class = ["DRUID"] }
+chain = "ps-teld-s086-11802"
+reqlevel = 10
+text = "Coge la misión de vuelta a Darnassus."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#86"]
+note = "Polestar paso 86 «Claro de la Luna», objetivo 5 (accept) · datos no importados: pre · ya en Senda: dr-10-bear-010"
+
+[[step]]
+id = "ps-teld-253"
+do = "getfp"
+npc = 10897
+node = "49"
+at = [1450, 48.1, 67.34]
+if = { class = ["DRUID"] }
+text = "Coge la ruta de vuelo de Claro de la Luna con Sindrayl."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#86"]
+note = "Polestar paso 86 «Claro de la Luna», objetivo 6 (getfp)"
+
+[[step]]
+id = "ps-teld-254"
+do = "fly"
+zone = 1438
+if = { class = ["DRUID"] }
+text = "Vuela a Aldea Rut'theran."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#86"]
+note = "Polestar paso 86 «Claro de la Luna», objetivo 7 (fly)"
+
+[[step]]
+id = "ps-teld-255"
+do = "turnin"
+quest = 6343
+npc = 10118
+at = [1438, 56.26, 92.44]
+if = { class = ["DRUID"] }
+text = "Entrega «Vuelve con Nessa» a Nessa Cantosombrío."
+tip = "[EN] Nessa Cantosombrío stands on the Rut'theran dock where you land. Then take the portal up to Mathrengyl Garroso in the Enclave Cenarion."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#87"]
+note = "Polestar paso 87 ««El regreso a Darnassus»», objetivo 1 (turnin)"
+
+[[step]]
+id = "ps-teld-256"
+do = "goto"
+at = [1457, 35.8, 11.6]
+if = { class = ["DRUID"] }
+text = "Ve a Enclave Cenarion."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#88"]
+note = "Polestar paso 88 «Enclave Cenarion», objetivo 1 (goto)"
+
+[[step]]
+id = "ps-teld-257"
+do = "turnin"
+quest = 5931
+npc = 4217
+at = [1457, 35.37, 8.4]
+if = { class = ["DRUID"] }
+chain = "ps-teld-s089-4217"
+text = "Entra en Darnassus por el portal de Rut'theran y entrega a Mathrengyl."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#89"]
+note = "Polestar paso 89 ««El regreso a Darnassus»», objetivo 1 (turnin) · ya en Senda: dr-10-bear-012"
+
+[[step]]
+id = "ps-teld-258"
+do = "accept"
+quest = 6001
+npc = 4217
+at = [1457, 35.37, 8.4]
+if = { class = ["DRUID"] }
+chain = "ps-teld-s089-4217"
+reqlevel = 10
+text = "Coge la siguiente misión de Mathrengyl: te da un polvo lunar para usarlo en la piedra lechúcica de Auberdine."
+tip = "Guarda el polvo. La pelea es en Costa Oscura: hazla al llegar a Auberdine."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#89"]
+note = "Polestar paso 89 ««El regreso a Darnassus»», objetivo 2 (accept) · datos no importados: pre · ya en Senda: dr-10-bear-013"
+
+[[step]]
+id = "ps-teld-259"
+do = "fly"
+zone = 1439
+if = { class = ["DRUID"] }
+text = "Vuela a Auberdine."
+tip = "Vuelve a bajar a Aldea Rut'theran y vuela a Auberdine. El Piedra de lechúcico lunar está en las colinas justo al este del poblado: usa el Polvo lunar Cenarion allí, derrota a Lunaclaw y habla con el Espíritu de Garraluna."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#90"]
+note = "Polestar paso 90 «The Piedra de lechúcico lunar», objetivo 1 (fly)"
+
+[[step]]
+id = "ps-teld-260"
+do = "use"
+item = 15208
+at = [1439, 43.5, 46.0]
+if = { class = ["DRUID"] }
+text = "Usa Polvo lunar Cenarion."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#90"]
+note = "Polestar paso 90 «The Piedra de lechúcico lunar», objetivo 2 (use)"
+
+[[step]]
+id = "ps-teld-261"
+do = "complete"
+quest = 6001
+if = { class = ["DRUID"] }
+text = "Sube la colina al este de Auberdine y usa el polvo lunar en la piedra lechúcica. Vence a Lunaclaw y habla con su espíritu."
+tip = "Lunaclaw es nivel 12: entra con vida y maná llenos, Raíces enredadoras y Cólera a distancia, y cúrate con Toque de sanación."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#90"]
+note = "Polestar paso 90 «The Piedra de lechúcico lunar», objetivo 3 (complete) · objetivos (EN): Lunaclaw Spirit · ya en Senda: dr-11-lunaclaw-001"
+
+[[step]]
+id = "ps-teld-262"
+do = "fly"
+zone = 1438
+if = { class = ["DRUID"] }
+text = "Vuela a Aldea Rut'theran."
+tip = "[EN] Fly to Aldea Rut'theran once more and take the portal up to Mathrengyl Garroso, then fly back to Auberdine."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#91"]
+note = "Polestar paso 91 ««Cuerpo y corazón»», objetivo 1 (fly)"
+
+[[step]]
+id = "ps-teld-263"
+do = "goto"
+at = [1457, 35.8, 11.6]
+if = { class = ["DRUID"] }
+text = "Ve a Enclave Cenarion."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#91"]
+note = "Polestar paso 91 ««Cuerpo y corazón»», objetivo 2 (goto)"
+
+[[step]]
+id = "ps-teld-264"
+do = "turnin"
+quest = 6001
+npc = 4217
+at = [1457, 35.37, 8.4]
+if = { class = ["DRUID"] }
+text = "Entra en Darnassus por el portal de Rut'theran y entrega a Mathrengyl: aprendes Forma de oso, Gruñido y Vapulear."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#91"]
+note = "Polestar paso 91 ««Cuerpo y corazón»», objetivo 3 (turnin) · ya en Senda: dr-11-lunaclaw-003"
+
+[[step]]
+id = "ps-teld-265"
+do = "fly"
+zone = 1439
+if = { class = ["DRUID"] }
+text = "Vuela a Auberdine."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/nightelf/01-teldrassil#91"]
+note = "Polestar paso 91 ««Cuerpo y corazón»», objetivo 4 (fly)"

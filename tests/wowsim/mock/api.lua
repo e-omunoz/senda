@@ -175,7 +175,15 @@ GetRealZoneText = GetZoneText
 function GetSubZoneText() return "" end
 function GetMinimapZoneText() return GetZoneText() end
 function GetBindLocation() return Sim.player.bind or "Kharanos" end
-function IsInInstance() return Sim.player.instance and true or false, Sim.player.instance and "party" or "none" end
+-- player.instance: nil (outside) or the instance type ("party", "raid", "pvp", "arena"; true = "party").
+function IsInInstance()
+  local i = Sim.player.instance
+  return i and true or false, i and (type(i) == "string" and i or "party") or "none"
+end
+function Sim.SetInstance(kind)
+  Sim.player.instance = kind or nil
+  Sim.Fire("PLAYER_ENTERING_WORLD", false, false)
+end
 
 -- Moves the player (x, y in 0-1) and runs the frames in between.
 function Sim.MoveTo(map, x, y)
@@ -290,7 +298,7 @@ function GetLocale() return Sim.locale or "esES" end
 function GetBuildInfo() return "1.60.1", "70291", "Nov 4 2026", 16001, "", "", 16001 end
 function GetServerTime() return time() end
 function IsShiftKeyDown() return Sim.shift end
-function IsControlKeyDown() return false end
+function IsControlKeyDown() return Sim.ctrl == true end
 function IsAltKeyDown() return false end
 function IsMouseButtonDown() return false end
 function GetCursorPosition() return 960, 540 end
@@ -369,6 +377,18 @@ function C_QuestLog.GetInfo(i)
   if not id then return nil end
   return { title = questTitle(id), questID = id, isHeader = false, isHidden = false, level = Sim.player.level }
 end
+function C_QuestLog.IsFailed(id)
+  num(id, "C_QuestLog.IsFailed", "questID")
+  local q = Sim.player.quests[id]
+  return q ~= nil and q.failed == true
+end
+-- Returns totalTime, elapsedTime (seconds) like the client; nothing when the quest has no timer.
+function C_QuestLog.GetTimeAllowed(id)
+  num(id, "C_QuestLog.GetTimeAllowed", "questID")
+  local q = Sim.player.quests[id]
+  if not (q and q.timer) then return nil end
+  return q.timer.total, math.min(q.timer.total, Sim.time - q.timer.start)
+end
 function C_QuestLog.GetSelectedQuest() return Sim.selectedQuest or 0 end
 function C_QuestLog.SetSelectedQuest(id) num(id, "C_QuestLog.SetSelectedQuest", "questID"); Sim.selectedQuest = id end
 function C_QuestLog.IsUnitOnQuest(unit, id)
@@ -386,8 +406,9 @@ function GetNumQuestLogRewards(questID) num(questID, "GetNumQuestLogRewards", "q
 function GetQuestLogItemLink(kind, i, questID) str(kind, "GetQuestLogItemLink", "type"); num(i, "GetQuestLogItemLink", "index"); return nil end
 
 -- Scenario helpers (fire the same events as the client).
-function Sim.AcceptQuest(id, objectives)
+function Sim.AcceptQuest(id, objectives, opts)
   local q = { objectives = {} }
+  if opts and opts.timeLimit then q.timer = { total = opts.timeLimit, start = Sim.time } end
   for i, o in ipairs(objectives or {}) do
     q.objectives[i] = { text = o[1], have = 0, need = o[2] or 1, finished = false, type = o[3] }
   end
@@ -409,6 +430,17 @@ function Sim.FinishQuestObjectives(id)
   for i, o in ipairs(q.objectives) do Sim.ProgressQuest(id, i, o.need) end
   if #q.objectives == 0 then q.complete = true; Sim.Fire("QUEST_LOG_UPDATE") end
 end
+function Sim.FailQuest(id)
+  Sim.player.quests[id].failed = true
+  Sim.Fire("QUEST_LOG_UPDATE")
+end
+-- Abandon: the quest leaves the log with no turn-in (QUEST_REMOVED only).
+function Sim.AbandonQuest(id)
+  Sim.player.quests[id] = nil
+  for i, q in ipairs(Sim.player.questOrder) do if q == id then table.remove(Sim.player.questOrder, i); break end end
+  Sim.Fire("QUEST_REMOVED", id, false)
+  Sim.Fire("QUEST_LOG_UPDATE")
+end
 function Sim.TurnInQuest(id)
   Sim.player.quests[id] = nil
   for i, q in ipairs(Sim.player.questOrder) do if q == id then table.remove(Sim.player.questOrder, i); break end end
@@ -424,7 +456,11 @@ end
 
 Sim.SPELL_NAMES = { [686] = "Descarga de las Sombras", [348] = "Inmolar", [172] = "Corrupción", [702] = "Maldición de debilidad",
   [688] = "Invocar diablillo", [687] = "Piel de demonio", [133] = "Bola de Fuego", [168] = "Armadura de escarcha",
-  [5009] = "Varitas", [13262] = "Desencantar", [8690] = "Piedra de hogar", [6201] = "Crear piedra de salud" }
+  [5009] = "Varitas", [13262] = "Desencantar", [8690] = "Piedra de hogar", [6201] = "Crear piedra de salud",
+  -- three ranks of one spell, for the action-bar rank upgrade
+  [116] = "Descarga de Escarcha", [205] = "Descarga de Escarcha", [837] = "Descarga de Escarcha" }
+-- spell id -> rank number (C_Spell.GetSpellSubtext says "Rango N"); spells not listed have no rank.
+Sim.SPELL_RANKS = { [116] = 1, [205] = 2, [837] = 3 }
 local function spellArg(s, fname)
   if type(s) ~= "number" and type(s) ~= "string" then bad(fname, "spell must be a spellID or a name (got " .. type(s) .. ")") end
   if type(s) == "string" then
@@ -444,6 +480,12 @@ function C_Spell.GetSpellInfo(s)
 end
 function C_Spell.GetSpellName(s) local i = C_Spell.GetSpellInfo(s); return i and i.name end
 function C_Spell.GetSpellTexture(s) local id = spellArg(s, "C_Spell.GetSpellTexture"); return id and (136000 + id % 1000) end
+function C_Spell.GetSpellSubtext(s)
+  local id = spellArg(s, "C_Spell.GetSpellSubtext")
+  local r = id and Sim.SPELL_RANKS[id]
+  if not r then return "" end
+  return (Sim.locale == "enUS" and "Rank " or "Rango ") .. r
+end
 function C_Spell.IsSpellPassive(s) spellArg(s, "C_Spell.IsSpellPassive"); return false end
 function C_Spell.PickupSpell(s)
   local id = spellArg(s, "C_Spell.PickupSpell")
@@ -476,6 +518,12 @@ function C_SpellBook.GetSpellBookItemName(i, bank)
   if bank == Enum.SpellBookSpellBank.Pet then return nil end
   local id = knownList()[i]
   return id and spellName(id) or nil, ""
+end
+function C_SpellBook.GetSpellBookItemInfo(i, bank)
+  num(i, "C_SpellBook.GetSpellBookItemInfo", "index")
+  if bank == Enum.SpellBookSpellBank.Pet then return nil end
+  local id = knownList()[i]
+  return id and { spellID = id, itemType = Enum.SpellBookItemType.Spell, actionID = id, name = spellName(id) } or nil
 end
 function C_SpellBook.HasPetSpells() return nil end
 function C_SpellBook.PickupSpellBookItem(i, bank)
@@ -747,6 +795,96 @@ end
 function IsTradeskillTrainer() return false end
 
 function GetNumQuestChoices() return Sim.questChoices and #Sim.questChoices or 0 end
+
+-- Quest dialog windows: Sim.qwin = { kind = "detail"|"progress"|"complete"|"greeting"|"gossip", id = questID }.
+-- The functions below are the client's; they only work while the matching window is open.
+Sim.autoLog = {} -- what the add-on did: "accept 12", "complete 12", "reward 12 1", "select-active 12"...
+local function winId() return Sim.qwin and Sim.qwin.id or 0 end
+function GetQuestID() return winId() end
+function QuestGetAutoAccept() return false end
+function QuestFlagsPVP() return Sim.qwin and Sim.qwin.pvp or false end
+function AcknowledgeAutoAcceptQuest() end
+function GetQuestMoneyToGet() return Sim.qwin and Sim.qwin.money or 0 end
+function IsQuestCompletable() return Sim.qwin ~= nil and Sim.qwin.kind == "progress" and Sim.qwin.completable ~= false end
+function CloseQuest() Sim.qwin = nil; Sim.questChoices = nil; Sim.Fire("QUEST_FINISHED") end
+function AcceptQuest()
+  if not (Sim.qwin and Sim.qwin.kind == "detail") then bad("AcceptQuest", "no quest detail window open") end
+  if Sim.player.combat then bad("AcceptQuest", "protected in combat") end
+  local id = Sim.qwin.id
+  Sim.autoLog[#Sim.autoLog + 1] = "accept " .. id
+  Sim.qwin = nil
+  Sim.AcceptQuest(id, Sim.qwin_objectives and Sim.qwin_objectives[id] or { { "Objetivo", 1 } })
+  Sim.Fire("QUEST_FINISHED")
+end
+function CompleteQuest()
+  if not (Sim.qwin and Sim.qwin.kind == "progress") then bad("CompleteQuest", "no quest progress window open") end
+  Sim.autoLog[#Sim.autoLog + 1] = "complete " .. Sim.qwin.id
+  Sim.qwin.kind = "complete"
+  Sim.questChoices = Sim.qwin.choices
+  Sim.Fire("QUEST_COMPLETE")
+end
+function GetQuestReward(choice)
+  if not (Sim.qwin and Sim.qwin.kind == "complete") then bad("GetQuestReward", "no quest reward window open") end
+  local id = Sim.qwin.id
+  Sim.autoLog[#Sim.autoLog + 1] = "reward " .. id .. " " .. tostring(choice)
+  Sim.qwin = nil
+  Sim.questChoices = nil
+  Sim.TurnInQuest(id)
+  Sim.Fire("QUEST_FINISHED")
+end
+function Sim.OpenQuest(kind, id, opts)
+  Sim.qwin = { kind = kind, id = id }
+  for k, v in pairs(opts or {}) do Sim.qwin[k] = v end
+  Sim.questChoices = opts and opts.choices or nil
+  Sim.Fire(kind == "detail" and "QUEST_DETAIL" or kind == "progress" and "QUEST_PROGRESS" or "QUEST_COMPLETE")
+end
+-- Greeting / gossip windows list quests: active = { {id=, complete=} }, available = { id, ... }.
+function Sim.OpenNpc(kind, active, available)
+  Sim.qwin = { kind = kind, id = 0, active = active or {}, available = available or {} }
+  Sim.Fire(kind == "greeting" and "QUEST_GREETING" or "GOSSIP_SHOW")
+end
+function GetNumActiveQuests() return Sim.qwin and Sim.qwin.kind == "greeting" and #Sim.qwin.active or 0 end
+function GetNumAvailableQuests() return Sim.qwin and Sim.qwin.kind == "greeting" and #Sim.qwin.available or 0 end
+function GetActiveTitle(i) local a = Sim.qwin.active[i]; return "Misión " .. a.id, a.complete end
+function GetActiveQuestID(i) return Sim.qwin.active[i].id end
+function GetAvailableQuestInfo(i) return "Misión", 1, false, false, Sim.qwin.available[i] end
+function SelectActiveQuest(i)
+  local a = Sim.qwin.active[i]
+  Sim.autoLog[#Sim.autoLog + 1] = "select-active " .. a.id
+  Sim.OpenQuest("progress", a.id)
+end
+function SelectAvailableQuest(i)
+  local id = Sim.qwin.available[i]
+  Sim.autoLog[#Sim.autoLog + 1] = "select-available " .. id
+  Sim.OpenQuest("detail", id)
+end
+C_GossipInfo = {}
+function C_GossipInfo.GetOptions() return {} end
+function C_GossipInfo.CloseGossip() Sim.qwin = nil end
+function C_GossipInfo.GetActiveQuests()
+  local out = {}
+  for i, a in ipairs(Sim.qwin and Sim.qwin.kind == "gossip" and Sim.qwin.active or {}) do
+    out[i] = { questID = a.id, isComplete = a.complete, title = "Misión " .. a.id }
+  end
+  return out
+end
+function C_GossipInfo.GetAvailableQuests()
+  local out = {}
+  for i, id in ipairs(Sim.qwin and Sim.qwin.kind == "gossip" and Sim.qwin.available or {}) do
+    out[i] = { questID = id, title = "Misión " .. id }
+  end
+  return out
+end
+function C_GossipInfo.SelectActiveQuest(id)
+  num(id, "C_GossipInfo.SelectActiveQuest", "questID")
+  Sim.autoLog[#Sim.autoLog + 1] = "select-active " .. id
+  Sim.OpenQuest("progress", id)
+end
+function C_GossipInfo.SelectAvailableQuest(id)
+  num(id, "C_GossipInfo.SelectAvailableQuest", "questID")
+  Sim.autoLog[#Sim.autoLog + 1] = "select-available " .. id
+  Sim.OpenQuest("detail", id)
+end
 function GetQuestItemLink(kind, i)
   str(kind, "GetQuestItemLink", "type"); num(i, "GetQuestItemLink", "index")
   local id = kind == "choice" and Sim.questChoices and Sim.questChoices[i]
@@ -865,6 +1003,7 @@ end
 Enum = {
   TooltipDataType = { Item = 0, Spell = 1, Unit = 2 },
   SpellBookSpellBank = { Player = 0, Pet = 1 },
+  SpellBookItemType = { None = 0, Spell = 1, FutureSpell = 2, PetAction = 3, Flyout = 4 },
   FlightPathState = { Current = 0, Reachable = 1, Unreachable = 2 },
   PlayerInteractionType = { None = 0, TradePartner = 1, Item = 2, Gossip = 3, QuestGiver = 4, Merchant = 5,
     TaxiNode = 6, Trainer = 7, Banker = 8, Binder = 21, ProfessionsTrainer = 59, StableMaster = 13, Auctioneer = 21 + 100 },

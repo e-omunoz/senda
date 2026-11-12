@@ -1,4 +1,4 @@
--- Comandos de chat: /senda [hud | reset | guide <id> | way x y [texto] | map | debug | export | help]
+-- Comandos de chat: /senda [hud | hide | reset | guide <id> | way x y [texto] | map | debug | export | help]
 local _, Senda = ...
 local L = Senda.L
 local Util, Compat = Senda.Util, Senda.Compat
@@ -27,6 +27,10 @@ end
 
 commands.hud = function()
   if Senda.HUD and Senda.HUD.Toggle then Senda.HUD:Toggle() end
+end
+
+commands.hide = function()
+  if Senda.Visibility then Senda.Visibility:Toggle() end
 end
 
 commands.reset = function()
@@ -123,6 +127,7 @@ commands.help = function()
 end
 
 -- Alias en español.
+commands.ocultar = commands.hide
 commands.guia = commands.guide
 commands.ayuda = commands.help
 commands.reiniciar = commands.reset

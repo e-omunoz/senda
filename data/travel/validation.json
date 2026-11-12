@@ -1,0 +1,235 @@
+{
+ "dijkstra_selftest": {
+  "cases": [
+   {
+    "expect": "Stormwind Harbor boat",
+    "legs": [
+     [
+      "ride",
+      "boat-stormwind-auberdine"
+     ]
+    ],
+    "name": "Stormwind -> Auberdine (Forever)",
+    "ok": true,
+    "seconds": 428.2
+   },
+   {
+    "expect": "routes through Menethil (boat or flight), not the harbour boat",
+    "legs": [
+     [
+      "fly",
+      "Stormwind, Elwynn -> Ironforge, Dun Morogh"
+     ],
+     [
+      "fly",
+      "Ironforge, Dun Morogh -> Menethil Harbor, Wetlands"
+     ],
+     [
+      "fly",
+      "Menethil Harbor, Wetlands -> Southshore, Hillsbrad"
+     ],
+     [
+      "ride",
+      "boat-southshore-auberdine"
+     ]
+    ],
+    "name": "Stormwind -> Auberdine (Era transports)",
+    "ok": true,
+    "seconds": 961.1
+   },
+   {
+    "expect": "Deeprun Tram",
+    "legs": [
+     [
+      "ride",
+      "tram-stormwind-ironforge"
+     ]
+    ],
+    "name": "Ironforge tram gate -> Stormwind Trade District",
+    "ok": true,
+    "seconds": 204.5
+   },
+   {
+    "expect": "Deeprun Tram",
+    "legs": [
+     [
+      "ride",
+      "tram-stormwind-ironforge"
+     ]
+    ],
+    "name": "Stormwind inn -> Ironforge inn",
+    "ok": true,
+    "seconds": 323.9
+   },
+   {
+    "expect": "walk only",
+    "legs": [],
+    "name": "Short hop under 400 yd (350 yd)",
+    "ok": true,
+    "seconds": 62.5
+   },
+   {
+    "expect": "walk only",
+    "legs": [],
+    "name": "Short hop under 400 yd (399 yd)",
+    "ok": true,
+    "seconds": 71.2
+   },
+   {
+    "expect": "zeppelin",
+    "legs": [
+     [
+      "ride",
+      "zeppelin-orgrimmar-undercity"
+     ]
+    ],
+    "name": "Orgrimmar -> Undercity",
+    "ok": true,
+    "seconds": 462.3
+   },
+   {
+    "expect": "boat-bootybay-ratchet",
+    "legs": [
+     [
+      "ride",
+      "boat-bootybay-ratchet"
+     ]
+    ],
+    "name": "Booty Bay -> Ratchet (alliance)",
+    "ok": true,
+    "seconds": 364.8
+   },
+   {
+    "expect": "boat-bootybay-ratchet",
+    "legs": [
+     [
+      "ride",
+      "boat-bootybay-ratchet"
+     ]
+    ],
+    "name": "Booty Bay -> Ratchet (horde)",
+    "ok": true,
+    "seconds": 364.8
+   },
+   {
+    "expect": "boat-menethil-theramore",
+    "legs": [
+     [
+      "ride",
+      "boat-menethil-theramore"
+     ]
+    ],
+    "name": "Menethil Harbor -> Theramore",
+    "ok": true,
+    "seconds": 411.3
+   },
+   {
+    "expect": "hearth",
+    "legs": [
+     [
+      "hearth",
+      "Hearthstone"
+     ]
+    ],
+    "name": "Hearthstone Southshore -> Stormwind inn",
+    "ok": true,
+    "seconds": 15.0
+   },
+   {
+    "expect": "Teleport: Thunder Bluff",
+    "legs": [
+     [
+      "teleport",
+      "Teleport: Thunder Bluff"
+     ]
+    ],
+    "name": "Mage Undercity -> Thunder Bluff",
+    "ok": true,
+    "seconds": 89.1
+   },
+   {
+    "expect": "Teleport: Moonglade or the class flight master",
+    "legs": [
+     [
+      "teleport",
+      "Teleport: Moonglade"
+     ]
+    ],
+    "name": "Druid Stormwind -> Nighthaven",
+    "ok": true,
+    "seconds": 75.7
+   },
+   {
+    "expect": "no Nighthaven leg",
+    "legs": [
+     [
+      "fly",
+      "Moonglade -> Auberdine, Darkshore"
+     ],
+     [
+      "ride",
+      "boat-stormwind-auberdine"
+     ]
+    ],
+    "name": "Non-druid never lands at Nighthaven",
+    "ok": true,
+    "seconds": 552.2
+   },
+   {
+    "expect": "0 violations",
+    "legs": [],
+    "name": "horde never uses alliance-only services (16 sampled pairs)",
+    "ok": true,
+    "seconds": null,
+    "violations": 0
+   },
+   {
+    "expect": "0 violations",
+    "legs": [],
+    "name": "alliance never uses horde-only services (16 sampled pairs)",
+    "ok": true,
+    "seconds": null,
+    "violations": 0
+   }
+  ],
+  "passed": 16,
+  "total": 16
+ },
+ "forever_db_flight_masters": {
+  "checked": 63,
+  "median_yards": 3.6,
+  "mismatches": [],
+  "nodes": 63,
+  "within_1_percent": 63
+ },
+ "forever_db_innkeepers": {
+  "inns": 47,
+  "mismatches": []
+ },
+ "symmetry": {
+  "bad_timetable_refs": [],
+  "flights_between_opposite_factions": [],
+  "flights_lopsided_over_1_6x": [],
+  "flights_one_way": [
+   [
+    62,
+    27,
+    "Nighthaven, Moonglade",
+    "Rut'theran Village, Teldrassil"
+   ],
+   [
+    63,
+    22,
+    "Nighthaven, Moonglade",
+    "Thunder Bluff, Mulgore"
+   ]
+  ],
+  "flights_total": 268,
+  "flights_unknown_node": [],
+  "portals_one_way": [
+   "Rohashi Spires -> Valanaar",
+   "Shrine of Akir -> Rohashi Spires"
+  ],
+  "transport_issues": []
+ }
+}

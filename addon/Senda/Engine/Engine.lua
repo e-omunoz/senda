@@ -82,6 +82,8 @@ function Engine:NotTaken(entry)
   if d ~= "complete" and d ~= "turnin" then return false end
   local acc = self.acceptIndex and self.acceptIndex[s.quest]
   if not acc or not entry.index or acc >= entry.index then return false end
+  -- Abandonada o fallida: no se salta en silencio; el HUD avisa y la flecha vuelve a quien la daba.
+  if self.IsAbandoned and self:IsAbandoned(s.quest) then return false end
   return not QuestTaken(s.quest)
 end
 
@@ -100,6 +102,11 @@ local function Applicable(entry)
   return entry and Cond:LevelFilter(entry.step["if"]) and not Engine:WaitLevel(entry)
     and not Engine:NotTaken(entry) and not Engine:NoSkill(entry)
 end
+
+-- Las siguientes funciones las usan Quests.lua y Automation.lua.
+function Engine:IsApplicable(entry) return Applicable(entry) and true or false end
+function Engine:QuestTaken(q) return QuestTaken(q) end
+function Engine:IsMarked(entry) return DoneMark(entry) end
 
 -- Índice misión -> nivel requerido (de los pasos accept con reqlevel).
 local function BuildQuestWait(steps)
@@ -492,7 +499,7 @@ function Engine:AutoSelect()
     return
   end
   local list = Senda.Guides:ForPlayer()
-  if list[1] then
+  if list[1] and not Senda.Guides:IsManualOnly(list[1]) then
     self:SetGuide(list[1].id)
   else
     Senda:Debug("No hay guías para este personaje")

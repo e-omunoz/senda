@@ -1,0 +1,98 @@
+name: forever-db
+
+# Avisa cuando Polestar publica una forever-db más nueva que la fijada en tools/foreverdb/PIN.
+# No cambia nada: abre (una sola vez por versión) una incidencia con su CHANGELOG para revisarla.
+# Para subir: cambia `version` en PIN, `python tools/fetch_foreverdb.py`, `python tools/verify.py --db foreverdb`.
+
+on:
+  schedule:
+    - cron: "23 8 * * 3"    # miércoles
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: foreverdb
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Versión fijada y última publicada
+        id: v
+        run: |
+          repo="$(sed -n 's/^repo *= *//p' tools/foreverdb/PIN)"
+          pinned="$(sed -n 's/^version *= *//p' tools/foreverdb/PIN)"
+          latest="$(gh api "repos/$repo/releases?per_page=100" \
+            -q '.[] | select(.draft | not) | .tag_name | select(startswith("data-v")) | ltrimstr("data-v")' \
+            | sort -V | tail -1)"
+          echo "repo=$repo" >> "$GITHUB_OUTPUT"
+          echo "pinned=$pinned" >> "$GITHUB_OUTPUT"
+          echo "latest=$latest" >> "$GITHUB_OUTPUT"
+          newer=false
+          if [ -n "$latest" ] && [ "$latest" != "$pinned" ] \
+             && [ "$(printf '%s\n%s\n' "$pinned" "$latest" | sort -V | tail -1)" = "$latest" ]; then
+            newer=true
+          fi
+          echo "newer=$newer" >> "$GITHUB_OUTPUT"
+          echo "forever-db fijada $pinned · última publicada ${latest:-(ninguna)}"
+          {
+            echo "## forever-db"
+            echo "- Fijada: \`$pinned\`"
+            echo "- Última publicada: \`${latest:-ninguna}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: La versión fijada sigue descargándose y verificándose
+        run: python tools/fetch_foreverdb.py
+
+      - name: Avisar de la nueva versión
+        if: steps.v.outputs.newer == 'true'
+        # Los valores llegan por entorno, no interpolados en el script: el nombre de la etiqueta viene de otro repo.
+        env:
+          REPO: ${{ steps.v.outputs.repo }}
+          LATEST: ${{ steps.v.outputs.latest }}
+          PINNED: ${{ steps.v.outputs.pinned }}
+        run: |
+          repo="$REPO"
+          latest="$LATEST"
+          pinned="$PINNED"
+          case "$latest" in *[!0-9.]*|"") echo "::error::Versión inesperada: $latest"; exit 1 ;; esac
+          echo "::notice::Hay forever-db $latest (Senda fija $pinned)."
+          title="forever-db $latest disponible (fijada: $pinned)"
+          if [ -n "$(gh issue list --state open --search "in:title \"forever-db $latest\"" --json number -q '.[].number')" ]; then
+            echo "Ya hay una incidencia abierta para $latest."
+            exit 0
+          fi
+          body_file="$(mktemp)"
+          {
+            echo "Polestar ha publicado **forever-db $latest** (\`data-v$latest\`); Senda fija **$pinned** en \`tools/foreverdb/PIN\`."
+            echo
+            echo "Release: https://github.com/$repo/releases/tag/data-v$latest"
+            echo
+            echo "Para subir:"
+            echo
+            echo '1. Lee el CHANGELOG (abajo): tablas, cobertura y valores retirados.'
+            echo "2. Cambia \`version = $latest\` en \`tools/foreverdb/PIN\`."
+            echo '3. `python tools/fetch_foreverdb.py` y `python tools/verify.py --db foreverdb --no-report`.'
+            echo '4. Actualiza la versión en `THIRD_PARTY.md` y commitea.'
+            echo
+            echo '<details><summary>CHANGELOG del release</summary>'
+            echo
+            gh release view "data-v$latest" -R "$repo" --json body -q .body | head -c 60000
+            echo
+            echo '</details>'
+          } > "$body_file"
+          gh issue create --title "$title" --body-file "$body_file" \
+            || echo "::warning::No se pudo abrir la incidencia; el aviso queda en el resumen."

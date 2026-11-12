@@ -117,6 +117,11 @@ HUD.STATUS = STATUS
 
 local function Opt(key) return Senda.Options:Get(key) end
 
+-- Quita los códigos de color de un texto (|cAARRGGBB ... |r).
+local function Plain(text)
+  return ((tostring(text or ""):gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")))
+end
+
 local function FS(parent, font, r, g, b)
   local fs = parent:CreateFontString(nil, "OVERLAY", font or "GameFontHighlightSmall")
   fs:SetJustifyH("LEFT")
@@ -211,14 +216,36 @@ local function Create()
   f.objectives:SetPoint("TOPLEFT", f.text, "BOTTOMLEFT", 0, -4)
   f.objectives:SetPoint("RIGHT", -PAD, 0)
 
+  -- Cuentas atrás de misiones con tiempo y aviso de misión fallida / abandonada
+  f.status = FS(f, "GameFontHighlightSmall")
+  f.status:SetPoint("TOPLEFT", f.objectives, "BOTTOMLEFT", 0, -4)
+  f.status:SetPoint("RIGHT", -PAD, 0)
+
   f.tip = FS(f, "GameFontHighlightSmall", C.gold[1] * 0.9, C.gold[2] * 0.9, C.gold[3] * 0.6)
-  f.tip:SetPoint("TOPLEFT", f.objectives, "BOTTOMLEFT", 0, -4)
+  f.tip:SetPoint("TOPLEFT", f.status, "BOTTOMLEFT", 0, -4)
   f.tip:SetPoint("RIGHT", -PAD, 0)
+
+  -- Nota de escolta
+  f.escort = FS(f, "GameFontHighlightSmall", 0.95, 0.65, 0.35)
+  f.escort:SetPoint("TOPLEFT", f.tip, "BOTTOMLEFT", 0, -4)
+  f.escort:SetPoint("RIGHT", -PAD, 0)
 
   -- Aviso corto de los módulos (Senda.HUD:SetAdvice)
   f.advice = FS(f, "GameFontHighlightSmall", C.accent[1], C.accent[2], C.accent[3])
-  f.advice:SetPoint("TOPLEFT", f.tip, "BOTTOMLEFT", 0, -4)
+  f.advice:SetPoint("TOPLEFT", f.escort, "BOTTOMLEFT", 0, -4)
   f.advice:SetPoint("RIGHT", -PAD, 0)
+
+  -- Botones de una misión fallida o abandonada
+  f.retake = UI:Button(f, L.QUEST_RETAKE, 110, 20, function()
+    local pr = Senda.Engine:Problem()
+    if pr then Senda.Engine:RetakeQuest(pr.quest) end
+  end)
+  UI:Tooltip(f.retake, L.QUEST_RETAKE, L.QUEST_RETAKE_TIP)
+  f.skipq = UI:Button(f, L.QUEST_SKIP_QUEST, 110, 20, function()
+    local pr = Senda.Engine:Problem()
+    if pr then Senda.Engine:SkipQuest(pr.quest) end
+  end)
+  UI:Tooltip(f.skipq, L.QUEST_SKIP_QUEST, L.QUEST_SKIP_QUEST_TIP)
 
   -- Misiones aplazadas por nivel (clic: volver a la primera que ya se puede coger)
   f.gated = CreateFrame("Button", nil, f)
@@ -307,6 +334,8 @@ function HUD:Refresh()
 
   -- Paso
   local y = 28
+  local problem = step and Engine.Problem and Engine:Problem(entry) or nil
+  f.icon:SetDesaturated(problem ~= nil)
   if step then
     f.icon:SetTexture(Cond:Icon(step))
     f.icon:SetTexCoord(0.06, 0.94, 0.06, 0.94)
@@ -322,6 +351,10 @@ function HUD:Refresh()
     local text = self:StepText(step)
     if step.at and step.at[2] then
       text = text .. UI:Color("dim", string.format("  (%.1f, %.1f)", step.at[2], step.at[3] or 0))
+    end
+    if problem then
+      f.title:SetText(UI:Color("dim", Plain(f.title:GetText())))
+      text = UI:Color("dim", Plain(text))
     end
     f.text:SetText(text)
   elseif Engine:GuideId() and #Engine:Steps() == 0 then
@@ -342,8 +375,8 @@ function HUD:Refresh()
   local textH = collapsed and 0 or (f.text:GetStringHeight() + 3)
   y = y + math.max(28, titleH + textH) + 4
 
-  -- Objetivos y consejo
-  local objH, tipH = 0, 0
+  -- Objetivos, cuentas atrás, consejo y nota de escolta
+  local objH, statusH, tipH, escortH = 0, 0, 0, 0
   if not collapsed and step then
     local lines = {}
     for _, o in ipairs(self:ObjectiveLines(step)) do
@@ -353,14 +386,33 @@ function HUD:Refresh()
     if not Cond:IsAuto(step) then lines[#lines + 1] = UI:Color("dim", L.HUD_MANUAL_HINT) end
     f.objectives:SetText(table.concat(lines, "\n"))
     objH = #lines > 0 and (f.objectives:GetStringHeight() + 4) or 0
+
+    local st = {}
+    if problem then
+      st[#st + 1] = UI:Color("red", problem.kind == "failed" and L.QUEST_FAILED_LINE or L.QUEST_ABANDONED_LINE)
+    end
+    for _, t in ipairs(Engine.StepTimers and Engine:StepTimers(step) or {}) do
+      local color = t.left <= 60 and "red" or (t.left <= 120 and "gold" or "white")
+      st[#st + 1] = "|TInterface\\Icons\\INV_Misc_PocketWatch_01:14:14:0:0|t " .. UI:Color(color,
+        Senda.Quests.Clock(t.left)) .. UI:Color("dim", "  " .. QuestName(t.quest))
+    end
+    f.status:SetText(table.concat(st, "\n"))
+    statusH = #st > 0 and (f.status:GetStringHeight() + 4) or 0
+
     f.tip:SetText(step.tip and ("|TInterface\\COMMON\\help-i:14:14:0:0|t" .. step.tip) or "")
     tipH = step.tip and (f.tip:GetStringHeight() + 4) or 0
+    f.escort:SetText(step.escort and L.ESCORT_NOTE or "")
+    escortH = step.escort and (f.escort:GetStringHeight() + 4) or 0
   else
     f.objectives:SetText("")
+    f.status:SetText("")
     f.tip:SetText("")
+    f.escort:SetText("")
   end
   f.objectives:SetShown(objH > 0)
+  f.status:SetShown(statusH > 0)
   f.tip:SetShown(tipH > 0)
+  f.escort:SetShown(escortH > 0)
   local advH = 0
   if not collapsed and self.advice and self.advice ~= "" then
     f.advice:SetText(self.advice)
@@ -369,7 +421,18 @@ function HUD:Refresh()
     f.advice:SetText("")
   end
   f.advice:SetShown(advH > 0)
-  y = y + objH + tipH + advH
+  y = y + objH + statusH + tipH + escortH + advH
+
+  -- Misión fallida o abandonada: volver a cogerla o saltarla
+  local showProblem = problem ~= nil and not collapsed
+  f.retake:SetShown(showProblem and problem.accept ~= nil)
+  f.skipq:SetShown(showProblem)
+  if showProblem then
+    f.retake:ClearAllPoints(); f.retake:SetPoint("TOPLEFT", PAD, -y)
+    f.skipq:ClearAllPoints()
+    if problem.accept then f.skipq:SetPoint("LEFT", f.retake, "RIGHT", 4, 0) else f.skipq:SetPoint("TOPLEFT", PAD, -y) end
+    y = y + 24
+  end
 
   -- Misiones aplazadas por nivel
   local gated = (not collapsed and Engine.LevelGated) and Engine:LevelGated() or {}
@@ -488,6 +551,7 @@ function HUD:Apply()
   f:SetScale(Opt("hudScale") or 1)
   f:SetAlpha(Opt("hudAlpha") or 1)
   local show = Opt("hud") and not (Opt("hudCombatHide") and Compat.InCombat())
+    and not (Senda.Visibility and Senda.Visibility:Hidden())
   f:SetShown(show and true or false)
   if show then self:Refresh() end
 end
@@ -520,6 +584,10 @@ Events:On("SENDA_READY", function()
   Events:On("SENDA_GUIDE_CHANGED", refresh)
   Events:On("SENDA_ADVICE", function(_, text)
     if HUD.advice ~= text then HUD:SetAdvice(text) end
+  end)
+  Events:On("SENDA_QUEST_TIMER", function()
+    local step = Senda.Engine:CurrentStep()
+    if step and #Senda.Engine:StepTimers(step) > 0 then refresh() end
   end)
   Events:On("QUEST_DATA_LOAD_RESULT", refresh)
   Events:On("GET_ITEM_INFO_RECEIVED", refresh)

@@ -869,6 +869,7 @@ quest = 309
 reqlevel = 10
 npc = 1379
 at = [1432, 52.2, 69.4]
+escort = true
 text = "Escolta a Miran y el cargamento hasta la excavación."
 status = "unverified"
 sources = ["questie:quest/309"]

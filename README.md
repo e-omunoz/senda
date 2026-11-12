@@ -65,9 +65,12 @@ Más detalles en [tools/README.md](tools/README.md) y [CONTRIBUTING.md](CONTRIBU
 
 ## Licencia
 
-Código y guías propias: [MIT](LICENSE).
+Senda es software libre bajo [GPL-3.0](LICENSE) desde la 0.4.0. Las versiones hasta la 0.3.5 se publicaron con
+licencia MIT y lo siguen siendo para quien las tenga.
 
-Senda no incluye datos de terceros con licencia restrictiva. QuestieDB solo se lee en local para verificar.
+Lo que viene de otros proyectos (Polestar y sus datos abiertos forever-db, ambos GPL-3.0) está en
+[THIRD_PARTY.md](THIRD_PARTY.md), con su licencia, su origen y la versión fijada. Senda no incluye datos de
+terceros con licencia restrictiva: QuestieDB solo se lee en local para verificar.
 
 World of Warcraft es una marca de Blizzard Entertainment. Senda es un proyecto de la comunidad sin
 afiliación con Blizzard.
