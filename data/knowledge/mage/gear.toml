@@ -1,5 +1,5 @@
 # Migrado de BrujoGnomoGuia 4.1.0 (Gear.lua ns.GEAR.WEIGHTS.MAGE y textos de BrujoGnomoGuia.lua).
-# Mismo formato de [weights] que data/knowledge/warlock/gear.toml.
+# Los pesos numéricos (antes [weights] aquí) están en weights.toml, por tramo de nivel y con fuente (docs/GEAR.md).
 id = "mage-gear"
 class = "MAGE"
 kind = "page"
@@ -8,19 +8,8 @@ order = 140
 status = "unverified"
 sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.warcrafttavern.com/forever/", "cita:Blizzard, notas de desarrollo de la beta (24-sep-2026)"]
 checked = "2026-11-09"
-note = "Prioridades de Warcraft Tavern (guía de mago de Forever, revisado el 9-nov). Pesos numéricos puestos por el autor."
+note = "Prioridades de Warcraft Tavern (guía de mago de Forever, revisado el 9-nov). Pesos numéricos con fuente en mage-weights."
 
-[weights]
-SP = 1.0
-SCHOOL = "FROST"
-SCHOOL_W = 1.0
-INT = 0.6
-MP5 = 0.6
-STA = 0.4
-SPI = 0.3
-ARMOR = 0.005
-WAND_DPS = 1.2
-WAND_DPS_30 = 1.0
 
 [[block]]
 heading = "Prioridad"

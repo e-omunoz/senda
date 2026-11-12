@@ -191,7 +191,13 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 `tests/test_build.py` usa el fixture `tests/fixtures/repo/` (copiado a una carpeta temporal; nunca se escribe en
 él) y cubre el escapado Lua, el validador de esquemas, los errores semánticos, el build completo, el zip e
-`install-dev`.
+`install-dev`. `tests/test_gen_bis.py` cubre `tools/gen_bis.py` y las comprobaciones de `weights.toml`.
+
+## gen_bis.py
+
+Genera `data/knowledge/<clase>/bis-forever.toml` (mejor pieza conocida por tramo y ranura) desde el `Forever.lua` de
+Polestar (ForeverLevelingBiS v0.12.0-beta, MIT) y los pesos de `weights.toml`:
+`python tools/gen_bis.py --polestar RUTA/polestar [--check]`. Detalle y fuentes: [docs/GEAR.md](../docs/GEAR.md).
 
 ## ingest_recording.py y route_report.py
 

@@ -878,6 +878,239 @@ const scenarios = [
     `,
   },
   {
+    id: 'gear-reward',
+    title: 'Gear: quest reward choice picks the build item (Affliction warlock), message and weights from weights.toml',
+    char: 'gnome-warlock',
+    lua: L_`
+      Sim.CHARS["gnome-warlock"].level = 12
+      Login()
+      Sim.Advance(2)
+      local G = S().Modules.Gear
+      Check(G.BuildKey() == "affliction", "warlock build = affliction (default of warlock-weights)", G.BuildKey())
+      local band = G.Band(12)
+      Check(band and band.from == 1 and band.to == 29, "level 12 uses the 1-29 band", band and (band.from .. "-" .. band.to))
+      local W = G.Weights(12)
+      Check(W.SCHOOL == "SHADOW" and W.WAND_DPS == 2 and W.STA == 0.8, "weights come from the band (school from the build)",
+        tostring(W.SCHOOL) .. " " .. tostring(W.WAND_DPS) .. " " .. tostring(W.STA))
+      local function Pick(ids)
+        local best = G.PickReward(function(k) return ids[k] and Sim.ItemLink(ids[k]) end, #ids)
+        return best and Sim.ItemIdOf(best)
+      end
+      Check(Pick({ 90002, 90001, 90007 }) == 90001, "cloth Int/Spirit robe beats leather Agility/Stamina vests", Pick({ 90002, 90001, 90007 }))
+      Section("the real reward window")
+      Sim.questChoices = { 90002, 90001, 90007 }
+      local before = #Sim.chat
+      G.OnQuestRewards()
+      Sim.Advance(0.2)
+      local said = table.concat(Sim.chat, " | ", before + 1)
+      Check(said:find("Túnica de aprendiz de sombras", 1, true) ~= nil and said:find("para tu build", 1, true) ~= nil,
+        "chat recommends the robe for your build", said)
+      Sim.questChoices = nil
+    `,
+  },
+  {
+    id: 'gear-usable',
+    title: 'Gear: items the class cannot wear are never recommended (mage, druid)',
+    char: 'human-mage',
+    lua: L_`
+      Sim.CHARS["human-mage"].level = 14
+      Login()
+      Sim.Advance(2)
+      local G = S().Modules.Gear
+      Check(G.BuildKey() == "frost", "mage build = frost", G.BuildKey())
+      local function Pick(ids)
+        local best = G.PickReward(function(k) return ids[k] and Sim.ItemLink(ids[k]) end, #ids)
+        return best and Sim.ItemIdOf(best)
+      end
+      -- mail (huge stats), shield, two-handed axe and a small cloth glove
+      local pick = Pick({ 90003, 90004, 90008, 90006 })
+      Check(pick == 90006, "mage takes the cloth gloves, never mail, shield or axe", pick)
+      for _, id in ipairs({ 90003, 90004, 90008 }) do
+        local _, _, why = G.Delta(Sim.ItemLink(id))
+        Check(why == "no", "Delta marks " .. Sim.ITEMS[id].name .. " as unusable", why)
+        Check(not G.IsUpgrade(Sim.ItemLink(id)), Sim.ITEMS[id].name .. " is never an upgrade")
+      end
+      Check(Pick({ 90003, 90004, 90008 }) == nil, "only unusable choices: no recommendation (sell value instead)")
+      Section("bags: an unusable item with big stats is never announced")
+      Sim.player.bags[0][10] = { id = 90003, count = 1 }
+      local before = #Sim.chat
+      Sim.Fire("BAG_UPDATE_DELAYED")
+      Sim.Advance(2)
+      local said = table.concat(Sim.chat, " | ", before + 1)
+      Check(not said:find("Coraza de malla", 1, true), "no «Ponte» for the mail chest", said)
+      local ups = G.FindUpgrades()
+      local listed = false
+      for _, u in ipairs(ups) do if Sim.ItemIdOf(u.link) == 90003 then listed = true end end
+      Check(not listed, "the gear list never offers the mail chest")
+    `,
+  },
+  {
+    id: 'gear-tip',
+    title: 'Gear: tooltip line «+N% para tu build», bag scan «Ponte X: mejora» and the gear tab (best known piece)',
+    char: 'gnome-warlock',
+    lua: L_`
+      Sim.CHARS["gnome-warlock"].level = 12
+      Sim.CHARS["gnome-warlock"].equipped = { [4] = 6096, [5] = 3000 }
+      Login()
+      Sim.Advance(2)
+      local function TipLine(id)
+        GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+        GameTooltip:SetHyperlink(Sim.ItemLink(id))
+        local found
+        for _, l in ipairs(GameTooltip:Lines()) do if l:find("^Senda:") then found = (found and (found .. " / ") or "") .. Plain(l) end end
+        GameTooltip:Hide()
+        return found
+      end
+      -- equipped chest 3000: 3 Sta 1 Int = 0.8*3 + 0.75 = 3.15; robe 90001: 0.75*5 + 0.6*5 + 0.8*3 + 0.005*20 = 9.25
+      local line = TipLine(90001)
+      Check(line == "Senda: +194% para tu build", "one tooltip line with the percent for the build", line)
+      local n = 0
+      GameTooltip:SetOwner(UIParent, "ANCHOR_NONE"); GameTooltip:SetHyperlink(Sim.ItemLink(90001))
+      for _, l in ipairs(GameTooltip:Lines()) do if l:find("^Senda:") then n = n + 1 end end
+      Check(n == 1, "exactly one Senda line", n)
+      Check((TipLine(90003) or ""):find("no te sirve", 1, true) ~= nil, "mail chest: «no te sirve»", TipLine(90003))
+      Check((TipLine(90006) or ""):find("no llevas nada", 1, true) ~= nil, "empty hands slot: says so", TipLine(90006))
+      Section("bag scan")
+      Sim.player.bags[0][10] = { id = 90001, count = 1 }
+      local before = #Sim.chat
+      Sim.Fire("BAG_UPDATE_DELAYED")
+      Sim.Advance(2)
+      local said = table.concat(Sim.chat, " | ", before + 1)
+      Check(said:find("Ponte", 1, true) ~= nil and said:find("194%", 1, true) ~= nil and said:find("para tu build", 1, true) ~= nil,
+        "«Ponte X: mejora un 194% para tu build»", said)
+      Section("gear tab")
+      S().UI:ShowPanel(); S().UI:ShowTab("gear"); Sim.Advance(0.5)
+      S().Modules.Gear.Refresh(); Sim.Advance(0.5)
+      local texts = {}
+      for _, f in ipairs(Sim.AllWidgets()) do
+        if f.__type == "FontString" and f:IsVisible() then texts[#texts + 1] = Plain(f:GetText() or "") end
+      end
+      local all = table.concat(texts, " | ")
+      Check(all:find("Mejor pieza conocida para tu tramo", 1, true) ~= nil, "tab shows the best known pieces for the band")
+      Check(all:find("Tu build: Aflicción", 1, true) ~= nil and all:find("tramo 1-29", 1, true) ~= nil, "tab shows build and weight band")
+      Check(all:find("+194%", 1, true) ~= nil, "upgrade list shows the percent", all:sub(1, 300))
+      local bis = S().Modules.Gear.BisFor(12)
+      Check(#bis >= 8, "bis-forever has pieces for 11-20 (affliction)", #bis)
+      local ok = true
+      for _, e in ipairs(bis) do
+        local src = S().Modules.Gear.BisSource(e)
+        if src == "?" or src == "" then ok = false end
+      end
+      Check(ok, "every piece has a readable source")
+    `,
+  },
+  {
+    id: 'gear-band',
+    title: 'Gear: the level band switch changes the pick (warlock wand weight drops at 30)',
+    char: 'gnome-warlock',
+    lua: L_`
+      Sim.CHARS["gnome-warlock"].level = 29
+      Login()
+      Sim.Advance(2)
+      local G = S().Modules.Gear
+      local function Pick(ids)
+        local best = G.PickReward(function(k) return ids[k] and Sim.ItemLink(ids[k]) end, #ids)
+        return best and Sim.ItemIdOf(best)
+      end
+      Check(Pick({ 90001, 5069 }) == 5069, "level 29: the wand (DPS weight 2) wins", Pick({ 90001, 5069 }))
+      Sim.player.level = 30
+      Sim.Fire("PLAYER_LEVEL_UP", 30, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      Check(G.Band(30).from == 30, "level 30 uses the 30-39 band", G.Band(30).from)
+      Check(Pick({ 90001, 5069 }) == 90001, "level 30: the robe wins (wand weight 0.6)", Pick({ 90001, 5069 }))
+      Sim.player.level = 40
+      Sim.Fire("PLAYER_LEVEL_UP", 40, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      Check(G.Weights(40).SPI == 0.3, "level 40: blended band (Spirit 0.3)", G.Weights(40).SPI)
+    `,
+  },
+  {
+    id: 'gear-skill',
+    title: 'Gear: a staff before learning Staves is not picked over something you can wear now',
+    char: 'gnome-warlock',
+    lua: L_`
+      Sim.CHARS["gnome-warlock"].level = 12
+      Login()
+      Sim.Advance(2)
+      Sim.player.spells[1180] = true -- Dagas
+      Sim.player.spells[5009] = true -- Varitas
+      Sim.Fire("SPELLS_CHANGED")
+      Sim.Advance(0.5)
+      local G = S().Modules.Gear
+      local function Pick(ids)
+        local best, _, _, why = G.PickReward(function(k) return ids[k] and Sim.ItemLink(ids[k]) end, #ids)
+        return best and Sim.ItemIdOf(best), why
+      end
+      local _, _, why = G.Delta(Sim.ItemLink(90005))
+      Check(why ~= nil and why:find("Bastones", 1, true) ~= nil, "staff says to learn Staves", why)
+      Check(Pick({ 90005, 90006 }) == 90006, "the gloves you can wear now win over the staff", Pick({ 90005, 90006 }))
+      local id, w = Pick({ 90005 })
+      Check(id == 90005 and w ~= nil, "staff alone: offered, with the reason", tostring(id) .. " " .. tostring(w))
+      Sim.LearnSpell(227) -- Bastones (Woo Ping)
+      Sim.Advance(0.5)
+      Check(Pick({ 90005, 90006 }) == 90005, "after learning Staves the staff wins", Pick({ 90005, 90006 }))
+      Section("off hand while wielding a staff")
+      Sim.player.equipped[16] = 90005
+      local d, _, why2 = G.Delta(Sim.ItemLink(90009))
+      Check(d < 0 and why2 ~= nil, "orb vs equipped staff: worse and says you'd drop the staff", tostring(d) .. " " .. tostring(why2))
+    `,
+  },
+  {
+    id: 'gear-druid',
+    title: 'Gear: feral druid, cat for levelling and bear for elites (/senda equipo oso)',
+    char: 'nightelf-druid',
+    lua: L_`
+      Sim.CHARS["nightelf-druid"].level = 14
+      Login()
+      Sim.Advance(2)
+      local G = S().Modules.Gear
+      local function Pick(ids)
+        local best = G.PickReward(function(k) return ids[k] and Sim.ItemLink(ids[k]) end, #ids)
+        return best and Sim.ItemIdOf(best)
+      end
+      Check(G.BuildKey() == "cat", "druid default build = cat", G.BuildKey())
+      Check(Pick({ 90002, 90007, 90003, 90001 }) == 90002, "cat: Agility/Strength leather vest", Pick({ 90002, 90007, 90003, 90001 }))
+      local lines = Slash("equipo oso")
+      Check(G.BuildKey() == "bear", "/senda equipo oso switches to bear", G.BuildKey())
+      Check(table.concat(lines, " "):find("oso", 1, true) ~= nil, "chat confirms the build", table.concat(lines, " "))
+      Check(Pick({ 90002, 90007, 90003, 90001 }) == 90007, "bear: Stamina/armor leather vest", Pick({ 90002, 90007, 90003, 90001 }))
+      Check(Pick({ 90003, 90008, 90004 }) == nil, "mail, axe and shield are never recommended to a druid")
+      Slash("equipo felino")
+      Check(G.BuildKey() == "cat", "/senda equipo felino back to cat", G.BuildKey())
+      Section("gear tab switch button")
+      S().UI:ShowPanel(); S().UI:ShowTab("gear"); Sim.Advance(0.5)
+      local btn
+      for _, f in ipairs(Sim.AllWidgets()) do
+        if f.__type == "Button" and f:IsVisible() and (f:GetText() or ""):find("^Usar ") then btn = f end
+      end
+      Check(btn ~= nil, "tab shows the «Usar Feral, oso…» button")
+      if btn then Sim.Click(btn); Sim.Advance(0.3) end
+      Check(G.BuildKey() == "bear", "the button switches the build", G.BuildKey())
+      Check(SendaDB.modules.gearBuild == "bear", "the choice is saved per character")
+    `,
+  },
+  {
+    id: 'gear-en',
+    title: 'Gear: tooltip line in English',
+    char: 'human-mage',
+    locale: 'enUS',
+    lua: L_`
+      Sim.CHARS["human-mage"].level = 12
+      Sim.CHARS["human-mage"].equipped = { [5] = 3000 }
+      Login()
+      Sim.Advance(2)
+      GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+      GameTooltip:SetHyperlink(Sim.ItemLink(90001))
+      local line
+      for _, l in ipairs(GameTooltip:Lines()) do if l:find("^Senda:") then line = Plain(l) end end
+      Check(line ~= nil and line:find("%% for your build$") ~= nil, "English tooltip line", line)
+      GameTooltip:SetHyperlink(Sim.ItemLink(90004))
+      line = nil
+      for _, l in ipairs(GameTooltip:Lines()) do if l:find("^Senda:") then line = Plain(l) end end
+      Check(line ~= nil and line:find("your class can't wear it", 1, true) ~= nil, "English unusable line", line)
+    `,
+  },
+  {
     id: 'g',
     title: 'Re-login with the SavedVariables of b: progress restored by step id',
     char: 'gnome-warlock',

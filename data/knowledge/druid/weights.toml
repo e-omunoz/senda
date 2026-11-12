@@ -1,0 +1,64 @@
+# Pesos de equipo por build y tramo de nivel (los lee Modules/Gear.lua). Formato: docs/GEAR.md.
+# Dos builds ferales: «cat» (felino, para subir; la de por defecto) y «bear» (oso, para élites y mazmorras).
+# Se cambia en la pestaña Equipo o con /senda equipo oso | felino.
+#
+# De dónde sale cada número:
+#  · Felino 1-39: pesos de subida de Polestar (addon/Polestar/Gear/Weights.lua, GPL-3.0, commit 19bd636e, tramo
+#    `feral` «Polestar leveling» de SpecData.lua): str 1, agi 1, ap 0.5, sta 0.65, int 0.2, spi 0.15, armor 0.04,
+#    hit 9, crit 9.
+#  · Felino 40-59: media 50 % Polestar + 50 % wowsims Classic (la mezcla es criterio, el método de Polestar);
+#    60: 25 % + 75 %. wowsims/classic commit 7779ebbf79dc7f1341e6ab939b28a3402c9a730a (24-jul-2026),
+#    ui/feral_druid/sim.ts, epWeights (MIT), divididos entre la Fuerza (2.4): Agility 2.43, Intellect 0.61,
+#    Spirit 0.38, MP5 0.79, AttackPower 1, MeleeHit 26.59, MeleeCrit 28.68.
+#  · DPS del arma: en Forever las formas pegan con el daño del arma (Warcraft Tavern y Method, ver druid-gear), así
+#    que el DPS del arma sí cuenta: 14 × el peso del poder de ataque (14 de poder de ataque = 1 de DPS en Classic;
+#    la misma regla que usa Polestar en Gear.WeightsFor). wowsims Classic no lo cuenta porque allí las formas
+#    ignoran el arma.
+#  · Oso (todos los niveles): wowsims/classic, ui/feral_tank_druid/sim.ts, epWeights (MIT), divididos entre la
+#    Agilidad (4.4974): Armor 3.5665, Stamina 7.3021, Strength 2.3786, AttackPower 1, MeleeHit 2.9282,
+#    MeleeCrit 1.5143, Defense 1.8171, Dodge 2.0196. Es una simulación de nivel 60: usarla en todos los tramos es
+#    CRITERIO de Senda (no hay pesos de tanque de subida con fuente). DPS del arma: la misma regla de Forever.
+id = "druid-weights"
+class = "DRUID"
+kind = "weights"
+title = "Pesos de equipo: feral (felino y oso)"
+order = 141
+status = "unverified"
+sources = ["polestar:19bd636e/addon/Polestar/Gear/Weights.lua", "polestar:19bd636e/addon/Polestar/Gear/SpecData.lua", "https://github.com/wowsims/classic/blob/7779ebbf79dc7f1341e6ab939b28a3402c9a730a/ui/feral_druid/sim.ts", "https://github.com/wowsims/classic/blob/7779ebbf79dc7f1341e6ab939b28a3402c9a730a/ui/feral_tank_druid/sim.ts", "https://www.warcrafttavern.com/forever/guides/feral-druid/", "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"]
+checked = "2026-11-12"
+note = "Felino: pesos de subida de Polestar hasta el 39 y mezcla con wowsims Classic desde el 40. Oso: simulación de tanque de wowsims Classic (nivel 60) en todos los tramos (criterio). El DPS del arma cuenta porque en Forever las formas pegan con el arma."
+
+[[build]]
+key = "cat"
+default = true
+
+[[build]]
+key = "bear"
+
+[[band]]
+build = "cat"
+from = 1
+to = 39
+ref = "Polestar"
+w = { STR = 1.0, AGI = 1.0, AP = 0.5, STA = 0.65, INT = 0.2, SPI = 0.15, ARMOR = 0.04, HIT = 9.0, CRIT = 9.0, DPS = 7.0 }
+
+[[band]]
+build = "cat"
+from = 40
+to = 59
+ref = "Polestar 50% + wowsims 50%"
+w = { STR = 1.0, AGI = 1.006, AP = 0.458, STA = 0.325, INT = 0.227, SPI = 0.154, MP5 = 0.165, ARMOR = 0.02, HIT = 10.04, CRIT = 10.48, DPS = 6.42 }
+
+[[band]]
+build = "cat"
+from = 60
+to = 60
+ref = "Polestar 25% + wowsims 75%"
+w = { STR = 1.0, AGI = 1.009, AP = 0.438, STA = 0.163, INT = 0.24, SPI = 0.156, MP5 = 0.247, ARMOR = 0.01, HIT = 10.56, CRIT = 11.21, DPS = 6.13 }
+
+[[band]]
+build = "bear"
+from = 1
+to = 60
+ref = "wowsims (oso, nivel 60)"
+w = { AGI = 1.0, STA = 1.624, STR = 0.529, AP = 0.222, ARMOR = 0.793, HIT = 0.651, CRIT = 0.337, DEFENSE = 0.404, DODGE = 0.449, DPS = 3.11 }

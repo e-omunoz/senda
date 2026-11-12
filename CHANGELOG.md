@@ -2,6 +2,18 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado [SemVer](https://semver.org/lang/es/).
 
+## [Sin publicar]
+
+### Añadido
+- **Equipo según tu build** ([docs/GEAR.md](docs/GEAR.md)). Pesos por build y tramo de nivel con fuente
+  (`data/knowledge/<clase>/weights.toml`): Aflicción, Escarcha y Feral (felino para subir, oso para élites; se cambia en
+  la pestaña Equipo o con `/senda equipo oso | felino`). Se aplican en la recompensa de misión recomendada, en el aviso
+  de las bolsas («Ponte X: mejora un 12% para tu build»), en una línea de la descripción de los objetos («Senda: +12%
+  para tu build») y en la pestaña Equipo. Nunca recomienda lo que tu clase no puede llevar; un arma que aún no sabes
+  usar solo se propone si no hay nada que ponerte ya, y con el motivo.
+- **Mejor pieza conocida para tu tramo** en la pestaña Equipo (`bis-forever.toml`, generado por `tools/gen_bis.py` desde
+  ForeverLevelingBiS v0.12.0-beta, MIT, a través de Polestar).
+
 ## [0.5.0] - 2026-11-12
 
 ### Añadido

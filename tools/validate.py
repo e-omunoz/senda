@@ -53,7 +53,13 @@ KNOWLEDGE_KIND_ARRAY = {
     "macros": "macro",
     "professions": "route",
     "rotation": "phase",
+    "weights": "band",
+    "bis": "bis",
 }
+
+# Claves de pesos de equipo que entiende Modules/Gear.lua (docs/GEAR.md).
+WEIGHT_KEYS = {"SP", "SCHOOL_W", "INT", "SPI", "STA", "STR", "AGI", "AP", "RAP", "MP5", "ARMOR", "DPS", "RANGED_DPS",
+               "WAND_DPS", "HIT", "CRIT", "SPELL_HIT", "SPELL_CRIT", "DEFENSE", "DODGE"}
 
 
 # =========================================================================== mini JSON Schema
@@ -521,7 +527,65 @@ def run_checks(ds: Dataset) -> Dataset:
                         ds.err(kp.path, f"{name} #{i + 1}", "from > to")
                     if name == "route" and isinstance(item.get("trainer"), list):
                         _check_point(ds, kp.path, f"{name} #{i + 1}", item["trainer"], "trainer")
+    _check_gear_weights(ds)
     return ds
+
+
+def _check_gear_weights(ds: Dataset) -> None:
+    """kind = "weights": una build por defecto, tramos sin huecos ni solapes de 1 a 60 por build, claves conocidas.
+    kind = "bis": cada build existe en los pesos de su clase y from <= to."""
+    builds_by_class: dict[str, set[str]] = {}
+    for kp in ds.knowledge:
+        d = kp.data
+        if d.get("kind") != "weights":
+            continue
+        builds = [b for b in (d.get("build") or []) if isinstance(b, dict) and isinstance(b.get("key"), str)]
+        if not builds:
+            ds.err(kp.path, "campo 'build'", 'kind = "weights" exige al menos un [[build]]')
+        keys = [b["key"] for b in builds]
+        if len(set(keys)) != len(keys):
+            ds.err(kp.path, "campo 'build'", "build repetida")
+        if builds and sum(1 for b in builds if b.get("default")) != 1:
+            ds.err(kp.path, "campo 'build'", "exactamente una [[build]] con default = true")
+        builds_by_class.setdefault(str(d.get("class")), set()).update(keys)
+        per: dict[str, list[tuple[int, int]]] = {k: [] for k in keys}
+        for i, b in enumerate(d.get("band") or []):
+            if not isinstance(b, dict):
+                continue
+            where = f"band #{i + 1}"
+            if b.get("build") not in per:
+                ds.err(kp.path, where, f"build '{b.get('build')}' no está en [[build]]")
+                continue
+            if isinstance(b.get("from"), int) and isinstance(b.get("to"), int):
+                if b["from"] > b["to"]:
+                    ds.err(kp.path, where, "from > to")
+                per[b["build"]].append((b["from"], b["to"]))
+            for k in (b.get("w") or {}):
+                if k not in WEIGHT_KEYS:
+                    ds.err(kp.path, where, f"clave de peso desconocida '{k}' (válidas: {', '.join(sorted(WEIGHT_KEYS))})")
+        for key, spans in per.items():
+            spans.sort()
+            nxt = 1
+            for a, z in spans:
+                if a != nxt:
+                    ds.err(kp.path, f"build {key}", f"los tramos deben seguirse sin huecos ni solapes (esperado {nxt}, hay {a})")
+                    break
+                nxt = z + 1
+            else:
+                if nxt != 61:
+                    ds.err(kp.path, f"build {key}", f"los tramos deben llegar al 60 (llegan al {nxt - 1})")
+    for kp in ds.knowledge:
+        d = kp.data
+        if d.get("kind") != "bis":
+            continue
+        known = builds_by_class.get(str(d.get("class")), set())
+        for i, b in enumerate(d.get("bis") or []):
+            if not isinstance(b, dict):
+                continue
+            if b.get("build") not in known:
+                ds.err(kp.path, f"bis #{i + 1}", f"build '{b.get('build')}' no está en los pesos de {d.get('class')}")
+            if isinstance(b.get("from"), int) and isinstance(b.get("to"), int) and b["from"] > b["to"]:
+                ds.err(kp.path, f"bis #{i + 1}", "from > to")
 
 
 def load_and_check(paths: Paths) -> Dataset:

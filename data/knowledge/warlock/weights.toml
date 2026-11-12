@@ -1,0 +1,59 @@
+# Pesos de equipo por build y tramo de nivel (los lee Modules/Gear.lua). Formato: docs/GEAR.md.
+# [[build]]: key, school (escuela del poder con hechizos que cuenta como SCHOOL_W), default (la que usa el addon).
+# [[band]]: build, from, to (niveles incluidos), ref (fuente corta que enseña la pestaña Equipo) y w = pesos por punto
+#   (por 1 % en SPELL_HIT/SPELL_CRIT; por 1 de DPS en WAND_DPS). Claves: ver docs/GEAR.md.
+#
+# De dónde sale cada número (todo con fuente; lo que es criterio lo dice):
+#  · 1-39: pesos de subida de Polestar (addon/Polestar/Gear/Weights.lua, GPL-3.0, commit 19bd636e, tramo
+#    `affliction` de SpecData.lua «Polestar leveling», hecho con las fórmulas de estadísticas de Classic):
+#    sp 1, spShadow 1, int 0.75, spi 0.6, sta 0.8, mp5 1, rdps 2, armor 0.005, spellHit 9, spellCrit 3.
+#  · 30-39: igual, salvo la varita: 0.6 en vez de 2. CRITERIO de Senda a partir de Warcraft Tavern (guía de brujo
+#    de Forever): «el DPS de varita importa hasta el nivel 30; luego Drenar vida es tu relleno».
+#  · 40-59: media 50 % Polestar + 50 % wowsims Classic (mismo método que Polestar usa con sus simulaciones; la
+#    mezcla es criterio). wowsims/classic commit 7779ebbf79dc7f1341e6ab939b28a3402c9a730a (24-jul-2026),
+#    ui/warlock/sim.ts, epWeights (MIT): Int 0.23, Spirit 0, MP5 0.14, SpellPower 1, ShadowPower 0.9,
+#    SpellHit 12.79, SpellCrit 7.92, Stamina 0.01.
+#  · 60: 25 % Polestar + 75 % wowsims Classic (coincide con el tramo `upTo = 60` de SpecData.lua de Polestar).
+#  wowsims simula banda de nivel 60 (sin cuidar el tiempo muerto ni la supervivencia): por eso pesa poco antes.
+id = "warlock-weights"
+class = "WARLOCK"
+kind = "weights"
+title = "Pesos de equipo: Aflicción"
+order = 141
+status = "unverified"
+sources = ["polestar:19bd636e/addon/Polestar/Gear/Weights.lua", "polestar:19bd636e/addon/Polestar/Gear/SpecData.lua", "https://github.com/wowsims/classic/blob/7779ebbf79dc7f1341e6ab939b28a3402c9a730a/ui/warlock/sim.ts", "https://www.warcrafttavern.com/forever/"]
+checked = "2026-11-12"
+note = "Pesos de subida de Polestar (fórmulas de Classic) hasta el 39; desde el 40 mezclados con la simulación de wowsims Classic (nivel 60). La varita pesa menos desde el 30 (criterio, Warcraft Tavern)."
+
+[[build]]
+key = "affliction"
+school = "SHADOW"
+default = true
+
+[[band]]
+build = "affliction"
+from = 1
+to = 29
+ref = "Polestar"
+w = { SP = 1.0, SCHOOL_W = 1.0, INT = 0.75, SPI = 0.6, STA = 0.8, MP5 = 1.0, WAND_DPS = 2.0, ARMOR = 0.005, SPELL_HIT = 9.0, SPELL_CRIT = 3.0 }
+
+[[band]]
+build = "affliction"
+from = 30
+to = 39
+ref = "Polestar + Warcraft Tavern"
+w = { SP = 1.0, SCHOOL_W = 1.0, INT = 0.75, SPI = 0.6, STA = 0.8, MP5 = 1.0, WAND_DPS = 0.6, ARMOR = 0.005, SPELL_HIT = 9.0, SPELL_CRIT = 3.0 }
+
+[[band]]
+build = "affliction"
+from = 40
+to = 59
+ref = "Polestar 50% + wowsims 50%"
+w = { SP = 1.0, SCHOOL_W = 0.95, INT = 0.49, SPI = 0.3, STA = 0.41, MP5 = 0.57, WAND_DPS = 0.6, ARMOR = 0.003, SPELL_HIT = 10.9, SPELL_CRIT = 5.46 }
+
+[[band]]
+build = "affliction"
+from = 60
+to = 60
+ref = "Polestar 25% + wowsims 75%"
+w = { SP = 1.0, SCHOOL_W = 0.925, INT = 0.36, SPI = 0.15, STA = 0.21, MP5 = 0.355, WAND_DPS = 0.5, ARMOR = 0.001, SPELL_HIT = 11.84, SPELL_CRIT = 6.69 }
