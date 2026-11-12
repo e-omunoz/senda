@@ -49,20 +49,9 @@ reqlevel = 5
 npc = 1267
 at = [1426, 46.8, 52.4]
 text = "Coge las costillas de jabalí de Ragnar Thunderbrew, en la posada."
+why = "+1.017 XP · ~4,3 min"
 status = "unverified"
 sources = ["questie:quest/384", "questie:npc/1267"]
-
-[[step]]
-id = "dun-morogh-005"
-do = "accept"
-quest = 99158
-reqlevel = 5
-npc = 1226
-at = [1426, 47.3, 52.2]
-text = "Coge la misión del instructor de sacerdote Maxan Anvol (nueva de Forever): se entrega al padre Gavin, al noreste."
-tip = "La entregarás hacia el 9: guárdala en el registro."
-status = "unverified"
-sources = ["questie:quest/99158", "questie:npc/1226"]
 
 [[step]]
 id = "dun-morogh-006"
@@ -94,6 +83,7 @@ reqlevel = 4
 npc = 265813
 at = [1426, 46.6, 53.9]
 text = "Coge la misión del campamento de Eric (nueva de Forever)."
+why = "+410 XP · ~2 min · desbloquea «{quest:96047}» y 2 más"
 status = "unverified"
 sources = ["questie:quest/96608", "questie:npc/265813"]
 
@@ -137,6 +127,7 @@ reqskill = [129, 1]
 npc = 265813
 at = [1426, 46.6, 53.9]
 text = "Vuelve con Eric y coge la lección de Primeros auxilios."
+why = "+270 XP · ~1 min"
 status = "unverified"
 sources = ["questie:quest/96047", "questie:npc/265813"]
 
@@ -148,6 +139,7 @@ reqlevel = 4
 npc = 265813
 at = [1426, 46.6, 53.9]
 text = "Y la de Cocina."
+why = "+270 XP · ~1 min"
 status = "unverified"
 sources = ["questie:quest/96629", "questie:npc/265813"]
 
@@ -192,17 +184,6 @@ status = "unverified"
 sources = ["questie:quest/420", "questie:npc/1252"]
 
 [[step]]
-id = "dun-morogh-019"
-do = "accept"
-quest = 98322
-reqlevel = 4
-npc = 1252
-at = [1426, 46.7, 53.8]
-text = "Coge la primera misión de asegurar la montaña de Senir (nueva de Forever)."
-status = "unverified"
-sources = ["questie:quest/98322", "questie:npc/1252"]
-
-[[step]]
 id = "dun-morogh-020"
 do = "accept"
 quest = 98321
@@ -210,6 +191,7 @@ reqlevel = 4
 npc = 1241
 at = [1426, 45.3, 51.9]
 text = "Coge el cargamento perdido de Tognus Flintfire, al oeste de la posada."
+why = "+625 XP"
 status = "unverified"
 sources = ["questie:quest/98321", "questie:npc/1241"]
 
@@ -221,6 +203,7 @@ reqlevel = 2
 npc = 1872
 at = [1426, 46.0, 51.7]
 text = "Coge las herramientas de Tharek Blackstone."
+why = "+110 XP · <1 min"
 status = "unverified"
 sources = ["questie:quest/400", "questie:npc/1872"]
 
@@ -232,6 +215,7 @@ reqlevel = 2
 npc = 1378
 at = [1426, 49.4, 48.4]
 text = "Ve a la nave al noreste del pueblo y coge la misión del piloto Bellowfiz."
+why = "+1.135 XP · ~6 min · desbloquea «{quest:318}»"
 status = "unverified"
 sources = ["questie:quest/317", "questie:npc/1378"]
 
@@ -243,6 +227,7 @@ reqlevel = 4
 npc = 1377
 at = [1426, 49.6, 48.6]
 text = "Coge la Guarida Grizzled del piloto Stonegear, al lado."
+why = "+1.493 XP · ~7,4 min"
 status = "unverified"
 sources = ["questie:quest/313", "questie:npc/1377"]
 
@@ -264,31 +249,11 @@ reqlevel = 5
 npc = 1694
 at = [1426, 50.1, 49.4]
 text = "Coge la munición para Rumbleshot de Loslor Rudge."
+why = "+550 XP · ~2,3 min"
 status = "unverified"
 sources = ["questie:quest/5541", "questie:npc/1694"]
 
 # --- Bucle sur: Gretchen, jabalíes, Rumbleshot y la Guarida (6-8) ---------------------------
-
-[[step]]
-id = "dun-morogh-026"
-do = "turnin"
-quest = 98322
-npc = 271546
-at = [1426, 44.1, 57.1]
-text = "Baja al suroeste del pueblo y entrega a Mountaineer Gretchen."
-status = "unverified"
-sources = ["questie:quest/98322", "questie:npc/271546"]
-
-[[step]]
-id = "dun-morogh-027"
-do = "accept"
-quest = 98319
-reqlevel = 4
-npc = 271546
-at = [1426, 44.1, 57.1]
-text = "Coge la siguiente de Gretchen: buscar a un montañero en la Guarida Grizzled."
-status = "unverified"
-sources = ["questie:quest/98319", "questie:npc/271546"]
 
 [[step]]
 id = "dun-morogh-028"
@@ -296,6 +261,7 @@ do = "complete"
 quest = 5541
 at = [1426, 44.1, 57.0]
 text = "Recoge la caja de munición que hay junto a Gretchen."
+tip = "{npc:271546} está al suroeste de Kharanos."
 status = "unverified"
 sources = ["questie:quest/5541", "questie:object/176785"]
 
@@ -329,15 +295,6 @@ status = "unverified"
 sources = ["questie:quest/317", "questie:npc/1128", "questie:npc/1125"]
 
 [[step]]
-id = "dun-morogh-032"
-do = "complete"
-quest = 98319
-at = [1426, 43.0, 49.6]
-text = "Encuentra al montañero Cornelius en la Guarida Grizzled y habla con él."
-status = "unverified"
-sources = ["questie:quest/98319", "questie:npc/278166"]
-
-[[step]]
 id = "dun-morogh-033"
 do = "complete"
 quest = 313
@@ -357,39 +314,6 @@ status = "unverified"
 sources = ["questie:quest/98321", "questie:object/672508"]
 
 [[step]]
-id = "dun-morogh-035"
-do = "turnin"
-quest = 98319
-npc = 271546
-at = [1426, 44.1, 57.1]
-text = "Vuelve con Gretchen y entrégale."
-status = "unverified"
-sources = ["questie:quest/98319", "questie:npc/271546"]
-
-[[step]]
-id = "dun-morogh-036"
-do = "accept"
-quest = 98323
-reqlevel = 4
-npc = 271546
-at = [1426, 44.1, 57.1]
-text = "Coge la última de Gretchen: el informe vuelve a Senir."
-status = "unverified"
-sources = ["questie:quest/98323", "questie:npc/271546"]
-
-# --- Kharanos: entregas (7-8) ---------------------------------------------------------------
-
-[[step]]
-id = "dun-morogh-037"
-do = "turnin"
-quest = 98323
-npc = 1252
-at = [1426, 46.7, 53.8]
-text = "Entrega a Senir Whitebeard en Kharanos."
-status = "unverified"
-sources = ["questie:quest/98323", "questie:npc/1252"]
-
-[[step]]
 id = "dun-morogh-038"
 do = "accept"
 quest = 287
@@ -397,6 +321,8 @@ reqlevel = 7
 npc = 1252
 at = [1426, 46.7, 53.8]
 text = "Coge la misión del Bastión Peloescarcha de Senir (nivel 7)."
+tip = "{npc:1252} está en Kharanos. +955 XP · ~6,7 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/287", "questie:npc/1252"]
 
@@ -428,6 +354,7 @@ reqlevel = 7
 npc = 1269
 at = [1426, 45.9, 49.4]
 text = "Coge la Operación Recombobulación de Razzle Sprysprocket (nivel 7)."
+why = "+1.757 XP · ~6 min"
 status = "unverified"
 sources = ["questie:quest/412", "questie:npc/1269"]
 
@@ -449,6 +376,7 @@ reqlevel = 2
 npc = 1378
 at = [1426, 49.4, 48.4]
 text = "Coge la continuación de Bellowfiz: se entrega en Brewnall."
+why = "+160 XP · <1 min"
 status = "unverified"
 sources = ["questie:quest/318", "questie:npc/1378"]
 
@@ -526,6 +454,7 @@ reqskill = [333, 1]
 npc = 11065
 at = [1455, 60.3, 45.4]
 text = "Coge la lección de Encantamiento de Thonys."
+why = "+270 XP · ~1 min"
 status = "unverified"
 sources = ["questie:quest/96059", "questie:npc/11065"]
 
@@ -548,6 +477,7 @@ npc = 11028
 at = [1455, 67.7, 44.2]
 text = "Coge la misión de datos de Jemma Quikswitch, también en Ciudad Manitas."
 tip = "Los ventisqueros con datos están junto a los gnomos leprosos, al noroeste de Brewnall."
+why = "+625 XP"
 status = "unverified"
 sources = ["questie:quest/95041", "questie:npc/11028"]
 
@@ -561,6 +491,7 @@ reqlevel = 7
 npc = 1266
 at = [1426, 34.6, 51.6]
 text = "Sal de Forjaz, baja hacia el oeste y coge la misión de Tundra MacGrann."
+why = "+900 XP · ~1,6 min · 2,0× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/312", "questie:npc/1266"]
 
@@ -575,17 +506,6 @@ status = "unverified"
 sources = ["questie:quest/318", "questie:npc/1374"]
 
 [[step]]
-id = "dun-morogh-056"
-do = "accept"
-quest = 319
-reqlevel = 2
-npc = 1374
-at = [1426, 30.2, 45.7]
-text = "Coge el favor de Rejold: osos, jabalíes y leopardos."
-status = "unverified"
-sources = ["questie:quest/319", "questie:npc/1374"]
-
-[[step]]
 id = "dun-morogh-057"
 do = "accept"
 quest = 315
@@ -593,6 +513,7 @@ reqlevel = 5
 npc = 1374
 at = [1426, 30.2, 45.7]
 text = "Coge también la cerveza perfecta de Rejold."
+why = "+775 XP · ~5 min · desbloquea «{quest:413}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/315", "questie:npc/1374"]
 
@@ -605,6 +526,7 @@ npc = 8508
 at = [1426, 31.5, 44.6]
 text = "Coge la misión de Frosthowl de Gretta Ganter (nueva de Forever)."
 tip = "Marleth, al lado, ofrece Bitter Rivals: sáltala, pide dos viajes más por poca experiencia."
+why = "+775 XP · ~2 min"
 status = "unverified"
 sources = ["questie:quest/98326", "questie:npc/8508"]
 
@@ -633,6 +555,7 @@ quest = 287
 at = [1426, 25.4, 50.4]
 text = "Baja al sur, al Bastión Peloescarcha, y mata cazacabezas Peloescarcha."
 tip = "Usa Miedo si se te juntan dos. Leopardos y osos del camino cuentan para Rejold."
+optional = true
 status = "unverified"
 sources = ["questie:quest/287", "questie:npc/1123"]
 
@@ -663,15 +586,6 @@ text = "Sal por el sur de la Guarida y abre la despensa de MacGrann."
 tip = "Cerca anda Old Icebeard, un oso de más nivel: espera a que se aleje antes de abrirla."
 status = "unverified"
 sources = ["questie:quest/312", "questie:object/272"]
-
-[[step]]
-id = "dun-morogh-065"
-do = "complete"
-quest = 319
-at = [1426, 36.0, 47.0]
-text = "Termina los osos, jabalíes y leopardos que te falten para Rejold."
-status = "unverified"
-sources = ["questie:quest/319", "questie:npc/1196", "questie:npc/1127", "questie:npc/1201"]
 
 [[step]]
 id = "dun-morogh-066"
@@ -711,31 +625,9 @@ reqlevel = 8
 npc = 1374
 at = [1426, 30.2, 45.7]
 text = "Coge la cerveza para el montañero Barleybrew, en el extremo este de la zona."
+why = "+420 XP · <1 min · desbloquea «{quest:414}»"
 status = "unverified"
 sources = ["questie:quest/413", "questie:npc/1374"]
-
-[[step]]
-id = "dun-morogh-070"
-do = "turnin"
-quest = 319
-npc = 1374
-at = [1426, 30.2, 45.7]
-text = "Entrega el favor a Rejold."
-status = "unverified"
-sources = ["questie:quest/319", "questie:npc/1374"]
-
-[[step]]
-id = "dun-morogh-071"
-do = "accept"
-quest = 320
-reqlevel = 2
-npc = 1374
-at = [1426, 30.2, 45.7]
-text = "Coge la vuelta con Bellowfiz."
-status = "unverified"
-sources = ["questie:quest/320", "questie:npc/1374"]
-
-# --- Kharanos otra vez (9) ------------------------------------------------------------------
 
 [[step]]
 id = "dun-morogh-072"
@@ -744,6 +636,7 @@ quest = 287
 npc = 1252
 at = [1426, 46.7, 53.8]
 text = "Vuelve a Kharanos y entrega el Bastión a Senir."
+optional = true
 status = "unverified"
 sources = ["questie:quest/287", "questie:npc/1252"]
 
@@ -754,20 +647,9 @@ quest = 291
 npc = 1252
 at = [1426, 46.7, 53.8]
 text = "Coge los informes de Senir: se entregan en Forjaz."
+why = "+420 XP · ~1,4 min"
 status = "unverified"
 sources = ["questie:quest/291", "questie:npc/1252"]
-
-[[step]]
-id = "dun-morogh-011"
-do = "accept"
-quest = 96057
-reqlevel = 4
-reqskill = [197, 1]
-npc = 265813
-at = [1426, 46.6, 53.9]
-text = "Ya con Sastrería, coge la lección de Sastrería de Eric, junto a la hoguera: se entrega en Forjaz."
-status = "unverified"
-sources = ["questie:quest/96057", "questie:npc/265813"]
 
 [[step]]
 id = "dun-morogh-074"
@@ -780,16 +662,6 @@ status = "unverified"
 sources = ["questie:quest/412", "questie:npc/1269"]
 
 [[step]]
-id = "dun-morogh-075"
-do = "turnin"
-quest = 320
-npc = 1378
-at = [1426, 49.4, 48.4]
-text = "Entrega a Bellowfiz."
-status = "unverified"
-sources = ["questie:quest/320", "questie:npc/1378"]
-
-[[step]]
 id = "dun-morogh-076"
 do = "accept"
 quest = 96408
@@ -797,20 +669,11 @@ reqlevel = 9
 npc = 1376
 at = [1426, 50.4, 49.1]
 text = "Coge de Beldin Steelgrill la visita al vidente de la tierra Farsen (nivel 9)."
+why = "+675 XP · ~1 min · 2,1× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/96408", "questie:npc/1376"]
 
 # --- Padre Gavin (9-10) ---------------------------------------------------------------------
-
-[[step]]
-id = "dun-morogh-077"
-do = "turnin"
-quest = 99158
-npc = 1253
-at = [1426, 57.7, 44.9]
-text = "Ve al noreste de Kharanos y entrega la misión de Maxan al padre Gavin."
-status = "unverified"
-sources = ["questie:quest/99158", "questie:npc/1253"]
 
 [[step]]
 id = "dun-morogh-078"
@@ -820,6 +683,8 @@ reqlevel = 5
 npc = 1253
 at = [1426, 57.7, 44.9]
 text = "Coge la leña del padre Gavin."
+tip = "{npc:1253} está al noreste de Kharanos."
+why = "+700 XP"
 status = "unverified"
 sources = ["questie:quest/99159", "questie:npc/1253"]
 
@@ -850,6 +715,8 @@ reqlevel = 5
 npc = 1253
 at = [1426, 57.7, 44.9]
 text = "Coge la primera de los elementales de escarcha."
+tip = "+700 XP · ~10 min: por debajo de la media del tramo según el cálculo, pendiente de cronometrar en el juego."
+optional = true
 status = "unverified"
 sources = ["questie:quest/99160", "questie:npc/1253"]
 
@@ -861,6 +728,7 @@ reqlevel = 5
 npc = 1253
 at = [1426, 57.7, 44.9]
 text = "Coge también la de los rifles de los montañeros caídos."
+why = "+700 XP · ~1 min · 1,9× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/99162", "questie:npc/1253"]
 
@@ -870,6 +738,7 @@ do = "complete"
 quest = 99160
 at = [1426, 55.3, 45.7]
 text = "Mata elementales de hielo menores alrededor de Gavin."
+optional = true
 status = "unverified"
 sources = ["questie:quest/99160", "questie:npc/276003"]
 
@@ -890,6 +759,7 @@ quest = 99160
 npc = 1253
 at = [1426, 57.7, 44.9]
 text = "Entrega los elementales a Gavin."
+optional = true
 status = "unverified"
 sources = ["questie:quest/99160", "questie:npc/1253"]
 
@@ -911,6 +781,8 @@ reqlevel = 5
 npc = 1253
 at = [1426, 57.7, 44.9]
 text = "Coge la segunda de los elementales: su jefa."
+tip = "+700 XP · ~1 min: por debajo de la media del tramo según el cálculo, pendiente de cronometrar en el juego."
+optional = true
 status = "unverified"
 sources = ["questie:quest/99161", "questie:npc/1253"]
 
@@ -921,6 +793,7 @@ quest = 99161
 at = [1426, 58.3, 42.1]
 text = "Mata a Avala, al norte de Gavin, y recoge su núcleo."
 tip = "Agonía, Corrupción e Inmolar y que el Diablillo dispare; Miedo si te baja de la mitad."
+optional = true
 status = "unverified"
 sources = ["questie:quest/99161", "questie:npc/276009"]
 
@@ -931,6 +804,7 @@ quest = 99161
 npc = 1253
 at = [1426, 57.7, 44.9]
 text = "Entrega el núcleo a Gavin."
+optional = true
 status = "unverified"
 sources = ["questie:quest/99161", "questie:npc/1253"]
 
@@ -944,6 +818,7 @@ reqlevel = 7
 npc = 1265
 at = [1426, 63.1, 49.9]
 text = "Sigue al este hasta la granja Amberstill y coge la misión de pieles de Rudra Amberstill."
+why = "+625 XP"
 status = "unverified"
 sources = ["questie:quest/95212", "questie:npc/1265"]
 
@@ -955,6 +830,7 @@ reqlevel = 6
 npc = 1265
 at = [1426, 63.1, 49.9]
 text = "Coge también la de Vagash de Rudra; la harás al volver, ya con más nivel."
+why = "+1.076 XP · ~3 min"
 status = "unverified"
 sources = ["questie:quest/314", "questie:npc/1265"]
 
@@ -976,6 +852,7 @@ reqlevel = 9
 npc = 264936
 at = [1426, 64.9, 58.5]
 text = "Coge la vigilancia de Farsen."
+why = "+784 XP · ~1,4 min · desbloquea «{quest:96390}»"
 status = "unverified"
 sources = ["questie:quest/96392", "questie:npc/264936"]
 
@@ -1007,6 +884,7 @@ npc = 264936
 at = [1426, 64.9, 58.5]
 text = "Coge la de los espías Hierro Negro."
 tip = "Farsen también ofrece Old Ironforge Incursion: es de la mazmorra Hall of Thanes; cógela solo si vas a ir en grupo."
+why = "+1.710 XP · ~9,5 min"
 status = "unverified"
 sources = ["questie:quest/96390", "questie:npc/264936"]
 
@@ -1018,6 +896,7 @@ reqlevel = 5
 npc = 1254
 at = [1426, 69.1, 56.3]
 text = "Ve a la cantera de Gol'Bolar y coge la de los troggs del capataz Stonebrow."
+why = "+894 XP · ~3,5 min"
 status = "unverified"
 sources = ["questie:quest/432", "questie:npc/1254"]
 
@@ -1030,6 +909,7 @@ npc = 1977
 at = [1426, 68.7, 56.0]
 text = "Coge la del senador Mehr Stonehallow, al lado."
 tip = "Frast Dokner pide barras de cobre: sáltala si no tienes Minería."
+why = "+1.460 XP · ~6,4 min"
 status = "unverified"
 sources = ["questie:quest/433", "questie:npc/1977"]
 
@@ -1041,6 +921,7 @@ reqlevel = 7
 item = 268548
 at = [1426, 70.3, 55.9]
 text = "Mata troggs de la cantera hasta que caiga el barril de pólvora vacío y úsalo para empezar la misión."
+why = "+85 XP · <1 min · desbloquea «{quest:95214}»"
 status = "unverified"
 sources = ["questie:quest/95213", "questie:npc/1115"]
 
@@ -1062,6 +943,7 @@ reqlevel = 7
 npc = 1256
 at = [1426, 69.2, 54.8]
 text = "Coge la pólvora robada de Thesten."
+why = "+850 XP"
 status = "unverified"
 sources = ["questie:quest/95214", "questie:npc/1256"]
 
@@ -1149,6 +1031,7 @@ reqlevel = 8
 npc = 1960
 at = [1426, 83.9, 39.2]
 text = "Sube al noreste y coge la misión del piloto Hammerfoot."
+why = "+420 XP · ~3 min · desbloquea «{quest:417}»"
 status = "unverified"
 sources = ["questie:quest/419", "questie:npc/1960"]
 
@@ -1168,6 +1051,7 @@ quest = 417
 reqlevel = 8
 at = [1426, 79.7, 36.2]
 text = "Coge del mismo cadáver la venganza del piloto."
+why = "+750 XP · ~2 min · 1,6× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/417", "questie:object/2059"]
 
@@ -1287,16 +1171,6 @@ text = "Ve a la Caverna Abandonada y entrena con Briarthorn: Drenar alma, Crear 
 tip = "Si ya eres 12, entrena también Cauce de salud. Guarda 2-3 Fragmentos de alma y haz una Piedra de salud."
 status = "unverified"
 sources = ["questie:npc/5172", "legacy:BrujoGnomoGuia 4.1.0"]
-
-[[step]]
-id = "dun-morogh-048"
-do = "turnin"
-quest = 96057
-npc = 1703
-at = [1455, 43.8, 27.9]
-text = "Ve a la Gran Fundición y entrega la lección de Sastrería a Uthrar Threx."
-status = "unverified"
-sources = ["questie:quest/96057", "questie:npc/1703"]
 
 [[step]]
 id = "dun-morogh-124"

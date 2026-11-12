@@ -38,6 +38,7 @@ reqlevel = 9
 npc = 240
 at = [1429, 42.1, 65.9]
 text = "Sal por la puerta y ve a Villadorada. Coge con el Alguacil Dughan la misión para la Colina del Centinela."
+why = "+500 XP · ~2 min"
 status = "unverified"
 sources = ["questie:quest/109", "questie:npc/240"]
 
@@ -49,6 +50,7 @@ reqlevel = 9
 npc = 237
 at = [1436, 60.0, 19.4]
 text = "Entra en Páramos de Poniente por el norte. En la granja de los Furlbrow, coge la misión del reloj."
+why = "+900 XP · ~2 min · 1,6× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/64", "questie:npc/237"]
 
@@ -60,6 +62,7 @@ reqlevel = 9
 npc = 238
 at = [1436, 59.9, 19.4]
 text = "Coge con Verna Furlbrow la receta para Salma Saldean."
+why = "+336 XP · <1 min · 2,7× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/36", "questie:npc/238"]
 
@@ -71,7 +74,8 @@ reqlevel = 9
 npc = 238
 at = [1436, 59.9, 19.4]
 text = "Coge también la de la avena para Blanchy."
-tip = "Los sacos de avena están por todos los campos: cógelos al pasar."
+tip = "Los sacos de avena están por todos los campos: cógelos al pasar. +1.250 XP · ~8 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/151"]
 
@@ -93,6 +97,8 @@ reqlevel = 9
 npc = 235
 at = [1436, 56.4, 30.5]
 text = "Coge el pastel de hígado de jabalí de Salma."
+tip = "+2.341 XP · ~16 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/22"]
 
@@ -104,6 +110,8 @@ reqlevel = 8
 npc = 233
 at = [1436, 56.0, 31.2]
 text = "Coge con el granjero Saldean la misión de los vigías de la cosecha."
+tip = "+2.590 XP · ~14 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/9", "questie:npc/233"]
 
@@ -115,6 +123,7 @@ reqlevel = 8
 npc = 253395
 at = [1436, 51.5, 32.3]
 text = "Coge la misión de Ozwin Ironsprocket (piezas de gólem), junto a la granja."
+why = "+800 XP"
 status = "unverified"
 sources = ["questie:quest/92909", "questie:npc/253395"]
 
@@ -136,6 +145,8 @@ reqlevel = 9
 npc = 234
 at = [1436, 56.3, 47.5]
 text = "Coge la primera misión de la Milicia del Pueblo."
+tip = "+2.310 XP · ~18 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/12"]
 
@@ -148,6 +159,7 @@ npc = 234
 at = [1436, 56.3, 47.5]
 text = "Coge La Hermandad Defias: la entregarás en Villa del Lago (Crestagrana)."
 tip = "Es el inicio de la cadena que acaba en las Minas de la Muerte."
+why = "+1.350 XP · <1 min · desbloquea Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/65"]
 
@@ -159,6 +171,7 @@ reqlevel = 8
 npc = 821
 at = [1436, 56.4, 47.6]
 text = "Coge la de las patas de gnoll con el Capitán Danuvin."
+why = "+1.445 XP · ~5,6 min"
 status = "unverified"
 sources = ["questie:quest/102", "questie:npc/821"]
 
@@ -170,6 +183,7 @@ reqlevel = 10
 npc = 878
 at = [1436, 54.0, 53.0]
 text = "Coge la de los pañuelos rojos con el Explorador Galiaan."
+why = "+2.218 XP · ~7 min"
 status = "unverified"
 sources = ["questie:quest/153", "questie:npc/878"]
 
@@ -181,6 +195,7 @@ reqlevel = 9
 npc = 253092
 at = [1436, 52.5, 53.0]
 text = "Coge con Alba Fairmoon la misión de las muestras de agua de los pozos."
+why = "+368 XP · ~2,5 min · desbloquea la cadena de {npc:253092} hasta Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/92742", "questie:npc/253092"]
 
@@ -192,6 +207,7 @@ reqlevel = 9
 npc = 253092
 at = [1436, 52.5, 53.0]
 text = "Coge también la de las branquias de múrloc."
+why = "+368 XP"
 status = "unverified"
 sources = ["questie:quest/92744"]
 
@@ -244,6 +260,7 @@ quest = 9
 at = [1436, 45.6, 35.1]
 text = "En los campos alrededor, mata 20 vigías de la cosecha."
 tip = "A la vez: piezas de gólem para Ozwin, hígados de jabalí, avena y Defias tramperos y contrabandistas."
+optional = true
 status = "unverified"
 sources = ["questie:quest/9"]
 
@@ -264,6 +281,7 @@ quest = 12
 at = [1436, 46.0, 30.0]
 text = "Mata 15 tramperos y 15 contrabandistas Defias en las granjas del norte."
 tip = "Los contrabandistas sueltan pañuelos rojos para Galiaan."
+optional = true
 status = "unverified"
 sources = ["questie:quest/12"]
 
@@ -311,6 +329,7 @@ do = "complete"
 quest = 151
 at = [1436, 49.7, 34.5]
 text = "Termina los 8 puñados de avena de los sacos de los campos."
+optional = true
 status = "unverified"
 sources = ["questie:quest/151"]
 
@@ -331,6 +350,7 @@ quest = 151
 npc = 238
 at = [1436, 59.9, 19.4]
 text = "Entrega la avena a Verna."
+optional = true
 status = "unverified"
 sources = ["questie:quest/151"]
 
@@ -340,6 +360,7 @@ do = "complete"
 quest = 22
 at = [1436, 52.3, 30.7]
 text = "Termina los 8 hígados de jabalí con los jabalíes Colmilloensangrentado de alrededor."
+optional = true
 status = "unverified"
 sources = ["questie:quest/22"]
 
@@ -350,6 +371,7 @@ quest = 22
 npc = 235
 at = [1436, 56.4, 30.5]
 text = "Entrega el pastel a Salma Saldean."
+optional = true
 status = "unverified"
 sources = ["questie:quest/22"]
 
@@ -360,6 +382,7 @@ quest = 9
 npc = 233
 at = [1436, 56.0, 31.2]
 text = "Entrega los vigías al granjero Saldean."
+optional = true
 status = "unverified"
 sources = ["questie:quest/9"]
 
@@ -391,6 +414,7 @@ quest = 12
 npc = 234
 at = [1436, 56.3, 47.5]
 text = "En la Colina del Centinela, entrega la Milicia a Gryan."
+optional = true
 status = "unverified"
 sources = ["questie:quest/12"]
 
@@ -402,6 +426,8 @@ reqlevel = 9
 npc = 234
 at = [1436, 56.3, 47.5]
 text = "Coge la segunda misión de la Milicia."
+tip = "+2.895 XP · ~18 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/13"]
 
@@ -443,6 +469,7 @@ reqlevel = 9
 npc = 253092
 at = [1436, 52.5, 53.0]
 text = "Coge la misión de las minas de Alba."
+why = "+874 XP · ~11 min · desbloquea la cadena de {npc:253092} hasta Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/92745"]
 
@@ -463,6 +490,7 @@ do = "complete"
 quest = 13
 at = [1436, 38.7, 62.0]
 text = "Mata 15 saqueadores y 15 desvalijadores Defias al suroeste de la Colina."
+optional = true
 status = "unverified"
 sources = ["questie:quest/13"]
 
@@ -474,6 +502,7 @@ reqlevel = 10
 npc = 239
 at = [1436, 44.6, 80.2]
 text = "En la granja al sur de Arroyo de la Luna, coge la misión del lúpulo de Grimbooze Thunderbrew."
+why = "+948 XP"
 status = "unverified"
 sources = ["questie:quest/117", "questie:npc/239"]
 
@@ -485,7 +514,8 @@ reqlevel = 10
 npc = 392
 at = [1436, 30.0, 86.0]
 text = "Ve al faro del suroeste y coge la misión del aceite con el Capitán Grayson."
-tip = "Grayson también da la de Old Murk-Eye (élite, mejor en grupo) y la de los múrlocs de la costa: sáltalas si vas solo."
+tip = "Grayson también da la de Old Murk-Eye (élite, mejor en grupo) y la de los múrlocs de la costa: sáltalas si vas solo. +2.089 XP · ~10 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/103", "questie:npc/392"]
 
@@ -504,6 +534,7 @@ quest = 13
 npc = 234
 at = [1436, 56.3, 47.5]
 text = "Entrega la Milicia a Gryan."
+optional = true
 status = "unverified"
 sources = ["questie:quest/13"]
 
@@ -515,6 +546,7 @@ reqlevel = 9
 npc = 234
 at = [1436, 56.3, 47.5]
 text = "Coge la tercera misión de la Milicia."
+why = "+3.491 XP · ~16 min"
 status = "unverified"
 sources = ["questie:quest/14"]
 
@@ -536,6 +568,7 @@ reqlevel = 9
 npc = 253092
 at = [1436, 52.5, 53.0]
 text = "Coge la misión de espionaje en Arroyo de la Luna."
+why = "+800 XP"
 status = "unverified"
 sources = ["questie:quest/92747"]
 
@@ -582,6 +615,7 @@ do = "complete"
 quest = 103
 at = [1436, 64.6, 61.3]
 text = "Termina los 5 frascos de aceite con los gólems."
+optional = true
 status = "unverified"
 sources = ["questie:quest/103"]
 
@@ -602,6 +636,7 @@ quest = 103
 npc = 392
 at = [1436, 30.0, 86.0]
 text = "Lleva el aceite al Capitán Grayson, en el faro."
+optional = true
 status = "unverified"
 sources = ["questie:quest/103"]
 
@@ -652,6 +687,7 @@ reqlevel = 9
 npc = 253092
 at = [1436, 52.5, 53.0]
 text = "Coge la consulta para el ingeniero de Ventormenta."
+why = "+575 XP · <1 min · 1,7× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/92748"]
 
@@ -722,6 +758,7 @@ reqlevel = 9
 npc = 11026
 at = [1453, 61.9, 30.6]
 text = "Coge la misión del detonador remoto."
+why = "+120 XP · ~1,7 min · desbloquea «{quest:92752}» y Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/92750"]
 
@@ -756,6 +793,7 @@ reqlevel = 9
 npc = 1325
 at = [1453, 80.3, 70.1]
 text = "Coge el kit de detonador remoto."
+why = "+120 XP · ~1,6 min · desbloquea «{quest:92752}» y Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/92751"]
 

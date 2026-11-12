@@ -57,6 +57,7 @@ reqlevel = 30
 npc = 6546
 at = [1445, 46.1, 57.1]
 text = "Coge la misión de la varita."
+why = "+3.150 XP · <1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1952", "questie:npc/6546"]
 checked = "2026-11-11"

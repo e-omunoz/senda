@@ -75,6 +75,7 @@ reqlevel = 30
 npc = 733
 at = [1434, 38.02, 3.33]
 text = "Habla con el sargento Yohwa y coge las dos misiones de la rebelión Kurzen."
+why = "+3.758 XP · ~6,7 min"
 status = "unverified"
 sources = ["questie:quest/203", "questie:npc/733"]
 
@@ -86,6 +87,7 @@ reqlevel = 30
 npc = 733
 at = [1434, 38.02, 3.33]
 text = "Coge también la de las medicinas al mismo sargento."
+why = "+5.244 XP · ~9,3 min"
 status = "unverified"
 sources = ["questie:quest/204", "questie:npc/733"]
 
@@ -97,6 +99,7 @@ reqlevel = 30
 npc = 738
 at = [1434, 40.34, 8.44]
 text = "Al sureste, el soldado Thorsen te da la misión de los secretos de la selva."
+why = "+1.300 XP · ~1 min · desbloquea «{quest:331}» y 4 más"
 status = "unverified"
 sources = ["questie:quest/215", "questie:npc/738"]
 
@@ -108,6 +111,7 @@ reqlevel = 28
 npc = 716
 at = [1434, 35.66, 10.53]
 text = "Baja al campamento de Nesingwary y habla con Barnil Stonepot."
+why = "+250 XP · <1 min · desbloquea «{quest:194}» y 4 más"
 status = "unverified"
 sources = ["questie:quest/583", "questie:npc/716"]
 
@@ -129,6 +133,7 @@ reqlevel = 28
 npc = 717
 at = [1434, 35.62, 10.62]
 text = "Coge la caza de tigres jóvenes de Ajeck Rouack."
+why = "+3.040 XP · ~7,4 min · desbloquea «{quest:186}»"
 status = "unverified"
 sources = ["questie:quest/185", "questie:npc/717"]
 
@@ -140,6 +145,7 @@ reqlevel = 28
 npc = 718
 at = [1434, 35.55, 10.55]
 text = "Coge la caza de panteras jóvenes de Sir S. J. Erlgadin."
+why = "+3.040 XP · ~8,3 min · desbloquea «{quest:191}»"
 status = "unverified"
 sources = ["questie:quest/190", "questie:npc/718"]
 
@@ -151,6 +157,7 @@ reqlevel = 28
 npc = 715
 at = [1434, 35.66, 10.81]
 text = "Coge la caza de raptores de Hemet Nesingwary."
+why = "+3.610 XP · ~9 min"
 status = "unverified"
 sources = ["questie:quest/194", "questie:npc/715"]
 
@@ -219,6 +226,8 @@ reqlevel = 28
 npc = 717
 at = [1434, 35.62, 10.62]
 text = "Coge la segunda caza de tigres."
+tip = "+3.350 XP · ~11 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/186", "questie:npc/717"]
 
@@ -230,6 +239,7 @@ reqlevel = 28
 npc = 718
 at = [1434, 35.55, 10.55]
 text = "Coge la segunda caza de panteras."
+why = "+3.350 XP · ~8 min"
 status = "unverified"
 sources = ["questie:quest/191", "questie:npc/718"]
 
@@ -239,6 +249,7 @@ do = "complete"
 quest = 186
 at = [1434, 37.8, 13.7]
 text = "Mata tigres de Tuercespina entre el campamento y el río."
+optional = true
 status = "unverified"
 sources = ["questie:quest/186"]
 
@@ -267,6 +278,7 @@ quest = 186
 npc = 717
 at = [1434, 35.62, 10.62]
 text = "Entrega los tigres a Ajeck."
+optional = true
 status = "unverified"
 sources = ["questie:quest/186", "questie:npc/717"]
 
@@ -329,6 +341,7 @@ reqlevel = 30
 npc = 469
 at = [1434, 38.04, 3.01]
 text = "Coge de Doren la misión del corredor de apuestas Herod."
+why = "+1.350 XP · ~1 min · desbloquea «{quest:331}» y 3 más"
 status = "unverified"
 sources = ["questie:quest/200", "questie:npc/469"]
 
@@ -341,6 +354,7 @@ npc = 770
 at = [1434, 37.74, 3.3]
 text = "Coge la misión de cocina del cabo Kaleb (pide nivel 32)."
 tip = "Si aún no eres 32, vuelve a por ella antes de bajar a Bahía del Botín."
+why = "+1.400 XP · <1 min · 4,0× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/210", "questie:npc/770"]
 
@@ -360,6 +374,7 @@ quest = 328
 reqlevel = 30
 at = [1434, 43.67, 9.37]
 text = "Coge la siguiente parte en los mismos registros."
+why = "+1.400 XP · ~1,4 min · desbloquea «{quest:331}» y 2 más"
 status = "unverified"
 sources = ["questie:quest/328"]
 
@@ -380,6 +395,7 @@ quest = 329
 reqlevel = 30
 at = [1434, 49.62, 7.56]
 text = "Coge en la caja la misión del espía."
+why = "+1.400 XP · ~1 min · desbloquea «{quest:331}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/329"]
 
@@ -401,6 +417,7 @@ reqlevel = 30
 npc = 469
 at = [1434, 38.04, 3.01]
 text = "Coge de Doren los horarios de patrulla."
+why = "+290 XP · ~1 min · desbloquea «{quest:331}»"
 status = "unverified"
 sources = ["questie:quest/330", "questie:npc/469"]
 
@@ -422,6 +439,7 @@ reqlevel = 30
 npc = 1422
 at = [1434, 37.66, 3.39]
 text = "Coge el aviso para Doren."
+why = "+2.850 XP · ~1 min · 4,0× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/331", "questie:npc/1422"]
 

@@ -27,6 +27,7 @@ npc = 5497
 at = [1453, 49.6, 85.8]
 text = "Coge de Jennea Cannon la misión del viaje al pantano."
 tip = "Empieza la cadena de la Varita de mago (recompensa: varita a elegir)."
+why = "+290 XP · <1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1947", "questie:npc/5497"]
 checked = "2026-11-11"

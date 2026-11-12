@@ -50,6 +50,7 @@ reqlevel = 16
 npc = 11802
 at = [1450, 56.21, 30.64]
 text = "Coge la última misión de la Forma acuática."
+why = "+1.150 XP · <1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/5061", "questie:npc/11802"]
 checked = "2026-11-11"

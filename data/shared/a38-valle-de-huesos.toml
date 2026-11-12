@@ -14,6 +14,8 @@ reqlevel = 30
 npc = 5397
 at = [1443, 36.22, 79.25]
 text = "Coge de Uthek el Sabio la misión del Valle de los Huesos."
+tip = "+290 XP · <1 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/93034", "questie:npc/5397"]
 
@@ -24,6 +26,7 @@ quest = 93034
 npc = 253177
 at = [2652, 21.2, 23.2]
 text = "Ve al este hasta Nerlokh, en la entrada sur del Valle de los Huesos."
+optional = true
 status = "unverified"
 sources = ["questie:quest/93034", "questie:npc/253177"]
 
@@ -35,6 +38,7 @@ reqlevel = 30
 npc = 253177
 at = [2652, 21.2, 23.2]
 text = "Coge de Nerlokh la caza de devastadores."
+why = "+2.525 XP · ~4,4 min"
 status = "unverified"
 sources = ["questie:quest/93035", "questie:npc/253177"]
 
@@ -46,6 +50,8 @@ reqlevel = 30
 npc = 253177
 at = [2652, 21.2, 23.2]
 text = "Coge de Nerlokh la misión de la verdad."
+tip = "+700 XP · ~4 min: por debajo de la media del tramo según el cálculo, pendiente de cronometrar en el juego."
+optional = true
 status = "unverified"
 sources = ["questie:quest/93041", "questie:npc/253177"]
 
@@ -57,6 +63,7 @@ reqlevel = 30
 npc = 253177
 at = [2652, 21.2, 23.2]
 text = "Coge de Nerlokh la de los proscritos."
+why = "+2.350 XP · ~1,5 min · 2,5× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/93037", "questie:npc/253177"]
 
@@ -86,6 +93,7 @@ quest = 93041
 at = [2652, 39, 29.2]
 text = "Mata nigromantes en el valle hasta conseguir la vestimenta y la calavera."
 tip = "Lugar aproximado: los nigromantes están en el centro del valle."
+optional = true
 status = "unverified"
 sources = ["questie:quest/93041"]
 
@@ -126,6 +134,7 @@ quest = 93041
 npc = 5397
 at = [1443, 36.22, 79.25]
 text = "Lleva la calavera y la vestimenta a Uthek."
+optional = true
 status = "unverified"
 sources = ["questie:quest/93041", "questie:npc/5397"]
 
@@ -167,6 +176,7 @@ quest = 1387
 npc = 5752
 at = [1443, 66.74, 10.87]
 text = "Entrega las orejas de centauro a Melkins."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1387", "questie:npc/5752"]
 
@@ -181,15 +191,14 @@ status = "unverified"
 sources = ["questie:quest/93224", "questie:npc/5396"]
 
 [[step]]
-id = "a38-valle-de-huesos-018"
+id = "a38-valle-de-huesos-017b"
 do = "turnin"
-quest = 1459
+quest = 1455
 npc = 5638
 at = [1443, 66.2, 9.63]
-text = "Entrega el veneno y la piel a Kreldig."
-tip = "Las siguientes de Kreldig mandan al pecio Karnitol: sáltalas."
+text = "Entrega el naufragio de Karnitol a {npc:5638}."
 status = "unverified"
-sources = ["questie:quest/1459", "questie:npc/5638"]
+sources = ["foreverdb:quest/1455", "foreverdb:npc/5638", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/30-40/02-desolace#15"]
 
 [[step]]
 id = "a38-valle-de-huesos-019"

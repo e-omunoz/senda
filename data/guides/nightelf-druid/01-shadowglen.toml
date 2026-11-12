@@ -18,6 +18,7 @@ npc = 2079
 at = [1438, 58.69, 44.27]
 text = "Coge la misión del {npc:2079}, delante de Aldrassil."
 tip = "Vende los grises en cada vendedor. Mata todo lo que te cruces: la Cañada se acaba rápido."
+why = "+732 XP · ~5,4 min · desbloquea «{quest:457}»"
 status = "unverified"
 sources = ["questie:quest/456", "questie:npc/2079"]
 
@@ -28,6 +29,7 @@ quest = 458
 npc = 2077
 at = [1438, 59.92, 42.47]
 text = "Coge la misión de {npc:2077}, junto al camino."
+why = "+40 XP · <1 min · desbloquea «{quest:459}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/458", "questie:npc/2077"]
 
@@ -58,38 +60,10 @@ quest = 457
 npc = 2079
 at = [1438, 58.69, 44.27]
 text = "Coge la segunda parte: ahora sables y jabalíes adultos, más al norte."
+tip = "+866 XP · ~8,4 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+optional = true
 status = "unverified"
 sources = ["questie:quest/457", "questie:npc/2079"]
-
-[[step]]
-id = "nesg-006"
-do = "accept"
-quest = 97979
-npc = 3595
-at = [1438, 59.17, 40.44]
-text = "Sube a Aldrassil y coge la misión de Shanda (nueva de Forever)."
-status = "unverified"
-sources = ["questie:quest/97979", "questie:npc/3595"]
-
-[[step]]
-id = "nesg-007"
-do = "complete"
-quest = 97979
-at = [1438, 59.17, 40.44]
-text = "Lanza Luz de Elune y Fusión de las sombras para completar la misión."
-tip = "Son habilidades raciales: arrástralas a la barra. Fusión de las sombras te sirve luego para beber sin que te ataquen."
-status = "unverified"
-sources = ["questie:quest/97979"]
-
-[[step]]
-id = "nesg-008"
-do = "turnin"
-quest = 97979
-npc = 3595
-at = [1438, 59.17, 40.44]
-text = "Entrega la misión a Shanda."
-status = "unverified"
-sources = ["questie:quest/97979", "questie:npc/3595"]
 
 [[step]]
 id = "nesg-009"
@@ -108,6 +82,7 @@ quest = 459
 npc = 1992
 at = [1438, 57.83, 45.21]
 text = "Coge la misión del musgo vil de Tarindrella."
+why = "+840 XP · ~5,5 min · 1,5× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/459", "questie:npc/1992"]
 
@@ -118,6 +93,7 @@ quest = 97977
 npc = 1992
 at = [1438, 57.83, 45.21]
 text = "Coge también la de los tótems Tuercepinos (nueva de Forever)."
+why = "+250 XP"
 status = "unverified"
 sources = ["questie:quest/97977", "questie:npc/1992"]
 
@@ -169,6 +145,7 @@ reqlevel = 3
 npc = 2082
 at = [1438, 57.81, 41.65]
 text = "Entra en Aldrassil y coge la misión del veneno de Gilshalan Windwalker."
+why = "+1.148 XP · ~7 min · desbloquea «{quest:935}» y 8 más"
 status = "unverified"
 sources = ["questie:quest/916", "questie:npc/2082"]
 
@@ -180,6 +157,7 @@ reqlevel = 2
 npc = 8583
 at = [1438, 60.9, 41.96]
 text = "Coge la misión de Dirania Silvershine, al este de Aldrassil."
+why = "+270 XP · ~1 min · desbloquea «{quest:3522}» y 2 más"
 status = "unverified"
 sources = ["questie:quest/4495", "questie:npc/8583"]
 
@@ -190,6 +168,7 @@ quest = 457
 at = [1438, 60.5, 36.0]
 wps = [[1438, 61.4, 36.4, "Sables"], [1438, 59.2, 36.2, "Jabalíes"]]
 text = "Ve al norte y mata sables de la noche sarnosos y jabalíes de cardo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/457"]
 
@@ -211,6 +190,8 @@ reqlevel = 2
 npc = 8584
 at = [1438, 54.59, 32.99]
 text = "Coge la misión de Iverron: vuelve con Dirania."
+tip = "+90 XP · <1 min: por debajo de la media del tramo según el cálculo, pendiente de cronometrar en el juego."
+optional = true
 status = "unverified"
 sources = ["questie:quest/3519", "questie:npc/8584"]
 
@@ -231,6 +212,7 @@ quest = 457
 npc = 2079
 at = [1438, 58.69, 44.27]
 text = "Vuelve a Aldrassil y entrega los sables y jabalíes al Conservador."
+optional = true
 status = "unverified"
 sources = ["questie:quest/457", "questie:npc/2079"]
 
@@ -241,6 +223,7 @@ quest = 3519
 npc = 8583
 at = [1438, 60.9, 41.96]
 text = "Entrega a Dirania Silvershine."
+optional = true
 status = "unverified"
 sources = ["questie:quest/3519", "questie:npc/8583"]
 
@@ -252,6 +235,8 @@ reqlevel = 2
 npc = 8583
 at = [1438, 60.9, 41.96]
 text = "Coge el antídoto de Iverron."
+tip = "+441 XP · ~5,5 min: por debajo de la media del tramo según el cálculo, pendiente de cronometrar en el juego."
+optional = true
 status = "unverified"
 sources = ["questie:quest/3521", "questie:npc/8583"]
 
@@ -272,6 +257,7 @@ quest = 917
 npc = 2082
 at = [1438, 57.81, 41.65]
 text = "Coge la misión de los huevos de araña."
+why = "+550 XP · ~1,5 min · desbloquea «{quest:935}» y 7 más"
 status = "unverified"
 sources = ["questie:quest/917", "questie:npc/2082"]
 
@@ -283,6 +269,7 @@ at = [1438, 57.8, 37.5]
 wps = [[1438, 57.8, 37.5, "Lirios"], [1438, 56.8, 29.5, "Arañas (icor)"]]
 text = "Recoge lirios de pétalo lunar junto al estanque, champiñones jacinto (suelo o grells) e icor de araña."
 tip = "Los champiñones también caen de los grells. Coge los que veas por el camino."
+optional = true
 status = "unverified"
 sources = ["questie:quest/3521"]
 
@@ -313,6 +300,7 @@ quest = 3521
 npc = 8583
 at = [1438, 60.9, 41.96]
 text = "Vuelve con Dirania y entrega los ingredientes."
+optional = true
 status = "unverified"
 sources = ["questie:quest/3521", "questie:npc/8583"]
 
@@ -324,7 +312,8 @@ reqlevel = 2
 npc = 8583
 at = [1438, 60.9, 41.96]
 text = "Coge el antídoto: llévaselo a Iverron."
-tip = "Tiene tiempo límite: ve directo a la cueva."
+tip = "Tiene tiempo límite: ve directo a la cueva. +450 XP · ~2,3 min: por debajo de la media del tramo según el cálculo, pendiente de cronometrar en el juego."
+optional = true
 status = "unverified"
 sources = ["questie:quest/3522", "questie:npc/8583"]
 
@@ -335,6 +324,7 @@ quest = 3522
 npc = 8584
 at = [1438, 54.59, 32.99]
 text = "Dale el antídoto a Iverron, junto a la cueva."
+optional = true
 status = "unverified"
 sources = ["questie:quest/3522", "questie:npc/8584"]
 
@@ -366,6 +356,7 @@ quest = 920
 npc = 2082
 at = [1438, 57.81, 41.65]
 text = "Coge la misión que te manda arriba, con Tenaron Stormgrip."
+why = "+45 XP · <1 min · desbloquea «{quest:935}» y 6 más"
 status = "unverified"
 sources = ["questie:quest/920", "questie:npc/2082"]
 
@@ -386,6 +377,7 @@ quest = 921
 npc = 3514
 at = [1438, 59.06, 39.45]
 text = "Coge la primera misión de la Corona de la Tierra."
+why = "+340 XP · ~2 min · desbloquea «{quest:935}» y 5 más"
 status = "unverified"
 sources = ["questie:quest/921", "questie:npc/3514"]
 
@@ -415,6 +407,7 @@ quest = 928
 npc = 3514
 at = [1438, 59.06, 39.45]
 text = "Coge la siguiente Corona de la Tierra: se entrega en Dolanaar."
+why = "+230 XP · <1 min · desbloquea «{quest:935}» y 3 más"
 status = "unverified"
 sources = ["questie:quest/928", "questie:npc/3514"]
 
@@ -426,6 +419,7 @@ reqlevel = 4
 at = [1438, 59.07, 39.55]
 text = "Junto a Tenaron, abre el Diario perdido: misión del aventurero para Dolanaar (nueva de Forever)."
 tip = "Abre el campamento de Forever: hoguera, saco de dormir y lecciones de profesión."
+why = "+410 XP · <1 min · 5,2× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/96630", "questie:object/654846"]
 
@@ -436,6 +430,7 @@ quest = 2159
 npc = 6780
 at = [1438, 61.16, 47.64]
 text = "Al salir por la rampa del sur, coge la entrega de Porthannius."
+why = "+110 XP · ~1 min"
 status = "unverified"
 sources = ["questie:quest/2159", "questie:npc/6780"]
 

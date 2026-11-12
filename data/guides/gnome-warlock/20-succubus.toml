@@ -42,6 +42,7 @@ reqlevel = 20
 npc = 6122
 at = [1453, 39.2, 85.2]
 text = "Coge de Gakin la misión que te manda con Takar el Vidente, en Los Baldíos."
+why = "+775 XP · <1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1716", "questie:npc/6122", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
 

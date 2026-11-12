@@ -63,6 +63,7 @@ reqlevel = 30
 npc = 5637
 at = [1455, 69.95, 21.26]
 text = "Coge la misión de los Reclamadores con Roetten Stonehammer (Sala de los Exploradores)."
+why = "+1.300 XP · <1 min · desbloquea «{quest:1458}» y 2 más"
 status = "unverified"
 sources = ["questie:quest/1453", "questie:npc/5637"]
 
@@ -134,6 +135,7 @@ reqlevel = 30
 npc = 5638
 at = [1443, 66.2, 9.63]
 text = "Coge el primer encargo de reactivos de Kreldig."
+why = "+7.224 XP · ~17 min"
 status = "unverified"
 sources = ["questie:quest/1458", "questie:npc/5638"]
 
@@ -145,7 +147,8 @@ reqlevel = 30
 npc = 5752
 at = [1443, 66.74, 10.87]
 text = "Coge la recompensa por orejas de centauro del cabo Melkins."
-tip = "Sirve cualquier centauro: la completarás sin buscarla."
+tip = "Sirve cualquier centauro: la completarás sin buscarla. +6.070 XP · ~40 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1387", "questie:npc/5752"]
 
@@ -158,6 +161,7 @@ npc = 5396
 at = [1443, 66.66, 10.93]
 text = "Coge la alianza con los centauros del capitán Pentigast."
 tip = "Elige Gelkis (Uthek). No cojas la de los Magram (Brutal Politics): los dos clanes se excluyen."
+why = "+2.050 XP · ~3,3 min · desbloquea «{quest:1384}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/1382", "questie:npc/5396"]
 
@@ -169,6 +173,7 @@ reqlevel = 30
 npc = 5396
 at = [1443, 66.66, 10.93]
 text = "Coge también los tótems tallados de centauro de Pentigast (nueva de Forever)."
+why = "+2.350 XP"
 status = "unverified"
 sources = ["questie:quest/93224", "questie:npc/5396"]
 
@@ -181,6 +186,7 @@ npc = 1182
 at = [1443, 66.52, 7.91]
 text = "Coge la Senda Escarlata del hermano Anton (pide nivel 34)."
 tip = "Los 30 devastadores no muertos están en el Valle de los Huesos: los harás al 38."
+why = "+8.375 XP · ~15 min · desbloquea «{quest:1053}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/261", "questie:npc/1182"]
 
@@ -204,16 +210,16 @@ status = "unverified"
 sources = ["questie:quest/1458", "questie:npc/5638"]
 
 [[step]]
-id = "a34-desolace-018"
+id = "a34-desolace-017b"
 do = "accept"
-quest = 1459
+quest = 1454
 reqlevel = 30
 npc = 5638
 at = [1443, 66.2, 9.63]
-text = "Coge el segundo encargo: veneno de escórpido y piel de kodo vieja."
-tip = "Escórpidos y kodos están por toda la zona: complétala de paso."
+text = "Coge también con {npc:5638} la del naufragio de Karnitol: el cofre está bajo la torre de {npc:11863}, de camino a la Fortaleza Hacha de Trueno."
+why = "+3.000 XP · ~1 min · desbloquea «{quest:1455}»"
 status = "unverified"
-sources = ["questie:quest/1459", "questie:npc/5638"]
+sources = ["foreverdb:quest/1454", "foreverdb:npc/5638", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/30-40/02-desolace#1"]
 
 [[step]]
 id = "a34-desolace-019"
@@ -223,8 +229,29 @@ reqlevel = 30
 npc = 11863
 at = [1443, 38.88, 27.16]
 text = "Ve al oeste y coge el cetro de luz de Azore Aldamort, en su torre."
+why = "+2.808 XP · ~7 min"
 status = "unverified"
 sources = ["questie:quest/5741", "questie:npc/11863"]
+
+[[step]]
+id = "a34-desolace-019b"
+do = "turnin"
+quest = 1454
+at = [1443, 36.11, 30.46]
+text = "Al suroeste de la torre, en el barco naufragado, entrega la misión en el cofre de Karnitol."
+status = "unverified"
+sources = ["foreverdb:quest/1454", "foreverdb:object/35251", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/30-40/02-desolace#7"]
+
+[[step]]
+id = "a34-desolace-019c"
+do = "accept"
+quest = 1455
+reqlevel = 30
+at = [1443, 36.11, 30.46]
+text = "Coge del cofre la siguiente: se entrega a {npc:5638} al volver a Punta de Nijel."
+why = "+1.500 XP · <1 min · 4,4× la media del tramo"
+status = "unverified"
+sources = ["foreverdb:quest/1455", "foreverdb:object/35251", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/30-40/02-desolace#7"]
 
 [[step]]
 id = "a34-desolace-020"
@@ -265,6 +292,8 @@ reqlevel = 30
 npc = 5397
 at = [1443, 36.22, 79.25]
 text = "Coge de Uthek el asalto a los Kolkar."
+tip = "+7.406 XP · ~23 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1384", "questie:npc/5397"]
 
@@ -275,6 +304,7 @@ quest = 1384
 at = [1443, 71.5, 46.1]
 text = "Consigue amuletos toscos de los centauros Kolkar, en su poblado del este."
 tip = "Aquí sacas también las orejas y los tótems."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1384"]
 
@@ -286,6 +316,8 @@ reqlevel = 30
 npc = 11596
 at = [1443, 60.86, 61.86]
 text = "Al sur, en el Cementerio de Kodos, coge la redada de kodos de Smeed Scrabblescrew."
+tip = "+2.000 XP · ~8,7 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+optional = true
 status = "unverified"
 sources = ["questie:quest/5561", "questie:npc/11596"]
 
@@ -295,6 +327,7 @@ do = "complete"
 quest = 5561
 at = [1443, 55, 60]
 text = "Usa el control de kodos en los kodos ancianos y llévalos hasta Smeed."
+optional = true
 status = "unverified"
 sources = ["questie:quest/5561"]
 
@@ -305,6 +338,7 @@ quest = 5561
 npc = 11596
 at = [1443, 60.86, 61.86]
 text = "Entrega la redada a Smeed."
+optional = true
 status = "unverified"
 sources = ["questie:quest/5561", "questie:npc/11596"]
 
@@ -315,6 +349,7 @@ quest = 1384
 npc = 5397
 at = [1443, 36.22, 79.25]
 text = "Vuelve con Uthek y entrega los amuletos."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1384", "questie:npc/5397"]
 
@@ -326,6 +361,8 @@ reqlevel = 30
 npc = 5397
 at = [1443, 36.22, 79.25]
 text = "Coge el robo de provisiones a los Magram."
+tip = "+1.350 XP · ~11 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1370", "questie:npc/5397"]
 
@@ -336,6 +373,7 @@ quest = 1370
 at = [1443, 72.4, 77.3]
 text = "Roba carne seca en el poblado Magram, al sureste."
 tip = "Ahora los Magram son hostiles: tira de uno en uno, sus chamanes ponen tótems."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1370"]
 
@@ -356,6 +394,7 @@ npc = 5397
 at = [1443, 36.22, 79.25]
 text = "Entrega las provisiones a Uthek."
 tip = "Ongeku y los kanes siguientes son de nivel 37-42: déjalos, la cadena nueva del valle rinde más."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1370", "questie:npc/5397"]
 

@@ -24,6 +24,7 @@ reqlevel = 26
 npc = 1309
 at = [1453, 51.8, 83.5]
 text = "Coge la misión de la prenda."
+why = "+2.100 XP · <1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1942", "questie:npc/1309"]
 checked = "2026-11-11"

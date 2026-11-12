@@ -37,6 +37,7 @@ npc = 14470
 at = [1448, 41.4, 45.0]
 text = "Coge de Impsy la misión de las tres esencias viles."
 tip = "Hazla a la vez que las zonas: Jaedenar (Frondavil), Azshara y Las Tierras Devastadas."
+why = "+6.973 XP · ~65 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/7602", "questie:npc/14470"]
 
@@ -88,6 +89,7 @@ reqlevel = 50
 npc = 14470
 at = [1448, 41.4, 45.0]
 text = "Coge de Impsy la misión de Kroshius."
+why = "+7.712 XP · ~4 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/7603", "questie:npc/14470"]
 

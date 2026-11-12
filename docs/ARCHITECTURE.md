@@ -105,6 +105,7 @@ sources = ["questie:quest/179"]
 | `if` | tabla | Filtros: `class`, `race`, `faction`, `prof`, `minlevel`, `maxlevel` |
 | `optional` | bool | Se puede saltar sin penalización |
 | `escort` | bool | Misión de escolta: el HUD añade «Escolta: si el PNJ no está, alguien la está haciendo; espera a que reaparezca.» |
+| `why` | string | Por qué está la misión en la ruta, en el primer paso de cada misión que se queda: «+1.150 XP · ~3 min · desbloquea Minas de la Muerte» (sale de `tools/route_score.py`; ver `docs/ROUTE-CHANGES.md`). Solo se muestra; fichas `{quest:N}` como en `text`. Las opcionales llevan su motivo en `tip` |
 | `chain` | string | Pasos que se completan juntos |
 | `link` | string | Ruta en la web (GitHub Pages) para leer más |
 | `status` | enum | Obligatorio: `verified`, `unverified`, `disputed` |

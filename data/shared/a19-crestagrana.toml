@@ -61,6 +61,7 @@ npc = 464
 at = [1433, 10.4, 71.3]
 text = "Coge con el Guardia Parker, que patrulla el camino, el aviso para el Ayudante Feldon."
 tip = "Imprescindible: sin entregar esta misión, Feldon no te ofrece la de los cazadores furtivos. Parker patrulla el camino entre Tres Caminos y el puente de Villa del Lago; si no está en el punto, recorre el camino."
+why = "+290 XP · <1 min · desbloquea «{quest:246}»"
 status = "unverified"
 sources = ["questie:quest/244", "questie:npc/464"]
 
@@ -92,7 +93,8 @@ reqlevel = 11
 npc = 1070
 at = [1433, 25.6, 60.0]
 text = "Coge la misión de gnolls de Feldon (chuchos y cazadores furtivos)."
-tip = "Solo aparece si antes has entregado el aviso del Guardia Parker (paso anterior). Si Feldon no te la da, vuelve a buscar a Parker en el camino del oeste."
+tip = "Solo aparece si antes has entregado el aviso del Guardia Parker (paso anterior). Si Feldon no te la da, vuelve a buscar a Parker en el camino del oeste. +2.230 XP · ~11 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/246"]
 
@@ -104,6 +106,7 @@ reqlevel = 11
 npc = 1070
 at = [1433, 25.6, 60.0]
 text = "Coge también la de los collares de los trituradores."
+why = "+950 XP"
 status = "unverified"
 sources = ["questie:quest/98407"]
 
@@ -137,8 +140,22 @@ npc = 266
 at = [1433, 21.4, 45.4]
 text = "Coge la nota de Wiley para Gryan Stoutmantle. La entregarás al volver a Poniente."
 if = { race = ["Human", "Dwarf", "Gnome"] }
+why = "+675 XP · <1 min · desbloquea Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/132"]
+
+[[step]]
+id = "a19rr-012b"
+do = "accept"
+quest = 129
+reqlevel = 12
+npc = 379
+at = [1433, 21.52, 44.31]
+text = "En la posada, coge también con {npc:379} el almuerzo para {npc:464}."
+tip = "Se lo das en Tres Caminos, cuando vayas a por los collares de los trituradores."
+why = "+550 XP · <1 min · 2,5× la media del tramo"
+status = "unverified"
+sources = ["foreverdb:quest/129", "foreverdb:npc/379", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/03-loch-modan#36"]
 
 [[step]]
 id = "a19rr-013"
@@ -148,6 +165,7 @@ reqlevel = 16
 npc = 381
 at = [1433, 22.6, 47.4]
 text = "En el muelle, coge las dos misiones de múrlocs del Jefe de muelle Baren (pescado)."
+why = "+3.882 XP · ~11 min"
 status = "unverified"
 sources = ["questie:quest/127", "questie:npc/381"]
 
@@ -159,6 +177,7 @@ reqlevel = 20
 npc = 381
 at = [1433, 22.6, 47.4]
 text = "Coge también la de las aletas de múrloc."
+why = "+1.550 XP"
 status = "unverified"
 sources = ["questie:quest/150"]
 
@@ -170,6 +189,7 @@ reqlevel = 15
 npc = 343
 at = [1433, 17.6, 43.8]
 text = "Coge el estofado de Crestagrana con la Chef Breanna."
+why = "+4.084 XP"
 status = "unverified"
 sources = ["questie:quest/92", "questie:npc/343"]
 
@@ -181,6 +201,7 @@ reqlevel = 15
 npc = 341
 at = [1433, 27.1, 48.6]
 text = "Coge con el Capataz Oslow la misión de su caja de herramientas."
+why = "+875 XP · ~1,7 min · desbloquea «{quest:89}»"
 status = "unverified"
 sources = ["questie:quest/125", "questie:npc/341"]
 
@@ -192,6 +213,7 @@ reqlevel = 18
 npc = 382
 at = [1433, 28.4, 49.0]
 text = "Coge con el Alguacil Marris la de las hachas de Roca Negra."
+why = "+7.463 XP · ~30 min"
 status = "unverified"
 sources = ["questie:quest/20", "questie:npc/382"]
 
@@ -203,6 +225,7 @@ reqlevel = 18
 npc = 382
 at = [1433, 28.4, 49.0]
 text = "Coge también la del bloqueo de Roca Negra."
+why = "+1.650 XP"
 status = "unverified"
 sources = ["questie:quest/98387"]
 
@@ -214,6 +237,7 @@ reqlevel = 17
 npc = 900
 at = [1433, 24.6, 44.3]
 text = "En el ayuntamiento, coge con el Alguacil Conacher la de los colgantes Sombrapellejo."
+why = "+4.007 XP · ~10 min"
 status = "unverified"
 sources = ["questie:quest/91", "questie:npc/900"]
 
@@ -225,6 +249,7 @@ reqlevel = 12
 npc = 8965
 at = [1433, 24.2, 53.6]
 text = "Al sur del pueblo, coge con Shawn la misión del collar de Hilary."
+why = "+1.350 XP · <1 min · 3,7× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/3741", "questie:npc/8965"]
 
@@ -283,6 +308,7 @@ at = [1433, 27.0, 82.5]
 wps = [[1433, 37.6, 71.3, "Campamento del este"]]
 text = "Ve al sur de Villa del Lago: mata 10 chuchos y 6 cazadores furtivos de Crestagrana."
 tip = "Por el camino: hocicos de jabalí y carne de araña para Breanna."
+optional = true
 status = "unverified"
 sources = ["questie:quest/246"]
 
@@ -294,6 +320,17 @@ at = [1433, 10.9, 66.3]
 text = "Al suroeste, cerca de Tres Caminos, consigue 5 collares de los trituradores de Crestagrana."
 status = "unverified"
 sources = ["questie:quest/98407"]
+
+[[step]]
+id = "a19rr-027b"
+do = "turnin"
+quest = 129
+npc = 464
+at = [1433, 10.17, 71.45]
+text = "Baja a Tres Caminos y dale el almuerzo a {npc:464}."
+tip = "Patrulla alrededor del cruce: si no lo ves, espera un momento en el camino."
+status = "unverified"
+sources = ["foreverdb:quest/129", "foreverdb:npc/464", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/03-loch-modan#37"]
 
 [[step]]
 id = "a19rr-028"
@@ -312,6 +349,7 @@ quest = 246
 npc = 1070
 at = [1433, 25.6, 60.0]
 text = "Entrega a Feldon."
+optional = true
 status = "unverified"
 sources = ["questie:quest/246"]
 
@@ -343,6 +381,7 @@ reqlevel = 15
 npc = 341
 at = [1433, 27.1, 48.6]
 text = "Coge la del puente (picas y remaches de hierro)."
+why = "+2.538 XP · ~5,6 min"
 status = "unverified"
 sources = ["questie:quest/89"]
 
@@ -394,26 +433,6 @@ at = [1433, 27.1, 48.6]
 text = "Entrega a Oslow."
 status = "unverified"
 sources = ["questie:quest/89"]
-
-[[step]]
-id = "a19rr-038"
-do = "accept"
-quest = 98386
-reqlevel = 15
-npc = 341
-at = [1433, 27.1, 48.6]
-text = "Coge la del Molino de Alther (tarántulas y huevos)."
-status = "unverified"
-sources = ["questie:quest/98386"]
-
-[[step]]
-id = "a19rr-039"
-do = "complete"
-quest = 98386
-at = [1433, 48.3, 40.8]
-text = "En el Molino de Alther, mata 12 tarántulas mayores y rompe 6 huevos."
-status = "unverified"
-sources = ["questie:quest/98386"]
 
 [[step]]
 id = "a19rr-040"
@@ -470,16 +489,6 @@ at = [1433, 28.4, 49.0]
 text = "Entrega el bloqueo."
 status = "unverified"
 sources = ["questie:quest/98387"]
-
-[[step]]
-id = "a19rr-046"
-do = "turnin"
-quest = 98386
-npc = 341
-at = [1433, 27.1, 48.6]
-text = "Entrega el Molino a Oslow."
-status = "unverified"
-sources = ["questie:quest/98386"]
 
 [[step]]
 id = "a19rr-047"

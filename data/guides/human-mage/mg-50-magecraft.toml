@@ -38,6 +38,7 @@ npc = 331
 at = [1453, 49.2, 87.8]
 text = "Coge de Maginor Dumas, en lo alto del Sagrario, la misión de Azshara."
 tip = "Hazla cuando vayas a Azshara: la cadena da buenos objetos de mago."
+why = "+510 XP · ~1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/8250", "questie:npc/331"]
 checked = "2026-11-11"

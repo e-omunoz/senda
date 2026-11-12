@@ -237,6 +237,11 @@
         "optional": {
           "type": "boolean"
         },
+        "why": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Por qué está la misión en la ruta (filtro de eficiencia, tools/route_score.py): «+1.150 XP · ~3 min · desbloquea Minas de la Muerte». Solo se muestra; va en el primer paso de cada misión que se queda. Fichas {quest:N} {npc:N} como en text."
+        },
         "escort": {
           "type": "boolean",
           "description": "Misión de escolta: el HUD avisa de que, si el PNJ no está, alguien la está haciendo."

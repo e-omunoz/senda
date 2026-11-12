@@ -14,6 +14,7 @@ npc = 658
 at = [1426, 29.9, 71.2]
 text = "Coge la misión de Sten Stoutarm, delante de ti al aparecer."
 tip = "Pon Descarga de las Sombras e Inmolar en la barra. Vende los grises en cada vendedor que pises."
+why = "+591 XP · ~5 min · desbloquea «{quest:170}» y 3 más"
 status = "unverified"
 sources = ["questie:quest/179", "questie:npc/658"]
 
@@ -46,6 +47,7 @@ npc = 658
 at = [1426, 29.9, 71.2]
 text = "Coge el memorando de brujo de Sten Stoutarm."
 tip = "Se entrega más tarde en Yunquemar: no subas todavía, lo harás al llevar la cerveza caliente."
+why = "+40 XP · <1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/3115", "questie:npc/658"]
 
@@ -56,6 +58,7 @@ quest = 233
 npc = 658
 at = [1426, 29.9, 71.2]
 text = "Coge también el correo para Talin Keeneye."
+why = "+190 XP · <1 min · desbloquea «{quest:234}»"
 status = "unverified"
 sources = ["questie:quest/233", "questie:npc/658"]
 
@@ -66,6 +69,8 @@ quest = 170
 npc = 713
 at = [1426, 29.7, 71.2]
 text = "Coge la misión de los troggs de Balir Frosthammer, al lado de Sten."
+tip = "+830 XP · ~7,3 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+optional = true
 status = "unverified"
 sources = ["questie:quest/170", "questie:npc/713"]
 
@@ -87,6 +92,7 @@ quest = 234
 npc = 714
 at = [1426, 22.6, 71.4]
 text = "Coge la segunda entrega de correo de Talin."
+why = "+270 XP · <1 min · 2,7× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/234", "questie:npc/714"]
 
@@ -97,6 +103,7 @@ quest = 183
 npc = 714
 at = [1426, 22.6, 71.4]
 text = "Coge la caza de jabalíes de Talin."
+why = "+946 XP · ~7,4 min"
 status = "unverified"
 sources = ["questie:quest/183", "questie:npc/714"]
 
@@ -117,6 +124,7 @@ do = "complete"
 quest = 170
 at = [1426, 25.4, 74.4]
 text = "Termina los troggs que falten."
+optional = true
 status = "unverified"
 sources = ["questie:quest/170", "questie:npc/707", "questie:npc/724"]
 
@@ -147,6 +155,7 @@ quest = 182
 npc = 786
 at = [1426, 25.1, 75.7]
 text = "Coge la misión de la cueva de los trols de Grelin."
+why = "+1.270 XP · ~8,5 min · desbloquea «{quest:287}» y 5 más"
 status = "unverified"
 sources = ["questie:quest/182", "questie:npc/786"]
 
@@ -159,6 +168,7 @@ npc = 12738
 at = [1426, 25.0, 76.0]
 text = "Coge la cerveza caliente de Nori Pridedrift, junto a Grelin (nivel 4)."
 tip = "Llévala ya a Yunquemar, sin desvíos: allí entregas también el memorando y entrenas."
+why = "+230 XP · <1 min · desbloquea «{quest:3365}»"
 status = "unverified"
 sources = ["questie:quest/3364", "questie:npc/12738"]
 
@@ -180,6 +190,7 @@ reqlevel = 4
 npc = 836
 at = [1426, 28.8, 66.4]
 text = "Coge la jarra de vuelta de Durnan."
+why = "+450 XP · <1 min · 2,1× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/3365", "questie:npc/836"]
 
@@ -200,6 +211,7 @@ quest = 1599
 npc = 460
 at = [1426, 28.6, 66.1]
 text = "Coge la misión del Diablillo de Alamar Grimm."
+why = "+604 XP · ~3 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1599", "questie:npc/460", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
 
@@ -216,17 +228,6 @@ status = "unverified"
 sources = ["questie:npc/460", "legacy:BrujoGnomoGuia 4.1.0"]
 
 [[step]]
-id = "coldridge-021"
-do = "accept"
-quest = 3361
-reqlevel = 3
-npc = 8416
-at = [1426, 28.6, 67.6]
-text = "Coge la misión de Felix Whindlebolt, dentro de Yunquemar."
-status = "unverified"
-sources = ["questie:quest/3361", "questie:npc/8416"]
-
-[[step]]
 id = "coldridge-022"
 do = "accept"
 quest = 97277
@@ -234,7 +235,8 @@ reqlevel = 4
 npc = 2756
 at = [1426, 28.7, 67.5]
 text = "Coge la misión de Grund Drokda, al lado de Felix."
-tip = "Misión nueva de Forever: el objetivo está justo al norte de Yunquemar."
+tip = "{npc:2756} está dentro de Yunquemar. Misión nueva de Forever: el objetivo está justo al norte de Yunquemar."
+why = "+482 XP · ~2 min"
 status = "unverified"
 sources = ["questie:quest/97277", "questie:npc/2756"]
 
@@ -264,6 +266,7 @@ quest = 170
 npc = 713
 at = [1426, 29.7, 71.2]
 text = "Baja al campamento y entrega los troggs a Balir Frosthammer."
+optional = true
 status = "unverified"
 sources = ["questie:quest/170", "questie:npc/713"]
 
@@ -276,16 +279,6 @@ wps = [[1426, 22.0, 78.5, "Trols al oeste"], [1426, 29.0, 80.0, "Entrada de la c
 text = "Mata crías de trol Peloescarcha al sur de Grelin, delante y dentro de la cueva."
 status = "unverified"
 sources = ["questie:quest/182", "questie:npc/706"]
-
-[[step]]
-id = "coldridge-027"
-do = "complete"
-quest = 3361
-at = [1426, 22.8, 80.0]
-wps = [[1426, 20.9, 76.1, "Caja de Felix"], [1426, 22.8, 80.0, "Cofre de Felix"], [1426, 26.3, 79.3, "Cubo de tornillos de Felix"]]
-text = "Recoge las tres cosas de Felix en el campamento trol: caja, cofre y cubo de tornillos."
-status = "unverified"
-sources = ["questie:quest/3361", "questie:object/148499", "questie:object/178084", "questie:object/178085"]
 
 [[step]]
 id = "coldridge-028"
@@ -324,6 +317,7 @@ quest = 218
 npc = 786
 at = [1426, 25.1, 75.7]
 text = "Coge el diario robado de Grelin."
+why = "+620 XP · ~2,4 min · desbloquea «{quest:287}» y 4 más"
 status = "unverified"
 sources = ["questie:quest/218", "questie:npc/786"]
 
@@ -354,6 +348,7 @@ quest = 282
 npc = 786
 at = [1426, 25.1, 75.7]
 text = "Coge las observaciones para el montañero del túnel."
+why = "+340 XP · <1 min · desbloquea «{quest:287}» y 3 más"
 status = "unverified"
 sources = ["questie:quest/282", "questie:npc/786"]
 
@@ -379,16 +374,6 @@ status = "unverified"
 sources = ["questie:quest/1599", "legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
 
 [[step]]
-id = "coldridge-037"
-do = "turnin"
-quest = 3361
-npc = 8416
-at = [1426, 28.6, 67.6]
-text = "Entrega las cosas a Felix Whindlebolt."
-status = "unverified"
-sources = ["questie:quest/3361", "questie:npc/8416"]
-
-[[step]]
 id = "coldridge-038"
 do = "turnin"
 quest = 282
@@ -405,6 +390,7 @@ quest = 420
 npc = 1965
 at = [1426, 33.5, 71.8]
 text = "Coge la continuación de Thalos: se entrega en Kharanos."
+why = "+340 XP · <1 min · desbloquea «{quest:287}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/420", "questie:npc/1965"]
 
@@ -416,6 +402,7 @@ reqlevel = 4
 npc = 1965
 at = [1426, 33.5, 71.8]
 text = "Coge también la misión del aventurero de Thalos (nueva de Forever): te lleva al campamento de Kharanos."
+why = "+410 XP · <1 min · 5,6× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/96628", "questie:npc/1965"]
 
@@ -426,6 +413,7 @@ quest = 2160
 npc = 6782
 at = [1426, 33.9, 72.2]
 text = "Coge los suministros de Hands Springsprocket, al lado de Thalos."
+why = "+110 XP · <1 min · 1,7× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/2160", "questie:npc/6782"]
 

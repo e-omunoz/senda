@@ -16,6 +16,7 @@ reqlevel = 14
 npc = 656
 at = [1453, 70.3, 40.8]
 text = "En Ventormenta, coge con Wilder Thistlenettle (Distrito de los Enanos) la misión de las tarjetas de minero."
+why = "+1.350 XP · mazmorra: Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/168", "questie:npc/656"]
 
@@ -27,6 +28,7 @@ reqlevel = 15
 npc = 656
 at = [1453, 70.3, 40.8]
 text = "Coge también la de su hermano, el capataz."
+why = "+1.550 XP · mazmorra: Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/167"]
 
@@ -38,6 +40,7 @@ reqlevel = 15
 npc = 6579
 at = [1453, 62.6, 34.1]
 text = "Coge con Shoni la Silenciosa la misión de la pieza de gnomo."
+why = "+3.700 XP · mazmorra: Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/2040", "questie:npc/6579"]
 
@@ -69,6 +72,7 @@ reqlevel = 14
 npc = 234
 at = [1436, 56.3, 47.5]
 text = "Coge la siguiente: llevar la nota a Mathias Shaw en Ventormenta."
+why = "+695 XP · <1 min · desbloquea Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/135"]
 
@@ -123,6 +127,7 @@ reqlevel = 14
 npc = 332
 at = [1453, 78.3, 70.7]
 text = "Coge el informe de Shaw para Gryan."
+why = "+340 XP · <1 min · desbloquea Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/141"]
 
@@ -154,6 +159,7 @@ reqlevel = 14
 npc = 234
 at = [1436, 56.3, 47.5]
 text = "Coge la misión del mensajero Defias."
+why = "+1.350 XP · ~4,3 min · desbloquea Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/142"]
 
@@ -187,6 +193,7 @@ at = [1436, 55.7, 47.5]
 escort = true
 text = "Habla con el Traidor Defias y escóltalo hasta la guarida de los Defias en Arroyo de la Luna."
 tip = "Le atacan por el camino: no te alejes de él."
+why = "+1.700 XP · ~10 min · desbloquea Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/155", "questie:npc/467"]
 
@@ -218,6 +225,7 @@ reqlevel = 14
 npc = 234
 at = [1436, 56.3, 47.5]
 text = "Coge la misión de Edwin VanCleef."
+why = "+6.200 XP · mazmorra: Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/166"]
 
@@ -229,6 +237,7 @@ reqlevel = 14
 npc = 820
 at = [1436, 56.7, 47.4]
 text = "Coge con la Exploradora Riell la de los pañuelos de seda roja."
+why = "+2.950 XP · mazmorra: Minas de la Muerte"
 status = "unverified"
 sources = ["questie:quest/214", "questie:npc/820"]
 
@@ -253,39 +262,6 @@ text = "Al salir por la cala, busca a Alba Fairmoon junto a la salida de la mina
 optional = true
 status = "unverified"
 sources = ["questie:quest/92753", "questie:npc/253279"]
-
-[[step]]
-id = "a21dm-024"
-do = "accept"
-quest = 92819
-reqlevel = 9
-npc = 253279
-at = [1436, 38.7, 83.7]
-text = "Coge la misión del detonador."
-optional = true
-status = "unverified"
-sources = ["questie:quest/92819"]
-
-[[step]]
-id = "a21dm-025"
-do = "complete"
-quest = 92819
-at = [1436, 38.7, 83.6]
-text = "Usa el detonador, al lado de Alba."
-optional = true
-status = "unverified"
-sources = ["questie:quest/92819", "questie:object/581792"]
-
-[[step]]
-id = "a21dm-026"
-do = "turnin"
-quest = 92819
-npc = 253279
-at = [1436, 38.7, 83.7]
-text = "Entrega a Alba."
-optional = true
-status = "unverified"
-sources = ["questie:quest/92819"]
 
 [[step]]
 id = "a21dm-027"

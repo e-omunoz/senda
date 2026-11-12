@@ -52,6 +52,7 @@ reqlevel = 7
 npc = 3666
 at = [1439, 36.97, 44.13]
 text = "Coge la misión del buzón de Wizbang Cranktoggle, en la posada."
+why = "+1.206 XP · ~5 min · desbloquea «{quest:1001}»"
 status = "unverified"
 sources = ["questie:quest/983", "questie:npc/3666"]
 
@@ -62,6 +63,7 @@ quest = 98025
 reqlevel = 10
 at = [1439, 37.22, 44.22]
 text = "Coge en el cartel de la posada el aviso de Jai'vhanel (nuevo de Forever)."
+why = "+1.150 XP · ~1 min · 3,3× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/98025", "questie:object/175320"]
 
@@ -73,6 +75,7 @@ reqlevel = 11
 npc = 10219
 at = [1439, 36.62, 45.59]
 text = "Coge la misión de Gwennyth Bly'Leggonde, junto al muelle."
+why = "+675 XP · ~1,4 min · desbloquea «{quest:4681}» y 9 más"
 status = "unverified"
 sources = ["questie:quest/3524", "questie:npc/10219"]
 
@@ -85,6 +88,7 @@ npc = 3644
 at = [1439, 35.74, 43.71]
 text = "Coge la misión de Cerellean Whiteclaw, al oeste del muelle."
 tip = "Anaya es de nivel 16: la harás en la segunda pasada por Ameth'Aran."
+why = "+986 XP · ~2 min · 1,8× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/963", "questie:npc/3644"]
 
@@ -96,6 +100,7 @@ reqlevel = 12
 npc = 3583
 at = [1439, 37.32, 43.64]
 text = "Coge la misión de los champiñones de Barithras Moonshade."
+why = "+1.250 XP · ~4 min · desbloquea «{quest:951}» y 4 más"
 status = "unverified"
 sources = ["questie:quest/947", "questie:npc/3583"]
 
@@ -107,20 +112,9 @@ reqlevel = 12
 npc = 2930
 at = [1439, 37.7, 43.41]
 text = "Coge la misión del cristal rojo de la Centinela Glynda Nal'Shea."
+why = "+490 XP · ~3 min · desbloquea «{quest:4813}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/4811", "questie:npc/2930"]
-
-[[step]]
-id = "neds-010"
-do = "accept"
-quest = 2118
-reqlevel = 10
-npc = 3701
-at = [1439, 38.84, 43.42]
-text = "Coge la misión de los osos de Tharnariun Treetender."
-tip = "Te da una trampa: si la pierdes, pide otra a Tharnariun."
-status = "unverified"
-sources = ["questie:quest/2118", "questie:npc/3701"]
 
 [[step]]
 id = "neds-011"
@@ -130,6 +124,7 @@ reqlevel = 10
 npc = 3693
 at = [1439, 39.37, 43.48]
 text = "Coge la amenaza de Terenthis, junto al camino del este."
+why = "+750 XP"
 status = "unverified"
 sources = ["questie:quest/984", "questie:npc/3693"]
 
@@ -141,6 +136,7 @@ reqlevel = 7
 npc = 3649
 at = [1439, 37.4, 40.13]
 text = "Coge la misión de Bashal'Aran de Thundris Windweaver, al norte del pueblo."
+why = "+675 XP · ~1,5 min · desbloquea «{quest:955}» y 2 más"
 status = "unverified"
 sources = ["questie:quest/954", "questie:npc/3649"]
 
@@ -152,6 +148,7 @@ reqlevel = 9
 npc = 3649
 at = [1439, 37.4, 40.13]
 text = "Coge también las herramientas de los altonatos."
+why = "+2.354 XP · ~7,4 min"
 status = "unverified"
 sources = ["questie:quest/958", "questie:npc/3649"]
 
@@ -189,19 +186,10 @@ quest = 1001
 reqlevel = 7
 at = [1439, 36.64, 46.26]
 text = "Coge del buzón la siguiente misión: ojos de trillador."
-tip = "Los trilladores nadan por toda la costa: mátalos cuando los veas."
+tip = "Los trilladores nadan por toda la costa: mátalos cuando los veas. +1.772 XP · ~7,5 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1001", "questie:object/17182"]
-
-[[step]]
-id = "neds-018"
-do = "complete"
-quest = 2118
-at = [1439, 41.0, 48.0]
-text = "Busca un oso de cardo rabioso al este del camino y atrápalo con la trampa."
-tip = "Pon la trampa, atrae al oso encima y espera a que quede atrapado."
-status = "unverified"
-sources = ["questie:quest/2118"]
 
 [[step]]
 id = "neds-019"
@@ -220,6 +208,7 @@ reqlevel = 9
 npc = 3639
 at = [1439, 40.3, 59.73]
 text = "Sigue el camino al sur: coge la misión de la Centinela Tysha Moonblade."
+why = "+900 XP · ~3 min"
 status = "unverified"
 sources = ["questie:quest/953", "questie:npc/3639"]
 
@@ -271,27 +260,6 @@ status = "unverified"
 sources = ["questie:quest/4811"]
 
 [[step]]
-id = "neds-026"
-do = "turnin"
-quest = 2118
-npc = 3701
-at = [1439, 38.84, 43.42]
-text = "Vuelve a Auberdine. Entrega el oso a Tharnariun."
-status = "unverified"
-sources = ["questie:quest/2118", "questie:npc/3701"]
-
-[[step]]
-id = "neds-027"
-do = "accept"
-quest = 2138
-reqlevel = 10
-npc = 3701
-at = [1439, 38.84, 43.42]
-text = "Coge la siguiente: mata osos rabiosos."
-status = "unverified"
-sources = ["questie:quest/2138", "questie:npc/3701"]
-
-[[step]]
 id = "neds-028"
 do = "turnin"
 quest = 984
@@ -310,6 +278,7 @@ npc = 3693
 at = [1439, 39.37, 43.48]
 text = "Coge la siguiente amenaza: furbolgs del campamento."
 tip = "Los harás en la segunda bajada al sur."
+why = "+1.736 XP · ~7 min"
 status = "unverified"
 sources = ["questie:quest/985", "questie:npc/3693"]
 
@@ -321,6 +290,8 @@ reqlevel = 11
 npc = 3693
 at = [1439, 39.37, 43.48]
 text = "Coge el aviso para Thundris."
+tip = "+110 XP · <1 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4761", "questie:npc/3693"]
 
@@ -331,6 +302,7 @@ quest = 4761
 npc = 3649
 at = [1439, 37.4, 40.13]
 text = "Entrega el aviso a Thundris Windweaver."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4761", "questie:npc/3649"]
 
@@ -342,6 +314,7 @@ reqlevel = 11
 npc = 3649
 at = [1439, 37.4, 40.13]
 text = "Coge la misión del río de la cascada."
+why = "+800 XP · ~3 min · desbloquea «{quest:4763}»"
 status = "unverified"
 sources = ["questie:quest/4762", "questie:npc/3649"]
 
@@ -383,6 +356,7 @@ reqlevel = 12
 npc = 2930
 at = [1439, 37.7, 43.41]
 text = "Coge la misión del agua de la poza."
+why = "+490 XP · ~2 min · desbloquea «{quest:4813}»"
 status = "unverified"
 sources = ["questie:quest/4812", "questie:npc/2930"]
 
@@ -413,6 +387,7 @@ reqlevel = 11
 npc = 10219
 at = [1439, 36.62, 45.59]
 text = "Coge la segunda misión de Gwennyth."
+why = "+975 XP · ~2,4 min · desbloquea «{quest:4731}» y 8 más"
 status = "unverified"
 sources = ["questie:quest/4681", "questie:npc/10219"]
 
@@ -445,6 +420,7 @@ reqlevel = 13
 npc = 6301
 at = [1439, 38.11, 41.17]
 text = "Coge la misión de los cofres hundidos de Gorbold Steelhand (desde el 13)."
+why = "+1.250 XP · ~3,4 min"
 status = "unverified"
 sources = ["questie:quest/982", "questie:npc/6301"]
 
@@ -456,6 +432,7 @@ reqlevel = 13
 npc = 3657
 at = [1439, 39.05, 43.55]
 text = "Coge la Torre de Althalaxx de la Centinela Elissa Starbreeze (desde el 13)."
+why = "+675 XP · <1 min · desbloquea «{quest:966}»"
 status = "unverified"
 sources = ["questie:quest/965", "questie:npc/3657"]
 
@@ -476,6 +453,7 @@ quest = 4723
 reqlevel = 11
 at = [1439, 41.93, 31.53]
 text = "Examina la criatura varada de la costa norte."
+why = "+460 XP · ~2 min"
 status = "unverified"
 sources = ["questie:quest/4723", "questie:object/175233"]
 
@@ -485,6 +463,7 @@ do = "complete"
 quest = 1001
 at = [1439, 38.5, 32.0]
 text = "Termina los ojos de trillador."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1001"]
 
@@ -494,19 +473,9 @@ do = "turnin"
 quest = 1001
 at = [1439, 41.96, 28.62]
 text = "Echa los ojos en el Buzón 411, en la orilla."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1001", "questie:object/17183"]
-
-[[step]]
-id = "neds-048"
-do = "accept"
-quest = 1002
-reqlevel = 7
-at = [1439, 41.96, 28.62]
-text = "Coge del buzón la siguiente: colmillos de acechaluna."
-tip = "Los acechalunas salen por todo el norte: mátalos de camino."
-status = "unverified"
-sources = ["questie:quest/1002", "questie:object/17183"]
 
 [[step]]
 id = "neds-049"
@@ -515,6 +484,7 @@ quest = 4725
 reqlevel = 12
 at = [1439, 44.19, 20.6]
 text = "En la playa del norte, examina la tortuga varada."
+why = "+550 XP · ~2,2 min"
 status = "unverified"
 sources = ["questie:quest/4725", "questie:object/176197"]
 
@@ -536,6 +506,7 @@ reqlevel = 7
 npc = 3650
 at = [1439, 44.17, 36.29]
 text = "Coge su misión: pendientes de grell."
+why = "+1.788 XP · ~7,3 min · desbloquea «{quest:956}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/955", "questie:npc/3650"]
 
@@ -566,6 +537,7 @@ reqlevel = 7
 npc = 3650
 at = [1439, 44.17, 36.29]
 text = "Coge la siguiente: el sello de los sátiros."
+why = "+1.083 XP · ~2,5 min · desbloquea «{quest:957}»"
 status = "unverified"
 sources = ["questie:quest/956", "questie:npc/3650"]
 
@@ -596,17 +568,10 @@ reqlevel = 7
 npc = 3650
 at = [1439, 44.17, 36.29]
 text = "Coge la última parte: el sello se quema en Ameth'Aran."
+tip = "+540 XP · ~4 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+optional = true
 status = "unverified"
 sources = ["questie:quest/957", "questie:npc/3650"]
-
-[[step]]
-id = "neds-058"
-do = "complete"
-quest = 2138
-at = [1439, 44.0, 40.0]
-text = "Mata osos rabiosos por el camino hasta tener los que pide Tharnariun."
-status = "unverified"
-sources = ["questie:quest/2138"]
 
 [[step]]
 id = "neds-059"
@@ -616,34 +581,6 @@ at = [1439, 50.8, 25.6]
 text = "Sube al noreste y llena el tubo en la cascada del río."
 status = "unverified"
 sources = ["questie:quest/4762"]
-
-[[step]]
-id = "neds-060"
-do = "complete"
-quest = 1002
-at = [1439, 48.0, 30.0]
-text = "Termina los colmillos de acechaluna."
-status = "unverified"
-sources = ["questie:quest/1002"]
-
-[[step]]
-id = "neds-061"
-do = "turnin"
-quest = 1002
-at = [1439, 51.29, 24.57]
-text = "Echa los colmillos en el Buzón 323, junto al puente."
-status = "unverified"
-sources = ["questie:quest/1002", "questie:object/17184"]
-
-[[step]]
-id = "neds-062"
-do = "accept"
-quest = 1003
-reqlevel = 7
-at = [1439, 51.29, 24.57]
-text = "Coge del buzón la última: cabelleras de oso canoso (al sur)."
-status = "unverified"
-sources = ["questie:quest/1003", "questie:object/17184"]
 
 [[step]]
 id = "neds-063"
@@ -663,6 +600,7 @@ reqlevel = 13
 npc = 3661
 at = [1439, 54.97, 24.89]
 text = "Coge su misión: pergaminos de los fanáticos."
+why = "+2.470 XP · ~5,6 min · 1,7× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/966", "questie:npc/3661"]
 
@@ -693,6 +631,8 @@ quest = 4727
 reqlevel = 12
 at = [1439, 53.11, 18.08]
 text = "Examina la tortuga varada de la playa del noreste."
+tip = "+550 XP · ~4 min: por debajo de la media del tramo según el cálculo, pendiente de cronometrar en el juego."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4727", "questie:object/176196"]
 
@@ -722,6 +662,7 @@ quest = 4813
 reqlevel = 12
 at = [1439, 47.32, 48.68]
 text = "Coge la siguiente en el cristal."
+why = "+975 XP · ~1,7 min · 2,3× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/4813", "questie:object/175524"]
 
@@ -754,27 +695,6 @@ status = "unverified"
 sources = ["questie:quest/4813", "questie:npc/2930"]
 
 [[step]]
-id = "neds-074"
-do = "turnin"
-quest = 2138
-npc = 3701
-at = [1439, 38.84, 43.42]
-text = "Entrega los osos a Tharnariun."
-status = "unverified"
-sources = ["questie:quest/2138", "questie:npc/3701"]
-
-[[step]]
-id = "neds-075"
-do = "accept"
-quest = 2139
-reqlevel = 10
-npc = 3701
-at = [1439, 38.84, 43.42]
-text = "Coge la misión de la Madre de la guarida (al noreste; para el 18-19)."
-status = "unverified"
-sources = ["questie:quest/2139", "questie:npc/3701"]
-
-[[step]]
 id = "neds-076"
 do = "turnin"
 quest = 4762
@@ -792,6 +712,8 @@ reqlevel = 15
 npc = 3649
 at = [1439, 37.4, 40.13]
 text = "Coge la misión de los Madera Negra corruptos (para el 18-19)."
+tip = "+1.700 XP · ~7,5 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4763", "questie:npc/3649"]
 
@@ -813,6 +735,7 @@ reqlevel = 12
 npc = 3583
 at = [1439, 37.32, 43.64]
 text = "Coge la misión para Onu."
+why = "+625 XP · <1 min · desbloquea «{quest:951}» y 3 más"
 status = "unverified"
 sources = ["questie:quest/948", "questie:npc/3583"]
 
@@ -843,6 +766,7 @@ quest = 4727
 npc = 10219
 at = [1439, 36.62, 45.59]
 text = "Entrega la tortuga del noreste."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4727", "questie:npc/10219"]
 
@@ -854,6 +778,8 @@ reqlevel = 15
 npc = 10216
 at = [1439, 36.1, 44.93]
 text = "Coge la misión de Gubber Blump: carne de cangrejo (desde el 15)."
+tip = "+3.133 XP · ~18 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1138", "questie:npc/10216"]
 
@@ -864,6 +790,7 @@ quest = 4740
 reqlevel = 15
 at = [1439, 37.22, 44.22]
 text = "Coge en el cartel la busca de Murkdeep (desde el 15)."
+why = "+1.843 XP · ~2,7 min · 2,0× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/4740", "questie:object/175320"]
 
@@ -875,6 +802,7 @@ reqlevel = 15
 npc = 2913
 at = [1439, 37.44, 41.84]
 text = "Coge el prospector despistado de la Arqueóloga Hollee (desde el 15)."
+why = "+1.150 XP · <1 min · desbloquea «{quest:731}»"
 status = "unverified"
 sources = ["questie:quest/729", "questie:npc/2913"]
 
@@ -893,6 +821,7 @@ do = "complete"
 quest = 957
 at = [1439, 42.4, 61.8]
 text = "En Ameth'Aran, quema el sello en la llama antigua."
+optional = true
 status = "unverified"
 sources = ["questie:quest/957"]
 
@@ -912,6 +841,8 @@ quest = 4722
 reqlevel = 11
 at = [1439, 37.09, 62.18]
 text = "En la playa al oeste de Ameth'Aran, examina la tortuga varada."
+tip = "+368 XP · ~3,3 min: por debajo de la media del tramo según el cálculo, pendiente de cronometrar en el juego."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4722", "questie:object/176190"]
 
@@ -922,6 +853,8 @@ quest = 4728
 reqlevel = 12
 at = [1439, 36.01, 70.88]
 text = "Sigue la playa al sur: criatura varada."
+tip = "+490 XP · ~2,4 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4728", "questie:object/175226"]
 
@@ -931,6 +864,7 @@ do = "complete"
 quest = 1138
 at = [1439, 36.0, 66.0]
 text = "Mata cangrejos de arrecife por la playa para la carne."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1138"]
 
@@ -972,26 +906,9 @@ reqlevel = 12
 npc = 3616
 at = [1439, 43.55, 76.29]
 text = "Coge la misión de la guja del maestro."
+why = "+625 XP · ~2 min · desbloquea «{quest:951}» y 2 más"
 status = "unverified"
 sources = ["questie:quest/944", "questie:npc/3616"]
-
-[[step]]
-id = "neds-096"
-do = "complete"
-quest = 1003
-at = [1439, 40.0, 79.5]
-text = "Mata osos de cardo canosos al suroeste de Onu para las cabelleras."
-status = "unverified"
-sources = ["questie:quest/1003"]
-
-[[step]]
-id = "neds-097"
-do = "turnin"
-quest = 1003
-at = [1439, 41.39, 80.56]
-text = "Echa las cabelleras en el Buzón 525."
-status = "unverified"
-sources = ["questie:quest/1003", "questie:object/17185"]
 
 [[step]]
 id = "neds-098"
@@ -1000,6 +917,8 @@ quest = 4730
 reqlevel = 12
 at = [1439, 32.69, 80.79]
 text = "Examina la criatura varada al oeste."
+tip = "+575 XP · ~3 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4730", "questie:object/175227"]
 
@@ -1022,6 +941,7 @@ npc = 2917
 at = [1439, 35.73, 83.7]
 escort = true
 text = "Coge la escolta de Remtravel."
+why = "+1.950 XP · ~6,6 min"
 status = "unverified"
 sources = ["questie:quest/731", "questie:npc/2917"]
 
@@ -1043,6 +963,7 @@ quest = 4731
 reqlevel = 13
 at = [1439, 31.67, 83.68]
 text = "En la playa del sur, examina la tortuga varada."
+why = "+725 XP · ~1 min · 2,0× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/4731", "questie:object/176198"]
 
@@ -1053,6 +974,7 @@ quest = 4732
 reqlevel = 13
 at = [1439, 31.23, 85.6]
 text = "Otra tortuga varada al lado."
+why = "+725 XP · ~2,6 min"
 status = "unverified"
 sources = ["questie:quest/4732", "questie:object/176191"]
 
@@ -1063,6 +985,7 @@ quest = 4733
 reqlevel = 13
 at = [1439, 31.26, 87.44]
 text = "Y la criatura varada del extremo sur."
+why = "+725 XP · ~1,5 min"
 status = "unverified"
 sources = ["questie:quest/4733", "questie:object/175230"]
 
@@ -1082,6 +1005,7 @@ quest = 949
 reqlevel = 12
 at = [1439, 38.6, 86.2]
 text = "Coge la siguiente en el cuenco."
+why = "+1.250 XP · <1 min · desbloquea «{quest:951}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/949", "questie:object/10076"]
 
@@ -1101,6 +1025,7 @@ quest = 950
 reqlevel = 12
 at = [1439, 38.54, 86.05]
 text = "Coge del tomo la vuelta con Onu."
+why = "+950 XP · ~1 min · desbloquea «{quest:951}»"
 status = "unverified"
 sources = ["questie:quest/950", "questie:object/12666"]
 
@@ -1111,6 +1036,7 @@ quest = 98042
 reqlevel = 12
 at = [1439, 38.54, 86.05]
 text = "Coge también del tomo la misión del Ojo (nueva de Forever)."
+why = "+1.250 XP · <1 min · 4,0× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/98042", "questie:object/12666"]
 
@@ -1141,6 +1067,7 @@ reqlevel = 12
 npc = 3616
 at = [1439, 43.55, 76.29]
 text = "Coge las reliquias de Mathystra (al norte, para el 19-20)."
+why = "+1.950 XP · ~7,2 min"
 status = "unverified"
 sources = ["questie:quest/951", "questie:npc/3616"]
 
@@ -1152,6 +1079,7 @@ reqlevel = 12
 npc = 270269
 at = [1439, 43.75, 76.5]
 text = "Coge con Arbal, junto a Onu, la misión de las nagas (nueva de Forever)."
+why = "+5.048 XP · ~18 min"
 status = "unverified"
 sources = ["questie:quest/98013", "questie:npc/270269"]
 
@@ -1191,6 +1119,7 @@ quest = 1138
 npc = 10216
 at = [1439, 36.1, 44.93]
 text = "Entrega la carne a Gubber Blump."
+optional = true
 status = "unverified"
 sources = ["questie:quest/1138", "questie:npc/10216"]
 
@@ -1232,6 +1161,7 @@ quest = 4722
 npc = 10219
 at = [1439, 36.62, 45.59]
 text = "Entrega a Gwennyth la tortuga de Ameth'Aran."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4722", "questie:npc/10219"]
 
@@ -1242,6 +1172,7 @@ quest = 4728
 npc = 10219
 at = [1439, 36.62, 45.59]
 text = "Entrega a Gwennyth la criatura del sur."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4728", "questie:npc/10219"]
 
@@ -1252,6 +1183,7 @@ quest = 4730
 npc = 10219
 at = [1439, 36.62, 45.59]
 text = "Entrega a Gwennyth la criatura del suroeste."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4730", "questie:npc/10219"]
 
@@ -1293,6 +1225,7 @@ reqlevel = 15
 npc = 10219
 at = [1439, 36.62, 45.59]
 text = "Coge con Gwennyth la misión de la vara (nueva de Forever): sale al entregar todas las varadas."
+why = "+1.550 XP · ~3 min"
 status = "unverified"
 sources = ["questie:quest/87760", "questie:npc/10219"]
 
@@ -1303,18 +1236,9 @@ quest = 957
 npc = 3650
 at = [1439, 44.17, 36.29]
 text = "Sube al noreste. En Bashal'Aran, entrega el sello quemado a Asterion."
+optional = true
 status = "unverified"
 sources = ["questie:quest/957", "questie:npc/3650"]
-
-[[step]]
-id = "neds-129"
-do = "complete"
-quest = 2139
-at = [1439, 51.5, 38.3]
-text = "Mata a la Madre de la guarida, en su cueva al este."
-tip = "Tiene cachorros: llévalos de uno en uno y guarda pociones."
-status = "unverified"
-sources = ["questie:quest/2139"]
 
 [[step]]
 id = "neds-130"
@@ -1322,6 +1246,7 @@ do = "complete"
 quest = 4763
 at = [1439, 52.5, 33.4]
 text = "En el campamento Madera Negra del norte, mata a Xabraxxis y abre su bolsa."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4763"]
 
@@ -1406,22 +1331,13 @@ status = "unverified"
 sources = ["https://games.gg/world-of-warcraft/guides/wow-forever-darkshore-leveling-guide/"]
 
 [[step]]
-id = "neds-139"
-do = "turnin"
-quest = 2139
-npc = 3701
-at = [1439, 38.84, 43.42]
-text = "Entrega la Madre de la guarida a Tharnariun."
-status = "unverified"
-sources = ["questie:quest/2139", "questie:npc/3701"]
-
-[[step]]
 id = "neds-140"
 do = "turnin"
 quest = 4763
 npc = 3649
 at = [1439, 37.4, 40.13]
 text = "Entrega el talismán a Thundris."
+optional = true
 status = "unverified"
 sources = ["questie:quest/4763", "questie:npc/3649"]
 
@@ -1434,19 +1350,6 @@ at = [1439, 36.62, 45.59]
 text = "Entrega la vara a Gwennyth."
 status = "unverified"
 sources = ["questie:quest/87760", "questie:npc/10219"]
-
-[[step]]
-id = "neds-142"
-do = "accept"
-quest = 98461
-reqlevel = 18
-npc = 2913
-at = [1439, 37.44, 41.84]
-text = "Coge con Hollee el amor no correspondido (nueva de Forever): se entrega en Menethil."
-tip = "La entregas en Puerto de Menethil (Los Humedales) hacia el 26: déjala en el registro."
-optional = true
-status = "unverified"
-sources = ["questie:quest/98461", "questie:npc/2913"]
 
 [[step]]
 id = "neds-143"

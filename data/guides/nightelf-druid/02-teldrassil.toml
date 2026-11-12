@@ -48,6 +48,7 @@ quest = 929
 npc = 3515
 at = [1438, 56.14, 61.71]
 text = "Coge la siguiente Corona de la Tierra."
+why = "+340 XP · ~1,6 min · desbloquea «{quest:935}» y 2 más"
 status = "unverified"
 sources = ["questie:quest/929", "questie:npc/3515"]
 
@@ -69,6 +70,7 @@ reqlevel = 4
 npc = 265811
 at = [1438, 57.58, 56.64]
 text = "Coge la misión del campamento de Lyreena."
+why = "+410 XP · ~2 min · desbloquea «{quest:97944}» y 3 más"
 status = "unverified"
 sources = ["questie:quest/96606", "questie:npc/265811"]
 
@@ -133,6 +135,7 @@ reqskill = [182, 1]
 npc = 265811
 at = [1438, 57.58, 56.64]
 text = "Vuelve con Lyreena y coge la lección de campamento de Herboristería (pide saber ya la profesión)."
+why = "+270 XP · ~1 min"
 status = "unverified"
 sources = ["questie:quest/97944", "questie:npc/265811"]
 
@@ -145,6 +148,7 @@ reqskill = [171, 1]
 npc = 265811
 at = [1438, 57.58, 56.64]
 text = "Coge la lección de Alquimia."
+why = "+270 XP · ~1 min"
 status = "unverified"
 sources = ["questie:quest/97938", "questie:npc/265811"]
 
@@ -157,6 +161,7 @@ reqskill = [129, 1]
 npc = 265811
 at = [1438, 57.58, 56.64]
 text = "Coge la lección de Primeros auxilios."
+why = "+270 XP · ~1 min"
 status = "unverified"
 sources = ["questie:quest/97942", "questie:npc/265811"]
 
@@ -169,6 +174,7 @@ npc = 265811
 at = [1438, 57.58, 56.64]
 text = "Coge la lección de Cocina."
 tip = "Si Lyreena no deja coger tantas, quédate con Herboristería y Alquimia: son tus principales."
+why = "+270 XP · ~1 min"
 status = "unverified"
 sources = ["questie:quest/96634", "questie:npc/265811"]
 
@@ -243,6 +249,7 @@ reqlevel = 4
 npc = 2078
 at = [1438, 55.96, 57.27]
 text = "Coge la misión de Athridas Bearmantle."
+why = "+270 XP · <1 min · desbloquea «{quest:486}» y 2 más"
 status = "unverified"
 sources = ["questie:quest/475", "questie:npc/2078"]
 
@@ -253,6 +260,7 @@ quest = 2438
 npc = 3567
 at = [1438, 55.57, 56.95]
 text = "Coge la misión del atrapasueños de Tallonkai Swiftroot."
+why = "+410 XP · <1 min · desbloquea «{quest:2459}»"
 status = "unverified"
 sources = ["questie:quest/2438", "questie:npc/3567"]
 
@@ -264,6 +272,7 @@ reqlevel = 4
 npc = 3567
 at = [1438, 55.57, 56.95]
 text = "Coge también la de Lord Melenas de Tallonkai."
+why = "+785 XP · ~2,3 min · desbloquea «{quest:98403}»"
 status = "unverified"
 sources = ["questie:quest/932", "questie:npc/3567"]
 
@@ -275,6 +284,7 @@ reqlevel = 4
 npc = 3608
 at = [1438, 55.51, 57.15]
 text = "Coge la misión de las pieles de sable de Aldia (nueva de Forever)."
+why = "+625 XP"
 status = "unverified"
 sources = ["questie:quest/87288", "questie:npc/3608"]
 
@@ -286,6 +296,7 @@ reqlevel = 4
 npc = 2083
 at = [1438, 56.08, 57.72]
 text = "Coge la misión de la tierra de Denalan de Syral Bladeleaf."
+why = "+230 XP · <1 min"
 status = "unverified"
 sources = ["questie:quest/997", "questie:npc/2083"]
 
@@ -312,7 +323,8 @@ reqlevel = 4
 npc = 2150
 at = [1438, 60.35, 56.16]
 text = "Al este del pueblo, coge la misión de Zenn Foulhoof (el sátiro)."
-tip = "Colmillos de sable, plumas de lechuza y seda de araña: se consiguen solos mientras haces lo demás."
+tip = "Colmillos de sable, plumas de lechuza y seda de araña: se consiguen solos mientras haces lo demás. +2.269 XP · ~24 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+optional = true
 status = "unverified"
 sources = ["questie:quest/488", "questie:npc/2150"]
 
@@ -334,6 +346,7 @@ reqlevel = 4
 npc = 2107
 at = [1438, 66.26, 58.52]
 text = "Coge su misión: vuelve con Athridas."
+why = "+550 XP · <1 min · desbloquea «{quest:486}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/476", "questie:npc/2107"]
 
@@ -383,6 +396,7 @@ reqlevel = 4
 npc = 2078
 at = [1438, 55.96, 57.27]
 text = "Coge las reliquias del despertar (Ban'ethil): las harás más tarde."
+why = "+775 XP · ~2 min · desbloquea «{quest:486}»"
 status = "unverified"
 sources = ["questie:quest/483", "questie:npc/2078"]
 
@@ -403,6 +417,7 @@ quest = 2459
 npc = 3567
 at = [1438, 55.57, 56.95]
 text = "Coge la misión de Ferocitas."
+why = "+1.225 XP · ~7 min"
 status = "unverified"
 sources = ["questie:quest/2459", "questie:npc/3567"]
 
@@ -433,6 +448,7 @@ quest = 933
 npc = 3515
 at = [1438, 56.14, 61.71]
 text = "Coge la siguiente Corona de la Tierra."
+why = "+775 XP · ~2,6 min · desbloquea «{quest:935}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/933", "questie:npc/3515"]
 
@@ -484,6 +500,7 @@ reqlevel = 4
 npc = 3567
 at = [1438, 55.57, 56.95]
 text = "Coge la continuación (nueva de Forever): arañas corruptas y musgo vil al norte. Hazla al 10-11."
+why = "+1.468 XP · ~7,5 min"
 status = "unverified"
 sources = ["questie:quest/98403", "questie:npc/3567"]
 
@@ -495,6 +512,7 @@ npc = 2150
 at = [1438, 60.35, 56.16]
 text = "Entrega los colmillos, plumas y seda a Zenn."
 tip = "Si te falta algo, hazlo en el lago: hay arañas, lechuzas y sables al sur."
+optional = true
 status = "unverified"
 sources = ["questie:quest/488", "questie:npc/2150"]
 
@@ -506,7 +524,8 @@ reqlevel = 4
 npc = 2083
 at = [1438, 56.08, 57.72]
 text = "En Dolanaar, coge con Syral Bladeleaf la misión de los conos viles para Zenn."
-tip = "Los conos viles están por el suelo alrededor del lago del sur."
+tip = "Los conos viles están por el suelo alrededor del lago del sur. +625 XP · ~4 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/489", "questie:npc/2083"]
 
@@ -528,6 +547,7 @@ reqlevel = 4
 npc = 2080
 at = [1438, 60.9, 68.49]
 text = "Coge la misión de las semillas."
+why = "+1.806 XP · ~11 min · desbloquea «{quest:923}» y 6 más"
 status = "unverified"
 sources = ["questie:quest/918", "questie:npc/2080"]
 
@@ -539,6 +559,7 @@ reqlevel = 4
 npc = 2080
 at = [1438, 60.9, 68.49]
 text = "Coge la de los brotes."
+why = "+800 XP · ~5,3 min"
 status = "unverified"
 sources = ["questie:quest/919", "questie:npc/2080"]
 
@@ -567,6 +588,7 @@ do = "complete"
 quest = 489
 at = [1438, 55.0, 66.0]
 text = "Recoge los conos viles por el suelo alrededor del lago."
+optional = true
 status = "unverified"
 sources = ["questie:quest/489"]
 
@@ -598,6 +620,8 @@ reqlevel = 4
 npc = 2080
 at = [1438, 60.9, 68.49]
 text = "Coge la misión que te manda a Darnassus con Rellian Greenspyre."
+tip = "+708 XP · ~9 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/922", "questie:npc/2080"]
 
@@ -608,6 +632,7 @@ quest = 489
 npc = 2150
 at = [1438, 60.35, 56.16]
 text = "Vuelve a Dolanaar y entrega los conos a Zenn."
+optional = true
 status = "unverified"
 sources = ["questie:quest/489", "questie:npc/2150"]
 
@@ -642,6 +667,8 @@ reqlevel = 4
 npc = 2081
 at = [1438, 56.0, 59.52]
 text = "Coge la misión del corredor perdido de la Centinela Kyra Starsong (nueva de Forever)."
+tip = "+80 XP · <1 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/99046", "questie:npc/2081"]
 
@@ -653,7 +680,8 @@ reqlevel = 5
 npc = 2151
 at = [1438, 52.91, 57.2]
 text = "Toma el camino al oeste. Coge la misión de la Sacerdotisa lunar Amara, que patrulla el camino."
-tip = "Amara recorre el camino hacia el oeste: si no está en el punto, síguelo."
+tip = "Amara recorre el camino hacia el oeste: si no está en el punto, síguelo. +1.000 XP · ~6 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/487", "questie:npc/2151"]
 
@@ -663,6 +691,7 @@ do = "complete"
 quest = 487
 at = [1438, 46.5, 53.3]
 text = "Mata emboscadores Tuercepinos junto al camino."
+optional = true
 status = "unverified"
 sources = ["questie:quest/487"]
 
@@ -672,8 +701,9 @@ do = "accept"
 quest = 490
 reqlevel = 5
 npc = 2155
-at = [1438, 40.46, 50.73]
+at = [1438, 42.22, 51.26]
 text = "Sigue al oeste y coge la recompensa de la Centinela Shayla Nightbreeze."
+why = "+700 XP"
 status = "unverified"
 sources = ["questie:quest/490", "questie:npc/2155"]
 
@@ -685,6 +715,7 @@ reqlevel = 3
 npc = 7317
 at = [1438, 44.94, 61.59]
 text = "Baja al túmulo de Ban'ethil y coge la misión de Oben Rageclaw, dentro."
+why = "+1.173 XP · ~5 min · desbloquea «{quest:2561}»"
 status = "unverified"
 sources = ["questie:quest/2541", "questie:npc/7317"]
 
@@ -697,7 +728,8 @@ npc = 275744
 at = [1438, 44.67, 58.91]
 escort = true
 text = "En el túmulo, habla con la Centinela Lynessa Duskblossom y acepta su escolta (nueva de Forever)."
-tip = "Haz antes las reliquias y los amuletos: la escolta acaba fuera y no tendrás que volver a entrar."
+tip = "Haz antes las reliquias y los amuletos: la escolta acaba fuera y no tendrás que volver a entrar. +850 XP · ~8,5 min: por debajo de la media del tramo según el cálculo, pendiente de cronometrar en el juego."
+optional = true
 status = "unverified"
 sources = ["questie:quest/99053", "questie:npc/275744"]
 
@@ -747,6 +779,7 @@ reqlevel = 3
 npc = 7317
 at = [1438, 44.94, 61.59]
 text = "Coge la misión de Rageclaw."
+why = "+1.145 XP · ~2 min · 2,4× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/2561", "questie:npc/7317"]
 
@@ -776,6 +809,7 @@ quest = 99053
 at = [1438, 43.1, 51.6]
 escort = true
 text = "Escolta a Lynessa hasta la salida del túmulo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/99053"]
 
@@ -804,7 +838,7 @@ id = "netd-076"
 do = "turnin"
 quest = 490
 npc = 2155
-at = [1438, 40.46, 50.73]
+at = [1438, 42.22, 51.26]
 text = "Vuelve al camino y entrega los colmillos a Shayla."
 status = "unverified"
 sources = ["questie:quest/490", "questie:npc/2155"]
@@ -816,6 +850,7 @@ quest = 487
 npc = 2151
 at = [1438, 52.91, 57.2]
 text = "De vuelta hacia Dolanaar, entrega los emboscadores a Amara."
+optional = true
 status = "unverified"
 sources = ["questie:quest/487", "questie:npc/2151"]
 
@@ -826,6 +861,7 @@ quest = 99053
 npc = 2081
 at = [1438, 56.0, 59.52]
 text = "En Dolanaar, entrega la escolta a la Centinela Kyra Starsong."
+optional = true
 status = "unverified"
 sources = ["questie:quest/99053", "questie:npc/2081"]
 
@@ -868,19 +904,9 @@ quest = 7383
 npc = 3515
 at = [1438, 56.14, 61.71]
 text = "Coge la siguiente Corona de la Tierra: poza del Claro del Oráculo."
+why = "+650 XP · ~1 min · desbloquea «{quest:935}»"
 status = "unverified"
 sources = ["questie:quest/7383", "questie:npc/3515"]
-
-[[step]]
-id = "netd-083"
-do = "accept"
-quest = 98391
-reqlevel = 5
-npc = 3600
-at = [1438, 55.56, 56.75]
-text = "Coge la misión de Laurna Morninglight para el Templo de la Luna."
-status = "unverified"
-sources = ["questie:quest/98391", "questie:npc/3600"]
 
 [[step]]
 id = "netd-084"
@@ -890,6 +916,7 @@ npc = 3517
 at = [1457, 38.18, 21.64]
 text = "Ve por el camino del oeste a Darnassus. En el Enclave Cenarion, entrega a Rellian Greenspyre."
 tip = "Darnassus no tiene ruta de vuelo: el vuelo está abajo, en Rut'theran."
+optional = true
 status = "unverified"
 sources = ["questie:quest/922", "questie:npc/3517"]
 
@@ -901,6 +928,7 @@ reqlevel = 4
 npc = 3517
 at = [1457, 38.18, 21.64]
 text = "Coge la misión de los tumores."
+why = "+2.094 XP · ~7 min · desbloquea «{quest:2499}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/923", "questie:npc/3517"]
 
@@ -917,37 +945,6 @@ status = "unverified"
 sources = ["questie:npc/4226"]
 
 [[step]]
-id = "netd-087"
-do = "turnin"
-quest = 98391
-npc = 7316
-at = [1457, 28.94, 45.8]
-text = "Entrega la carta de Laurna a la Hermana Aquinne, en el jardín del Templo."
-status = "unverified"
-sources = ["questie:quest/98391", "questie:npc/7316"]
-
-[[step]]
-id = "netd-088"
-do = "accept"
-quest = 2519
-reqlevel = 5
-npc = 7316
-at = [1457, 28.94, 45.8]
-text = "Coge su misión para el Templo de la Luna."
-status = "unverified"
-sources = ["questie:quest/2519", "questie:npc/7316"]
-
-[[step]]
-id = "netd-089"
-do = "turnin"
-quest = 2519
-npc = 7313
-at = [1457, 36.65, 85.93]
-text = "Entra en el Templo de la Luna y entrega a la Sacerdotisa A'moora."
-status = "unverified"
-sources = ["questie:quest/2519", "questie:npc/7313"]
-
-[[step]]
 id = "netd-090"
 do = "accept"
 quest = 2518
@@ -955,6 +952,8 @@ reqlevel = 5
 npc = 7313
 at = [1457, 36.65, 85.93]
 text = "Coge la misión de las Lágrimas de la Luna (Lady Sathrah, al norte de Teldrassil)."
+tip = "{npc:7313} está en el Templo de la Luna."
+why = "+1.255 XP · ~4 min · desbloquea «{quest:2520}»"
 status = "unverified"
 sources = ["questie:quest/2518", "questie:npc/7313"]
 
@@ -965,6 +964,8 @@ quest = 98067
 npc = 8396
 at = [1457, 39.65, 89.54]
 text = "En el Templo, coge la misión de la Centinela Dalia Sunblade (nueva de Forever)."
+tip = "+650 XP · ~9,4 min: por debajo de la media del tramo según el cálculo, pendiente de cronometrar en el juego."
+optional = true
 status = "unverified"
 sources = ["questie:quest/98067", "questie:npc/8396"]
 
@@ -975,6 +976,7 @@ quest = 98067
 at = [1457, 41.0, 43.5]
 wps = [[1457, 33.4, 16.8, "Noroeste"], [1457, 41.0, 43.5, "Centro"], [1457, 66.5, 15.3, "Noreste"], [1457, 89.1, 34.8, "Entrada"]]
 text = "Recorre los cuatro puntos de vigilancia de Darnassus con el objeto de Dalia."
+optional = true
 status = "unverified"
 sources = ["questie:quest/98067"]
 
@@ -985,6 +987,7 @@ quest = 98067
 npc = 8396
 at = [1457, 39.65, 89.54]
 text = "Vuelve al Templo y entrega a Dalia."
+optional = true
 status = "unverified"
 sources = ["questie:quest/98067", "questie:npc/8396"]
 
@@ -996,7 +999,8 @@ reqlevel = 10
 npc = 4241
 at = [1457, 70.68, 45.38]
 text = "Junto a la entrada de la ciudad, coge con Mydrannul la misión de Nessa Shadowsong."
-tip = "Te da el vuelo gratis a Costa Oscura al acabar Teldrassil."
+tip = "Te da el vuelo gratis a Costa Oscura al acabar Teldrassil. +210 XP · ~1,5 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/6344", "questie:npc/4241"]
 
@@ -1007,6 +1011,7 @@ quest = 99046
 npc = 275683
 at = [1438, 37.54, 36.81]
 text = "Sal de Darnassus y sube al norte, al Claro del Oráculo. Entrega a la Centinela Eralya Leafshadow."
+optional = true
 status = "unverified"
 sources = ["questie:quest/99046", "questie:npc/275683"]
 
@@ -1018,6 +1023,7 @@ reqlevel = 4
 npc = 275683
 at = [1438, 37.54, 36.81]
 text = "Coge su misión: vuelve con Byancie a Dolanaar."
+why = "+80 XP · <1 min · desbloquea «{quest:99050}»"
 status = "unverified"
 sources = ["questie:quest/99047", "questie:npc/275683"]
 
@@ -1038,6 +1044,7 @@ reqlevel = 6
 npc = 3519
 at = [1438, 38.32, 34.36]
 text = "Coge la misión de la Centinela Arynia Cloudsbreak, junto a la poza."
+why = "+1.588 XP · ~9 min · desbloquea «{quest:952}» y 3 más"
 status = "unverified"
 sources = ["questie:quest/937", "questie:npc/3519"]
 
@@ -1068,6 +1075,7 @@ reqlevel = 6
 npc = 3519
 at = [1438, 38.32, 34.36]
 text = "Coge la continuación (nueva de Forever): tres arpías con nombre."
+why = "+900 XP · ~1,4 min · desbloquea «{quest:952}» y 2 más"
 status = "unverified"
 sources = ["questie:quest/98392", "questie:npc/3519"]
 
@@ -1100,6 +1108,7 @@ reqlevel = 6
 npc = 3519
 at = [1438, 38.32, 34.36]
 text = "Coge la misión del Árbol del Oráculo."
+why = "+90 XP · <1 min · desbloquea «{quest:952}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/98398", "questie:npc/3519"]
 
@@ -1119,6 +1128,7 @@ quest = 940
 reqlevel = 6
 at = [1438, 36.97, 34.04]
 text = "Coge de la corteza la misión para el Archidruida Fandral Staghelm."
+why = "+440 XP · <1 min · desbloquea «{quest:952}»"
 status = "unverified"
 sources = ["questie:quest/940", "questie:object/673378"]
 
@@ -1131,6 +1141,8 @@ npc = 3568
 at = [1438, 31.54, 31.61]
 escort = true
 text = "Al oeste del claro, habla con Mist, la cría de sable, y empieza la escolta."
+tip = "+900 XP · ~8 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+optional = true
 status = "unverified"
 sources = ["questie:quest/938", "questie:npc/3568"]
 
@@ -1142,6 +1154,7 @@ at = [1438, 38.33, 34.39]
 escort = true
 text = "Lleva a Mist hasta Arynia sin perderla."
 tip = "Ve despacio y no tires grupos: si Mist muere hay que volver a por ella."
+optional = true
 status = "unverified"
 sources = ["questie:quest/938"]
 
@@ -1152,6 +1165,7 @@ quest = 938
 npc = 3519
 at = [1438, 38.32, 34.36]
 text = "Entrega a Arynia."
+optional = true
 status = "unverified"
 sources = ["questie:quest/938", "questie:npc/3519"]
 
@@ -1162,6 +1176,7 @@ quest = 931
 reqlevel = 4
 at = [1438, 34.61, 28.76]
 text = "Al norte, examina la planta de frondas extrañas: misión para Denalan."
+why = "+850 XP · ~1 min · desbloquea «{quest:2399}»"
 status = "unverified"
 sources = ["questie:quest/931", "questie:object/6752"]
 
@@ -1203,6 +1218,7 @@ reqlevel = 6
 npc = 3516
 at = [1457, 34.81, 9.26]
 text = "Coge la misión del Bosque de los Ancestros: se entrega a Onu, en Costa Oscura."
+why = "+1.250 XP · <1 min · 7,0× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/952", "questie:npc/3516"]
 
@@ -1224,6 +1240,7 @@ reqlevel = 4
 npc = 3517
 at = [1457, 38.18, 21.64]
 text = "Coge la misión de vuelta con Denalan."
+why = "+80 XP · <1 min · desbloquea «{quest:2499}»"
 status = "unverified"
 sources = ["questie:quest/2498", "questie:npc/3517"]
 
@@ -1245,6 +1262,7 @@ reqlevel = 5
 npc = 7313
 at = [1457, 36.65, 85.93]
 text = "Coge el sacrificio de Sathrah."
+why = "+900 XP · ~2 min · 2,1× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/2520", "questie:npc/7313"]
 
@@ -1293,6 +1311,7 @@ reqlevel = 4
 npc = 6094
 at = [1438, 55.29, 56.82]
 text = "Coge la misión de Byancie (nueva de Forever): frondas, vial y agua."
+why = "+850 XP"
 status = "unverified"
 sources = ["questie:quest/99050", "questie:npc/6094"]
 
@@ -1324,6 +1343,7 @@ quest = 935
 npc = 3515
 at = [1438, 56.14, 61.71]
 text = "Coge la última Corona de la Tierra: para Fandral, en Darnassus."
+why = "+1.100 XP · ~3,7 min"
 status = "unverified"
 sources = ["questie:quest/935", "questie:npc/3515"]
 
@@ -1345,6 +1365,7 @@ reqlevel = 4
 npc = 2080
 at = [1438, 60.9, 68.49]
 text = "Coge la misión de Robleceño (élite)."
+why = "+1.103 XP · ~3,3 min"
 status = "unverified"
 sources = ["questie:quest/2499", "questie:npc/2080"]
 
@@ -1366,6 +1387,7 @@ reqlevel = 4
 at = [1438, 60.75, 68.56]
 text = "Coge la misión de las frondas brotadas."
 tip = "Sale de la fronda plantada junto a Denalan."
+why = "+85 XP · <1 min"
 status = "unverified"
 sources = ["questie:quest/2399", "questie:object/7510"]
 
@@ -1429,17 +1451,6 @@ status = "unverified"
 sources = ["questie:quest/99050", "questie:npc/6094"]
 
 [[step]]
-id = "netd-137"
-do = "accept"
-quest = 99073
-reqlevel = 4
-npc = 6094
-at = [1438, 55.29, 56.82]
-text = "Coge su siguiente misión: llévale el remedio a Eralya."
-status = "unverified"
-sources = ["questie:quest/99073", "questie:npc/6094"]
-
-[[step]]
 id = "netd-138"
 do = "complete"
 quest = 98403
@@ -1494,16 +1505,6 @@ status = "unverified"
 sources = ["questie:npc/3603"]
 
 [[step]]
-id = "netd-143"
-do = "turnin"
-quest = 99073
-npc = 275683
-at = [1438, 37.54, 36.81]
-text = "Ve al Claro del Oráculo y entrega el remedio a Eralya."
-status = "unverified"
-sources = ["questie:quest/99073", "questie:npc/275683"]
-
-[[step]]
 id = "netd-144"
 do = "turnin"
 quest = 935
@@ -1512,46 +1513,6 @@ at = [1457, 34.81, 9.26]
 text = "Entra en Darnassus y entrega la última Corona de la Tierra a Fandral."
 status = "unverified"
 sources = ["questie:quest/935", "questie:npc/3516"]
-
-[[step]]
-id = "netd-145"
-do = "accept"
-quest = 98046
-npc = 3516
-at = [1457, 34.81, 9.26]
-text = "Coge la continuación (nueva de Forever): para Lariia, en el Templo de la Luna."
-status = "unverified"
-sources = ["questie:quest/98046", "questie:npc/3516"]
-
-[[step]]
-id = "netd-146"
-do = "turnin"
-quest = 98046
-npc = 4092
-at = [1457, 40.35, 88.68]
-text = "En el Templo de la Luna, entrega a Lariia."
-status = "unverified"
-sources = ["questie:quest/98046", "questie:npc/4092"]
-
-[[step]]
-id = "netd-147"
-do = "accept"
-quest = 98065
-npc = 4092
-at = [1457, 40.35, 88.68]
-text = "Coge la última parte: para Tyrande Whisperwind."
-status = "unverified"
-sources = ["questie:quest/98065", "questie:npc/4092"]
-
-[[step]]
-id = "netd-148"
-do = "turnin"
-quest = 98065
-npc = 7999
-at = [1457, 39.1, 81.59]
-text = "Sube al balcón del Templo y entrega a Tyrande Whisperwind."
-status = "unverified"
-sources = ["questie:quest/98065", "questie:npc/7999"]
 
 [[step]]
 id = "netd-149"
@@ -1570,6 +1531,7 @@ quest = 6344
 npc = 10118
 at = [1438, 56.26, 92.44]
 text = "En Rut'theran, entrega a Nessa Shadowsong, en el muelle."
+optional = true
 status = "unverified"
 sources = ["questie:quest/6344", "questie:npc/10118"]
 
@@ -1581,6 +1543,7 @@ reqlevel = 10
 npc = 10118
 at = [1438, 56.26, 92.44]
 text = "Coge la misión de Nessa."
+why = "+210 XP · <1 min · desbloquea «{quest:6342}»"
 status = "unverified"
 sources = ["questie:quest/6341", "questie:npc/10118"]
 
@@ -1612,6 +1575,7 @@ reqlevel = 10
 npc = 3838
 at = [1438, 58.4, 94.02]
 text = "Coge el vuelo a Auberdine."
+why = "+420 XP · <1 min · 3,0× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/6342", "questie:npc/3838"]
 

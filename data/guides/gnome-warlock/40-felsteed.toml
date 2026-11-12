@@ -49,6 +49,7 @@ reqlevel = 40
 npc = 6251
 at = [1413, 62.6, 35.5]
 text = "Coge la segunda parte de Strahad."
+why = "+315 XP · <1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/4490", "questie:npc/6251"]
 

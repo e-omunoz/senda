@@ -95,27 +95,6 @@ status = "unverified"
 sources = ["questie:npc/1572"]
 
 [[step]]
-id = "a26wl-005"
-do = "accept"
-quest = 468
-reqlevel = 19
-npc = 1340
-at = [1432, 32.6, 49.7]
-text = "En Thelsamar, coge con el Montañero Kadrell el aviso para el Montañero Rockgar."
-status = "unverified"
-sources = ["questie:quest/468", "questie:npc/1340"]
-
-[[step]]
-id = "a26wl-006"
-do = "turnin"
-quest = 468
-npc = 1342
-at = [1432, 25.4, 10.4]
-text = "Sigue el camino al norte hasta Dun Algaz y habla con Rockgar."
-status = "unverified"
-sources = ["questie:quest/468", "questie:npc/1342"]
-
-[[step]]
 id = "a26wl-007"
 do = "accept"
 quest = 455
@@ -123,6 +102,8 @@ reqlevel = 19
 npc = 1342
 at = [1432, 25.4, 10.4]
 text = "Coge la misión para cruzar Dun Algaz."
+tip = "{npc:1342} está al norte de Thelsamar, en Dun Algaz: sigue el camino."
+why = "+1.924 XP · ~12 min · camino a Los Humedales; desbloquea «{quest:473}»"
 status = "unverified"
 sources = ["questie:quest/455"]
 
@@ -157,18 +138,6 @@ status = "unverified"
 sources = ["questie:npc/1464", "https://games.gg/world-of-warcraft/guides/wow-forever-wetlands-leveling-guide/"]
 
 [[step]]
-id = "a26wl-ne-03"
-do = "turnin"
-quest = 98461
-npc = 2096
-at = [1437, 11.5, 52.2]
-text = "Si la cogiste en Costa Oscura, entrega la nota de Hollee a Tarrel Rockweaver, junto a Menethil."
-if = { race = ["NightElf"] }
-optional = true
-status = "unverified"
-sources = ["questie:quest/98461", "questie:npc/2096"]
-
-[[step]]
 id = "a26wl-011"
 do = "turnin"
 quest = 455
@@ -186,6 +155,7 @@ reqlevel = 23
 npc = 2086
 at = [1437, 10.1, 56.9]
 text = "Coge el aviso para el Capitán Stoutfist."
+why = "+230 XP · <1 min"
 status = "unverified"
 sources = ["questie:quest/473"]
 
@@ -197,6 +167,7 @@ reqlevel = 18
 npc = 2086
 at = [1437, 10.1, 56.9]
 text = "Coge también la de los botines de guerra de Valstag."
+why = "+1.750 XP"
 status = "unverified"
 sources = ["questie:quest/98197"]
 
@@ -218,6 +189,7 @@ reqlevel = 23
 npc = 2104
 at = [1437, 9.9, 57.5]
 text = "Coge con Stoutfist la misión de los estandartes Faucedraco."
+why = "+3.819 XP · ~5,7 min"
 status = "unverified"
 sources = ["questie:quest/464"]
 
@@ -229,19 +201,9 @@ reqlevel = 23
 npc = 2104
 at = [1437, 9.9, 57.5]
 text = "Coge también la de los planes de ataque del campamento Faucedraco."
+why = "+2.300 XP · ~3,4 min"
 status = "unverified"
 sources = ["questie:quest/98221"]
-
-[[step]]
-id = "a26wl-017"
-do = "accept"
-quest = 98230
-reqlevel = 22
-npc = 2104
-at = [1437, 9.9, 57.5]
-text = "Y la que te manda con Howin Kindfeather, al este por el camino."
-status = "unverified"
-sources = ["questie:quest/98230"]
 
 [[step]]
 id = "a26wl-018"
@@ -251,31 +213,21 @@ reqlevel = 18
 npc = 2094
 at = [1437, 8.6, 55.7]
 text = "Coge con el curtidor James Halloran la de las pieles de crocolisco joven."
+tip = "+3.450 XP · ~25 min: por debajo de la media del tramo; hazla si vas a Excavation Site: abre «{quest:98815}»."
+optional = true
 status = "unverified"
 sources = ["questie:quest/484", "questie:npc/2094"]
 
 [[step]]
-id = "a26wl-019"
+id = "a26wl-018b"
 do = "accept"
-quest = 98240
-reqlevel = 19
-npc = 2094
-at = [1437, 8.6, 55.7]
-text = "Coge también la caja carmesí para Howin."
+quest = 98208
+npc = 270844
+at = [1437, 7.97, 55.86]
+text = "Junto a Halloran, coge con {npc:270844} la misión de la flor {item:279915}."
+why = "+1.750 XP · ~1 min · 3,2× la media del tramo"
 status = "unverified"
-sources = ["questie:quest/98240"]
-
-[[step]]
-id = "a26wl-020"
-do = "accept"
-quest = 98815
-reqlevel = 24
-npc = 2094
-at = [1437, 8.6, 55.7]
-text = "Si vas a hacer Excavation Site, coge la de las pieles de raptor de la espesura."
-optional = true
-status = "unverified"
-sources = ["questie:quest/98815"]
+sources = ["foreverdb:quest/98208", "foreverdb:npc/270844", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/06-wetlands#13"]
 
 [[step]]
 id = "a26wl-021"
@@ -285,30 +237,9 @@ reqlevel = 20
 npc = 1242
 at = [1437, 8.3, 58.6]
 text = "En el muelle, coge con Karl Boran la de los múrlocs Branquiazul."
+why = "+1.835 XP · ~8 min · desbloquea «{quest:286}» y 3 más"
 status = "unverified"
 sources = ["questie:quest/279", "questie:npc/1242"]
-
-[[step]]
-id = "a26wl-022"
-do = "accept"
-quest = 463
-reqlevel = 20
-npc = 1239
-at = [1437, 10.9, 59.6]
-text = "Coge con el Primer Oficial Fitzsimmons la misión para el Guardaverde."
-status = "unverified"
-sources = ["questie:quest/463", "questie:npc/1239"]
-
-[[step]]
-id = "a26wl-023"
-do = "accept"
-quest = 305
-reqlevel = 21
-npc = 2096
-at = [1437, 11.5, 52.2]
-text = "Al norte del pueblo, coge con Tarrel Rockweaver la misión para el equipo de excavación."
-status = "unverified"
-sources = ["questie:quest/305", "questie:npc/2096"]
 
 [[step]]
 id = "a26wl-024"
@@ -318,6 +249,7 @@ reqlevel = 20
 npc = 1480
 at = [1437, 11.9, 58.8]
 text = "Coge con Caitlin Grassman la de la glándula de acechador."
+why = "+1.050 XP · ~2,4 min"
 status = "unverified"
 sources = ["questie:quest/98282", "questie:npc/1480"]
 
@@ -332,6 +264,17 @@ text = "Si vas a hacer Excavation Site, coge también la de Ardin Grassman."
 optional = true
 status = "unverified"
 sources = ["questie:quest/95647"]
+
+[[step]]
+id = "a26wl-025b"
+do = "complete"
+quest = 98208
+obj = 1
+at = [1437, 12.2, 63.8]
+text = "Baja a la orilla, justo al sur del pueblo, y recoge {item:279915}."
+tip = "Está a pocos pasos del extremo sur de Menethil."
+status = "unverified"
+sources = ["foreverdb:quest/98208", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/06-wetlands#14"]
 
 [[step]]
 id = "a26wl-026"
@@ -368,6 +311,7 @@ do = "complete"
 quest = 484
 at = [1437, 18.0, 45.0]
 text = "Mata crocoliscos jóvenes por el camino hasta tener 4 pieles."
+optional = true
 status = "unverified"
 sources = ["questie:quest/484"]
 
@@ -389,6 +333,7 @@ reqlevel = 20
 npc = 1242
 at = [1437, 8.3, 58.6]
 text = "Coge la búsqueda de la estatuilla de Menethil."
+why = "+500 XP · ~1,7 min · desbloquea «{quest:286}» y 2 más"
 status = "unverified"
 sources = ["questie:quest/281"]
 
@@ -399,8 +344,32 @@ quest = 484
 npc = 2094
 at = [1437, 8.6, 55.7]
 text = "Entrega las pieles a Halloran."
+optional = true
 status = "unverified"
 sources = ["questie:quest/484"]
+
+[[step]]
+id = "a26wl-020"
+do = "accept"
+quest = 98815
+reqlevel = 24
+npc = 2094
+at = [1437, 8.6, 55.7]
+text = "Si vas a hacer Excavation Site, coge la de las pieles de raptor de la espesura."
+tip = "Halloran solo la ofrece después de entregarle las pieles de crocolisco joven."
+optional = true
+status = "unverified"
+sources = ["questie:quest/98815", "foreverdb:corrections/quests/98815"]
+
+[[step]]
+id = "a26wl-032b"
+do = "turnin"
+quest = 98208
+npc = 270844
+at = [1437, 7.97, 55.86]
+text = "Entrega la flor a {npc:270844}, al lado de Halloran."
+status = "unverified"
+sources = ["foreverdb:quest/98208", "foreverdb:npc/270844", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/06-wetlands#17"]
 
 [[step]]
 id = "a26wl-033"
@@ -418,6 +387,7 @@ quest = 284
 reqlevel = 20
 at = [1437, 13.5, 41.4]
 text = "Coge la siguiente pista de la caja."
+why = "+500 XP · <1 min · desbloquea «{quest:286}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/284"]
 
@@ -437,6 +407,7 @@ quest = 285
 reqlevel = 20
 at = [1437, 13.6, 38.2]
 text = "Coge la siguiente pista del barril."
+why = "+1.000 XP · <1 min · desbloquea «{quest:286}»"
 status = "unverified"
 sources = ["questie:quest/285"]
 
@@ -456,6 +427,7 @@ quest = 286
 reqlevel = 20
 at = [1437, 13.9, 34.8]
 text = "Coge la estatuilla de Menethil."
+why = "+1.500 XP · ~2,7 min"
 status = "unverified"
 sources = ["questie:quest/286"]
 
@@ -470,49 +442,6 @@ status = "unverified"
 sources = ["questie:quest/286"]
 
 [[step]]
-id = "a26wl-040"
-do = "accept"
-quest = 98189
-reqlevel = 20
-npc = 1242
-at = [1437, 8.3, 58.6]
-text = "Coge la entrega de la estatuilla al Capitán Stoutfist."
-status = "unverified"
-sources = ["questie:quest/98189"]
-
-[[step]]
-id = "a26wl-041"
-do = "turnin"
-quest = 98189
-npc = 2104
-at = [1437, 9.9, 57.5]
-text = "Entrega la estatuilla a Stoutfist."
-tip = "Después te ofrece llevarla al Alto Señor Bolvar en Ventormenta: cógela solo si vas a pasar por allí."
-status = "unverified"
-sources = ["questie:quest/98189"]
-
-[[step]]
-id = "a26wl-042"
-do = "turnin"
-quest = 305
-npc = 1076
-at = [1437, 38.9, 52.3]
-text = "Ve al este por el camino hasta la Excavación de Whelgar. Habla con Merrin Rockweaver."
-status = "unverified"
-sources = ["questie:quest/305", "questie:npc/1076"]
-
-[[step]]
-id = "a26wl-043"
-do = "accept"
-quest = 306
-reqlevel = 21
-npc = 1076
-at = [1437, 38.9, 52.3]
-text = "Coge la nota de Merrin para Tarrel."
-status = "unverified"
-sources = ["questie:quest/306"]
-
-[[step]]
 id = "a26wl-044"
 do = "accept"
 quest = 294
@@ -520,6 +449,8 @@ reqlevel = 22
 npc = 1078
 at = [1437, 38.2, 50.9]
 text = "Coge con Ormer Ironbraid la venganza contra los raptores."
+tip = "La Excavación de Whelgar está al este de Menethil, siguiendo el camino."
+why = "+3.700 XP · ~16 min · desbloquea «{quest:295}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/294", "questie:npc/1078"]
 
@@ -531,6 +462,7 @@ reqlevel = 22
 npc = 1077
 at = [1437, 38.8, 52.4]
 text = "Coge con el Prospector Whelgar la de los fragmentos de la tablilla."
+why = "+2.200 XP · ~2,7 min · 1,7× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/299", "questie:npc/1077"]
 
@@ -570,6 +502,7 @@ reqlevel = 22
 npc = 1078
 at = [1437, 38.2, 50.9]
 text = "Coge la segunda venganza de Ormer (raptores de la excavación)."
+why = "+5.060 XP · ~11 min · desbloquea «{quest:296}»"
 status = "unverified"
 sources = ["questie:quest/295"]
 
@@ -603,6 +536,37 @@ status = "unverified"
 sources = ["questie:quest/295"]
 
 [[step]]
+id = "a26wl-052b"
+do = "accept"
+quest = 296
+reqlevel = 22
+npc = 1078
+at = [1437, 38.18, 50.89]
+text = "Coge con {npc:1078} la última venganza: la garra de {npc:1353}."
+why = "+3.144 XP · ~2,2 min · 2,8× la media del tramo"
+status = "unverified"
+sources = ["foreverdb:quest/296", "foreverdb:npc/1078", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/06-wetlands#20"]
+
+[[step]]
+id = "a26wl-052c"
+do = "complete"
+quest = 296
+at = [1437, 33.26, 51.5]
+text = "Mata a {npc:1353}, un fauces de navaja grande que ronda justo al oeste de la excavación, y coge su garra."
+status = "unverified"
+sources = ["foreverdb:quest/296", "foreverdb:npc/1353", "foreverdb:item/3638", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/06-wetlands#21"]
+
+[[step]]
+id = "a26wl-052d"
+do = "turnin"
+quest = 296
+npc = 1078
+at = [1437, 38.18, 50.89]
+text = "Entrega la garra a {npc:1078}."
+status = "unverified"
+sources = ["foreverdb:quest/296", "foreverdb:npc/1078", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/alliance/06-wetlands#22"]
+
+[[step]]
 id = "a26wl-053"
 do = "dungeon"
 quests = [95647, 98815, 95646]
@@ -615,47 +579,6 @@ sources = ["https://conquestcapped.com/guides/wow-forever/wow-forever-leveling/"
 note = "Entrada de la mazmorra sin confirmar: la fuente dice «sobre la Excavación de Whelgar». Highland Horror (95646) sale en QuestieDB en 49.9, 59.7."
 
 [[step]]
-id = "a26wl-054"
-do = "turnin"
-quest = 463
-npc = 1244
-at = [1437, 56.4, 40.4]
-text = "Sigue el camino al este y sube al Cinturón Verde: entrega a Rethiel el Guardaverde."
-status = "unverified"
-sources = ["questie:quest/463", "questie:npc/1244"]
-
-[[step]]
-id = "a26wl-055"
-do = "accept"
-quest = 276
-reqlevel = 20
-npc = 1244
-at = [1437, 56.4, 40.4]
-text = "Coge la misión de los gnolls Pellejomusgo."
-status = "unverified"
-sources = ["questie:quest/276"]
-
-[[step]]
-id = "a26wl-056"
-do = "turnin"
-quest = 98230
-npc = 270637
-at = [1437, 49.4, 42.1]
-text = "Baja al camino y habla con Howin Kindfeather."
-status = "unverified"
-sources = ["questie:quest/98230", "questie:npc/270637"]
-
-[[step]]
-id = "a26wl-057"
-do = "turnin"
-quest = 98240
-npc = 270637
-at = [1437, 49.4, 42.1]
-text = "Entrégale también la caja carmesí."
-status = "unverified"
-sources = ["questie:quest/98240"]
-
-[[step]]
 id = "a26wl-058"
 do = "accept"
 quest = 98245
@@ -663,6 +586,8 @@ reqlevel = 21
 npc = 270637
 at = [1437, 49.4, 42.1]
 text = "Coge la de los incisivos de fauces de navaja."
+tip = "{npc:270637} está junto al camino, al pie del Cinturón Verde."
+why = "+2.350 XP"
 status = "unverified"
 sources = ["questie:quest/98245"]
 
@@ -674,6 +599,7 @@ reqlevel = 21
 npc = 270637
 at = [1437, 49.4, 42.1]
 text = "Coge la de los huevos de fauces de navaja."
+why = "+2.350 XP"
 status = "unverified"
 sources = ["questie:quest/98246"]
 
@@ -685,6 +611,7 @@ reqlevel = 22
 npc = 270637
 at = [1437, 49.4, 42.1]
 text = "Y la de los Faucedraco del Refugio Faucedraco."
+why = "+6.170 XP · ~13 min"
 status = "unverified"
 sources = ["questie:quest/98291"]
 
@@ -707,16 +634,6 @@ status = "unverified"
 sources = ["questie:quest/98221"]
 
 [[step]]
-id = "a26wl-063"
-do = "complete"
-quest = 276
-at = [1437, 61.8, 68.0]
-text = "Al sur, mata 15 gnolls y 10 chuchos Pellejomusgo."
-tip = "De paso, en la Roca Thelgen (50, 62) consigue la glándula de acechador para Caitlin."
-status = "unverified"
-sources = ["questie:quest/276"]
-
-[[step]]
 id = "a26wl-064"
 do = "complete"
 quest = 98282
@@ -724,27 +641,6 @@ at = [1437, 52.7, 62.8]
 text = "Mata acechadores sanguijuela en la Roca Thelgen hasta conseguir una glándula intacta."
 status = "unverified"
 sources = ["questie:quest/98282"]
-
-[[step]]
-id = "a26wl-065"
-do = "turnin"
-quest = 276
-npc = 1244
-at = [1437, 56.4, 40.4]
-text = "Vuelve con Rethiel y entrega los gnolls."
-status = "unverified"
-sources = ["questie:quest/276"]
-
-[[step]]
-id = "a26wl-066"
-do = "accept"
-quest = 277
-reqlevel = 20
-npc = 1244
-at = [1437, 56.4, 40.4]
-text = "Coge la del pedernal."
-status = "unverified"
-sources = ["questie:quest/277"]
 
 [[step]]
 id = "a26wl-067"
@@ -772,15 +668,6 @@ at = [1437, 64.3, 46.0]
 text = "En el Refugio Faucedraco, mata 8 recuperadores, 5 vinculadores de almas y 3 infiltrados."
 status = "unverified"
 sources = ["questie:quest/98291"]
-
-[[step]]
-id = "a26wl-070"
-do = "complete"
-quest = 277
-at = [1437, 40.0, 32.0]
-text = "Al oeste del Cinturón Verde, mata gnolls Pellejomusgo hasta tener 9 pedernales."
-status = "unverified"
-sources = ["questie:quest/277"]
 
 [[step]]
 id = "a26wl-071"
@@ -811,36 +698,6 @@ at = [1437, 49.4, 42.1]
 text = "Entrega los Faucedraco."
 status = "unverified"
 sources = ["questie:quest/98291"]
-
-[[step]]
-id = "a26wl-074"
-do = "turnin"
-quest = 277
-npc = 1244
-at = [1437, 56.4, 40.4]
-text = "Entrega el pedernal a Rethiel."
-status = "unverified"
-sources = ["questie:quest/277"]
-
-[[step]]
-id = "a26wl-075"
-do = "accept"
-quest = 275
-reqlevel = 20
-npc = 1244
-at = [1437, 56.4, 40.4]
-text = "Coge la de las enredaderas de la ciénaga."
-status = "unverified"
-sources = ["questie:quest/275"]
-
-[[step]]
-id = "a26wl-076"
-do = "complete"
-quest = 275
-at = [1437, 33.0, 33.0]
-text = "Mata 12 trepadoras de la ciénaga camino de Menethil."
-status = "unverified"
-sources = ["questie:quest/275"]
 
 [[step]]
 id = "a26wl-077"
@@ -879,16 +736,6 @@ at = [1437, 11.9, 58.8]
 text = "Entrega la glándula a Caitlin."
 status = "unverified"
 sources = ["questie:quest/98282"]
-
-[[step]]
-id = "a26wl-081"
-do = "turnin"
-quest = 306
-npc = 2096
-at = [1437, 11.5, 52.2]
-text = "Entrega la nota de Merrin a Tarrel Rockweaver."
-status = "unverified"
-sources = ["questie:quest/306"]
 
 [[step]]
 id = "a26wl-082"
@@ -973,16 +820,6 @@ status = "unverified"
 sources = ["questie:quest/288"]
 
 [[step]]
-id = "a26wl-088"
-do = "turnin"
-quest = 275
-npc = 1244
-at = [1437, 56.4, 40.4]
-text = "Vuelve al Cinturón Verde y entrega las trepadoras a Rethiel."
-status = "unverified"
-sources = ["questie:quest/275"]
-
-[[step]]
 id = "a26wl-089"
 do = "accept"
 quest = 98216
@@ -990,6 +827,7 @@ reqlevel = 23
 npc = 1077
 at = [1437, 38.8, 52.4]
 text = "En la Excavación de Whelgar, coge con Whelgar la misión de la piedra angular titánica."
+why = "+3.150 XP · ~8 min"
 status = "unverified"
 sources = ["questie:quest/98216"]
 

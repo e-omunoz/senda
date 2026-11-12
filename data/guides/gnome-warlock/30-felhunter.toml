@@ -16,6 +16,7 @@ npc = 6120
 at = [1455, 47.6, 9.3]
 text = "Coge de Lago Blackwrench, en la Caverna Abandonada de Forjaz, la misión que te manda con Strahad."
 tip = "Gakin, en Ventormenta, da la misma misión. Entrena el 30 a la vez con Briarthorn: Subyugar demonio y Piroinferno."
+why = "+600 XP · <1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1798", "questie:npc/6120", "legacy:BrujoGnomoGuia 4.1.0"]
 
@@ -50,6 +51,7 @@ reqlevel = 30
 npc = 6251
 at = [1413, 62.6, 35.5]
 text = "Coge la primera parte del Tomo de la Cábala de Strahad."
+why = "+600 XP · <1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1758", "questie:npc/6251"]
 
@@ -71,6 +73,7 @@ reqlevel = 30
 npc = 6294
 at = [1455, 74.2, 9.4]
 text = "Coge de Krom la misión de las dos páginas del tomo."
+why = "+2.450 XP · ~37 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1802", "questie:npc/6294"]
 
@@ -113,6 +116,7 @@ reqlevel = 30
 npc = 6294
 at = [1455, 74.2, 9.4]
 text = "Coge la última parte del tomo de Krom."
+why = "+2.799 XP · ~9 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1804", "questie:npc/6294"]
 
@@ -145,6 +149,7 @@ reqlevel = 30
 npc = 6251
 at = [1413, 62.6, 35.5]
 text = "Coge La vinculación de Strahad."
+why = "+2.450 XP · ~1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1795", "questie:npc/6251"]
 

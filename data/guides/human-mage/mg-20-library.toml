@@ -12,6 +12,7 @@ quest = 79092
 at = [1429, 65.4, 70.1]
 text = "De camino a Crestagrana, entra en la Torre de Azora (Elwynn) y coge el libro de la biblioteca."
 tip = "Vale cualquier libro de biblioteca que encuentres por el mundo."
+why = "+160 XP · ~10 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/79092"]
 checked = "2026-11-11"

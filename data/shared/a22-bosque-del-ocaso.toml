@@ -95,6 +95,7 @@ reqlevel = 18
 npc = 264
 at = [1431, 73.5, 46.8]
 text = "Coge con la Comandante Althea Ebonlocke la primera misión de la Guardia Nocturna."
+why = "+3.424 XP · ~9 min · desbloquea «{quest:57}»"
 status = "unverified"
 sources = ["questie:quest/56", "questie:npc/264"]
 
@@ -106,6 +107,7 @@ reqlevel = 17
 npc = 633
 at = [1431, 75.3, 48.8]
 text = "Coge con Elaine Carevin la misión para Jitters (Colina del Cuervo)."
+why = "+390 XP · ~1,3 min"
 status = "unverified"
 sources = ["questie:quest/163", "questie:npc/633"]
 
@@ -117,6 +119,7 @@ reqlevel = 17
 npc = 633
 at = [1431, 75.3, 48.8]
 text = "Coge también la entrega para Sven."
+why = "+925 XP · <1 min · 3,6× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/164"]
 
@@ -128,6 +131,7 @@ reqlevel = 17
 npc = 633
 at = [1431, 75.3, 48.8]
 text = "Y la del ermitaño."
+why = "+1.000 XP · ~1 min · 2,5× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/165"]
 
@@ -139,6 +143,7 @@ reqlevel = 18
 npc = 268
 at = [1431, 72.6, 47.6]
 text = "Coge con Sirra Von'Indi la misión de la familia Valor."
+why = "+1.750 XP · <1 min · 6,0× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/96139", "questie:npc/268"]
 
@@ -151,6 +156,7 @@ npc = 265
 at = [1431, 75.8, 45.3]
 text = "Coge con Madame Eva la misión del tótem (colmillos de necrófago, dedos de esqueleto y veneno de araña)."
 tip = "Se completa poco a poco en toda la zona: no la busques aparte."
+why = "+7.144 XP · ~25 min"
 status = "unverified"
 sources = ["questie:quest/101", "questie:npc/265"]
 
@@ -182,6 +188,7 @@ reqlevel = 18
 npc = 264
 at = [1431, 73.5, 46.8]
 text = "Coge la segunda misión de la Guardia Nocturna."
+why = "+7.050 XP · ~19 min"
 status = "unverified"
 sources = ["questie:quest/57"]
 
@@ -193,6 +200,8 @@ reqlevel = 17
 npc = 888
 at = [1431, 45.1, 67.0]
 text = "Ve al oeste por el camino. Coge con el Vigía Dodds la misión de las arañas."
+tip = "+2.165 XP · ~19 min: por debajo de la media del tramo; hazla si te interesa la recompensa."
+optional = true
 status = "unverified"
 sources = ["questie:quest/245", "questie:npc/888"]
 
@@ -214,6 +223,8 @@ reqlevel = 17
 npc = 288
 at = [1431, 18.4, 56.4]
 text = "Coge la de Jitters para el Chef Grual."
+tip = "+390 XP · ~1,5 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/5"]
 
@@ -253,6 +264,7 @@ reqlevel = 20
 npc = 311
 at = [1431, 7.8, 34.1]
 text = "Coge la venganza de Sven."
+why = "+1.000 XP · ~1,3 min · 2,0× la media del tramo"
 status = "unverified"
 sources = ["questie:quest/95"]
 
@@ -264,6 +276,8 @@ reqlevel = 19
 npc = 893
 at = [1431, 7.7, 33.2]
 text = "Coge con Lars la misión de los lobos."
+tip = "+3.090 XP · ~15 min: por debajo de la media del tramo."
+optional = true
 status = "unverified"
 sources = ["questie:quest/226", "questie:npc/893"]
 
@@ -285,6 +299,7 @@ reqlevel = 20
 npc = 289
 at = [1431, 28.1, 31.5]
 text = "Coge su encargo para Madame Eva."
+why = "+490 XP · ~1 min · desbloquea «{quest:149}»"
 status = "unverified"
 sources = ["questie:quest/148"]
 
@@ -295,6 +310,7 @@ quest = 226
 at = [1431, 20.2, 27.6]
 text = "Mata 12 lobos hambrientos y 8 lobos rabiosos en el norte del bosque."
 tip = "Los necrófagos de la cripta (24, 34) dan colmillos para Madame Eva."
+optional = true
 status = "unverified"
 sources = ["questie:quest/226"]
 
@@ -305,6 +321,7 @@ quest = 226
 npc = 893
 at = [1431, 7.7, 33.2]
 text = "Vuelve con Lars y entrega los lobos."
+optional = true
 status = "unverified"
 sources = ["questie:quest/226"]
 
@@ -314,6 +331,7 @@ do = "complete"
 quest = 245
 at = [1431, 30.0, 40.0]
 text = "Termina las 15 arañas venenosas pigmeas por el camino de vuelta."
+optional = true
 status = "unverified"
 sources = ["questie:quest/245"]
 
@@ -324,6 +342,7 @@ quest = 245
 npc = 888
 at = [1431, 45.1, 67.0]
 text = "Entrega las arañas a Dodds."
+optional = true
 status = "unverified"
 sources = ["questie:quest/245"]
 
@@ -371,6 +390,7 @@ quest = 5
 npc = 272
 at = [1431, 73.8, 43.5]
 text = "Habla con el Chef Grual."
+optional = true
 status = "unverified"
 sources = ["questie:quest/5"]
 
@@ -392,6 +412,7 @@ reqlevel = 20
 npc = 265
 at = [1431, 75.8, 45.3]
 text = "Coge la del peine para Mary la Ciega."
+why = "+490 XP · ~2 min"
 status = "unverified"
 sources = ["questie:quest/149"]
 
@@ -404,27 +425,6 @@ at = [1431, 82.0, 59.1]
 text = "Ve al sureste, a la casa de Mary la Ciega."
 status = "unverified"
 sources = ["questie:quest/149", "questie:npc/302"]
-
-[[step]]
-id = "a22dw-038"
-do = "accept"
-quest = 154
-reqlevel = 20
-npc = 302
-at = [1431, 82.0, 59.1]
-text = "Coge la vuelta para Madame Eva."
-status = "unverified"
-sources = ["questie:quest/154"]
-
-[[step]]
-id = "a22dw-039"
-do = "turnin"
-quest = 154
-npc = 265
-at = [1431, 75.8, 45.3]
-text = "Entrega el peine a Madame Eva."
-status = "unverified"
-sources = ["questie:quest/154"]
 
 [[step]]
 id = "a22dw-040"
@@ -491,6 +491,7 @@ reqlevel = 23
 npc = 663
 at = [1431, 75.8, 47.6]
 text = "Coge con Calor la primera misión de los huargen."
+why = "+2.320 XP · ~7,6 min · desbloquea «{quest:221}»"
 status = "unverified"
 sources = ["questie:quest/173", "questie:npc/663"]
 
@@ -522,6 +523,7 @@ reqlevel = 23
 npc = 663
 at = [1431, 75.8, 47.6]
 text = "Coge la segunda de los huargen."
+why = "+4.066 XP · ~12 min"
 status = "unverified"
 sources = ["questie:quest/221"]
 

@@ -18,6 +18,7 @@ npc = 6120
 at = [1455, 47.6, 9.3]
 text = "En la Caverna Abandonada de Forjaz, coge la misión de Lago Blackwrench."
 if = { race = ["Gnome"] }
+why = "+420 XP · <1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1715", "questie:npc/6120", "legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
 
@@ -86,6 +87,7 @@ reqlevel = 10
 npc = 6122
 at = [1453, 39.2, 85.2]
 text = "Coge la misión de Surena Caledon de Gakin."
+why = "+689 XP · ~12 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1688", "questie:npc/6122"]
 
@@ -130,6 +132,7 @@ reqlevel = 10
 npc = 6122
 at = [1453, 39.2, 85.2]
 text = "Coge La vinculación de Gakin."
+why = "+625 XP · ~1 min · misión de clase"
 status = "unverified"
 sources = ["questie:quest/1689", "questie:npc/6122"]
 
