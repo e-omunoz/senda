@@ -5,6 +5,12 @@ levels = [40, 41]
 map = 1441
 summary = "Misiones de clase con Magus Tirth, en los Llanos Centelleantes."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta vaya a {map:1441}."
+later_level = 40
+later_map = 1441
+
 [[step]]
 id = "mg-40-needles-001"
 do = "turnin"

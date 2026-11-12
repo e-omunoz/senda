@@ -9,6 +9,12 @@ map = 1450
 summary = "Nivel 16: Curar envenenamiento, Prueba del lago en el Claro de la Luna y la mitad del colgante hundida junto a las Ruinas de Mathystra."
 if = { class = ["DRUID"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Con Teletransporte: Claro de la Luna, cuando tengas un rato: {map:1450} y {map:1439}."
+later_level = 16
+later_map = 1450
+
 [[step]]
 id = "dr-16-aquatic-001"
 do = "goto"

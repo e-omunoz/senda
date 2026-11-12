@@ -9,6 +9,12 @@ map = 1453
 summary = "Cadena de clase del nivel 10: Gakin en El Cordero Degollado (Ventormenta), la gargantilla de Surena Caledon en Elwynn y la vinculación en el círculo del sótano."
 if = { class = ["WARLOCK"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Al pasar por {map:1453}: Gakin, en el sótano de El Cordero Degollado."
+later_level = 10
+later_map = 1453
+
 [[step]]
 id = "wl-voidwalker-001"
 do = "accept"

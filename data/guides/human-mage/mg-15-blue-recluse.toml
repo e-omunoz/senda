@@ -5,6 +5,12 @@ levels = [15, 16]
 map = 1453
 summary = "Primera parte de la Túnica de tejido de maná (misión de clase del 15)."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "En tu próxima visita a {map:1453}; la gema de falla se consigue en {map:1432}."
+later_level = 15
+later_map = 1453
+
 [[step]]
 id = "mg-15-blue-recluse-001"
 do = "accept"

@@ -7,6 +7,12 @@ map = 1439
 summary = "Usa el polvo lunar en la piedra lechúcica de Auberdine, vence a Lunaclaw y vuelve a Darnassus a por la Forma de oso."
 if = { class = ["DRUID"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta vaya a {map:1439}: la piedra lechúcica está en Auberdine."
+later_level = 11
+later_map = 1439
+
 [[step]]
 id = "dr-11-lunaclaw-001"
 do = "complete"

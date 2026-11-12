@@ -6,6 +6,11 @@ map = 1450
 summary = "Opcional: el libro de La Masacre, la cadena de Torwa en el Templo Sumergido y las misiones de clase de Zul'Gurub."
 if = { class = ["DRUID"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Al 60 y con grupo."
+later_level = 60
+
 [[step]]
 id = "dr-60-endgame-001"
 do = "note"

@@ -7,6 +7,12 @@ map = 1419
 summary = "Opcional al 60. Daio el Decrépito (Las Tierras Devastadas) enseña el Ritual de condena; Jubahl Corpseseeker (Forjaz) empieza la cadena del Corcel de la muerte."
 if = { class = ["WARLOCK"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Al 60 y con grupo: Daio, en {map:1419}."
+later_level = 60
+later_map = 1419
+
 [[step]]
 id = "wl-endgame-001"
 do = "accept"

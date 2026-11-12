@@ -86,6 +86,7 @@ Código de salida: `0` sin errores, `1` con errores (o con avisos si `--strict`)
 
 ```
 python tools/build.py [--check] [--quiet] [--root RUTA] [--refresh-prereq]
+python tools/build.py --refresh-reserve [--reserve-from RAIZ] [--foreverdb DIR]
 ```
 
 1. Ejecuta la validación; si hay errores, no genera nada y sale con `1`.
@@ -98,7 +99,14 @@ python tools/build.py [--check] [--quiet] [--root RUTA] [--refresh-prereq]
      forever-db: `all` sin migas de pan y `any` con una sola previa); si no existe, de `.cache/foreverdb`; y si
      tampoco, del orden de las guías (coger B justo después de entregar A al mismo PNJ, o el mismo `chain`).
      `python tools/build.py --refresh-prereq` regenera la instantánea desde forever-db.
-   - `addon/Senda/Guides/Guides.xml` (primero `Followups.lua` y `Shared.lua`, luego las guías por orden alfabético).
+   - `addon/Senda/Guides/Reserve.lua`: la Reserva de XP de la pestaña «Aparte» (una cadena por zona), desde la
+     instantánea `data/reserve.json`. `--refresh-reserve` (`tools/reserve.py`) la rehace con las puntuaciones de
+     `tools/route_score.py` (`data/scores/*.json`: decisión, XP y minutos), los PNJ y coordenadas de los pasos de las
+     guías, las rutas importadas de Polestar que tengas en local (`ps-*`, `*-ps`, `*-ps-full`, en la raíz de
+     `--reserve-from`) y forever-db (nivel mínimo, XP, razas y clases, requisitos, objetivos); solo guarda lo que
+     pueden coger el gnomo brujo, el humano mago y el elfo druida.
+   - `addon/Senda/Guides/Guides.xml` (primero `Followups.lua`, `Reserve.lua` y `Shared.lua`, luego las guías por
+     orden alfabético).
    - `addon/Senda/Knowledge/<carpeta>.lua`: una por carpeta de `data/knowledge/` (`warlock.lua`, `mage.lua`,
      `general.lua`...) con `Senda.Knowledge:Register(...)` por página, ordenadas por `order` e `id`.
    - `addon/Senda/Knowledge/Knowledge.xml`.

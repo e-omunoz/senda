@@ -9,6 +9,12 @@ map = 1439
 summary = "Nivel 14: muestra de agua de la Cascada de Cliffspring, ungüento de Alanndarian en Auberdine y diez ciervos enfermos de Costa Oscura."
 if = { class = ["DRUID"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta pase por {map:1439}."
+later_level = 14
+later_map = 1439
+
 [[step]]
 id = "dr-14-poison-001"
 do = "goto"

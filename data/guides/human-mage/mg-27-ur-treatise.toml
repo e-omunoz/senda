@@ -5,6 +5,12 @@ levels = [27, 28]
 map = 1433
 summary = "Paso de la misión de clase que se hace en Montañas Crestagrana."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta pase por {map:1433}."
+later_level = 27
+later_map = 1433
+
 [[step]]
 id = "mg-27-ur-treatise-001"
 do = "complete"

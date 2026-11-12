@@ -8,6 +8,12 @@ map = 1413
 summary = "Briarthorn (Forjaz) te manda con Strahad Farsan en Trinquete, que te enseña Invocar a corcel nefasto en el momento."
 if = { class = ["WARLOCK"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "En tu próximo viaje a {map:1413}: Strahad Farsan, en Trinquete."
+later_level = 40
+later_map = 1413
+
 [[step]]
 id = "wl-felsteed-001"
 do = "train"

@@ -5,6 +5,12 @@ levels = [16, 17]
 map = 1432
 summary = "Paso de la misión de clase que se hace en Loch Modan."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta pase por {map:1432}."
+later_level = 16
+later_map = 1432
+
 [[step]]
 id = "mg-16-rift-gem-001"
 do = "complete"

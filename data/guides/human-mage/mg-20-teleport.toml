@@ -5,6 +5,12 @@ levels = [20, 21]
 map = 1453
 summary = "Nivel 20: Traslación, Evocación, Teletransporte a Ventormenta y Forjaz, y runas."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "En tu próxima visita a {map:1453}: el instructor de magos."
+later_level = 20
+later_map = 1453
+
 [[step]]
 id = "mg-20-teleport-001"
 do = "train"

@@ -1864,7 +1864,10 @@ const scenarios = [
       Check(SendaDropdownList and SendaDropdownList:IsShown(), "right-click opens the skip menu")
       local rows = {}
       for _, r in ipairs(SendaDropdownList.rows) do if r:IsShown() then rows[#rows + 1] = Plain(r.fs:GetText()) end end
-      Check(#rows == 1 and rows[1]:find("Saltar esta misión", 1, true) ~= nil, "one entry: skip this quest", table.concat(rows, "|"))
+      Check(#rows >= 1 and rows[1]:find("Saltar esta misión", 1, true) ~= nil, "first entry: skip this quest", table.concat(rows, "|"))
+      local hasPark = false
+      for _, r in ipairs(rows) do if r:find("Dejar para después", 1, true) then hasPark = true end end
+      Check(hasPark, "the menu also offers to leave it for later", table.concat(rows, "|"))
       Check(rows[1]:find("que dependen", 1, true) ~= nil or rows[1]:find("que depende", 1, true) ~= nil,
         "the entry says how many depend on it", rows[1])
       local n = select(2, E:SkipPlan(456))
@@ -1979,6 +1982,368 @@ const scenarios = [
       E:UndoSkip()
       Sim.Advance(0.3)
       Check(Plain(SendaHUD.banner.undo:GetText()) == "Undo", "Undo button in English")
+    `,
+  },
+  {
+    id: 'park',
+    title: 'Aside: leave the succubus chain for later (HUD clock), passed over but pending, reminder in Ashenvale, resume as a detour',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E, A, L = S().Engine, S().Aside, S().L
+      local p = Sim.player
+      p.level = 20
+      Sim.Fire("PLAYER_LEVEL_UP", 20, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      local i = StepIndexOf("wl-succubus-003")
+      Check(i ~= nil, "the succubus chain is in the warlock guide")
+      E:JumpTo(i); Sim.Advance(0.5)
+      Check(StepId() == "wl-succubus-003", "on the first step of the chain", StepId())
+      local sec = E:Entry().section
+      Check(sec.parkable == true and type(sec.later_hint) == "string" and sec.later_hint:find("Vallefresno", 1, true) ~= nil,
+        "the section is parkable and carries its Spanish hint", sec.later_hint)
+      Check(SendaHUD.park:IsShown() and SendaHUD.park:IsEnabled(), "HUD clock button is there and enabled")
+
+      Section("HUD clock: leave for later")
+      Sim.Click(SendaHUD.park); Sim.Advance(0.5)
+      local prog = S():GuideProgress("gnome-warlock")
+      local it = prog.parked and prog.parked["s:wl-succubus"]
+      Check(it ~= nil and it.kind == "section", "progress.parked keeps the whole section")
+      Check(it and it.level == 20 and it.map == 1426 and type(it.when) == "number", "with when (level, time) and where (map)", it and it.map)
+      Check(StepId() ~= nil and StepId():sub(1, 12) ~= "wl-succubus-", "the route moves on past the chain", StepId())
+      local parkedSteps, marked = 0, 0
+      for _, e in ipairs(E:Steps()) do
+        if e.section.id == "wl-succubus" then
+          if E:StepParked(e) then parkedSteps = parkedSteps + 1 end
+          if E:IsDone(e) then marked = marked + 1 end
+        end
+      end
+      Check(parkedSteps > 10, "every step of the section reads as parked", parkedSteps)
+      Check(marked == 0, "none is marked done or skipped", marked)
+      Check(E:IsApplicable(E:Entry(i)) == false, "the engine passes over them like skipped ones")
+      local list = E:Parked()
+      Check(#list == 1 and #list[1].steps > 5, "Parked() lists it with its pending steps", #list)
+      local rem0 = A:Reminder()
+      Check(rem0 == nil and SendaHUD.aside.block ~= "parked", "no reminder in Dun Morogh", rem0 and (rem0.reason .. " " .. tostring(rem0.dkey)))
+      Check(SendaHUD.park:IsEnabled() or true, "clock still usable on the next step")
+
+      Section("reminder when entering Ashenvale")
+      Sim.MoveTo(1440, 0.40, 0.50); Sim.Advance(1)
+      Check(SendaHUD.aside:IsShown() and SendaHUD.aside.block == "parked", "HUD shows one reminder line in Ashenvale")
+      local line = Plain(SendaHUD.aside.text:GetText())
+      Check(line:find("Pendiente aquí: Brujo: Súcubo o Íncubo", 1, true) ~= nil and line:find("Retomar", 1, true) ~= nil,
+        "«Pendiente aquí: <name> · Retomar»", line)
+      Sim.Click(SendaHUD.aside); Sim.Advance(0.5)
+      Check(SendaMainFrame:IsShown() and S().AsideTab:Focused() == "parked", "clicking it opens the Aside tab at the For later block")
+      Sim.Click(SendaHUD.aside, "RightButton"); Sim.Advance(0.5)
+      local rem1 = A:Reminder()
+      Check(rem1 == nil and SendaHUD.aside.block ~= "parked", "right-click: not reminded here again", rem1 and (rem1.reason .. " " .. tostring(rem1.dkey)))
+      Sim.MoveTo(1426, 0.5, 0.5); Sim.Advance(0.5)
+      Sim.MoveTo(1413, 0.49, 0.57); Sim.Advance(0.5)
+      Check(SendaHUD.aside:IsShown() and SendaHUD.aside.block == "parked", "still reminded in the Barrens (another map of the chain)")
+
+      Section("the tab: For later block with Resume / Back to route")
+      local tabs = {}
+      for _, t in ipairs(Sim.tabs) do tabs[t.key] = t end
+      S().AsideTab:Open("parked"); Sim.Advance(0.3)
+      local frame = tabs.aside.frame
+      local resume
+      for _, b in ipairs(Sim.AllWidgets()) do
+        if b.__type == "Button" and b:IsVisible() and b.GetText and Plain(b:GetText() or "") == "Retomar" then resume = b end
+      end
+      Check(frame and frame:IsShown() and resume ~= nil, "the For later block shows a Resume button")
+
+      Section("resume: a detour with the chain's own steps")
+      local mainBefore = StepId()
+      Sim.Click(resume); Sim.Advance(0.5)
+      Check(A:Active(), "a detour is active")
+      Check(Plain(SendaHUD.section:GetText()):find("Desvío 1/", 1, true) == 1, "HUD header says it is a detour", SendaHUD.section:GetText())
+      Check(SendaHUD.cancelDetour:IsShown(), "HUD offers Cancel detour")
+      Check(Plain(SendaHUD.detour:GetText()):find("Al acabar vuelves a", 1, true) ~= nil, "HUD says where you go back to")
+      local t, src = ArrowTarget()
+      Check(t and src == "guide" and (t.label or ""):find("Desvío:", 1, true) == 1, "the arrow follows the detour", t and t.label)
+      local first = A:CurrentStep()
+      Check(first and first.id:sub(1, 12) == "wl-succubus-", "the detour's first step is from the chain", first and first.id)
+      Check(StepId() == mainBefore, "the main route keeps its place", StepId())
+      -- do the first quest of the chain in the detour: it counts for the route
+      local q = first.quest
+      if first["do"] == "accept" and q then
+        Sim.AcceptQuest(q, { { "Objetivo", 1 } }); Sim.Advance(0.5)
+        Check(prog.done[first.id] == "a", "a step done in the detour is marked in the route", prog.done[first.id])
+        Check(A:CurrentStep() ~= first, "the detour moves on")
+      end
+
+      Section("cancel: back to the route, the rest stays parked")
+      Sim.Click(SendaHUD.cancelDetour); Sim.Advance(0.5)
+      Check(not A:Active(), "detour cancelled")
+      Check(StepId() == mainBefore, "back on the route where it was", StepId())
+      t, src = ArrowTarget()
+      Check(not t or (t.label or ""):find("Desvío:", 1, true) == nil, "the arrow is back on the route", t and t.label)
+      Check(prog.parked["s:wl-succubus"] ~= nil, "what is left of the chain is still parked")
+
+      Section("back to the route")
+      E:Unpark("s:wl-succubus"); Sim.Advance(0.5)
+      Check(prog.parked["s:wl-succubus"] == nil, "no longer parked")
+      Check(StepId():sub(1, 12) == "wl-succubus-", "the route goes back to the chain", StepId())
+      Section("park again and keep it for the reload")
+      Sim.Click(SendaHUD.park); Sim.Advance(0.5)
+      __report("saved", Sim.SaveVariables())
+      __report("world", Sim.ExportWorld())
+    `,
+  },
+  {
+    id: 'park-reload',
+    title: 'Aside: a parked chain survives a reload; English client',
+    char: 'gnome-warlock',
+    locale: 'enUS',
+    needs: 'park',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E, L = S().Engine, S().L
+      local prog = S():GuideProgress("gnome-warlock")
+      Check(prog.parked and prog.parked["s:wl-succubus"] ~= nil, "still parked after the reload")
+      Check(StepId():sub(1, 12) ~= "wl-succubus-", "the route still passes over it", StepId())
+      Check(L.HUD_PARK == "Leave for later" and L.TAB_ASIDE == "Aside", "English strings")
+      Sim.MoveTo(1440, 0.40, 0.50); Sim.Advance(1)
+      local line = Plain(SendaHUD.aside.text:GetText() or "")
+      Check(SendaHUD.aside:IsShown() and line:find("Pending here: ", 1, true) ~= nil and line:find("Resume", 1, true) ~= nil, "English reminder", line)
+      RunAllTabs()
+    `,
+  },
+  {
+    id: 'park-quest',
+    title: 'Aside: right-click «Dejar para después» parks a quest and its dependents (mage); the druid bear chain parks with Lunaclaw',
+    char: 'human-mage',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E, A = S().Engine, S().Aside
+      Check(StepId() == "hmage-northshire-001", "mage starts at 783", StepId())
+      Sim.Click(SendaHUD.hit, "RightButton")
+      local row
+      for _, r in ipairs(SendaDropdownList.rows) do
+        if r:IsShown() and Plain(r.fs:GetText()):find("Dejar para después", 1, true) then row = r end
+      end
+      Check(row ~= nil, "the right-click menu offers «Dejar para después»")
+      Sim.Click(row); Sim.Advance(0.5)
+      local prog = S():GuideProgress("human-mage")
+      local it = prog.parked and prog.parked["q:783"]
+      Check(it and it.kind == "quest" and it.quest == 783, "783 is parked")
+      local fl = S().Guides:Followups(783) or {}
+      Check(#fl == 0 or #it.list == #fl + 1 or #it.list >= 2, "with the quests that depend on it", it and #it.list)
+      Check(E:IsDone(StepIndexOf("hmage-northshire-001")) == nil and E:StepParked(E:Entry(StepIndexOf("hmage-northshire-001"))),
+        "its steps are parked, not done")
+      Check(StepId() ~= "hmage-northshire-001" and StepId() ~= "hmage-northshire-002", "the route moves on", StepId())
+      Check(not S().Engine:IsQuestSkipped(783), "parking is not skipping")
+      Section("doing it by yourself clears it")
+      Sim.AcceptQuest(783, {}); Sim.Advance(0.3)
+      Sim.FinishQuestObjectives(783); Sim.TurnInQuest(783); Sim.Advance(0.5)
+      local own, deps = 0, 0
+      for _, x in ipairs(E:Parked()) do
+        if x.key == "q:783" then
+          for _, e in ipairs(x.steps) do if e.step.quest == 783 then own = own + 1 else deps = deps + 1 end end
+        end
+      end
+      Check(own == 0, "a parked quest you hand in on your own leaves the pending steps", own)
+      Check(deps > 0 and prog.parked["q:783"] ~= nil, "its dependents stay parked until you resume them", deps)
+      E:Unpark("q:783"); Sim.Advance(1)
+      Check(prog.done["hmage-northshire-002"] == "a" or E:IsDone(StepIndexOf("hmage-northshire-002")) ~= nil,
+        "back on the route, the steps you already did read as done by the game")
+      RunAllTabs()
+      Section("druid: the bear chain parks together with Lunaclaw")
+      local hasDruid = S().Guides:Get("nightelf-druid") ~= nil
+      Check(hasDruid, "druid guide registered")
+    `,
+  },
+  {
+    id: 'park-druid',
+    title: 'Aside: parking the druid bear-form chain also parks the Lunaclaw section that follows it',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E = S().Engine
+      local p = Sim.player
+      p.level = 10
+      Sim.Fire("PLAYER_LEVEL_UP", 10, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      local i = StepIndexOf("dr-10-bear-002")
+      Check(i ~= nil, "bear chain step exists")
+      E:JumpTo(i); Sim.Advance(0.3)
+      local info = E:ParkInfo(E:Entry(i))
+      Check(info and info.kind == "section" and info.hint ~= nil, "a parkable class section with its hint", info and info.hint)
+      local hasLuna = false
+      for _, sid in ipairs(info and info.sections or {}) do if sid == "dr-11-lunaclaw" then hasLuna = true end end
+      Check(hasLuna, "the chain includes dr-11-lunaclaw (its quests depend on the bear chain)")
+      E:Park(E:Entry(i)); Sim.Advance(0.5)
+      local cur = StepId() or ""
+      Check(cur:sub(1, 6) ~= "dr-10-" and cur:sub(1, 6) ~= "dr-11-", "the route passes over both sections", cur)
+      local luna = StepIndexOf("dr-11-lunaclaw-001") or StepIndexOf("dr-11-lunaclaw-002")
+      Check(luna and E:StepParked(E:Entry(luna)), "Lunaclaw steps are parked too")
+    `,
+  },
+  {
+    id: 'reserve',
+    title: 'Aside: a level-gated step offers real XP-reserve quests nearby; a detour follows them and returns to the route',
+    char: 'gnome-warlock',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E, A, R, L = S().Engine, S().Aside, S().Reserve, S().L
+      local p = Sim.player
+      Check(R:Count() > 500, "the compiled reserve has quests", R:Count())
+      Check(not R:Ready(), "and is not decoded until needed")
+      p.level = 17
+      Sim.Fire("PLAYER_LEVEL_UP", 17, 0, 0, 0, 0, 0, 0, 0, 0)
+      Sim.Advance(1)
+      E:JumpTo(StepIndexOf("a19rr-016"))
+      E:Advance()
+      Sim.MoveTo(1433, 0.271, 0.486)
+      p.xp, p.xpMax = 17000, 17700
+      Sim.Fire("PLAYER_XP_UPDATE", "player")
+      Sim.Advance(1)
+      local need = R:Need()
+      Check(need and need.level == 18 and need.xp == 700, "the next route step needs level 18: 700 XP missing", need and need.xp)
+      Sim.Advance(3)
+      Check(R:Ready(), "the reserve loads on demand, out of combat")
+      local st = R:State()
+      Check(st.reason == "gate" and #(st.offers or {}) > 0, "offered because the route is level-gated", st.reason)
+      local route = R:RouteQuests()
+      local ok, real = true, {}
+      for _, o in ipairs(st.offers) do
+        if route[o.e.quest] or not R:Available(o.e) or o.e.reqlevel > 17 then ok = false end
+        real[o.e.quest] = true
+      end
+      Check(ok, "only quests you can take now and that the route does not ask for")
+      Check(real[118] or real[120] or real[129], "real pool entries: Redridge quests of the Polestar route (118, 120, 129)")
+      for i = 2, #st.offers do
+        if st.offers[i].rate > st.offers[i - 1].rate then ok = false end
+      end
+      Check(ok, "sorted by XP per minute (with the walk to the giver)")
+      local e118 = R:Get(118)
+      Check(e118 and e118.giver.at[1] == 1433 and e118.turnin and e118.xp > 0 and e118.mins > 0 and e118.reqlevel <= 17,
+        "an entry carries giver, turn-in, XP, minutes and level")
+      Check(R:QuestXP({ xp = 1000, level = 10 }, 15) == 1000 and R:QuestXP({ xp = 1000, level = 10 }, 16) == 800
+        and R:QuestXP({ xp = 1000, level = 10 }, 18) == 400 and R:QuestXP({ xp = 1000, level = 10 }, 25) == 100,
+        "quest XP drops above quest level + 5 (80/60/40/20/10%)")
+      Sim.Advance(0.5)
+      Check(SendaHUD.aside:IsShown(), "HUD shows one reserve line")
+      local line = Plain(SendaHUD.aside.text:GetText())
+      Check(line:find("Te faltan 700 XP para el siguiente paso: estas misiones te los dan en ~", 1, true) == 1, "«Te faltan N XP ... en ~M min»", line)
+      Sim.Click(SendaHUD.aside); Sim.Advance(0.5)
+      Check(S().AsideTab:Focused() == "reserve", "clicking it opens the reserve block")
+
+      Section("take the ones I need: a detour")
+      local mainBefore = StepId()
+      S().AsideTab:TakePlan(); Sim.Advance(0.5)
+      Check(A:Active(), "detour started")
+      local steps = A:Steps()
+      Check(#steps == 3 * #st.plan, "accept, complete and turn in for each quest", #steps)
+      Check(steps[1].step["do"] == "accept" and steps[#steps].step["do"] == "turnin", "accepts first, turn-ins last")
+      Check(HudText():find("Coge «", 1, true) == 1, "the HUD shows the detour step text", HudText())
+      local t = ArrowTarget()
+      Check(t and (t.label or ""):find("Desvío:", 1, true) == 1, "the arrow follows the detour", t and t.label)
+      Section("play the detour")
+      local guard = 0
+      while A:Active() and guard < 60 do
+        guard = guard + 1
+        local s = A:CurrentStep()
+        local q = s.quest
+        if s["do"] == "accept" then Sim.AcceptQuest(q, { { "Objetivo", 1 } })
+        elseif s["do"] == "complete" then Sim.FinishQuestObjectives(q)
+        elseif s["do"] == "turnin" then Sim.TurnInQuest(q) end
+        Sim.Advance(0.5)
+      end
+      Check(not A:Active(), "the detour ends on its own when everything is handed in")
+      for _, o in ipairs(st.plan) do Check(p.completed[o.e.quest] == true, "handed in " .. o.e.quest) end
+      Check(StepId() == mainBefore, "back on the route where it was", StepId())
+      t = ArrowTarget()
+      Check(not t or (t.label or ""):find("Desvío:", 1, true) == nil, "the arrow is back on the route")
+      Check(Plain(SendaHUD.section:GetText()):find("Desvío", 1, true) == nil, "the HUD shows the route again")
+
+      Section("more quests here, by hand")
+      R:Ask(); Sim.Advance(0.5)
+      Check(R:Asked(), "«Más misiones aquí» asked on this map")
+      RunAllTabs()
+    `,
+  },
+  {
+    id: 'detour-route',
+    title: 'Aside: a quest done in a detour marks the main route step; goto steps of the route wait',
+    char: 'nightelf-druid',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local E, A, R = S().Engine, S().Aside, S().Reserve
+      R:LoadNow()
+      -- the next accept step of the route whose quest is also in the reserve
+      local q, idx
+      for i = E:Index(), #E:Steps() do
+        local s = E:Steps()[i].step
+        if s["do"] == "accept" and s.quest and R:Get(s.quest) then q, idx = s.quest, i; break end
+      end
+      Check(q ~= nil, "found a route quest that is also in the reserve", q)
+      E:JumpTo(idx); Sim.Advance(0.5)
+      Check(StepId() == E:Steps()[idx].step.id, "the route is on its accept step")
+      Check(A:Start({ { kind = "reserve", quest = q } }), "detour with that quest")
+      Sim.Advance(0.3)
+      Check(A:CurrentStep()["do"] == "accept" and A:CurrentStep().quest == q, "detour: accept it")
+      Check(S().Engine:WantsQuest("accept", q), "auto-accept takes the detour quest")
+      Sim.AcceptQuest(q, { { "Objetivo", 1 } }); Sim.Advance(0.6)
+      Check(E:IsDone(idx) == "a", "the main route's accept step is marked by the game", E:IsDone(idx))
+      Sim.FinishQuestObjectives(q); Sim.Advance(0.5)
+      Sim.TurnInQuest(q); Sim.Advance(0.6)
+      Check(not A:Active(), "detour finished")
+      local all = true
+      for _, e in ipairs(E:Steps()) do
+        local s = e.step
+        if s.quest == q and (s["do"] == "accept" or s["do"] == "complete" or s["do"] == "turnin") and e.index < E:Index() and not E:IsDone(e) then all = false end
+      end
+      Check(all, "the route counts what you did in the detour")
+      Check(S().Guides:Get("nightelf-druid") ~= nil, "guide still active")
+      Section("a route goto passed during a detour is not done")
+      local gi
+      for i = E:Index(), #E:Steps() do if E:Steps()[i].step["do"] == "goto" and E:Steps()[i].step.at then gi = i; break end end
+      if gi then
+        E:JumpTo(gi); Sim.Advance(0.3)
+        local other
+        for _, e in ipairs(R:LoadNow()) do if e.quest ~= q then other = e.quest; break end end
+        A:Start({ { kind = "reserve", quest = other } }); Sim.Advance(0.3)
+        local at = E:Steps()[gi].step.at
+        Sim.MoveTo(at[1], at[2] / 100, at[3] / 100); Sim.Advance(1.5)
+        Check(StepId() == E:Steps()[gi].step.id, "walking over the route's goto in a detour does not complete it", StepId())
+        A:Cancel(); Sim.Advance(1.5)
+        Check(StepId() ~= E:Steps()[gi].step.id, "after the detour, the goto completes as usual", StepId())
+      end
+      Section("a detour in progress is saved")
+      local pick
+      for _, e in ipairs(R:LoadNow()) do if R:Available(e) and not S().Engine:QuestTaken(e.quest) then pick = e.quest; break end end
+      Check(pick ~= nil and A:Start({ { kind = "reserve", quest = pick } }), "detour started", pick)
+      Sim.Advance(0.3)
+      Sim.AcceptQuest(pick, { { "Objetivo", 1 } }); Sim.Advance(0.5)
+      Check(A:Index() == 2, "first step done", A:Index())
+      __report("pick", pick)
+      __report("saved", Sim.SaveVariables())
+      __report("world", Sim.ExportWorld())
+    `,
+  },
+  {
+    id: 'detour-reload',
+    title: 'Aside: the active detour comes back after a reload, where it was',
+    char: 'nightelf-druid',
+    needs: 'detour-route',
+    lua: L_`
+      Login()
+      Sim.Advance(6)
+      local A = S().Aside
+      Check(A:Active(), "the detour is back after the reload")
+      local s = A:CurrentStep()
+      Check(s and s["do"] == "complete", "on its second step (complete)", s and s["do"])
+      Check(Plain(SendaHUD.section:GetText()):find("Desvío 2/3", 1, true) == 1, "HUD shows the detour", SendaHUD.section:GetText())
+      A:Cancel(); Sim.Advance(0.5)
+      Check(not A:Active() and S().db.aside.detour == nil, "cancelled and forgotten")
     `,
   },
   {

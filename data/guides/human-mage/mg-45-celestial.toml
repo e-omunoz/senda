@@ -5,6 +5,12 @@ levels = [44, 46]
 map = 1445
 summary = "Final opcional de la cadena del Orbe celestial tras Uldaman."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Después de Uldaman, cuando vuelvas a {map:1445}."
+later_level = 44
+later_map = 1445
+
 [[step]]
 id = "mg-45-celestial-001"
 do = "turnin"

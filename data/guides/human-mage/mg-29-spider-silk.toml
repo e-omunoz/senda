@@ -5,6 +5,12 @@ levels = [29, 30]
 map = 1431
 summary = "Paso de la misión de clase que se hace en el Bosque del Ocaso."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta pase por {map:1431}."
+later_level = 29
+later_map = 1431
+
 [[step]]
 id = "mg-29-spider-silk-001"
 do = "complete"

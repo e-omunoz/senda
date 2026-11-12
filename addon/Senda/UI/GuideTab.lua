@@ -176,7 +176,10 @@ function tab.Refresh(scrollToCurrent)
       else
         r.bg:SetColorTexture(0, 0, 0, 0)
       end
-      if mark == "s" then
+      local parked = not mark and Engine.StepParked and Engine:StepParked(e)
+      if parked then
+        r.state:SetTexture("Interface\\Icons\\INV_Misc_PocketWatch_01") -- para después (pestaña Aparte)
+      elseif mark == "s" then
         r.state:SetTexture("Interface\\RaidFrame\\ReadyCheck-NotReady")
       elseif mark then
         r.state:SetTexture("Interface\\RaidFrame\\ReadyCheck-Ready")
@@ -190,7 +193,11 @@ function tab.Refresh(scrollToCurrent)
       local text = Senda.HUD:StepText(e.step)
       local line = title ~= "" and (UI:Color("accent", title) .. "  " .. text) or text
       if e.step.optional then line = line .. " " .. UI:Color("dim", L.OPTIONAL_TAG) end
-      if not applicable then line = UI:Color("dim", line .. " " .. L.NOT_APPLICABLE) end
+      if parked then
+        line = UI:Color("dim", line .. " " .. L.PARKED_TAG)
+      elseif not applicable then
+        line = UI:Color("dim", line .. " " .. L.NOT_APPLICABLE)
+      end
       r.text:SetText(line)
       r.text:SetAlpha((mark and not isCurrent) and 0.55 or 1)
       local st = Senda.HUD.STATUS[e.step.status or ""]

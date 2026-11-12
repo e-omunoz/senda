@@ -5,6 +5,12 @@ levels = [20, 22]
 map = 1453
 summary = "Un libro de biblioteca para Garion Wendell: el mago aprende Investigación y Estudiar."
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "En tu próxima visita a {map:1453}."
+later_level = 20
+later_map = 1453
+
 [[step]]
 id = "mg-20-library-001"
 do = "accept"

@@ -8,6 +8,12 @@ map = 1457
 summary = "Nivel 10: entrena con Kal en Dolanaar, aprende Teletransporte: Claro de la Luna y habla con el Gran Espíritu del Oso."
 if = { class = ["DRUID"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Al 10, desde {map:1438}: Teletransporte: Claro de la Luna te deja en {map:1450}."
+later_level = 10
+later_map = 1438
+
 [[step]]
 id = "dr-10-bear-001"
 do = "train"

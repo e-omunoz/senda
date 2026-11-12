@@ -8,6 +8,12 @@ map = 1436
 summary = "Mitad del colgante en la costa de los Páramos de Poniente, colgante unido en el Santuario de Remulos y Forma acuática en Darnassus."
 if = { class = ["DRUID"] }
 
+# Cadena de clase: «Dejar para después» la aparca entera (pestaña Aparte, Engine/Aside.lua).
+parkable = true
+later_hint = "Cuando la ruta vaya a {map:1436}: la otra mitad del colgante está en su costa."
+later_level = 17
+later_map = 1436
+
 [[step]]
 id = "dr-18-sea-lion-001"
 do = "loot"

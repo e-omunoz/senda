@@ -7,4 +7,6 @@
   <Script file="Quests.lua"/>
   <Script file="Skip.lua"/>
   <Script file="Automation.lua"/>
+  <Script file="Reserve.lua"/>
+  <Script file="Aside.lua"/>
 </Ui>
