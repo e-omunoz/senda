@@ -305,6 +305,16 @@ local function Create()
   end)
   UI:Tooltip(f.goOn, L.DUO_GO_ON, L.DUO_GO_ON_TIP)
 
+  -- Aviso de un raro cercano (Modules/Rares.lua): línea, «Señalar» y descartar
+  f.rare = FS(f, "GameFontHighlightSmall", C.gold[1], C.gold[2], C.gold[3])
+  f.rareClose = UI:IconButton(f, "Interface\\Buttons\\UI-StopButton", 12, function()
+    if Senda.Rares then Senda.Rares.Dismiss() end
+  end, L.RARE_DISMISS)
+  f.rarePoint = UI:Button(f, L.RARE_POINT, 66, 18, function()
+    if Senda.Rares then Senda.Rares.Point() end
+  end)
+  UI:Tooltip(f.rarePoint, L.RARE_POINT, L.RARE_POINT_TIP)
+
   -- Botones de una misión fallida o abandonada
   f.retake = UI:Button(f, L.QUEST_RETAKE, 110, 20, function()
     local pr = Senda.Engine:Problem()
@@ -518,6 +528,25 @@ function HUD:Refresh()
     y = y + bh + 4
   else
     f.banner:Hide()
+  end
+
+  -- Raro cerca: «Raro cerca: Madre Colmillo (nivel 10) · Señalar»
+  local R = Senda.Rares
+  local rareText, rareCan
+  if not collapsed and R and R.HudLine then rareText, rareCan = R.HudLine() end
+  f.rare:SetShown(rareText ~= nil)
+  f.rareClose:SetShown(rareText ~= nil)
+  f.rarePoint:SetShown(rareText ~= nil and rareCan == true)
+  if rareText then
+    f.rare:SetText(rareText)
+    f.rareClose:ClearAllPoints()
+    f.rareClose:SetPoint("TOPRIGHT", -PAD, -y - 1)
+    f.rarePoint:ClearAllPoints()
+    f.rarePoint:SetPoint("TOPRIGHT", -PAD - 16, -y)
+    f.rare:ClearAllPoints()
+    f.rare:SetPoint("TOPLEFT", PAD, -y - 3)
+    f.rare:SetPoint("RIGHT", rareCan and f.rarePoint or f.rareClose, "LEFT", -6, 0)
+    y = y + math.max(f.rare:GetStringHeight() + 6, 20)
   end
 
   -- Pareja: «Espera a Ana: le falta 3/8» con «Seguir sin él», y la línea de dónde va
