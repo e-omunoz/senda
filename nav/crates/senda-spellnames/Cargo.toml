@@ -1,0 +1,14 @@
+[package]
+name = "senda-spellnames"
+description = "Senda: esES spell names and rank subtexts (SpellName, Spell.NameSubtext) from the installed Forever client, for the trainer lists (docs/TRAINER.md)."
+version.workspace = true
+edition.workspace = true
+license = "GPL-3.0-only"
+publish = false
+
+[dependencies]
+forge-gamedata = { path = "../forge-gamedata" }
+serde_json = { workspace = true }
+
+[lints]
+workspace = true

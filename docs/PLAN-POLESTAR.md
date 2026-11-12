@@ -221,6 +221,28 @@ Los nombres oficiales en español (misiones, PNJ, objetos, hechizos, zonas) los 
   **verificado en el juego**. Un nuevo volcado detecta los cambios de nombre de cada parche.
 - Las explicaciones, los trucos y el porqué de cada paso los seguimos escribiendo nosotros.
 
+## 6d. Pedidos del jugador (pendientes)
+
+- **Pestaña «Aparte»** (fuera de la guía principal), con tres bloques coordinados:
+  - **Para después:** botón en el HUD y en el clic derecho de un paso; aparca la misión y sus
+    dependientes (o la cadena de clase entera, p. ej. la súcubo) sin darla por hecha ni saltada.
+    Recordatorio discreto al entrar en el mapa de alguno de sus pasos o cuando la ruta pasa cerca;
+    las cadenas de clase llevan una pista del mejor momento («cuando la ruta vaya a Vallefresno»).
+  - **Reserva de XP:** misiones opcionales, las que el filtro de eficiencia quitó y las de Polestar
+    que no van en la ruta, ordenadas por XP/min y cercanía, solo las que puedes coger ya. Se ofrece
+    si te falta nivel para el siguiente paso, si acabas una zona antes de tiempo o con «Más misiones
+    aquí».
+  - **Desvío activo:** lo que haces fuera de la ruta, con su progreso; al acabar, vuelta a la ruta
+    donde la dejaste. Lo hecho en un desvío cuenta para la ruta.
+  La flecha sigue o la ruta o el desvío, nunca los dos; el HUD solo añade una línea cuando hay algo
+  útil justo ahí.
+- **Evaluación de equipo según la build y la clase:** hoy `Modules/Gear.lua` compara mejoras de forma
+  general. Debe usar pesos de estadísticas por clase y build (Aflicción del brujo, Escarcha del mago,
+  Feral del druida; pesos con fuente, p. ej. wowsims, MIT), respetar lo que la build prefiere (tipo de
+  arma y armadura que puede llevar, bastón frente a varita y orbe, Espíritu frente a Intelecto según el
+  tramo de nivel), y aplicarlo en recompensas de misión, bolsas, tooltips y la lista de equipo.
+  ForeverLevelingBiS (MIT) como referencia de piezas por tramo.
+
 ## 7. Calidad: cómo sabremos que somos mejores
 
 - **Simulador** (`tests/wowsim`): cada guía importada se juega entera en cada raza y clase, como ahora.

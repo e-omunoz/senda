@@ -1,7 +1,7 @@
 # Senda's offline navigation pipeline (docs/NAV.md). Build-time only: nothing here runs in the game.
 # crates/forge-gamedata, crates/forge-navbuild and crates/forge-core (jsnum only) are copied from
 # Polestar (https://github.com/fitzforge/polestar, commit 19bd636e, GPL-3.0-only, LICENSE-POLESTAR);
-# crates/senda-nav is Senda's own (GPL-3.0).
+# crates/senda-nav, senda-nav-lua and senda-spellnames (docs/TRAINER.md) are Senda's own (GPL-3.0).
 [workspace]
 members = ["crates/*"]
 resolver = "2"
