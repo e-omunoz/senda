@@ -67,6 +67,8 @@ function Sim.SetupCharacter(cfg)
   Sim.player = p
   Sim.party = {}
   Sim.npc = nil
+  Sim.units = {}
+  Sim.vignettes, Sim.vignetteOrder = {}, {}
   Sim.merchant = nil
   Sim.trainer = nil
   Sim.questChoices = nil
@@ -289,6 +291,82 @@ function UnitPowerType(u)
 end
 function GetUnitSpeed(u) unitArg(u, "GetUnitSpeed"); return Sim.player.speed or 0, 7, 7, 4.72 end
 function InCombatLockdown() return Sim.player.combat end
+
+-- Simulated world units (nameplates, target, mouseover...): Sim.SetUnit("nameplate1", { id = 471, name = "Madre Colmillo",
+-- level = 10, class = "rare", dead = false, player = false }); Sim.units[token] = nil removes it. Returns the GUID.
+Sim.units = {}
+function Sim.CreatureGUID(id, n) return string.format("Creature-0-1234-0-5678-%d-%010X", id, n or 1) end
+function Sim.SetUnit(token, u)
+  u.guid = u.guid or (u.player and "Player-1234-0A1B2C3D" or Sim.CreatureGUID(u.id or 1, u.n))
+  Sim.units[token] = u
+  return u.guid
+end
+local function wrapUnit(fname, fn)
+  local orig = _G[fname]
+  _G[fname] = function(u, ...)
+    local su = type(u) == "string" and Sim.units[u]
+    if su then return fn(su, u, ...) end
+    if orig then return orig(u, ...) end
+  end
+end
+wrapUnit("UnitExists", function() return true end)
+wrapUnit("UnitGUID", function(su) return su.guid end)
+wrapUnit("UnitName", function(su) return su.name end)
+wrapUnit("UnitLevel", function(su) return su.level or 0 end)
+wrapUnit("UnitIsPlayer", function(su) return su.player == true end)
+wrapUnit("UnitIsDead", function(su) return su.dead == true end)
+wrapUnit("UnitPlayerControlled", function(su) return su.controlled == true end)
+wrapUnit("UnitClassification", function(su) return su.class or "normal" end)
+if not UnitClassification then UnitClassification = function() return "normal" end end
+if not UnitPlayerControlled then UnitPlayerControlled = function() return false end end
+
+-- Minimap vignettes: Sim.AddVignette({ id = 471, name = "...", map = 1429, x = 0.62, y = 0.48, dead = false,
+-- treasure = true }) -> vignette GUID. Fires VIGNETTE_MINIMAP_UPDATED; Sim.RemoveVignette(guid) fires it with false.
+Sim.vignettes, Sim.vignetteOrder, Sim.vignetteCalls = {}, {}, { list = 0, info = 0 }
+local vseq = 0
+function Sim.AddVignette(v, quiet)
+  vseq = vseq + 1
+  v.guid = v.guid or ("Vignette-0-1234-0-5678-" .. vseq)
+  v.objectGUID = v.objectGUID or (v.treasure and string.format("GameObject-0-1234-0-5678-%d-%010X", v.id or 1, vseq)
+    or Sim.CreatureGUID(v.id or 1, vseq))
+  Sim.vignettes[v.guid] = v
+  Sim.vignetteOrder[#Sim.vignetteOrder + 1] = v.guid
+  if not quiet then Sim.Fire("VIGNETTE_MINIMAP_UPDATED", v.guid, true) end
+  return v.guid
+end
+function Sim.RemoveVignette(guid)
+  Sim.vignettes[guid] = nil
+  for i, g in ipairs(Sim.vignetteOrder) do if g == guid then table.remove(Sim.vignetteOrder, i); break end end
+  Sim.Fire("VIGNETTE_MINIMAP_UPDATED", guid, false)
+end
+C_VignetteInfo = {}
+function C_VignetteInfo.GetVignettes()
+  Sim.vignetteCalls.list = Sim.vignetteCalls.list + 1
+  local out = {}
+  for i, g in ipairs(Sim.vignetteOrder) do out[i] = g end
+  return out
+end
+function C_VignetteInfo.GetVignetteInfo(guid)
+  str(guid, "C_VignetteInfo.GetVignetteInfo", "vignetteGUID")
+  Sim.vignetteCalls.info = Sim.vignetteCalls.info + 1
+  local v = Sim.vignettes[guid]
+  if not v then return nil end
+  return { objectGUID = v.objectGUID, name = v.name, isDead = v.dead == true, onMinimap = v.onMinimap ~= false,
+    vignetteID = 1, atlasName = v.treasure and "VignetteLoot" or "VignetteKill" }
+end
+function C_VignetteInfo.GetVignettePosition(guid, uiMapID)
+  str(guid, "C_VignetteInfo.GetVignettePosition", "vignetteGUID")
+  num(uiMapID, "C_VignetteInfo.GetVignettePosition", "uiMapID")
+  local v = Sim.vignettes[guid]
+  if not v or not v.map then return nil end
+  if uiMapID == v.map then return CreateVector2D(v.x, v.y) end
+  if v.onlyOwnMap then return nil end
+  local cont, wn, ww = toWorld(v.map, v.x, v.y)
+  if mapData(uiMapID).continent ~= cont then return nil end
+  local x, y = fromWorld(uiMapID, wn, ww)
+  if x < 0 or x > 1 or y < 0 or y > 1 then return nil end
+  return CreateVector2D(x, y)
+end
 function IsMounted() return false end
 function IsResting() return false end
 function GetSpellBonusDamage(school) num(school, "GetSpellBonusDamage", "school"); return 0 end

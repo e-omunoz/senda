@@ -13,6 +13,7 @@
 
 Core\Core.xml
 Locale\Locale.xml
+Data\Data.xml
 Engine\Engine.xml
 Recorder\Recorder.xml
 UI\UI.xml

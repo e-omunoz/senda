@@ -10,6 +10,8 @@ Genera:
   addon/Senda/Knowledge/Knowledge.xml
   addon/Senda/Locale/Names_<locale>.lua  nombres del cliente de respaldo, desde data/locale/<locale>/*.json
   addon/Senda/Locale/Locale.xml       (siempre, aunque no haya idiomas: el .toc lo carga)
+  addon/Senda/Data/Rares.lua          raros compactos desde data/rares/rares.json (id, niveles, rango, apariciones)
+  addon/Senda/Data/Data.xml           (siempre: el .toc lo carga)
 Y estampa la versión de VERSION en la línea `## Version:` de Senda.toc.
 
 Uso:
@@ -244,6 +246,49 @@ def render_locale(paths: Paths) -> dict[Path, str]:
     return out
 
 
+def render_rares(paths: Paths) -> dict[Path, str]:
+    """data/rares/rares.json -> addon/Senda/Data/Rares.lua (+ Data.xml).
+
+    Un raro por clave numérica (su id de PNJ) con una cadena "<niv. mín>-<niv. máx> <r|e> <mapa>:<x>,<y>;<x>,<y> ...":
+    r = raro, e = raro élite; x e y en décimas de % del mapa (509 = 50,9 %). Nivel 0-0: desconocido (forever-db da
+    nivel 1 a ocho raros que son marcadores o de nivel escalado; no se corrige, el cliente da el real al verlos).
+    Solo entran los que tienen alguna aparición conocida. El addon decodifica cada cadena al usarla."""
+    out: dict[Path, str] = {}
+    files: list[str] = []
+    src = paths.rares / "rares.json"
+    if src.exists():
+        with open(src, encoding="utf-8") as fh:
+            rares = json.load(fh)
+        meta = {}
+        mf = paths.rares / "meta.json"
+        if mf.exists():
+            with open(mf, encoding="utf-8") as fh:
+                meta = json.load(fh).get("source", {})
+        lines = []
+        for r in sorted(rares, key=lambda r: r["id"]):
+            if not r.get("spawns"):
+                continue
+            lo, hi = r["level"]
+            if lo <= 1 and hi <= 1:
+                lo = hi = 0
+            groups: dict[int, list[str]] = {}
+            for m, x, y in r["spawns"]:
+                groups.setdefault(int(m), []).append(f"{round(x * 10)},{round(y * 10)}")
+            pts = " ".join(f"{m}:" + ";".join(v) for m, v in groups.items())
+            kind = "e" if r["rank"] == "rareelite" else "r"
+            lines.append(f'  [{r["id"]}] = "{lo}-{hi} {kind} {pts}",')
+        head = [f"-- {GENERATED_HEADER}",
+                f"-- Fuente: data/rares/ ({len(lines)} raros con aparición; {meta.get('name', 'forever-db')} "
+                f"{meta.get('version', '?')}, GPL-3.0)",
+                "local _, Senda = ..."]
+        body = ['-- [idNPC] = "nivelMín-nivelMáx r|e mapa:x,y;x,y ..." (x e y en décimas de %; ver tools/build.py)',
+                "Senda.RaresData = {"] + lines + ["}"]
+        out[paths.out_data / "Rares.lua"] = "\n".join(head + [""] + body) + "\n"
+        files.append("Rares.lua")
+    out[paths.out_data / "Data.xml"] = _xml(files)
+    return out
+
+
 def render(ds: validate.Dataset) -> dict[Path, str]:
     """Devuelve {ruta: contenido} de todo lo generado. Determinista."""
     paths = ds.paths
@@ -294,6 +339,7 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
         kfiles.append(name)
     out[paths.out_knowledge / "Knowledge.xml"] = _xml(kfiles)
     out.update(render_locale(paths))
+    out.update(render_rares(paths))
     return out
 
 
@@ -352,7 +398,7 @@ def build(paths: Paths, check: bool = False, quiet: bool = False) -> int:
 
     # Archivos generados que ya no corresponden a nada (solo los que llevan nuestra cabecera).
     stale: list[str] = []
-    for d in (paths.out_guides, paths.out_knowledge, paths.out_locale):
+    for d in (paths.out_guides, paths.out_knowledge, paths.out_locale, paths.out_data):
         if not d.is_dir():
             continue
         for p in sorted(d.iterdir()):

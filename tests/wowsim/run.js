@@ -2166,6 +2166,7 @@ const scenarios = [
 ];
 
 scenarios.push(...require('./scenarios_rec').scenarios);
+scenarios.push(...require('./scenarios_rares').scenarios);
 
 // ---------------------------------------------------------------------------
 // Runner

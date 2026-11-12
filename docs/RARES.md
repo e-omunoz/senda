@@ -1,6 +1,6 @@
 # Alertas de raros: datos y diseño de detección
 
-Estado: dataset generado, detección sin implementar. Este documento fija los datos (`data/rares/`),
+Estado: dataset generado y detección implementada (`addon/Senda/Modules/Rares.lua`; ver el apartado «Implementación» al final). Este documento fija los datos (`data/rares/`),
 cómo se generan (`tools/gen_rares.py`) y el diseño de detección en el juego, adaptado de la lógica de
 Polestar (GPL-3). Corresponde a la fila «Alertas de raros» de `docs/PLAN-POLESTAR.md` 6b.
 
@@ -208,3 +208,25 @@ La clave del historial es `rare:<npcId>`, o `name:<nombre>` cuando no hay id leg
 - `Decide`: rebote, combate (hold y release con y sin enfriamiento), muerto, instancia, ignorado, jugador.
 - El GUID de un raro conocido sale como id correcto; un valor secreto se salta sin error.
 - Cobertura de datos: 346 de 411 con aparición (se comprueba en el generador y en la compilación).
+
+## 3. Implementación (Senda 0.5.x)
+
+- **Datos en el juego:** `python tools/build.py` compila `data/rares/rares.json` a `addon/Senda/Data/Rares.lua`
+  (17,5 KB, 346 raros con aparición, todas las zonas): `[idPNJ] = "nivMín-nivMáx r|e mapa:x,y;x,y ..."` con x e y en décimas de %.
+  Nivel 0-0 = desconocido (los ocho raros de nivel 1 de forever-db). El addon decodifica cada cadena al usarla y la guarda en
+  caché; como pesa poco se carga con el `.toc` (`Data\Data.xml`) en lugar de por continente.
+- **Módulo:** `Modules/Rares.lua`. Caminos: `VIGNETTE_MINIMAP_UPDATED` y barrido de `C_VignetteInfo.GetVignettes()`
+  (como mucho cada 2 s, nunca en combate, en tandas de 8 viñetas por fotograma), `NAME_PLATE_UNIT_ADDED`,
+  `PLAYER_TARGET_CHANGED` y `UPDATE_MOUSEOVER_UNIT`. Lecturas con `pcall` y valores secretos = desconocido.
+- **`Rares.Decide(estado, avistamiento)`** (pura): `alert | hold | skip` con motivo (`off`, `instance`, `hidden`, `path`,
+  `player`, `notrare`, `ignored`, `dead`, `unreadable`, `debounce` 3 s por unidad, `cooldown` 10 min por raro, `level` con
+  «solo ±3 niveles»). En combate devuelve `hold` y guarda solo el último; `Rares.Release` lo suelta al salir si tiene
+  menos de 60 s y no ha muerto. `Rares.ScanDelay` da el tope de 2 s del barrido.
+- **Aviso:** una línea del HUD, «Raro cerca: {npc:N} (nivel A-B) · Señalar», sonido opcional y descartar. «Señalar» apunta
+  la flecha (fuente `rare`) a la posición de la viñeta o, si no la hay, a la aparición conocida más cercana en el mapa del
+  jugador. Dura 45 s. Nada se avisa en instancias ni con `hideInInstance` / «ocultar todo».
+- **Opciones** (sección «Raros»): `raresEnabled`, `raresNear` (solo ±3 niveles), `raresSound`. `/senda raros [on|off]`.
+- **Pendiente respecto al diseño:** historial por reino, lista de ignorados editable en el juego y ajustes por camino
+  (el estado ya los admite: `opts.paths[camino] = false`). Cinco raros conocidos comprobados en el cliente (Madre Colmillo, Thuros...).
+- **Pruebas:** `tests/wowsim/scenarios_rares.js` (`rares-decide`, `rares-vignette`, `rares-units`, `rares-combat`,
+  `rares-en`, `rares-data`) y `tests/test_rares_build.py`.

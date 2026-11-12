@@ -2,6 +2,11 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado [SemVer](https://semver.org/lang/es/).
 
+## [Sin publicar]
+
+### Añadido
+- **Alertas de raros** (`Modules/Rares.lua`, datos de `data/rares/` compilados a `Data/Rares.lua`, 346 raros con aparición): una línea en el HUD, «Raro cerca: {npc:N} (nivel A-B) · Señalar», que apunta la flecha al raro. Detecta por viñetas del minimapa (barrido como mucho cada 2 s, en tandas, nunca en combate), placas de nombre, objetivo y ratón encima; rebote de 3 s por unidad, enfriamiento por raro, ignora muertos, retiene el aviso en combate y lo suelta al salir si sigue vivo; nada en mazmorras ni con todo oculto. Opciones en la sección «Raros» (activar, solo ±3 niveles, sonido) y `/senda raros`. Ver `docs/RARES.md`.
+
 ## [0.5.0] - 2026-11-12
 
 ### Añadido

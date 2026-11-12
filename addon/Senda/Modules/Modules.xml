@@ -16,4 +16,5 @@
   <Script file="Duo.lua"/>
   <Script file="Bars.lua"/>
   <Script file="SpellCards.lua"/>
+  <Script file="Rares.lua"/>
 </Ui>
