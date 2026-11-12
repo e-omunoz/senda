@@ -9,7 +9,7 @@ local Compat, Events, Util = Senda.Compat, Senda.Events, Senda.Util
 local Recorder = {}
 Senda.Recorder = Recorder
 
-local SCHEMA = 1
+local SCHEMA = 2 -- 2: añade los fragmentos de partidas (Session.lua); las observaciones se conservan
 local MAX = 5000
 
 local keys = {} -- clave de deduplicación -> entrada

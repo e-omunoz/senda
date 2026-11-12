@@ -2,6 +2,12 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado [SemVer](https://semver.org/lang/es/).
 
+## [Sin publicar]
+
+### Añadido
+- **Grabador de partidas (esquema 2),** apagado por defecto (Opciones o `/senda grabar on|off|estado|limpiar|rastro on|off`): pasos con su motivo, XP, combate, ausencias, muertes, misiones y un rastro de posición opcional, en fragmentos compactos con tope de 4 MiB. No guarda nombres de personaje ni de reino, chat ni compañeros de grupo (solo si vas en pareja o no). Ver `docs/RECORDING.md`.
+- `tools/ingest_recording.py` (tiempo activo por paso con AFK a cero y huecos de 5 min como máximo, XP/hora, yardas, muertes) y `tools/route_report.py` (medido frente a estimado por paso, pasos a más del doble, error mediano; exporta rastros a `data/recordings/traces/`).
+
 ## [0.4.0] - 2026-11-12
 
 ### Cambiado
