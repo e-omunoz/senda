@@ -16,6 +16,7 @@ Rutas publicadas (relativas a la raíz del sitio; los `link` de los pasos apunta
   <clase>/<página>/              página de conocimiento (p. ej. brujo/10-19#abisario)
   estado/                        estado de los datos (verificación)
   cambios/                       historial de cambios
+  metricas/                      métricas (tools/site_metrics.py): horas, XP/hora, malla de navegación, cobertura
 """
 from __future__ import annotations
 
@@ -763,6 +764,7 @@ class Site:
             out.append("</ul></div>")
         out.append('<div class="nav-group"><h2 class="nav-title">Proyecto</h2><ul>')
         out.append(item("estado", "Estado de los datos", "shield"))
+        out.append(item("metricas", "Métricas", "shield"))
         out.append(item("cambios", "Cambios", "note"))
         out.append(f'<li><a href="{REPO_URL}" target="_blank" rel="noopener">{icon("github")}'
                    f'<span>Código en GitHub</span></a></li>')
@@ -1384,6 +1386,15 @@ class Site:
         self.page("", "", body, toc=toc, page_class="page-home")
         self.index("Instalación", "#instalar", "Ayuda", "Descarga el zip y descomprímelo en Interface\\AddOns")
 
+    def build_metrics(self):
+        """Métricas (tools/site_metrics.py): guías, malla de navegación, cobertura de datos y cambios."""
+        import site_metrics
+        m = site_metrics.collect(self.root, data=self.data)
+        self.page("metricas", "Métricas", site_metrics.render_body(m, changelog_href=ROOT + "cambios/"),
+                  page_class="page-metrics",
+                  description="Métricas de Senda: horas y XP por hora de cada guía, malla de navegación y cobertura de datos.")
+        self.index("Métricas", "metricas/", "Proyecto", "Horas, XP por hora, verificación, malla de navegación, cobertura")
+
     def build_changelog(self):
         path = self.root / "CHANGELOG.md"
         toc: list = []
@@ -1559,6 +1570,7 @@ class Site:
                 for p in pages:
                     self.build_knowledge_page(p)
         self.build_changelog()
+        self.build_metrics()
         self.build_home()
         self.check_links()
         self.build_status()

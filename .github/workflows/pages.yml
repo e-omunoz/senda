@@ -26,7 +26,7 @@ jobs:
           allow-prereleases: true
 
       - name: Tests de la web
-        run: python -m unittest tests.test_site -v
+        run: python -m unittest tests.test_site tests.test_site_metrics -v
 
       - name: Generar la web
         run: python tools/site.py --out _site

@@ -4,6 +4,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ## [Sin publicar]
 
+### Añadido
+- **Métricas en la web** (`metricas/`, `tools/site_metrics.py`): por guía, misiones, horas estimadas, XP por hora,
+  pasos verificados y sin verificar, cobertura de fuentes y opcionales/descartadas; estadísticas de la malla de
+  navegación (rutas halladas, tiempo de fotograma); cobertura de nombres del juego y de búsqueda; y los últimos cambios.
+  En español con interruptor a inglés, tema claro/oscuro y sin recursos externos.
+
 ## [0.6.1] - 2026-11-12
 
 ### Añadido
