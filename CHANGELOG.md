@@ -14,6 +14,10 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - Pareja: «va por delante» ya no cuenta los pasos de misiones que alguno de los dos ha saltado (mensaje nuevo `2K`).
 - Prueba sin luacheck: `tests/test_lua_syntax.py` compila el Lua con luac/luajit si están, y si no usa un analizador
   léxico propio que comprueba bloques y cadenas.
+- **Métricas en la web** (`metricas/`, `tools/site_metrics.py`): por guía, misiones, horas estimadas, XP por hora,
+  pasos verificados y sin verificar, cobertura de fuentes y opcionales/descartadas; estadísticas de la malla de
+  navegación (rutas halladas, tiempo de fotograma); cobertura de nombres del juego y de búsqueda; y los últimos cambios.
+  En español con interruptor a inglés, tema claro/oscuro y sin recursos externos.
 
 ### Corregido
 - «Saltar esta misión» en un aviso como el de Lago Blackwrench (1717) saltaba toda la cadena del súcubo: los avisos

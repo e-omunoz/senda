@@ -26,6 +26,9 @@ Guías disponibles: **brujo gnomo**, **mago humano** y **druida elfo de la noche
 
 Web con la guía detallada: https://e-omunoz.github.io/senda/
 
+Métricas (horas y XP por hora de cada guía, verificación, malla de navegación, cobertura de datos; en español e
+inglés): https://e-omunoz.github.io/senda/metricas/ (se generan con `tools/site_metrics.py`).
+
 ## Instalación
 
 1. Descarga `Senda-x.y.z.zip` desde [Releases](https://github.com/e-omunoz/senda/releases).
