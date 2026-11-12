@@ -18,6 +18,16 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
   pasos verificados y sin verificar, cobertura de fuentes y opcionales/descartadas; estadísticas de la malla de
   navegación (rutas halladas, tiempo de fotograma); cobertura de nombres del juego y de búsqueda; y los últimos cambios.
   En español con interruptor a inglés, tema claro/oscuro y sin recursos externos.
+- **Diario de mazmorras:** pestaña «Mazmorras» con las mazmorras de tu bando por nivel. Para cada una: niveles (entrada,
+  recomendado y de sus misiones), dónde está la entrada y la piedra de encuentro con un botón para la flecha (el
+  planificador de viaje calcula el camino más rápido y la ficha lo enseña), los jefes, sus misiones para tu personaje
+  (las de tu guía primero y marcadas, las hechas, las que llevas y las previas que te faltan; clic para ir a quien la da)
+  y el botín que mejora a tu build (felino u oso del druida, Aflicción del brujo, Escarcha del mago), con lo que gana
+  frente a lo que llevas. Datos: forever-db, tablas del cliente y ForeverLevelingBiS (MIT). `/senda mazmorra [nombre]`.
+- En un paso de mazmorra de la guía, el texto del HUD termina en «Ver en Mazmorras »»: un clic en el paso abre su ficha
+  (sin línea nueva en el HUD). Al entrar en la instancia la flecha a la mazmorra se quita.
+- `tools/gen_dungeon_journal.py` (`data/dungeons/journal.json`) y `Data/Dungeons.lua` (~85 KB, se descodifica al abrir el
+  diario y fuera de combate). Simulador: escenarios `dungeons-tab`, `dungeons-druid`, `dungeons-arrow` y `dungeons-hud`.
 
 ### Corregido
 - «Saltar esta misión» en un aviso como el de Lago Blackwrench (1717) saltaba toda la cadena del súcubo: los avisos
@@ -32,6 +42,9 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - Lago Blackwrench: el paso dice que está abajo, a ras del suelo de la Caverna Abandonada.
 - Tras subir al tranvía o al barco (un salto de más de 400 yardas) la flecha vuelve a pedir ruta a pie al momento, sin
   esperar los 20 s de reintento de la ruta que había fallado.
+
+### Cambiado
+- La barra de pestañas del panel junta un poco los botones cuando hay muchas, para que siempre quepan.
 
 ## [0.6.1] - 2026-11-12
 

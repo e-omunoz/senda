@@ -30,7 +30,8 @@ addon/Senda/              Addon (esta carpeta se copia a Interface/AddOns/Senda)
   Recorder/               Observaciones en juego para el harness
   Knowledge/              Paneles de conocimiento (rotaciones, talentos, macros...) generados
   Locale/                 GENERADO: nombres de respaldo por idioma (Names_<locale>.lua) desde data/locale/
-  Data/                   GENERADO: Travel.lua (datos de viaje en cadenas compactas, desde data/travel/)
+  Data/                   GENERADO: Travel.lua (datos de viaje en cadenas compactas, desde data/travel/), Rares.lua y
+                          Dungeons.lua (diario de mazmorras, desde data/dungeons/)
   Guides/                 GENERADO por tools/build.py desde data/ (sí se commitea)
 data/
   guides/<guide-id>/      Secciones TOML de cada guía (orden por prefijo numérico)
@@ -294,6 +295,18 @@ cuanto se va la de más prioridad. Escenario `hud-slot` del simulador.
   flecha apunta al paso del desvío («Desvío: ...»); la automatización coge y entrega sus misiones. La ruta sigue
   evaluándose (lo que hagas cuenta para ella: las misiones entregadas se detectan solas) salvo los «ve a», que no se
   dan por hechos por pasar cerca. Al acabar o cancelar vuelves a la ruta donde la dejaste.
+
+## Diario de mazmorras
+
+Pestaña «Mazmorras» (`Modules/Dungeons.lua`, datos `Data/Dungeons.lua` compilados por `tools/build.py` desde
+`data/dungeons/`; fuentes y reglas en [DUNGEONS.md](DUNGEONS.md)). Una lista de las mazmorras de tu bando por nivel y la
+ficha de la elegida: niveles, entrada y piedra de encuentro con flecha (fuente `dungeon`, que el planificador de viaje
+sigue como las de la guía), jefes, misiones para tu personaje (las de tu guía primero y marcadas; hechas, en el registro y
+las previas que faltan) y el botín que mejora a tu build (`G.ScoreData`/`G.DeltaData` de `Modules/Gear.lua` con los pesos
+de `weights.toml`, sin pedir los objetos al cliente). Las cadenas se descodifican al abrir la pestaña, fuera de combate y
+200 filas por fotograma; solo el índice paso -> mazmorra (`DungeonsData.steps`) se lee al cargar. En un paso
+`do = "dungeon"` el texto del paso del HUD termina en «Ver en Mazmorras »» y un clic izquierdo en el paso abre su ficha
+(sin línea extra: el hueco único del HUD no cambia). `/senda mazmorra [nombre]`.
 
 ## Harness de verificación
 

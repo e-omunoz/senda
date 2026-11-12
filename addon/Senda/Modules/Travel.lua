@@ -900,7 +900,7 @@ function T.Refresh(force)
   if M.InCombat() or not Senda.Arrow then return end
   if Compat.OnTaxi() then return end -- volando: el camino ya está en marcha
   local dest, src = Senda.Arrow:Destination()
-  if not dest or (src ~= "guide" and src ~= "manual" and src ~= "trainer") or not dest.continent then ClearPlan(); return end
+  if not dest or (src ~= "guide" and src ~= "manual" and src ~= "trainer" and src ~= "dungeon") or not dest.continent then ClearPlan(); return end
   local pc, pn, pw = Compat.PlayerWorldPos()
   if not pc or Compat.IsDead() then ClearPlan(); return end
   -- solo Reinos del Este (0) y Kalimdor (1): el continente nuevo de Forever no tiene yardas fiables

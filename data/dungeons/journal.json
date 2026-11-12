@@ -1,0 +1,9559 @@
+{
+ "schema": 1,
+ "generator": "tools/gen_dungeon_journal.py",
+ "sources": {
+  "ForeverLevelingBiS": {
+   "version": "v0.12.0-beta",
+   "data": "2026-10-13",
+   "licence": "MIT (Copyright (c) 2026 Thunder)",
+   "via": "polestar 19bd636e addon/Polestar_ItemDB/Forever.lua (sha256 dd440d4e7548ddce)"
+  },
+  "client-items": {
+   "build": "1.15.9.70576",
+   "via": "polestar 19bd636e addon/Polestar_ItemDB/Items.lua (sha256 243fcb5b45960250)",
+   "licence": "hechos del cliente (Blizzard Classic Era ItemSparse/Item), publicados por Polestar (GPL-3.0)"
+  },
+  "forever-db": {
+   "version": "2026.11.1",
+   "licence": "GPL-3.0",
+   "tables": [
+    "item_source",
+    "npc",
+    "object",
+    "spawn",
+    "ui_map"
+   ]
+  }
+ },
+ "rules": {
+  "loot": "ForeverLevelingBiS: botín cuya zona es un área de la mazmorra (más ZONE_ALIAS); forever-db: item_source de los PNJ sin aparición cuyo nombre es el de un encuentro del cliente. Solo armas y armaduras equipables.",
+  "stats": "Claves de los pesos de Senda (weights.toml); SP_<ESCUELA> = poder de una escuela; DPS = daño por segundo del arma. stats_from: flb (estadísticas de Forever) o era (tabla del cliente Classic Era).",
+  "stones": "Piedra de encuentro de forever-db más cercana a la entrada, en el mismo continente y a menos de 1000 yardas."
+ },
+ "metrics": {
+  "dungeons_with_loot": 20,
+  "items": 414,
+  "items_flb": 410,
+  "items_fdb": 64,
+  "stones": 19,
+  "bosses_with_npc": 196,
+  "bosses": 215
+ },
+ "bosses": {
+  "shadowfang-keep": [
+   [
+    "Rethilgore",
+    3914
+   ],
+   [
+    "Razorclaw the Butcher",
+    3886
+   ],
+   [
+    "Baron Silverlaine",
+    3887
+   ],
+   [
+    "Commander Springvale",
+    4278
+   ],
+   [
+    "Odo the Blindwatcher",
+    4279
+   ],
+   [
+    "Fenrus the Devourer",
+    4274
+   ],
+   [
+    "Wolf Master Nandos",
+    3927
+   ],
+   [
+    "Archmage Arugal",
+    4275
+   ]
+  ],
+  "stormwind-stockade": [
+   [
+    "Targorr the Dread",
+    1696
+   ],
+   [
+    "Kam Deepfury",
+    1666
+   ],
+   [
+    "Hamhock",
+    1717
+   ],
+   [
+    "Dextren Ward",
+    1663
+   ],
+   [
+    "Bazil Thredd",
+    1716
+   ]
+  ],
+  "deadmines": [
+   [
+    "Rhahk'Zor",
+    644
+   ],
+   [
+    "Sneed",
+    643
+   ],
+   [
+    "Miner Johnson",
+    3586
+   ],
+   [
+    "Gilnid",
+    1763
+   ],
+   [
+    "Captain Greenskin",
+    647
+   ],
+   [
+    "Mr. Smite",
+    646
+   ],
+   [
+    "Cookie",
+    645
+   ],
+   [
+    "Edwin VanCleef",
+    639
+   ]
+  ],
+  "wailing-caverns": [
+   [
+    "Lady Anacondra",
+    3671
+   ],
+   [
+    "Lord Cobrahn",
+    3669
+   ],
+   [
+    "Kresh",
+    3653
+   ],
+   [
+    "Lord Pythas",
+    3670
+   ],
+   [
+    "Skum",
+    3674
+   ],
+   [
+    "Lord Serpentis",
+    3673
+   ],
+   [
+    "Verdan the Everliving",
+    5775
+   ],
+   [
+    "Mutanus the Devourer",
+    3654
+   ]
+  ],
+  "razorfen-kraul": [
+   [
+    "Roogug",
+    6168
+   ],
+   [
+    "Aggem Thorncurse",
+    4424
+   ],
+   [
+    "Death Speaker Jargba",
+    4428
+   ],
+   [
+    "Overlord Ramtusk",
+    4420
+   ],
+   [
+    "Agathelos the Raging",
+    4422
+   ],
+   [
+    "Charlga Razorflank",
+    4421
+   ]
+  ],
+  "blackfathom-deeps": [
+   [
+    "Ghamoo-ra",
+    4887
+   ],
+   [
+    "Lady Sarevess",
+    4831
+   ],
+   [
+    "Geilhast",
+    0
+   ],
+   [
+    "Lorgus Jett",
+    12902
+   ],
+   [
+    "Old Serra'kis",
+    4830
+   ],
+   [
+    "Twilight Lord Kelris",
+    4832
+   ],
+   [
+    "Baron Aquanis",
+    12876
+   ],
+   [
+    "Aku'mai",
+    4829
+   ],
+   [
+    "Gelihast",
+    6243
+   ]
+  ],
+  "uldaman": [
+   [
+    "Revelosh",
+    6910
+   ],
+   [
+    "The Lost Dwarves",
+    0
+   ],
+   [
+    "Ironaya",
+    7228
+   ],
+   [
+    "Obsidian Sentinel",
+    7023
+   ],
+   [
+    "Ancient Stone Keeper",
+    7206
+   ],
+   [
+    "Galgann Firehammer",
+    7291
+   ],
+   [
+    "Grimlok",
+    4854
+   ],
+   [
+    "Archaedas",
+    2748
+   ]
+  ],
+  "gnomeregan": [
+   [
+    "Grubbis",
+    7361
+   ],
+   [
+    "Viscous Fallout",
+    7079
+   ],
+   [
+    "Electrocutioner 6000",
+    6235
+   ],
+   [
+    "Crowd Pummeler 9-60",
+    6229
+   ],
+   [
+    "Mekgineer Thermaplugg",
+    7800
+   ],
+   [
+    "Mechanical Menagerie",
+    0
+   ]
+  ],
+  "sunken-temple": [
+   [
+    "Avatar of Hakkar",
+    8443
+   ],
+   [
+    "Atal'alarion",
+    8580
+   ],
+   [
+    "Jammal'an the Prophet",
+    5710
+   ],
+   [
+    "Dreamscythe",
+    5721
+   ],
+   [
+    "Festering Rotslime",
+    0
+   ],
+   [
+    "Weaver",
+    5720
+   ],
+   [
+    "Atal'ai Defenders",
+    0
+   ],
+   [
+    "Shade of Eranikus",
+    5709
+   ],
+   [
+    "Dreamscythe and Weaver",
+    0
+   ],
+   [
+    "Hazzas",
+    5722
+   ],
+   [
+    "Morphaz",
+    5719
+   ],
+   [
+    "Jammal'an and Ogom",
+    0
+   ],
+   [
+    "Morphaz and Hazzas",
+    0
+   ]
+  ],
+  "razorfen-downs": [
+   [
+    "Tuten'kash",
+    7355
+   ],
+   [
+    "Plaguemaw the Rotting",
+    7356
+   ],
+   [
+    "Mordresh Fire Eye",
+    7357
+   ],
+   [
+    "Ragglesnout",
+    7354
+   ],
+   [
+    "Glutton",
+    8567
+   ],
+   [
+    "Amnennar the Coldbringer",
+    7358
+   ]
+  ],
+  "scarlet-monastery": [
+   [
+    "Interrogator Vishas",
+    3983
+   ],
+   [
+    "Bloodmage Thalnos",
+    4543
+   ],
+   [
+    "Houndmaster Loksey",
+    3974
+   ],
+   [
+    "Arcanist Doan",
+    6487
+   ],
+   [
+    "Herod",
+    3975
+   ],
+   [
+    "High Inquisitor Fairbanks",
+    4542
+   ],
+   [
+    "High Inquisitor Whitemane",
+    3977
+   ]
+  ],
+  "zulfarrak": [
+   [
+    "Hydromancer Velratha",
+    7795
+   ],
+   [
+    "Gahz'rilla",
+    7273
+   ],
+   [
+    "Antu'sul",
+    8127
+   ],
+   [
+    "Theka the Martyr",
+    7272
+   ],
+   [
+    "Witch Doctor Zum'rah",
+    7271
+   ],
+   [
+    "Nekrum Gutchewer",
+    7796
+   ],
+   [
+    "Shadowpriest Sezz'ziz",
+    7275
+   ],
+   [
+    "Chief Ukorz Sandscalp",
+    7267
+   ]
+  ],
+  "blackrock-spire": [
+   [
+    "Highlord Omokk",
+    9196
+   ],
+   [
+    "Shadow Hunter Vosh'gajin",
+    9236
+   ],
+   [
+    "War Master Voone",
+    9237
+   ],
+   [
+    "Mother Smolderweb",
+    10596
+   ],
+   [
+    "Urok Doomhowl",
+    10584
+   ],
+   [
+    "Quartermaster Zigris",
+    9736
+   ],
+   [
+    "Halycon",
+    10220
+   ],
+   [
+    "Gizrul the Slavener",
+    10268
+   ],
+   [
+    "Overlord Wyrmthalak",
+    9568
+   ],
+   [
+    "Pyroguard Emberseer",
+    9816
+   ],
+   [
+    "Warchief Rend Blackhand",
+    10429
+   ],
+   [
+    "The Beast",
+    10430
+   ],
+   [
+    "General Drakkisath",
+    10363
+   ],
+   [
+    "Lord Valthalak",
+    16042
+   ]
+  ],
+  "blackrock-depths": [
+   [
+    "High Interrogator Gerstahn",
+    9018
+   ],
+   [
+    "Lord Roccor",
+    9025
+   ],
+   [
+    "Houndmaster Grebmar",
+    9319
+   ],
+   [
+    "Ring of Law",
+    0
+   ],
+   [
+    "Pyromancer Loregrain",
+    9024
+   ],
+   [
+    "Lord Incendius",
+    9017
+   ],
+   [
+    "Warder Stilgiss",
+    9041
+   ],
+   [
+    "Fineous Darkvire",
+    9056
+   ],
+   [
+    "Bael'Gar",
+    9016
+   ],
+   [
+    "General Angerforge",
+    9033
+   ],
+   [
+    "Golem Lord Argelmach",
+    8983
+   ],
+   [
+    "Hurley Blackbreath",
+    9537
+   ],
+   [
+    "Phalanx",
+    9502
+   ],
+   [
+    "Ribbly Screwspigot",
+    9543
+   ],
+   [
+    "Plugger Spazzring",
+    9499
+   ],
+   [
+    "The Vault",
+    0
+   ],
+   [
+    "Ambassador Flamelash",
+    9156
+   ],
+   [
+    "The Seven",
+    0
+   ],
+   [
+    "Magmus",
+    9938
+   ],
+   [
+    "Princess Moira Bronzebeard",
+    8929
+   ],
+   [
+    "Emperor Dagran Thaurissan",
+    9019
+   ]
+  ],
+  "scholomance": [
+   [
+    "Kirtonos",
+    0
+   ],
+   [
+    "Jandice Barov",
+    10503
+   ],
+   [
+    "Rattlegore",
+    11622
+   ],
+   [
+    "Marduk Blackpool",
+    10433
+   ],
+   [
+    "Vectus",
+    10432
+   ],
+   [
+    "Kormok",
+    16118
+   ],
+   [
+    "Ras Frostwhisperer",
+    0
+   ],
+   [
+    "Instructor Malicia",
+    10505
+   ],
+   [
+    "Doctor Theolen Krastinov",
+    11261
+   ],
+   [
+    "Lorekeeper Polkelt",
+    10901
+   ],
+   [
+    "The Ravenian",
+    10507
+   ],
+   [
+    "Lord Alexei Barov",
+    10504
+   ],
+   [
+    "Lady Illucia Barov",
+    10502
+   ],
+   [
+    "Darkmaster Gandling",
+    1853
+   ]
+  ],
+  "stratholme": [
+   [
+    "Hearthsinger Forresten",
+    10558
+   ],
+   [
+    "Timmy the Cruel",
+    10808
+   ],
+   [
+    "Malor the Zealous",
+    11032
+   ],
+   [
+    "Cannon Master Willey",
+    10997
+   ],
+   [
+    "Archivist Galford",
+    10811
+   ],
+   [
+    "Balnazzar",
+    10813
+   ],
+   [
+    "The Unforgiven",
+    10516
+   ],
+   [
+    "Baroness Anastari",
+    10436
+   ],
+   [
+    "Nerub'enkan",
+    10437
+   ],
+   [
+    "Maleki the Pallid",
+    10438
+   ],
+   [
+    "Magistrate Barthilas",
+    10435
+   ],
+   [
+    "Ramstein the Gorger",
+    10439
+   ],
+   [
+    "Baron Rivendare",
+    10440
+   ],
+   [
+    "Black Guard Swordsmith",
+    11121
+   ],
+   [
+    "Crimson Hammersmith",
+    11120
+   ],
+   [
+    "Ezra Grimm",
+    11058
+   ],
+   [
+    "Postmaster Malown",
+    11143
+   ],
+   [
+    "Skul",
+    10393
+   ],
+   [
+    "Stonespine",
+    10809
+   ]
+  ],
+  "maraudon": [
+   [
+    "Noxxion",
+    13282
+   ],
+   [
+    "Razorlash",
+    12258
+   ],
+   [
+    "Tinkerer Gizlock",
+    13601
+   ],
+   [
+    "Lord Vyletongue",
+    12236
+   ],
+   [
+    "Celebras the Cursed",
+    12225
+   ],
+   [
+    "Landslide",
+    12203
+   ],
+   [
+    "Rotgrip",
+    13596
+   ],
+   [
+    "Princess Theradras",
+    12201
+   ]
+  ],
+  "ragefire-chasm": [
+   [
+    "Oggleflint",
+    11517
+   ],
+   [
+    "Taragaman the Hungerer",
+    11520
+   ],
+   [
+    "Jergosh the Invoker",
+    11518
+   ],
+   [
+    "Bazzalan",
+    11519
+   ]
+  ],
+  "dire-maul": [
+   [
+    "Zevrim Thornhoof",
+    11490
+   ],
+   [
+    "Hydrospawn",
+    13280
+   ],
+   [
+    "Lethtendris",
+    14327
+   ],
+   [
+    "Pusillin",
+    14354
+   ],
+   [
+    "Alzzin the Wildshaper",
+    11492
+   ],
+   [
+    "Tendris Warpwood",
+    11489
+   ],
+   [
+    "Illyanna Ravenoak",
+    11488
+   ],
+   [
+    "Magister Kalendris",
+    11487
+   ],
+   [
+    "Immol'thar",
+    11496
+   ],
+   [
+    "Prince Tortheldrin",
+    11486
+   ],
+   [
+    "Guard Mol'dar",
+    14326
+   ],
+   [
+    "Stomper Kreeg",
+    14322
+   ],
+   [
+    "Guard Fengus",
+    14321
+   ],
+   [
+    "Guard Slip'kik",
+    14323
+   ],
+   [
+    "Captain Kromcrush",
+    14325
+   ],
+   [
+    "Cho'Rush the Observer",
+    14324
+   ],
+   [
+    "King Gordok",
+    11501
+   ],
+   [
+    "Lord Hel'nurath",
+    14506
+   ],
+   [
+    "Tsu'zee",
+    11467
+   ]
+  ],
+  "city-of-dalaran": [
+   [
+    "Arcane Anomaly",
+    245999
+   ],
+   [
+    "Fel Ancient",
+    0
+   ],
+   [
+    "Mana Devourer",
+    0
+   ],
+   [
+    "Mana Elemental",
+    14689
+   ],
+   [
+    "Unstable Sentinel",
+    246017
+   ],
+   [
+    "Shade of the Archmage",
+    246020
+   ],
+   [
+    "Lyn the Ignored",
+    0
+   ],
+   [
+    "Atrexis the Grave Knight",
+    247126
+   ],
+   [
+    "Mana Wraith",
+    246931
+   ]
+  ],
+  "excavation-site-wetlands": [
+   [
+    "Saltspine",
+    260322
+   ],
+   [
+    "Shadetooth",
+    260325
+   ],
+   [
+    "Highland Horror",
+    0
+   ],
+   [
+    "Relic Guardian",
+    260326
+   ]
+  ],
+  "ruins-of-lordaeron": [
+   [
+    "Witherfang",
+    250483
+   ],
+   [
+    "The Abandoned",
+    250631
+   ],
+   [
+    "The Butcher",
+    0
+   ],
+   [
+    "Rath'mael",
+    250657
+   ],
+   [
+    "Lordaeron Captain",
+    255699
+   ],
+   [
+    "Viktor the Vile",
+    256035
+   ],
+   [
+    "Bjork",
+    256097
+   ]
+  ],
+  "the-hall-of-thanes": [
+   [
+    "Faldrim Anvilmar",
+    261306
+   ],
+   [
+    "Infurnus",
+    0
+   ],
+   [
+    "Plunder",
+    261311
+   ],
+   [
+    "Durgen Dirgehammer",
+    261319
+   ]
+  ]
+ },
+ "stones": {
+  "shadowfang-keep": {
+   "object": 178845,
+   "uiMapId": 1421,
+   "x": 46.2,
+   "y": 68.3,
+   "world": {
+    "map": 0,
+    "x": -247,
+    "y": 1509
+   },
+   "yards": 65
+  },
+  "stormwind-stockade": {
+   "object": 179595,
+   "uiMapId": 1453,
+   "x": 53.2,
+   "y": 70.3,
+   "world": {
+    "map": 0,
+    "x": -8810.5,
+    "y": 798
+   },
+   "yards": 69
+  },
+  "deadmines": {
+   "object": 178834,
+   "uiMapId": 1436,
+   "x": 41.6,
+   "y": 72.4,
+   "world": {
+    "map": 0,
+    "x": -11089.5,
+    "y": 1561
+   },
+   "yards": 169
+  },
+  "wailing-caverns": {
+   "object": 178884,
+   "uiMapId": 1413,
+   "x": 47.0,
+   "y": 35.6,
+   "world": {
+    "map": 1,
+    "x": -793.5,
+    "y": -2135.5
+   },
+   "yards": 85
+  },
+  "razorfen-kraul": {
+   "object": 178825,
+   "uiMapId": 1441,
+   "x": 31.2,
+   "y": 17.0,
+   "world": {
+    "map": 1,
+    "x": -4465.5,
+    "y": -1806
+   },
+   "yards": 146
+  },
+  "blackfathom-deeps": {
+   "object": 178828,
+   "uiMapId": 1448,
+   "x": 14.4,
+   "y": 79.8,
+   "world": {
+    "map": 1,
+    "x": 4076,
+    "y": 813
+   },
+   "yards": 185
+  },
+  "uldaman": {
+   "object": 178833,
+   "uiMapId": 1432,
+   "x": 47.3,
+   "y": 88.6,
+   "world": {
+    "map": 0,
+    "x": -6117.5,
+    "y": -3298.5
+   },
+   "yards": 348
+  },
+  "gnomeregan": {
+   "object": 179555,
+   "uiMapId": 1426,
+   "x": 24.3,
+   "y": 40.4,
+   "world": {
+    "map": 0,
+    "x": -5203.5,
+    "y": 607
+   },
+   "yards": 327
+  },
+  "sunken-temple": {
+   "object": 179554,
+   "uiMapId": 1435,
+   "x": 69.1,
+   "y": 54.7,
+   "world": {
+    "map": 0,
+    "x": -10457.5,
+    "y": -3808
+   },
+   "yards": 343
+  },
+  "razorfen-downs": {
+   "object": 178824,
+   "uiMapId": 1441,
+   "x": 34.5,
+   "y": 13.9,
+   "world": {
+    "map": 1,
+    "x": -4374,
+    "y": -1953.5
+   },
+   "yards": 650
+  },
+  "scarlet-monastery": {
+   "object": 178844,
+   "uiMapId": 1420,
+   "x": 82.1,
+   "y": 39.2,
+   "world": {
+    "map": 0,
+    "x": 2656,
+    "y": -678.5
+   },
+   "yards": 271
+  },
+  "zulfarrak": {
+   "object": 178829,
+   "uiMapId": 1446,
+   "x": 38.5,
+   "y": 20.7,
+   "world": {
+    "map": 1,
+    "x": -6829,
+    "y": -2874.5
+   },
+   "yards": 42
+  },
+  "blackrock-spire": {
+   "object": 179585,
+   "uiMapId": 1428,
+   "x": 32.8,
+   "y": 30.4,
+   "world": {
+    "map": 0,
+    "x": -7625.5,
+    "y": -1226.5
+   },
+   "yards": 103
+  },
+  "blackrock-depths": {
+   "object": 179584,
+   "uiMapId": 1428,
+   "x": 29.8,
+   "y": 28.7,
+   "world": {
+    "map": 0,
+    "x": -7591.5,
+    "y": -1139.5
+   },
+   "yards": 464
+  },
+  "scholomance": {
+   "object": 178832,
+   "uiMapId": 1422,
+   "x": 69.5,
+   "y": 74.5,
+   "world": {
+    "map": 0,
+    "x": 1232,
+    "y": -2572
+   },
+   "yards": 47
+  },
+  "stratholme": {
+   "object": 178831,
+   "uiMapId": 1423,
+   "x": 26.1,
+   "y": 11.1,
+   "world": {
+    "map": 0,
+    "x": 3372.5,
+    "y": -3379.5
+   },
+   "yards": 20
+  },
+  "maraudon": {
+   "object": 178827,
+   "uiMapId": 1443,
+   "x": 31.5,
+   "y": 62.4,
+   "world": {
+    "map": 1,
+    "x": -1417.5,
+    "y": 2817
+   },
+   "yards": 109
+  },
+  "ragefire-chasm": {
+   "object": 179596,
+   "uiMapId": 1454,
+   "x": 51.4,
+   "y": 48.7,
+   "world": {
+    "map": 1,
+    "x": 1818.5,
+    "y": -4402
+   },
+   "yards": 21
+  },
+  "dire-maul": {
+   "object": 178826,
+   "uiMapId": 1444,
+   "x": 58.0,
+   "y": 44.5,
+   "world": {
+    "map": 1,
+    "x": -4427.5,
+    "y": 1413
+   },
+   "yards": 592
+  }
+ },
+ "loot": {
+  "shadowfang-keep": [
+   {
+    "id": 1292,
+    "inv": 13,
+    "class": 2,
+    "sub": 0,
+    "req": 20,
+    "ilvl": 25,
+    "q": 3,
+    "npc": 3886,
+    "pct": 9.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 2,
+     "DPS": 16.2,
+     "STR": 5
+    }
+   },
+   {
+    "id": 3191,
+    "inv": 17,
+    "class": 2,
+    "sub": 1,
+    "req": 21,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 4278,
+    "pct": 33.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 21.7,
+     "STA": 9,
+     "STR": 9
+    }
+   },
+   {
+    "id": 3230,
+    "inv": 9,
+    "class": 4,
+    "sub": 2,
+    "req": 21,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 4274,
+    "pct": 18.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 4,
+     "ARMOR": 63,
+     "STA": 7
+    }
+   },
+   {
+    "id": 3748,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 3927,
+    "pct": 56.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 2,
+     "ARMOR": 34,
+     "INT": 8,
+     "SP": 4
+    }
+   },
+   {
+    "id": 5254,
+    "inv": 3,
+    "class": 4,
+    "sub": 2,
+    "req": 15,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3914,
+    "pct": 82.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 87
+    }
+   },
+   {
+    "id": 5943,
+    "inv": 9,
+    "class": 4,
+    "sub": 3,
+    "req": 20,
+    "ilvl": 25,
+    "q": 2,
+    "npc": 0,
+    "pct": 2.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 80,
+     "SP": 2,
+     "STA": 4
+    }
+   },
+   {
+    "id": 6220,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 24,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 4275,
+    "pct": 18.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 17.8
+    }
+   },
+   {
+    "id": 6226,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 18,
+    "ilvl": 24,
+    "q": 3,
+    "npc": 3886,
+    "pct": 41.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 42,
+     "SP": 4,
+     "STA": 10
+    }
+   },
+   {
+    "id": 6314,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 22,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 3927,
+    "pct": 37.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 10,
+     "ARMOR": 22,
+     "STA": 3
+    }
+   },
+   {
+    "id": 6318,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 21,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 4279,
+    "pct": 33.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 16,
+     "SP": 17,
+     "SPI": 12,
+     "STA": 5
+    }
+   },
+   {
+    "id": 6319,
+    "inv": 6,
+    "class": 4,
+    "sub": 2,
+    "req": 21,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 4279,
+    "pct": 57.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 54,
+     "SP": 7,
+     "STA": 5
+    }
+   },
+   {
+    "id": 6320,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 23,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 4278,
+    "pct": 28.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 585,
+     "STA": 3,
+     "STR": 5
+    }
+   },
+   {
+    "id": 6321,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 21,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 3887,
+    "pct": 19.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "STA": 2,
+     "STR": 5
+    }
+   },
+   {
+    "id": 6323,
+    "inv": 21,
+    "class": 2,
+    "sub": 4,
+    "req": 20,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 3887,
+    "pct": 37.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 16.7,
+     "STA": 3,
+     "STR": 2
+    }
+   },
+   {
+    "id": 6324,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 24,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 4275,
+    "pct": 34.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 46,
+     "SP": 6,
+     "SPI": 6,
+     "STA": 5
+    }
+   },
+   {
+    "id": 6340,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 21,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 4274,
+    "pct": 71.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 4,
+     "ARMOR": 22,
+     "STA": 6
+    }
+   },
+   {
+    "id": 6341,
+    "inv": 23,
+    "class": 4,
+    "sub": 0,
+    "req": 14,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 4278,
+    "pct": 9.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "STA": 4
+    }
+   },
+   {
+    "id": 6392,
+    "inv": 6,
+    "class": 4,
+    "sub": 1,
+    "req": 24,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 4275,
+    "pct": 34.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 2,
+     "ARMOR": 26,
+     "INT": 3,
+     "SP": 9,
+     "SPI": 5
+    }
+   },
+   {
+    "id": 6633,
+    "inv": 13,
+    "class": 2,
+    "sub": 7,
+    "req": 18,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 3886,
+    "pct": 39.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 6,
+     "DPS": 15,
+     "STA": 3
+    }
+   },
+   {
+    "id": 6641,
+    "inv": 17,
+    "class": 2,
+    "sub": 8,
+    "req": 21,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 3872,
+    "pct": 56.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 22.4,
+     "SP": 11
+    }
+   },
+   {
+    "id": 6642,
+    "inv": 5,
+    "class": 4,
+    "sub": 3,
+    "req": 20,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 3872,
+    "pct": 34.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 208,
+     "SPI": 5,
+     "STA": 12,
+     "STR": 3
+    }
+   },
+   {
+    "id": 273456,
+    "inv": 21,
+    "class": 2,
+    "sub": 13,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3914,
+    "pct": 1.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 2,
+     "AP": 6,
+     "DPS": 14.6
+    }
+   },
+   {
+    "id": 273457,
+    "inv": 2,
+    "class": 4,
+    "sub": 0,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3914,
+    "pct": 1.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "INT": 2,
+     "SPI": 2
+    }
+   },
+   {
+    "id": 273637,
+    "inv": 21,
+    "class": 2,
+    "sub": 7,
+    "req": 21,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 3887,
+    "pct": 1.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 10.9,
+     "SP": 28
+    }
+   },
+   {
+    "id": 273643,
+    "inv": 12,
+    "class": 4,
+    "sub": 0,
+    "req": 21,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 4278,
+    "pct": 1.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "MP5": 2
+    }
+   },
+   {
+    "id": 273645,
+    "inv": 1,
+    "class": 4,
+    "sub": 0,
+    "req": 21,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 4279,
+    "pct": 1.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {}
+   },
+   {
+    "id": 273646,
+    "inv": 8,
+    "class": 4,
+    "sub": 3,
+    "req": 22,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 4274,
+    "pct": 1.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 43,
+     "STR": 8
+    }
+   },
+   {
+    "id": 273647,
+    "inv": 7,
+    "class": 4,
+    "sub": 2,
+    "req": 21,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 3927,
+    "pct": 1.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 10,
+     "ARMOR": 84,
+     "STR": 5
+    }
+   }
+  ],
+  "stormwind-stockade": [
+   {
+    "id": 1076,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 20,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 0,
+    "pct": 1.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 4,
+     "STA": 6
+    }
+   },
+   {
+    "id": 2280,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 22,
+    "ilvl": 29,
+    "q": 3,
+    "npc": 1666,
+    "pct": 2.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 10,
+     "DPS": 17.7,
+     "INT": 3,
+     "SP": 32
+    }
+   },
+   {
+    "id": 2941,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 21,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 1720,
+    "pct": 19.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 6,
+     "DPS": 17.8,
+     "STA": 2
+    }
+   },
+   {
+    "id": 2942,
+    "inv": 13,
+    "class": 2,
+    "sub": 13,
+    "req": 21,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 1720,
+    "pct": 18.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 17.6
+    }
+   },
+   {
+    "id": 3228,
+    "inv": 9,
+    "class": 4,
+    "sub": 3,
+    "req": 21,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 1720,
+    "pct": 54.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 92,
+     "STA": 8,
+     "STR": 3
+    }
+   },
+   {
+    "id": 273804,
+    "inv": 3,
+    "class": 4,
+    "sub": 2,
+    "req": 21,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 1696,
+    "pct": 1.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 10,
+     "ARMOR": 72,
+     "SPI": 9
+    }
+   },
+   {
+    "id": 273805,
+    "inv": 5,
+    "class": 4,
+    "sub": 2,
+    "req": 21,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 1696,
+    "pct": 1.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 14,
+     "ARMOR": 96,
+     "DEFENSE": 4,
+     "STA": 8
+    }
+   },
+   {
+    "id": 273806,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 21,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 1696,
+    "pct": 1.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SP": 6,
+     "STA": 6
+    }
+   },
+   {
+    "id": 273807,
+    "inv": 6,
+    "class": 4,
+    "sub": 2,
+    "req": 24,
+    "ilvl": 29,
+    "q": 3,
+    "npc": 1666,
+    "pct": 1.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 57,
+     "SP": 9,
+     "STR": 8
+    }
+   },
+   {
+    "id": 273808,
+    "inv": 9,
+    "class": 4,
+    "sub": 1,
+    "req": 24,
+    "ilvl": 29,
+    "q": 3,
+    "npc": 1666,
+    "pct": 1.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 20,
+     "SP": 3
+    }
+   },
+   {
+    "id": 273809,
+    "inv": 21,
+    "class": 2,
+    "sub": 0,
+    "req": 25,
+    "ilvl": 30,
+    "q": 3,
+    "npc": 1717,
+    "pct": 1.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 8,
+     "DPS": 18.9,
+     "STR": 4
+    }
+   },
+   {
+    "id": 273810,
+    "inv": 10,
+    "class": 4,
+    "sub": 3,
+    "req": 25,
+    "ilvl": 30,
+    "q": 3,
+    "npc": 1717,
+    "pct": 1.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 136,
+     "STA": 10,
+     "STR": 4
+    }
+   },
+   {
+    "id": 273811,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 25,
+    "ilvl": 30,
+    "q": 3,
+    "npc": 1717,
+    "pct": 1.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 661,
+     "SP": 7,
+     "STR": 6
+    }
+   },
+   {
+    "id": 273817,
+    "inv": 17,
+    "class": 2,
+    "sub": 5,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 1663,
+    "pct": 1.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 12,
+     "DPS": 23,
+     "STA": 10
+    }
+   },
+   {
+    "id": 273819,
+    "inv": 17,
+    "class": 2,
+    "sub": 6,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 1663,
+    "pct": 1.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 22.8
+    }
+   },
+   {
+    "id": 273820,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 1663,
+    "pct": 1.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {}
+   },
+   {
+    "id": 273824,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 1716,
+    "pct": 0.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 6,
+     "ARMOR": 65,
+     "STA": 7
+    }
+   },
+   {
+    "id": 273825,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 1716,
+    "pct": 0.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 24,
+     "MP5": 3,
+     "SP": 3
+    }
+   },
+   {
+    "id": 273827,
+    "inv": 21,
+    "class": 2,
+    "sub": 7,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 1716,
+    "pct": 1.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 13,
+     "SP": 34
+    }
+   },
+   {
+    "id": 273829,
+    "inv": 26,
+    "class": 2,
+    "sub": 18,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 1716,
+    "pct": 0.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 15.2,
+     "RAP": 12
+    }
+   },
+   {
+    "id": 274092,
+    "inv": 25,
+    "class": 2,
+    "sub": 16,
+    "req": 19,
+    "ilvl": 26,
+    "q": 3,
+    "npc": 0,
+    "pct": 0.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 14.7
+    }
+   }
+  ],
+  "deadmines": [
+   {
+    "id": 872,
+    "inv": 17,
+    "class": 2,
+    "sub": 1,
+    "req": 16,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 644,
+    "pct": 5.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 19.7,
+     "STR": 7
+    }
+   },
+   {
+    "id": 1156,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 1763,
+    "pct": 37.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 2,
+     "INT": 6
+    }
+   },
+   {
+    "id": 1925,
+    "inv": 21,
+    "class": 2,
+    "sub": 7,
+    "req": 11,
+    "ilvl": 16,
+    "q": 2,
+    "npc": 0,
+    "pct": 6.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 2,
+     "DPS": 8.1
+    }
+   },
+   {
+    "id": 1929,
+    "inv": 7,
+    "class": 4,
+    "sub": 1,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 0,
+    "pct": 6.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 5,
+     "ARMOR": 31,
+     "SP": 7
+    }
+   },
+   {
+    "id": 1930,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 13,
+    "ilvl": 18,
+    "q": 2,
+    "npc": 0,
+    "pct": 2.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 16,
+     "STA": 3
+    }
+   },
+   {
+    "id": 1934,
+    "inv": 7,
+    "class": 4,
+    "sub": 2,
+    "req": 15,
+    "ilvl": 20,
+    "q": 3,
+    "npc": 0,
+    "pct": 5.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 7,
+     "ARMOR": 75,
+     "SPI": 7
+    }
+   },
+   {
+    "id": 1936,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 0,
+    "pct": 5.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 4,
+     "DPS": 12.1
+    }
+   },
+   {
+    "id": 1937,
+    "inv": 13,
+    "class": 2,
+    "sub": 7,
+    "req": 16,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 642,
+    "pct": 10.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 3,
+     "DPS": 15.2,
+     "STA": 3
+    }
+   },
+   {
+    "id": 1943,
+    "inv": 7,
+    "class": 4,
+    "sub": 3,
+    "req": 14,
+    "ilvl": 19,
+    "q": 2,
+    "npc": 0,
+    "pct": 6.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "ARMOR": 144,
+     "STA": 3,
+     "STR": 4
+    }
+   },
+   {
+    "id": 1944,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 13,
+    "ilvl": 18,
+    "q": 2,
+    "npc": 0,
+    "pct": 5.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "ARMOR": 46,
+     "STA": 1,
+     "STR": 3
+    }
+   },
+   {
+    "id": 1945,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 13,
+    "ilvl": 18,
+    "q": 2,
+    "npc": 0,
+    "pct": 6.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "ARMOR": 46,
+     "INT": 3,
+     "SPI": 2
+    }
+   },
+   {
+    "id": 1951,
+    "inv": 13,
+    "class": 2,
+    "sub": 7,
+    "req": 14,
+    "ilvl": 19,
+    "q": 3,
+    "npc": 0,
+    "pct": 6.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 4,
+     "DPS": 12.9
+    }
+   },
+   {
+    "id": 2169,
+    "inv": 21,
+    "class": 2,
+    "sub": 15,
+    "req": 16,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 642,
+    "pct": 50.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 9,
+     "SP": 22
+    }
+   },
+   {
+    "id": 5187,
+    "inv": 17,
+    "class": 2,
+    "sub": 5,
+    "req": 15,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 644,
+    "pct": 71.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 18.4,
+     "SP": 8,
+     "STA": 8
+    }
+   },
+   {
+    "id": 5191,
+    "inv": 13,
+    "class": 2,
+    "sub": 7,
+    "req": 19,
+    "ilvl": 24,
+    "q": 3,
+    "npc": 639,
+    "pct": 15.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AP": 12,
+     "DPS": 15.5
+    }
+   },
+   {
+    "id": 5192,
+    "inv": 13,
+    "class": 2,
+    "sub": 7,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 646,
+    "pct": 38.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 4,
+     "DPS": 14.4
+    }
+   },
+   {
+    "id": 5193,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 20,
+    "ilvl": 24,
+    "q": 3,
+    "npc": 639,
+    "pct": 22.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 5,
+     "ARMOR": 21,
+     "STA": 3
+    }
+   },
+   {
+    "id": 5194,
+    "inv": 17,
+    "class": 2,
+    "sub": 1,
+    "req": 18,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 643,
+    "pct": 27.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 14.6,
+     "SP": 15,
+     "SPI": 8,
+     "STA": 8
+    }
+   },
+   {
+    "id": 5195,
+    "inv": 10,
+    "class": 4,
+    "sub": 1,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 643,
+    "pct": 67.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 25,
+     "STR": 7
+    }
+   },
+   {
+    "id": 5196,
+    "inv": 13,
+    "class": 2,
+    "sub": 0,
+    "req": 17,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 646,
+    "pct": 37.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 13.9,
+     "SPI": 3,
+     "STR": 3
+    }
+   },
+   {
+    "id": 5197,
+    "inv": 13,
+    "class": 2,
+    "sub": 4,
+    "req": 16,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 645,
+    "pct": 54.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 13.9,
+     "SPI": 4
+    }
+   },
+   {
+    "id": 5198,
+    "inv": 26,
+    "class": 2,
+    "sub": 19,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 645,
+    "pct": 34.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 22.3
+    }
+   },
+   {
+    "id": 5199,
+    "inv": 7,
+    "class": 4,
+    "sub": 2,
+    "req": 16,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 1763,
+    "pct": 55.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 76,
+     "SPI": 5,
+     "STA": 7
+    }
+   },
+   {
+    "id": 5200,
+    "inv": 17,
+    "class": 2,
+    "sub": 6,
+    "req": 20,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 647,
+    "pct": 28.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "DPS": 19,
+     "INT": 5
+    }
+   },
+   {
+    "id": 5201,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 18,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 647,
+    "pct": 38.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 14.2,
+     "SP": 24,
+     "STA": 8
+    }
+   },
+   {
+    "id": 5202,
+    "inv": 5,
+    "class": 4,
+    "sub": 1,
+    "req": 19,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 639,
+    "pct": 23.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 40,
+     "SP": 3,
+     "SPI": 8,
+     "STA": 5
+    }
+   },
+   {
+    "id": 5443,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 15,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3586,
+    "pct": 41.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 2,
+     "ARMOR": 509,
+     "STA": 5
+    }
+   },
+   {
+    "id": 5444,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 14,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3586,
+    "pct": 55.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 4,
+     "ARMOR": 20,
+     "STA": 5
+    }
+   },
+   {
+    "id": 7230,
+    "inv": 17,
+    "class": 2,
+    "sub": 5,
+    "req": 18,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 646,
+    "pct": 18.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 4,
+     "DPS": 19.7,
+     "STR": 11
+    }
+   },
+   {
+    "id": 10399,
+    "inv": 5,
+    "class": 4,
+    "sub": 2,
+    "req": 19,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 639,
+    "pct": 15.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 3,
+     "ARMOR": 89,
+     "STA": 10,
+     "STR": 4
+    }
+   },
+   {
+    "id": 10400,
+    "inv": 7,
+    "class": 4,
+    "sub": 2,
+    "req": 13,
+    "ilvl": 19,
+    "q": 3,
+    "npc": 0,
+    "pct": 3.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 6,
+     "ARMOR": 73,
+     "STR": 6
+    }
+   },
+   {
+    "id": 10401,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 13,
+    "ilvl": 19,
+    "q": 3,
+    "npc": 0,
+    "pct": 3.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 52,
+     "STA": 2,
+     "STR": 6
+    }
+   },
+   {
+    "id": 10402,
+    "inv": 8,
+    "class": 4,
+    "sub": 2,
+    "req": 13,
+    "ilvl": 20,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 6,
+     "ARMOR": 59,
+     "STA": 4
+    }
+   },
+   {
+    "id": 10403,
+    "inv": 6,
+    "class": 4,
+    "sub": 2,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 647,
+    "pct": 26.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 18,
+     "ARMOR": 50
+    }
+   },
+   {
+    "id": 273289,
+    "inv": 7,
+    "class": 4,
+    "sub": 1,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 644,
+    "pct": 1.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 35,
+     "SP": 6,
+     "STA": 6,
+     "STR": 4
+    }
+   },
+   {
+    "id": 273293,
+    "inv": 9,
+    "class": 4,
+    "sub": 3,
+    "req": 16,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 643,
+    "pct": 0.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 82,
+     "STA": 5
+    }
+   },
+   {
+    "id": 273297,
+    "inv": 21,
+    "class": 2,
+    "sub": 4,
+    "req": 18,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 1763,
+    "pct": 1.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 20,
+     "DPS": 15.2,
+     "STA": 4
+    }
+   },
+   {
+    "id": 273298,
+    "inv": 12,
+    "class": 4,
+    "sub": 0,
+    "req": 18,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 645,
+    "pct": 0.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SPI": 1
+    }
+   },
+   {
+    "id": 284715,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 646,
+    "pct": 0.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "STA": 5,
+     "STR": 4
+    }
+   },
+   {
+    "id": 285292,
+    "inv": 25,
+    "class": 2,
+    "sub": 16,
+    "req": 16,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 642,
+    "pct": 1.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 6,
+     "DPS": 12.6,
+     "STA": 2
+    }
+   }
+  ],
+  "wailing-caverns": [
+   {
+    "id": 1121,
+    "inv": 8,
+    "class": 4,
+    "sub": 2,
+    "req": 19,
+    "ilvl": 24,
+    "q": 3,
+    "npc": 3673,
+    "pct": 5.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 8,
+     "ARMOR": 63,
+     "STR": 3
+    }
+   },
+   {
+    "id": 5243,
+    "inv": 26,
+    "class": 2,
+    "sub": 19,
+    "req": 15,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 5912,
+    "pct": 41.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 23.2
+    }
+   },
+   {
+    "id": 5404,
+    "inv": 3,
+    "class": 4,
+    "sub": 2,
+    "req": 18,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 3671,
+    "pct": 41.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 5,
+     "ARMOR": 68,
+     "SPI": 7
+    }
+   },
+   {
+    "id": 5970,
+    "inv": 10,
+    "class": 4,
+    "sub": 1,
+    "req": 18,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 3673,
+    "pct": 19.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 6,
+     "ARMOR": 25,
+     "SP": 7
+    }
+   },
+   {
+    "id": 6447,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 15,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 3653,
+    "pct": 63.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 530,
+     "MP5": 2
+    }
+   },
+   {
+    "id": 6448,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 17,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 3674,
+    "pct": 45.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 3,
+     "DPS": 13.9,
+     "STR": 3
+    }
+   },
+   {
+    "id": 6449,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 17,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 3674,
+    "pct": 45.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 6,
+     "ARMOR": 20
+    }
+   },
+   {
+    "id": 6459,
+    "inv": 8,
+    "class": 4,
+    "sub": 3,
+    "req": 18,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 3673,
+    "pct": 23.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 134,
+     "STA": 7
+    }
+   },
+   {
+    "id": 6460,
+    "inv": 6,
+    "class": 4,
+    "sub": 3,
+    "req": 19,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3669,
+    "pct": 18.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 3,
+     "ARMOR": 107,
+     "STR": 7
+    }
+   },
+   {
+    "id": 6461,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 22,
+    "ilvl": 25,
+    "q": 3,
+    "npc": 3654,
+    "pct": 29.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 32,
+     "MP5": 3
+    }
+   },
+   {
+    "id": 6463,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 21,
+    "ilvl": 24,
+    "q": 3,
+    "npc": 3654,
+    "pct": 30.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "STA": 3
+    }
+   },
+   {
+    "id": 6465,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3669,
+    "pct": 53.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 40,
+     "SP": 3,
+     "SPI": 10,
+     "STR": 3
+    }
+   },
+   {
+    "id": 6469,
+    "inv": 15,
+    "class": 2,
+    "sub": 2,
+    "req": 19,
+    "ilvl": 24,
+    "q": 3,
+    "npc": 3673,
+    "pct": 17.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 12.1
+    }
+   },
+   {
+    "id": 6472,
+    "inv": 13,
+    "class": 2,
+    "sub": 4,
+    "req": 19,
+    "ilvl": 24,
+    "q": 3,
+    "npc": 3670,
+    "pct": 29.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 15.5
+    }
+   },
+   {
+    "id": 6473,
+    "inv": 5,
+    "class": 4,
+    "sub": 2,
+    "req": 18,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 3670,
+    "pct": 53.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 91,
+     "INT": 3,
+     "SPI": 10,
+     "STR": 3
+    }
+   },
+   {
+    "id": 6627,
+    "inv": 5,
+    "class": 4,
+    "sub": 3,
+    "req": 23,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 3654,
+    "pct": 23.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 194,
+     "STA": 4,
+     "STR": 10
+    }
+   },
+   {
+    "id": 6629,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 18,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 5775,
+    "pct": 20.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 20,
+     "STA": 6
+    }
+   },
+   {
+    "id": 6630,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 20,
+    "ilvl": 24,
+    "q": 3,
+    "npc": 5775,
+    "pct": 38.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 547,
+     "INT": 5,
+     "SP": 5
+    }
+   },
+   {
+    "id": 6631,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 20,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 5775,
+    "pct": 37.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 14.7,
+     "SP": 15,
+     "SPI": 5,
+     "STA": 2
+    }
+   },
+   {
+    "id": 6632,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 15,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 5912,
+    "pct": 46.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 19,
+     "SP": 3,
+     "STA": 5
+    }
+   },
+   {
+    "id": 10410,
+    "inv": 7,
+    "class": 4,
+    "sub": 2,
+    "req": 18,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3669,
+    "pct": 18.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "ARMOR": 78,
+     "STA": 4,
+     "STR": 5
+    }
+   },
+   {
+    "id": 10411,
+    "inv": 8,
+    "class": 4,
+    "sub": 2,
+    "req": 18,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3673,
+    "pct": 21.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 6,
+     "ARMOR": 61,
+     "STA": 6
+    }
+   },
+   {
+    "id": 10412,
+    "inv": 6,
+    "class": 4,
+    "sub": 2,
+    "req": 16,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 3671,
+    "pct": 10.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 3,
+     "ARMOR": 49,
+     "STA": 5
+    }
+   },
+   {
+    "id": 10413,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 14,
+    "ilvl": 19,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 6,
+     "ARMOR": 52,
+     "STR": 4
+    }
+   },
+   {
+    "id": 13245,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 15,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 3653,
+    "pct": 16.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 528,
+     "DEFENSE": 5
+    }
+   },
+   {
+    "id": 273084,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3653,
+    "pct": 1.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 20
+    }
+   },
+   {
+    "id": 273088,
+    "inv": 2,
+    "class": 4,
+    "sub": 0,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3671,
+    "pct": 1.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 1,
+     "INT": 1,
+     "SPI": 1,
+     "STA": 1,
+     "STR": 1
+    }
+   },
+   {
+    "id": 273089,
+    "inv": 6,
+    "class": 4,
+    "sub": 1,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3670,
+    "pct": 1.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 22,
+     "MP5": 3
+    }
+   },
+   {
+    "id": 273137,
+    "inv": 23,
+    "class": 4,
+    "sub": 0,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 3674,
+    "pct": 2.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SP": 3,
+     "STA": 3
+    }
+   }
+  ],
+  "razorfen-kraul": [
+   {
+    "id": 1727,
+    "inv": 21,
+    "class": 2,
+    "sub": 7,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 4842,
+    "pct": 7.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 17.6
+    }
+   },
+   {
+    "id": 1975,
+    "inv": 17,
+    "class": 2,
+    "sub": 8,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 4424,
+    "pct": 5.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 22.9,
+     "SP": 10,
+     "STR": 5
+    }
+   },
+   {
+    "id": 2264,
+    "inv": 3,
+    "class": 4,
+    "sub": 2,
+    "req": 25,
+    "ilvl": 30,
+    "q": 3,
+    "npc": 4842,
+    "pct": 12.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 10,
+     "ARMOR": 77,
+     "SPI": 3,
+     "STA": 4
+    }
+   },
+   {
+    "id": 2816,
+    "inv": 21,
+    "class": 2,
+    "sub": 4,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 4428,
+    "pct": 11.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 14.3,
+     "SP_SHADOW": 28
+    }
+   },
+   {
+    "id": 3569,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 21,
+    "ilvl": 26,
+    "q": 2,
+    "npc": 0,
+    "pct": 2.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 40,
+     "SP": 1,
+     "SPI": 7,
+     "STA": 3
+    }
+   },
+   {
+    "id": 4438,
+    "inv": 9,
+    "class": 4,
+    "sub": 3,
+    "req": 25,
+    "ilvl": 30,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "ARMOR": 95,
+     "STA": 3,
+     "STR": 8
+    }
+   },
+   {
+    "id": 6679,
+    "inv": 17,
+    "class": 2,
+    "sub": 6,
+    "req": 24,
+    "ilvl": 29,
+    "q": 2,
+    "npc": 0,
+    "pct": 61.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 11,
+     "DPS": 19.8
+    }
+   },
+   {
+    "id": 6681,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 27,
+    "ilvl": 32,
+    "q": 3,
+    "npc": 4424,
+    "pct": 46.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 20.6
+    }
+   },
+   {
+    "id": 6682,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 4428,
+    "pct": 42.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 48,
+     "INT": 11,
+     "SP": 7,
+     "STA": 4
+    }
+   },
+   {
+    "id": 6685,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 25,
+    "ilvl": 32,
+    "q": 3,
+    "npc": 4428,
+    "pct": 43.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 37,
+     "INT": 11,
+     "SP": 6
+    }
+   },
+   {
+    "id": 6686,
+    "inv": 1,
+    "class": 4,
+    "sub": 3,
+    "req": 28,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 4420,
+    "pct": 61.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 308,
+     "STR": 13
+    }
+   },
+   {
+    "id": 6687,
+    "inv": 17,
+    "class": 2,
+    "sub": 1,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 4420,
+    "pct": 33.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 28.9,
+     "STA": 8,
+     "STR": 15
+    }
+   },
+   {
+    "id": 6688,
+    "inv": 1,
+    "class": 4,
+    "sub": 2,
+    "req": 27,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 4842,
+    "pct": 46.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 89,
+     "SP": 7,
+     "SPI": 11,
+     "STA": 11
+    }
+   },
+   {
+    "id": 6689,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 27,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 4842,
+    "pct": 48.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 21.4,
+     "SP": 23,
+     "SPI": 16,
+     "STA": 6
+    }
+   },
+   {
+    "id": 6690,
+    "inv": 7,
+    "class": 4,
+    "sub": 2,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 4422,
+    "pct": 60.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 26,
+     "ARMOR": 96,
+     "INT": 12
+    }
+   },
+   {
+    "id": 6691,
+    "inv": 21,
+    "class": 2,
+    "sub": 15,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 4422,
+    "pct": 33.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 15.3,
+     "SP": 40,
+     "SPI": 4,
+     "STA": 6
+    }
+   },
+   {
+    "id": 6692,
+    "inv": 13,
+    "class": 2,
+    "sub": 0,
+    "req": 31,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 4421,
+    "pct": 18.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 22.9,
+     "SPI": 5,
+     "STR": 5
+    }
+   },
+   {
+    "id": 6693,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 31,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 4421,
+    "pct": 34.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SPI": 6,
+     "STA": 5
+    }
+   },
+   {
+    "id": 6694,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 31,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 4421,
+    "pct": 33.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 757,
+     "SP": 5,
+     "STA": 7
+    }
+   },
+   {
+    "id": 6695,
+    "inv": 2,
+    "class": 4,
+    "sub": 0,
+    "req": 27,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 4425,
+    "pct": 25.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SP": 5,
+     "STA": 4
+    }
+   },
+   {
+    "id": 6696,
+    "inv": 15,
+    "class": 2,
+    "sub": 2,
+    "req": 27,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 4425,
+    "pct": 33.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 3,
+     "DPS": 17.1
+    }
+   },
+   {
+    "id": 6697,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 27,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 4425,
+    "pct": 34.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 3,
+     "ARMOR": 38,
+     "INT": 11,
+     "SP": 6
+    }
+   },
+   {
+    "id": 274149,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 25,
+    "ilvl": 30,
+    "q": 3,
+    "npc": 6168,
+    "pct": 1.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 24,
+     "SP": 7,
+     "SPI": 6
+    }
+   },
+   {
+    "id": 274152,
+    "inv": 12,
+    "class": 4,
+    "sub": 0,
+    "req": 25,
+    "ilvl": 30,
+    "q": 3,
+    "npc": 6168,
+    "pct": 1.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SPI": 6
+    }
+   },
+   {
+    "id": 274155,
+    "inv": 1,
+    "class": 4,
+    "sub": 2,
+    "req": 25,
+    "ilvl": 30,
+    "q": 3,
+    "npc": 6168,
+    "pct": 1.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 84,
+     "SP": 4,
+     "SPI": 14
+    }
+   },
+   {
+    "id": 274158,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 4424,
+    "pct": 2.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 18.9,
+     "MP5": 5,
+     "SP": 34,
+     "STA": 11
+    }
+   },
+   {
+    "id": 274159,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 27,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 4424,
+    "pct": 2.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 18,
+     "ARMOR": 68
+    }
+   },
+   {
+    "id": 274160,
+    "inv": 25,
+    "class": 2,
+    "sub": 16,
+    "req": 31,
+    "ilvl": 36,
+    "q": 3,
+    "npc": 4422,
+    "pct": 1.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 40,
+     "DPS": 21.7,
+     "STR": 4
+    }
+   },
+   {
+    "id": 274161,
+    "inv": 7,
+    "class": 4,
+    "sub": 3,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 4420,
+    "pct": 1.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 202,
+     "SPI": 8,
+     "STA": 11
+    }
+   }
+  ],
+  "blackfathom-deeps": [
+   {
+    "id": 888,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 22,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 4831,
+    "pct": 36.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 61,
+     "SP": 5,
+     "STA": 4,
+     "STR": 4
+    }
+   },
+   {
+    "id": 1155,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 24,
+    "ilvl": 29,
+    "q": 3,
+    "npc": 4832,
+    "pct": 48.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 17.7,
+     "SP": 32,
+     "SPI": 11
+    }
+   },
+   {
+    "id": 2034,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 20,
+    "ilvl": 25,
+    "q": 3,
+    "npc": 0,
+    "pct": 1.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 43,
+     "SP": 3,
+     "SPI": 12
+    }
+   },
+   {
+    "id": 3078,
+    "inv": 15,
+    "class": 2,
+    "sub": 2,
+    "req": 21,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 4831,
+    "pct": 20.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 13.3
+    }
+   },
+   {
+    "id": 5516,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 11,
+    "ilvl": 16,
+    "q": 0,
+    "npc": 4830,
+    "pct": 17.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 5
+    }
+   },
+   {
+    "id": 6901,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 24,
+    "ilvl": 29,
+    "q": 3,
+    "npc": 4830,
+    "pct": 38.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 23,
+     "SP": 3,
+     "SPI": 8
+    }
+   },
+   {
+    "id": 6902,
+    "inv": 9,
+    "class": 4,
+    "sub": 2,
+    "req": 22,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 4830,
+    "pct": 33.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 43,
+     "STA": 3,
+     "STR": 6
+    }
+   },
+   {
+    "id": 6903,
+    "inv": 7,
+    "class": 4,
+    "sub": 1,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 4832,
+    "pct": 33.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 40,
+     "SP": 12,
+     "SPI": 9
+    }
+   },
+   {
+    "id": 6904,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 4830,
+    "pct": 22.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 17.7
+    }
+   },
+   {
+    "id": 6905,
+    "inv": 17,
+    "class": 2,
+    "sub": 1,
+    "req": 22,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 6243,
+    "pct": 46.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 22.4,
+     "SP": 8,
+     "STR": 8
+    }
+   },
+   {
+    "id": 6906,
+    "inv": 10,
+    "class": 4,
+    "sub": 3,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 6243,
+    "pct": 43.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 132,
+     "STA": 5,
+     "STR": 8
+    }
+   },
+   {
+    "id": 6907,
+    "inv": 5,
+    "class": 4,
+    "sub": 3,
+    "req": 20,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 4887,
+    "pct": 37.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 248
+    }
+   },
+   {
+    "id": 6908,
+    "inv": 6,
+    "class": 4,
+    "sub": 1,
+    "req": 20,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 4887,
+    "pct": 53.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 25,
+     "SP": 8,
+     "STA": 7
+    }
+   },
+   {
+    "id": 6909,
+    "inv": 17,
+    "class": 2,
+    "sub": 8,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 4829,
+    "pct": 21.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 25.6
+    }
+   },
+   {
+    "id": 6910,
+    "inv": 7,
+    "class": 4,
+    "sub": 1,
+    "req": 26,
+    "ilvl": 29,
+    "q": 3,
+    "npc": 4829,
+    "pct": 35.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 41,
+     "MP5": 5,
+     "SP": 5,
+     "STA": 5
+    }
+   },
+   {
+    "id": 6911,
+    "inv": 6,
+    "class": 4,
+    "sub": 2,
+    "req": 26,
+    "ilvl": 30,
+    "q": 3,
+    "npc": 4829,
+    "pct": 36.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 58,
+     "SP": 12,
+     "STA": 5
+    }
+   },
+   {
+    "id": 11121,
+    "inv": 21,
+    "class": 2,
+    "sub": 7,
+    "req": 21,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 4831,
+    "pct": 38.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 17
+    }
+   },
+   {
+    "id": 273839,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 22,
+    "ilvl": 27,
+    "q": 3,
+    "npc": 4887,
+    "pct": 3.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "STA": 5
+    }
+   },
+   {
+    "id": 273840,
+    "inv": 12,
+    "class": 4,
+    "sub": 0,
+    "req": 24,
+    "ilvl": 29,
+    "q": 3,
+    "npc": 6243,
+    "pct": 3.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {}
+   },
+   {
+    "id": 273841,
+    "inv": 17,
+    "class": 2,
+    "sub": 5,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 12902,
+    "pct": 11.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 22.9,
+     "SP": 12
+    }
+   },
+   {
+    "id": 273842,
+    "inv": 8,
+    "class": 4,
+    "sub": 3,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 12902,
+    "pct": 7.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 145,
+     "STA": 7,
+     "STR": 5
+    }
+   },
+   {
+    "id": 273843,
+    "inv": 15,
+    "class": 2,
+    "sub": 2,
+    "req": 23,
+    "ilvl": 28,
+    "q": 3,
+    "npc": 12902,
+    "pct": 8.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 2,
+     "DPS": 13.9,
+     "STA": 4
+    }
+   },
+   {
+    "id": 273846,
+    "inv": 6,
+    "class": 4,
+    "sub": 3,
+    "req": 25,
+    "ilvl": 30,
+    "q": 3,
+    "npc": 4832,
+    "pct": 2.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 123,
+     "STR": 8
+    }
+   }
+  ],
+  "uldaman": [
+   {
+    "id": 9387,
+    "inv": 8,
+    "class": 4,
+    "sub": 4,
+    "req": 40,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 6910,
+    "pct": 23.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 257
+    }
+   },
+   {
+    "id": 9388,
+    "inv": 9,
+    "class": 4,
+    "sub": 3,
+    "req": 35,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 6910,
+    "pct": 20.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 115
+    }
+   },
+   {
+    "id": 9389,
+    "inv": 3,
+    "class": 4,
+    "sub": 2,
+    "req": 36,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 6910,
+    "pct": 23.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 95
+    }
+   },
+   {
+    "id": 9390,
+    "inv": 10,
+    "class": 4,
+    "sub": 1,
+    "req": 35,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 6910,
+    "pct": 21.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 38
+    }
+   },
+   {
+    "id": 9394,
+    "inv": 1,
+    "class": 4,
+    "sub": 4,
+    "req": 40,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 6907,
+    "pct": 8.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 10,
+     "ARMOR": 303,
+     "STA": 15
+    }
+   },
+   {
+    "id": 9400,
+    "inv": 15,
+    "class": 2,
+    "sub": 2,
+    "req": 36,
+    "ilvl": 43,
+    "q": 3,
+    "npc": 6906,
+    "pct": 39.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 22.6,
+     "STA": 5,
+     "STR": 5
+    }
+   },
+   {
+    "id": 9401,
+    "inv": 13,
+    "class": 2,
+    "sub": 7,
+    "req": 38,
+    "ilvl": 43,
+    "q": 3,
+    "npc": 6906,
+    "pct": 0.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 8,
+     "DPS": 29.3,
+     "STA": 5
+    }
+   },
+   {
+    "id": 9403,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 35,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 6908,
+    "pct": 77.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 1287,
+     "SP": 5,
+     "SPI": 10
+    }
+   },
+   {
+    "id": 9407,
+    "inv": 7,
+    "class": 4,
+    "sub": 1,
+    "req": 35,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 7228,
+    "pct": 38.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 53,
+     "INT": 8,
+     "SP": 7,
+     "SPI": 12,
+     "STA": 9
+    }
+   },
+   {
+    "id": 9408,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 37,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 7228,
+    "pct": 20.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 37.2,
+     "STA": 20,
+     "STR": 8
+    }
+   },
+   {
+    "id": 9409,
+    "inv": 9,
+    "class": 4,
+    "sub": 3,
+    "req": 37,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 7228,
+    "pct": 37.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 165
+    }
+   },
+   {
+    "id": 9410,
+    "inv": 10,
+    "class": 4,
+    "sub": 4,
+    "req": 40,
+    "ilvl": 46,
+    "q": 3,
+    "npc": 7206,
+    "pct": 0.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 306,
+     "DEFENSE": 5
+    }
+   },
+   {
+    "id": 9414,
+    "inv": 7,
+    "class": 4,
+    "sub": 2,
+    "req": 41,
+    "ilvl": 47,
+    "q": 3,
+    "npc": 4854,
+    "pct": 29.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 18,
+     "ARMOR": 122,
+     "SPI": 11
+    }
+   },
+   {
+    "id": 9415,
+    "inv": 5,
+    "class": 4,
+    "sub": 1,
+    "req": 42,
+    "ilvl": 47,
+    "q": 3,
+    "npc": 4854,
+    "pct": 39.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 68,
+     "INT": 5,
+     "SP": 10,
+     "SPI": 14,
+     "STA": 10
+    }
+   },
+   {
+    "id": 11310,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 42,
+    "ilvl": 47,
+    "q": 3,
+    "npc": 7291,
+    "pct": 19.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "ARMOR": 51,
+     "SPI": 10,
+     "SP_FIRE": 14
+    }
+   }
+  ],
+  "gnomeregan": [
+   {
+    "id": 9445,
+    "inv": 10,
+    "class": 4,
+    "sub": 3,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 7361,
+    "pct": 9.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 5,
+     "ARMOR": 144,
+     "SPI": 9,
+     "STR": 6
+    }
+   },
+   {
+    "id": 9446,
+    "inv": 21,
+    "class": 2,
+    "sub": 7,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 6235,
+    "pct": 16.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 22.1
+    }
+   },
+   {
+    "id": 9447,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 6235,
+    "pct": 31.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SP": 3,
+     "SPI": 7,
+     "STA": 4
+    }
+   },
+   {
+    "id": 9448,
+    "inv": 9,
+    "class": 4,
+    "sub": 1,
+    "req": 28,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 6235,
+    "pct": 39.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 22,
+     "MP5": 3,
+     "SP": 9
+    }
+   },
+   {
+    "id": 9449,
+    "inv": 17,
+    "class": 2,
+    "sub": 5,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 6229,
+    "pct": 33.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 5,
+     "DPS": 29,
+     "STR": 16
+    }
+   },
+   {
+    "id": 9450,
+    "inv": 8,
+    "class": 4,
+    "sub": 2,
+    "req": 28,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 6229,
+    "pct": 64.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 76,
+     "SP": 4,
+     "STA": 12
+    }
+   },
+   {
+    "id": 9452,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 27,
+    "ilvl": 32,
+    "q": 3,
+    "npc": 7079,
+    "pct": 19.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 19.8,
+     "SP": 36
+    }
+   },
+   {
+    "id": 9453,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 27,
+    "ilvl": 32,
+    "q": 3,
+    "npc": 7079,
+    "pct": 18.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 20.5
+    }
+   },
+   {
+    "id": 9454,
+    "inv": 8,
+    "class": 4,
+    "sub": 1,
+    "req": 27,
+    "ilvl": 32,
+    "q": 3,
+    "npc": 7079,
+    "pct": 59.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "ARMOR": 34,
+     "INT": 8,
+     "SP": 5,
+     "SPI": 4
+    }
+   },
+   {
+    "id": 9455,
+    "inv": 9,
+    "class": 4,
+    "sub": 2,
+    "req": 28,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6228,
+    "pct": 39.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 49
+    }
+   },
+   {
+    "id": 9456,
+    "inv": 26,
+    "class": 2,
+    "sub": 3,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6228,
+    "pct": 34.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 12,
+     "DPS": 17.9
+    }
+   },
+   {
+    "id": 9457,
+    "inv": 21,
+    "class": 2,
+    "sub": 4,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6228,
+    "pct": 22.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 15.2,
+     "SP": 25,
+     "SPI": 7,
+     "STA": 3
+    }
+   },
+   {
+    "id": 9458,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 32,
+    "ilvl": 36,
+    "q": 3,
+    "npc": 7800,
+    "pct": 31.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 776,
+     "SPI": 3
+    }
+   },
+   {
+    "id": 9459,
+    "inv": 17,
+    "class": 2,
+    "sub": 1,
+    "req": 32,
+    "ilvl": 36,
+    "q": 3,
+    "npc": 7800,
+    "pct": 18.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 31.3,
+     "INT": 4,
+     "STA": 5,
+     "STR": 17
+    }
+   },
+   {
+    "id": 9461,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 32,
+    "ilvl": 36,
+    "q": 3,
+    "npc": 7800,
+    "pct": 32.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {}
+   },
+   {
+    "id": 9489,
+    "inv": 26,
+    "class": 2,
+    "sub": 19,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 0,
+    "pct": 0.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 30.4
+    }
+   },
+   {
+    "id": 9492,
+    "inv": 1,
+    "class": 4,
+    "sub": 1,
+    "req": 32,
+    "ilvl": 36,
+    "q": 3,
+    "npc": 7800,
+    "pct": 9.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 43,
+     "INT": 8,
+     "SP": 8,
+     "SPI": 9
+    }
+   },
+   {
+    "id": 274042,
+    "inv": 6,
+    "class": 4,
+    "sub": 2,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 7361,
+    "pct": 1.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 16,
+     "ARMOR": 62,
+     "SPI": 7
+    }
+   },
+   {
+    "id": 274043,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 7361,
+    "pct": 1.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 738,
+     "SPI": 9,
+     "SP_NATURE": 14,
+     "STA": -10
+    }
+   },
+   {
+    "id": 274068,
+    "inv": 2,
+    "class": 4,
+    "sub": 0,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 6229,
+    "pct": 0.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 10,
+     "SPI": 6,
+     "STA": 6
+    }
+   }
+  ],
+  "razorfen-downs": [
+   {
+    "id": 10762,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 39,
+    "ilvl": 43,
+    "q": 3,
+    "npc": 7358,
+    "pct": 38.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 62,
+     "SP_FROST": 14,
+     "SP_SHADOW": 14,
+     "STA": 20
+    }
+   },
+   {
+    "id": 10763,
+    "inv": 1,
+    "class": 4,
+    "sub": 4,
+    "req": 40,
+    "ilvl": 43,
+    "q": 3,
+    "npc": 7358,
+    "pct": 36.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 341,
+     "INT": 10,
+     "STA": 7,
+     "STR": 14
+    }
+   },
+   {
+    "id": 10769,
+    "inv": 2,
+    "class": 4,
+    "sub": 0,
+    "req": 36,
+    "ilvl": 41,
+    "q": 3,
+    "npc": 7357,
+    "pct": 32.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "INT": 8,
+     "SP": 7
+    }
+   },
+   {
+    "id": 10770,
+    "inv": 23,
+    "class": 4,
+    "sub": 0,
+    "req": 36,
+    "ilvl": 41,
+    "q": 3,
+    "npc": 7357,
+    "pct": 32.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SPI": 5,
+     "SP_SHADOW": 16
+    }
+   },
+   {
+    "id": 10771,
+    "inv": 6,
+    "class": 4,
+    "sub": 1,
+    "req": 36,
+    "ilvl": 41,
+    "q": 3,
+    "npc": 7357,
+    "pct": 31.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 33,
+     "INT": 15,
+     "SP": 7
+    }
+   },
+   {
+    "id": 10772,
+    "inv": 13,
+    "class": 2,
+    "sub": 0,
+    "req": 36,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 8567,
+    "pct": 50.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 28.8
+    }
+   },
+   {
+    "id": 10774,
+    "inv": 3,
+    "class": 4,
+    "sub": 2,
+    "req": 37,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 8567,
+    "pct": 48.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 6,
+     "ARMOR": 95,
+     "STA": 15,
+     "STR": 5
+    }
+   },
+   {
+    "id": 10775,
+    "inv": 5,
+    "class": 4,
+    "sub": 4,
+    "req": 40,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 7355,
+    "pct": 32.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 8,
+     "ARMOR": 373,
+     "STA": 15,
+     "STR": 10
+    }
+   },
+   {
+    "id": 10776,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 35,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 7355,
+    "pct": 34.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 30,
+     "STA": 10
+    }
+   },
+   {
+    "id": 10777,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 37,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 7355,
+    "pct": 30.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "ARMOR": 79
+    }
+   }
+  ],
+  "scarlet-monastery": [
+   {
+    "id": 3456,
+    "inv": 12,
+    "class": 4,
+    "sub": 0,
+    "req": 25,
+    "ilvl": 30,
+    "q": 3,
+    "npc": 3974,
+    "pct": 25.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {}
+   },
+   {
+    "id": 7682,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 3983,
+    "pct": 7.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 19.4
+    }
+   },
+   {
+    "id": 7683,
+    "inv": 13,
+    "class": 2,
+    "sub": 13,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 3983,
+    "pct": 51.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 12,
+     "DPS": 21.9
+    }
+   },
+   {
+    "id": 7684,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 4543,
+    "pct": 47.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 38,
+     "INT": 9,
+     "SP": 9
+    }
+   },
+   {
+    "id": 7685,
+    "inv": 23,
+    "class": 4,
+    "sub": 0,
+    "req": 33,
+    "ilvl": 37,
+    "q": 3,
+    "npc": 4543,
+    "pct": 49.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SP": 14
+    }
+   },
+   {
+    "id": 7686,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6489,
+    "pct": 41.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 9,
+     "STR": 4
+    }
+   },
+   {
+    "id": 7687,
+    "inv": 13,
+    "class": 2,
+    "sub": 4,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6489,
+    "pct": 20.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 22.9,
+     "STR": 7
+    }
+   },
+   {
+    "id": 7688,
+    "inv": 5,
+    "class": 4,
+    "sub": 3,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6489,
+    "pct": 35.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 3,
+     "ARMOR": 235,
+     "STA": 17,
+     "STR": 6
+    }
+   },
+   {
+    "id": 7689,
+    "inv": 17,
+    "class": 2,
+    "sub": 8,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6488,
+    "pct": 18.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 30.2,
+     "STA": 15,
+     "STR": 10
+    }
+   },
+   {
+    "id": 7690,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6488,
+    "pct": 39.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 6,
+     "ARMOR": 70,
+     "STA": 8,
+     "STR": 4
+    }
+   },
+   {
+    "id": 7691,
+    "inv": 1,
+    "class": 4,
+    "sub": 1,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6488,
+    "pct": 38.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 42,
+     "SP": 8,
+     "SPI": 12,
+     "STA": 7
+    }
+   },
+   {
+    "id": 7708,
+    "inv": 26,
+    "class": 2,
+    "sub": 19,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6490,
+    "pct": 32.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 33.2,
+     "SP": 3
+    }
+   },
+   {
+    "id": 7709,
+    "inv": 7,
+    "class": 4,
+    "sub": 1,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6490,
+    "pct": 31.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 45,
+     "SPI": 14,
+     "SP_SHADOW": 19
+    }
+   },
+   {
+    "id": 7710,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 31,
+    "ilvl": 36,
+    "q": 3,
+    "npc": 3974,
+    "pct": 14.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 28,
+     "DPS": 31.3
+    }
+   },
+   {
+    "id": 7711,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 33,
+    "ilvl": 39,
+    "q": 2,
+    "npc": 6487,
+    "pct": 46.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 52,
+     "SPI": 8,
+     "SP_FIRE": 16,
+     "STA": 4
+    }
+   },
+   {
+    "id": 7712,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 33,
+    "ilvl": 39,
+    "q": 2,
+    "npc": 6487,
+    "pct": 47.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 39,
+     "INT": 6,
+     "SP": 7,
+     "SPI": 8
+    }
+   },
+   {
+    "id": 7713,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 34,
+    "ilvl": 39,
+    "q": 3,
+    "npc": 6487,
+    "pct": 46.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 25.7,
+     "INT": 6,
+     "SP": 44,
+     "SPI": 7,
+     "STA": 10
+    }
+   },
+   {
+    "id": 7714,
+    "inv": 21,
+    "class": 2,
+    "sub": 15,
+    "req": 34,
+    "ilvl": 39,
+    "q": 3,
+    "npc": 6487,
+    "pct": 47.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 17.5,
+     "INT": 8,
+     "SP": 44,
+     "SPI": 3
+    }
+   },
+   {
+    "id": 7717,
+    "inv": 17,
+    "class": 2,
+    "sub": 1,
+    "req": 37,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 3975,
+    "pct": 14.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 37.3
+    }
+   },
+   {
+    "id": 7718,
+    "inv": 3,
+    "class": 4,
+    "sub": 3,
+    "req": 37,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 3975,
+    "pct": 33.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 12,
+     "ARMOR": 196,
+     "STA": 15
+    }
+   },
+   {
+    "id": 7719,
+    "inv": 1,
+    "class": 4,
+    "sub": 3,
+    "req": 37,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 3975,
+    "pct": 32.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "ARMOR": 213,
+     "CRIT": 1,
+     "STA": 8,
+     "STR": 13
+    }
+   },
+   {
+    "id": 7721,
+    "inv": 21,
+    "class": 2,
+    "sub": 4,
+    "req": 39,
+    "ilvl": 44,
+    "q": 3,
+    "npc": 3977,
+    "pct": 18.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 19.8,
+     "SP": 31,
+     "SPI": 8,
+     "STA": 7
+    }
+   },
+   {
+    "id": 7722,
+    "inv": 2,
+    "class": 4,
+    "sub": 0,
+    "req": 39,
+    "ilvl": 44,
+    "q": 3,
+    "npc": 3977,
+    "pct": 0.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SP": 8,
+     "SPI": 7,
+     "STA": 7
+    }
+   },
+   {
+    "id": 7724,
+    "inv": 10,
+    "class": 4,
+    "sub": 3,
+    "req": 39,
+    "ilvl": 44,
+    "q": 3,
+    "npc": 3976,
+    "pct": 19.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AP": 32,
+     "ARMOR": 168,
+     "STA": 7
+    }
+   },
+   {
+    "id": 7726,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 39,
+    "ilvl": 44,
+    "q": 3,
+    "npc": 3976,
+    "pct": 43.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 1548,
+     "STA": 8,
+     "STR": 7
+    }
+   },
+   {
+    "id": 7731,
+    "inv": 2,
+    "class": 4,
+    "sub": 0,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 6490,
+    "pct": 33.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 14,
+     "STA": 9
+    }
+   },
+   {
+    "id": 7756,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 29,
+    "ilvl": 36,
+    "q": 3,
+    "npc": 3974,
+    "pct": 56.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 24,
+     "ARMOR": 71
+    }
+   },
+   {
+    "id": 10329,
+    "inv": 6,
+    "class": 4,
+    "sub": 3,
+    "req": 32,
+    "ilvl": 37,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 136,
+     "STA": 10,
+     "STR": 12
+    }
+   },
+   {
+    "id": 10330,
+    "inv": 7,
+    "class": 4,
+    "sub": 3,
+    "req": 38,
+    "ilvl": 44,
+    "q": 3,
+    "npc": 3975,
+    "pct": 14.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 236,
+     "STA": 10,
+     "STR": 21
+    }
+   },
+   {
+    "id": 10331,
+    "inv": 10,
+    "class": 4,
+    "sub": 3,
+    "req": 33,
+    "ilvl": 38,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 10,
+     "ARMOR": 153,
+     "STR": 12
+    }
+   },
+   {
+    "id": 10333,
+    "inv": 9,
+    "class": 4,
+    "sub": 3,
+    "req": 31,
+    "ilvl": 36,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 104,
+     "STA": 11
+    }
+   },
+   {
+    "id": 19507,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 36,
+    "ilvl": 42,
+    "q": 3,
+    "npc": 4542,
+    "pct": 33.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 46,
+     "INT": 13,
+     "SP": 7
+    }
+   },
+   {
+    "id": 23169,
+    "inv": 2,
+    "class": 4,
+    "sub": 0,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 14693,
+    "pct": 38.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "INT": 6,
+     "SP": 7,
+     "STA": 5
+    }
+   },
+   {
+    "id": 274290,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 3983,
+    "pct": 0.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 738,
+     "SP": 5,
+     "STA": 6
+    }
+   },
+   {
+    "id": 274291,
+    "inv": 1,
+    "class": 4,
+    "sub": 3,
+    "req": 31,
+    "ilvl": 36,
+    "q": 3,
+    "npc": 4543,
+    "pct": 0.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 193,
+     "STA": 8,
+     "STR": 7
+    }
+   },
+   {
+    "id": 274292,
+    "inv": 25,
+    "class": 2,
+    "sub": 16,
+    "req": 31,
+    "ilvl": 36,
+    "q": 3,
+    "npc": 3974,
+    "pct": 0.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 4,
+     "DPS": 21.7,
+     "STA": 4
+    }
+   },
+   {
+    "id": 274293,
+    "inv": 26,
+    "class": 2,
+    "sub": 18,
+    "req": 34,
+    "ilvl": 39,
+    "q": 3,
+    "npc": 6487,
+    "pct": 0.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 8,
+     "DPS": 20.8
+    }
+   },
+   {
+    "id": 274294,
+    "inv": 8,
+    "class": 4,
+    "sub": 1,
+    "req": 34,
+    "ilvl": 39,
+    "q": 2,
+    "npc": 6487,
+    "pct": 0.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 35,
+     "INT": 9,
+     "SP": 5
+    }
+   }
+  ],
+  "zulfarrak": [
+   {
+    "id": 5516,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 11,
+    "ilvl": 16,
+    "q": 0,
+    "npc": 7273,
+    "pct": 6.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "DPS": 5
+    }
+   }
+  ],
+  "blackrock-spire": [
+   {
+    "id": 13164,
+    "inv": 12,
+    "class": 4,
+    "sub": 0,
+    "req": 56,
+    "ilvl": 61,
+    "q": 3,
+    "npc": 9568,
+    "pct": 9.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {}
+   },
+   {
+    "id": 16666,
+    "inv": 5,
+    "class": 4,
+    "sub": 3,
+    "req": 58,
+    "ilvl": 63,
+    "q": 3,
+    "npc": 10363,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 370,
+     "INT": 20,
+     "SP": 23,
+     "STA": 13
+    }
+   },
+   {
+    "id": 16669,
+    "inv": 3,
+    "class": 4,
+    "sub": 3,
+    "req": 55,
+    "ilvl": 60,
+    "q": 3,
+    "npc": 10339,
+    "pct": 19.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 266,
+     "INT": 15,
+     "SPI": 6,
+     "STA": 14,
+     "STR": 5
+    }
+   },
+   {
+    "id": 16670,
+    "inv": 8,
+    "class": 4,
+    "sub": 3,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 9196,
+    "pct": 16.7,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "ARMOR": 240,
+     "SP": 14,
+     "SPI": 17
+    }
+   },
+   {
+    "id": 16672,
+    "inv": 10,
+    "class": 4,
+    "sub": 3,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 9816,
+    "pct": 20,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 218,
+     "INT": 10,
+     "SP": 6,
+     "SPI": 16,
+     "STA": 4
+    }
+   },
+   {
+    "id": 16673,
+    "inv": 6,
+    "class": 4,
+    "sub": 3,
+    "req": 53,
+    "ilvl": 58,
+    "q": 3,
+    "npc": 0,
+    "pct": 3.2,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "ARMOR": 193,
+     "INT": 17,
+     "SPI": 7,
+     "STA": 6,
+     "STR": 9
+    }
+   },
+   {
+    "id": 16674,
+    "inv": 5,
+    "class": 4,
+    "sub": 3,
+    "req": 58,
+    "ilvl": 63,
+    "q": 3,
+    "npc": 10363,
+    "pct": 11.5,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 21,
+     "ARMOR": 370,
+     "INT": 13,
+     "SPI": 6,
+     "STA": 16,
+     "STR": 8
+    }
+   },
+   {
+    "id": 16676,
+    "inv": 10,
+    "class": 4,
+    "sub": 3,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 9237,
+    "pct": 20,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 14,
+     "ARMOR": 218,
+     "INT": 10,
+     "SPI": 10,
+     "STA": 10
+    }
+   },
+   {
+    "id": 16679,
+    "inv": 3,
+    "class": 4,
+    "sub": 3,
+    "req": 55,
+    "ilvl": 60,
+    "q": 3,
+    "npc": 9568,
+    "pct": 20,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 11,
+     "ARMOR": 266,
+     "INT": 7,
+     "SPI": 7,
+     "STA": 17
+    }
+   },
+   {
+    "id": 16680,
+    "inv": 6,
+    "class": 4,
+    "sub": 3,
+    "req": 53,
+    "ilvl": 58,
+    "q": 3,
+    "npc": 0,
+    "pct": 3.5,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 10,
+     "ARMOR": 193,
+     "INT": 9,
+     "SPI": 11,
+     "STA": 6,
+     "STR": 8
+    }
+   },
+   {
+    "id": 16683,
+    "inv": 9,
+    "class": 4,
+    "sub": 1,
+    "req": 52,
+    "ilvl": 57,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.5,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 35,
+     "INT": 13,
+     "SPI": 6,
+     "STA": 6
+    }
+   },
+   {
+    "id": 16688,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 58,
+    "ilvl": 63,
+    "q": 3,
+    "npc": 10363,
+    "pct": 11.2,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 89,
+     "INT": 28,
+     "SP": 12,
+     "SPI": 8,
+     "STA": 9
+    }
+   },
+   {
+    "id": 16690,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 58,
+    "ilvl": 63,
+    "q": 3,
+    "npc": 10363,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 89,
+     "INT": 24,
+     "SP": 7,
+     "SPI": 15,
+     "STA": 13
+    }
+   },
+   {
+    "id": 16695,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 55,
+    "ilvl": 60,
+    "q": 3,
+    "npc": 10264,
+    "pct": 18.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 64,
+     "INT": 21,
+     "SP": 4,
+     "SPI": 9,
+     "STA": 4
+    }
+   },
+   {
+    "id": 16696,
+    "inv": 6,
+    "class": 4,
+    "sub": 1,
+    "req": 53,
+    "ilvl": 58,
+    "q": 3,
+    "npc": 0,
+    "pct": 3.4,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 46,
+     "INT": 20,
+     "SP": 4,
+     "SPI": 9,
+     "STA": 4
+    }
+   },
+   {
+    "id": 16700,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 58,
+    "ilvl": 63,
+    "q": 3,
+    "npc": 10363,
+    "pct": 12.4,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 89,
+     "INT": 21,
+     "SPI": 10,
+     "STA": 20
+    }
+   },
+   {
+    "id": 16703,
+    "inv": 9,
+    "class": 4,
+    "sub": 1,
+    "req": 52,
+    "ilvl": 57,
+    "q": 3,
+    "npc": 0,
+    "pct": 3.9,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 35,
+     "INT": 11,
+     "SP": 5,
+     "SPI": 5,
+     "STA": 10
+    }
+   },
+   {
+    "id": 16706,
+    "inv": 5,
+    "class": 4,
+    "sub": 2,
+    "req": 58,
+    "ilvl": 63,
+    "q": 3,
+    "npc": 10363,
+    "pct": 11.8,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 176,
+     "INT": 20,
+     "SP": 4,
+     "SPI": 20,
+     "STA": 13
+    }
+   },
+   {
+    "id": 16712,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 9236,
+    "pct": 21,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 14,
+     "ARMOR": 105,
+     "SPI": 11,
+     "STA": 10,
+     "STR": 9
+    }
+   },
+   {
+    "id": 16713,
+    "inv": 6,
+    "class": 4,
+    "sub": 2,
+    "req": 53,
+    "ilvl": 58,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.4,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 14,
+     "ARMOR": 93,
+     "SPI": 11,
+     "STA": 10,
+     "STR": 9
+    }
+   },
+   {
+    "id": 16715,
+    "inv": 8,
+    "class": 4,
+    "sub": 2,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10596,
+    "pct": 15.7,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 115,
+     "INT": 9,
+     "SP": 4,
+     "SPI": 17,
+     "STA": 10
+    }
+   },
+   {
+    "id": 16716,
+    "inv": 6,
+    "class": 4,
+    "sub": 2,
+    "req": 53,
+    "ilvl": 58,
+    "q": 3,
+    "npc": 9736,
+    "pct": 1.5,
+    "src": [
+     "fdb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 93,
+     "INT": 17,
+     "SP": 4,
+     "SPI": 10,
+     "STA": 9
+    }
+   },
+   {
+    "id": 16717,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 9736,
+    "pct": 1,
+    "src": [
+     "fdb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 105,
+     "INT": 9,
+     "SP": 4,
+     "SPI": 21
+    }
+   },
+   {
+    "id": 16718,
+    "inv": 3,
+    "class": 4,
+    "sub": 2,
+    "req": 55,
+    "ilvl": 60,
+    "q": 3,
+    "npc": 10268,
+    "pct": 18.2,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 127,
+     "INT": 18,
+     "SP": 7,
+     "SPI": 8,
+     "STA": 9
+    }
+   },
+   {
+    "id": 16721,
+    "inv": 5,
+    "class": 4,
+    "sub": 2,
+    "req": 58,
+    "ilvl": 63,
+    "q": 3,
+    "npc": 10363,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 26,
+     "ARMOR": 176,
+     "SPI": 12,
+     "STA": 13
+    }
+   },
+   {
+    "id": 16726,
+    "inv": 5,
+    "class": 4,
+    "sub": 4,
+    "req": 58,
+    "ilvl": 63,
+    "q": 3,
+    "npc": 10363,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "ARMOR": 657,
+     "INT": 16,
+     "SPI": 8,
+     "STA": 21,
+     "STR": 13
+    }
+   },
+   {
+    "id": 16729,
+    "inv": 3,
+    "class": 4,
+    "sub": 4,
+    "req": 55,
+    "ilvl": 60,
+    "q": 3,
+    "npc": 10430,
+    "pct": 20,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 5,
+     "ARMOR": 470,
+     "INT": 10,
+     "STA": 15,
+     "STR": 9
+    }
+   },
+   {
+    "id": 16730,
+    "inv": 5,
+    "class": 4,
+    "sub": 4,
+    "req": 58,
+    "ilvl": 63,
+    "q": 3,
+    "npc": 10363,
+    "pct": 12.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 10,
+     "ARMOR": 657,
+     "SPI": 12,
+     "STA": 24,
+     "STR": 15
+    }
+   },
+   {
+    "id": 16733,
+    "inv": 3,
+    "class": 4,
+    "sub": 4,
+    "req": 55,
+    "ilvl": 60,
+    "q": 3,
+    "npc": 10429,
+    "pct": 19.8,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "ARMOR": 470,
+     "DEFENSE": 4,
+     "STA": 17,
+     "STR": 11
+    }
+   },
+   {
+    "id": 16735,
+    "inv": 9,
+    "class": 4,
+    "sub": 4,
+    "req": 52,
+    "ilvl": 57,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.6,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 3,
+     "ARMOR": 261,
+     "DEFENSE": 2,
+     "SPI": 2,
+     "STA": 14,
+     "STR": 7
+    }
+   },
+   {
+    "id": 16736,
+    "inv": 6,
+    "class": 4,
+    "sub": 4,
+    "req": 53,
+    "ilvl": 58,
+    "q": 3,
+    "npc": 9196,
+    "pct": null,
+    "src": [
+     "fdb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 7,
+     "ARMOR": 341,
+     "DEFENSE": 6,
+     "SPI": 4,
+     "STA": 12,
+     "STR": 14
+    }
+   }
+  ],
+  "blackrock-depths": [
+   {
+    "id": 16724,
+    "inv": 10,
+    "class": 4,
+    "sub": 4,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 9019,
+    "pct": null,
+    "src": [
+     "fdb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 386,
+     "INT": 5,
+     "SPI": 14,
+     "STA": 9,
+     "STR": 14
+    }
+   }
+  ],
+  "scholomance": [
+   {
+    "id": 16667,
+    "inv": 1,
+    "class": 4,
+    "sub": 3,
+    "req": 57,
+    "ilvl": 62,
+    "q": 3,
+    "npc": 1853,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 297,
+     "INT": 23,
+     "SP": 12,
+     "SPI": 12,
+     "STA": 13,
+     "STR": 7
+    }
+   },
+   {
+    "id": 16677,
+    "inv": 1,
+    "class": 4,
+    "sub": 3,
+    "req": 57,
+    "ilvl": 62,
+    "q": 3,
+    "npc": 1853,
+    "pct": 12.8,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 20,
+     "ARMOR": 297,
+     "INT": 13,
+     "SPI": 6,
+     "STA": 20
+    }
+   },
+   {
+    "id": 16684,
+    "inv": 10,
+    "class": 4,
+    "sub": 1,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 11261,
+    "pct": 14,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 52,
+     "INT": 14,
+     "SP": 7,
+     "SPI": 14,
+     "STA": 8
+    }
+   },
+   {
+    "id": 16686,
+    "inv": 1,
+    "class": 4,
+    "sub": 1,
+    "req": 57,
+    "ilvl": 62,
+    "q": 3,
+    "npc": 1853,
+    "pct": 12.8,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 71,
+     "INT": 30,
+     "SP": 11,
+     "STA": 10
+    }
+   },
+   {
+    "id": 16689,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 55,
+    "ilvl": 60,
+    "q": 3,
+    "npc": 10508,
+    "pct": 18.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 64,
+     "INT": 22,
+     "SP": 8,
+     "STA": 6
+    }
+   },
+   {
+    "id": 16693,
+    "inv": 1,
+    "class": 4,
+    "sub": 1,
+    "req": 57,
+    "ilvl": 62,
+    "q": 3,
+    "npc": 1853,
+    "pct": 11.5,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 71,
+     "INT": 24,
+     "SP": 7,
+     "SPI": 15,
+     "STA": 13
+    }
+   },
+   {
+    "id": 16698,
+    "inv": 1,
+    "class": 4,
+    "sub": 1,
+    "req": 57,
+    "ilvl": 62,
+    "q": 3,
+    "npc": 1853,
+    "pct": 11.7,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 71,
+     "INT": 23,
+     "SP": 14,
+     "SPI": 12,
+     "STA": 15
+    }
+   },
+   {
+    "id": 16701,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 55,
+    "ilvl": 60,
+    "q": 3,
+    "npc": 10503,
+    "pct": 17,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 64,
+     "INT": 15,
+     "SP": 11,
+     "STA": 14
+    }
+   },
+   {
+    "id": 16705,
+    "inv": 10,
+    "class": 4,
+    "sub": 1,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10901,
+    "pct": 17,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "ARMOR": 52,
+     "INT": 9,
+     "SPI": 14,
+     "STA": 13
+    }
+   },
+   {
+    "id": 16707,
+    "inv": 1,
+    "class": 4,
+    "sub": 2,
+    "req": 57,
+    "ilvl": 62,
+    "q": 3,
+    "npc": 1853,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 20,
+     "ARMOR": 141,
+     "SPI": 13,
+     "STA": 20,
+     "STR": 6
+    }
+   },
+   {
+    "id": 16710,
+    "inv": 9,
+    "class": 4,
+    "sub": 2,
+    "req": 52,
+    "ilvl": 57,
+    "q": 3,
+    "npc": 10505,
+    "pct": 5,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 15,
+     "ARMOR": 71,
+     "STA": 7
+    }
+   },
+   {
+    "id": 16711,
+    "inv": 8,
+    "class": 4,
+    "sub": 2,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 11622,
+    "pct": 18.3,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 21,
+     "ARMOR": 115,
+     "STA": 9
+    }
+   },
+   {
+    "id": 16716,
+    "inv": 6,
+    "class": 4,
+    "sub": 2,
+    "req": 53,
+    "ilvl": 58,
+    "q": 3,
+    "npc": 10507,
+    "pct": 4,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 93,
+     "INT": 17,
+     "SP": 4,
+     "SPI": 10,
+     "STA": 9
+    }
+   },
+   {
+    "id": 16720,
+    "inv": 1,
+    "class": 4,
+    "sub": 2,
+    "req": 57,
+    "ilvl": 62,
+    "q": 3,
+    "npc": 1853,
+    "pct": 11.4,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 141,
+     "INT": 20,
+     "SP": 5,
+     "SPI": 20,
+     "STA": 10,
+     "STR": 6
+    }
+   },
+   {
+    "id": 16722,
+    "inv": 9,
+    "class": 4,
+    "sub": 4,
+    "req": 52,
+    "ilvl": 57,
+    "q": 3,
+    "npc": 10504,
+    "pct": 5,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 5,
+     "ARMOR": 261,
+     "INT": 7,
+     "STA": 10,
+     "STR": 8
+    }
+   },
+   {
+    "id": 16727,
+    "inv": 1,
+    "class": 4,
+    "sub": 4,
+    "req": 57,
+    "ilvl": 62,
+    "q": 3,
+    "npc": 1853,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 7,
+     "ARMOR": 526,
+     "INT": 13,
+     "MP5": 4,
+     "STA": 20,
+     "STR": 14
+    }
+   },
+   {
+    "id": 16731,
+    "inv": 1,
+    "class": 4,
+    "sub": 4,
+    "req": 57,
+    "ilvl": 62,
+    "q": 3,
+    "npc": 1853,
+    "pct": 11.8,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "ARMOR": 526,
+     "STA": 27,
+     "STR": 15
+    }
+   },
+   {
+    "id": 16734,
+    "inv": 8,
+    "class": 4,
+    "sub": 4,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10506,
+    "pct": 18.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 5,
+     "ARMOR": 424,
+     "DEFENSE": 2,
+     "STA": 20,
+     "STR": 9
+    }
+   },
+   {
+    "id": 18760,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 57,
+    "ilvl": 62,
+    "q": 3,
+    "npc": 14516,
+    "pct": 24.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {}
+   }
+  ],
+  "stratholme": [
+   {
+    "id": 16668,
+    "inv": 7,
+    "class": 4,
+    "sub": 3,
+    "req": 56,
+    "ilvl": 61,
+    "q": 3,
+    "npc": 10440,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 315,
+     "INT": 15,
+     "SP": 14,
+     "SPI": 20,
+     "STA": 7
+    }
+   },
+   {
+    "id": 16671,
+    "inv": 9,
+    "class": 4,
+    "sub": 3,
+    "req": 52,
+    "ilvl": 57,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 148,
+     "INT": 8,
+     "SP": 5,
+     "SPI": 10,
+     "STA": 7
+    }
+   },
+   {
+    "id": 16675,
+    "inv": 8,
+    "class": 4,
+    "sub": 3,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10437,
+    "pct": 20,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 21,
+     "ARMOR": 240,
+     "INT": 3,
+     "STA": 9
+    }
+   },
+   {
+    "id": 16678,
+    "inv": 7,
+    "class": 4,
+    "sub": 3,
+    "req": 56,
+    "ilvl": 61,
+    "q": 3,
+    "npc": 10440,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 26,
+     "ARMOR": 315,
+     "INT": 10,
+     "SPI": 12,
+     "STA": 6,
+     "STR": 6
+    }
+   },
+   {
+    "id": 16681,
+    "inv": 9,
+    "class": 4,
+    "sub": 3,
+    "req": 52,
+    "ilvl": 57,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 15,
+     "ARMOR": 148,
+     "STA": 8
+    }
+   },
+   {
+    "id": 16682,
+    "inv": 8,
+    "class": 4,
+    "sub": 1,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10558,
+    "pct": 20,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 58,
+     "INT": 14,
+     "SP": 9,
+     "SPI": 14,
+     "STA": 7
+    }
+   },
+   {
+    "id": 16685,
+    "inv": 6,
+    "class": 4,
+    "sub": 1,
+    "req": 53,
+    "ilvl": 58,
+    "q": 3,
+    "npc": 0,
+    "pct": 1.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 46,
+     "INT": 21,
+     "SP": 7,
+     "STA": 6
+    }
+   },
+   {
+    "id": 16687,
+    "inv": 7,
+    "class": 4,
+    "sub": 1,
+    "req": 56,
+    "ilvl": 61,
+    "q": 3,
+    "npc": 10440,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 76,
+     "INT": 15,
+     "SP": 7,
+     "SPI": 21,
+     "STA": 12
+    }
+   },
+   {
+    "id": 16691,
+    "inv": 8,
+    "class": 4,
+    "sub": 1,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10438,
+    "pct": 20,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 58,
+     "INT": 10,
+     "SP": 4,
+     "SPI": 17,
+     "STA": 9
+    }
+   },
+   {
+    "id": 16692,
+    "inv": 10,
+    "class": 4,
+    "sub": 1,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10811,
+    "pct": 22,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 52,
+     "INT": 10,
+     "SP": 5,
+     "SPI": 17,
+     "STA": 8
+    }
+   },
+   {
+    "id": 16694,
+    "inv": 7,
+    "class": 4,
+    "sub": 1,
+    "req": 56,
+    "ilvl": 61,
+    "q": 3,
+    "npc": 10440,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 76,
+     "INT": 15,
+     "SP": 8,
+     "SPI": 23,
+     "STA": 12
+    }
+   },
+   {
+    "id": 16697,
+    "inv": 9,
+    "class": 4,
+    "sub": 1,
+    "req": 52,
+    "ilvl": 57,
+    "q": 3,
+    "npc": 0,
+    "pct": 1.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 35,
+     "INT": 8,
+     "SP": 4,
+     "SPI": 10,
+     "STA": 7
+    }
+   },
+   {
+    "id": 16699,
+    "inv": 7,
+    "class": 4,
+    "sub": 1,
+    "req": 56,
+    "ilvl": 61,
+    "q": 3,
+    "npc": 10440,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 76,
+     "INT": 14,
+     "SP": 12,
+     "SPI": 21,
+     "STA": 15
+    }
+   },
+   {
+    "id": 16702,
+    "inv": 6,
+    "class": 4,
+    "sub": 1,
+    "req": 53,
+    "ilvl": 58,
+    "q": 3,
+    "npc": 0,
+    "pct": 1.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 46,
+     "INT": 14,
+     "SP": 9,
+     "SPI": 9,
+     "STA": 10
+    }
+   },
+   {
+    "id": 16704,
+    "inv": 8,
+    "class": 4,
+    "sub": 1,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10436,
+    "pct": 20,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 58,
+     "INT": 7,
+     "SP": 9,
+     "SPI": 10,
+     "STA": 17
+    }
+   },
+   {
+    "id": 16708,
+    "inv": 3,
+    "class": 4,
+    "sub": 2,
+    "req": 55,
+    "ilvl": 60,
+    "q": 3,
+    "npc": 10997,
+    "pct": 20,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "AGI": 22,
+     "ARMOR": 127,
+     "STA": 9
+    }
+   },
+   {
+    "id": 16709,
+    "inv": 7,
+    "class": 4,
+    "sub": 2,
+    "req": 56,
+    "ilvl": 61,
+    "q": 3,
+    "npc": 10440,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 25,
+     "ARMOR": 150,
+     "SPI": 14,
+     "STA": 14
+    }
+   },
+   {
+    "id": 16714,
+    "inv": 9,
+    "class": 4,
+    "sub": 2,
+    "req": 52,
+    "ilvl": 57,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 71,
+     "INT": 15,
+     "SP": 3,
+     "STR": 5
+    }
+   },
+   {
+    "id": 16717,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10516,
+    "pct": 20,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 105,
+     "INT": 9,
+     "SP": 4,
+     "SPI": 21
+    }
+   },
+   {
+    "id": 16719,
+    "inv": 7,
+    "class": 4,
+    "sub": 2,
+    "req": 56,
+    "ilvl": 61,
+    "q": 3,
+    "npc": 10440,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 150,
+     "INT": 14,
+     "SP": 8,
+     "SPI": 14,
+     "STA": 14,
+     "STR": 12
+    }
+   },
+   {
+    "id": 16723,
+    "inv": 6,
+    "class": 4,
+    "sub": 4,
+    "req": 53,
+    "ilvl": 58,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 341,
+     "INT": 15,
+     "SP": 7,
+     "STA": 9,
+     "STR": 10
+    }
+   },
+   {
+    "id": 16724,
+    "inv": 10,
+    "class": 4,
+    "sub": 4,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10808,
+    "pct": 20,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 386,
+     "INT": 5,
+     "SPI": 14,
+     "STA": 9,
+     "STR": 14
+    }
+   },
+   {
+    "id": 16725,
+    "inv": 8,
+    "class": 4,
+    "sub": 4,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10813,
+    "pct": 19.8,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 424,
+     "SPI": 9,
+     "STA": 18,
+     "STR": 11
+    }
+   },
+   {
+    "id": 16728,
+    "inv": 7,
+    "class": 4,
+    "sub": 4,
+    "req": 56,
+    "ilvl": 61,
+    "q": 3,
+    "npc": 10440,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "ARMOR": 557,
+     "INT": 12,
+     "MP5": 3,
+     "STA": 14,
+     "STR": 20
+    }
+   },
+   {
+    "id": 16732,
+    "inv": 7,
+    "class": 4,
+    "sub": 4,
+    "req": 56,
+    "ilvl": 61,
+    "q": 3,
+    "npc": 10440,
+    "pct": 11.1,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 11,
+     "ARMOR": 557,
+     "SPI": 4,
+     "STA": 15,
+     "STR": 23
+    }
+   },
+   {
+    "id": 16736,
+    "inv": 6,
+    "class": 4,
+    "sub": 4,
+    "req": 53,
+    "ilvl": 58,
+    "q": 3,
+    "npc": 0,
+    "pct": 1.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 7,
+     "ARMOR": 341,
+     "DEFENSE": 6,
+     "SPI": 4,
+     "STA": 12,
+     "STR": 14
+    }
+   },
+   {
+    "id": 16737,
+    "inv": 10,
+    "class": 4,
+    "sub": 4,
+    "req": 54,
+    "ilvl": 59,
+    "q": 3,
+    "npc": 10439,
+    "pct": 17.4,
+    "src": [
+     "fdb",
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 3,
+     "ARMOR": 386,
+     "DEFENSE": 4,
+     "SPI": 8,
+     "STA": 10,
+     "STR": 17
+    }
+   },
+   {
+    "id": 22206,
+    "inv": 23,
+    "class": 4,
+    "sub": 0,
+    "req": 0,
+    "ilvl": 1,
+    "q": 2,
+    "npc": 10811,
+    "pct": 0.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {}
+   },
+   {
+    "id": 23125,
+    "inv": 2,
+    "class": 4,
+    "sub": 0,
+    "req": 55,
+    "ilvl": 60,
+    "q": 3,
+    "npc": 14684,
+    "pct": 27.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "era",
+    "stats": {
+     "SP": 22
+    }
+   }
+  ],
+  "ragefire-chasm": [
+   {
+    "id": 14145,
+    "inv": 21,
+    "class": 2,
+    "sub": 7,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11520,
+    "pct": 16.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 12.2
+    }
+   },
+   {
+    "id": 14147,
+    "inv": 9,
+    "class": 4,
+    "sub": 3,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11518,
+    "pct": 33.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 78,
+     "SPI": 3,
+     "STR": 2
+    }
+   },
+   {
+    "id": 14148,
+    "inv": 9,
+    "class": 4,
+    "sub": 1,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11520,
+    "pct": 30.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 15,
+     "SPI": 3,
+     "STA": 2
+    }
+   },
+   {
+    "id": 14149,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11520,
+    "pct": 32.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 17,
+     "STR": 3
+    }
+   },
+   {
+    "id": 14150,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11518,
+    "pct": 36.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 35,
+     "INT": 4,
+     "SPI": 4,
+     "STA": 6
+    }
+   },
+   {
+    "id": 14151,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11518,
+    "pct": 16.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 2,
+     "DPS": 12,
+     "STA": 3
+    }
+   },
+   {
+    "id": 272996,
+    "inv": 21,
+    "class": 2,
+    "sub": 4,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11517,
+    "pct": 2.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 8.1,
+     "SP": 11,
+     "SPI": 4
+    }
+   },
+   {
+    "id": 272998,
+    "inv": 21,
+    "class": 2,
+    "sub": 13,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11517,
+    "pct": 1.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 6,
+     "DPS": 12.2
+    }
+   },
+   {
+    "id": 272999,
+    "inv": 26,
+    "class": 2,
+    "sub": 18,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11517,
+    "pct": 2.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 9.5
+    }
+   },
+   {
+    "id": 273003,
+    "inv": 21,
+    "class": 2,
+    "sub": 15,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11519,
+    "pct": 1.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 8.1,
+     "SPI": 4
+    }
+   },
+   {
+    "id": 273005,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11519,
+    "pct": 2.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 17,
+     "STA": 3
+    }
+   },
+   {
+    "id": 273007,
+    "inv": 8,
+    "class": 4,
+    "sub": 2,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 11519,
+    "pct": 2.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 4,
+     "ARMOR": 56,
+     "SPI": 5
+    }
+   }
+  ],
+  "city-of-dalaran": [
+   {
+    "id": 273031,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 27,
+    "ilvl": 32,
+    "q": 3,
+    "npc": 245999,
+    "pct": 31.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SP": 3,
+     "SPI": 7,
+     "STA": 4
+    }
+   },
+   {
+    "id": 273032,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 25,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 247126,
+    "pct": 32.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 40,
+     "SPI": 6,
+     "STR": 5
+    }
+   },
+   {
+    "id": 273033,
+    "inv": 26,
+    "class": 2,
+    "sub": 18,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 247126,
+    "pct": 29.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 8,
+     "DPS": 15.4
+    }
+   },
+   {
+    "id": 273034,
+    "inv": 10,
+    "class": 4,
+    "sub": 1,
+    "req": 27,
+    "ilvl": 32,
+    "q": 3,
+    "npc": 245999,
+    "pct": 33.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 31,
+     "INT": 7,
+     "SP_ARCANE": 9,
+     "SP_SHADOW": 9,
+     "STA": 7
+    }
+   },
+   {
+    "id": 273035,
+    "inv": 5,
+    "class": 4,
+    "sub": 3,
+    "req": 27,
+    "ilvl": 32,
+    "q": 3,
+    "npc": 245999,
+    "pct": 34.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 225,
+     "MP5": 3,
+     "STA": 8,
+     "STR": 12
+    }
+   },
+   {
+    "id": 273036,
+    "inv": 9,
+    "class": 4,
+    "sub": 1,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 247126,
+    "pct": 38.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 21,
+     "MP5": 2,
+     "SP": 5,
+     "STR": 6
+    }
+   },
+   {
+    "id": 273037,
+    "inv": 17,
+    "class": 2,
+    "sub": 6,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 246003,
+    "pct": 29.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 10,
+     "DPS": 28.8
+    }
+   },
+   {
+    "id": 273038,
+    "inv": 5,
+    "class": 4,
+    "sub": 2,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 246003,
+    "pct": 34.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "ARMOR": 110,
+     "INT": 13,
+     "STA": 7
+    }
+   },
+   {
+    "id": 273039,
+    "inv": 6,
+    "class": 4,
+    "sub": 1,
+    "req": 29,
+    "ilvl": 34,
+    "q": 3,
+    "npc": 246003,
+    "pct": 35.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 28,
+     "INT": 10,
+     "SP": 7
+    }
+   },
+   {
+    "id": 273040,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 246008,
+    "pct": 30.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 20.7,
+     "SP": 36,
+     "STA": 14
+    }
+   },
+   {
+    "id": 273041,
+    "inv": 6,
+    "class": 4,
+    "sub": 2,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 246008,
+    "pct": 34.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "ARMOR": 61,
+     "STA": 6
+    }
+   },
+   {
+    "id": 273042,
+    "inv": 8,
+    "class": 4,
+    "sub": 3,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 246008,
+    "pct": 34.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 157,
+     "INT": 7,
+     "STR": 7
+    }
+   },
+   {
+    "id": 273043,
+    "inv": 26,
+    "class": 2,
+    "sub": 19,
+    "req": 27,
+    "ilvl": 32,
+    "q": 3,
+    "npc": 246016,
+    "pct": 31.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 31.2,
+     "INT": 4,
+     "MP5": 2
+    }
+   },
+   {
+    "id": 273044,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 27,
+    "ilvl": 32,
+    "q": 3,
+    "npc": 246016,
+    "pct": 32.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 49,
+     "INT": 15,
+     "SP": 9
+    }
+   },
+   {
+    "id": 273045,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 27,
+    "ilvl": 32,
+    "q": 3,
+    "npc": 246016,
+    "pct": 35.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 12,
+     "ARMOR": 24,
+     "SPI": 7
+    }
+   },
+   {
+    "id": 273046,
+    "inv": 17,
+    "class": 2,
+    "sub": 1,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 246017,
+    "pct": 37.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 27.9
+    }
+   },
+   {
+    "id": 273047,
+    "inv": 3,
+    "class": 4,
+    "sub": 2,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 246017,
+    "pct": 32.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "ARMOR": 81,
+     "MP5": 2,
+     "STA": 6
+    }
+   },
+   {
+    "id": 273048,
+    "inv": 7,
+    "class": 4,
+    "sub": 3,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 246017,
+    "pct": 30.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 299,
+     "STR": 12
+    }
+   },
+   {
+    "id": 273049,
+    "inv": 2,
+    "class": 4,
+    "sub": 0,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 246020,
+    "pct": 32.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AP": 12,
+     "INT": 6
+    }
+   },
+   {
+    "id": 273051,
+    "inv": 3,
+    "class": 4,
+    "sub": 1,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 246020,
+    "pct": 31.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 38,
+     "INT": 9
+    }
+   },
+   {
+    "id": 273052,
+    "inv": 23,
+    "class": 4,
+    "sub": 0,
+    "req": 30,
+    "ilvl": 35,
+    "q": 3,
+    "npc": 246020,
+    "pct": 32.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "INT": 2,
+     "SP": 4,
+     "SPI": 8
+    }
+   },
+   {
+    "id": 273053,
+    "inv": 21,
+    "class": 2,
+    "sub": 15,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 247032,
+    "pct": 33.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 14.4,
+     "SP": 36,
+     "STA": 5
+    }
+   },
+   {
+    "id": 273054,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 247032,
+    "pct": 33.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "ARMOR": 68,
+     "SPI": 8
+    }
+   },
+   {
+    "id": 273055,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 247032,
+    "pct": 34.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 718,
+     "STA": 5,
+     "STR": 5
+    }
+   }
+  ],
+  "excavation-site-wetlands": [
+   {
+    "id": 273022,
+    "inv": 7,
+    "class": 4,
+    "sub": 2,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 260322,
+    "pct": 36.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 92,
+     "STA": 14,
+     "STR": 6
+    }
+   },
+   {
+    "id": 273023,
+    "inv": 6,
+    "class": 4,
+    "sub": 3,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 260322,
+    "pct": 31.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 124,
+     "INT": 9,
+     "STR": 9
+    }
+   },
+   {
+    "id": 273024,
+    "inv": 8,
+    "class": 4,
+    "sub": 1,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 260322,
+    "pct": 31.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 33,
+     "SP": 7,
+     "SPI": 6,
+     "STA": 9
+    }
+   },
+   {
+    "id": 273025,
+    "inv": 8,
+    "class": 4,
+    "sub": 3,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 260325,
+    "pct": 26.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 152,
+     "INT": 6,
+     "STA": 7,
+     "STR": 7
+    }
+   },
+   {
+    "id": 273026,
+    "inv": 5,
+    "class": 4,
+    "sub": 2,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 260325,
+    "pct": 33.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "ARMOR": 105,
+     "INT": 15
+    }
+   },
+   {
+    "id": 273027,
+    "inv": 23,
+    "class": 4,
+    "sub": 0,
+    "req": 26,
+    "ilvl": 31,
+    "q": 3,
+    "npc": 260325,
+    "pct": 33.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "INT": 4,
+     "SP": 8,
+     "STA": 4
+    }
+   },
+   {
+    "id": 273028,
+    "inv": 3,
+    "class": 4,
+    "sub": 3,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 260326,
+    "pct": 34.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 171,
+     "STA": 12
+    }
+   },
+   {
+    "id": 273029,
+    "inv": 26,
+    "class": 2,
+    "sub": 3,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 260326,
+    "pct": 32.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 6,
+     "DPS": 16.6
+    }
+   },
+   {
+    "id": 273030,
+    "inv": 11,
+    "class": 4,
+    "sub": 0,
+    "req": 28,
+    "ilvl": 33,
+    "q": 3,
+    "npc": 260326,
+    "pct": 28.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "MP5": 3,
+     "SP": 6
+    }
+   }
+  ],
+  "ruins-of-lordaeron": [
+   {
+    "id": 271201,
+    "inv": 6,
+    "class": 4,
+    "sub": 3,
+    "req": 15,
+    "ilvl": 20,
+    "q": 3,
+    "npc": 250483,
+    "pct": 24.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 104,
+     "STA": 7,
+     "STR": 3
+    }
+   },
+   {
+    "id": 271202,
+    "inv": 9,
+    "class": 4,
+    "sub": 2,
+    "req": 15,
+    "ilvl": 20,
+    "q": 3,
+    "npc": 250483,
+    "pct": 30.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 4,
+     "ARMOR": 37,
+     "SP": 5
+    }
+   },
+   {
+    "id": 271203,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 15,
+    "ilvl": 20,
+    "q": 3,
+    "npc": 250483,
+    "pct": 32.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "DPS": 17.5,
+     "SPI": 5
+    }
+   },
+   {
+    "id": 271204,
+    "inv": 13,
+    "class": 2,
+    "sub": 15,
+    "req": 15,
+    "ilvl": 20,
+    "q": 3,
+    "npc": 250660,
+    "pct": 30.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 13.6,
+     "STA": 5
+    }
+   },
+   {
+    "id": 271205,
+    "inv": 5,
+    "class": 4,
+    "sub": 3,
+    "req": 15,
+    "ilvl": 20,
+    "q": 3,
+    "npc": 250660,
+    "pct": 29.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 184,
+     "STR": 8
+    }
+   },
+   {
+    "id": 271206,
+    "inv": 5,
+    "class": 4,
+    "sub": 1,
+    "req": 15,
+    "ilvl": 20,
+    "q": 3,
+    "npc": 250660,
+    "pct": 31.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 37,
+     "SPI": 9,
+     "SP_SHADOW": 7
+    }
+   },
+   {
+    "id": 271207,
+    "inv": 7,
+    "class": 4,
+    "sub": 1,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 250631,
+    "pct": 36.8,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 35,
+     "MP5": 4,
+     "STA": 5
+    }
+   },
+   {
+    "id": 271208,
+    "inv": 10,
+    "class": 4,
+    "sub": 3,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 250631,
+    "pct": 31.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 119,
+     "INT": 6,
+     "STR": 6
+    }
+   },
+   {
+    "id": 271209,
+    "inv": 7,
+    "class": 4,
+    "sub": 3,
+    "req": 16,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 256097,
+    "pct": 32.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 9,
+     "ARMOR": 164,
+     "STR": 4
+    }
+   },
+   {
+    "id": 271210,
+    "inv": 6,
+    "class": 4,
+    "sub": 1,
+    "req": 16,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 256097,
+    "pct": 34.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 22,
+     "SP": 6,
+     "SPI": 5
+    }
+   },
+   {
+    "id": 271211,
+    "inv": 8,
+    "class": 4,
+    "sub": 3,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 256035,
+    "pct": 33.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 131,
+     "STA": 5,
+     "STR": 7
+    }
+   },
+   {
+    "id": 271212,
+    "inv": 5,
+    "class": 4,
+    "sub": 2,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 256035,
+    "pct": 35.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 7,
+     "ARMOR": 89,
+     "SPI": 9
+    }
+   },
+   {
+    "id": 271213,
+    "inv": 14,
+    "class": 4,
+    "sub": 6,
+    "req": 19,
+    "ilvl": 24,
+    "q": 3,
+    "npc": 250657,
+    "pct": 38.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 547,
+     "STR": 5
+    }
+   },
+   {
+    "id": 271214,
+    "inv": 8,
+    "class": 4,
+    "sub": 1,
+    "req": 19,
+    "ilvl": 24,
+    "q": 3,
+    "npc": 250657,
+    "pct": 30.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 29,
+     "SP": 5,
+     "STA": 7
+    }
+   },
+   {
+    "id": 271215,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 19,
+    "ilvl": 24,
+    "q": 3,
+    "npc": 250657,
+    "pct": 31.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 15.1,
+     "SP_FROST": 32
+    }
+   },
+   {
+    "id": 271216,
+    "inv": 21,
+    "class": 2,
+    "sub": 4,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 250631,
+    "pct": 32.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 9.6,
+     "SP": 24
+    }
+   },
+   {
+    "id": 271217,
+    "inv": 17,
+    "class": 2,
+    "sub": 1,
+    "req": 16,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 256097,
+    "pct": 32.9,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 18.2
+    }
+   },
+   {
+    "id": 271218,
+    "inv": 13,
+    "class": 2,
+    "sub": 7,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 256035,
+    "pct": 31.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 14.6,
+     "SPI": 5
+    }
+   },
+   {
+    "id": 286977,
+    "inv": 17,
+    "class": 2,
+    "sub": 8,
+    "req": 18,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 19.7,
+     "INT": 9,
+     "STR": 6
+    }
+   },
+   {
+    "id": 286978,
+    "inv": 5,
+    "class": 4,
+    "sub": 1,
+    "req": 18,
+    "ilvl": 23,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 41,
+     "INT": 10,
+     "SP": 4
+    }
+   },
+   {
+    "id": 286979,
+    "inv": 10,
+    "class": 4,
+    "sub": 1,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 250629,
+    "pct": 6.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 25,
+     "INT": 3,
+     "SPI": 8
+    }
+   },
+   {
+    "id": 286980,
+    "inv": 6,
+    "class": 4,
+    "sub": 1,
+    "req": 17,
+    "ilvl": 22,
+    "q": 3,
+    "npc": 0,
+    "pct": 7.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 22,
+     "INT": 6,
+     "STA": 6
+    }
+   },
+   {
+    "id": 286981,
+    "inv": 9,
+    "class": 4,
+    "sub": 3,
+    "req": 16,
+    "ilvl": 21,
+    "q": 3,
+    "npc": 0,
+    "pct": 2.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 82,
+     "SPI": 2,
+     "STR": 5
+    }
+   }
+  ],
+  "the-hall-of-thanes": [
+   {
+    "id": 270227,
+    "inv": 2,
+    "class": 4,
+    "sub": 0,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261306,
+    "pct": 31.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "SPI": 5
+    }
+   },
+   {
+    "id": 270228,
+    "inv": 17,
+    "class": 2,
+    "sub": 10,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261311,
+    "pct": 34.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 11.9,
+     "SP": 18
+    }
+   },
+   {
+    "id": 270229,
+    "inv": 8,
+    "class": 4,
+    "sub": 3,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261311,
+    "pct": 32.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 172,
+     "STR": 5
+    }
+   },
+   {
+    "id": 270230,
+    "inv": 6,
+    "class": 4,
+    "sub": 3,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261316,
+    "pct": 37.2,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 100,
+     "STA": 7
+    }
+   },
+   {
+    "id": 270231,
+    "inv": 10,
+    "class": 4,
+    "sub": 2,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261316,
+    "pct": 30.1,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 5,
+     "ARMOR": 51,
+     "SPI": 5
+    }
+   },
+   {
+    "id": 270256,
+    "inv": 21,
+    "class": 2,
+    "sub": 0,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261319,
+    "pct": 27.0,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 12.3,
+     "STR": 4
+    }
+   },
+   {
+    "id": 270260,
+    "inv": 7,
+    "class": 4,
+    "sub": 2,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261319,
+    "pct": 21.6,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 4,
+     "ARMOR": 72,
+     "STA": 7
+    }
+   },
+   {
+    "id": 270261,
+    "inv": 20,
+    "class": 4,
+    "sub": 1,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261319,
+    "pct": 24.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 35,
+     "SP": 8,
+     "SPI": 4
+    }
+   },
+   {
+    "id": 271095,
+    "inv": 21,
+    "class": 2,
+    "sub": 15,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261316,
+    "pct": 32.7,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "DPS": 7.9,
+     "INT": 4,
+     "SP": 18
+    }
+   },
+   {
+    "id": 271096,
+    "inv": 9,
+    "class": 4,
+    "sub": 1,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261306,
+    "pct": 34.3,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 45,
+     "SP": 3
+    }
+   },
+   {
+    "id": 271097,
+    "inv": 16,
+    "class": 4,
+    "sub": 0,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261306,
+    "pct": 33.4,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "AGI": 3,
+     "ARMOR": 17,
+     "SPI": 4
+    }
+   },
+   {
+    "id": 271098,
+    "inv": 5,
+    "class": 4,
+    "sub": 3,
+    "req": 13,
+    "ilvl": 18,
+    "q": 3,
+    "npc": 261311,
+    "pct": 32.5,
+    "src": [
+     "flb"
+    ],
+    "stats_from": "flb",
+    "stats": {
+     "ARMOR": 238,
+     "STA": 6
+    }
+   }
+  ]
+ }
+}

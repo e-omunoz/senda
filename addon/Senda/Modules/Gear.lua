@@ -414,6 +414,101 @@ function G.Delta(item, level)
   return score - cur, slots[1], why, cur, score
 end
 
+------------------------------------------------------------------------
+-- Valoración desde datos compilados (diario de mazmorras): sin pedir el objeto al cliente.
+--   inv = inventoryType numérico del cliente; stats = { CLAVE_DE_PESO = valor, SP_<ESCUELA> = n, DPS = n }
+------------------------------------------------------------------------
+local INV_LOC = {
+  [1] = "INVTYPE_HEAD", [2] = "INVTYPE_NECK", [3] = "INVTYPE_SHOULDER", [5] = "INVTYPE_CHEST", [6] = "INVTYPE_WAIST",
+  [7] = "INVTYPE_LEGS", [8] = "INVTYPE_FEET", [9] = "INVTYPE_WRIST", [10] = "INVTYPE_HAND", [11] = "INVTYPE_FINGER",
+  [12] = "INVTYPE_TRINKET", [13] = "INVTYPE_WEAPON", [14] = "INVTYPE_SHIELD", [15] = "INVTYPE_RANGED",
+  [16] = "INVTYPE_CLOAK", [17] = "INVTYPE_2HWEAPON", [20] = "INVTYPE_ROBE", [21] = "INVTYPE_WEAPONMAINHAND",
+  [22] = "INVTYPE_WEAPONOFFHAND", [23] = "INVTYPE_HOLDABLE", [25] = "INVTYPE_THROWN", [26] = "INVTYPE_RANGEDRIGHT",
+  [28] = "INVTYPE_RELIC",
+}
+G.INV_LOC = INV_LOC
+-- Máscara de clase de los objetos (ChrClasses): bit = 2^(id-1).
+local CLASS_BIT = { WARRIOR = 1, PALADIN = 2, HUNTER = 4, ROGUE = 8, PRIEST = 16, SHAMAN = 64, MAGE = 128,
+  WARLOCK = 256, DRUID = 1024 }
+
+local function HasBit(mask, bit)
+  return mask % (bit * 2) >= bit
+end
+
+-- ¿Tu clase lo puede llevar? Mismas reglas que ClassCanUse, desde los datos y con la máscara de clase del objeto.
+function G.CanUseData(inv, classID, subID, clsMask)
+  local loc = INV_LOC[inv or 0]
+  if not loc then return false end
+  local cls = M.Class() or ""
+  if (clsMask or 0) > 0 and CLASS_BIT[cls] and not HasBit(clsMask, CLASS_BIT[cls]) then return false end
+  if classID == 4 then
+    if subID == 6 then return SHIELD[cls] == true end
+    if subID and subID >= 7 and subID <= 11 then return RELIC[cls] == subID end
+    if subID and subID >= 1 and subID <= 4 and subID > ArmorMax() then return false end
+  elseif classID == 2 then
+    if WEAPONS[cls] and not Contains(WEAPONS[cls], subID) then return false end
+    if loc == "INVTYPE_WEAPONOFFHAND" and not DUAL[cls] then return false end
+  else
+    return false
+  end
+  return true
+end
+
+-- Puntos de un objeto de datos con los pesos de tu build: total y la parte que viene de lo que tu build busca de
+-- verdad (estadísticas con peso >= PRIMARY_W por punto, sin Aguante ni armadura): Agilidad y Fuerza del felino,
+-- poder con hechizos e Intelecto del brujo... Una capa de Espíritu no es «de felino» aunque puntúe algo.
+G.PRIMARY_W = 0.3
+function G.ScoreData(stats, classID, subID, level)
+  level = level or M.Level()
+  local W = G.Weights(level)
+  local s, core = 0, 0
+  for k, v in pairs(stats or {}) do
+    local w = 0
+    if k == "DPS" then
+      if classID == 2 and subID == 19 then w = (level >= 30 and W.WAND_DPS_30) or W.WAND_DPS
+      elseif classID == 2 and (subID == 2 or subID == 3 or subID == 18 or subID == 16) then w = W.RANGED_DPS
+      else w = W.DPS end
+    elseif k == "RAP" then
+      w = W.RAP or W.AP
+    elseif k:sub(1, 3) == "SP_" then
+      if W.SCHOOL and k == "SP_" .. W.SCHOOL then w = W.SCHOOL_W or W.SP end
+    else
+      w = W[k]
+    end
+    w = w or 0
+    s = s + v * w
+    if k ~= "STA" and k ~= "ARMOR" and w >= G.PRIMARY_W then core = core + v * w end
+  end
+  return s, core
+end
+
+-- Mejora frente a lo que llevas de un objeto de datos: d, ranura, motivo (nivel N / aprende el arma / una mano), cur.
+function G.DeltaData(e, level)
+  level = level or M.Level()
+  local loc = INV_LOC[e.inv or 0]
+  local slots = loc and LOC[loc]
+  if not slots then return nil end
+  local lv = math.max(level, e.req or 0)
+  local score = G.ScoreData(e.stats, e.class, e.sub, lv)
+  local cur, why
+  if loc == "INVTYPE_2HWEAPON" then
+    cur = G.SlotScore(16, lv) + G.SlotScore(17, lv)
+  elseif OFFHAND[loc] and MainIsTwoHand() then
+    cur = G.SlotScore(16, lv)
+    why = L.GEAR_NEEDS_ONEHAND or "necesitas un arma de una mano"
+  elseif #slots == 2 then
+    cur = math.min(G.SlotScore(slots[1], lv), G.SlotScore(slots[2], lv))
+  else
+    cur = G.SlotScore(slots[1], lv)
+  end
+  if (e.req or 0) > level then why = string.format(L.MOD_AT_LEVEL or "nivel %d", e.req) end
+  if e.class == 2 and not HasWeaponSkill(e.sub) then
+    local key = SKILL_KEY[e.sub]
+    why = (key and L["GEAR_LEARN_" .. key]) or L.MOD_GEAR_LEARN_SKILL or "aprende esa arma"
+  end
+  return score - cur, slots[1], why, cur, score
+end
+
 -- Porcentaje de mejora respecto a lo que llevas (nil si la ranura está vacía o no puntúa).
 function G.Percent(d, cur)
   if not d or not cur or cur < 1 then return nil end

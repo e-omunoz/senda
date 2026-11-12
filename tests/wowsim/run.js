@@ -173,6 +173,9 @@ const SCENARIO_E = L_`
         if SendaDropdownList and SendaDropdownList:IsShown() then n = n + ClickAll(SendaDropdownList) end
         Sim.Out("    tab " .. t.key .. ": " .. n .. " clicks")
       end
+      -- the Mazmorras tab's buttons point the arrow on purpose (a target the player chose): drop it so the
+      -- checks below see only the guide's own targets
+      S().Modules.Dungeons.Clear()
       Slash("way 35 75 Manual")
       ClickAll(SendaHUD)
       ClickAll(SendaArrow)
@@ -2872,6 +2875,7 @@ scenarios.push(...require('./scenarios_nav').scenarios);
 scenarios.push(...require('./scenarios_travel').scenarios);
 scenarios.push(...require('./scenarios_rares').scenarios);
 scenarios.push(...require('./scenarios_audit').scenarios);
+scenarios.push(...require('./scenarios_dungeons').scenarios);
 
 // ---------------------------------------------------------------------------
 // Runner

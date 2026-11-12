@@ -18,4 +18,5 @@
   <Script file="SpellCards.lua"/>
   <Script file="Travel.lua"/>
   <Script file="Rares.lua"/>
+  <Script file="Dungeons.lua"/>
 </Ui>
