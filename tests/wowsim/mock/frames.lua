@@ -261,7 +261,8 @@ function TextureM:SetColorTexture(r, g, b, a)
 end
 function TextureM:SetTexCoord(...) usage(select("#", ...) == 4 or select("#", ...) == 8, "Usage: SetTexCoord(l, r, t, b)") end
 function TextureM:SetDesaturated() end
-function TextureM:SetRotation(r) usage(type(r) == "number", "Usage: SetRotation(radians)") end
+function TextureM:SetRotation(r) usage(type(r) == "number", "Usage: SetRotation(radians)"); self.__rotation = r end
+function TextureM:GetRotation() return self.__rotation or 0 end
 function TextureM:SetBlendMode(m) usage(type(m) == "string", "Usage: SetBlendMode(mode)") end
 function TextureM:SetGradient() end
 

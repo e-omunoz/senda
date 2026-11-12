@@ -344,6 +344,7 @@ class PackageTests(unittest.TestCase):
             quiet(build.main, ["--root", str(root)])
             (root / "addon/Senda/.DS_Store").write_text("x")
             (root / "addon/Senda/notes.bak").write_text("x")
+            (root / "LICENSE").write_text("GPL")
             rc, out, err = quiet(package.main, ["--root", str(root)])
             self.assertEqual(rc, 0, err)
             z = root / "dist" / "Senda-1.2.3.zip"
@@ -351,7 +352,12 @@ class PackageTests(unittest.TestCase):
                 names = zf.namelist()
             self.assertIn("Senda/Senda.toc", names)
             self.assertIn("Senda/Guides/Guides.xml", names)
-            self.assertTrue(all(n.startswith("Senda/") for n in names))
+            # los cuatro addons en la raíz del zip, cada uno con su licencia
+            for addon in package.ADDONS:
+                self.assertIn(f"{addon}/{addon}.toc", names)
+                self.assertIn(f"{addon}/LICENSE", names)
+            self.assertIn("Senda_Nav/SendaNav.lua", names)
+            self.assertEqual({n.split("/")[0] for n in names}, set(package.ADDONS))
             self.assertNotIn("Senda/.DS_Store", names)
             self.assertNotIn("Senda/notes.bak", names)
 
@@ -369,15 +375,34 @@ class PackageTests(unittest.TestCase):
             self.assertEqual(rc, 1)
             self.assertTrue((addons / "Senda" / "foreign.txt").exists())
             shutil.rmtree(addons / "Senda")
-            # instalación correcta; Questie intacto
+            # carpeta Senda_Nav ajena: se niega sin instalar ninguno
+            (addons / "Senda_Nav").mkdir()
+            rc, _, err = quiet(package.main, ["--root", str(root), "--install-dev", "--target", str(addons)])
+            self.assertEqual(rc, 1)
+            self.assertFalse((addons / "Senda").exists())
+            shutil.rmtree(addons / "Senda_Nav")
+            # instalación correcta de los cuatro; Questie intacto
             rc, out, err = quiet(package.main, ["--root", str(root), "--install-dev", "--target", str(addons)])
             self.assertEqual(rc, 0, err)
-            self.assertTrue((addons / "Senda" / "Senda.toc").exists())
+            for addon in package.ADDONS:
+                self.assertTrue((addons / addon / f"{addon}.toc").exists())
+            self.assertTrue((addons / "Senda_Nav" / "SendaNav.lua").exists())
             self.assertEqual((other / "Questie.toc").read_text(), "keep")
-            self.assertEqual(sorted(p.name for p in addons.iterdir()), ["Questie", "Senda"])
+            self.assertEqual(sorted(p.name for p in addons.iterdir()), sorted(["Questie", *package.ADDONS]))
+            # otra vez: reemplaza las cuatro carpetas
+            rc, out, err = quiet(package.main, ["--root", str(root), "--install-dev", "--target", str(addons)])
+            self.assertEqual(rc, 0, err)
             # el destino debe llamarse AddOns
             rc, _, _ = quiet(package.main, ["--root", str(root), "--install-dev", "--target", str(root / "fake")])
             self.assertEqual(rc, 2)
+
+    def test_zip_needs_nav_addons(self):
+        with TempRepo() as root:
+            quiet(build.main, ["--root", str(root)])
+            shutil.rmtree(root / "addon" / "Senda_Nav_Kalimdor")
+            with self.assertRaises(SystemExit) as cm:
+                quiet(package.main, ["--root", str(root)])
+            self.assertIn("Senda_Nav_Kalimdor.toc", str(cm.exception))
 
     def test_changelog_section(self):
         with TempRepo() as root:

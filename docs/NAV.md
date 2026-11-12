@@ -319,3 +319,33 @@ Medido (2026-11-12, este equipo, `tests/navsim/report.md`):
 - `Next`: 60/60 caminos seguidos sin retroceder, sin quedarse atrás, sin falsos «fuera de ruta» y llegando;
   1,4 µs por llamada de media.
 - No probado en el cliente real; las cifras de tiempo son de un procesador de escritorio.
+
+### 8.5 En Senda: la flecha (`addon/Senda/UI/ArrowNav.lua`)
+
+`UI/Arrow.lua` pregunta en cada medida a `Senda.ArrowNav:Waypoint(objetivo, mapa, x, y)`; si responde, la flecha
+apunta a ese punto y la distancia es la que queda por el camino; si no, va recta como siempre.
+
+- **Cuándo:** opción «Seguir caminos reales» (`navPaths`, activada por defecto) y objetivo en el continente del
+  jugador (0 o 1). Nunca volando (`IsFlying`), en taxi (`UnitOnTaxi`) ni en instancias. En barco no hay API que lo
+  diga: el barco va por agua lejos de la orilla, la ruta sale `offmesh` y la flecha va recta.
+- **Carga:** `C_AddOns.LoadAddOn("Senda_Nav")` la primera vez que hace falta y, en otro fotograma,
+  `SendaNav.Load(continente)`. **Nunca en combate**: se apunta y se carga con `PLAYER_REGEN_ENABLED`. Si
+  `Senda_Nav` no está instalado o no carga, se intenta una vez por sesión y la flecha sigue recta.
+- **Memoria:** al cambiar de continente se suelta el paquete del otro (`SendaNav.Unload`). El cliente no vuelve a
+  cargar un addon en la misma sesión, así que volver a un continente ya soltado deja la flecha recta hasta
+  `/reload` (lo dice la ayuda de la opción).
+- **Rutas:** una al cambiar el objetivo (mapa y coordenadas; el modo cadáver, que repite el mismo objetivo,
+  no pide otra) y otra cuando `SendaNav.Next` dice «fuera de ruta», como mucho una cada 5 s. Mientras se
+  calcula la primera, la flecha va recta; al recalcular sigue el camino anterior salvo a más de 120 yd de él.
+  Una ruta que falla (`offmesh`, `unreachable`...) no se vuelve a pedir hasta pasados 20 s y 30 yd de
+  movimiento. Las respuestas de rutas ya sustituidas se descartan.
+- **En pantalla:** «120 m a pie · 1:05» (la distancia por el camino, `path.rest` + lo que queda hasta el
+  punto) y la marca pequeña «ruta» junto a la flecha; la ayuda de la flecha dice «punto i de n» o «Calculando».
+  «Has llegado» sigue midiéndose en línea recta hasta el objetivo.
+- **Simulador:** `tests/wowsim/scenarios_nav.js` carga el `Senda_Nav` real (Router y SendaNav) en el
+  simulador con paquetes sintéticos en el formato de la sección 3 (`tests/wowsim/mock/nav.lua`: un sector de
+  64×64 celdas con un muro que obliga a rodearlo; base64 y zlib de verdad). Escenarios: ruta pedida y seguida
+  punto a punto (`nav-route`), fuera de ruta con espera y cambio de objetivo (`nav-reroute`), combate que
+  aplaza la carga y modo cadáver (`nav-combat`, mago humano), sin `Senda_Nav` (`nav-missing`), volando, en
+  taxi, en instancia y sin ruta (`nav-fallback`), y cambio de continente que suelta el otro paquete
+  (`nav-continent`, druida elfo de la noche).

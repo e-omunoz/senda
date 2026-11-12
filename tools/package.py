@@ -1,15 +1,20 @@
 #!/usr/bin/env python3
 """Empaquetado e instalación de desarrollo de Senda.
 
-    python tools/package.py                         # dist/Senda-<versión>.zip (carpeta Senda/ en la raíz del zip)
+    python tools/package.py                         # dist/Senda-<versión>.zip (Senda/, Senda_Nav/, Senda_Nav_EK/ y
+                                                    #   Senda_Nav_Kalimdor/ en la raíz del zip)
     python tools/package.py --changelog 0.1.0       # imprime la sección de CHANGELOG.md de esa versión
     python tools/package.py --install-dev --target "C:/.../_forever_/Interface/AddOns"
 
-`--install-dev` copia addon/Senda a <target>/Senda. Por seguridad:
+El paquete lleva los cuatro addons: Senda y los de navegación que carga bajo demanda (Senda_Nav, el
+runtime, y los paquetes por continente Senda_Nav_EK y Senda_Nav_Kalimdor; docs/NAV.md). Cada carpeta lleva
+LICENSE y THIRD_PARTY.md (GPL-3: la licencia viaja con cada addon).
+
+`--install-dev` copia addon/<addon> a <target>/<addon> para los cuatro. Por seguridad:
   - exige --target explícito (no hay ruta por defecto);
   - el destino debe existir y llamarse AddOns (salvo --allow-any-dir);
-  - solo crea/reemplaza <target>/Senda; nunca toca otras carpetas;
-  - se niega si <target>/Senda existe y no es una instalación de Senda (sin Senda.toc),
+  - solo crea/reemplaza esas cuatro carpetas; nunca toca otras;
+  - se niega (sin tocar nada) si alguna existe y no es ese addon (sin su .toc),
     o si es un enlace simbólico/unión (podría apuntar al repo).
 """
 from __future__ import annotations
@@ -25,6 +30,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import Paths, read_version, setup_stdio  # noqa: E402
 
 ADDON_NAME = "Senda"
+# Addons que van en el paquete y en la instalación de desarrollo, en este orden (addon/<nombre>/<nombre>.toc).
+ADDONS = ("Senda", "Senda_Nav", "Senda_Nav_EK", "Senda_Nav_Kalimdor")
+LICENSE_FILES = ("LICENSE", "THIRD_PARTY.md")
 # Fecha fija en las entradas del zip: el paquete es reproducible.
 ZIP_DATE = (2026, 1, 1, 0, 0, 0)
 
@@ -50,6 +58,10 @@ def addon_files(addon_dir: Path) -> list[Path]:
     return files
 
 
+def addon_dir(paths: Paths, name: str) -> Path:
+    return paths.addon if name == ADDON_NAME else paths.addon.parent / name
+
+
 def toc_version(paths: Paths) -> str | None:
     if not paths.toc.exists():
         return None
@@ -68,26 +80,35 @@ def make_zip(paths: Paths, out_dir: Path | None = None) -> Path:
     if tv != version:
         raise SystemExit(f"package: el .toc dice {tv!r} y VERSION {version!r}; ejecuta tools/build.py")
 
+    for name in ADDONS[1:]:
+        toc = addon_dir(paths, name) / f"{name}.toc"
+        if not toc.exists():
+            raise SystemExit(f"package: falta {paths.rel(toc)}")
+
     out_dir = out_dir or paths.dist
     out_dir.mkdir(parents=True, exist_ok=True)
     zpath = out_dir / f"{ADDON_NAME}-{version}.zip"
-    files = addon_files(paths.addon)
+    total = 0
+
+    def put(zf: zipfile.ZipFile, arc: str, data: bytes) -> None:
+        info = zipfile.ZipInfo(arc, date_time=ZIP_DATE)
+        info.compress_type = zipfile.ZIP_DEFLATED
+        info.external_attr = 0o644 << 16
+        zf.writestr(info, data)
+
     with zipfile.ZipFile(zpath, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
-        for p in files:
-            arc = f"{ADDON_NAME}/{p.relative_to(paths.addon).as_posix()}"
-            info = zipfile.ZipInfo(arc, date_time=ZIP_DATE)
-            info.compress_type = zipfile.ZIP_DEFLATED
-            info.external_attr = 0o644 << 16
-            zf.writestr(info, p.read_bytes())
-        # GPL-3: la licencia y los créditos de terceros viajan dentro del paquete.
-        for extra in ("LICENSE", "THIRD_PARTY.md"):
-            src = paths.root / extra
-            if src.exists():
-                info = zipfile.ZipInfo(f"{ADDON_NAME}/{extra}", date_time=ZIP_DATE)
-                info.compress_type = zipfile.ZIP_DEFLATED
-                info.external_attr = 0o644 << 16
-                zf.writestr(info, src.read_bytes())
-    print(f"package: {paths.rel(zpath)} ({len(files)} archivos, {zpath.stat().st_size} bytes)")
+        for name in ADDONS:
+            base = addon_dir(paths, name)
+            files = addon_files(base)
+            total += len(files)
+            for p in files:
+                put(zf, f"{name}/{p.relative_to(base).as_posix()}", p.read_bytes())
+            # GPL-3: la licencia y los créditos de terceros viajan dentro de cada addon.
+            for extra in LICENSE_FILES:
+                src = paths.root / extra
+                if src.exists():
+                    put(zf, f"{name}/{extra}", src.read_bytes())
+    print(f"package: {paths.rel(zpath)} ({len(ADDONS)} addons, {total} archivos, {zpath.stat().st_size} bytes)")
     return zpath
 
 
@@ -127,40 +148,49 @@ def install_dev(paths: Paths, target: str, allow_any_dir: bool = False) -> int:
     if not tgt.is_dir():
         print(f"install-dev: {tgt} no existe o no es una carpeta; no se crea nada", file=sys.stderr)
         return 2
-    if tgt.name.lower() == ADDON_NAME.lower():
-        print("install-dev: --target debe ser la carpeta AddOns, no la propia carpeta Senda", file=sys.stderr)
+    if tgt.name.lower() in {a.lower() for a in ADDONS}:
+        print("install-dev: --target debe ser la carpeta AddOns, no la carpeta de un addon", file=sys.stderr)
         return 2
     if tgt.name.lower() != "addons" and not allow_any_dir:
         print(f"install-dev: {tgt} no se llama 'AddOns'; usa --allow-any-dir si es intencionado", file=sys.stderr)
         return 2
-    src = paths.addon.resolve()
-    if not (src / "Senda.toc").exists():
-        print(f"install-dev: no existe {src / 'Senda.toc'}", file=sys.stderr)
-        return 1
-
-    dest = tgt / ADDON_NAME
-    if _is_link(dest):
-        print(f"install-dev: {dest} es un enlace/unión; se deja como está (bórralo tú si quieres copiar)",
-              file=sys.stderr)
-        return 1
-    if dest.exists():
-        if not dest.is_dir() or not (dest / "Senda.toc").exists():
-            print(f"install-dev: {dest} existe pero no parece Senda (sin Senda.toc); no se toca", file=sys.stderr)
+    # Todas las comprobaciones antes de tocar nada: o se instalan los cuatro o ninguno.
+    plan: list[tuple[str, Path, Path]] = []
+    for name in ADDONS:
+        src = addon_dir(paths, name).resolve()
+        toc = src / f"{name}.toc"
+        if not toc.exists():
+            print(f"install-dev: no existe {toc}", file=sys.stderr)
             return 1
-        rdest = dest.resolve()
-        if rdest == src or src in rdest.parents or rdest in src.parents:
-            print(f"install-dev: {dest} se solapa con el repositorio; no se toca", file=sys.stderr)
+        dest = tgt / name
+        if _is_link(dest):
+            print(f"install-dev: {dest} es un enlace/unión; se deja como está (bórralo tú si quieres copiar)",
+                  file=sys.stderr)
             return 1
+        if dest.exists():
+            if not dest.is_dir() or not (dest / f"{name}.toc").exists():
+                print(f"install-dev: {dest} existe pero no parece {name} (sin {name}.toc); no se toca",
+                      file=sys.stderr)
+                return 1
+            rdest = dest.resolve()
+            if rdest == src or src in rdest.parents or rdest in src.parents:
+                print(f"install-dev: {dest} se solapa con el repositorio; no se toca", file=sys.stderr)
+                return 1
+        plan.append((name, src, dest))
 
-    # Solo se toca <target>/Senda: se vacía (era Senda, comprobado arriba) y se copia de nuevo.
-    files = addon_files(src)
-    if dest.exists():
-        shutil.rmtree(dest)
-    for p in files:
-        d = dest / p.relative_to(src)
-        d.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(p, d)
-    print(f"install-dev: {len(files)} archivos copiados a {dest}")
+    # Solo se tocan <target>/<addon>: se vacían (eran ese addon, comprobado arriba) y se copian de nuevo.
+    for name, src, dest in plan:
+        files = addon_files(src)
+        if dest.exists():
+            shutil.rmtree(dest)
+        for p in files:
+            d = dest / p.relative_to(src)
+            d.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(p, d)
+        for extra in LICENSE_FILES:
+            if (paths.root / extra).exists():
+                shutil.copy2(paths.root / extra, dest / extra)
+        print(f"install-dev: {len(files)} archivos copiados a {dest}")
     return 0
 
 
@@ -170,7 +200,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--root", help="raíz alternativa (por defecto, el repo)")
     ap.add_argument("--out", help="carpeta de salida del zip (por defecto dist/)")
     ap.add_argument("--changelog", metavar="VERSION", help="imprime la sección del CHANGELOG y sale")
-    ap.add_argument("--install-dev", action="store_true", help="copia addon/Senda a --target/Senda")
+    ap.add_argument("--install-dev", action="store_true",
+                    help="copia addon/{Senda,Senda_Nav,Senda_Nav_EK,Senda_Nav_Kalimdor} a --target")
     ap.add_argument("--target", help="ruta ABSOLUTA de la carpeta Interface/AddOns (obligatoria con --install-dev)")
     ap.add_argument("--allow-any-dir", action="store_true", help="permite un --target que no se llame AddOns")
     args = ap.parse_args(argv)

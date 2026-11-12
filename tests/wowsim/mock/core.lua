@@ -109,7 +109,13 @@ end
 
 function GetTime() return Sim.time end
 function GetTimePreciseSec() return Sim.time end
-function debugprofilestop() return Sim.time * 1000 end
+-- Sim.profileTick (ms): each call also moves this clock on, so frame-sliced work (the nav router) really
+-- spans several frames in the scenarios that set it.
+local profileExtra = 0
+function debugprofilestop()
+  if Sim.profileTick then profileExtra = profileExtra + Sim.profileTick end
+  return Sim.time * 1000 + profileExtra
+end
 function time() return 1793000000 + math.floor(Sim.time) end
 date = os.date
 

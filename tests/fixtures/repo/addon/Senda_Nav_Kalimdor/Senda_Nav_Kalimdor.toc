@@ -1,0 +1,3 @@
+## Interface: 16001
+## Title: Senda_Nav_Kalimdor (fixture)
+## LoadOnDemand: 1

@@ -671,3 +671,20 @@ Senda:AddLocale({
   DUO_DEBUG_MEMBER = "party%d %s: runs Senda %s, quests %d",
   DUO_DEBUG_LINE = "  heard %s",
 })
+
+-- Caminos reales de la flecha (UI/ArrowNav.lua, addon Senda_Nav).
+Senda:AddLocale({
+  ARROW_ON_FOOT = "%s a pie",
+  ARROW_ROUTE_MARK = "ruta",
+  ARROW_TIP_PATH = "Sigue un camino a pie (punto %d de %d).",
+  ARROW_TIP_ROUTING = "Calculando el camino a pie…",
+  OPT_NAV_PATHS = "Seguir caminos reales",
+  OPT_NAV_PATHS_TIP = "La flecha te lleva por caminos a pie sacados del terreno del juego (puentes, puertas, rampas) en vez de en línea recta. Memoria: fuera de combate carga los datos de tu continente, unos 9 MB en los Reinos del Este y 12 MB en Kalimdor, y suelta los del otro al cambiar de continente; para volver a usar los de un continente ya soltado hace falta /reload. Volando, en taxi, en barco y en mazmorras la flecha va recta. Si la desactivas, la memoria se libera al hacer /reload.",
+}, {
+  ARROW_ON_FOOT = "%s on foot",
+  ARROW_ROUTE_MARK = "path",
+  ARROW_TIP_PATH = "Following a walking path (point %d of %d).",
+  ARROW_TIP_ROUTING = "Working out the walking path…",
+  OPT_NAV_PATHS = "Follow real paths",
+  OPT_NAV_PATHS_TIP = "The arrow leads you along walking paths taken from the game's terrain (bridges, doors, ramps) instead of a straight line. Memory: out of combat it loads your continent's data, about 9 MB for the Eastern Kingdoms and 12 MB for Kalimdor, and releases the other one when you change continent; using a released continent's data again needs a /reload. Flying, on a flight path, on a boat and in dungeons the arrow points straight. If you turn it off, the memory is freed after a /reload.",
+})

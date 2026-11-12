@@ -29,7 +29,9 @@ Web con la guía detallada: https://e-omunoz.github.io/senda/
 ## Instalación
 
 1. Descarga `Senda-x.y.z.zip` desde [Releases](https://github.com/e-omunoz/senda/releases).
-2. Descomprímelo en `World of Warcraft\_forever_\Interface\AddOns\`. Debe quedar la ruta `AddOns\Senda\Senda.toc`.
+2. Descomprímelo en `World of Warcraft\_forever_\Interface\AddOns\`. Deben quedar cuatro carpetas: `Senda`,
+   `Senda_Nav`, `Senda_Nav_EK` y `Senda_Nav_Kalimdor` (las tres últimas son los caminos a pie de la flecha; Senda
+   las carga solo cuando hacen falta, fuera de combate).
 3. En el juego, escribe `/senda`.
 
 | Comando | Qué hace |

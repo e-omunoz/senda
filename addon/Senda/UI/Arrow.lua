@@ -6,6 +6,9 @@
 -- Gira según la orientación del jugador (GetPlayerFacing puede devolver nil o un valor secreto: se tolera),
 -- muestra distancia (m o yd) y tiempo estimado, se pone verde al acercarse y marca "has llegado".
 -- Modo cadáver: siendo fantasma apunta a C_DeathInfo.GetCorpseMapPosition y vuelve a la guía al resucitar.
+-- Caminos reales (opción navPaths, UI/ArrowNav.lua): si el objetivo está en tu continente, la flecha apunta
+-- al siguiente punto del camino a pie de Senda_Nav y la distancia es la que queda por el camino («a pie»,
+-- con la marca «ruta»); mientras se calcula, sin datos, volando, en taxi o en instancias, va recta.
 local _, Senda = ...
 local UI, Compat, Events = Senda.UI, Senda.Compat, Senda.Events
 local L = Senda.L
@@ -25,6 +28,7 @@ local frame
 local tomtomUid
 
 local function Opt(key) return Senda.Options:Get(key) end
+local function Nav() return Senda.ArrowNav end
 
 ------------------------------------------------------------------------------
 -- Objetivos
@@ -60,6 +64,7 @@ local function Update()
     Arrow:ApplyVisibility()
   end
   if changed then
+    if Nav() then Nav():TargetChanged(active) end
     SyncTomTom()
     Events:Fire("SENDA_ARROW_TARGET", active, activeSource)
   end
@@ -90,8 +95,11 @@ end
 -- Cálculo
 ------------------------------------------------------------------------------
 
--- Distancia (m) y rumbo al objetivo activo desde la posición actual.
+-- Distancia (m) y rumbo al objetivo activo desde la posición actual: metros en línea recta (para «has
+-- llegado»), rumbo, ¿otro continente?, metros que se muestran (por el camino si lo hay) y ¿por camino?
 local function Measure(t)
+  local nav = Nav()
+  if nav then nav:Straight() end
   local map, x, y = Compat.PlayerMapPos()
   if not map then return nil end
   if t.continent then
@@ -100,11 +108,17 @@ local function Measure(t)
       if c ~= t.continent then return nil, nil, true end
       local dN, dW = t.wn - n, t.ww - w
       local yards = math.sqrt(dN * dN + dW * dW)
-      return yards * 0.9144, math.atan2(dW, dN)
+      local metres = yards * 0.9144
+      local wn, ww, along
+      if nav then wn, ww, along = nav:Waypoint(t, map, x, y) end
+      if wn then
+        return metres, math.atan2(ww - w, wn - n), false, along * 0.9144, true
+      end
+      return metres, math.atan2(dW, dN), false, metres, false
     end
   end
   local m, a = Compat.WorldDistance(map, x, y, t.map, t.x, t.y)
-  return m, a
+  return m, a, false, m, false
 end
 
 local function FormatDist(m)
@@ -132,8 +146,13 @@ local function OnUpdate(self, elapsed)
   local t = active
   if not t then return end
 
-  local dist, angle, otherContinent = Measure(t)
+  local dist, angle, otherContinent, shown, routed = Measure(t)
   self.label:SetText(t.label or "")
+  self.route:SetShown(routed and dist ~= nil and dist > (t.radius or DEFAULT_ARRIVE) or false)
+  if routed ~= self.routed then
+    -- el camino cambia la distancia que se mide: la velocidad suavizada vuelve a empezar
+    self.routed, self.speed, self.lastDist = routed, nil, nil
+  end
   if not dist then
     self.arrow:Hide()
     self.check:Hide()
@@ -173,19 +192,22 @@ local function OnUpdate(self, elapsed)
   end
 
   -- Tiempo estimado: velocidad de acercamiento suavizada; si no, velocidad del personaje.
+  -- Con camino, la distancia es la que queda por él.
+  shown = shown or dist
   if self.lastDist then
-    local closing = (self.lastDist - dist) / dt
+    local closing = (self.lastDist - shown) / dt
     self.speed = self.speed and (self.speed * 0.85 + closing * 0.15) or closing
   end
-  self.lastDist = dist
+  self.lastDist = shown
   local eta
   if self.speed and self.speed > 0.5 then
-    eta = dist / self.speed
+    eta = shown / self.speed
   else
     local sp = Compat.PlayerSpeed()
-    if sp and sp > 0 and Compat.IsGhost() then eta = dist / (sp * 0.9144) end
+    if sp and sp > 0 and Compat.IsGhost() then eta = shown / (sp * 0.9144) end
   end
-  local text = FormatDist(dist)
+  local text = FormatDist(shown)
+  if routed then text = string.format(L.ARROW_ON_FOOT, text) end
   if eta and eta < 3600 then text = text .. UI:Color("dim", "  ·  " .. Senda.Util.FormatTime(eta)) end
   self.info:SetText(text)
 end
@@ -238,6 +260,14 @@ local function Create()
   f.info:SetPoint("TOP", f.label, "BOTTOM", 0, -2)
   f.info:SetShadowOffset(1, -1)
 
+  -- Marca pequeña «ruta»: la flecha sigue un camino a pie, no la línea recta.
+  f.route = f:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  f.route:SetPoint("LEFT", f.arrow, "RIGHT", 0, -6)
+  f.route:SetShadowOffset(1, -1)
+  f.route:SetTextColor(0.45, 0.85, 0.45)
+  f.route:SetText(L.ARROW_ROUTE_MARK)
+  f.route:Hide()
+
   f:SetScript("OnUpdate", OnUpdate)
   f:SetScript("OnClick", function()
     if activeSource ~= "guide" and activeSource ~= "corpse" then Arrow:Clear(activeSource) end
@@ -248,6 +278,15 @@ local function Create()
     if active then
       GameTooltip:AddLine(string.format("%s  %.1f, %.1f", Compat.MapName(active.map) or active.map,
         active.x * 100, active.y * 100), 0.7, 0.7, 0.7)
+    end
+    local nav = Nav()
+    local state = nav and nav:State()
+    if state == "path" then
+      local path = nav.state.path
+      local i, n = path and path.idx, path and #path
+      if i and n then GameTooltip:AddLine(string.format(L.ARROW_TIP_PATH, i, n), 0.45, 0.85, 0.45, true) end
+    elseif state == "routing" then
+      GameTooltip:AddLine(L.ARROW_TIP_ROUTING, 0.7, 0.7, 0.7, true)
     end
     GameTooltip:AddLine(L.ARROW_TOOLTIP, nil, nil, nil, true)
     GameTooltip:Show()
@@ -363,6 +402,8 @@ Senda.Options:Register({ key = "corpse", label = L.OPT_CORPSE, tooltip = L.OPT_C
   default = true, section = SEC, order = 4, onChange = function() Arrow:UpdateCorpse() end })
 Senda.Options:Register({ key = "arrowCombatHide", label = L.OPT_ARROW_COMBAT, type = "toggle", default = false,
   section = SEC, order = 5, onChange = Apply })
+Senda.Options:Register({ key = "navPaths", label = L.OPT_NAV_PATHS, tooltip = L.OPT_NAV_PATHS_TIP, type = "toggle",
+  default = true, section = SEC, order = 6, onChange = function() if Nav() then Nav():SetEnabled() end end })
 Senda.Options:Register({ key = "tomtom", label = L.OPT_TOMTOM, tooltip = L.OPT_TOMTOM_TIP, type = "toggle",
   default = false, section = SEC, order = 7, onChange = function() SyncTomTom() end })
 Senda.Options:Register({ key = "arrowScale", label = L.OPT_SCALE, type = "slider", default = 1, min = 0.5, max = 2,
