@@ -4,6 +4,24 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ## [Sin publicar]
 
+### Añadido
+- **Auditoría de datos de las guías** (`tools/audit_guides.py`, en `python -m unittest`): cada paso de las guías del
+  brujo gnomo, el mago humano y el druida elfo de la noche contra forever-db y sus correcciones (PNJ, quién da y
+  recibe, coordenadas, raza y clase, requisitos, niveles, orden). Informe en [docs/AUDIT.md](docs/AUDIT.md).
+- forever-db se lee con sus correcciones (`corrections/*.json`) y las de Senda (`data/corrections/`).
+
+### Corregido
+- «Saltar esta misión» en un aviso como el de Lago Blackwrench (1717) saltaba toda la cadena del súcubo: los avisos
+  son migas de pan, no requisitos, y van aparte en `Guides/Followups.lua`. Igual con «The Slaughtered Lamb» (1715).
+- El druida pedía una versión antigua de «Crown of the Earth» (934) que no existe; el Gran Espíritu del Felino estaba
+  4 puntos de mapa al este de donde aparece; el mago se quedaba esperando a coger en la Torre de Azora la misión del
+  libro, que da Garion Wendell.
+- El gnomo repetía la cadena de Farsen en Loch Modan y nunca entregaba la cerveza a Kadrell; Kadrell (patrulla) se
+  marca en su aparición de forever-db.
+- Misiones obligatorias detrás de una previa opcional (291, 3905, 14, 5742, 5781 pasan a opcionales; 106, 922 y
+  4761 a obligatorias).
+- Lago Blackwrench: el paso dice que está abajo, a ras del suelo de la Caverna Abandonada.
+
 ## [0.6.1] - 2026-11-12
 
 ### Añadido

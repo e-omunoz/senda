@@ -22,11 +22,12 @@ quest = 1715
 reqlevel = 10
 npc = 6120
 at = [1455, 47.6, 9.3]
-text = "En la Caverna Abandonada de Forjaz, coge la misión de Lago Blackwrench."
+text = "En la Caverna Abandonada de Forjaz, coge la misión de Lago Blackwrench: está abajo, a ras del suelo de la caverna, no en el piso alto de {npc:5173}."
+tip = "Es solo el aviso para ir a Gakin: si Lago no te la ofrece, ve a Ventormenta igualmente, Gakin te da la siguiente."
 if = { race = ["Gnome"] }
 why = "+420 XP · <1 min · misión de clase"
 status = "unverified"
-sources = ["questie:quest/1715", "questie:npc/6120", "legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
+sources = ["questie:quest/1715", "questie:npc/6120", "foreverdb:npc/6120", "foreverdb:npc/5173", "legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/guides/wow-forever/wow-forever-warlock-quests/"]
 
 [[step]]
 id = "wl-voidwalker-002"

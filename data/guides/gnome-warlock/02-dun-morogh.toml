@@ -647,7 +647,8 @@ quest = 291
 npc = 1252
 at = [1426, 46.7, 53.8]
 text = "Coge los informes de Senir: se entregan en Forjaz."
-why = "+420 XP · ~1,4 min"
+tip = "Solo si hiciste «{quest:287}»: sin ella {npc:1252} no te la ofrece. +420 XP · ~1,4 min."
+optional = true
 status = "unverified"
 sources = ["questie:quest/291", "questie:npc/1252"]
 
@@ -1147,6 +1148,7 @@ quest = 291
 npc = 1274
 at = [1455, 39.5, 57.5]
 text = "Ve a Forjaz y entrega los informes al senador Barin Redstone, en el Alto Trono."
+optional = true
 status = "unverified"
 sources = ["questie:quest/291", "questie:npc/1274"]
 

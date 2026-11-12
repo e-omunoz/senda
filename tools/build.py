@@ -110,50 +110,61 @@ def _step_quests(step: dict) -> list[int]:
     return out
 
 
-def foreverdb_prereq_edges(root: Path) -> list[tuple[int, int]] | None:
-    """Aristas (previa, misión) duras de forever-db: `all` sin migas de pan y `any` con una sola previa
-    (con varias previas alternativas, saltar una no pierde la misión). None si no hay forever-db."""
-    f = root / ".cache" / "foreverdb" / "data" / "quest_prereq.jsonl"
-    if not f.exists():
+def foreverdb_prereq(root: Path, senda_corrections: Path | None = None) -> dict | None:
+    """Requisitos de forever-db con sus correcciones (corrections/*.json) y las de Senda (data/corrections):
+    {"edges": aristas duras (previa, misión): `all` sin migas de pan y `any` con una sola previa (con varias
+    previas alternativas, saltar una no pierde la misión); "breadcrumbs": (miga, misión a la que lleva)}.
+    None si no hay forever-db."""
+    db_root = root / ".cache" / "foreverdb"
+    if not (db_root / "data" / "quest_prereq.jsonl").exists():
         return None
+    from foreverdb import corrections  # tools/foreverdb (solo hace falta al refrescar)
+    tables = corrections.load_tables_corrected(
+        db_root, ("quest_prereq",), senda_corrections if senda_corrections is not None else root / "data" / "corrections")
     rows: dict[int, dict[str, list[int]]] = {}
-    with open(f, encoding="utf-8") as fh:
-        for line in fh:
-            line = line.strip()
-            if not line:
-                continue
-            r = json.loads(line)
-            if r.get("breadcrumb"):
-                continue
-            rows.setdefault(int(r["quest"]), {"all": [], "any": []})[r["mode"]].append(int(r["pre"]))
+    crumbs: set[tuple[int, int]] = set()
+    for r in tables["quest_prereq"]:
+        if r.get("breadcrumb"):
+            crumbs.add((int(r["pre"]), int(r["quest"])))
+            continue
+        rows.setdefault(int(r["quest"]), {"all": [], "any": []})[r["mode"]].append(int(r["pre"]))
     edges = set()
     for q, m in rows.items():
         for p in m["all"]:
             edges.add((p, q))
         if len(m["any"]) == 1:
             edges.add((m["any"][0], q))
-    return sorted(edges)
+    return {"edges": sorted(edges), "breadcrumbs": sorted(crumbs - edges)}
 
 
-def read_prereq_snapshot(paths: Paths) -> list[tuple[int, int]] | None:
+def foreverdb_prereq_edges(root: Path) -> list[tuple[int, int]] | None:
+    pre = foreverdb_prereq(root)
+    return None if pre is None else pre["edges"]
+
+
+def read_prereq_snapshot(paths: Paths) -> dict | None:
     f = paths.data / PREREQ_FILE
     if not f.exists():
         return None
     with open(f, encoding="utf-8") as fh:
         data = json.load(fh)
-    return sorted((int(a), int(b)) for a, b in data.get("edges", []))
+    return {"edges": sorted((int(a), int(b)) for a, b in data.get("edges", [])),
+            "breadcrumbs": sorted((int(a), int(b)) for a, b in data.get("breadcrumbs", []))}
 
 
-def write_prereq_snapshot(paths: Paths, edges: list[tuple[int, int]]) -> None:
+def write_prereq_snapshot(paths: Paths, pre: dict) -> None:
     pin = ""
     pf = paths.root / "tools" / "foreverdb" / "PIN"
     if pf.exists():
         m = re.search(r"^version\s*=\s*(\S+)", pf.read_text(encoding="utf-8"), re.MULTILINE)
         pin = m.group(1) if m else ""
-    head = {"_": "Requisitos duros de misión de forever-db (GPL-3.0, ver THIRD_PARTY.md); los lee tools/build.py. "
-                 "Se regenera con `python tools/build.py --refresh-prereq`.",
+    head = {"_": "Requisitos duros de misión de forever-db (GPL-3.0, ver THIRD_PARTY.md) con sus correcciones "
+                 "(corrections/*.json) y las de Senda (data/corrections/); los lee tools/build.py. `breadcrumbs`: "
+                 "[miga, misión a la que lleva]. Se regenera con `python tools/build.py --refresh-prereq`.",
             "forever_db": pin}
-    text = json.dumps(head, ensure_ascii=False)[:-1] + ', "edges": [' + ",".join(f"[{a},{b}]" for a, b in edges) + "]}\n"
+    text = (json.dumps(head, ensure_ascii=False)[:-1]
+            + ', "edges": [' + ",".join(f"[{a},{b}]" for a, b in pre["edges"]) + "]"
+            + ', "breadcrumbs": [' + ",".join(f"[{a},{b}]" for a, b in pre.get("breadcrumbs", [])) + "]}\n")
     write_text_lf(paths.data / PREREQ_FILE, text)
 
 
@@ -185,14 +196,15 @@ def render_followups(ds: validate.Dataset) -> str:
     """Guides/Followups.lua: para cada misión de las guías, las misiones de las guías que dependen de ella
     (cierre transitivo, también a través de misiones que ninguna guía usa). Cadena «q>d1,d2;...»."""
     paths = ds.paths
-    edges = read_prereq_snapshot(paths)
+    pre = read_prereq_snapshot(paths)
     source = f"data/{PREREQ_FILE}"
-    if edges is None:
-        edges = foreverdb_prereq_edges(paths.root)
+    if pre is None:
+        pre = foreverdb_prereq(paths.root)
         source = "forever-db (.cache)"
-    if edges is None:
-        edges = guide_prereq_edges(ds)
+    if pre is None:
+        pre = {"edges": guide_prereq_edges(ds), "breadcrumbs": []}
         source = "orden de las guías"
+    edges = pre["edges"]
     mine: set[int] = set()
     for g in ds.guides:
         if g.data.get("ship") is False:
@@ -218,10 +230,19 @@ def render_followups(ds: validate.Dataset) -> str:
         if d:
             n_pairs += len(d)
             parts.append(f"{q}>" + ",".join(map(str, d)))
+    # Migas de pan: la miga deja de hacer falta (y de ofrecerse) cuando ya tienes o has entregado la misión a la
+    # que lleva (Engine/Conditions.lua); saltarla no salta esa misión, así que no van en el índice de dependientes.
+    lead: dict[int, list[int]] = {}
+    for a, b in pre.get("breadcrumbs", []):
+        if a in mine and b in mine:
+            lead.setdefault(a, []).append(b)
+    crumbs = [f"{a}>" + ",".join(map(str, sorted(lead[a]))) for a in sorted(lead)]
     head = [f"-- {GENERATED_HEADER}",
-            f"-- Fuente: {source}; {len(parts)} misiones con dependientes ({n_pairs} pares)",
+            f"-- Fuente: {source}; {len(parts)} misiones con dependientes ({n_pairs} pares); "
+            f"{len(crumbs)} migas de pan",
             "local _, Senda = ..."]
-    return "\n".join(head) + "\n\nSenda.Guides:RegisterFollowups(" + lua_string(";".join(parts)) + ")\n"
+    return ("\n".join(head) + "\n\nSenda.Guides:RegisterFollowups(" + lua_string(";".join(parts)) + ")\n"
+            + "Senda.Guides:RegisterBreadcrumbs(" + lua_string(";".join(crumbs)) + ")\n")
 
 
 def render_locale(paths: Paths) -> dict[Path, str]:
@@ -583,12 +604,12 @@ def main(argv: list[str] | None = None) -> int:
         print(f"data/{reserve.RESERVE_FILE}: {len(snap['quests'])} misiones ({', '.join(snap['scores'])})")
     if args.refresh_prereq:
         paths = Paths(args.root)
-        edges = foreverdb_prereq_edges(paths.root)
-        if edges is None:
+        pre = foreverdb_prereq(paths.root)
+        if pre is None:
             print("build: no hay forever-db en .cache (ejecuta `python tools/fetch_foreverdb.py`).", file=sys.stderr)
             return 1
-        write_prereq_snapshot(paths, edges)
-        print(f"data/{PREREQ_FILE}: {len(edges)} requisitos")
+        write_prereq_snapshot(paths, pre)
+        print(f"data/{PREREQ_FILE}: {len(pre['edges'])} requisitos, {len(pre['breadcrumbs'])} migas de pan")
     return build(Paths(args.root), check=args.check, quiet=args.quiet)
 
 

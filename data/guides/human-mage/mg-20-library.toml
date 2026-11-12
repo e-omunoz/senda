@@ -13,15 +13,27 @@ later_map = 1453
 
 [[step]]
 id = "mg-20-library-001"
-do = "accept"
-quest = 79092
+do = "loot"
+item = 203755
+count = 1
 at = [1429, 65.4, 70.1]
 text = "De camino a Crestagrana, entra en la Torre de Azora (Elwynn) y coge el libro de la biblioteca."
-tip = "Vale cualquier libro de biblioteca que encuentres por el mundo."
+tip = "Para «{quest:97286}» vale cualquier libro de biblioteca que encuentres por el mundo; este es el que pilla de camino."
+status = "unverified"
+sources = ["questie:quest/79092", "foreverdb:item/203755"]
+checked = "2026-11-11"
+
+[[step]]
+id = "mg-20-library-001b"
+do = "accept"
+quest = 79092
+npc = 211033
+at = [1453, 48.9, 86.5]
+text = "Teletranspórtate a Ventormenta y enséñale el libro a {npc:211033}, en lo alto del Sagrario: te da la misión del libro."
+tip = "Si la misión ya te salió al coger el libro, este paso se marca solo."
 why = "+160 XP · ~10 min · misión de clase"
 status = "unverified"
-sources = ["questie:quest/79092"]
-checked = "2026-11-11"
+sources = ["foreverdb:quest/79092", "foreverdb:npc/211033"]
 
 [[step]]
 id = "mg-20-library-002"
@@ -29,7 +41,7 @@ do = "turnin"
 quest = 79092
 npc = 211033
 at = [1453, 48.9, 86.5]
-text = "Teletranspórtate a Ventormenta y entrega el libro a Garion Wendell, en lo alto del Sagrario."
+text = "Entrégale el libro a Garion Wendell."
 status = "unverified"
 sources = ["questie:quest/79092", "questie:npc/211033"]
 checked = "2026-11-11"

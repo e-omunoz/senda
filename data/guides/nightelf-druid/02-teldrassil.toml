@@ -620,8 +620,7 @@ reqlevel = 4
 npc = 2080
 at = [1438, 60.9, 68.49]
 text = "Coge la misión que te manda a Darnassus con Rellian Greenspyre."
-tip = "+708 XP · ~9 min: por debajo de la media del tramo."
-optional = true
+why = "+708 XP · ~9 min · desbloquea «{quest:923}» y 2 más"
 status = "unverified"
 sources = ["questie:quest/922", "questie:npc/2080"]
 
@@ -916,7 +915,6 @@ npc = 3517
 at = [1457, 38.18, 21.64]
 text = "Ve por el camino del oeste a Darnassus. En el Enclave Cenarion, entrega a Rellian Greenspyre."
 tip = "Darnassus no tiene ruta de vuelo: el vuelo está abajo, en Rut'theran."
-optional = true
 status = "unverified"
 sources = ["questie:quest/922", "questie:npc/3517"]
 

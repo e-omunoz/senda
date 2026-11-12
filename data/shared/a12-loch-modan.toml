@@ -27,6 +27,7 @@ quest = 96392
 reqlevel = 9
 npc = 264936
 at = [1426, 64.9, 58.5]
+if = { race = ["Human", "NightElf", "Skyborne"] }
 text = "Sal de Forjaz hacia el este por Dun Morogh. Habla con Earthseer Farsen, en el campamento sobre la cantera de Gol'Bolar."
 tip = "Esta cadena de Forever da la misión de Hall of Thanes que empieza fuera de Forjaz. No te la saltes."
 why = "+785 XP · <1 min · desbloquea «{quest:96390}»"
@@ -39,6 +40,7 @@ do = "complete"
 quest = 96392
 npc = 264936
 at = [1426, 64.9, 58.5]
+if = { race = ["Human", "NightElf", "Skyborne"] }
 text = "Pídele a Farsen que te preste su visión lejana y observa a los Hierro Negro."
 status = "unverified"
 sources = ["questie:quest/96392"]
@@ -49,6 +51,7 @@ do = "turnin"
 quest = 96392
 npc = 264936
 at = [1426, 64.9, 58.5]
+if = { race = ["Human", "NightElf", "Skyborne"] }
 text = "Entrega a Farsen."
 status = "unverified"
 sources = ["questie:quest/96392"]
@@ -60,6 +63,7 @@ quest = 96390
 reqlevel = 9
 npc = 264936
 at = [1426, 64.9, 58.5]
+if = { race = ["Human", "NightElf", "Skyborne"] }
 text = "Coge la siguiente misión de Farsen: matar espías Hierro Negro."
 why = "+1.610 XP · ~5 min"
 status = "unverified"
@@ -70,6 +74,7 @@ id = "a12lm-006"
 do = "complete"
 quest = 96390
 at = [1426, 77.5, 61.3]
+if = { race = ["Human", "NightElf", "Skyborne"] }
 text = "Mata 10 espías Hierro Negro en el campamento al este, junto al camino a Loch Modan."
 tip = "El Capitán Beld (78, 62) y los espías sueltan el Mapa Hierro Negro. Si no cae, sigue matando: lo necesitas."
 status = "unverified"
@@ -93,6 +98,7 @@ do = "turnin"
 quest = 96390
 npc = 264936
 at = [1426, 64.9, 58.5]
+if = { race = ["Human", "NightElf", "Skyborne"] }
 text = "Vuelve con Farsen y entrega los espías."
 status = "unverified"
 sources = ["questie:quest/96390"]
@@ -217,16 +223,29 @@ status = "unverified"
 sources = ["questie:npc/6734"]
 
 [[step]]
+id = "a12lm-020a"
+do = "turnin"
+quest = 414
+npc = 1340
+at = [1432, 34.2, 47.8]
+if = { race = ["Gnome", "Dwarf"] }
+text = "Entrega a {npc:1340} la cerveza que traes de Dun Morogh."
+tip = "Patrulla por el centro de Thelsamar: si no está donde marca la flecha, búscalo por el camino del pueblo."
+status = "unverified"
+sources = ["foreverdb:quest/414", "foreverdb:npc/1340"]
+
+[[step]]
 id = "a12lm-020"
 do = "accept"
 quest = 416
 reqlevel = 10
 npc = 1340
-at = [1432, 32.6, 49.7]
+at = [1432, 34.2, 47.8]
 text = "Coge la misión de ratas del Montañero Kadrell."
+tip = "{npc:1340} patrulla por el centro de Thelsamar: si no está donde marca la flecha, búscalo por el camino del pueblo."
 why = "+2.884 XP · ~12 min"
 status = "unverified"
-sources = ["questie:quest/416", "questie:npc/1340"]
+sources = ["questie:quest/416", "questie:npc/1340", "foreverdb:npc/1340"]
 
 [[step]]
 id = "a12lm-021"
@@ -234,7 +253,7 @@ do = "accept"
 quest = 1339
 reqlevel = 9
 npc = 1340
-at = [1432, 32.6, 49.7]
+at = [1432, 34.2, 47.8]
 text = "Coge también la que te manda con el Montañero Stormpike."
 why = "+550 XP · <1 min · 2,1× la media del tramo"
 status = "unverified"
@@ -411,7 +430,7 @@ id = "a12lm-037"
 do = "turnin"
 quest = 416
 npc = 1340
-at = [1432, 32.6, 49.7]
+at = [1432, 34.2, 47.8]
 text = "En Thelsamar, entrega las orejas a Kadrell."
 status = "unverified"
 sources = ["questie:quest/416"]

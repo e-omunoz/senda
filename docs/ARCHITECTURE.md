@@ -402,6 +402,9 @@ Senda.Reserve:Load([fn]), :Offers(opts), :Need(), :State(), :Ask(), :QuestXP(e[,
                                        --   eventos internos SENDA_RESERVE_READY, SENDA_RESERVE_UPDATED
 Senda.AsideTab:Open("parked"|"reserve"|"detour")                                  -- UI/AsideTab.lua
 Senda.Guides:Followups(q) -> misiones que dependen de q (índice de Guides/Followups.lua)
+Senda.Guides:BreadcrumbTargets(q) -> misiones a las que lleva la miga de pan q (Guides/Followups.lua): con una de
+                                       --   ellas cogida o entregada y q fuera del registro, sus pasos se dan por hechos
+                                       --   (Engine/Conditions.lua); saltar q no las salta
 Senda.Report:Open(), :Context(), :Text(desc), :IssueURL(desc); Senda.Errors:Add(err), .list   -- informe de errores
 Senda.Visibility:Hidden(), :SetHidden(b), :Toggle()  -- ocultar HUD y flecha (instancias o a mano)
 Senda.Party.Members(), .StepsApart(m), .Holds(entry), .HoldsQuest(q), .GoOn(), .RequestSync()  -- pareja

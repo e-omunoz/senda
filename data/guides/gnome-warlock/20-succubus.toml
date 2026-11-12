@@ -21,12 +21,12 @@ quest = 1717
 reqlevel = 20
 npc = 6120
 at = [1455, 47.6, 9.3]
-text = "Si pasas por Forjaz, coge el aviso de Lago Blackwrench en la Caverna Abandonada."
-tip = "Es solo un recado: si estás ya en Ventormenta, ve directo a Gakin."
+text = "Si pasas por Forjaz, coge el aviso de Lago Blackwrench en la Caverna Abandonada: está abajo, a ras del suelo de la caverna, no en el piso alto de {npc:5173}."
+tip = "Es solo un recado: si estás ya en Ventormenta, ve directo a Gakin. Con «{quest:1716}» ya en el registro Lago no te lo ofrece y la guía lo pasa sola."
 optional = true
 if = { race = ["Gnome"] }
 status = "unverified"
-sources = ["questie:quest/1717", "questie:npc/6120"]
+sources = ["questie:quest/1717", "questie:npc/6120", "foreverdb:npc/6120", "foreverdb:npc/5173"]
 
 [[step]]
 id = "wl-succubus-002"

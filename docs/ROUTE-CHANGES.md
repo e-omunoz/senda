@@ -1607,10 +1607,12 @@ minutos cambian poco entre ellos. Las opcionales no llevan `why`: su motivo est�
 
 ## 9. Pendiente
 
-- `tools/route_score.py` y `data/prereq.json` no leen `corrections/quests.json` de forever-db: con ellos, «Young
-  Crocolisk Skins» (484), «Testing the Wells» (92742) y «The State of the Mines» (92745) saldrían `keep` por cadena sin
-  excepción a mano, y los dos hechos equivocados de la sección 2 no habrían entrado. Arreglo propuesto: aplicar `set.pre`,
-  `preAll` y `preAny` de las correcciones al cargar forever-db (`tools/foreverdb/db.py`) y regenerar `prereq.json`.
+- ~~`tools/route_score.py` y `data/prereq.json` no leen `corrections/quests.json`~~ Hecho (ver [AUDIT.md](AUDIT.md) §1):
+  `tools/foreverdb` aplica las correcciones al cargar y `data/prereq.json` se ha regenerado. Recalculado con ellas
+  (sin escribir `data/scores/`): «Young Crocolisk Skins» (484) sale `keep` por cadena, así que su excepción ya no hace
+  falta (sigue opcional en la ruta, que es más prudente: 98815 también lo es); «Testing the Wells» (92742) y «The State
+  of the Mines» (92745) siguen saliendo `drop` (el filtro no ve la cadena de Alba entera: 92747 pasa a `drop` porque
+  92745 lo es), así que sus excepciones siguen. Los dos hechos equivocados de la sección 2 ya no entran.
 - La cadena de Alba (92742 → 92745 → 92747 → 92748 → 92749/92750-92751 → 92752 → 92753) no tiene requisitos en
   forever-db más allá de 92745 y 92747; que 92752 pida las dos partes sale del texto de Senda (`a17wf-074`). Confirmar en
   el juego.

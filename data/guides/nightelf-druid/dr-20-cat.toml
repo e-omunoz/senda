@@ -69,10 +69,10 @@ id = "dr-20-cat-005"
 do = "turnin"
 quest = 98394
 npc = 11957
-at = [1450, 58.39, 73.52]
-text = "Ve al sur del Claro y habla con el Gran Espíritu del Felino."
+at = [1450, 54.5, 75.0]
+text = "Ve al sur del Claro y habla con el Gran Espíritu del Felino, en la colina sobre el puente."
 status = "unverified"
-sources = ["questie:quest/98394", "questie:npc/11957"]
+sources = ["questie:quest/98394", "questie:npc/11957", "foreverdb:npc/11957"]
 checked = "2026-11-11"
 
 [[step]]
@@ -81,11 +81,11 @@ do = "accept"
 quest = 98396
 reqlevel = 20
 npc = 11957
-at = [1450, 58.39, 73.52]
+at = [1450, 54.5, 75.0]
 text = "Coge la prueba de las tres reliquias."
 why = "+775 XP · ~3 min · misión de clase"
 status = "unverified"
-sources = ["questie:quest/98396", "questie:npc/11957"]
+sources = ["questie:quest/98396", "questie:npc/11957", "foreverdb:npc/11957"]
 checked = "2026-11-11"
 
 [[step]]
@@ -115,10 +115,10 @@ id = "dr-20-cat-009"
 do = "turnin"
 quest = 98396
 npc = 11957
-at = [1450, 58.39, 73.52]
+at = [1450, 54.5, 75.0]
 text = "Sal del túmulo y entrega las reliquias al Gran Espíritu del Felino."
 status = "unverified"
-sources = ["questie:quest/98396", "questie:npc/11957"]
+sources = ["questie:quest/98396", "questie:npc/11957", "foreverdb:npc/11957"]
 checked = "2026-11-11"
 
 [[step]]
@@ -127,11 +127,11 @@ do = "accept"
 quest = 98731
 reqlevel = 20
 npc = 11957
-at = [1450, 58.39, 73.52]
+at = [1450, 54.5, 75.0]
 text = "Coge la misión de las bendiciones."
 why = "+775 XP · ~1,7 min · misión de clase"
 status = "unverified"
-sources = ["questie:quest/98731", "questie:npc/11957"]
+sources = ["questie:quest/98731", "questie:npc/11957", "foreverdb:npc/11957"]
 checked = "2026-11-11"
 
 [[step]]

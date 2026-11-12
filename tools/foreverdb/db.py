@@ -7,6 +7,10 @@ tools/enrich.py, tools/verify.py and tools/lookup.py can use either source uncha
 Licence: the tables are GPL-3.0 (forever-db/LICENSE), its own layer CC BY 4.0. Credits in
 THIRD_PARTY.md. The data is downloaded by tools/fetch_foreverdb.py into ``<repo>/.cache/foreverdb``.
 
+Corrections: forever-db's ``corrections/{quests,npcs,objects}.json`` (hand-checked fixes, many not yet in
+the tables) and then Senda's own ``data/corrections/*.json`` are applied on load
+(tools/foreverdb/corrections.py; ``ForeverDB.open(corrections=False)`` reads the raw tables).
+
 What forever-db does not have (returned as ``None`` and listed in ``ForeverDB.MISSING``):
 ``exclusiveTo``, ``requiredSkill``, ``npcFlags``, vendors and NPC waypoints. QuestieDB, read
 locally, stays the source for those; Senda keeps the facts it needs in its TOML (``reqskill``).
@@ -21,6 +25,8 @@ from pathlib import Path
 
 from questiedb.constants import ALLIANCE_MASK, HORDE_MASK
 from questiedb.db import QuestDB
+
+from . import corrections as C
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DIR = REPO_ROOT / ".cache" / "foreverdb"
@@ -112,7 +118,7 @@ class Frames:
 # Build the QuestDB-shaped data dict
 # --------------------------------------------------------------------------------------------
 
-def _load(root: Path) -> dict:
+def _load(root: Path, apply_corrections: bool = True, senda_corrections: Path | None = C.SENDA_DIR) -> dict:
     data_dir = root / "data"
     tables = {}
     for t in TABLES:
@@ -126,6 +132,10 @@ def _load(root: Path) -> dict:
     index = {}
     if (root / "index.json").exists():
         index = json.loads((root / "index.json").read_text(encoding="utf-8"))
+
+    # -- corrections: forever-db's corrections/*.json, then Senda's data/corrections/*.json -----
+    corr = C.load(root, senda_corrections) if apply_corrections else {"quests": {}, "npcs": {}, "objects": {}}
+    q_fixed = C.apply_quests(tables, corr)
 
     frames = Frames(tables["ui_map"])
 
@@ -144,6 +154,17 @@ def _load(root: Path) -> dict:
         # Zone frames overlap near borders: keep the point in every other frame too, so a guide
         # coordinate in the neighbouring zone (or on the continent map) can still be matched.
         alt.setdefault(key, []).extend(h + [None] for h in hits[1:])
+
+    # corrected spawns (map percent): `addSpawns` replaces that map's points, `set.spawns` all of them
+    for kind, ck in (("npc", "npcs"), ("object", "objects")):
+        for eid, ov in C.spawn_overrides(corr, ck).items():
+            key = (kind, eid)
+            if ov["all"]:
+                spawns.pop(key, None)
+                alt.pop(key, None)
+            for ui, pts in ov["maps"].items():
+                spawns[key] = [s for s in spawns.get(key, []) if s[0] != ui] + [[ui, x, y, None] for x, y in pts]
+                alt[key] = [s for s in alt.get(key, []) if s[0] != ui]
 
     # -- quests ------------------------------------------------------------------------------
     starts: dict[int, dict[str, list]] = {}
@@ -189,6 +210,7 @@ def _load(root: Path) -> dict:
         st = starts.get(qid, {"npc": [], "object": [], "item": []})
         fi = ends.get(qid, {"npc": [], "object": []})
         rw = rewards.get(qid, [])
+        fx = q_fixed.get(qid, {})
         quests[qid] = {
             "id": qid,
             "name": r.get("title"),
@@ -205,7 +227,8 @@ def _load(root: Path) -> dict:
             "preQuestSingle": sorted(pre_any.get(qid, [])),
             "childQuests": [],
             "inGroupWith": [],
-            "exclusiveTo": None,          # not in forever-db: QuestieDB (local) only
+            # not in forever-db's tables (QuestieDB has it); its corrections give some (`excl`)
+            "exclusiveTo": fx.get("extra", {}).get("excl"),
             "nextQuestInChain": 0,
             "parentQuest": 0,
             "breadcrumbFor": crumb_for.get(qid, 0),
@@ -225,12 +248,14 @@ def _load(root: Path) -> dict:
             "availableStartingWith": 0,
             "availableUntilCompleted": 0,
             "hidden": None,
-            "corrected": [],
+            "corrected": sorted(set(fx.get("fields", []))),
             # forever-db extras
             "xp": r.get("xp"),
             "money": r.get("money_copper"),
             "type": r.get("type"),
             "repeatable": bool(r.get("repeatable")),
+            "escort": bool(fx.get("extra", {}).get("escort")),
+            "correctedBy": fx.get("from", []),
             "rewards": {"item": [int(x["id"]) for x in rw if x["kind"] == "item"],
                         "choice": [int(x["id"]) for x in rw if x["kind"] == "choice"],
                         "rep": [[int(x["id"]), x.get("count")] for x in rw if x["kind"] == "rep"]},
@@ -258,6 +283,8 @@ def _load(root: Path) -> dict:
     for r in tables["npc"]:
         nid = int(r["id"])
         nq = npc_quests.get(nid, {"starts": [], "ends": []})
+        nset = (corr["npcs"].get(str(nid)) or {}).get("set") or {}
+        r = {**r, **{k: v for k, v in nset.items() if k in ("name", "rank")}}
         npcs[nid] = {
             "id": nid,
             "name": r.get("name"),
@@ -275,7 +302,7 @@ def _load(root: Path) -> dict:
             "factionID": int(r.get("faction_template") or 0),
             "friendlyTo": None,
             "npcFlags": None,             # not in forever-db: QuestieDB (local) only
-            "corrected": [],
+            "corrected": sorted(set(nset) | set((corr["npcs"].get(str(nid)) or {}).get("addSpawns") or {})),
         }
     objects = {}
     for r in tables["object"]:
@@ -341,6 +368,7 @@ def _load(root: Path) -> dict:
         "schema_version": index.get("schemaVersion"),
         "root": str(root),
         "missing": sorted(ForeverDB.MISSING),
+        "corrections": {k: len(v) for k, v in corr.items()},
     }
     zones = {"area_to_uimap": {}, "sub_to_parent": {}, "uimap_names": {}, "area_names": {},
              "uimaps": frames.uimaps}
@@ -367,9 +395,12 @@ class ForeverDB(QuestDB):
 
     @classmethod
     def open(cls, foreverdb=None, faction: str = "Alliance", rebuild: bool = False,
-             verbose: bool = False, **_ignored) -> "ForeverDB":
-        """Load forever-db. ``faction`` is accepted for compatibility (the data covers both)."""
-        return cls(_load(resolve_foreverdb(foreverdb)))
+             verbose: bool = False, corrections: bool = True, **_ignored) -> "ForeverDB":
+        """Load forever-db. ``faction`` is accepted for compatibility (the data covers both).
+
+        ``corrections``: apply forever-db's corrections/*.json and Senda's data/corrections/*.json
+        (tools/foreverdb/corrections.py). Default on; False reads the published tables as they are."""
+        return cls(_load(resolve_foreverdb(foreverdb), apply_corrections=corrections))
 
     def to_uimap(self, map_id: int, x: float, y: float) -> list | None:
         """World yards (client Map id, x north, y west) -> [uiMapId, x%, y%] or None."""

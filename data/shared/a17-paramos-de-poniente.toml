@@ -546,7 +546,8 @@ reqlevel = 9
 npc = 234
 at = [1436, 56.3, 47.5]
 text = "Coge la tercera misión de la Milicia."
-why = "+3.491 XP · ~16 min"
+tip = "Solo si hiciste «{quest:13}»: sin ella {npc:234} no te la ofrece. +3.491 XP · ~16 min."
+optional = true
 status = "unverified"
 sources = ["questie:quest/14"]
 
@@ -579,6 +580,7 @@ quest = 14
 at = [1436, 46.6, 76.0]
 text = "Al sur de Arroyo de la Luna, mata 15 salteadores, 5 acechadores y 5 nudilleros Defias."
 tip = "Los Defias del sur sueltan pañuelos rojos y los gólems dan lúpulo y aceite: hazlo todo a la vez."
+optional = true
 status = "unverified"
 sources = ["questie:quest/14"]
 
@@ -656,6 +658,7 @@ quest = 14
 npc = 234
 at = [1436, 56.3, 47.5]
 text = "Entrega la última Milicia a Gryan."
+optional = true
 status = "unverified"
 sources = ["questie:quest/14"]
 

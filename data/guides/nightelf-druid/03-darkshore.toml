@@ -290,8 +290,7 @@ reqlevel = 11
 npc = 3693
 at = [1439, 39.37, 43.48]
 text = "Coge el aviso para Thundris."
-tip = "+110 XP · <1 min: por debajo de la media del tramo."
-optional = true
+why = "+110 XP · <1 min · desbloquea «{quest:4762}» y 1 más"
 status = "unverified"
 sources = ["questie:quest/4761", "questie:npc/3693"]
 
@@ -302,7 +301,6 @@ quest = 4761
 npc = 3649
 at = [1439, 37.4, 40.13]
 text = "Entrega el aviso a Thundris Windweaver."
-optional = true
 status = "unverified"
 sources = ["questie:quest/4761", "questie:npc/3649"]
 

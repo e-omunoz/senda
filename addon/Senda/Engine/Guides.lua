@@ -4,6 +4,7 @@
 --   Senda.Guides:Get(id), :GetSection(id), :AllSections(), :List(), :ForPlayer()
 --   Senda.Guides:Resolve(guideId) -> lista plana de entradas { step, section, secIndex, index }
 --   Senda.Guides:RegisterFollowups(texto), :Followups(questId) -> lista de misiones que dependen de ella
+--   Senda.Guides:RegisterBreadcrumbs(texto), :BreadcrumbTargets(questId) -> misiones a las que lleva una miga
 -- Las secciones pueden registrarse antes o después que las guías: se resuelven tarde.
 local _, Senda = ...
 local Util, Compat = Senda.Util, Senda.Compat
@@ -69,6 +70,30 @@ function Guides:Followups(q)
     end
   end
   return followups[q]
+end
+
+-- Migas de pan (también de Guides/Followups.lua): "miga>misión,...": la miga solo lleva a esas misiones y deja de
+-- ofrecerse cuando ya las tienes. No son dependientes: saltar la miga no las salta.
+local crumbText, crumbs = nil, nil
+
+function Guides:RegisterBreadcrumbs(text)
+  crumbText = type(text) == "string" and text or nil
+  crumbs = nil
+end
+
+function Guides:BreadcrumbTargets(q)
+  if not crumbs then
+    crumbs = {}
+    for entry in (crumbText or ""):gmatch("[^;]+") do
+      local id, list = entry:match("^(%d+)>(.+)$")
+      if id then
+        local t = {}
+        for d in list:gmatch("%d+") do t[#t + 1] = tonumber(d) end
+        crumbs[tonumber(id)] = t
+      end
+    end
+  end
+  return crumbs[q]
 end
 
 -- Todas las secciones registradas, en orden de id (las recorre /senda volcar).

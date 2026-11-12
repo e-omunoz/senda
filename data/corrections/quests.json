@@ -1,0 +1,71 @@
+{
+	"_": "Correcciones de Senda a forever-db, en su mismo formato (corrections/quests.json). Las aplica tools/foreverdb/corrections.py después de las de forever-db. Cada una lleva fuente y nota; ver docs/AUDIT.md. Candidatas a enviar a forever-db.",
+	"1716": {
+		"set": {
+			"pre": [],
+			"preAny": [],
+			"breadcrumbs": [1717]
+		},
+		"source": [
+			{
+				"kind": "in-game-check",
+				"ref": "Senda, brujo gnomo (nov. 2026): Gakin dio «Devourer of Souls» (1716) sin haber hecho «Gakin's Summons» (1717); la guía lo mandó luego a Lago Blackwrench a por 1717 con 1716 ya en el registro"
+			},
+			{
+				"kind": "guide",
+				"ref": "Polestar guides/forever/class/warlock/incubus-alliance.guide (GPL-3.0): los humanos cogen 1716 de Gakin directamente; 1717 solo lo entregan los gnomos («turnin 1717 only Gnome»)"
+			}
+		],
+		"note": "Gakin's Summons (1717, Lago Blackwrench en Forjaz) solo lleva hasta Devourer of Souls (1716, Gakin): es una miga de pan, no un requisito. forever-db 2026.11.1 la publica como requisito duro (mode all), así que el índice de dependencias decía que saltar 1717 saltaba toda la cadena del súcubo. Como toda miga, deja de ofrecerse al coger 1716."
+	},
+	"1688": {
+		"set": {
+			"pre": [],
+			"preAny": [],
+			"breadcrumbs": [1685, 1715]
+		},
+		"source": [
+			{
+				"kind": "guide",
+				"ref": "Polestar guides/forever/class/warlock/voidwalker-alliance.guide (GPL-3.0): los humanos llegan a Gakin con 1685 y los gnomos con 1715; «si Lago no te la ofrece, ve a Gakin igualmente: te da la siguiente»"
+			}
+		],
+		"note": "Surena Caledon (1688, Gakin): The Slaughtered Lamb (1715, Lago Blackwrench, gnomos) es una miga de pan como Gakin's Summons (1685, Remen Marcot, humanos), no un requisito. forever-db 2026.11.1 marca 1685 como miga y 1715 como requisito duro (mode all): con eso un humano no podría hacer el abisario. Mismo caso que 1717 -> 1716."
+	},
+	"935": {
+		"set": {
+			"pre": [],
+			"preAny": [7383]
+		},
+		"source": [
+			{
+				"kind": "guide",
+				"ref": "Polestar guides/forever/alliance/nightelf/01-teldrassil.guide (GPL-3.0): turnin 7383 y accept 935 a Corithras Moonrage, sin 934"
+			},
+			{
+				"kind": "questie",
+				"ref": "QuestieDB (Forever, local): 934 en su lista de misiones ocultas (no está en el juego)"
+			}
+		],
+		"note": "Crown of the Earth (935, Corithras Moonrage) sigue a 7383 (la Fiala de amatista en el pozo de la luna de Ban'ethil). forever-db 2026.11.1 le pone también como requisito duro 934, la versión antigua de esa misión, que no se ofrece: con ella la guía del druida pedía una misión que no existe."
+	},
+	"97286": {
+		"set": {
+			"end": {
+				"npc": [211033],
+				"object": []
+			}
+		},
+		"source": [
+			{
+				"kind": "client",
+				"ref": "forever-db npc.jsonl: Owen Thadd (211022) tiene faction_template 68 (Entrañas) y aparece solo en Entrañas (uiMap 1458); la misión es solo de Alianza (races 4294967361: humano, gnomo, alado)"
+			},
+			{
+				"kind": "questie",
+				"ref": "QuestieDB (Forever, local): la entrega Garion Wendell (211033)"
+			}
+		],
+		"note": "Research Access (97286, magos de la Alianza): se coge y se entrega a Garion Wendell, el bibliotecario de Ventormenta. forever-db 2026.11.1 da como único receptor a Owen Thadd, el bibliotecario de Entrañas (Horda), que ningún personaje que puede coger la misión puede alcanzar."
+	}
+}

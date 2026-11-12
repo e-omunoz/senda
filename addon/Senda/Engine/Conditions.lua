@@ -84,15 +84,22 @@ function Cond:Quests(step)
   return nil
 end
 
--- Una misión que va después en la cadena (Guides:Followups) ya cogida o entregada: esta ya no hace falta
--- (p. ej. el aviso de Lago Blackwrench cuando ya tienes «Devoradora de almas» de Gakin).
+-- Una misión que va después en la cadena (Guides:Followups) ya cogida o entregada: esta ya no hace falta.
+-- Una miga de pan (Guides:BreadcrumbTargets) tampoco, si ya tienes la misión a la que lleva y la miga no está en
+-- el registro: el PNJ deja de ofrecerla (p. ej. el aviso de Lago Blackwrench cuando ya tienes «Devoradora de
+-- almas» de Gakin).
 local function Superseded(q, state)
   local G = Senda.Guides
-  local deps = G and G.Followups and G:Followups(q)
-  if not deps then return false end
-  for _, d in ipairs(deps) do
-    if (state and state.turnedIn and state.turnedIn[d]) or Compat.IsOnQuest(d) or Compat.IsQuestDone(d) then
-      return true
+  local function Has(d)
+    return (state and state.turnedIn and state.turnedIn[d]) or Compat.IsOnQuest(d) or Compat.IsQuestDone(d)
+  end
+  for _, d in ipairs(G and G.Followups and G:Followups(q) or {}) do
+    if Has(d) then return true end
+  end
+  local leads = G and G.BreadcrumbTargets and G:BreadcrumbTargets(q)
+  if leads and not Compat.IsOnQuest(q) then
+    for _, d in ipairs(leads) do
+      if Has(d) then return true end
     end
   end
   return false
