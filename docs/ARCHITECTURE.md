@@ -257,6 +257,11 @@ Pestaña «Aparte» (`UI/AsideTab.lua`), fuera de la guía principal, con tres b
 sigue o la ruta o el desvío, nunca los dos; el HUD solo añade una línea cuando hay algo útil justo ahí, y esa línea
 abre la pestaña en su bloque.
 
+**Hueco único del HUD.** Las líneas extra (raro cerca, camino más rápido y Aparte) comparten un solo hueco:
+`UI/HUD.lua` enseña como mucho una a la vez, por prioridad raro > viaje > Aparte (`HUD.extraLine` dice cuál), para
+que la ruta principal se lea limpia. Lo que queda debajo sigue vivo (el plan de viaje, el recordatorio) y vuelve en
+cuanto se va la de más prioridad. Escenario `hud-slot` del simulador.
+
 - **Para después** (`Engine/Aside.lua`). El reloj de la cabecera del HUD y el clic derecho en un paso («Dejar para
   después») aparcan la misión y las que dependen de ella (`Guides:Followups`) que aún no tienes; en una sección de
   clase con `parkable = true` aparcan la sección entera y las secciones de clase que siguen la cadena (las que tienen
@@ -421,8 +426,9 @@ Propietarios de carpetas del addon:
 - `Guides/` y `Knowledge/`: los genera `tools/build.py`.
 
 Cada carpeta tiene su `<Carpeta>.xml` y el `.toc` solo incluye esos XML, en este orden:
-`Core\Core.xml`, `Locale\Locale.xml`, `Engine\Engine.xml`, `Recorder\Recorder.xml`, `UI\UI.xml`, `Knowledge\Knowledge.xml`,
-`Data\Travel.lua` (un solo archivo, sin XML), `Guides\Guides.xml`, `Modules\Modules.xml`.
+`Core\Core.xml`, `Locale\Locale.xml`, `Data\Data.xml` (generado: `Travel.lua` y `Rares.lua`, tablas de cadenas que se
+decodifican bajo demanda), `Engine\Engine.xml`, `Recorder\Recorder.xml`, `UI\UI.xml`, `Knowledge\Knowledge.xml`,
+`Guides\Guides.xml`, `Modules\Modules.xml`.
 
 ## Planificador de viaje (`Modules/Travel.lua`)
 
@@ -446,7 +452,7 @@ el camino más rápido con lo que el personaje sabe y lleva, y lo enseña. Datos
 - **Piedra de hogar.** La posada vinculada se aprende al vincular (`HEARTHSTONE_BOUND`: el posadero del paso `sethearth`, la unidad
   «npc» o la posada a menos de 60 yardas), se reconoce por el nombre de zona del cliente (`C_Map.GetAreaInfo`) o por el
   nombre inglés de los datos, y como último recurso por el último paso `sethearth` hecho de la guía.
-- **Salida.** Una línea del HUD, «Camino más rápido: vuela a X (3 min) → barco a Y → a pie», y la fuente `travel` de la flecha
+- **Salida.** (destinos de la guía, puntos manuales y el instructor de SpellCards) Una línea del HUD, «Camino más rápido: vuela a X (3 min) → barco a Y → a pie», y la fuente `travel` de la flecha
   (justo por delante del destino al que sustituye) apuntando al embarque del primer tramo. Sin flecha si ya estás allí o si el
   primer tramo es la piedra o un teletransporte. Clic derecho en la flecha la descarta hasta que cambie el destino.
 - **Mapa de vuelo.** Con `TAXIMAP_OPENED` marca con un resplandor el nodo al que lleva el primer vuelo (`FlightMapFrame` o los

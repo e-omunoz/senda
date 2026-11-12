@@ -18,6 +18,5 @@ Engine\Engine.xml
 Recorder\Recorder.xml
 UI\UI.xml
 Knowledge\Knowledge.xml
-Data\Travel.lua
 Guides\Guides.xml
 Modules\Modules.xml

@@ -351,8 +351,8 @@ const scenarios = [
       local before = #Sim.chat
       Sim.Fire("TAXIMAP_OPENED", 1)
       Sim.Advance(2)
-      Check(pins[8].sendaGlow ~= nil and pins[8].sendaGlow:IsShown(), "Thelsamar's button is highlighted")
-      Check(not (pins[2].sendaGlow and pins[2].sendaGlow:IsShown()) and not (pins[6].sendaGlow and pins[6].sendaGlow:IsShown()), "the others are not")
+      Check(T.Glowing(pins[8]), "Thelsamar's button is highlighted")
+      Check(not T.Glowing(pins[2]) and not T.Glowing(pins[6]), "the others are not")
       local chat = ""
       for i = before + 1, #Sim.chat do chat = chat .. Plain(Sim.chat[i]) .. "|" end
       Check(chat:find("lo he marcado en el mapa de vuelos", 1, true) ~= nil, "a chat hint says which node", chat)
@@ -366,14 +366,14 @@ const scenarios = [
       Check(T.NextFlightNode() ~= nil, "a flight is still the first leg", T.NextFlightNode())
       T.HighlightTaxi()
       local lit = 0
-      for id, pin in pairs(pins) do if pin.sendaGlow and pin.sendaGlow:IsShown() then lit = lit + 1 end end
+      for id, pin in pairs(pins) do if T.Glowing(pin) then lit = lit + 1 end end
       Check(lit <= 1, "at most one node is marked", lit)
       Section("no destination: nothing is marked")
       Slash("way clear")
       Settle()
       Check(T.HighlightTaxi() == 0, "no highlight without a plan")
       local anyLit = false
-      for id, pin in pairs(pins) do if pin.sendaGlow and pin.sendaGlow:IsShown() then anyLit = true end end
+      for id, pin in pairs(pins) do if T.Glowing(pin) then anyLit = true end end
       Check(not anyLit, "all marks cleared")
       Section("classic taxi frame: buttons matched by name")
       TaxiFrame = { IsShown = function() return true end }
@@ -384,7 +384,7 @@ const scenarios = [
       for i = 1, 3 do _G["TaxiButton" .. i] = CreateFrame("Frame", nil, UIParent) end
       Aim(0, n8.wx, n8.wy, "Thelsamar")
       Settle()
-      Check(T.HighlightTaxi() == 1 and TaxiButton3.sendaGlow:IsShown() and not (TaxiButton1.sendaGlow and TaxiButton1.sendaGlow:IsShown()), "classic: Thelsamar's button")
+      Check(T.HighlightTaxi() == 1 and T.Glowing(TaxiButton3) and not T.Glowing(TaxiButton1), "classic: Thelsamar's button")
       Check(#Sim.errors == 0, "no Lua errors", #Sim.errors)
     `,
   },
@@ -566,6 +566,62 @@ const scenarios = [
       Check(not hordeTele, "Teleport: Undercity is Horde-only: not in an Alliance context")
       Check(ctx.mask == 1 and ctx.class == "MAGE", "context: Alliance mage", ctx.mask .. " " .. tostring(ctx.class))
       Check(#Sim.errors == 0, "no Lua errors", #Sim.errors)
+    `,
+  },
+  {
+    id: 'hud-slot',
+    title: 'HUD: a single slot for the extra lines (rare > travel > Aparte), the main route stays clean (night elf druid)',
+    char: 'nightelf-druid',
+    lua: SETUP + L_`
+      Login()
+      Sim.Advance(6)
+      NoGuide()
+      local HUD = S().HUD
+      local function Extras()
+        local n = 0
+        if SendaHUD.rare:IsShown() then n = n + 1 end
+        if SendaHUD.travel:IsShown() then n = n + 1 end
+        if SendaHUD.aside:IsShown() then n = n + 1 end
+        return n
+      end
+      -- an Aparte reminder always available, so the three lines compete
+      local realAside = HUD.AsideLine
+      HUD.AsideLine = function() return { text = "Pendiente aquí: prueba", block = "parked" } end
+      local n2, n26 = Node(2), Node(26)
+      Known({ 2 })
+      GoTo(0, n2.wx, n2.wy)
+      HUD:Refresh()
+      Check(SendaHUD.aside:IsShown() and Extras() == 1, "alone, the Aparte line shows", Extras())
+      Check(HUD.extraLine == "aside", "slot: aside", tostring(HUD.extraLine))
+
+      Section("a far destination: the travel line takes the slot")
+      Aim(1, n26.wx, n26.wy, "Auberdine")
+      Settle()
+      HUD:Refresh()
+      Check(SendaHUD.travel:IsShown() and not SendaHUD.aside:IsShown(), "travel shown, Aparte hidden")
+      Check(Extras() == 1 and HUD.extraLine == "travel", "one extra line", Extras())
+
+      Section("a rare: it takes the slot while it lasts")
+      Sim.AddVignette({ id = 471, name = "Mother Fang", map = 1429, x = 0.621, y = 0.480 })
+      Sim.Advance(1)
+      HUD:Refresh()
+      Check(SendaHUD.rare:IsShown() and not SendaHUD.travel:IsShown() and not SendaHUD.aside:IsShown(), "rare shown, the others hidden")
+      Check(Extras() == 1 and HUD.extraLine == "rare", "one extra line", Extras())
+      Check(TT().GetPlan() ~= nil, "the travel plan is kept underneath")
+
+      Section("rare dismissed: travel comes back; destination cleared: Aparte comes back")
+      Sim.Click(SendaHUD.rareClose); Sim.Advance(0.5)
+      HUD:Refresh()
+      Check(SendaHUD.travel:IsShown() and Extras() == 1, "travel back", Extras())
+      S().Arrow:Clear("manual")
+      Settle()
+      HUD:Refresh()
+      Check(SendaHUD.aside:IsShown() and Extras() == 1, "Aparte back", Extras())
+
+      Section("the real Aparte line: still at most one")
+      HUD.AsideLine = realAside
+      HUD:Refresh()
+      Check(Extras() <= 1, "never more than one", Extras())
     `,
   },
 ];

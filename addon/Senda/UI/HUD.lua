@@ -579,8 +579,17 @@ function HUD:Refresh()
     f.cancelDetour:Hide()
   end
 
+  -- Hueco único para las líneas extra (raro, viaje, Aparte): la ruta principal se queda limpia y se ve como
+  -- mucho una a la vez. Prioridad: el raro (dura poco), luego el viaje (cómo llegar al destino) y luego Aparte.
+  local R = Senda.Rares
+  local rareText, rareCan
+  if not collapsed and R and R.HudLine then rareText, rareCan = R.HudLine() end
+  local TV = Senda.Modules and Senda.Modules.Travel
+  local travelText = (not collapsed and not rareText and TV and TV.HudLine) and TV.HudLine() or nil
+  local aline = (not collapsed and not rareText and not travelText) and self:AsideLine(detour) or nil
+  self.extraLine = (rareText and "rare") or (travelText and "travel") or (aline and "aside") or nil
+
   -- Aparte: una sola línea, solo si hay algo útil justo aquí
-  local aline = (not collapsed) and self:AsideLine(detour) or nil
   if aline then
     f.aside.text:SetText(aline.text)
     f.aside.block, f.aside.reminder = aline.block, aline.reminder
@@ -632,9 +641,6 @@ function HUD:Refresh()
   end
 
   -- Raro cerca: «Raro cerca: Madre Colmillo (nivel 10) · Señalar»
-  local R = Senda.Rares
-  local rareText, rareCan
-  if not collapsed and R and R.HudLine then rareText, rareCan = R.HudLine() end
   f.rare:SetShown(rareText ~= nil)
   f.rareClose:SetShown(rareText ~= nil)
   f.rarePoint:SetShown(rareText ~= nil and rareCan == true)
@@ -676,8 +682,6 @@ function HUD:Refresh()
   end
 
   -- Camino más rápido al destino de la flecha (si está lejos o en otro continente)
-  local TV = Senda.Modules and Senda.Modules.Travel
-  local travelText = (not collapsed and TV and TV.HudLine) and TV.HudLine() or nil
   f.travel:SetText(travelText or "")
   f.travel:SetShown(travelText ~= nil)
   if travelText then

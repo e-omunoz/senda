@@ -739,18 +739,24 @@ end
 -- Mapa de vuelo: marcar el nodo destino
 ------------------------------------------------------------------------------
 
+-- Resplandor por botón en una tabla propia (claves débiles): no se escriben campos en los marcos de Blizzard,
+-- así no se ensucia (taint) su tabla.
+local glows = setmetatable({}, { __mode = "k" })
 local function Glow(pin, on)
   if not pin then return end
-  if on and not pin.sendaGlow and pin.CreateTexture then
-    local tex = pin:CreateTexture(nil, "OVERLAY")
+  local tex = glows[pin]
+  if on and not tex and pin.CreateTexture then
+    tex = pin:CreateTexture(nil, "OVERLAY")
     tex:SetTexture("Interface\\Buttons\\UI-ActionButton-Border")
     tex:SetBlendMode("ADD")
     tex:SetPoint("CENTER", pin, "CENTER", 0, 0)
     tex:SetSize(64, 64)
-    pin.sendaGlow = tex
+    glows[pin] = tex
   end
-  if pin.sendaGlow then pin.sendaGlow:SetShown(on and true or false) end
+  if tex then tex:SetShown(on and true or false) end
 end
+-- ¿Está marcado este botón del mapa de vuelo? (para las pruebas)
+function T.Glowing(pin) return glows[pin] ~= nil and glows[pin]:IsShown() end
 
 -- Nodo (id) al que lleva el primer vuelo del camino, o nil.
 function T.NextFlightNode()
@@ -888,7 +894,7 @@ function T.Refresh(force)
   if M.InCombat() or not Senda.Arrow then return end
   if Compat.OnTaxi() then return end -- volando: el camino ya está en marcha
   local dest, src = Senda.Arrow:Destination()
-  if not dest or (src ~= "guide" and src ~= "manual") or not dest.continent then ClearPlan(); return end
+  if not dest or (src ~= "guide" and src ~= "manual" and src ~= "trainer") or not dest.continent then ClearPlan(); return end
   local pc, pn, pw = Compat.PlayerWorldPos()
   if not pc or Compat.IsDead() then ClearPlan(); return end
   -- solo Reinos del Este (0) y Kalimdor (1): el continente nuevo de Forever no tiene yardas fiables

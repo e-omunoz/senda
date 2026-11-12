@@ -14,7 +14,7 @@ Genera:
   addon/Senda/Data/Travel.lua         datos de data/travel/ en cadenas compactas (el planificador de viaje las decodifica
                                       bajo demanda, Modules/Travel.lua); solo si existe data/travel/
   addon/Senda/Data/Rares.lua          raros compactos desde data/rares/rares.json (id, niveles, rango, apariciones)
-  addon/Senda/Data/Data.xml           (siempre: el .toc lo carga)
+  addon/Senda/Data/Data.xml           (siempre: el .toc lo carga; incluye Travel.lua y Rares.lua si existen)
 Y estampa la versión de VERSION en la línea `## Version:` de Senda.toc.
 
 Uso:
@@ -358,7 +358,7 @@ def render_travel(paths: Paths) -> str | None:
         "}",
     ])
     return body + "\n"
-def render_rares(paths: Paths) -> dict[Path, str]:
+def render_rares(paths: Paths, extra: list[str] | None = None) -> dict[Path, str]:
     """data/rares/rares.json -> addon/Senda/Data/Rares.lua (+ Data.xml).
 
     Un raro por clave numérica (su id de PNJ) con una cadena "<niv. mín>-<niv. máx> <r|e> <mapa>:<x>,<y>;<x>,<y> ...":
@@ -366,7 +366,7 @@ def render_rares(paths: Paths) -> dict[Path, str]:
     nivel 1 a ocho raros que son marcadores o de nivel escalado; no se corrige, el cliente da el real al verlos).
     Solo entran los que tienen alguna aparición conocida. El addon decodifica cada cadena al usarla."""
     out: dict[Path, str] = {}
-    files: list[str] = []
+    files: list[str] = list(extra or [])  # otros datos de Data/ que carga el mismo Data.xml (Travel.lua)
     src = paths.rares / "rares.json"
     if src.exists():
         with open(src, encoding="utf-8") as fh:
@@ -456,9 +456,11 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
     out[paths.out_knowledge / "Knowledge.xml"] = _xml(kfiles)
     out.update(render_locale(paths))
     travel = render_travel(paths)
+    data_files: list[str] = []
     if travel is not None:
         out[paths.out_data / "Travel.lua"] = travel
-    out.update(render_rares(paths))
+        data_files.append("Travel.lua")
+    out.update(render_rares(paths, data_files))
     return out
 
 

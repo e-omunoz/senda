@@ -32,6 +32,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - `python tools/build.py --refresh-reserve` (`tools/reserve.py`) genera `data/reserve.json` y el build lo compila en `Guides/Reserve.lua`. Campos de sección nuevos: `parkable`, `later_hint`, `later_level`, `later_map`.
 - Simulador: escenarios `park`, `park-reload`, `park-quest`, `park-druid`, `reserve`, `detour-route` y `detour-reload`.
 
+### Cambiado
+- **El HUD enseña como mucho una línea extra.** Raro cerca, camino más rápido y Aparte comparten un hueco, por
+  prioridad (raro > viaje > Aparte); la ruta principal se queda limpia. Escenario `hud-slot` del simulador.
+- El planificador de viaje también propone camino hacia el instructor que señala la pestaña de hechizos.
+- La reserva de XP (`data/reserve.json`) se rehízo sobre las rutas fusionadas del brujo, el mago y el druida.
+
 ## [0.5.0] - 2026-11-12
 
 ### Añadido
