@@ -17,7 +17,10 @@ function D.Partner()
     if UnitExists(u) and UnitIsPlayer(u) then table.insert(units, u) end
   end
   if #units == 0 then return nil end
-  local want = M.DB().duoPartner
+  -- Si alguien del grupo usa Senda (Modules/Party.lua), ese es el compañero. Su nombre solo vive en memoria.
+  local P = Senda.Party
+  local synced = P and P.Members and P.Members()[1]
+  local want = synced and synced.name
   local me = M.Level()
   local best, bestDiff
   for _, u in ipairs(units) do
@@ -117,6 +120,30 @@ function D.Refresh()
     if #general == 0 then table.insert(nodes, { t = "p", text = L.MOD_DUO_NONE or "Todavía no hay guía en pareja para tu clase." }) end
   end
 
+  local P = Senda.Party
+  local synced = (P and P.Members) and P.Members() or {}
+  if #synced > 0 then
+    table.insert(nodes, { t = "h1", text = L.DUO_TAB_SYNC or "Sincronización" })
+    local hold = P.HoldLine and P.HoldLine()
+    if hold then table.insert(nodes, { t = "p", raw = true, text = "|cffffd140" .. hold .. "|r" }) end
+    for _, m in ipairs(synced) do
+      local rel = P.Relation(m)
+      if rel then table.insert(nodes, { t = "li", text = rel, raw = true }) end
+      local who = P.Who(m)
+      if who.level then table.insert(nodes, { t = "li", raw = true, text = string.format(L.DUO_TAB_LEVEL or "%s: nivel %d", m.name, who.level) }) end
+      table.insert(nodes, { t = "li", raw = true, text = string.format(L.DUO_TAB_QUESTS or "%s lleva %d misiones en el registro.", m.name, m.n or 0) })
+      local done = P.TheirDoneNear(m)
+      if #done > 0 then
+        local names = {}
+        for i, q in ipairs(done) do
+          if i > 8 then names[#names + 1] = "…"; break end
+          names[#names + 1] = "«" .. (Senda.Compat.QuestTitle(q) or ("#" .. q)) .. "»"
+        end
+        table.insert(nodes, { t = "li", raw = true, text = string.format(L.DUO_TAB_DONE or "%s ya entregó, cerca de tu paso: %s", m.name, table.concat(names, ", ")) })
+      end
+    end
+  end
+
   if partner then
     local shared, mine, ok = D.QuestCompare(partner.unit)
     if ok and (#shared > 0 or #mine > 0) then
@@ -133,6 +160,7 @@ function D.Refresh()
   end
 
   for _, p in ipairs(general) do PageNodes(p, nodes) end
+  if ui.sync then ui.sync:SetEnabled(#synced > 0) end
   ui.doc:Set(nodes, true)
 end
 
@@ -144,9 +172,13 @@ local function Build(parent)
   ui.next:SetPoint("LEFT", ui.prev, "RIGHT", 4, 0)
   local now = M.Button(bar, L.MOD_DUO_OUR_LEVEL or "Nuestro nivel", 110, function() ui.auto = true; D.Refresh() end)
   now:SetPoint("LEFT", ui.next, "RIGHT", 4, 0)
+  ui.sync = M.Button(bar, L.DUO_SYNC_BUTTON or "Pedir que salte a mi paso", 170, function()
+    if Senda.Party then Senda.Party.RequestSync() end
+  end)
+  ui.sync:SetPoint("RIGHT", -6, 0)
   ui.header = bar:CreateFontString(nil, "OVERLAY", "GameFontNormal")
   ui.header:SetPoint("LEFT", now, "RIGHT", 10, 0)
-  ui.header:SetPoint("RIGHT", -6, 0)
+  ui.header:SetPoint("RIGHT", ui.sync, "LEFT", -6, 0)
   ui.header:SetJustifyH("LEFT")
   ui.doc = M.Doc(body)
 end
@@ -171,3 +203,4 @@ M.On("GROUP_ROSTER_UPDATE", Roster)
 M.On("UNIT_LEVEL", function(_, unit) if unit and unit:find("^party") then Roster() end end)
 M.On("QUEST_LOG_UPDATE", function() if ui.doc and ui.doc.scroll:IsVisible() then M.Debounce("duo-refresh", 1, D.Refresh) end end)
 M.On("PLAYER_LEVEL_UP", function() ui.auto = true end)
+M.On("SENDA_PARTY_UPDATED", function() if ui.doc and ui.doc.scroll:IsVisible() then M.Debounce("duo-refresh", 0.5, D.Refresh) end end)

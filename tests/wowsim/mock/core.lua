@@ -11,6 +11,7 @@ Sim.log = {}
 Sim.unknownMethods = {}    -- ["Type:Method"] = count (permissive widget fallback)
 Sim.missingGlobals = {}    -- [name] = count (read of an undefined global)
 Sim.verbose = false
+Sim.frameHooks = {}        -- functions run once per simulated frame, after timers and OnUpdate
 
 local out = __out or print
 
@@ -138,7 +139,13 @@ function Sim.Advance(sec)
     Sim.time = Sim.time + Sim.FRAME
     runDueTimers()
     if Sim.RunOnUpdate then Sim.RunOnUpdate(Sim.FRAME) end
+    for _, hook in ipairs(Sim.frameHooks) do hook() end
   end
+end
+
+-- Advances frame by frame until the clock reaches `t` (the two-player mode keeps both clients in step).
+function Sim.AdvanceTo(t)
+  while Sim.time + Sim.FRAME / 2 < t do Sim.Advance(Sim.FRAME) end
 end
 
 function Sim.PendingTimers()

@@ -270,6 +270,71 @@ function ToggleAllOptions()
   end
 end
 
+-- Two-player helpers ---------------------------------------------------------------
+-- A small guide both a gnome warlock and a night elf druid follow, with one step for each class only:
+-- dp-003 is the warlock's, dp-007 the druid's.
+function DuoGuide()
+  local G = Sim.ns.Guides
+  local function st(id, d, extra)
+    local s = { id = id, ["do"] = d, text = "Paso " .. id, status = "unverified" }
+    for k, v in pairs(extra or {}) do s[k] = v end
+    return s
+  end
+  G:RegisterSection({ id = "duo-prueba-1", title = "Pareja de prueba", levels = { 1, 10 }, map = 1438, steps = {
+    st("dp-001", "accept", { quest = 9001 }),
+    st("dp-002", "complete", { quest = 9001 }),
+    st("dp-003", "note", { ["if"] = { class = { "WARLOCK" } } }),
+    st("dp-004", "turnin", { quest = 9001 }),
+    st("dp-005", "accept", { quest = 9002 }),
+    st("dp-006", "complete", { quest = 9002 }),
+    st("dp-007", "note", { ["if"] = { class = { "DRUID" } } }),
+    st("dp-008", "turnin", { quest = 9002 }),
+    st("dp-009", "accept", { quest = 9003 }),
+    st("dp-010", "complete", { quest = 9003 }),
+    st("dp-011", "turnin", { quest = 9003 }),
+    st("dp-012", "note"),
+  } })
+  G:RegisterGuide({ id = "duo-prueba", title = "Pareja de prueba", faction = "Alliance", order = -1,
+    sections = { "duo-prueba-1" } })
+  Sim.ns.Engine:SetGuide("duo-prueba", true)
+end
+
+-- Joins `name` (class, race) to the party as party1 and fires the roster event.
+function DuoJoin(name, class, race)
+  Sim.party[1] = { name = name, class = class, race = race, level = Sim.player.level, quests = {} }
+  Sim.Fire("GROUP_ROSTER_UPDATE")
+end
+
+-- A quest log as Party sends it, sorted: "q:a/b,c/d;q2:...". From the player's own log, or (member name)
+-- from what Party received of that party member.
+function DuoLog(member)
+  local P = Sim.ns.Party
+  local ids, by = {}, {}
+  if member then
+    for _, m in ipairs(P.Members()) do
+      if m.name == member then
+        for q, counts in pairs(m.quests) do
+          local parts = {}
+          for i, c in ipairs(counts) do parts[i] = c[1] .. "/" .. c[2] end
+          by[q] = table.concat(parts, ",")
+        end
+      end
+    end
+  else
+    by = P.ReadLog()
+  end
+  for q in pairs(by) do ids[#ids + 1] = q end
+  table.sort(ids)
+  local out = {}
+  for i, q in ipairs(ids) do out[i] = q .. ":" .. by[q] end
+  return table.concat(out, ";")
+end
+
+-- The party member `name` as Party knows it (nil until they answered).
+function DuoMember(name)
+  for _, m in ipairs(Sim.ns.Party.Members()) do if m.name == name then return m end end
+end
+
 -- Errors the add-on caught itself and only printed (pcall + Print/Debug) still count as failures.
 local CHAT_ERROR_PATTERNS = { "%.lua:%d+:", "attempt to ", "bad argument", "stack traceback", "^Senda: Error:" }
 

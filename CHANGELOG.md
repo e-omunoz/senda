@@ -2,6 +2,17 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado [SemVer](https://semver.org/lang/es/).
 
+## [Sin publicar]
+
+### Añadido
+- **Pareja sincronizada** (`Modules/Party.lua`). Si tu compañero de grupo también usa Senda, vuestros addons se hablan por mensajes ocultos (solo al grupo, nunca en banda, y nada hasta que el otro contesta al saludo): cuentas de cada objetivo, en qué paso va cada uno y qué misiones ha entregado cerca de tu paso.
+  - Línea de pareja en el HUD: «Lunaria va 2 pasos por delante». Se cuentan solo los pasos de los dos: un paso solo de brujo entre medias no descuadra.
+  - **Esperar al compañero:** si terminas un objetivo que a él le falta, el paso no avanza ni la misión se entrega sola: «Espera a Lunaria: le falta 3/8», con el botón «Seguir sin él». Si se desconecta más de 2 minutos, se deja de esperar.
+  - **Pedir que salte a mi paso** (pestaña «En pareja» o `/senda pareja saltar`): al otro le sale una ventana para aceptar o rechazar; sus pasos de clase no se saltan.
+  - `/senda pareja` (dónde va), `/senda pareja seguir` y `/senda pareja debug` (envíos, último resultado y mensajes oídos). Dos opciones nuevas en la sección «Pareja».
+  - Los nombres de los compañeros solo se muestran: nunca se guardan.
+- Simulador: modo de dos jugadores (`duo` en `tests/wowsim/run.js`) con dos clientes que se pasan los mensajes de addon y fallos de envío simulados (`Sim.addonFault`).
+
 ## [0.4.0] - 2026-11-12
 
 ### Cambiado

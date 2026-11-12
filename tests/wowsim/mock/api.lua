@@ -43,6 +43,7 @@ local RACES = {
 local CLASSES = {
   WARLOCK = { name = "Brujo", id = 9, power = 0 }, MAGE = { name = "Mago", id = 8, power = 0 },
   WARRIOR = { name = "Guerrero", id = 1, power = 1 }, PRIEST = { name = "Sacerdote", id = 5, power = 0 },
+  DRUID = { name = "Druida", id = 11, power = 0 },
 }
 
 function Sim.SetupCharacter(cfg)
@@ -243,9 +244,10 @@ function UnitClass(u)
 end
 function UnitRace(u)
   unitArg(u, "UnitRace")
-  if u ~= "player" then return nil end
-  local r = RACES[Sim.player.race] or { name = Sim.player.race, id = 0 }
-  return r.name, Sim.player.race, r.id
+  local token = u == "player" and Sim.player.race or (partyOf(u) and partyOf(u).race)
+  if not token then return nil end
+  local r = RACES[token] or { name = token, id = 0 }
+  return r.name, token, r.id
 end
 function UnitLevel(u)
   unitArg(u, "UnitLevel")
@@ -1001,6 +1003,10 @@ function Sim.TooltipDataPosted(tt, link)
 end
 
 Enum = {
+  SendAddonMessageResult = { Success = 0, InvalidPrefix = 1, InvalidMessage = 2, AddonMessageThrottle = 3,
+    InvalidChatType = 4, NotInGroup = 5, TargetRequired = 6, InvalidChannel = 7, ChannelThrottle = 8,
+    GeneralError = 9, NotInGuild = 10, AddOnMessageLockdown = 11, TargetOffline = 12 },
+  RegisterAddonMessagePrefixResult = { Success = 0, DuplicatePrefix = 1, InvalidPrefix = 2, MaxPrefixes = 3 },
   TooltipDataType = { Item = 0, Spell = 1, Unit = 2 },
   SpellBookSpellBank = { Player = 0, Pet = 1 },
   SpellBookItemType = { None = 0, Spell = 1, FutureSpell = 2, PetAction = 3, Flyout = 4 },
@@ -1077,6 +1083,110 @@ function Sim.CreateGlobalFrames()
   ChatFrame1 = chat
 end
 
+------------------------------------------------------------------------------
+-- Group and addon messages
+-- Sim.party[i] = { name, realm?, class, race?, level, quests = {}, offline? }; Sim.raid = true: a raid.
+-- C_ChatInfo.SendAddonMessage records every send in Sim.addonSent ({ prefix, text, channel, result, t }),
+-- echoes it back to the sender (as the client does) and, in the two-player mode of run.js, hands it to the
+-- other client through __busSend. Sim.addonFault = n: the next n sends are refused with
+-- Enum.SendAddonMessageResult.AddonMessageThrottle (nothing is delivered).
+------------------------------------------------------------------------------
+
+Sim.addonSent = {}
+Sim.addonInbox = {}  -- { due, prefix, text, channel, sender }
+Sim.addonFault = 0
+Sim.realm = "Reino"
+local addonPrefixes = {}
+
+function GetRealmName() return Sim.realm end
+function GetNormalizedRealmName() return Sim.realm end
+function Ambiguate(name, context)
+  str(name, "Ambiguate", "fullName"); str(context, "Ambiguate", "context")
+  local base, realm = name:match("^([^%-]+)%-(.+)$")
+  if base and (context == "short" or realm == Sim.realm) then return base end
+  return name
+end
+local function partyCount() local n = 0; for i = 1, 4 do if Sim.party[i] then n = i end end; return n end
+function IsInRaid() return Sim.raid == true end
+function IsInGroup() return Sim.raid == true or partyCount() > 0 end
+function GetNumSubgroupMembers() return partyCount() end
+function GetNumGroupMembers()
+  if Sim.raid then return math.max(partyCount() + 1, Sim.raidSize or 10) end
+  local n = partyCount()
+  return n > 0 and n + 1 or 0
+end
+function UnitIsConnected(u)
+  unitArg(u, "UnitIsConnected")
+  if u == "player" then return true end
+  local pm = partyOf(u)
+  if not pm then return false end
+  return not pm.offline
+end
+function UnitInParty(u) unitArg(u, "UnitInParty"); return u == "player" or partyOf(u) ~= nil end
+
+C_ChatInfo = {}
+function C_ChatInfo.RegisterAddonMessagePrefix(prefix)
+  str(prefix, "C_ChatInfo.RegisterAddonMessagePrefix", "prefix")
+  if #prefix > 16 then return Enum.RegisterAddonMessagePrefixResult.InvalidPrefix end
+  if addonPrefixes[prefix] then return Enum.RegisterAddonMessagePrefixResult.DuplicatePrefix end
+  addonPrefixes[prefix] = true
+  return Enum.RegisterAddonMessagePrefixResult.Success
+end
+function C_ChatInfo.IsAddonMessagePrefixRegistered(prefix)
+  str(prefix, "C_ChatInfo.IsAddonMessagePrefixRegistered", "prefix")
+  return addonPrefixes[prefix] == true
+end
+local CHAT_TYPES = { PARTY = true, RAID = true, GUILD = true, WHISPER = true, INSTANCE_CHAT = true, CHANNEL = true }
+function C_ChatInfo.SendAddonMessage(prefix, text, chatType, target)
+  str(prefix, "C_ChatInfo.SendAddonMessage", "prefix"); str(text, "C_ChatInfo.SendAddonMessage", "message")
+  str(chatType, "C_ChatInfo.SendAddonMessage", "chatType")
+  local R = Enum.SendAddonMessageResult
+  if #prefix > 16 then return R.InvalidPrefix end
+  if #text > 255 then bad("C_ChatInfo.SendAddonMessage", "message longer than 255 bytes (" .. #text .. ")") end
+  if not CHAT_TYPES[chatType] then return R.InvalidChatType end
+  local result = R.Success
+  if (chatType == "PARTY" or chatType == "RAID") and not IsInGroup() then result = R.NotInGroup
+  elseif Sim.addonFault > 0 then Sim.addonFault = Sim.addonFault - 1; result = R.AddonMessageThrottle end
+  Sim.addonSent[#Sim.addonSent + 1] = { prefix = prefix, text = text, channel = chatType, result = result, t = Sim.time }
+  if Sim.verbose then Sim.Out("  > addon " .. prefix .. " " .. chatType .. " " .. text .. " -> " .. result) end
+  if result ~= R.Success then return result end
+  local sender = Sim.player.name .. "-" .. Sim.realm
+  Sim.addonInbox[#Sim.addonInbox + 1] = { due = Sim.time + 0.05, prefix = prefix, text = text, channel = chatType, sender = sender }
+  local busSend = rawget(_G, "__busSend")
+  if busSend then busSend(prefix, text, chatType, Sim.time, sender) end
+  return result
+end
+-- Texts of the addon messages that went out (sends since index `from`, default 1) with this prefix.
+function Sim.AddonTexts(prefix, from)
+  local out = {}
+  for i = from or 1, #Sim.addonSent do
+    local m = Sim.addonSent[i]
+    if (not prefix or m.prefix == prefix) and m.result == Enum.SendAddonMessageResult.Success then out[#out + 1] = m.text end
+  end
+  return out
+end
+local function deliver(prefix, text, channel, sender)
+  if not addonPrefixes[prefix] then return end
+  Sim.Fire("CHAT_MSG_ADDON", prefix, text, channel, sender, Sim.player.name, 0, 0, "", 0)
+end
+-- Per frame: self-echoes and, in the two-player mode, the other client's messages that are due.
+table.insert(Sim.frameHooks, function()
+  local keep, due = {}, {}
+  for _, m in ipairs(Sim.addonInbox) do
+    if m.due <= Sim.time + 1e-9 then due[#due + 1] = m else keep[#keep + 1] = m end
+  end
+  Sim.addonInbox = keep
+  for _, m in ipairs(due) do deliver(m.prefix, m.text, m.channel, m.sender) end
+  local busRecv = rawget(_G, "__busRecv")
+  if busRecv then
+    while true do
+      local prefix, text, channel, sender = busRecv(Sim.time)
+      if not prefix then break end
+      deliver(prefix, text, channel, sender)
+    end
+  end
+end)
+
 -- Static popups: the dialog frame gets the shown data; Sim.AcceptPopup() presses button1.
 function StaticPopup_Show(which, text1, text2, data)
   str(which, "StaticPopup_Show", "which")
@@ -1094,7 +1204,22 @@ function StaticPopup_Show(which, text1, text2, data)
   end
   return f
 end
-function StaticPopup_Hide(which) if _G.StaticPopup1 and _G.StaticPopup1.which == which then _G.StaticPopup1:Hide() end end
+function StaticPopup_Hide(which)
+  if _G.StaticPopup1 and _G.StaticPopup1.which == which then
+    _G.StaticPopup1:Hide()
+    if Sim.lastPopup == _G.StaticPopup1 then Sim.lastPopup = nil end
+  end
+end
+-- Presses button2 (OnCancel with reason "clicked").
+function Sim.DeclinePopup()
+  local f = Sim.lastPopup
+  if not f then return false end
+  local d = StaticPopupDialogs[f.which]
+  if d.OnCancel then Sim.SafeCall("StaticPopup OnCancel " .. f.which, d.OnCancel, f, f.data, "clicked") end
+  f:Hide()
+  Sim.lastPopup = nil
+  return true
+end
 function Sim.AcceptPopup()
   local f = Sim.lastPopup
   if not f then return false end
