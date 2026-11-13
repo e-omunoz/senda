@@ -4,6 +4,29 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ## [Sin publicar]
 
+### Añadido
+- **Profesiones reales:** la pestaña Profesiones enseña todas las profesiones que tu personaje tiene aprendidas
+  (principales, secundarias y de recolección), cada una con su tramo, qué fabricar, las fabricaciones esperadas que
+  quedan, el material que falta (bolsas + banco), los colores de la receta, dónde se aprende, el rango siguiente y el
+  instructor de tu facción que lo enseña (el más cercano, con flecha). Si te falta una principal, recuerda la de tu
+  clase y por qué (brujo y mago: Sastrería + Encantamiento; druida: Herboristería + Alquimia, con los números).
+- **Rutas calculadas con datos reales** para Alquimia, Herrería, Encantamiento, Ingeniería, Peletería, Sastrería, Cocina y
+  Primeros auxilios (`tools/gen_professions.py`, [docs/PROFESSIONS.md](docs/PROFESSIONS.md)): recetas, colores, materiales
+  y nombres de las tablas del cliente de Forever; habilidad de aprendizaje de las listas de instructor de Forever;
+  instructores por rango y bando con coordenadas; la ruta de menor esfuerzo esperado de 1 a 300 con los pasos «entrena
+  el rango siguiente». Frente a Polestar: 49 fabricaciones menos en Sastrería, 108 en Ingeniería, y menos esfuerzo en
+  todas.
+- La ventana del instructor resalta las recetas de tu ruta que ya puedes aprender.
+- `tools/fetch_wago.py` (tablas del cliente con build fijado) y comprobaciones de rutas de profesión en `tools/validate.py`.
+- Simulador: escenarios `prof-warlock`, `prof-mining`, `prof-druid`, `prof-cap`, `prof-none` y `prof-trainer`.
+
+### Corregido
+- Las rutas de Sastrería, Encantamiento y Alquimia venían de guías de Classic: Forever bajó unos 25 puntos los colores
+  de casi todas las recetas y había tramos con recetas ya grises (30 puntos sin cubrir en Alquimia, 18 en
+  Encantamiento).
+- Aprendiz se entrena a cualquier nivel en Forever (no a 5). El Artesano de Alquimia del druida es Kylanna Windwhisper
+  (Feralas), no Ainethil.
+
 ## [0.6.1] - 2026-11-12
 
 ### Añadido

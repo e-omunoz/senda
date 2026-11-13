@@ -101,6 +101,8 @@ Sim.MAPS = {
   [1413] = { name = "Los Baldíos", parent = 1414, type = 3, continent = 1, n = 1500, w = 1000, sx = 6000, sy = 4000 },
   [1440] = { name = "Vallefresno", parent = 1414, type = 3, continent = 1, n = 4000, w = 2000, sx = 5700, sy = 3800 },
   [1436] = { name = "Páramos de Poniente", parent = 1415, type = 3, continent = 0, n = -9500, w = 2500, sx = 3500, sy = 2333 },
+  -- Lejos al sur (instructores de profesión de Bahía del Botín): que el más cercano siga siendo el de la ciudad.
+  [1434] = { name = "Vega de Tuercespina", parent = 1415, type = 3, continent = 0, n = -11000, w = 2500, sx = 6400, sy = 4300 },
 }
 local function mapData(id)
   if type(id) ~= "number" then return nil end
@@ -863,9 +865,20 @@ end
 -- Professions
 ------------------------------------------------------------------------------
 
+-- Sim.player.profs = { { name, skillLine, rank, max[, slot] } }: sin `slot`, las dos primeras son las principales;
+-- slot = "fish" | "cook" | "firstaid" (o "arch") las coloca donde las devuelve el cliente.
 function GetProfessions()
   local p = Sim.player.profs
-  return p[1] and 1 or nil, p[2] and 2 or nil, nil, nil, nil
+  local at, prim = {}, 0
+  for i, pr in ipairs(p) do
+    local s = pr.slot
+    if not s then
+      prim = prim + 1
+      s = (prim == 1 and "prof1") or (prim == 2 and "prof2") or nil
+    end
+    if s and not at[s] then at[s] = i end
+  end
+  return at.prof1, at.prof2, at.arch, at.fish, at.cook, at.firstaid
 end
 function GetProfessionInfo(i)
   num(i, "GetProfessionInfo", "index")

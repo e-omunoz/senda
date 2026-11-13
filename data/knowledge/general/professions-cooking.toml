@@ -1,0 +1,447 @@
+# GENERADO por tools/gen_professions.py: no editar a mano (regenerar; docs/PROFESSIONS.md).
+# Tablas del cliente de Forever 1.60.1.70888 (wago.tools), Polestar 19bd636e7d6f (listas de instructor de forever-tdb-2026-10-14, trainers.rs) y forever-db 2026.11.1.
+id = "general-professions-cooking"
+class = "ANY"
+kind = "professions"
+title = "Cocina 1-300"
+prof = "cooking"
+prof_kind = "secondary"
+order = 206
+status = "unverified"
+sources = ["wago:1.60.1.70888", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798", "foreverdb:2026.11.1"]
+assumes = "la carne la sueltan las bestias que matas mientras subes"
+crafts = 352
+reach = 300
+note = "Ruta calculada: unas 352 fabricaciones esperadas de 1 a 300. Esfuerzo mínimo con material de vendedor por su precio y recolectado por su nivel; la carne la sueltan las bestias que matas mientras subes."
+
+[[rank]]
+name = "Aprendiz"
+max = 75
+skill = 0
+level = 1
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Oficial"
+max = 150
+skill = 50
+level = 0
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Experto"
+max = 225
+skill = 125
+level = 20
+item = 16072
+how = "book"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Artesano"
+max = 300
+skill = 225
+level = 35
+how = "quest"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[trainer]]
+prof = "cooking"
+npc = 5482
+name = "Stephen Ryback"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1453, 78.2, 53.1, "Stephen Ryback (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5482"]
+
+[[trainer]]
+prof = "cooking"
+npc = 5159
+name = "Daryl Riknussun"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1455, 60.1, 36.4, "Daryl Riknussun (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5159"]
+
+[[trainer]]
+prof = "cooking"
+npc = 4210
+name = "Alegorn"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1457, 49, 21.4, "Alegorn (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4210"]
+
+[[trainer]]
+prof = "cooking"
+npc = 1355
+name = "Cook Ghilm"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1426, 68.4, 54.5, "Cook Ghilm (Dun Morogh)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1355"]
+
+[[trainer]]
+prof = "cooking"
+npc = 1430
+name = "Tomas"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1429, 44.4, 66, "Tomas (Bosque de Elwynn)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1430"]
+
+[[trainer]]
+prof = "cooking"
+npc = 1699
+name = "Gremlock Pilsnor"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1426, 47.7, 52.3, "Gremlock Pilsnor (Dun Morogh)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1699"]
+
+[[trainer]]
+prof = "cooking"
+npc = 3087
+name = "Crystal Boughman"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1433, 17.7, 43.5, "Crystal Boughman (Montañas Crestagrana)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3087"]
+
+[[trainer]]
+prof = "cooking"
+npc = 6286
+name = "Zarrin"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1438, 57.1, 61.3, "Zarrin (Teldrassil)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/6286"]
+
+[[trainer]]
+prof = "cooking"
+npc = 1382
+name = "Mudduk"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1434, 31.3, 28, "Mudduk (Vega de Tuercespina)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1382"]
+
+[[trainer]]
+prof = "cooking"
+npc = 3026
+name = "Aska Mistrunner"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1456, 50.7, 53.1, "Aska Mistrunner (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3026"]
+
+[[trainer]]
+prof = "cooking"
+npc = 3067
+name = "Pyall Silentstride"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1412, 44.9, 61.7, "Pyall Silentstride (Mulgore)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3067"]
+
+[[trainer]]
+prof = "cooking"
+npc = 3399
+name = "Zamja"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1454, 57.4, 54, "Zamja (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3399"]
+
+[[trainer]]
+prof = "cooking"
+npc = 4552
+name = "Eunice Burch"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1458, 62.1, 44.9, "Eunice Burch (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4552"]
+
+[[trainer]]
+prof = "cooking"
+npc = 8306
+name = "Duhng"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1413, 55.3, 31.8, "Duhng (Los Baldíos)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/8306"]
+
+[[trainer]]
+prof = "cooking"
+npc = 3191
+name = "Cook Torka"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1411, 51.1, 42.5, "Cook Torka (Durotar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3191"]
+
+[[trainer]]
+prof = "cooking"
+npc = 3955
+name = "Shandrina"
+faction = "Alliance"
+ranks = ["Experto"]
+at = [1440, 49.5, 67.1, "Shandrina (Vallefresno)"]
+book = 16072
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3955"]
+
+[[trainer]]
+prof = "cooking"
+npc = 12033
+name = "Wulan"
+faction = "Horde"
+ranks = ["Experto"]
+at = [1443, 26.2, 69.7, "Wulan (Desolace)"]
+book = 16072
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/12033"]
+
+[[trainer]]
+prof = "cooking"
+npc = 8125
+name = "Dirge Quikcleave"
+faction = "Alliance"
+ranks = ["Artesano"]
+at = [1446, 52.6, 28.1, "Dirge Quikcleave (Tanaris)"]
+quest = true
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/8125"]
+
+[[trainer]]
+prof = "cooking"
+npc = 8125
+name = "Dirge Quikcleave"
+faction = "Horde"
+ranks = ["Artesano"]
+at = [1446, 52.6, 28.1, "Dirge Quikcleave (Tanaris)"]
+quest = true
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/8125"]
+
+[[route]]
+prof = "cooking"
+from = 50
+to = 75
+train = "Oficial"
+level = 0
+note = "Entrena Oficial (habilidad 50) antes de llegar a 75: los puntos por encima del tope se pierden."
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "cooking"
+from = 125
+to = 150
+train = "Experto"
+level = 20
+note = "Experto es un libro, «Libro de cocina para expertos» (habilidad 125, nivel 20): cómpralo y léelo antes de llegar a 150."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "cooking"
+from = 225
+to = 225
+train = "Artesano"
+level = 35
+note = "Artesano es una misión (habilidad 225, nivel 35): hazla en cuanto llegues a 225, que es el tope."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "cooking"
+from = 1
+to = 19
+craft = 2679
+spell = 2538
+name = "Carne de lobo carbonizada"
+n = 18
+mats = [[2672, 1]]
+colors = [1, 45, 65, 85]
+learn = "la sabes al aprender la profesión"
+learn_skill = 1
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2538"]
+
+[[route]]
+prof = "cooking"
+from = 19
+to = 75
+craft = 5472
+spell = 6412
+name = "Kebab de araña Kaldorei"
+n = 70
+mats = [[5465, 1]]
+colors = [10, 50, 70, 90]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 10"
+learn_skill = 10
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/6412", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "cooking"
+from = 75
+to = 76
+craft = 5472
+spell = 6412
+name = "Kebab de araña Kaldorei"
+n = 3
+mats = [[5465, 1]]
+colors = [10, 50, 70, 90]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 10"
+learn_skill = 10
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/6412", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "cooking"
+from = 76
+to = 107
+craft = 2684
+spell = 2541
+name = "Chuleta de coyote"
+n = 36
+mats = [[2673, 1]]
+colors = [50, 90, 110, 130]
+learn = "instructor (lista capturada de Forever), desde 50 (1 p)"
+learn_skill = 50
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2541", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/2541"]
+
+[[route]]
+prof = "cooking"
+from = 107
+to = 146
+craft = 2687
+spell = 2546
+name = "Costillas de cerdo secas"
+n = 55
+mats = [[2677, 1], [2678, 1]]
+colors = [80, 120, 140, 160]
+learn = "instructor (lista capturada de Forever), desde 80 (1 p 50 c)"
+learn_skill = 80
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2546", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/2546"]
+
+[[route]]
+prof = "cooking"
+from = 146
+to = 150
+craft = 5527
+spell = 6500
+name = "Almejas picantes a la goblin"
+n = 4
+mats = [[5504, 1], [2692, 1]]
+colors = [125, 165, 185, 205]
+learn = "instructor (lista capturada de Forever), desde 125 (3 p)"
+learn_skill = 125
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/6500", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/6500"]
+
+[[route]]
+prof = "cooking"
+from = 150
+to = 177
+craft = 5527
+spell = 6500
+name = "Almejas picantes a la goblin"
+n = 30
+mats = [[5504, 1], [2692, 1]]
+colors = [125, 165, 185, 205]
+learn = "instructor (lista capturada de Forever), desde 125 (3 p)"
+learn_skill = 125
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/6500", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/6500"]
+
+[[route]]
+prof = "cooking"
+from = 177
+to = 225
+craft = 12210
+spell = 15855
+name = "Raptor a la brasa"
+n = 50
+mats = [[12184, 1], [2692, 1]]
+colors = [175, 215, 235, 255]
+learn = "receta «Receta: raptor asado» del vendedor (50 p), desde 175"
+learn_skill = 175
+recipe_item = 12228
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/15855", "wago:1.60.1.70888/ItemSparse/12228"]
+
+[[route]]
+prof = "cooking"
+from = 225
+to = 241
+craft = 12210
+spell = 15855
+name = "Raptor a la brasa"
+n = 30
+mats = [[12184, 1], [2692, 1]]
+colors = [175, 215, 235, 255]
+learn = "receta «Receta: raptor asado» del vendedor (50 p), desde 175"
+learn_skill = 175
+recipe_item = 12228
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/15855", "wago:1.60.1.70888/ItemSparse/12228"]
+
+[[route]]
+prof = "cooking"
+from = 241
+to = 266
+craft = 6887
+spell = 18238
+name = "Serviola moteada"
+n = 25
+mats = [[4603, 1]]
+colors = [225, 265, 285, 305]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 225"
+learn_skill = 225
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/18238", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "cooking"
+from = 266
+to = 300
+craft = 13931
+spell = 18243
+name = "Sopa de pargo nocturno"
+n = 36
+mats = [[13759, 1], [159, 1]]
+colors = [250, 290, 310, 330]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 250"
+learn_skill = 250
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/18243", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]

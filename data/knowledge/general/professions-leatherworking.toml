@@ -1,0 +1,607 @@
+# GENERADO por tools/gen_professions.py: no editar a mano (regenerar; docs/PROFESSIONS.md).
+# Tablas del cliente de Forever 1.60.1.70888 (wago.tools), Polestar 19bd636e7d6f (listas de instructor de forever-tdb-2026-10-14, trainers.rs) y forever-db 2026.11.1.
+id = "general-professions-leatherworking"
+class = "ANY"
+kind = "professions"
+title = "Peletería 1-300"
+prof = "leatherworking"
+prof_kind = "primary"
+order = 204
+status = "unverified"
+sources = ["wago:1.60.1.70888", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798", "foreverdb:2026.11.1"]
+assumes = "supone Desuello (el cuero lo sacas tú)"
+crafts = 367
+reach = 300
+note = "Ruta calculada: unas 367 fabricaciones esperadas de 1 a 300. Esfuerzo mínimo con material de vendedor por su precio y recolectado por su nivel; supone Desuello (el cuero lo sacas tú)."
+
+[[rank]]
+name = "Aprendiz"
+max = 75
+skill = 0
+level = 1
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Oficial"
+max = 150
+skill = 50
+level = 10
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Experto"
+max = 225
+skill = 125
+level = 20
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Artesano"
+max = 300
+skill = 200
+level = 35
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 5564
+name = "Simon Tanner"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1453, 71.7, 63, "Simon Tanner (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5564"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 11096
+name = "Randal Worth"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1453, 72.1, 62.9, "Randal Worth (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11096"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 5127
+name = "Fimble Finespindle"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1455, 40.2, 33.7, "Fimble Finespindle (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5127"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 1466
+name = "Gretta Finespindle"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1455, 38.8, 32.8, "Gretta Finespindle (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1466"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 4212
+name = "Telonis"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+at = [1457, 64.4, 21.4, "Telonis (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4212"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 11081
+name = "Faldron"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1457, 64.9, 21.9, "Faldron (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11081"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 11083
+name = "Darianna"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1457, 64.4, 20.9, "Darianna (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11083"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 11097
+name = "Drakk Stonehand"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+at = [1425, 13.4, 43.5, "Drakk Stonehand (Tierras del Interior)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11097"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 3967
+name = "Aayndia Floralwind"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1440, 36, 52.1, "Aayndia Floralwind (Vallefresno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3967"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 1632
+name = "Adele Fielder"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1429, 46.4, 62.1, "Adele Fielder (Bosque de Elwynn)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1632"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 3605
+name = "Nadyia Maneweaver"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1438, 41.9, 49.4, "Nadyia Maneweaver (Teldrassil)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3605"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 11098
+name = "Hahrana Ironhide"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+at = [1444, 74.4, 43.1, "Hahrana Ironhide (Feralas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11098"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 3007
+name = "Una"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+at = [1456, 41.3, 42.6, "Una (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3007"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 1385
+name = "Brawn"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1434, 31.7, 28.9, "Brawn (Vega de Tuercespina)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1385"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 3365
+name = "Karolek"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1454, 62.8, 44.1, "Karolek (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3365"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 3703
+name = "Krulmoo Fullmoon"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1413, 44.8, 59.5, "Krulmoo Fullmoon (Los Baldíos)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3703"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 4588
+name = "Arthur Moore"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1458, 70.2, 57.4, "Arthur Moore (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4588"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 8153
+name = "Narv Hidecrafter"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1443, 55.2, 56.3, "Narv Hidecrafter (Desolace)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/8153"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 11084
+name = "Tarn"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1456, 42.3, 42.6, "Tarn (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11084"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 223
+name = "Dan Golthas"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1458, 71, 58.4, "Dan Golthas (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/223"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 3069
+name = "Chaw Stronghide"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1412, 44.9, 61.5, "Chaw Stronghide (Mulgore)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3069"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 3549
+name = "Shelene Rhobart"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1420, 65.4, 60.1, "Shelene Rhobart (Claros de Tirisfal)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3549"]
+
+[[trainer]]
+prof = "leatherworking"
+npc = 5811
+name = "Kamari"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1454, 63.3, 44.7, "Kamari (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5811"]
+
+[[route]]
+prof = "leatherworking"
+from = 50
+to = 75
+train = "Oficial"
+level = 10
+note = "Entrena Oficial (habilidad 50, nivel 10) antes de llegar a 75: los puntos por encima del tope se pierden."
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 125
+to = 150
+train = "Experto"
+level = 20
+note = "Entrena Experto (habilidad 125, nivel 20) antes de llegar a 150: los puntos por encima del tope se pierden."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 200
+to = 225
+train = "Artesano"
+level = 35
+note = "Entrena Artesano (habilidad 200, nivel 35) antes de llegar a 225: los puntos por encima del tope se pierden."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 1
+to = 52
+craft = 2304
+spell = 2152
+name = "Complemento ligero para armadura"
+n = 68
+mats = [[2318, 1]]
+colors = [1, 30, 45, 60]
+learn = "la sabes al aprender la profesión"
+learn_skill = 1
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2152"]
+
+[[route]]
+prof = "leatherworking"
+from = 52
+to = 75
+craft = 4239
+spell = 3756
+name = "Guantes de cuero estampado"
+n = 24
+mats = [[2318, 3], [2320, 2]]
+colors = [40, 70, 85, 100]
+learn = "instructor (lista capturada de Forever), desde 40 (1 p 50 c)"
+learn_skill = 40
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3756", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3756"]
+
+[[route]]
+prof = "leatherworking"
+from = 75
+to = 84
+craft = 4239
+spell = 3756
+name = "Guantes de cuero estampado"
+n = 14
+mats = [[2318, 3], [2320, 2]]
+colors = [40, 70, 85, 100]
+learn = "instructor (lista capturada de Forever), desde 40 (1 p 50 c)"
+learn_skill = 40
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3756", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3756"]
+
+[[route]]
+prof = "leatherworking"
+from = 84
+to = 108
+craft = 4246
+spell = 3763
+name = "Cinturón fino de cuero"
+n = 44
+mats = [[2318, 6], [2320, 2]]
+colors = [55, 85, 100, 115]
+learn = "instructor (lista capturada de Forever), desde 55 (3 p)"
+learn_skill = 55
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3763", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3763"]
+
+[[route]]
+prof = "leatherworking"
+from = 108
+to = 125
+craft = 4251
+spell = 3768
+name = "Hombreras del montañero"
+n = 17
+mats = [[4233, 1], [2319, 4], [2321, 1]]
+colors = [105, 130, 142, 155]
+learn = "instructor (lista capturada de Forever), desde 105 (5 p)"
+learn_skill = 105
+note = "Fabrica antes unas 17 x Pellejo curado medio: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3768", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3768"]
+
+[[route]]
+prof = "leatherworking"
+from = 125
+to = 142
+craft = 4236
+spell = 3818
+name = "Pellejo curado pesado"
+n = 21
+mats = [[4235, 1], [4289, 3]]
+colors = [125, 135, 140, 145]
+learn = "instructor (lista capturada de Forever), desde 125 (5 p)"
+learn_skill = 125
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3818", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3818"]
+
+[[route]]
+prof = "leatherworking"
+from = 142
+to = 150
+craft = 4265
+spell = 3780
+name = "Complemento pesado para armadura"
+n = 9
+mats = [[4234, 5], [2321, 1]]
+colors = [125, 145, 155, 165]
+learn = "instructor (lista capturada de Forever), desde 125 (7 p 50 c)"
+learn_skill = 125
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3780", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3780"]
+
+[[route]]
+prof = "leatherworking"
+from = 150
+to = 153
+craft = 4265
+spell = 3780
+name = "Complemento pesado para armadura"
+n = 5
+mats = [[4234, 5], [2321, 1]]
+colors = [125, 145, 155, 165]
+learn = "instructor (lista capturada de Forever), desde 125 (7 p 50 c)"
+learn_skill = 125
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3780", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3780"]
+
+[[route]]
+prof = "leatherworking"
+from = 153
+to = 158
+craft = 4257
+spell = 3774
+name = "Cinturón verde de cuero"
+n = 6
+mats = [[4236, 1], [4234, 5], [2321, 1], [2605, 1], [7071, 1]]
+colors = [135, 155, 165, 175]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 135"
+learn_skill = 135
+note = "Fabrica antes unas 6 x Pellejo curado pesado: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3774", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 158
+to = 165
+craft = 4259
+spell = 3776
+name = "Brazales verdes de cuero"
+n = 7
+mats = [[4236, 2], [4234, 6], [2605, 1], [2321, 1]]
+colors = [155, 175, 185, 195]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 155"
+learn_skill = 155
+note = "Fabrica antes unas 14 x Pellejo curado pesado: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3776", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 165
+to = 193
+craft = 5966
+spell = 7156
+name = "Guantes del Guardián"
+n = 30
+mats = [[4234, 4], [4236, 1], [4291, 1]]
+colors = [165, 185, 195, 205]
+learn = "instructor (visto en el juego), desde 165"
+learn_skill = 165
+note = "Fabrica antes unas 30 x Pellejo curado pesado: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/7156", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 193
+to = 198
+craft = 8173
+spell = 10487
+name = "Complemento grueso para armadura"
+n = 6
+mats = [[4304, 5], [4291, 1]]
+colors = [175, 195, 205, 215]
+learn = "instructor (visto en el juego), desde 175"
+learn_skill = 175
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/10487", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 198
+to = 213
+craft = 8176
+spell = 10507
+name = "Cinta Nochefugaz"
+n = 23
+mats = [[4304, 5], [4291, 2]]
+colors = [180, 200, 210, 220]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 180"
+learn_skill = 180
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/10507", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 213
+to = 225
+craft = 8193
+spell = 10548
+name = "Pantalones Nochefugaz"
+n = 12
+mats = [[4304, 14], [4291, 4]]
+colors = [210, 225, 235, 245]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 210"
+learn_skill = 210
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/10548", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 225
+to = 240
+craft = 15564
+spell = 19058
+name = "Complemento basto para armadura"
+n = 27
+mats = [[8170, 5]]
+colors = [225, 225, 235, 245]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 225"
+learn_skill = 225
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/19058", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 240
+to = 265
+craft = 15084
+spell = 19052
+name = "Brazales de cuero maligno"
+n = 26
+mats = [[8170, 8], [2325, 1], [14341, 1]]
+colors = [240, 260, 270, 280]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 240"
+learn_skill = 240
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/19052", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 265
+to = 281
+craft = 15086
+spell = 19071
+name = "Cinta de cuero maligno"
+n = 17
+mats = [[8170, 12], [2325, 1], [14341, 1]]
+colors = [255, 275, 285, 295]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 255"
+learn_skill = 255
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/19071", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 281
+to = 286
+craft = 15087
+spell = 19083
+name = "Pantalones de cuero maligno"
+n = 5
+mats = [[8170, 16], [15407, 1], [2325, 3], [14341, 1]]
+colors = [265, 285, 295, 305]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 265"
+learn_skill = 265
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/19083", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "leatherworking"
+from = 286
+to = 300
+craft = 15088
+spell = 19092
+name = "Cinturón de cuero maligno"
+n = 15
+mats = [[8170, 14], [2325, 2], [14341, 2]]
+colors = [275, 295, 305, 315]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 275"
+learn_skill = 275
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/19092", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]

@@ -1177,8 +1177,17 @@ class Site:
                     if tr:
                         lbl = f"{esc(tr[1])} · " if tr[1] else ""
                         bits.append(f'<li><span class="k">Instructor:</span> {lbl}{esc(tr[0])}</li>')
+                if x.get("train"):
+                    bits.append(f'<li><span class="k">Entrenar:</span> {esc(x["train"])}'
+                                f'{(" (nivel " + esc(x["level"]) + ")") if is_int(x.get("level")) and x["level"] > 1 else ""}</li>')
                 if x.get("src"):
                     bits.append(f'<li><span class="k">Receta:</span> {inline_md(x["src"])}</li>')
+                elif x.get("learn"):
+                    bits.append(f'<li><span class="k">Receta:</span> {inline_md(x["learn"])}</li>')
+                col = x.get("colors")
+                if isinstance(col, list) and len(col) == 4:
+                    bits.append(f'<li><span class="k">Colores:</span> naranja {esc(col[0])}, amarillo {esc(col[1])}, '
+                                f'verde {esc(col[2])}, gris {esc(col[3])}</li>')
                 if x.get("note"):
                     bits.append(f"<li>{inline_md(x['note'])}</li>")
                 items.append(f'<article class="card" id="{rid}"><h3><span class="lvl">{esc(rng)}</span> {esc(pname)} {item_badge(x)}</h3>'

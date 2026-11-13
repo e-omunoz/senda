@@ -528,7 +528,51 @@ def run_checks(ds: Dataset) -> Dataset:
                     if name == "route" and isinstance(item.get("trainer"), list):
                         _check_point(ds, kp.path, f"{name} #{i + 1}", item["trainer"], "trainer")
     _check_gear_weights(ds)
+    _check_professions(ds)
     return ds
+
+
+def _check_professions(ds: Dataset) -> None:
+    """Rutas de profesión (las generadas por tools/gen_professions.py llevan `prof`): tramos de fabricación sin huecos
+    ni solapes, que no cruzan un tope de rango (75/150/225), colores {aprende, amarillo, verde, gris} ordenados, la
+    receta aprendida antes de su tramo, `n` >= 1, y los pasos de rango (`train`) con un [[rank]] de ese nombre."""
+    for kp in ds.knowledge:
+        d = kp.data
+        if d.get("kind") != "professions" or not d.get("prof"):
+            continue
+        ranks = {r.get("name"): r for r in d.get("rank") or [] if isinstance(r, dict)}
+        segs = []
+        for i, s in enumerate(d.get("route") or []):
+            if not isinstance(s, dict):
+                continue
+            where = f"route #{i + 1}"
+            if s.get("train"):
+                if s["train"] not in ranks:
+                    ds.err(kp.path, where, f"train = \"{s['train']}\" sin [[rank]] de ese nombre")
+                continue
+            segs.append((where, s))
+            fr, to = s.get("from"), s.get("to")
+            if not (isinstance(fr, int) and isinstance(to, int)) or fr >= to:
+                ds.err(kp.path, where, f"tramo vacío o invertido {fr}-{to}")
+                continue
+            for cap in (75, 150, 225):
+                if fr < cap < to:
+                    ds.err(kp.path, where, f"el tramo {fr}-{to} cruza el tope {cap}: pártelo para entrenar el rango")
+            col = s.get("colors")
+            if col is not None:
+                if not (isinstance(col, list) and len(col) == 4 and all(isinstance(x, int) for x in col)
+                        and col[0] <= col[1] <= col[2] <= col[3]):
+                    ds.err(kp.path, where, f"colors debe ser [aprende, amarillo, verde, gris] ordenados: {col}")
+                elif col[0] > fr or fr >= col[3]:
+                    ds.err(kp.path, where, f"la receta no da puntos en {fr} (colores {col})")
+            if not isinstance(s.get("n"), int) or s["n"] < 1:
+                ds.err(kp.path, where, "n (fabricaciones esperadas) debe ser >= 1")
+            if not (s.get("craft") or s.get("craft_spell")):
+                ds.err(kp.path, where, "falta craft o craft_spell")
+        segs.sort(key=lambda w: w[1].get("from", 0))
+        for (_, a), (wb, b) in zip(segs, segs[1:]):
+            if a.get("to") != b.get("from"):
+                ds.err(kp.path, wb, f"hueco o solape entre {a.get('from')}-{a.get('to')} y {b.get('from')}-{b.get('to')}")
 
 
 def _check_gear_weights(ds: Dataset) -> None:

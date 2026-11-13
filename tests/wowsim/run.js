@@ -882,7 +882,7 @@ const scenarios = [
       local st = M.Professions.State("tailoring")
       Check(st.trainer ~= nil and st.trainer[1] == 1453, "tailoring trainer for a mage comes from [[trainer]] (Ventormenta)", st.trainer and table.concat(st.trainer, ", "))
       local ench = M.Professions.State("enchanting")
-      Check(ench.missing and ench.trainer == nil, "enchanting for a mage: no Apprentice trainer with coordinates -> no arrow",
+      Check(ench.missing and ench.trainer ~= nil and ench.trainer[1] == 1453, "enchanting for a human mage: Apprentice trainer in Ventormenta (forever-db coordinates)",
         ench.trainer and table.concat(ench.trainer, ", "))
 
       Section("gear: [[item]] list (Dónde buscar)")
@@ -2785,6 +2785,7 @@ scenarios.push(...require('./scenarios_rec').scenarios);
 scenarios.push(...require('./scenarios_nav').scenarios);
 scenarios.push(...require('./scenarios_travel').scenarios);
 scenarios.push(...require('./scenarios_rares').scenarios);
+scenarios.push(...require('./scenarios_prof').scenarios);
 
 // ---------------------------------------------------------------------------
 // Runner

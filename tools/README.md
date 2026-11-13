@@ -18,6 +18,7 @@ instalar nada con `pip`. Funciona igual en Windows y en Linux (CI). Los archivos
 | `import_names.py` (+ `localenames.py`) | Pasa a `data/locale/<idioma>/*.json` los nombres que el cliente dio con `/senda volcar` (lee `SendaNamesDB` del archivo de SavedVariables que se le pasa) e informa de los cambios de nombre entre parches; ver «Nombres del juego» abajo |
 | `route_score.py` (+ `routescore/`) | Filtro de eficiencia: puntúa cada misión de una ruta (`data/scores/`) |
 | `gen_travel.py` / `gen_dungeons.py` / `gen_rares.py` / `gen_lookup.py` | Generan `data/travel/`, `data/dungeons/`, `data/rares/` y `data/lookup/` desde Polestar, forever-db y tablas del cliente (ver `docs/TRAVEL.md`, `DUNGEONS.md`, `RARES.md`, `LOOKUP.md`) |
+| `fetch_wago.py` / `gen_professions.py` | Bajan a `.cache/wago` las tablas del cliente de Forever (build fijado) y calculan las rutas de profesión de `data/knowledge/general/professions-<prof>.toml` (ver `docs/PROFESSIONS.md`) |
 
 ## Atajos
 
@@ -207,6 +208,22 @@ python -m unittest discover -s tests -p "test_*.py" -v
 Genera `data/knowledge/<clase>/bis-forever.toml` (mejor pieza conocida por tramo y ranura) desde el `Forever.lua` de
 Polestar (ForeverLevelingBiS v0.12.0-beta, MIT) y los pesos de `weights.toml`:
 `python tools/gen_bis.py --polestar RUTA/polestar [--check]`. Detalle y fuentes: [docs/GEAR.md](../docs/GEAR.md).
+
+## fetch_wago.py y gen_professions.py
+
+`python tools/fetch_wago.py [--force] [--out DIR]` baja de wago.tools (CSV, `User-Agent: senda-build`) las tablas del
+cliente que hacen falta, con el build fijado en el propio script (Forever 1.60.1.70888; Classic Era 1.15.9.70576 solo
+para `SkillLineAbility`), a `.cache/wago` (ignorada; en un worktree usa la del checkout principal si existe, o
+`SENDA_WAGO`).
+
+`python tools/gen_professions.py [--polestar RUTA] [--wago DIR] [--foreverdb DIR]` escribe
+`data/knowledge/general/professions-{alchemy,blacksmithing,enchanting,engineering,leatherworking,tailoring,cooking,firstaid}.toml`
+y `professions-materials.toml` con la ruta de menor esfuerzo esperado (programación dinámica sobre la habilidad; modelo
+en `docs/PROFESSIONS.md`). Necesita las tablas, el clon de Polestar (`SENDA_POLESTAR`) y forever-db. `--check` no
+escribe y sale con 1 si algo cambiaría; sin fuentes avisa («sin fuentes, no se comprueba nada») y sale con 0, como los
+otros generadores. `--compare [--old DIR]` imprime la tabla Senda / Polestar / ruta anterior. Después,
+`python tools/build.py`. Tests: `tests/test_gen_professions.py` (la programación dinámica con datos sintéticos siempre;
+colores contra el CSV y determinismo si hay fuentes).
 
 ## ingest_recording.py y route_report.py
 

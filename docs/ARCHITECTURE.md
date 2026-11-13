@@ -485,5 +485,5 @@ Tipos estructurados (los usa el módulo correspondiente):
 - `talents`: `[[pick]] level, talent, tree, note`
 - `spells`: `[[train]] level, spells = [ids], note`
 - `macros`: `[[macro]] name, icon, minlevel, body, note`
-- `professions`: `[[route]] prof, from, to, craft (id), mats = [[id, n]], trainer = [map, x, y, "nombre"]`
+- `professions`: `[[route]] prof, from, to, craft (id) | craft_spell, spell, name, n, mats = [[id, n(, base, n)]], colors, learn, train`, `[[rank]]`, `[[trainer]] prof, npc, faction, ranks, at`; las de fabricación las genera `tools/gen_professions.py` ([PROFESSIONS.md](PROFESSIONS.md))
 - `rotation`: `[[phase]] from, to, text, spells = [ids]`
