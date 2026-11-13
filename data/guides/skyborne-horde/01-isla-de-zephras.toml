@@ -559,7 +559,6 @@ npc = 3153
 spells = [6673]
 at = [1411, 42.89, 69.44]
 if = { class = ["WARRIOR"] }
-reqlevel = 1
 text = "Entrena con {npc:3153}, el instructor de guerrero."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:6673}."
 status = "unverified"
@@ -573,7 +572,6 @@ npc = 3154
 spells = [1494]
 at = [1411, 42.84, 69.33]
 if = { class = ["HUNTER"] }
-reqlevel = 1
 text = "Entrena con {npc:3154}, el instructor de cazador."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1494}."
 status = "unverified"
@@ -587,7 +585,6 @@ npc = 3155
 spells = [1784]
 at = [1411, 41.28, 68.0]
 if = { class = ["ROGUE"] }
-reqlevel = 1
 text = "Entrena con {npc:3155}, el instructor de pícaro."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1784}."
 status = "unverified"
@@ -601,7 +598,6 @@ npc = 3706
 spells = [1243]
 at = [1411, 54.26, 42.93]
 if = { class = ["PRIEST"] }
-reqlevel = 1
 text = "Entrena con {npc:3706}, el instructor de sacerdote."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1243}."
 status = "unverified"
@@ -615,7 +611,6 @@ npc = 5880
 spells = [1459]
 at = [1411, 56.31, 75.11]
 if = { class = ["MAGE"] }
-reqlevel = 1
 text = "Entrena con {npc:5880}, el instructor de mago."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1459}."
 status = "unverified"
@@ -629,7 +624,6 @@ npc = 3156
 spells = [348]
 at = [1411, 40.65, 68.52]
 if = { class = ["WARLOCK"] }
-reqlevel = 1
 text = "Entrena con {npc:3156}, el instructor de brujo."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:348}."
 status = "unverified"
@@ -1058,6 +1052,7 @@ npc = 263664
 at = [2521, 41.66, 44.8]
 if = { prof = ["skinning"] }
 reqlevel = 4
+reqskill = [393, 1]
 text = "Coge «{quest:97971}» de {npc:263664}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#15"]
@@ -1071,6 +1066,7 @@ npc = 263664
 at = [2521, 41.66, 44.8]
 if = { prof = ["firstaid"] }
 reqlevel = 4
+reqskill = [129, 1]
 text = "Coge «{quest:97965}» de {npc:263664}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#16"]
@@ -1084,6 +1080,7 @@ npc = 263664
 at = [2521, 41.66, 44.8]
 if = { prof = ["leatherworking"] }
 reqlevel = 4
+reqskill = [165, 1]
 text = "Coge «{quest:97969}» de {npc:263664}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#17"]
@@ -1097,6 +1094,7 @@ npc = 263664
 at = [2521, 41.66, 44.8]
 if = { prof = ["mining"] }
 reqlevel = 4
+reqskill = [186, 1]
 text = "Coge «{quest:97970}» de {npc:263664}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#18"]
@@ -1110,6 +1108,7 @@ npc = 263664
 at = [2521, 41.66, 44.8]
 if = { prof = ["alchemy"] }
 reqlevel = 4
+reqskill = [171, 1]
 text = "Coge «{quest:97963}» de {npc:263664}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#19"]
@@ -1123,6 +1122,7 @@ npc = 263664
 at = [2521, 41.66, 44.8]
 if = { prof = ["blacksmithing"] }
 reqlevel = 4
+reqskill = [164, 1]
 text = "Coge «{quest:97964}» de {npc:263664}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#20"]
@@ -1136,6 +1136,7 @@ npc = 263664
 at = [2521, 41.66, 44.8]
 if = { prof = ["fishing"] }
 reqlevel = 4
+reqskill = [356, 1]
 text = "Coge «{quest:97967}» de {npc:263664}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/skyborne/01-zephras-isle#21"]

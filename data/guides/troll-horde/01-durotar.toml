@@ -126,7 +126,6 @@ npc = 3153
 spells = [6673]
 at = [1411, 42.89, 69.44]
 if = { class = ["WARRIOR"] }
-reqlevel = 1
 text = "Entrena con {npc:3153}, el instructor de guerrero."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:6673}."
 status = "unverified"
@@ -140,7 +139,6 @@ npc = 3154
 spells = [1494]
 at = [1411, 42.84, 69.33]
 if = { class = ["HUNTER"] }
-reqlevel = 1
 text = "Entrena con {npc:3154}, el instructor de cazador."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1494}."
 status = "unverified"
@@ -154,7 +152,6 @@ npc = 3155
 spells = [1784]
 at = [1411, 41.28, 68.0]
 if = { class = ["ROGUE"] }
-reqlevel = 1
 text = "Entrena con {npc:3155}, el instructor de pícaro."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1784}."
 status = "unverified"
@@ -168,7 +165,6 @@ npc = 3707
 spells = [1243]
 at = [1411, 42.36, 68.81]
 if = { class = ["PRIEST"] }
-reqlevel = 1
 text = "Entrena con {npc:3707}, el instructor de sacerdote."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1243}."
 status = "unverified"
@@ -182,7 +178,6 @@ npc = 5884
 spells = [1459]
 at = [1411, 42.51, 69.04]
 if = { class = ["MAGE"] }
-reqlevel = 1
 text = "Entrena con {npc:5884}, el instructor de mago."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1459}."
 status = "unverified"
@@ -196,7 +191,6 @@ npc = 3156
 spells = [348]
 at = [1411, 40.65, 68.52]
 if = { class = ["WARLOCK"] }
-reqlevel = 1
 text = "Entrena con {npc:3156}, el instructor de brujo."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:348}."
 status = "unverified"
@@ -890,6 +884,7 @@ at = [1411, 56.69, 73.74]
 if = { prof = ["enchanting"] }
 optional = true
 reqlevel = 5
+reqskill = [333, 1]
 text = "Coge «{quest:96873}» de {npc:266881}, solo encantadores; el residuo se obtiene desencantando colgantes embrujados."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/troll/01-durotar#20"]
@@ -1048,6 +1043,7 @@ npc = 265809
 at = [1411, 51.98, 47.27]
 if = { prof = ["mining"] }
 reqlevel = 4
+reqskill = [186, 1]
 text = "Coge «{quest:97907}» de {npc:265809}, para {npc:3175}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/troll/01-durotar#22"]
@@ -1061,6 +1057,7 @@ npc = 265809
 at = [1411, 51.98, 47.27]
 if = { prof = ["engineering"] }
 reqlevel = 4
+reqskill = [202, 1]
 text = "Coge «{quest:97902}» de {npc:265809}, para {npc:11025}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/troll/01-durotar#23"]
@@ -1074,6 +1071,7 @@ npc = 265809
 at = [1411, 51.98, 47.27]
 if = { prof = ["firstaid"] }
 reqlevel = 4
+reqskill = [129, 1]
 text = "Coge «{quest:97903}» de {npc:265809}, para {npc:5943}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/troll/01-durotar#24"]
@@ -1087,6 +1085,7 @@ npc = 265809
 at = [1411, 51.98, 47.27]
 if = { prof = ["skinning"] }
 reqlevel = 4
+reqskill = [393, 1]
 text = "Coge «{quest:97908}» de {npc:265809}, para {npc:7088}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/troll/01-durotar#25"]
@@ -1100,6 +1099,7 @@ npc = 265809
 at = [1411, 51.98, 47.27]
 if = { prof = ["leatherworking"] }
 reqlevel = 4
+reqskill = [165, 1]
 text = "Coge «{quest:97906}» de {npc:265809}, para {npc:3365}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/troll/01-durotar#26"]
@@ -1113,6 +1113,7 @@ npc = 265809
 at = [1411, 51.98, 47.27]
 if = { prof = ["tailoring"] }
 reqlevel = 4
+reqskill = [197, 1]
 text = "Coge «{quest:96102}» de {npc:265809}, para {npc:2855}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/troll/01-durotar#27"]
@@ -1126,6 +1127,7 @@ npc = 265809
 at = [1411, 51.98, 47.27]
 if = { prof = ["herbalism"] }
 reqlevel = 4
+reqskill = [182, 1]
 text = "Coge «{quest:97905}» de {npc:265809}, para {npc:3404}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/troll/01-durotar#28"]
@@ -1139,6 +1141,7 @@ npc = 265809
 at = [1411, 51.98, 47.27]
 if = { prof = ["enchanting"] }
 reqlevel = 4
+reqskill = [333, 1]
 text = "Coge «{quest:97901}» de {npc:265809}, para {npc:11066}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/troll/01-durotar#29"]
@@ -1152,6 +1155,7 @@ npc = 265809
 at = [1411, 51.98, 47.27]
 if = { prof = ["alchemy"] }
 reqlevel = 4
+reqskill = [171, 1]
 text = "Coge «{quest:97899}» de {npc:265809}, para {npc:11046}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/troll/01-durotar#30"]
@@ -2462,7 +2466,7 @@ npc = 3293
 at = [1411, 46.37, 22.94]
 optional = true
 chain = "trl-s061-3293"
-reqlevel = 6
+reqlevel = 7
 text = "Coge «{quest:97282}» de {npc:3293}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/troll/01-durotar#61"]
@@ -2575,7 +2579,7 @@ quest = 99049
 npc = 275657
 at = [1411, 58.6, 45.6]
 chain = "trl-s065-275657"
-reqlevel = 8
+reqlevel = 9
 text = "Coge «{quest:99049}» de {npc:275657}."
 why = "+875 XP · ~2,6 min · desbloquea «{quest:99052}» y 1 más"
 status = "unverified"
@@ -2729,7 +2733,7 @@ quest = 99051
 npc = 3142
 at = [1411, 52.24, 43.15]
 chain = "trl-s070-3142"
-reqlevel = 8
+reqlevel = 9
 text = "Coge «{quest:99051}» de {npc:3142}."
 why = "+875 XP · ~3,7 min · sin datos de botín: no se filtra"
 status = "unverified"

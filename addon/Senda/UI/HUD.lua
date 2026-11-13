@@ -95,10 +95,11 @@ function HUD:StepTip(step)
   return Names:Resolve(tip)
 end
 
--- Por qué toca este paso (xp, minutos, qué desbloquea), con fichas resueltas; nil si no hay o la opción está off.
-function HUD:StepWhy(step)
+-- Por qué toca este paso (xp, minutos, qué desbloquea), con fichas resueltas; nil si no hay. Sin `always`, también
+-- nil con la opción «hudWhy» apagada (la línea del HUD); la descripción del paso lo lleva siempre.
+function HUD:StepWhy(step, always)
   local why = step and step.why
-  if type(why) ~= "string" or why == "" or not Senda.Options:Get("hudWhy") then return nil end
+  if type(why) ~= "string" or why == "" or not (always or Senda.Options:Get("hudWhy")) then return nil end
   return Names:Resolve(why)
 end
 
@@ -540,6 +541,7 @@ function HUD:Refresh()
   local titleH = math.max(f.title:GetStringHeight(), 12)
   local textH = collapsed and 0 or (f.text:GetStringHeight() + 3)
   local whyText = (step and not collapsed and not problem) and self:StepWhy(step) or nil
+  local whyTip = (step and not problem) and self:StepWhy(step, true) or nil
   f.why:SetText(whyText or "")
   local whyH = whyText and (f.why:GetStringHeight() + 2) or 0
   y = y + math.max(28, titleH + textH + whyH) + 4
@@ -670,16 +672,16 @@ function HUD:Refresh()
   f.hit:SetHeight(math.max(28, titleH + textH + whyH))
   if #skipQs > 0 then
     self.hitTip = L.SKIP_MENU
-    self.hitBody = L.SKIP_HINT .. (whyText and (NL .. whyText) or "")
-  elseif whyText then
-    self.hitTip, self.hitBody = L.HUD_WHY_TITLE, whyText
+    self.hitBody = L.SKIP_HINT .. (whyTip and (NL .. whyTip) or "")
+  elseif whyTip then
+    self.hitTip, self.hitBody = L.HUD_WHY_TITLE, whyTip
   else
     self.hitTip, self.hitBody = nil, nil
   end
   if self.dungeonKey and not detour then
     self.hitTip = L.HUD_DUNGEON_TIP
     self.hitBody = L.HUD_DUNGEON_BODY .. (#skipQs > 0 and (NL .. L.SKIP_HINT) or "")
-      .. (whyText and (NL .. whyText) or "")
+      .. (whyTip and (NL .. whyTip) or "")
   end
 
   -- Aviso de misión saltada
@@ -1029,7 +1031,9 @@ Senda.Options:Register({ key = "hudLocked", label = L.OPT_HUD_LOCKED, type = "to
   section = SEC, order = 2 })
 Senda.Options:Register({ key = "hudPreview", label = L.OPT_HUD_PREVIEW, type = "toggle", default = true,
   section = SEC, order = 3, onChange = Apply })
-Senda.Options:Register({ key = "hudWhy", label = L.OPT_HUD_WHY, type = "toggle", default = true,
+-- Apagada por defecto: el HUD tiene un solo hueco de línea extra (raro > viaje > Aparte) y el motivo va siempre en
+-- la descripción del paso.
+Senda.Options:Register({ key = "hudWhy", label = L.OPT_HUD_WHY, tooltip = L.OPT_HUD_WHY_TIP, type = "toggle", default = false,
   section = SEC, order = 3.5, onChange = Apply })
 Senda.Options:Register({ key = "hudCombatHide", label = L.OPT_HUD_COMBAT, type = "toggle", default = false,
   section = SEC, order = 4, onChange = Apply })

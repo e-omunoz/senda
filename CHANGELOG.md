@@ -9,8 +9,9 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
   brujo gnomo, el mago humano y el druida elfo de la noche contra forever-db y sus correcciones (PNJ, quién da y
   recibe, coordenadas, raza y clase, requisitos, niveles, orden). Informe en [docs/AUDIT.md](docs/AUDIT.md).
 - forever-db se lee con sus correcciones (`corrections/*.json`) y las de Senda (`data/corrections/`).
-- **El HUD dice por qué toca cada paso:** una línea tenue bajo el texto del paso (por ejemplo «+3.144 XP · ~2,2 min ·
-  2,8× la media del tramo»). Opción «Mostrar por qué» (activada). También sale en el tooltip del paso (clic derecho).
+- **Por qué toca cada paso:** la descripción del paso (pasa el ratón por encima) dice la experiencia, el tiempo y lo que
+  desbloquea (por ejemplo «+3.144 XP · ~2,2 min · 2,8× la media del tramo»). Con la opción «Mostrar por qué bajo el
+  paso» (apagada por defecto, para no cargar el HUD) sale además en una línea tenue bajo el texto.
 - Pareja: «va por delante» ya no cuenta los pasos de misiones que alguno de los dos ha saltado (mensaje nuevo `2K`).
 - Prueba sin luacheck: `tests/test_lua_syntax.py` compila el Lua con luac/luajit si están, y si no usa un analizador
   léxico propio que comprueba bloques y cadenas.
@@ -50,6 +51,9 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
   misiones que se quedan y el motivo en las opcionales. Pasos de entrenamiento por clase con los hechizos del
   instructor de Forever. Ver docs/ROUTE-HORDE.md.
 - Ficha `{area:N}` en los textos: el cliente pone el nombre de la subzona («El Cruce», «Rémol»).
+- `tests/test_locale_keys.py`: cada cadena de `Core/Locale.lua` en español y en inglés, cada `L.CLAVE` del código
+  definida y ningún carácter que las fuentes del juego no tienen en el Lua escrito a mano.
+- [docs/TESTING-INGAME.md](docs/TESTING-INGAME.md): lista corta para probar la versión en el juego y cómo informar.
 
 ### Corregido
 - «Saltar esta misión» en un aviso como el de Lago Blackwrench (1717) saltaba toda la cadena del súcubo: los avisos
@@ -64,6 +68,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - Lago Blackwrench: el paso dice que está abajo, a ras del suelo de la Caverna Abandonada.
 - Tras subir al tranvía o al barco (un salto de más de 400 yardas) la flecha vuelve a pedir ruta a pie al momento, sin
   esperar los 20 s de reintento de la ruta que había fallado.
+- `tools/enrich.py` borraba el nivel de los pasos de entrenamiento de la Horda de las clases sin
+  `data/knowledge/<clase>/spells.toml` (guerrero, cazador, pícaro...): ahora lo toma del consejo del paso («hasta el
+  nivel 12»). Las guías de la Horda pasan `enrich --check` (niveles de QuestieDB y `reqskill` de las misiones de oficio).
+- La línea del buscador de objetos ya no escribe campos en `GameTooltip` (podía contaminarlo): usa una tabla aparte.
+- Métricas de la web: faltaba el tipo de nombre «Lugares» (`{area:N}` de la Horda) y la página no se generaba.
 
 ### Cambiado
 - La barra de pestañas del panel junta un poco los botones cuando hay muchas, para que siempre quepan.

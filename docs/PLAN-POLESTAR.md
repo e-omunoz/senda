@@ -181,7 +181,7 @@ de esas funciones hay una vía abierta o propia, con su forma de comprobar que c
 | Caminos reales | Malla real desde el terreno del cliente (Recast en Rust) con precálculo jerárquico; en el juego, A* sobre el grafo de sectores y detalle solo cerca (ver 6a) | Propia + GPL-3 (SPF, `forge-navbuild`) | Por continente, bajo demanda; objetivo < 26 MB cargados | Alto |
 | Planificador de viaje | Datos de vuelos, barcos, zepelines, tranvías y portales de Polestar (GPL-3, con el aviso de Shortest Path Forever), nodos conocidos con `C_TaxiMap`, Dijkstra con andar/volar/barco/piedra de hogar. Después, los regeneramos nosotros desde wago.tools, classic-db e InFlight | GPL-3 / MIT | ~70 KB | Medio |
 | Buscador de objetos | forever-db (objetos de misión) + ForeverLevelingBiS (MIT: botín de mazmorra y equipo de subida) + tablas del cliente para monturas y mascotas, en un addon aparte que se carga al usarlo | GPL-3 + MIT + datos del cliente | 0,3-0,5 MB | Medio |
-| Diario de mazmorras | El cliente de Forever no trae Diario de encuentros: misiones de cada mazmorra desde forever-db, niveles desde las tablas del cliente, entradas comprobadas, botín útil por clase desde ForeverLevelingBiS con los pesos de Senda. **Hecho** (rama `fase4-mazmorras`): pestaña «Mazmorras», ver [DUNGEONS.md](DUNGEONS.md) | GPL-3 + MIT | ~85 KB | Medio |
+| Diario de mazmorras | El cliente de Forever no trae Diario de encuentros: misiones de cada mazmorra desde forever-db, niveles desde las tablas del cliente, entradas comprobadas, botín útil por clase desde ForeverLevelingBiS con los pesos de Senda. **Hecho** (fase 4): pestaña «Mazmorras», ver [DUNGEONS.md](DUNGEONS.md) | GPL-3 + MIT | ~85 KB | Medio |
 | Alertas de raros | Detección por viñetas del minimapa (`C_VignetteInfo`, comprobado en el cliente de Forever), placas de nombre y objetivo; lista de 411 raros con sus apariciones desde forever-db | GPL-3 (lógica adaptada de Polestar) | ~25 KB | Bajo-medio |
 | Grupo y pareja | Protocolo propio por `C_ChatInfo.SendAddonMessage` inspirado en Polestar: saludo, progreso por misión con contadores, quién va por delante, pedir al compañero que salte a tu paso, esperar al compañero. Sin librerías | Propia | Pequeño | Medio |
 | Grabador | Ampliar el `Recorder` de Senda: pasos, XP, combate, ausencia, muertes y rastro de posición opcional, sin nombres. Herramientas que calculan el tiempo real de cada paso y lo comparan con el filtro de eficiencia; los rastros alimentan el grafo de caminos | Propia | — | Medio-alto |
@@ -266,10 +266,17 @@ pequeñas, textos, pruebas). Cada fase termina con el simulador en verde y una v
 | 1 | Importador + prototipo Teldrassil + funciones 1, 2, 3, 6 y 7 | 0.4.x |
 | 2 | Nombres desde el juego (fichas y volcado), filtro de eficiencia, grabador ampliado, las 3 guías actuales completas, seguimiento por objetivo, saltar con Deshacer, informe de errores, pareja sincronizada | 0.5.0 |
 | 3 | Todas las razas de Alianza, planificador de viaje, grafo de caminos, «Mientras estás aquí», alertas de raros | 0.6.0 |
-| 4 | Horda, diario de mazmorras, buscador de objetos (hecho en la rama `fase4-objetos`: línea en la descripción, `/senda objeto`, pestaña «Objetos», «Señalar» y nombres del juego; [LOOKUP.md](LOOKUP.md)), métricas en la web | 1.0.0 |
+| 4 | Horda, diario de mazmorras, buscador de objetos, métricas en la web | 1.0.0 |
 
-Fase 4, Horda: rama `fase4-horda`, [ROUTE-HORDE.md](ROUTE-HORDE.md) (cinco salidas de raza, ruta común 12-60,
-filtro de eficiencia con bandas propias, entrenamiento de clase de `data/knowledge/trainer`).
+Fase 4, **hecha y fusionada en `main`** (prueba en el juego pendiente: [TESTING-INGAME.md](TESTING-INGAME.md)):
+- Horda: [ROUTE-HORDE.md](ROUTE-HORDE.md) (cinco salidas de raza, ruta común 12-60, filtro de eficiencia con bandas
+  propias, entrenamiento de clase de `data/knowledge/trainer`). Sus archivos solo cargan para la Horda.
+- Diario de mazmorras: pestaña «Mazmorras», [DUNGEONS.md](DUNGEONS.md).
+- Buscador de objetos: línea en la descripción, `/senda objeto`, pestaña «Objetos», «Señalar» y nombres del juego;
+  addon bajo demanda `Senda_Lookup`, [LOOKUP.md](LOOKUP.md).
+- Métricas en la web: `tools/site_metrics.py` (página `metricas/`).
+- Pulido: el porqué de cada paso (en la descripción; la línea del HUD es opcional), pareja sin pasos saltados, ruta a
+  pie al bajar del tranvía o del barco, prueba de sintaxis Lua y de cadenas (`tests/test_locale_keys.py`).
 
 ## 9. Riesgos
 

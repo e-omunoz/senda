@@ -289,6 +289,7 @@ T = {
                   "uses the Polestar or Senda fallback. Lookup is from data/lookup/coverage.json."),
     "kind_quest": ("Misiones", "Quests"), "kind_npc": ("PNJ", "NPCs"), "kind_item": ("Objetos", "Items"),
     "kind_spell": ("Hechizos", "Spells"), "kind_map": ("Mapas", "Maps"), "kind_obj": ("Objetos del mundo", "World objects"),
+    "kind_area": ("Lugares", "Places"),
     "full_log": ("Historial completo", "Full history"),
     "log_note": ("El historial está escrito en español.", "The changelog is written in Spanish."),
 }

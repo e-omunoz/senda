@@ -2829,7 +2829,7 @@ const scenarios = [
   },
   {
     id: 'hudwhy',
-    title: 'HUD: the why line of a step (option on by default), its own block, no overlap, tooltip',
+    title: 'HUD: the why line of a step (option off by default, always in the tooltip), its own block, no overlap',
     char: 'gnome-warlock',
     lua: L_`
       Login()
@@ -2843,8 +2843,12 @@ const scenarios = [
       G:RegisterGuide({ id = "sim-why", title = "Por qué", sections = { "sim-why" }, order = -1 })
       E:SetGuide("sim-why", true)
       Sim.Advance(1)
-      Check(S().Options:Get("hudWhy") == true, "option on by default")
+      Check(S().Options:Get("hudWhy") == false, "option off by default")
       local f = SendaHUD
+      Check(not f.why:IsShown(), "no why line by default")
+      Check(HUD.hitTip ~= nil and Plain(HUD.hitBody or ""):find("3.144 XP", 1, true) ~= nil, "tooltip carries the why anyway", tostring(HUD.hitBody))
+      S().Options:Set("hudWhy", true)
+      Sim.Advance(1)
       local why = Plain(f.why:GetText() or "")
       Check(f.why:IsShown() and why:find("+3.144 XP · ~2,2 min", 1, true) ~= nil, "why line shown", why)
       Check(not why:find("{quest", 1, true), "tokens resolved", why)
@@ -2859,7 +2863,7 @@ const scenarios = [
       S().Options:Set("hudWhy", false)
       Sim.Advance(1)
       Check(not f.why:IsShown(), "hidden with the option off")
-      Check(not (HUD.hitBody or ""):find("3.144", 1, true), "tooltip without it too", tostring(HUD.hitBody))
+      Check(Plain(HUD.hitBody or ""):find("3.144", 1, true) ~= nil, "tooltip keeps it", tostring(HUD.hitBody))
       S().Options:Set("hudWhy", true)
       Section("step without why")
       E:Skip()

@@ -242,9 +242,12 @@ local function ItemIdOfTooltip(tt, data)
   end
 end
 
+-- Descripciones a rehacer cuando lleguen nombres. Tabla aparte (débil): escribir campos en GameTooltip lo contamina.
+local pendingTips = setmetatable({}, { __mode = "k" })
+
 local function OnTooltipItem(tt, data)
   if not tt or not tt.AddLine then return end
-  tt.sendaLookupPending = nil
+  pendingTips[tt] = nil
   if Opt("lookupTip") == false then return end
   local id = ItemIdOfTooltip(tt, data)
   if not id then return end
@@ -259,7 +262,7 @@ local function OnTooltipItem(tt, data)
   Names:EachToken(text, function(kind, tid)
     if not Names:Get(kind, tid) then pending = true end
   end)
-  tt.sendaLookupPending = pending or nil
+  pendingTips[tt] = pending or nil
   tt:AddLine(Names:Resolve(text), TIP_RGB[1], TIP_RGB[2], TIP_RGB[3], true)
 end
 Lookup.OnTooltipItem = OnTooltipItem
@@ -283,8 +286,8 @@ end
 -- Cuando llegan los nombres que faltaban, la descripción que se está viendo se rehace una vez.
 local function RefreshTooltips()
   for _, tt in ipairs({ GameTooltip, ItemRefTooltip }) do
-    if tt and tt.sendaLookupPending and tt.IsShown and tt:IsShown() then
-      tt.sendaLookupPending = nil
+    if tt and pendingTips[tt] and tt.IsShown and tt:IsShown() then
+      pendingTips[tt] = nil
       if tt.RefreshData then pcall(tt.RefreshData, tt) end
     end
   end

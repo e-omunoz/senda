@@ -279,7 +279,6 @@ npc = 2119
 spells = [6673]
 at = [1420, 32.69, 65.56]
 if = { class = ["WARRIOR"] }
-reqlevel = 1
 text = "Entrena con {npc:2119}, el instructor de guerrero."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:6673}."
 status = "unverified"
@@ -293,7 +292,6 @@ npc = 987
 spells = [1494]
 at = [1435, 47.26, 53.43]
 if = { class = ["HUNTER"] }
-reqlevel = 1
 text = "Entrena con {npc:987}, el instructor de cazador."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1494}."
 status = "unverified"
@@ -307,7 +305,6 @@ npc = 2122
 spells = [1784]
 at = [1420, 32.53, 65.65]
 if = { class = ["ROGUE"] }
-reqlevel = 1
 text = "Entrena con {npc:2122}, el instructor de pícaro."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1784}."
 status = "unverified"
@@ -321,7 +318,6 @@ npc = 2123
 spells = [1243]
 at = [1420, 31.11, 66.03]
 if = { class = ["PRIEST"] }
-reqlevel = 1
 text = "Entrena con {npc:2123}, el instructor de sacerdote."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1243}."
 status = "unverified"
@@ -335,7 +331,6 @@ npc = 2124
 spells = [1459]
 at = [1420, 30.93, 66.06]
 if = { class = ["MAGE"] }
-reqlevel = 1
 text = "Entrena con {npc:2124}, el instructor de mago."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1459}."
 status = "unverified"
@@ -349,7 +344,6 @@ npc = 2126
 spells = [348]
 at = [1420, 30.91, 66.34]
 if = { class = ["WARLOCK"] }
-reqlevel = 1
 text = "Entrena con {npc:2126}, el instructor de brujo."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:348}."
 status = "unverified"
@@ -981,6 +975,7 @@ npc = 265812
 at = [1420, 57.28, 55.49]
 if = { prof = ["firstaid"] }
 reqlevel = 4
+reqskill = [129, 1]
 text = "Coge «{quest:97955}» de {npc:265812}."
 tip = "Eleanor: para {npc:5759}."
 status = "unverified"
@@ -995,6 +990,7 @@ npc = 265812
 at = [1420, 57.28, 55.49]
 if = { prof = ["enchanting"] }
 reqlevel = 4
+reqskill = [333, 1]
 text = "Coge «{quest:97953}» de {npc:265812}."
 tip = "Eleanor: para {npc:5695}."
 status = "unverified"
@@ -1009,6 +1005,7 @@ npc = 265812
 at = [1420, 57.28, 55.49]
 if = { prof = ["herbalism"] }
 reqlevel = 4
+reqskill = [182, 1]
 text = "Coge «{quest:97957}» de {npc:265812}."
 tip = "Eleanor: para {npc:2114}."
 status = "unverified"
@@ -1023,6 +1020,7 @@ npc = 265812
 at = [1420, 57.28, 55.49]
 if = { prof = ["alchemy"] }
 reqlevel = 4
+reqskill = [171, 1]
 text = "Coge «{quest:97951}» de {npc:265812}."
 tip = "Eleanor: para {npc:2132}."
 status = "unverified"
@@ -1037,6 +1035,7 @@ npc = 265812
 at = [1420, 57.28, 55.49]
 if = { prof = ["skinning"] }
 reqlevel = 4
+reqskill = [393, 1]
 text = "Coge «{quest:97960}» de {npc:265812}."
 tip = "Eleanor: para {npc:6289}."
 status = "unverified"
@@ -1051,6 +1050,7 @@ npc = 265812
 at = [1420, 57.28, 55.49]
 if = { prof = ["leatherworking"] }
 reqlevel = 4
+reqskill = [165, 1]
 text = "Coge «{quest:97958}» de {npc:265812}."
 tip = "Eleanor: para {npc:3549}."
 status = "unverified"
@@ -1065,6 +1065,7 @@ npc = 265812
 at = [1420, 57.28, 55.49]
 if = { prof = ["tailoring"] }
 reqlevel = 4
+reqskill = [197, 1]
 text = "Coge «{quest:97961}» de {npc:265812}."
 tip = "Eleanor: para {npc:3523}."
 status = "unverified"
@@ -1079,6 +1080,7 @@ npc = 265812
 at = [1420, 57.28, 55.49]
 if = { prof = ["mining"] }
 reqlevel = 4
+reqskill = [186, 1]
 text = "Coge «{quest:97959}» de {npc:265812}."
 tip = "Eleanor: para {npc:4598}."
 status = "unverified"
@@ -1093,6 +1095,7 @@ npc = 265812
 at = [1420, 57.28, 55.49]
 if = { prof = ["blacksmithing"] }
 reqlevel = 4
+reqskill = [164, 1]
 text = "Coge «{quest:97952}» de {npc:265812}."
 tip = "Eleanor: para {npc:4605}."
 status = "unverified"
@@ -1107,6 +1110,7 @@ npc = 265812
 at = [1420, 57.28, 55.49]
 if = { prof = ["engineering"] }
 reqlevel = 4
+reqskill = [202, 1]
 text = "Coge «{quest:97954}» de {npc:265812}."
 tip = "Eleanor: para {npc:4586}."
 status = "unverified"
@@ -3096,7 +3100,7 @@ do = "accept"
 quest = 99152
 npc = 246389
 at = [1420, 21.96, 47.25]
-reqlevel = 10
+reqlevel = 7
 text = "Coge «{quest:99152}» de {npc:246389}."
 why = "+900 XP · ~6 min · sin datos de botín: no se filtra"
 status = "unverified"
@@ -3109,7 +3113,7 @@ do = "accept"
 quest = 99153
 npc = 259190
 at = [1420, 20.17, 46.49]
-reqlevel = 10
+reqlevel = 7
 text = "Coge «{quest:99153}» de {npc:259190}."
 why = "+900 XP · ~3 min"
 status = "unverified"

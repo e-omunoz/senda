@@ -225,7 +225,6 @@ npc = 3059
 spells = [6673]
 at = [1412, 43.75, 76.72]
 if = { class = ["WARRIOR"] }
-reqlevel = 1
 text = "Entrena con {npc:3059}, el instructor de guerrero."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:6673}."
 status = "unverified"
@@ -239,7 +238,6 @@ npc = 3061
 spells = [1494]
 at = [1412, 43.96, 76.35]
 if = { class = ["HUNTER"] }
-reqlevel = 1
 text = "Entrena con {npc:3061}, el instructor de cazador."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1494}."
 status = "unverified"
@@ -253,7 +251,6 @@ npc = 3155
 spells = [1784]
 at = [1411, 41.28, 68.0]
 if = { class = ["ROGUE"] }
-reqlevel = 1
 text = "Entrena con {npc:3155}, el instructor de pícaro."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1784}."
 status = "unverified"
@@ -267,7 +264,6 @@ npc = 3045
 spells = [1243]
 at = [1456, 24.56, 22.57]
 if = { class = ["PRIEST"] }
-reqlevel = 1
 text = "Entrena con {npc:3045}, el instructor de sacerdote."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1243}."
 status = "unverified"
@@ -281,7 +277,6 @@ npc = 3049
 spells = [1459]
 at = [1456, 25.18, 20.96]
 if = { class = ["MAGE"] }
-reqlevel = 1
 text = "Entrena con {npc:3049}, el instructor de mago."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:1459}."
 status = "unverified"
@@ -295,7 +290,6 @@ npc = 3156
 spells = [348]
 at = [1411, 40.65, 68.52]
 if = { class = ["WARLOCK"] }
-reqlevel = 1
 text = "Entrena con {npc:3156}, el instructor de brujo."
 tip = "1 hechizo hasta el nivel 1: nuevos {spell:348}."
 status = "unverified"
@@ -743,6 +737,7 @@ npc = 265810
 at = [1412, 46.16, 67.3]
 if = { prof = ["skinning"] }
 reqlevel = 4
+reqskill = [393, 1]
 text = "Coge «{quest:97936}» de {npc:265810}, para {npc:6290}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/tauren/01-mulgore#16"]
@@ -756,6 +751,7 @@ npc = 265810
 at = [1412, 46.16, 67.3]
 if = { prof = ["leatherworking"] }
 reqlevel = 4
+reqskill = [165, 1]
 text = "Coge «{quest:97934}» de {npc:265810}, para {npc:3069}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/tauren/01-mulgore#17"]
@@ -769,6 +765,7 @@ npc = 265810
 at = [1412, 46.16, 67.3]
 if = { prof = ["firstaid"] }
 reqlevel = 4
+reqskill = [129, 1]
 text = "Coge «{quest:97931}» de {npc:265810}, para {npc:5939}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/tauren/01-mulgore#18"]
@@ -782,6 +779,7 @@ npc = 265810
 at = [1412, 46.16, 67.3]
 if = { prof = ["fishing"] }
 reqlevel = 4
+reqskill = [356, 1]
 text = "Coge «{quest:97932}» de {npc:265810}, para {npc:5938}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/tauren/01-mulgore#19"]
@@ -795,6 +793,7 @@ npc = 265810
 at = [1412, 46.16, 67.3]
 if = { prof = ["herbalism"] }
 reqlevel = 4
+reqskill = [182, 1]
 text = "Coge «{quest:97933}» de {npc:265810}, para {npc:3013}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/tauren/01-mulgore#20"]
@@ -808,6 +807,7 @@ npc = 265810
 at = [1412, 46.16, 67.3]
 if = { prof = ["mining"] }
 reqlevel = 4
+reqskill = [186, 1]
 text = "Coge «{quest:97935}» de {npc:265810}, para {npc:3001}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/tauren/01-mulgore#21"]
@@ -821,6 +821,7 @@ npc = 265810
 at = [1412, 46.16, 67.3]
 if = { prof = ["alchemy"] }
 reqlevel = 4
+reqskill = [171, 1]
 text = "Coge «{quest:97927}» de {npc:265810}, para {npc:11047}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/tauren/01-mulgore#22"]
@@ -834,6 +835,7 @@ npc = 265810
 at = [1412, 46.16, 67.3]
 if = { prof = ["blacksmithing"] }
 reqlevel = 4
+reqskill = [164, 1]
 text = "Coge «{quest:97928}» de {npc:265810}, para {npc:10278}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/tauren/01-mulgore#23"]
@@ -847,6 +849,7 @@ npc = 265810
 at = [1412, 46.16, 67.3]
 if = { prof = ["enchanting"] }
 reqlevel = 4
+reqskill = [333, 1]
 text = "Coge «{quest:97929}» de {npc:265810}, para {npc:11071}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/tauren/01-mulgore#24"]
@@ -860,6 +863,7 @@ npc = 265810
 at = [1412, 46.16, 67.3]
 if = { prof = ["tailoring"] }
 reqlevel = 4
+reqskill = [197, 1]
 text = "Coge «{quest:97937}» de {npc:265810}, para {npc:11051}."
 status = "unverified"
 sources = ["polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798/forever/horde/tauren/01-mulgore#25"]

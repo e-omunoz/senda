@@ -45,6 +45,10 @@ SPELLS_RE = re.compile(r"^spells\s*=\s*\[([^\]]*)\]")
 CLASS_RE = re.compile(r'class\s*=\s*\[\s*"([A-Z]+)"')
 MINLEVEL_RE = re.compile(r"minlevel\s*=\s*(\d+)")
 TEXT_RE = re.compile(r'^text\s*=\s*"(.*)"')
+TIP_RE = re.compile(r'^tip\s*=\s*"(.*)"')
+# «3 hechizos hasta el nivel 12: ...» (pasos de entrenamiento generados por tools/gen_horde.py, para las clases sin
+# data/knowledge/<clase>/spells.toml).
+TIP_LEVEL_RE = re.compile(r"hasta el nivel (\d{1,2})")
 TEXT_LEVEL_RE = re.compile(r"(?:lo del|[Nn]ivel|[Ee]ntrena el|[Ee]ntrena del|[Aa]l)\s+(\d{1,2})")
 
 CLASS_DIR = {"WARLOCK": "warlock", "MAGE": "mage", "DRUID": "druid", "WARRIOR": "warrior", "PALADIN": "paladin",
@@ -96,6 +100,10 @@ def train_level(block: list[str], cls: str | None, levels: dict[str, dict[int, i
                 nums = [int(n) for n in TEXT_LEVEL_RE.findall(m.group(1)) if 2 <= int(n) <= 60]
                 if nums:
                     found.append(max(nums))
+    if not found:
+        for l in block:
+            if (m := TIP_RE.match(l)):
+                found += [int(n) for n in TIP_LEVEL_RE.findall(m.group(1)) if 2 <= int(n) <= 60]
     lvl = max(found) if found else None
     return lvl if lvl and lvl > 1 else None
 

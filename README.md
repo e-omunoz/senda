@@ -54,6 +54,7 @@ QuestieDB local + lo grabado en partida ──► verificador ──┘
 
 - [Arquitectura](docs/ARCHITECTURE.md)
 - [Verificación](docs/VERIFICATION.md)
+- [Prueba en el juego (lista para el jugador)](docs/TESTING-INGAME.md)
 - [Harness de IA](docs/HARNESS.md)
 - [Datos de WoW Forever](docs/FOREVER.md)
 
