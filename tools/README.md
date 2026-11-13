@@ -22,6 +22,7 @@ instalar nada con `pip`. Funciona igual en Windows y en Linux (CI). Los archivos
 | `gen_travel.py` / `gen_dungeons.py` / `gen_rares.py` / `gen_lookup.py` | Generan `data/travel/`, `data/dungeons/`, `data/rares/` y `data/lookup/` desde Polestar, forever-db y tablas del cliente (ver `docs/TRAVEL.md`, `DUNGEONS.md`, `RARES.md`, `LOOKUP.md`) |
 | `gen_dungeon_journal.py` | Genera `data/dungeons/journal.json` (botín de mazmorra con estadísticas, jefes y piedras de encuentro) desde ForeverLevelingBiS (MIT, vía Polestar) y forever-db: `python tools/gen_dungeon_journal.py --polestar RUTA/polestar [--check]` (ver `docs/DUNGEONS.md`) |
 | `fetch_wago.py` / `gen_professions.py` | Bajan a `.cache/wago` las tablas del cliente de Forever (build fijado) y calculan las rutas de profesión de `data/knowledge/general/professions-<prof>.toml` (ver `docs/PROFESSIONS.md`) |
+| `gen_gathering.py` / `fetch_wago.py` | `gen_gathering.py` genera las rutas de Herboristería, Minería, Desuello y Pesca y `gathering-route.toml` (docs/PROFESSIONS.md, «Recolección»); `fetch_wago.py` baja a `.cache/wago` las tablas del cliente de Forever con la build fijada |
 
 ## Atajos
 

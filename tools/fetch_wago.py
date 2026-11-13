@@ -14,6 +14,9 @@ Uso:
     python tools/fetch_wago.py              # descarga lo que falte
     python tools/fetch_wago.py --force      # vuelve a descargar todo
     python tools/fetch_wago.py --out DIR    # otra carpeta (por defecto la de wago_dir())
+    python tools/fetch_wago.py --check      # solo dice cuáles faltan (código 2 si falta alguna)
+
+Las usan tools/gen_professions.py (fabricación) y tools/gen_gathering.py (recolección: Lock e ItemSparse_esES).
 """
 from __future__ import annotations
 
@@ -124,8 +127,14 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--out", help="carpeta de destino (por defecto .cache/wago)")
     ap.add_argument("--force", action="store_true", help="vuelve a descargar aunque ya estén")
+    ap.add_argument("--check", action="store_true", help="no descarga: dice cuáles faltan (código 2 si falta alguna)")
     a = ap.parse_args(argv)
     out = wago_dir(a.out)
+    if a.check:
+        falta = missing(out)
+        for f in falta:
+            print(f"falta {f}")
+        return 2 if falta else 0
     print(f"wago.tools -> {out} (Forever {BUILD}, Classic Era {ERA_BUILD})")
     return fetch(out, a.force)
 

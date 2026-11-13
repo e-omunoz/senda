@@ -671,6 +671,7 @@ function P.Refresh()
     table.insert(nodes, { t = "sp" })
     table.insert(nodes, { t = "p", text = "|cffaaaaaa" .. (L.MOD_OPEN_BANK or "Abre el banco una vez para que Senda cuente lo que guardas.") .. "|r", raw = true })
   end
+  if P.ExtraNodes then P.ExtraNodes(nodes, level) end -- Modules/Gathering.lua: recolección en tu ruta
   ui.doc:Set(nodes, true)
 end
 

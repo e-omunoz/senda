@@ -1,0 +1,3480 @@
+# En qué zona de tu guía recolectas (GENERADO por tools/gen_gathering.py: no editar).
+# [[stop]]: guide, section, levels, maps = mapas de la sección con zonas de recolección (los que más pasos tienen).
+# Modules/Gathering.lua cruza esto con los nodos de cada zona ([[zone]] de professions-*.toml) y tu habilidad.
+id = "general-gathering-route"
+class = "ANY"
+kind = "gathering_route"
+title = "Recolección en tu ruta"
+order = 219
+status = "unverified"
+sources = ["senda:data/guides", "foreverdb:ui_map", "polestar:19bd636e/node-abundance"]
+checked = "2026-11-13"
+note = "Calculado a partir de los pasos de cada sección (el mapa de cada paso con coordenadas)."
+
+[[stop]]
+guide = "gnome-warlock"
+section = "coldridge"
+levels = [1, 6]
+maps = [1426]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "dun-morogh"
+levels = [6, 12]
+maps = [1426]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-voidwalker"
+levels = [10, 12]
+maps = [1429]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a12-loch-modan"
+levels = [12, 16]
+maps = [1432, 1426]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a17-paramos-de-poniente"
+levels = [16, 19]
+maps = [1436]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a19-crestagrana"
+levels = [19, 21]
+maps = [1433]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a21-minas-de-la-muerte"
+levels = [20, 22]
+maps = [1436]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-succubus"
+levels = [20, 24]
+maps = [1413, 1440]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a22-bosque-del-ocaso"
+levels = [22, 26]
+maps = [1431]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a26-los-humedales"
+levels = [26, 30]
+maps = [1437, 1432]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a30-stv-norte"
+levels = [30, 34]
+maps = [1434]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-felhunter"
+levels = [30, 34]
+maps = [1413]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a34-desolace"
+levels = [34, 38]
+maps = [1443]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a38-valle-de-huesos"
+levels = [38, 40]
+maps = [1443]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a40-ciudad"
+levels = [40, 40]
+maps = [1429]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-felsteed"
+levels = [40, 40]
+maps = [1413]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a40-monasterio"
+levels = [40, 41]
+maps = [1424]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a41-riverglades"
+levels = [41, 44]
+maps = [1433]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a44-badlands"
+levels = [44, 45]
+maps = [1418]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a45-feralas"
+levels = [45, 47]
+maps = [1444]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a47-tanaris"
+levels = [47, 48]
+maps = [1446]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a48-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a49-hinterlands"
+levels = [49, 50]
+maps = [1425]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a50-ungoro"
+levels = [50, 52]
+maps = [1449, 1446]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a52-felwood"
+levels = [52, 54]
+maps = [1448]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-inferno"
+levels = [50, 55]
+maps = [1448]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a54-winterspring"
+levels = [54, 56]
+maps = [1452]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a55-burning-steppes"
+levels = [55, 57]
+maps = [1428, 1433]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a57-western-plaguelands"
+levels = [57, 58]
+maps = [1422]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a58-eastern-plaguelands"
+levels = [58, 60]
+maps = [1423]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a60-endgame"
+levels = [60, 60]
+maps = [1428]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-endgame"
+levels = [60, 60]
+maps = [1419]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-dun-morogh"
+levels = [1, 14]
+maps = [1426, 1432, 1429]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-westfall"
+levels = [11, 17]
+maps = [1436, 1429]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-darkshore"
+levels = [15, 19]
+maps = [1439]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-loch-modan"
+levels = [17, 21]
+maps = [1433, 1432, 1436]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-darkshore-return"
+levels = [21, 23]
+maps = [1439]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-ashenvale"
+levels = [22, 25]
+maps = [1440, 1437, 1442]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-redridge-mountains"
+levels = [25, 27]
+maps = [1431, 1433, 1429]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-duskwood"
+levels = [27, 28]
+maps = [1431, 1429]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-wetlands"
+levels = [27, 30]
+maps = [1437, 1440, 1439]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-thousand-needles"
+levels = [29, 31]
+maps = [1431]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-hillsbrad-foothills"
+levels = [30, 33]
+maps = [1424, 1437, 1416]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-ashenvale-11"
+levels = [32, 33]
+maps = [1441, 1437, 1445]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-stranglethorn-vale"
+levels = [33, 35]
+maps = [1434, 1440]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-desolace"
+levels = [35, 36]
+maps = [1443]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-stranglethorn-vale-14"
+levels = [35, 36]
+maps = [1434]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-arathi-highlands"
+levels = [36, 38]
+maps = [1417, 1424, 1435]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-badlands"
+levels = [38, 39]
+maps = [1418, 1443, 1432]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-stranglethorn-vale-17"
+levels = [40, 43]
+maps = [1434, 1445, 1435]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-badlands-18"
+levels = [43, 43]
+maps = [1425, 1418, 1445]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-feralas"
+levels = [43, 45]
+maps = [1444]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-tanaris"
+levels = [45, 47]
+maps = [1446, 1425, 1441]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-the-hinterlands"
+levels = [47, 48]
+maps = [1419, 1434, 1425]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-un-goro-crater"
+levels = [49, 50]
+maps = [1449, 1446, 1447]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-burning-steppes"
+levels = [50, 53]
+maps = [1428, 1447, 1422]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-felwood"
+levels = [53, 53]
+maps = [1448]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-winterspring"
+levels = [53, 56]
+maps = [1452, 1423, 1422]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-western-plaguelands"
+levels = [56, 58]
+maps = [1422, 1449, 1451]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-silithus"
+levels = [58, 58]
+maps = [1423, 1413]
+
+[[stop]]
+guide = "gnome-warlock-ps"
+section = "gw-silithus-29"
+levels = [58, 60]
+maps = [1448, 1451, 1452]
+
+[[stop]]
+guide = "human-mage"
+section = "hmage-northshire"
+levels = [1, 6]
+maps = [1429]
+
+[[stop]]
+guide = "human-mage"
+section = "hmage-elwynn"
+levels = [6, 12]
+maps = [1429]
+
+[[stop]]
+guide = "human-mage"
+section = "a12-loch-modan"
+levels = [12, 16]
+maps = [1432, 1426]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-16-rift-gem"
+levels = [16, 17]
+maps = [1432]
+
+[[stop]]
+guide = "human-mage"
+section = "a17-paramos-de-poniente"
+levels = [16, 19]
+maps = [1436]
+
+[[stop]]
+guide = "human-mage"
+section = "a19-crestagrana"
+levels = [19, 21]
+maps = [1433]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-20-library"
+levels = [20, 22]
+maps = [1429]
+
+[[stop]]
+guide = "human-mage"
+section = "a21-minas-de-la-muerte"
+levels = [20, 22]
+maps = [1436]
+
+[[stop]]
+guide = "human-mage"
+section = "a22-bosque-del-ocaso"
+levels = [22, 26]
+maps = [1431]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-27-ur-treatise"
+levels = [27, 28]
+maps = [1433]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-29-spider-silk"
+levels = [29, 30]
+maps = [1431]
+
+[[stop]]
+guide = "human-mage"
+section = "a26-los-humedales"
+levels = [26, 30]
+maps = [1437, 1432]
+
+[[stop]]
+guide = "human-mage"
+section = "a30-stv-norte"
+levels = [30, 34]
+maps = [1434]
+
+[[stop]]
+guide = "human-mage"
+section = "a34-desolace"
+levels = [34, 38]
+maps = [1443]
+
+[[stop]]
+guide = "human-mage"
+section = "a38-valle-de-huesos"
+levels = [38, 40]
+maps = [1443]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-38-tabetha"
+levels = [38, 40]
+maps = [1445]
+
+[[stop]]
+guide = "human-mage"
+section = "a40-ciudad"
+levels = [40, 40]
+maps = [1429]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-40-train"
+levels = [40, 41]
+maps = [1429]
+
+[[stop]]
+guide = "human-mage"
+section = "a40-monasterio"
+levels = [40, 41]
+maps = [1424]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-40-needles"
+levels = [40, 41]
+maps = [1441]
+
+[[stop]]
+guide = "human-mage"
+section = "a41-riverglades"
+levels = [41, 44]
+maps = [1433]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-42-wand"
+levels = [40, 44]
+maps = [1445]
+
+[[stop]]
+guide = "human-mage"
+section = "a44-badlands"
+levels = [44, 45]
+maps = [1418]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-45-celestial"
+levels = [44, 46]
+maps = [1445]
+
+[[stop]]
+guide = "human-mage"
+section = "a45-feralas"
+levels = [45, 47]
+maps = [1444]
+
+[[stop]]
+guide = "human-mage"
+section = "a47-tanaris"
+levels = [47, 48]
+maps = [1446]
+
+[[stop]]
+guide = "human-mage"
+section = "a48-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "human-mage"
+section = "a49-hinterlands"
+levels = [49, 50]
+maps = [1425]
+
+[[stop]]
+guide = "human-mage"
+section = "a50-ungoro"
+levels = [50, 52]
+maps = [1449, 1446]
+
+[[stop]]
+guide = "human-mage"
+section = "a52-felwood"
+levels = [52, 54]
+maps = [1448]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-52-azshara"
+levels = [52, 55]
+maps = [1447]
+
+[[stop]]
+guide = "human-mage"
+section = "a54-winterspring"
+levels = [54, 56]
+maps = [1452]
+
+[[stop]]
+guide = "human-mage"
+section = "a55-burning-steppes"
+levels = [55, 57]
+maps = [1428, 1433]
+
+[[stop]]
+guide = "human-mage"
+section = "a57-western-plaguelands"
+levels = [57, 58]
+maps = [1422]
+
+[[stop]]
+guide = "human-mage"
+section = "a58-eastern-plaguelands"
+levels = [58, 60]
+maps = [1423]
+
+[[stop]]
+guide = "human-mage"
+section = "a60-endgame"
+levels = [60, 60]
+maps = [1428]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-60-krellian"
+levels = [60, 60]
+maps = [1447]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-elwynn-forest"
+levels = [1, 11]
+maps = [1429]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-westfall"
+levels = [11, 17]
+maps = [1436]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-darkshore"
+levels = [15, 19]
+maps = [1439]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-loch-modan"
+levels = [17, 21]
+maps = [1433, 1432, 1436]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-darkshore-return"
+levels = [21, 23]
+maps = [1439]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-ashenvale"
+levels = [22, 25]
+maps = [1440, 1437, 1442]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-redridge-mountains"
+levels = [25, 27]
+maps = [1431, 1433, 1429]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-duskwood"
+levels = [27, 28]
+maps = [1431, 1429]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-wetlands"
+levels = [27, 30]
+maps = [1437, 1440, 1439]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-thousand-needles"
+levels = [29, 31]
+maps = [1431]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-hillsbrad-foothills"
+levels = [30, 33]
+maps = [1424, 1437, 1416]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-ashenvale-11"
+levels = [32, 33]
+maps = [1441, 1437, 1445]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-stranglethorn-vale"
+levels = [33, 35]
+maps = [1434]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-desolace"
+levels = [35, 36]
+maps = [1443]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-stranglethorn-vale-14"
+levels = [35, 36]
+maps = [1434]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-arathi-highlands"
+levels = [36, 38]
+maps = [1417, 1424, 1435]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-badlands"
+levels = [38, 39]
+maps = [1418, 1443, 1432]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-stranglethorn-vale-17"
+levels = [40, 43]
+maps = [1434, 1445, 1435]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-badlands-18"
+levels = [43, 43]
+maps = [1425, 1418, 1445]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-feralas"
+levels = [43, 45]
+maps = [1444]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-tanaris"
+levels = [45, 47]
+maps = [1446, 1425, 1441]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-the-hinterlands"
+levels = [47, 48]
+maps = [1419, 1434, 1425]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-un-goro-crater"
+levels = [49, 50]
+maps = [1449, 1446, 1432]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-burning-steppes"
+levels = [50, 53]
+maps = [1447, 1428, 1422]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-felwood"
+levels = [53, 53]
+maps = [1448]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-winterspring"
+levels = [53, 56]
+maps = [1452, 1423, 1422]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-western-plaguelands"
+levels = [56, 58]
+maps = [1422, 1449, 1451]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-silithus"
+levels = [58, 58]
+maps = [1423, 1413]
+
+[[stop]]
+guide = "human-mage-ps"
+section = "hm-silithus-29"
+levels = [58, 60]
+maps = [1448, 1451, 1452]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "ne-shadowglen"
+levels = [1, 6]
+maps = [1438]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "ne-teldrassil"
+levels = [6, 12]
+maps = [1438]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-10-bear"
+levels = [10, 11]
+maps = [1438]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-11-lunaclaw"
+levels = [11, 12]
+maps = [1439]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "ne-darkshore"
+levels = [12, 20]
+maps = [1439]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-14-poison"
+levels = [14, 16]
+maps = [1439]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-16-aquatic"
+levels = [16, 17]
+maps = [1439]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "ne-viaje-reinos-del-este"
+levels = [20, 20]
+maps = [1429]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-18-sea-lion"
+levels = [17, 19]
+maps = [1436]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a19-crestagrana"
+levels = [19, 21]
+maps = [1433]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a22-bosque-del-ocaso"
+levels = [22, 26]
+maps = [1431]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a26-los-humedales"
+levels = [26, 30]
+maps = [1437, 1432]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a30-stv-norte"
+levels = [30, 34]
+maps = [1434]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a34-desolace"
+levels = [34, 38]
+maps = [1443]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a38-valle-de-huesos"
+levels = [38, 40]
+maps = [1443]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a40-ciudad"
+levels = [40, 40]
+maps = [1429]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a40-monasterio"
+levels = [40, 41]
+maps = [1424]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a41-riverglades"
+levels = [41, 44]
+maps = [1433]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a44-badlands"
+levels = [44, 45]
+maps = [1418]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a45-feralas"
+levels = [45, 47]
+maps = [1444]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a47-tanaris"
+levels = [47, 48]
+maps = [1446]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a48-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a49-hinterlands"
+levels = [49, 50]
+maps = [1425]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a50-ungoro"
+levels = [50, 52]
+maps = [1449, 1446]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-52-torwa"
+levels = [50, 54]
+maps = [1449]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a52-felwood"
+levels = [52, 54]
+maps = [1448]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a54-winterspring"
+levels = [54, 56]
+maps = [1452]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a55-burning-steppes"
+levels = [55, 57]
+maps = [1428, 1433]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a57-western-plaguelands"
+levels = [57, 58]
+maps = [1422]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a58-eastern-plaguelands"
+levels = [58, 60]
+maps = [1423]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a60-endgame"
+levels = [60, 60]
+maps = [1428]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-60-endgame"
+levels = [60, 60]
+maps = [1434]
+
+[[stop]]
+guide = "nightelf-druid-ps"
+section = "ps-teldrassil"
+levels = [1, 12]
+maps = [1438, 1439]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-teldrassil"
+levels = [1, 12]
+maps = [1438, 1439]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-darkshore"
+levels = [12, 14]
+maps = [1439, 1429]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-westfall"
+levels = [11, 17]
+maps = [1436]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-darkshore-3"
+levels = [15, 19]
+maps = [1439]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-loch-modan"
+levels = [17, 21]
+maps = [1433, 1432, 1436]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-darkshore-return"
+levels = [21, 23]
+maps = [1439]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-ashenvale"
+levels = [22, 25]
+maps = [1440, 1437, 1442]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-redridge-mountains"
+levels = [25, 27]
+maps = [1431, 1433, 1429]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-duskwood"
+levels = [27, 28]
+maps = [1431]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-wetlands"
+levels = [27, 30]
+maps = [1437, 1440, 1439]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-thousand-needles"
+levels = [29, 31]
+maps = [1431]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-hillsbrad-foothills"
+levels = [30, 33]
+maps = [1424, 1437, 1416]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-ashenvale-12"
+levels = [32, 33]
+maps = [1441, 1437, 1445]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-stranglethorn-vale"
+levels = [33, 35]
+maps = [1434]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-desolace"
+levels = [35, 36]
+maps = [1443]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-stranglethorn-vale-15"
+levels = [35, 36]
+maps = [1434]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-arathi-highlands"
+levels = [36, 38]
+maps = [1417, 1424, 1435]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-badlands"
+levels = [38, 39]
+maps = [1418, 1443, 1432]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-stranglethorn-vale-18"
+levels = [40, 43]
+maps = [1434, 1445, 1435]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-badlands-19"
+levels = [43, 43]
+maps = [1425, 1418, 1445]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-feralas"
+levels = [43, 45]
+maps = [1444]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-tanaris"
+levels = [45, 47]
+maps = [1446, 1425, 1441]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-the-hinterlands"
+levels = [47, 48]
+maps = [1419, 1434, 1425]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-un-goro-crater"
+levels = [49, 50]
+maps = [1449, 1446, 1447]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-burning-steppes"
+levels = [50, 53]
+maps = [1428, 1447, 1422]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-felwood"
+levels = [53, 53]
+maps = [1448]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-winterspring"
+levels = [53, 56]
+maps = [1452, 1423, 1422]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-western-plaguelands"
+levels = [56, 58]
+maps = [1422, 1449, 1451]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-silithus"
+levels = [58, 58]
+maps = [1423, 1413]
+
+[[stop]]
+guide = "nightelf-druid-ps-full"
+section = "nd-silithus-30"
+levels = [58, 60]
+maps = [1448, 1451, 1452]
+
+[[stop]]
+guide = "orc-horde"
+section = "orc-durotar"
+levels = [1, 12]
+maps = [1411, 1413]
+
+[[stop]]
+guide = "orc-horde"
+section = "h12-argenteos"
+levels = [12, 15]
+maps = [1421, 1420]
+
+[[stop]]
+guide = "orc-horde"
+section = "h14-los-baldios"
+levels = [14, 21]
+maps = [1413, 1442, 1411]
+
+[[stop]]
+guide = "orc-horde"
+section = "h21-vallefresno-argenteos"
+levels = [21, 23]
+maps = [1440, 1421, 1413]
+
+[[stop]]
+guide = "orc-horde"
+section = "h22-trabalomas"
+levels = [22, 25]
+maps = [1424, 1421]
+
+[[stop]]
+guide = "orc-horde"
+section = "h24-baldios-espolon"
+levels = [24, 26]
+maps = [1413, 1442, 1441]
+
+[[stop]]
+guide = "orc-horde"
+section = "h26-vallefresno-mil-agujas"
+levels = [26, 30]
+maps = [1441, 1440, 1412]
+
+[[stop]]
+guide = "orc-horde"
+section = "h29-trabalomas-arathi"
+levels = [29, 33]
+maps = [1424, 1417, 1416]
+
+[[stop]]
+guide = "orc-horde"
+section = "h32-mil-agujas-desolace"
+levels = [32, 34]
+maps = [1443, 1441, 1413]
+
+[[stop]]
+guide = "orc-horde"
+section = "h34-tuercespina"
+levels = [34, 36]
+maps = [1434, 1413]
+
+[[stop]]
+guide = "orc-horde"
+section = "h36-revolcafango-desolace"
+levels = [36, 38]
+maps = [1445, 1443, 1413]
+
+[[stop]]
+guide = "orc-horde"
+section = "h38-alterac-arathi"
+levels = [38, 39]
+maps = [1417, 1416, 1424]
+
+[[stop]]
+guide = "orc-horde"
+section = "h39-tierras-inhospitas"
+levels = [39, 40]
+maps = [1418]
+
+[[stop]]
+guide = "orc-horde"
+section = "h40-tuercespina-penas"
+levels = [39, 43]
+maps = [1434, 1435, 1431]
+
+[[stop]]
+guide = "orc-horde"
+section = "h43-feralas-tanaris"
+levels = [43, 45]
+maps = [1444, 1446, 1441]
+
+[[stop]]
+guide = "orc-horde"
+section = "h45-feralas-revolcafango"
+levels = [45, 47]
+maps = [1445, 1435, 1444]
+
+[[stop]]
+guide = "orc-horde"
+section = "h46-tanaris-garganta"
+levels = [46, 48]
+maps = [1446, 1427, 1444]
+
+[[stop]]
+guide = "orc-horde"
+section = "h48-interior-devastadas"
+levels = [48, 50]
+maps = [1425, 1419, 1435]
+
+[[stop]]
+guide = "orc-horde"
+section = "h50-azshara-feralas"
+levels = [50, 51]
+maps = [1447, 1434, 1444]
+
+[[stop]]
+guide = "orc-horde"
+section = "h51-ungoro-estepas"
+levels = [51, 53]
+maps = [1449, 1428, 1446]
+
+[[stop]]
+guide = "orc-horde"
+section = "h53-frondavil-peste-oeste"
+levels = [53, 55]
+maps = [1448, 1422, 1420]
+
+[[stop]]
+guide = "orc-horde"
+section = "h55-cuna-del-invierno"
+levels = [55, 56]
+maps = [1452, 1444, 1443]
+
+[[stop]]
+guide = "orc-horde"
+section = "h56-azshara-baldios"
+levels = [56, 56]
+maps = [1447, 1422, 1413]
+
+[[stop]]
+guide = "orc-horde"
+section = "h56-peste-del-este"
+levels = [56, 57]
+maps = [1423, 1422, 1446]
+
+[[stop]]
+guide = "orc-horde"
+section = "h57-silithus-pestes"
+levels = [57, 59]
+maps = [1451, 1422, 1449]
+
+[[stop]]
+guide = "orc-horde"
+section = "h59-frondavil-claro"
+levels = [59, 60]
+maps = [1448, 1452, 1420]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-00-dun-morogh"
+levels = [1, 14]
+maps = [1426, 1432, 1429]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-01-westfall"
+levels = [11, 17]
+maps = [1436, 1429]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-02-darkshore"
+levels = [15, 19]
+maps = [1439]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-03-loch-modan"
+levels = [17, 21]
+maps = [1433, 1432, 1436]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-04-darkshore-return"
+levels = [21, 23]
+maps = [1439]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-05-ashenvale"
+levels = [22, 25]
+maps = [1440, 1437, 1442]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-06-redridge-mountains"
+levels = [25, 27]
+maps = [1431, 1433, 1429]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-07-duskwood"
+levels = [27, 28]
+maps = [1431, 1436, 1429]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-08-wetlands"
+levels = [27, 30]
+maps = [1437, 1440, 1439]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-09-thousand-needles"
+levels = [29, 31]
+maps = [1431]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-10-hillsbrad-foothills"
+levels = [30, 33]
+maps = [1424, 1437, 1416]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-11-ashenvale"
+levels = [32, 33]
+maps = [1441, 1437, 1445]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-12-stranglethorn-vale"
+levels = [33, 35]
+maps = [1434, 1440]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-13-desolace"
+levels = [35, 36]
+maps = [1443]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-14-stranglethorn-vale"
+levels = [35, 36]
+maps = [1434]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-15-arathi-highlands"
+levels = [36, 38]
+maps = [1417, 1424, 1435]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-16-badlands"
+levels = [38, 39]
+maps = [1418, 1443, 1432]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-17-stranglethorn-vale"
+levels = [40, 43]
+maps = [1434, 1445, 1413]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-18-badlands"
+levels = [43, 43]
+maps = [1425, 1418, 1445]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-19-feralas"
+levels = [43, 45]
+maps = [1444]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-20-tanaris"
+levels = [45, 47]
+maps = [1446, 1425, 1441]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-21-the-hinterlands"
+levels = [47, 48]
+maps = [1419, 1434, 1425]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-22-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-23-un-goro-crater"
+levels = [49, 50]
+maps = [1449, 1446, 1432]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-24-burning-steppes"
+levels = [50, 53]
+maps = [1447, 1428, 1422]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-25-felwood"
+levels = [53, 53]
+maps = [1448]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-26-winterspring"
+levels = [53, 56]
+maps = [1452, 1423, 1422]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-27-western-plaguelands"
+levels = [56, 58]
+maps = [1422, 1449, 1451]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-28-silithus"
+levels = [58, 58]
+maps = [1423, 1413]
+
+[[stop]]
+guide = "ps-alliance-dwarf"
+section = "adw-29-silithus"
+levels = [58, 60]
+maps = [1448, 1451, 1452]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-00-dun-morogh"
+levels = [1, 14]
+maps = [1426, 1432, 1429]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-01-westfall"
+levels = [11, 17]
+maps = [1436, 1429]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-02-darkshore"
+levels = [15, 19]
+maps = [1439]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-03-loch-modan"
+levels = [17, 21]
+maps = [1433, 1432, 1436]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-04-darkshore-return"
+levels = [21, 23]
+maps = [1439]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-05-ashenvale"
+levels = [22, 25]
+maps = [1440, 1437, 1442]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-06-redridge-mountains"
+levels = [25, 27]
+maps = [1431, 1433, 1429]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-07-duskwood"
+levels = [27, 28]
+maps = [1431, 1436, 1429]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-08-wetlands"
+levels = [27, 30]
+maps = [1437, 1440, 1439]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-09-thousand-needles"
+levels = [29, 31]
+maps = [1431]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-10-hillsbrad-foothills"
+levels = [30, 33]
+maps = [1424, 1437, 1416]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-11-ashenvale"
+levels = [32, 33]
+maps = [1441, 1437, 1445]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-12-stranglethorn-vale"
+levels = [33, 35]
+maps = [1434, 1440]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-13-desolace"
+levels = [35, 36]
+maps = [1443]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-14-stranglethorn-vale"
+levels = [35, 36]
+maps = [1434]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-15-arathi-highlands"
+levels = [36, 38]
+maps = [1417, 1424, 1435]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-16-badlands"
+levels = [38, 39]
+maps = [1418, 1443, 1432]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-17-stranglethorn-vale"
+levels = [40, 43]
+maps = [1434, 1445, 1413]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-18-badlands"
+levels = [43, 43]
+maps = [1425, 1418, 1445]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-19-feralas"
+levels = [43, 45]
+maps = [1444]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-20-tanaris"
+levels = [45, 47]
+maps = [1446, 1425, 1441]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-21-the-hinterlands"
+levels = [47, 48]
+maps = [1419, 1434, 1425]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-22-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-23-un-goro-crater"
+levels = [49, 50]
+maps = [1449, 1446, 1432]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-24-burning-steppes"
+levels = [50, 53]
+maps = [1447, 1428, 1422]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-25-felwood"
+levels = [53, 53]
+maps = [1448]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-26-winterspring"
+levels = [53, 56]
+maps = [1452, 1423, 1422]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-27-western-plaguelands"
+levels = [56, 58]
+maps = [1422, 1449, 1451]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-28-silithus"
+levels = [58, 58]
+maps = [1423, 1413]
+
+[[stop]]
+guide = "ps-alliance-gnome"
+section = "agn-29-silithus"
+levels = [58, 60]
+maps = [1448, 1451, 1452]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-00-elwynn-forest"
+levels = [1, 11]
+maps = [1429]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-01-westfall"
+levels = [11, 17]
+maps = [1436]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-02-darkshore"
+levels = [15, 19]
+maps = [1439]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-03-loch-modan"
+levels = [17, 21]
+maps = [1433, 1432, 1436]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-04-darkshore-return"
+levels = [21, 23]
+maps = [1439]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-05-ashenvale"
+levels = [22, 25]
+maps = [1440, 1437, 1442]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-06-redridge-mountains"
+levels = [25, 27]
+maps = [1431, 1433, 1429]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-07-duskwood"
+levels = [27, 28]
+maps = [1431, 1436, 1429]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-08-wetlands"
+levels = [27, 30]
+maps = [1437, 1440, 1439]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-09-thousand-needles"
+levels = [29, 31]
+maps = [1431]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-10-hillsbrad-foothills"
+levels = [30, 33]
+maps = [1424, 1437, 1416]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-11-ashenvale"
+levels = [32, 33]
+maps = [1441, 1437, 1445]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-12-stranglethorn-vale"
+levels = [33, 35]
+maps = [1434, 1440]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-13-desolace"
+levels = [35, 36]
+maps = [1443]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-14-stranglethorn-vale"
+levels = [35, 36]
+maps = [1434]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-15-arathi-highlands"
+levels = [36, 38]
+maps = [1417, 1424, 1435]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-16-badlands"
+levels = [38, 39]
+maps = [1418, 1443, 1432]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-17-stranglethorn-vale"
+levels = [40, 43]
+maps = [1434, 1445, 1435]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-18-badlands"
+levels = [43, 43]
+maps = [1425, 1418, 1445]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-19-feralas"
+levels = [43, 45]
+maps = [1444]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-20-tanaris"
+levels = [45, 47]
+maps = [1446, 1425, 1441]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-21-the-hinterlands"
+levels = [47, 48]
+maps = [1419, 1434, 1425]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-22-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-23-un-goro-crater"
+levels = [49, 50]
+maps = [1449, 1446, 1432]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-24-burning-steppes"
+levels = [50, 53]
+maps = [1447, 1428, 1422]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-25-felwood"
+levels = [53, 53]
+maps = [1448]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-26-winterspring"
+levels = [53, 56]
+maps = [1452, 1423, 1422]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-27-western-plaguelands"
+levels = [56, 58]
+maps = [1422, 1449, 1451]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-28-silithus"
+levels = [58, 58]
+maps = [1423, 1413]
+
+[[stop]]
+guide = "ps-alliance-human"
+section = "ahu-29-silithus"
+levels = [58, 60]
+maps = [1448, 1451, 1452]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-00-teldrassil"
+levels = [1, 12]
+maps = [1438, 1439]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-01-darkshore"
+levels = [12, 14]
+maps = [1439, 1429]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-02-westfall"
+levels = [11, 17]
+maps = [1436]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-03-darkshore"
+levels = [15, 19]
+maps = [1439]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-04-loch-modan"
+levels = [17, 21]
+maps = [1433, 1432, 1436]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-05-darkshore-return"
+levels = [21, 23]
+maps = [1439]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-06-ashenvale"
+levels = [22, 25]
+maps = [1440, 1437, 1442]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-07-redridge-mountains"
+levels = [25, 27]
+maps = [1431, 1433, 1429]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-08-duskwood"
+levels = [27, 28]
+maps = [1431, 1436, 1429]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-09-wetlands"
+levels = [27, 30]
+maps = [1437, 1440, 1439]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-10-thousand-needles"
+levels = [29, 31]
+maps = [1431]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-11-hillsbrad-foothills"
+levels = [30, 33]
+maps = [1424, 1437, 1416]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-12-ashenvale"
+levels = [32, 33]
+maps = [1441, 1437, 1445]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-13-stranglethorn-vale"
+levels = [33, 35]
+maps = [1434, 1440]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-14-desolace"
+levels = [35, 36]
+maps = [1443]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-15-stranglethorn-vale"
+levels = [35, 36]
+maps = [1434]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-16-arathi-highlands"
+levels = [36, 38]
+maps = [1417, 1424, 1435]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-17-badlands"
+levels = [38, 39]
+maps = [1418, 1443, 1432]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-18-stranglethorn-vale"
+levels = [40, 43]
+maps = [1434, 1445, 1413]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-19-badlands"
+levels = [43, 43]
+maps = [1425, 1418, 1445]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-20-feralas"
+levels = [43, 45]
+maps = [1444]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-21-tanaris"
+levels = [45, 47]
+maps = [1446, 1425, 1441]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-22-the-hinterlands"
+levels = [47, 48]
+maps = [1419, 1434, 1425]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-23-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-24-un-goro-crater"
+levels = [49, 50]
+maps = [1449, 1446, 1432]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-25-burning-steppes"
+levels = [50, 53]
+maps = [1447, 1428, 1422]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-26-felwood"
+levels = [53, 53]
+maps = [1448]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-27-winterspring"
+levels = [53, 56]
+maps = [1452, 1423, 1422]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-28-western-plaguelands"
+levels = [56, 58]
+maps = [1422, 1449, 1451]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-29-silithus"
+levels = [58, 58]
+maps = [1423, 1413]
+
+[[stop]]
+guide = "ps-alliance-nightelf"
+section = "ane-30-silithus"
+levels = [58, 60]
+maps = [1448, 1451, 1452]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-00-zephras-isle"
+levels = [1, 14]
+maps = [2521, 1426, 1416]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-01-westfall"
+levels = [11, 17]
+maps = [1436]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-02-darkshore"
+levels = [15, 19]
+maps = [1439]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-03-loch-modan"
+levels = [17, 21]
+maps = [1433, 1432, 1436]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-04-darkshore-return"
+levels = [21, 23]
+maps = [1439]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-05-ashenvale"
+levels = [22, 25]
+maps = [1440, 1437, 1442]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-06-redridge-mountains"
+levels = [25, 27]
+maps = [1431, 1433, 1429]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-07-duskwood"
+levels = [27, 28]
+maps = [1431, 1436, 1429]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-08-wetlands"
+levels = [27, 30]
+maps = [1437, 1440, 1439]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-09-thousand-needles"
+levels = [29, 31]
+maps = [1431]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-10-hillsbrad-foothills"
+levels = [30, 33]
+maps = [1424, 1437, 1416]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-11-ashenvale"
+levels = [32, 33]
+maps = [1441, 1437, 1445]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-12-stranglethorn-vale"
+levels = [33, 35]
+maps = [1434, 1440]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-13-desolace"
+levels = [35, 36]
+maps = [1443]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-14-stranglethorn-vale"
+levels = [35, 36]
+maps = [1434]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-15-arathi-highlands"
+levels = [36, 38]
+maps = [1417, 1424, 1435]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-16-badlands"
+levels = [38, 39]
+maps = [1418, 1443, 1432]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-17-stranglethorn-vale"
+levels = [40, 43]
+maps = [1434, 1445, 1413]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-18-badlands"
+levels = [43, 43]
+maps = [1425, 1418, 1445]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-19-feralas"
+levels = [43, 45]
+maps = [1444]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-20-tanaris"
+levels = [45, 47]
+maps = [1446, 1425, 1441]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-21-the-hinterlands"
+levels = [47, 48]
+maps = [1419, 1434, 1425]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-22-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-23-un-goro-crater"
+levels = [49, 50]
+maps = [1449, 1446, 1432]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-24-burning-steppes"
+levels = [50, 53]
+maps = [1447, 1428, 1422]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-25-felwood"
+levels = [53, 53]
+maps = [1448]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-26-winterspring"
+levels = [53, 56]
+maps = [1452, 1423, 1422]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-27-western-plaguelands"
+levels = [56, 58]
+maps = [1422, 1449, 1451]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-28-silithus"
+levels = [58, 58]
+maps = [1423, 1413]
+
+[[stop]]
+guide = "ps-alliance-skyborne"
+section = "asb-29-silithus"
+levels = [58, 60]
+maps = [1448, 1451, 1452]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc00-durotar"
+levels = [1, 12]
+maps = [1411, 1413]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc01-silverpine-forest"
+levels = [12, 15]
+maps = [1421, 1420]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc02-the-barrens"
+levels = [14, 21]
+maps = [1413, 1442, 1411]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc03-stonetalon-mountains"
+levels = [21, 23]
+maps = [1440, 1421, 1413]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc04-hillsbrad-foothills"
+levels = [22, 25]
+maps = [1424, 1421]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc05-the-barrens"
+levels = [24, 26]
+maps = [1413, 1442, 1441]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc06-ashenvale"
+levels = [26, 30]
+maps = [1441, 1440, 1412]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc07-hillsbrad-foothills"
+levels = [29, 33]
+maps = [1424, 1417, 1416]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc08-thousand-needles"
+levels = [32, 34]
+maps = [1443, 1441, 1413]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc09-stranglethorn-vale"
+levels = [34, 36]
+maps = [1434, 1413]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc10-dustwallow-marsh"
+levels = [36, 38]
+maps = [1445, 1443, 1413]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc11-arathi-highlands"
+levels = [38, 39]
+maps = [1417, 1416, 1424]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc12-badlands"
+levels = [39, 40]
+maps = [1418]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc13-stranglethorn-vale"
+levels = [39, 43]
+maps = [1434, 1435, 1431]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc14-feralas"
+levels = [43, 45]
+maps = [1444, 1446, 1441]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc15-feralas"
+levels = [45, 47]
+maps = [1445, 1435, 1444]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc16-tanaris"
+levels = [46, 48]
+maps = [1446, 1427, 1444]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc17-the-hinterlands"
+levels = [48, 50]
+maps = [1425, 1419, 1435]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc18-azshara"
+levels = [50, 51]
+maps = [1447, 1434, 1444]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc19-un-goro-crater"
+levels = [51, 53]
+maps = [1449, 1428, 1418]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc20-felwood"
+levels = [53, 55]
+maps = [1448, 1422, 1420]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc21-winterspring"
+levels = [55, 56]
+maps = [1452, 1444, 1443]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc22-azshara"
+levels = [56, 56]
+maps = [1447, 1422, 1413]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc23-eastern-plaguelands"
+levels = [56, 57]
+maps = [1423, 1422, 1446]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc24-silithus"
+levels = [57, 59]
+maps = [1451, 1422, 1423]
+
+[[stop]]
+guide = "ps-horde-orc"
+section = "orc25-felwood"
+levels = [59, 60]
+maps = [1448, 1452, 1420]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau00-mulgore"
+levels = [1, 12]
+maps = [1412, 1413, 1411]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau01-silverpine-forest"
+levels = [12, 15]
+maps = [1421, 1420]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau02-the-barrens"
+levels = [14, 21]
+maps = [1413, 1442, 1411]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau03-stonetalon-mountains"
+levels = [21, 23]
+maps = [1440, 1421, 1413]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau04-hillsbrad-foothills"
+levels = [22, 25]
+maps = [1424, 1421]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau05-the-barrens"
+levels = [24, 26]
+maps = [1413, 1442, 1441]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau06-ashenvale"
+levels = [26, 30]
+maps = [1441, 1440, 1412]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau07-hillsbrad-foothills"
+levels = [29, 33]
+maps = [1424, 1417, 1416]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau08-thousand-needles"
+levels = [32, 34]
+maps = [1443, 1441, 1413]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau09-stranglethorn-vale"
+levels = [34, 36]
+maps = [1434, 1413]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau10-dustwallow-marsh"
+levels = [36, 38]
+maps = [1445, 1443, 1413]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau11-arathi-highlands"
+levels = [38, 39]
+maps = [1417, 1416, 1424]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau12-badlands"
+levels = [39, 40]
+maps = [1418]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau13-stranglethorn-vale"
+levels = [39, 43]
+maps = [1434, 1435, 1431]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau14-feralas"
+levels = [43, 45]
+maps = [1444, 1446, 1441]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau15-feralas"
+levels = [45, 47]
+maps = [1445, 1435, 1444]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau16-tanaris"
+levels = [46, 48]
+maps = [1446, 1427, 1444]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau17-the-hinterlands"
+levels = [48, 50]
+maps = [1425, 1419, 1435]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau18-azshara"
+levels = [50, 51]
+maps = [1447, 1434, 1444]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau19-un-goro-crater"
+levels = [51, 53]
+maps = [1449, 1428, 1418]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau20-felwood"
+levels = [53, 55]
+maps = [1448, 1422, 1420]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau21-winterspring"
+levels = [55, 56]
+maps = [1452, 1444, 1443]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau22-azshara"
+levels = [56, 56]
+maps = [1447, 1422, 1413]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau23-eastern-plaguelands"
+levels = [56, 57]
+maps = [1423, 1422, 1446]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau24-silithus"
+levels = [57, 59]
+maps = [1451, 1422, 1423]
+
+[[stop]]
+guide = "ps-horde-tauren"
+section = "tau25-felwood"
+levels = [59, 60]
+maps = [1448, 1452, 1420]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl00-durotar"
+levels = [1, 12]
+maps = [1411, 1413]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl01-silverpine-forest"
+levels = [12, 15]
+maps = [1421, 1420]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl02-the-barrens"
+levels = [14, 21]
+maps = [1413, 1442, 1411]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl03-stonetalon-mountains"
+levels = [21, 23]
+maps = [1440, 1421, 1413]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl04-hillsbrad-foothills"
+levels = [22, 25]
+maps = [1424, 1421]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl05-the-barrens"
+levels = [24, 26]
+maps = [1413, 1442, 1441]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl06-ashenvale"
+levels = [26, 30]
+maps = [1441, 1440, 1412]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl07-hillsbrad-foothills"
+levels = [29, 33]
+maps = [1424, 1417, 1416]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl08-thousand-needles"
+levels = [32, 34]
+maps = [1443, 1441, 1413]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl09-stranglethorn-vale"
+levels = [34, 36]
+maps = [1434, 1413]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl10-dustwallow-marsh"
+levels = [36, 38]
+maps = [1445, 1443, 1413]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl11-arathi-highlands"
+levels = [38, 39]
+maps = [1417, 1416, 1424]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl12-badlands"
+levels = [39, 40]
+maps = [1418]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl13-stranglethorn-vale"
+levels = [39, 43]
+maps = [1434, 1435, 1431]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl14-feralas"
+levels = [43, 45]
+maps = [1444, 1446, 1441]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl15-feralas"
+levels = [45, 47]
+maps = [1445, 1435, 1444]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl16-tanaris"
+levels = [46, 48]
+maps = [1446, 1427, 1444]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl17-the-hinterlands"
+levels = [48, 50]
+maps = [1425, 1419, 1435]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl18-azshara"
+levels = [50, 51]
+maps = [1447, 1434, 1444]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl19-un-goro-crater"
+levels = [51, 53]
+maps = [1449, 1428, 1418]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl20-felwood"
+levels = [53, 55]
+maps = [1448, 1422, 1420]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl21-winterspring"
+levels = [55, 56]
+maps = [1452, 1444, 1443]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl22-azshara"
+levels = [56, 56]
+maps = [1447, 1422, 1413]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl23-eastern-plaguelands"
+levels = [56, 57]
+maps = [1423, 1422, 1446]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl24-silithus"
+levels = [57, 59]
+maps = [1451, 1422, 1423]
+
+[[stop]]
+guide = "ps-horde-troll"
+section = "trl25-felwood"
+levels = [59, 60]
+maps = [1448, 1452, 1420]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und00-tirisfal-glades"
+levels = [1, 13]
+maps = [1420]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und01-silverpine-forest"
+levels = [12, 15]
+maps = [1421, 1420]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und02-the-barrens"
+levels = [14, 21]
+maps = [1413, 1442]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und03-stonetalon-mountains"
+levels = [21, 23]
+maps = [1440, 1421, 1413]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und04-hillsbrad-foothills"
+levels = [22, 25]
+maps = [1424, 1421]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und05-the-barrens"
+levels = [24, 26]
+maps = [1413, 1442, 1441]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und06-ashenvale"
+levels = [26, 30]
+maps = [1441, 1440, 1412]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und07-hillsbrad-foothills"
+levels = [29, 33]
+maps = [1424, 1417, 1416]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und08-thousand-needles"
+levels = [32, 34]
+maps = [1443, 1441, 1413]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und09-stranglethorn-vale"
+levels = [34, 36]
+maps = [1434, 1413]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und10-dustwallow-marsh"
+levels = [36, 38]
+maps = [1445, 1443, 1413]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und11-arathi-highlands"
+levels = [38, 39]
+maps = [1417, 1416, 1424]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und12-badlands"
+levels = [39, 40]
+maps = [1418]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und13-stranglethorn-vale"
+levels = [39, 43]
+maps = [1434, 1435, 1431]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und14-feralas"
+levels = [43, 45]
+maps = [1444, 1446, 1441]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und15-feralas"
+levels = [45, 47]
+maps = [1445, 1435, 1444]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und16-tanaris"
+levels = [46, 48]
+maps = [1446, 1427, 1444]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und17-the-hinterlands"
+levels = [48, 50]
+maps = [1425, 1419, 1435]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und18-azshara"
+levels = [50, 51]
+maps = [1447, 1434, 1444]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und19-un-goro-crater"
+levels = [51, 53]
+maps = [1449, 1428, 1418]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und20-felwood"
+levels = [53, 55]
+maps = [1448, 1422, 1420]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und21-winterspring"
+levels = [55, 56]
+maps = [1452, 1444, 1443]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und22-azshara"
+levels = [56, 56]
+maps = [1447, 1422, 1413]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und23-eastern-plaguelands"
+levels = [56, 57]
+maps = [1423, 1422, 1446]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und24-silithus"
+levels = [57, 59]
+maps = [1451, 1422, 1423]
+
+[[stop]]
+guide = "ps-horde-undead"
+section = "und25-felwood"
+levels = [59, 60]
+maps = [1448, 1452, 1420]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "sky-isla-de-zephras"
+levels = [1, 14]
+maps = [2521, 1411, 1412]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h12-argenteos"
+levels = [12, 15]
+maps = [1421, 1420]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h14-los-baldios"
+levels = [14, 21]
+maps = [1413, 1442, 1411]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h21-vallefresno-argenteos"
+levels = [21, 23]
+maps = [1440, 1421, 1413]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h22-trabalomas"
+levels = [22, 25]
+maps = [1424, 1421]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h24-baldios-espolon"
+levels = [24, 26]
+maps = [1413, 1442, 1441]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h26-vallefresno-mil-agujas"
+levels = [26, 30]
+maps = [1441, 1440, 1412]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h29-trabalomas-arathi"
+levels = [29, 33]
+maps = [1424, 1417, 1416]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h32-mil-agujas-desolace"
+levels = [32, 34]
+maps = [1443, 1441, 1413]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h34-tuercespina"
+levels = [34, 36]
+maps = [1434, 1413]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h36-revolcafango-desolace"
+levels = [36, 38]
+maps = [1445, 1443, 1413]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h38-alterac-arathi"
+levels = [38, 39]
+maps = [1417, 1416, 1424]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h39-tierras-inhospitas"
+levels = [39, 40]
+maps = [1418]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h40-tuercespina-penas"
+levels = [39, 43]
+maps = [1434, 1435, 1431]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h43-feralas-tanaris"
+levels = [43, 45]
+maps = [1444, 1446, 1441]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h45-feralas-revolcafango"
+levels = [45, 47]
+maps = [1445, 1435, 1444]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h46-tanaris-garganta"
+levels = [46, 48]
+maps = [1446, 1427, 1444]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h48-interior-devastadas"
+levels = [48, 50]
+maps = [1425, 1419, 1435]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h50-azshara-feralas"
+levels = [50, 51]
+maps = [1447, 1434, 1444]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h51-ungoro-estepas"
+levels = [51, 53]
+maps = [1449, 1428, 1446]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h53-frondavil-peste-oeste"
+levels = [53, 55]
+maps = [1448, 1422, 1420]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h55-cuna-del-invierno"
+levels = [55, 56]
+maps = [1452, 1444, 1443]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h56-azshara-baldios"
+levels = [56, 56]
+maps = [1447, 1422, 1413]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h56-peste-del-este"
+levels = [56, 57]
+maps = [1423, 1422, 1446]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h57-silithus-pestes"
+levels = [57, 59]
+maps = [1451, 1422, 1449]
+
+[[stop]]
+guide = "skyborne-horde"
+section = "h59-frondavil-claro"
+levels = [59, 60]
+maps = [1448, 1452, 1420]
+
+[[stop]]
+guide = "tauren-horde"
+section = "tau-mulgore"
+levels = [1, 12]
+maps = [1412, 1413, 1411]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h12-argenteos"
+levels = [12, 15]
+maps = [1421, 1420]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h14-los-baldios"
+levels = [14, 21]
+maps = [1413, 1442, 1411]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h21-vallefresno-argenteos"
+levels = [21, 23]
+maps = [1440, 1421, 1413]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h22-trabalomas"
+levels = [22, 25]
+maps = [1424, 1421]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h24-baldios-espolon"
+levels = [24, 26]
+maps = [1413, 1442, 1441]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h26-vallefresno-mil-agujas"
+levels = [26, 30]
+maps = [1441, 1440, 1412]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h29-trabalomas-arathi"
+levels = [29, 33]
+maps = [1424, 1417, 1416]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h32-mil-agujas-desolace"
+levels = [32, 34]
+maps = [1443, 1441, 1413]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h34-tuercespina"
+levels = [34, 36]
+maps = [1434, 1413]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h36-revolcafango-desolace"
+levels = [36, 38]
+maps = [1445, 1443, 1413]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h38-alterac-arathi"
+levels = [38, 39]
+maps = [1417, 1416, 1424]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h39-tierras-inhospitas"
+levels = [39, 40]
+maps = [1418]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h40-tuercespina-penas"
+levels = [39, 43]
+maps = [1434, 1435, 1431]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h43-feralas-tanaris"
+levels = [43, 45]
+maps = [1444, 1446, 1441]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h45-feralas-revolcafango"
+levels = [45, 47]
+maps = [1445, 1435, 1444]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h46-tanaris-garganta"
+levels = [46, 48]
+maps = [1446, 1427, 1444]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h48-interior-devastadas"
+levels = [48, 50]
+maps = [1425, 1419, 1435]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h50-azshara-feralas"
+levels = [50, 51]
+maps = [1447, 1434, 1444]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h51-ungoro-estepas"
+levels = [51, 53]
+maps = [1449, 1428, 1446]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h53-frondavil-peste-oeste"
+levels = [53, 55]
+maps = [1448, 1422, 1420]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h55-cuna-del-invierno"
+levels = [55, 56]
+maps = [1452, 1444, 1443]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h56-azshara-baldios"
+levels = [56, 56]
+maps = [1447, 1422, 1413]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h56-peste-del-este"
+levels = [56, 57]
+maps = [1423, 1422, 1446]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h57-silithus-pestes"
+levels = [57, 59]
+maps = [1451, 1422, 1449]
+
+[[stop]]
+guide = "tauren-horde"
+section = "h59-frondavil-claro"
+levels = [59, 60]
+maps = [1448, 1452, 1420]
+
+[[stop]]
+guide = "troll-horde"
+section = "trl-durotar"
+levels = [1, 12]
+maps = [1411, 1413]
+
+[[stop]]
+guide = "troll-horde"
+section = "h12-argenteos"
+levels = [12, 15]
+maps = [1421, 1420]
+
+[[stop]]
+guide = "troll-horde"
+section = "h14-los-baldios"
+levels = [14, 21]
+maps = [1413, 1442, 1411]
+
+[[stop]]
+guide = "troll-horde"
+section = "h21-vallefresno-argenteos"
+levels = [21, 23]
+maps = [1440, 1421, 1413]
+
+[[stop]]
+guide = "troll-horde"
+section = "h22-trabalomas"
+levels = [22, 25]
+maps = [1424, 1421]
+
+[[stop]]
+guide = "troll-horde"
+section = "h24-baldios-espolon"
+levels = [24, 26]
+maps = [1413, 1442, 1441]
+
+[[stop]]
+guide = "troll-horde"
+section = "h26-vallefresno-mil-agujas"
+levels = [26, 30]
+maps = [1441, 1440, 1412]
+
+[[stop]]
+guide = "troll-horde"
+section = "h29-trabalomas-arathi"
+levels = [29, 33]
+maps = [1424, 1417, 1416]
+
+[[stop]]
+guide = "troll-horde"
+section = "h32-mil-agujas-desolace"
+levels = [32, 34]
+maps = [1443, 1441, 1413]
+
+[[stop]]
+guide = "troll-horde"
+section = "h34-tuercespina"
+levels = [34, 36]
+maps = [1434, 1413]
+
+[[stop]]
+guide = "troll-horde"
+section = "h36-revolcafango-desolace"
+levels = [36, 38]
+maps = [1445, 1443, 1413]
+
+[[stop]]
+guide = "troll-horde"
+section = "h38-alterac-arathi"
+levels = [38, 39]
+maps = [1417, 1416, 1424]
+
+[[stop]]
+guide = "troll-horde"
+section = "h39-tierras-inhospitas"
+levels = [39, 40]
+maps = [1418]
+
+[[stop]]
+guide = "troll-horde"
+section = "h40-tuercespina-penas"
+levels = [39, 43]
+maps = [1434, 1435, 1431]
+
+[[stop]]
+guide = "troll-horde"
+section = "h43-feralas-tanaris"
+levels = [43, 45]
+maps = [1444, 1446, 1441]
+
+[[stop]]
+guide = "troll-horde"
+section = "h45-feralas-revolcafango"
+levels = [45, 47]
+maps = [1445, 1435, 1444]
+
+[[stop]]
+guide = "troll-horde"
+section = "h46-tanaris-garganta"
+levels = [46, 48]
+maps = [1446, 1427, 1444]
+
+[[stop]]
+guide = "troll-horde"
+section = "h48-interior-devastadas"
+levels = [48, 50]
+maps = [1425, 1419, 1435]
+
+[[stop]]
+guide = "troll-horde"
+section = "h50-azshara-feralas"
+levels = [50, 51]
+maps = [1447, 1434, 1444]
+
+[[stop]]
+guide = "troll-horde"
+section = "h51-ungoro-estepas"
+levels = [51, 53]
+maps = [1449, 1428, 1446]
+
+[[stop]]
+guide = "troll-horde"
+section = "h53-frondavil-peste-oeste"
+levels = [53, 55]
+maps = [1448, 1422, 1420]
+
+[[stop]]
+guide = "troll-horde"
+section = "h55-cuna-del-invierno"
+levels = [55, 56]
+maps = [1452, 1444, 1443]
+
+[[stop]]
+guide = "troll-horde"
+section = "h56-azshara-baldios"
+levels = [56, 56]
+maps = [1447, 1422, 1413]
+
+[[stop]]
+guide = "troll-horde"
+section = "h56-peste-del-este"
+levels = [56, 57]
+maps = [1423, 1422, 1446]
+
+[[stop]]
+guide = "troll-horde"
+section = "h57-silithus-pestes"
+levels = [57, 59]
+maps = [1451, 1422, 1449]
+
+[[stop]]
+guide = "troll-horde"
+section = "h59-frondavil-claro"
+levels = [59, 60]
+maps = [1448, 1452, 1420]
+
+[[stop]]
+guide = "undead-horde"
+section = "und-claros-de-tirisfal"
+levels = [1, 13]
+maps = [1420, 1435, 1412]
+
+[[stop]]
+guide = "undead-horde"
+section = "h12-argenteos"
+levels = [12, 15]
+maps = [1421, 1420]
+
+[[stop]]
+guide = "undead-horde"
+section = "h14-los-baldios"
+levels = [14, 21]
+maps = [1413, 1442, 1411]
+
+[[stop]]
+guide = "undead-horde"
+section = "h21-vallefresno-argenteos"
+levels = [21, 23]
+maps = [1440, 1421, 1413]
+
+[[stop]]
+guide = "undead-horde"
+section = "h22-trabalomas"
+levels = [22, 25]
+maps = [1424, 1421]
+
+[[stop]]
+guide = "undead-horde"
+section = "h24-baldios-espolon"
+levels = [24, 26]
+maps = [1413, 1442, 1441]
+
+[[stop]]
+guide = "undead-horde"
+section = "h26-vallefresno-mil-agujas"
+levels = [26, 30]
+maps = [1441, 1440, 1412]
+
+[[stop]]
+guide = "undead-horde"
+section = "h29-trabalomas-arathi"
+levels = [29, 33]
+maps = [1424, 1417, 1416]
+
+[[stop]]
+guide = "undead-horde"
+section = "h32-mil-agujas-desolace"
+levels = [32, 34]
+maps = [1443, 1441, 1413]
+
+[[stop]]
+guide = "undead-horde"
+section = "h34-tuercespina"
+levels = [34, 36]
+maps = [1434, 1413]
+
+[[stop]]
+guide = "undead-horde"
+section = "h36-revolcafango-desolace"
+levels = [36, 38]
+maps = [1445, 1443, 1413]
+
+[[stop]]
+guide = "undead-horde"
+section = "h38-alterac-arathi"
+levels = [38, 39]
+maps = [1417, 1416, 1424]
+
+[[stop]]
+guide = "undead-horde"
+section = "h39-tierras-inhospitas"
+levels = [39, 40]
+maps = [1418]
+
+[[stop]]
+guide = "undead-horde"
+section = "h40-tuercespina-penas"
+levels = [39, 43]
+maps = [1434, 1435, 1431]
+
+[[stop]]
+guide = "undead-horde"
+section = "h43-feralas-tanaris"
+levels = [43, 45]
+maps = [1444, 1446, 1441]
+
+[[stop]]
+guide = "undead-horde"
+section = "h45-feralas-revolcafango"
+levels = [45, 47]
+maps = [1445, 1435, 1444]
+
+[[stop]]
+guide = "undead-horde"
+section = "h46-tanaris-garganta"
+levels = [46, 48]
+maps = [1446, 1427, 1444]
+
+[[stop]]
+guide = "undead-horde"
+section = "h48-interior-devastadas"
+levels = [48, 50]
+maps = [1425, 1419, 1435]
+
+[[stop]]
+guide = "undead-horde"
+section = "h50-azshara-feralas"
+levels = [50, 51]
+maps = [1447, 1434, 1444]
+
+[[stop]]
+guide = "undead-horde"
+section = "h51-ungoro-estepas"
+levels = [51, 53]
+maps = [1449, 1428, 1446]
+
+[[stop]]
+guide = "undead-horde"
+section = "h53-frondavil-peste-oeste"
+levels = [53, 55]
+maps = [1448, 1422, 1420]
+
+[[stop]]
+guide = "undead-horde"
+section = "h55-cuna-del-invierno"
+levels = [55, 56]
+maps = [1452, 1444, 1443]
+
+[[stop]]
+guide = "undead-horde"
+section = "h56-azshara-baldios"
+levels = [56, 56]
+maps = [1447, 1422, 1413]
+
+[[stop]]
+guide = "undead-horde"
+section = "h56-peste-del-este"
+levels = [56, 57]
+maps = [1423, 1422, 1446]
+
+[[stop]]
+guide = "undead-horde"
+section = "h57-silithus-pestes"
+levels = [57, 59]
+maps = [1451, 1422, 1449]
+
+[[stop]]
+guide = "undead-horde"
+section = "h59-frondavil-claro"
+levels = [59, 60]
+maps = [1448, 1452, 1420]

@@ -19,6 +19,16 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - La ventana del instructor resalta las recetas de tu ruta que ya puedes aprender.
 - `tools/fetch_wago.py` (tablas del cliente con build fijado) y comprobaciones de rutas de profesión en `tools/validate.py`.
 - Simulador: escenarios `prof-warlock`, `prof-mining`, `prof-druid`, `prof-cap`, `prof-none` y `prof-trainer`.
+- **Recolección y pesca en tu ruta.** La pestaña Profesiones enseña, para Herboristería, Minería, Desuello y Pesca (las que
+  hayas aprendido), en qué zonas de tu guía sigue subiendo la profesión desde donde estás, con su estado: «sube bien»,
+  «va lento», «ya no sube nada: cambia de zona», «los nodos están en rojo (pide N)» y, en la pesca, «pierdes peces».
+  Además, la mejor zona para tu banda de habilidad con flecha, y el aviso del rango siguiente.
+- Rutas de Minería, Desuello y Pesca (no existían) y de Herboristería rehecha: un tramo por 25 de habilidad con las
+  zonas de mayor densidad de nodos que aún suben (reglas de Classic: naranja/amarillo/verde/gris) y las recogidas
+  esperadas. Todo generado por `tools/gen_gathering.py` desde el cliente de Forever, forever-db y los datos de
+  Polestar (`tools/fetch_wago.py` baja las tablas del cliente con la build fijada). Método y comparación con Polestar en
+  docs/PROFESSIONS.md, «Recolección».
+- Instructores de recolección y pesca de cada bando, con coordenadas (de las listas de Forever vía Polestar).
 
 ### Corregido
 - Las rutas de Sastrería, Encantamiento y Alquimia venían de guías de Classic: Forever bajó unos 25 puntos los colores
@@ -26,6 +36,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
   Encantamiento).
 - Aprendiz se entrena a cualquier nivel en Forever (no a 5). El Artesano de Alquimia del druida es Kylanna Windwhisper
   (Feralas), no Ainethil.
+- Herboristería, Minería y Desuello ya no avisan de «pide nivel 10/20/35» para Oficial, Experto y Artesano: en Forever esos
+  rangos piden solo habilidad (50, 125, 200).
 
 ## [0.7.0] - 2026-11-13
 

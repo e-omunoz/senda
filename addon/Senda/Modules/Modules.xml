@@ -6,6 +6,7 @@
   <Script file="Knowledge.lua"/>
   <Script file="Macros.lua"/>
   <Script file="Professions.lua"/>
+  <Script file="Gathering.lua"/>
   <Script file="Gear.lua"/>
   <Script file="Vendor.lua"/>
   <Script file="Trainer.lua"/>

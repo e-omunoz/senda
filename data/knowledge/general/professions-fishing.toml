@@ -1,0 +1,550 @@
+# Pesca 1-300 (GENERADO por tools/gen_gathering.py: no editar; se regenera con `python tools/gen_gathering.py`).
+# [[route]]: un tramo por banda de 25 de habilidad (prof, from, to, craft = id del objeto que da, name, n = recogidas
+#   esperadas, note = mejores zonas). [[zone]]: nodos por zona, nodes = [[objeto, habilidad mínima, nodos a la vez]],
+#   at = punto central del grupo más denso. [[bracket]]: mejores zonas por banda, zones = [[mapa, x, y, subidas por barrido]].
+# [[trainer]]: instructores por bando con coordenadas.
+id = "general-professions-fishing"
+class = "ANY"
+kind = "professions"
+title = "Pesca 1-300"
+order = 218
+status = "unverified"
+sources = ["foreverdb:npc,spawn,ui_map", "polestar:19bd636e/fishing"]
+checked = "2026-11-13"
+note = "Pesca (sin verificar en Forever; reglas de Classic como las usa Polestar). Cada captura sube la habilidad por debajo de 75; después, una de cada (habilidad-50)/25: unas 1.300 capturas hasta 300. Una captura cuenta igual en cualquier agua: lo que cambia es que el agua dura pierde peces hasta la habilidad `full` de cada zona (base de la zona de Classic + 95). Oficial se aprende con el instructor a 50 y nivel 10; Experto es un libro (Old Man Heming, Bahía del Botín; habilidad 125); Artesano es la misión de Nat Pagle (Marjal Revolcafango; habilidad 200). Se necesita una caña de pescar."
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Androl Oakhand"
+at = [1438, 55.9, 93.5, "Androl Oakhand (Teldrassil)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+name = "Armand Cromwell"
+at = [1458, 80.7, 31.2, "Armand Cromwell (Entrañas)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Arnold Leland"
+at = [1453, 55.0, 69.6, "Arnold Leland (Ventormenta)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Astaia"
+at = [1457, 47.9, 56.6, "Astaia (Darnassus)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Brannock"
+at = [1444, 32.2, 41.6, "Brannock (Feralas)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+name = "Clyde Kellen"
+at = [1420, 67.2, 51.0, "Clyde Kellen (Claros de Tirisfal)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Donald Rabonne"
+at = [1424, 50.8, 61.0, "Donald Rabonne (Laderas de Trabalomas)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Grimnur Stonebrand"
+at = [1455, 48.0, 6.9, "Grimnur Stonebrand (Forjaz)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Harold Riggs"
+at = [1437, 8.1, 58.6, "Harold Riggs (Los Humedales)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+name = "Kah Mistrunner"
+at = [1456, 56.1, 46.5, "Kah Mistrunner (Cima del Trueno)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+name = "Katoom the Angler"
+at = [1425, 80.3, 81.5, "Katoom the Angler (Tierras del Interior)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+name = "Kil'Hiwana"
+at = [1440, 10.8, 33.7, "Kil'Hiwana (Vallefresno)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+name = "Lau'Tiki"
+at = [1413, 73.0, 39.7, "Lau'Tiki (Los Baldíos)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Lee Brown"
+at = [1429, 47.6, 62.3, "Lee Brown (Bosque de Elwynn)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+name = "Lui'Mala"
+at = [1443, 22.7, 72.4, "Lui'Mala (Desolace)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+name = "Lumak"
+at = [1454, 69.8, 29.2, "Lumak (Orgrimmar)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Matthew Hooper"
+at = [1433, 21.9, 51.1, "Matthew Hooper (Montañas Crestagrana)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Myizz Luckycatch"
+at = [1434, 27.5, 77.1, "Myizz Luckycatch (Vega de Tuercespina)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Artesano"]
+name = "Nat Pagle"
+at = [1445, 58.6, 60.1, "Nat Pagle (Marjal Revolcafango)"]
+note = "Misión de Artesano: habilidad 200 (sin verificar)."
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Experto"]
+name = "Old Man Heming"
+at = [1434, 27.4, 77.2, "Old Man Heming (Vega de Tuercespina)"]
+note = "Vende el libro «Pescador experto» (Experto): habilidad 125 y nivel 20 (sin verificar)."
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Paxton Ganter"
+at = [1426, 35.5, 40.2, "Paxton Ganter (Dun Morogh)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+name = "Uthan Stillwater"
+at = [1412, 44.2, 63.8, "Uthan Stillwater (Mulgore)"]
+status = "unverified"
+
+[[trainer]]
+prof = "fishing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+name = "Warg Deepwater"
+at = [1432, 40.6, 39.7, "Warg Deepwater (Loch Modan)"]
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 1
+to = 25
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 24
+note = "Agua sin pérdida de peces: cualquier orilla. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 25
+to = 50
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 25
+note = "Agua sin pérdida de peces: Durotar, Mulgore, Claros de Tirisfal. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 50
+to = 75
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 25
+note = "Agua sin pérdida de peces: Durotar, Mulgore, Claros de Tirisfal. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 75
+to = 100
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 37
+note = "Agua sin pérdida de peces: Los Baldíos, Bosque de Argénteos, Loch Modan. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 100
+to = 125
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 62
+note = "Agua sin pérdida de peces: Los Baldíos, Bosque de Argénteos, Loch Modan. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 125
+to = 150
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 87
+note = "Agua sin pérdida de peces: Los Baldíos, Bosque de Argénteos, Loch Modan. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 150
+to = 175
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 112
+note = "Agua sin pérdida de peces: Laderas de Trabalomas, Los Humedales, Vallefresno. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 175
+to = 200
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 137
+note = "Agua sin pérdida de peces: Laderas de Trabalomas, Los Humedales, Vallefresno. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 200
+to = 225
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 162
+note = "Agua sin pérdida de peces: Laderas de Trabalomas, Los Humedales, Vallefresno. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 225
+to = 250
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 187
+note = "Agua sin pérdida de peces: Pantano de las Penas, Vega de Tuercespina, Desolace. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 250
+to = 275
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 212
+note = "Agua sin pérdida de peces: Pantano de las Penas, Vega de Tuercespina, Desolace. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[route]]
+prof = "fishing"
+from = 275
+to = 300
+craft = 6256
+name = "Pescar en agua que no pierda peces"
+n = 237
+note = "Agua sin pérdida de peces: Pantano de las Penas, Vega de Tuercespina, Desolace. Una captura cuenta igual en cualquier agua."
+status = "unverified"
+
+[[zone]]
+prof = "fishing"
+map = 1411
+name = "Durotar"
+side = "H"
+levels = [1, 10]
+full = 25
+at = [1413, 73.0, 39.7]
+
+[[zone]]
+prof = "fishing"
+map = 1412
+name = "Mulgore"
+side = "H"
+levels = [1, 10]
+full = 25
+at = [1412, 44.2, 63.8]
+
+[[zone]]
+prof = "fishing"
+map = 1413
+name = "Los Baldíos"
+side = "H"
+levels = [10, 25]
+full = 75
+
+[[zone]]
+prof = "fishing"
+map = 1420
+name = "Claros de Tirisfal"
+side = "H"
+levels = [1, 10]
+full = 25
+at = [1420, 67.2, 51.0]
+
+[[zone]]
+prof = "fishing"
+map = 1421
+name = "Bosque de Argénteos"
+side = "H"
+levels = [10, 20]
+full = 75
+
+[[zone]]
+prof = "fishing"
+map = 1424
+name = "Laderas de Trabalomas"
+side = "AH"
+levels = [20, 30]
+full = 150
+
+[[zone]]
+prof = "fishing"
+map = 1426
+name = "Dun Morogh"
+side = "A"
+levels = [1, 10]
+full = 25
+at = [1426, 35.5, 40.2]
+
+[[zone]]
+prof = "fishing"
+map = 1429
+name = "Bosque de Elwynn"
+side = "A"
+levels = [1, 10]
+full = 25
+at = [1429, 47.6, 62.3]
+
+[[zone]]
+prof = "fishing"
+map = 1432
+name = "Loch Modan"
+side = "A"
+levels = [10, 20]
+full = 75
+
+[[zone]]
+prof = "fishing"
+map = 1434
+name = "Vega de Tuercespina"
+side = "AH"
+levels = [30, 45]
+full = 225
+
+[[zone]]
+prof = "fishing"
+map = 1435
+name = "Pantano de las Penas"
+side = "AH"
+levels = [35, 45]
+full = 225
+
+[[zone]]
+prof = "fishing"
+map = 1436
+name = "Páramos de Poniente"
+side = "A"
+levels = [10, 20]
+full = 75
+
+[[zone]]
+prof = "fishing"
+map = 1437
+name = "Los Humedales"
+side = "A"
+levels = [20, 30]
+full = 150
+
+[[zone]]
+prof = "fishing"
+map = 1438
+name = "Teldrassil"
+side = "A"
+levels = [1, 10]
+full = 25
+at = [1438, 55.9, 93.5]
+
+[[zone]]
+prof = "fishing"
+map = 1439
+name = "Costa Oscura"
+side = "A"
+levels = [10, 20]
+full = 75
+
+[[zone]]
+prof = "fishing"
+map = 1440
+name = "Vallefresno"
+side = "AH"
+levels = [18, 30]
+full = 150
+
+[[zone]]
+prof = "fishing"
+map = 1442
+name = "Sierra Espolón"
+side = "AH"
+levels = [15, 27]
+full = 150
+
+[[zone]]
+prof = "fishing"
+map = 1443
+name = "Desolace"
+side = "AH"
+levels = [30, 40]
+full = 225
+
+[[zone]]
+prof = "fishing"
+map = 1444
+name = "Feralas"
+side = "AH"
+levels = [40, 50]
+full = 300
+
+[[bracket]]
+prof = "fishing"
+from = 1
+to = 25
+zones = []
+
+[[bracket]]
+prof = "fishing"
+from = 25
+to = 50
+zones = [[1411, 73.0, 39.7, 25], [1412, 44.2, 63.8, 25], [1420, 67.2, 51.0, 25], [1426, 35.5, 40.2, 25]]
+
+[[bracket]]
+prof = "fishing"
+from = 50
+to = 75
+zones = [[1411, 73.0, 39.7, 25], [1412, 44.2, 63.8, 25], [1420, 67.2, 51.0, 25], [1426, 35.5, 40.2, 25]]
+
+[[bracket]]
+prof = "fishing"
+from = 75
+to = 100
+zones = [[1413, 0, 0, 37], [1421, 0, 0, 37], [1432, 0, 0, 37], [1436, 0, 0, 37]]
+
+[[bracket]]
+prof = "fishing"
+from = 100
+to = 125
+zones = [[1413, 0, 0, 62], [1421, 0, 0, 62], [1432, 0, 0, 62], [1436, 0, 0, 62]]
+
+[[bracket]]
+prof = "fishing"
+from = 125
+to = 150
+zones = [[1413, 0, 0, 87], [1421, 0, 0, 87], [1432, 0, 0, 87], [1436, 0, 0, 87]]
+
+[[bracket]]
+prof = "fishing"
+from = 150
+to = 175
+zones = [[1424, 0, 0, 112], [1437, 0, 0, 112], [1440, 0, 0, 112], [1442, 0, 0, 112]]
+
+[[bracket]]
+prof = "fishing"
+from = 175
+to = 200
+zones = [[1424, 0, 0, 137], [1437, 0, 0, 137], [1440, 0, 0, 137], [1442, 0, 0, 137]]
+
+[[bracket]]
+prof = "fishing"
+from = 200
+to = 225
+zones = [[1424, 0, 0, 162], [1437, 0, 0, 162], [1440, 0, 0, 162], [1442, 0, 0, 162]]
+
+[[bracket]]
+prof = "fishing"
+from = 225
+to = 250
+zones = [[1435, 0, 0, 187], [1434, 0, 0, 187], [1443, 0, 0, 187], [1424, 0, 0, 187]]
+
+[[bracket]]
+prof = "fishing"
+from = 250
+to = 275
+zones = [[1435, 0, 0, 212], [1434, 0, 0, 212], [1443, 0, 0, 212], [1424, 0, 0, 212]]
+
+[[bracket]]
+prof = "fishing"
+from = 275
+to = 300
+zones = [[1435, 0, 0, 237], [1434, 0, 0, 237], [1443, 0, 0, 237], [1424, 0, 0, 237]]
