@@ -1418,6 +1418,8 @@ Senda:AddLocale({
   NAMES_DUMP_LOOKUP_ASK = "Asking the game for %d item finder names (%d of %d already known). It pauses in combat.",
   NAMES_DUMP_LOOKUP_NOCACHE = "This client does not say which items it has cached: use /senda volcar objetos to ask for all of them.",
   NAMES_DUMP_LOOKUP_UNAVAILABLE = "The item finder data is not available (%s): the item dump is skipped.",
+})
+
 -- Recolección y pesca en tu ruta (Modules/Gathering.lua).
 Senda:AddLocale({
   MOD_GATH_HEAD = "%s: dónde recoger",

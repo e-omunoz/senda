@@ -29,6 +29,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
   Polestar (`tools/fetch_wago.py` baja las tablas del cliente con la build fijada). Método y comparación con Polestar en
   docs/PROFESSIONS.md, «Recolección».
 - Instructores de recolección y pesca de cada bando, con coordenadas (de las listas de Forever vía Polestar).
+- docs/TESTING-INGAME.md: lista de profesiones para el brujo gnomo (instructores de Forjaz, pestaña, instructor, flecha).
 
 ### Corregido
 - Las rutas de Sastrería, Encantamiento y Alquimia venían de guías de Classic: Forever bajó unos 25 puntos los colores

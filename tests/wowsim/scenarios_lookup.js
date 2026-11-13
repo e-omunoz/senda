@@ -545,7 +545,9 @@ const scenarios = [
       Check(not D:Running(), "dump finished")
       local n = 0
       for _ in pairs(d.litem) do n = n + 1 end
-      Check(n > 5400, "nearly every lookup item has a name now", n)
+      -- Los objetos que también salen en las guías o en el conocimiento (p. ej. los materiales de las rutas de
+      -- profesión) se guardan en item, no en litem: por eso el umbral no es el total del buscador (5623).
+      Check(n > 5350, "nearly every lookup item has a name now", n)
       Check(d.litem[10438] ~= nil and d.litem[11243] ~= nil, "formerly uncached items answered", tostring(d.litem[11243]))
       local miss = 0
       for _ in pairs(d.missing.litem) do miss = miss + 1 end
@@ -581,7 +583,7 @@ const scenarios = [
           const names = JSON.parse(fs.readFileSync(f, 'utf8')).names;
           ctx.check(names['2676'] && names['2676'].name === 'Brillaverde' && /^ingame:/.test(names['2676'].source),
             'a name the client had is ingested with an ingame source', JSON.stringify(names['2676']));
-          ctx.check(Object.keys(names).length > 5400, 'the whole dump is ingested (' + Object.keys(names).length + ')');
+          ctx.check(Object.keys(names).length > 5350, 'the whole dump is ingested (' + Object.keys(names).length + ')');
         }
         const guide = path.join(tmp, 'data', 'locale', 'esES', 'items.json');
         ctx.check(fs.existsSync(guide) && !('11243' in JSON.parse(fs.readFileSync(guide, 'utf8')).names),

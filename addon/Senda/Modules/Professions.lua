@@ -434,8 +434,10 @@ end
 -- La usa el instructor para resaltarlas (nombre del cliente y, de reserva, el esES de los datos).
 function P.TrainerRecipes()
   local out = {}
-  for _, st in ipairs(P.States()) do
-    local route = P.Routes()[st.key]
+  local routes = P.Routes()
+  for _, key in ipairs(routes.order) do
+    local route = routes[key]
+    local st = P.State(key, nil, route)
     if st.rank and route then
       for _, s in ipairs(route.segs or {}) do
         if s.to > st.rank and (s.learn_skill or s.from) <= st.rank then

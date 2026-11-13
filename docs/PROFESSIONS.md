@@ -176,6 +176,20 @@ python tools/build.py
   sigue la misma ruta pagando las hierbas.
 - Los patrones por Favor del mercader y los de la Rueca no entran: si los tienes, pueden ser mejores para tu equipo.
 
+## Verificación independiente (fusión)
+
+Al fusionar, un script aparte (no commiteado) releyó los CSV de `.cache/wago` y comprobó los 135 tramos de
+fabricación de las ocho rutas: el hechizo está en la línea de la profesión y no está retirado, los colores coinciden con
+`SkillLineAbility`, los materiales con `SpellReagents`, el objeto con `SpellEffect`, el nombre con las tablas esES,
+cada tramo empieza a la habilidad de aprendizaje o después y acaba como mucho en el gris, ninguno cruza un tope de rango,
+no hay huecos de 1 a 300 y las fabricaciones esperadas recalculadas con la fórmula (contando los intermedios) quedan
+a menos del 10 % de `n`. **0 diferencias.** Ningún tramo pide una receta de botín, de Favor, de rueca o de telar. Las
+seis recetas de vendedor de las rutas las venden los dos bandos (según las guías de Polestar). La habilidad de
+aprendizaje coincide con la de las guías de Polestar en las 26 recetas en que la escriben (las diferencias aparentes
+de «is orange at» son el punto donde Polestar empieza a fabricarla, no donde se aprende); 78 de 135 tramos
+siguen «sin verificar» (habilidad estimada). En recolección: 4 rutas sin huecos de 1 a 300 y todos los nombres de
+hierbas y minerales están en `ItemSparse_esES`.
+
 ## Recolección
 
 Herboristería, Minería, Desuello y Pesca. Lo que las distingue de la fabricación: no gastan material, así que el

@@ -99,6 +99,25 @@ Antes de empezar:
 Con el brujo, en la pestaña «Guía» solo salen guías de la Alianza. Si tienes un personaje de la Horda, prueba que
 entra en su guía de raza sin elegir nada.
 
+## 11. Profesiones (cambios sin publicar)
+
+Con el **brujo gnomo**, empezando sin profesiones. Instructores de Forjaz: Sastrería **Jormund Stonebrow** (43,1 29,3;
+Aprendiz y Oficial), Encantamiento **Gimble Thistlefuzz** (59,8 45,4; Aprendiz y Oficial).
+
+| Qué haces | Qué deberías ver |
+|---|---|
+| Pestaña «Profesiones» sin ninguna aprendida | «Profesiones recomendadas para tu clase: Sastrería + Encantamiento» con el porqué, y para cada una «No tienes...» con su instructor y el botón «Flecha al instructor». |
+| Clic en «Flecha al instructor» estando en Forjaz | La flecha va al instructor **de Forjaz** (el más cercano), no al de Ventormenta. Comprueba que el PNJ está en ese punto. |
+| Aprendes Sastrería y Encantamiento (Aprendiz, a cualquier nivel) | La pestaña cambia sola: barras «Sastrería 1 / 75» y «Encantamiento 1 / 75», y el primer tramo de cada una: Sastrería «fabrica unas 7 x Capa de lino» (antes 7 Madejas de paño de lino), Encantamiento «Encantar brazales: aguante menor» con la Vara de cobre rúnico. Colores (naranja/amarillo/verde/gris), «Receta: ...», el material con «tienes N / M». |
+| Abres el banco una vez | Deja de salir «Abre el banco una vez...» y el material cuenta lo que guardas. |
+| Hablas con el instructor con habilidad ~15 en Sastrería | En la ventana de Senda junto al instructor, la receta de tu ruta que ya puedes aprender (Cinturón de lino) sale resaltada con «receta de tu ruta de Sastrería (15-70)». |
+| Llegas a 50-60 de habilidad (con nivel 10) | «Entrena Oficial de Sastrería ya...» y la flecha al instructor que enseña Oficial. Sin nivel 10: «Te acercas al tope. Oficial pide nivel 10». |
+| Aprendes una de recolección (p. ej. Minería) | Sale también en la pestaña, con su barra, el tramo y la sección «Minería: dónde recoger» con zonas de tu guía. |
+| **Anota** el nivel que piden **Experto** (20) y **Artesano** (35) y la habilidad a la que el instructor enseña las recetas marcadas «sin verificar» | Son datos de Classic sin comprobar en Forever: si no coinciden, `/senda informe` en la ventana del instructor. |
+
+Con el **druida** (Herboristería + Alquimia): la recomendación dice Herboristería + Alquimia y, con Herboristería, la
+sección «dónde recoger» empieza en Teldrassil y sigue con Costa Oscura.
+
 ## Cómo informar
 
 1. Cuando veas algo raro, escribe **`/senda informe`** en ese momento (o pulsa el botón del bicho en la cabecera del
