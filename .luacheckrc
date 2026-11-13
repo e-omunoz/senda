@@ -94,7 +94,7 @@ read_globals = {
   "QuestGetAutoAccept", "AcknowledgeAutoAcceptQuest", "ShowQuestComplete", "ShowQuestOffer",
   "AbandonQuest", "SetAbandonQuest", "QUEST_LOG_UPDATE", "C_QuestOffer",
   -- Mapas y vuelo
-  "C_Map", "C_MapExplorationInfo", "C_SuperTrack", "C_Navigation", "C_TaxiMap", "C_Minimap",
+  "C_Map", "C_VignetteInfo", "GetInstanceInfo", "C_MapExplorationInfo", "C_SuperTrack", "C_Navigation", "C_TaxiMap", "C_Minimap",
   "CreateVector2D", "GetZoneText", "GetSubZoneText", "GetRealZoneText", "GetMinimapZoneText",
   "NumTaxiNodes", "TaxiNodeName", "TaxiNodeGetType", "TaxiNodePosition", "TakeTaxiNode", "TaxiNodeCost",
   "GetBindLocation", "ConfirmBinder", "C_Housing",

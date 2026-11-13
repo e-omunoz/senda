@@ -346,7 +346,7 @@ function G.Nodes(level)
       end
     end
     -- 3) siguiente rango
-    local ri, r = G.RankFor(max)
+    local ri = G.RankFor(max)
     local nextR = RANKS[ri + 1]
     if nextR and skill >= nextR.learn - 10 then
       local msg

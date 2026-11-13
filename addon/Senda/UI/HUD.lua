@@ -565,17 +565,17 @@ function HUD:Refresh()
     f.objectives:SetText(table.concat(lines, "\n"))
     objH = #lines > 0 and (f.objectives:GetStringHeight() + 4) or 0
 
-    local st = {}
+    local stl = {}
     if problem then
-      st[#st + 1] = UI:Color("red", problem.kind == "failed" and L.QUEST_FAILED_LINE or L.QUEST_ABANDONED_LINE)
+      stl[#stl + 1] = UI:Color("red", problem.kind == "failed" and L.QUEST_FAILED_LINE or L.QUEST_ABANDONED_LINE)
     end
     for _, t in ipairs(Engine.StepTimers and Engine:StepTimers(step) or {}) do
       local color = t.left <= 60 and "red" or (t.left <= 120 and "gold" or "white")
-      st[#st + 1] = "|TInterface\\Icons\\INV_Misc_PocketWatch_01:0:0:0:0|t " .. UI:Color(color,
+      stl[#stl + 1] = "|TInterface\\Icons\\INV_Misc_PocketWatch_01:0:0:0:0|t " .. UI:Color(color,
         Senda.Quests.Clock(t.left)) .. UI:Color("dim", "  " .. QuestName(t.quest))
     end
-    f.status:SetText(table.concat(st, "\n"))
-    statusH = #st > 0 and (f.status:GetStringHeight() + 4) or 0
+    f.status:SetText(table.concat(stl, "\n"))
+    statusH = #stl > 0 and (f.status:GetStringHeight() + 4) or 0
 
     local tip = self:StepTip(step)
     f.tip:SetText(tip and ("|TInterface\\COMMON\\help-i:0:0:0:0|t " .. tip) or "")

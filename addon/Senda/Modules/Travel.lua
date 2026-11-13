@@ -432,7 +432,6 @@ local function BuildGraph(data, ctx, start, target, mode)
     end
   end
   local k = data.k
-  local flySpeed, flyStop = k.flySpeed or 30, k.flyStop or 2
   for _, f in ipairs(data.flights) do
     local a, b = g.byFp[f.from], g.byFp[f.to]
     if a and b then link(a, b, f.secs, "fly", f) end
