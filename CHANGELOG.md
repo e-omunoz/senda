@@ -4,6 +4,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ## [Sin publicar]
 
+## [0.8.0] - 2026-11-13
+
 ### Añadido
 - **Profesiones reales:** la pestaña Profesiones enseña todas las profesiones que tu personaje tiene aprendidas
   (principales, secundarias y de recolección), cada una con su tramo, qué fabricar, las fabricaciones esperadas que
