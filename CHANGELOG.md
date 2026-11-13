@@ -4,6 +4,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ## [Sin publicar]
 
+## [0.7.0] - 2026-11-13
+
 ### Añadido
 - **Auditoría de datos de las guías** (`tools/audit_guides.py`, en `python -m unittest`): cada paso de las guías del
   brujo gnomo, el mago humano y el druida elfo de la noche contra forever-db y sus correcciones (PNJ, quién da y
