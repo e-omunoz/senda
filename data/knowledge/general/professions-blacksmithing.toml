@@ -1,0 +1,578 @@
+# GENERADO por tools/gen_professions.py: no editar a mano (regenerar; docs/PROFESSIONS.md).
+# Tablas del cliente de Forever 1.60.1.70888 (wago.tools), Polestar 19bd636e7d6f (listas de instructor de forever-tdb-2026-10-14, trainers.rs) y forever-db 2026.11.1.
+id = "general-professions-blacksmithing"
+class = "ANY"
+kind = "professions"
+title = "Herrería 1-300"
+prof = "blacksmithing"
+prof_kind = "primary"
+order = 201
+status = "unverified"
+sources = ["wago:1.60.1.70888", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798", "foreverdb:2026.11.1"]
+assumes = "supone Minería (mineral y barras los sacas tú)"
+crafts = 438
+reach = 300
+note = "Ruta calculada: unas 438 fabricaciones esperadas de 1 a 300. Esfuerzo mínimo con material de vendedor por su precio y recolectado por su nivel; supone Minería (mineral y barras los sacas tú)."
+
+[[rank]]
+name = "Aprendiz"
+max = 75
+skill = 0
+level = 1
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Oficial"
+max = 150
+skill = 50
+level = 10
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Experto"
+max = 225
+skill = 125
+level = 20
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Artesano"
+max = 300
+skill = 200
+level = 35
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 5511
+name = "Therum Deepforge"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1453, 63.6, 37, "Therum Deepforge (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5511"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 957
+name = "Dane Lindgren"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1453, 64.1, 37, "Dane Lindgren (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/957"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 4258
+name = "Bengus Deepforge"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+at = [1455, 52.5, 41.5, "Bengus Deepforge (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4258"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 10276
+name = "Rotgath Stonebeard"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1455, 52.4, 42.5, "Rotgath Stonebeard (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/10276"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 10277
+name = "Groum Stonebeard"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1455, 52.3, 41.9, "Groum Stonebeard (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/10277"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 2836
+name = "Brikk Keencraft"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+at = [1434, 29, 75.6, "Brikk Keencraft (Vega de Tuercespina)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2836"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 3136
+name = "Clarise Gnarltree"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1431, 74, 48.5, "Clarise Gnarltree (Bosque del Ocaso)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3136"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 514
+name = "Smith Argus"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1429, 41.7, 65.5, "Smith Argus (Bosque de Elwynn)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/514"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 1241
+name = "Tognus Flintfire"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1426, 45.3, 51.9, "Tognus Flintfire (Dun Morogh)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1241"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 6299
+name = "Delfrum Flintbeard"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1439, 38.2, 40.9, "Delfrum Flintbeard (Costa Oscura)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/6299"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 2836
+name = "Brikk Keencraft"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+at = [1434, 29, 75.6, "Brikk Keencraft (Vega de Tuercespina)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2836"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 3355
+name = "Saru Steelfury"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+at = [1454, 82.3, 23, "Saru Steelfury (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3355"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 1383
+name = "Snarl"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1454, 79.6, 23.3, "Snarl (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1383"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 2998
+name = "Karn Stonehoof"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1456, 39.4, 55.1, "Karn Stonehoof (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2998"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 3478
+name = "Traugh"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1413, 51.3, 28.9, "Traugh (Los Baldíos)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3478"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 4596
+name = "James Van Brunt"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1458, 61.3, 30.6, "James Van Brunt (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4596"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 276067
+name = "Angus Hammerhand"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1420, 21.8, 47, "Angus Hammerhand (Claros de Tirisfal)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/276067"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 3174
+name = "Dwukk"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1411, 52, 40.7, "Dwukk (Durotar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3174"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 4605
+name = "Basil Frye"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1458, 60.2, 29.1, "Basil Frye (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4605"]
+
+[[trainer]]
+prof = "blacksmithing"
+npc = 10278
+name = "Thrag Stonehoof"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1456, 39.4, 56.8, "Thrag Stonehoof (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/10278"]
+
+[[route]]
+prof = "blacksmithing"
+from = 50
+to = 75
+train = "Oficial"
+level = 10
+note = "Entrena Oficial (habilidad 50, nivel 10) antes de llegar a 75: los puntos por encima del tope se pierden."
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 125
+to = 150
+train = "Experto"
+level = 20
+note = "Entrena Experto (habilidad 125, nivel 20) antes de llegar a 150: los puntos por encima del tope se pierden."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 200
+to = 225
+train = "Artesano"
+level = 35
+note = "Entrena Artesano (habilidad 200, nivel 35) antes de llegar a 225: los puntos por encima del tope se pierden."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 1
+to = 37
+craft = 2862
+spell = 2660
+name = "Piedra de afilar férrea"
+n = 46
+mats = [[2835, 1]]
+colors = [1, 15, 35, 55]
+learn = "la sabes al aprender la profesión"
+learn_skill = 1
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2660"]
+
+[[route]]
+prof = "blacksmithing"
+from = 37
+to = 75
+craft = 3470
+spell = 3320
+name = "Piedra de pulir férrea"
+n = 62
+mats = [[2835, 2]]
+colors = [25, 45, 65, 85]
+learn = "instructor (lista capturada de Forever), desde 25 (1 p)"
+learn_skill = 25
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3320", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3320"]
+
+[[route]]
+prof = "blacksmithing"
+from = 75
+to = 82
+craft = 3470
+spell = 3320
+name = "Piedra de pulir férrea"
+n = 44
+mats = [[2835, 2]]
+colors = [25, 45, 65, 85]
+learn = "instructor (lista capturada de Forever), desde 25 (1 p)"
+learn_skill = 25
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3320", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3320"]
+
+[[route]]
+prof = "blacksmithing"
+from = 82
+to = 90
+craft = 2851
+spell = 2661
+name = "Cinturón anillado de cobre"
+n = 14
+mats = [[2840, 6]]
+colors = [30, 70, 90, 110]
+learn = "instructor (lista capturada de Forever), desde 30 (1 p)"
+learn_skill = 30
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2661", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/2661"]
+
+[[route]]
+prof = "blacksmithing"
+from = 90
+to = 100
+craft = 2865
+spell = 2668
+name = "Leotardos de bronce férreos"
+n = 10
+mats = [[2841, 6]]
+colors = [80, 120, 135, 150]
+learn = "instructor (lista capturada de Forever), desde 80 (3 p)"
+learn_skill = 80
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2668", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/2668"]
+
+[[route]]
+prof = "blacksmithing"
+from = 100
+to = 110
+craft = 2871
+spell = 2674
+name = "Piedra de afilar pesada"
+n = 16
+mats = [[2838, 1]]
+colors = [100, 100, 107, 115]
+learn = "instructor (lista capturada de Forever), desde 100 (10 p)"
+learn_skill = 100
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2674", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/2674"]
+
+[[route]]
+prof = "blacksmithing"
+from = 110
+to = 138
+craft = 2865
+spell = 2668
+name = "Leotardos de bronce férreos"
+n = 37
+mats = [[2841, 6]]
+colors = [80, 120, 135, 150]
+learn = "instructor (lista capturada de Forever), desde 80 (3 p)"
+learn_skill = 80
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2668", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/2668"]
+
+[[route]]
+prof = "blacksmithing"
+from = 138
+to = 150
+craft = 3483
+spell = 3333
+name = "Guanteletes de bronce bañados en plata"
+n = 14
+mats = [[2841, 8], [2842, 1], [3478, 2, 2836, 2]]
+colors = [110, 140, 155, 170]
+learn = "instructor (lista capturada de Forever), desde 110 (10 p)"
+learn_skill = 110
+note = "Fabrica antes unas 28 x Piedra de pulir burda: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3333", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3333"]
+
+[[route]]
+prof = "blacksmithing"
+from = 150
+to = 157
+craft = 3483
+spell = 3333
+name = "Guanteletes de bronce bañados en plata"
+n = 13
+mats = [[2841, 8], [2842, 1], [3478, 2, 2836, 2]]
+colors = [110, 140, 155, 170]
+learn = "instructor (lista capturada de Forever), desde 110 (10 p)"
+learn_skill = 110
+note = "Fabrica antes unas 26 x Piedra de pulir burda: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3333", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3333"]
+
+[[route]]
+prof = "blacksmithing"
+from = 157
+to = 160
+craft = 3835
+spell = 3501
+name = "Brazales de hierro verde"
+n = 3
+mats = [[3575, 6], [2605, 1]]
+colors = [140, 165, 177, 190]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 140"
+learn_skill = 140
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3501", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 160
+to = 175
+craft = 6040
+spell = 7223
+name = "Brazales de escamas doradas"
+n = 15
+mats = [[3859, 5], [3486, 2, 2838, 3]]
+colors = [160, 185, 197, 210]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 160"
+learn_skill = 160
+note = "Fabrica antes unas 30 x Piedra de pulir pesada: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/7223", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 175
+to = 184
+craft = 7964
+spell = 9918
+name = "Piedra de afilar sólida"
+n = 20
+mats = [[7912, 1]]
+colors = [175, 175, 180, 185]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 175"
+learn_skill = 175
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/9918", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 184
+to = 199
+craft = 6040
+spell = 7223
+name = "Brazales de escamas doradas"
+n = 21
+mats = [[3859, 5], [3486, 2, 2838, 3]]
+colors = [160, 185, 197, 210]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 160"
+learn_skill = 160
+note = "Fabrica antes unas 42 x Piedra de pulir pesada: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/7223", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 199
+to = 221
+craft = 7922
+spell = 9935
+name = "Yelmo de chapa de acero"
+n = 27
+mats = [[3859, 14], [7966, 1, 7912, 4]]
+colors = [190, 210, 220, 230]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 190"
+learn_skill = 190
+note = "Fabrica antes unas 27 x Piedra de pulir sólida: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/9935", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 221
+to = 225
+craft = 7930
+spell = 9959
+name = "Peto pesado de mitril"
+n = 4
+mats = [[3860, 16]]
+colors = [205, 225, 235, 245]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 205"
+learn_skill = 205
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/9959", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 225
+to = 235
+craft = 12643
+spell = 16640
+name = "Piedrafuerte densa"
+n = 17
+mats = [[12365, 1]]
+colors = [225, 230, 232, 235]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 225"
+learn_skill = 225
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/16640", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 235
+to = 266
+craft = 12408
+spell = 16644
+name = "Brazales de torio"
+n = 46
+mats = [[12359, 12], [11184, 4]]
+colors = [230, 250, 260, 270]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 230"
+learn_skill = 230
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/16644", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 266
+to = 275
+craft = 12409
+spell = 16652
+name = "Botas de torio"
+n = 9
+mats = [[12359, 20], [8170, 8], [11185, 4]]
+colors = [255, 275, 285, 295]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 255"
+learn_skill = 255
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/16652", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "blacksmithing"
+from = 275
+to = 300
+craft = 12414
+spell = 16662
+name = "Leotardos de torio"
+n = 26
+mats = [[12359, 26], [11186, 4]]
+colors = [275, 295, 305, 315]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 275"
+learn_skill = 275
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/16662", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]

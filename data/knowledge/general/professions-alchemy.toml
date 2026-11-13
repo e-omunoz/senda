@@ -1,184 +1,641 @@
-# Alquimia 1-300. Mismo formato que professions-tailoring.toml.
-# [[route]]: prof, from, to, craft (id del objeto fabricado), name (nombre esES probable; el cliente da el definitivo
-#   por id), n (fabricaciones aproximadas para todo el tramo), mats = [[id, cantidad]] por fabricación, src (origen de
-#   la receta si no la enseña el instructor), note. Si la receta del juego pide otra cosa, manda la receta.
-# [[trainer]]: instructores. for_class = clase para la que se pone (druida elfo de la noche → Teldrassil/Darnassus).
+# GENERADO por tools/gen_professions.py: no editar a mano (regenerar; docs/PROFESSIONS.md).
+# Tablas del cliente de Forever 1.60.1.70888 (wago.tools), Polestar 19bd636e7d6f (listas de instructor de forever-tdb-2026-10-14, trainers.rs) y forever-db 2026.11.1.
 id = "general-professions-alchemy"
 class = "ANY"
 kind = "professions"
 title = "Alquimia 1-300"
-order = 218
+prof = "alchemy"
+prof_kind = "primary"
+order = 200
 status = "unverified"
-sources = ["https://www.wowhead.com/forever/profession-leveling-guides/alchemy", "https://www.warcrafttavern.com/forever/guides/herbalism/", "https://conquestcapped.com/guides/wow-forever/wow-forever-alchemy/", "https://www.icy-veins.com/wow-forever/alchemy-leveling-guide", "questie:npc/3603", "questie:npc/11041", "questie:npc/4160", "questie:npc/4226", "questie:npc/5594", "questie:npc/249713"]
-checked = "2026-11-11"
-note = "Ruta de la guía de Alquimia de Wowhead Forever (recetas, cantidades y número de fabricaciones). Ids de objetos y PNJ comprobados en QuestieDB (Forever). En Forever las pociones de sanación pasan a Primeros auxilios (Warcraft Tavern y otras guías); la ruta clásica de pociones de sanación no vale. Icy Veins dice que 225-300 aún no está confirmado."
+sources = ["wago:1.60.1.70888", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798", "foreverdb:2026.11.1"]
+assumes = "supone Herboristería (las hierbas las recoges tú)"
+crafts = 345
+reach = 300
+note = "Ruta calculada: unas 345 fabricaciones esperadas de 1 a 300. Esfuerzo mínimo con material de vendedor por su precio y recolectado por su nivel; supone Herboristería (las hierbas las recoges tú)."
+
+[[rank]]
+name = "Aprendiz"
+max = 75
+skill = 0
+level = 1
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Oficial"
+max = 150
+skill = 50
+level = 10
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Experto"
+max = 225
+skill = 125
+level = 20
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Artesano"
+max = 300
+skill = 200
+level = 35
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
 
 [[trainer]]
 prof = "alchemy"
+npc = 5499
+name = "Lilyssia Nightbreeze"
+faction = "Alliance"
 ranks = ["Aprendiz", "Oficial"]
-for_class = "DRUID"
-name = "Cyndra Kindwhisper"
-at = [1438, 57.6, 60.8, "Cyndra Kindwhisper (Teldrassil, Dolanaar)"]
+at = [1453, 55.6, 86.1, "Lilyssia Nightbreeze (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5499"]
 
 [[trainer]]
 prof = "alchemy"
+npc = 1215
+name = "Alchemist Mallory"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1453, 90.4, 91.5, "Alchemist Mallory (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1215"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 5500
+name = "Tel'Athir"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1453, 55.5, 85.7, "Tel'Athir (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5500"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 5177
+name = "Tally Berryfizz"
+faction = "Alliance"
 ranks = ["Aprendiz", "Oficial"]
-for_class = "DRUID"
-name = "Milla Fairancora"
-at = [1457, 55.4, 22.7, "Milla Fairancora (Darnassus, Terraza del Artesano)"]
+at = [1455, 66.6, 55.7, "Tally Berryfizz (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5177"]
 
 [[trainer]]
 prof = "alchemy"
-ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
-for_class = "DRUID"
+npc = 1246
+name = "Vosur Brakthel"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1455, 66.3, 55.7, "Vosur Brakthel (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1246"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 4160
 name = "Ainethil"
-at = [1457, 54.9, 24.0, "Ainethil (Darnassus, Terraza del Artesano)"]
-note = "QuestieDB la titula «Artisan Alchemist». Ulthir (55.8, 24.5), al lado, vende viales y la receta de Poción de maná superior."
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+at = [1457, 54.9, 24, "Ainethil (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4160"]
 
 [[trainer]]
 prof = "alchemy"
-ranks = []
-for_class = "ANY"
-name = "Odd Child"
-at = [1436, 42.8, 72.8, "Odd Child (Páramos de Poniente)"]
-note = "Instructor especial de la Poción de sanación descolorida mayor (270-300) tras una cadena de misiones (empieza con My First Alchemy Set, 92109). Horda: Apothecary Renferrel (Bosque de Argénteos)."
+npc = 11042
+name = "Sylvanna Forestmoon"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1457, 56.2, 24.4, "Sylvanna Forestmoon (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11042"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 11041
+name = "Milla Fairancora"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1457, 55.3, 22.9, "Milla Fairancora (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11041"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 7948
+name = "Kylanna Windwhisper"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+at = [1444, 32.6, 43.8, "Kylanna Windwhisper (Feralas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/7948"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 2837
+name = "Jaxin Chong"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1434, 28, 78, "Jaxin Chong (Vega de Tuercespina)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2837"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 3964
+name = "Kylanna"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1440, 50.9, 67.1, "Kylanna (Vallefresno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3964"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 4900
+name = "Alchemist Narett"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1445, 63.9, 47.6, "Alchemist Narett (Marjal Revolcafango)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4900"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 1470
+name = "Ghak Healtouch"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1432, 37.1, 49.4, "Ghak Healtouch (Loch Modan)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1470"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 3603
+name = "Cyndra Kindwhisper"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1438, 57.6, 60.8, "Cyndra Kindwhisper (Teldrassil)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3603"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 1386
+name = "Rogvar"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+at = [1435, 48.5, 55.9, "Rogvar (Pantano de las Penas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1386"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 4611
+name = "Doctor Herbert Halsey"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+at = [1458, 47.8, 73.3, "Doctor Herbert Halsey (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4611"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 2391
+name = "Serge Hinott"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1416, 60.3, 80.9, "Serge Hinott (Montañas de Alterac)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2391"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 2837
+name = "Jaxin Chong"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1434, 28, 78, "Jaxin Chong (Vega de Tuercespina)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2837"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 3009
+name = "Bena Winterhoof"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1456, 46.7, 33.2, "Bena Winterhoof (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3009"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 3347
+name = "Yelmak"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1454, 56.9, 33, "Yelmak (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3347"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 4609
+name = "Doctor Marsh"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1458, 51, 74.6, "Doctor Marsh (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4609"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 2132
+name = "Carolai Anise"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1420, 59.4, 52.2, "Carolai Anise (Claros de Tirisfal)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2132"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 3184
+name = "Miao'zan"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1411, 55.4, 74, "Miao'zan (Durotar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3184"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 11044
+name = "Doctor Martin Felben"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1458, 46.6, 74.1, "Doctor Martin Felben (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11044"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 11046
+name = "Whuut"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1454, 55.8, 32.9, "Whuut (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11046"]
+
+[[trainer]]
+prof = "alchemy"
+npc = 11047
+name = "Kray"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1456, 46.7, 34.4, "Kray (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11047"]
+
+[[route]]
+prof = "alchemy"
+from = 50
+to = 75
+train = "Oficial"
+level = 10
+note = "Entrena Oficial (habilidad 50, nivel 10) antes de llegar a 75: los puntos por encima del tope se pierden."
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "alchemy"
+from = 125
+to = 150
+train = "Experto"
+level = 20
+note = "Entrena Experto (habilidad 125, nivel 20) antes de llegar a 150: los puntos por encima del tope se pierden."
 status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "alchemy"
+from = 200
+to = 225
+train = "Artesano"
+level = 35
+note = "Entrena Artesano (habilidad 200, nivel 35) antes de llegar a 225: los puntos por encima del tope se pierden."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
 
 [[route]]
 prof = "alchemy"
 from = 1
-to = 12
-craft = 247755
-name = "Elixir de fuerza menor"
-n = 11
-mats = [[765, 1], [3371, 1]]
-note = "Receta nueva de Forever; se conoce al aprender la profesión."
+to = 13
+craft = 247754
+spell = 1245246
+name = "Elixir Arcano menor"
+n = 13
+mats = [[2447, 1], [3371, 1]]
+colors = [1, 10, 12, 15]
+learn = "la sabes al aprender la profesión"
+learn_skill = 1
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/1245246"]
 
 [[route]]
 prof = "alchemy"
-from = 12
-to = 55
+from = 13
+to = 73
 craft = 5997
+spell = 7183
 name = "Elixir de defensa menor"
-n = 43
+n = 66
 mats = [[765, 1], [2447, 1], [3371, 1]]
+colors = [1, 55, 75, 95]
+learn = "la sabes al aprender la profesión"
+learn_skill = 1
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/7183"]
 
 [[route]]
 prof = "alchemy"
-from = 55
-to = 65
+from = 73
+to = 75
 craft = 2455
-name = "Poción de maná menor"
-n = 10
+spell = 2331
+name = "Poción menor de maná"
+n = 3
 mats = [[785, 1], [2447, 1], [3371, 1]]
-note = "En Classic pedía Hojaplata en lugar de Flor de paz; Wowhead Forever dice Flor de paz."
+colors = [25, 65, 85, 105]
+learn = "instructor (lista capturada de Forever), desde 25 (1 p)"
+learn_skill = 25
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2331", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/2331"]
 
 [[route]]
 prof = "alchemy"
-from = 65
+from = 75
 to = 90
-craft = 2458
-name = "Elixir de entereza menor"
-n = 26
-mats = [[2449, 2], [2447, 1], [3371, 1]]
-note = "A 50 de habilidad y nivel 10, entrena Oficial: el tope de Aprendiz es 75."
+craft = 2455
+spell = 2331
+name = "Poción menor de maná"
+n = 28
+mats = [[785, 1], [2447, 1], [3371, 1]]
+colors = [25, 65, 85, 105]
+learn = "instructor (lista capturada de Forever), desde 25 (1 p)"
+learn_skill = 25
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2331", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/2331"]
 
 [[route]]
 prof = "alchemy"
 from = 90
-to = 120
+to = 135
 craft = 3383
+spell = 3171
 name = "Elixir de sabiduría"
-n = 30
+n = 49
 mats = [[785, 1], [2450, 2], [3371, 1]]
+colors = [90, 120, 140, 160]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 90"
+learn_skill = 90
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3171", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "alchemy"
-from = 120
+from = 135
+to = 142
+craft = 247240
+spell = 1244646
+name = "Poción de sanación descolorida"
+n = 8
+mats = [[3372, 1], [2453, 1], [730, 1]]
+colors = [135, 135, 155, 175]
+learn = "instructor (habilidad estimada: sin confirmar), desde 135"
+learn_skill = 135
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/1244646"]
+
+[[route]]
+prof = "alchemy"
+from = 142
+to = 150
+craft = 3385
+spell = 3173
+name = "Poción inferior de maná"
+n = 9
+mats = [[785, 1], [3820, 1], [3371, 1]]
+colors = [120, 145, 165, 185]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 120"
+learn_skill = 120
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3173", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "alchemy"
+from = 150
 to = 160
 craft = 3385
-name = "Poción de maná inferior"
-n = 43
+spell = 3173
+name = "Poción inferior de maná"
+n = 14
 mats = [[785, 1], [3820, 1], [3371, 1]]
-note = "A 125 y nivel 20, entrena Experto."
+colors = [120, 145, 165, 185]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 120"
+learn_skill = 120
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3173", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "alchemy"
 from = 160
-to = 195
+to = 175
 craft = 3827
+spell = 3452
 name = "Poción de maná"
-n = 38
+n = 15
 mats = [[3820, 1], [3356, 1], [3372, 1]]
+colors = [160, 180, 200, 220]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 160"
+learn_skill = 160
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3452", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "alchemy"
+from = 175
+to = 195
+craft = 247241
+spell = 1244647
+name = "Poción de sanación descolorida superior"
+n = 28
+mats = [[3372, 1], [3356, 1], [730, 1]]
+colors = [175, 175, 195, 215]
+learn = "instructor (habilidad estimada: sin confirmar), desde 175"
+learn_skill = 175
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/1244647"]
 
 [[route]]
 prof = "alchemy"
 from = 195
-to = 205
-craft = 8949
-name = "Elixir de agilidad"
-n = 10
-mats = [[3820, 1], [3821, 1], [3372, 1]]
-note = "Guárdalos si eres druida feral o pícaro. A 200 y nivel 35, entrena Artesano."
-
-[[route]]
-prof = "alchemy"
-from = 205
 to = 225
-craft = 6149
-name = "Poción de maná mayor"
-n = 20
-mats = [[3358, 1], [3821, 1], [3372, 1]]
+craft = 8951
+spell = 11450
+name = "Elixir de defensa"
+n = 32
+mats = [[3355, 1], [3821, 1], [3372, 1]]
+colors = [195, 215, 235, 255]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 195"
+learn_skill = 195
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/11450", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "alchemy"
 from = 225
-to = 226
-craft = 9149
-name = "Piedra filosofal"
-n = 1
-mats = [[3575, 4], [9262, 1], [8831, 4], [4625, 4]]
-src = "Receta 9303 de Alchemist Pestlezugg (Gadgetzan, Tanaris)."
-note = "Guárdala: la necesitan las transmutaciones. Opcional para subir."
+to = 233
+craft = 8951
+spell = 11450
+name = "Elixir de defensa"
+n = 13
+mats = [[3355, 1], [3821, 1], [3372, 1]]
+colors = [195, 215, 235, 255]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 195"
+learn_skill = 195
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/11450", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "alchemy"
-from = 226
-to = 240
-craft = 6149
-name = "Poción de maná mayor"
-n = 20
-mats = [[3358, 1], [3821, 1], [3372, 1]]
-
-[[route]]
-prof = "alchemy"
-from = 240
-to = 260
+from = 233
+to = 250
 craft = 9154
-name = "Elixir de detectar no-muertos"
-n = 23
+spell = 11460
+name = "Jarabe de detección de no-muertos"
+n = 18
 mats = [[8836, 1], [8925, 1]]
-note = "Wowhead lo llama Draught of Detect Undead; en la base de datos es Elixir of Detect Undead (9154)."
+colors = [230, 245, 265, 285]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 230"
+learn_skill = 230
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/11460", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "alchemy"
-from = 260
-to = 270
-craft = 13443
-name = "Poción de maná superior"
-n = 10
-mats = [[8838, 2], [8839, 2], [8925, 1]]
-src = "Receta 13477: Ulthir (Darnassus) en la Alianza, Algernon (Entrañas) en la Horda."
+from = 250
+to = 253
+craft = 13423
+spell = 17551
+name = "Aceite de escamas de piedra"
+n = 4
+mats = [[13422, 1], [3372, 1]]
+colors = [250, 250, 255, 260]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 250"
+learn_skill = 250
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/17551", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "alchemy"
-from = 270
+from = 253
+to = 261
+craft = 9154
+spell = 11460
+name = "Jarabe de detección de no-muertos"
+n = 12
+mats = [[8836, 1], [8925, 1]]
+colors = [230, 245, 265, 285]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 230"
+learn_skill = 230
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/11460", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "alchemy"
+from = 261
+to = 267
+craft = 9187
+spell = 11467
+name = "Elixir de agilidad superior"
+n = 8
+mats = [[8838, 1], [3821, 1], [8925, 1]]
+colors = [240, 255, 275, 295]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 240"
+learn_skill = 240
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/11467", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "alchemy"
+from = 267
+to = 274
+craft = 9233
+spell = 11478
+name = "Jarabe de detección de demonios"
+n = 9
+mats = [[8846, 2], [8925, 1]]
+colors = [250, 265, 285, 305]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 250"
+learn_skill = 250
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/11478", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "alchemy"
+from = 274
+to = 290
+craft = 13447
+spell = 17555
+name = "Elixir de los sabios"
+n = 17
+mats = [[13463, 1], [13466, 2], [8925, 1]]
+colors = [270, 285, 305, 325]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 270"
+learn_skill = 270
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/17555", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "alchemy"
+from = 290
 to = 300
-craft = 241650
-name = "Poción de sanación descolorida mayor"
-n = 31
-mats = [[8925, 1], [13466, 1], [730, 1]]
-src = "Instructor especial tras una cadena de misiones: Odd Child (Páramos de Poniente) en la Alianza."
-status = "disputed"
-sources = ["https://www.wowhead.com/forever/profession-leveling-guides/alchemy", "https://www.warcrafttavern.com/forever/guides/herbalism/"]
-note = "Wowhead la pone en la ruta de Alquimia; otras guías dicen que las pociones de sanación pasaron a Primeros auxilios en Forever. Si no la tienes, usa Poción de maná superior hasta 285 y cualquier receta naranja o amarilla hasta 300."
+craft = 13454
+spell = 17573
+name = "Elixir superior Arcano"
+n = 10
+mats = [[13463, 3], [13465, 1], [8925, 1]]
+colors = [285, 300, 320, 340]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 285"
+learn_skill = 285
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/17573", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]

@@ -96,7 +96,8 @@ function C.Analyze()
     local ok, states = pcall(P.States, level)
     local inPlan = {}
     for _, st in ipairs(ok and states or {}) do
-      inPlan[st.key] = true
+      -- Las aprendidas también salen en los estados; solo cuentan como plan las de la recomendación de tu clase.
+      if st.inPlan ~= false then inPlan[st.key] = true end
       if st.missing and level >= 5 then add(string.format(L.MOD_PROF_MISSING or "No tienes %s.", st.label), "warn")
       elseif st.train then add(P.Advice(st), "warn")
       elseif st.behind then add(string.format(L.MOD_ADV_BEHIND or "%s va atrasada (%d, ideal ~%d para tu nivel): dedica un rato a subirla.", st.label, st.rank, st.target)) end

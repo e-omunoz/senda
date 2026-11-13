@@ -43,15 +43,12 @@ local function Services()
       end
     end
   end
+  -- Recetas de las rutas de tus profesiones que ya puedes aprender y aún te dan puntos (datos generados).
   local profNames = {}
   local P = Senda.Modules.Professions
-  if P and P.States then
-    local ok, states = pcall(P.States)
-    if ok then
-      for _, st in ipairs(states) do
-        if st.seg then profNames[P.SegName(st.seg):lower()] = st end
-      end
-    end
+  if P and P.TrainerRecipes then
+    local ok, list = pcall(P.TrainerRecipes)
+    if ok and type(list) == "table" then profNames = list end
   end
   local okN, n = pcall(GetNumTrainerServices)
   for i = 1, (okN and n or 0) do
@@ -63,8 +60,9 @@ local function Services()
       end
       local lname = name:lower()
       if cost > 0 then CostCache()[CostKey(name, rank)] = cost end
+      local pr = profNames[lname]
       table.insert(out, { i = i, name = name, rank = rank, cost = cost,
-        rec = recNames[lname] or profNames[lname] ~= nil })
+        rec = recNames[lname] or pr ~= nil, prof = pr })
     end
   end
   return out
@@ -156,8 +154,14 @@ function T.Refresh()
     local label = s.name .. ((s.rank and s.rank ~= "") and (" |cffaaaaaa(" .. s.rank .. ")|r") or "")
     local icon
     if GetTrainerServiceIcon then local ok, ic = pcall(GetTrainerServiceIcon, s.i); if ok then icon = ic end end
+    local why
+    if s.prof then
+      why = string.format(L.MOD_TRAINER_PROF_REC or "receta de tu ruta de %s (%d-%d)", s.prof.st.label, s.prof.seg.from, s.prof.seg.to)
+    elseif s.rec then
+      why = L.MOD_TRAINER_RECOMMENDED or "recomendado para tu nivel"
+    end
     table.insert(nodes, { t = "row", raw = true, icon = icon, hl = s.rec and "now" or nil,
-      text = label .. (s.rec and ("\n|cffffd100" .. (L.MOD_TRAINER_RECOMMENDED or "recomendado para tu nivel") .. "|r") or ""),
+      text = label .. (why and ("\n|cffffd100" .. why .. "|r") or ""),
       right = M.Money(s.cost) })
   end
   if #list > 0 then

@@ -1,17 +1,14 @@
-# Migrado de BrujoGnomoGuia 4.1.0 (Crafting.lua: ns.CRAFT.RANKS, ns.CRAFT.MATS, ns.CRAFT.SELLABLE, ns.CRAFT.ORDER).
-# [[rank]]: rangos de instructor. max = tope de habilidad; skill = habilidad mínima para entrenarlo; level = nivel mínimo.
-# [[material]]: id, name (esES según Wowhead), vendor = precio en cobre si lo vende el proveedor de suministros,
-#   where = de dónde sale, sell = consejo de venta si sobra, min = cantidad sobrante a partir de la que se aconseja vender,
-#   made_from = [id_base, cantidad] para madejas (el addon contaba madejas y paño suelto juntos).
-# sellable: materiales que el addon proponía vender si sobraban para toda la ruta.
+# GENERADO por tools/gen_professions.py: no editar a mano.
+# [[rank]]: rangos de las profesiones de fabricación (los de cada profesión van en su archivo).
+# [[material]]: lo que piden las rutas generadas: id, name (esES del cliente), vendor = precio en cobre
+#   (por unidad) si lo vende un proveedor de la Alianza, where = de dónde sale, made_from = [id, cantidad].
 id = "general-professions-materials"
 class = "ANY"
 kind = "professions"
-title = "Rangos y materiales de Sastrería y Encantamiento"
+title = "Rangos y materiales de las profesiones"
 order = 220
-status = "unverified"
-sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever"]
-checked = "2026-11-09"
+status = "verified"
+sources = ["wago:1.60.1.70888", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798"]
 order_profs = ["tailoring", "enchanting"]
 sellable = [2589, 2592, 4306, 4338, 14047, 10940, 10938, 10939, 11176]
 
@@ -19,251 +16,686 @@ sellable = [2589, 2592, 4306, 4338, 14047, 10940, 10938, 10939, 11176]
 name = "Aprendiz"
 max = 75
 skill = 0
-level = 5
-cost = "10 cobres"
+level = 1
 
 [[rank]]
 name = "Oficial"
 max = 150
 skill = 50
 level = 10
-cost = "5 platas"
 
 [[rank]]
 name = "Experto"
 max = 225
 skill = 125
 level = 20
-cost = "50 platas"
 
 [[rank]]
 name = "Artesano"
 max = 300
 skill = 200
 level = 35
-cost = "5 de oro"
-
-# --- Paño y madejas
-[[material]]
-id = 2589
-name = "Paño de lino"
-where = "humanoides de nivel 5-15 o subasta"
-sell = "véndelo en la subasta o haz vendas de Primeros auxilios."
-min = 20
 
 [[material]]
-id = 2592
-name = "Paño de lana"
-where = "humanoides de nivel 15-25 o subasta"
-sell = "véndelo en la subasta: lo buscan sastres y Primeros auxilios."
-min = 20
+id = 159
+name = "Agua de manantial refrescante"
+vendor = 5
+where = "vendedor"
+profs = ["cooking"]
 
 [[material]]
-id = 4306
-name = "Paño de seda"
-where = "humanoides de nivel 23-35 o subasta"
-sell = "véndelo en la subasta."
-min = 20
+id = 730
+name = "Ojo de múrloc"
+where = "bestias"
+profs = ["alchemy"]
 
 [[material]]
-id = 4338
-name = "Paño de tejido mágico"
-where = "humanoides de nivel 35-45 o subasta"
-sell = "véndelo en la subasta: se vende muy bien."
-min = 20
-note = "La fuente lo llamaba «Tela de paño mágico»; el nombre esES habitual es «Paño de tejido mágico». Confirmar en el cliente."
+id = 765
+name = "Hojaplata"
+where = "herboristería"
+profs = ["alchemy"]
 
 [[material]]
-id = 14047
-name = "Paño rúnico"
-where = "humanoides de nivel 48+ o subasta"
-sell = "véndelo en la subasta."
-min = 20
+id = 785
+name = "Marregal"
+where = "herboristería"
+profs = ["alchemy"]
 
 [[material]]
-id = 2996
-name = "Madeja de paño de lino"
-made_from = [2589, 2]
+id = 2318
+name = "Cuero ligero"
+where = "fabricado"
+profs = ["leatherworking"]
 
 [[material]]
-id = 2997
-name = "Madeja de paño de lana"
-made_from = [2592, 3]
+id = 2319
+name = "Cuero medio"
+where = "fabricado"
+profs = ["leatherworking"]
 
-[[material]]
-id = 4305
-name = "Madeja de paño de seda"
-made_from = [4306, 4]
-
-[[material]]
-id = 4339
-name = "Madeja de tejido mágico"
-made_from = [4338, 5]
-
-[[material]]
-id = 14048
-name = "Madeja de paño rúnico"
-made_from = [14047, 5]
-
-# --- Proveedor de suministros comerciales
 [[material]]
 id = 2320
 name = "Hilo burdo"
 vendor = 10
+where = "vendedor"
+profs = ["leatherworking", "tailoring"]
 
 [[material]]
 id = 2321
 name = "Hilo refinado"
 vendor = 100
-
-[[material]]
-id = 4291
-name = "Hilo de seda"
-vendor = 500
-
-[[material]]
-id = 8343
-name = "Hilo de seda pesada"
-vendor = 2000
-
-[[material]]
-id = 14341
-name = "Hilo rúnico"
-vendor = 5000
-
-[[material]]
-id = 2604
-name = "Tinte rojo"
-vendor = 50
-
-[[material]]
-id = 6260
-name = "Tinte azul"
-vendor = 50
-
-[[material]]
-id = 4340
-name = "Tinte gris"
-vendor = 350
+where = "vendedor"
+profs = ["leatherworking", "tailoring"]
 
 [[material]]
 id = 2324
 name = "Lejía"
 vendor = 25
+where = "vendedor"
+profs = ["tailoring"]
 
 [[material]]
-id = 6217
-name = "Vara de cobre"
-vendor = 124
+id = 2325
+name = "Tinte negro"
+vendor = 1000
+where = "vendedor"
+profs = ["leatherworking"]
 
 [[material]]
-id = 247786
-name = "Mota de magia"
-vendor = 5
-note = "Objeto nuevo de Forever."
+id = 2447
+name = "Flor de paz"
+where = "herboristería"
+profs = ["alchemy", "firstaid"]
 
 [[material]]
-id = 4470
-name = "Madera simple"
-vendor = 38
+id = 2450
+name = "Brezospina"
+where = "herboristería"
+profs = ["alchemy"]
+
+[[material]]
+id = 2453
+name = "Hierba cardenal"
+where = "herboristería"
+profs = ["alchemy"]
+
+[[material]]
+id = 2589
+name = "Paño de lino"
+where = "paño de humanoides"
+profs = ["engineering", "firstaid"]
+
+[[material]]
+id = 2592
+name = "Paño de lana"
+where = "paño de humanoides"
+profs = ["engineering", "firstaid"]
+
+[[material]]
+id = 2604
+name = "Tinte rojo"
+vendor = 50
+where = "vendedor"
+profs = ["tailoring"]
+
+[[material]]
+id = 2605
+name = "Tinte verde"
+vendor = 100
+where = "vendedor"
+profs = ["blacksmithing", "leatherworking"]
+
+[[material]]
+id = 2672
+name = "Carne fibrosa de lobo"
+where = "bestias"
+profs = ["cooking"]
+
+[[material]]
+id = 2673
+name = "Carne de coyote"
+where = "bestias"
+profs = ["cooking"]
+
+[[material]]
+id = 2677
+name = "Costillas de jabalí"
+where = "bestias"
+profs = ["cooking"]
+
+[[material]]
+id = 2678
+name = "Especias suaves"
+vendor = 2
+where = "vendedor"
+profs = ["cooking", "firstaid"]
+
+[[material]]
+id = 2692
+name = "Especias picantes"
+vendor = 40
+where = "vendedor"
+profs = ["cooking"]
+
+[[material]]
+id = 2835
+name = "Piedra basta"
+where = "minería"
+profs = ["blacksmithing", "engineering"]
+
+[[material]]
+id = 2838
+name = "Piedra pesada"
+where = "minería"
+profs = ["blacksmithing"]
+
+[[material]]
+id = 2840
+name = "Lingote de cobre"
+where = "minería"
+profs = ["blacksmithing", "engineering"]
+
+[[material]]
+id = 2841
+name = "Lingote de bronce"
+where = "minería"
+profs = ["blacksmithing", "engineering"]
+
+[[material]]
+id = 2842
+name = "Lingote de plata"
+where = "minería"
+profs = ["blacksmithing", "engineering"]
+
+[[material]]
+id = 2996
+name = "Madeja de paño de lino"
+where = "fabricado"
+made_from = [2589, 2]
+profs = ["tailoring"]
+
+[[material]]
+id = 2997
+name = "Madeja de paño de lana"
+where = "fabricado"
+made_from = [2592, 3]
+profs = ["tailoring"]
+
+[[material]]
+id = 3355
+name = "Acérita salvaje"
+where = "herboristería"
+profs = ["alchemy"]
+
+[[material]]
+id = 3356
+name = "Sangrerregia"
+where = "herboristería"
+profs = ["alchemy"]
+
+[[material]]
+id = 3371
+name = "Vial vacío"
+vendor = 4
+where = "vendedor"
+profs = ["alchemy", "firstaid"]
+
+[[material]]
+id = 3372
+name = "Vial con plomo"
+vendor = 40
+where = "vendedor"
+profs = ["alchemy"]
+
+[[material]]
+id = 3383
+name = "Elixir de sabiduría"
+where = "botín o subasta"
+profs = ["tailoring"]
+
+[[material]]
+id = 3478
+name = "Piedra de pulir burda"
+where = "fabricado"
+made_from = [2836, 2]
+profs = ["blacksmithing"]
+
+[[material]]
+id = 3486
+name = "Piedra de pulir pesada"
+where = "fabricado"
+made_from = [2838, 3]
+profs = ["blacksmithing"]
+
+[[material]]
+id = 3575
+name = "Lingote de hierro"
+where = "minería"
+profs = ["blacksmithing", "engineering"]
+
+[[material]]
+id = 3577
+name = "Lingote de oro"
+where = "minería"
+profs = ["tailoring"]
+
+[[material]]
+id = 3820
+name = "Alga estranguladora"
+where = "herboristería"
+profs = ["alchemy"]
+
+[[material]]
+id = 3821
+name = "Espina de oro"
+where = "herboristería"
+profs = ["alchemy"]
+
+[[material]]
+id = 3859
+name = "Lingote de acero"
+where = "minería"
+profs = ["blacksmithing"]
+
+[[material]]
+id = 3860
+name = "Lingote de mitril"
+where = "minería"
+profs = ["blacksmithing", "engineering"]
+
+[[material]]
+id = 4233
+name = "Pellejo medio curado"
+where = "fabricado"
+profs = ["leatherworking"]
+
+[[material]]
+id = 4234
+name = "Cuero pesado"
+where = "fabricado"
+profs = ["leatherworking"]
+
+[[material]]
+id = 4235
+name = "Pellejo pesado"
+where = "desuello"
+profs = ["leatherworking"]
+
+[[material]]
+id = 4236
+name = "Pellejo pesado curado"
+where = "fabricado"
+profs = ["leatherworking"]
+
+[[material]]
+id = 4289
+name = "Sal"
+vendor = 50
+where = "vendedor"
+profs = ["leatherworking"]
+
+[[material]]
+id = 4291
+name = "Hilo de seda"
+vendor = 500
+where = "vendedor"
+profs = ["leatherworking", "tailoring"]
+
+[[material]]
+id = 4304
+name = "Cuero grueso"
+where = "fabricado"
+profs = ["leatherworking"]
+
+[[material]]
+id = 4305
+name = "Madeja de paño de seda"
+where = "fabricado"
+made_from = [4306, 4]
+profs = ["tailoring"]
+
+[[material]]
+id = 4306
+name = "Paño de seda"
+where = "paño de humanoides"
+profs = ["engineering", "firstaid"]
+
+[[material]]
+id = 4338
+name = "Tela de paño mágico"
+where = "paño de humanoides"
+profs = ["engineering", "firstaid", "tailoring"]
+
+[[material]]
+id = 4339
+name = "Madeja de tejido mágico"
+where = "fabricado"
+made_from = [4338, 5]
+profs = ["tailoring"]
+
+[[material]]
+id = 4357
+name = "Pólvora férrea"
+where = "fabricado"
+made_from = [2835, 1]
+profs = ["engineering"]
+
+[[material]]
+id = 4359
+name = "Un puñado de tornillos de cobre"
+where = "fabricado"
+made_from = [2840, 1]
+profs = ["engineering"]
+
+[[material]]
+id = 4364
+name = "Pólvora burda"
+where = "fabricado"
+made_from = [2836, 1]
+profs = ["engineering"]
+
+[[material]]
+id = 4375
+name = "Cacharros zumbones de bronce"
+where = "fabricado"
+profs = ["engineering"]
+
+[[material]]
+id = 4377
+name = "Pólvora pesada"
+where = "fabricado"
+made_from = [2838, 1]
+profs = ["engineering"]
+
+[[material]]
+id = 4382
+name = "Marco de bronce"
+where = "fabricado"
+profs = ["engineering"]
+
+[[material]]
+id = 4603
+name = "Serviola moteada cruda"
+where = "botín o subasta"
+profs = ["cooking"]
+
+[[material]]
+id = 5465
+name = "Pata de araña pequeña"
+where = "bestias"
+profs = ["cooking"]
+
+[[material]]
+id = 5504
+name = "Carne de almeja ácida"
+where = "bestias"
+profs = ["cooking"]
+
+[[material]]
+id = 6260
+name = "Tinte azul"
+vendor = 50
+where = "vendedor"
+profs = ["tailoring"]
+
+[[material]]
+id = 6261
+name = "Tinte naranja"
+vendor = 1000
+where = "vendedor"
+profs = ["tailoring"]
+
+[[material]]
+id = 6530
+name = "Reptadores nocturnos"
+vendor = 100
+where = "vendedor"
+profs = ["engineering"]
+
+[[material]]
+id = 7071
+name = "Hebilla de hierro"
+where = "botín o subasta"
+profs = ["leatherworking"]
+
+[[material]]
+id = 7080
+name = "Esencia de agua"
+where = "botín elemental"
+profs = ["tailoring"]
+
+[[material]]
+id = 7912
+name = "Piedra sólida"
+where = "minería"
+profs = ["blacksmithing"]
+
+[[material]]
+id = 7966
+name = "Piedra de pulir sólida"
+where = "fabricado"
+made_from = [7912, 4]
+profs = ["blacksmithing"]
+
+[[material]]
+id = 8170
+name = "Cuero basto"
+where = "desuello"
+profs = ["blacksmithing", "leatherworking", "tailoring"]
+
+[[material]]
+id = 8343
+name = "Hilo de seda pesada"
+vendor = 2000
+where = "vendedor"
+profs = ["tailoring"]
+
+[[material]]
+id = 8836
+name = "Lágrimas de Arthas"
+where = "herboristería"
+profs = ["alchemy"]
+
+[[material]]
+id = 8838
+name = "Solea"
+where = "herboristería"
+profs = ["alchemy"]
+
+[[material]]
+id = 8846
+name = "Gromsanguina"
+where = "herboristería"
+profs = ["alchemy"]
 
 [[material]]
 id = 8925
 name = "Vial de cristal"
 vendor = 500
-note = "Lo venden los proveedores de alquimia."
-
-# --- Otros
-[[material]]
-id = 8170
-name = "Cuero basto"
-where = "subasta (desolladores)"
+where = "vendedor"
+profs = ["alchemy"]
 
 [[material]]
-id = 14227
-name = "Seda de araña de tela de hierro"
-where = "arañas de nivel 50+ o subasta"
+id = 10505
+name = "Pólvora"
+where = "fabricado"
+made_from = [7912, 2]
+profs = ["engineering"]
 
 [[material]]
-id = 6338
-name = "Vara de plata"
-where = "subasta (la hacen los herreros)"
+id = 10560
+name = "Disparador inestable"
+where = "fabricado"
+profs = ["engineering"]
 
 [[material]]
-id = 1210
-name = "Gema de las Sombras"
-where = "subasta o botín"
-
-[[material]]
-id = 8831
-name = "Loto morado"
-where = "subasta (herboristas)"
-
-# --- Encantamiento (desencantar)
-[[material]]
-id = 10940
-name = "Polvo extraño"
-where = "desencanta verdes de nivel 5-20"
-sell = "lo compran otros encantadores en la subasta."
-min = 20
+id = 10561
+name = "Envoltura de mitril"
+where = "fabricado"
+made_from = [3860, 3]
+profs = ["engineering"]
 
 [[material]]
 id = 10938
 name = "Esencia mágica inferior"
-where = "desencanta verdes de nivel 5-15"
-sell = "véndela en la subasta."
-min = 6
+where = "desencantar"
+profs = ["enchanting"]
 
 [[material]]
-id = 10939
-name = "Esencia mágica superior"
-where = "desencanta verdes de nivel 15-20"
-sell = "véndela en la subasta."
-min = 3
+id = 10940
+name = "Polvo extraño"
+where = "desencantar"
+profs = ["enchanting"]
 
 [[material]]
-id = 10998
-name = "Esencia astral inferior"
-where = "desencanta verdes de nivel 20-25"
+id = 10978
+name = "Fragmento de luz trémula pequeño"
+where = "desencantar"
+profs = ["enchanting"]
 
 [[material]]
 id = 11082
 name = "Esencia astral superior"
-where = "desencanta verdes de nivel 25-30"
-
-[[material]]
-id = 11083
-name = "Polvo de alma"
-where = "desencanta verdes de nivel 20-30"
+where = "desencantar"
+profs = ["enchanting"]
 
 [[material]]
 id = 11134
 name = "Esencia mística inferior"
-where = "desencanta verdes de nivel 30-35"
+where = "desencantar"
+profs = ["enchanting"]
 
 [[material]]
-id = 11135
-name = "Esencia mística superior"
-where = "desencanta verdes de nivel 35-40"
-
-[[material]]
-id = 11137
-name = "Polvo de visión"
-where = "desencanta verdes de nivel 30-40"
-
-[[material]]
-id = 11174
-name = "Esencia abisal inferior"
-where = "desencanta verdes de nivel 40-45"
+id = 11175
+name = "Esencia abisal superior"
+where = "desencantar"
+profs = ["enchanting"]
 
 [[material]]
 id = 11176
 name = "Polvo onírico"
-where = "desencanta verdes de nivel 40-50"
-sell = "se vende muy bien: todo encantador lo necesita de 265 a 300."
-min = 20
+where = "desencantar"
+profs = ["tailoring"]
 
 [[material]]
-id = 16204
-name = "Polvo de ilusión"
-where = "desencanta verdes de nivel 50-60"
+id = 11184
+name = "Cristal de poder azul"
+where = "botín o subasta"
+profs = ["blacksmithing"]
+
+[[material]]
+id = 11185
+name = "Cristal de poder verde"
+where = "botín o subasta"
+profs = ["blacksmithing"]
+
+[[material]]
+id = 11186
+name = "Cristal de poder rojo"
+where = "botín o subasta"
+profs = ["blacksmithing"]
+
+[[material]]
+id = 12184
+name = "Carne de raptor"
+where = "bestias"
+profs = ["cooking"]
+
+[[material]]
+id = 12359
+name = "Lingote de torio"
+where = "minería"
+profs = ["blacksmithing", "engineering"]
+
+[[material]]
+id = 12365
+name = "Piedra densa"
+where = "minería"
+profs = ["blacksmithing", "engineering"]
+
+[[material]]
+id = 12662
+name = "Runa demoníaca"
+where = "botín o subasta"
+profs = ["tailoring"]
+
+[[material]]
+id = 13422
+name = "Anguila Escama Tormentosa"
+where = "botín o subasta"
+profs = ["alchemy"]
+
+[[material]]
+id = 13463
+name = "Hojasueño"
+where = "herboristería"
+profs = ["alchemy"]
+
+[[material]]
+id = 13465
+name = "Salviargenta de montaña"
+where = "herboristería"
+profs = ["alchemy"]
+
+[[material]]
+id = 13466
+name = "Flor de peste"
+where = "herboristería"
+profs = ["alchemy"]
+
+[[material]]
+id = 13759
+name = "Pargo nocturno crudo"
+where = "botín o subasta"
+profs = ["cooking"]
+
+[[material]]
+id = 14047
+name = "Paño rúnico"
+where = "paño de humanoides"
+profs = ["engineering", "firstaid", "tailoring"]
+
+[[material]]
+id = 14048
+name = "Madeja de paño rúnico"
+where = "fabricado"
+made_from = [14047, 5]
+profs = ["tailoring"]
+
+[[material]]
+id = 14227
+name = "Seda de araña Tejehierro"
+where = "paño de humanoides"
+profs = ["tailoring"]
+
+[[material]]
+id = 14256
+name = "Tela de inferi"
+where = "paño de humanoides"
+profs = ["tailoring"]
+
+[[material]]
+id = 14341
+name = "Hilo rúnico"
+vendor = 5000
+where = "vendedor"
+profs = ["leatherworking", "tailoring"]
+
+[[material]]
+id = 15407
+name = "Pellejo basto curado"
+where = "desuello"
+profs = ["leatherworking"]
+
+[[material]]
+id = 16202
+name = "Esencia eterna inferior"
+where = "desencantar"
+profs = ["enchanting"]
+
+[[material]]
+id = 247786
+name = "Mota de magia"
+vendor = 10
+where = "vendedor"
+profs = ["enchanting"]

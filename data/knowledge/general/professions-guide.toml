@@ -1,62 +1,78 @@
-# Migrado de BrujoGnomoGuia 4.1.0 (Texts.lua, ns.TEXTS.profesiones). Lo usaban el brujo y el mago.
+# Escrito a mano. Origen: BrujoGnomoGuia 4.1.0 (Texts.lua, ns.TEXTS.profesiones), corregido el 13-nov-2026 con las tablas
+# del cliente de Forever (1.60.1.70888) y las listas de instructor de Forever que recoge Polestar: las rutas por
+# habilidad ya no están aquí, las genera tools/gen_professions.py (data/knowledge/general/professions-<prof>.toml).
+# [[recommend]]: profesiones recomendadas por clase y el porqué (la pestaña Profesiones lo enseña si te falta alguna
+# principal). Las cifras del druida salen de `python tools/gen_professions.py --compare` (docs/PROFESSIONS.md).
 id = "general-professions-guide"
 class = "ANY"
 kind = "page"
-title = "Profesiones: Sastrería y Encantamiento"
+title = "Profesiones: plan, rangos y campamento"
 order = 190
 status = "unverified"
-sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/"]
-note = "Recomendación de Legacy (Thrill of Adventure) según ConquestCapped. Los nombres de Legacy y Arcane Salvager están en inglés: el nombre español no está confirmado."
+sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://conquestcapped.com/", "wago:1.60.1.70888", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798"]
+checked = "2026-11-13"
+note = "Legacy (Thrill of Adventure) según ConquestCapped. Los nombres de Legacy y Arcane Salvager están en inglés: el nombre español no está confirmado. Los rangos y las recetas citadas, comprobados en las tablas del cliente."
+
+[[recommend]]
+class = "WARLOCK"
+profs = ["tailoring", "enchanting"]
+why = "Sastrería no pide recolección: el paño lo sueltan los humanoides que matas en la guía, y fabrica tu equipo de tela, bolsas y el **Estandarte de facción** del campamento. Encantamiento desencanta los verdes que fabricas y los que te caen, encanta tu equipo y hace la **Varita mágica inferior** (habilidad 10), tu primera varita. Las dos juntas son la ruta más barata en esfuerzo de las calculadas (docs/PROFESSIONS.md)."
+
+[[recommend]]
+class = "MAGE"
+profs = ["tailoring", "enchanting"]
+why = "Igual que el brujo: Sastrería sube con el paño que sueltan los humanoides, sin recolectar, y te viste de tela; Encantamiento aprovecha cada verde y te da la **Varita mágica inferior** a habilidad 10. Las dos juntas son la combinación más barata en esfuerzo para una clase de tela."
+
+[[recommend]]
+class = "DRUID"
+profs = ["herbalism", "alchemy"]
+why = "Con los datos del cliente, Alquimia con Herboristería sube de 1 a 300 con unas 345 fabricaciones esperadas y unas 14 de oro de esfuerzo (las hierbas las recoges tú, también en Forma de viaje); Peletería con Desuello pide unas 367 fabricaciones y unas 156 de oro de esfuerzo (sobre todo cuero grueso y basto). Además Alquimia te da las pociones de maná y los elixires de agilidad que usas. Peletería solo compensa si quieres fabricarte el cuero de feral: es la alternativa."
 
 [[block]]
-heading = "Plan definitivo"
+heading = "Plan"
 body = """
-**Sastrería + Encantamiento**, sin cambiar nunca. Secundarias: Primeros auxilios y Cocina (Pesca opcional).
-
-Cada profesión de fabricación da 1 punto de Legacy a 150, 225 y 300, una vez por cuenta. Subirla de nuevo no da nada."""
+- **Brujo y mago:** Sastrería + Encantamiento, sin cambiar nunca. **Druida:** Herboristería + Alquimia (alternativa: Desuello + Peletería).
+- Secundarias: Primeros auxilios y Cocina (Pesca opcional). En Forever, Primeros auxilios también enseña pociones de sanación.
+- La pestaña Profesiones sigue las profesiones que **de verdad** tienes aprendidas, todas, con su ruta; si aún te falta una principal, te recuerda la de tu clase.
+- Cada profesión de fabricación da 1 punto de Legacy a 150, 225 y 300, una vez por cuenta. Subirla de nuevo no da nada."""
 
 [[block]]
-heading = "Rangos de instructor"
+heading = "Rangos"
 body = """
-- **Aprendiz:** 1-75.
-- **Oficial:** habilidad 50 y nivel 10.
-- **Experto:** habilidad 125 y nivel 20.
-- **Artesano:** habilidad 200 y nivel 35.
+- **Aprendiz:** tope 75; en Forever se aprende a cualquier nivel (Classic pedía 5).
+- **Oficial:** tope 150; habilidad 50 y nivel 10 (Cocina y Primeros auxilios: sin nivel).
+- **Experto:** tope 225; habilidad 125 y nivel 20. Solo algunos instructores lo enseñan (Sastrería: Georgio Bolero en Ventormenta; Encantamiento: Kitta Firewind en la Torre de Azora; Alquimia: Ainethil en Darnassus). Cocina y Primeros auxilios: un libro.
+- **Artesano:** tope 300; habilidad 200 y nivel 35, en instructores concretos (Sastrería: Timothy Worthington en Theramore; Encantamiento: Annora en Uldaman). Cocina y Primeros auxilios: una misión (habilidad 225).
 
-Entrena el rango siguiente antes de llegar al tope: los puntos por encima se pierden."""
+Entrena el rango siguiente antes de llegar al tope: los puntos por encima se pierden. El nivel de Experto y Artesano es el de Classic: sin confirmar en Forever."""
 
 [[block]]
-heading = "Sastrería por habilidad"
+heading = "Sastrería: lo que no es la ruta"
 body = """
-- **1-45:** Madejas de paño de lino; **45-55:** Guantes de lino pesado.
-- **20:** Estandarte de facción para el campamento (+Espíritu).
-- **60-125:** conjuntos nuevos ligados al recogerlos (30 de Favor cada patrón, Mivin Shadowweave en Tres Caminos). Fabrica el de Sombras si eres brujo.
-- **75-125:** túnicas Filigreed (Filigreed Shadow Gown para Aflicción); patrones en jefes de mazmorra.
-- **140:** Rueca para el campamento (patrón de botín, no del instructor). **140-235:** seis conjuntos más; los pies son de lo mejor a los niveles 30, 40 y 50.
+- **20:** **Estandarte de facción** para el campamento (+Espíritu).
+- **60-125:** conjuntos nuevos ligados al recogerlos, por Favor del mercader (Mivin Shadowweave en Tres Caminos). Fabrica el de Sombras si eres brujo.
+- **140:** **Rueca** para el campamento: el patrón cae en Dalaran, no lo enseña el instructor. Muchos patrones de Forever piden la Rueca: la ruta calculada no los usa.
 - **195-205:** hombros y brazales Nether (60 de Favor y Amistoso con la Azeroth Commerce Authority).
-- **300:** Telar y conjunto de banda del brujo (Demonheart, Aisarra Nightmeadow).
+- **300:** **Telar** (sin origen conocido aún) y conjunto de banda del brujo (Demonheart).
 
-Ruta exacta con materiales: data/knowledge/general/professions-tailoring.toml. De 225 a 300 aún no hay ninguna ruta probada en Forever."""
+En Forever casi todas las recetas bajaron unos 25 puntos sus colores: **Madeja de paño de seda** es amarilla a 110 y gris a 120 (en Classic, 135 y 145). La ruta: data/knowledge/general/professions-tailoring.toml."""
 
 [[block]]
-heading = "Encantamiento por habilidad"
+heading = "Encantamiento: lo que no es la ruta"
 body = """
-- **1:** Vara de cobre con runas, y desencanta todo verde que no uses.
-- **Varita mágica inferior:** la receta se aprende a 10; haz una para ti ya. **Varita mágica superior:** a 70. Para subir puntos rinden más tarde (70-90 y 101-111).
-- **20:** Laúd encantado para el campamento (armadura, estadísticas, resistencias).
-- **140:** bastones y orbes nuevos (Soulstaff, Orb of Souls), 45 de Favor.
-- **140:** Arcane Salvager para el campamento (fórmula de botín).
+- **1:** fabrica la **Vara de cobre rúnico** (herramienta) y desencanta todo verde que no uses.
+- **10:** **Varita mágica inferior**: haz una para ti ya. **70:** **Varita mágica superior**.
+- **20:** **Laúd encantado** para el campamento (armadura, estadísticas, resistencias).
+- **140:** bastones y orbes nuevos (Soulstaff, Orb of Souls), 45 de Favor; Arcane Salvager para el campamento (fórmula de botín).
 - **210:** encantamientos de collar, como Poder con hechizos (120 de Favor y Amistoso con la Azeroth Commerce Authority).
-- **Varita brillante:** 180 de Favor y Honorable con la Azeroth Commerce Authority (la habilidad, 275 o 220, según la guía).
 - **300:** Forja arcana y encantamientos de poder con hechizos.
 
-Ruta exacta con materiales: data/knowledge/general/professions-enchanting.toml."""
-note = "Varita brillante: las guías no coinciden en la habilidad (275 o 220)."
+La ruta, con las varas rúnicas que hacen falta en cada tramo: data/knowledge/general/professions-enchanting.toml."""
 
 [[block]]
 heading = "Secundarias"
 body = """
-- **Primeros auxilios:** vendas con el paño sobrante; en Forever, también pociones de salud.
+- **Primeros auxilios:** vendas con el paño sobrante y, en Forever, pociones de sanación (Flor de paz, Especias suaves y un Vial vacío) y el **Equipo de primeros auxilios** del campamento a 20.
 - **Cocina:** comida con +5% de experiencia y la hoguera del campamento (sin hoguera no hay objetos de campamento)."""
 
 [[block]]
@@ -65,7 +81,7 @@ body = """
 - La hoguera básica admite 3 objetos; la de Oficial (Cocina 140), 5; la de Experto (Cocina 220), 10.
 - Siéntate o fabrica un minuto al lado para ganar el beneficio.
 - Todos los objetos comparten 1 hora de reutilización.
-- Tus dos profesiones dan objetos a habilidad 20: úsalos cada vez que pares."""
+- Tus dos profesiones dan objetos a habilidad 20: úsalos cada vez que pares. Peletería: **Bastidor para pieles** a 125 (corrección de Forever del 6-nov)."""
 
 [[block]]
 heading = "Puntos de Legacy (16 por personaje)"
@@ -79,6 +95,6 @@ body = """
 [[block]]
 heading = "Lógica del asesor"
 body = """
-- Ideal de habilidad para tu nivel: **nivel × 5** (máximo 300). Si vas 40 puntos por debajo, la profesión va atrasada.
-- Aviso de tope: a 15 puntos del máximo de tu rango, entrena el siguiente si ya cumples nivel y habilidad.
-- Si tienes una profesión de recolección (Herboristería, que el cliente llama Botánica; Minería; Desuello), el plan es abandonarla."""
+- Ideal de habilidad para tu nivel: **nivel × 5** (máximo 300). Si una profesión de tu plan va 40 puntos por debajo, va atrasada.
+- Aviso de tope: a 15 puntos del máximo de tu rango, entrena el siguiente si ya cumples nivel y habilidad; si no, guarda el material.
+- Si tienes una profesión que no está en el plan de tu clase (por ejemplo Minería en un brujo), la pestaña la enseña igual, con su progreso y dónde entrenarla, y la ficha de personaje te lo recuerda."""

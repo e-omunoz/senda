@@ -1,0 +1,442 @@
+# GENERADO por tools/gen_professions.py: no editar a mano (regenerar; docs/PROFESSIONS.md).
+# Tablas del cliente de Forever 1.60.1.70888 (wago.tools), Polestar 19bd636e7d6f (listas de instructor de forever-tdb-2026-10-14, trainers.rs) y forever-db 2026.11.1.
+id = "general-professions-firstaid"
+class = "ANY"
+kind = "professions"
+title = "Primeros auxilios 1-300"
+prof = "firstaid"
+prof_kind = "secondary"
+order = 207
+status = "unverified"
+sources = ["wago:1.60.1.70888", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798", "foreverdb:2026.11.1"]
+assumes = "el paño lo sueltan los humanoides mientras subes"
+crafts = 482
+reach = 300
+note = "Ruta calculada: unas 482 fabricaciones esperadas de 1 a 300. Esfuerzo mínimo con material de vendedor por su precio y recolectado por su nivel; el paño lo sueltan los humanoides mientras subes."
+
+[[rank]]
+name = "Aprendiz"
+max = 75
+skill = 0
+level = 1
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Oficial"
+max = 150
+skill = 50
+level = 0
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Experto"
+max = 225
+skill = 125
+level = 20
+item = 16084
+how = "book"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Artesano"
+max = 300
+skill = 225
+level = 35
+how = "quest"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 2327
+name = "Shaina Fuller"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1453, 53, 44.7, "Shaina Fuller (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2327"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 5150
+name = "Nissa Firestone"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1455, 55.1, 58.2, "Nissa Firestone (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5150"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 4211
+name = "Dannelor"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1457, 51.9, 12.3, "Dannelor (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4211"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 2326
+name = "Thamner Pol"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1426, 47.2, 52.6, "Thamner Pol (Dun Morogh)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2326"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 2329
+name = "Michelle Belle"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1429, 43.4, 65.6, "Michelle Belle (Bosque de Elwynn)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2329"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 3181
+name = "Fremal Doohickey"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1437, 10.8, 61.4, "Fremal Doohickey (Los Humedales)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3181"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 6094
+name = "Byancie"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1438, 55.3, 56.8, "Byancie (Teldrassil)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/6094"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 2798
+name = "Pand Stonebinder"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1456, 29.5, 21.4, "Pand Stonebinder (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2798"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 3373
+name = "Arnok"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1454, 34.2, 84.6, "Arnok (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3373"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 4591
+name = "Mary Edras"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1458, 73.1, 55.1, "Mary Edras (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4591"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 5759
+name = "Nurse Neela"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1420, 61.8, 52.8, "Nurse Neela (Claros de Tirisfal)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5759"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 5939
+name = "Vira Younghoof"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1412, 46.1, 64, "Vira Younghoof (Mulgore)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5939"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 5943
+name = "Rawrk"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1411, 54.2, 41.9, "Rawrk (Durotar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5943"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 2805
+name = "Deneb Walker"
+faction = "Alliance"
+ranks = ["Experto"]
+at = [1417, 27, 58.8, "Deneb Walker (Tierras Altas de Arathi)"]
+book = 16084
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2805"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 13476
+name = "Balai Lok'Wein"
+faction = "Horde"
+ranks = ["Experto"]
+at = [1413, 54.4, 69.7, "Balai Lok'Wein (Los Baldíos)"]
+book = 16084
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/13476"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 12939
+name = "Doctor Gustaf VanHowzen"
+faction = "Alliance"
+ranks = ["Artesano"]
+at = [1445, 67.8, 49, "Doctor Gustaf VanHowzen (Marjal Revolcafango)"]
+quest = true
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/12939"]
+
+[[trainer]]
+prof = "firstaid"
+npc = 12920
+name = "Doctor Gregory Victor"
+faction = "Horde"
+ranks = ["Artesano"]
+at = [1417, 73.4, 36.9, "Doctor Gregory Victor (Tierras Altas de Arathi)"]
+quest = true
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/12920"]
+
+[[route]]
+prof = "firstaid"
+from = 50
+to = 75
+train = "Oficial"
+level = 0
+note = "Entrena Oficial (habilidad 50) antes de llegar a 75: los puntos por encima del tope se pierden."
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "firstaid"
+from = 125
+to = 150
+train = "Experto"
+level = 20
+note = "Experto es un libro, «Primeros auxilios para expertos: Entre vendas» (habilidad 125, nivel 20): cómpralo y léelo antes de llegar a 150."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "firstaid"
+from = 225
+to = 225
+train = "Artesano"
+level = 35
+note = "Artesano es una misión (habilidad 225, nivel 35): hazla en cuanto llegues a 225, que es el tope."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "firstaid"
+from = 1
+to = 44
+craft = 1251
+spell = 3275
+name = "Vendaje de lino"
+n = 48
+mats = [[2589, 1]]
+colors = [1, 30, 45, 60]
+learn = "la sabes al aprender la profesión"
+learn_skill = 1
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3275"]
+
+[[route]]
+prof = "firstaid"
+from = 44
+to = 75
+craft = 118
+spell = 1244431
+name = "Poción de sanación menor"
+n = 39
+mats = [[3371, 1], [2678, 1], [2447, 1]]
+colors = [1, 55, 75, 95]
+learn = "instructor (lista capturada de Forever), desde 1 (1 p)"
+learn_skill = 1
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/1244431", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/1244431"]
+
+[[route]]
+prof = "firstaid"
+from = 75
+to = 80
+craft = 118
+spell = 1244431
+name = "Poción de sanación menor"
+n = 12
+mats = [[3371, 1], [2678, 1], [2447, 1]]
+colors = [1, 55, 75, 95]
+learn = "instructor (lista capturada de Forever), desde 1 (1 p)"
+learn_skill = 1
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/1244431", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/1244431"]
+
+[[route]]
+prof = "firstaid"
+from = 80
+to = 115
+craft = 3530
+spell = 3277
+name = "Vendaje de lana"
+n = 49
+mats = [[2592, 1]]
+colors = [80, 80, 115, 150]
+learn = "instructor (lista capturada de Forever), desde 80 (2 p 50 c)"
+learn_skill = 80
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3277", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3277"]
+
+[[route]]
+prof = "firstaid"
+from = 115
+to = 150
+craft = 3531
+spell = 3278
+name = "Vendaje pesado de lana"
+n = 49
+mats = [[2592, 2]]
+colors = [115, 115, 150, 185]
+learn = "instructor (lista capturada de Forever), desde 115 (10 p)"
+learn_skill = 115
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3278", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3278"]
+
+[[route]]
+prof = "firstaid"
+from = 150
+to = 180
+craft = 3531
+spell = 3278
+name = "Vendaje pesado de lana"
+n = 131
+mats = [[2592, 2]]
+colors = [115, 115, 150, 185]
+learn = "instructor (lista capturada de Forever), desde 115 (10 p)"
+learn_skill = 115
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3278", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3278"]
+
+[[route]]
+prof = "firstaid"
+from = 180
+to = 210
+craft = 6451
+spell = 7929
+name = "Vendaje pesado de seda"
+n = 42
+mats = [[4306, 2]]
+colors = [180, 180, 210, 240]
+learn = "receta «Manual: venda de seda pesada» del vendedor (22 p), desde 180"
+learn_skill = 180
+recipe_item = 16112
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/7929", "wago:1.60.1.70888/ItemSparse/16112"]
+
+[[route]]
+prof = "firstaid"
+from = 210
+to = 225
+craft = 8544
+spell = 10840
+name = "Vendaje de tejido mágico"
+n = 18
+mats = [[4338, 1]]
+colors = [210, 210, 240, 270]
+learn = "receta «Manual: venda de paño mágico» del vendedor (50 p), desde 210"
+learn_skill = 210
+recipe_item = 16113
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/10840", "wago:1.60.1.70888/ItemSparse/16113"]
+
+[[route]]
+prof = "firstaid"
+from = 225
+to = 240
+craft = 8544
+spell = 10840
+name = "Vendaje de tejido mágico"
+n = 24
+mats = [[4338, 1]]
+colors = [210, 210, 240, 270]
+learn = "receta «Manual: venda de paño mágico» del vendedor (50 p), desde 210"
+learn_skill = 210
+recipe_item = 16113
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/10840", "wago:1.60.1.70888/ItemSparse/16113"]
+
+[[route]]
+prof = "firstaid"
+from = 240
+to = 260
+craft = 8545
+spell = 10841
+name = "Venda de tejido mágico gruesa"
+n = 25
+mats = [[4338, 2]]
+colors = [240, 240, 270, 300]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 240"
+learn_skill = 240
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/10841", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "firstaid"
+from = 260
+to = 290
+craft = 14529
+spell = 18629
+name = "Venda de paño rúnico"
+n = 42
+mats = [[14047, 1]]
+colors = [260, 260, 290, 320]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 260"
+learn_skill = 260
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/18629", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "firstaid"
+from = 290
+to = 300
+craft = 14530
+spell = 18630
+name = "Vendaje pesado de paño rúnico"
+n = 11
+mats = [[14047, 2]]
+colors = [290, 290, 320, 350]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 290"
+learn_skill = 290
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/18630", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]

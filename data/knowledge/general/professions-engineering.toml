@@ -1,0 +1,571 @@
+# GENERADO por tools/gen_professions.py: no editar a mano (regenerar; docs/PROFESSIONS.md).
+# Tablas del cliente de Forever 1.60.1.70888 (wago.tools), Polestar 19bd636e7d6f (listas de instructor de forever-tdb-2026-10-14, trainers.rs) y forever-db 2026.11.1.
+id = "general-professions-engineering"
+class = "ANY"
+kind = "professions"
+title = "Ingeniería 1-300"
+prof = "engineering"
+prof_kind = "primary"
+order = 203
+status = "unverified"
+sources = ["wago:1.60.1.70888", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798", "foreverdb:2026.11.1"]
+assumes = "supone Minería (mineral, barras y piedra los sacas tú)"
+crafts = 331
+reach = 300
+note = "Ruta calculada: unas 331 fabricaciones esperadas de 1 a 300. Esfuerzo mínimo con material de vendedor por su precio y recolectado por su nivel; supone Minería (mineral, barras y piedra los sacas tú)."
+
+[[rank]]
+name = "Aprendiz"
+max = 75
+skill = 0
+level = 1
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Oficial"
+max = 150
+skill = 50
+level = 10
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Experto"
+max = 225
+skill = 125
+level = 20
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Artesano"
+max = 300
+skill = 200
+level = 35
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[trainer]]
+prof = "engineering"
+npc = 5518
+name = "Lilliam Sparkspindle"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1453, 62.1, 30.3, "Lilliam Sparkspindle (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5518"]
+
+[[trainer]]
+prof = "engineering"
+npc = 11026
+name = "Sprite Jumpsprocket"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1453, 61.9, 30.6, "Sprite Jumpsprocket (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11026"]
+
+[[trainer]]
+prof = "engineering"
+npc = 5174
+name = "Springspindle Fizzlegear"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+at = [1455, 68.5, 43.5, "Springspindle Fizzlegear (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5174"]
+
+[[trainer]]
+prof = "engineering"
+npc = 11029
+name = "Trixie Quikswitch"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1455, 67.5, 42.9, "Trixie Quikswitch (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11029"]
+
+[[trainer]]
+prof = "engineering"
+npc = 11028
+name = "Jemma Quikswitch"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1455, 67.7, 44.2, "Jemma Quikswitch (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11028"]
+
+[[trainer]]
+prof = "engineering"
+npc = 8736
+name = "Buzzek Bracketswing"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+at = [1446, 52.3, 27.7, "Buzzek Bracketswing (Tanaris)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/8736"]
+
+[[trainer]]
+prof = "engineering"
+npc = 1676
+name = "Finbus Geargrind"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1431, 77.4, 48.8, "Finbus Geargrind (Bosque del Ocaso)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1676"]
+
+[[trainer]]
+prof = "engineering"
+npc = 1702
+name = "Bronk Guzzlegear"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1426, 50.2, 50.4, "Bronk Guzzlegear (Dun Morogh)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1702"]
+
+[[trainer]]
+prof = "engineering"
+npc = 10993
+name = "Twizwick Sprocketgrind"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1412, 58.6, 39.4, "Twizwick Sprocketgrind (Mulgore)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/10993"]
+
+[[trainer]]
+prof = "engineering"
+npc = 11037
+name = "Jenna Lemkenilli"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1439, 38.3, 41.1, "Jenna Lemkenilli (Costa Oscura)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11037"]
+
+[[trainer]]
+prof = "engineering"
+npc = 8736
+name = "Buzzek Bracketswing"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+at = [1446, 52.3, 27.7, "Buzzek Bracketswing (Tanaris)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/8736"]
+
+[[trainer]]
+prof = "engineering"
+npc = 11017
+name = "Roxxik"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+at = [1454, 76.2, 25.2, "Roxxik (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11017"]
+
+[[trainer]]
+prof = "engineering"
+npc = 3412
+name = "Nogg"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1454, 76, 25.4, "Nogg (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3412"]
+
+[[trainer]]
+prof = "engineering"
+npc = 11031
+name = "Franklin Lloyd"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1458, 76.1, 74, "Franklin Lloyd (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11031"]
+
+[[trainer]]
+prof = "engineering"
+npc = 4586
+name = "Graham Van Talen"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1458, 75.3, 73.1, "Graham Van Talen (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4586"]
+
+[[trainer]]
+prof = "engineering"
+npc = 10993
+name = "Twizwick Sprocketgrind"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1412, 58.6, 39.4, "Twizwick Sprocketgrind (Mulgore)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/10993"]
+
+[[trainer]]
+prof = "engineering"
+npc = 11025
+name = "Mukdrak"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1411, 52.2, 40.8, "Mukdrak (Durotar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11025"]
+
+[[route]]
+prof = "engineering"
+from = 50
+to = 75
+train = "Oficial"
+level = 10
+note = "Entrena Oficial (habilidad 50, nivel 10) antes de llegar a 75: los puntos por encima del tope se pierden."
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "engineering"
+from = 125
+to = 150
+train = "Experto"
+level = 20
+note = "Entrena Experto (habilidad 125, nivel 20) antes de llegar a 150: los puntos por encima del tope se pierden."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "engineering"
+from = 200
+to = 225
+train = "Artesano"
+level = 35
+note = "Entrena Artesano (habilidad 200, nivel 35) antes de llegar a 225: los puntos por encima del tope se pierden."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "engineering"
+from = 1
+to = 33
+craft = 4357
+spell = 3918
+name = "Pólvora férrea"
+n = 40
+mats = [[2835, 1]]
+colors = [1, 20, 30, 40]
+learn = "la sabes al aprender la profesión"
+learn_skill = 1
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3918"]
+
+[[route]]
+prof = "engineering"
+from = 33
+to = 54
+craft = 4359
+spell = 3922
+name = "Manojo de cuentas de cobre"
+n = 26
+mats = [[2840, 1]]
+colors = [30, 45, 52, 60]
+learn = "instructor (lista capturada de Forever), desde 30 (1 p 15 c)"
+learn_skill = 30
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3922", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3922"]
+
+[[route]]
+prof = "engineering"
+from = 54
+to = 75
+craft = 4360
+spell = 3923
+name = "Bomba de cobre férrea"
+n = 26
+mats = [[2840, 1], [4359, 1, 2840, 1], [4357, 2, 2835, 1], [2589, 1]]
+colors = [30, 60, 75, 90]
+learn = "instructor (lista capturada de Forever), desde 30 (1 p 30 c)"
+learn_skill = 30
+note = "Fabrica antes unas 26 x Manojo de cuentas de cobre: también suben puntos mientras no son grises. Fabrica antes unas 51 x Pólvora férrea: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3923", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3923"]
+
+[[route]]
+prof = "engineering"
+from = 75
+to = 94
+craft = 4365
+spell = 3931
+name = "Dinamita gruesa"
+n = 7
+mats = [[4364, 3, 2836, 1], [2589, 1]]
+colors = [75, 90, 97, 105]
+learn = "instructor (lista capturada de Forever), desde 75 (2 p 50 c)"
+learn_skill = 75
+note = "Fabrica antes unas 19 x Pólvora gruesa: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3931", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3931"]
+
+[[route]]
+prof = "engineering"
+from = 94
+to = 125
+craft = 4404
+spell = 3973
+name = "Contacto de plata"
+n = 37
+mats = [[2842, 1]]
+colors = [90, 110, 125, 140]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 90"
+learn_skill = 90
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3973", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 125
+to = 138
+craft = 8069
+spell = 3947
+name = "Disparo sólido artesanal"
+n = 11
+mats = [[4377, 1, 2838, 1], [2841, 1]]
+colors = [125, 125, 135, 145]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 125"
+learn_skill = 125
+note = "Fabrica antes unas 11 x Pólvora pesada: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3947", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 138
+to = 150
+craft = 4375
+spell = 3942
+name = "Cacharro zumbón de bronce"
+n = 20
+mats = [[2841, 2], [2592, 1]]
+colors = [125, 125, 150, 175]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 125"
+learn_skill = 125
+note = "Necesitas la herramienta Llave inglesa Arcoluz: fabrícala una vez (Llave arqueluz). Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3942", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 150
+to = 158
+craft = 6533
+spell = 9271
+name = "Atraepeces acuadinámico"
+n = 10
+mats = [[2841, 2], [6530, 1], [4364, 1, 2836, 1]]
+colors = [150, 150, 160, 170]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 150"
+learn_skill = 150
+note = "Fabrica antes unas 10 x Pólvora gruesa: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/9271", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 158
+to = 175
+craft = 4384
+spell = 3955
+name = "Oveja explosiva"
+n = 10
+mats = [[4382, 1], [4375, 1], [4377, 2, 2838, 1], [2592, 2]]
+colors = [150, 175, 187, 200]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 150"
+learn_skill = 150
+note = "Fabrica antes unas 10 x Marco de bronce: también suben puntos mientras no son grises. Fabrica antes unas 10 x Cacharro zumbón de bronce: también suben puntos mientras no son grises. Fabrica antes unas 20 x Pólvora pesada: también suben puntos mientras no son grises. Necesitas la herramienta Llave inglesa Arcoluz: fabrícala una vez (Llave arqueluz). Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3955", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 175
+to = 189
+craft = 10507
+spell = 12586
+name = "Dinamita pura"
+n = 12
+mats = [[10505, 1, 7912, 2], [4306, 1]]
+colors = [175, 175, 185, 195]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 175"
+learn_skill = 175
+note = "Fabrica antes unas 12 x Polvos explosivos puros: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/12586", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 189
+to = 200
+craft = 4390
+spell = 3962
+name = "Granada de hierro"
+n = 22
+mats = [[3575, 1], [4377, 1, 2838, 1], [4306, 1]]
+colors = [175, 175, 195, 215]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 175"
+learn_skill = 175
+note = "Fabrica antes unas 22 x Pólvora pesada: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3962", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 200
+to = 210
+craft = 11590
+spell = 15255
+name = "Juego de reparación mecánico"
+n = 12
+mats = [[3860, 1], [4338, 1], [10505, 1, 7912, 2]]
+colors = [200, 200, 220, 240]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 200"
+learn_skill = 200
+note = "Fabrica antes unas 12 x Polvos explosivos puros: también suben puntos mientras no son grises. Necesitas la herramienta Llave inglesa Arcoluz: fabrícala una vez (Llave arqueluz). Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/15255", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 210
+to = 225
+craft = 10512
+spell = 12596
+name = "Perdigón de mitril de alto impacto"
+n = 19
+mats = [[3860, 1], [10505, 1, 7912, 2]]
+colors = [210, 210, 230, 250]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 210"
+learn_skill = 210
+note = "Fabrica antes unas 19 x Polvos explosivos puros: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/12596", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 225
+to = 235
+craft = 10512
+spell = 12596
+name = "Perdigón de mitril de alto impacto"
+n = 20
+mats = [[3860, 1], [10505, 1, 7912, 2]]
+colors = [210, 210, 230, 250]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 210"
+learn_skill = 210
+note = "Fabrica antes unas 20 x Polvos explosivos puros: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/12596", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 235
+to = 245
+craft = 10562
+spell = 12619
+name = "Bomba altamente explosiva"
+n = 7
+mats = [[10561, 2, 3860, 3], [10560, 1], [10505, 2, 7912, 2]]
+colors = [235, 235, 255, 275]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 235"
+learn_skill = 235
+note = "Fabrica antes unas 13 x Envoltura de mitril: también suben puntos mientras no son grises. Fabrica antes unas 7 x Activador inestable: también suben puntos mientras no son grises. Fabrica antes unas 13 x Polvos explosivos puros: también suben puntos mientras no son grises. Necesitas la herramienta Llave inglesa Arcoluz: fabrícala una vez (Llave arqueluz). Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/12619", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 245
+to = 250
+craft = 10513
+spell = 12621
+name = "Girotiro de mitril"
+n = 6
+mats = [[3860, 2], [10505, 2, 7912, 2]]
+colors = [245, 245, 265, 285]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 245"
+learn_skill = 245
+note = "Fabrica antes unas 11 x Polvos explosivos puros: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/12621", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 250
+to = 257
+craft = 15992
+spell = 19788
+name = "Pólvora densa"
+n = 11
+mats = [[12365, 2]]
+colors = [250, 250, 255, 260]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 250"
+learn_skill = 250
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/19788", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 257
+to = 260
+craft = 10513
+spell = 12621
+name = "Girotiro de mitril"
+n = 5
+mats = [[3860, 2], [10505, 2, 7912, 2]]
+colors = [245, 245, 265, 285]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 245"
+learn_skill = 245
+note = "Fabrica antes unas 9 x Polvos explosivos puros: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/12621", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "engineering"
+from = 260
+to = 285
+craft = 15994
+spell = 19791
+name = "Trasto de torio"
+n = 26
+mats = [[12359, 3], [14047, 1]]
+colors = [260, 280, 290, 300]
+learn = "receta «Esquema: trastos wow de torio» del vendedor (1 o 20 p), desde 260"
+learn_skill = 260
+recipe_item = 16042
+note = "Necesitas la herramienta Llave inglesa Arcoluz: fabrícala una vez (Llave arqueluz)."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/19791", "wago:1.60.1.70888/ItemSparse/16042"]
+
+[[route]]
+prof = "engineering"
+from = 285
+to = 300
+craft = 16000
+spell = 19795
+name = "Tubo de torio"
+n = 16
+mats = [[12359, 6]]
+colors = [275, 295, 305, 315]
+learn = "receta «Esquema: tubo de torio» del vendedor (1 o 60 p), desde 275"
+learn_skill = 275
+recipe_item = 16047
+note = "Necesitas la herramienta Llave inglesa Arcoluz: fabrícala una vez (Llave arqueluz)."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/19795", "wago:1.60.1.70888/ItemSparse/16047"]

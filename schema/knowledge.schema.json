@@ -404,7 +404,7 @@
               }
             ],
             "minItems": 2,
-            "maxItems": 2
+            "maxItems": 4
           }
         },
         "trainer": {

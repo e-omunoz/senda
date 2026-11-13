@@ -1,228 +1,457 @@
-# Migrado de BrujoGnomoGuia 4.1.0 (Crafting.lua, ns.CRAFT.PROFS.ench y MageData.lua CRAFT_TRAINERS).
-# Mismo formato que professions-tailoring.toml. Extra: craft_spell = id del hechizo de encantamiento cuando lo que
-# se «fabrica» es un encantamiento y no un objeto.
+# GENERADO por tools/gen_professions.py: no editar a mano (regenerar; docs/PROFESSIONS.md).
+# Tablas del cliente de Forever 1.60.1.70888 (wago.tools), Polestar 19bd636e7d6f (listas de instructor de forever-tdb-2026-10-14, trainers.rs) y forever-db 2026.11.1.
 id = "general-professions-enchanting"
 class = "ANY"
 kind = "professions"
 title = "Encantamiento 1-300"
-order = 210
+prof = "enchanting"
+prof_kind = "primary"
+order = 202
 status = "unverified"
-sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.wowhead.com/forever", "https://conquestcapped.com/", "cita:wowprofs", "https://www.method.gg/", "https://www.wow-professions.com/"]
-checked = "2026-11-09"
-note = "Wowhead Forever, ConquestCapped, wowprofs, Method (todas las recetas, 5-nov) y wow-professions; revisado el 9-nov. Varias cantidades de materiales difieren de Classic (posible cambio de Forever): ver docs/MIGRATION.md."
+sources = ["wago:1.60.1.70888", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798", "foreverdb:2026.11.1"]
+assumes = "supone que desencantas los verdes que te caen y los que fabricas con Sastrería"
+crafts = 384
+reach = 300
+note = "Ruta calculada: unas 384 fabricaciones esperadas de 1 a 300. Esfuerzo mínimo con material de vendedor por su precio y recolectado por su nivel; supone que desencantas los verdes que te caen y los que fabricas con Sastrería."
+
+[[rank]]
+name = "Aprendiz"
+max = 75
+skill = 0
+level = 1
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Oficial"
+max = 150
+skill = 50
+level = 10
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Experto"
+max = 225
+skill = 125
+level = 20
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Artesano"
+max = 300
+skill = 200
+level = 35
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
 
 [[trainer]]
 prof = "enchanting"
-ranks = ["Aprendiz", "Oficial"]
-for_class = "WARLOCK"
-name = "Gimble Thistlefuzz"
-at = [1455, 60.4, 45.6, "Gimble Thistlefuzz (Forjaz, Ciudad Manitas)"]
-
-[[trainer]]
-prof = "enchanting"
-ranks = ["Aprendiz", "Oficial"]
-for_class = "MAGE"
+npc = 1317
 name = "Lucan Cordell"
-text = "Ventormenta, Barrio de los Magos, en su tienda junto a los canales. Si no lo encuentras, pregunta a un guardia."
-note = "Sin coordenadas en la fuente."
-status = "unverified"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1453, 52.9, 74.5, "Lucan Cordell (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1317"]
 
 [[trainer]]
 prof = "enchanting"
-ranks = ["Experto"]
-for_class = "ANY"
+npc = 11068
+name = "Betty Quin"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1453, 53, 73.7, "Betty Quin (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11068"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 5157
+name = "Gimble Thistlefuzz"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1455, 59.8, 45.4, "Gimble Thistlefuzz (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5157"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 11065
+name = "Thonys Pillarstone"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1455, 60.3, 45.4, "Thonys Pillarstone (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11065"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 4213
+name = "Taladan"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1457, 58.2, 13.3, "Taladan (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4213"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 11070
+name = "Lalina Summermoon"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1457, 58.7, 12.8, "Lalina Summermoon (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11070"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 11072
 name = "Kitta Firewind"
-at = [1429, 64.8, 70.6, "Kitta Firewind (Torre de Azora)"]
-note = "Torre de Azora, Bosque de Elwynn."
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+at = [1429, 64.9, 70.7, "Kitta Firewind (Bosque de Elwynn)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11072"]
 
 [[trainer]]
 prof = "enchanting"
-ranks = ["Artesano"]
-for_class = "ANY"
+npc = 7949
+name = "Xylinnia Starshine"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1444, 31.6, 44.2, "Xylinnia Starshine (Feralas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/7949"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 3606
+name = "Alanna Raveneye"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1438, 36.7, 34.2, "Alanna Raveneye (Teldrassil)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3606"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 11073
 name = "Annora"
-text = "Dentro de Uldaman (Tierras Inhóspitas): aparece al limpiar su zona. Ve en grupo."
+faction = "Alliance"
+ranks = ["Artesano"]
+text = "Dentro de Uldaman (Tierras Inhóspitas): aparece al limpiar su zona."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11073"]
 
 [[trainer]]
-prof = "both"
-ranks = []
-for_class = "MAGE"
-name = "Eldrin y Lalina Summerbreeze"
-text = "En el Bosque de Elwynn, en la Vega del Este, hay instructores de Sastrería y de Encantamiento (Eldrin y Lalina Summerbreeze)."
-note = "Sin coordenadas ni rangos en la fuente."
+prof = "enchanting"
+npc = 11074
+name = "Hgarth"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+at = [1442, 49.2, 57.2, "Hgarth (Sierra Espolón)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11074"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 3011
+name = "Teg Dawnstrider"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1456, 44.8, 37.6, "Teg Dawnstrider (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3011"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 3345
+name = "Godan"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1454, 53.9, 38.7, "Godan (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3345"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 4616
+name = "Lavinia Crowe"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1458, 62.5, 61.8, "Lavinia Crowe (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4616"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 5695
+name = "Vance Undergloom"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1420, 61.8, 51.5, "Vance Undergloom (Claros de Tirisfal)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5695"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 11066
+name = "Jhag"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1454, 53.5, 38.5, "Jhag (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11066"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 11067
+name = "Malcomb Wynn"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1458, 62.6, 60.4, "Malcomb Wynn (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11067"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 11071
+name = "Mot Dawnstrider"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1456, 44.8, 38.7, "Mot Dawnstrider (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11071"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 11073
+name = "Annora"
+faction = "Horde"
+ranks = ["Artesano"]
+text = "Dentro de Uldaman (Tierras Inhóspitas): aparece al limpiar su zona."
 status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11073"]
+
+[[trainer]]
+prof = "enchanting"
+npc = 266881
+name = "Pa'zula"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1411, 56.7, 73.7, "Pa'zula (Durotar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/266881"]
 
 [[route]]
 prof = "enchanting"
-from = 1
-to = 2
-craft = 6218
-name = "Vara de cobre con runas"
-n = 1
-mats = [[6217, 1], [247786, 1]]
-note = "La receta ya la sabes. Sin la vara no puedes encantar."
-
-[[route]]
-prof = "enchanting"
-from = 2
-to = 20
-name = "Desencantar verdes"
-n = 20
-note = "Desencanta los verdes que no uses: cada uno suele dar un punto hasta 20. También puedes hacer la Varita de prácticas de novicio (Madera simple + Mota de magia)."
-
-[[route]]
-prof = "enchanting"
-from = 20
-to = 70
-craft_spell = 7420
-name = "Encantar torso: aguante menor"
-n = 50
-mats = [[10940, 1]]
-note = "Aplícalo a tu pechera o a la de un compañero."
-
-[[route]]
-prof = "enchanting"
-from = 70
-to = 90
-craft = 11287
-name = "Varita mágica inferior"
-n = 25
-mats = [[4470, 1], [10938, 1]]
-note = "La receta se aprende a 10: haz una para ti en cuanto puedas. Del resto quédate una y vende las demás a magos, brujos y sacerdotes."
-
-[[route]]
-prof = "enchanting"
-from = 90
-to = 100
-craft_spell = 7457
-name = "Encantar brazales: aguante menor"
-n = 12
-mats = [[10940, 2]]
-
-[[route]]
-prof = "enchanting"
-from = 100
-to = 101
-craft = 6339
-name = "Vara de plata con runas"
-n = 1
-mats = [[6338, 1], [10940, 3], [10938, 4], [1210, 1]]
-note = "La Vara de plata la hacen los herreros: búscala en la subasta."
-
-[[route]]
-prof = "enchanting"
-from = 101
-to = 111
-craft = 11288
-name = "Varita mágica superior"
-n = 10
-mats = [[4470, 1], [10938, 2]]
-note = "Tu varita para los niveles 13-22. Vende las que sobren."
-
-[[route]]
-prof = "enchanting"
-from = 111
-to = 125
-craft_spell = 13419
-name = "Encantar capa: agilidad menor"
-n = 15
-mats = [[10998, 1]]
-src = "Fórmula de vendedor: Dalria (Astranaar, Vallefresno)."
+from = 50
+to = 75
+train = "Oficial"
+level = 10
+note = "Entrena Oficial (habilidad 50, nivel 10) antes de llegar a 75: los puntos por encima del tope se pierden."
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
 
 [[route]]
 prof = "enchanting"
 from = 125
-to = 151
-craft_spell = 7863
-name = "Encantar botas: aguante menor"
+to = 150
+train = "Experto"
+level = 20
+note = "Entrena Experto (habilidad 125, nivel 20) antes de llegar a 150: los puntos por encima del tope se pierden."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "enchanting"
+from = 200
+to = 225
+train = "Artesano"
+level = 35
+note = "Entrena Artesano (habilidad 200, nivel 35) antes de llegar a 225: los puntos por encima del tope se pierden."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "enchanting"
+from = 1
+to = 24
+craft_spell = 7418
+spell = 7418
+name = "Encantar brazales: aguante menor"
 n = 26
-mats = [[10940, 4]]
-note = "Entrena Experto a 125 y nivel 20 con Kitta Firewind. A 140: Bastón de alma y Orbe de almas (45 de Favor, Alynsia en Tres Caminos). El Arcane Salvager del campamento (140) es una fórmula de botín."
+mats = [[247786, 1]]
+colors = [1, 20, 22, 25]
+learn = "la sabes al aprender la profesión"
+learn_skill = 1
+note = "Necesitas la herramienta Vara de cobre con runas: fabrícala una vez (Vara de cobre rúnico)."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/7418"]
 
 [[route]]
 prof = "enchanting"
-from = 151
-to = 157
-craft_spell = 13501
-name = "Encantar brazal: aguante inferior"
-n = 8
-mats = [[11083, 1]]
+from = 24
+to = 40
+craft_spell = 7428
+spell = 7428
+name = "Encantar brazal: desvío menor"
+n = 16
+mats = [[10938, 1]]
+colors = [1, 80, 100, 120]
+learn = "la sabes al aprender la profesión"
+learn_skill = 1
+note = "Necesitas la herramienta Vara de cobre con runas: fabrícala una vez (Vara de cobre rúnico)."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/7428"]
 
 [[route]]
 prof = "enchanting"
-from = 157
+from = 40
+to = 75
+craft_spell = 7426
+spell = 7426
+name = "Encantar pechera: absorción menor"
+n = 35
+mats = [[10938, 1]]
+colors = [40, 90, 110, 130]
+learn = "instructor (lista capturada de Forever), desde 40 (1 p)"
+learn_skill = 40
+note = "Necesitas la herramienta Vara de cobre con runas: fabrícala una vez (Vara de cobre rúnico)."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/7426", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/7426"]
+
+[[route]]
+prof = "enchanting"
+from = 75
+to = 120
+craft_spell = 7426
+spell = 7426
+name = "Encantar pechera: absorción menor"
+n = 69
+mats = [[10938, 1]]
+colors = [40, 90, 110, 130]
+learn = "instructor (lista capturada de Forever), desde 40 (1 p)"
+learn_skill = 40
+note = "Necesitas la herramienta Vara de cobre con runas: fabrícala una vez (Vara de cobre rúnico)."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/7426", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/7426"]
+
+[[route]]
+prof = "enchanting"
+from = 120
+to = 145
+craft_spell = 7745
+spell = 7745
+name = "Encantar arma 2M: impacto menor"
+n = 29
+mats = [[10940, 1], [10978, 1]]
+colors = [100, 130, 150, 170]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 100"
+learn_skill = 100
+note = "Necesitas la herramienta Vara de cobre con runas: fabrícala una vez (Vara de cobre rúnico). Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/7745", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "enchanting"
+from = 145
+to = 150
+craft_spell = 13607
+spell = 13607
+name = "Encantar torso: intelecto"
+n = 5
+mats = [[11082, 1]]
+colors = [145, 170, 190, 210]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 145"
+learn_skill = 145
+note = "Necesitas la herramienta Vara de plata con runas: fabrícala una vez (Vara rúnica plateada). Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/13607", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "enchanting"
+from = 150
 to = 185
-craft_spell = 13536
-name = "Encantar brazal: fuerza inferior"
-n = 30
-mats = [[11083, 1]]
-src = "Fórmula de vendedor: Dalria (Astranaar, Vallefresno)."
-note = "Hacia 160, Vara de oro con runas (Vara de oro en la subasta, Perla iridiscente, Esencia astral superior, Polvo de alma)."
+craft_spell = 13607
+spell = 13607
+name = "Encantar torso: intelecto"
+n = 39
+mats = [[11082, 1]]
+colors = [145, 170, 190, 210]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 145"
+learn_skill = 145
+note = "Necesitas la herramienta Vara de plata con runas: fabrícala una vez (Vara rúnica plateada). Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/13607", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "enchanting"
 from = 185
-to = 220
-craft_spell = 13661
-name = "Encantar brazal: fuerza"
-n = 38
-mats = [[11137, 1]]
-note = "Se pone gris hacia 220. A 200: Vara de veraplata con runas y entrena Artesano (nivel 35) con Annora en Uldaman. Alternativa de 201 a 220: Aceite de zahorí inferior. A 210: collares (120 de Favor y Amistoso con la Azeroth Commerce Authority)."
-
-[[route]]
-prof = "enchanting"
-from = 220
 to = 225
-craft_spell = 13746
-name = "Encantar capa: defensa superior"
-n = 6
-mats = [[11137, 3]]
+craft_spell = 13663
+spell = 13663
+name = "Encantar torso: intelecto superior"
+n = 48
+mats = [[11134, 1]]
+colors = [185, 205, 225, 245]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 185"
+learn_skill = 185
+note = "Necesitas la herramienta Vara de oro rúnica: fabrícala una vez (Vara rúnica dorada). Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/13663", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "enchanting"
 from = 225
 to = 235
-craft_spell = 13815
-name = "Encantar guantes: agilidad"
-n = 10
-mats = [[11137, 1], [11174, 1]]
+craft_spell = 13663
+spell = 13663
+name = "Encantar torso: intelecto superior"
+n = 27
+mats = [[11134, 1]]
+colors = [185, 205, 225, 245]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 185"
+learn_skill = 185
+note = "Necesitas la herramienta Vara de oro rúnica: fabrícala una vez (Vara rúnica dorada). Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/13663", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "enchanting"
 from = 235
-to = 250
-craft_spell = 13858
-name = "Encantar torso: aguante excelente"
-n = 16
-mats = [[11137, 3]]
+to = 281
+craft_spell = 13935
+spell = 13935
+name = "Encantar botas: agilidad"
+n = 62
+mats = [[11175, 1]]
+colors = [235, 255, 275, 295]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 235"
+learn_skill = 235
+note = "Necesitas la herramienta Vara de veraplata con runas: fabrícala una vez (Vara rúnica de veraplata). Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/13935", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "enchanting"
-from = 250
-to = 265
-craft = 20747
-name = "Aceite de maná inferior"
-n = 16
-mats = [[11176, 1], [8831, 1], [8925, 1]]
-src = "Fórmula de Kania (posada de Fuerte Cenarion, Silithus)."
-note = "Se vende bien a sanadores. El Vial de cristal lo venden los proveedores de alquimia."
-
-[[route]]
-prof = "enchanting"
-from = 265
-to = 295
-craft_spell = 20017
-name = "Encantar escudo: aguante superior"
-n = 30
-mats = [[11176, 6]]
-src = "Fórmula de vendedor: Mythrin'dir (Darnassus)."
-
-[[route]]
-prof = "enchanting"
-from = 295
+from = 281
 to = 300
-craft_spell = 20015
-name = "Encantar capa: defensa excelente"
-n = 8
-mats = [[16204, 8]]
-src = "Fórmula de Lorelae Wintersong (Claro de la Luna)."
-note = "Antes, Vara de arcanita con runas (también de Lorelae). Varita brillante: 180 de Favor y Honorable con la Azeroth Commerce Authority."
+craft_spell = 20008
+spell = 20008
+name = "Encantar brazal: intelecto superior"
+n = 32
+mats = [[16202, 2]]
+colors = [255, 275, 295, 315]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 255"
+learn_skill = 255
+note = "Necesitas la herramienta Vara de veraplata con runas: fabrícala una vez (Vara rúnica de veraplata). Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/20008", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]

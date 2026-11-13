@@ -1,220 +1,687 @@
-# Migrado de BrujoGnomoGuia 4.1.0 (Crafting.lua, ns.CRAFT.PROFS.tailor y MageData.lua CRAFT_TRAINERS).
-# [[route]]: prof, from, to, craft (id del objeto fabricado), name (nombre esES según Wowhead), n (fabricaciones
-#   aproximadas para todo el tramo), mats = [[id, cantidad]] por fabricación, src (origen de la receta si no la
-#   enseña el instructor), note. Si la receta del juego pide otra cosa, manda la receta.
-#   Las madejas se pueden contar como paño suelto: ver [[material]].made_from en professions-materials.toml.
-# [[trainer]]: instructores. for_class = clase para la que se usaba (gnomo brujo → Forjaz; humano mago → Ventormenta).
-#   at = [uiMapID, x, y, "etiqueta"] cuando la fuente daba coordenadas.
+# GENERADO por tools/gen_professions.py: no editar a mano (regenerar; docs/PROFESSIONS.md).
+# Tablas del cliente de Forever 1.60.1.70888 (wago.tools), Polestar 19bd636e7d6f (listas de instructor de forever-tdb-2026-10-14, trainers.rs) y forever-db 2026.11.1.
 id = "general-professions-tailoring"
 class = "ANY"
 kind = "professions"
 title = "Sastrería 1-300"
-order = 200
+prof = "tailoring"
+prof_kind = "primary"
+order = 205
 status = "unverified"
-sources = ["legacy:BrujoGnomoGuia 4.1.0", "https://www.method.gg/", "https://www.wow-professions.com/", "https://www.wowhead.com/forever"]
-checked = "2026-11-09"
-note = "Method.gg (9-nov) y wow-professions; recetas y materiales comprobados en los datos de Wowhead Forever. 225-300 es la ruta de Method, que ellos mismos llaman especulativa (nadie la probó en la beta)."
+sources = ["wago:1.60.1.70888", "polestar:19bd636e7d6f33231770f6029c76d2d4dfc63798", "foreverdb:2026.11.1"]
+assumes = "el paño lo sueltan los humanoides mientras subes: no hace falta recolección"
+crafts = 336
+reach = 300
+note = "Ruta calculada: unas 336 fabricaciones esperadas de 1 a 300. Esfuerzo mínimo con material de vendedor por su precio y recolectado por su nivel; el paño lo sueltan los humanoides mientras subes: no hace falta recolección."
+
+[[rank]]
+name = "Aprendiz"
+max = 75
+skill = 0
+level = 1
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Oficial"
+max = 150
+skill = 50
+level = 10
+how = "trainer"
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Experto"
+max = 225
+skill = 125
+level = 20
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[rank]]
+name = "Artesano"
+max = 300
+skill = 200
+level = 35
+how = "trainer"
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
 
 [[trainer]]
 prof = "tailoring"
+npc = 1346
+name = "Georgio Bolero"
+faction = "Alliance"
 ranks = ["Aprendiz", "Oficial", "Experto"]
-for_class = "WARLOCK"
+at = [1453, 53.1, 81.3, "Georgio Bolero (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1346"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 5567
+name = "Sellandus"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1453, 52.2, 83.2, "Sellandus (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5567"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 1300
+name = "Lawrence Schneider"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1453, 53.5, 81.5, "Lawrence Schneider (Ventormenta)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1300"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 5153
 name = "Jormund Stonebrow"
-at = [1455, 43.2, 29.0, "Jormund Stonebrow (Forjaz, Gran Fundición)"]
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1455, 43.1, 29.3, "Jormund Stonebrow (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/5153"]
 
 [[trainer]]
 prof = "tailoring"
-ranks = ["Aprendiz", "Oficial", "Experto"]
-for_class = "MAGE"
-name = "Sellandus o Georgio Bolero"
-at = [1453, 42.0, 76.2, "Sastrería: Sellandus o Georgio Bolero (Barrio de los Magos)"]
-note = "Coordenada aproximada («hacia 42.0, 76.2»). Lawrence Schneider (Ventormenta) solo enseña el rango Aprendiz."
-status = "unverified"
+npc = 1703
+name = "Uthrar Threx"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1455, 43.8, 27.8, "Uthrar Threx (Forjaz)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1703"]
 
 [[trainer]]
 prof = "tailoring"
-ranks = ["Artesano"]
-for_class = "ANY"
+npc = 4159
+name = "Me'lynn"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1457, 63.5, 22.4, "Me'lynn (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4159"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 11050
+name = "Trianna"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1457, 63.5, 21.2, "Trianna (Darnassus)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11050"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 11052
 name = "Timothy Worthington"
-at = [1445, 66.2, 51.6, "Timothy Worthington (Theramore)"]
-note = "Theramore, Marjal Revolcafango."
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+at = [1445, 66.2, 51.8, "Timothy Worthington (Marjal Revolcafango)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11052"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 2627
+name = "Grarnik Goodstitch"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial"]
+at = [1434, 28.8, 76.8, "Grarnik Goodstitch (Vega de Tuercespina)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2627"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 1103
+name = "Eldrin"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1429, 79.2, 69, "Eldrin (Bosque de Elwynn)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/1103"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 4193
+name = "Grondal Moonbreeze"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+at = [1439, 38.2, 40.5, "Grondal Moonbreeze (Costa Oscura)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4193"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 2399
+name = "Daryl Stack"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+at = [1424, 63.8, 20.8, "Daryl Stack (Laderas de Trabalomas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2399"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 4576
+name = "Josef Gregorian"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto"]
+at = [1458, 70.7, 30.7, "Josef Gregorian (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/4576"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 2627
+name = "Grarnik Goodstitch"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1434, 28.8, 76.8, "Grarnik Goodstitch (Vega de Tuercespina)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2627"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 3004
+name = "Tepa"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1456, 44.8, 45.6, "Tepa (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3004"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 3363
+name = "Magar"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1454, 63.7, 49.9, "Magar (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3363"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 3704
+name = "Mahani"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1413, 44.9, 59.4, "Mahani (Los Baldíos)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3704"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 11049
+name = "Rhiannon Davis"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial"]
+at = [1458, 70.1, 30.5, "Rhiannon Davis (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11049"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 2855
+name = "Snang"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1454, 63, 49.2, "Snang (Orgrimmar)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/2855"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 3523
+name = "Bowen Brisboise"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1420, 52.6, 55.5, "Bowen Brisboise (Claros de Tirisfal)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/3523"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 11048
+name = "Victor Ward"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1458, 70.1, 29.8, "Victor Ward (Entrañas)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11048"]
+
+[[trainer]]
+prof = "tailoring"
+npc = 11051
+name = "Vhan"
+faction = "Horde"
+ranks = ["Aprendiz"]
+at = [1456, 44.3, 44.5, "Vhan (Cima del Trueno)"]
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs", "foreverdb:npc/11051"]
+
+[[route]]
+prof = "tailoring"
+from = 50
+to = 75
+train = "Oficial"
+level = 10
+note = "Entrena Oficial (habilidad 50, nivel 10) antes de llegar a 75: los puntos por encima del tope se pierden."
+status = "verified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "tailoring"
+from = 125
+to = 150
+train = "Experto"
+level = 20
+note = "Entrena Experto (habilidad 125, nivel 20) antes de llegar a 150: los puntos por encima del tope se pierden."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
+
+[[route]]
+prof = "tailoring"
+from = 200
+to = 225
+train = "Artesano"
+level = 35
+note = "Entrena Artesano (habilidad 200, nivel 35) antes de llegar a 225: los puntos por encima del tope se pierden."
+status = "unverified"
+sources = ["polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/trainers.rs"]
 
 [[route]]
 prof = "tailoring"
 from = 1
-to = 45
-craft = 2996
-name = "Madeja de paño de lino"
-n = 60
-mats = [[2589, 2]]
-note = "Guarda las madejas: las usas en el tramo siguiente."
+to = 15
+craft = 2570
+spell = 2387
+name = "Capa de lino"
+n = 7
+mats = [[2996, 1, 2589, 2], [2320, 1]]
+colors = [1, 35, 47, 60]
+learn = "la sabes al aprender la profesión"
+learn_skill = 1
+note = "Fabrica antes unas 7 x Madeja de paño de lino: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2387"]
 
 [[route]]
 prof = "tailoring"
-from = 45
-to = 55
-craft = 4307
-name = "Guantes de lino pesado"
-n = 10
-mats = [[2996, 2], [2320, 1]]
-note = "Desencántalos (te dan polvo para Encantamiento)."
+from = 15
+to = 70
+craft = 7026
+spell = 8776
+name = "Cinturón de lino"
+n = 52
+mats = [[2996, 1, 2589, 2], [2320, 1]]
+colors = [15, 50, 67, 85]
+learn = "instructor (lista capturada de Forever), desde 15 (50 c)"
+learn_skill = 15
+note = "Fabrica antes unas 52 x Madeja de paño de lino: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/8776", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/8776"]
 
 [[route]]
 prof = "tailoring"
-from = 55
-to = 80
-craft = 2997
-name = "Madeja de paño de lana"
-n = 30
-mats = [[2592, 3]]
-note = "A 50 de habilidad y nivel 10, entrena Oficial: el tope de Aprendiz es 75."
-
-[[route]]
-prof = "tailoring"
-from = 80
-to = 85
+from = 70
+to = 75
 craft = 2584
+spell = 2402
 name = "Capa de lana"
-n = 6
-mats = [[2997, 1], [2321, 1]]
+n = 3
+mats = [[2997, 1, 2592, 3], [2321, 1]]
+colors = [55, 80, 97, 115]
+learn = "instructor (lista capturada de Forever), desde 55 (2 p 50 c)"
+learn_skill = 55
+note = "Fabrica antes unas 3 x Madeja de paño de lana: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2402", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/2402"]
 
 [[route]]
 prof = "tailoring"
-from = 85
-to = 95
-craft = 2587
-name = "Camisa de lana gris"
-n = 12
-mats = [[2997, 2], [2321, 1], [4340, 1]]
+from = 75
+to = 102
+craft = 2584
+spell = 2402
+name = "Capa de lana"
+n = 37
+mats = [[2997, 1, 2592, 3], [2321, 1]]
+colors = [55, 80, 97, 115]
+learn = "instructor (lista capturada de Forever), desde 55 (2 p 50 c)"
+learn_skill = 55
+note = "Fabrica antes unas 37 x Madeja de paño de lana: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/2402", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/2402"]
 
 [[route]]
 prof = "tailoring"
-from = 95
-to = 100
-craft = 4314
-name = "Hombreras de lana con doble pespunte"
-n = 5
-mats = [[2997, 3], [2321, 2]]
+from = 102
+to = 129
+craft = 6787
+spell = 8467
+name = "Vestido blanco de lana"
+n = 35
+mats = [[2997, 3, 2592, 3], [2324, 4], [2321, 1]]
+colors = [85, 110, 127, 145]
+learn = "instructor (lista capturada de Forever), desde 85 (2 p 50 c)"
+learn_skill = 85
+note = "Fabrica antes unas 105 x Madeja de paño de lana: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/8467", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/8467"]
 
 [[route]]
 prof = "tailoring"
-from = 100
-to = 120
-craft = 4305
-name = "Madeja de paño de seda"
-n = 40
-mats = [[4306, 4]]
-note = "Guarda las madejas: las necesitas hasta 190."
-
-[[route]]
-prof = "tailoring"
-from = 120
-to = 135
-craft = 7048
-name = "Caperuza de seda azur"
-n = 17
-mats = [[4305, 2], [6260, 2], [2321, 1]]
-note = "Si es mejor que tu casco, póntela; si no, desencántala. A 125 y nivel 20, entrena Experto."
-
-[[route]]
-prof = "tailoring"
-from = 135
+from = 129
 to = 140
-craft = 4334
-name = "Camisa blanca formal"
-n = 5
-mats = [[4305, 3], [2324, 2], [2321, 1]]
+craft = 4318
+spell = 3852
+name = "Guantes de meditación"
+n = 17
+mats = [[2997, 4, 2592, 3], [2321, 3], [3383, 1]]
+colors = [105, 125, 140, 155]
+learn = "instructor (lista capturada de Forever), desde 105 (7 p 50 c)"
+learn_skill = 105
+note = "Fabrica antes unas 65 x Madeja de paño de lana: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3852", "polestar:19bd636e7d6f/forever-tdb:forever-tdb-2026-10-14/professionSpells/3852"]
 
 [[route]]
 prof = "tailoring"
 from = 140
-to = 150
+to = 147
 craft = 4339
+spell = 3865
 name = "Madeja de tejido mágico"
-n = 12
+n = 8
 mats = [[4338, 5]]
-note = "La Rueca del campamento (140) es un patrón de botín: no te la enseña el instructor."
+colors = [140, 145, 147, 150]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 140"
+learn_skill = 140
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/3865", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "tailoring"
+from = 147
+to = 150
+craft = 7053
+spell = 8786
+name = "Capa de seda azur"
+n = 3
+mats = [[4305, 3, 4306, 4], [6260, 2], [2321, 2]]
+colors = [140, 160, 175, 190]
+learn = "receta «Patrón: capa de seda azur» del vendedor (15 p), desde 140"
+learn_skill = 140
+recipe_item = 7089
+note = "Fabrica antes unas 9 x Madeja de paño de seda: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/8786", "wago:1.60.1.70888/ItemSparse/7089"]
 
 [[route]]
 prof = "tailoring"
 from = 150
-to = 170
-craft = 7058
-name = "Jubón de seda carmesí"
+to = 168
+craft = 7053
+spell = 8786
+name = "Capa de seda azur"
 n = 20
-mats = [[4305, 4], [2604, 2], [2321, 2]]
+mats = [[4305, 3, 4306, 4], [6260, 2], [2321, 2]]
+colors = [140, 160, 175, 190]
+learn = "receta «Patrón: capa de seda azur» del vendedor (15 p), desde 140"
+learn_skill = 140
+recipe_item = 7089
+note = "Fabrica antes unas 58 x Madeja de paño de seda: también suben puntos mientras no son grises."
+status = "verified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/8786", "wago:1.60.1.70888/ItemSparse/7089"]
 
 [[route]]
 prof = "tailoring"
-from = 170
-to = 190
+from = 168
+to = 173
+craft = 7058
+spell = 8791
+name = "Jubón carmesí de seda"
+n = 6
+mats = [[4305, 4, 4306, 4], [2604, 2], [2321, 2]]
+colors = [150, 170, 180, 190]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 150"
+learn_skill = 150
+note = "Fabrica antes unas 21 x Madeja de paño de seda: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/8791", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "tailoring"
+from = 173
+to = 181
 craft = 7062
-name = "Pantalones bombacho de seda carmesí"
-n = 25
-mats = [[4305, 4], [2604, 2], [4291, 2]]
+spell = 8799
+name = "Pantalones carmesí de seda"
+n = 8
+mats = [[4305, 4, 4306, 4], [2604, 2], [4291, 2]]
+colors = [160, 180, 190, 200]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 160"
+learn_skill = 160
+note = "Fabrica antes unas 32 x Madeja de paño de seda: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/8799", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "tailoring"
-from = 190
-to = 215
+from = 181
+to = 187
+craft = 10056
+spell = 12061
+name = "Camisa de tejido mágico naranja"
+n = 7
+mats = [[4339, 1, 4338, 5], [6261, 1], [8343, 1]]
+colors = [180, 185, 190, 195]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 180"
+learn_skill = 180
+note = "Fabrica antes unas 7 x Madeja de tejido mágico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/12061", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "tailoring"
+from = 187
+to = 194
+craft = 9998
+spell = 12048
+name = "Jubón de tejido mágico negro"
+n = 9
+mats = [[4339, 2, 4338, 5], [4291, 3]]
+colors = [170, 185, 200, 215]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 170"
+learn_skill = 170
+note = "Fabrica antes unas 17 x Madeja de tejido mágico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/12048", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "tailoring"
+from = 194
+to = 201
 craft = 10003
+spell = 12053
 name = "Guantes de tejido mágico negros"
-n = 38
-mats = [[4339, 2], [8343, 2]]
-note = "A 200 y nivel 35, entrena Artesano."
+n = 8
+mats = [[4339, 2, 4338, 5], [8343, 2]]
+colors = [180, 195, 210, 225]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 180"
+learn_skill = 180
+note = "Fabrica antes unas 16 x Madeja de tejido mágico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/12053", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "tailoring"
-from = 215
-to = 225
+from = 201
+to = 205
 craft = 10050
+spell = 12065
 name = "Bolsa de tejido mágico"
-n = 18
-mats = [[4339, 4], [4291, 2]]
-note = "Bolsa de 12 huecos: usa una y vende el resto, se venden bien."
+n = 4
+mats = [[4339, 4, 4338, 5], [4291, 2]]
+colors = [190, 205, 220, 235]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 190"
+learn_skill = 190
+note = "Fabrica antes unas 16 x Madeja de tejido mágico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/12065", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "tailoring"
+from = 205
+to = 210
+craft = 14048
+spell = 18401
+name = "Madeja de paño rúnico"
+n = 5
+mats = [[14047, 5]]
+colors = [205, 210, 212, 215]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 205"
+learn_skill = 205
+note = "Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/18401", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "tailoring"
+from = 210
+to = 225
+craft = 13856
+spell = 18402
+name = "Cinturón de paño rúnico"
+n = 12
+mats = [[14048, 3, 14047, 5], [14341, 1]]
+colors = [210, 225, 240, 255]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 210"
+learn_skill = 210
+note = "Fabrica antes unas 36 x Madeja de paño rúnico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/18402", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "tailoring"
 from = 225
-to = 240
+to = 228
 craft = 13856
+spell = 18402
 name = "Cinturón de paño rúnico"
-n = 25
-mats = [[14048, 3], [14341, 1]]
+n = 4
+mats = [[14048, 3, 14047, 5], [14341, 1]]
+colors = [210, 225, 240, 255]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 210"
+learn_skill = 210
+note = "Fabrica antes unas 10 x Madeja de paño rúnico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
 status = "unverified"
-note = "Ruta especulativa de Method (225-300 no se probó en la beta). En Forever el cinturón se aprende a 210: se pondrá gris pronto."
+sources = ["wago:1.60.1.70888/SkillLineAbility/18402", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "tailoring"
-from = 240
-to = 250
-craft = 13863
-name = "Guantes de paño rúnico"
+from = 228
+to = 238
+craft = 13870
+spell = 18411
+name = "Guantes tejescarcha"
 n = 12
-mats = [[14048, 4], [8170, 4], [14341, 1]]
-src = "Patrón de vendedor: Qia (Cuna del Invierno)."
+mats = [[14048, 3, 14047, 5], [7080, 1], [14341, 1]]
+colors = [215, 230, 245, 260]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 215"
+learn_skill = 215
+note = "Fabrica antes unas 34 x Madeja de paño rúnico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
 status = "unverified"
-note = "Especulativo."
+sources = ["wago:1.60.1.70888/SkillLineAbility/18411", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "tailoring"
-from = 250
-to = 280
+from = 238
+to = 251
+craft = 14103
+spell = 18420
+name = "Capa de paño brillante"
+n = 14
+mats = [[14048, 4, 14047, 5], [3577, 2], [14341, 1]]
+colors = [230, 245, 260, 275]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 230"
+learn_skill = 230
+note = "Fabrica antes unas 55 x Madeja de paño rúnico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/18420", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "tailoring"
+from = 251
+to = 274
 craft = 13866
+spell = 18444
 name = "Cinta de paño rúnico"
-n = 40
-mats = [[14048, 4], [14227, 2], [14341, 1]]
+n = 25
+mats = [[14048, 4, 14047, 5], [14227, 2], [14341, 1]]
+colors = [250, 265, 280, 295]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 250"
+learn_skill = 250
+note = "Fabrica antes unas 98 x Madeja de paño rúnico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
 status = "unverified"
-note = "Especulativo. En Forever se aprende a 250."
+sources = ["wago:1.60.1.70888/SkillLineAbility/18444", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
 
 [[route]]
 prof = "tailoring"
-from = 280
-to = 300
-craft = 13867
-name = "Hombreras de paño rúnico"
-n = 50
-mats = [[14048, 7], [14227, 2], [8170, 4], [14341, 1]]
-src = "Patrón de botín en Classic; en Forever, sin confirmar."
+from = 274
+to = 286
+craft = 14128
+spell = 18446
+name = "Toga de tejido zahorí"
+n = 19
+mats = [[14048, 8, 14047, 5], [11176, 2], [14341, 1]]
+colors = [255, 270, 285, 300]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 255"
+learn_skill = 255
+note = "Fabrica antes unas 145 x Madeja de paño rúnico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
 status = "unverified"
-note = "Especulativo. A 300: el Telar del campamento (origen sin confirmar) y el conjunto de banda."
+sources = ["wago:1.60.1.70888/SkillLineAbility/18446", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "tailoring"
+from = 286
+to = 297
+craft = 13867
+spell = 18449
+name = "Hombreras de paño rúnico"
+n = 25
+mats = [[14048, 7, 14047, 5], [14227, 2], [8170, 4], [14341, 1]]
+colors = [260, 275, 290, 305]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 260"
+learn_skill = 260
+note = "Fabrica antes unas 175 x Madeja de paño rúnico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/18449", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]
+
+[[route]]
+prof = "tailoring"
+from = 297
+to = 300
+craft = 14112
+spell = 18453
+name = "Hombreras de tela de inferi"
+n = 8
+mats = [[14048, 7, 14047, 5], [14256, 6], [12662, 4], [8170, 4], [14341, 2]]
+colors = [265, 280, 295, 310]
+learn = "instructor (habilidad estimada desde Classic: sin confirmar), desde 265"
+learn_skill = 265
+note = "Fabrica antes unas 53 x Madeja de paño rúnico: también suben puntos mientras no son grises. Comprueba en el instructor la habilidad a la que la enseña (estimada)."
+status = "unverified"
+sources = ["wago:1.60.1.70888/SkillLineAbility/18453", "polestar:19bd636e7d6f/rust/crates/forge-data/src/professions/extract.rs"]

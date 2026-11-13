@@ -62,7 +62,7 @@ body = """
 heading = "Profesiones"
 body = """
 - Objetivo al 40: Herboristería ~230, Alquimia ~210.
-- Entrena **Artesano** al 35 con Ainethil (Darnassus, 54.9, 24.0).
+- Entrena **Artesano** al 35: Herboristería con Firodren Mooncaller (Darnassus); Alquimia solo la enseña Kylanna Windwhisper (Feralas, 32.6, 43.8), según las listas de instructor de Forever que recoge Polestar. Mientras no vayas a Feralas, guarda el material a partir de 220.
 - Arathi y la Vega de Tuercespina: Pálida, Espina de oro, Mostacho de Khadgar.
 - **Elixir de agilidad** (Alquimia ~195): úsalo tú en felino."""
 
