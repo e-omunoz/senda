@@ -1,0 +1,722 @@
+# Desuello 1-300 (GENERADO por tools/gen_gathering.py: no editar; se regenera con `python tools/gen_gathering.py`).
+# [[route]]: un tramo por banda de 25 de habilidad (prof, from, to, craft = id del objeto que da, name, n = recogidas
+#   esperadas, note = mejores zonas). [[zone]]: nodos por zona, nodes = [[objeto, habilidad mínima, nodos a la vez]],
+#   at = punto central del grupo más denso. [[bracket]]: mejores zonas por banda, zones = [[mapa, x, y, subidas por barrido]].
+# [[trainer]]: instructores por bando con coordenadas.
+id = "general-professions-skinning"
+class = "ANY"
+kind = "professions"
+title = "Desuello 1-300"
+order = 217
+status = "unverified"
+sources = ["foreverdb:object,spawn,npc,ui_map", "wago:Lock@1.60.1.70888", "polestar:19bd636e/gathering", "polestar:19bd636e/node-abundance"]
+checked = "2026-11-13"
+note = "Bestias desollables por zona de la lista curada de Polestar (forever-db no trae el tipo de criatura), con nivel y apariciones de forever-db. Habilidad exigida por bestia: nivel <= 10: 1; 11-20: (nivel-10)*10; después nivel*5. Mismas probabilidades de subida que la recolección (Classic, sin verificar). Rangos sin nivel de personaje. Necesitas un Cuchillo de desollar en las bolsas."
+
+[[trainer]]
+prof = "skinning"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Balthus Stoneflayer"
+at = [1455, 39.8, 32.5, "Balthus Stoneflayer (Forjaz)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+name = "Brighid Stormflayer"
+at = [1426, 28.7, 68.2, "Brighid Stormflayer (Dun Morogh)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Dranh"
+at = [1413, 45.1, 59.1, "Dranh (Los Baldíos)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Eladriel"
+at = [1457, 64.0, 22.4, "Eladriel (Darnassus)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Helene Peltskinner"
+at = [1429, 46.2, 62.2, "Helene Peltskinner (Bosque de Elwynn)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Jayla"
+at = [1440, 50.0, 67.3, "Jayla (Vallefresno)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Horde"
+ranks = ["Aprendiz"]
+name = "Kagil"
+at = [1411, 40.8, 67.9, "Kagil (Durotar)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Killian Hagey"
+at = [1458, 70.2, 59.2, "Killian Hagey (Entrañas)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Kulleg Stonehorn"
+at = [1444, 74.5, 43.0, "Kulleg Stonehorn (Feralas)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Malux"
+at = [1443, 23.2, 69.7, "Malux (Desolace)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Horde"
+ranks = ["Aprendiz"]
+name = "Margaret Weaver"
+at = [1420, 32.6, 65.7, "Margaret Weaver (Claros de Tirisfal)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Maris Granger"
+at = [1453, 72.1, 62.2, "Maris Granger (Ventormenta)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Mooranta"
+at = [1456, 44.4, 43.2, "Mooranta (Cima del Trueno)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Horde"
+ranks = ["Aprendiz"]
+name = "Nawka Wildsong"
+at = [1413, 28.4, 67.6, "Nawka Wildsong (Los Baldíos)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Radnaal Maneweaver"
+at = [1438, 42.1, 50.0, "Radnaal Maneweaver (Teldrassil)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Rand Rhobart"
+at = [1420, 65.6, 60.0, "Rand Rhobart (Claros de Tirisfal)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+name = "Riley Peltskinner"
+at = [1429, 46.9, 40.1, "Riley Peltskinner (Bosque de Elwynn)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+name = "Terunne Bearshaper"
+at = [1438, 59.2, 39.6, "Terunne Bearshaper (Teldrassil)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Thuwd"
+at = [1454, 63.4, 45.4, "Thuwd (Orgrimmar)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Wilma Ranthal"
+at = [1433, 83.7, 71.3, "Wilma Ranthal (Montañas Crestagrana)"]
+status = "unverified"
+
+[[trainer]]
+prof = "skinning"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Yonn Deepcut"
+at = [1412, 45.0, 61.4, "Yonn Deepcut (Mulgore)"]
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 1
+to = 25
+craft = 2318
+name = "Bestias desollables de nivel 1-7"
+n = 24
+note = "Mejores zonas: Bosque de Elwynn, Dun Morogh, Durotar. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 25
+to = 50
+craft = 2318
+name = "Bestias desollables de nivel 5-12"
+n = 33
+note = "Mejores zonas: Bosque de Elwynn, Loch Modan, Dun Morogh. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 50
+to = 75
+craft = 2318
+name = "Bestias desollables de nivel 10-17"
+n = 32
+note = "Mejores zonas: Loch Modan, Páramos de Poniente, Montañas Crestagrana. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 75
+to = 100
+craft = 2319
+name = "Bestias desollables de nivel 15-22"
+n = 50
+note = "Mejores zonas: Loch Modan, Montañas Crestagrana, Bosque de Elwynn. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 100
+to = 125
+craft = 2319
+name = "Bestias desollables de nivel 20-27"
+n = 85
+note = "Mejores zonas: Loch Modan, Bosque del Ocaso, Laderas de Trabalomas. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 125
+to = 150
+craft = 4234
+name = "Bestias desollables de nivel 25-32"
+n = 27
+note = "Mejores zonas: Laderas de Trabalomas, Los Humedales, Bosque del Ocaso. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 150
+to = 175
+craft = 4234
+name = "Bestias desollables de nivel 30-37"
+n = 32
+note = "Mejores zonas: Laderas de Trabalomas, Montañas de Alterac, Los Humedales. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 175
+to = 200
+craft = 4304
+name = "Bestias desollables de nivel 35-42"
+n = 31
+note = "Mejores zonas: Montañas de Alterac, Laderas de Trabalomas, Tierras Inhóspitas. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 200
+to = 225
+craft = 4304
+name = "Bestias desollables de nivel 40-47"
+n = 28
+note = "Mejores zonas: Tierras Inhóspitas, Pantano de las Penas, Montañas de Alterac. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 225
+to = 250
+craft = 8170
+name = "Bestias desollables de nivel 45-52"
+n = 47
+note = "Mejores zonas: Tierras Inhóspitas, Pantano de las Penas, Tierras del Interior. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 250
+to = 275
+craft = 8170
+name = "Bestias desollables de nivel 50-57"
+n = 25
+note = "Mejores zonas: Cráter de Un'Goro, Tierras del Interior, Tierras Inhóspitas. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "skinning"
+from = 275
+to = 300
+craft = 8170
+name = "Bestias desollables de nivel 55-62"
+n = 32
+note = "Mejores zonas: Cráter de Un'Goro, Azshara, Cuna del Invierno. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[zone]]
+prof = "skinning"
+map = 1411
+name = "Durotar"
+side = "H"
+levels = [1, 10]
+at = [1411, 38.1, 27.9]
+nodes = [[0, 1, 280]]
+
+[[zone]]
+prof = "skinning"
+map = 1412
+name = "Mulgore"
+side = "H"
+levels = [1, 10]
+at = [1412, 41.1, 51.8]
+nodes = [[0, 1, 124]]
+
+[[zone]]
+prof = "skinning"
+map = 1413
+name = "Los Baldíos"
+side = "H"
+levels = [10, 25]
+at = [1413, 48.3, 22.1]
+nodes = [[0, 1, 51], [0, 20, 82], [0, 40, 79], [0, 60, 28], [0, 70, 22], [0, 80, 23], [0, 100, 29]]
+
+[[zone]]
+prof = "skinning"
+map = 1416
+name = "Montañas de Alterac"
+side = "AH"
+levels = [30, 40]
+at = [1416, 37.7, 68.2]
+nodes = [[0, 110, 7], [0, 130, 3], [0, 150, 28], [0, 160, 40], [0, 165, 38], [0, 170, 23]]
+
+[[zone]]
+prof = "skinning"
+map = 1417
+name = "Tierras Altas de Arathi"
+side = "AH"
+levels = [30, 40]
+at = [1417, 49.3, 65.6]
+nodes = [[0, 150, 24], [0, 170, 24], [0, 180, 19]]
+
+[[zone]]
+prof = "skinning"
+map = 1418
+name = "Tierras Inhóspitas"
+side = "AH"
+levels = [35, 45]
+at = [1418, 47.7, 41.4]
+nodes = [[0, 180, 48], [0, 190, 48], [0, 200, 43], [0, 210, 6]]
+
+[[zone]]
+prof = "skinning"
+map = 1419
+name = "Las Tierras Devastadas"
+side = "AH"
+levels = [45, 55]
+at = [1419, 58.1, 31.7]
+nodes = [[0, 235, 5], [0, 240, 5], [0, 250, 9]]
+
+[[zone]]
+prof = "skinning"
+map = 1420
+name = "Claros de Tirisfal"
+side = "H"
+levels = [1, 10]
+at = [1420, 33.6, 62.7]
+nodes = [[0, 1, 130]]
+
+[[zone]]
+prof = "skinning"
+map = 1421
+name = "Bosque de Argénteos"
+side = "H"
+levels = [10, 20]
+at = [1421, 47.8, 20.9]
+nodes = [[0, 1, 5], [0, 20, 62], [0, 60, 22]]
+
+[[zone]]
+prof = "skinning"
+map = 1422
+name = "Tierras de la Peste del Oeste"
+side = "AH"
+levels = [51, 58]
+at = [1422, 32.8, 58.4]
+nodes = [[0, 260, 33], [0, 270, 25], [0, 280, 24]]
+
+[[zone]]
+prof = "skinning"
+map = 1423
+name = "Tierras de la Peste del Este"
+side = "AH"
+levels = [53, 60]
+at = [1423, 53.7, 51.5]
+nodes = [[0, 270, 14], [0, 280, 24], [0, 290, 24]]
+
+[[zone]]
+prof = "skinning"
+map = 1424
+name = "Laderas de Trabalomas"
+side = "AH"
+levels = [20, 30]
+at = [1424, 45.5, 30.7]
+nodes = [[0, 110, 45], [0, 120, 32], [0, 130, 26], [0, 140, 19], [0, 150, 13], [0, 155, 35], [0, 160, 44], [0, 170, 9]]
+
+[[zone]]
+prof = "skinning"
+map = 1425
+name = "Tierras del Interior"
+side = "AH"
+levels = [40, 50]
+at = [1425, 32.1, 57.6]
+nodes = [[0, 210, 24], [0, 220, 48], [0, 230, 24], [0, 240, 24], [0, 250, 24]]
+
+[[zone]]
+prof = "skinning"
+map = 1426
+name = "Dun Morogh"
+side = "A"
+levels = [1, 10]
+at = [1426, 26.5, 74.0]
+nodes = [[0, 1, 272]]
+
+[[zone]]
+prof = "skinning"
+map = 1428
+name = "Las Estepas Ardientes"
+side = "AH"
+levels = [50, 58]
+at = [1428, 27.5, 59.1]
+nodes = [[0, 260, 1], [0, 270, 23], [0, 280, 11]]
+
+[[zone]]
+prof = "skinning"
+map = 1429
+name = "Bosque de Elwynn"
+side = "A"
+levels = [1, 10]
+at = [1429, 48.6, 41.2]
+nodes = [[0, 1, 181]]
+
+[[zone]]
+prof = "skinning"
+map = 1431
+name = "Bosque del Ocaso"
+side = "A"
+levels = [18, 30]
+at = [1431, 32.2, 25.4]
+nodes = [[0, 100, 28], [0, 130, 6]]
+
+[[zone]]
+prof = "skinning"
+map = 1432
+name = "Loch Modan"
+side = "A"
+levels = [10, 20]
+at = [1432, 66.7, 41.5]
+nodes = [[0, 1, 24], [0, 20, 21], [0, 40, 72], [0, 60, 39]]
+
+[[zone]]
+prof = "skinning"
+map = 1433
+name = "Montañas Crestagrana"
+side = "A"
+levels = [15, 25]
+at = [1433, 10.6, 64.0]
+nodes = [[0, 40, 10], [0, 60, 24]]
+
+[[zone]]
+prof = "skinning"
+map = 1434
+name = "Vega de Tuercespina"
+side = "AH"
+levels = [30, 45]
+at = [1434, 33.5, 13.8]
+nodes = [[0, 150, 60], [0, 160, 63], [0, 170, 42], [0, 180, 63], [0, 190, 24], [0, 200, 67], [0, 210, 31], [0, 220, 20]]
+
+[[zone]]
+prof = "skinning"
+map = 1435
+name = "Pantano de las Penas"
+side = "AH"
+levels = [35, 45]
+at = [1435, 54.2, 42.4]
+nodes = [[0, 180, 20], [0, 190, 24], [0, 200, 23], [0, 210, 17]]
+
+[[zone]]
+prof = "skinning"
+map = 1436
+name = "Páramos de Poniente"
+side = "A"
+levels = [10, 20]
+at = [1436, 37.6, 31.8]
+nodes = [[0, 1, 25], [0, 20, 47], [0, 40, 24], [0, 60, 16]]
+
+[[zone]]
+prof = "skinning"
+map = 1437
+name = "Los Humedales"
+side = "A"
+levels = [20, 30]
+at = [1437, 28.3, 47.7]
+nodes = [[0, 110, 48], [0, 120, 80], [0, 130, 36], [0, 140, 24], [0, 145, 22]]
+
+[[zone]]
+prof = "skinning"
+map = 1438
+name = "Teldrassil"
+side = "A"
+levels = [1, 10]
+at = [1438, 60.0, 40.9]
+nodes = [[0, 1, 146]]
+
+[[zone]]
+prof = "skinning"
+map = 1439
+name = "Costa Oscura"
+side = "A"
+levels = [10, 20]
+at = [1439, 47.6, 27.5]
+nodes = [[0, 10, 20], [0, 20, 25], [0, 40, 45], [0, 60, 3], [0, 80, 4], [0, 100, 5]]
+
+[[zone]]
+prof = "skinning"
+map = 1440
+name = "Vallefresno"
+side = "AH"
+levels = [18, 30]
+at = [1440, 67.2, 57.0]
+nodes = [[0, 100, 23], [0, 110, 49], [0, 130, 53], [0, 150, 3]]
+
+[[zone]]
+prof = "skinning"
+map = 1441
+name = "Las Mil Agujas"
+side = "AH"
+levels = [25, 35]
+at = [1441, 77.5, 57.5]
+nodes = [[0, 130, 56], [0, 140, 33], [0, 150, 42], [0, 160, 24], [0, 170, 34]]
+
+[[zone]]
+prof = "skinning"
+map = 1442
+name = "Sierra Espolón"
+side = "AH"
+levels = [15, 27]
+at = [1442, 33.1, 69.8]
+nodes = [[0, 110, 14], [0, 120, 24], [0, 125, 5], [0, 130, 3], [0, 140, 11], [0, 160, 3]]
+
+[[zone]]
+prof = "skinning"
+map = 1443
+name = "Desolace"
+side = "AH"
+levels = [30, 40]
+at = [1443, 48.6, 58.1]
+nodes = [[0, 150, 22], [0, 160, 23], [0, 170, 70], [0, 180, 42], [0, 190, 36]]
+
+[[zone]]
+prof = "skinning"
+map = 1444
+name = "Feralas"
+side = "AH"
+levels = [40, 50]
+at = [1444, 57.1, 58.1]
+nodes = [[0, 140, 24], [0, 200, 23], [0, 210, 46], [0, 220, 94], [0, 230, 8], [0, 240, 24], [0, 250, 24]]
+
+[[zone]]
+prof = "skinning"
+map = 1445
+name = "Marjal Revolcafango"
+side = "AH"
+levels = [35, 45]
+at = [1445, 34.3, 67.0]
+nodes = [[0, 180, 10], [0, 190, 61], [0, 200, 54], [0, 210, 24]]
+
+[[zone]]
+prof = "skinning"
+map = 1446
+name = "Tanaris"
+side = "AH"
+levels = [40, 50]
+at = [1446, 51.7, 32.6]
+nodes = [[0, 200, 25], [0, 210, 48], [0, 220, 49], [0, 230, 24], [0, 245, 12]]
+
+[[zone]]
+prof = "skinning"
+map = 1447
+name = "Azshara"
+side = "AH"
+levels = [45, 55]
+at = [1447, 19.2, 56.0]
+nodes = [[0, 230, 25], [0, 235, 21], [0, 245, 24], [0, 255, 38], [0, 265, 48]]
+
+[[zone]]
+prof = "skinning"
+map = 1448
+name = "Frondavil"
+side = "AH"
+levels = [48, 55]
+at = [1448, 44.3, 76.3]
+nodes = [[0, 240, 26], [0, 250, 25]]
+
+[[zone]]
+prof = "skinning"
+map = 1449
+name = "Cráter de Un'Goro"
+side = "AH"
+levels = [48, 55]
+at = [1449, 67.2, 52.0]
+nodes = [[0, 240, 14], [0, 245, 10], [0, 250, 70], [0, 255, 4], [0, 260, 41], [0, 265, 24], [0, 270, 24]]
+
+[[zone]]
+prof = "skinning"
+map = 1451
+name = "Silithus"
+side = "AH"
+levels = [55, 60]
+at = [1451, 65.8, 35.1]
+nodes = [[0, 270, 27]]
+
+[[zone]]
+prof = "skinning"
+map = 1452
+name = "Cuna del Invierno"
+side = "AH"
+levels = [55, 60]
+at = [1452, 56.3, 16.7]
+nodes = [[0, 270, 49], [0, 275, 19], [0, 280, 128], [0, 290, 89], [0, 300, 45]]
+
+[[zone]]
+prof = "skinning"
+map = 2521
+name = "Isla de Zephras"
+side = "AH"
+levels = [1, 15]
+at = [2521, 52.3, 62.9]
+nodes = [[0, 1, 360]]
+
+[[bracket]]
+prof = "skinning"
+from = 1
+to = 25
+zones = [[1429, 48.6, 41.2, 181], [1426, 26.5, 74.0, 272], [1411, 38.1, 27.9, 280], [1420, 33.6, 62.7, 130]]
+
+[[bracket]]
+prof = "skinning"
+from = 25
+to = 50
+zones = [[1429, 48.6, 41.2, 137.6], [1432, 34.4, 33.2, 67], [1426, 26.5, 74.0, 206.7], [1411, 38.1, 27.9, 212.8]]
+
+[[bracket]]
+prof = "skinning"
+from = 50
+to = 75
+zones = [[1432, 66.7, 41.5, 108.3], [1436, 37.5, 32.0, 68.5], [1433, 10.6, 64.0, 23.4], [1429, 48.6, 41.2, 48.9]]
+
+[[bracket]]
+prof = "skinning"
+from = 75
+to = 100
+zones = [[1432, 66.7, 41.5, 84], [1433, 10.6, 64.0, 25.9], [1429, 48.6, 41.2, 45.2], [1436, 57.8, 63.2, 44.8]]
+
+[[bracket]]
+prof = "skinning"
+from = 100
+to = 125
+zones = [[1432, 66.7, 41.5, 40], [1431, 32.2, 25.4, 28], [1424, 47.7, 38.2, 33.4], [1433, 10.6, 64.0, 13.3]]
+
+[[bracket]]
+prof = "skinning"
+from = 125
+to = 150
+zones = [[1424, 48.9, 36.5, 97], [1437, 28.6, 47.7, 159.6], [1431, 32.2, 25.4, 25.8], [1440, 67.2, 57.0, 101.3]]
+
+[[bracket]]
+prof = "skinning"
+from = 150
+to = 175
+zones = [[1424, 45.2, 30.3, 148.2], [1416, 34.1, 69.2, 77.3], [1437, 68.6, 31.6, 144.9], [1441, 76.7, 57.7, 137.7]]
+
+[[bracket]]
+prof = "skinning"
+from = 175
+to = 200
+zones = [[1416, 38.0, 68.0, 113.8], [1424, 43.7, 29.0, 122.5], [1418, 47.6, 40.8, 57.6], [1443, 49.0, 58.1, 150.6]]
+
+[[bracket]]
+prof = "skinning"
+from = 200
+to = 225
+zones = [[1418, 57.3, 57.3, 128.2], [1435, 54.2, 42.4, 70.8], [1416, 38.6, 67.5, 62.3], [1443, 57.1, 52.7, 127.3]]
+
+[[bracket]]
+prof = "skinning"
+from = 225
+to = 250
+zones = [[1418, 57.5, 57.6, 80.5], [1435, 54.2, 42.4, 51.9], [1425, 32.3, 57.6, 94.8], [1434, 38.9, 44.1, 172.1]]
+
+[[bracket]]
+prof = "skinning"
+from = 250
+to = 275
+zones = [[1449, 67.2, 52.0, 134.3], [1425, 57.6, 48.6, 106.8], [1418, 47.7, 41.4, 37.5], [1435, 54.2, 42.4, 24.4]]
+
+[[bracket]]
+prof = "skinning"
+from = 275
+to = 300
+zones = [[1449, 67.2, 52.0, 149.2], [1447, 71.6, 26.6, 107.4], [1452, 61.7, 37.5, 203.6], [1425, 57.7, 48.6, 57.6]]

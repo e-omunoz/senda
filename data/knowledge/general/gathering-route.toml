@@ -1,0 +1,624 @@
+# En qué zona de tu guía recolectas (GENERADO por tools/gen_gathering.py: no editar).
+# [[stop]]: guide, section, levels, maps = mapas de la sección con zonas de recolección (los que más pasos tienen).
+# Modules/Gathering.lua cruza esto con los nodos de cada zona ([[zone]] de professions-*.toml) y tu habilidad.
+id = "general-gathering-route"
+class = "ANY"
+kind = "gathering_route"
+title = "Recolección en tu ruta"
+order = 219
+status = "unverified"
+sources = ["senda:data/guides", "foreverdb:ui_map", "polestar:19bd636e/node-abundance"]
+checked = "2026-11-13"
+note = "Calculado a partir de los pasos de cada sección (el mapa de cada paso con coordenadas)."
+
+[[stop]]
+guide = "gnome-warlock"
+section = "coldridge"
+levels = [1, 6]
+maps = [1426]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "dun-morogh"
+levels = [6, 12]
+maps = [1426]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-voidwalker"
+levels = [10, 12]
+maps = [1429]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a12-loch-modan"
+levels = [12, 16]
+maps = [1432, 1426]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a17-paramos-de-poniente"
+levels = [16, 19]
+maps = [1436]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a19-crestagrana"
+levels = [19, 21]
+maps = [1433]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a21-minas-de-la-muerte"
+levels = [20, 22]
+maps = [1436]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-succubus"
+levels = [20, 24]
+maps = [1413, 1440]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a22-bosque-del-ocaso"
+levels = [22, 26]
+maps = [1431]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a26-los-humedales"
+levels = [26, 30]
+maps = [1437, 1432]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a30-stv-norte"
+levels = [30, 34]
+maps = [1434]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-felhunter"
+levels = [30, 34]
+maps = [1413]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a34-desolace"
+levels = [34, 38]
+maps = [1443]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a38-valle-de-huesos"
+levels = [38, 40]
+maps = [1443]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a40-ciudad"
+levels = [40, 40]
+maps = [1429]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-felsteed"
+levels = [40, 40]
+maps = [1413]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a40-monasterio"
+levels = [40, 41]
+maps = [1424]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a41-riverglades"
+levels = [41, 44]
+maps = [1433]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a44-badlands"
+levels = [44, 45]
+maps = [1418]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a45-feralas"
+levels = [45, 47]
+maps = [1444]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a47-tanaris"
+levels = [47, 48]
+maps = [1446]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a48-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a49-hinterlands"
+levels = [49, 50]
+maps = [1425]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a50-ungoro"
+levels = [50, 52]
+maps = [1449, 1446]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a52-felwood"
+levels = [52, 54]
+maps = [1448]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-inferno"
+levels = [50, 55]
+maps = [1448]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a54-winterspring"
+levels = [54, 56]
+maps = [1452]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a55-burning-steppes"
+levels = [55, 57]
+maps = [1428, 1433]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a57-western-plaguelands"
+levels = [57, 58]
+maps = [1422]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a58-eastern-plaguelands"
+levels = [58, 60]
+maps = [1423]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "a60-endgame"
+levels = [60, 60]
+maps = [1428]
+
+[[stop]]
+guide = "gnome-warlock"
+section = "wl-endgame"
+levels = [60, 60]
+maps = [1419]
+
+[[stop]]
+guide = "human-mage"
+section = "hmage-northshire"
+levels = [1, 6]
+maps = [1429]
+
+[[stop]]
+guide = "human-mage"
+section = "hmage-elwynn"
+levels = [6, 12]
+maps = [1429]
+
+[[stop]]
+guide = "human-mage"
+section = "a12-loch-modan"
+levels = [12, 16]
+maps = [1432, 1426]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-16-rift-gem"
+levels = [16, 17]
+maps = [1432]
+
+[[stop]]
+guide = "human-mage"
+section = "a17-paramos-de-poniente"
+levels = [16, 19]
+maps = [1436]
+
+[[stop]]
+guide = "human-mage"
+section = "a19-crestagrana"
+levels = [19, 21]
+maps = [1433]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-20-library"
+levels = [20, 22]
+maps = [1429]
+
+[[stop]]
+guide = "human-mage"
+section = "a21-minas-de-la-muerte"
+levels = [20, 22]
+maps = [1436]
+
+[[stop]]
+guide = "human-mage"
+section = "a22-bosque-del-ocaso"
+levels = [22, 26]
+maps = [1431]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-27-ur-treatise"
+levels = [27, 28]
+maps = [1433]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-29-spider-silk"
+levels = [29, 30]
+maps = [1431]
+
+[[stop]]
+guide = "human-mage"
+section = "a26-los-humedales"
+levels = [26, 30]
+maps = [1437, 1432]
+
+[[stop]]
+guide = "human-mage"
+section = "a30-stv-norte"
+levels = [30, 34]
+maps = [1434]
+
+[[stop]]
+guide = "human-mage"
+section = "a34-desolace"
+levels = [34, 38]
+maps = [1443]
+
+[[stop]]
+guide = "human-mage"
+section = "a38-valle-de-huesos"
+levels = [38, 40]
+maps = [1443]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-38-tabetha"
+levels = [38, 40]
+maps = [1445]
+
+[[stop]]
+guide = "human-mage"
+section = "a40-ciudad"
+levels = [40, 40]
+maps = [1429]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-40-train"
+levels = [40, 41]
+maps = [1429]
+
+[[stop]]
+guide = "human-mage"
+section = "a40-monasterio"
+levels = [40, 41]
+maps = [1424]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-40-needles"
+levels = [40, 41]
+maps = [1441]
+
+[[stop]]
+guide = "human-mage"
+section = "a41-riverglades"
+levels = [41, 44]
+maps = [1433]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-42-wand"
+levels = [40, 44]
+maps = [1445]
+
+[[stop]]
+guide = "human-mage"
+section = "a44-badlands"
+levels = [44, 45]
+maps = [1418]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-45-celestial"
+levels = [44, 46]
+maps = [1445]
+
+[[stop]]
+guide = "human-mage"
+section = "a45-feralas"
+levels = [45, 47]
+maps = [1444]
+
+[[stop]]
+guide = "human-mage"
+section = "a47-tanaris"
+levels = [47, 48]
+maps = [1446]
+
+[[stop]]
+guide = "human-mage"
+section = "a48-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "human-mage"
+section = "a49-hinterlands"
+levels = [49, 50]
+maps = [1425]
+
+[[stop]]
+guide = "human-mage"
+section = "a50-ungoro"
+levels = [50, 52]
+maps = [1449, 1446]
+
+[[stop]]
+guide = "human-mage"
+section = "a52-felwood"
+levels = [52, 54]
+maps = [1448]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-52-azshara"
+levels = [52, 55]
+maps = [1447]
+
+[[stop]]
+guide = "human-mage"
+section = "a54-winterspring"
+levels = [54, 56]
+maps = [1452]
+
+[[stop]]
+guide = "human-mage"
+section = "a55-burning-steppes"
+levels = [55, 57]
+maps = [1428, 1433]
+
+[[stop]]
+guide = "human-mage"
+section = "a57-western-plaguelands"
+levels = [57, 58]
+maps = [1422]
+
+[[stop]]
+guide = "human-mage"
+section = "a58-eastern-plaguelands"
+levels = [58, 60]
+maps = [1423]
+
+[[stop]]
+guide = "human-mage"
+section = "a60-endgame"
+levels = [60, 60]
+maps = [1428]
+
+[[stop]]
+guide = "human-mage"
+section = "mg-60-krellian"
+levels = [60, 60]
+maps = [1447]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "ne-shadowglen"
+levels = [1, 6]
+maps = [1438]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "ne-teldrassil"
+levels = [6, 12]
+maps = [1438]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-10-bear"
+levels = [10, 11]
+maps = [1438]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-11-lunaclaw"
+levels = [11, 12]
+maps = [1439]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "ne-darkshore"
+levels = [12, 20]
+maps = [1439]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-14-poison"
+levels = [14, 16]
+maps = [1439]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-16-aquatic"
+levels = [16, 17]
+maps = [1439]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "ne-viaje-reinos-del-este"
+levels = [20, 20]
+maps = [1429]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-18-sea-lion"
+levels = [17, 19]
+maps = [1436]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a19-crestagrana"
+levels = [19, 21]
+maps = [1433]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a22-bosque-del-ocaso"
+levels = [22, 26]
+maps = [1431]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a26-los-humedales"
+levels = [26, 30]
+maps = [1437, 1432]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a30-stv-norte"
+levels = [30, 34]
+maps = [1434]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a34-desolace"
+levels = [34, 38]
+maps = [1443]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a38-valle-de-huesos"
+levels = [38, 40]
+maps = [1443]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a40-ciudad"
+levels = [40, 40]
+maps = [1429]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a40-monasterio"
+levels = [40, 41]
+maps = [1424]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a41-riverglades"
+levels = [41, 44]
+maps = [1433]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a44-badlands"
+levels = [44, 45]
+maps = [1418]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a45-feralas"
+levels = [45, 47]
+maps = [1444]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a47-tanaris"
+levels = [47, 48]
+maps = [1446]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a48-searing-gorge"
+levels = [48, 49]
+maps = [1427]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a49-hinterlands"
+levels = [49, 50]
+maps = [1425]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a50-ungoro"
+levels = [50, 52]
+maps = [1449, 1446]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-52-torwa"
+levels = [50, 54]
+maps = [1449]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a52-felwood"
+levels = [52, 54]
+maps = [1448]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a54-winterspring"
+levels = [54, 56]
+maps = [1452]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a55-burning-steppes"
+levels = [55, 57]
+maps = [1428, 1433]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a57-western-plaguelands"
+levels = [57, 58]
+maps = [1422]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a58-eastern-plaguelands"
+levels = [58, 60]
+maps = [1423]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "a60-endgame"
+levels = [60, 60]
+maps = [1428]
+
+[[stop]]
+guide = "nightelf-druid"
+section = "dr-60-endgame"
+levels = [60, 60]
+maps = [1434]
+
+[[stop]]
+guide = "nightelf-druid-ps"
+section = "ps-teldrassil"
+levels = [1, 12]
+maps = [1438, 1439]

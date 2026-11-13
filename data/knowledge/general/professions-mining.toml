@@ -1,0 +1,715 @@
+# Minería 1-300 (GENERADO por tools/gen_gathering.py: no editar; se regenera con `python tools/gen_gathering.py`).
+# [[route]]: un tramo por banda de 25 de habilidad (prof, from, to, craft = id del objeto que da, name, n = recogidas
+#   esperadas, note = mejores zonas). [[zone]]: nodos por zona, nodes = [[objeto, habilidad mínima, nodos a la vez]],
+#   at = punto central del grupo más denso. [[bracket]]: mejores zonas por banda, zones = [[mapa, x, y, subidas por barrido]].
+# [[trainer]]: instructores por bando con coordenadas.
+id = "general-professions-mining"
+class = "ANY"
+kind = "professions"
+title = "Minería 1-300"
+order = 216
+status = "unverified"
+sources = ["foreverdb:object,spawn,npc,ui_map", "wago:Lock@1.60.1.70888", "polestar:19bd636e/gathering", "polestar:19bd636e/node-abundance"]
+checked = "2026-11-13"
+note = "Zonas, bandas y rutas con las reglas de Classic y los nodos que mantiene cada zona a la vez (reservas de aparición de Forever, vía Polestar). Cobre 1; Estaño e Incendicita 65; Plata y Petrosangre 75; Hierro 125; Oro 155; Mitril 175; Veraplata y Hierro Negro 230; Torio pequeño 245; Torio rico 275; todas esas habilidades existen en la tabla Lock del cliente de Forever. Poor Copper Vein (zonas de inicio de Forever) cuenta como habilidad 1. En Teldrassil Forever usa Chunk of Amber (sin datos de cantidad aquí: Senda no los cuenta). Rangos sin nivel de personaje, como Herboristería. Hace falta un Pico de minero en las bolsas."
+
+[[trainer]]
+prof = "mining"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Brek Stonehoof"
+at = [1456, 34.4, 57.8, "Brek Stonehoof (Cima del Trueno)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Brock Stoneseeker"
+at = [1432, 37.0, 47.8, "Brock Stoneseeker (Loch Modan)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Brom Killian"
+at = [1458, 56.0, 37.5, "Brom Killian (Entrañas)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Dank Drizzlecut"
+at = [1426, 69.3, 55.5, "Dank Drizzlecut (Dun Morogh)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+name = "Fanorran Stilloak"
+at = [1438, 57.9, 43.8, "Fanorran Stilloak (Teldrassil)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Gelman Stonehand"
+at = [1453, 59.2, 37.8, "Gelman Stonehand (Ventormenta)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Geofram Bouldertoe"
+at = [1455, 50.0, 26.3, "Geofram Bouldertoe (Forjaz)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Johan Focht"
+at = [1421, 43.4, 40.5, "Johan Focht (Bosque de Argénteos)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+name = "Kelsey Fargo"
+at = [1429, 47.2, 32.2, "Kelsey Fargo (Bosque de Elwynn)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Krunn"
+at = [1411, 51.8, 40.9, "Krunn (Durotar)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Kurdram Stonehammer"
+at = [1439, 38.2, 41.0, "Kurdram Stonehammer (Costa Oscura)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Horde"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Makaru"
+at = [1454, 73.1, 26.1, "Makaru (Orgrimmar)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Matt Johnson"
+at = [1431, 74.0, 49.6, "Matt Johnson (Bosque del Ocaso)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Horde"
+ranks = ["Aprendiz"]
+name = "Norzsh"
+at = [1411, 40.6, 68.1, "Norzsh (Durotar)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Pikkle"
+at = [1446, 51.1, 28.1, "Pikkle (Tanaris)"]
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Alliance"
+ranks = ["Aprendiz"]
+name = "Sally Swiftwrench"
+at = [1426, 29.0, 68.3, "Sally Swiftwrench (Dun Morogh)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Horde"
+ranks = ["Aprendiz"]
+name = "Vartha Rockmane"
+at = [1413, 28.3, 67.5, "Vartha Rockmane (Los Baldíos)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Horde"
+ranks = ["Aprendiz"]
+name = "Walter Mason"
+at = [1420, 32.3, 65.7, "Walter Mason (Claros de Tirisfal)"]
+note = "Instructor de la zona de inicio: solo enseña Aprendiz."
+status = "unverified"
+
+[[trainer]]
+prof = "mining"
+faction = "Alliance"
+ranks = ["Aprendiz", "Oficial", "Experto", "Artesano"]
+name = "Yarr Hammerstone"
+at = [1426, 50.0, 50.3, "Yarr Hammerstone (Dun Morogh)"]
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 1
+to = 25
+craft = 2770
+name = "Mineral de cobre"
+n = 24
+note = "Mejores zonas: Loch Modan, Bosque de Elwynn, Durotar. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 25
+to = 50
+craft = 2770
+name = "Mineral de cobre"
+n = 33
+note = "Mejores zonas: Montañas Crestagrana, Loch Modan, Bosque de Elwynn. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 50
+to = 75
+craft = 2770
+name = "Mineral de cobre"
+n = 80
+note = "Mejores zonas: Montañas Crestagrana, Loch Modan, Bosque de Elwynn. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 75
+to = 100
+craft = 2771
+name = "Mineral de estaño y Mineral de cobre y Mineral de plata"
+n = 59
+note = "Mejores zonas: Montañas Crestagrana, Loch Modan, Bosque del Ocaso. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 100
+to = 125
+craft = 2771
+name = "Mineral de estaño y Mineral de plata"
+n = 57
+note = "Mejores zonas: Loch Modan, Laderas de Trabalomas, Los Humedales. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 125
+to = 150
+craft = 2772
+name = "Hierro y Mineral de plata"
+n = 26
+note = "Mejores zonas: Tierras Inhóspitas, Tierras Altas de Arathi, Montañas de Alterac. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 150
+to = 175
+craft = 2772
+name = "Hierro y Mineral de oro y Mineral de plata"
+n = 34
+note = "Mejores zonas: Tierras Inhóspitas, Tierras Altas de Arathi, Montañas de Alterac. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 175
+to = 200
+craft = 3858
+name = "Mineral de mitril y Hierro y Mineral de oro"
+n = 40
+note = "Mejores zonas: Tierras Inhóspitas, La Garganta de Fuego, Tierras del Interior. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 200
+to = 225
+craft = 3858
+name = "Mineral de mitril y Hierro y Mineral de oro"
+n = 51
+note = "Mejores zonas: Tierras Inhóspitas, Montañas de Alterac, Tierras del Interior. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 225
+to = 250
+craft = 11370
+name = "Hierro Negro y Mineral de mitril y Veraplata"
+n = 62
+note = "Mejores zonas: La Garganta de Fuego, Las Estepas Ardientes, Tierras del Interior. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 250
+to = 275
+craft = 10620
+name = "Torio y Mineral de mitril y Hierro Negro"
+n = 46
+note = "Mejores zonas: La Garganta de Fuego, Las Estepas Ardientes, Silithus. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[route]]
+prof = "mining"
+from = 275
+to = 300
+craft = 10620
+name = "Torio y Torio y Hierro Negro"
+n = 39
+note = "Mejores zonas: Las Estepas Ardientes, Tierras de la Peste del Este, Cráter de Un'Goro. Naranja = sube siempre; amarillo, casi siempre."
+status = "unverified"
+
+[[zone]]
+prof = "mining"
+map = 1411
+name = "Durotar"
+side = "H"
+levels = [1, 10]
+at = [1411, 44.1, 63.3]
+nodes = [[2770, 1, 62.2]]
+
+[[zone]]
+prof = "mining"
+map = 1412
+name = "Mulgore"
+side = "H"
+levels = [1, 10]
+at = [1412, 56.4, 43.5]
+nodes = [[2770, 1, 41.9]]
+
+[[zone]]
+prof = "mining"
+map = 1413
+name = "Los Baldíos"
+side = "H"
+levels = [10, 25]
+at = [1413, 52.3, 64.1]
+nodes = [[2770, 1, 46.6], [2771, 65, 11.2], [2775, 75, 0.9], [2772, 125, 6.3], [2776, 155, 0.4], [3858, 175, 1.7], [7911, 230, 0.1]]
+
+[[zone]]
+prof = "mining"
+map = 1416
+name = "Montañas de Alterac"
+side = "AH"
+levels = [30, 40]
+at = [1416, 48.2, 47.2]
+nodes = [[2771, 65, 2.7], [2775, 75, 0.8], [2772, 125, 11.5], [2776, 155, 0.9], [3858, 175, 5.3], [7911, 230, 0.3]]
+
+[[zone]]
+prof = "mining"
+map = 1417
+name = "Tierras Altas de Arathi"
+side = "AH"
+levels = [30, 40]
+at = [1417, 84.4, 31.5]
+nodes = [[2771, 65, 5.7], [2775, 75, 1.3], [4278, 75, 3.7], [2772, 125, 18.1], [2776, 155, 1.4], [3858, 175, 6.3], [7911, 230, 0.4], [10620, 245, 0.7]]
+
+[[zone]]
+prof = "mining"
+map = 1418
+name = "Tierras Inhóspitas"
+side = "AH"
+levels = [35, 45]
+at = [1418, 37.2, 15.6]
+nodes = [[2770, 1, 0.4], [2775, 75, 0.6], [2772, 125, 11], [2776, 155, 1.2], [3858, 175, 10.6], [7911, 230, 0.6]]
+
+[[zone]]
+prof = "mining"
+map = 1419
+name = "Las Tierras Devastadas"
+side = "AH"
+levels = [45, 55]
+at = [1419, 52.5, 55.1]
+nodes = [[2775, 75, 0], [2772, 125, 0.5], [2776, 155, 0.4], [3858, 175, 6], [7911, 230, 0.6], [10620, 245, 5.1]]
+
+[[zone]]
+prof = "mining"
+map = 1420
+name = "Claros de Tirisfal"
+side = "H"
+levels = [1, 10]
+at = [1420, 32.8, 67.8]
+nodes = [[2770, 1, 44.5]]
+
+[[zone]]
+prof = "mining"
+map = 1421
+name = "Bosque de Argénteos"
+side = "H"
+levels = [10, 20]
+at = [1421, 47.2, 30.5]
+nodes = [[2770, 1, 24.7], [2771, 65, 7.1], [2775, 75, 0.4]]
+
+[[zone]]
+prof = "mining"
+map = 1422
+name = "Tierras de la Peste del Oeste"
+side = "AH"
+levels = [51, 58]
+at = [1422, 30.5, 55.2]
+nodes = [[2770, 1, 2.5], [2775, 75, 0], [2772, 125, 0.7], [2776, 155, 0.3], [3858, 175, 4.5], [7911, 230, 0.7], [10620, 245, 4.8], [10620, 275, 2.8]]
+
+[[zone]]
+prof = "mining"
+map = 1423
+name = "Tierras de la Peste del Este"
+side = "AH"
+levels = [53, 60]
+at = [1423, 43.3, 66.2]
+nodes = [[2776, 155, 0.1], [3858, 175, 1.8], [7911, 230, 0.8], [10620, 245, 4.8], [10620, 275, 7.6]]
+
+[[zone]]
+prof = "mining"
+map = 1424
+name = "Laderas de Trabalomas"
+side = "AH"
+levels = [20, 30]
+at = [1424, 43.6, 28.2]
+nodes = [[2770, 1, 10], [2771, 65, 13.3], [2775, 75, 1], [2772, 125, 6], [2776, 155, 0.4], [3858, 175, 0.6], [7911, 230, 0]]
+
+[[zone]]
+prof = "mining"
+map = 1425
+name = "Tierras del Interior"
+side = "AH"
+levels = [40, 50]
+at = [1425, 29.2, 64.7]
+nodes = [[2775, 75, 0.1], [2772, 125, 1.8], [2776, 155, 1], [3858, 175, 16.7], [7911, 230, 1], [10620, 245, 2.1]]
+
+[[zone]]
+prof = "mining"
+map = 1426
+name = "Dun Morogh"
+side = "A"
+levels = [1, 10]
+at = [1426, 26.2, 78.7]
+nodes = [[2770, 1, 53]]
+
+[[zone]]
+prof = "mining"
+map = 1427
+name = "La Garganta de Fuego"
+side = "AH"
+levels = [43, 50]
+at = [1427, 48.3, 43.4]
+nodes = [[2775, 75, 0.1], [2772, 125, 0.9], [2776, 155, 0.5], [3858, 175, 6.8], [7911, 230, 0.7], [11370, 230, 2], [10620, 245, 3.2], [10620, 275, 0.3]]
+
+[[zone]]
+prof = "mining"
+map = 1428
+name = "Las Estepas Ardientes"
+side = "AH"
+levels = [50, 58]
+at = [1428, 61.8, 89.4]
+nodes = [[2770, 1, 0.8], [2771, 65, 1.1], [2775, 75, 0.1], [2776, 155, 0.3], [3858, 175, 4.7], [7911, 230, 0.9], [11370, 230, 2.6], [10620, 245, 5.6], [10620, 275, 3.7]]
+
+[[zone]]
+prof = "mining"
+map = 1429
+name = "Bosque de Elwynn"
+side = "A"
+levels = [1, 10]
+at = [1429, 50.9, 33.4]
+nodes = [[2770, 1, 46.7]]
+
+[[zone]]
+prof = "mining"
+map = 1431
+name = "Bosque del Ocaso"
+side = "A"
+levels = [18, 30]
+at = [1431, 34.2, 80.1]
+nodes = [[2770, 1, 9.8], [2771, 65, 9], [2775, 75, 0.9], [2772, 125, 7.6], [2776, 155, 0.4]]
+
+[[zone]]
+prof = "mining"
+map = 1432
+name = "Loch Modan"
+side = "A"
+levels = [10, 20]
+at = [1432, 38.9, 87.1]
+nodes = [[2770, 1, 31.6], [2771, 65, 10.4], [2775, 75, 0.6], [2772, 125, 1.6], [2776, 155, 0.1], [3858, 175, 0.9], [7911, 230, 0.1]]
+
+[[zone]]
+prof = "mining"
+map = 1433
+name = "Montañas Crestagrana"
+side = "A"
+levels = [15, 25]
+at = [1433, 14.5, 26.3]
+nodes = [[2770, 1, 19.7], [2771, 65, 6.9], [2775, 75, 0.4]]
+
+[[zone]]
+prof = "mining"
+map = 1434
+name = "Vega de Tuercespina"
+side = "AH"
+levels = [30, 45]
+at = [1434, 42.9, 42.1]
+nodes = [[2771, 65, 1.9], [2775, 75, 1.1], [2772, 125, 18], [2776, 155, 1.4], [3858, 175, 8.1], [7911, 230, 0.5]]
+
+[[zone]]
+prof = "mining"
+map = 1435
+name = "Pantano de las Penas"
+side = "AH"
+levels = [35, 45]
+at = [1435, 52.1, 63.1]
+nodes = [[2775, 75, 0.3], [2772, 125, 5], [2776, 155, 0.5], [3858, 175, 4.7], [7911, 230, 0.3], [10620, 245, 1.7]]
+
+[[zone]]
+prof = "mining"
+map = 1436
+name = "Páramos de Poniente"
+side = "A"
+levels = [10, 20]
+at = [1436, 62.8, 44.7]
+nodes = [[2770, 1, 27], [2771, 65, 6.9], [2775, 75, 0.4]]
+
+[[zone]]
+prof = "mining"
+map = 1437
+name = "Los Humedales"
+side = "A"
+levels = [20, 30]
+at = [1437, 49.0, 62.0]
+nodes = [[2770, 1, 10], [2771, 65, 12.3], [3340, 65, 4], [2775, 75, 0.8], [2772, 125, 3.6], [2776, 155, 0.2]]
+
+[[zone]]
+prof = "mining"
+map = 1438
+name = "Teldrassil"
+side = "A"
+levels = [1, 10]
+at = [1438, 47.8, 54.0]
+nodes = [[2770, 1, 7]]
+
+[[zone]]
+prof = "mining"
+map = 1439
+name = "Costa Oscura"
+side = "A"
+levels = [10, 20]
+at = [1439, 57.2, 40.5]
+nodes = [[2770, 1, 28], [2771, 65, 9.4], [2775, 75, 0.5], [7911, 230, 0], [10620, 245, 0.5]]
+
+[[zone]]
+prof = "mining"
+map = 1440
+name = "Vallefresno"
+side = "AH"
+levels = [18, 30]
+at = [1440, 53.3, 28.9]
+nodes = [[2770, 1, 13.5], [2771, 65, 18.6], [2775, 75, 1.4], [2772, 125, 7.2], [2776, 155, 0.4], [3858, 175, 0.2], [7911, 230, 0]]
+
+[[zone]]
+prof = "mining"
+map = 1441
+name = "Las Mil Agujas"
+side = "AH"
+levels = [25, 35]
+at = [1441, 40.9, 33.2]
+nodes = [[2770, 1, 10.7], [2771, 65, 10.1], [2775, 75, 1.3], [2772, 125, 14], [2776, 155, 0.9], [3858, 175, 1.8], [7911, 230, 0.1]]
+
+[[zone]]
+prof = "mining"
+map = 1442
+name = "Sierra Espolón"
+side = "AH"
+levels = [15, 27]
+at = [1442, 32.9, 66.6]
+nodes = [[2770, 1, 16], [2771, 65, 5], [2775, 75, 0.4], [2772, 125, 1.8], [2776, 155, 0.3], [3858, 175, 2.7], [7911, 230, 0.2]]
+
+[[zone]]
+prof = "mining"
+map = 1443
+name = "Desolace"
+side = "AH"
+levels = [30, 40]
+at = [1443, 31.0, 56.7]
+nodes = [[2770, 1, 5.1], [2771, 65, 7.6], [2775, 75, 1.2], [2772, 125, 14.1], [2776, 155, 1.4], [3858, 175, 10.9], [7911, 230, 0.6]]
+
+[[zone]]
+prof = "mining"
+map = 1444
+name = "Feralas"
+side = "AH"
+levels = [40, 50]
+at = [1444, 54.7, 58.0]
+nodes = [[2770, 1, 0.3], [2775, 75, 0.2], [2772, 125, 3.6], [2776, 155, 0.9], [3858, 175, 12.6], [7911, 230, 0.8], [10620, 245, 1.7]]
+
+[[zone]]
+prof = "mining"
+map = 1445
+name = "Marjal Revolcafango"
+side = "AH"
+levels = [35, 45]
+at = [1445, 33.7, 67.5]
+nodes = [[2770, 1, 0.8], [2771, 65, 2.2], [2775, 75, 0.5], [2772, 125, 7.7], [2776, 155, 0.6], [3858, 175, 2.6], [7911, 230, 0.1]]
+
+[[zone]]
+prof = "mining"
+map = 1446
+name = "Tanaris"
+side = "AH"
+levels = [40, 50]
+at = [1446, 67.2, 44.0]
+nodes = [[2775, 75, 0.3], [2772, 125, 5.4], [2776, 155, 0.9], [3858, 175, 11.7], [7911, 230, 0.8], [10620, 245, 3.8]]
+
+[[zone]]
+prof = "mining"
+map = 1447
+name = "Azshara"
+side = "AH"
+levels = [45, 55]
+at = [1447, 36.4, 38.3]
+nodes = [[2776, 155, 0.7], [3858, 175, 11.9], [7911, 230, 1.1], [10620, 275, 7.4]]
+
+[[zone]]
+prof = "mining"
+map = 1448
+name = "Frondavil"
+side = "AH"
+levels = [48, 55]
+at = [1448, 33.1, 63.4]
+nodes = [[2770, 1, 1], [2771, 65, 1.9], [2775, 75, 0.1], [2776, 155, 0.4], [3858, 175, 7.7], [7911, 230, 0.9], [10620, 245, 8.5]]
+
+[[zone]]
+prof = "mining"
+map = 1449
+name = "Cráter de Un'Goro"
+side = "AH"
+levels = [48, 55]
+at = [1449, 55.0, 67.2]
+nodes = [[2776, 155, 0.2], [3858, 175, 3.6], [7911, 230, 0.7], [10620, 245, 6.7], [10620, 275, 2.8]]
+
+[[zone]]
+prof = "mining"
+map = 1451
+name = "Silithus"
+side = "AH"
+levels = [55, 60]
+at = [1451, 56.9, 15.6]
+nodes = [[2776, 155, 0.2], [3858, 175, 3.6], [7911, 230, 0.6], [10620, 245, 7.4]]
+
+[[zone]]
+prof = "mining"
+map = 1452
+name = "Cuna del Invierno"
+side = "AH"
+levels = [55, 60]
+at = [1452, 48.5, 41.0]
+nodes = [[2776, 155, 0.2], [3858, 175, 3.6], [7911, 230, 1], [10620, 245, 8.5], [10620, 275, 7.4]]
+
+[[zone]]
+prof = "mining"
+map = 2521
+name = "Isla de Zephras"
+side = "AH"
+levels = [1, 15]
+at = [2521, 42.8, 25.8]
+nodes = [[2770, 1, 173]]
+
+[[bracket]]
+prof = "mining"
+from = 1
+to = 25
+zones = [[1432, 54.0, 54.8, 31.6], [1429, 50.9, 33.4, 46.7], [1411, 44.1, 63.3, 62.2], [1436, 62.8, 44.7, 27]]
+
+[[bracket]]
+prof = "mining"
+from = 25
+to = 50
+zones = [[1433, 14.6, 25.6, 15], [1432, 54.0, 54.8, 24], [1429, 50.9, 33.4, 35.5], [1411, 44.1, 63.3, 47.3]]
+
+[[bracket]]
+prof = "mining"
+from = 50
+to = 75
+zones = [[1433, 14.6, 25.6, 8.1], [1432, 54.0, 54.8, 12.7], [1429, 50.9, 33.4, 12.6], [1431, 34.2, 80.1, 6.2]]
+
+[[bracket]]
+prof = "mining"
+from = 75
+to = 100
+zones = [[1433, 14.5, 26.7, 11.5], [1432, 31.9, 57.0, 17.9], [1431, 34.2, 80.1, 11.4], [1424, 31.1, 56.2, 15.5]]
+
+[[bracket]]
+prof = "mining"
+from = 100
+to = 125
+zones = [[1432, 32.1, 57.0, 6.5], [1424, 31.0, 56.1, 8.2], [1437, 48.9, 62.1, 9.7], [1417, 84.4, 31.8, 6.9]]
+
+[[bracket]]
+prof = "mining"
+from = 125
+to = 150
+zones = [[1418, 37.2, 15.4, 11.2], [1417, 83.5, 31.4, 20.8], [1416, 34.3, 71.8, 12.4], [1431, 34.2, 80.1, 10.1]]
+
+[[bracket]]
+prof = "mining"
+from = 150
+to = 175
+zones = [[1418, 37.2, 15.3, 9.4], [1417, 84.1, 31.3, 16.8], [1416, 34.3, 71.8, 9.9], [1431, 34.2, 80.1, 7.6]]
+
+[[bracket]]
+prof = "mining"
+from = 175
+to = 200
+zones = [[1418, 37.2, 15.2, 14.3], [1427, 48.1, 42.8, 7.4], [1425, 29.2, 64.7, 17.9], [1435, 47.1, 62.2, 6.3]]
+
+[[bracket]]
+prof = "mining"
+from = 200
+to = 225
+zones = [[1418, 37.2, 15.2, 11.1], [1416, 48.1, 46.9, 7.2], [1425, 29.2, 64.7, 13.3], [1417, 34.9, 69.2, 9.7]]
+
+[[bracket]]
+prof = "mining"
+from = 225
+to = 250
+zones = [[1427, 38.6, 72.3, 4.6], [1428, 30.4, 49.9, 5.2], [1425, 29.2, 64.7, 5.6], [1446, 33.3, 48.2, 4.5]]
+
+[[bracket]]
+prof = "mining"
+from = 250
+to = 275
+zones = [[1427, 38.0, 72.5, 6.9], [1428, 30.4, 49.9, 9.3], [1451, 57.4, 16.0, 8.4], [1419, 52.5, 55.1, 6.8]]
+
+[[bracket]]
+prof = "mining"
+from = 275
+to = 300
+zones = [[1428, 30.4, 49.9, 8.6], [1423, 43.3, 66.2, 11], [1449, 34.2, 72.4, 7.4], [1422, 62.2, 37.8, 6.2]]
