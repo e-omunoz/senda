@@ -4,6 +4,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ## [Sin publicar]
 
+## [0.8.1] - 2026-11-14
+
 ### Corregido
 - **La flecha de viaje sigue al plan nuevo.** Si el plan cambiaba (te movías, aprendías un nodo, la piedra volvía a estar
   lista), el HUD decía el tramo nuevo pero la flecha seguía apuntando al primer tramo viejo.
