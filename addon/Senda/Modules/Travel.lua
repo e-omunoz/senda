@@ -11,8 +11,9 @@
 --   Senda.Modules.Travel.HighlightTaxi() -> nº de nodos marcados en el mapa de vuelo abierto
 --
 -- Datos: Data/Travel.lua (generado desde data/travel por tools/build.py): cadenas compactas que se decodifican la
--- primera vez que hacen falta y fuera de combate. El Dijkstra corre en una corrutina por rebanadas (un máximo de
--- operaciones y de milisegundos por fotograma) y se pausa en combate. Sin pcall dentro de la corrutina (Lua 5.1 no
+-- primera vez que hacen falta y fuera de combate. Andar: Data/TravelWalk.lua, el grafo de andar de cada continente con
+-- las yardas reales de la malla de Senda (senda-nav walkgraph); en línea recta solo se anda unas 300 yardas. El Dijkstra
+-- corre en una corrutina por rebanadas (un máximo de operaciones y de milisegundos por fotograma) y se pausa en combate. Sin pcall dentro de la corrutina (Lua 5.1 no
 -- deja ceder a través de pcall).
 --
 -- Adaptado de Polestar (GPL-3.0-or-later, Portions Copyright (C) 2026 Polestar contributors), Nav/Travel.lua: el
@@ -77,12 +78,15 @@ local function Lines(blob)
   return out
 end
 
+-- Cada lugar lleva `key`, la clave con la que el grafo de andar (Data/TravelWalk.lua) lo conoce: «fp:<nodo>»,
+-- «ride:<id>:a|b», «portal:<id>:a|b», «inn:<posadero>», «tele:<hechizo>».
 local function Decode(raw)
   local d = { k = raw.consts or {}, nodes = {}, nodeList = {}, flights = {}, rides = {}, portals = {}, inns = {},
     innByNpc = {}, innByName = {}, teleports = {}, maps = {} }
   for _, f in ipairs(Lines(raw.nodes)) do
     local p = Point(f[4], f[5])
     p.id, p.mask, p.class, p.fp = tonumber(f[1]), tonumber(f[2]), f[3] ~= "" and f[3] or nil, tonumber(f[1])
+    p.key = "fp:" .. f[1]
     d.nodes[p.id] = p
     d.nodeList[#d.nodeList + 1] = p
   end
@@ -94,25 +98,28 @@ local function Decode(raw)
     d.flights[#d.flights + 1] = { from = tonumber(f[1]), to = tonumber(f[2]), secs = tonumber(f[3]) }
   end
   for _, f in ipairs(Lines(raw.rides)) do
-    local function End(pt, board, name)
+    local function End(pt, board, name, side)
       local p = Point(pt, name)
       if board ~= "" then
         local b = Split(board, ",")
         p.bwx, p.bwy = tonumber(b[1]), tonumber(b[2])
       end
+      p.key = "ride:" .. f[1] .. ":" .. side
       return p
     end
     d.rides[#d.rides + 1] = { id = f[1], kind = f[2], mask = tonumber(f[3]), abSecs = tonumber(f[4]), baSecs = tonumber(f[5]),
-      waitA = tonumber(f[6]), waitB = tonumber(f[7]), extra = tonumber(f[8]), a = End(f[9], f[10], f[11]),
-      b = End(f[12], f[13], f[14]) }
+      waitA = tonumber(f[6]), waitB = tonumber(f[7]), extra = tonumber(f[8]), a = End(f[9], f[10], f[11], "a"),
+      b = End(f[12], f[13], f[14], "b") }
   end
   for _, f in ipairs(Lines(raw.portals)) do
-    d.portals[#d.portals + 1] = { id = f[1], mask = tonumber(f[2]), secs = tonumber(f[3]), a = Point(f[4], f[5]),
-      b = Point(f[6], f[7]) }
+    local a, b = Point(f[4], f[5]), Point(f[6], f[7])
+    a.key, b.key = "portal:" .. f[1] .. ":a", "portal:" .. f[1] .. ":b"
+    d.portals[#d.portals + 1] = { id = f[1], mask = tonumber(f[2]), secs = tonumber(f[3]), a = a, b = b }
   end
   for _, f in ipairs(Lines(raw.inns)) do
     local inn = { area = tonumber(f[1]), npc = tonumber(f[2]), p = Point(f[3]), names = Split(f[4] or "", ";") }
     inn.p.name = inn.names[#inn.names]
+    inn.p.key = "inn:" .. f[2]
     d.inns[#d.inns + 1] = inn
     d.innByNpc[inn.npc] = inn
     for _, n in ipairs(inn.names) do d.innByName[n:lower()] = inn end
@@ -125,8 +132,10 @@ local function Decode(raw)
         if item then reagents[#reagents + 1] = { item = tonumber(item), count = tonumber(count) } end
       end
     end
+    local to = f[6] ~= "bind" and Point(f[6], f[7]) or "bind"
+    if to ~= "bind" then to.key = "tele:" .. f[1] end
     d.teleports[#d.teleports + 1] = { spell = tonumber(f[1]), class = f[2], mask = tonumber(f[3]), cast = tonumber(f[4]),
-      reagents = reagents, to = f[6] ~= "bind" and Point(f[6], f[7]) or "bind", name = f[7] }
+      reagents = reagents, to = to, name = f[7] }
   end
   return d
 end
@@ -409,6 +418,270 @@ local function HeapPop(h)
   return topK, topV
 end
 
+------------------------------------------------------------------------------
+-- Andar por el terreno real (Data/TravelWalk.lua, docs/TRAVEL.md «Andar»)
+------------------------------------------------------------------------------
+-- Por continente, un grafo de andar con las yardas de verdad sacadas de la malla de Senda (nav/, senda-nav walkgraph):
+-- nodos (un punto por región de cada sector de 267 yd, más cada lugar del planificador), aristas con las yardas del
+-- camino y, entre lugares, una matriz de yardas exactas. En línea recta solo se anda hasta WALK_RADIUS: de la salida o
+-- el destino a los nodos del grafo, o de la salida al destino. Un extremo sin nodo a esa distancia (fuera de la malla)
+-- anda en línea recta como antes, con la penalización OFFMESH.
+
+local WALK_RADIUS = 300   -- yardas de paseo en línea recta como mucho (unos 1,1 sectores)
+local OFFMESH = 2         -- factor sobre la línea recta x1,25 cuando un extremo no tiene grafo cerca
+local WALK_CELL = 300     -- yardas de la rejilla que busca los nodos cercanos
+local AT_PLACE = 40       -- yardas: estás en ese lugar del planificador
+
+local walkData = {}       -- [continente] = grafo decodificado | false (no hay)
+local B64 = {}
+do
+  local alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+  for i = 1, 64 do B64[alpha:byte(i)] = i - 1 end
+end
+local byte = string.byte
+
+local function Num(s, i, w)
+  local v = 0
+  for k = i, i + w - 1 do v = v * 64 + B64[byte(s, k)] end
+  return v
+end
+
+local function CellKey(x, y) return floor((x + 20000) / WALK_CELL) * 1000 + floor((y + 20000) / WALK_CELL) end
+
+-- El grafo de andar del continente c, o nil. Se decodifica la primera vez (fuera de combate, dentro del trabajo por
+-- rebanadas: cede con Tick) y se guarda entero solo al acabar, así un cálculo cancelado no deja medio grafo.
+local function WalkGraph(c)
+  local w = walkData[c]
+  if w ~= nil then return w or nil end
+  local all = Senda.TravelWalk
+  local raw = type(all) == "table" and all[c]
+  if type(raw) ~= "table" or type(raw.g) ~= "string" then
+    walkData[c] = false
+    return nil
+  end
+  local off, none = all.off or 20000, all.none or 262143
+  w = { n = 0, x = {}, y = {}, out = {}, inn = {}, cell = {}, node = {}, idx = {}, placeAt = {}, np = raw.np or 0,
+    mat = {}, none = none }
+  local X, Y, out, inn = w.x, w.y, w.out, w.inn
+  local i = 0
+  for line in raw.g:gmatch("[^\n]+") do
+    i = i + 1
+    local x, y = Num(line, 1, 3) - off, Num(line, 4, 3) - off
+    X[i], Y[i] = x, y
+    out[i] = out[i] or {}
+    inn[i] = inn[i] or {}
+    local ck = CellKey(x, y)
+    local list = w.cell[ck]
+    if not list then list = {}; w.cell[ck] = list end
+    list[#list + 1] = i
+    for p = 7, #line - 5, 6 do
+      local j = i + Num(line, p, 2)
+      local ab, ba = Num(line, p + 2, 2), Num(line, p + 4, 2)
+      local oj, ij = out[j], inn[j]
+      if not oj then oj = {}; out[j] = oj end
+      if not ij then ij = {}; inn[j] = ij end
+      local oi, ii = out[i], inn[i]
+      if ab > 0 then oi[#oi + 1] = j; oi[#oi + 1] = ab; ij[#ij + 1] = i; ij[#ij + 1] = ab end
+      if ba > 0 then oj[#oj + 1] = i; oj[#oj + 1] = ba; ii[#ii + 1] = j; ii[#ii + 1] = ba end
+    end
+    Tick()
+  end
+  w.n = i
+  local keys = Split(raw.keys or "", ";")
+  local pn = raw.nodes or ""
+  for k, key in ipairs(keys) do
+    if key ~= "" then
+      local node = Num(pn, (k - 1) * 3 + 1, 3) + 1
+      w.node[key], w.idx[key], w.placeAt[node] = node, k, k
+    end
+  end
+  local np, mat, r = w.np, w.mat, 0
+  for line in (raw.m or ""):gmatch("[^\n]+") do
+    r = r + 1
+    local base = (r - 1) * np
+    for l = 1, np do mat[base + l] = Num(line, (l - 1) * 3 + 1, 3) end
+    Tick()
+  end
+  walkData[c] = w
+  return w
+end
+
+-- Nodos del grafo a menos de WALK_RADIUS de (x, y): { nodo, yardas, ... } (pares en una lista plana).
+local function Attach(w, x, y)
+  local out = {}
+  local cx, cy = floor((x + 20000) / WALK_CELL), floor((y + 20000) / WALK_CELL)
+  for dx = -1, 1 do
+    for dy = -1, 1 do
+      local list = w.cell[(cx + dx) * 1000 + cy + dy]
+      if list then
+        for _, i in ipairs(list) do
+          local d = Dist(x, y, w.x[i], w.y[i])
+          if d <= WALK_RADIUS then out[#out + 1] = i; out[#out + 1] = d end
+        end
+      end
+    end
+  end
+  return out
+end
+
+-- Dijkstra sobre el grafo de andar desde las semillas { nodo, coste, yardas, ... } por `adj` (w.out hacia delante,
+-- w.inn hacia atrás). Devuelve coste (yardas con la línea recta x rodeo) y yardas reales por nodo.
+local function WalkSearch(w, seeds, adj)
+  local cost, yards = {}, {}
+  local heap = { n = 0, k = {}, v = {} }
+  for s = 1, #seeds, 3 do
+    local i, c, y = seeds[s], seeds[s + 1], seeds[s + 2]
+    if c < (cost[i] or 1e18) then
+      cost[i], yards[i] = c, y
+      HeapPush(heap, c, i)
+    end
+  end
+  while heap.n > 0 do
+    local d, u = HeapPop(heap)
+    if d <= cost[u] then
+      local e, yu = adj[u], yards[u]
+      for k = 1, #e, 2 do
+        local v, c = e[k], e[k + 1]
+        local nd = d + c
+        if nd < (cost[v] or 1e18) then
+          cost[v], yards[v] = nd, yu + c
+          HeapPush(heap, nd, v)
+        end
+      end
+      Tick()
+    end
+  end
+  return cost, yards
+end
+
+-- Lo que el cálculo necesita para andar: desde la salida (búsqueda hacia delante) y hasta el destino (hacia atrás),
+-- en sus continentes. Un extremo sin nodo cerca se queda sin búsqueda y anda en línea recta con OFFMESH.
+local function PrepareWalk(data, ctx, start, target)
+  local k = data.k
+  local wk = { detour = k.detour or 1.25, perYard = 1 / ((k.run or 7) * (ctx.speed or 1)), graphs = {} }
+  local function side(p, adjName, label)
+    if p.c ~= 0 and p.c ~= 1 then return nil end
+    local w = WalkGraph(p.c)
+    if not w then return nil end
+    wk.graphs[p.c] = w
+    local att = Attach(w, p.wx, p.wy)
+    -- de pie en un lugar del grafo (maestro de vuelo, muelle, posada): solo ese lugar, con el piso que eligió la malla
+    -- (en una ciudad bajo la montaña, un nodo de fuera a 200 yd en el plano está al otro lado de la roca)
+    local here = {}
+    for s = 1, #att, 2 do
+      if w.placeAt[att[s]] and att[s + 1] <= AT_PLACE then here[#here + 1] = att[s]; here[#here + 1] = att[s + 1] end
+    end
+    if #here > 0 then att = here end
+    if #att == 0 then
+      Debug("Viaje: %s sin nodo de andar a %d yd (continente %d, %.0f, %.0f): línea recta con penalización", label,
+        WALK_RADIUS, p.c, p.wx, p.wy)
+      return nil
+    end
+    local seeds = {}
+    for s = 1, #att, 2 do
+      seeds[#seeds + 1] = att[s]
+      seeds[#seeds + 1] = att[s + 1] * wk.detour
+      seeds[#seeds + 1] = att[s + 1]
+    end
+    local cost, yards = WalkSearch(w, seeds, w[adjName])
+    -- los lugares a mano (el extremo está en un maestro de vuelo, en el muelle): de ahí, la matriz exacta
+    local places = {}
+    for s = 1, #att, 2 do
+      local pk = w.placeAt[att[s]]
+      if pk then places[#places + 1] = pk; places[#places + 1] = att[s + 1] end
+    end
+    return { w = w, cost = cost, yards = yards, att = att, places = places }
+  end
+  wk.from = side(start, "out", "salida")
+  wk.to = side(target, "inn", "destino")
+  -- de la salida al destino a pie
+  if start.c == target.c then
+    local straight = Dist(start.wx, start.wy, target.wx, target.wy)
+    local bc, by
+    if straight <= WALK_RADIUS then bc, by = straight * wk.detour, straight end
+    local f, t = wk.from, wk.to
+    if f and t then
+      local att = t.att
+      for s = 1, #att, 2 do
+        local c = f.cost[att[s]]
+        if c then
+          c = c + att[s + 1] * wk.detour
+          if c < (bc or 1e18) then bc, by = c, f.yards[att[s]] + att[s + 1] end
+        end
+      end
+      local w, fp, tp = f.w, f.places, t.places
+      for i = 1, #fp, 2 do
+        for j = 1, #tp, 2 do
+          local y = w.mat[(fp[i] - 1) * w.np + tp[j]]
+          if y and y < w.none then
+            local c = y + (fp[i + 1] + tp[j + 1]) * wk.detour
+            if c < (bc or 1e18) then bc, by = c, y + fp[i + 1] + tp[j + 1] end
+          end
+        end
+      end
+    elseif not bc then
+      bc, by = straight * wk.detour * OFFMESH, straight -- un extremo fuera de la malla
+    end
+    wk.direct, wk.directYards = bc, by
+  end
+  return wk
+end
+
+-- Andar de un nodo del planificador a otro (mismo continente c): coste en yardas equivalentes (la línea recta x rodeo)
+-- y yardas reales, o nil si no se llega andando. `a`, `b` = info de los nodos (kind, p.key).
+local function WalkCost(wk, a, b, x1, y1, x2, y2, c)
+  local w = wk.graphs[c]
+  if w == nil then
+    w = WalkGraph(c) or false
+    wk.graphs[c] = w
+  end
+  if not w then
+    local d = Dist(x1, y1, x2, y2) -- sin grafo de andar: la línea recta de siempre
+    return d * wk.detour, d
+  end
+  local ka, kb = a.kind ~= "start" and a.p.key or nil, b.kind ~= "target" and b.p.key or nil
+  local ia, ib = ka and w.idx[ka], kb and w.idx[kb]
+  local np, mat, none = w.np, w.mat, w.none
+  local bc, by
+  if a.kind == "start" then
+    if b.kind == "target" then return wk.direct, wk.directYards end
+    local f = wk.from
+    if f and ib then
+      local node = w.node[kb]
+      bc, by = f.cost[node], f.yards[node]
+      local fp = f.places
+      for i = 1, #fp, 2 do
+        local y = mat[(fp[i] - 1) * np + ib]
+        if y and y < none and y + fp[i + 1] * wk.detour < (bc or 1e18) then
+          bc, by = y + fp[i + 1] * wk.detour, y + fp[i + 1]
+        end
+      end
+      return bc, by
+    end
+  elseif b.kind == "target" then
+    local t = wk.to
+    if t and ia then
+      local node = w.node[ka]
+      bc, by = t.cost[node], t.yards[node]
+      local tp = t.places
+      for j = 1, #tp, 2 do
+        local y = mat[(ia - 1) * np + tp[j]]
+        if y and y < none and y + tp[j + 1] * wk.detour < (bc or 1e18) then
+          bc, by = y + tp[j + 1] * wk.detour, y + tp[j + 1]
+        end
+      end
+      return bc, by
+    end
+  elseif ia and ib then
+    local y = mat[(ia - 1) * np + ib]
+    if not y or y >= none then return nil end
+    return y, y
+  end
+  -- un extremo sin grafo cerca o un lugar que la malla no tiene: línea recta con penalización
+  local d = Dist(x1, y1, x2, y2)
+  return d * wk.detour * OFFMESH, d
+end
+
 -- Grafo de un cálculo. `mode`: nil (solo con los pies, vuelos y transportes), "hearth" (añade la piedra de hogar) o
 -- "tele" (añade los teletransportes de clase). start / target = { c, wx, wy }.
 local function BuildGraph(data, ctx, start, target, mode)
@@ -469,9 +742,9 @@ end
 
 -- Dijkstra con estado (nodo, ¿llegado volando?) para cobrar el despegue una vez por tramo de vuelo.
 -- Devuelve { secs, legs } o nil. `sp` = factor de velocidad al andar.
-local function Dijkstra(data, g, ctx)
+local function Dijkstra(data, g, ctx, wk)
   local k = data.k
-  local walkSecsPerYard = (k.detour or 1.25) / ((k.run or 7) * (ctx.speed or 1))
+  local perYard = wk.perYard
   local takeOff = k.takeOff or 4
   local n = g.n
   local dist, prev = {}, {}
@@ -499,18 +772,22 @@ local function Dijkstra(data, g, ctx)
           HeapPush(heap, nd, vs)
         end
       end
-      -- a pie, en línea recta, a cualquier punto del mismo continente
+      -- a pie a cualquier punto del mismo continente: por el grafo de andar (yardas reales), en línea recta solo cerca
       local cu = C[u]
       if cu == 0 or cu == 1 then
-        local ux, uy = X[u], Y[u]
+        local ux, uy, iu = X[u], Y[u], g.info[u]
         for v = 1, n do
           if v ~= u and v ~= g.start and C[v] == cu then
-            local nd = d + Dist(ux, uy, X[v], Y[v]) * walkSecsPerYard
-            local vs = v * 2
-            if nd < (dist[vs] or 1e18) then
-              dist[vs] = nd
-              prev[vs] = { st, "walk", nil, nd - d, nil }
-              HeapPush(heap, nd, vs)
+            local cost, yards = WalkCost(wk, iu, g.info[v], ux, uy, X[v], Y[v], cu)
+            if cost then
+              local secs = cost * perYard
+              local nd = d + secs
+              local vs = v * 2
+              if nd < (dist[vs] or 1e18) then
+                dist[vs] = nd
+                prev[vs] = { st, "walk", nil, secs, yards }
+                HeapPush(heap, nd, vs)
+              end
             end
             Tick()
           end
@@ -522,7 +799,7 @@ local function Dijkstra(data, g, ctx)
   local raw, st = {}, targetState
   while prev[st] do
     local p = prev[st]
-    raw[#raw + 1] = { how = p[2], ref = p[3], secs = p[4], from = floor(p[1] / 2), to = floor(st / 2) }
+    raw[#raw + 1] = { how = p[2], ref = p[3], secs = p[4], yards = p[5], from = floor(p[1] / 2), to = floor(st / 2) }
     st = p[1]
   end
   -- orden de salida a destino
@@ -536,10 +813,15 @@ local function Dijkstra(data, g, ctx)
       last.secs = last.secs + r.secs
       last.to, last.toId = toInfo.p, toInfo.id
       last.nodes[#last.nodes + 1] = toInfo.id
+    elseif r.how == "walk" and last and last.how == "walk" then
+      -- dos paseos seguidos (pasando por un lugar) = un solo tramo a pie
+      last.secs = last.secs + r.secs
+      last.yards = last.yards + (r.yards or 0)
+      last.to = toInfo.p
     else
       local leg = { how = r.how, secs = r.secs, from = fromInfo.p, to = toInfo.p }
       if r.how == "walk" then
-        leg.yards = Dist(g.x[r.from], g.y[r.from], g.x[r.to], g.y[r.to])
+        leg.yards = r.yards or Dist(g.x[r.from], g.y[r.from], g.x[r.to], g.y[r.to])
       elseif r.how == "fly" then
         leg.fromId, leg.toId, leg.nodes = fromInfo.id, toInfo.id, { fromInfo.id, toInfo.id }
       elseif r.how == "ride" then
@@ -571,17 +853,18 @@ end
 -- gana el más rápido que cumpla sus márgenes. Es la función que ejecuta la corrutina.
 local function Compute(data, ctx, start, target)
   local k = data.k
-  local A = Dijkstra(data, BuildGraph(data, ctx, start, target, nil), ctx)
+  local wk = PrepareWalk(data, ctx, start, target)
+  local A = Dijkstra(data, BuildGraph(data, ctx, start, target, nil), ctx, wk)
   local best = A
   if ctx.bind and ctx.hearthWait then
-    local H = Dijkstra(data, BuildGraph(data, ctx, start, target, "hearth"), ctx)
+    local H = Dijkstra(data, BuildGraph(data, ctx, start, target, "hearth"), ctx, wk)
     -- la piedra solo si el viaje sin ella dura al menos 3 min y ahorra al menos 2 min
     if H and Uses(H, "hearth") and (not A or (A.secs >= (k.hearthMinTrip or 180) and A.secs - H.secs >= (k.hearthMargin or 120))) then
       if not best or H.secs < best.secs then best = H end
     end
   end
   if ctx.teleports and #ctx.teleports > 0 then
-    local Tl = Dijkstra(data, BuildGraph(data, ctx, start, target, "tele"), ctx)
+    local Tl = Dijkstra(data, BuildGraph(data, ctx, start, target, "tele"), ctx, wk)
     -- un teletransporte solo si ahorra 60 s o el 20 %
     if Tl and Uses(Tl, "teleport") and (not A or A.secs - Tl.secs >= math.max(k.teleMargin or 60, (k.teleShare or 0.2) * A.secs)) then
       if not best or Tl.secs < best.secs then best = Tl end

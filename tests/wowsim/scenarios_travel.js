@@ -143,7 +143,8 @@ const scenarios = [
       Section("Stormwind -> Auberdine: Forever's harbour boat")
       local r = T.PlanSync(Ctx(), Pt(2), Pt(26))
       Check(r ~= nil and RideId(r.legs) == "boat-stormwind-auberdine", "boat from Stormwind Harbor", r and Hows(r.legs))
-      Check(r ~= nil and math.abs(r.secs - 428) < 15, "about 428 s (docs/TRAVEL.md)", r and r.secs)
+      -- 428 s with the straight line (863 yd x 1.25); the real walk from the flight master to the harbour is 1248 yd
+      Check(r ~= nil and math.abs(r.secs - 457) < 15, "about 457 s (docs/TRAVEL.md: 1248 yd on foot to the harbour)", r and r.secs)
       Section("... and without that boat: through Menethil (flight or boat), never walking the sea")
       r = T.PlanSync(Ctx({ noRide = { ["boat-stormwind-auberdine"] = true } }), Pt(2), Pt(26))
       local ride = r and RideId(r.legs)
@@ -228,10 +229,13 @@ const scenarios = [
       Check(r ~= nil and not Has(r.legs, "hearth"), "on cooldown (50 min): not the hearth", r and Hows(r.legs))
       r = T.PlanSync(Ctx({ bind = bind }), InnPt(271), InnPt(1519))
       Check(r ~= nil and not Has(r.legs, "hearth"), "no hearthstone (no hearthWait): not the hearth", r and Hows(r.legs))
-      r = T.PlanSync(Ctx({ bind = bind, hearthWait = 0 }), InnPt(87), InnPt(1519))
-      Check(r ~= nil and not Has(r.legs, "hearth"), "a trip under 3 minutes: not the hearth", r and (Hows(r.legs) .. " " .. r.secs))
-      r = T.PlanSync(Ctx({ bind = Inn(2102).p, hearthWait = 0 }), InnPt(271), InnPt(1519))
-      Check(r ~= nil and not Has(r.legs, "hearth"), "bound far from the target: not the hearth", r and Hows(r.legs))
+      -- (Goldshire - Stormwind's inn was the short trip with straight lines: 1027 yd on foot now, over 3 minutes)
+      r = T.PlanSync(Ctx({ bind = bind, hearthWait = 0 }), Pt(2), InnPt(1519))
+      Check(r ~= nil and not Has(r.legs, "hearth"), "a trip under 3 minutes (flight master to the inn): not the hearth", r and (Hows(r.legs) .. " " .. r.secs))
+      -- (bound in Kharanos was "far" with straight lines; the walk graph finds a 4600 yd way from Dun Morogh to
+      -- Stormwind, see docs/TRAVEL.md: an inn on another continent is far for sure)
+      r = T.PlanSync(Ctx({ bind = Inn(442).p, hearthWait = 0 }), InnPt(271), InnPt(1519))
+      Check(r ~= nil and not Has(r.legs, "hearth"), "bound far from the target (Auberdine): not the hearth", r and Hows(r.legs))
 
       Section("class teleports")
       local tele = {}
@@ -247,7 +251,155 @@ const scenarios = [
       local slow = T.PlanSync(Ctx({ known = {} }), a, b)
       local fast = T.PlanSync(Ctx({ known = {}, speed = 1.6 }), a, b)
       Check(slow ~= nil and fast ~= nil and math.abs(fast.secs * 1.6 - slow.secs) < 0.5, "60 % mount: 1.6 times faster", slow and fast and (slow.secs .. " vs " .. fast.secs))
-      Check(slow ~= nil and math.abs(slow.secs - 700 * 1.25 / 7) < 0.5, "700 yd on foot = 700 x 1.25 / 7 s", slow and slow.secs)
+      -- real walking (the walk graph): at least the straight line, never more than the old x1.25 by much in Duskwood's woods
+      local yd = slow and slow.legs[1] and slow.legs[1].yards
+      Check(slow ~= nil and #slow.legs == 1 and yd >= 700 and yd <= 700 * 1.3, "700 yd away on foot: a real path of 700-910 yd", yd)
+      Check(slow ~= nil and slow.secs >= yd / 7 and slow.secs <= yd * 1.25 / 7 + 0.5, "seconds = yards / 7 (x1.25 only on the straight bits)", slow and slow.secs)
+      Check(#Sim.errors == 0, "no Lua errors", #Sim.errors)
+    `,
+  },
+  {
+    id: 'travel-walk',
+    title: 'Travel planner walks the real terrain (Data/TravelWalk.lua): Darkshire -> Menethil never crosses the Dun Morogh mountains; tunnel, harbour, open fields, no sea (gnome warlock)',
+    char: 'gnome-warlock',
+    lua: SETUP + L_`
+      Login()
+      Sim.Advance(6)
+      NoGuide()
+      local T = TT()
+      local W = S().TravelWalk
+      Section("data")
+      Check(W ~= nil and W[0] ~= nil and W[1] ~= nil, "walk graphs for both continents")
+      Check(W[0].n > 1000 and W[1].n > 1000 and W[0].np >= 60 and W[1].np >= 60, "nodes and places", W[0].n .. "/" .. W[1].n .. " " .. W[0].np .. "/" .. W[1].np)
+      local function Straight(a, b) return math.sqrt((a.wx - b.wx) ^ 2 + (a.wy - b.wy) ^ 2) end
+      local function Legs(r)
+        local out = {}
+        for _, l in ipairs(r and r.legs or {}) do
+          out[#out + 1] = l.how .. (l.yards and string.format("(%d yd)", l.yards) or "") .. ":" .. string.format("%.0f s", l.secs)
+        end
+        return table.concat(out, " ")
+      end
+      -- no walk leg shorter than the straight line between its ends, none between two continents
+      local function WalksReal(r)
+        for _, l in ipairs(r and r.legs or {}) do
+          if l.how == "walk" then
+            if l.from.c ~= l.to.c then return false, "continents" end
+            local s = Straight(l.from, l.to)
+            if (l.yards or 0) < s * 0.98 then return false, string.format("%d < %d", l.yards or 0, s) end
+          end
+        end
+        return true
+      end
+
+      Section("the reported case: level 21 in Darkshire, flights Stormwind, Sentinel Hill, Lakeshire, Ironforge; to Menethil")
+      local ctx = { mask = 1, class = "WARLOCK", known = { [2] = true, [4] = true, [5] = true, [6] = true }, speed = 1 }
+      local t0 = __clock()
+      local r = T.PlanSync(ctx, Pt(12), Pt(7))
+      local ms = __clock() - t0
+      Sim.Out(string.format("    Darkshire -> Menethil: %s = %.0f s (first plan %.0f ms, with decoding)", Legs(r), r and r.secs or -1, ms))
+      Check(r ~= nil, "a plan")
+      local ok, why = WalksReal(r)
+      Check(ok, "every walk leg is at least its straight line", why)
+      local function FromIF(plan)
+        for _, l in ipairs(plan and plan.legs or {}) do
+          if l.how == "walk" and l.from.fp == 6 then return l end
+        end
+      end
+      local fromIF = FromIF(r)
+      Check(fromIF == nil or fromIF.yards > 3000, "no walk straight from Ironforge over the mountains (1095 yd before)", fromIF and fromIF.yards)
+      -- with the real walk from Ironforge (5700 yd) the boats win: Lakeshire -> Stormwind, harbour boat to
+      -- Auberdine, boat to Menethil
+      Check(r ~= nil and RideId(r.legs) ~= nil and Has(r.legs, "ride", "boat-menethil-auberdine"), "a faster way exists: Stormwind's harbour boat and the Auberdine - Menethil boat", r and Hows(r.legs))
+      Check(r ~= nil and r.legs[#r.legs].how == "walk" and r.legs[#r.legs].yards < 400, "lands at the Menethil dock, a short walk to the flight master", r and Legs(r))
+      -- the Ironforge walk itself (no boats): the real one, through the tunnel, Loch Modan and Dun Algaz
+      local noBoats = {}
+      for _, x in ipairs(TD().rides) do if x.kind == "boat" then noBoats[x.id] = true end end
+      local r2 = T.PlanSync({ mask = 1, class = "WARLOCK", known = {}, speed = 1, noRide = noBoats }, Pt(6), Pt(7))
+      Sim.Out(string.format("    Ironforge -> Menethil on foot: %s = %.0f s", Legs(r2), r2 and r2.secs or -1))
+      fromIF = r2 and r2.legs[1]
+      Check(r2 ~= nil and #r2.legs == 1 and fromIF.how == "walk" and fromIF.yards > 4000, "Ironforge -> Menethil on foot: several thousand yards (1095 in a straight line)", fromIF and fromIF.yards)
+      Check(fromIF ~= nil and math.abs(fromIF.secs - fromIF.yards / 7) < 30, "... and its seconds are those yards at 7 yd/s", fromIF and fromIF.secs)
+      -- the Ironforge way: walk to Lakeshire, fly Lakeshire - Stormwind - Ironforge (there is no direct flight), that walk
+      local fly = 4
+      for _, f in ipairs(TD().flights) do
+        if (f.from == 5 and f.to == 2) or (f.from == 2 and f.to == 6) then fly = fly + f.secs end
+      end
+      local viaIF = r and r2 and (r.legs[1].secs + fly + r2.secs)
+      Check(r ~= nil and r2 ~= nil and r.secs < viaIF, "the boats beat flying to Ironforge and walking from there", r and r2 and (r.secs .. " < " .. viaIF))
+      t0 = __clock()
+      for _ = 1, 5 do T.PlanSync(ctx, Pt(12), Pt(7)) end
+      ms = (__clock() - t0) / 5
+      Sim.Out(string.format("    plan time (decoded): %.0f ms in this Lua VM (fengari)", ms))
+      Check(ms < 2000, "a plan stays cheap", ms)
+      -- the same in game: the job runs sliced (700 operations a frame at most), the HUD names the boats. Bound in
+      -- Darkshire like the player (the sim's warlock starts bound in Kharanos)
+      Sim.player.bind = "Darkshire"
+      Sim.Fire("HEARTHSTONE_BOUND")
+      Sim.Advance(1)
+      Check(T.BoundInn() ~= nil and T.BoundInn().p.key == "inn:6790", "bound at the Darkshire inn", T.BoundInn() and T.BoundInn().p.key)
+      Known({ 2, 4, 5, 6 })
+      local dk = Node(12)
+      GoTo(0, dk.wx, dk.wy)
+      Aim(0, Node(7).wx, Node(7).wy, "Puerto de Menethil")
+      Settle()
+      Settle()
+      local p = Plan()
+      Sim.Out(string.format("    sliced: %d frames, at most %d operations a frame; HUD: %s", T.lastJobFrames, T.maxSliceOps, TravelLine()))
+      Check(p ~= nil and not p.none and Has(p.legs, "ride", "boat-menethil-auberdine"), "the job finds the same plan", p and Hows(p.legs))
+      Check(T.maxSliceOps <= 720, "no slice ran more than 720 operations", T.maxSliceOps)
+      Check(T.lastJobFrames <= 120, "done in at most 120 frames (2 s at 60 fps)", T.lastJobFrames)
+      Slash("way clear")
+      Settle()
+
+      Section("Ironforge -> Thelsamar on foot: through the Dun Morogh - Loch Modan tunnel")
+      r = T.PlanSync(Ctx({ known = {} }), Pt(6), Pt(8))
+      Sim.Out("    " .. Legs(r))
+      Check(r ~= nil and #r.legs == 1 and r.legs[1].how == "walk", "walks", r and Hows(r.legs))
+      local s = Straight(Pt(6), Pt(8))
+      Check(r ~= nil and r.legs[1].yards > s * 1.2, "longer than the straight line over the mountains", r and (r.legs[1].yards .. " vs " .. math.floor(s)))
+
+      Section("Elwynn -> Westfall: open fields, near the straight line")
+      local gold = InnPt(87)
+      r = T.PlanSync(Ctx({ known = {} }), gold, Pt(4))
+      Sim.Out("    " .. Legs(r))
+      s = Straight(gold, Pt(4))
+      Check(r ~= nil and #r.legs == 1 and r.legs[1].how == "walk", "walks", r and Hows(r.legs))
+      Check(r ~= nil and r.legs[1].yards >= s * 0.98 and r.legs[1].yards <= s * 1.25, "within 25 % of the straight line", r and (r.legs[1].yards .. " vs " .. math.floor(s)))
+
+      Section("Stormwind -> Auberdine still takes the harbour boat; the walk to it is real")
+      r = T.PlanSync(Ctx(), Pt(2), Pt(26))
+      Sim.Out("    " .. Legs(r))
+      Check(r ~= nil and RideId(r.legs) == "boat-stormwind-auberdine", "boat from Stormwind Harbor", r and Hows(r.legs))
+      ok, why = WalksReal(r)
+      Check(ok, "walk legs at least the straight line", why)
+
+      Section("no walking across the sea")
+      -- Auberdine -> Rut'theran with no flight and no boat: Teldrassil is an island
+      local noRides = {}
+      for _, x in ipairs(TD().rides) do noRides[x.id] = true end
+      r = T.PlanSync(Ctx({ known = {}, noRide = noRides }), Pt(26), Pt(27))
+      Check(r == nil, "Auberdine -> Rut'theran: no plan without the boat or the flight (the old planner walked the sea)", r and Legs(r))
+      -- Menethil -> Theramore (another continent): only by boat
+      local thera
+      for _, x in ipairs(TD().rides) do if x.id == "boat-menethil-theramore" then thera = x.b end end
+      r = T.PlanSync(Ctx({ known = {} }), Pt(7), { c = thera.c, wx = thera.wx - 120, wy = thera.wy + 60 })
+      Check(r ~= nil and Has(r.legs, "ride") and select(1, WalksReal(r)), "Menethil -> Theramore by boat, walks on land only", r and Legs(r))
+      local seaPlans, bad = 0, 0
+      for _, pair in ipairs({ { 2, 26 }, { 6, 27 }, { 12, 7 }, { 7, 26 }, { 14, 26 } }) do
+        local rr = T.PlanSync(Ctx(), Pt(pair[1]), Pt(pair[2]))
+        seaPlans = seaPlans + 1
+        if rr and not select(1, WalksReal(rr)) then bad = bad + 1 end
+      end
+      Check(bad == 0, "no walk leg shorter than its straight line in " .. seaPlans .. " cross-water plans", bad)
+
+      Section("off the mesh: a point at sea (1300 yd from any walk node) falls back to the straight line with a penalty")
+      local sea = { c = 0, wx = -8000, wy = 3000 }
+      r = T.PlanSync(Ctx({ known = {} }), sea, Pt(2))
+      Check(r ~= nil and r.legs[1].how == "walk", "still a plan", r and Hows(r.legs))
+      if r then
+        local st = Straight(sea, Pt(2))
+        Check(r.secs > st * 1.25 / 7 * 1.5, "slower than the old straight line (x1.25): the penalty", r.secs .. " vs " .. math.floor(st * 1.25 / 7))
+      end
       Check(#Sim.errors == 0, "no Lua errors", #Sim.errors)
     `,
   },

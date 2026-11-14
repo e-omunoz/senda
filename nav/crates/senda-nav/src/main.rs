@@ -2,8 +2,9 @@
 //!
 //!   senda-nav prep  --foreverdb DIR --out DIR             frames, lift objects for the grid build
 //!   senda-nav grid  --wow DIR --product wowf --defs DIR --data DIR --out DIR [--jobs N] [--continents 0,1]
-//!   senda-nav bake  --grid DIR --frames DIR --out DIR [--continents 0,1]
+//!   senda-nav bake  --grid DIR --frames DIR --out DIR [--continents 0,1] [--skip climb] [--block FILE]
 //!   senda-nav eval  --packs DIR --frames DIR --routes FILE --report FILE [--grid DIR]
+//!   senda-nav walkgraph --packs DIR --travel DIR --out DIR [--grid DIR] [--continents 0,1]   travel planner walk graph
 //!
 //! Copyright (C) 2026 Senda contributors. GPL-3.0-only.
 
@@ -12,6 +13,7 @@ mod coords;
 mod eval;
 mod hpa;
 mod pack;
+mod walkgraph;
 
 use std::collections::HashMap;
 use std::path::PathBuf;
@@ -58,13 +60,15 @@ fn main() {
 				eprintln!("grid: build {} done", o.build);
 			})
 		}
-		"bake" => bake::run(&get("grid"), &get("out"), &continents(&kv), kv.get("teleports").map(std::path::Path::new)),
+		"bake" => bake::set_skip(kv.get("skip").map_or("", |s| s.as_str())).and_then(|_| bake::set_blocks(kv.get("block").map(std::path::Path::new))).and_then(|_| bake::run(&get("grid"), &get("out"), &continents(&kv), kv.get("teleports").map(std::path::Path::new))),
 		"eval" => eval::run(&get("packs"), &get("frames"), &get("routes"), &get("report"), kv.get("grid").map(PathBuf::from)),
+		"walkgraph" => walkgraph::run(&get("packs"), &get("travel"), &get("out"), kv.get("grid").map(std::path::Path::new), &continents(&kv)),
+		"zprof" => walkgraph::zprof(&get("grid"), kv.get("map").and_then(|m| m.parse().ok()).unwrap_or(0), &get("file")),
 		"probe" => {
 			let f = |k: &str| kv.get(k).and_then(|v| v.parse::<f64>().ok());
 			eval::probe(&get("packs"), f("map").unwrap_or(0.0) as u32, f("wx").unwrap(), f("wy").unwrap(), f("tx").zip(f("ty")), f("sz"), f("tz"))
 		}
-		_ => Err("usage: senda-nav prep|grid|bake|eval ... (see docs/NAV.md)".into()),
+		_ => Err("usage: senda-nav prep|grid|bake|eval|walkgraph|probe ... (see docs/NAV.md)".into()),
 	};
 	if let Err(e) = r {
 		eprintln!("senda-nav: {e}");

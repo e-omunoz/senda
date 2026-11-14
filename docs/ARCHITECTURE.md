@@ -30,8 +30,8 @@ addon/Senda/              Addon (esta carpeta se copia a Interface/AddOns/Senda)
   Recorder/               Observaciones en juego para el harness
   Knowledge/              Paneles de conocimiento (rotaciones, talentos, macros...) generados
   Locale/                 GENERADO: nombres de respaldo por idioma (Names_<locale>.lua) desde data/locale/
-  Data/                   GENERADO: Travel.lua (datos de viaje en cadenas compactas, desde data/travel/), Rares.lua y
-                          Dungeons.lua (diario de mazmorras, desde data/dungeons/)
+  Data/                   GENERADO: Travel.lua (datos de viaje en cadenas compactas, desde data/travel/), TravelWalk.lua
+                          (grafo de andar del planificador), Rares.lua y Dungeons.lua (diario de mazmorras, desde data/dungeons/)
   Guides/                 GENERADO por tools/build.py desde data/ (sí se commitea)
 data/
   guides/<guide-id>/      Secciones TOML de cada guía (orden por prefijo numérico)
@@ -449,8 +449,8 @@ Propietarios de carpetas del addon:
 - `Guides/` y `Knowledge/`: los genera `tools/build.py`.
 
 Cada carpeta tiene su `<Carpeta>.xml` y el `.toc` solo incluye esos XML, en este orden:
-`Core\Core.xml`, `Locale\Locale.xml`, `Data\Data.xml` (generado: `Travel.lua` y `Rares.lua`, tablas de cadenas que se
-decodifican bajo demanda), `Engine\Engine.xml`, `Recorder\Recorder.xml`, `UI\UI.xml`, `Knowledge\Knowledge.xml`,
+`Core\Core.xml`, `Locale\Locale.xml`, `Data\Data.xml` (generado: `Travel.lua`, `TravelWalk.lua` y `Rares.lua`, tablas de
+cadenas que se decodifican bajo demanda), `Engine\Engine.xml`, `Recorder\Recorder.xml`, `UI\UI.xml`, `Knowledge\Knowledge.xml`,
 `Guides\Guides.xml`, `Modules\Modules.xml`.
 
 Además del addon `Senda`, el paquete lleva cuatro addons `LoadOnDemand` que Senda carga fuera de combate cuando hacen falta: `Senda_Nav` y sus dos paquetes de continente (caminos de la flecha, [NAV.md](NAV.md)) y `Senda_Lookup` (buscador de objetos: línea en la descripción, `/senda objeto`, pestaña «Objetos»; `Modules/Lookup.lua` y `UI/LookupTab.lua`, datos generados por `tools/build.py` desde `data/lookup/`; [LOOKUP.md](LOOKUP.md)).
@@ -463,8 +463,9 @@ el camino más rápido con lo que el personaje sabe y lleva, y lo enseña. Datos
 
 - **Datos bajo demanda.** `Data/Travel.lua` (generado por `tools/build.py` desde `data/travel/`) solo contiene cadenas
   compactas (`Senda.TravelData`); no se decodifican al cargar, sino la primera vez que hay un destino lejano y fuera de combate.
-- **Dijkstra en una corrutina.** Estado (nodo, ¿llegado volando?) para cobrar el despegue una vez por tramo. A pie en línea
-  recta ×1,25 a 7 yd/s (más rápido con corcel de brujo, forma de viaje o una montura en las bolsas), vuelos **solo entre
+- **Dijkstra en una corrutina.** Estado (nodo, ¿llegado volando?) para cobrar el despegue una vez por tramo. A pie por el
+  terreno real: el grafo de andar de `Data/TravelWalk.lua` (yardas de la malla de Senda, sin cruzar el mar entre islas ni
+  continentes; en línea recta ×1,25 solo hasta 300 yd del grafo), a 7 yd/s (más rápido con corcel de brujo, forma de viaje o una montura en las bolsas), vuelos **solo entre
   nodos descubiertos** de tu facción y clase, barcos, zepelines y tranvía con su espera media, portales, teletransportes de
   clase (hechizo conocido, reactivo en las bolsas y sin enfriamiento) y la piedra de hogar (objeto en las bolsas, enfriamiento
   leído con `C_Container.GetItemCooldown`, posada vinculada). Se calcula sin atajos, con la piedra y con los teletransportes, y

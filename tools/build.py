@@ -14,6 +14,7 @@ Genera:
   addon/Senda/Locale/Locale.xml       (siempre, aunque no haya idiomas: el .toc lo carga)
   addon/Senda/Data/Travel.lua         datos de data/travel/ en cadenas compactas (el planificador de viaje las decodifica
                                       bajo demanda, Modules/Travel.lua); solo si existe data/travel/
+  addon/Senda/Data/TravelWalk.lua     el grafo de andar del planificador (data/travel/walk_<c>.json, senda-nav walkgraph)
   addon/Senda/Data/Rares.lua          raros compactos desde data/rares/rares.json (id, niveles, rango, apariciones)
   addon/Senda/Data/Dungeons.lua       diario de mazmorras desde data/dungeons/ (fichas, misiones, botín y pasos de guía)
   addon/Senda/Data/Data.xml           (siempre: el .toc lo carga; incluye Travel.lua y Rares.lua si existen)
@@ -398,6 +399,86 @@ def render_travel(paths: Paths) -> str | None:
         "}",
     ])
     return body + "\n"
+# ---------------------------------------------------------------- viaje: andar por el terreno real
+WALK_SCHEMA = 1
+WALK_B64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+WALK_OFF = 20000      # se suma a las yardas de mundo para que sean positivas (3 dígitos: hasta 262143)
+WALK_NONE = 64 ** 3 - 1  # en la matriz: no se llega andando
+
+
+def _b64n(v: int, width: int) -> str:
+    """Entero >= 0 en `width` dígitos de base 64 (de más a menos significativo)."""
+    if not 0 <= v < 64 ** width:
+        raise ValueError(f"data/travel/walk: {v} no cabe en {width} dígitos")
+    out = []
+    for _ in range(width):
+        out.append(WALK_B64[v & 63])
+        v >>= 6
+    return "".join(reversed(out))
+
+
+def render_walk(paths: Paths) -> str | None:
+    """data/travel/walk_<c>.json (senda-nav walkgraph) -> Data/TravelWalk.lua: por continente, el grafo de andar del
+    planificador en cadenas de dígitos de base 64 (Modules/Travel.lua las decodifica la primera vez que planifica en ese
+    continente). `g`: una línea por nodo, «x y» (3 + 3 dígitos, yardas de mundo + 20000) y sus aristas hacia nodos
+    posteriores, 6 dígitos cada una: salto al otro nodo (2), yardas de ida (2) y de vuelta (2), 0 = sin paso en ese
+    sentido. `keys`: los lugares del planificador («fp:2», «ride:<id>:a», «inn:<pnj>»...) y `nodes` su nodo (3 dígitos,
+    desde 0). `m`: la matriz de yardas a pie entre lugares, una línea por lugar (3 dígitos; 262143 = no se llega)."""
+    files = [(c, paths.travel / f"walk_{c}.json") for c in TRAVEL_FRAMES]
+    files = [(c, f) for c, f in files if f.exists()]
+    if not files:
+        return None
+    parts, counts = [], []
+    for c, f in files:
+        with open(f, encoding="utf-8") as fh:
+            d = json.load(fh)
+        nodes = d["nodes"]
+        pairs: dict[tuple[int, int], list[int]] = {}
+        for a, b, y in d["edges"]:
+            lo, hi = (a, b) if a < b else (b, a)
+            if lo == hi:
+                continue
+            p = pairs.setdefault((lo, hi), [0, 0])
+            p[0 if a == lo else 1] = int(y)
+        by_node: dict[int, list[str]] = {}
+        for (lo, hi), (ab, ba) in sorted(pairs.items()):
+            if hi - lo >= 64 ** 2 or ab >= 64 ** 2 or ba >= 64 ** 2:
+                raise ValueError(f"data/travel/walk_{c}.json: arista {lo}-{hi} fuera de rango")
+            by_node.setdefault(lo, []).append(_b64n(hi - lo, 2) + _b64n(ab, 2) + _b64n(ba, 2))
+        g = [_b64n(int(x) + WALK_OFF, 3) + _b64n(int(y) + WALK_OFF, 3) + "".join(by_node.get(i, []))
+             for i, (x, y) in enumerate(nodes)]
+        keys = d["matrix"]["keys"]
+        for k in keys:
+            if ";" in k or "]==]" in k:
+                raise ValueError(f"data/travel/walk_{c}.json: clave {k!r}")
+        pnodes = "".join(_b64n(d["places"][k], 3) for k in keys)
+        m = ["".join(_b64n(WALK_NONE if v is None else int(v), 3) for v in row) for row in d["matrix"]["yards"]]
+        meta = d.get("meta", {})
+        counts.append(f"{c}: {len(nodes)} nodos, {len(pairs)} pares de aristas, {len(keys)} lugares")
+        parts += [
+            f"  [{c}] = {{",
+            f"    n = {len(nodes)}, np = {len(keys)}, build = {lua_string(str(meta.get('client_build', '?')))},",
+            "    g = [==[\n" + "\n".join(g) + "\n]==],",
+            f"    keys = [==[{';'.join(keys)}]==],",
+            f"    nodes = [==[{pnodes}]==],",
+            "    m = [==[\n" + "\n".join(m) + "\n]==],",
+            "  },",
+        ]
+    body = [
+        f"-- {GENERATED_HEADER}",
+        "-- Fuente: data/travel/walk_<c>.json (senda-nav walkgraph sobre la malla propia de Senda, nav/; ver docs/TRAVEL.md,"
+        " «Andar»): " + "; ".join(counts),
+        "-- Dígitos de base 64 (A-Z a-z 0-9 + /); se decodifica bajo demanda en Modules/Travel.lua.",
+        "local _, Senda = ...",
+        "",
+        "Senda.TravelWalk = {",
+        f"  schema = {WALK_SCHEMA}, off = {WALK_OFF}, none = {WALK_NONE},",
+        *parts,
+        "}",
+    ]
+    return "\n".join(body) + "\n"
+
+
 def render_rares(paths: Paths, extra: list[str] | None = None) -> dict[Path, str]:
     """data/rares/rares.json -> addon/Senda/Data/Rares.lua (+ Data.xml).
 
@@ -822,6 +903,10 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
     if travel is not None:
         out[paths.out_data / "Travel.lua"] = travel
         data_files.append("Travel.lua")
+    walk = render_walk(paths)
+    if walk is not None:
+        out[paths.out_data / "TravelWalk.lua"] = walk
+        data_files.append("TravelWalk.lua")
     dungeons = render_dungeons(paths, ds.sections)
     if dungeons is not None:
         out[paths.out_data / "Dungeons.lua"] = dungeons

@@ -123,5 +123,87 @@ class TravelData(unittest.TestCase):
             self.assertIsNone(build.render_travel(Paths(d)))
 
 
+WALK_LUA = ROOT / "addon" / "Senda" / "Data" / "TravelWalk.lua"
+B64 = {c: i for i, c in enumerate(build.WALK_B64)}
+
+
+def num(s: str) -> int:
+    v = 0
+    for ch in s:
+        v = v * 64 + B64[ch]
+    return v
+
+
+def walk_blocks(text: str, c: int) -> dict[str, str]:
+    m = re.search(rf"^  \[{c}\] = \{{\n(.*?)\n  \}},$", text, re.MULTILINE | re.DOTALL)
+    assert m, f"falta el continente {c}"
+    body = m.group(1)
+    out = {}
+    for key in ("g", "keys", "nodes", "m"):
+        k = re.search(rf"^    {key} = \[==\[\n?(.*?)\n?\]==\],$", body, re.MULTILINE | re.DOTALL)
+        assert k, f"falta {key}"
+        out[key] = k.group(1)
+    return out
+
+
+class TravelWalk(unittest.TestCase):
+    """data/travel/walk_<c>.json -> Data/TravelWalk.lua (render_walk): lo compilado dice lo mismo que el JSON."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.text = build.render_walk(Paths())
+        assert cls.text is not None
+        cls.json = {}
+        for c in (0, 1):
+            with open(TRAVEL / f"walk_{c}.json", encoding="utf-8") as fh:
+                cls.json[c] = json.load(fh)
+
+    def test_committed_file_is_current(self):
+        self.assertEqual(WALK_LUA.read_text(encoding="utf-8"), self.text, "ejecuta python tools/build.py")
+
+    def test_size_per_continent(self):
+        for c in (0, 1):
+            m = re.search(rf"^  \[{c}\] = \{{\n(.*?)\n  \}},$", self.text, re.MULTILINE | re.DOTALL)
+            self.assertLess(len(m.group(0).encode("utf-8")), 150_000, f"continente {c}")
+
+    def test_nodes_edges_and_matrix_round_trip(self):
+        for c in (0, 1):
+            d, b = self.json[c], walk_blocks(self.text, c)
+            lines = b["g"].split("\n")
+            self.assertEqual(len(lines), len(d["nodes"]))
+            edges = {}
+            for i, line in enumerate(lines):
+                self.assertEqual([num(line[0:3]) - build.WALK_OFF, num(line[3:6]) - build.WALK_OFF], d["nodes"][i])
+                self.assertEqual((len(line) - 6) % 6, 0)
+                for p in range(6, len(line), 6):
+                    j = i + num(line[p:p + 2])
+                    ab, ba = num(line[p + 2:p + 4]), num(line[p + 4:p + 6])
+                    if ab:
+                        edges[(i, j)] = ab
+                    if ba:
+                        edges[(j, i)] = ba
+            self.assertEqual(edges, {(a, b2): y for a, b2, y in d["edges"]})
+            keys = b["keys"].split(";")
+            self.assertEqual(keys, d["matrix"]["keys"])
+            self.assertEqual([num(b["nodes"][k * 3:k * 3 + 3]) for k in range(len(keys))], [d["places"][k] for k in keys])
+            rows = b["m"].split("\n")
+            for r, row in zip(rows, d["matrix"]["yards"]):
+                got = [num(r[k * 3:k * 3 + 3]) for k in range(len(keys))]
+                self.assertEqual(got, [build.WALK_NONE if v is None else v for v in row])
+
+    def test_places_cover_the_planner(self):
+        # cada maestro de vuelo de la Alianza en los Reinos del Este tiene su nodo; el caso del jugador: de Forjaz a
+        # Menethil a pie es el camino de verdad (túnel, Loch Modan, Dun Algaz), no 1095 yardas en línea recta
+        d = self.json[0]
+        for fp in (2, 4, 5, 6, 7, 8, 12):
+            self.assertIn(f"fp:{fp}", d["places"])
+        keys = d["matrix"]["keys"]
+        ifm = d["matrix"]["yards"][keys.index("fp:6")][keys.index("fp:7")]
+        self.assertGreater(ifm, 4000)
+
+    def test_deterministic(self):
+        self.assertEqual(build.render_walk(Paths()), self.text)
+
+
 if __name__ == "__main__":
     unittest.main()

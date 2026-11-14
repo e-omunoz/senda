@@ -55,6 +55,12 @@ function newState(report) {
     return 0;
   });
   lua.lua_setglobal(L, to_luastring('__out'));
+  // wall clock in ms, for scenarios that measure how long the add-on's own work takes in this VM
+  lua.lua_pushjsfunction(L, (L) => {
+    lua.lua_pushnumber(L, Number(process.hrtime.bigint()) / 1e6);
+    return 1;
+  });
+  lua.lua_setglobal(L, to_luastring('__clock'));
   lua.lua_pushjsfunction(L, (L) => {
     const k = lua.lua_tojsstring(L, 1);
     const t = lua.lua_type(L, 2);

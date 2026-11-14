@@ -1,0 +1,13 @@
+{
+	"note": "Ground the travel planner's walk graph leaves out (senda-nav bake --block, docs/TRAVEL.md «Andar»). Senda's own review, not taken from any other addon or database: places where the coarse walk grid finds a way the game does not give a runner. Each block: map, polygon in world yards [wx north, wy west], zmin (only surfaces above that height are dropped) and outdoor (true: indoor WMO floors inside stay).",
+	"blocks": [
+		{
+			"id": "dun-morogh-north-rim",
+			"map": 0,
+			"note": "The mountains along Dun Morogh's northern edge, from the western coast to Loch Modan (Dun Morogh map x 5-82 %, y 3-33 %), outdoors above z 100. Sampled every 2 yd the slopes there chain into walkable ways north of Ironforge, over the city's mountain and along the rim, down into the Wetlands; a runner cannot cross them: the way is the Dun Morogh - Loch Modan tunnel and Dun Algaz. Reported in game (2026-11, gnome warlock sent on foot from Ironforge straight to Menethil Harbor). Ironforge's halls (indoor) stay, the Gates of Ironforge and Gnomeregan lie south of the box, the Wetlands coast and the Dun Algaz road below z 100 or north of it.",
+			"poly": [[-3975.6, 1555.8], [-3975.6, -2236.4], [-4960.6, -2236.4], [-4960.6, 1555.8]],
+			"zmin": 100,
+			"outdoor": true
+		}
+	]
+}
