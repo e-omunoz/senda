@@ -100,6 +100,7 @@ sources = ["questie:quest/179"]
 | `prof` | string | Profesión (`tailoring`, `enchanting`...) para learn_prof / skill |
 | `skill` | int | Rango de profesión objetivo |
 | `at` | [map, x, y] | Destino principal |
+| `z` | number | Altura (yardas del mundo) de `at`, para que la flecha elija el piso; opcional: sin ella sale de `data/heights.json` (`tools/heights.py`, docs/NAV.md 8.6) |
 | `wps` | [[map, x, y, "etiqueta"], ...] | Puntos adicionales |
 | `radius` | number | Metros para `goto` (por defecto 12) |
 | `node` | string | Nombre/id de nodo de vuelo (getfp/fly) |

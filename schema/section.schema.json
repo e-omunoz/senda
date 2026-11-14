@@ -248,6 +248,12 @@
         "at": {
           "$ref": "#/$defs/point"
         },
+        "z": {
+          "type": "number",
+          "minimum": -2000,
+          "maximum": 2000,
+          "description": "Altura (yardas del mundo) del punto `at`, para que la flecha escoja el piso (mina bajo una colina, ciudad bajo una montaña). Opcional: sin ella tools/build.py usa la de data/heights.json (forever-db, tools/heights.py)."
+        },
         "wps": {
           "type": "array",
           "items": {

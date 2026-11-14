@@ -384,6 +384,7 @@ def run_checks(ds: Dataset) -> Dataset:
 
     # --- secciones: esquema, pasos
     step_ids: dict[str, Path] = {}
+    step_at: dict[str, Any] = {}
     section_ids: dict[str, Path] = {}
     for sec in ds.sections:
         data = sec.data
@@ -423,6 +424,10 @@ def run_checks(ds: Dataset) -> Dataset:
                 ds.err(sec.path, f"{where} · campo 'obj'", "'obj' sin 'quest'")
             if "at" in st:
                 _check_point(ds, sec.path, where, st["at"], "at")
+                if isinstance(stid, str):
+                    step_at[stid] = st["at"]
+            elif "z" in st:
+                ds.err(sec.path, f"{where} · campo 'z'", "'z' es la altura de 'at' y el paso no tiene 'at'")
             for wp in st.get("wps") or []:
                 _check_point(ds, sec.path, where, wp, "wps")
             flt = st.get("if")
@@ -541,7 +546,40 @@ def run_checks(ds: Dataset) -> Dataset:
                         _check_point(ds, kp.path, f"{name} #{i + 1}", item["trainer"], "trainer")
     _check_gear_weights(ds)
     _check_professions(ds)
+    _check_heights(ds, step_at)
     return ds
+
+
+def _check_heights(ds: Dataset, step_at: dict[str, Any]) -> None:
+    """data/heights.json (tools/heights.py): filas [uiMap, x, y, z] de pasos que existen. Si el `at` del paso ya
+    no es ese punto, la altura no se usa (aviso: hay que regenerarla con `build.py --refresh-heights`)."""
+    f = ds.paths.data / "heights.json"
+    if not f.exists():
+        return
+    try:
+        with open(f, encoding="utf-8") as fh:
+            rows = json.load(fh).get("steps")
+    except (OSError, ValueError, AttributeError) as exc:
+        ds.err(f, "archivo", f"no se puede leer: {exc}")
+        return
+    if not isinstance(rows, dict):
+        ds.err(f, "campo 'steps'", "debe ser un objeto {id de paso: [uiMap, x, y, z]}")
+        return
+    stale = []
+    for sid, row in rows.items():
+        num = (lambda v: isinstance(v, (int, float)) and not isinstance(v, bool))
+        if not (isinstance(row, list) and len(row) == 4 and isinstance(row[0], int) and all(num(v) for v in row[1:])):
+            ds.err(f, f"paso {sid}", f"fila mal formada {row!r} (se espera [uiMap, x, y, z])")
+            continue
+        at = step_at.get(sid)
+        if at is None:
+            stale.append(sid)
+        elif not (isinstance(at, list) and len(at) >= 3 and [at[0], float(at[1]), float(at[2])] == [row[0], float(row[1]), float(row[2])]):
+            stale.append(sid)
+    if stale:
+        ds.warn(f, "pasos", f"{len(stale)} alturas de pasos que ya no existen o cuyo 'at' cambió (no se usan; "
+                            f"regenera con `python tools/build.py --refresh-heights`): {', '.join(stale[:8])}"
+                            + ("..." if len(stale) > 8 else ""))
 
 
 def _check_professions(ds: Dataset) -> None:

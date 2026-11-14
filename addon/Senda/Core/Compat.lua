@@ -86,6 +86,22 @@ function Compat.IsFlying()
   return r and true or false
 end
 
+-- ¿Bajo techo (cueva, edificio, ciudad bajo la montaña)? true / false, o nil si no se puede saber.
+function Compat.IsIndoors()
+  local r = Try(_G.IsIndoors)
+  if r == nil or IsSecret(r) then return nil end
+  return r and true or false
+end
+
+-- Altura del jugador (yardas del mundo) o nil. UnitPosition no la da en todos los clientes (devuelve 0 o
+-- nada, o un valor secreto en instancias): un 0 exacto se toma como «desconocida».
+function Compat.PlayerZ()
+  local _, _, z = Try(_G.UnitPosition, "player")
+  z = Num(z)
+  if not z or z == 0 then return nil end
+  return z
+end
+
 -- Orientación del jugador en radianes (0 = norte, sentido antihorario) o nil si no se puede leer.
 function Compat.PlayerFacing()
   return Num(Try(GetPlayerFacing))

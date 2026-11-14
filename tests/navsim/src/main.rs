@@ -294,6 +294,53 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 		.eval()?;
 	check("Cancel: no callback, queue empty", cancelled == "false false", cancelled.clone());
 
+	// floors without the player's height (the client does not give it): UI/ArrowNav.lua passes what it
+	// knows instead. Every floor of the start cell seeded at once made these start on the wrong one.
+	let floors: Vec<(String, String, String)> = lua
+		.load(
+			r#"
+		local function route(fm, fx, fy, tm, tx, ty, opts)
+			local res
+			SendaNav.Route(fm, fx, fy, tm, tx, ty, function(p, c) res = { p = p, c = c } end, opts)
+			local n = 0
+			while not res and n < 50000 do navsim.frame(1 / 60); n = n + 1 end
+			return res and res.p, res and res.c
+		end
+		local function zs(p)
+			local t = {}
+			for i, q in ipairs(p or {}) do t[i] = q.z and string.format("%.0f", q.z) or "-" end
+			return table.concat(t, ",")
+		end
+		local cases = {
+			-- name, from, to, opts (what ArrowNav passes), test on the start / end heights
+			{ "Ironforge flight master -> guide point, indoors (no heights)", { 1455, 55.51, 47.72 }, { 1455, 72.08, 51.88 },
+				{ fhint = "under" }, function(a, b, p) for _, q in ipairs(p) do if q.z and q.z > 600 then return false end end return a.z and a.z < 600 end },
+			{ "Ironforge flight master -> Great Forge, indoors (no heights)", { 1455, 55.51, 47.72 }, { 1455, 51.52, 26.31 },
+				{ fhint = "under" }, function(a, b, p) for _, q in ipairs(p) do if q.z and q.z > 600 then return false end end return a.z and a.z < 600 end },
+			{ "Ruins of Lordaeron -> Undercity (h12-argenteos-114), outdoors + step height", { 1420, 62.0, 70.5 }, { 1458, 63.25, 48.56 },
+				{ fhint = "top", tz = -43, tnear = true }, function(a, b) return a.z and a.z > 0 and b.z and math.abs(b.z + 43) < 6 end },
+			{ "Goldshire -> Fargodeep Mine (hmage-elwynn-052), outdoors + step height", { 1429, 42.0, 65.0 }, { 1429, 39.1, 81.7 },
+				{ fhint = "top", tz = 22.6, tnear = true }, function(a, b) return b.z and b.z < 30 end },
+		}
+		local out = {}
+		for _, k in ipairs(cases) do
+			local f, t = k[2], k[3]
+			local p, c = route(f[1], f[2], f[3], t[1], t[2], t[3], k[4])
+			local q = route(f[1], f[2], f[3], t[1], t[2], t[3])
+			local ok = p and k[5](p[1], p[#p], p) or false
+			out[#out + 1] = { k[1], tostring(ok), string.format("z %s (with no hint: %s)", p and zs(p) or tostring(c), zs(q)) }
+		end
+		return out
+	"#,
+		)
+		.eval::<Vec<Vec<String>>>()?
+		.into_iter()
+		.map(|v| (v[0].clone(), v[1].clone(), v[2].clone()))
+		.collect();
+	for (name, ok, detail) in floors {
+		check(&format!("floor: {name}"), ok == "true", detail);
+	}
+
 	// ---------------------------------------------------------------- the corpus
 	let doc: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("nav/eval/routes.json"))?)?;
 	let routes: Vec<serde_json::Value> = doc["routes"].as_array().unwrap().iter().filter(|r| only.as_deref().map_or(true, |o| r["id"].as_str() == Some(o))).cloned().collect();

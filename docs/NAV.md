@@ -264,7 +264,10 @@ SendaNav.ToWorld(mapa, x, y) -> continente, wx, wy;  SendaNav.ToMap(continente, 
   más `path.continent`, `path.cost` (yardas de la búsqueda); el primero es el inicio; un punto con `lift`
   (nombre del ascensor o portal) es donde empieza el viaje y el siguiente, donde acaba. Cada punto lleva el
   mapa de destino o de origen si lo contiene; si no, el que da `C_Map.GetMapPosFromWorldPos`.
-- `opts = { fz, tz }`: alturas de los extremos para elegir piso (sin ellas, todos los pisos de la celda).
+- `opts = { fz, tz }`: alturas de los extremos para elegir piso (la capa más cercana). Sin altura:
+  `fhint` / `thint = "top"` (el piso más alto: fuera) o `"under"` (los que tienen otro encima: bajo techo), y
+  `tnear = true` (sin `tz`, el piso de llegada más cercano a `fz`). Sin nada, todos los pisos de la celda
+  (la búsqueda se queda con el más barato). Ver 8.6.
 - Fallos (`callback(nil, motivo)`): `map` (mapa sin posición de mundo), `continent` (extremos en dos
   continentes: eso es del planificador de viaje), `nodata` (paquete sin cargar, p. ej. en combate),
   `offmesh`, `unreachable`, `error: …`. Los de entrada (`map`, `continent`, `nodata`) llaman al momento.
@@ -340,9 +343,10 @@ apunta a ese punto y la distancia es la que queda por el camino; si no, va recta
 - **Carga:** `C_AddOns.LoadAddOn("Senda_Nav")` la primera vez que hace falta y, en otro fotograma,
   `SendaNav.Load(continente)`. **Nunca en combate**: se apunta y se carga con `PLAYER_REGEN_ENABLED`. Si
   `Senda_Nav` no está instalado o no carga, se intenta una vez por sesión y la flecha sigue recta.
-- **Memoria:** al cambiar de continente se suelta el paquete del otro (`SendaNav.Unload`). El cliente no vuelve a
-  cargar un addon en la misma sesión, así que volver a un continente ya soltado deja la flecha recta hasta
-  `/reload` (lo dice la ayuda de la opción).
+- **Memoria:** un paquete cargado se queda cargado toda la sesión; al cambiar de continente no se suelta nada
+  (Senda nunca llama a `SendaNav.Unload`). El cliente no vuelve a cargar un addon en la misma sesión: soltarlo
+  obligaría a hacer `/reload` al volver a ese continente. Con los dos paquetes cargados son unos 21 MB; la
+  memoria solo vuelve con `/reload` y la opción apagada (lo dice la ayuda de la opción).
 - **Rutas:** una al cambiar el objetivo (mapa y coordenadas; el modo cadáver, que repite el mismo objetivo,
   no pide otra) y otra cuando `SendaNav.Next` dice «fuera de ruta», como mucho una cada 5 s. Mientras se
   calcula la primera, la flecha va recta; al recalcular sigue el camino anterior salvo a más de 120 yd de él.
@@ -350,11 +354,54 @@ apunta a ese punto y la distancia es la que queda por el camino; si no, va recta
   movimiento. Las respuestas de rutas ya sustituidas se descartan.
 - **En pantalla:** «120 m a pie · 1:05» (la distancia por el camino, `path.rest` + lo que queda hasta el
   punto) y la marca pequeña «ruta» junto a la flecha; la ayuda de la flecha dice «punto i de n» o «Calculando».
-  «Has llegado» sigue midiéndose en línea recta hasta el objetivo.
+  En el último tramo, con menos de 5 yd de camino, la flecha deja el camino y apunta recta al objetivo
+  («Línea recta», «fin del camino»): un objetivo fuera de la malla (sobre una roca, en un edificio sin datos)
+  queda más allá del final del camino y apuntar a ese final daba «0 m» girando sobre uno mismo.
+- **Llegada:** «Has llegado» exige estar dentro del radio en línea recta **y**, si hay camino hacia ese objetivo y
+  el jugador va por él, que lo que queda de camino también quepa en el radio (el destino puede estar justo
+  debajo, en una mina). Fuera del camino cuenta solo la línea recta. La llegada, el paso de un punto de ruta
+  (`wps`) al siguiente y el borrado de los objetivos manuales los lleva un temporizador de 0,2 s
+  (`Arrow:Tick`) que corre aunque la flecha esté oculta (opción apagada, oculta en combate o por las reglas de visibilidad).
+- **Pisos:** ver 8.6.
 - **Simulador:** `tests/wowsim/scenarios_nav.js` carga el `Senda_Nav` real (Router y SendaNav) en el
   simulador con paquetes sintéticos en el formato de la sección 3 (`tests/wowsim/mock/nav.lua`: un sector de
   64×64 celdas con un muro que obliga a rodearlo; base64 y zlib de verdad). Escenarios: ruta pedida y seguida
   punto a punto (`nav-route`), fuera de ruta con espera y cambio de objetivo (`nav-reroute`), combate que
   aplaza la carga y modo cadáver (`nav-combat`, mago humano), sin `Senda_Nav` (`nav-missing`), volando, en
-  taxi, en instancia y sin ruta (`nav-fallback`), y cambio de continente que suelta el otro paquete
-  (`nav-continent`, druida elfo de la noche).
+  taxi, en instancia y sin ruta (`nav-fallback`), y cambio de continente con los dos paquetes cargados, sin
+  `/reload` para volver (`nav-continent`, druida elfo de la noche). `tests/wowsim/scenarios_arrow.js`: pistas de
+  piso, reintento sin ellas, llegada medida por el camino y final de camino (`arrow-floor`,
+  `arrow-arrive-path`, `arrow-pathend`), y los objetivos y puntos de ruta de la flecha (`arrow-prio`,
+  `arrow-wps`, `arrow-wps-reload`).
+
+### 8.6 Pisos (celdas con varias capas)
+
+Una celda de la malla puede tener varios pisos: la colina y la Mina Abisal de debajo, la cima de la montaña y
+Forjaz dentro, las Ruinas de Lordaeron y Entrañas. `SendaNav.Route` escoge el piso de cada extremo con la altura
+(`fz`, `tz`: la capa más cercana); sin altura sembraba **todos** los pisos de la celda de salida y aceptaba todos
+los de la de llegada, y la búsqueda se quedaba con el más barato: desde el maestro de vuelo de Forjaz salía de
+la cima (z 771 en vez de 502) en línea recta por la roca, desde las Ruinas salía bajo tierra, y hacia la Mina
+Abisal acababa en la colina de encima (y la llegada en línea recta saltaba allí). `navsim` siempre pasaba la z
+del corpus, así que no se veía.
+
+El cliente no da la altura del jugador (`UnitPosition` devuelve 0 o nada), así que `UI/ArrowNav.lua` pasa lo que
+sabe, en este orden:
+
+1. **Salida:** la altura del cliente si la da (`Compat.PlayerZ`, un 0 exacto cuenta como desconocida); si no, la
+   del camino que venía siguiendo (los puntos de un camino en celdas de varios pisos llevan `z`; se anota la del
+   punto con altura a menos de 20 yd y vale mientras el jugador no se aleje 40 yd de donde se anotó); si no,
+   `IsIndoors()` (`Compat.IsIndoors`): fuera, `fhint = "top"` (el piso más alto); bajo techo, `fhint = "under"`
+   (los pisos que tienen otro encima). Sin nada de eso, todos.
+2. **Llegada:** la `z` del objetivo (`tz`). Los pasos de guía la llevan desde `tools/build.py`: la del TOML del
+   paso si alguien la escribió (`z`, esquema `section.schema.json`) o la de `data/heights.json`, una instantánea
+   de las apariciones de forever-db (las mismas que dan las coordenadas): la z de la aparición más cercana del
+   PNJ u objeto que el paso nombra (el `npc`, quien da o recibe la misión, o los objetivos de `complete` y quién
+   suelta sus objetos), a menos de 25 yd (PNJ) o 50 yd (objetivos). Unos 4500 de los 6200 pasos con `at`. Se
+   regenera con `python tools/build.py --refresh-heights`; `tools/validate.py` avisa de las filas cuyo `at` ya
+   cambió (no se usan). Sin `tz`, con `tnear` y una altura de salida conocida, el piso de llegada más cercano a
+   ella; si no, todos (el más barato).
+3. **Reintento:** si con esas pistas la ruta sale `unreachable`, se pide otra sin ninguna.
+
+`tests/navsim` comprueba los tres casos con los paquetes reales y sin alturas del corpus (`floor: ...` en las
+comprobaciones de la API): Forjaz sale del piso 502 con `fhint = "under"`, las Ruinas salen de la superficie
+(z 63) con `"top"` y llegan a Entrañas (z -43), y la Mina Abisal acaba dentro (z 23) con la altura del paso.

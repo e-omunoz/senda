@@ -29,6 +29,10 @@ Uso:
     python tools/build.py --root RUTA # otra raíz (fixtures)
     python tools/build.py --refresh-prereq  # relee los requisitos de forever-db y guarda data/prereq.json
     python tools/build.py --refresh-reserve [--reserve-from RAIZ]  # rehace data/reserve.json (tools/reserve.py)
+    python tools/build.py --refresh-heights  # relee las alturas de forever-db y guarda data/heights.json
+
+Alturas: cada paso con `at` lleva `z` (yardas del mundo) si la tiene en su TOML o en data/heights.json
+(tools/heights.py); la flecha la usa para escoger el piso del destino (docs/NAV.md, 8.6).
 
 Requisitos de misión («Saltar esta misión»): el índice sale de data/prereq.json (instantánea de los requisitos
 de forever-db, versionada para que el resultado no dependa de la caché local); sin ese archivo, de la caché
@@ -47,6 +51,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (  # noqa: E402
     GENERATED_HEADER, Paths, lua_string, read_version, setup_stdio, to_lua, write_text_lf,
 )
+import heights  # noqa: E402
 import localenames  # noqa: E402
 import reserve  # noqa: E402
 import validate  # noqa: E402
@@ -62,7 +67,7 @@ GUIDE_ORDER = ["id", "title", "summary", "faction", "races", "classes", "levels"
 # Orden de claves de un paso en el Lua (como en el contrato de docs/ARCHITECTURE.md);
 # las claves no listadas van al final en el orden del esquema.
 STEP_ORDER = ["id", "do", "quest", "quests", "obj", "npc", "item", "count", "spells", "level", "prof", "skill",
-              "at", "wps", "radius", "node", "zone", "if", "optional", "escort", "chain", "text", "tip", "link", "status"]
+              "at", "z", "wps", "radius", "node", "zone", "if", "optional", "escort", "chain", "text", "tip", "link", "status"]
 KNOWLEDGE_ORDER = ["id", "class", "kind", "title", "summary", "levels", "order", "icon", "link", "status"]
 
 
@@ -110,9 +115,14 @@ def _xml(files: list[str]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def _section_table(sec: validate.Section, step_order: list[str]) -> str:
+def _section_table(sec: validate.Section, step_order: list[str], hts: dict | None = None) -> str:
     d = _strip(sec.data, STRIP_GUIDE)
     steps = d.pop("step", [])
+    # Altura del `at` (la del paso o la de data/heights.json): la flecha elige con ella el piso del destino.
+    for st in steps:
+        z = heights.height_for(st, hts or {})
+        if z is not None:
+            st["z"] = z
     d["steps"] = [{k: st[k] for k in step_order if k in st} | {k: v for k, v in st.items() if k not in step_order}
                   for st in steps]
     return f"Senda.Guides:RegisterSection({to_lua(d, key_order=SECTION_ORDER, multiline=True)})"
@@ -835,6 +845,7 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
     """Devuelve {ruta: contenido} de todo lo generado. Determinista."""
     paths = ds.paths
     step_order = _step_order(paths)
+    hts = heights.read(paths)
     out: dict[Path, str] = {}
 
     # --- guías
@@ -851,7 +862,7 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
                 shared_used.setdefault(sec.key, sec)
                 shared_factions.setdefault(sec.key, set()).add(g.data.get("faction"))
             else:
-                body.append(_section_table(sec, step_order))
+                body.append(_section_table(sec, step_order, hts))
         gd = _strip(g.data, STRIP_GUIDE)
         gd["sections"] = [s.id for s in g.sections]
         body.append(f"Senda.Guides:RegisterGuide({to_lua(gd, key_order=GUIDE_ORDER, multiline=True)})")
@@ -873,11 +884,11 @@ def render(ds: validate.Dataset) -> dict[Path, str]:
         only = next(iter(fs)) if len(fs) == 1 else None
         gated.setdefault(only if only in GATED_FACTIONS else "", {})[key] = sec
     if gated.get(""):
-        body = [_section_table(sec, step_order) for _, sec in sorted(gated[""].items())]
+        body = [_section_table(sec, step_order, hts) for _, sec in sorted(gated[""].items())]
         out[paths.out_guides / "Shared.lua"] = _lua_file("data/shared/", body)
         xml_files.append("Shared.lua")
     for faction in sorted(f for f in gated if f):
-        body = [_section_table(sec, step_order) for _, sec in sorted(gated[faction].items())]
+        body = [_section_table(sec, step_order, hts) for _, sec in sorted(gated[faction].items())]
         name = f"Shared{faction}.lua"
         out[paths.out_guides / name] = _lua_file("data/shared/", body, faction)
         xml_files.append(name)
@@ -1021,7 +1032,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--refresh-reserve", action="store_true",
                     help="rehace data/reserve.json (puntuaciones, guías y forever-db; ver tools/reserve.py)")
     ap.add_argument("--reserve-from", help="raíz de donde leer las rutas importadas de Polestar y sus puntuaciones")
-    ap.add_argument("--foreverdb", help="carpeta de forever-db para --refresh-reserve (o SENDA_FOREVERDB)")
+    ap.add_argument("--refresh-heights", action="store_true",
+                    help="relee las alturas de las apariciones de forever-db y guarda data/heights.json")
+    ap.add_argument("--foreverdb", help="carpeta de forever-db para --refresh-reserve y --refresh-heights "
+                                        "(o SENDA_FOREVERDB)")
     ap.add_argument("-q", "--quiet", action="store_true")
     args = ap.parse_args(argv)
     if args.refresh_reserve:
@@ -1041,6 +1055,17 @@ def main(argv: list[str] | None = None) -> int:
             return 1
         write_prereq_snapshot(paths, pre)
         print(f"data/{PREREQ_FILE}: {len(pre['edges'])} requisitos, {len(pre['breadcrumbs'])} migas de pan")
+    if args.refresh_heights:
+        paths = Paths(args.root)
+        import os
+        db = args.foreverdb or os.environ.get("SENDA_FOREVERDB")
+        try:
+            hs = heights.refresh(paths, Path(db) if db else None)
+        except FileNotFoundError as exc:
+            print(f"build: {exc}", file=sys.stderr)
+            return 1
+        heights.write(paths, hs)
+        print(f"data/{heights.HEIGHTS_FILE}: {len(hs)} pasos con altura")
     return build(Paths(args.root), check=args.check, quiet=args.quiet)
 
 

@@ -14,7 +14,10 @@
 --       path = { {map, x, y, wx, wy, z?, lift = name|nil}, ..., continent = c, cost = yards }:
 --       the first waypoint is the start; a waypoint with `lift` is where a lift or portal ride
 --       starts, and the next waypoint is where it ends.
---       opts: { fz = z, tz = z } (ends' heights, to pick a floor), { look = n }.
+--       opts: { fz = z, tz = z } (ends' heights, to pick a floor), { look = n }; without a height,
+--       { fhint = "top" | "under" } (start on the highest floor, outdoors, or on a floor with another
+--       above it, indoors), { thint = ... } the same for the goal, { tnear = true } (goal on the floor
+--       nearest the start floor's height). With none of them every floor of a cell is a candidate.
 --   SendaNav.Next(path, map, x, y [, z]) -> waypoint, index, yards, offRoute, arrived
 --       The waypoint an arrow should point at for a player at uiMapId/percent (x, y). Keeps its
 --       progress in path.idx (only moves forward). offRoute: farther than SendaNav.offRoute yards
@@ -201,7 +204,8 @@ function SendaNav.Route(fromMap, fx, fy, toMap, tx, ty, callback, opts)
 		callback(nil, "nodata", fail)
 		return fail
 	end
-	local req = { sx = sx, sy = sy, sz = opts.fz, tx = ex, ty = ey, tz = opts.tz, look = opts.look or SendaNav.look }
+	local req = { sx = sx, sy = sy, sz = opts.fz, shint = opts.fhint, tx = ex, ty = ey, tz = opts.tz,
+		thint = opts.thint, tnear = opts.tnear, look = opts.look or SendaNav.look }
 	local job = R.Find(c1, req, function(points, costOrReason, j)
 		if not points then return callback(nil, costOrReason, j) end
 		local path = { continent = c1, cost = costOrReason, from = fromMap, to = toMap, idx = 2 }

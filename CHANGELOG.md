@@ -32,6 +32,25 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
   los reevalúa al abrir un maestro de vuelo. Los pasos de ir a pie y coger Forjaz y Thelsamar son ahora para todas las
   razas (se dan por hechos solos si ya los tienes).
 - Mismo arreglo en Costasur (Monasterio), Gadgetzan, el Nido Aguileño y la Vigilia de Morgan, con su camino a pie.
+- **La flecha ya no te saca por el piso equivocado.** Sin la altura del jugador (el cliente no la da), los caminos a
+  pie salían de cualquier piso de la celda y llegaban a cualquiera: desde el maestro de vuelo de Forjaz la ruta salía
+  de la cima de la montaña y cruzaba la roca en línea recta, desde las Ruinas de Lordaeron salía bajo tierra y hacia la
+  Mina Abisal acababa en la colina de encima (y «Has llegado» saltaba allí). Ahora la salida usa el piso del camino que
+  venías siguiendo o, si no, si estás bajo techo (`IsIndoors`): fuera, el piso de arriba; dentro, los de debajo. La
+  llegada usa la altura del paso de guía (nueva `data/heights.json`, de las apariciones de forever-db; campo opcional
+  `z` en los pasos). Si con esas pistas no hay camino, se pide otro sin ellas.
+- **«Has llegado» mide por el camino:** con un camino a pie, solo llegas cuando lo que queda de camino cabe en el radio,
+  no cuando estás encima en línea recta (la mina de debajo, el otro lado de un muro).
+- **Al final de un camino que no llega al objetivo** (objetivo fuera de la malla) la flecha apunta recta a él con el
+  motivo «fin del camino», en vez de «Ruta a pie 0 m» girando sobre ti.
+- **Varios objetivos de módulos a la vez** (buscador, raros, mazmorras, profesiones, instructor): gana el último que
+  pusiste, no uno al azar. Refrescar el mismo punto no le quita la flecha a otro.
+- **Puntos de ruta (`wps`):** si llegas a uno posterior por otro lado, la flecha salta a él; avanzan aunque la flecha esté
+  oculta (opción apagada, oculta en combate o por las reglas de visibilidad), y el punto por el que ibas se guarda por paso: un `/reload`,
+  un desvío o un recálculo de la guía ya no la devuelven al primero. Los puntos manuales también se borran al llegar con
+  la flecha oculta.
+- Documentación: `docs/NAV.md` decía que se soltaba el paquete de caminos del otro continente al cambiar de continente;
+  no es así (se quedan los dos cargados, sin `/reload`). Nueva sección 8.6 sobre los pisos.
 
 ### Añadido
 - `addon/Senda/Data/TravelWalk.lua` (222 KB): el grafo de andar de Reinos del Este y Kalimdor (nodos por región de sector,
@@ -49,6 +68,10 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - `tools/audit_guides.py` comprueba que cada paso `fly` de las tres guías va a un nodo ya conocido en ese punto
   (`fly-unknown-node`; aviso en las de la Horda). Filtros `fp` / `nofp` en `schema/section.schema.json`,
   `tools/validate.py`, `docs/ARCHITECTURE.md` y `docs/ROUTE-AUTHORING.md`. Simulador: escenarios `fpf-a`, `fpf-b`, `fpf-c`.
+- `python tools/build.py --refresh-heights` (`tools/heights.py`) y comprobación de `data/heights.json` en
+  `tools/validate.py`.
+- Simulador: escenarios `arrow-prio`, `arrow-wps`, `arrow-wps-reload`, `arrow-floor`, `arrow-arrive-path` y
+  `arrow-pathend`; `tests/navsim` comprueba los tres casos de pisos con los paquetes reales y sin alturas.
 
 ## [0.8.0] - 2026-11-13
 
