@@ -175,6 +175,22 @@ class ValidationTests(unittest.TestCase):
             self.assertIssue(ds, "warning", "disputed")
             self.assertIssue(ds, "warning", "ninguna guía usa esta sección")
 
+    def test_fp_filters_validated(self):
+        sec = "data/guides/gnome-warlock/01-coldridge.toml"
+        with TempRepo() as root:
+            self._edit(root, sec, 'quest = 179\n', 'quest = 179\nif = { fp = ["8"], nofp = ["8"] }\n')
+            ds = self.check(root)
+            self.assertIssue(ds, "error", "'fp' y 'nofp' con el mismo nodo", "paso coldridge-001")
+        with TempRepo() as root:
+            self._edit(root, sec, 'quest = 179\n', 'quest = 179\nif = { fp = [] }\n')
+            self.assertIssue(self.check(root), "error", "lista no vacía de nodos de vuelo")
+        with TempRepo() as root:
+            self._edit(root, sec, 'quest = 179\n', 'quest = 179\nif = { nofp = "8" }\n')
+            self.assertTrue([i for i in self.check(root).errors if "nofp" in i.where])
+        with TempRepo() as root:
+            self._edit(root, sec, 'quest = 179\n', 'quest = 179\nif = { fp = ["8", "Thelsamar"], nofp = [6] }\n')
+            self.assertEqual([str(i) for i in self.check(root).errors], [])
+
     def test_verified_requires_sources_and_level_order(self):
         with TempRepo() as root:
             self._edit(root, "data/guides/gnome-warlock/01-coldridge.toml",
@@ -212,6 +228,17 @@ class ValidationTests(unittest.TestCase):
 
 # ---------------------------------------------------------------------------- build
 class BuildTests(unittest.TestCase):
+    def test_fp_filters_compiled(self):
+        with TempRepo() as root:
+            p = root / "data/guides/gnome-warlock/01-coldridge.toml"
+            p.write_text(p.read_text(encoding="utf-8").replace(
+                'quest = 179\n', 'quest = 179\nif = { fp = ["8", "Thelsamar"], nofp = ["6"] }\n', 1),
+                encoding="utf-8", newline="\n")
+            rc, out, err = quiet(build.main, ["--root", str(root)])
+            self.assertEqual(rc, 0, err)
+            text = (root / "addon/Senda/Guides/gnome-warlock.lua").read_text(encoding="utf-8")
+            self.assertIn('["if"] = { fp = {"8", "Thelsamar"}, nofp = {"6"} }', text)
+
     def test_build_fixture(self):
         with TempRepo() as root:
             rc, out, err = quiet(build.main, ["--root", str(root)])

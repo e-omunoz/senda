@@ -14,6 +14,19 @@ node = "Southshore"
 zone = 1424
 at = [1424, 49.34, 52.27]
 text = "Vuela a Costasur (Laderas de Trabalomas)."
+if = { fp = ["Southshore"] }
+status = "unverified"
+sources = ["questie:npc/2432"]
+
+[[step]]
+id = "a40-monasterio-walk"
+do = "getfp"
+node = "Southshore"
+npc = 2432
+at = [1424, 49.34, 52.27]
+text = "Aún no conoces Costasur: vuela a Puerto de Menethil, cruza el puente de Thandol a Arathi y sigue al oeste por Trabalomas hasta Costasur. Coge su ruta de vuelo."
+tip = "Es un trayecto largo y la sección es opcional: si no vas a entrar en el Monasterio, sáltala."
+if = { nofp = ["Southshore"] }
 status = "unverified"
 sources = ["questie:npc/2432"]
 

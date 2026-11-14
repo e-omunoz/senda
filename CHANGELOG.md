@@ -4,6 +4,19 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ## [Sin publicar]
 
+### Corregido
+- **La guía ya no te manda a volar a un nodo que no tienes.** Un brujo gnomo del 21 que se había saltado Thelsamar veía
+  «Vuela a Thelsamar» al llegar a Los Humedales (y de ahí a Menethil por Forjaz). Ahora los pasos de la guía pueden llevar
+  los filtros `if = { fp = ["8"] }` (solo con ese nodo de vuelo conocido) y `if = { nofp = ["8"] }` (solo sin él); el motor
+  los reevalúa al abrir un maestro de vuelo. Los pasos de ir a pie y coger Forjaz y Thelsamar son ahora para todas las
+  razas (se dan por hechos solos si ya los tienes).
+- Mismo arreglo en Costasur (Monasterio), Gadgetzan, el Nido Aguileño y la Vigilia de Morgan, con su camino a pie.
+
+### Añadido
+- `tools/audit_guides.py` comprueba que cada paso `fly` de las tres guías va a un nodo ya conocido en ese punto
+  (`fly-unknown-node`; aviso en las de la Horda). Filtros `fp` / `nofp` en `schema/section.schema.json`,
+  `tools/validate.py`, `docs/ARCHITECTURE.md` y `docs/ROUTE-AUTHORING.md`. Simulador: escenarios `fpf-a`, `fpf-b`, `fpf-c`.
+
 ## [0.8.0] - 2026-11-13
 
 ### Añadido

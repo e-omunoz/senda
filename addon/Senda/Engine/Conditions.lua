@@ -1,6 +1,8 @@
 -- Condiciones: filtros `if` y detección de cada tipo de paso (`do`).
 --   Cond:StaticFilter(f)      -> clase / raza / facción / profesión (se evalúa al resolver la guía)
---   Cond:LevelFilter(f)       -> minlevel / maxlevel (dinámico, lo usa el motor al avanzar)
+--   Cond:LevelFilter(f)       -> minlevel / maxlevel y fp / nofp (dinámico, lo usa el motor al avanzar)
+--   Cond:FpFilter(f)          -> fp / nofp: el paso solo se ve con ese nodo de vuelo conocido / desconocido
+--   Cond:KnownFpSignature()   -> cambia cuando cambian los nodos de vuelo conocidos (para reevaluar)
 --   Cond:Check(step, state)   -> true (cumplido), false (aún no), nil (solo manual)
 --   Cond:NeedsPosition(step)  -> el motor activa el temporizador de posición
 --   Cond:CanFastForward(step) -> se puede dar por hecho al iniciar sesión si ya se cumple
@@ -64,13 +66,68 @@ function Cond:StaticFilter(f)
   return true
 end
 
--- Filtros de nivel: un paso fuera de rango se salta al llegar a él.
+-- Nodos de vuelo conocidos: los que guarda el motor al abrir un maestro de vuelo (db.char.fps) y los que el módulo
+-- de viajes ve en el mapa del mundo. Un nodo se pide por id ("8", 8) o por nombre, como el `node` de getfp.
+local function FpIsKnown(node)
+  if Cond.FpKnown({ node = node }) then return true end
+  local nid = tonumber(node)
+  local T = Senda.Modules and Senda.Modules.Travel
+  if nid and T and T.KnownNodes then
+    local ok, known = pcall(T.KnownNodes)
+    if ok and type(known) == "table" and known[nid] then return true end
+  end
+  return false
+end
+
+-- fp = { "8" }: solo con alguno de esos nodos conocido. nofp = { "8" }: solo si falta alguno.
+-- Sirve para no mandar a volar a un nodo que el jugador no tiene (el paso alternativo es ir a pie y cogerlo).
+function Cond:FpFilter(f)
+  if type(f) ~= "table" then return true end
+  if f.fp then
+    local list = type(f.fp) == "table" and f.fp or { f.fp }
+    local any = false
+    for _, n in ipairs(list) do
+      if FpIsKnown(n) then any = true break end
+    end
+    if not any then return false end
+  end
+  if f.nofp then
+    local list = type(f.nofp) == "table" and f.nofp or { f.nofp }
+    local missing = false
+    for _, n in ipairs(list) do
+      if not FpIsKnown(n) then missing = true break end
+    end
+    if not missing then return false end
+  end
+  return true
+end
+
+-- Cuántos nodos conocidos hay y cuáles: cambia al aprender un nodo (el motor reevalúa los pasos con fp / nofp).
+function Cond:KnownFpSignature()
+  local ids = {}
+  local fps = Senda.db and Senda.db.char and Senda.db.char.fps
+  if type(fps) == "table" then
+    for id in pairs(fps) do ids[#ids + 1] = tostring(id) end
+  end
+  local T = Senda.Modules and Senda.Modules.Travel
+  if T and T.KnownNodes then
+    local ok, known = pcall(T.KnownNodes)
+    if ok and type(known) == "table" then
+      for id in pairs(known) do ids[#ids + 1] = tostring(id) end
+    end
+  end
+  table.sort(ids)
+  return table.concat(ids, ",")
+end
+
+-- Filtros dinámicos: nivel (minlevel / maxlevel) y nodos de vuelo (fp / nofp).
+-- Un paso fuera de rango se salta al llegar a él.
 function Cond:LevelFilter(f)
   if type(f) ~= "table" then return true end
   local lvl = Compat.PlayerLevel()
   if f.minlevel and lvl < f.minlevel then return false end
   if f.maxlevel and lvl > f.maxlevel then return false end
-  return true
+  return self:FpFilter(f)
 end
 
 ------------------------------------------------------------------------------

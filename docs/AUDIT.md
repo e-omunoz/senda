@@ -27,7 +27,8 @@ con el nivel estimado en cada paso (interpolado en el rango de la sección, sin 
 | `crumb-late`, `exclusive` | error | una miga de pan cogida después de la misión a la que lleva; dos misiones que se excluyen |
 | `level` | error | la misión pide más nivel del que se lleva en ese punto y el paso no tiene `reqlevel` para esperarlo |
 | `dup-accept`, `dup-turnin`, `turnin-before-accept`, `turnin-no-accept`, `complete-after-turnin`, `complete-before-accept` | error | orden y duplicados (un `dungeon` cuenta como coger las misiones que empiezan dentro) |
-| `reqlevel-differs`, `level-section`, `class-late`, `never-turned-in`, `no-giver-data`, `no-ender-data`, `npc-no-spawn`, `at-unnamed-far`, `at-unnamed-map` | aviso | dudas: revisar a mano |
+| `fly-unknown-node` | error (aviso en las guías de la Horda) | un `do = "fly"` cuyo nodo de destino (`node` o, si no, el nodo de su `zone`) no es conocido en ese punto de la ruta del personaje: ningún `getfp` anterior no opcional de ese nodo y sin `if.fp` con él en el propio paso. Los vuelos gratuitos de misión van en `FREE_FLIGHTS` |
+| `reqlevel-differs`, `level-section`, `class-late`, `never-turned-in`, `no-giver-data`, `no-ender-data`, `npc-no-spawn`, `at-unnamed-far`, `at-unnamed-map`, `fly-no-node` | aviso | dudas: revisar a mano |
 
 Las dudas revisadas van en `REVIEWED` (en la propia herramienta) con su motivo y salen como «revisado».
 
@@ -114,6 +115,26 @@ Regla para `pre-optional`: si la misión dependiente abre más misiones obligato
 922, 4761); si no, la dependiente pasa a opcional, con su línea de XP en `tip` (las opcionales no llevan `why`,
 ROUTE-CHANGES.md §8).
 
+### 3.4 Vuelos a nodos que el jugador puede no tener (`fly-unknown-node`)
+
+Origen: un brujo gnomo del 21 que se saltó el nodo de Thelsamar veía «Vuela a Thelsamar» al entrar en Los Humedales (el
+paso era solo para humanos, enanos y gnomos y los pasos de ir a pie a por el nodo, solo para elfos de la noche). Ahora
+los filtros `if.fp` / `if.nofp` (ARCHITECTURE.md, ROUTE-AUTHORING.md) muestran el vuelo solo con el nodo conocido y la
+alternativa a pie si no.
+
+| Pasos | Problema | Arreglo |
+|---|---|---|
+| `a26wl-004` | «Vuela a Thelsamar» (nodo 8) sin saber si se tiene; lista de razas | `if = { fp = ["8"] }` (sin lista de razas: los elfos de la noche que lo tienen también vuelan) |
+| `a26wl-ne-01`, `a26wl-ne-02` | solo elfos de la noche; el camino a pie a por los nodos 6 y 8 | para todos (se dan por hechos solos con el nodo conocido); `-ne-01` con `nofp = ["8"]`; textos válidos para quien viene de Ventormenta o de Villa Oscura (tranvía o vuelo a Forjaz, puerta, este por Dun Morogh, túnel a Loch Modan) |
+| `a40-monasterio-001` (+ `a40-monasterio-walk`) | vuelo a Costasur (nodo 14), que ninguna ruta da | `fp = ["Southshore"]`; alternativa `getfp` con `nofp` (Menethil, Arathi y Trabalomas a pie) |
+| `a47-tanaris-001` (+ `a47-tanaris-walk`) | vuelo a Gadgetzan (nodo 39) antes de pisarlo | `fp = ["Gadgetzan"]`; alternativa a pie desde Feralas por Mil Agujas (el `getfp` `-002` ya existía) |
+| `a49-hinterlands-001` (+ `a49-hinterlands-walk`) | vuelo al Nido Aguileño (nodo 43) antes de pisarlo | `fp = ["Aerie Peak"]`; alternativa: Menethil, puente de Thandol y Arathi a pie |
+| `a55-burning-steppes-009` (+ `a55-burning-steppes-walk`) | vuelo a la Vigilia de Morgan (nodo 71) antes de pisarla | `fp = ["Morgan's Vigil"]`; alternativa: Villa del Lago y el camino al este |
+
+Todos son iguales para las tres guías de personaje (secciones compartidas). Los textos de las alternativas a pie son de
+Senda, sin comprobar en el juego (`status = "unverified"`). Vuelos gratuitos de misión (`netd-155`, `ps-teld-231`,
+`-259`, `-265`: «Nessa Shadowsong», 6344) y los de la guía de la Horda no se tocan; la Horda sale como aviso (ver 5).
+
 ## 4. Dudas revisadas (`REVIEWED`)
 
 | Paso | Duda | Por qué se deja |
@@ -131,6 +152,7 @@ ROUTE-CHANGES.md §8).
   quitó (ROUTE-CHANGES.md §2); forever-db no. 291 queda opcional, así que como mucho se salta; confirmarlo en el juego.
 - `data/scores/` no se ha recalculado con las correcciones: `route_score.py` las lee ya (ver ROUTE-CHANGES.md §9).
 - Las correcciones de Senda (3.2) están sin comprobar en el juego, salvo la de 1716 (vista por el jugador).
+- **Vuelos de la Horda** (`fly-unknown-node`, aviso): `h14-los-baldios-163`, `-295`, `-362`, `-366`, `-393` y `h24-baldios-espolon-006` (a Cima del Trueno sin tener el nodo; sale como aviso para algunas clases), `h32-mil-agujas-desolace-057` (Shadowprey) y `fly-no-node` en `h22`, `h26`, `h43`, `h56` (el destino no coincide con un nodo de `data/travel/taxi_nodes.json`). Sin arreglar: pide revisar la ruta de la Horda con su propio guion.
 - La auditoría usa las tres guías de personaje; `--guide` sirve para las importadas de Polestar (`ps-*`), que no se
   publican.
 

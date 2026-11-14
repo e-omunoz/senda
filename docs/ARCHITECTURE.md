@@ -104,7 +104,7 @@ sources = ["questie:quest/179"]
 | `radius` | number | Metros para `goto` (por defecto 12) |
 | `node` | string | Nombre/id de nodo de vuelo (getfp/fly) |
 | `zone` | int | uiMapID de llegada (hearth/fly) |
-| `if` | tabla | Filtros: `class`, `race`, `faction`, `prof`, `minlevel`, `maxlevel` |
+| `if` | tabla | Filtros: `class`, `race`, `faction`, `prof` (estáticos), `minlevel`, `maxlevel`, `fp`, `nofp` (dinámicos: el motor los reevalúa al subir de nivel o al conocer un nodo de vuelo). `fp = ["8"]`: el paso solo se ve si ese nodo de vuelo (id o nombre, como `node` de getfp) se conoce; `nofp = ["8"]`: solo si no se conoce |
 | `optional` | bool | Se puede saltar sin penalización |
 | `escort` | bool | Misión de escolta: el HUD añade «Escolta: si el PNJ no está, alguien la está haciendo; espera a que reaparezca.» |
 | `why` | string | Por qué está la misión en la ruta, en el primer paso de cada misión que se queda: «+1.150 XP · ~3 min · desbloquea Minas de la Muerte» (sale de `tools/route_score.py`; ver `docs/ROUTE-CHANGES.md`). Solo se muestra; fichas `{quest:N}` como en `text`. Las opcionales llevan su motivo en `tip` |

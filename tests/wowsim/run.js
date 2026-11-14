@@ -2884,6 +2884,7 @@ scenarios.push(...require('./scenarios_lookup').scenarios);
 scenarios.push(...require('./scenarios_horde').scenarios);
 scenarios.push(...require('./scenarios_prof').scenarios);
 scenarios.push(...require('./scenarios_gathering').scenarios);
+scenarios.push(...require('./scenarios_fpfilter').scenarios);
 
 // ---------------------------------------------------------------------------
 // Runner

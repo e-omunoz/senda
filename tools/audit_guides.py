@@ -14,6 +14,9 @@ comprueba cada paso:
 - requisitos (quest_prereq, modos all/any, migas de pan): la previa se entrega antes en la misma guía, o el
   paso es opcional; una miga de pan no se coge después de la misión a la que lleva;
 - nivel: el nivel mínimo de la misión frente al nivel estimado en ese punto de la ruta y el `reqlevel` del paso;
+- vuelos: el nodo de destino de cada paso `fly` ya se conoce en ese punto de la ruta del personaje (un `getfp`
+  anterior, un nodo de salida de la raza o el propio paso lleva `if.fp` con ese nodo); si no, el jugador
+  que se saltó el nodo vería «Vuela a X» sin poder hacerlo (error `fly-unknown-node`);
 - misiones cogidas o entregadas dos veces, entregas antes de coger o de completar, misiones de clase tarde.
 
 Niveles: «error» (la guía manda a algo que no está o no se puede hacer: falla `python -m unittest`) y
@@ -52,6 +55,18 @@ ALL_CLASSES = sum(CLASS_BITS.values())
 
 MAX_AT_DISTANCE = 1.0      # % de mapa entre `at` y la aparición más cercana del PNJ
 CLASS_LATE_LEVELS = 10     # una misión de clase cogida más de N niveles después de su mínimo: aviso
+
+# Nodos de vuelo que el personaje ya conoce al empezar (por raza): ninguno. En Forever, como en Classic, cada
+# nodo se aprende al visitar a su maestro de vuelo; los vuelos gratuitos de misión se declaran en FREE_FLIGHTS.
+START_NODES: dict[str, tuple[int, ...]] = {}
+
+# Vuelos de misión: (id de paso) -> motivo. El destino no hace falta conocerlo (la misión te lleva y lo aprende).
+FREE_FLIGHTS: dict[str, str] = {
+    "netd-155": "vuelo gratuito de «Nessa Shadowsong» (6344): la misión te lleva a Auberdine",
+    "ps-teld-231": "vuelo gratuito de «Nessa Shadowsong» (6344): la misión te lleva a Auberdine",
+    "ps-teld-259": "vuelo gratuito de «Nessa Shadowsong» (6344): la misión te lleva a Auberdine",
+    "ps-teld-265": "vuelo gratuito de «Nessa Shadowsong» (6344): la misión te lleva a Auberdine",
+}
 
 # Dudas revisadas a mano: (código, id de paso) -> motivo. Se muestran como «revisado», no como aviso.
 REVIEWED: dict[tuple[str, str], str] = {
@@ -403,6 +418,69 @@ def check_filters(db, secs: list[tuple[str, Path, dict]], root: Path, faction: s
                                 f"`if = {{ class = {json.dumps(ok_cls)} }}`", step_id=r.get("id"), path=rel)
 
 
+_NODES_CACHE: list[dict] | None = None
+
+
+def taxi_nodes(root: Path = REPO_ROOT) -> list[dict]:
+    """Nodos de vuelo (data/travel/taxi_nodes.json); `faction` = alliance, horde o both."""
+    global _NODES_CACHE
+    if _NODES_CACHE is None:
+        rows = json.loads((root / "data" / "travel" / "taxi_nodes.json").read_text(encoding="utf-8"))["rows"]
+        _NODES_CACHE = list(rows)
+    return _NODES_CACHE
+
+
+def _node_ids(ref, nodes: list[dict]) -> set[int]:
+    """Ids de nodo a los que se refiere `ref` (id numérico, "8" o un nombre como el `node` de getfp)."""
+    sref = str(ref).strip()
+    if sref.isdigit():
+        return {int(sref)}
+    low = sref.lower()
+    return {n["id"] for n in nodes if low and low in n["name"].lower()}
+
+
+def fly_destinations(raw: dict, nodes: list[dict]) -> set[int]:
+    """Nodos posibles de destino de un paso `fly`: su `node` si lo lleva, y si no el que cae en su `zone` (uiMap)."""
+    if raw.get("node") is not None:
+        ids = _node_ids(raw["node"], nodes)
+        if ids:
+            return ids
+    zone = raw.get("zone")
+    return {n["id"] for n in nodes if n.get("map") == zone} if zone else set()
+
+
+def check_flights(steps: list[FlatStep], ch: Character, rep: Report, nodes: list[dict] | None = None,
+                  level: str = "error") -> None:
+    """Todo `fly` va a un nodo que el personaje ya conoce en ese punto: un `getfp` anterior (de ese nodo), un
+    nodo de salida de su raza o un `if.fp` en el propio paso (solo se muestra con el nodo conocido). Los
+    `getfp` y `fly` de pasos con `if.nofp` del mismo nodo no cuentan como seguros (se ven solo sin él)."""
+    nodes = nodes if nodes is not None else taxi_nodes()
+    mine = ch.faction.lower()
+    nodes = [n for n in nodes if n.get("faction") in (mine, "both")]
+    known: set[int] = set(START_NODES.get(ch.race, ()))
+    for st in steps:
+        raw = st.raw
+        if st.do == "getfp" and raw.get("node") is not None and not st.optional:
+            known |= _node_ids(raw["node"], nodes)
+            continue
+        if st.do != "fly" or st.id in FREE_FLIGHTS:
+            continue
+        dests = fly_destinations(raw, nodes)
+        if not dests:
+            rep.add("warning", "fly-no-node", st, f"el destino del vuelo (zone = {raw.get('zone')}) no es un nodo de vuelo conocido",
+                    guide=ch.guide)
+            continue
+        flt = raw.get("if") or {}
+        gated = {i for ref in (flt.get("fp") or []) for i in _node_ids(ref, nodes)}
+        if dests & known or dests & gated:
+            continue
+        names = ", ".join(sorted(n["name"] for n in nodes if n["id"] in dests))
+        rep.add(level, "fly-unknown-node", st,
+                f"vuela a {names}, pero {ch.race} {ch.cls} aún no tiene ese nodo en este punto de la ruta "
+                f"(ningún getfp antes): añade `if = {{ fp = [\"<nodo>\"] }}` y una alternativa a pie con getfp",
+                guide=ch.guide)
+
+
 def check_route(db, steps: list[FlatStep], ch: Character, rep: Report) -> None:
     """Máscaras, requisitos, orden de coger/completar/entregar, duplicados, niveles."""
     accepts: dict[int, list[FlatStep]] = {}
@@ -533,6 +611,7 @@ def _check_pre(db, rep: Report, ch: Character, st: FlatStep, qid: int, alts: lis
 
 def audit(db, root: Path = REPO_ROOT, guides=DEFAULT_GUIDES) -> Report:
     rep = Report()
+    nodes = taxi_nodes(root)
     for gid in guides:
         meta, secs = load_guide(root, gid)
         check_filters(db, secs, root, meta.get("faction", "Alliance"), rep)
@@ -540,6 +619,7 @@ def audit(db, root: Path = REPO_ROOT, guides=DEFAULT_GUIDES) -> Report:
             steps = flatten(root, secs, ch)
             check_entities(db, steps, ch, rep)
             check_route(db, steps, ch, rep)
+            check_flights(steps, ch, rep, nodes, "warning" if ch.faction == "Horde" else "error")
     return rep
 
 
