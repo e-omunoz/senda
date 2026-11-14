@@ -20,6 +20,7 @@ código de terceros: un lector de literales de tabla Lua lee el fichero de Poles
 | Nodos de vuelo, vuelos (yardas), muelles, portales, posadas, tiempos de viaje | `addon/Polestar/Nav/TravelData.lua` de Polestar | commit `19bd636` del clon; tablas del cliente Classic Era 1.15.9.70576 (wago.tools) y, para los barcos que añadió Forever, del cliente de Forever 1.60.1.70532 | GPL-3.0-or-later |
 | Horarios (periodo del bucle y paradas), ascensores, tranvía, teletransportes de clase | `addon/Polestar/Nav/TravelData.lua` (bloque `ns.Transit.Register`) y `Nav/Transit.lua` (significado de los campos) | Tablas `TransportAnimation` y de hechizos de Forever 1.60.1.70532; CMaNGOS classic-db 22b5146 (periodos observados) | GPL-3.0-or-later |
 | Comprobación de maestros de vuelo y posaderos | forever-db (`npc`, `spawn`, `ui_map`) | 2026.11.1, cliente 1.60.1.70532 | GPL-3.0 / CC BY 4.0 (su capa propia) |
+| Grafo de andar (`walk_<c>.json`) | `senda-nav walkgraph` sobre la malla de Senda (`nav/`: terreno, WMO y M2 del cliente de Forever leídos con `forge-navbuild` de Polestar) y `nav/data/walk_blocks.json` (revisión propia) | cliente 1.60.1.70888 | GPL-3.0 |
 
 Los hechos de base son datos de las tablas del cliente de Blizzard (© Blizzard Entertainment, usados como
 hechos para interoperabilidad) y de CMaNGOS classic-db (GPL-3.0, usados como hechos). Los datos de
@@ -64,14 +65,17 @@ Sistema de coordenadas: `c` continente (0 Reinos del Este, 1 Kalimdor, 2991 cont
 | `inns.json` | 47 | lugares de enlace de la piedra de hogar: `names` (como los devuelve `GetBindLocation`), `area`, `npc` (posadero), `c`, `wx`, `wy`, `map`, `x`, `y`, `frame` |
 | `teleports.json` | 8 | `spell`, `name`, `class`, `faction`, `cast_s`, `reagents` (`item`, `count`), `to` (extremo o `"bind"`) |
 | `meta.json` | — | fuentes, versiones, constantes del planificador y recuentos |
+| `walk_0.json`, `walk_1.json` | — | grafo de andar (no lo genera `gen_travel.py` sino `senda-nav walkgraph`, ver «Andar»): `meta` (fuente, build del cliente, recuentos), `nodes` `[wx, wy]` en yardas enteras, `edges` `[de, a, yardas]` dirigidas, `places` clave → nodo, `matrix` (`keys`, `yards`: yardas a pie entre lugares, `null` si no se llega) |
 | `validation.json` | — | informe de la última ejecución |
 
-Constantes del planificador (en `meta.json`): correr 7 yd/s con rodeo 1,25 para líneas rectas; vuelo 30 yd/s
+Constantes del planificador (en `meta.json`): correr 7 yd/s con rodeo 1,25 para líneas rectas (en el juego solo los
+tramos rectos cortos: el resto se anda por el grafo de andar, ver «Andar»); vuelo 30 yd/s
 más 2 s por salto y 4 s de despegue una vez por tramo; piedra de hogar (objeto 6948) 10 s de conjuro y 15 s
 con la pantalla de carga, solo si el viaje sin ella dura al menos 180 s y ahorra al menos 120 s; teletransporte
 de clase solo si ahorra 60 s o el 20 %.
 
-Tamaño: unos 51 KB de JSON (unos 48 KB compactado), listo para compilar a Lua por continente.
+Tamaño: unos 51 KB de JSON (unos 48 KB compactado), listo para compilar a Lua por continente; más el grafo de andar
+(`walk_0.json` y `walk_1.json`, 360 + 470 KB de JSON, 228 KB compilados: ver «Andar»).
 
 ## Cobertura
 
@@ -119,14 +123,76 @@ clase (6 de mago, Moonglade de druida, Retorno astral de chamán).
    unas 470 del tranvía. Con la espera media (sin horario cronometrado) el planificador es correcto; con el
    horario real del tranvía el reparto cambiará, y el planificador del juego debe usarlo.
 
+## Andar (`walk_<c>.json`)
+
+Hasta la 0.8.0 el planificador andaba **en línea recta ×1,25 entre dos puntos cualesquiera del mismo continente**: cruzaba
+montañas, mar y murallas, y la flecha no podía seguir ese tramo. Caso real (brujo gnomo, nivel 21, en Villa Oscura con los
+vuelos de Ventormenta, Colina del Centinela, Lakeshire y Forjaz, hacia el Puerto de Menethil): «anda 1456 yd a Lakeshire,
+vuela a Forjaz y **anda 1095 yd en línea recta de Forjaz a Menethil**» (834 s), por encima de las montañas de Dun Morogh.
+
+Ahora se anda por un **grafo de andar** por continente, sacado de la malla propia de Senda ([NAV.md](NAV.md)), no de mapas
+ajenos:
+
+```
+cd nav
+target/release/senda-nav bake --grid out/grid --out out/walk --continents 0,1 --teleports data/teleports.json \
+    --skip climb --block data/walk_blocks.json                    # ~30 s: la malla de andar del planificador
+target/release/senda-nav walkgraph --packs out/walk --grid out/grid --travel ../data/travel --out ../data/travel   # ~25 s
+python ../tools/build.py                                          # -> addon/Senda/Data/TravelWalk.lua
+```
+
+- **Malla de andar.** El mismo horneado que los paquetes de la flecha, con dos diferencias: sin los enlaces de «trepar»
+  (paredes de más de 60° hacia arriba: `--skip climb`) y sin el suelo de `nav/data/walk_blocks.json` (`--block`), polígonos
+  revisados a mano donde la rejilla encuentra un paso que el juego no da. Hoy uno: **la sierra norte de Dun Morogh**
+  (del oeste a Loch Modan, por encima de z 100, al aire libre: los salones de Forjaz quedan), por la que la rejilla subía
+  de la puerta de Forjaz y bajaba a Los Humedales. El camino es el túnel a Loch Modan y Dun Algaz. Los paquetes de la
+  flecha (`Senda_Nav_EK`) no cambian.
+- **Nodos.** Un punto por región de cada sector de 267 yd (los nodos abstractos del HPA\* que se alcanzan sin salir del
+  sector; el punto andable más céntrico) si la región tiene al menos 100 celdas de suelo; las regiones solo de agua (mar,
+  lagos) no entran. Más **cada lugar del planificador**: maestros de vuelo (`fp:<nodo>`), puntos de embarque
+  (`ride:<id>:a|b`), extremos de portal (`portal:<id>:a|b`), posadas (`inn:<posadero>`) y llegadas de teletransporte
+  (`tele:<hechizo>`). Un lugar sin z se ajusta a la capa con suelo del componente mayor y, entre esas, la más cerca del
+  punto con la salida más barata del sector (la calle a la puerta de la posada, no un rincón cerrado ni el piso de arriba;
+  dentro de Forjaz, no la montaña de encima). La distancia del punto a su celda se suma a cada camino.
+- **Aristas.** El camino más corto entre nodos a 2 sectores como mucho, por el grafo abstracto y las celdas (yardas, ×3 en
+  agua), solo con lo que cabe en esos sectores; después un *spanner* voraz (factor 1,1) deja unas 8 aristas por nodo. Los
+  componentes sin ningún lugar (islas a las que nadie viaja) se quitan.
+- **Matriz entre lugares.** Las yardas exactas de cada lugar a cada otro por todo el grafo abstracto (sin las regiones de
+  agua); vacía si no se llega andando (Teldrassil desde Costa Oscura, otro continente). Un lugar que no llega a ningún otro
+  (la rejilla lo deja en un hueco) se quita y el planificador anda hasta él en línea recta con la penalización.
+
+Medido (2026-11-14, cliente 1.60.1.70888): Reinos del Este 2560 nodos, 20 790 aristas (10 991 pares), 67 lugares;
+Kalimdor 3475 nodos, 26 630 aristas, 77 lugares (fuera: Bloodvenom Post, aislado). El grafo frente a la matriz exacta
+entre lugares: mediana 1,05, percentil 90 1,07. JSON 360 + 470 KB; compilado `Data/TravelWalk.lua` 228 KB (unos 98 KB
+Reinos del Este y 130 KB Kalimdor: por debajo de 150 KB cada uno). Algunas yardas: Forjaz - Menethil 5739 (1095 en
+línea recta), Forjaz - Thelsamar 2926 (1874), Villa Oscura - Lakeshire 1602 (1456), Ventormenta - muelle del puerto
+1232 (863), Villadorada - Colina del Centinela 1827 (1549).
+
+**En el planificador** (`Modules/Travel.lua`): la salida y el destino se unen **en línea recta ×1,25 solo a los nodos a
+menos de 300 yd**; si estás a menos de 40 yd de un lugar, solo a ese lugar (con el piso que eligió la malla). Una
+búsqueda hacia delante desde la salida y otra hacia atrás desde el destino (Dijkstra sobre las aristas, sin O(n²)) dan
+lo que cuesta llegar a cada lugar; entre lugares, la matriz. De la salida al destino en línea recta solo por debajo de
+300 yd. Un extremo **sin nodo a 300 yd** (en el mar, fuera de la malla) anda en línea recta como antes pero **×2** (y lo
+dice `Debug`); un lugar que la malla no tiene, igual. Dos paseos seguidos se juntan en un tramo cuyas `yards` son las del
+camino. Los segundos: yardas / (7 × velocidad), con el ×1,25 solo en los trozos rectos. El grafo se decodifica la primera
+vez, dentro del trabajo por rebanadas, y se guarda solo al acabar.
+
+Con eso, el caso real sale «anda 1602 yd a Lakeshire, vuela a Ventormenta, anda al puerto, barco a Auberdine, barco a
+Menethil» (1142 s): andar de Forjaz a Menethil son 5739 yd (820 s), y por Forjaz serían unos 1430 s. En el simulador
+(fengari, un Lua en JavaScript muchas veces más lento que el del cliente): la primera vez 0,5-0,65 s con la decodificación,
+después unos 0,1 s por plan; en rebanadas de 700 operaciones, 9 fotogramas. Antes: 4 ms por plan.
+
 ## En el juego
 
 `python tools/build.py` compacta estos JSON en `addon/Senda/Data/Travel.lua` (unos 13 KB): una cadena por clase de dato, una
 fila por línea, campos con «|» y puntos «continente,wx,wy,mapa,x,y,zona». Quedan fuera lo que el planificador no usa: los
 ascensores, los horarios (`timetables.json`), los extremos del continente nuevo de Forever (c 2991: dos portales y dos
-posadas) y los fotogramas. `tests/test_travel.py` comprueba que lo compilado dice lo mismo que los JSON.
+posadas) y los fotogramas. `tests/test_travel.py` comprueba que lo compilado dice lo mismo que los JSON. El grafo de andar
+va en `addon/Senda/Data/TravelWalk.lua` (`Senda.TravelWalk`): dígitos de base 64, una línea por nodo («x y» y sus aristas
+hacia nodos posteriores: salto, yardas de ida y de vuelta), las claves de los lugares, su nodo y la matriz.
 
-`Modules/Travel.lua` repite el Dijkstra de la autoprueba de `gen_travel.py` con lo que sabe el personaje:
+`Modules/Travel.lua` repite el Dijkstra de la autoprueba de `gen_travel.py` con lo que sabe el personaje (y anda por el
+grafo de andar, arriba):
 
 | Dato del juego | Cómo se lee |
 |---|---|
@@ -135,13 +201,29 @@ posadas) y los fotogramas. `tests/test_travel.py` comprueba que lo compilado dic
 | Piedra de hogar | objeto 6948 en las bolsas, `C_Container.GetItemCooldown` (el enfriamiento restante se suma al coste), posada vinculada (`GetBindLocation` + `HEARTHSTONE_BOUND` + `C_Map.GetAreaInfo`) |
 | Teletransportes | hechizo conocido (`IsSpellKnown`), reactivo en las bolsas (runa de teletransporte 17031), enfriamiento del hechizo; solo desde la posición de salida |
 
-Escenarios con la respuesta esperada en `tests/wowsim/scenarios_travel.js`: Ventormenta - Auberdine (barco del puerto, 428 s
-con un margen de 15 s), Forjaz - Ventormenta (vuelo si se conocen los dos nodos; tranvía si no), andar por debajo de 400 yardas,
+Escenarios con la respuesta esperada en `tests/wowsim/scenarios_travel.js`: Ventormenta - Auberdine (barco del puerto, 457 s
+con un margen de 15 s: 428 s con la línea recta, 1232 yd de verdad hasta el muelle), Forjaz - Ventormenta (vuelo si se conocen los dos nodos; tranvía si no), andar por debajo de 400 yardas,
 nodo desconocido nunca usado, nodos de la otra facción y de otra clase nunca usados, piedra de hogar usada cuando la posada
 vinculada está cerca del destino y fuera de enfriamiento (y no con enfriamiento, ni en un viaje de menos de 3 minutos), y
-teletransportes de mago y druida.
+teletransportes de mago y druida. `travel-walk` (brujo gnomo) prueba el andar: el caso real de Villa Oscura a Menethil (nunca
+en línea recta desde Forjaz; los barcos ganan; Forjaz - Menethil a pie más de 4000 yd), Forjaz - Thelsamar por el túnel,
+Villadorada - Colina del Centinela cerca de la línea recta, ningún tramo a pie más corto que su línea recta ni entre
+continentes, Auberdine - Rut'theran sin barco ni vuelo imposible (antes cruzaba el mar a pie), un punto en el mar con la
+penalización, y el trabajo en rebanadas (≤ 700 operaciones por fotograma). Cambiaron con las yardas reales: Ventormenta -
+Auberdine (428 → 457 s), «un viaje de menos de 3 minutos» (Villadorada - posada de Ventormenta son 1027 yd, más de 3 min: ahora
+desde el maestro de vuelo de Ventormenta) y «vinculada lejos» (Kharanos: la malla anda de Dun Morogh a Ventormenta en
+4600 yd; ahora Auberdine, en otro continente).
 
 ## Límites conocidos
+
+- **La malla es generosa con las montañas.** Muestreada cada 2 yd, encuentra pendientes de menos de 50° que encadenan pasos
+  que el juego no da. El de Dun Morogh a Los Humedales está cortado (`nav/data/walk_blocks.json`); quedan otros sin revisar:
+  Kharanos - Ventormenta a pie sale en 4600 yd por el sur de Dun Morogh, y sin barcos Villa Oscura - Menethil sale andando
+  9500 yd por las montañas del sur. Se corrigen añadiendo polígonos revisados a `walk_blocks.json` y regenerando.
+- Sin z, la salida y el destino se unen a los nodos a 300 yd en el plano: en una ciudad de varios pisos o bajo la montaña
+  puede tomar un nodo de otro piso (salvo a 40 yd de un lugar del planificador, que lleva su piso). Fuera de la malla
+  (en el mar) se anda en línea recta ×2.
+- Los grafos de sectores HPA\* y las regiones hacen los caminos un 5 % más largos que la matriz exacta (mediana).
 
 - Las esperas son medias del bucle. El horario real depende del tiempo de actividad del servidor y se
   determina observando (Polestar `Transit.lua`, sin datos aquí).

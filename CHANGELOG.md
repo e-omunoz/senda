@@ -4,6 +4,25 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ## [Sin publicar]
 
+### Corregido
+- **El planificador de viaje ya no anda en línea recta por encima de montañas, mar y murallas.** Andaba ×1,25 en línea recta
+  entre dos puntos cualesquiera del mismo continente: a un brujo gnomo en Villa Oscura le mandaba volar a Forjaz y andar
+  1095 yd «recto» hasta el Puerto de Menethil, cruzando las montañas de Dun Morogh, y la flecha no podía seguir ese tramo.
+  Ahora anda por un grafo de andar con las yardas reales de la malla propia de Senda: de Forjaz a Menethil son 5739 yd
+  (túnel, Loch Modan, Dun Algaz), así que el camino más rápido es vuelo a Ventormenta, barco a Auberdine y barco a
+  Menethil (1142 s). En línea recta solo se anda hasta 300 yd del grafo; un punto fuera de la malla (en el mar) anda recto
+  con penalización. Ver [docs/TRAVEL.md](docs/TRAVEL.md), «Andar».
+
+### Añadido
+- `addon/Senda/Data/TravelWalk.lua` (228 KB): el grafo de andar de Reinos del Este y Kalimdor (nodos por región de sector,
+  cada lugar del planificador, aristas con yardas reales y la matriz exacta entre lugares), desde `data/travel/walk_<c>.json`.
+- `senda-nav walkgraph` (lo genera desde los paquetes HPA\*), `senda-nav bake --skip <clases> --block <fichero>` (malla de
+  andar sin trepar paredes y sin el suelo revisado de `nav/data/walk_blocks.json`: la sierra norte de Dun Morogh) y
+  `senda-nav zprof` (depuración).
+- Simulador: escenario `travel-walk` (el caso del brujo gnomo, el túnel de Loch Modan, Elwynn - Páramos de Poniente, sin
+  andar por el mar, fuera de la malla, rebanadas). Cambian con las yardas reales: Ventormenta - Auberdine 428 → 457 s y dos
+  casos de la piedra de hogar (docs/TRAVEL.md).
+
 ## [0.8.0] - 2026-11-13
 
 ### Añadido

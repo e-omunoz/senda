@@ -301,6 +301,9 @@ const scenarios = [
       local text = Plain(HudText())
       Check(text:find("Ver en Mazmorras", 1, true) ~= nil, "step text links to the journal", text)
       Check(S().HUD.dungeonKey == "deadmines", "HUD knows the dungeon")
+      -- let the travel planner finish its plan towards the step (it decodes the walk graph the first time)
+      Sim.Advance(4)
+      S().HUD:Refresh()
       local extra = S().HUD.extraLine
       Section("click on the step")
       Sim.Click(SendaHUD.hit, "LeftButton")

@@ -42,7 +42,14 @@ target/release/senda-nav-lua --packs out --frames out/data --routes eval/routes.
 ```
 
 Depuración: `senda-nav probe --packs out --map 0 --wx X --wy Y [--sz Z] [--tx X --ty Y --tz Z]` enseña las
-celdas de alrededor y si hay camino; `SENDA_DUMP=<id de ruta> senda-nav eval ...` imprime la línea de una ruta.
+celdas de alrededor y si hay camino; `SENDA_DUMP=<id de ruta> senda-nav eval ...` imprime la línea de una ruta y
+`senda-nav zprof --grid out/grid --map 0 --file <volcado>` da, por cada punto del volcado, el área del trozo de terreno y
+las superficies finas (z, banderas, pendiente) de su columna.
+
+El planificador de viaje no usa estos paquetes sino un **grafo de andar** propio (`senda-nav bake ... --skip climb --block
+data/walk_blocks.json` a `out/walk` y `senda-nav walkgraph`): ver [TRAVEL.md](TRAVEL.md), «Andar». `--skip <clases>` deja
+fuera enlaces finos de esas clases (`climb`, `steep`...) y `--block <fichero>` el suelo de unos polígonos revisados; sin
+ellas el horneado es el de siempre.
 
 ### 1.1 Extracción (`grid`)
 

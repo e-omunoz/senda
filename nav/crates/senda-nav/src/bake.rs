@@ -20,6 +20,79 @@ use rustc_hash::FxHashMap;
 use serde_json::Value;
 use std::path::Path;
 
+/// Fine link classes (forge_navbuild::format::cls) the bake ignores, as a bitmask: 0 for the
+/// shipped packs (every link); the travel planner's walk graph bakes with `--skip climb` (no
+/// climbing up rock faces over STEEP_MAX: a runner cannot walk the Dun Morogh - Wetlands ridge).
+static SKIP: std::sync::atomic::AtomicU8 = std::sync::atomic::AtomicU8::new(0);
+
+/// Sets the skipped link classes from names (`climb`, `steep`, `jump`, ...).
+pub fn set_skip(names: &str) -> Result<(), String> {
+	let mut m = 0u8;
+	for n in names.split(',').map(str::trim).filter(|n| !n.is_empty()) {
+		let i = format::CLS_NAMES.iter().position(|&x| x == n).ok_or(format!("bake: unknown link class {n}"))?;
+		m |= 1 << i;
+	}
+	SKIP.store(m, std::sync::atomic::Ordering::Relaxed);
+	Ok(())
+}
+
+/// A stored link byte the bake follows: a link whose class is not skipped. LINK_SLOPE (7, a
+/// walkable slope) is never skipped.
+fn usable(b: u8) -> bool {
+	b != NO_LINK && (b >> 5 == format::LINK_SLOPE || SKIP.load(std::sync::atomic::Ordering::Relaxed) & (1 << (b >> 5)) == 0)
+}
+
+/// Ground the bake leaves out (`--block FILE`, only for the travel planner's walk graph): per
+/// continent, polygons in world yards (wx, wy) and the height above which a surface inside them
+/// is dropped (with `outdoor`, never an indoor WMO floor: a city's halls under the mountain). Reviewed by hand (docs/TRAVEL.md, «Andar»).
+pub struct Block {
+	pub poly: Vec<(f64, f64)>,
+	pub zmin: f32,
+	pub outdoor: bool,
+}
+
+static BLOCKS: std::sync::OnceLock<FxHashMap<u32, Vec<Block>>> = std::sync::OnceLock::new();
+
+/// Reads the blocked ground (nav/data/walk_blocks.json).
+pub fn set_blocks(p: Option<&Path>) -> Result<(), String> {
+	let mut m: FxHashMap<u32, Vec<Block>> = FxHashMap::default();
+	if let Some(p) = p {
+		let v: Value = serde_json::from_slice(&std::fs::read(p).map_err(|e| format!("{}: {e}", p.display()))?).map_err(|e| e.to_string())?;
+		for b in v["blocks"].as_array().into_iter().flatten() {
+			let poly: Vec<(f64, f64)> = b["poly"].as_array().into_iter().flatten().filter_map(|q| Some((q[0].as_f64()?, q[1].as_f64()?))).collect();
+			if poly.len() < 3 {
+				return Err(format!("bake: block {} needs a polygon", b["id"]));
+			}
+			let map = b["map"].as_u64().ok_or("bake: block without map")? as u32;
+			eprintln!("bake: block {} on map {map} above z {}", b["id"].as_str().unwrap_or("?"), b["zmin"]);
+			m.entry(map).or_default().push(Block { poly, zmin: b["zmin"].as_f64().unwrap_or(-1e9) as f32, outdoor: b["outdoor"].as_bool().unwrap_or(false) });
+		}
+	}
+	let _ = BLOCKS.set(m);
+	Ok(())
+}
+
+fn inside(poly: &[(f64, f64)], x: f64, y: f64) -> bool {
+	let mut c = false;
+	let mut j = poly.len() - 1;
+	for i in 0..poly.len() {
+		let (xi, yi) = poly[i];
+		let (xj, yj) = poly[j];
+		if (yi > y) != (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi {
+			c = !c;
+		}
+		j = i;
+	}
+	c
+}
+
+/// Whether the entry at height z of fine column (i, j) of tile (col, row) lies on blocked ground.
+fn blocked(c: u32, col: i32, row: i32, i: i32, j: i32, z: f32, flags: u8) -> bool {
+	let Some(list) = BLOCKS.get().and_then(|m| m.get(&c)) else { return false };
+	let (wx, wy) = format::cell_centre(col, row, i, j);
+	list.iter().any(|b| z > b.zmin && !(b.outdoor && flags & flag::INDOOR != 0) && inside(&b.poly, wx, wy))
+}
+
 /// Components under this many fine entries (2.08 x 2.08 yd each: ~17,000 yd², a 130-yd square)
 /// are not reachable ground.
 pub const KEEP: u32 = 4000;
@@ -99,7 +172,7 @@ impl Fine {
 }
 
 fn walkable(t: &Tile, e: usize) -> bool {
-	t.flags[e] & flag::BLOCKED == 0 && t.links.as_ref().is_some_and(|l| l[e * 8..e * 8 + 8].iter().any(|&b| b != NO_LINK))
+	t.flags[e] & flag::BLOCKED == 0 && t.links.as_ref().is_some_and(|l| l[e * 8..e * 8 + 8].iter().any(|&b| usable(b)))
 }
 
 /// The highest walkable indoor WMO surface of column k (an indoor floor, a city's streets).
@@ -194,15 +267,16 @@ fn bake_continent(grid: &Path, c: u32, keys: &[String], lifts: &Value) -> Result
 			for k in 0..format::COLUMNS {
 				let (i, j) = ((k % TILE_CELLS) as i32, (k / TILE_CELLS) as i32);
 				let top = indoor_top(&tile, k);
+				let (col, row) = fine.tiles[t];
 				for e in tile.first[k] as usize..tile.first[k + 1] as usize {
-					if !walkable(&tile, e) || buried(&tile, e, top) {
+					if !walkable(&tile, e) || buried(&tile, e, top) || blocked(c, col, row, i, j, tile.z[e], tile.flags[e]) {
 						continue;
 					}
 					let ge = fine.base[t] + e as u32;
 					ws.push(ge);
 					for d in 0..8 {
 						let b = links[e * 8 + d];
-						if b == NO_LINK {
+						if !usable(b) {
 							continue;
 						}
 						if let Some((_, _, _, te)) = fine.target(t, i, j, d, b) {
@@ -316,7 +390,7 @@ fn bake_continent(grid: &Path, c: u32, keys: &[String], lifts: &Value) -> Result
 					let (i, j) = ((k % TILE_CELLS) as i32, (k / TILE_CELLS) as i32);
 					for d in 0..8 {
 						let b = links[e * 8 + d];
-						if b == NO_LINK {
+						if !usable(b) {
 							continue;
 						}
 						let (ni, nj) = (i + DIRS[d].0, j + DIRS[d].1);
@@ -395,7 +469,7 @@ fn bake_continent(grid: &Path, c: u32, keys: &[String], lifts: &Value) -> Result
 				let ord = tcz.first[blk] as usize + a as usize;
 				for d in 0..8 {
 					let b = links[e * 8 + d];
-					if b == NO_LINK {
+					if !usable(b) {
 						continue;
 					}
 					let Some((_, ti, tj, te)) = fine.target(t, i, j, d, b) else { continue };
