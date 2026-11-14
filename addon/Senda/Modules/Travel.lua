@@ -980,7 +980,10 @@ function T.MarkDirty(reason)
   Debug("Viaje: recalcular (%s)", tostring(reason))
 end
 
+local arrowKey -- objetivo que la flecha "travel" tiene puesto ahora (para cambiarlo si el plan cambia)
+
 local function ClearArrow()
+  arrowKey = nil
   if Senda.Arrow and Senda.Arrow.Has and Senda.Arrow:Has("travel") then Senda.Arrow:Clear("travel") end
 end
 
@@ -1024,9 +1027,14 @@ local function ApplyArrow()
     ClearArrow()
     return
   end
-  if A:Has("travel") then return end
-  A:SetTarget(aim.map, aim.x, aim.y, ArrowLabel(plan.legs), "travel",
-    { continent = aim.c, wn = wn, ww = ww, radius = NEAR_BOARD })
+  -- Si el plan cambia (nodo aprendido, piedra lista, te has movido...), la flecha cambia con él.
+  local label = ArrowLabel(plan.legs)
+  local key = format("%s:%.4f:%.4f:%s", tostring(aim.map), aim.x, aim.y, label)
+  if A:Has("travel") and arrowKey == key then return end
+  arrowKey = key
+  -- El radio de la flecha va en metros; NEAR_BOARD está en yardas.
+  A:SetTarget(aim.map, aim.x, aim.y, label, "travel",
+    { continent = aim.c, wn = wn, ww = ww, radius = NEAR_BOARD * 0.9144 })
 end
 
 ------------------------------------------------------------------------------

@@ -5,6 +5,10 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 ## [Sin publicar]
 
 ### Corregido
+- **La flecha de viaje sigue al plan nuevo.** Si el plan cambiaba (te movías, aprendías un nodo, la piedra volvía a estar
+  lista), el HUD decía el tramo nuevo pero la flecha seguía apuntando al primer tramo viejo.
+- **La flecha de viaje ya no parpadea a ~40 yd del embarque.** El radio de llegada iba en yardas y la flecha lo
+  comparaba en metros.
 - **El planificador de viaje ya no anda en línea recta por encima de montañas, mar y murallas.** Andaba ×1,25 en línea recta
   entre dos puntos cualesquiera del mismo continente: a un brujo gnomo en Villa Oscura le mandaba volar a Forjaz y andar
   1095 yd «recto» hasta el Puerto de Menethil, cruzando las montañas de Dun Morogh, y la flecha no podía seguir ese tramo.

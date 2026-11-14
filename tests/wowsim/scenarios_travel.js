@@ -1037,6 +1037,54 @@ const scenarios = [
       Check(#Sim.errors == 0, "no Lua errors", #Sim.errors)
     `,
   },
+  {
+    id: 'travel-arrow-replan',
+    title: 'Viaje: la flecha cambia de primer tramo cuando cambia el plan',
+    char: 'human-mage',
+    lua: SETUP + L_`
+      Login()
+      Sim.Advance(6)
+      NoGuide()
+      local n2, n8 = Node(2), Node(8)
+      Known({ 2, 6, 8 })
+      GoTo(0, n2.wx + 100, n2.wy)
+      Aim(0, n8.wx, n8.wy, "Thelsamar")
+      Settle()
+      local t1 = ArrowTarget()
+      Check(t1 and Plain(t1.label):find("Stormwind", 1, true) ~= nil, "primer plan: maestro de vuelo de Stormwind", t1 and Plain(t1.label))
+      local n6 = Node(6)
+      GoTo(0, n6.wx + 100, n6.wy) -- te has movido (en el juego: tranvía a Forjaz): se recalcula el plan
+      Settle(); Sim.Advance(10)
+      local t2, src = ArrowTarget()
+      Sim.Out("plan nuevo: " .. Hows(Plan().legs) .. " | flecha " .. tostring(src) .. " " .. Plain(t2 and t2.label or ""))
+      Check(src == "travel", "la flecha sigue siendo de viaje", src)
+      Check(t2 and Plain(t2.label) ~= Plain(t1.label), "la flecha sigue al plan nuevo", t2 and Plain(t2.label))
+    `,
+  },
+  {
+    id: 'travel-arrow-radius',
+    title: 'Viaje: a 42 yd del embarque la flecha no parpadea (radio en metros)',
+    char: 'human-mage',
+    lua: SETUP + L_`
+      Login()
+      Sim.Advance(6)
+      NoGuide()
+      local n2, n8 = Node(2), Node(8)
+      Known({ 2, 6, 8 })
+      GoTo(0, n2.wx + 100, n2.wy)
+      Aim(0, n8.wx, n8.wy, "Thelsamar")
+      Settle()
+      local t = ArrowTarget()
+      GoTo(0, t.wn + 42, t.ww)
+      local last, changes = nil, 0
+      for _ = 1, 400 do
+        Sim.Advance(0.1)
+        local _, src = ArrowTarget()
+        if src ~= last then changes = changes + 1; last = src end
+      end
+      Check(changes <= 2, "flecha estable durante 40 s", changes)
+    `,
+  },
 ];
 
 module.exports = { scenarios };
