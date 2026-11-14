@@ -14,6 +14,12 @@
 -- «Ruta a pie  230 m» (verde) o «Línea recta  230 m» (gris) con el motivo debajo. Con ruta, una flechita
 -- dorada en el borde marca la línea recta al destino. El giro se suaviza (sin saltos entre puntos del camino).
 -- En un desvío activo (Engine/Aside.lua) el objetivo de la guía es el paso del desvío («Desvío: ...»).
+-- Empates de prioridad (varios módulos a la vez: buscador, raros, mazmorras, profesiones, instructor): gana el
+-- objetivo puesto más recientemente (cada SetTarget lleva un número de orden; volver a poner el mismo punto no
+-- lo renueva). Llegada y puntos de ruta (`wps`): un temporizador ligero (TICK s) los avanza aunque la flecha
+-- esté oculta (opción apagada, en combate, reglas de visibilidad); con un camino a pie, se llega cuando lo que queda por
+-- el camino cabe en el radio, no solo en línea recta (el destino puede estar justo debajo, en una mina). El
+-- punto de ruta por el que se va se guarda por paso (SendaDB.char.wps) y sobrevive a /reload y a los desvíos.
 local _, Senda = ...
 local UI, Compat, Events = Senda.UI, Senda.Compat, Senda.Events
 local L = Senda.L
@@ -25,9 +31,16 @@ Senda.Arrow = Arrow
 local PRIORITY = { corpse = 1, manual = 2, guide = 3 }
 local OTHER_PRIORITY = 2.5
 local DEFAULT_ARRIVE = 10 -- metros
+local WP_RADIUS = 15      -- metros: radio de llegada de un punto de ruta
+local WP_SKIP_NEAR = 40   -- metros: un punto de ruta posterior así de cerca (y más cerca que el actual) lo salta
+local WP_SKIP_MARGIN = 5  -- metros que tiene que ganar el posterior (sin vaivenes entre dos puntos)
+local WP_KEEP = 12        -- pasos con punto de ruta guardado (los más antiguos se olvidan)
+local TICK = 0.2          -- s entre dos comprobaciones de llegada
+local CLEAR_AFTER = 3     -- s en el destino antes de borrar un objetivo manual o de módulo
 local TWO_PI = math.pi * 2
 
 local targets = {}   -- source -> target
+local seq = 0        -- orden de los SetTarget (desempate entre fuentes de la misma prioridad)
 local active, activeSource
 local frame
 local tomtomUid
@@ -40,7 +53,7 @@ local function Nav() return Senda.ArrowNav end
 ------------------------------------------------------------------------------
 
 local function Pick(skipTravel)
-  local best, bestSrc, bestP
+  local best, bestSrc, bestP, bestSeq
   for src, t in pairs(targets) do
     if not (skipTravel and src == "travel") then
       local p = PRIORITY[src] or OTHER_PRIORITY
@@ -48,7 +61,9 @@ local function Pick(skipTravel)
         local _, destSrc = Pick(true)
         p = (destSrc and (PRIORITY[destSrc] or OTHER_PRIORITY) or OTHER_PRIORITY) - 0.1
       end
-      if not bestP or p < bestP then best, bestSrc, bestP = t, src, p end
+      local n = t.seq or 0
+      -- a igual prioridad, el más reciente (no el orden de pairs, que no está definido)
+      if not bestP or p < bestP or (p == bestP and n > bestSeq) then best, bestSrc, bestP, bestSeq = t, src, p, n end
     end
   end
   return best, bestSrc
@@ -100,6 +115,14 @@ function Arrow:SetTarget(map, x, y, label, source, extra)
   -- Posición de mundo en caché (no cambia mientras dure el objetivo); un módulo puede traerla ya calculada.
   if not (t.continent and t.wn and t.ww) then
     t.continent, t.wn, t.ww = Compat.WorldPos(map, t.x, t.y)
+  end
+  -- orden: uno nuevo pasa delante de los de su misma prioridad; refrescar el mismo punto no
+  local old = targets[source]
+  if old and old.seq and old.map == t.map and old.x == t.x and old.y == t.y then
+    t.seq = old.seq
+  else
+    seq = seq + 1
+    t.seq = seq
   end
   targets[source] = t
   Update()
@@ -248,23 +271,18 @@ local function OnUpdate(self, elapsed)
   self.unknown:Hide()
 
   local arrive = t.radius or DEFAULT_ARRIVE
-  if dist <= arrive then
+  -- con camino a pie, llegar es que quede poco camino (no solo estar cerca en línea recta)
+  local nav = Nav()
+  local pathLeft = routed and not (nav and nav.state.off) and shown or nil
+  if dist <= arrive and not (pathLeft and pathLeft > arrive) then
+    -- Puntos de ruta y borrado de los manuales: los lleva el temporizador (Arrow:Tick), visible o no.
     self.arrow:Hide()
     self.direct:Hide()
     self.goal, self.directGoal = nil, nil
     self.check:Show()
     self.info:SetText(UI:Color("green", L.ARROW_ARRIVED))
-    -- Puntos de ruta: al llegar a uno se pasa al siguiente; los manuales se borran solos.
-    if t.wps and t.wpIndex and t.wpIndex < #t.wps then
-      Arrow:NextWaypoint(t)
-    elseif activeSource ~= "guide" and activeSource ~= "corpse" then
-      -- Puntos manuales o de módulos: se borran solos poco después de llegar.
-      self.arrivedFor = (self.arrivedFor or 0) + dt
-      if self.arrivedFor > 3 then self.arrivedFor = 0; Arrow:Clear(activeSource) end
-    end
     return
   end
-  self.arrivedFor = 0
   self.check:Hide()
   self.arrow:Show()
 
@@ -293,7 +311,6 @@ local function OnUpdate(self, elapsed)
     .. "  " .. FormatDist(shown)
   if eta and eta < 3600 then text = text .. UI:Color("dim", "  ·  " .. Senda.Util.FormatTime(eta)) end
   if not routed then
-    local nav = Nav()
     local why = nav and nav:Why()
     local reason = why and L["ARROW_WHY_" .. why]
     if reason then text = text .. "\n" .. UI:Color("dim", reason) end
@@ -407,12 +424,103 @@ function Arrow:ApplyVisibility()
   f:SetShown(show and true or false)
 end
 
-function Arrow:NextWaypoint(t)
-  t.wpIndex = t.wpIndex + 1
-  local wp = t.wps[t.wpIndex]
-  if wp then
-    self:SetTarget(wp[1], wp[2], wp[3], wp[4] or t.baseLabel, "guide",
-      { wps = t.wps, wpIndex = t.wpIndex, baseLabel = t.baseLabel, radius = 15 })
+------------------------------------------------------------------------------
+-- Puntos de ruta (`wps`) y llegada
+------------------------------------------------------------------------------
+
+-- Punto de ruta guardado por paso: SendaDB.char.wps[stepId] = { i = índice, n = orden de guardado }.
+local function WpStore()
+  local char = Senda.db and Senda.db.char
+  if type(char) ~= "table" then return nil end
+  if type(char.wps) ~= "table" then char.wps = {} end
+  return char
+end
+
+local function SaveWp(stepId, i)
+  local char = stepId and WpStore()
+  if not char then return end
+  local store = char.wps
+  char.wpsN = (tonumber(char.wpsN) or 0) + 1
+  store[stepId] = { i = i, n = char.wpsN }
+  local count, oldest, on = 0, nil, nil
+  for id, e in pairs(store) do
+    count = count + 1
+    local n = type(e) == "table" and tonumber(e.n) or 0
+    if not on or n < on then oldest, on = id, n end
+  end
+  if count > WP_KEEP and oldest then store[oldest] = nil end
+end
+
+local function LoadWp(stepId, n)
+  local char = stepId and WpStore()
+  local e = char and char.wps[stepId]
+  local i = type(e) == "table" and tonumber(e.i)
+  if i and i >= 1 and i <= n then return math.floor(i) end
+  return nil
+end
+
+-- La flecha de la guía al punto j del recorrido (route[1] es el `at` del paso si lo tiene: `first`).
+local function SetRoutePoint(route, j, label, stepId, first)
+  local wp = route[j]
+  if not wp then return end
+  local extra = { wps = route, wpIndex = j, baseLabel = label, stepId = stepId, radius = WP_RADIUS }
+  local text = wp[4] or label
+  if j == 1 and first then
+    extra.radius, extra.z, text = first.radius, first.z, first.label or text
+  end
+  Arrow:SetTarget(wp[1], wp[2], wp[3], text, "guide", extra)
+end
+
+function Arrow:NextWaypoint(t, j)
+  j = j or (t.wpIndex + 1)
+  if not t.wps[j] then return end
+  t.wpIndex = j
+  SaveWp(t.stepId, j)
+  SetRoutePoint(t.wps, j, t.baseLabel, t.stepId)
+end
+
+-- ¿Llegó al objetivo t? En línea recta dentro del radio y, si hay camino a pie hacia él (y el jugador va por
+-- él), con lo que queda de camino también dentro del radio. Devuelve llegado, metros en línea recta.
+local function ArrivedAt(t, map, x, y)
+  local m = Compat.WorldDistance(map, x, y, t.map, t.x, t.y)
+  if not m then return false, nil end
+  local arrive = t.radius or DEFAULT_ARRIVE
+  if m > arrive then return false, m end
+  local nav = Nav()
+  local left = nav and nav.Remaining and nav:Remaining(t, map, x, y)
+  if left and left * 0.9144 > arrive then return false, m end
+  return true, m
+end
+
+local arrivedFor = 0
+
+-- Cada TICK s, se vea la flecha o no: avanza los puntos de ruta de la guía y borra los objetivos manuales o de
+-- módulos al llegar. Barato: unas pocas distancias (los puntos de ruta de un paso son una decena como mucho).
+function Arrow:Tick(dt)
+  local map, x, y = Compat.PlayerMapPos()
+  if not map then return end
+  local g = targets.guide
+  if g and g.wps and g.wpIndex then
+    local arrived, cur = ArrivedAt(g, map, x, y)
+    -- saltar adelante: un punto posterior cerca y más cerca que el actual (se llegó por otro lado)
+    local bestJ, bestD
+    for j = g.wpIndex + 1, #g.wps do
+      local wp = g.wps[j]
+      local d = Compat.WorldDistance(map, x, y, wp[1], wp[2] / 100, wp[3] / 100)
+      if d and (not bestD or d < bestD) then bestJ, bestD = j, d end
+    end
+    if bestJ and bestD <= WP_SKIP_NEAR and (not cur or bestD + WP_SKIP_MARGIN < cur) then
+      self:NextWaypoint(g, bestJ)
+    elseif arrived and g.wpIndex < #g.wps then
+      self:NextWaypoint(g)
+    end
+  end
+  local t, src = active, activeSource
+  if t and src ~= "guide" and src ~= "corpse" and ArrivedAt(t, map, x, y) then
+    arrivedFor = arrivedFor + (dt or TICK)
+    if arrivedFor >= CLEAR_AFTER then arrivedFor = 0; self:Clear(src) end
+  else
+    arrivedFor = 0
   end
 end
 
@@ -449,25 +557,26 @@ function Arrow:FollowStep()
   local at = pr and pr.accept and pr.accept.step.at
   if type(at) == "table" and at[1] then
     problemKey = pr.kind .. ":" .. pr.quest
-    self:SetTarget(at[1], at[2], at[3], string.format(L.ARROW_RETAKE, GuideLabel(pr.accept.step)), "guide")
+    self:SetTarget(at[1], at[2], at[3], string.format(L.ARROW_RETAKE, GuideLabel(pr.accept.step)), "guide",
+      { z = pr.accept.step.z })
     return
   end
   local label = GuideLabel(step)
   if detour then label = string.format(L.ARROW_DETOUR, label) end
   local radius = step["do"] == "goto" and step.radius or nil
-  if type(step.at) == "table" and step.at[1] then
-    local extra = { radius = radius }
-    if type(step.wps) == "table" and type(step.wps[1]) == "table" then
-      -- `at` es el primer punto y `wps` el resto: la flecha los recorre en orden.
-      local route = { { step.at[1], step.at[2], step.at[3], step.at[4] } }
-      for _, wp in ipairs(step.wps) do route[#route + 1] = wp end
-      extra.wps, extra.wpIndex, extra.baseLabel = route, 1, label
+  local hasWps = type(step.wps) == "table" and type(step.wps[1]) == "table"
+  if hasWps then
+    -- `at` es el primer punto y `wps` el resto: la flecha los recorre en orden, desde el que se guardó
+    -- (un /reload, un desvío o un recálculo de la guía no la devuelven al primero).
+    local route, first = {}, nil
+    if type(step.at) == "table" and step.at[1] then
+      route[1] = { step.at[1], step.at[2], step.at[3], step.at[4] }
+      first = { radius = radius, z = step.z, label = label }
     end
-    self:SetTarget(step.at[1], step.at[2], step.at[3], label, "guide", extra)
-  elseif type(step.wps) == "table" and type(step.wps[1]) == "table" then
-    local wp = step.wps[1]
-    self:SetTarget(wp[1], wp[2], wp[3], wp[4] or label, "guide",
-      { wps = step.wps, wpIndex = 1, baseLabel = label, radius = 15 })
+    for _, wp in ipairs(step.wps) do route[#route + 1] = wp end
+    SetRoutePoint(route, LoadWp(step.id, #route) or 1, label, step.id, first)
+  elseif type(step.at) == "table" and step.at[1] then
+    self:SetTarget(step.at[1], step.at[2], step.at[3], label, "guide", { radius = radius, z = step.z })
   else
     targets.guide = nil
     Update()
@@ -519,6 +628,7 @@ Senda.Options:Register({ key = "arrowScale", label = L.OPT_SCALE, type = "slider
 Events:On("SENDA_READY", function()
   Create()
   Arrow:ApplyVisibility()
+  Compat.NewTicker(TICK, function() Arrow:Tick(TICK) end)
   Events:On("SENDA_STEP_CHANGED", function() Arrow:FollowStep() end)
   Events:On("SENDA_GUIDE_CHANGED", function() Arrow:FollowStep() end)
   Events:On("SENDA_ASIDE_CHANGED", function() Arrow:FollowStep() end)

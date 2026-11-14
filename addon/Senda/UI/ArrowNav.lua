@@ -14,6 +14,13 @@
 -- así gira con suavidad en los recodos en vez de saltar al llegar a cada punto.
 --   Senda.ArrowNav:Why() -> motivo de la última medida en línea recta (para el texto de la flecha)
 --   Senda.ArrowNav:Path() -> path, índice (para dibujar el camino en el minimapa)
+--   Senda.ArrowNav:Remaining(t, map, x, y) -> yardas que quedan por el camino hasta t, o nil (sin camino
+--       para ese objetivo o fuera de él): la llegada de la flecha la mide el camino, no solo la línea recta.
+-- Pisos (docs/NAV.md, 8.6): una celda puede tener varios (la cima y la mina de debajo, Forjaz bajo la montaña,
+-- las Ruinas sobre Entrañas). El de salida: la altura del cliente si la da; si no, la del camino que se venía
+-- siguiendo (si el jugador sigue cerca); si no, IsIndoors(): fuera, el piso más alto; dentro, los que tienen
+-- otro encima. El de llegada: la `z` del objetivo (pasos de guía: data/heights.json) o, sin ella, el más
+-- cercano a la altura de salida si se conoce. Si con esas pistas no hay ruta, se pide otra sin ellas.
 local _, Senda = ...
 local Compat, Events = Senda.Compat, Senda.Events
 
@@ -28,6 +35,9 @@ local RETRY_JUMP = 400    -- yd: un salto así (tranvía, barco, teletransporte)
 local RETRY_MOVED = 30     -- ...y solo si el jugador se ha movido al menos estas yardas
 local FAR_OFF = 120        -- yd: tan lejos del camino, la flecha va recta mientras se recalcula
 local LOOK = 15            -- yd por delante en el camino a los que apunta la flecha
+local FLOOR_NEAR = 20      -- yd: un punto del camino con altura así de cerca dice en qué piso va el jugador...
+local FLOOR_KEEP = 40      -- ...y ese piso vale mientras no se aleje más de esto de donde se anotó
+local END_LEFT = 5         -- yd: en el último tramo, con menos camino que esto, la flecha va recta al objetivo
 
 local sqrt = math.sqrt
 
@@ -46,6 +56,8 @@ local st = {
   failAt = nil, failN = nil, failW = nil,
   requests = 0,      -- rutas pedidas (para el simulador y el informe)
   shown = false,     -- la última llamada devolvió un punto del camino
+  off = false,       -- el jugador está fuera del camino (lejos del tramo actual)
+  floor = nil,       -- { z, n, w }: piso del camino por el que iba el jugador y dónde se anotó
 }
 Nav.state = st
 
@@ -110,6 +122,7 @@ end
 
 local function ContinentChanged(c)
   st.continent = c
+  st.floor = nil
   Reset(nil)
 end
 
@@ -126,25 +139,64 @@ local function Prepare(path)
   path.rest = rest
 end
 
-local function Request(t, map, x, y, pn, pw)
+-- Piso de salida: altura conocida (fz) o pista ("top" fuera, "under" bajo techo) para Senda_Nav.
+local function StartFloor(pn, pw)
+  local z = Compat.PlayerZ and Compat.PlayerZ()
+  if z then return z, nil end
+  local f = st.floor
+  if f then
+    local dn, dw = pn - f.n, pw - f.w
+    if dn * dn + dw * dw <= FLOOR_KEEP * FLOOR_KEEP then return f.z, nil end
+  end
+  local indoors = Compat.IsIndoors and Compat.IsIndoors()
+  if indoors == true then return nil, "under" end
+  if indoors == false then return nil, "top" end
+  return nil, nil
+end
+
+-- Anota el piso del camino junto al jugador (los puntos con altura son los de celdas con varios pisos).
+local function NoteFloor(path, i, pn, pw)
+  local best, bd
+  for k = i - 1, i do
+    local q = path[k]
+    if q and q.z then
+      local dn, dw = q.wx - pn, q.wy - pw
+      local d = dn * dn + dw * dw
+      if d <= FLOOR_NEAR * FLOOR_NEAR and (not bd or d < bd) then best, bd = q, d end
+    end
+  end
+  if best then st.floor = { z = best.z, n = pn, w = pw } end
+end
+
+local function Request(t, map, x, y, pn, pw, relaxed)
   local N = API()
   if st.job then N.Cancel(st.job) end
   local token = {}
   st.token, st.job, st.status, st.why = token, nil, "routing", nil
   st.routedAt = Now()
   st.requests = st.requests + 1
+  local opts
+  if not relaxed then
+    local fz, fhint = StartFloor(pn, pw)
+    local tz = tonumber(t.z)
+    if fz or fhint or tz then opts = { fz = fz, fhint = fhint, tz = tz, tnear = true } end
+  end
+  st.floorOpts = opts
   local job = N.Route(map, x * 100, y * 100, t.map, t.x * 100, t.y * 100, function(path, costOrWhy)
     if st.token ~= token then return end -- respuesta de una ruta ya sustituida
     st.job = nil
     if path and #path > 0 then
       Prepare(path)
       st.path, st.status = path, "ok"
+    elseif opts and costOrWhy == "unreachable" then
+      -- las pistas de piso pueden equivocarse (bajo un puente, una terraza): otra vez con todos los pisos
+      Request(t, map, x, y, pn, pw, true)
     else
       st.path, st.status, st.why = nil, "fail", tostring(costOrWhy)
       st.failAt, st.failN, st.failW = Now(), pn, pw
       Senda:Debug("caminos: sin ruta (" .. st.why .. ")")
     end
-  end)
+  end, opts)
   -- Route puede responder en el acto (fallos de entrada): solo se guarda el trabajo si sigue en curso.
   if st.token == token and st.status == "routing" then st.job = job end
 end
@@ -218,6 +270,7 @@ function Nav:Waypoint(t, map, x, y)
   local N = API()
   local wp, i, yards, off = N.Next(path, map, x * 100, y * 100)
   if not (wp and i and yards) then return Straight("noroute") end
+  st.off = off and true or false
   if off then
     if st.status ~= "routing" and now - st.routedAt >= REROUTE_COOLDOWN then
       Request(t, map, x, y, pn, pw)
@@ -225,6 +278,13 @@ function Nav:Waypoint(t, map, x, y)
     if yards > FAR_OFF then return Straight("routing") end
   end
   local along = yards + (path.rest[i] or 0)
+  if not off then NoteFloor(path, i, pn, pw) end
+  -- último tramo y casi sin camino: el objetivo puede quedar fuera de la malla (encima de una roca, dentro
+  -- de un edificio sin datos); apuntar al final del camino daría «0 m» girando sobre uno mismo
+  if i == #path and along < END_LEFT then
+    st.idx, st.along = i, along
+    return Straight("pathend")
+  end
   st.shown, st.idx, st.along, st.straightWhy = true, i, along, nil
   st.pn, st.pw = pn, pw
   local cn, cw = Carrot(path, i, pn, pw)
@@ -233,6 +293,19 @@ function Nav:Waypoint(t, map, x, y)
 end
 
 function Nav:Why() return st.straightWhy end
+
+-- Yardas por el camino hasta el objetivo t (nil sin camino para t, o fuera de él). No pide rutas ni carga
+-- nada: lo usa el temporizador de llegada de la flecha, que corre aunque la flecha esté oculta.
+function Nav:Remaining(t, map, x, y)
+  if not (t and map and x and y and Enabled()) then return nil end
+  local path = st.path
+  if not path or st.key ~= Key(t) or not path.rest then return nil end
+  local N = API()
+  if not N then return nil end
+  local wp, i, yards, off = N.Next(path, map, x * 100, y * 100)
+  if not (wp and i and yards) or off then return nil end
+  return yards + (path.rest[i] or 0)
+end
 
 function Nav:Path()
   if not st.shown then return nil end

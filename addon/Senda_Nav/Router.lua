@@ -372,9 +372,15 @@ local function liftsOf(m)
 end
 
 -- ---------------------------------------------------------------- ends
--- The nearest cell with layers within r cells of a world point; its layer by z when known,
--- else every layer: returns sid, { ord, ... }, gx, gy.
-local function snap(m, wx, wy, z, r)
+-- The nearest cell with layers within r cells of a world point, and the layers to start from:
+--   z known: the layer nearest that height;
+--   else hint "top" (the player is outdoors): the highest layer;
+--   else hint "under" (indoors: a cave, a building, a city under a mountain): the layers with
+--   another one above them (every layer if the cell has one);
+--   else every layer (the search takes the cheapest).
+-- Returns sid, { ord, ... }, gx, gy, z (the height of the layer picked when there is exactly
+-- one and the pack has it: single-layer cells carry no height).
+local function snap(m, wx, wy, z, r, hint)
 	local gx, gy = floor((ORIGIN - wy) / CELL), floor((ORIGIN - wx) / CELL)
 	for ring = 0, r do
 		local best, bx, by
@@ -392,21 +398,44 @@ local function snap(m, wx, wy, z, r)
 		if best then
 			local n, c, k = count(m, bx, by)
 			local f0 = c.first[k + 1]
-			local out = {}
-			if z and n > 1 then
-				local bl, bd
+			local out, oz = {}, nil
+			if n > 1 and (z or hint == "top" or hint == "under") then
+				local bl, bd, top, topz
 				for li = 0, n - 1 do
 					local lz = layerZ(c, k, li)
-					local d = lz and abs(lz - z) or 1e9
-					if not bd or d < bd then bl, bd = li, d end
+					if z then
+						local d = lz and abs(lz - z) or 1e9
+						if not bd or d < bd then bl, bd = li, d end
+					end
+					if lz and (not topz or lz > topz) then top, topz = li, lz end
 				end
-				out[1] = f0 + bl
+				if z then
+					out[1] = f0 + bl
+				elseif hint == "top" or not top then
+					out[1] = f0 + (top or n - 1)
+				else
+					for li = 0, n - 1 do
+						if li ~= top then out[#out + 1] = f0 + li end
+					end
+				end
+				if #out == 1 then oz = layerZ(c, k, out[1] - f0) end
 			else
 				for li = 0, n - 1 do out[#out + 1] = f0 + li end
 			end
-			return sidOf(bx, by), out, bx, by
+			return sidOf(bx, by), out, bx, by, oz
 		end
 	end
+end
+R.snap = function(map, wx, wy, z, hint)
+	local m = M(map)
+	if not m then return nil end
+	local sid, out, gx, gy, oz = snap(m, wx, wy, z, 8, hint)
+	if not sid then return nil end
+	local zs = {}
+	local c = cells(m, sid)
+	local k = (gy % SEC) * SEC + gx % SEC
+	for i, o in ipairs(out) do zs[i] = layerZ(c, k, o - c.first[k + 1]) or false end
+	return gx, gy, zs, oz
 end
 
 -- ---------------------------------------------------------------- the walk
@@ -471,8 +500,12 @@ R.trace = function(map, ax, ay, al, bx, by, bl)
 end
 
 local function run(m, req)
-	local ssid, so, _, _ = snap(m, req.sx, req.sy, req.sz, 8)
-	local gsid, go, ggx, ggy = snap(m, req.tx, req.ty, req.tz, 8)
+	local ssid, so = snap(m, req.sx, req.sy, req.sz, 8, req.shint)
+	-- goal height unknown: with `tnear` and a known start height, the goal floor nearest it (a floor
+	-- picked by a hint is not a height: from the top of a city the nearest goal floor can be a roof)
+	local tz = req.tz
+	if tz == nil and req.tnear then tz = req.sz end
+	local gsid, go, ggx, ggy = snap(m, req.tx, req.ty, tz, 8, req.thint)
 	if not ssid or not gsid then return nil, "offmesh" end
 	local src, gsrc = {}, {}
 	for _, o in ipairs(so) do src[#src + 1] = o; src[#src + 1] = 0 end
@@ -652,7 +685,9 @@ end
 -- ---------------------------------------------------------------- jobs
 local queue = {}
 
--- Find(map, {sx, sy, sz?, tx, ty, tz?, look?}, callback(points | nil, cost | reason, job)) -> job
+-- Find(map, {sx, sy, sz?, shint?, tx, ty, tz?, thint?, tnear?, look?}, callback(points | nil, cost | reason, job)) -> job
+-- sz / tz: heights of the ends (the floor nearest each); shint / thint: "top" or "under" when the
+-- height is unknown (see snap); tnear: without tz, the goal floor nearest sz.
 -- points = { {wx, wy, z?, gx, gy, li, lift = name|nil}, ... }: a point with `lift` is the start
 -- of a ride (lift or portal) that ends at the next point.
 function R.Find(map, req, callback)

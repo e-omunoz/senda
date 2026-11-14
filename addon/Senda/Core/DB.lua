@@ -20,6 +20,7 @@ local DEFAULTS = {
   modules = {},       -- datos persistentes de los módulos (Modules/)
   char = {
     fps = {},         -- nodos de vuelo conocidos: [nodeID] = nombre
+    wps = {},         -- punto de ruta de la flecha por paso: [stepId] = { i = índice, n = orden } (UI/Arrow.lua)
   },
 }
 
