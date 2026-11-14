@@ -1,0 +1,51 @@
+{
+	"note": "Zones and the ways between them a runner really has (tools/walk_zones.py, docs/TRAVEL.md «Andar»). Senda's own review of the Classic geography of Eastern Kingdoms and Kalimdor, not taken from any other addon or database. The walk mesh lets a runner up almost any slope under 50 degrees, so it crosses the mountain ranges between zones (Elwynn - Burning Steppes, Dun Morogh - Searing Gorge, Mulgore - Desolace...); the walk graph keeps an edge between two zones only if the pair is listed here. `zones`: per continent, the AreaTable ids of the zones (a node's terrain chunk carries its subzone; a subzone takes the zone of the nodes around it). `areas`: subzones whose neighbours would vote wrong: Kargath (under the Searing Gorge wall), the Loch Modan end of the Dun Morogh tunnel, Stormwind Harbor (WoW: Forever), the south of The Barrens (it borders Mulgore and Dustwallow as much as The Barrens). `links`: per continent, the zone pairs with a road, pass, tunnel or shore a runner uses. Left out on purpose: the Searing Gorge gate in Loch Modan (closed in Classic), Redridge - Swamp of Sorrows, Durotar - Azshara, Tanaris - Dustwallow (opened in later expansions), and every mountain crossing.",
+	"zones": {
+		"0": {
+			"1": "Dun Morogh", "3": "Badlands", "4": "Blasted Lands", "8": "Swamp of Sorrows", "10": "Duskwood",
+			"11": "Wetlands", "12": "Elwynn Forest", "25": "Blackrock Mountain", "28": "Western Plaguelands",
+			"33": "Stranglethorn Vale", "36": "Alterac Mountains", "38": "Loch Modan", "40": "Westfall",
+			"41": "Deadwind Pass", "44": "Redridge Mountains", "45": "Arathi Highlands", "46": "Burning Steppes",
+			"47": "The Hinterlands", "51": "Searing Gorge", "85": "Tirisfal Glades", "130": "Silverpine Forest",
+			"139": "Eastern Plaguelands", "267": "Hillsbrad Foothills", "1497": "Undercity", "1519": "Stormwind City",
+			"1537": "Ironforge"
+		},
+		"1": {
+			"14": "Durotar", "15": "Dustwallow Marsh", "16": "Azshara", "17": "The Barrens", "141": "Teldrassil",
+			"148": "Darkshore", "215": "Mulgore", "331": "Ashenvale", "357": "Feralas", "361": "Felwood",
+			"400": "Thousand Needles", "405": "Desolace", "406": "Stonetalon Mountains", "440": "Tanaris",
+			"490": "Un'Goro Crater", "493": "Moonglade", "618": "Winterspring", "1377": "Silithus", "1637": "Orgrimmar",
+			"1638": "Thunder Bluff", "1657": "Darnassus"
+		}
+	},
+	"areas": {
+		"0": { "340": "Badlands", "808": "Loch Modan", "17203": "Stormwind City" },
+		"1": { "1156": "The Barrens", "1157": "The Barrens", "1701": "The Barrens" }
+	},
+	"links": {
+		"0": [
+			["Elwynn Forest", "Stormwind City"], ["Elwynn Forest", "Westfall"], ["Elwynn Forest", "Duskwood"],
+			["Elwynn Forest", "Redridge Mountains"], ["Westfall", "Duskwood"], ["Duskwood", "Redridge Mountains"],
+			["Duskwood", "Stranglethorn Vale"], ["Duskwood", "Deadwind Pass"], ["Deadwind Pass", "Swamp of Sorrows"],
+			["Swamp of Sorrows", "Blasted Lands"], ["Redridge Mountains", "Burning Steppes"],
+			["Burning Steppes", "Blackrock Mountain"], ["Searing Gorge", "Blackrock Mountain"],
+			["Burning Steppes", "Searing Gorge"],
+			["Dun Morogh", "Ironforge"], ["Dun Morogh", "Loch Modan"], ["Loch Modan", "Wetlands"], ["Loch Modan", "Badlands"],
+			["Wetlands", "Arathi Highlands"], ["Arathi Highlands", "Hillsbrad Foothills"], ["Arathi Highlands", "The Hinterlands"],
+			["Hillsbrad Foothills", "Alterac Mountains"], ["Hillsbrad Foothills", "Silverpine Forest"],
+			["Hillsbrad Foothills", "The Hinterlands"], ["Hillsbrad Foothills", "Western Plaguelands"],
+			["Alterac Mountains", "Western Plaguelands"], ["Western Plaguelands", "Tirisfal Glades"],
+			["Western Plaguelands", "Eastern Plaguelands"], ["Western Plaguelands", "The Hinterlands"],
+			["Tirisfal Glades", "Silverpine Forest"], ["Tirisfal Glades", "Undercity"]
+		],
+		"1": [
+			["Teldrassil", "Darnassus"], ["Darkshore", "Ashenvale"], ["Ashenvale", "Stonetalon Mountains"],
+			["Ashenvale", "The Barrens"], ["Ashenvale", "Felwood"], ["Ashenvale", "Azshara"], ["Felwood", "Winterspring"],
+			["Felwood", "Moonglade"], ["Moonglade", "Winterspring"], ["The Barrens", "Durotar"], ["The Barrens", "Mulgore"],
+			["The Barrens", "Stonetalon Mountains"], ["The Barrens", "Dustwallow Marsh"], ["The Barrens", "Thousand Needles"],
+			["Durotar", "Orgrimmar"], ["The Barrens", "Orgrimmar"], ["Mulgore", "Thunder Bluff"], ["Stonetalon Mountains", "Desolace"],
+			["Desolace", "Feralas"], ["Feralas", "Thousand Needles"], ["Thousand Needles", "Tanaris"],
+			["Tanaris", "Un'Goro Crater"], ["Un'Goro Crater", "Silithus"]
+		]
+	}
+}

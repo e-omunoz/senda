@@ -10,8 +10,18 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
   1095 yd «recto» hasta el Puerto de Menethil, cruzando las montañas de Dun Morogh, y la flecha no podía seguir ese tramo.
   Ahora anda por un grafo de andar con las yardas reales de la malla propia de Senda: de Forjaz a Menethil son 5739 yd
   (túnel, Loch Modan, Dun Algaz), así que el camino más rápido es vuelo a Ventormenta, barco a Auberdine y barco a
-  Menethil (1142 s). En línea recta solo se anda hasta 300 yd del grafo; un punto fuera de la malla (en el mar) anda recto
+  Menethil. En línea recta solo se anda hasta 300 yd del grafo; un punto fuera de la malla (en el mar) anda recto
   con penalización. Ver [docs/TRAVEL.md](docs/TRAVEL.md), «Andar».
+- **Ni por las sierras entre zonas.** La malla deja subir casi cualquier ladera, y el grafo de andar cruzaba de Elwynn a
+  Las Estepas Ardientes, de Dun Morogh a La Garganta de Fuego o de Mulgore a Desolace: con la guía arreglada, el brujo
+  gnomo de Villa Oscura recibía «anda 6005 yd a Thelsamar» por las Estepas, La Garganta y la puerta cerrada de Loch Modan.
+  `tools/walk_zones.py` quita del grafo las aristas entre dos zonas sin camino de verdad (revisión propia de Classic en
+  `nav/data/walk_zones.json`; 1032 aristas en los Reinos del Este y 767 en Kalimdor). Ahora: «vuela a Forjaz » a pie»
+  (2929 yd por el túnel). El norte y el sur de los Reinos del Este ya no se tocan a pie (tranvía o vuelo).
+- **Un maestro de vuelo sin descubrir al lado sirve para despegar.** En Villa Oscura sin ese nodo, el planificador mandaba
+  andar 1602 yd hasta Lakeshire para volar; ahora, a menos de 400 yd de la salida, cuenta con hablarle (se aprende) y volar
+  desde él a los nodos conocidos. Nunca se vuela hacia un nodo desconocido. El caso del jugador hacia Menethil: 888 s
+  (antes 1142 s).
 - **La guía ya no te manda a volar a un nodo que no tienes.** Un brujo gnomo del 21 que se había saltado Thelsamar veía
   «Vuela a Thelsamar» al llegar a Los Humedales (y de ahí a Menethil por Forjaz). Ahora los pasos de la guía pueden llevar
   los filtros `if = { fp = ["8"] }` (solo con ese nodo de vuelo conocido) y `if = { nofp = ["8"] }` (solo sin él); el motor
@@ -20,11 +30,15 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - Mismo arreglo en Costasur (Monasterio), Gadgetzan, el Nido Aguileño y la Vigilia de Morgan, con su camino a pie.
 
 ### Añadido
-- `addon/Senda/Data/TravelWalk.lua` (228 KB): el grafo de andar de Reinos del Este y Kalimdor (nodos por región de sector,
+- `addon/Senda/Data/TravelWalk.lua` (222 KB): el grafo de andar de Reinos del Este y Kalimdor (nodos por región de sector,
   cada lugar del planificador, aristas con yardas reales y la matriz exacta entre lugares), desde `data/travel/walk_<c>.json`.
 - `senda-nav walkgraph` (lo genera desde los paquetes HPA\*), `senda-nav bake --skip <clases> --block <fichero>` (malla de
   andar sin trepar paredes y sin el suelo revisado de `nav/data/walk_blocks.json`: la sierra norte de Dun Morogh) y
   `senda-nav zprof` (depuración).
+- `tools/walk_zones.py` y `nav/data/walk_zones.json` (zonas y caminos entre ellas, por continente); cada nodo del grafo de
+  andar guarda su zona (`zone`) y `tests/test_travel.py` comprueba que no queda ninguna arista entre zonas sin camino.
+- Simulador: `travel-focus` (los tres personajes de referencia a Auberdine, Theramore y Costasur) y `fpf-e2e` (el caso del
+  jugador con la guía y los marcos de mapa reales de forever-db).
 - Simulador: escenario `travel-walk` (el caso del brujo gnomo, el túnel de Loch Modan, Elwynn - Páramos de Poniente, sin
   andar por el mar, fuera de la malla, rebanadas). Cambian con las yardas reales: Ventormenta - Auberdine 428 → 457 s y dos
   casos de la piedra de hogar (docs/TRAVEL.md).

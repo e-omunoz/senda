@@ -42,6 +42,7 @@ local REPLAN_MIN = 8         -- segundos mínimos entre dos cálculos (salvo cam
 local OPS_SLICE = 700        -- operaciones del Dijkstra por fotograma
 local BUDGET_MS = 1.0        -- milisegundos por fotograma (la regla del addon es < 2 ms)
 local TELE_LOAD = 5          -- segundos de pantalla de carga tras un teletransporte
+local LEARN_FP = 400         -- yardas: un maestro de vuelo sin descubrir tan cerca de la salida sirve para despegar
 local MOUNT_ITEM_CLASS, MOUNT_ITEM_SUB = 15, 5
 
 local function Debug(...) M.Debug(...) end
@@ -700,14 +701,19 @@ local function BuildGraph(data, ctx, start, target, mode)
   g.target = add(target.c, target.wx, target.wy, { kind = "target", p = target })
   local known = ctx.known or {}
   for _, p in ipairs(data.nodeList) do
-    if (p.mask == 3 or p.mask == ctx.mask) and known[p.id] and (not p.class or p.class == ctx.class) then
-      g.byFp[p.id] = add(p.c, p.wx, p.wy, { kind = "fp", p = p, id = p.id })
+    if (p.mask == 3 or p.mask == ctx.mask) and (not p.class or p.class == ctx.class) then
+      if known[p.id] then
+        g.byFp[p.id] = add(p.c, p.wx, p.wy, { kind = "fp", p = p, id = p.id })
+      elseif p.c == start.c and Dist(p.wx, p.wy, start.wx, start.wy) <= LEARN_FP then
+        -- un maestro de vuelo sin descubrir al lado: al hablarle se aprende y se vuela desde él (nunca hacia él)
+        g.byFp[p.id] = add(p.c, p.wx, p.wy, { kind = "fp", p = p, id = p.id, learn = true })
+      end
     end
   end
   local k = data.k
   for _, f in ipairs(data.flights) do
     local a, b = g.byFp[f.from], g.byFp[f.to]
-    if a and b then link(a, b, f.secs, "fly", f) end
+    if a and b and not g.info[b].learn then link(a, b, f.secs, "fly", f) end
   end
   for _, r in ipairs(data.rides) do
     if (r.mask == 3 or r.mask == ctx.mask) and not (ctx.noRide and ctx.noRide[r.id]) then

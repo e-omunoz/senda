@@ -138,6 +138,7 @@ cd nav
 target/release/senda-nav bake --grid out/grid --out out/walk --continents 0,1 --teleports data/teleports.json \
     --skip climb --block data/walk_blocks.json                    # ~30 s: la malla de andar del planificador
 target/release/senda-nav walkgraph --packs out/walk --grid out/grid --travel ../data/travel --out ../data/travel   # ~25 s
+python ../tools/walk_zones.py                                     # ~10 s: quita los pasos entre zonas que el juego no da
 python ../tools/build.py                                          # -> addon/Senda/Data/TravelWalk.lua
 ```
 
@@ -157,13 +158,29 @@ python ../tools/build.py                                          # -> addon/Sen
 - **Aristas.** El camino más corto entre nodos a 2 sectores como mucho, por el grafo abstracto y las celdas (yardas, ×3 en
   agua), solo con lo que cabe en esos sectores; después un *spanner* voraz (factor 1,1) deja unas 8 aristas por nodo. Los
   componentes sin ningún lugar (islas a las que nadie viaja) se quitan.
+- **Zonas (`tools/walk_zones.py`, `nav/data/walk_zones.json`).** La malla deja subir casi cualquier ladera de menos de
+  50°, así que el grafo cruzaba las sierras entre zonas: de Villa Oscura a Thelsamar «andaba» 6005 yd por Elwynn, Las
+  Estepas Ardientes, La Garganta de Fuego y la puerta cerrada de Loch Modan (la guía le mandaba eso al brujo gnomo en
+  cuanto dejó de volar a Thelsamar); de Forjaz a Ventormenta, 6209 yd por la sierra sur de Dun Morogh; de Cima del Trueno
+  a Thalanaar, 4242 yd por la sierra de Mulgore. Cada nodo toma la zona de su trozo de terreno (`senda-nav zprof`; una
+  subzona, la de la mayoría de los trozos de zona que la rodean en la rejilla de 33 yd del continente; el mar no vota y
+  sus nodos toman la de sus vecinos; `areas` corrige a mano cuatro subzonas que votan mal) y se quitan las aristas entre
+  dos zonas que no estén en `links`: la revisión propia de los caminos de Classic (carreteras, pasos, túneles y la costa;
+  fuera a propósito la puerta de La Garganta de Fuego en Loch Modan, Crestagrana - Pantano de las Penas, Durotar -
+  Azshara y Tanaris - Marjal Revolcafango, abiertas en expansiones posteriores). Quita 1032 aristas en los Reinos del Este
+  (25 pares de zonas) y 767 en Kalimdor (18). La matriz se rehace: los pares cuyo camino no usaba una arista quitada
+  guardan su valor exacto (Forjaz - Thelsamar 2926, Forjaz - Menethil 5739, El Cruce - Viento Libre 6072 por el Gran
+  Elevador); los demás toman el camino del grafo podado (674 y 1995 pares más largos) o se quedan sin camino a pie (2156
+  pares de los Reinos del Este: el norte y el sur no se tocan sin el tranvía). Cada nodo guarda su zona (`zone`) para
+  `tests/test_travel.py`. Volver a pasarlo no cambia nada.
 - **Matriz entre lugares.** Las yardas exactas de cada lugar a cada otro por todo el grafo abstracto (sin las regiones de
   agua); vacía si no se llega andando (Teldrassil desde Costa Oscura, otro continente). Un lugar que no llega a ningún otro
   (la rejilla lo deja en un hueco) se quita y el planificador anda hasta él en línea recta con la penalización.
 
-Medido (2026-11-14, cliente 1.60.1.70888): Reinos del Este 2560 nodos, 20 790 aristas (10 991 pares), 67 lugares;
-Kalimdor 3475 nodos, 26 630 aristas, 77 lugares (fuera: Bloodvenom Post, aislado). El grafo frente a la matriz exacta
-entre lugares: mediana 1,05, percentil 90 1,07. JSON 360 + 470 KB; compilado `Data/TravelWalk.lua` 228 KB (unos 98 KB
+Medido (2026-11-14, cliente 1.60.1.70888): Reinos del Este 2560 nodos, 20 790 aristas (10 991 pares; 19 758 aristas y
+10 498 pares tras las zonas), 67 lugares; Kalimdor 3475 nodos, 26 630 aristas (25 863 tras las zonas), 77 lugares
+(fuera: Bloodvenom Post, aislado). El grafo frente a la matriz exacta
+entre lugares: mediana 1,05, percentil 90 1,07. JSON 360 + 470 KB; compilado `Data/TravelWalk.lua` 222 KB (unos 98 KB
 Reinos del Este y 130 KB Kalimdor: por debajo de 150 KB cada uno). Algunas yardas: Forjaz - Menethil 5739 (1095 en
 línea recta), Forjaz - Thelsamar 2926 (1874), Villa Oscura - Lakeshire 1602 (1456), Ventormenta - muelle del puerto
 1232 (863), Villadorada - Colina del Centinela 1827 (1549).
@@ -177,8 +194,14 @@ dice `Debug`); un lugar que la malla no tiene, igual. Dos paseos seguidos se jun
 camino. Los segundos: yardas / (7 × velocidad), con el ×1,25 solo en los trozos rectos. El grafo se decodifica la primera
 vez, dentro del trabajo por rebanadas, y se guarda solo al acabar.
 
-Con eso, el caso real sale «anda 1602 yd a Lakeshire, vuela a Ventormenta, anda al puerto, barco a Auberdine, barco a
-Menethil» (1142 s): andar de Forjaz a Menethil son 5739 yd (820 s), y por Forjaz serían unos 1430 s. En el simulador
+**Maestro de vuelo sin descubrir al lado.** Un nodo de tu facción (y clase) que no conoces, a menos de 400 yd de la
+salida, entra en el cálculo solo para despegar: al hablarle se aprende y se vuela desde él a los conocidos (nunca se vuela
+hacia un nodo desconocido). El brujo del caso real está en Villa Oscura sin ese nodo: antes le mandaba andar 1602 yd a
+Lakeshire para volar; ahora vuela desde Villa Oscura.
+
+Con eso, el caso real (hacia Menethil) sale «vuela a Ventormenta, anda al puerto, barco a Auberdine, barco a Menethil»
+(888 s; 1142 s andando a Lakeshire): andar de Forjaz a Menethil son 5739 yd (820 s), y por Forjaz es más lento. Hacia
+Thelsamar (el paso de la guía cuando no conoce ese nodo): «vuela a Forjaz (6 min) » a pie», 2929 yd por el túnel. En el simulador
 (fengari, un Lua en JavaScript muchas veces más lento que el del cliente): la primera vez 0,5-0,65 s con la decodificación,
 después unos 0,1 s por plan; en rebanadas de 700 operaciones, 9 fotogramas. Antes: 4 ms por plan.
 
@@ -196,20 +219,24 @@ grafo de andar, arriba):
 
 | Dato del juego | Cómo se lee |
 |---|---|
-| Nodos de vuelo conocidos | `db.char.fps` (el motor, al abrir un maestro de vuelo) y `C_TaxiMap.GetTaxiNodesForMap(...).isUndiscovered`; nunca se usa un nodo desconocido, de la otra facción ni de otra clase |
+| Nodos de vuelo conocidos | `db.char.fps` (el motor, al abrir un maestro de vuelo) y `C_TaxiMap.GetTaxiNodesForMap(...).isUndiscovered`; nunca se usa un nodo de la otra facción ni de otra clase; uno desconocido solo para despegar si está a menos de 400 yd de la salida |
 | Velocidad a pie | 7 yd/s; ×1,6 con Invocar corcel vil (5784) o una montura en las bolsas a partir del nivel 40; ×2 con Invocar corcel de terror (23161); ×1,4 con la forma de viaje (783) |
 | Piedra de hogar | objeto 6948 en las bolsas, `C_Container.GetItemCooldown` (el enfriamiento restante se suma al coste), posada vinculada (`GetBindLocation` + `HEARTHSTONE_BOUND` + `C_Map.GetAreaInfo`) |
 | Teletransportes | hechizo conocido (`IsSpellKnown`), reactivo en las bolsas (runa de teletransporte 17031), enfriamiento del hechizo; solo desde la posición de salida |
 
 Escenarios con la respuesta esperada en `tests/wowsim/scenarios_travel.js`: Ventormenta - Auberdine (barco del puerto, 457 s
 con un margen de 15 s: 428 s con la línea recta, 1232 yd de verdad hasta el muelle), Forjaz - Ventormenta (vuelo si se conocen los dos nodos; tranvía si no), andar por debajo de 400 yardas,
-nodo desconocido nunca usado, nodos de la otra facción y de otra clase nunca usados, piedra de hogar usada cuando la posada
+nodo desconocido nunca usado (salvo el maestro de vuelo sin descubrir a menos de 400 yd, para despegar), nodos de la otra facción y de otra clase nunca usados, piedra de hogar usada cuando la posada
 vinculada está cerca del destino y fuera de enfriamiento (y no con enfriamiento, ni en un viaje de menos de 3 minutos), y
 teletransportes de mago y druida. `travel-walk` (brujo gnomo) prueba el andar: el caso real de Villa Oscura a Menethil (nunca
 en línea recta desde Forjaz; los barcos ganan; Forjaz - Menethil a pie más de 4000 yd), Forjaz - Thelsamar por el túnel,
 Villadorada - Colina del Centinela cerca de la línea recta, ningún tramo a pie más corto que su línea recta ni entre
 continentes, Auberdine - Rut'theran sin barco ni vuelo imposible (antes cruzaba el mar a pie), un punto en el mar con la
-penalización, y el trabajo en rebanadas (≤ 700 operaciones por fotograma). Cambiaron con las yardas reales: Ventormenta -
+penalización, y el trabajo en rebanadas (≤ 700 operaciones por fotograma). `travel-focus` lleva a los tres personajes de
+referencia a Auberdine, Theramore y Costasur desde sus sitios de nivel (Villa Oscura, Forjaz, Colina del Centinela,
+Ventormenta, Rut'theran, Auberdine, Astranaar) y mira que ningún tramo a pie cruce entre el norte y el sur de los Reinos
+del Este; sin vuelos, de Villa Oscura a Thelsamar va por el tranvía. `fpf-e2e` (escenarios_fpfilter) juega el caso del
+jugador con la guía y los marcos de mapa reales: paso de Thelsamar a pie, vuelo a Forjaz, túnel, Dun Algaz. Cambiaron con las yardas reales: Ventormenta -
 Auberdine (428 → 457 s), «un viaje de menos de 3 minutos» (Villadorada - posada de Ventormenta son 1027 yd, más de 3 min: ahora
 desde el maestro de vuelo de Ventormenta) y «vinculada lejos» (Kharanos: la malla anda de Dun Morogh a Ventormenta en
 4600 yd; ahora Auberdine, en otro continente).

@@ -465,8 +465,8 @@ el camino más rápido con lo que el personaje sabe y lleva, y lo enseña. Datos
   compactas (`Senda.TravelData`); no se decodifican al cargar, sino la primera vez que hay un destino lejano y fuera de combate.
 - **Dijkstra en una corrutina.** Estado (nodo, ¿llegado volando?) para cobrar el despegue una vez por tramo. A pie por el
   terreno real: el grafo de andar de `Data/TravelWalk.lua` (yardas de la malla de Senda, sin cruzar el mar entre islas ni
-  continentes; en línea recta ×1,25 solo hasta 300 yd del grafo), a 7 yd/s (más rápido con corcel de brujo, forma de viaje o una montura en las bolsas), vuelos **solo entre
-  nodos descubiertos** de tu facción y clase, barcos, zepelines y tranvía con su espera media, portales, teletransportes de
+  continentes ni las sierras entre zonas sin camino, `tools/walk_zones.py`; en línea recta ×1,25 solo hasta 300 yd del grafo), a 7 yd/s (más rápido con corcel de brujo, forma de viaje o una montura en las bolsas), vuelos **solo hacia
+  nodos descubiertos** de tu facción y clase (se despega también de un maestro de vuelo sin descubrir a menos de 400 yd de la salida: se aprende al hablarle), barcos, zepelines y tranvía con su espera media, portales, teletransportes de
   clase (hechizo conocido, reactivo en las bolsas y sin enfriamiento) y la piedra de hogar (objeto en las bolsas, enfriamiento
   leído con `C_Container.GetItemCooldown`, posada vinculada). Se calcula sin atajos, con la piedra y con los teletransportes, y
   gana lo más rápido que cumpla sus márgenes (piedra: viaje de 3 min o más que ahorre 2 min; teletransporte: ahorra 60 s o el 20 %).

@@ -47,7 +47,8 @@ celdas de alrededor y si hay camino; `SENDA_DUMP=<id de ruta> senda-nav eval ...
 las superficies finas (z, banderas, pendiente) de su columna.
 
 El planificador de viaje no usa estos paquetes sino un **grafo de andar** propio (`senda-nav bake ... --skip climb --block
-data/walk_blocks.json` a `out/walk` y `senda-nav walkgraph`): ver [TRAVEL.md](TRAVEL.md), «Andar». `--skip <clases>` deja
+data/walk_blocks.json` a `out/walk`, `senda-nav walkgraph` y `tools/walk_zones.py`, que quita los pasos entre zonas
+sin camino con `zprof`): ver [TRAVEL.md](TRAVEL.md), «Andar». `--skip <clases>` deja
 fuera enlaces finos de esas clases (`climb`, `steep`...) y `--block <fichero>` el suelo de unos polígonos revisados; sin
 ellas el horneado es el de siempre.
 

@@ -204,6 +204,44 @@ class TravelWalk(unittest.TestCase):
     def test_deterministic(self):
         self.assertEqual(build.render_walk(Paths()), self.text)
 
+    def test_zones_no_mountain_crossings(self):
+        # tools/walk_zones.py: ninguna arista entre dos zonas que no estén en `links` de nav/data/walk_zones.json
+        with open(ROOT / "nav" / "data" / "walk_zones.json", encoding="utf-8") as fh:
+            cfg = json.load(fh)
+        for c in (0, 1):
+            d = self.json[c]
+            names = d["meta"]["zones"]["names"]
+            self.assertEqual(len(d["zone"]), len(d["nodes"]))
+            self.assertGreater(d["meta"]["zones"]["cut_edges"], 500, f"continente {c}: ¿se pasó tools/walk_zones.py?")
+            links = {frozenset(p) for p in cfg["links"][str(c)]}
+            for a, b, _ in d["edges"]:
+                za, zb = d["zone"][a], d["zone"][b]
+                if za >= 0 and zb >= 0 and za != zb:
+                    self.assertIn(frozenset((names[za], names[zb])), links, f"continente {c}: arista {a}-{b}")
+
+    def test_zones_real_geography(self):
+        # yardas a pie entre lugares (None: no se llega andando)
+        def yd(c, a, b):
+            keys = self.json[c]["matrix"]["keys"]
+            return self.json[c]["matrix"]["yards"][keys.index(a)][keys.index(b)]
+        # el norte (Dun Morogh, Loch Modan, Los Humedales) y el sur (Elwynn, Villa Oscura, Las Estepas Ardientes) de los
+        # Reinos del Este no se tocan a pie: la puerta de La Garganta de Fuego está cerrada; se va en tranvía o volando
+        self.assertIsNone(yd(0, "fp:12", "fp:8"))   # Villa Oscura - Thelsamar
+        self.assertIsNone(yd(0, "fp:6", "fp:2"))    # Forjaz - Ventormenta
+        self.assertIsNone(yd(0, "fp:8", "fp:74"))   # Thelsamar - Puesto del Torio
+        # caminos de verdad que siguen
+        self.assertLess(yd(0, "fp:6", "fp:8"), 3200)      # Forjaz - Thelsamar por el túnel
+        self.assertLess(yd(0, "fp:8", "fp:7"), 4200)      # Thelsamar - Menethil por Dun Algaz
+        self.assertLess(yd(0, "fp:12", "fp:5"), 1800)     # Villa Oscura - Lakeshire
+        self.assertLess(yd(0, "fp:5", "fp:71"), 1800)     # Lakeshire - Vigilia de Morgan (Estepas Ardientes)
+        self.assertLess(yd(0, "fp:74", "fp:71"), 3100)    # Garganta de Fuego - Estepas por la Montaña Roca Negra
+        self.assertLess(yd(0, "fp:7", "fp:16"), 3800)     # Menethil - Refugio de la Zaga (puente de Thandol)
+        self.assertLess(yd(0, "fp:14", "fp:16"), 2400)    # Costasur - Refugio de la Zaga
+        self.assertLess(yd(1, "fp:25", "fp:30"), 6500)    # El Cruce - Poblado Viento Libre (el Gran Elevador)
+        self.assertLess(yd(1, "fp:26", "fp:28"), 4000)    # Auberdine - Astranaar
+        self.assertLess(yd(1, "fp:32", "fp:25"), 4400)    # Theramore - El Cruce
+        self.assertGreater(yd(1, "fp:22", "fp:31"), 6000)  # Cima del Trueno - Thalanaar: no por la sierra de Mulgore
+
 
 if __name__ == "__main__":
     unittest.main()

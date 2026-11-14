@@ -173,7 +173,7 @@ const scenarios = [
       r = T.PlanSync(Ctx(), Pt(12), { c = d.c, wx = d.wx, wy = d.wy - 399 })
       Check(r ~= nil and #r.legs == 1 and r.legs[1].how == "walk", "399 yd: walk", r and Hows(r.legs))
 
-      Section("unknown and other-faction nodes are never used")
+      Section("unknown and other-faction nodes are never used (only the undiscovered flight master you stand next to, to take off)")
       local sets = { { 2 }, { 2, 6 }, { 2, 7, 12 }, { 5, 6, 8, 14 }, {} }
       local bad, runs = 0, 0
       for _, ids in ipairs(sets) do
@@ -182,14 +182,29 @@ const scenarios = [
         for _, pair in ipairs({ { 2, 26 }, { 2, 8 }, { 12, 6 }, { 14, 7 }, { 8, 2 } }) do
           local rr = T.PlanSync(Ctx({ known = known }), Pt(pair[1]), Pt(pair[2]))
           runs = runs + 1
+          local firstFly = true
           for _, l in ipairs(rr and rr.legs or {}) do
             if l.how == "fly" then
-              for _, id in ipairs(l.nodes) do if not known[id] then bad = bad + 1 end end
+              for k, id in ipairs(l.nodes) do
+                -- the only unknown one allowed: the take-off of the first flight, at the start (learnt by talking)
+                local takeoff = firstFly and k == 1 and id == pair[1]
+                if not known[id] and not takeoff then bad = bad + 1 end
+              end
+              firstFly = false
             end
           end
         end
       end
       Check(runs == 25 and bad == 0, "no unknown node on any of " .. runs .. " plans", bad)
+      -- in Darkshire with Darkshire unknown: talk to its flight master (it is learnt) and fly; a node 400 yd away or
+      -- more does not count, and nothing ever flies to an unknown node
+      local dk = Node(12)
+      r = T.PlanSync(Ctx({ known = { [2] = true, [6] = true } }), { c = dk.c, wx = dk.wx + 60, wy = dk.wy }, Pt(6))
+      Check(r ~= nil and r.legs[#r.legs].how == "fly" and r.legs[#r.legs].nodes[1] == 12, "undiscovered Darkshire flight master next to you: take off from it", r and Hows(r.legs))
+      r = T.PlanSync(Ctx({ known = { [2] = true, [6] = true } }), { c = dk.c, wx = dk.wx + 900, wy = dk.wy }, Pt(6))
+      local far12 = false
+      for _, l in ipairs(r and r.legs or {}) do if l.how == "fly" and l.nodes[1] == 12 then far12 = true end end
+      Check(not far12, "900 yd away it is not used", r and Hows(r.legs))
       r = T.PlanSync(Ctx({ known = { [2] = true } }), Pt(2), Pt(8))
       Check(r ~= nil and not Has(r.legs, "fly"), "with only Stormwind known there is nothing to fly to", r and Hows(r.legs))
       bad = 0
@@ -307,7 +322,7 @@ const scenarios = [
       end
       local fromIF = FromIF(r)
       Check(fromIF == nil or fromIF.yards > 3000, "no walk straight from Ironforge over the mountains (1095 yd before)", fromIF and fromIF.yards)
-      -- with the real walk from Ironforge (5700 yd) the boats win: Lakeshire -> Stormwind, harbour boat to
+      -- with the real walk from Ironforge (5700 yd) the boats win: Darkshire (its flight master, learnt there) -> Stormwind, harbour boat to
       -- Auberdine, boat to Menethil
       Check(r ~= nil and RideId(r.legs) ~= nil and Has(r.legs, "ride", "boat-menethil-auberdine"), "a faster way exists: Stormwind's harbour boat and the Auberdine - Menethil boat", r and Hows(r.legs))
       Check(r ~= nil and r.legs[#r.legs].how == "walk" and r.legs[#r.legs].yards < 400, "lands at the Menethil dock, a short walk to the flight master", r and Legs(r))
@@ -319,12 +334,10 @@ const scenarios = [
       fromIF = r2 and r2.legs[1]
       Check(r2 ~= nil and #r2.legs == 1 and fromIF.how == "walk" and fromIF.yards > 4000, "Ironforge -> Menethil on foot: several thousand yards (1095 in a straight line)", fromIF and fromIF.yards)
       Check(fromIF ~= nil and math.abs(fromIF.secs - fromIF.yards / 7) < 30, "... and its seconds are those yards at 7 yd/s", fromIF and fromIF.secs)
-      -- the Ironforge way: walk to Lakeshire, fly Lakeshire - Stormwind - Ironforge (there is no direct flight), that walk
-      local fly = 4
-      for _, f in ipairs(TD().flights) do
-        if (f.from == 5 and f.to == 2) or (f.from == 2 and f.to == 6) then fly = fly + f.secs end
-      end
-      local viaIF = r and r2 and (r.legs[1].secs + fly + r2.secs)
+      -- the Ironforge way: the best plan to the Ironforge flight master (from Darkshire: talk to its undiscovered flight
+      -- master and fly Darkshire - Stormwind - Ironforge), then that walk
+      local toIF = T.PlanSync(ctx, Pt(12), Pt(6))
+      local viaIF = toIF and r2 and (toIF.secs + r2.secs)
       Check(r ~= nil and r2 ~= nil and r.secs < viaIF, "the boats beat flying to Ironforge and walking from there", r and r2 and (r.secs .. " < " .. viaIF))
       t0 = __clock()
       for _ = 1, 5 do T.PlanSync(ctx, Pt(12), Pt(7)) end
@@ -400,6 +413,92 @@ const scenarios = [
         local st = Straight(sea, Pt(2))
         Check(r.secs > st * 1.25 / 7 * 1.5, "slower than the old straight line (x1.25): the penalty", r.secs .. " vs " .. math.floor(st * 1.25 / 7))
       end
+      Check(#Sim.errors == 0, "no Lua errors", #Sim.errors)
+    `,
+  },
+  {
+    id: 'travel-focus',
+    title: 'Travel planner, the three focus characters to Auberdine, Theramore (Menethil boat) and Southshore: real roads, no walk across mountains or sea (Data/TravelWalk.lua after tools/walk_zones.py)',
+    char: 'gnome-warlock',
+    lua: SETUP + L_`
+      Login()
+      Sim.Advance(6)
+      NoGuide()
+      local T = TT()
+      local D = TD()
+      local function Straight(a, b) return math.sqrt((a.wx - b.wx) ^ 2 + (a.wy - b.wy) ^ 2) end
+      local function Legs(r)
+        local out = {}
+        for _, l in ipairs(r and r.legs or {}) do
+          local w = l.how
+          if l.how == "fly" then w = "fly " .. table.concat(l.nodes, ">") end
+          if l.how == "ride" or l.how == "portal" then w = l.id end
+          if l.how == "teleport" then w = "tele " .. tostring(l.name) end
+          if l.how == "walk" then w = string.format("walk %d yd", l.yards) end
+          out[#out + 1] = w .. string.format(" %.0fs", l.secs)
+        end
+        return table.concat(out, " | ")
+      end
+      -- every walk leg: same continent, at least its straight line, and never between the north of the Eastern
+      -- Kingdoms (Dun Morogh, Loch Modan, the Wetlands: wx > -6000) and the south (Elwynn and below: wx < -7900)
+      local function Sane(r)
+        for _, l in ipairs(r and r.legs or {}) do
+          if l.how == "walk" then
+            if l.from.c ~= l.to.c then return false, "walk between continents" end
+            if l.yards < Straight(l.from, l.to) * 0.98 then return false, "walk shorter than the straight line" end
+            if l.from.c == 0 then
+              local n1, n2 = l.from.wx > -6000, l.to.wx > -6000
+              local s1, s2 = l.from.wx < -7900, l.to.wx < -7900
+              if (n1 and s2) or (s1 and n2) then return false, "walk between the north and the south of the Eastern Kingdoms" end
+            end
+          end
+        end
+        return true
+      end
+      local function Run(who, ctx, from, label, to, tolabel, expect)
+        local r = T.PlanSync(ctx, from, to)
+        Sim.Out(string.format("    %s %s -> %s: %s = %.0f s", who, label, tolabel, Legs(r), r and r.secs or -1))
+        Check(r ~= nil, who .. " " .. label .. " -> " .. tolabel .. ": a plan")
+        local ok, why = Sane(r)
+        Check(ok, who .. " " .. label .. " -> " .. tolabel .. ": real walking", why)
+        if expect then
+          local has = false
+          for _, l in ipairs(r and r.legs or {}) do if l.id == expect or (l.how == "fly" and l.toId == expect) then has = true end end
+          Check(has, who .. " " .. label .. " -> " .. tolabel .. ": uses " .. tostring(expect), r and Legs(r))
+        end
+        return r
+      end
+      local function K(ids) local t = {} for _, id in ipairs(ids) do t[id] = true end return t end
+      local function Dock(id, side) local x = nil for _, r in ipairs(D.rides) do if r.id == id then x = r[side] end end return { c = x.c, wx = x.wx, wy = x.wy } end
+      local aub, thera, ss = Pt(26), Pt(32), Pt(14)
+
+      Section("gnome warlock, level 21-30: Stormwind, Sentinel Hill, Lakeshire, Ironforge (+ Thelsamar, Menethil later)")
+      local wl = { mask = 1, class = "WARLOCK", known = K({ 2, 4, 5, 6 }), speed = 1 }
+      Run("warlock", wl, Pt(12), "Darkshire", aub, "Auberdine", "boat-stormwind-auberdine")
+      -- without Menethil: the free Booty Bay - Ratchet boat and the Dustwallow shore are as fast as two Auberdine boats
+      Run("warlock", wl, Pt(12), "Darkshire", thera, "Theramore")
+      Run("warlock", wl, Pt(12), "Darkshire", ss, "Southshore")
+      local wl2 = { mask = 1, class = "WARLOCK", known = K({ 2, 4, 5, 6, 7, 8 }), speed = 1 }
+      Run("warlock", wl2, Pt(6), "Ironforge", ss, "Southshore", "boat-menethil-southshore")
+      Run("warlock", wl2, Pt(6), "Ironforge", thera, "Theramore", "boat-menethil-theramore")
+
+      Section("human mage: Stormwind, Sentinel Hill, Lakeshire, Darkshire, Ironforge, Menethil")
+      local mg = { mask = 1, class = "MAGE", known = K({ 2, 4, 5, 6, 7, 12 }), speed = 1 }
+      Run("mage", mg, Pt(4), "Sentinel Hill", aub, "Auberdine", "boat-stormwind-auberdine")
+      Run("mage", mg, Pt(2), "Stormwind", thera, "Theramore", "boat-menethil-theramore")
+      Run("mage", mg, Pt(2), "Stormwind", ss, "Southshore")
+
+      Section("night elf druid: Rut'theran, Auberdine, Astranaar, Stonetalon Peak")
+      local dr = { mask = 1, class = "DRUID", known = K({ 26, 27, 28, 33 }), speed = 1 }
+      Run("druid", dr, Pt(27), "Rut'theran", aub, "Auberdine")
+      Run("druid", dr, Pt(26), "Auberdine", thera, "Theramore", "boat-menethil-theramore")
+      Run("druid", dr, Pt(26), "Auberdine", ss, "Southshore", "boat-southshore-auberdine")
+      Run("druid", dr, Pt(28), "Astranaar", thera, "Theramore")
+
+      Section("on foot only, no flight known: never over the Dun Morogh - Searing Gorge - Burning Steppes ranges")
+      local foot = { mask = 1, class = "WARLOCK", known = {}, speed = 1 }
+      local r = Run("foot", foot, Pt(12), "Darkshire", Pt(8), "Thelsamar")
+      Check(r ~= nil and Has(r.legs, "ride"), "Darkshire -> Thelsamar with no flights: by the Deeprun Tram (no land way)", r and Legs(r))
       Check(#Sim.errors == 0, "no Lua errors", #Sim.errors)
     `,
   },
