@@ -11,6 +11,17 @@ do = "fly"
 node = "Gadgetzan"
 zone = 1446
 text = "Vuela de Plumaluna a Gadgetzan (Tanaris)."
+if = { fp = ["Gadgetzan"] }
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a47-tanaris-walk"
+do = "goto"
+at = [1446, 51.0, 29.3]
+text = "Aún no conoces Gadgetzan: ve a pie desde Feralas al este por Mil Agujas y sigue al sur hasta Gadgetzan."
+tip = "Es un camino largo y con bichos de nivel 45-50: ve montado si puedes. Al llegar coge su ruta de vuelo."
+if = { nofp = ["Gadgetzan"] }
 status = "unverified"
 sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
 

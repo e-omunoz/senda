@@ -63,6 +63,40 @@ python tools/lookup.py search "Kharanos"
    ```
    Corrige todos los `conflict` que sean tuyos.
 
+## Vuelos: nunca mandes volar a un nodo que el jugador puede no tener
+
+En Forever, como en Classic, solo se vuela a nodos que ya se han visitado. Un paso `do = "fly"` a un nodo que ningún
+`getfp` anterior de la ruta da por conocido deja al jugador que se lo saltó con un «Vuela a X» imposible (y el
+planificador de viajes lo manda por donde puede). Dos filtros dinámicos del `if` lo resuelven:
+
+- `if = { fp = ["8"] }`: el paso solo se ve si el nodo 8 se conoce (también acepta el nombre, como el `node` de getfp).
+- `if = { nofp = ["8"] }`: el paso solo se ve si el nodo 8 NO se conoce.
+
+Patrón: el `fly` lleva `fp`, y justo después va la alternativa a pie con `nofp` (un `goto` o un `getfp` del nodo, con
+el camino explicado); el `getfp` normal que ya había se da por hecho solo si el nodo ya se conoce.
+
+```toml
+[[step]]
+id = "a26wl-004"
+do = "fly"
+zone = 1432
+text = "Vuela a Thelsamar (Loch Modan)."
+if = { fp = ["8"] }
+
+[[step]]
+id = "a26wl-ne-02"
+do = "getfp"
+node = "8"
+npc = 1572
+at = [1432, 33.9, 51.0]
+text = "Sal por la puerta de Forjaz, ve al este por Dun Morogh y entra en Loch Modan por el túnel. Coge la ruta de vuelo de Thelsamar."
+```
+
+`python tools/audit_guides.py` falla (`fly-unknown-node`) con cualquier `fly` de las tres guías de personaje cuyo destino no
+sea un nodo ya conocido en ese punto (un `getfp` anterior no opcional, o `if.fp` en el propio paso). Ver `docs/AUDIT.md`.
+Los dos filtros se validan en `tools/validate.py` (lista no vacía; no el mismo nodo en `fp` y `nofp`) y se compilan tal cual
+en el Lua de la guía.
+
 ## Composición de las guías
 
 Cada guía (`data/guides/<id>/guide.toml`) lista sus secciones en orden. Las secciones compartidas se escriben

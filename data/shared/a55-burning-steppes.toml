@@ -153,8 +153,19 @@ node = "Morgan's Vigil"
 zone = 1428
 text = "Vuela a la Vigilia de Morgan (Las Estepas Ardientes)."
 tip = "Si no tienes el vuelo, vuela a Villa del Lago y sube al norte por el paso de los Montes Crestagrana."
+if = { fp = ["Morgan's Vigil"] }
 status = "unverified"
 sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance", "https://www.warcrafttavern.com/forever/news/onyxias-lair-raid-will-still-require-attunement-in-wow-forever/"]
+
+[[step]]
+id = "a55-burning-steppes-walk"
+do = "goto"
+at = [1428, 84.3, 68.3]
+text = "Aún no conoces la Vigilia de Morgan: vuela a Villa del Lago, sigue el camino al este hasta las Estepas Ardientes y llega a la Vigilia."
+tip = "El paso de Crestagrana está lleno de ogros y dragonantes: ve atento. Al llegar coge la ruta de vuelo."
+if = { nofp = ["Morgan's Vigil"] }
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
 
 [[step]]
 id = "a55-burning-steppes-010"

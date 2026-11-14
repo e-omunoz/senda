@@ -320,6 +320,75 @@ class FollowupBreadcrumbsTest(unittest.TestCase):
 
 
 # ------------------------------------------------------------------------------------------- guías reales
+NODES = [{"id": 2, "map": 1453, "name": "Stormwind, Elwynn", "faction": "alliance"},
+         {"id": 6, "map": 1455, "name": "Ironforge, Dun Morogh", "faction": "alliance"},
+         {"id": 8, "map": 1432, "name": "Thelsamar, Loch Modan", "faction": "alliance"},
+         {"id": 7, "map": 1437, "name": "Menethil Harbor, Wetlands", "faction": "alliance"},
+         {"id": 11, "map": 1411, "name": "Orgrimmar, Durotar", "faction": "horde"}]
+
+
+def flights(*raw, ch=GNOME, level="error", optional_ids=()):
+    rep = A.Report()
+    A.check_flights(steps(*raw, optional_ids=optional_ids), ch, rep, NODES, level)
+    return rep
+
+
+class FlightChecks(unittest.TestCase):
+    """Cada `fly` va a un nodo que el personaje ya conoce en ese punto de su ruta."""
+
+    def test_fly_to_unknown_node_is_an_error(self):
+        rep = flights({"do": "fly", "zone": 1432, "id": "fly-th"})
+        self.assertEqual(codes(rep), ["fly-unknown-node"])
+        self.assertEqual([i.step for i in rep.errors], ["fly-th"])
+
+    def test_known_after_getfp_by_id_or_name(self):
+        for node in ("8", "Thelsamar"):
+            rep = flights({"do": "getfp", "node": node}, {"do": "fly", "zone": 1432})
+            self.assertEqual(rep.issues, [], node)
+
+    def test_getfp_after_the_fly_does_not_count(self):
+        rep = flights({"do": "fly", "zone": 1432}, {"do": "getfp", "node": "8"})
+        self.assertEqual(codes(rep), ["fly-unknown-node"])
+
+    def test_optional_getfp_does_not_count(self):
+        rep = flights({"do": "getfp", "node": "8", "id": "g"}, {"do": "fly", "zone": 1432}, optional_ids=("g",))
+        self.assertEqual(codes(rep), ["fly-unknown-node"])
+
+    def test_fp_filter_on_the_step_is_enough(self):
+        self.assertEqual(flights({"do": "fly", "zone": 1432, "if": {"fp": ["8"]}}).issues, [])
+        self.assertEqual(flights({"do": "fly", "zone": 1432, "if": {"fp": ["Thelsamar"]}}).issues, [])
+        # filtra por otro nodo, o justo al revés (nofp): no vale
+        self.assertEqual(codes(flights({"do": "fly", "zone": 1432, "if": {"fp": ["6"]}})), ["fly-unknown-node"])
+        self.assertEqual(codes(flights({"do": "fly", "zone": 1432, "if": {"nofp": ["8"]}})), ["fly-unknown-node"])
+
+    def test_node_field_wins_over_zone(self):
+        rep = flights({"do": "getfp", "node": "6"}, {"do": "fly", "zone": 1432, "node": "Ironforge"})
+        self.assertEqual(rep.issues, [])
+
+    def test_horde_report_level_and_faction_nodes(self):
+        orc = A.Character("o", "Orc", "WARRIOR", "Horde")
+        rep = flights({"do": "fly", "zone": 1411}, ch=orc, level="warning")
+        self.assertEqual(codes(rep, "warning"), ["fly-unknown-node"])
+        self.assertEqual(codes(rep), [])
+        # un nodo de la Alianza no existe para la Horda
+        rep = flights({"do": "fly", "zone": 1432}, ch=orc, level="warning")
+        self.assertEqual(codes(rep, "warning"), ["fly-no-node"])
+
+    def test_free_flight_is_exempt(self):
+        self.assertEqual(codes(flights({"do": "fly", "zone": 1432, "id": "other-fly"})), ["fly-unknown-node"])
+        self.assertEqual(flights({"do": "fly", "zone": 1432, "id": next(iter(A.FREE_FLIGHTS))}).issues, [])
+
+    def test_real_wetlands_entry(self):
+        """La entrada de Los Humedales no manda volar a Thelsamar a quien no lo conoce."""
+        import tomllib
+        data = tomllib.loads((REPO / "data/shared/a26-los-humedales.toml").read_text(encoding="utf-8"))
+        by_id = {s["id"]: s for s in data["step"]}
+        self.assertEqual(by_id["a26wl-004"]["if"], {"fp": ["8"]})
+        self.assertEqual(by_id["a26wl-ne-02"]["do"], "getfp")
+        self.assertNotIn("if", by_id["a26wl-ne-02"])
+        self.assertEqual(by_id["a26wl-ne-01"]["if"], {"nofp": ["8"]})
+
+
 @unittest.skipUnless((FOREVERDB / "data" / "quest.jsonl").exists(), "sin forever-db en .cache (tools/fetch_foreverdb.py)")
 class AuditRealGuidesTest(unittest.TestCase):
     @classmethod

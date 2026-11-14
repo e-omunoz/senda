@@ -66,7 +66,7 @@ at = [1453, 71.3, 72.2]
 zone = 1432
 text = "Vuela a Thelsamar (Loch Modan)."
 tip = "Si no hay ruta directa, vuela a Forjaz y de allí a Thelsamar."
-if = { race = ["Human", "Dwarf", "Gnome"] }
+if = { fp = ["8"] }
 status = "unverified"
 sources = ["questie:npc/352"]
 
@@ -76,9 +76,9 @@ do = "getfp"
 node = "6"
 npc = 1573
 at = [1455, 55.5, 47.7]
-text = "Toma el Tranvía Subterráneo en Ciudad de los Enanos (Ventormenta) hasta Forjaz y coge la ruta de vuelo con Gryth Thurden, en la Gran Fundición."
-tip = "Es tu primera visita a Forjaz: así podrás volar aquí al 28 y al 30."
-if = { race = ["NightElf"] }
+text = "Ve a Forjaz (tranvía subterráneo desde Ventormenta, o vuela) y coge la ruta de vuelo con Gryth Thurden, en la Gran Fundición."
+tip = "Si ya la tienes se da por hecha. Con ella podrás volar a Forjaz al 28 y al 30."
+if = { nofp = ["8"] }
 status = "unverified"
 sources = ["questie:npc/1573"]
 
@@ -88,9 +88,8 @@ do = "getfp"
 node = "8"
 npc = 1572
 at = [1432, 33.9, 51.0]
-text = "Sal por la puerta de Forjaz, cruza Dun Morogh hacia el este y entra en Loch Modan por el túnel. Coge la ruta de vuelo de Thelsamar con Thorgrum Borrelson."
-tip = "El camino es seguro a tu nivel. Si vas montado (forma de viaje al 30 no; a pie), unos 6-7 minutos."
-if = { race = ["NightElf"] }
+text = "Sal por la puerta de Forjaz, ve al este por Dun Morogh y entra en Loch Modan por el túnel. Coge la ruta de vuelo de Thelsamar con Thorgrum Borrelson."
+tip = "Es camino seguro a tu nivel, unos 6-7 minutos a pie. Con este nodo, la próxima vez vuelas directo a Thelsamar desde Ventormenta."
 status = "unverified"
 sources = ["questie:npc/1572"]
 

@@ -914,6 +914,15 @@ Events:On("SENDA_READY", function()
   Events:On("BAG_UPDATE_DELAYED", Req("bags", 0.3))
   Events:On("HEARTHSTONE_BOUND", OnBound)
   Events:On("TAXIMAP_OPENED", OnTaxiOpened)
+  -- Los pasos con `if.fp` / `if.nofp` dependen de los nodos de vuelo conocidos: se reevalúa solo si cambian.
+  local fpSig = Cond:KnownFpSignature()
+  Events:On("SENDA_TRAVEL_UPDATED", function()
+    local sig = Cond:KnownFpSignature()
+    if sig ~= fpSig then
+      fpSig = sig
+      Engine:RequestEvaluate(0.3, "fpknown")
+    end
+  end)
   Events:On("ZONE_CHANGED_NEW_AREA", OnZone)
   Events:On("ZONE_CHANGED", Req("subzone", 0.5))
   Events:On("PLAYER_ENTERING_WORLD", OnZone)

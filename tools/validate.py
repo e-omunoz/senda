@@ -429,6 +429,18 @@ def run_checks(ds: Dataset) -> Dataset:
             if isinstance(flt, dict) and isinstance(flt.get("minlevel"), int) \
                     and isinstance(flt.get("maxlevel"), int) and flt["minlevel"] > flt["maxlevel"]:
                 ds.err(sec.path, f"{where} · campo 'if'", "minlevel > maxlevel")
+            if isinstance(flt, dict):
+                for key in ("fp", "nofp"):
+                    val = flt.get(key)
+                    if val is not None and (not isinstance(val, list) or not val
+                                            or not all(isinstance(x, (str, int)) and not isinstance(x, bool)
+                                                       and str(x).strip() for x in val)):
+                        ds.err(sec.path, f"{where} · campo 'if'",
+                               f"'{key}' debe ser una lista no vacía de nodos de vuelo (id o nombre)")
+                both = set(map(str, flt.get("fp") or [])) & set(map(str, flt.get("nofp") or []))
+                if both:
+                    ds.err(sec.path, f"{where} · campo 'if'",
+                           f"'fp' y 'nofp' con el mismo nodo ({', '.join(sorted(both))}): el paso nunca se vería")
             for fld in ("text", "tip"):
                 val = st.get(fld)
                 if isinstance(val, str):

@@ -11,6 +11,17 @@ do = "fly"
 node = "Aerie Peak"
 zone = 1425
 text = "Vuela del Puesto del Torio al Nido Aguileño (Tierras del Interior)."
+if = { fp = ["Aerie Peak"] }
+status = "unverified"
+sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
+
+[[step]]
+id = "a49-hinterlands-walk"
+do = "goto"
+at = [1425, 11.1, 46.1]
+text = "Aún no conoces el Nido Aguileño: vuela a Puerto de Menethil, cruza el puente de Thandol a Arathi y sigue por tierra hasta las Tierras del Interior."
+tip = "Es un trayecto largo. Al llegar al Nido Aguileño coge su ruta de vuelo para no repetirlo."
+if = { nofp = ["Aerie Peak"] }
 status = "unverified"
 sources = ["https://www.warcrafttavern.com/forever/guides/leveling/", "https://expcarry.com/wow-forever-leveling-guide-alliance"]
 

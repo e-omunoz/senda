@@ -145,6 +145,20 @@
         },
         "maxlevel": {
           "type": "integer"
+        },
+        "fp": {
+          "type": "array",
+          "description": "Solo se muestra el paso cuando se conoce ese nodo de vuelo (id de nodo o nombre, como `node` de getfp). Con varios, basta uno.",
+          "items": {
+            "type": ["string", "integer"]
+          }
+        },
+        "nofp": {
+          "type": "array",
+          "description": "Solo se muestra el paso cuando NO se conoce ese nodo de vuelo (id o nombre). Con varios, basta que falte uno.",
+          "items": {
+            "type": ["string", "integer"]
+          }
         }
       }
     },
